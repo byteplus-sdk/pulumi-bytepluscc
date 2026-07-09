@@ -17,32 +17,32 @@ import javax.annotation.Nullable;
 
 /**
  * ID namespace is a resource isolation unit in permissions management. It can be used to organize associated entities, projects, and tags.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.id.PermissionNamespace;
  * import com.byteplus.bytepluscc.id.PermissionNamespaceArgs;
  * import com.pulumi.bytepluscc.id.inputs.PermissionNamespaceTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var example = new PermissionNamespace("example", PermissionNamespaceArgs.builder()
  *             .namespaceName("test-namespace-full")
@@ -53,136 +53,146 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:id/permissionNamespace:PermissionNamespace example &#34;namespace_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:id/permissionNamespace:PermissionNamespace")
 public class PermissionNamespace extends com.pulumi.resources.CustomResource {
     /**
      * Associated Entities List
-     * 
+     *
      */
     @Export(name="associates", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> associates;
 
     /**
      * @return Associated Entities List
-     * 
+     *
      */
     public Output<List<String>> associates() {
         return this.associates;
     }
     /**
      * Namespace Creation Time
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Namespace Creation Time
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Namespace Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Namespace Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Namespace Unique ID
-     * 
+     *
      */
     @Export(name="namespaceId", refs={String.class}, tree="[0]")
     private Output<String> namespaceId;
 
     /**
      * @return Namespace Unique ID
-     * 
+     *
      */
     public Output<String> namespaceId() {
         return this.namespaceId;
     }
     /**
      * Namespace Name
-     * 
+     *
      */
     @Export(name="namespaceName", refs={String.class}, tree="[0]")
     private Output<String> namespaceName;
 
     /**
      * @return Namespace Name
-     * 
+     *
      */
     public Output<String> namespaceName() {
         return this.namespaceName;
     }
     /**
      * Project Associated with Namespace
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project Associated with Namespace
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Namespace Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,PermissionNamespaceTag.class}, tree="[0,1]")
     private Output<List<PermissionNamespaceTag>> tags;
 
+    /**
+     * @return Namespace Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<PermissionNamespaceTag>> tags() {
         return this.tags;
     }
     /**
      * Namespace TRN
-     * 
+     *
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Namespace TRN
-     * 
+     *
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Namespace Update Time
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Namespace Update Time
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

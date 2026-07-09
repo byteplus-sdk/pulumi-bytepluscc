@@ -19,14 +19,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Algorithm for assigning partitions to consumers, specified by the consumer client. If using custom partition consumption, this field may be empty
-     * 
+     *
      */
     @Import(name="balanceAlgorithm")
     private @Nullable Output<String> balanceAlgorithm;
 
     /**
      * @return Algorithm for assigning partitions to consumers, specified by the consumer client. If using custom partition consumption, this field may be empty
-     * 
+     *
      */
     public Optional<Output<String>> balanceAlgorithm() {
         return Optional.ofNullable(this.balanceAlgorithm);
@@ -34,14 +34,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer group description, up to 128 characters
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Consumer group description, up to 128 characters
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -49,14 +49,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-     * 
+     *
      */
     @Import(name="groupId")
     private @Nullable Output<String> groupId;
 
     /**
      * @return Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-     * 
+     *
      */
     public Optional<Output<String>> groupId() {
         return Optional.ofNullable(this.groupId);
@@ -64,14 +64,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -79,14 +79,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer group protocol type   - If using the standard Kafka consumer protocol, displays as consumer   - If using another protocol type, displays the corresponding protocol name, for example, connect when using Kafka-Connector   - If using custom partition consumption, this field may be empty
-     * 
+     *
      */
     @Import(name="protocolType")
     private @Nullable Output<String> protocolType;
 
     /**
      * @return Consumer group protocol type   - If using the standard Kafka consumer protocol, displays as consumer   - If using another protocol type, displays the corresponding protocol name, for example, connect when using Kafka-Connector   - If using custom partition consumption, this field may be empty
-     * 
+     *
      */
     public Optional<Output<String>> protocolType() {
         return Optional.ofNullable(this.protocolType);
@@ -94,22 +94,32 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer group status   - PreparingRebalance: preparing for consumption   - CompletingRebalance: assigning partitions   - Stable: consuming   - Empty: not consuming   - Dead: expired
-     * 
+     *
      */
     @Import(name="state")
     private @Nullable Output<String> state;
 
     /**
      * @return Consumer group status   - PreparingRebalance: preparing for consumption   - CompletingRebalance: assigning partitions   - Stable: consuming   - Empty: not consuming   - Dead: expired
-     * 
+     *
      */
     public Optional<Output<String>> state() {
         return Optional.ofNullable(this.state);
     }
 
+    /**
+     * Group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<GroupTagArgs>> tags;
 
+    /**
+     * @return Group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -146,9 +156,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param balanceAlgorithm Algorithm for assigning partitions to consumers, specified by the consumer client. If using custom partition consumption, this field may be empty
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder balanceAlgorithm(@Nullable Output<String> balanceAlgorithm) {
             $.balanceAlgorithm = balanceAlgorithm;
@@ -157,9 +167,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param balanceAlgorithm Algorithm for assigning partitions to consumers, specified by the consumer client. If using custom partition consumption, this field may be empty
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder balanceAlgorithm(String balanceAlgorithm) {
             return balanceAlgorithm(Output.of(balanceAlgorithm));
@@ -167,9 +177,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Consumer group description, up to 128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -178,9 +188,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Consumer group description, up to 128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -188,9 +198,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupId Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groupId(@Nullable Output<String> groupId) {
             $.groupId = groupId;
@@ -199,9 +209,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupId Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
@@ -209,9 +219,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -220,9 +230,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -230,9 +240,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolType Consumer group protocol type   - If using the standard Kafka consumer protocol, displays as consumer   - If using another protocol type, displays the corresponding protocol name, for example, connect when using Kafka-Connector   - If using custom partition consumption, this field may be empty
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocolType(@Nullable Output<String> protocolType) {
             $.protocolType = protocolType;
@@ -241,9 +251,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolType Consumer group protocol type   - If using the standard Kafka consumer protocol, displays as consumer   - If using another protocol type, displays the corresponding protocol name, for example, connect when using Kafka-Connector   - If using custom partition consumption, this field may be empty
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocolType(String protocolType) {
             return protocolType(Output.of(protocolType));
@@ -251,9 +261,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param state Consumer group status   - PreparingRebalance: preparing for consumption   - CompletingRebalance: assigning partitions   - Stable: consuming   - Empty: not consuming   - Dead: expired
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder state(@Nullable Output<String> state) {
             $.state = state;
@@ -262,23 +272,44 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param state Consumer group status   - PreparingRebalance: preparing for consumption   - CompletingRebalance: assigning partitions   - Stable: consuming   - Empty: not consuming   - Dead: expired
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder state(String state) {
             return state(Output.of(state));
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<GroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<GroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(GroupTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -20,29 +20,49 @@ public final class NodeKubernetesConfigArgs extends com.pulumi.resources.Resourc
 
     /**
      * Node lock configuration. Options: false (default): not locked; true: locked
-     * 
+     *
      */
     @Import(name="cordon")
     private @Nullable Output<Boolean> cordon;
 
     /**
      * @return Node lock configuration. Options: false (default): not locked; true: locked
-     * 
+     *
      */
     public Optional<Output<Boolean>> cordon() {
         return Optional.ofNullable(this.cordon);
     }
 
+    /**
+     * Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="labels")
     private @Nullable Output<List<NodeKubernetesConfigLabelArgs>> labels;
 
+    /**
+     * @return Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NodeKubernetesConfigLabelArgs>>> labels() {
         return Optional.ofNullable(this.labels);
     }
 
+    /**
+     * Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="taints")
     private @Nullable Output<List<NodeKubernetesConfigTaintArgs>> taints;
 
+    /**
+     * @return Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NodeKubernetesConfigTaintArgs>>> taints() {
         return Optional.ofNullable(this.taints);
     }
@@ -75,9 +95,9 @@ public final class NodeKubernetesConfigArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param cordon Node lock configuration. Options: false (default): not locked; true: locked
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cordon(@Nullable Output<Boolean> cordon) {
             $.cordon = cordon;
@@ -86,36 +106,78 @@ public final class NodeKubernetesConfigArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param cordon Node lock configuration. Options: false (default): not locked; true: locked
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cordon(Boolean cordon) {
             return cordon(Output.of(cordon));
         }
 
+        /**
+         * @param labels Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(@Nullable Output<List<NodeKubernetesConfigLabelArgs>> labels) {
             $.labels = labels;
             return this;
         }
 
+        /**
+         * @param labels Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(List<NodeKubernetesConfigLabelArgs> labels) {
             return labels(Output.of(labels));
         }
 
+        /**
+         * @param labels Kubernetes label information for node pools/nodes. Up to 20 labels can be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(NodeKubernetesConfigLabelArgs... labels) {
             return labels(List.of(labels));
         }
 
+        /**
+         * @param taints Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder taints(@Nullable Output<List<NodeKubernetesConfigTaintArgs>> taints) {
             $.taints = taints;
             return this;
         }
 
+        /**
+         * @param taints Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder taints(List<NodeKubernetesConfigTaintArgs> taints) {
             return taints(Output.of(taints));
         }
 
+        /**
+         * @param taints Kubernetes taint information for node pools/nodes. Up to 20 taints can be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder taints(NodeKubernetesConfigTaintArgs... taints) {
             return taints(List.of(taints));
         }

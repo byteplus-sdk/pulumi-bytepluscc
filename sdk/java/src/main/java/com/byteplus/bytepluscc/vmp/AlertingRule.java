@@ -21,181 +21,296 @@ import javax.annotation.Nullable;
 
 /**
  * VMP alert rule configuration
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vmp.AlertingRule;
+ * import com.byteplus.bytepluscc.vmp.AlertingRuleArgs;
+ * import com.pulumi.bytepluscc.vmp.inputs.AlertingRuleQueryArgs;
+ * import com.pulumi.bytepluscc.vmp.inputs.AlertingRuleLevelArgs;
+ * import com.pulumi.bytepluscc.vmp.inputs.AlertingRuleAnnotationArgs;
+ * import com.pulumi.bytepluscc.vmp.inputs.AlertingRuleLabelArgs;
+ * import com.pulumi.bytepluscc.vmp.inputs.AlertingRuleTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var vMPAlertingRuleDemo = new AlertingRule("vMPAlertingRuleDemo", AlertingRuleArgs.builder()
+ *             .name("alert-rule-demo")
+ *             .description("this is a alert rule demo")
+ *             .type("vmp/PromQL")
+ *             .query(AlertingRuleQueryArgs.builder()
+ *                 .prom_ql("http_requests_total{method=\"PUT\", status=\"404\"}")
+ *                 .workspace_id("e9e4b146-0ba9-41ac-af2b-xxxxxx")
+ *                 .build())
+ *             .levels(
+ *                 AlertingRuleLevelArgs.builder()
+ *                     .level("P0")
+ *                     .for_("1s")
+ *                     .comparator("<")
+ *                     .threshold(5.0)
+ *                     .build(),
+ *                 AlertingRuleLevelArgs.builder()
+ *                     .level("P1")
+ *                     .for_("6m")
+ *                     .comparator("<=")
+ *                     .threshold(10.0)
+ *                     .build(),
+ *                 AlertingRuleLevelArgs.builder()
+ *                     .level("P2")
+ *                     .for_("10m")
+ *                     .comparator("!=")
+ *                     .threshold(20.0)
+ *                     .build())
+ *             .notifyPolicyId("2890eb5e-f383-4a7b-810f-xxxxxxx")
+ *             .notifyGroupPolicyId("a8490e9b-4e5d-4a86-xxxx-xxxxxxx")
+ *             .annotations(AlertingRuleAnnotationArgs.builder()
+ *                 .name("Key")
+ *                 .value("Value")
+ *                 .build())
+ *             .labels(AlertingRuleLabelArgs.builder()
+ *                 .name("LabelsKey")
+ *                 .value("LabelsValue")
+ *                 .build())
+ *             .status("Running")
+ *             .tags(AlertingRuleTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vmp/alertingRule:AlertingRule example &#34;alerting_rule_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vmp/alertingRule:AlertingRule")
 public class AlertingRule extends com.pulumi.resources.CustomResource {
     /**
      * Alert rule ID
-     * 
+     *
      */
     @Export(name="alertingRuleId", refs={String.class}, tree="[0]")
     private Output<String> alertingRuleId;
 
     /**
      * @return Alert rule ID
-     * 
+     *
      */
     public Output<String> alertingRuleId() {
         return this.alertingRuleId;
     }
+    /**
+     * Annotation attached to the alert
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="annotations", refs={List.class,AlertingRuleAnnotation.class}, tree="[0,1]")
     private Output<List<AlertingRuleAnnotation>> annotations;
 
+    /**
+     * @return Annotation attached to the alert
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AlertingRuleAnnotation>> annotations() {
         return this.annotations;
     }
     /**
      * Alert rule creation time
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Alert rule creation time
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Alert rule description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Alert rule description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * Tags attached to the alert
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="labels", refs={List.class,AlertingRuleLabel.class}, tree="[0,1]")
     private Output<List<AlertingRuleLabel>> labels;
 
+    /**
+     * @return Tags attached to the alert
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AlertingRuleLabel>> labels() {
         return this.labels;
     }
+    /**
+     * Alert severity
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="levels", refs={List.class,AlertingRuleLevel.class}, tree="[0,1]")
     private Output<List<AlertingRuleLevel>> levels;
 
+    /**
+     * @return Alert severity
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AlertingRuleLevel>> levels() {
         return this.levels;
     }
     /**
      * Alert rule name
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Alert rule name
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Alert aggregation policy ID
-     * 
+     *
      */
     @Export(name="notifyGroupPolicyId", refs={String.class}, tree="[0]")
     private Output<String> notifyGroupPolicyId;
 
     /**
      * @return Alert aggregation policy ID
-     * 
+     *
      */
     public Output<String> notifyGroupPolicyId() {
         return this.notifyGroupPolicyId;
     }
     /**
      * Alert notification policy ID
-     * 
+     *
      */
     @Export(name="notifyPolicyId", refs={String.class}, tree="[0]")
     private Output<String> notifyPolicyId;
 
     /**
      * @return Alert notification policy ID
-     * 
+     *
      */
     public Output<String> notifyPolicyId() {
         return this.notifyPolicyId;
     }
     /**
      * Alert configuration
-     * 
+     *
      */
     @Export(name="query", refs={AlertingRuleQuery.class}, tree="[0]")
     private Output<AlertingRuleQuery> query;
 
     /**
      * @return Alert configuration
-     * 
+     *
      */
     public Output<AlertingRuleQuery> query() {
         return this.query;
     }
     /**
      * Alert rule status: Running (monitoring), Disabled (disabled)
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Alert rule status: Running (monitoring), Disabled (disabled)
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,AlertingRuleTag.class}, tree="[0,1]")
     private Output<List<AlertingRuleTag>> tags;
 
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AlertingRuleTag>> tags() {
         return this.tags;
     }
     /**
      * Alert rule type. Allowed values: vmp/PromQL
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Alert rule type. Allowed values: vmp/PromQL
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Alert rule update time
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Alert rule update time
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

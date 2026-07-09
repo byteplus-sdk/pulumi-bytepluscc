@@ -21,14 +21,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of DNS servers assigned to the domain by Cloud DNS
-     * 
+     *
      */
     @Import(name="allocateDnsServerLists")
     private @Nullable Output<List<String>> allocateDnsServerLists;
 
     /**
      * @return List of DNS servers assigned to the domain by Cloud DNS
-     * 
+     *
      */
     public Optional<Output<List<String>>> allocateDnsServerLists() {
         return Optional.ofNullable(this.allocateDnsServerLists);
@@ -36,14 +36,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
-     * 
+     *
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
      * @return Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
@@ -51,14 +51,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is &#39;domain reclaim pending.&#39; To manage DNS resolution, you must verify domain ownership in the console as prompted.
-     * 
+     *
      */
     @Import(name="cacheStage")
     private @Nullable Output<Integer> cacheStage;
 
     /**
      * @return Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is &#39;domain reclaim pending.&#39; To manage DNS resolution, you must verify domain ownership in the console as prompted.
-     * 
+     *
      */
     public Optional<Output<Integer>> cacheStage() {
         return Optional.ofNullable(this.cacheStage);
@@ -66,14 +66,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain creation time.
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Domain creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -81,14 +81,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. &#34;&#34;: No protection edition.
-     * 
+     *
      */
     @Import(name="dnsSecurity")
     private @Nullable Output<String> dnsSecurity;
 
     /**
      * @return Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. &#34;&#34;: No protection edition.
-     * 
+     *
      */
     public Optional<Output<String>> dnsSecurity() {
         return Optional.ofNullable(this.dnsSecurity);
@@ -96,14 +96,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
-     * 
+     *
      */
     @Import(name="expiredTime")
     private @Nullable Output<Integer> expiredTime;
 
     /**
      * @return Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
-     * 
+     *
      */
     public Optional<Output<Integer>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
@@ -111,14 +111,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID. For Cloud DNS Free Edition, this field is null.
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID. For Cloud DNS Free Edition, this field is null.
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -126,14 +126,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID. For Cloud DNS Free Edition, this field is null.
-     * 
+     *
      */
     @Import(name="instanceNo")
     private @Nullable Output<String> instanceNo;
 
     /**
      * @return Instance ID. For Cloud DNS Free Edition, this field is null.
-     * 
+     *
      */
     public Optional<Output<String>> instanceNo() {
         return Optional.ofNullable(this.instanceNo);
@@ -141,14 +141,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
-     * 
+     *
      */
     @Import(name="isNsCorrect")
     private @Nullable Output<Boolean> isNsCorrect;
 
     /**
      * @return Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
-     * 
+     *
      */
     public Optional<Output<Boolean>> isNsCorrect() {
         return Optional.ofNullable(this.isNsCorrect);
@@ -156,14 +156,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether it is a subdomain. true: Subdomain. false: Primary domain.
-     * 
+     *
      */
     @Import(name="isSubDomain")
     private @Nullable Output<Boolean> isSubDomain;
 
     /**
      * @return Whether it is a subdomain. true: Subdomain. false: Primary domain.
-     * 
+     *
      */
     public Optional<Output<Boolean>> isSubDomain() {
         return Optional.ofNullable(this.isSubDomain);
@@ -171,14 +171,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the account that created the domain.
-     * 
+     *
      */
     @Import(name="lastOperator")
     private @Nullable Output<String> lastOperator;
 
     /**
      * @return ID of the account that created the domain.
-     * 
+     *
      */
     public Optional<Output<String>> lastOperator() {
         return Optional.ofNullable(this.lastOperator);
@@ -186,14 +186,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Domain project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -201,14 +201,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of DNS servers actually used by the domain.
-     * 
+     *
      */
     @Import(name="realDnsServerLists")
     private @Nullable Output<List<String>> realDnsServerLists;
 
     /**
      * @return List of DNS servers actually used by the domain.
-     * 
+     *
      */
     public Optional<Output<List<String>>> realDnsServerLists() {
         return Optional.ofNullable(this.realDnsServerLists);
@@ -216,14 +216,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total number of DNS records contained in the domain.
-     * 
+     *
      */
     @Import(name="recordCount")
     private @Nullable Output<Integer> recordCount;
 
     /**
      * @return Total number of DNS records contained in the domain.
-     * 
+     *
      */
     public Optional<Output<Integer>> recordCount() {
         return Optional.ofNullable(this.recordCount);
@@ -231,14 +231,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain notes
-     * 
+     *
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Domain notes
-     * 
+     *
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
@@ -246,14 +246,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain status. This parameter has the following values: 0: Normal. In this state, the domain&#39;s DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain&#39;s DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain&#39;s DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain&#39;s DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain&#39;s DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
-     * 
+     *
      */
     @Import(name="stage")
     private @Nullable Output<Integer> stage;
 
     /**
      * @return Domain status. This parameter has the following values: 0: Normal. In this state, the domain&#39;s DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain&#39;s DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain&#39;s DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain&#39;s DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain&#39;s DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
-     * 
+     *
      */
     public Optional<Output<Integer>> stage() {
         return Optional.ofNullable(this.stage);
@@ -261,36 +261,46 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
-     * 
+     *
      */
     @Import(name="subDomainHost")
     private @Nullable Output<String> subDomainHost;
 
     /**
      * @return Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
-     * 
+     *
      */
     public Optional<Output<String>> subDomainHost() {
         return Optional.ofNullable(this.subDomainHost);
     }
 
+    /**
+     * Tags for the domain. Default is empty.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<ZoneTagArgs>> tags;
 
+    /**
+     * @return Tags for the domain. Default is empty.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ZoneTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
-     * 
+     *
      */
     @Import(name="tradeCode")
     private @Nullable Output<String> tradeCode;
 
     /**
      * @return Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
-     * 
+     *
      */
     public Optional<Output<String>> tradeCode() {
         return Optional.ofNullable(this.tradeCode);
@@ -298,14 +308,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -313,14 +323,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain ID.
-     * 
+     *
      */
     @Import(name="zid")
     private @Nullable Output<String> zid;
 
     /**
      * @return Domain ID.
-     * 
+     *
      */
     public Optional<Output<String>> zid() {
         return Optional.ofNullable(this.zid);
@@ -328,14 +338,14 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name.
-     * 
+     *
      */
     @Import(name="zoneName")
     private @Nullable Output<String> zoneName;
 
     /**
      * @return Domain name.
-     * 
+     *
      */
     public Optional<Output<String>> zoneName() {
         return Optional.ofNullable(this.zoneName);
@@ -388,9 +398,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allocateDnsServerLists List of DNS servers assigned to the domain by Cloud DNS
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allocateDnsServerLists(@Nullable Output<List<String>> allocateDnsServerLists) {
             $.allocateDnsServerLists = allocateDnsServerLists;
@@ -399,9 +409,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allocateDnsServerLists List of DNS servers assigned to the domain by Cloud DNS
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allocateDnsServerLists(List<String> allocateDnsServerLists) {
             return allocateDnsServerLists(Output.of(allocateDnsServerLists));
@@ -409,9 +419,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allocateDnsServerLists List of DNS servers assigned to the domain by Cloud DNS
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allocateDnsServerLists(String... allocateDnsServerLists) {
             return allocateDnsServerLists(List.of(allocateDnsServerLists));
@@ -419,9 +429,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
             $.autoRenew = autoRenew;
@@ -430,9 +440,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Whether domain auto-renewal is enabled. true: Auto-renewal enabled. false: Auto-renewal disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
@@ -440,9 +450,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cacheStage Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is &#39;domain reclaim pending.&#39; To manage DNS resolution, you must verify domain ownership in the console as prompted.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cacheStage(@Nullable Output<Integer> cacheStage) {
             $.cacheStage = cacheStage;
@@ -451,9 +461,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cacheStage Domain ownership status. This parameter has the following values: 0: You are the domain owner. After adding this domain, you can manage its DNS resolution. 1: You are not the domain owner. After adding this domain, its status is &#39;domain reclaim pending.&#39; To manage DNS resolution, you must verify domain ownership in the console as prompted.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cacheStage(Integer cacheStage) {
             return cacheStage(Output.of(cacheStage));
@@ -461,9 +471,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Domain creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -472,9 +482,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Domain creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -482,9 +492,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnsSecurity Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. &#34;&#34;: No protection edition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dnsSecurity(@Nullable Output<String> dnsSecurity) {
             $.dnsSecurity = dnsSecurity;
@@ -493,9 +503,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnsSecurity Version of DNS DDoS protection service. dns*security*standard_inner: Standard protection edition. &#34;&#34;: No protection edition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dnsSecurity(String dnsSecurity) {
             return dnsSecurity(Output.of(dnsSecurity));
@@ -503,9 +513,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expiredTime(@Nullable Output<Integer> expiredTime) {
             $.expiredTime = expiredTime;
@@ -514,9 +524,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Instance expiration time. Format is Unix timestamp. For Cloud DNS Free Edition, this field is null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expiredTime(Integer expiredTime) {
             return expiredTime(Output.of(expiredTime));
@@ -524,9 +534,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID. For Cloud DNS Free Edition, this field is null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -535,9 +545,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID. For Cloud DNS Free Edition, this field is null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -545,9 +555,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceNo Instance ID. For Cloud DNS Free Edition, this field is null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceNo(@Nullable Output<String> instanceNo) {
             $.instanceNo = instanceNo;
@@ -556,9 +566,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceNo Instance ID. For Cloud DNS Free Edition, this field is null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceNo(String instanceNo) {
             return instanceNo(Output.of(instanceNo));
@@ -566,9 +576,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isNsCorrect Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isNsCorrect(@Nullable Output<Boolean> isNsCorrect) {
             $.isNsCorrect = isNsCorrect;
@@ -577,9 +587,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isNsCorrect Whether the DNS server configuration is correct. If configured correctly, the domain status in Cloud DNS is Normal. This parameter has the following values: true: The DNS server list in RealDNSServerList includes all DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is correct. false: The DNS server list in RealDNSServerList includes only some or none of the DNS servers in AllocateDNSServerList. In this case, the DNS server configuration is incorrect.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isNsCorrect(Boolean isNsCorrect) {
             return isNsCorrect(Output.of(isNsCorrect));
@@ -587,9 +597,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isSubDomain Whether it is a subdomain. true: Subdomain. false: Primary domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isSubDomain(@Nullable Output<Boolean> isSubDomain) {
             $.isSubDomain = isSubDomain;
@@ -598,9 +608,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isSubDomain Whether it is a subdomain. true: Subdomain. false: Primary domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isSubDomain(Boolean isSubDomain) {
             return isSubDomain(Output.of(isSubDomain));
@@ -608,9 +618,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastOperator ID of the account that created the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastOperator(@Nullable Output<String> lastOperator) {
             $.lastOperator = lastOperator;
@@ -619,9 +629,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastOperator ID of the account that created the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastOperator(String lastOperator) {
             return lastOperator(Output.of(lastOperator));
@@ -629,9 +639,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Domain project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -640,9 +650,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Domain project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -650,9 +660,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param realDnsServerLists List of DNS servers actually used by the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder realDnsServerLists(@Nullable Output<List<String>> realDnsServerLists) {
             $.realDnsServerLists = realDnsServerLists;
@@ -661,9 +671,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param realDnsServerLists List of DNS servers actually used by the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder realDnsServerLists(List<String> realDnsServerLists) {
             return realDnsServerLists(Output.of(realDnsServerLists));
@@ -671,9 +681,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param realDnsServerLists List of DNS servers actually used by the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder realDnsServerLists(String... realDnsServerLists) {
             return realDnsServerLists(List.of(realDnsServerLists));
@@ -681,9 +691,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recordCount Total number of DNS records contained in the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recordCount(@Nullable Output<Integer> recordCount) {
             $.recordCount = recordCount;
@@ -692,9 +702,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recordCount Total number of DNS records contained in the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recordCount(Integer recordCount) {
             return recordCount(Output.of(recordCount));
@@ -702,9 +712,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Domain notes
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -713,9 +723,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Domain notes
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
@@ -723,9 +733,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param stage Domain status. This parameter has the following values: 0: Normal. In this state, the domain&#39;s DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain&#39;s DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain&#39;s DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain&#39;s DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain&#39;s DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder stage(@Nullable Output<Integer> stage) {
             $.stage = stage;
@@ -734,9 +744,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param stage Domain status. This parameter has the following values: 0: Normal. In this state, the domain&#39;s DNS resolution records are active. 1: Domain reclaim pending. In this state, the domain&#39;s DNS resolution records are inactive. This status indicates you are not the owner of the domain. If you need to manage DNS resolution, you must verify domain ownership. 2: TrafficRoute not used for resolution. In this state, the domain&#39;s DNS resolution records are inactive. This status means the DNS server assigned to the domain is not a Cloud DNS server. 3: Abnormal. In this state, the domain&#39;s DNS resolution records are inactive. Common causes for this status include: the domain is disabled by the registry or registrar due to lack of real-name verification; DNS server not configured; domain not registered; API timeout when querying the domain, possibly due to network issues. 5: Please change DNS server. This status means you need to update the domain&#39;s DNS server to the newly assigned Cloud DNS server due to service upgrade or change.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder stage(Integer stage) {
             return stage(Output.of(stage));
@@ -744,9 +754,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subDomainHost Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subDomainHost(@Nullable Output<String> subDomainHost) {
             $.subDomainHost = subDomainHost;
@@ -755,32 +765,53 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subDomainHost Prefix of the subdomain. If the domain is not a subdomain, this parameter is null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subDomainHost(String subDomainHost) {
             return subDomainHost(Output.of(subDomainHost));
         }
 
+        /**
+         * @param tags Tags for the domain. Default is empty.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<ZoneTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags for the domain. Default is empty.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<ZoneTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags for the domain. Default is empty.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(ZoneTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param tradeCode Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tradeCode(@Nullable Output<String> tradeCode) {
             $.tradeCode = tradeCode;
@@ -789,9 +820,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tradeCode Domain feature version. This parameter has the following values: free*inner: Free Edition; professional*inner: Professional Edition; enterprise*inner: Enterprise Edition; ultimate*inner: Flagship Edition; ultimate*exclusive*inner: Premium Edition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tradeCode(String tradeCode) {
             return tradeCode(Output.of(tradeCode));
@@ -799,9 +830,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -810,9 +841,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Last update time for the domain. Update operations include: updating domain remarks, creating DNS records under the domain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -820,9 +851,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zid Domain ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zid(@Nullable Output<String> zid) {
             $.zid = zid;
@@ -831,9 +862,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zid Domain ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zid(String zid) {
             return zid(Output.of(zid));
@@ -841,9 +872,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Domain name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneName(@Nullable Output<String> zoneName) {
             $.zoneName = zoneName;
@@ -852,9 +883,9 @@ public final class ZoneState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Domain name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneName(String zoneName) {
             return zoneName(Output.of(zoneName));

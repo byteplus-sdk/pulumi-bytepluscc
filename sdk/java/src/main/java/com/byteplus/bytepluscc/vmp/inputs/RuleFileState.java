@@ -17,17 +17,23 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
     public static final RuleFileState Empty = new RuleFileState();
 
     /**
-     * Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-     * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
-     * 
+     * Rule file content in YAML format. Content length limits:
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
+     *
      */
     @Import(name="content")
     private @Nullable Output<String> content;
 
     /**
-     * @return Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-     * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
-     * 
+     * @return Rule file content in YAML format. Content length limits:
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+     *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
+     *
      */
     public Optional<Output<String>> content() {
         return Optional.ofNullable(this.content);
@@ -35,31 +41,35 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Rule file creation time in RFC3339 format.
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Rule file creation time in RFC3339 format.
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
     }
 
     /**
-     * Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-     * counts as one character.
-     * 
+     * Rule file description, limited to 0–200 characters.
+     *
+     *   **Note:** Note
+     *   Each English letter, Chinese character, or symbol counts as one character.
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-     * counts as one character.
-     * 
+     * @return Rule file description, limited to 0–200 characters.
+     *
+     *   **Note:** Note
+     *   Each English letter, Chinese character, or symbol counts as one character.
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -67,29 +77,35 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last updated time of the rule file in RFC3339 format.
-     * 
+     *
      */
     @Import(name="lastUpdateTime")
     private @Nullable Output<String> lastUpdateTime;
 
     /**
      * @return Last updated time of the rule file in RFC3339 format.
-     * 
+     *
      */
     public Optional<Output<String>> lastUpdateTime() {
         return Optional.ofNullable(this.lastUpdateTime);
     }
 
     /**
-     * Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
-     * 
+     * Rule file name:
+     *
+     *     - Must be a valid Linux file name and less than 255 characters.
+     *     - Must be unique within the workspace.
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
-     * 
+     * @return Rule file name:
+     *
+     *     - Must be a valid Linux file name and less than 255 characters.
+     *     - Must be unique within the workspace.
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -97,14 +113,14 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of rules in the rule file.
-     * 
+     *
      */
     @Import(name="ruleCount")
     private @Nullable Output<Integer> ruleCount;
 
     /**
      * @return Number of rules in the rule file.
-     * 
+     *
      */
     public Optional<Output<Integer>> ruleCount() {
         return Optional.ofNullable(this.ruleCount);
@@ -112,31 +128,41 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Rule file ID.
-     * 
+     *
      */
     @Import(name="ruleFileId")
     private @Nullable Output<String> ruleFileId;
 
     /**
      * @return Rule file ID.
-     * 
+     *
      */
     public Optional<Output<String>> ruleFileId() {
         return Optional.ofNullable(this.ruleFileId);
     }
 
     /**
-     * Rule file status: - **Creating**: Creating - **Running**: Running - **Updating**: Updating - **OverdueSuspended**:
-     * Suspended due to overdue payment - **Resuming**: Resuming
-     * 
+     * Rule file status:
+     *
+     *     - **Creating**: Creating
+     *     - **Running**: Running
+     *     - **Updating**: Updating
+     *     - **OverdueSuspended**: Suspended due to overdue payment
+     *     - **Resuming**: Resuming
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Rule file status: - **Creating**: Creating - **Running**: Running - **Updating**: Updating - **OverdueSuspended**:
-     * Suspended due to overdue payment - **Resuming**: Resuming
-     * 
+     * @return Rule file status:
+     *
+     *     - **Creating**: Creating
+     *     - **Running**: Running
+     *     - **Updating**: Updating
+     *     - **OverdueSuspended**: Suspended due to overdue payment
+     *     - **Resuming**: Resuming
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -144,14 +170,14 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Target workspace ID to write to. If empty, writes to the source workspace.
-     * 
+     *
      */
     @Import(name="targetWorkspaceId")
     private @Nullable Output<String> targetWorkspaceId;
 
     /**
      * @return Target workspace ID to write to. If empty, writes to the source workspace.
-     * 
+     *
      */
     public Optional<Output<String>> targetWorkspaceId() {
         return Optional.ofNullable(this.targetWorkspaceId);
@@ -159,14 +185,14 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace ID.
-     * 
+     *
      */
     @Import(name="workspaceId")
     private @Nullable Output<String> workspaceId;
 
     /**
      * @return Workspace ID.
-     * 
+     *
      */
     public Optional<Output<String>> workspaceId() {
         return Optional.ofNullable(this.workspaceId);
@@ -206,11 +232,14 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param content Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-         * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
-         * 
+         * @param content Rule file content in YAML format. Content length limits:
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder content(@Nullable Output<String> content) {
             $.content = content;
@@ -218,11 +247,14 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param content Rule file content in YAML format. Content length limits: - Each `expr` must not exceed 16 KB. - Each `record` must not
-         * exceed 2,048 bytes. - Each `labelname` must not exceed 256 bytes. - Each `labelvalue` must not exceed 2,048 bytes.
-         * 
+         * @param content Rule file content in YAML format. Content length limits:
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`expr`&#34; pulumi-lang-dotnet=&#34;`Expr`&#34; pulumi-lang-go=&#34;`expr`&#34; pulumi-lang-python=&#34;`expr`&#34; pulumi-lang-yaml=&#34;`expr`&#34; pulumi-lang-java=&#34;`expr`&#34; pulumi-lang-hcl=&#34;`expr`&#34;&gt;`expr`&lt;/span&gt; must not exceed 16 KB.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`record`&#34; pulumi-lang-dotnet=&#34;`Record`&#34; pulumi-lang-go=&#34;`record`&#34; pulumi-lang-python=&#34;`record`&#34; pulumi-lang-yaml=&#34;`record`&#34; pulumi-lang-java=&#34;`record`&#34; pulumi-lang-hcl=&#34;`record`&#34;&gt;`record`&lt;/span&gt; must not exceed 2,048 bytes.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelname`&#34; pulumi-lang-dotnet=&#34;`Labelname`&#34; pulumi-lang-go=&#34;`labelname`&#34; pulumi-lang-python=&#34;`labelname`&#34; pulumi-lang-yaml=&#34;`labelname`&#34; pulumi-lang-java=&#34;`labelname`&#34; pulumi-lang-hcl=&#34;`labelname`&#34;&gt;`labelname`&lt;/span&gt; must not exceed 256 bytes.
+         *     - Each &lt;span pulumi-lang-nodejs=&#34;`labelvalue`&#34; pulumi-lang-dotnet=&#34;`Labelvalue`&#34; pulumi-lang-go=&#34;`labelvalue`&#34; pulumi-lang-python=&#34;`labelvalue`&#34; pulumi-lang-yaml=&#34;`labelvalue`&#34; pulumi-lang-java=&#34;`labelvalue`&#34; pulumi-lang-hcl=&#34;`labelvalue`&#34;&gt;`labelvalue`&lt;/span&gt; must not exceed 2,048 bytes.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder content(String content) {
             return content(Output.of(content));
@@ -230,9 +262,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Rule file creation time in RFC3339 format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -241,20 +273,22 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Rule file creation time in RFC3339 format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
         }
 
         /**
-         * @param description Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-         * counts as one character.
-         * 
+         * @param description Rule file description, limited to 0–200 characters.
+         *
+         *   **Note:** Note
+         *   Each English letter, Chinese character, or symbol counts as one character.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -262,11 +296,13 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Rule file description, limited to 0–200 characters. **Note:** Note Each English letter, Chinese character, or symbol
-         * counts as one character.
-         * 
+         * @param description Rule file description, limited to 0–200 characters.
+         *
+         *   **Note:** Note
+         *   Each English letter, Chinese character, or symbol counts as one character.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -274,9 +310,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastUpdateTime Last updated time of the rule file in RFC3339 format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastUpdateTime(@Nullable Output<String> lastUpdateTime) {
             $.lastUpdateTime = lastUpdateTime;
@@ -285,19 +321,22 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastUpdateTime Last updated time of the rule file in RFC3339 format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastUpdateTime(String lastUpdateTime) {
             return lastUpdateTime(Output.of(lastUpdateTime));
         }
 
         /**
-         * @param name Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
-         * 
+         * @param name Rule file name:
+         *
+         *     - Must be a valid Linux file name and less than 255 characters.
+         *     - Must be unique within the workspace.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -305,10 +344,13 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Rule file name: - Must be a valid Linux file name and less than 255 characters. - Must be unique within the workspace.
-         * 
+         * @param name Rule file name:
+         *
+         *     - Must be a valid Linux file name and less than 255 characters.
+         *     - Must be unique within the workspace.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -316,9 +358,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleCount Number of rules in the rule file.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleCount(@Nullable Output<Integer> ruleCount) {
             $.ruleCount = ruleCount;
@@ -327,9 +369,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleCount Number of rules in the rule file.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleCount(Integer ruleCount) {
             return ruleCount(Output.of(ruleCount));
@@ -337,9 +379,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleFileId Rule file ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleFileId(@Nullable Output<String> ruleFileId) {
             $.ruleFileId = ruleFileId;
@@ -348,20 +390,25 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleFileId Rule file ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleFileId(String ruleFileId) {
             return ruleFileId(Output.of(ruleFileId));
         }
 
         /**
-         * @param status Rule file status: - **Creating**: Creating - **Running**: Running - **Updating**: Updating - **OverdueSuspended**:
-         * Suspended due to overdue payment - **Resuming**: Resuming
-         * 
+         * @param status Rule file status:
+         *
+         *     - **Creating**: Creating
+         *     - **Running**: Running
+         *     - **Updating**: Updating
+         *     - **OverdueSuspended**: Suspended due to overdue payment
+         *     - **Resuming**: Resuming
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -369,11 +416,16 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Rule file status: - **Creating**: Creating - **Running**: Running - **Updating**: Updating - **OverdueSuspended**:
-         * Suspended due to overdue payment - **Resuming**: Resuming
-         * 
+         * @param status Rule file status:
+         *
+         *     - **Creating**: Creating
+         *     - **Running**: Running
+         *     - **Updating**: Updating
+         *     - **OverdueSuspended**: Suspended due to overdue payment
+         *     - **Resuming**: Resuming
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -381,9 +433,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param targetWorkspaceId Target workspace ID to write to. If empty, writes to the source workspace.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder targetWorkspaceId(@Nullable Output<String> targetWorkspaceId) {
             $.targetWorkspaceId = targetWorkspaceId;
@@ -392,9 +444,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param targetWorkspaceId Target workspace ID to write to. If empty, writes to the source workspace.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder targetWorkspaceId(String targetWorkspaceId) {
             return targetWorkspaceId(Output.of(targetWorkspaceId));
@@ -402,9 +454,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workspaceId Workspace ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workspaceId(@Nullable Output<String> workspaceId) {
             $.workspaceId = workspaceId;
@@ -413,9 +465,9 @@ public final class RuleFileState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workspaceId Workspace ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workspaceId(String workspaceId) {
             return workspaceId(Output.of(workspaceId));

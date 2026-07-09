@@ -15,80 +15,90 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ServiceRouteApiSpecResponseFilter {
+    /**
+     * @return Attribute mapping list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<ServiceRouteApiSpecResponseFilterAttribute> attributes;
     /**
      * @return Array path JSON Pointer
-     * 
+     *
      */
     private @Nullable String filterPath;
     /**
      * @return ID field name
-     * 
+     *
      */
     private @Nullable String idField;
     /**
      * @return Whether used for authentication
-     * 
+     *
      */
     private @Nullable Boolean isAuth;
     /**
      * @return Filter mode enumeration value
-     * 
+     *
      */
     private @Nullable Integer mode;
     /**
      * @return Resource path JSON Pointer
-     * 
+     *
      */
     private @Nullable String resourcePath;
     /**
      * @return Filtered resource type
-     * 
+     *
      */
     private @Nullable String resourceType;
 
     private ServiceRouteApiSpecResponseFilter() {}
+    /**
+     * @return Attribute mapping list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<ServiceRouteApiSpecResponseFilterAttribute> attributes() {
         return this.attributes == null ? List.of() : this.attributes;
     }
     /**
      * @return Array path JSON Pointer
-     * 
+     *
      */
     public Optional<String> filterPath() {
         return Optional.ofNullable(this.filterPath);
     }
     /**
      * @return ID field name
-     * 
+     *
      */
     public Optional<String> idField() {
         return Optional.ofNullable(this.idField);
     }
     /**
      * @return Whether used for authentication
-     * 
+     *
      */
     public Optional<Boolean> isAuth() {
         return Optional.ofNullable(this.isAuth);
     }
     /**
      * @return Filter mode enumeration value
-     * 
+     *
      */
     public Optional<Integer> mode() {
         return Optional.ofNullable(this.mode);
     }
     /**
      * @return Resource path JSON Pointer
-     * 
+     *
      */
     public Optional<String> resourcePath() {
         return Optional.ofNullable(this.resourcePath);
     }
     /**
      * @return Filtered resource type
-     * 
+     *
      */
     public Optional<String> resourceType() {
         return Optional.ofNullable(this.resourceType);

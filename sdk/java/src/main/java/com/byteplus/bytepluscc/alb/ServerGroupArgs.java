@@ -23,14 +23,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
-     * 
+     *
      */
     @Import(name="crossZoneEnabled")
     private @Nullable Output<String> crossZoneEnabled;
 
     /**
      * @return Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
-     * 
+     *
      */
     public Optional<Output<String>> crossZoneEnabled() {
         return Optional.ofNullable(this.crossZoneEnabled);
@@ -38,14 +38,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the backend server group.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the backend server group.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -53,14 +53,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Server group health check configuration information.
-     * 
+     *
      */
     @Import(name="healthCheck")
     private @Nullable Output<ServerGroupHealthCheckArgs> healthCheck;
 
     /**
      * @return Server group health check configuration information.
-     * 
+     *
      */
     public Optional<Output<ServerGroupHealthCheckArgs>> healthCheck() {
         return Optional.ofNullable(this.healthCheck);
@@ -68,14 +68,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address type of the server group. Only IPv4 is supported.
-     * 
+     *
      */
     @Import(name="ipAddressType")
     private @Nullable Output<String> ipAddressType;
 
     /**
      * @return IP address type of the server group. Only IPv4 is supported.
-     * 
+     *
      */
     public Optional<Output<String>> ipAddressType() {
         return Optional.ofNullable(this.ipAddressType);
@@ -83,14 +83,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the backend server group belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the backend server group belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -98,14 +98,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backend protocol: HTTP, HTTPS.
-     * 
+     *
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
      * @return Backend protocol: HTTP, HTTPS.
-     * 
+     *
      */
     public Optional<Output<String>> protocol() {
         return Optional.ofNullable(this.protocol);
@@ -113,14 +113,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
-     * 
+     *
      */
     @Import(name="scheduler")
     private @Nullable Output<String> scheduler;
 
     /**
      * @return Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
-     * 
+     *
      */
     public Optional<Output<String>> scheduler() {
         return Optional.ofNullable(this.scheduler);
@@ -128,14 +128,14 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the backend server group.
-     * 
+     *
      */
     @Import(name="serverGroupName")
     private @Nullable Output<String> serverGroupName;
 
     /**
      * @return Name of the backend server group.
-     * 
+     *
      */
     public Optional<Output<String>> serverGroupName() {
         return Optional.ofNullable(this.serverGroupName);
@@ -143,36 +143,46 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-     * 
+     *
      */
     @Import(name="serverGroupType")
     private @Nullable Output<String> serverGroupType;
 
     /**
      * @return Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-     * 
+     *
      */
     public Optional<Output<String>> serverGroupType() {
         return Optional.ofNullable(this.serverGroupType);
     }
 
+    /**
+     * Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="servers")
     private @Nullable Output<List<ServerGroupServerArgs>> servers;
 
+    /**
+     * @return Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ServerGroupServerArgs>>> servers() {
         return Optional.ofNullable(this.servers);
     }
 
     /**
      * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -180,36 +190,46 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Session persistence parameter information.
-     * 
+     *
      */
     @Import(name="stickySessionConfig")
     private @Nullable Output<ServerGroupStickySessionConfigArgs> stickySessionConfig;
 
     /**
      * @return Session persistence parameter information.
-     * 
+     *
      */
     public Optional<Output<ServerGroupStickySessionConfigArgs>> stickySessionConfig() {
         return Optional.ofNullable(this.stickySessionConfig);
     }
 
+    /**
+     * Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<ServerGroupTagArgs>> tags;
 
+    /**
+     * @return Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ServerGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * ID of the VPC to which the backend server group belongs.
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the backend server group belongs.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -254,9 +274,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param crossZoneEnabled Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder crossZoneEnabled(@Nullable Output<String> crossZoneEnabled) {
             $.crossZoneEnabled = crossZoneEnabled;
@@ -265,9 +285,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param crossZoneEnabled Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder crossZoneEnabled(String crossZoneEnabled) {
             return crossZoneEnabled(Output.of(crossZoneEnabled));
@@ -275,9 +295,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the backend server group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -286,9 +306,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the backend server group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -296,9 +316,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthCheck Server group health check configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheck(@Nullable Output<ServerGroupHealthCheckArgs> healthCheck) {
             $.healthCheck = healthCheck;
@@ -307,9 +327,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthCheck Server group health check configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheck(ServerGroupHealthCheckArgs healthCheck) {
             return healthCheck(Output.of(healthCheck));
@@ -317,9 +337,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressType IP address type of the server group. Only IPv4 is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddressType(@Nullable Output<String> ipAddressType) {
             $.ipAddressType = ipAddressType;
@@ -328,9 +348,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressType IP address type of the server group. Only IPv4 is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddressType(String ipAddressType) {
             return ipAddressType(Output.of(ipAddressType));
@@ -338,9 +358,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the backend server group belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -349,9 +369,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the backend server group belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -359,9 +379,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Backend protocol: HTTP, HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocol(@Nullable Output<String> protocol) {
             $.protocol = protocol;
@@ -370,9 +390,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Backend protocol: HTTP, HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -380,9 +400,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scheduler Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scheduler(@Nullable Output<String> scheduler) {
             $.scheduler = scheduler;
@@ -391,9 +411,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scheduler Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scheduler(String scheduler) {
             return scheduler(Output.of(scheduler));
@@ -401,9 +421,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupName Name of the backend server group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverGroupName(@Nullable Output<String> serverGroupName) {
             $.serverGroupName = serverGroupName;
@@ -412,9 +432,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupName Name of the backend server group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverGroupName(String serverGroupName) {
             return serverGroupName(Output.of(serverGroupName));
@@ -422,9 +442,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupType Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverGroupType(@Nullable Output<String> serverGroupType) {
             $.serverGroupType = serverGroupType;
@@ -433,32 +453,53 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupType Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverGroupType(String serverGroupType) {
             return serverGroupType(Output.of(serverGroupType));
         }
 
+        /**
+         * @param servers Information about servers in the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder servers(@Nullable Output<List<ServerGroupServerArgs>> servers) {
             $.servers = servers;
             return this;
         }
 
+        /**
+         * @param servers Information about servers in the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder servers(List<ServerGroupServerArgs> servers) {
             return servers(Output.of(servers));
         }
 
+        /**
+         * @param servers Information about servers in the backend server group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder servers(ServerGroupServerArgs... servers) {
             return servers(List.of(servers));
         }
 
         /**
          * @param status Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -467,9 +508,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -477,9 +518,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param stickySessionConfig Session persistence parameter information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder stickySessionConfig(@Nullable Output<ServerGroupStickySessionConfigArgs> stickySessionConfig) {
             $.stickySessionConfig = stickySessionConfig;
@@ -488,32 +529,53 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param stickySessionConfig Session persistence parameter information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder stickySessionConfig(ServerGroupStickySessionConfigArgs stickySessionConfig) {
             return stickySessionConfig(Output.of(stickySessionConfig));
         }
 
+        /**
+         * @param tags Tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<ServerGroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<ServerGroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(ServerGroupTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpcId ID of the VPC to which the backend server group belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -522,9 +584,9 @@ public final class ServerGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC to which the backend server group belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

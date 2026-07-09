@@ -27,14 +27,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the scaling configuration bound to the scaling group
-     * 
+     *
      */
     @Import(name="activeScalingConfigurationId")
     private @Nullable Output<String> activeScalingConfigurationId;
 
     /**
      * @return ID of the scaling configuration bound to the scaling group
-     * 
+     *
      */
     public Optional<Output<String>> activeScalingConfigurationId() {
         return Optional.ofNullable(this.activeScalingConfigurationId);
@@ -42,14 +42,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
-     * 
+     *
      */
     @Import(name="defaultCooldown")
     private @Nullable Output<Integer> defaultCooldown;
 
     /**
      * @return Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
-     * 
+     *
      */
     public Optional<Output<Integer>> defaultCooldown() {
         return Optional.ofNullable(this.defaultCooldown);
@@ -57,14 +57,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
-     * 
+     *
      */
     @Import(name="desireInstanceNumber")
     private @Nullable Output<Integer> desireInstanceNumber;
 
     /**
      * @return Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
-     * 
+     *
      */
     public Optional<Output<Integer>> desireInstanceNumber() {
         return Optional.ofNullable(this.desireInstanceNumber);
@@ -72,58 +72,78 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
-     * 
+     *
      */
     @Import(name="healthCheckType")
     private @Nullable Output<String> healthCheckType;
 
     /**
      * @return Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckType() {
         return Optional.ofNullable(this.healthCheckType);
     }
 
+    /**
+     * Instance removal policy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="instanceRemovePolicies")
     private @Nullable Output<List<ScalingGroupInstanceRemovePolicyArgs>> instanceRemovePolicies;
 
+    /**
+     * @return Instance removal policy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ScalingGroupInstanceRemovePolicyArgs>>> instanceRemovePolicies() {
         return Optional.ofNullable(this.instanceRemovePolicies);
     }
 
     /**
      * Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
-     * 
+     *
      */
     @Import(name="instanceTerminatePolicy")
     private @Nullable Output<String> instanceTerminatePolicy;
 
     /**
      * @return Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
-     * 
+     *
      */
     public Optional<Output<String>> instanceTerminatePolicy() {
         return Optional.ofNullable(this.instanceTerminatePolicy);
     }
 
+    /**
+     * Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="instances")
     private @Nullable Output<List<ScalingGroupInstanceArgs>> instances;
 
+    /**
+     * @return Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ScalingGroupInstanceArgs>>> instances() {
         return Optional.ofNullable(this.instances);
     }
 
     /**
      * Instance distribution policy.
-     * 
+     *
      */
     @Import(name="instancesDistribution")
     private @Nullable Output<ScalingGroupInstancesDistributionArgs> instancesDistribution;
 
     /**
      * @return Instance distribution policy.
-     * 
+     *
      */
     public Optional<Output<ScalingGroupInstancesDistributionArgs>> instancesDistribution() {
         return Optional.ofNullable(this.instancesDistribution);
@@ -131,14 +151,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable the scaling group. true: enabled. false: stopped
-     * 
+     *
      */
     @Import(name="isEnableScalingGroup")
     private @Nullable Output<Boolean> isEnableScalingGroup;
 
     /**
      * @return Whether to enable the scaling group. true: enabled. false: stopped
-     * 
+     *
      */
     public Optional<Output<Boolean>> isEnableScalingGroup() {
         return Optional.ofNullable(this.isEnableScalingGroup);
@@ -146,36 +166,46 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
-     * 
+     *
      */
     @Import(name="launchTemplateId")
     private @Nullable Output<String> launchTemplateId;
 
     /**
      * @return Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
-     * 
+     *
      */
     public Optional<Output<String>> launchTemplateId() {
         return Optional.ofNullable(this.launchTemplateId);
     }
 
+    /**
+     * Instance launch template information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="launchTemplateOverrides")
     private @Nullable Output<List<ScalingGroupLaunchTemplateOverrideArgs>> launchTemplateOverrides;
 
+    /**
+     * @return Instance launch template information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ScalingGroupLaunchTemplateOverrideArgs>>> launchTemplateOverrides() {
         return Optional.ofNullable(this.launchTemplateOverrides);
     }
 
     /**
      * Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
-     * 
+     *
      */
     @Import(name="launchTemplateVersion")
     private @Nullable Output<String> launchTemplateVersion;
 
     /**
      * @return Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
-     * 
+     *
      */
     public Optional<Output<String>> launchTemplateVersion() {
         return Optional.ofNullable(this.launchTemplateVersion);
@@ -183,14 +213,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
-     * 
+     *
      */
     @Import(name="maxInstanceNumber", required=true)
     private Output<Integer> maxInstanceNumber;
 
     /**
      * @return Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
-     * 
+     *
      */
     public Output<Integer> maxInstanceNumber() {
         return this.maxInstanceNumber;
@@ -198,14 +228,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
-     * 
+     *
      */
     @Import(name="minInstanceNumber", required=true)
     private Output<Integer> minInstanceNumber;
 
     /**
      * @return Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
-     * 
+     *
      */
     public Output<Integer> minInstanceNumber() {
         return this.minInstanceNumber;
@@ -213,14 +243,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
-     * 
+     *
      */
     @Import(name="multiAzPolicy")
     private @Nullable Output<String> multiAzPolicy;
 
     /**
      * @return Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
-     * 
+     *
      */
     public Optional<Output<String>> multiAzPolicy() {
         return Optional.ofNullable(this.multiAzPolicy);
@@ -228,14 +258,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -243,14 +273,14 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
-     * 
+     *
      */
     @Import(name="scalingGroupName", required=true)
     private Output<String> scalingGroupName;
 
     /**
      * @return Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
-     * 
+     *
      */
     public Output<String> scalingGroupName() {
         return this.scalingGroupName;
@@ -258,36 +288,46 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
-     * 
+     *
      */
     @Import(name="scalingMode")
     private @Nullable Output<String> scalingMode;
 
     /**
      * @return Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
-     * 
+     *
      */
     public Optional<Output<String>> scalingMode() {
         return Optional.ofNullable(this.scalingMode);
     }
 
+    /**
+     * Load balancer information associated with the scaling group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="serverGroupAttributes")
     private @Nullable Output<List<ScalingGroupServerGroupAttributeArgs>> serverGroupAttributes;
 
+    /**
+     * @return Load balancer information associated with the scaling group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ScalingGroupServerGroupAttributeArgs>>> serverGroupAttributes() {
         return Optional.ofNullable(this.serverGroupAttributes);
     }
 
     /**
      * List of subnet IDs for the primary network interface of instances in the scaling group
-     * 
+     *
      */
     @Import(name="subnetIds", required=true)
     private Output<List<String>> subnetIds;
 
     /**
      * @return List of subnet IDs for the primary network interface of instances in the scaling group
-     * 
+     *
      */
     public Output<List<String>> subnetIds() {
         return this.subnetIds;
@@ -295,22 +335,32 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
-     * 
+     *
      */
     @Import(name="suspendedProcesses")
     private @Nullable Output<List<String>> suspendedProcesses;
 
     /**
      * @return Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
-     * 
+     *
      */
     public Optional<Output<List<String>>> suspendedProcesses() {
         return Optional.ofNullable(this.suspendedProcesses);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<ScalingGroupTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ScalingGroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -362,9 +412,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param activeScalingConfigurationId ID of the scaling configuration bound to the scaling group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder activeScalingConfigurationId(@Nullable Output<String> activeScalingConfigurationId) {
             $.activeScalingConfigurationId = activeScalingConfigurationId;
@@ -373,9 +423,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param activeScalingConfigurationId ID of the scaling configuration bound to the scaling group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder activeScalingConfigurationId(String activeScalingConfigurationId) {
             return activeScalingConfigurationId(Output.of(activeScalingConfigurationId));
@@ -383,9 +433,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param defaultCooldown Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder defaultCooldown(@Nullable Output<Integer> defaultCooldown) {
             $.defaultCooldown = defaultCooldown;
@@ -394,9 +444,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param defaultCooldown Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder defaultCooldown(Integer defaultCooldown) {
             return defaultCooldown(Output.of(defaultCooldown));
@@ -404,9 +454,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param desireInstanceNumber Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder desireInstanceNumber(@Nullable Output<Integer> desireInstanceNumber) {
             $.desireInstanceNumber = desireInstanceNumber;
@@ -415,9 +465,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param desireInstanceNumber Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder desireInstanceNumber(Integer desireInstanceNumber) {
             return desireInstanceNumber(Output.of(desireInstanceNumber));
@@ -425,9 +475,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthCheckType Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckType(@Nullable Output<String> healthCheckType) {
             $.healthCheckType = healthCheckType;
@@ -436,32 +486,53 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthCheckType Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckType(String healthCheckType) {
             return healthCheckType(Output.of(healthCheckType));
         }
 
+        /**
+         * @param instanceRemovePolicies Instance removal policy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instanceRemovePolicies(@Nullable Output<List<ScalingGroupInstanceRemovePolicyArgs>> instanceRemovePolicies) {
             $.instanceRemovePolicies = instanceRemovePolicies;
             return this;
         }
 
+        /**
+         * @param instanceRemovePolicies Instance removal policy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instanceRemovePolicies(List<ScalingGroupInstanceRemovePolicyArgs> instanceRemovePolicies) {
             return instanceRemovePolicies(Output.of(instanceRemovePolicies));
         }
 
+        /**
+         * @param instanceRemovePolicies Instance removal policy
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instanceRemovePolicies(ScalingGroupInstanceRemovePolicyArgs... instanceRemovePolicies) {
             return instanceRemovePolicies(List.of(instanceRemovePolicies));
         }
 
         /**
          * @param instanceTerminatePolicy Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceTerminatePolicy(@Nullable Output<String> instanceTerminatePolicy) {
             $.instanceTerminatePolicy = instanceTerminatePolicy;
@@ -470,32 +541,53 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceTerminatePolicy Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceTerminatePolicy(String instanceTerminatePolicy) {
             return instanceTerminatePolicy(Output.of(instanceTerminatePolicy));
         }
 
+        /**
+         * @param instances Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instances(@Nullable Output<List<ScalingGroupInstanceArgs>> instances) {
             $.instances = instances;
             return this;
         }
 
+        /**
+         * @param instances Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instances(List<ScalingGroupInstanceArgs> instances) {
             return instances(Output.of(instances));
         }
 
+        /**
+         * @param instances Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instances(ScalingGroupInstanceArgs... instances) {
             return instances(List.of(instances));
         }
 
         /**
          * @param instancesDistribution Instance distribution policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instancesDistribution(@Nullable Output<ScalingGroupInstancesDistributionArgs> instancesDistribution) {
             $.instancesDistribution = instancesDistribution;
@@ -504,9 +596,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instancesDistribution Instance distribution policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instancesDistribution(ScalingGroupInstancesDistributionArgs instancesDistribution) {
             return instancesDistribution(Output.of(instancesDistribution));
@@ -514,9 +606,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isEnableScalingGroup Whether to enable the scaling group. true: enabled. false: stopped
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isEnableScalingGroup(@Nullable Output<Boolean> isEnableScalingGroup) {
             $.isEnableScalingGroup = isEnableScalingGroup;
@@ -525,9 +617,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isEnableScalingGroup Whether to enable the scaling group. true: enabled. false: stopped
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isEnableScalingGroup(Boolean isEnableScalingGroup) {
             return isEnableScalingGroup(Output.of(isEnableScalingGroup));
@@ -535,9 +627,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param launchTemplateId Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder launchTemplateId(@Nullable Output<String> launchTemplateId) {
             $.launchTemplateId = launchTemplateId;
@@ -546,32 +638,53 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param launchTemplateId Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder launchTemplateId(String launchTemplateId) {
             return launchTemplateId(Output.of(launchTemplateId));
         }
 
+        /**
+         * @param launchTemplateOverrides Instance launch template information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder launchTemplateOverrides(@Nullable Output<List<ScalingGroupLaunchTemplateOverrideArgs>> launchTemplateOverrides) {
             $.launchTemplateOverrides = launchTemplateOverrides;
             return this;
         }
 
+        /**
+         * @param launchTemplateOverrides Instance launch template information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder launchTemplateOverrides(List<ScalingGroupLaunchTemplateOverrideArgs> launchTemplateOverrides) {
             return launchTemplateOverrides(Output.of(launchTemplateOverrides));
         }
 
+        /**
+         * @param launchTemplateOverrides Instance launch template information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder launchTemplateOverrides(ScalingGroupLaunchTemplateOverrideArgs... launchTemplateOverrides) {
             return launchTemplateOverrides(List.of(launchTemplateOverrides));
         }
 
         /**
          * @param launchTemplateVersion Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder launchTemplateVersion(@Nullable Output<String> launchTemplateVersion) {
             $.launchTemplateVersion = launchTemplateVersion;
@@ -580,9 +693,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param launchTemplateVersion Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder launchTemplateVersion(String launchTemplateVersion) {
             return launchTemplateVersion(Output.of(launchTemplateVersion));
@@ -590,9 +703,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxInstanceNumber Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maxInstanceNumber(Output<Integer> maxInstanceNumber) {
             $.maxInstanceNumber = maxInstanceNumber;
@@ -601,9 +714,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxInstanceNumber Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maxInstanceNumber(Integer maxInstanceNumber) {
             return maxInstanceNumber(Output.of(maxInstanceNumber));
@@ -611,9 +724,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param minInstanceNumber Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder minInstanceNumber(Output<Integer> minInstanceNumber) {
             $.minInstanceNumber = minInstanceNumber;
@@ -622,9 +735,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param minInstanceNumber Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder minInstanceNumber(Integer minInstanceNumber) {
             return minInstanceNumber(Output.of(minInstanceNumber));
@@ -632,9 +745,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiAzPolicy Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiAzPolicy(@Nullable Output<String> multiAzPolicy) {
             $.multiAzPolicy = multiAzPolicy;
@@ -643,9 +756,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiAzPolicy Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiAzPolicy(String multiAzPolicy) {
             return multiAzPolicy(Output.of(multiAzPolicy));
@@ -653,9 +766,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -664,9 +777,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -674,9 +787,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scalingGroupName Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scalingGroupName(Output<String> scalingGroupName) {
             $.scalingGroupName = scalingGroupName;
@@ -685,9 +798,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scalingGroupName Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scalingGroupName(String scalingGroupName) {
             return scalingGroupName(Output.of(scalingGroupName));
@@ -695,9 +808,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scalingMode Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scalingMode(@Nullable Output<String> scalingMode) {
             $.scalingMode = scalingMode;
@@ -706,32 +819,53 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scalingMode Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scalingMode(String scalingMode) {
             return scalingMode(Output.of(scalingMode));
         }
 
+        /**
+         * @param serverGroupAttributes Load balancer information associated with the scaling group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverGroupAttributes(@Nullable Output<List<ScalingGroupServerGroupAttributeArgs>> serverGroupAttributes) {
             $.serverGroupAttributes = serverGroupAttributes;
             return this;
         }
 
+        /**
+         * @param serverGroupAttributes Load balancer information associated with the scaling group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverGroupAttributes(List<ScalingGroupServerGroupAttributeArgs> serverGroupAttributes) {
             return serverGroupAttributes(Output.of(serverGroupAttributes));
         }
 
+        /**
+         * @param serverGroupAttributes Load balancer information associated with the scaling group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverGroupAttributes(ScalingGroupServerGroupAttributeArgs... serverGroupAttributes) {
             return serverGroupAttributes(List.of(serverGroupAttributes));
         }
 
         /**
          * @param subnetIds List of subnet IDs for the primary network interface of instances in the scaling group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIds(Output<List<String>> subnetIds) {
             $.subnetIds = subnetIds;
@@ -740,9 +874,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds List of subnet IDs for the primary network interface of instances in the scaling group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIds(List<String> subnetIds) {
             return subnetIds(Output.of(subnetIds));
@@ -750,9 +884,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIds List of subnet IDs for the primary network interface of instances in the scaling group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
@@ -760,9 +894,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param suspendedProcesses Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder suspendedProcesses(@Nullable Output<List<String>> suspendedProcesses) {
             $.suspendedProcesses = suspendedProcesses;
@@ -771,9 +905,9 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param suspendedProcesses Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder suspendedProcesses(List<String> suspendedProcesses) {
             return suspendedProcesses(Output.of(suspendedProcesses));
@@ -781,23 +915,44 @@ public final class ScalingGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param suspendedProcesses Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder suspendedProcesses(String... suspendedProcesses) {
             return suspendedProcesses(List.of(suspendedProcesses));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<ScalingGroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<ScalingGroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(ScalingGroupTagArgs... tags) {
             return tags(List.of(tags));
         }

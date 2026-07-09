@@ -24,245 +24,317 @@ import javax.annotation.Nullable;
 
 /**
  * An IAM sub-user is an identity for access control, created by an account or a user with permissions. After permissions are granted, the user can log in to the console or use the access key to call APIs to access cloud resources.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.iam.User;
+ * import com.byteplus.bytepluscc.iam.UserArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.UserPolicyArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.UserTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var userDemo = new User("userDemo", UserArgs.builder()
+ *             .userName("UserDemo")
+ *             .description("user description")
+ *             .groups("UserGroupDemo")
+ *             .policies(UserPolicyArgs.builder()
+ *                 .policy_name("TOSReadOnlyAccess")
+ *                 .policy_type("System")
+ *                 .build())
+ *             .tags(UserTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:iam/user:User example &#34;user_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:iam/user:User")
 public class User extends com.pulumi.resources.CustomResource {
+    /**
+     * Sub-user&#39;s access key.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="accessKeys", refs={List.class,UserAccessKey.class}, tree="[0,1]")
     private Output<List<UserAccessKey>> accessKeys;
 
+    /**
+     * @return Sub-user&#39;s access key.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<UserAccessKey>> accessKeys() {
         return this.accessKeys;
     }
     /**
      * Main account to which the sub-user belongs.
-     * 
+     *
      */
     @Export(name="accountId", refs={Double.class}, tree="[0]")
     private Output<Double> accountId;
 
     /**
      * @return Main account to which the sub-user belongs.
-     * 
+     *
      */
     public Output<Double> accountId() {
         return this.accountId;
     }
     /**
      * Sub-user&#39;s creation time.
-     * 
+     *
      */
     @Export(name="createDate", refs={String.class}, tree="[0]")
     private Output<String> createDate;
 
     /**
      * @return Sub-user&#39;s creation time.
-     * 
+     *
      */
     public Output<String> createDate() {
         return this.createDate;
     }
     /**
      * Description for the sub-user, up to 255 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description for the sub-user, up to 255 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
-     * 
+     *
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
      * @return Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
-     * 
+     *
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
      * Sub-user&#39;s email address.
-     * 
+     *
      */
     @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
      * @return Sub-user&#39;s email address.
-     * 
+     *
      */
     public Output<String> email() {
         return this.email;
     }
     /**
      * Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-     * 
+     *
      */
     @Export(name="emailIsVerify", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> emailIsVerify;
 
     /**
      * @return Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-     * 
+     *
      */
     public Output<Boolean> emailIsVerify() {
         return this.emailIsVerify;
     }
     /**
      * User group to which the sub-user belongs.
-     * 
+     *
      */
     @Export(name="groups", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> groups;
 
     /**
      * @return User group to which the sub-user belongs.
-     * 
+     *
      */
     public Output<List<String>> groups() {
         return this.groups;
     }
     /**
      * Login configuration for the sub-user.
-     * 
+     *
      */
     @Export(name="loginProfile", refs={UserLoginProfile.class}, tree="[0]")
     private Output<UserLoginProfile> loginProfile;
 
     /**
      * @return Login configuration for the sub-user.
-     * 
+     *
      */
     public Output<UserLoginProfile> loginProfile() {
         return this.loginProfile;
     }
     /**
      * Sub-user&#39;s mobile number.
-     * 
+     *
      */
     @Export(name="mobilePhone", refs={String.class}, tree="[0]")
     private Output<String> mobilePhone;
 
     /**
      * @return Sub-user&#39;s mobile number.
-     * 
+     *
      */
     public Output<String> mobilePhone() {
         return this.mobilePhone;
     }
     /**
      * Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-     * 
+     *
      */
     @Export(name="mobilePhoneIsVerify", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> mobilePhoneIsVerify;
 
     /**
      * @return Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-     * 
+     *
      */
     public Output<Boolean> mobilePhoneIsVerify() {
         return this.mobilePhoneIsVerify;
     }
+    /**
+     * Sub-user&#39;s permission policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="policies", refs={List.class,UserPolicy.class}, tree="[0,1]")
     private Output<List<UserPolicy>> policies;
 
+    /**
+     * @return Sub-user&#39;s permission policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<UserPolicy>> policies() {
         return this.policies;
     }
     /**
      * Operation protection configuration for the sub-user.
-     * 
+     *
      */
     @Export(name="securityConfig", refs={UserSecurityConfig.class}, tree="[0]")
     private Output<UserSecurityConfig> securityConfig;
 
     /**
      * @return Operation protection configuration for the sub-user.
-     * 
+     *
      */
     public Output<UserSecurityConfig> securityConfig() {
         return this.securityConfig;
     }
+    /**
+     * Sub-user&#39;s resource tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,UserTag.class}, tree="[0,1]")
     private Output<List<UserTag>> tags;
 
+    /**
+     * @return Sub-user&#39;s resource tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<UserTag>> tags() {
         return this.tags;
     }
     /**
      * TRN expression for the sub-user.
-     * 
+     *
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return TRN expression for the sub-user.
-     * 
+     *
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Update time for the sub-user.
-     * 
+     *
      */
     @Export(name="updateDate", refs={String.class}, tree="[0]")
     private Output<String> updateDate;
 
     /**
      * @return Update time for the sub-user.
-     * 
+     *
      */
     public Output<String> updateDate() {
         return this.updateDate;
     }
     /**
      * Sub-user&#39;s ID.
-     * 
+     *
      */
     @Export(name="userId", refs={Integer.class}, tree="[0]")
     private Output<Integer> userId;
 
     /**
      * @return Sub-user&#39;s ID.
-     * 
+     *
      */
     public Output<Integer> userId() {
         return this.userId;
     }
     /**
      * Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
-     * 
+     *
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
      * @return Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
-     * 
+     *
      */
     public Output<String> userName() {
         return this.userName;

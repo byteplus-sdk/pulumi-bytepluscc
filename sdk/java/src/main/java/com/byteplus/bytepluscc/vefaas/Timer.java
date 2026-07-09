@@ -17,31 +17,31 @@ import javax.annotation.Nullable;
 
 /**
  * Trigger management
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vefaas.Timer;
  * import com.byteplus.bytepluscc.vefaas.TimerArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App }{{@code
  *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
  *     }}{@code
- * 
+ *
  *     public static void stack(Context ctx) }{{@code
  *         var vEFAASTimerDemo = new Timer("vEFAASTimerDemo", TimerArgs.builder()
  *             .functionId("o1zxxx")
@@ -53,172 +53,172 @@ import javax.annotation.Nullable;
  *             .enableConcurrency(false)
  *             .retries(5)
  *             .build());
- * 
+ *
  *     }}{@code
  * }}{@code
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vefaas/timer:Timer example &#34;function_id|timer_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vefaas/timer:Timer")
 public class Timer extends com.pulumi.resources.CustomResource {
     /**
      * Timer trigger creation time
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Timer trigger creation time
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Timer trigger time, formatted as a crontab expression
-     * 
+     *
      */
     @Export(name="crontab", refs={String.class}, tree="[0]")
     private Output<String> crontab;
 
     /**
      * @return Timer trigger time, formatted as a crontab expression
-     * 
+     *
      */
     public Output<String> crontab() {
         return this.crontab;
     }
     /**
      * Timer trigger remarks
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Timer trigger remarks
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Allow timer trigger concurrency; true means concurrency is allowed
-     * 
+     *
      */
     @Export(name="enableConcurrency", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableConcurrency;
 
     /**
      * @return Allow timer trigger concurrency; true means concurrency is allowed
-     * 
+     *
      */
     public Output<Boolean> enableConcurrency() {
         return this.enableConcurrency;
     }
     /**
      * Timer trigger enabled; true means enabled
-     * 
+     *
      */
     @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
      * @return Timer trigger enabled; true means enabled
-     * 
+     *
      */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
     /**
      * Function ID
-     * 
+     *
      */
     @Export(name="functionId", refs={String.class}, tree="[0]")
     private Output<String> functionId;
 
     /**
      * @return Function ID
-     * 
+     *
      */
     public Output<String> functionId() {
         return this.functionId;
     }
     /**
      * Timer trigger update time
-     * 
+     *
      */
     @Export(name="lastUpdateTime", refs={String.class}, tree="[0]")
     private Output<String> lastUpdateTime;
 
     /**
      * @return Timer trigger update time
-     * 
+     *
      */
     public Output<String> lastUpdateTime() {
         return this.lastUpdateTime;
     }
     /**
      * Timer trigger name
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Timer trigger name
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Payload sent by timer trigger, that is, the trigger message
-     * 
+     *
      */
     @Export(name="payload", refs={String.class}, tree="[0]")
     private Output<String> payload;
 
     /**
      * @return Payload sent by timer trigger, that is, the trigger message
-     * 
+     *
      */
     public Output<String> payload() {
         return this.payload;
     }
     /**
      * Timer trigger retry count
-     * 
+     *
      */
     @Export(name="retries", refs={Integer.class}, tree="[0]")
     private Output<Integer> retries;
 
     /**
      * @return Timer trigger retry count
-     * 
+     *
      */
     public Output<Integer> retries() {
         return this.retries;
     }
     /**
      * Timer trigger ID
-     * 
+     *
      */
     @Export(name="timerId", refs={String.class}, tree="[0]")
     private Output<String> timerId;
 
     /**
      * @return Timer trigger ID
-     * 
+     *
      */
     public Output<String> timerId() {
         return this.timerId;

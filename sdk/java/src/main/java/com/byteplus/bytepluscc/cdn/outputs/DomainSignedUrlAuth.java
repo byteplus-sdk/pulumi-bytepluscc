@@ -13,20 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainSignedUrlAuth {
+    /**
+     * @return Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DomainSignedUrlAuthSignedUrlAuthRule> signedUrlAuthRules;
     /**
      * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
-     * 
+     *
      */
     private @Nullable Boolean switch_;
 
     private DomainSignedUrlAuth() {}
+    /**
+     * @return Represents the configuration module for the &#39;URL authentication&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DomainSignedUrlAuthSignedUrlAuthRule> signedUrlAuthRules() {
         return this.signedUrlAuthRules == null ? List.of() : this.signedUrlAuthRules;
     }
     /**
      * @return Indicates whether to enable this feature. This parameter has the following values: true: Enables this feature. false: Disables this feature.
-     * 
+     *
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);

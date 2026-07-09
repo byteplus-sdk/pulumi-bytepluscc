@@ -19,14 +19,14 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
     /**
      * Creation time.
-     * 
+     *
      */
     @Import(name="createDate")
     private @Nullable Output<String> createDate;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createDate() {
         return Optional.ofNullable(this.createDate);
@@ -34,14 +34,14 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
     /**
      * Description.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -49,14 +49,14 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
     /**
      * Policy ID.
-     * 
+     *
      */
     @Import(name="policyId")
     private @Nullable Output<String> policyId;
 
     /**
      * @return Policy ID.
-     * 
+     *
      */
     public Optional<Output<String>> policyId() {
         return Optional.ofNullable(this.policyId);
@@ -64,14 +64,14 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
     /**
      * Policy name.
-     * 
+     *
      */
     @Import(name="policyName")
     private @Nullable Output<String> policyName;
 
     /**
      * @return Policy name.
-     * 
+     *
      */
     public Optional<Output<String>> policyName() {
         return Optional.ofNullable(this.policyName);
@@ -79,14 +79,14 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
     /**
      * Policy type.
-     * 
+     *
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
      * @return Policy type.
-     * 
+     *
      */
     public Optional<Output<String>> policyType() {
         return Optional.ofNullable(this.policyType);
@@ -94,36 +94,46 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
     /**
      * Policy expression.
-     * 
+     *
      */
     @Import(name="statement")
     private @Nullable Output<String> statement;
 
     /**
      * @return Policy expression.
-     * 
+     *
      */
     public Optional<Output<String>> statement() {
         return Optional.ofNullable(this.statement);
     }
 
+    /**
+     * List of bound target objects.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="targets")
     private @Nullable Output<List<ServiceControlPolicyTargetArgs>> targets;
 
+    /**
+     * @return List of bound target objects.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ServiceControlPolicyTargetArgs>>> targets() {
         return Optional.ofNullable(this.targets);
     }
 
     /**
      * Update time.
-     * 
+     *
      */
     @Import(name="updateDate")
     private @Nullable Output<String> updateDate;
 
     /**
      * @return Update time.
-     * 
+     *
      */
     public Optional<Output<String>> updateDate() {
         return Optional.ofNullable(this.updateDate);
@@ -162,9 +172,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param createDate Creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createDate(@Nullable Output<String> createDate) {
             $.createDate = createDate;
@@ -173,9 +183,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param createDate Creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createDate(String createDate) {
             return createDate(Output.of(createDate));
@@ -183,9 +193,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param description Description.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -194,9 +204,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param description Description.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -204,9 +214,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param policyId Policy ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyId(@Nullable Output<String> policyId) {
             $.policyId = policyId;
@@ -215,9 +225,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param policyId Policy ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyId(String policyId) {
             return policyId(Output.of(policyId));
@@ -225,9 +235,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param policyName Policy name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyName(@Nullable Output<String> policyName) {
             $.policyName = policyName;
@@ -236,9 +246,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param policyName Policy name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyName(String policyName) {
             return policyName(Output.of(policyName));
@@ -246,9 +256,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param policyType Policy type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyType(@Nullable Output<String> policyType) {
             $.policyType = policyType;
@@ -257,9 +267,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param policyType Policy type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyType(String policyType) {
             return policyType(Output.of(policyType));
@@ -267,9 +277,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param statement Policy expression.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder statement(@Nullable Output<String> statement) {
             $.statement = statement;
@@ -278,32 +288,53 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param statement Policy expression.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder statement(String statement) {
             return statement(Output.of(statement));
         }
 
+        /**
+         * @param targets List of bound target objects.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder targets(@Nullable Output<List<ServiceControlPolicyTargetArgs>> targets) {
             $.targets = targets;
             return this;
         }
 
+        /**
+         * @param targets List of bound target objects.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder targets(List<ServiceControlPolicyTargetArgs> targets) {
             return targets(Output.of(targets));
         }
 
+        /**
+         * @param targets List of bound target objects.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder targets(ServiceControlPolicyTargetArgs... targets) {
             return targets(List.of(targets));
         }
 
         /**
          * @param updateDate Update time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateDate(@Nullable Output<String> updateDate) {
             $.updateDate = updateDate;
@@ -312,9 +343,9 @@ public final class ServiceControlPolicyState extends com.pulumi.resources.Resour
 
         /**
          * @param updateDate Update time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateDate(String updateDate) {
             return updateDate(Output.of(updateDate));

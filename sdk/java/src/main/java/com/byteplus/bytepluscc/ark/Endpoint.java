@@ -22,289 +22,348 @@ import javax.annotation.Nullable;
 
 /**
  * When using large language models for inference services, the inference endpoint is the key entry point for model invocation. Developers can initiate API/SDK inference requests to the large model simply by specifying the ID, enabling quick access and flexible invocation. The system provides a unified API invocation method, call monitoring, rate limiting strategies, and security mechanisms to ensure stability and security during inference
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.ark.Endpoint;
+ * import com.byteplus.bytepluscc.ark.EndpointArgs;
+ * import com.pulumi.bytepluscc.ark.inputs.EndpointModelReferenceArgs;
+ * import com.pulumi.bytepluscc.ark.inputs.EndpointTagArgs;
+ * import com.pulumi.bytepluscc.ark.inputs.EndpointRateLimitArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var endpointDemo = new Endpoint("endpointDemo", EndpointArgs.builder()
+ *             .name("EndpointDemo")
+ *             .description("endpoint description")
+ *             .modelReference(EndpointModelReferenceArgs.builder()
+ *                 .foundation_model(Map.ofEntries(
+ *                     Map.entry("name", "doubao-1-5-thinking-***"),
+ *                     Map.entry("modelVersion", "250428")
+ *                 ))
+ *                 .build())
+ *             .tags(EndpointTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .projectName("default")
+ *             .rateLimit(EndpointRateLimitArgs.builder()
+ *                 .tpm(5)
+ *                 .rpm(10)
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:ark/endpoint:Endpoint example &#34;endpoint_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:ark/endpoint:Endpoint")
 public class Endpoint extends com.pulumi.resources.CustomResource {
     /**
      * Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
-     * 
+     *
      */
     @Export(name="batchOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> batchOnly;
 
     /**
      * @return Whether only BatchChat is supported. If true, only batch inference interfaces can be accessed; otherwise, only online inference interfaces can be accessed
-     * 
+     *
      */
     public Output<Boolean> batchOnly() {
         return this.batchOnly;
     }
     /**
      * Certificate information
-     * 
+     *
      */
     @Export(name="certificate", refs={EndpointCertificate.class}, tree="[0]")
     private Output<EndpointCertificate> certificate;
 
     /**
      * @return Certificate information
-     * 
+     *
      */
     public Output<EndpointCertificate> certificate() {
         return this.certificate;
     }
     /**
      * Endpoint creation time, RFC3339 format
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Endpoint creation time, RFC3339 format
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Endpoint description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Endpoint description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Inference access point ID.
-     * 
+     *
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return Inference access point ID.
-     * 
+     *
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
-     * 
+     *
      */
     @Export(name="endpointModelType", refs={String.class}, tree="[0]")
     private Output<String> endpointModelType;
 
     /**
      * @return Access point model type. Options: FoundationModel for base model; CustomModel for custom model.
-     * 
+     *
      */
     public Output<String> endpointModelType() {
         return this.endpointModelType;
     }
     /**
      * Endpoint access model
-     * 
+     *
      */
     @Export(name="modelReference", refs={EndpointModelReference.class}, tree="[0]")
     private Output<EndpointModelReference> modelReference;
 
     /**
      * @return Endpoint access model
-     * 
+     *
      */
     public Output<EndpointModelReference> modelReference() {
         return this.modelReference;
     }
     /**
      * Model unit. If empty, indicates postpaid; otherwise, prepaid.
-     * 
+     *
      */
     @Export(name="modelUnitId", refs={String.class}, tree="[0]")
     private Output<String> modelUnitId;
 
     /**
      * @return Model unit. If empty, indicates postpaid; otherwise, prepaid.
-     * 
+     *
      */
     public Output<String> modelUnitId() {
         return this.modelUnitId;
     }
     /**
      * Content guardrail scheme
-     * 
+     *
      */
     @Export(name="moderation", refs={EndpointModeration.class}, tree="[0]")
     private Output<EndpointModeration> moderation;
 
     /**
      * @return Content guardrail scheme
-     * 
+     *
      */
     public Output<EndpointModeration> moderation() {
         return this.moderation;
     }
     /**
      * Endpoint name
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Endpoint name
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Project name the resource belongs to; default value is &#34;default&#34;
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name the resource belongs to; default value is &#34;default&#34;
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Endpoint rate limiting
-     * 
+     *
      */
     @Export(name="rateLimit", refs={EndpointRateLimit.class}, tree="[0]")
     private Output<EndpointRateLimit> rateLimit;
 
     /**
      * @return Endpoint rate limiting
-     * 
+     *
      */
     public Output<EndpointRateLimit> rateLimit() {
         return this.rateLimit;
     }
     /**
      * Endpoint switch ID
-     * 
+     *
      */
     @Export(name="rollingId", refs={String.class}, tree="[0]")
     private Output<String> rollingId;
 
     /**
      * @return Endpoint switch ID
-     * 
+     *
      */
     public Output<String> rollingId() {
         return this.rollingId;
     }
     /**
      * If a TPM protection package exists, this is the TPM protection package ID.
-     * 
+     *
      */
     @Export(name="scaleTierId", refs={String.class}, tree="[0]")
     private Output<String> scaleTierId;
 
     /**
      * @return If a TPM protection package exists, this is the TPM protection package ID.
-     * 
+     *
      */
     public Output<String> scaleTierId() {
         return this.scaleTierId;
     }
     /**
      * Endpoint status
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Endpoint status
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Additional status information
-     * 
+     *
      */
     @Export(name="statusReason", refs={String.class}, tree="[0]")
     private Output<String> statusReason;
 
     /**
      * @return Additional status information
-     * 
+     *
      */
     public Output<String> statusReason() {
         return this.statusReason;
     }
     /**
      * Whether endpoint supports switching model versions
-     * 
+     *
      */
     @Export(name="supportRolling", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> supportRolling;
 
     /**
      * @return Whether endpoint supports switching model versions
-     * 
+     *
      */
     public Output<Boolean> supportRolling() {
         return this.supportRolling;
     }
     /**
      * Whether TPM protection package is supported
-     * 
+     *
      */
     @Export(name="supportScaleTier", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> supportScaleTier;
 
     /**
      * @return Whether TPM protection package is supported
-     * 
+     *
      */
     public Output<Boolean> supportScaleTier() {
         return this.supportScaleTier;
     }
+    /**
+     * Tags bound to the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,EndpointTag.class}, tree="[0,1]")
     private Output<List<EndpointTag>> tags;
 
+    /**
+     * @return Tags bound to the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<EndpointTag>> tags() {
         return this.tags;
     }
     /**
      * Endpoint update time, RFC3339 format
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Endpoint update time, RFC3339 format
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

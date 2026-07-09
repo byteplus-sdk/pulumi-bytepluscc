@@ -21,205 +21,304 @@ import javax.annotation.Nullable;
 
 /**
  * Defines the instance configuration in the scaling group, including compute, memory, network, storage, and security. When the scaling group expands, new instances are created based on this configuration source.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingConfiguration;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingConfigurationArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationEipArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationInstanceTypeOverrideArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationVolumeArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var autoScalingDemo = new ScalingConfiguration("autoScalingDemo", ScalingConfigurationArgs.builder()
+ *             .instanceName("AutoScalingDemo")
+ *             .scalingConfigurationName("AutoScalingDemo")
+ *             .hostName("AutoScalingDemo")
+ *             .scalingGroupId("scg-ye43d97gsvkxgganxxxx")
+ *             .securityGroupIds("sg-rrco3fkzzy0wv0x589wxxxx")
+ *             .eip(ScalingConfigurationEipArgs.builder()
+ *                 .bandwidth(1)
+ *                 .billing_type("PostPaidByBandwidth")
+ *                 .isp("BGP")
+ *                 .bandwidth_package_id("bwp-btgl56gbli4g5h0b2v7ixxxx")
+ *                 .release_with_instance(true)
+ *                 .build())
+ *             .ipv6AddressCount(1)
+ *             .spotStrategy("SpotWithPriceLimit")
+ *             .instanceTypeOverrides(ScalingConfigurationInstanceTypeOverrideArgs.builder()
+ *                 .instance_type("ecs.g4il.large")
+ *                 .price_limit(0.5)
+ *                 .build())
+ *             .imageId("image-aagd56zrvqjtdripxxxx")
+ *             .securityEnhancementStrategy("Active")
+ *             .volumes(
+ *                 ScalingConfigurationVolumeArgs.builder()
+ *                     .delete_with_instance(true)
+ *                     .size(40)
+ *                     .volume_type("ESSD_PL0")
+ *                     .build(),
+ *                 ScalingConfigurationVolumeArgs.builder()
+ *                     .delete_with_instance(true)
+ *                     .size(500)
+ *                     .volume_type("ESSD_FlexPL")
+ *                     .extra_performance_iops(3)
+ *                     .extra_performance_type_id("Balance")
+ *                     .build(),
+ *                 ScalingConfigurationVolumeArgs.builder()
+ *                     .delete_with_instance(true)
+ *                     .size(510)
+ *                     .volume_type("ESSD_FlexPL")
+ *                     .extra_performance_iops(2)
+ *                     .extra_performance_type_id("IOPS")
+ *                     .build(),
+ *                 ScalingConfigurationVolumeArgs.builder()
+ *                     .delete_with_instance(true)
+ *                     .size(520)
+ *                     .volume_type("ESSD_FlexPL")
+ *                     .extra_performance_throughput_mb(2)
+ *                     .extra_performance_type_id("Throughput")
+ *                     .build())
+ *             .projectName("default")
+ *             .keyPairName("test")
+ *             .password("test")
+ *             .instanceDescription("Web server configuration")
+ *             .zoneId("cn-test")
+ *             .tags(ScalingConfigurationTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration example &#34;scaling_configuration_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration")
 public class ScalingConfiguration extends com.pulumi.resources.CustomResource {
     /**
      * Resource creation time (UTC)
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Resource creation time (UTC)
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Public IP.
-     * 
+     *
      */
     @Export(name="eip", refs={ScalingConfigurationEip.class}, tree="[0]")
     private Output<ScalingConfigurationEip> eip;
 
     /**
      * @return Public IP.
-     * 
+     *
      */
     public Output<ScalingConfigurationEip> eip() {
         return this.eip;
     }
     /**
      * Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
-     * 
+     *
      */
     @Export(name="hostName", refs={String.class}, tree="[0]")
     private Output<String> hostName;
 
     /**
      * @return Instance hostname. Value: Linux instances allow periods to separate segments; each segment can contain letters, digits, or hyphens &#39;-&#39;. Cannot start or end with a period &#39;.&#39; or hyphen &#39;-&#39;, and periods or hyphens cannot be used consecutively. Linux hostnames must be 2–63 characters long. Windows instances allow letters, digits, or hyphens &#39;-&#39;, but cannot be entirely numeric. Cannot start or end with a hyphen &#39;-&#39;, and hyphens cannot be used consecutively. Windows hostnames must be 2–15 characters long. If not specified, the hostname is automatically generated as follows: Structure: iv  - + initial hostname, for example iv-3tigy72q3u3vj0******. Created instances retain the original hostname generation logic and do not change upon instance restart. Initial hostname generation logic: Linux: extracts all characters after instance ID &#39;i-&#39;. Windows: extracts the last 12 characters after instance ID &#39;i-&#39;
-     * 
+     *
      */
     public Output<String> hostName() {
         return this.hostName;
     }
     /**
      * ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
-     * 
+     *
      */
     @Export(name="hpcClusterId", refs={String.class}, tree="[0]")
     private Output<String> hpcClusterId;
 
     /**
      * @return ID of the high-performance computing cluster to which the instance belongs. Only valid when InstanceTypes.N is specified as &#39;High-Performance Computing GPU&#39;.
-     * 
+     *
      */
     public Output<String> hpcClusterId() {
         return this.hpcClusterId;
     }
     /**
      * Image ID. The image resource used when the scaling group automatically creates an instance
-     * 
+     *
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
      * @return Image ID. The image resource used when the scaling group automatically creates an instance
-     * 
+     *
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
      * Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
-     * 
+     *
      */
     @Export(name="instanceChargeType", refs={String.class}, tree="[0]")
     private Output<String> instanceChargeType;
 
     /**
      * @return Instance billing type. Values: PrePaid (subscription) / PostPaid (pay-as-you-go)
-     * 
+     *
      */
     public Output<String> instanceChargeType() {
         return this.instanceChargeType;
     }
     /**
      * Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-     * 
+     *
      */
     @Export(name="instanceDescription", refs={String.class}, tree="[0]")
     private Output<String> instanceDescription;
 
     /**
      * @return Instance description. Value: Cannot start with a digit or hyphen. Only Chinese characters, letters, digits, underscores, and hyphens are allowed. Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-     * 
+     *
      */
     public Output<String> instanceDescription() {
         return this.instanceDescription;
     }
     /**
      * Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
-     * 
+     *
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name. Rules: Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, underscore &#34;_&#34;, hyphen &#34;-&#34;, and period &#34;.&#34;. Length: 1–128 characters.
-     * 
+     *
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
+    /**
+     * Specification information for preemptible instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="instanceTypeOverrides", refs={List.class,ScalingConfigurationInstanceTypeOverride.class}, tree="[0,1]")
     private Output<List<ScalingConfigurationInstanceTypeOverride>> instanceTypeOverrides;
 
+    /**
+     * @return Specification information for preemptible instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ScalingConfigurationInstanceTypeOverride>> instanceTypeOverrides() {
         return this.instanceTypeOverrides;
     }
     /**
      * List of compute specifications for the instance
-     * 
+     *
      */
     @Export(name="instanceTypes", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> instanceTypes;
 
     /**
      * @return List of compute specifications for the instance
-     * 
+     *
      */
     public Output<List<String>> instanceTypes() {
         return this.instanceTypes;
     }
     /**
      * Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
-     * 
+     *
      */
     @Export(name="ipv6AddressCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> ipv6AddressCount;
 
     /**
      * @return Assign an IPv6 address to the instance NIC. Values: 0: Do not assign an IPv6 address. 1: Assign an IPv6 address; the system automatically allocates an IPv6 subnet for you.
-     * 
+     *
      */
     public Output<Integer> ipv6AddressCount() {
         return this.ipv6AddressCount;
     }
     /**
      * Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
-     * 
+     *
      */
     @Export(name="keyPairName", refs={String.class}, tree="[0]")
     private Output<String> keyPairName;
 
     /**
      * @return Name of the key pair. If both KeyPairName and Password are set, only KeyPairName takes effect
-     * 
+     *
      */
     public Output<String> keyPairName() {
         return this.keyPairName;
     }
     /**
      * Lifecycle status. Values: Active (active) / InActive (inactive)
-     * 
+     *
      */
     @Export(name="lifecycleState", refs={String.class}, tree="[0]")
     private Output<String> lifecycleState;
 
     /**
      * @return Lifecycle status. Values: Active (active) / InActive (inactive)
-     * 
+     *
      */
     public Output<String> lifecycleState() {
         return this.lifecycleState;
     }
     /**
      * When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
-     * 
+     *
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
      * @return When logging in to the instance using the &#39;Password&#39; method, set the root login password: The password must be 8–30 characters long and consist of uppercase letters, lowercase letters, numbers, and special characters. At least three types must be included. Allowed special characters: `~!#$%^&amp;*()_-+= |. The password cannot start with &#39;/&#39; or &#39;$6$&#39;
-     * 
+     *
      */
     public Output<String> password() {
         return this.password;
@@ -228,7 +327,7 @@ public class ScalingConfiguration extends com.pulumi.resources.CustomResource {
      * The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
      * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
      * Maximum length: 64 characters
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
@@ -237,145 +336,165 @@ public class ScalingConfiguration extends com.pulumi.resources.CustomResource {
      * @return The project to which the instance created by the scaling configuration belongs. Default is empty. Each resource can belong to only one project.
      * Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed.
      * Maximum length: 64 characters
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Scaling configuration ID
-     * 
+     *
      */
     @Export(name="scalingConfigurationId", refs={String.class}, tree="[0]")
     private Output<String> scalingConfigurationId;
 
     /**
      * @return Scaling configuration ID
-     * 
+     *
      */
     public Output<String> scalingConfigurationId() {
         return this.scalingConfigurationId;
     }
     /**
      * Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
-     * 
+     *
      */
     @Export(name="scalingConfigurationName", refs={String.class}, tree="[0]")
     private Output<String> scalingConfigurationName;
 
     /**
      * @return Name of the scaling configuration. The name must be unique within the same scaling group in the same region. Rules: Must start with a Chinese character or letter. Can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length: 1–128 characters. Special characters are not supported.
-     * 
+     *
      */
     public Output<String> scalingConfigurationName() {
         return this.scalingConfigurationName;
     }
     /**
      * Scaling group ID to which the scaling configuration belongs
-     * 
+     *
      */
     @Export(name="scalingGroupId", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupId;
 
     /**
      * @return Scaling group ID to which the scaling configuration belongs
-     * 
+     *
      */
     public Output<String> scalingGroupId() {
         return this.scalingGroupId;
     }
     /**
      * Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-     * 
+     *
      */
     @Export(name="securityEnhancementStrategy", refs={String.class}, tree="[0]")
     private Output<String> securityEnhancementStrategy;
 
     /**
      * @return Enable security hardening. Options: Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-     * 
+     *
      */
     public Output<String> securityEnhancementStrategy() {
         return this.securityEnhancementStrategy;
     }
     /**
      * Security group ID associated with the instance&#39;s primary network interface
-     * 
+     *
      */
     @Export(name="securityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIds;
 
     /**
      * @return Security group ID associated with the instance&#39;s primary network interface
-     * 
+     *
      */
     public Output<List<String>> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
      * Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
-     * 
+     *
      */
     @Export(name="spotStrategy", refs={String.class}, tree="[0]")
     private Output<String> spotStrategy;
 
     /**
      * @return Instance preemption policy. Values: NoSpot (default): creates a standard pay-as-you-go instance. SpotAsPriceGo: system automatically bids, creating a preemptible instance that follows the current market price. SpotWithPriceLimit: creates a preemptible instance with a specified bid limit
-     * 
+     *
      */
     public Output<String> spotStrategy() {
         return this.spotStrategy;
     }
+    /**
+     * Tag key-value pairs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,ScalingConfigurationTag.class}, tree="[0,1]")
     private Output<List<ScalingConfigurationTag>> tags;
 
+    /**
+     * @return Tag key-value pairs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ScalingConfigurationTag>> tags() {
         return this.tags;
     }
     /**
      * Resource update time (UTC)
-     * 
+     *
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Resource update time (UTC)
-     * 
+     *
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
-     * 
+     *
      */
     @Export(name="userData", refs={String.class}, tree="[0]")
     private Output<String> userData;
 
     /**
      * @return Instance custom data. Custom data must be Base64 encoded, and the size before encoding must not exceed 16 KB. If not specified, defaults to empty
-     * 
+     *
      */
     public Output<String> userData() {
         return this.userData;
     }
+    /**
+     * Cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="volumes", refs={List.class,ScalingConfigurationVolume.class}, tree="[0,1]")
     private Output<List<ScalingConfigurationVolume>> volumes;
 
+    /**
+     * @return Cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ScalingConfigurationVolume>> volumes() {
         return this.volumes;
     }
     /**
      * Availability zone ID for the scaling configuration
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID for the scaling configuration
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;

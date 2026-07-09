@@ -19,22 +19,32 @@ public final class VpcEndpointState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image repository instance name
-     * 
+     *
      */
     @Import(name="registry")
     private @Nullable Output<String> registry;
 
     /**
      * @return Image repository instance name
-     * 
+     *
      */
     public Optional<Output<String>> registry() {
         return Optional.ofNullable(this.registry);
     }
 
+    /**
+     * Specify which VPCs can access this Standard Edition image repository instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="vpcs")
     private @Nullable Output<List<VpcEndpointVpcArgs>> vpcs;
 
+    /**
+     * @return Specify which VPCs can access this Standard Edition image repository instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpcEndpointVpcArgs>>> vpcs() {
         return Optional.ofNullable(this.vpcs);
     }
@@ -66,9 +76,9 @@ public final class VpcEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param registry Image repository instance name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder registry(@Nullable Output<String> registry) {
             $.registry = registry;
@@ -77,23 +87,44 @@ public final class VpcEndpointState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param registry Image repository instance name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder registry(String registry) {
             return registry(Output.of(registry));
         }
 
+        /**
+         * @param vpcs Specify which VPCs can access this Standard Edition image repository instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder vpcs(@Nullable Output<List<VpcEndpointVpcArgs>> vpcs) {
             $.vpcs = vpcs;
             return this;
         }
 
+        /**
+         * @param vpcs Specify which VPCs can access this Standard Edition image repository instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder vpcs(List<VpcEndpointVpcArgs> vpcs) {
             return vpcs(Output.of(vpcs));
         }
 
+        /**
+         * @param vpcs Specify which VPCs can access this Standard Edition image repository instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder vpcs(VpcEndpointVpcArgs... vpcs) {
             return vpcs(List.of(vpcs));
         }

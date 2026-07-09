@@ -16,31 +16,31 @@ import javax.annotation.Nullable;
 
 /**
  * Function to release
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vefaas.Release;
  * import com.byteplus.bytepluscc.vefaas.ReleaseArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vEFAASReleaseDemo = new Release("vEFAASReleaseDemo", ReleaseArgs.builder()
  *             .functionId("xxxxxxxx")
@@ -50,312 +50,312 @@ import javax.annotation.Nullable;
  *             .description("ccapi-test")
  *             .maxInstance(10)
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vefaas/release:Release example &#34;function_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vefaas/release:Release")
 public class Release extends com.pulumi.resources.CustomResource {
     /**
      * Creation time
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Current release traffic percentage. Valid values: 1–100, indicates the proportion of traffic assigned to the currently releasing version. Returned only when status is inprogress or failed
-     * 
+     *
      */
     @Export(name="currentTrafficWeight", refs={Integer.class}, tree="[0]")
     private Output<Integer> currentTrafficWeight;
 
     /**
      * @return Current release traffic percentage. Valid values: 1–100, indicates the proportion of traffic assigned to the currently releasing version. Returned only when status is inprogress or failed
-     * 
+     *
      */
     public Output<Integer> currentTrafficWeight() {
         return this.currentTrafficWeight;
     }
     /**
      * Description for this release
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description for this release
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Error codes for release failures: function*start*failed: function startup failed function*start*timeout: function startup timed out function*health*check*failed: function health check failed system*internal_error: internal system error
-     * 
+     *
      */
     @Export(name="errorCode", refs={String.class}, tree="[0]")
     private Output<String> errorCode;
 
     /**
      * @return Error codes for release failures: function*start*failed: function startup failed function*start*timeout: function startup timed out function*health*check*failed: function health check failed system*internal_error: internal system error
-     * 
+     *
      */
     public Output<String> errorCode() {
         return this.errorCode;
     }
     /**
      * Download link for logs of failed release instances
-     * 
+     *
      */
     @Export(name="failedInstanceLogs", refs={String.class}, tree="[0]")
     private Output<String> failedInstanceLogs;
 
     /**
      * @return Download link for logs of failed release instances
-     * 
+     *
      */
     public Output<String> failedInstanceLogs() {
         return this.failedInstanceLogs;
     }
     /**
      * Completion time
-     * 
+     *
      */
     @Export(name="finishTime", refs={String.class}, tree="[0]")
     private Output<String> finishTime;
 
     /**
      * @return Completion time
-     * 
+     *
      */
     public Output<String> finishTime() {
         return this.finishTime;
     }
     /**
      * Function ID
-     * 
+     *
      */
     @Export(name="functionId", refs={String.class}, tree="[0]")
     private Output<String> functionId;
 
     /**
      * @return Function ID
-     * 
+     *
      */
     public Output<String> functionId() {
         return this.functionId;
     }
     /**
      * Update time
-     * 
+     *
      */
     @Export(name="lastUpdateTime", refs={String.class}, tree="[0]")
     private Output<String> lastUpdateTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Output<String> lastUpdateTime() {
         return this.lastUpdateTime;
     }
     /**
      * Maximum number of function instances. Valid range: [0 ~ remaining available account resources/single instance maximum memory]
-     * 
+     *
      */
     @Export(name="maxInstance", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxInstance;
 
     /**
      * @return Maximum number of function instances. Valid range: [0 ~ remaining available account resources/single instance maximum memory]
-     * 
+     *
      */
     public Output<Integer> maxInstance() {
         return this.maxInstance;
     }
     /**
      * Version number of the new version being released. Not returned when status is pending; returned when status is inprogress, failed, or done
-     * 
+     *
      */
     @Export(name="newRevisionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> newRevisionNumber;
 
     /**
      * @return Version number of the new version being released. Not returned when status is pending; returned when status is inprogress, failed, or done
-     * 
+     *
      */
     public Output<Integer> newRevisionNumber() {
         return this.newRevisionNumber;
     }
     /**
      * Version number of the old version. Not returned when status is pending; returned when status is inprogress, failed, or done
-     * 
+     *
      */
     @Export(name="oldRevisionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> oldRevisionNumber;
 
     /**
      * @return Version number of the old version. Not returned when status is pending; returned when status is inprogress, failed, or done
-     * 
+     *
      */
     public Output<Integer> oldRevisionNumber() {
         return this.oldRevisionNumber;
     }
     /**
      * Release record ID
-     * 
+     *
      */
     @Export(name="releaseRecordId", refs={String.class}, tree="[0]")
     private Output<String> releaseRecordId;
 
     /**
      * @return Release record ID
-     * 
+     *
      */
     public Output<String> releaseRecordId() {
         return this.releaseRecordId;
     }
     /**
      * Version number to release. When RevisionNumber = 0, the latest code (Latest) is released and a new version is created
-     * 
+     *
      */
     @Export(name="revisionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> revisionNumber;
 
     /**
      * @return Version number to release. When RevisionNumber = 0, the latest code (Latest) is released and a new version is created
-     * 
+     *
      */
     public Output<Integer> revisionNumber() {
         return this.revisionNumber;
     }
     /**
      * Canary step percentage. Valid values: 1–100, default: 10
-     * 
+     *
      */
     @Export(name="rollingStep", refs={Integer.class}, tree="[0]")
     private Output<Integer> rollingStep;
 
     /**
      * @return Canary step percentage. Valid values: 1–100, default: 10
-     * 
+     *
      */
     public Output<Integer> rollingStep() {
         return this.rollingStep;
     }
     /**
      * Released historical version number
-     * 
+     *
      */
     @Export(name="sourceRevisionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> sourceRevisionNumber;
 
     /**
      * @return Released historical version number
-     * 
+     *
      */
     public Output<Integer> sourceRevisionNumber() {
         return this.sourceRevisionNumber;
     }
     /**
      * Version number currently running stably online. Generated after the first successful release. Before the first release (status == pending), StableRevisionNumber is -1
-     * 
+     *
      */
     @Export(name="stableRevisionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> stableRevisionNumber;
 
     /**
      * @return Version number currently running stably online. Generated after the first successful release. Before the first release (status == pending), StableRevisionNumber is -1
-     * 
+     *
      */
     public Output<Integer> stableRevisionNumber() {
         return this.stableRevisionNumber;
     }
     /**
      * Start time of the current release. Not returned when status is pending; returned when status is inprogress, failed, or done
-     * 
+     *
      */
     @Export(name="startTime", refs={String.class}, tree="[0]")
     private Output<String> startTime;
 
     /**
      * @return Start time of the current release. Not returned when status is pending; returned when status is inprogress, failed, or done
-     * 
+     *
      */
     public Output<String> startTime() {
         return this.startTime;
     }
     /**
      * Function release status: pending: never released, inprogress: releasing, done: release successful, failed: release failed
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Function release status: pending: never released, inprogress: releasing, done: release successful, failed: release failed
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Detailed function release status. Supplementary information for release status
-     * 
+     *
      */
     @Export(name="statusMessage", refs={String.class}, tree="[0]")
     private Output<String> statusMessage;
 
     /**
      * @return Detailed function release status. Supplementary information for release status
-     * 
+     *
      */
     public Output<String> statusMessage() {
         return this.statusMessage;
     }
     /**
      * Target version number for release
-     * 
+     *
      */
     @Export(name="targetRevisionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> targetRevisionNumber;
 
     /**
      * @return Target version number for release
-     * 
+     *
      */
     public Output<Integer> targetRevisionNumber() {
         return this.targetRevisionNumber;
     }
     /**
      * Target release traffic percentage. Valid range: [0, 100], indicates the proportion of traffic assigned to the released version. 100 means full release
-     * 
+     *
      */
     @Export(name="targetTrafficWeight", refs={Integer.class}, tree="[0]")
     private Output<Integer> targetTrafficWeight;
 
     /**
      * @return Target release traffic percentage. Valid range: [0, 100], indicates the proportion of traffic assigned to the released version. 100 means full release
-     * 
+     *
      */
     public Output<Integer> targetTrafficWeight() {
         return this.targetTrafficWeight;

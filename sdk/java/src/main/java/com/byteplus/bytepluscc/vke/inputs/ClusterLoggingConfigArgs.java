@@ -19,22 +19,32 @@ public final class ClusterLoggingConfigArgs extends com.pulumi.resources.Resourc
 
     /**
      * Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
-     * 
+     *
      */
     @Import(name="logProjectId")
     private @Nullable Output<String> logProjectId;
 
     /**
      * @return Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
-     * 
+     *
      */
     public Optional<Output<String>> logProjectId() {
         return Optional.ofNullable(this.logProjectId);
     }
 
+    /**
+     * Cluster log option information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="logSetups")
     private @Nullable Output<List<ClusterLoggingConfigLogSetupArgs>> logSetups;
 
+    /**
+     * @return Cluster log option information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ClusterLoggingConfigLogSetupArgs>>> logSetups() {
         return Optional.ofNullable(this.logSetups);
     }
@@ -66,9 +76,9 @@ public final class ClusterLoggingConfigArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param logProjectId Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logProjectId(@Nullable Output<String> logProjectId) {
             $.logProjectId = logProjectId;
@@ -77,23 +87,44 @@ public final class ClusterLoggingConfigArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param logProjectId Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logProjectId(String logProjectId) {
             return logProjectId(Output.of(logProjectId));
         }
 
+        /**
+         * @param logSetups Cluster log option information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder logSetups(@Nullable Output<List<ClusterLoggingConfigLogSetupArgs>> logSetups) {
             $.logSetups = logSetups;
             return this;
         }
 
+        /**
+         * @param logSetups Cluster log option information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder logSetups(List<ClusterLoggingConfigLogSetupArgs> logSetups) {
             return logSetups(Output.of(logSetups));
         }
 
+        /**
+         * @param logSetups Cluster log option information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder logSetups(ClusterLoggingConfigLogSetupArgs... logSetups) {
             return logSetups(List.of(logSetups));
         }

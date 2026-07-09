@@ -21,14 +21,14 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
     /**
      * Filter condition creation time
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Filter condition creation time
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -36,43 +36,63 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
     /**
      * Filter condition instance description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Filter condition instance description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Outbound filter rule details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="egressFilterRules")
     private @Nullable Output<List<TrafficMirrorFilterEgressFilterRuleArgs>> egressFilterRules;
 
+    /**
+     * @return Outbound filter rule details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TrafficMirrorFilterEgressFilterRuleArgs>>> egressFilterRules() {
         return Optional.ofNullable(this.egressFilterRules);
     }
 
+    /**
+     * Inbound filter rule details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="ingressFilterRules")
     private @Nullable Output<List<TrafficMirrorFilterIngressFilterRuleArgs>> ingressFilterRules;
 
+    /**
+     * @return Inbound filter rule details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TrafficMirrorFilterIngressFilterRuleArgs>>> ingressFilterRules() {
         return Optional.ofNullable(this.ingressFilterRules);
     }
 
     /**
      * Project name of the filter condition
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name of the filter condition
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -80,36 +100,46 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
     /**
      * Filter condition status
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Filter condition status
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<TrafficMirrorFilterTagArgs>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TrafficMirrorFilterTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Filter condition instance ID
-     * 
+     *
      */
     @Import(name="trafficMirrorFilterId")
     private @Nullable Output<String> trafficMirrorFilterId;
 
     /**
      * @return Filter condition instance ID
-     * 
+     *
      */
     public Optional<Output<String>> trafficMirrorFilterId() {
         return Optional.ofNullable(this.trafficMirrorFilterId);
@@ -117,14 +147,14 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
     /**
      * Filter condition name
-     * 
+     *
      */
     @Import(name="trafficMirrorFilterName")
     private @Nullable Output<String> trafficMirrorFilterName;
 
     /**
      * @return Filter condition name
-     * 
+     *
      */
     public Optional<Output<String>> trafficMirrorFilterName() {
         return Optional.ofNullable(this.trafficMirrorFilterName);
@@ -164,9 +194,9 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param createdTime Filter condition creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -175,9 +205,9 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param createdTime Filter condition creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -185,9 +215,9 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param description Filter condition instance description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -196,45 +226,87 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param description Filter condition instance description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param egressFilterRules Outbound filter rule details
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder egressFilterRules(@Nullable Output<List<TrafficMirrorFilterEgressFilterRuleArgs>> egressFilterRules) {
             $.egressFilterRules = egressFilterRules;
             return this;
         }
 
+        /**
+         * @param egressFilterRules Outbound filter rule details
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder egressFilterRules(List<TrafficMirrorFilterEgressFilterRuleArgs> egressFilterRules) {
             return egressFilterRules(Output.of(egressFilterRules));
         }
 
+        /**
+         * @param egressFilterRules Outbound filter rule details
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder egressFilterRules(TrafficMirrorFilterEgressFilterRuleArgs... egressFilterRules) {
             return egressFilterRules(List.of(egressFilterRules));
         }
 
+        /**
+         * @param ingressFilterRules Inbound filter rule details
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ingressFilterRules(@Nullable Output<List<TrafficMirrorFilterIngressFilterRuleArgs>> ingressFilterRules) {
             $.ingressFilterRules = ingressFilterRules;
             return this;
         }
 
+        /**
+         * @param ingressFilterRules Inbound filter rule details
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ingressFilterRules(List<TrafficMirrorFilterIngressFilterRuleArgs> ingressFilterRules) {
             return ingressFilterRules(Output.of(ingressFilterRules));
         }
 
+        /**
+         * @param ingressFilterRules Inbound filter rule details
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ingressFilterRules(TrafficMirrorFilterIngressFilterRuleArgs... ingressFilterRules) {
             return ingressFilterRules(List.of(ingressFilterRules));
         }
 
         /**
          * @param projectName Project name of the filter condition
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -243,9 +315,9 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Project name of the filter condition
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -253,9 +325,9 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param status Filter condition status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -264,32 +336,53 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param status Filter condition status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<TrafficMirrorFilterTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<TrafficMirrorFilterTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(TrafficMirrorFilterTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param trafficMirrorFilterId Filter condition instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorFilterId(@Nullable Output<String> trafficMirrorFilterId) {
             $.trafficMirrorFilterId = trafficMirrorFilterId;
@@ -298,9 +391,9 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param trafficMirrorFilterId Filter condition instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorFilterId(String trafficMirrorFilterId) {
             return trafficMirrorFilterId(Output.of(trafficMirrorFilterId));
@@ -308,9 +401,9 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param trafficMirrorFilterName Filter condition name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorFilterName(@Nullable Output<String> trafficMirrorFilterName) {
             $.trafficMirrorFilterName = trafficMirrorFilterName;
@@ -319,9 +412,9 @@ public final class TrafficMirrorFilterState extends com.pulumi.resources.Resourc
 
         /**
          * @param trafficMirrorFilterName Filter condition name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorFilterName(String trafficMirrorFilterName) {
             return trafficMirrorFilterName(Output.of(trafficMirrorFilterName));

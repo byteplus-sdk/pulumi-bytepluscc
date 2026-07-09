@@ -18,149 +18,203 @@ import javax.annotation.Nullable;
 
 /**
  * MongoDB instance database account.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.mongodb.Account;
+ * import com.byteplus.bytepluscc.mongodb.AccountArgs;
+ * import com.pulumi.bytepluscc.mongodb.inputs.AccountAccountPrivilegeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var mongoDBAccountDemo = new Account("mongoDBAccountDemo", AccountArgs.builder()
+ *             .accountDesc("this is a test")
+ *             .accountName("ccapi-test")
+ *             .accountPassword("QWExxxxzxc")
+ *             .accountPrivileges(
+ *                 AccountAccountPrivilegeArgs.builder()
+ *                     .db_name("admin")
+ *                     .role_name("read")
+ *                     .build(),
+ *                 AccountAccountPrivilegeArgs.builder()
+ *                     .db_name("admin")
+ *                     .role_name("userAdmin")
+ *                     .build())
+ *             .authDb("admin")
+ *             .instanceId("mongo-replica-xxxxxxxx")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:mongodb/account:Account example &#34;instance_id|account_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:mongodb/account:Account")
 public class Account extends com.pulumi.resources.CustomResource {
     /**
      * Account remarks.
-     * 
+     *
      */
     @Export(name="accountDesc", refs={String.class}, tree="[0]")
     private Output<String> accountDesc;
 
     /**
      * @return Account remarks.
-     * 
+     *
      */
     public Output<String> accountDesc() {
         return this.accountDesc;
     }
     /**
      * Account name.
-     * 
+     *
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
      * @return Account name.
-     * 
+     *
      */
     public Output<String> accountName() {
         return this.accountName;
     }
     /**
      * Account password.
-     * 
+     *
      */
     @Export(name="accountPassword", refs={String.class}, tree="[0]")
     private Output<String> accountPassword;
 
     /**
      * @return Account password.
-     * 
+     *
      */
     public Output<String> accountPassword() {
         return this.accountPassword;
     }
+    /**
+     * List of database permissions currently owned by the account.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="accountPrivileges", refs={List.class,AccountAccountPrivilege.class}, tree="[0,1]")
     private Output<List<AccountAccountPrivilege>> accountPrivileges;
 
+    /**
+     * @return List of database permissions currently owned by the account.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AccountAccountPrivilege>> accountPrivileges() {
         return this.accountPrivileges;
     }
     /**
      * Account type. Value options: Super: Super administrator account, that is, root account; UserAdmin: High-privilege account, that is, an account with any permissions on the admin database; Normal: Regular account, that is, an account with no permissions on the admin database.
-     * 
+     *
      */
     @Export(name="accountType", refs={String.class}, tree="[0]")
     private Output<String> accountType;
 
     /**
      * @return Account type. Value options: Super: Super administrator account, that is, root account; UserAdmin: High-privilege account, that is, an account with any permissions on the admin database; Normal: Regular account, that is, an account with no permissions on the admin database.
-     * 
+     *
      */
     public Output<String> accountType() {
         return this.accountType;
     }
     /**
      * Database associated with the account.
-     * 
+     *
      */
     @Export(name="authDb", refs={String.class}, tree="[0]")
     private Output<String> authDb;
 
     /**
      * @return Database associated with the account.
-     * 
+     *
      */
     public Output<String> authDb() {
         return this.authDb;
     }
     /**
      * Account creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Account creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Last update time of the account. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-     * 
+     *
      */
     @Export(name="modifyTime", refs={String.class}, tree="[0]")
     private Output<String> modifyTime;
 
     /**
      * @return Last update time of the account. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).
-     * 
+     *
      */
     public Output<String> modifyTime() {
         return this.modifyTime;
     }
     /**
      * Whether to reset the root account permissions to the initial state (that is, restore all permissions that can be granted to the super administrator account). Value options: false (default): Do not reset. true: Reset. Note: This parameter only applies to the root account in the admin database (that is, AuthDB is admin and AccountName is root).
-     * 
+     *
      */
     @Export(name="resetDbAccount", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> resetDbAccount;
 
     /**
      * @return Whether to reset the root account permissions to the initial state (that is, restore all permissions that can be granted to the super administrator account). Value options: false (default): Do not reset. true: Reset. Note: This parameter only applies to the root account in the admin database (that is, AuthDB is admin and AccountName is root).
-     * 
+     *
      */
     public Output<Boolean> resetDbAccount() {
         return this.resetDbAccount;

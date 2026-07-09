@@ -22,36 +22,46 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-     * 
+     *
      */
     @Import(name="applianceModeEnabled")
     private @Nullable Output<Boolean> applianceModeEnabled;
 
     /**
      * @return Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> applianceModeEnabled() {
         return Optional.ofNullable(this.applianceModeEnabled);
     }
 
+    /**
+     * Network instance connection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="attachPoints", required=true)
     private Output<List<VpcAttachmentAttachPointArgs>> attachPoints;
 
+    /**
+     * @return Network instance connection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<VpcAttachmentAttachPointArgs>> attachPoints() {
         return this.attachPoints;
     }
 
     /**
      * Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-     * 
+     *
      */
     @Import(name="autoPublishRouteEnabled")
     private @Nullable Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoPublishRouteEnabled() {
         return Optional.ofNullable(this.autoPublishRouteEnabled);
@@ -59,14 +69,14 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -74,36 +84,46 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-     * 
+     *
      */
     @Import(name="ipv6Enabled")
     private @Nullable Output<Boolean> ipv6Enabled;
 
     /**
      * @return Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> ipv6Enabled() {
         return Optional.ofNullable(this.ipv6Enabled);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpcAttachmentTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpcAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     * 
+     *
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
         return Optional.ofNullable(this.transitRouterAttachmentName);
@@ -111,14 +131,14 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Transit router instance ID.
-     * 
+     *
      */
     @Import(name="transitRouterId", required=true)
     private Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID.
-     * 
+     *
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
@@ -126,14 +146,14 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network instance ID.
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return Private network instance ID.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -173,9 +193,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param applianceModeEnabled Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder applianceModeEnabled(@Nullable Output<Boolean> applianceModeEnabled) {
             $.applianceModeEnabled = applianceModeEnabled;
@@ -184,32 +204,53 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param applianceModeEnabled Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder applianceModeEnabled(Boolean applianceModeEnabled) {
             return applianceModeEnabled(Output.of(applianceModeEnabled));
         }
 
+        /**
+         * @param attachPoints Network instance connection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachPoints(Output<List<VpcAttachmentAttachPointArgs>> attachPoints) {
             $.attachPoints = attachPoints;
             return this;
         }
 
+        /**
+         * @param attachPoints Network instance connection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachPoints(List<VpcAttachmentAttachPointArgs> attachPoints) {
             return attachPoints(Output.of(attachPoints));
         }
 
+        /**
+         * @param attachPoints Network instance connection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachPoints(VpcAttachmentAttachPointArgs... attachPoints) {
             return attachPoints(List.of(attachPoints));
         }
 
         /**
          * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoPublishRouteEnabled(@Nullable Output<Boolean> autoPublishRouteEnabled) {
             $.autoPublishRouteEnabled = autoPublishRouteEnabled;
@@ -218,9 +259,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoPublishRouteEnabled Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
             return autoPublishRouteEnabled(Output.of(autoPublishRouteEnabled));
@@ -228,9 +269,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -239,9 +280,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -249,9 +290,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6Enabled Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6Enabled(@Nullable Output<Boolean> ipv6Enabled) {
             $.ipv6Enabled = ipv6Enabled;
@@ -260,32 +301,53 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6Enabled Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6Enabled(Boolean ipv6Enabled) {
             return ipv6Enabled(Output.of(ipv6Enabled));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<VpcAttachmentTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<VpcAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(VpcAttachmentTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterAttachmentName(@Nullable Output<String> transitRouterAttachmentName) {
             $.transitRouterAttachmentName = transitRouterAttachmentName;
@@ -294,9 +356,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterAttachmentName Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterAttachmentName(String transitRouterAttachmentName) {
             return transitRouterAttachmentName(Output.of(transitRouterAttachmentName));
@@ -304,9 +366,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterId Transit router instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -315,9 +377,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterId Transit router instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));
@@ -325,9 +387,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -336,9 +398,9 @@ public final class VpcAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

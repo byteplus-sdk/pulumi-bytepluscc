@@ -17,23 +17,33 @@ public final class DomainCacheHostArgs extends com.pulumi.resources.ResourceArgs
 
     public static final DomainCacheHostArgs Empty = new DomainCacheHostArgs();
 
+    /**
+     * Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="cacheHostRules")
     private @Nullable Output<List<DomainCacheHostCacheHostRuleArgs>> cacheHostRules;
 
+    /**
+     * @return Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainCacheHostCacheHostRuleArgs>>> cacheHostRules() {
         return Optional.ofNullable(this.cacheHostRules);
     }
 
     /**
      * Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-     * 
+     *
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -64,24 +74,45 @@ public final class DomainCacheHostArgs extends com.pulumi.resources.ResourceArgs
             $ = new DomainCacheHostArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param cacheHostRules Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cacheHostRules(@Nullable Output<List<DomainCacheHostCacheHostRuleArgs>> cacheHostRules) {
             $.cacheHostRules = cacheHostRules;
             return this;
         }
 
+        /**
+         * @param cacheHostRules Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cacheHostRules(List<DomainCacheHostCacheHostRuleArgs> cacheHostRules) {
             return cacheHostRules(Output.of(cacheHostRules));
         }
 
+        /**
+         * @param cacheHostRules Indicates a set of shared cache HOST configurations. Currently, you can only create one configuration. When Switch is true, this parameter is required.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cacheHostRules(DomainCacheHostCacheHostRuleArgs... cacheHostRules) {
             return cacheHostRules(List.of(cacheHostRules));
         }
 
         /**
          * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -90,9 +121,9 @@ public final class DomainCacheHostArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

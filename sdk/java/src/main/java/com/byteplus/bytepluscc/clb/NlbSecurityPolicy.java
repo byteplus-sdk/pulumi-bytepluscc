@@ -17,35 +17,35 @@ import javax.annotation.Nullable;
 
 /**
  * Some security policies are preset for common scenarios. If the system preset policies do not meet your needs, you can also customize security policies
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.clb.NlbSecurityPolicy;
  * import com.byteplus.bytepluscc.clb.NlbSecurityPolicyArgs;
  * import com.pulumi.bytepluscc.clb.inputs.NlbSecurityPolicyTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cLBNLBSecurityPolicyDemo = new NlbSecurityPolicy("cLBNLBSecurityPolicyDemo", NlbSecurityPolicyArgs.builder()
- *             .ciphers(            
+ *             .ciphers(
  *                 "TLS_AES_128_CCM_SHA256",
  *                 "TLS_AES_128_GCM_SHA256")
  *             .projectName("default")
@@ -56,164 +56,174 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .tlsVersions("TLSv1.3")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:clb/nlbSecurityPolicy:NlbSecurityPolicy example &#34;security_policy_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:clb/nlbSecurityPolicy:NlbSecurityPolicy")
 public class NlbSecurityPolicy extends com.pulumi.resources.CustomResource {
     /**
      * Account ID associated with the TLS security policy
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID associated with the TLS security policy
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
-     * 
+     *
      */
     @Export(name="ciphers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ciphers;
 
     /**
      * @return Cipher suites for the TLS custom security policy. Supported cipher suites for different TLS protocol versions are as follows: TLSv1.0 &amp; TLSv1.1: ECDHE-ECDSA-AES128-SHA, ECDHE-ECDSA-AES256-SHA, ECDHE-RSA-AES128-SHA, ECDHE-RSA-AES256-SHA, AES128-SHA, AES256-SHA, DES-CBC3-SHA. TLSv1.2: ECDHE-ECDSA-AES128-GCM-SHA256, ECDHE-ECDSA-AES256-GCM-SHA384, ECDHE-ECDSA-AES128-SHA256, ECDHE-ECDSA-AES256-SHA384, ECDHE-RSA-AES128-GCM-SHA256, ECDHE-RSA-AES256-GCM-SHA384, ECDHE-RSA-AES128-SHA256, ECDHE-RSA-AES256-SHA384, AES128-GCM-SHA256, AES256-GCM-SHA384, AES128-SHA256, AES256-SHA256. TLSv1.3: TLS*CHACHA20*POLY1305*SHA256, TLS*AES*256*GCM*SHA384, TLS*AES*128*GCM*SHA256, TLS*AES*128*CCM*8*SHA256, TLS*AES*128*CCM*SHA256, TLS*SM4*GCM*SM3, TLS*SM4*CCM*SM3. When specifying this parameter, you must provide all supported cipher suites. Adding or removing cipher suites individually is not supported via this interface. If only Ciphers.N is provided and TlsVersions.N is not, validation is based on the TLS protocol versions supported by the current listener and the cipher suites specified in the request. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request. TLS*SM4*GCM*SM3 and TLS*SM4*CCM*SM3 are currently in pilot testing. To request access, please contact your account manager
-     * 
+     *
      */
     public Output<List<String>> ciphers() {
         return this.ciphers;
     }
     /**
      * Creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the TLS custom security policy belongs. If not specified, defaults to default
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Listener associated with the TLS security policy
-     * 
+     *
      */
     @Export(name="relatedListenerIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> relatedListenerIds;
 
     /**
      * @return Listener associated with the TLS security policy
-     * 
+     *
      */
     public Output<List<String>> relatedListenerIds() {
         return this.relatedListenerIds;
     }
     /**
      * Security policy ID
-     * 
+     *
      */
     @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
      * @return Security policy ID
-     * 
+     *
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
      * Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
-     * 
+     *
      */
     @Export(name="securityPolicyName", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyName;
 
     /**
      * @return Security policy name. Must start with a letter, number, or Chinese character, and can include the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not specified, defaults to the policy ID
-     * 
+     *
      */
     public Output<String> securityPolicyName() {
         return this.securityPolicyName;
     }
     /**
      * TLS custom security policy status. Creating: Being created. Configuring: Being configured. Active: Active. Deleting: Being deleted.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return TLS custom security policy status. Creating: Being created. Configuring: Being configured. Active: Active. Deleting: Being deleted.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,NlbSecurityPolicyTag.class}, tree="[0,1]")
     private Output<List<NlbSecurityPolicyTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NlbSecurityPolicyTag>> tags() {
         return this.tags;
     }
     /**
      * Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
-     * 
+     *
      */
     @Export(name="tlsVersions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> tlsVersions;
 
     /**
      * @return Update the TLS protocol versions for the TLS custom security policy. Valid values: TLSv1.0, TLSv1.1, TLSv1.2, TLSv1.3. When specifying this parameter, you must provide all supported TLS versions. Adding or removing TLS protocol versions individually is not supported via this interface. If only TlsVersions.N is provided and Ciphers.N is not, validation is based on the TLS protocol versions in the request and the cipher suites supported by the current listener. If both TlsVersions.N and Ciphers.N are provided, validation is based on the TLS protocol versions and cipher suites specified in the request
-     * 
+     *
      */
     public Output<List<String>> tlsVersions() {
         return this.tlsVersions;
     }
     /**
      * Update time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

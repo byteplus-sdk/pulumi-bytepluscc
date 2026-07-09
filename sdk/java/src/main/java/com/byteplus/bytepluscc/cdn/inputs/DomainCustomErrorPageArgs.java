@@ -17,23 +17,33 @@ public final class DomainCustomErrorPageArgs extends com.pulumi.resources.Resour
 
     public static final DomainCustomErrorPageArgs Empty = new DomainCustomErrorPageArgs();
 
+    /**
+     * Indicates a set of configuration rules. You can add up to 50 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="errorPageRules")
     private @Nullable Output<List<DomainCustomErrorPageErrorPageRuleArgs>> errorPageRules;
 
+    /**
+     * @return Indicates a set of configuration rules. You can add up to 50 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainCustomErrorPageErrorPageRuleArgs>>> errorPageRules() {
         return Optional.ofNullable(this.errorPageRules);
     }
 
     /**
      * Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
-     * 
+     *
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -64,24 +74,45 @@ public final class DomainCustomErrorPageArgs extends com.pulumi.resources.Resour
             $ = new DomainCustomErrorPageArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param errorPageRules Indicates a set of configuration rules. You can add up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder errorPageRules(@Nullable Output<List<DomainCustomErrorPageErrorPageRuleArgs>> errorPageRules) {
             $.errorPageRules = errorPageRules;
             return this;
         }
 
+        /**
+         * @param errorPageRules Indicates a set of configuration rules. You can add up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder errorPageRules(List<DomainCustomErrorPageErrorPageRuleArgs> errorPageRules) {
             return errorPageRules(Output.of(errorPageRules));
         }
 
+        /**
+         * @param errorPageRules Indicates a set of configuration rules. You can add up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder errorPageRules(DomainCustomErrorPageErrorPageRuleArgs... errorPageRules) {
             return errorPageRules(List.of(errorPageRules));
         }
 
         /**
          * @param switch_ Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -90,9 +121,9 @@ public final class DomainCustomErrorPageArgs extends com.pulumi.resources.Resour
 
         /**
          * @param switch_ Indicates whether this feature is enabled. The parameter values are: true: Enabled. false: Disabled. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

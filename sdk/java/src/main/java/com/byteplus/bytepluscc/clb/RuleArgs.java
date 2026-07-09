@@ -21,14 +21,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
-     * 
+     *
      */
     @Import(name="actionType")
     private @Nullable Output<String> actionType;
 
     /**
      * @return Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
-     * 
+     *
      */
     public Optional<Output<String>> actionType() {
         return Optional.ofNullable(this.actionType);
@@ -36,14 +36,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -51,14 +51,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name of the forwarding rule.
-     * 
+     *
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
      * @return Domain name of the forwarding rule.
-     * 
+     *
      */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
@@ -66,14 +66,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Listener ID.
-     * 
+     *
      */
     @Import(name="listenerId", required=true)
     private Output<String> listenerId;
 
     /**
      * @return Listener ID.
-     * 
+     *
      */
     public Output<String> listenerId() {
         return this.listenerId;
@@ -81,14 +81,14 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Redirection-related configuration information.
-     * 
+     *
      */
     @Import(name="redirectConfig")
     private @Nullable Output<RuleRedirectConfigArgs> redirectConfig;
 
     /**
      * @return Redirection-related configuration information.
-     * 
+     *
      */
     public Optional<Output<RuleRedirectConfigArgs>> redirectConfig() {
         return Optional.ofNullable(this.redirectConfig);
@@ -96,36 +96,46 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the backend server group associated with the forwarding rule.
-     * 
+     *
      */
     @Import(name="serverGroupId")
     private @Nullable Output<String> serverGroupId;
 
     /**
      * @return ID of the backend server group associated with the forwarding rule.
-     * 
+     *
      */
     public Optional<Output<String>> serverGroupId() {
         return Optional.ofNullable(this.serverGroupId);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<RuleTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RuleTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * URL of the forwarding rule.
-     * 
+     *
      */
     @Import(name="url")
     private @Nullable Output<String> url;
 
     /**
      * @return URL of the forwarding rule.
-     * 
+     *
      */
     public Optional<Output<String>> url() {
         return Optional.ofNullable(this.url);
@@ -164,9 +174,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param actionType Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder actionType(@Nullable Output<String> actionType) {
             $.actionType = actionType;
@@ -175,9 +185,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param actionType Forwarding rule action. Options: Forward: Forward to. Redirect: Redirect to.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder actionType(String actionType) {
             return actionType(Output.of(actionType));
@@ -185,9 +195,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -196,9 +206,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the forwarding rule. Default value is an empty string. Specifications: Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length must be between 0 and 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -206,9 +216,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Domain name of the forwarding rule.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
@@ -217,9 +227,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Domain name of the forwarding rule.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
@@ -227,9 +237,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerId Listener ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder listenerId(Output<String> listenerId) {
             $.listenerId = listenerId;
@@ -238,9 +248,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param listenerId Listener ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder listenerId(String listenerId) {
             return listenerId(Output.of(listenerId));
@@ -248,9 +258,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param redirectConfig Redirection-related configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder redirectConfig(@Nullable Output<RuleRedirectConfigArgs> redirectConfig) {
             $.redirectConfig = redirectConfig;
@@ -259,9 +269,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param redirectConfig Redirection-related configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder redirectConfig(RuleRedirectConfigArgs redirectConfig) {
             return redirectConfig(Output.of(redirectConfig));
@@ -269,9 +279,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId ID of the backend server group associated with the forwarding rule.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverGroupId(@Nullable Output<String> serverGroupId) {
             $.serverGroupId = serverGroupId;
@@ -280,32 +290,53 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverGroupId ID of the backend server group associated with the forwarding rule.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverGroupId(String serverGroupId) {
             return serverGroupId(Output.of(serverGroupId));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<RuleTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<RuleTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(RuleTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param url URL of the forwarding rule.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder url(@Nullable Output<String> url) {
             $.url = url;
@@ -314,9 +345,9 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param url URL of the forwarding rule.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder url(String url) {
             return url(Output.of(url));

@@ -18,31 +18,31 @@ import javax.annotation.Nullable;
 
 /**
  * SAML identity provider is a user authentication service provider responsible for collecting and storing user identity data such as usernames and passwords. In access control (IAM), it is an entity that contains external identity provider metadata and provides identity management services.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.iam.SamlProvider;
  * import com.byteplus.bytepluscc.iam.SamlProviderArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var iAMSamlProviderDemo = new SamlProvider("iAMSamlProviderDemo", SamlProviderArgs.builder()
  *             .samlProviderName("ccapi-test")
@@ -51,150 +51,170 @@ import javax.annotation.Nullable;
  *             .ssoType(1)
  *             .status(1)
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:iam/samlProvider:SamlProvider example &#34;saml_provider_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:iam/samlProvider:SamlProvider")
 public class SamlProvider extends com.pulumi.resources.CustomResource {
     /**
      * SAML Certificate Expiration Reminder Time
-     * 
+     *
      */
     @Export(name="certificateExpireTime", refs={String.class}, tree="[0]")
     private Output<String> certificateExpireTime;
 
     /**
      * @return SAML Certificate Expiration Reminder Time
-     * 
+     *
      */
     public Output<String> certificateExpireTime() {
         return this.certificateExpireTime;
     }
+    /**
+     * Certificate List
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="certificates", refs={List.class,SamlProviderCertificate.class}, tree="[0,1]")
     private Output<List<SamlProviderCertificate>> certificates;
 
+    /**
+     * @return Certificate List
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<SamlProviderCertificate>> certificates() {
         return this.certificates;
     }
     /**
      * Creation Time
-     * 
+     *
      */
     @Export(name="createDate", refs={String.class}, tree="[0]")
     private Output<String> createDate;
 
     /**
      * @return Creation Time
-     * 
+     *
      */
     public Output<String> createDate() {
         return this.createDate;
     }
     /**
      * SAML Identity Provider Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return SAML Identity Provider Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Base64 Encoded SAML Identity Provider Metadata File
-     * 
+     *
      */
     @Export(name="encodedSamlMetadataDocument", refs={String.class}, tree="[0]")
     private Output<String> encodedSamlMetadataDocument;
 
     /**
      * @return Base64 Encoded SAML Identity Provider Metadata File
-     * 
+     *
      */
     public Output<String> encodedSamlMetadataDocument() {
         return this.encodedSamlMetadataDocument;
     }
     /**
      * SAML Identity Provider Name
-     * 
+     *
      */
     @Export(name="samlProviderName", refs={String.class}, tree="[0]")
     private Output<String> samlProviderName;
 
     /**
      * @return SAML Identity Provider Name
-     * 
+     *
      */
     public Output<String> samlProviderName() {
         return this.samlProviderName;
     }
     /**
-     * Identity Provider SSO Type 1. Role SSO 2. User SSO
-     * 
+     * Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
+     *
      */
     @Export(name="ssoType", refs={Integer.class}, tree="[0]")
     private Output<Integer> ssoType;
 
     /**
-     * @return Identity Provider SSO Type 1. Role SSO 2. User SSO
-     * 
+     * @return Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
+     *
      */
     public Output<Integer> ssoType() {
         return this.ssoType;
     }
     /**
-     * Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
-     * 
+     * Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
+     *
      */
     @Export(name="status", refs={Integer.class}, tree="[0]")
     private Output<Integer> status;
 
     /**
-     * @return Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
-     * 
+     * @return Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
+     *
      */
     public Output<Integer> status() {
         return this.status;
     }
     /**
      * Identity Provider Trn
-     * 
+     *
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Identity Provider Trn
-     * 
+     *
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Update Time
-     * 
+     *
      */
     @Export(name="updateDate", refs={String.class}, tree="[0]")
     private Output<String> updateDate;
 
     /**
      * @return Update Time
-     * 
+     *
      */
     public Output<String> updateDate() {
         return this.updateDate;

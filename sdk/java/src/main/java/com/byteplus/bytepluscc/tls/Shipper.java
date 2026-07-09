@@ -20,241 +20,306 @@ import javax.annotation.Nullable;
 
 /**
  * Log delivery refers to sending data collected by the log service to TOS or other products for scenarios such as long-term storage of infrequently accessed data, integration with other systems for consumption, or data analysis.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.Shipper;
+ * import com.byteplus.bytepluscc.tls.ShipperArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.ShipperContentInfoArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.ShipperKafkaShipperInfoArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var tLSShipperDemo = new Shipper("tLSShipperDemo", ShipperArgs.builder()
+ *             .contentInfo(ShipperContentInfoArgs.builder()
+ *                 .format("json")
+ *                 .json_info(Map.ofEntries(
+ *                     Map.entry("enable", true),
+ *                     Map.entry("escape", true),
+ *                     Map.entry("keys", Arrays.asList(
+ *                         "__content__",
+ *                         "__source__",
+ *                         "__path__",
+ *                         "__time__",
+ *                         "__time_ns_part__",
+ *                         "__image_name__",
+ *                         "__container_name__",
+ *                         "__container_ip__",
+ *                         "__container_source__",
+ *                         "__pod_ip__",
+ *                         "__pod_name__",
+ *                         "__pod_uid__",
+ *                         "__namespace__",
+ *                         "__tag____client_ip__",
+ *                         "__tag____receive_time__"))
+ *                 ))
+ *                 .build())
+ *             .kafkaShipperInfo(ShipperKafkaShipperInfoArgs.builder()
+ *                 .compress("gzip")
+ *                 .end_time(1777538948000)
+ *                 .instance("kafka-cnngsl83xxxxxxxx")
+ *                 .kafka_topic("topic1")
+ *                 .build())
+ *             .shipperEndTime(1777538948000)
+ *             .shipperName("ccapi-test-kaf-1001")
+ *             .shipperType("kafka")
+ *             .topicId("b75fffd8-1986-460c-9cca-5axxxxxxx")
+ *             .status(false)
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:tls/shipper:Shipper example &#34;shipper_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:tls/shipper:Shipper")
 public class Shipper extends com.pulumi.resources.CustomResource {
     /**
      * Log content delivery format configuration.
-     * 
+     *
      */
     @Export(name="contentInfo", refs={ShipperContentInfo.class}, tree="[0]")
     private Output<ShipperContentInfo> contentInfo;
 
     /**
      * @return Log content delivery format configuration.
-     * 
+     *
      */
     public Output<ShipperContentInfo> contentInfo() {
         return this.contentInfo;
     }
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Default built-in dashboard ID for delivery.
-     * 
+     *
      */
     @Export(name="dashboardId", refs={String.class}, tree="[0]")
     private Output<String> dashboardId;
 
     /**
      * @return Default built-in dashboard ID for delivery.
-     * 
+     *
      */
     public Output<String> dashboardId() {
         return this.dashboardId;
     }
     /**
      * Kafka delivery configuration.
-     * 
+     *
      */
     @Export(name="kafkaShipperInfo", refs={ShipperKafkaShipperInfo.class}, tree="[0]")
     private Output<ShipperKafkaShipperInfo> kafkaShipperInfo;
 
     /**
      * @return Kafka delivery configuration.
-     * 
+     *
      */
     public Output<ShipperKafkaShipperInfo> kafkaShipperInfo() {
         return this.kafkaShipperInfo;
     }
     /**
      * Log project ID.
-     * 
+     *
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
      * @return Log project ID.
-     * 
+     *
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
      * Log project name.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Log project name.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Delivery end time, in milliseconds. Note: Millisecond data will be ignored. For example, if 1776761323455 is entered, the result will be 1776761323000; if 1776761323 is entered, the result will be 1776761323000.
-     * 
+     *
      */
     @Export(name="shipperEndTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> shipperEndTime;
 
     /**
      * @return Delivery end time, in milliseconds. Note: Millisecond data will be ignored. For example, if 1776761323455 is entered, the result will be 1776761323000; if 1776761323 is entered, the result will be 1776761323000.
-     * 
+     *
      */
     public Output<Integer> shipperEndTime() {
         return this.shipperEndTime;
     }
     /**
      * Delivery configuration ID.
-     * 
+     *
      */
     @Export(name="shipperId", refs={String.class}, tree="[0]")
     private Output<String> shipperId;
 
     /**
      * @return Delivery configuration ID.
-     * 
+     *
      */
     public Output<String> shipperId() {
         return this.shipperId;
     }
     /**
      * Delivery configuration name, unique within a log project.
-     * 
+     *
      */
     @Export(name="shipperName", refs={String.class}, tree="[0]")
     private Output<String> shipperName;
 
     /**
      * @return Delivery configuration name, unique within a log project.
-     * 
+     *
      */
     public Output<String> shipperName() {
         return this.shipperName;
     }
     /**
      * Delivery start time, in milliseconds. When delivering to Kafka, it is recommended to use the ShipperStartTime and ShipperEndTime fields to configure the delivery time range, and leave the StartTime and EndTime fields empty. Note: Millisecond data will be ignored. For example, if 1776761323455 is entered, the result will be 1776761323000; if 1776761323 is entered, the result will be 1776761323000.
-     * 
+     *
      */
     @Export(name="shipperStartTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> shipperStartTime;
 
     /**
      * @return Delivery start time, in milliseconds. When delivering to Kafka, it is recommended to use the ShipperStartTime and ShipperEndTime fields to configure the delivery time range, and leave the StartTime and EndTime fields empty. Note: Millisecond data will be ignored. For example, if 1776761323455 is entered, the result will be 1776761323000; if 1776761323 is entered, the result will be 1776761323000.
-     * 
+     *
      */
     public Output<Integer> shipperStartTime() {
         return this.shipperStartTime;
     }
     /**
      * Type of data source for delivery. Options: tos, kafka. Default is tos.
-     * 
+     *
      */
     @Export(name="shipperType", refs={String.class}, tree="[0]")
     private Output<String> shipperType;
 
     /**
      * @return Type of data source for delivery. Options: tos, kafka. Default is tos.
-     * 
+     *
      */
     public Output<String> shipperType() {
         return this.shipperType;
     }
     /**
      * Whether to enable delivery configuration. Default is true.
-     * 
+     *
      */
     @Export(name="status", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> status;
 
     /**
      * @return Whether to enable delivery configuration. Default is true.
-     * 
+     *
      */
     public Output<Boolean> status() {
         return this.status;
     }
     /**
      * Log topic ID.
-     * 
+     *
      */
     @Export(name="topicId", refs={String.class}, tree="[0]")
     private Output<String> topicId;
 
     /**
      * @return Log topic ID.
-     * 
+     *
      */
     public Output<String> topicId() {
         return this.topicId;
     }
     /**
      * Log topic name.
-     * 
+     *
      */
     @Export(name="topicName", refs={String.class}, tree="[0]")
     private Output<String> topicName;
 
     /**
      * @return Log topic name.
-     * 
+     *
      */
     public Output<String> topicName() {
         return this.topicName;
     }
     /**
      * Information related to delivery to TOS object storage.
-     * 
+     *
      */
     @Export(name="tosShipperInfo", refs={ShipperTosShipperInfo.class}, tree="[0]")
     private Output<ShipperTosShipperInfo> tosShipperInfo;
 
     /**
      * @return Information related to delivery to TOS object storage.
-     * 
+     *
      */
     public Output<ShipperTosShipperInfo> tosShipperInfo() {
         return this.tosShipperInfo;
     }
     /**
      * Update time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

@@ -16,126 +16,141 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceEndpoint {
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceEndpointAddress> addresses;
     /**
      * @return When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
-     * 
+     *
      */
     private @Nullable String autoAddNewNodes;
     /**
      * @return Address description.
-     * 
+     *
      */
     private @Nullable String description;
     /**
      * @return Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
-     * 
+     *
      */
     private @Nullable String enableReadOnly;
     /**
      * @return Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
-     * 
+     *
      */
     private @Nullable String enableReadWriteSplitting;
     /**
      * @return Instance connection terminal ID
-     * 
+     *
      */
     private @Nullable String endpointId;
     /**
      * @return Instance connection terminal name
-     * 
+     *
      */
     private @Nullable String endpointName;
     /**
      * @return Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
-     * 
+     *
      */
     private @Nullable String endpointType;
     /**
      * @return Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
-     * 
+     *
      */
     private @Nullable String readOnlyNodeDistributionType;
     /**
      * @return Maximum latency threshold for read-only nodes. If a read-only node&#39;s latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
      * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
-     * 
+     *
      */
     private @Nullable Double readOnlyNodeMaxDelayTime;
+    /**
+     * @return List of nodes configured for the endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
     /**
      * @return Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
-     * 
+     *
      */
     private @Nullable String readWriteMode;
     /**
      * @return After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance&#39;s primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
-     * 
+     *
      */
     private @Nullable Double readWriteProxyConnection;
     /**
-     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
-     * 
+     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
+     *
      */
     private @Nullable Boolean writeNodeHaltWriting;
 
     private InstanceEndpoint() {}
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceEndpointAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }
     /**
      * @return When the terminal type is read-write or read-only, you can set whether new nodes join automatically. Values:   - `Enable`: join automatically   - `Disable`: do not join automatically (default)
-     * 
+     *
      */
     public Optional<String> autoAddNewNodes() {
         return Optional.ofNullable(this.autoAddNewNodes);
     }
     /**
      * @return Address description.
-     * 
+     *
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Enable global read-only mode.   - `Enable`: enabled   - `Disable`: not enabled
-     * 
+     *
      */
     public Optional<String> enableReadOnly() {
         return Optional.ofNullable(this.enableReadOnly);
     }
     /**
      * @return Enable read-write separation. Values:   - `Enable`: enabled   - `Disable`: not enabled
-     * 
+     *
      */
     public Optional<String> enableReadWriteSplitting() {
         return Optional.ofNullable(this.enableReadWriteSplitting);
     }
     /**
      * @return Instance connection terminal ID
-     * 
+     *
      */
     public Optional<String> endpointId() {
         return Optional.ofNullable(this.endpointId);
     }
     /**
      * @return Instance connection terminal name
-     * 
+     *
      */
     public Optional<String> endpointName() {
         return Optional.ofNullable(this.endpointName);
     }
     /**
      * @return Endpoint type:   - `Cluster`: Default endpoint (created by default)   - `Custom`: Custom endpoint
-     * 
+     *
      */
     public Optional<String> endpointType() {
         return Optional.ofNullable(this.endpointType);
     }
     /**
      * @return Read-only weight allocation mode. Options:   - `Default`: Standard weight allocation (default).   - `Custom`: Custom weight allocation
-     * 
+     *
      */
     public Optional<String> readOnlyNodeDistributionType() {
         return Optional.ofNullable(this.readOnlyNodeDistributionType);
@@ -143,31 +158,36 @@ public final class InstanceEndpoint {
     /**
      * @return Maximum latency threshold for read-only nodes. If a read-only node&#39;s latency exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30.
      * **Note:** This parameter can be set for the default endpoint when read/write splitting is enabled.
-     * 
+     *
      */
     public Optional<Double> readOnlyNodeMaxDelayTime() {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
     }
+    /**
+     * @return List of nodes configured for the endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights == null ? List.of() : this.readOnlyNodeWeights;
     }
     /**
      * @return Read/write mode:   - `ReadWrite`: Read/write   - `ReadOnly`: Read-only
-     * 
+     *
      */
     public Optional<String> readWriteMode() {
         return Optional.ofNullable(this.readWriteMode);
     }
     /**
      * @return After read/write splitting is enabled for the terminal, set the number of proxy connections for the terminal.   - The minimum value for proxy connections is 20.   - The maximum value depends on the specification of the instance&#39;s primary node. Different specifications support different maximum proxy connections. For details, see [Product Specifications]
-     * 
+     *
      */
     public Optional<Double> readWriteProxyConnection() {
         return Optional.ofNullable(this.readWriteProxyConnection);
     }
     /**
-     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - `true`: Yes. (Default)   - `false`: No
-     * 
+     * @return Whether the endpoint sends write requests to the write node (currently, only the primary node is the write node). Value:   - &lt;span pulumi-lang-nodejs=&#34;`true`&#34; pulumi-lang-dotnet=&#34;`True`&#34; pulumi-lang-go=&#34;`true`&#34; pulumi-lang-python=&#34;`true`&#34; pulumi-lang-yaml=&#34;`true`&#34; pulumi-lang-java=&#34;`true`&#34; pulumi-lang-hcl=&#34;`true`&#34;&gt;`true`&lt;/span&gt;: Yes. (Default)   - &lt;span pulumi-lang-nodejs=&#34;`false`&#34; pulumi-lang-dotnet=&#34;`False`&#34; pulumi-lang-go=&#34;`false`&#34; pulumi-lang-python=&#34;`false`&#34; pulumi-lang-yaml=&#34;`false`&#34; pulumi-lang-java=&#34;`false`&#34; pulumi-lang-hcl=&#34;`false`&#34;&gt;`false`&lt;/span&gt;: No
+     *
      */
     public Optional<Boolean> writeNodeHaltWriting() {
         return Optional.ofNullable(this.writeNodeHaltWriting);

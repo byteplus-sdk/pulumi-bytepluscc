@@ -20,14 +20,14 @@ public final class RulePoolSetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Minimum number of available addresses required for the address pool collection to be considered available.
-     * 
+     *
      */
     @Import(name="activeAddrThr")
     private @Nullable Output<Integer> activeAddrThr;
 
     /**
      * @return Minimum number of available addresses required for the address pool collection to be considered available.
-     * 
+     *
      */
     public Optional<Output<Integer>> activeAddrThr() {
         return Optional.ofNullable(this.activeAddrThr);
@@ -35,22 +35,32 @@ public final class RulePoolSetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Address pool name.
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Address pool name.
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
     }
 
+    /**
+     * Address pool list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="pools")
     private @Nullable Output<List<RulePoolSetPoolArgs>> pools;
 
+    /**
+     * @return Address pool list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RulePoolSetPoolArgs>>> pools() {
         return Optional.ofNullable(this.pools);
     }
@@ -83,9 +93,9 @@ public final class RulePoolSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param activeAddrThr Minimum number of available addresses required for the address pool collection to be considered available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder activeAddrThr(@Nullable Output<Integer> activeAddrThr) {
             $.activeAddrThr = activeAddrThr;
@@ -94,9 +104,9 @@ public final class RulePoolSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param activeAddrThr Minimum number of available addresses required for the address pool collection to be considered available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder activeAddrThr(Integer activeAddrThr) {
             return activeAddrThr(Output.of(activeAddrThr));
@@ -104,9 +114,9 @@ public final class RulePoolSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Address pool name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -115,23 +125,44 @@ public final class RulePoolSetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Address pool name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param pools Address pool list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder pools(@Nullable Output<List<RulePoolSetPoolArgs>> pools) {
             $.pools = pools;
             return this;
         }
 
+        /**
+         * @param pools Address pool list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder pools(List<RulePoolSetPoolArgs> pools) {
             return pools(Output.of(pools));
         }
 
+        /**
+         * @param pools Address pool list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder pools(RulePoolSetPoolArgs... pools) {
             return pools(List.of(pools));
         }

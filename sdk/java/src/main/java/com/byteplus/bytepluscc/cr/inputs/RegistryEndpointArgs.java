@@ -18,23 +18,33 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
 
     public static final RegistryEndpointArgs Empty = new RegistryEndpointArgs();
 
+    /**
+     * Public IP allowlist list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="aclPolicies")
     private @Nullable Output<List<RegistryEndpointAclPolicyArgs>> aclPolicies;
 
+    /**
+     * @return Public IP allowlist list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RegistryEndpointAclPolicyArgs>>> aclPolicies() {
         return Optional.ofNullable(this.aclPolicies);
     }
 
     /**
      * Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
-     * 
+     *
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
      * @return Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enabled() {
         return Optional.ofNullable(this.enabled);
@@ -42,14 +52,14 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -81,24 +91,45 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
             $ = new RegistryEndpointArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param aclPolicies Public IP allowlist list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder aclPolicies(@Nullable Output<List<RegistryEndpointAclPolicyArgs>> aclPolicies) {
             $.aclPolicies = aclPolicies;
             return this;
         }
 
+        /**
+         * @param aclPolicies Public IP allowlist list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder aclPolicies(List<RegistryEndpointAclPolicyArgs> aclPolicies) {
             return aclPolicies(Output.of(aclPolicies));
         }
 
+        /**
+         * @param aclPolicies Public IP allowlist list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder aclPolicies(RegistryEndpointAclPolicyArgs... aclPolicies) {
             return aclPolicies(List.of(aclPolicies));
         }
 
         /**
          * @param enabled Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enabled(@Nullable Output<Boolean> enabled) {
             $.enabled = enabled;
@@ -107,9 +138,9 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enabled Whether to enable the public endpoint. Values: false: do not enable. true: enable. Default is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enabled(Boolean enabled) {
             return enabled(Output.of(enabled));
@@ -117,9 +148,9 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -128,9 +159,9 @@ public final class RegistryEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Current status of the public endpoint. Parameter values: Enabling: being enabled. Enabled: enabled. Disabling: being disabled. Updating: updating. Failed: failed. Disabled: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));

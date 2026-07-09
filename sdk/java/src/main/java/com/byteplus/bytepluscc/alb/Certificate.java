@@ -17,32 +17,32 @@ import javax.annotation.Nullable;
 
 /**
  * ALB supports uploading server certificates and CA certificates to the console and manages uploaded certificates separately
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.alb.Certificate;
  * import com.byteplus.bytepluscc.alb.CertificateArgs;
  * import com.pulumi.bytepluscc.alb.inputs.CertificateTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var aLBCertificateDemo = new Certificate("aLBCertificateDemo", CertificateArgs.builder()
  *             .certificateName("ALBCertificateDemo")
@@ -55,221 +55,231 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:alb/certificate:Certificate example &#34;certificate_id|certificate_type&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:alb/certificate:Certificate")
 public class Certificate extends com.pulumi.resources.CustomResource {
     /**
      * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
-     * 
+     *
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
      * @return Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
-     * 
+     *
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
      * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
-     * 
+     *
      */
     @Export(name="certificateName", refs={String.class}, tree="[0]")
     private Output<String> certificateName;
 
     /**
      * @return Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
-     * 
+     *
      */
     public Output<String> certificateName() {
         return this.certificateName;
     }
     /**
      * Certificate type. Options: CA: CA certificate; Server: server certificate
-     * 
+     *
      */
     @Export(name="certificateType", refs={String.class}, tree="[0]")
     private Output<String> certificateType;
 
     /**
      * @return Certificate type. Options: CA: CA certificate; Server: server certificate
-     * 
+     *
      */
     public Output<String> certificateType() {
         return this.certificateType;
     }
     /**
      * Certificate creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Certificate creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Certificate description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Certificate description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Certificate domain name
-     * 
+     *
      */
     @Export(name="domainName", refs={String.class}, tree="[0]")
     private Output<String> domainName;
 
     /**
      * @return Certificate domain name
-     * 
+     *
      */
     public Output<String> domainName() {
         return this.domainName;
     }
     /**
      * Certificate expiration time
-     * 
+     *
      */
     @Export(name="expiredAt", refs={String.class}, tree="[0]")
     private Output<String> expiredAt;
 
     /**
      * @return Certificate expiration time
-     * 
+     *
      */
     public Output<String> expiredAt() {
         return this.expiredAt;
     }
     /**
      * List of listeners associated with the certificate
-     * 
+     *
      */
     @Export(name="listeners", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> listeners;
 
     /**
      * @return List of listeners associated with the certificate
-     * 
+     *
      */
     public Output<List<String>> listeners() {
         return this.listeners;
     }
     /**
      * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
-     * 
+     *
      */
     @Export(name="oldCertificateId", refs={String.class}, tree="[0]")
     private Output<String> oldCertificateId;
 
     /**
      * @return Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
-     * 
+     *
      */
     public Output<String> oldCertificateId() {
         return this.oldCertificateId;
     }
     /**
      * Server certificate private key. Required when certificate type is Server
-     * 
+     *
      */
     @Export(name="privateKey", refs={String.class}, tree="[0]")
     private Output<String> privateKey;
 
     /**
      * @return Server certificate private key. Required when certificate type is Server
-     * 
+     *
      */
     public Output<String> privateKey() {
         return this.privateKey;
     }
     /**
      * Project name
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Server certificate public key
-     * 
+     *
      */
     @Export(name="publicKey", refs={String.class}, tree="[0]")
     private Output<String> publicKey;
 
     /**
      * @return Server certificate public key
-     * 
+     *
      */
     public Output<String> publicKey() {
         return this.publicKey;
     }
     /**
      * Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
-     * 
+     *
      */
     @Export(name="san", refs={String.class}, tree="[0]")
     private Output<String> san;
 
     /**
      * @return Certificate subject alternative name list. Use English &#39;,&#39; to separate multiple domain names. Includes (commonName, DnsName, IP)
-     * 
+     *
      */
     public Output<String> san() {
         return this.san;
     }
     /**
      * Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Certificate status. Options: Creating: creating; Active: active; Deleting: deleting
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,CertificateTag.class}, tree="[0,1]")
     private Output<List<CertificateTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<CertificateTag>> tags() {
         return this.tags;
     }

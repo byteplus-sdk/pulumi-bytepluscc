@@ -20,14 +20,14 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Parameter group description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Parameter group description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Redis engine version for the parameter group
-     * 
+     *
      */
     @Import(name="engineVersion", required=true)
     private Output<String> engineVersion;
 
     /**
      * @return Redis engine version for the parameter group
-     * 
+     *
      */
     public Output<String> engineVersion() {
         return this.engineVersion;
@@ -50,22 +50,32 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Parameter group name
-     * 
+     *
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Parameter group name
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
 
+    /**
+     * List of parameter values to set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="paramValues", required=true)
     private Output<List<ParameterGroupParamValueArgs>> paramValues;
 
+    /**
+     * @return List of parameter values to set
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ParameterGroupParamValueArgs>> paramValues() {
         return this.paramValues;
     }
@@ -99,9 +109,9 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Parameter group description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -110,9 +120,9 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Parameter group description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -120,9 +130,9 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param engineVersion Redis engine version for the parameter group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineVersion(Output<String> engineVersion) {
             $.engineVersion = engineVersion;
@@ -131,9 +141,9 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param engineVersion Redis engine version for the parameter group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineVersion(String engineVersion) {
             return engineVersion(Output.of(engineVersion));
@@ -141,9 +151,9 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param name Parameter group name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -152,23 +162,44 @@ public final class ParameterGroupArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param name Parameter group name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
         }
 
+        /**
+         * @param paramValues List of parameter values to set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder paramValues(Output<List<ParameterGroupParamValueArgs>> paramValues) {
             $.paramValues = paramValues;
             return this;
         }
 
+        /**
+         * @param paramValues List of parameter values to set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder paramValues(List<ParameterGroupParamValueArgs> paramValues) {
             return paramValues(Output.of(paramValues));
         }
 
+        /**
+         * @param paramValues List of parameter values to set
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder paramValues(ParameterGroupParamValueArgs... paramValues) {
             return paramValues(List.of(paramValues));
         }

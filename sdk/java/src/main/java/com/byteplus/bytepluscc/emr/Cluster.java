@@ -25,397 +25,672 @@ import javax.annotation.Nullable;
 
 /**
  * E-MapReduce (EMR) is an enterprise-grade big data analytics system based on the open-source Hadoop ecosystem. It is fully compatible with open source and provides integration and management for ecosystem components such as Hadoop, Spark, Hive, Hudi, and Iceberg.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.emr.Cluster;
+ * import com.byteplus.bytepluscc.emr.ClusterArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterNodeAttributeArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterNodeGroupAttributeArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterApplicationExtraArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterBootstrapScriptArgs;
+ * import com.pulumi.bytepluscc.emr.inputs.ClusterTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var eMRClusterDemo = new Cluster("eMRClusterDemo", ClusterArgs.builder()
+ *             .projectName("default")
+ *             .clusterName("ccapi-tftest-1")
+ *             .clusterType("Hadoop")
+ *             .releaseVersion("3.19.0")
+ *             .applicationNames(
+ *                 "HDFS",
+ *                 "YARN",
+ *                 "SPARK3")
+ *             .deployMode("SIMPLE")
+ *             .securityMode("SIMPLE")
+ *             .chargeType("POST")
+ *             .vpcId("vpc-rrco37ovjq4gv0xxxxxxxxx")
+ *             .securityGroupId("sg-1v9zvjkmx14w51j8xxxxxxxx")
+ *             .historyServerMode("LOCAL")
+ *             .nodeAttribute(ClusterNodeAttributeArgs.builder()
+ *                 .zone_id("cn-beijing-a")
+ *                 .ecs_iam_role("VEECSforEMRRole")
+ *                 .build())
+ *             .nodeGroupAttributes(
+ *                 ClusterNodeGroupAttributeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .subnet_ids(Arrays.asList("subnet-rrwqhg3qzxfkv0xxxxxxxx"))
+ *                     .node_group_name("MasterGroup")
+ *                     .ecs_key_pair_name("pln-test")
+ *                     .ecs_password("")
+ *                     .bandwidth(8)
+ *                     .charge_type("POST")
+ *                     .node_group_type("MASTER")
+ *                     .with_public_ip(false)
+ *                     .ecs_instance_types(Arrays.asList("ecs.r1ie.xlarge"))
+ *                     .node_count(1)
+ *                     .system_disk(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 120)
+ *                     ))
+ *                     .data_disks(Arrays.asList(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80),
+ *                         Map.entry("count", 1)
+ *                     )))
+ *                     .build(),
+ *                 ClusterNodeGroupAttributeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .subnet_ids(Arrays.asList("subnet-rrwqhg3qzxfkv0x5xxxxxx"))
+ *                     .node_group_name("CoreGroup")
+ *                     .ecs_key_pair_name("pln-test")
+ *                     .ecs_password("")
+ *                     .bandwidth(8)
+ *                     .charge_type("POST")
+ *                     .node_group_type("CORE")
+ *                     .with_public_ip(false)
+ *                     .ecs_instance_types(Arrays.asList("ecs.r1ie.xlarge"))
+ *                     .node_count(2)
+ *                     .system_disk(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80)
+ *                     ))
+ *                     .data_disks(Arrays.asList(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80),
+ *                         Map.entry("count", 4)
+ *                     )))
+ *                     .build(),
+ *                 ClusterNodeGroupAttributeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .subnet_ids(Arrays.asList("subnet-rrwqhg3qzxfkv0xxxxxxxx"))
+ *                     .node_group_name("TaskGroup-1")
+ *                     .ecs_key_pair_name("pln-test")
+ *                     .ecs_password("")
+ *                     .bandwidth(8)
+ *                     .charge_type("POST")
+ *                     .node_group_type("TASK")
+ *                     .with_public_ip(false)
+ *                     .ecs_instance_types(Arrays.asList("ecs.r1ie.xlarge"))
+ *                     .node_count(1)
+ *                     .system_disk(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80)
+ *                     ))
+ *                     .data_disks(Arrays.asList(Map.ofEntries(
+ *                         Map.entry("volumeType", "ESSD_FlexPL"),
+ *                         Map.entry("size", 80),
+ *                         Map.entry("count", 4)
+ *                     )))
+ *                     .build())
+ *             .applicationExtras(ClusterApplicationExtraArgs.builder()
+ *                 .application_name("HIVE")
+ *                 .connection_type("BUILT_IN_MYSQL")
+ *                 .connection_id("")
+ *                 .application_configs(Arrays.asList(
+ *                     Map.ofEntries(
+ *                         Map.entry("configFileName", "hive-site.xml"),
+ *                         Map.entry("configItemKey", "hive.metastore.warehouse.dir"),
+ *                         Map.entry("configItemValue", "tos://ccapi-test-tos-1/managed"),
+ *                         Map.entry("deleted", false),
+ *                         Map.entry("componentInstanceName", ""),
+ *                         Map.entry("componentName", ""),
+ *                         Map.entry("effectiveScope", Map.ofEntries(
+ *                             Map.entry("effectiveType", "CLUSTER"),
+ *                             Map.entry("nodeGroupIds", Arrays.asList()),
+ *                             Map.entry("nodeGroupNames", Arrays.asList()),
+ *                             Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                             Map.entry("nodeNames", Arrays.asList()),
+ *                             Map.entry("nodeIds", Arrays.asList()),
+ *                             Map.entry("componentNames", Arrays.asList())
+ *                         ))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("configFileName", "hive-site.xml"),
+ *                         Map.entry("configItemKey", "hive.metastore.warehouse.external.dir"),
+ *                         Map.entry("configItemValue", "tos://ccapi-test-tos-1/external"),
+ *                         Map.entry("deleted", false),
+ *                         Map.entry("componentInstanceName", ""),
+ *                         Map.entry("componentName", ""),
+ *                         Map.entry("effectiveScope", Map.ofEntries(
+ *                             Map.entry("effectiveType", "CLUSTER"),
+ *                             Map.entry("nodeGroupIds", Arrays.asList()),
+ *                             Map.entry("nodeGroupNames", Arrays.asList()),
+ *                             Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                             Map.entry("nodeNames", Arrays.asList()),
+ *                             Map.entry("nodeIds", Arrays.asList()),
+ *                             Map.entry("componentNames", Arrays.asList())
+ *                         ))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("configFileName", "hive-site.xml"),
+ *                         Map.entry("configItemKey", "hive.metastore.warehouse.dir"),
+ *                         Map.entry("configItemValue", "tos://ccapi-test-tos-1/managed"),
+ *                         Map.entry("deleted", false),
+ *                         Map.entry("componentInstanceName", ""),
+ *                         Map.entry("componentName", ""),
+ *                         Map.entry("effectiveScope", Map.ofEntries(
+ *                             Map.entry("effectiveType", "CLUSTER"),
+ *                             Map.entry("nodeGroupIds", Arrays.asList()),
+ *                             Map.entry("nodeGroupNames", Arrays.asList()),
+ *                             Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                             Map.entry("nodeNames", Arrays.asList()),
+ *                             Map.entry("nodeIds", Arrays.asList()),
+ *                             Map.entry("componentNames", Arrays.asList())
+ *                         ))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("configFileName", "hive-site.xml"),
+ *                         Map.entry("configItemKey", "hive.metastore.warehouse.external.dir"),
+ *                         Map.entry("configItemValue", "tos://ccapi-test-tos-1/external"),
+ *                         Map.entry("deleted", false),
+ *                         Map.entry("componentInstanceName", ""),
+ *                         Map.entry("componentName", ""),
+ *                         Map.entry("effectiveScope", Map.ofEntries(
+ *                             Map.entry("effectiveType", "CLUSTER"),
+ *                             Map.entry("nodeGroupIds", Arrays.asList()),
+ *                             Map.entry("nodeGroupNames", Arrays.asList()),
+ *                             Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                             Map.entry("nodeNames", Arrays.asList()),
+ *                             Map.entry("nodeIds", Arrays.asList()),
+ *                             Map.entry("componentNames", Arrays.asList())
+ *                         ))
+ *                     )))
+ *                 .application_component_layouts(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("componentName", ""),
+ *                     Map.entry("effectiveScope", Map.ofEntries(
+ *                         Map.entry("effectiveType", "CLUSTER"),
+ *                         Map.entry("nodeGroupIds", Arrays.asList()),
+ *                         Map.entry("nodeGroupNames", Arrays.asList()),
+ *                         Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                         Map.entry("nodeNames", Arrays.asList()),
+ *                         Map.entry("nodeIds", Arrays.asList()),
+ *                         Map.entry("componentNames", Arrays.asList())
+ *                     ))
+ *                 )))
+ *                 .build())
+ *             .bootstrapScripts(ClusterBootstrapScriptArgs.builder()
+ *                 .script_name("ccapi-test-script")
+ *                 .script_type("BOOTSTRAP")
+ *                 .script_path("tos://ccapi-test-tos-1/managed/")
+ *                 .script_args("")
+ *                 .priority("1")
+ *                 .effective_scope(Map.ofEntries(
+ *                     Map.entry("effectiveType", "CLUSTER"),
+ *                     Map.entry("componentNames", Arrays.asList()),
+ *                     Map.entry("nodeGroupIds", Arrays.asList()),
+ *                     Map.entry("nodeGroupNames", Arrays.asList()),
+ *                     Map.entry("nodeGroupTypes", Arrays.asList()),
+ *                     Map.entry("nodeIds", Arrays.asList()),
+ *                     Map.entry("nodeNames", Arrays.asList())
+ *                 ))
+ *                 .execution_moment("AFTER_APPLICATION_STARTED")
+ *                 .execution_fail_strategy("FAILED_BLOCK")
+ *                 .build())
+ *             .tags(ClusterTagArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
+ *                 .build());
+ *
+ *         }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:emr/cluster:Cluster example &#34;cluster_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:emr/cluster:Cluster")
 public class Cluster extends com.pulumi.resources.CustomResource {
     /**
      * Account ID.
-     * 
+     *
      */
     @Export(name="accountId", refs={Integer.class}, tree="[0]")
     private Output<Integer> accountId;
 
     /**
      * @return Account ID.
-     * 
+     *
      */
     public Output<Integer> accountId() {
         return this.accountId;
     }
+    /**
+     * Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="applicationExtras", refs={List.class,ClusterApplicationExtra.class}, tree="[0,1]")
     private Output<List<ClusterApplicationExtra>> applicationExtras;
 
+    /**
+     * @return Cluster service extension information list, including custom configuration items for services, custom deployment topology settings for service components, and metadata connection configuration information for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClusterApplicationExtra>> applicationExtras() {
         return this.applicationExtras;
     }
     /**
      * List of service names installed in the cluster. Creation-related field.
-     * 
+     *
      */
     @Export(name="applicationNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> applicationNames;
 
     /**
      * @return List of service names installed in the cluster. Creation-related field.
-     * 
+     *
      */
     public Output<List<String>> applicationNames() {
         return this.applicationNames;
     }
+    /**
+     * Installed service list for cluster. Read-only field.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="applications", refs={List.class,ClusterApplication.class}, tree="[0,1]")
     private Output<List<ClusterApplication>> applications;
 
+    /**
+     * @return Installed service list for cluster. Read-only field.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClusterApplication>> applications() {
         return this.applications;
     }
+    /**
+     * Cluster bootstrap script list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="bootstrapScripts", refs={List.class,ClusterBootstrapScript.class}, tree="[0,1]")
     private Output<List<ClusterBootstrapScript>> bootstrapScripts;
 
+    /**
+     * @return Cluster bootstrap script list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClusterBootstrapScript>> bootstrapScripts() {
         return this.bootstrapScripts;
     }
     /**
      * Monthly subscription configuration parameters. Required when chargeType=PRE.
-     * 
+     *
      */
     @Export(name="chargePreConfig", refs={ClusterChargePreConfig.class}, tree="[0]")
     private Output<ClusterChargePreConfig> chargePreConfig;
 
     /**
      * @return Monthly subscription configuration parameters. Required when chargeType=PRE.
-     * 
+     *
      */
     public Output<ClusterChargePreConfig> chargePreConfig() {
         return this.chargePreConfig;
     }
     /**
      * Payment type. PRE means monthly subscription, POST means pay-as-you-go.
-     * 
+     *
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
      * @return Payment type. PRE means monthly subscription, POST means pay-as-you-go.
-     * 
+     *
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
      * Cluster DNS domain suffix list.
-     * 
+     *
      */
     @Export(name="clusterDomainNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> clusterDomainNames;
 
     /**
      * @return Cluster DNS domain suffix list.
-     * 
+     *
      */
     public Output<List<String>> clusterDomainNames() {
         return this.clusterDomainNames;
     }
     /**
      * Cluster ID.
-     * 
+     *
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID.
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Cluster name.
-     * 
+     *
      */
     @Export(name="clusterName", refs={String.class}, tree="[0]")
     private Output<String> clusterName;
 
     /**
      * @return Cluster name.
-     * 
+     *
      */
     public Output<String> clusterName() {
         return this.clusterName;
     }
     /**
      * Cluster status.
-     * 
+     *
      */
     @Export(name="clusterState", refs={String.class}, tree="[0]")
     private Output<String> clusterState;
 
     /**
      * @return Cluster status.
-     * 
+     *
      */
     public Output<String> clusterState() {
         return this.clusterState;
     }
     /**
      * Cluster type.
-     * 
+     *
      */
     @Export(name="clusterType", refs={String.class}, tree="[0]")
     private Output<String> clusterType;
 
     /**
      * @return Cluster type.
-     * 
+     *
      */
     public Output<String> clusterType() {
         return this.clusterType;
     }
     /**
      * Cluster creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
      * @return Cluster creation time.
-     * 
+     *
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
      * Creator ID.
-     * 
+     *
      */
     @Export(name="creatorId", refs={Integer.class}, tree="[0]")
     private Output<Integer> creatorId;
 
     /**
      * @return Creator ID.
-     * 
+     *
      */
     public Output<Integer> creatorId() {
         return this.creatorId;
     }
     /**
      * Creator name.
-     * 
+     *
      */
     @Export(name="creatorName", refs={String.class}, tree="[0]")
     private Output<String> creatorName;
 
     /**
      * @return Creator name.
-     * 
+     *
      */
     public Output<String> creatorName() {
         return this.creatorName;
     }
     /**
      * Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
-     * 
+     *
      */
     @Export(name="deployMode", refs={String.class}, tree="[0]")
     private Output<String> deployMode;
 
     /**
      * @return Deployment mode. SIMPLE means simple mode, HIGH_AVAILABLE means high availability mode.
-     * 
+     *
      */
     public Output<String> deployMode() {
         return this.deployMode;
     }
     /**
      * ECS image ID.
-     * 
+     *
      */
     @Export(name="ecsImageId", refs={String.class}, tree="[0]")
     private Output<String> ecsImageId;
 
     /**
      * @return ECS image ID.
-     * 
+     *
      */
     public Output<String> ecsImageId() {
         return this.ecsImageId;
     }
     /**
      * Cluster expiration time.
-     * 
+     *
      */
     @Export(name="expireTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> expireTime;
 
     /**
      * @return Cluster expiration time.
-     * 
+     *
      */
     public Output<Integer> expireTime() {
         return this.expireTime;
     }
     /**
      * HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
-     * 
+     *
      */
     @Export(name="historyServerMode", refs={String.class}, tree="[0]")
     private Output<String> historyServerMode;
 
     /**
      * @return HistoryServer mode: LOCAL stores active data within the cluster, PHS stores active data outside the cluster.
-     * 
+     *
      */
     public Output<String> historyServerMode() {
         return this.historyServerMode;
     }
     /**
      * Cluster global node information.
-     * 
+     *
      */
     @Export(name="nodeAttribute", refs={ClusterNodeAttribute.class}, tree="[0]")
     private Output<ClusterNodeAttribute> nodeAttribute;
 
     /**
      * @return Cluster global node information.
-     * 
+     *
      */
     public Output<ClusterNodeAttribute> nodeAttribute() {
         return this.nodeAttribute;
     }
+    /**
+     * Node group property list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="nodeGroupAttributes", refs={List.class,ClusterNodeGroupAttribute.class}, tree="[0,1]")
     private Output<List<ClusterNodeGroupAttribute>> nodeGroupAttributes;
 
+    /**
+     * @return Node group property list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClusterNodeGroupAttribute>> nodeGroupAttributes() {
         return this.nodeGroupAttributes;
     }
     /**
      * Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs. Default is &#39;default&#39;. Each resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length is 64 characters.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Cluster creation completion time.
-     * 
+     *
      */
     @Export(name="readyTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> readyTime;
 
     /**
      * @return Cluster creation completion time.
-     * 
+     *
      */
     public Output<Integer> readyTime() {
         return this.readyTime;
     }
     /**
      * Cluster version.
-     * 
+     *
      */
     @Export(name="releaseVersion", refs={String.class}, tree="[0]")
     private Output<String> releaseVersion;
 
     /**
      * @return Cluster version.
-     * 
+     *
      */
     public Output<String> releaseVersion() {
         return this.releaseVersion;
     }
     /**
      * Cluster global security group ID. All ECS in node groups will join this security group.
-     * 
+     *
      */
     @Export(name="securityGroupId", refs={String.class}, tree="[0]")
     private Output<String> securityGroupId;
 
     /**
      * @return Cluster global security group ID. All ECS in node groups will join this security group.
-     * 
+     *
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
     }
     /**
      * Security mode.
-     * 
+     *
      */
     @Export(name="securityMode", refs={String.class}, tree="[0]")
     private Output<String> securityMode;
 
     /**
      * @return Security mode.
-     * 
+     *
      */
     public Output<String> securityMode() {
         return this.securityMode;
     }
     /**
      * Status change reason.
-     * 
+     *
      */
     @Export(name="stateChangeReason", refs={ClusterStateChangeReason.class}, tree="[0]")
     private Output<ClusterStateChangeReason> stateChangeReason;
 
     /**
      * @return Status change reason.
-     * 
+     *
      */
     public Output<ClusterStateChangeReason> stateChangeReason() {
         return this.stateChangeReason;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,ClusterTag.class}, tree="[0,1]")
     private Output<List<ClusterTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClusterTag>> tags() {
         return this.tags;
     }
     /**
      * Cluster termination time.
-     * 
+     *
      */
     @Export(name="terminateTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> terminateTime;
 
     /**
      * @return Cluster termination time.
-     * 
+     *
      */
     public Output<Integer> terminateTime() {
         return this.terminateTime;
     }
     /**
      * Vpc ID。
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Vpc ID。
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;

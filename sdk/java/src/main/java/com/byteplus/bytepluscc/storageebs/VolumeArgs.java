@@ -23,14 +23,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Automatic snapshot policy ID.
-     * 
+     *
      */
     @Import(name="autoSnapshotPolicyId")
     private @Nullable Output<String> autoSnapshotPolicyId;
 
     /**
      * @return Automatic snapshot policy ID.
-     * 
+     *
      */
     public Optional<Output<String>> autoSnapshotPolicyId() {
         return Optional.ofNullable(this.autoSnapshotPolicyId);
@@ -38,14 +38,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
-     * 
+     *
      */
     @Import(name="deleteWithInstance")
     private @Nullable Output<Boolean> deleteWithInstance;
 
     /**
      * @return When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
-     * 
+     *
      */
     public Optional<Output<Boolean>> deleteWithInstance() {
         return Optional.ofNullable(this.deleteWithInstance);
@@ -53,14 +53,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Disk description. Default is empty. Length must be between 1 and 255 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Disk description. Default is empty. Length must be between 1 and 255 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -68,14 +68,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Extra performance.
-     * 
+     *
      */
     @Import(name="extraPerformance")
     private @Nullable Output<VolumeExtraPerformanceArgs> extraPerformance;
 
     /**
      * @return Extra performance.
-     * 
+     *
      */
     public Optional<Output<VolumeExtraPerformanceArgs>> extraPerformance() {
         return Optional.ofNullable(this.extraPerformance);
@@ -83,14 +83,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ECS instance ID mounted when creating the cloud disk.
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return ECS instance ID mounted when creating the cloud disk.
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -98,14 +98,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
-     * 
+     *
      */
     @Import(name="kind")
     private @Nullable Output<String> kind;
 
     /**
      * @return Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
-     * 
+     *
      */
     public Optional<Output<String>> kind() {
         return Optional.ofNullable(this.kind);
@@ -113,14 +113,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
-     * 
+     *
      */
     @Import(name="payType")
     private @Nullable Output<String> payType;
 
     /**
      * @return Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
-     * 
+     *
      */
     public Optional<Output<String>> payType() {
         return Optional.ofNullable(this.payType);
@@ -128,14 +128,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name to which the disk will be added.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the disk will be added.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -143,14 +143,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
-     * 
+     *
      */
     @Import(name="size", required=true)
     private Output<Double> size;
 
     /**
      * @return Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
-     * 
+     *
      */
     public Output<Double> size() {
         return this.size;
@@ -158,36 +158,46 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Source snapshot.
-     * 
+     *
      */
     @Import(name="sourceSnapshotId")
     private @Nullable Output<String> sourceSnapshotId;
 
     /**
      * @return Source snapshot.
-     * 
+     *
      */
     public Optional<Output<String>> sourceSnapshotId() {
         return Optional.ofNullable(this.sourceSnapshotId);
     }
 
+    /**
+     * Disk tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<VolumeTagArgs>> tags;
 
+    /**
+     * @return Disk tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VolumeTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Import(name="volumeName", required=true)
     private Output<String> volumeName;
 
     /**
      * @return Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> volumeName() {
         return this.volumeName;
@@ -195,14 +205,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
-     * 
+     *
      */
     @Import(name="volumeType", required=true)
     private Output<String> volumeType;
 
     /**
      * @return Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
-     * 
+     *
      */
     public Output<String> volumeType() {
         return this.volumeType;
@@ -210,14 +220,14 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID.
-     * 
+     *
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -262,9 +272,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoSnapshotPolicyId Automatic snapshot policy ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoSnapshotPolicyId(@Nullable Output<String> autoSnapshotPolicyId) {
             $.autoSnapshotPolicyId = autoSnapshotPolicyId;
@@ -273,9 +283,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoSnapshotPolicyId Automatic snapshot policy ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoSnapshotPolicyId(String autoSnapshotPolicyId) {
             return autoSnapshotPolicyId(Output.of(autoSnapshotPolicyId));
@@ -283,9 +293,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteWithInstance When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteWithInstance(@Nullable Output<Boolean> deleteWithInstance) {
             $.deleteWithInstance = deleteWithInstance;
@@ -294,9 +304,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteWithInstance When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteWithInstance(Boolean deleteWithInstance) {
             return deleteWithInstance(Output.of(deleteWithInstance));
@@ -304,9 +314,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Disk description. Default is empty. Length must be between 1 and 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -315,9 +325,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Disk description. Default is empty. Length must be between 1 and 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -325,9 +335,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param extraPerformance Extra performance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder extraPerformance(@Nullable Output<VolumeExtraPerformanceArgs> extraPerformance) {
             $.extraPerformance = extraPerformance;
@@ -336,9 +346,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param extraPerformance Extra performance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder extraPerformance(VolumeExtraPerformanceArgs extraPerformance) {
             return extraPerformance(Output.of(extraPerformance));
@@ -346,9 +356,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId ECS instance ID mounted when creating the cloud disk.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -357,9 +367,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId ECS instance ID mounted when creating the cloud disk.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -367,9 +377,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kind Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kind(@Nullable Output<String> kind) {
             $.kind = kind;
@@ -378,9 +388,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kind Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kind(String kind) {
             return kind(Output.of(kind));
@@ -388,9 +398,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param payType Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder payType(@Nullable Output<String> payType) {
             $.payType = payType;
@@ -399,9 +409,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param payType Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder payType(String payType) {
             return payType(Output.of(payType));
@@ -409,9 +419,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the disk will be added.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -420,9 +430,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the disk will be added.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -430,9 +440,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param size Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder size(Output<Double> size) {
             $.size = size;
@@ -441,9 +451,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param size Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder size(Double size) {
             return size(Output.of(size));
@@ -451,9 +461,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceSnapshotId Source snapshot.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceSnapshotId(@Nullable Output<String> sourceSnapshotId) {
             $.sourceSnapshotId = sourceSnapshotId;
@@ -462,32 +472,53 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceSnapshotId Source snapshot.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceSnapshotId(String sourceSnapshotId) {
             return sourceSnapshotId(Output.of(sourceSnapshotId));
         }
 
+        /**
+         * @param tags Disk tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<VolumeTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Disk tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<VolumeTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Disk tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(VolumeTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param volumeName Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeName(Output<String> volumeName) {
             $.volumeName = volumeName;
@@ -496,9 +527,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeName Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeName(String volumeName) {
             return volumeName(Output.of(volumeName));
@@ -506,9 +537,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeType Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeType(Output<String> volumeType) {
             $.volumeType = volumeType;
@@ -517,9 +548,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeType Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeType(String volumeType) {
             return volumeType(Output.of(volumeType));
@@ -527,9 +558,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -538,9 +569,9 @@ public final class VolumeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

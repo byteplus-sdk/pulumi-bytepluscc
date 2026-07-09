@@ -17,15 +17,17 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
     public static final EndpointPublicAddressState Empty = new EndpointPublicAddressState();
 
     /**
-     * - false: private network resolution (default) - true: private and public network resolution
-     * 
+     * - false: private network resolution (default)
+     *     - true: private and public network resolution
+     *
      */
     @Import(name="dnsVisibility")
     private @Nullable Output<Boolean> dnsVisibility;
 
     /**
-     * @return - false: private network resolution (default) - true: private and public network resolution
-     * 
+     * @return - false: private network resolution (default)
+     *     - true: private and public network resolution
+     *
      */
     public Optional<Output<Boolean>> dnsVisibility() {
         return Optional.ofNullable(this.dnsVisibility);
@@ -33,33 +35,29 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * Connection domain name.
-     * 
+     *
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
      * @return Connection domain name.
-     * 
+     *
      */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
     }
 
     /**
-     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-     * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-     * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-     * 
+     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+     *
      */
     @Import(name="domainPrefix")
     private @Nullable Output<String> domainPrefix;
 
     /**
-     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-     * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-     * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-     * 
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+     *
      */
     public Optional<Output<String>> domainPrefix() {
         return Optional.ofNullable(this.domainPrefix);
@@ -67,29 +65,33 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * EIP ID, valid only for Public addresses.
-     * 
+     *
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
      * @return EIP ID, valid only for Public addresses.
-     * 
+     *
      */
     public Optional<Output<String>> eipId() {
         return Optional.ofNullable(this.eipId);
     }
 
     /**
-     * Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values: - true: Yes - false: No
-     * 
+     * Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values:
+     *     - true: Yes
+     *     - false: No
+     *
      */
     @Import(name="eipLocked")
     private @Nullable Output<Boolean> eipLocked;
 
     /**
-     * @return Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values: - true: Yes - false: No
-     * 
+     * @return Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values:
+     *     - true: Yes
+     *     - false: No
+     *
      */
     public Optional<Output<Boolean>> eipLocked() {
         return Optional.ofNullable(this.eipLocked);
@@ -97,14 +99,14 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * Instance connection endpoint ID.
-     * 
+     *
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -112,14 +114,14 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * Instance ID.
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -127,14 +129,14 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * IP protocol version. Value: IPv4.
-     * 
+     *
      */
     @Import(name="internetProtocol")
     private @Nullable Output<String> internetProtocol;
 
     /**
      * @return IP protocol version. Value: IPv4.
-     * 
+     *
      */
     public Optional<Output<String>> internetProtocol() {
         return Optional.ofNullable(this.internetProtocol);
@@ -142,14 +144,14 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * IP address.
-     * 
+     *
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
      * @return IP address.
-     * 
+     *
      */
     public Optional<Output<String>> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
@@ -157,14 +159,14 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * Network address type. Valid values: Private: Private address. Public: Public address.
-     * 
+     *
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
      * @return Network address type. Valid values: Private: Private address. Public: Public address.
-     * 
+     *
      */
     public Optional<Output<String>> networkType() {
         return Optional.ofNullable(this.networkType);
@@ -172,14 +174,14 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * Port.
-     * 
+     *
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
      * @return Port.
-     * 
+     *
      */
     public Optional<Output<String>> port() {
         return Optional.ofNullable(this.port);
@@ -187,14 +189,14 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
     /**
      * Subnet ID, valid only for Private addresses.
-     * 
+     *
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID, valid only for Private addresses.
-     * 
+     *
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
@@ -236,10 +238,11 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param dnsVisibility - false: private network resolution (default) - true: private and public network resolution
-         * 
+         * @param dnsVisibility - false: private network resolution (default)
+         *     - true: private and public network resolution
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dnsVisibility(@Nullable Output<Boolean> dnsVisibility) {
             $.dnsVisibility = dnsVisibility;
@@ -247,10 +250,11 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param dnsVisibility - false: private network resolution (default) - true: private and public network resolution
-         * 
+         * @param dnsVisibility - false: private network resolution (default)
+         *     - true: private and public network resolution
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dnsVisibility(Boolean dnsVisibility) {
             return dnsVisibility(Output.of(dnsVisibility));
@@ -258,9 +262,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param domain Connection domain name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
@@ -269,21 +273,19 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param domain Connection domain name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
         }
 
         /**
-         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-         * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-         * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-         * 
+         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domainPrefix(@Nullable Output<String> domainPrefix) {
             $.domainPrefix = domainPrefix;
@@ -291,12 +293,10 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-         * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-         * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-         * 
+         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domainPrefix(String domainPrefix) {
             return domainPrefix(Output.of(domainPrefix));
@@ -304,9 +304,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param eipId EIP ID, valid only for Public addresses.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(@Nullable Output<String> eipId) {
             $.eipId = eipId;
@@ -315,19 +315,21 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param eipId EIP ID, valid only for Public addresses.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(String eipId) {
             return eipId(Output.of(eipId));
         }
 
         /**
-         * @param eipLocked Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values: - true: Yes - false: No
-         * 
+         * @param eipLocked Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values:
+         *     - true: Yes
+         *     - false: No
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipLocked(@Nullable Output<Boolean> eipLocked) {
             $.eipLocked = eipLocked;
@@ -335,10 +337,12 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
         }
 
         /**
-         * @param eipLocked Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values: - true: Yes - false: No
-         * 
+         * @param eipLocked Whether the EIP used by the connection endpoint is suspended due to overdue payment. Values:
+         *     - true: Yes
+         *     - false: No
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipLocked(Boolean eipLocked) {
             return eipLocked(Output.of(eipLocked));
@@ -346,9 +350,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -357,9 +361,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -367,9 +371,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -378,9 +382,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -388,9 +392,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param internetProtocol IP protocol version. Value: IPv4.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder internetProtocol(@Nullable Output<String> internetProtocol) {
             $.internetProtocol = internetProtocol;
@@ -399,9 +403,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param internetProtocol IP protocol version. Value: IPv4.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder internetProtocol(String internetProtocol) {
             return internetProtocol(Output.of(internetProtocol));
@@ -409,9 +413,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param ipAddress IP address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddress(@Nullable Output<String> ipAddress) {
             $.ipAddress = ipAddress;
@@ -420,9 +424,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param ipAddress IP address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
@@ -430,9 +434,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param networkType Network address type. Valid values: Private: Private address. Public: Public address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkType(@Nullable Output<String> networkType) {
             $.networkType = networkType;
@@ -441,9 +445,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param networkType Network address type. Valid values: Private: Private address. Public: Public address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkType(String networkType) {
             return networkType(Output.of(networkType));
@@ -451,9 +455,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param port Port.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(@Nullable Output<String> port) {
             $.port = port;
@@ -462,9 +466,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param port Port.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(String port) {
             return port(Output.of(port));
@@ -472,9 +476,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param subnetId Subnet ID, valid only for Private addresses.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -483,9 +487,9 @@ public final class EndpointPublicAddressState extends com.pulumi.resources.Resou
 
         /**
          * @param subnetId Subnet ID, valid only for Private addresses.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));

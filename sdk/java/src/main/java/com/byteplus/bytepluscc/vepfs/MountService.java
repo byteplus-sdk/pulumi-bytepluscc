@@ -18,197 +18,257 @@ import javax.annotation.Nullable;
 
 /**
  * The mount service is the connection point for the file system in a network environment. The file system must be mounted on compute nodes to enable data access and storage.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vepfs.MountService;
+ * import com.byteplus.bytepluscc.vepfs.MountServiceArgs;
+ * import com.pulumi.bytepluscc.vepfs.inputs.MountServiceAttachFileSystemArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var vEPFSMountServiceDemo = new MountService("vEPFSMountServiceDemo", MountServiceArgs.builder()
+ *             .mountServiceName("test")
+ *             .project("default")
+ *             .nodeType("ecs.g4i.large")
+ *             .subnetId("subnet-1a185dj3sh1q8*****")
+ *             .vpcId("vpc-1a17v350xa8lc8n*****")
+ *             .zoneId("cn-beijing-a")
+ *             .attachFileSystems(MountServiceAttachFileSystemArgs.builder()
+ *                 .file_system_id("vepfs-cnbj607*****")
+ *                 .customer_path("/vepfs-cnbj*****")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vepfs/mountService:MountService example &#34;mount_service_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vepfs/mountService:MountService")
 public class MountService extends com.pulumi.resources.CustomResource {
+    /**
+     * Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="attachFileSystems", refs={List.class,MountServiceAttachFileSystem.class}, tree="[0,1]")
     private Output<List<MountServiceAttachFileSystem>> attachFileSystems;
 
+    /**
+     * @return Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<MountServiceAttachFileSystem>> attachFileSystems() {
         return this.attachFileSystems;
     }
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Mount service ID.
-     * 
+     *
      */
     @Export(name="mountServiceId", refs={String.class}, tree="[0]")
     private Output<String> mountServiceId;
 
     /**
      * @return Mount service ID.
-     * 
+     *
      */
     public Output<String> mountServiceId() {
         return this.mountServiceId;
     }
     /**
      * Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-     * 
+     *
      */
     @Export(name="mountServiceName", refs={String.class}, tree="[0]")
     private Output<String> mountServiceName;
 
     /**
      * @return Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-     * 
+     *
      */
     public Output<String> mountServiceName() {
         return this.mountServiceName;
     }
     /**
      * Client management node type.
-     * 
+     *
      */
     @Export(name="nodeType", refs={String.class}, tree="[0]")
     private Output<String> nodeType;
 
     /**
      * @return Client management node type.
-     * 
+     *
      */
     public Output<String> nodeType() {
         return this.nodeType;
     }
+    /**
+     * Client management node list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="nodes", refs={List.class,MountServiceNode.class}, tree="[0,1]")
     private Output<List<MountServiceNode>> nodes;
 
+    /**
+     * @return Client management node list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<MountServiceNode>> nodes() {
         return this.nodes;
     }
     /**
      * Project.
-     * 
+     *
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
      * @return Project.
-     * 
+     *
      */
     public Output<String> project() {
         return this.project;
     }
     /**
      * Client NIC security group ID.
-     * 
+     *
      */
     @Export(name="securityGroupId", refs={String.class}, tree="[0]")
     private Output<String> securityGroupId;
 
     /**
      * @return Client NIC security group ID.
-     * 
+     *
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
     }
     /**
      * Mount service status. Details: Creating: Creating. CreateError: Creation failed. Running: Running. Updating: Updating. UpdateError: Update failed. Deleting: Deleting. DeleteError: Deletion failed. Deleted: Deleted. Attaching: Attaching. AttachError: Attachment failed. Detaching: Detaching. DetachError: Detachment failed. Stopped: Stopped. Error: Error.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Mount service status. Details: Creating: Creating. CreateError: Creation failed. Running: Running. Updating: Updating. UpdateError: Update failed. Deleting: Deleting. DeleteError: Deletion failed. Deleted: Deleted. Attaching: Attaching. AttachError: Attachment failed. Detaching: Detaching. DetachError: Detachment failed. Stopped: Stopped. Error: Error.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Subnet ID.
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
      * Mount service version.
-     * 
+     *
      */
     @Export(name="versionNumber", refs={String.class}, tree="[0]")
     private Output<String> versionNumber;
 
     /**
      * @return Mount service version.
-     * 
+     *
      */
     public Output<String> versionNumber() {
         return this.versionNumber;
     }
     /**
      * Private network ID.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone ID.
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
     }
     /**
      * Availability zone name.
-     * 
+     *
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
      * @return Availability zone name.
-     * 
+     *
      */
     public Output<String> zoneName() {
         return this.zoneName;

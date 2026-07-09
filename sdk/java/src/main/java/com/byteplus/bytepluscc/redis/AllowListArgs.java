@@ -20,14 +20,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enter an IP address or an address range in CIDR format. Note: The AllowList and SecurityGroupBindInfos parameters cannot both be empty. Duplicate addresses are not allowed. Separate multiple addresses with commas (,). Setting 0.0.0.0/0 allows access from all addresses. Setting 127.0.0.1 denies access from all addresses. Setting both 0.0.0.0/0 and 127.0.0.1 allows access from all addresses. Setting CIDR 192.168.1.0/24 allows access from IP addresses within that subnet. Setting 192.168.1.1 allows access only from that IP address.
-     * 
+     *
      */
     @Import(name="allowList")
     private @Nullable Output<String> allowList;
 
     /**
      * @return Enter an IP address or an address range in CIDR format. Note: The AllowList and SecurityGroupBindInfos parameters cannot both be empty. Duplicate addresses are not allowed. Separate multiple addresses with commas (,). Setting 0.0.0.0/0 allows access from all addresses. Setting 127.0.0.1 denies access from all addresses. Setting both 0.0.0.0/0 and 127.0.0.1 allows access from all addresses. Setting CIDR 192.168.1.0/24 allows access from IP addresses within that subnet. Setting 192.168.1.1 allows access only from that IP address.
-     * 
+     *
      */
     public Optional<Output<String>> allowList() {
         return Optional.ofNullable(this.allowList);
@@ -35,14 +35,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Type of allowlist. The value range is as follows: Ordinary (default): ordinary allowlist. Default: default allowlist. Note: Each account can set at most one default allowlist per region. When a new default allowlist is set, it automatically replaces the original default allowlist, and the original default allowlist becomes a non-default allowlist. For more details, see Constraints and Limitations
-     * 
+     *
      */
     @Import(name="allowListCategory")
     private @Nullable Output<String> allowListCategory;
 
     /**
      * @return Type of allowlist. The value range is as follows: Ordinary (default): ordinary allowlist. Default: default allowlist. Note: Each account can set at most one default allowlist per region. When a new default allowlist is set, it automatically replaces the original default allowlist, and the original default allowlist becomes a non-default allowlist. For more details, see Constraints and Limitations
-     * 
+     *
      */
     public Optional<Output<String>> allowListCategory() {
         return Optional.ofNullable(this.allowListCategory);
@@ -50,14 +50,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
-     * 
+     *
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
      * @return Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
-     * 
+     *
      */
     public Optional<Output<String>> allowListDesc() {
         return Optional.ofNullable(this.allowListDesc);
@@ -65,14 +65,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-     * 
+     *
      */
     @Import(name="allowListName", required=true)
     private Output<String> allowListName;
 
     /**
      * @return Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-     * 
+     *
      */
     public Output<String> allowListName() {
         return this.allowListName;
@@ -80,14 +80,14 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of instance IDs bound to the current allowlist
-     * 
+     *
      */
     @Import(name="instanceIds")
     private @Nullable Output<List<String>> instanceIds;
 
     /**
      * @return List of instance IDs bound to the current allowlist
-     * 
+     *
      */
     public Optional<Output<List<String>>> instanceIds() {
         return Optional.ofNullable(this.instanceIds);
@@ -95,22 +95,32 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name associated with the allowlist
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name associated with the allowlist
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="securityGroupBindInfos")
     private @Nullable Output<List<AllowListSecurityGroupBindInfoArgs>> securityGroupBindInfos;
 
+    /**
+     * @return Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AllowListSecurityGroupBindInfoArgs>>> securityGroupBindInfos() {
         return Optional.ofNullable(this.securityGroupBindInfos);
     }
@@ -147,9 +157,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowList Enter an IP address or an address range in CIDR format. Note: The AllowList and SecurityGroupBindInfos parameters cannot both be empty. Duplicate addresses are not allowed. Separate multiple addresses with commas (,). Setting 0.0.0.0/0 allows access from all addresses. Setting 127.0.0.1 denies access from all addresses. Setting both 0.0.0.0/0 and 127.0.0.1 allows access from all addresses. Setting CIDR 192.168.1.0/24 allows access from IP addresses within that subnet. Setting 192.168.1.1 allows access only from that IP address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowList(@Nullable Output<String> allowList) {
             $.allowList = allowList;
@@ -158,9 +168,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowList Enter an IP address or an address range in CIDR format. Note: The AllowList and SecurityGroupBindInfos parameters cannot both be empty. Duplicate addresses are not allowed. Separate multiple addresses with commas (,). Setting 0.0.0.0/0 allows access from all addresses. Setting 127.0.0.1 denies access from all addresses. Setting both 0.0.0.0/0 and 127.0.0.1 allows access from all addresses. Setting CIDR 192.168.1.0/24 allows access from IP addresses within that subnet. Setting 192.168.1.1 allows access only from that IP address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowList(String allowList) {
             return allowList(Output.of(allowList));
@@ -168,9 +178,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListCategory Type of allowlist. The value range is as follows: Ordinary (default): ordinary allowlist. Default: default allowlist. Note: Each account can set at most one default allowlist per region. When a new default allowlist is set, it automatically replaces the original default allowlist, and the original default allowlist becomes a non-default allowlist. For more details, see Constraints and Limitations
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListCategory(@Nullable Output<String> allowListCategory) {
             $.allowListCategory = allowListCategory;
@@ -179,9 +189,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListCategory Type of allowlist. The value range is as follows: Ordinary (default): ordinary allowlist. Default: default allowlist. Note: Each account can set at most one default allowlist per region. When a new default allowlist is set, it automatically replaces the original default allowlist, and the original default allowlist becomes a non-default allowlist. For more details, see Constraints and Limitations
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListCategory(String allowListCategory) {
             return allowListCategory(Output.of(allowListCategory));
@@ -189,9 +199,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListDesc(@Nullable Output<String> allowListDesc) {
             $.allowListDesc = allowListDesc;
@@ -200,9 +210,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Allowlist remarks. The length cannot exceed 200 characters. Note: If this parameter is not set, the remarks for the new allowlist will be empty by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListDesc(String allowListDesc) {
             return allowListDesc(Output.of(allowListDesc));
@@ -210,9 +220,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListName(Output<String> allowListName) {
             $.allowListName = allowListName;
@@ -221,9 +231,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListName(String allowListName) {
             return allowListName(Output.of(allowListName));
@@ -231,9 +241,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds List of instance IDs bound to the current allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(@Nullable Output<List<String>> instanceIds) {
             $.instanceIds = instanceIds;
@@ -242,9 +252,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds List of instance IDs bound to the current allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(List<String> instanceIds) {
             return instanceIds(Output.of(instanceIds));
@@ -252,9 +262,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds List of instance IDs bound to the current allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(String... instanceIds) {
             return instanceIds(List.of(instanceIds));
@@ -262,9 +272,9 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -273,23 +283,44 @@ public final class AllowListArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param securityGroupBindInfos Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder securityGroupBindInfos(@Nullable Output<List<AllowListSecurityGroupBindInfoArgs>> securityGroupBindInfos) {
             $.securityGroupBindInfos = securityGroupBindInfos;
             return this;
         }
 
+        /**
+         * @param securityGroupBindInfos Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder securityGroupBindInfos(List<AllowListSecurityGroupBindInfoArgs> securityGroupBindInfos) {
             return securityGroupBindInfos(Output.of(securityGroupBindInfos));
         }
 
+        /**
+         * @param securityGroupBindInfos Information about the security groups associated with the allowlist. Note: This parameter is returned only if the allowlist contains associated security groups.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder securityGroupBindInfos(AllowListSecurityGroupBindInfoArgs... securityGroupBindInfos) {
             return securityGroupBindInfos(List.of(securityGroupBindInfos));
         }

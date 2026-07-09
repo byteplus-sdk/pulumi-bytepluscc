@@ -22,14 +22,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route rule creation time.
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Route rule creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -37,14 +37,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether this route rule is disabled. true: The route rule is disabled. false: The route rule is enabled.
-     * 
+     *
      */
     @Import(name="disable")
     private @Nullable Output<Boolean> disable;
 
     /**
      * @return Whether this route rule is disabled. true: The route rule is disabled. false: The route rule is enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> disable() {
         return Optional.ofNullable(this.disable);
@@ -52,14 +52,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Index of the effective address pool set.
-     * 
+     *
      */
     @Import(name="effectivePoolSetIndex")
     private @Nullable Output<Integer> effectivePoolSetIndex;
 
     /**
      * @return Index of the effective address pool set.
-     * 
+     *
      */
     public Optional<Output<Integer>> effectivePoolSetIndex() {
         return Optional.ofNullable(this.effectivePoolSetIndex);
@@ -67,14 +67,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * UUID of the GTM instance.
-     * 
+     *
      */
     @Import(name="gtmId")
     private @Nullable Output<String> gtmId;
 
     /**
      * @return UUID of the GTM instance.
-     * 
+     *
      */
     public Optional<Output<String>> gtmId() {
         return Optional.ofNullable(this.gtmId);
@@ -82,14 +82,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route rule applicable lines.
-     * 
+     *
      */
     @Import(name="line")
     private @Nullable Output<String> line;
 
     /**
      * @return Route rule applicable lines.
-     * 
+     *
      */
     public Optional<Output<String>> line() {
         return Optional.ofNullable(this.line);
@@ -97,14 +97,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route rule name.
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Route rule name.
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -112,14 +112,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The policy type corresponding to the routing rule. geo: basic routing. perf: intelligent routing.
-     * 
+     *
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
      * @return The policy type corresponding to the routing rule. geo: basic routing. perf: intelligent routing.
-     * 
+     *
      */
     public Optional<Output<String>> policyType() {
         return Optional.ofNullable(this.policyType);
@@ -127,36 +127,46 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Address pool set effective mode. auto: Automatically sets the effective address pool set. The highest-priority available address pool becomes effective automatically. If all address pools are unavailable, the highest-priority address pool becomes effective. manual: Manually sets the effective address pool set. In this mode, you need to set the index of the effective address pool set in the EffectivePoolSetIndex parameter.
-     * 
+     *
      */
     @Import(name="poolSetMode")
     private @Nullable Output<String> poolSetMode;
 
     /**
      * @return Address pool set effective mode. auto: Automatically sets the effective address pool set. The highest-priority available address pool becomes effective automatically. If all address pools are unavailable, the highest-priority address pool becomes effective. manual: Manually sets the effective address pool set. In this mode, you need to set the index of the effective address pool set in the EffectivePoolSetIndex parameter.
-     * 
+     *
      */
     public Optional<Output<String>> poolSetMode() {
         return Optional.ofNullable(this.poolSetMode);
     }
 
+    /**
+     * Address pool collection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="poolSets")
     private @Nullable Output<List<RulePoolSetArgs>> poolSets;
 
+    /**
+     * @return Address pool collection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RulePoolSetArgs>>> poolSets() {
         return Optional.ofNullable(this.poolSets);
     }
 
     /**
      * Health check parameters for the route rule.
-     * 
+     *
      */
     @Import(name="probe")
     private @Nullable Output<RuleProbeArgs> probe;
 
     /**
      * @return Health check parameters for the route rule.
-     * 
+     *
      */
     public Optional<Output<RuleProbeArgs>> probe() {
         return Optional.ofNullable(this.probe);
@@ -164,14 +174,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Health check mode.
-     * 
+     *
      */
     @Import(name="probeMode")
     private @Nullable Output<String> probeMode;
 
     /**
      * @return Health check mode.
-     * 
+     *
      */
     public Optional<Output<String>> probeMode() {
         return Optional.ofNullable(this.probeMode);
@@ -179,14 +189,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route rule remarks.
-     * 
+     *
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Route rule remarks.
-     * 
+     *
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
@@ -194,14 +204,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Routing rule ID.
-     * 
+     *
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
      * @return Routing rule ID.
-     * 
+     *
      */
     public Optional<Output<String>> ruleId() {
         return Optional.ofNullable(this.ruleId);
@@ -209,14 +219,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route rule update time.
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Route rule update time.
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -224,14 +234,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to inherit instance-level health check nodes.
-     * 
+     *
      */
     @Import(name="usePolicyProbeNodes")
     private @Nullable Output<Boolean> usePolicyProbeNodes;
 
     /**
      * @return Whether to inherit instance-level health check nodes.
-     * 
+     *
      */
     public Optional<Output<Boolean>> usePolicyProbeNodes() {
         return Optional.ofNullable(this.usePolicyProbeNodes);
@@ -239,14 +249,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to use route rule-level probe configuration.
-     * 
+     *
      */
     @Import(name="useRuleProbeConfig")
     private @Nullable Output<Boolean> useRuleProbeConfig;
 
     /**
      * @return Whether to use route rule-level probe configuration.
-     * 
+     *
      */
     public Optional<Output<Boolean>> useRuleProbeConfig() {
         return Optional.ofNullable(this.useRuleProbeConfig);
@@ -254,14 +264,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Routing rule weight.
-     * 
+     *
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
      * @return Routing rule weight.
-     * 
+     *
      */
     public Optional<Output<Integer>> weight() {
         return Optional.ofNullable(this.weight);
@@ -309,9 +319,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Route rule creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -320,9 +330,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Route rule creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -330,9 +340,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param disable Whether this route rule is disabled. true: The route rule is disabled. false: The route rule is enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder disable(@Nullable Output<Boolean> disable) {
             $.disable = disable;
@@ -341,9 +351,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param disable Whether this route rule is disabled. true: The route rule is disabled. false: The route rule is enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder disable(Boolean disable) {
             return disable(Output.of(disable));
@@ -351,9 +361,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param effectivePoolSetIndex Index of the effective address pool set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder effectivePoolSetIndex(@Nullable Output<Integer> effectivePoolSetIndex) {
             $.effectivePoolSetIndex = effectivePoolSetIndex;
@@ -362,9 +372,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param effectivePoolSetIndex Index of the effective address pool set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder effectivePoolSetIndex(Integer effectivePoolSetIndex) {
             return effectivePoolSetIndex(Output.of(effectivePoolSetIndex));
@@ -372,9 +382,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gtmId UUID of the GTM instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder gtmId(@Nullable Output<String> gtmId) {
             $.gtmId = gtmId;
@@ -383,9 +393,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gtmId UUID of the GTM instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder gtmId(String gtmId) {
             return gtmId(Output.of(gtmId));
@@ -393,9 +403,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line Route rule applicable lines.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder line(@Nullable Output<String> line) {
             $.line = line;
@@ -404,9 +414,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line Route rule applicable lines.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder line(String line) {
             return line(Output.of(line));
@@ -414,9 +424,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Route rule name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -425,9 +435,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Route rule name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -435,9 +445,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyType The policy type corresponding to the routing rule. geo: basic routing. perf: intelligent routing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyType(@Nullable Output<String> policyType) {
             $.policyType = policyType;
@@ -446,9 +456,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param policyType The policy type corresponding to the routing rule. geo: basic routing. perf: intelligent routing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyType(String policyType) {
             return policyType(Output.of(policyType));
@@ -456,9 +466,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param poolSetMode Address pool set effective mode. auto: Automatically sets the effective address pool set. The highest-priority available address pool becomes effective automatically. If all address pools are unavailable, the highest-priority address pool becomes effective. manual: Manually sets the effective address pool set. In this mode, you need to set the index of the effective address pool set in the EffectivePoolSetIndex parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder poolSetMode(@Nullable Output<String> poolSetMode) {
             $.poolSetMode = poolSetMode;
@@ -467,32 +477,53 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param poolSetMode Address pool set effective mode. auto: Automatically sets the effective address pool set. The highest-priority available address pool becomes effective automatically. If all address pools are unavailable, the highest-priority address pool becomes effective. manual: Manually sets the effective address pool set. In this mode, you need to set the index of the effective address pool set in the EffectivePoolSetIndex parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder poolSetMode(String poolSetMode) {
             return poolSetMode(Output.of(poolSetMode));
         }
 
+        /**
+         * @param poolSets Address pool collection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder poolSets(@Nullable Output<List<RulePoolSetArgs>> poolSets) {
             $.poolSets = poolSets;
             return this;
         }
 
+        /**
+         * @param poolSets Address pool collection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder poolSets(List<RulePoolSetArgs> poolSets) {
             return poolSets(Output.of(poolSets));
         }
 
+        /**
+         * @param poolSets Address pool collection list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder poolSets(RulePoolSetArgs... poolSets) {
             return poolSets(List.of(poolSets));
         }
 
         /**
          * @param probe Health check parameters for the route rule.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder probe(@Nullable Output<RuleProbeArgs> probe) {
             $.probe = probe;
@@ -501,9 +532,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param probe Health check parameters for the route rule.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder probe(RuleProbeArgs probe) {
             return probe(Output.of(probe));
@@ -511,9 +542,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param probeMode Health check mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder probeMode(@Nullable Output<String> probeMode) {
             $.probeMode = probeMode;
@@ -522,9 +553,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param probeMode Health check mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder probeMode(String probeMode) {
             return probeMode(Output.of(probeMode));
@@ -532,9 +563,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Route rule remarks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -543,9 +574,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Route rule remarks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
@@ -553,9 +584,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId Routing rule ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleId(@Nullable Output<String> ruleId) {
             $.ruleId = ruleId;
@@ -564,9 +595,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId Routing rule ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleId(String ruleId) {
             return ruleId(Output.of(ruleId));
@@ -574,9 +605,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Route rule update time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -585,9 +616,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Route rule update time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -595,9 +626,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param usePolicyProbeNodes Whether to inherit instance-level health check nodes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usePolicyProbeNodes(@Nullable Output<Boolean> usePolicyProbeNodes) {
             $.usePolicyProbeNodes = usePolicyProbeNodes;
@@ -606,9 +637,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param usePolicyProbeNodes Whether to inherit instance-level health check nodes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usePolicyProbeNodes(Boolean usePolicyProbeNodes) {
             return usePolicyProbeNodes(Output.of(usePolicyProbeNodes));
@@ -616,9 +647,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param useRuleProbeConfig Whether to use route rule-level probe configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder useRuleProbeConfig(@Nullable Output<Boolean> useRuleProbeConfig) {
             $.useRuleProbeConfig = useRuleProbeConfig;
@@ -627,9 +658,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param useRuleProbeConfig Whether to use route rule-level probe configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder useRuleProbeConfig(Boolean useRuleProbeConfig) {
             return useRuleProbeConfig(Output.of(useRuleProbeConfig));
@@ -637,9 +668,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight Routing rule weight.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder weight(@Nullable Output<Integer> weight) {
             $.weight = weight;
@@ -648,9 +679,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight Routing rule weight.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder weight(Integer weight) {
             return weight(Output.of(weight));

@@ -17,161 +17,161 @@ import javax.annotation.Nullable;
 
 /**
  * Instance SSL configuration.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.rdspostgresql.InstanceSsl;
  * import com.byteplus.bytepluscc.rdspostgresql.InstanceSslArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var rDSPostgreSQLInstanceSSLDemo = new InstanceSsl("rDSPostgreSQLInstanceSSLDemo", InstanceSslArgs.builder()
  *             .reloadSslCertificate(true)
  *             .instanceId("postgres-60xxxx5ed9")
  *             .forceEncryption(true)
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdspostgresql/instanceSsl:InstanceSsl example &#34;instance_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdspostgresql/instanceSsl:InstanceSsl")
 public class InstanceSsl extends com.pulumi.resources.CustomResource {
     /**
      * Protected address.
-     * 
+     *
      */
     @Export(name="addresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> addresses;
 
     /**
      * @return Protected address.
-     * 
+     *
      */
     public Output<List<String>> addresses() {
         return this.addresses;
     }
     /**
      * Is force encryption enabled? Value: true: Yes. false: No.
-     * 
+     *
      */
     @Export(name="forceEncryption", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> forceEncryption;
 
     /**
      * @return Is force encryption enabled? Value: true: Yes. false: No.
-     * 
+     *
      */
     public Output<Boolean> forceEncryption() {
         return this.forceEncryption;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Is the SSL certificate valid? Value: true: Yes. false: No.
-     * 
+     *
      */
     @Export(name="isValid", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isValid;
 
     /**
      * @return Is the SSL certificate valid? Value: true: Yes. false: No.
-     * 
+     *
      */
     public Output<Boolean> isValid() {
         return this.isValid;
     }
     /**
      * If set to true, the SSL certificate validity period will be updated.
-     * 
+     *
      */
     @Export(name="reloadSslCertificate", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> reloadSslCertificate;
 
     /**
      * @return If set to true, the SSL certificate validity period will be updated.
-     * 
+     *
      */
     public Output<Boolean> reloadSslCertificate() {
         return this.reloadSslCertificate;
     }
     /**
      * Is SSL functionality enabled? Value: true: Yes. false: No.
-     * 
+     *
      */
     @Export(name="sslEnable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sslEnable;
 
     /**
      * @return Is SSL functionality enabled? Value: true: Yes. false: No.
-     * 
+     *
      */
     public Output<Boolean> sslEnable() {
         return this.sslEnable;
     }
     /**
      * SSL certificate expiration time. Format: yyyy-MM-ddTHH:mm:ss (UTC).
-     * 
+     *
      */
     @Export(name="sslExpireTime", refs={String.class}, tree="[0]")
     private Output<String> sslExpireTime;
 
     /**
      * @return SSL certificate expiration time. Format: yyyy-MM-ddTHH:mm:ss (UTC).
-     * 
+     *
      */
     public Output<String> sslExpireTime() {
         return this.sslExpireTime;
     }
     /**
      * Supported TLS versions.
-     * 
+     *
      */
     @Export(name="tlsVersions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> tlsVersions;
 
     /**
      * @return Supported TLS versions.
-     * 
+     *
      */
     public Output<List<String>> tlsVersions() {
         return this.tlsVersions;

@@ -15,19 +15,29 @@ import javax.annotation.Nullable;
 public final class ClusterLoggingConfig {
     /**
      * @return Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
-     * 
+     *
      */
     private @Nullable String logProjectId;
+    /**
+     * @return Cluster log option information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<ClusterLoggingConfigLogSetup> logSetups;
 
     private ClusterLoggingConfig() {}
     /**
      * @return Cluster log project (Log Project) ID. If empty, the cluster log project has not been created.
-     * 
+     *
      */
     public Optional<String> logProjectId() {
         return Optional.ofNullable(this.logProjectId);
     }
+    /**
+     * @return Cluster log option information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<ClusterLoggingConfigLogSetup> logSetups() {
         return this.logSetups == null ? List.of() : this.logSetups;
     }

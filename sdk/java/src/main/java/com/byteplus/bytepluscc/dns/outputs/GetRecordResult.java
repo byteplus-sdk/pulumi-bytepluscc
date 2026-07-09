@@ -15,218 +15,218 @@ import java.util.Objects;
 public final class GetRecordResult {
     /**
      * @return Creation time of the DNS record.
-     * 
+     *
      */
     private String createdAt;
     /**
      * @return Whether the DNS record is enabled; if disabled, the record is inactive.
-     * 
+     *
      */
     private Boolean enable;
     /**
      * @return Host name included in the DNS record, using FQDN (Fully Qualified Domain Name) format; this field is deprecated.
-     * 
+     *
      */
     private String fqdn;
     /**
      * @return Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-     * 
+     *
      */
     private String host;
     /**
      * @return Uniquely identifies the resource.
-     * 
+     *
      */
     private String id;
     /**
-     * @return Line code corresponding to the DNS record, such as `default`.
-     * 
+     * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
+     *
      */
     private String line;
     /**
      * @return List of account IDs that recently operated on this DNS record.
-     * 
+     *
      */
     private List<String> operators;
     /**
      * @return Host name included in the DNS record, using PQDN (Partially Qualified Domain Name) format.
-     * 
+     *
      */
     private String pqdn;
     /**
      * @return Unique ID of the DNS record.
-     * 
+     *
      */
     private String recordId;
     /**
      * @return ID of the record set containing the DNS record; returned only for A, AAAA, and CNAME types.
-     * 
+     *
      */
     private String recordSetId;
     /**
      * @return Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-     * 
+     *
      */
     private String remark;
     /**
      * @return Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-     * 
+     *
      */
     private List<String> tags;
     /**
      * @return Expiration time of the DNS record, in seconds.
-     * 
+     *
      */
     private Integer ttl;
     /**
      * @return Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-     * 
+     *
      */
     private String type;
     /**
      * @return Last updated time of the DNS record.
-     * 
+     *
      */
     private String updatedAt;
     /**
      * @return Record value of the DNS record.
-     * 
+     *
      */
     private String value;
     /**
      * @return Weight of the DNS record, effective only when load balancing is enabled for the record set.
-     * 
+     *
      */
     private Integer weight;
     /**
      * @return Domain name ID, can be obtained via interfaces such as `ListZones`.
-     * 
+     *
      */
     private String zid;
 
     private GetRecordResult() {}
     /**
      * @return Creation time of the DNS record.
-     * 
+     *
      */
     public String createdAt() {
         return this.createdAt;
     }
     /**
      * @return Whether the DNS record is enabled; if disabled, the record is inactive.
-     * 
+     *
      */
     public Boolean enable() {
         return this.enable;
     }
     /**
      * @return Host name included in the DNS record, using FQDN (Fully Qualified Domain Name) format; this field is deprecated.
-     * 
+     *
      */
     public String fqdn() {
         return this.fqdn;
     }
     /**
      * @return Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-     * 
+     *
      */
     public String host() {
         return this.host;
     }
     /**
      * @return Uniquely identifies the resource.
-     * 
+     *
      */
     public String id() {
         return this.id;
     }
     /**
-     * @return Line code corresponding to the DNS record, such as `default`.
-     * 
+     * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
+     *
      */
     public String line() {
         return this.line;
     }
     /**
      * @return List of account IDs that recently operated on this DNS record.
-     * 
+     *
      */
     public List<String> operators() {
         return this.operators;
     }
     /**
      * @return Host name included in the DNS record, using PQDN (Partially Qualified Domain Name) format.
-     * 
+     *
      */
     public String pqdn() {
         return this.pqdn;
     }
     /**
      * @return Unique ID of the DNS record.
-     * 
+     *
      */
     public String recordId() {
         return this.recordId;
     }
     /**
      * @return ID of the record set containing the DNS record; returned only for A, AAAA, and CNAME types.
-     * 
+     *
      */
     public String recordSetId() {
         return this.recordSetId;
     }
     /**
      * @return Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-     * 
+     *
      */
     public String remark() {
         return this.remark;
     }
     /**
      * @return Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-     * 
+     *
      */
     public List<String> tags() {
         return this.tags;
     }
     /**
      * @return Expiration time of the DNS record, in seconds.
-     * 
+     *
      */
     public Integer ttl() {
         return this.ttl;
     }
     /**
      * @return Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-     * 
+     *
      */
     public String type() {
         return this.type;
     }
     /**
      * @return Last updated time of the DNS record.
-     * 
+     *
      */
     public String updatedAt() {
         return this.updatedAt;
     }
     /**
      * @return Record value of the DNS record.
-     * 
+     *
      */
     public String value() {
         return this.value;
     }
     /**
      * @return Weight of the DNS record, effective only when load balancing is enabled for the record set.
-     * 
+     *
      */
     public Integer weight() {
         return this.weight;
     }
     /**
      * @return Domain name ID, can be obtained via interfaces such as `ListZones`.
-     * 
+     *
      */
     public String zid() {
         return this.zid;

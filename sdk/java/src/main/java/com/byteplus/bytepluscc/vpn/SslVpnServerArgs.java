@@ -22,14 +22,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Authentication algorithm for the SSL server. SHA1 (default), MD5, None (no encryption).
-     * 
+     *
      */
     @Import(name="auth")
     private @Nullable Output<String> auth;
 
     /**
      * @return Authentication algorithm for the SSL server. SHA1 (default), MD5, None (no encryption).
-     * 
+     *
      */
     public Optional<Output<String>> auth() {
         return Optional.ofNullable(this.auth);
@@ -37,14 +37,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Encryption algorithm for the SSL server. AES-128-CBC (default) AES-192-CBC AES-256-CBC None (no encryption).
-     * 
+     *
      */
     @Import(name="cipher")
     private @Nullable Output<String> cipher;
 
     /**
      * @return Encryption algorithm for the SSL server. AES-128-CBC (default) AES-192-CBC AES-256-CBC None (no encryption).
-     * 
+     *
      */
     public Optional<Output<String>> cipher() {
         return Optional.ofNullable(this.cipher);
@@ -52,14 +52,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Session policy for client certificates. AllowConcurrent: Reuse supported. PreemptExisting: Reuse not supported.
-     * 
+     *
      */
     @Import(name="clientCertSessionPolicy")
     private @Nullable Output<String> clientCertSessionPolicy;
 
     /**
      * @return Session policy for client certificates. AllowConcurrent: Reuse supported. PreemptExisting: Reuse not supported.
-     * 
+     *
      */
     public Optional<Output<String>> clientCertSessionPolicy() {
         return Optional.ofNullable(this.clientCertSessionPolicy);
@@ -67,14 +67,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SSL client address pool. In SSL VPN, the client address pool is the address range assigned to the client&#39;s virtual network interface, not the client&#39;s existing internal network segment. Client address pool mask range: /16 to /28. The client address pool must not conflict with the LocalSubnet or IPSec connection routes. The client address pool must not overlap with 100.64.0.0/10, 169.254.0.0/16, 127.0.0.0/8, 224.0.0.0/4, or 240.0.0.0/4. The number of available IPs in the client address pool must be greater than four times the number of SSL connections selected when creating the VPN gateway. For example, if the number of SSL connections is 10, the client address pool must have more than 40 available IPs.
-     * 
+     *
      */
     @Import(name="clientIpPool", required=true)
     private Output<String> clientIpPool;
 
     /**
      * @return SSL client address pool. In SSL VPN, the client address pool is the address range assigned to the client&#39;s virtual network interface, not the client&#39;s existing internal network segment. Client address pool mask range: /16 to /28. The client address pool must not conflict with the LocalSubnet or IPSec connection routes. The client address pool must not overlap with 100.64.0.0/10, 169.254.0.0/16, 127.0.0.0/8, 224.0.0.0/4, or 240.0.0.0/4. The number of available IPs in the client address pool must be greater than four times the number of SSL connections selected when creating the VPN gateway. For example, if the number of SSL connections is 10, the client address pool must have more than 40 available IPs.
-     * 
+     *
      */
     public Output<String> clientIpPool() {
         return this.clientIpPool;
@@ -82,14 +82,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to compress transmitted data. true: Enable compression for communication. false (default): Do not compress communication.
-     * 
+     *
      */
     @Import(name="compress")
     private @Nullable Output<Boolean> compress;
 
     /**
      * @return Whether to compress transmitted data. true: Enable compression for communication. false (default): Do not compress communication.
-     * 
+     *
      */
     public Optional<Output<Boolean>> compress() {
         return Optional.ofNullable(this.compress);
@@ -97,14 +97,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), spaces ( ), underscores (_), hyphens (-), equals signs (=), English commas (,), Chinese commas (，), and Chinese periods (。). Length: 0 to 255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), spaces ( ), underscores (_), hyphens (-), equals signs (=), English commas (,), Chinese commas (，), and Chinese periods (。). Length: 0 to 255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -112,14 +112,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Local subnet of the SSL server. The local subnet is the address range accessed by clients through the SSL VPN connection. Note: Up to 5 local subnets can be specified, and they must not conflict with the ClientIpPool.
-     * 
+     *
      */
     @Import(name="localSubnets", required=true)
     private Output<List<String>> localSubnets;
 
     /**
      * @return Local subnet of the SSL server. The local subnet is the address range accessed by clients through the SSL VPN connection. Note: Up to 5 local subnets can be specified, and they must not conflict with the ClientIpPool.
-     * 
+     *
      */
     public Output<List<String>> localSubnets() {
         return this.localSubnets;
@@ -127,14 +127,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port used by the SSL server. Default: 1194. Valid port range: 1 ~ 65535. The following ports are not supported: 22, 68, 179, 323, 500, 4500.
-     * 
+     *
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
      * @return Port used by the SSL server. Default: 1194. Valid port range: 1 ~ 65535. The following ports are not supported: 22, 68, 179, 323, 500, 4500.
-     * 
+     *
      */
     public Optional<Output<Integer>> port() {
         return Optional.ofNullable(this.port);
@@ -142,14 +142,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the SSL server belongs. If left blank, the default is default, meaning the created resource belongs to the default project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the SSL server belongs. If left blank, the default is default, meaning the created resource belongs to the default project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -157,14 +157,14 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Protocol used by the SSL server. Options: TCP (default): TCP protocol. UDP: UDP protocol.
-     * 
+     *
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
      * @return Protocol used by the SSL server. Options: TCP (default): TCP protocol. UDP: UDP protocol.
-     * 
+     *
      */
     public Optional<Output<String>> protocol() {
         return Optional.ofNullable(this.protocol);
@@ -172,36 +172,46 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1 to 128 characters. If not specified, defaults to the SSL server ID.
-     * 
+     *
      */
     @Import(name="sslVpnServerName")
     private @Nullable Output<String> sslVpnServerName;
 
     /**
      * @return Name of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1 to 128 characters. If not specified, defaults to the SSL server ID.
-     * 
+     *
      */
     public Optional<Output<String>> sslVpnServerName() {
         return Optional.ofNullable(this.sslVpnServerName);
     }
 
+    /**
+     * Tags for the SSL server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<SslVpnServerTagArgs>> tags;
 
+    /**
+     * @return Tags for the SSL server.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<SslVpnServerTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * ID of the VPN gateway used by the SSL server.
-     * 
+     *
      */
     @Import(name="vpnGatewayId", required=true)
     private Output<String> vpnGatewayId;
 
     /**
      * @return ID of the VPN gateway used by the SSL server.
-     * 
+     *
      */
     public Output<String> vpnGatewayId() {
         return this.vpnGatewayId;
@@ -245,9 +255,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param auth Authentication algorithm for the SSL server. SHA1 (default), MD5, None (no encryption).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder auth(@Nullable Output<String> auth) {
             $.auth = auth;
@@ -256,9 +266,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param auth Authentication algorithm for the SSL server. SHA1 (default), MD5, None (no encryption).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder auth(String auth) {
             return auth(Output.of(auth));
@@ -266,9 +276,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cipher Encryption algorithm for the SSL server. AES-128-CBC (default) AES-192-CBC AES-256-CBC None (no encryption).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cipher(@Nullable Output<String> cipher) {
             $.cipher = cipher;
@@ -277,9 +287,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cipher Encryption algorithm for the SSL server. AES-128-CBC (default) AES-192-CBC AES-256-CBC None (no encryption).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cipher(String cipher) {
             return cipher(Output.of(cipher));
@@ -287,9 +297,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientCertSessionPolicy Session policy for client certificates. AllowConcurrent: Reuse supported. PreemptExisting: Reuse not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clientCertSessionPolicy(@Nullable Output<String> clientCertSessionPolicy) {
             $.clientCertSessionPolicy = clientCertSessionPolicy;
@@ -298,9 +308,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientCertSessionPolicy Session policy for client certificates. AllowConcurrent: Reuse supported. PreemptExisting: Reuse not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clientCertSessionPolicy(String clientCertSessionPolicy) {
             return clientCertSessionPolicy(Output.of(clientCertSessionPolicy));
@@ -308,9 +318,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientIpPool SSL client address pool. In SSL VPN, the client address pool is the address range assigned to the client&#39;s virtual network interface, not the client&#39;s existing internal network segment. Client address pool mask range: /16 to /28. The client address pool must not conflict with the LocalSubnet or IPSec connection routes. The client address pool must not overlap with 100.64.0.0/10, 169.254.0.0/16, 127.0.0.0/8, 224.0.0.0/4, or 240.0.0.0/4. The number of available IPs in the client address pool must be greater than four times the number of SSL connections selected when creating the VPN gateway. For example, if the number of SSL connections is 10, the client address pool must have more than 40 available IPs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clientIpPool(Output<String> clientIpPool) {
             $.clientIpPool = clientIpPool;
@@ -319,9 +329,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientIpPool SSL client address pool. In SSL VPN, the client address pool is the address range assigned to the client&#39;s virtual network interface, not the client&#39;s existing internal network segment. Client address pool mask range: /16 to /28. The client address pool must not conflict with the LocalSubnet or IPSec connection routes. The client address pool must not overlap with 100.64.0.0/10, 169.254.0.0/16, 127.0.0.0/8, 224.0.0.0/4, or 240.0.0.0/4. The number of available IPs in the client address pool must be greater than four times the number of SSL connections selected when creating the VPN gateway. For example, if the number of SSL connections is 10, the client address pool must have more than 40 available IPs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clientIpPool(String clientIpPool) {
             return clientIpPool(Output.of(clientIpPool));
@@ -329,9 +339,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param compress Whether to compress transmitted data. true: Enable compression for communication. false (default): Do not compress communication.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder compress(@Nullable Output<Boolean> compress) {
             $.compress = compress;
@@ -340,9 +350,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param compress Whether to compress transmitted data. true: Enable compression for communication. false (default): Do not compress communication.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder compress(Boolean compress) {
             return compress(Output.of(compress));
@@ -350,9 +360,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), spaces ( ), underscores (_), hyphens (-), equals signs (=), English commas (,), Chinese commas (，), and Chinese periods (。). Length: 0 to 255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -361,9 +371,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), spaces ( ), underscores (_), hyphens (-), equals signs (=), English commas (,), Chinese commas (，), and Chinese periods (。). Length: 0 to 255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -371,9 +381,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param localSubnets Local subnet of the SSL server. The local subnet is the address range accessed by clients through the SSL VPN connection. Note: Up to 5 local subnets can be specified, and they must not conflict with the ClientIpPool.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localSubnets(Output<List<String>> localSubnets) {
             $.localSubnets = localSubnets;
@@ -382,9 +392,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param localSubnets Local subnet of the SSL server. The local subnet is the address range accessed by clients through the SSL VPN connection. Note: Up to 5 local subnets can be specified, and they must not conflict with the ClientIpPool.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localSubnets(List<String> localSubnets) {
             return localSubnets(Output.of(localSubnets));
@@ -392,9 +402,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param localSubnets Local subnet of the SSL server. The local subnet is the address range accessed by clients through the SSL VPN connection. Note: Up to 5 local subnets can be specified, and they must not conflict with the ClientIpPool.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localSubnets(String... localSubnets) {
             return localSubnets(List.of(localSubnets));
@@ -402,9 +412,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port used by the SSL server. Default: 1194. Valid port range: 1 ~ 65535. The following ports are not supported: 22, 68, 179, 323, 500, 4500.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(@Nullable Output<Integer> port) {
             $.port = port;
@@ -413,9 +423,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port used by the SSL server. Default: 1194. Valid port range: 1 ~ 65535. The following ports are not supported: 22, 68, 179, 323, 500, 4500.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
@@ -423,9 +433,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the SSL server belongs. If left blank, the default is default, meaning the created resource belongs to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -434,9 +444,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the SSL server belongs. If left blank, the default is default, meaning the created resource belongs to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -444,9 +454,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Protocol used by the SSL server. Options: TCP (default): TCP protocol. UDP: UDP protocol.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocol(@Nullable Output<String> protocol) {
             $.protocol = protocol;
@@ -455,9 +465,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Protocol used by the SSL server. Options: TCP (default): TCP protocol. UDP: UDP protocol.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -465,9 +475,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslVpnServerName Name of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1 to 128 characters. If not specified, defaults to the SSL server ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sslVpnServerName(@Nullable Output<String> sslVpnServerName) {
             $.sslVpnServerName = sslVpnServerName;
@@ -476,32 +486,53 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslVpnServerName Name of the SSL server to be created. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1 to 128 characters. If not specified, defaults to the SSL server ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sslVpnServerName(String sslVpnServerName) {
             return sslVpnServerName(Output.of(sslVpnServerName));
         }
 
+        /**
+         * @param tags Tags for the SSL server.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<SslVpnServerTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags for the SSL server.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<SslVpnServerTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags for the SSL server.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(SslVpnServerTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpnGatewayId ID of the VPN gateway used by the SSL server.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpnGatewayId(Output<String> vpnGatewayId) {
             $.vpnGatewayId = vpnGatewayId;
@@ -510,9 +541,9 @@ public final class SslVpnServerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpnGatewayId ID of the VPN gateway used by the SSL server.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpnGatewayId(String vpnGatewayId) {
             return vpnGatewayId(Output.of(vpnGatewayId));

@@ -18,23 +18,33 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     public static final DeploymentSetState Empty = new DeploymentSetState();
 
+    /**
+     * Instance launch template version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="capacities")
     private @Nullable Output<List<DeploymentSetCapacityArgs>> capacities;
 
+    /**
+     * @return Instance launch template version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DeploymentSetCapacityArgs>>> capacities() {
         return Optional.ofNullable(this.capacities);
     }
 
     /**
      * Deployment set creation time.
-     * 
+     *
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Deployment set creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -42,14 +52,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Deployment set group index. Value range: 1–7.
-     * 
+     *
      */
     @Import(name="deploymentSetGroupNumber")
     private @Nullable Output<Integer> deploymentSetGroupNumber;
 
     /**
      * @return Deployment set group index. Value range: 1–7.
-     * 
+     *
      */
     public Optional<Output<Integer>> deploymentSetGroupNumber() {
         return Optional.ofNullable(this.deploymentSetGroupNumber);
@@ -57,14 +67,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Deployment set ID.
-     * 
+     *
      */
     @Import(name="deploymentSetId")
     private @Nullable Output<String> deploymentSetId;
 
     /**
      * @return Deployment set ID.
-     * 
+     *
      */
     public Optional<Output<String>> deploymentSetId() {
         return Optional.ofNullable(this.deploymentSetId);
@@ -72,14 +82,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
-     * 
+     *
      */
     @Import(name="deploymentSetName")
     private @Nullable Output<String> deploymentSetName;
 
     /**
      * @return Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> deploymentSetName() {
         return Optional.ofNullable(this.deploymentSetName);
@@ -87,14 +97,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -102,14 +112,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
-     * 
+     *
      */
     @Import(name="granularity")
     private @Nullable Output<String> granularity;
 
     /**
      * @return Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
-     * 
+     *
      */
     public Optional<Output<String>> granularity() {
         return Optional.ofNullable(this.granularity);
@@ -117,14 +127,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
-     * 
+     *
      */
     @Import(name="groupCount")
     private @Nullable Output<Integer> groupCount;
 
     /**
      * @return Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
-     * 
+     *
      */
     public Optional<Output<Integer>> groupCount() {
         return Optional.ofNullable(this.groupCount);
@@ -132,14 +142,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Number of ECS instances in the deployment set.
-     * 
+     *
      */
     @Import(name="instanceAmount")
     private @Nullable Output<Integer> instanceAmount;
 
     /**
      * @return Number of ECS instances in the deployment set.
-     * 
+     *
      */
     public Optional<Output<Integer>> instanceAmount() {
         return Optional.ofNullable(this.instanceAmount);
@@ -147,14 +157,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * List of ECS instance IDs in the deployment set.
-     * 
+     *
      */
     @Import(name="instanceIds")
     private @Nullable Output<List<String>> instanceIds;
 
     /**
      * @return List of ECS instance IDs in the deployment set.
-     * 
+     *
      */
     public Optional<Output<List<String>>> instanceIds() {
         return Optional.ofNullable(this.instanceIds);
@@ -162,14 +172,14 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
-     * 
+     *
      */
     @Import(name="strategy")
     private @Nullable Output<String> strategy;
 
     /**
      * @return Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
-     * 
+     *
      */
     public Optional<Output<String>> strategy() {
         return Optional.ofNullable(this.strategy);
@@ -209,24 +219,45 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
             $ = new DeploymentSetState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param capacities Instance launch template version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder capacities(@Nullable Output<List<DeploymentSetCapacityArgs>> capacities) {
             $.capacities = capacities;
             return this;
         }
 
+        /**
+         * @param capacities Instance launch template version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder capacities(List<DeploymentSetCapacityArgs> capacities) {
             return capacities(Output.of(capacities));
         }
 
+        /**
+         * @param capacities Instance launch template version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder capacities(DeploymentSetCapacityArgs... capacities) {
             return capacities(List.of(capacities));
         }
 
         /**
          * @param createdAt Deployment set creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -235,9 +266,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdAt Deployment set creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -245,9 +276,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param deploymentSetGroupNumber Deployment set group index. Value range: 1–7.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetGroupNumber(@Nullable Output<Integer> deploymentSetGroupNumber) {
             $.deploymentSetGroupNumber = deploymentSetGroupNumber;
@@ -256,9 +287,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param deploymentSetGroupNumber Deployment set group index. Value range: 1–7.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetGroupNumber(Integer deploymentSetGroupNumber) {
             return deploymentSetGroupNumber(Output.of(deploymentSetGroupNumber));
@@ -266,9 +297,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param deploymentSetId Deployment set ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetId(@Nullable Output<String> deploymentSetId) {
             $.deploymentSetId = deploymentSetId;
@@ -277,9 +308,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param deploymentSetId Deployment set ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetId(String deploymentSetId) {
             return deploymentSetId(Output.of(deploymentSetId));
@@ -287,9 +318,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param deploymentSetName Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetName(@Nullable Output<String> deploymentSetName) {
             $.deploymentSetName = deploymentSetName;
@@ -298,9 +329,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param deploymentSetName Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetName(String deploymentSetName) {
             return deploymentSetName(Output.of(deploymentSetName));
@@ -308,9 +339,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -319,9 +350,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -329,9 +360,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param granularity Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder granularity(@Nullable Output<String> granularity) {
             $.granularity = granularity;
@@ -340,9 +371,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param granularity Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder granularity(String granularity) {
             return granularity(Output.of(granularity));
@@ -350,9 +381,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param groupCount Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groupCount(@Nullable Output<Integer> groupCount) {
             $.groupCount = groupCount;
@@ -361,9 +392,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param groupCount Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groupCount(Integer groupCount) {
             return groupCount(Output.of(groupCount));
@@ -371,9 +402,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceAmount Number of ECS instances in the deployment set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceAmount(@Nullable Output<Integer> instanceAmount) {
             $.instanceAmount = instanceAmount;
@@ -382,9 +413,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceAmount Number of ECS instances in the deployment set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceAmount(Integer instanceAmount) {
             return instanceAmount(Output.of(instanceAmount));
@@ -392,9 +423,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceIds List of ECS instance IDs in the deployment set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(@Nullable Output<List<String>> instanceIds) {
             $.instanceIds = instanceIds;
@@ -403,9 +434,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceIds List of ECS instance IDs in the deployment set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(List<String> instanceIds) {
             return instanceIds(Output.of(instanceIds));
@@ -413,9 +444,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceIds List of ECS instance IDs in the deployment set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(String... instanceIds) {
             return instanceIds(List.of(instanceIds));
@@ -423,9 +454,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param strategy Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder strategy(@Nullable Output<String> strategy) {
             $.strategy = strategy;
@@ -434,9 +465,9 @@ public final class DeploymentSetState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param strategy Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder strategy(String strategy) {
             return strategy(Output.of(strategy));

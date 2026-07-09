@@ -24,14 +24,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node pool scaling policy configuration.
-     * 
+     *
      */
     @Import(name="autoScaling")
     private @Nullable Output<NodePoolAutoScalingArgs> autoScaling;
 
     /**
      * @return Node pool scaling policy configuration.
-     * 
+     *
      */
     public Optional<Output<NodePoolAutoScalingArgs>> autoScaling() {
         return Optional.ofNullable(this.autoScaling);
@@ -39,14 +39,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the cluster where the node pool is located
-     * 
+     *
      */
     @Import(name="clusterId", required=true)
     private Output<String> clusterId;
 
     /**
      * @return ID of the cluster where the node pool is located
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
@@ -54,14 +54,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kubernetes-related configuration for the node pool
-     * 
+     *
      */
     @Import(name="kubernetesConfig")
     private @Nullable Output<NodePoolKubernetesConfigArgs> kubernetesConfig;
 
     /**
      * @return Kubernetes-related configuration for the node pool
-     * 
+     *
      */
     public Optional<Output<NodePoolKubernetesConfigArgs>> kubernetesConfig() {
         return Optional.ofNullable(this.kubernetesConfig);
@@ -69,14 +69,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Managed node pool configuration
-     * 
+     *
      */
     @Import(name="management")
     private @Nullable Output<NodePoolManagementArgs> management;
 
     /**
      * @return Managed node pool configuration
-     * 
+     *
      */
     public Optional<Output<NodePoolManagementArgs>> management() {
         return Optional.ofNullable(this.management);
@@ -84,14 +84,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -99,14 +99,14 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud server (ECS) instance configuration in the node pool
-     * 
+     *
      */
     @Import(name="nodeConfig")
     private @Nullable Output<NodePoolNodeConfigArgs> nodeConfig;
 
     /**
      * @return Cloud server (ECS) instance configuration in the node pool
-     * 
+     *
      */
     public Optional<Output<NodePoolNodeConfigArgs>> nodeConfig() {
         return Optional.ofNullable(this.nodeConfig);
@@ -114,22 +114,32 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-     * 
+     *
      */
     @Import(name="retainResources")
     private @Nullable Output<List<String>> retainResources;
 
     /**
      * @return When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-     * 
+     *
      */
     public Optional<Output<List<String>>> retainResources() {
         return Optional.ofNullable(this.retainResources);
     }
 
+    /**
+     * Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<NodePoolTagArgs>> tags;
 
+    /**
+     * @return Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NodePoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -167,9 +177,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoScaling Node pool scaling policy configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoScaling(@Nullable Output<NodePoolAutoScalingArgs> autoScaling) {
             $.autoScaling = autoScaling;
@@ -178,9 +188,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoScaling Node pool scaling policy configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoScaling(NodePoolAutoScalingArgs autoScaling) {
             return autoScaling(Output.of(autoScaling));
@@ -188,9 +198,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterId ID of the cluster where the node pool is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(Output<String> clusterId) {
             $.clusterId = clusterId;
@@ -199,9 +209,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterId ID of the cluster where the node pool is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(String clusterId) {
             return clusterId(Output.of(clusterId));
@@ -209,9 +219,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kubernetesConfig Kubernetes-related configuration for the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesConfig(@Nullable Output<NodePoolKubernetesConfigArgs> kubernetesConfig) {
             $.kubernetesConfig = kubernetesConfig;
@@ -220,9 +230,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kubernetesConfig Kubernetes-related configuration for the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesConfig(NodePoolKubernetesConfigArgs kubernetesConfig) {
             return kubernetesConfig(Output.of(kubernetesConfig));
@@ -230,9 +240,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param management Managed node pool configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder management(@Nullable Output<NodePoolManagementArgs> management) {
             $.management = management;
@@ -241,9 +251,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param management Managed node pool configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder management(NodePoolManagementArgs management) {
             return management(Output.of(management));
@@ -251,9 +261,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -262,9 +272,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -272,9 +282,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeConfig(@Nullable Output<NodePoolNodeConfigArgs> nodeConfig) {
             $.nodeConfig = nodeConfig;
@@ -283,9 +293,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeConfig(NodePoolNodeConfigArgs nodeConfig) {
             return nodeConfig(Output.of(nodeConfig));
@@ -293,9 +303,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retainResources(@Nullable Output<List<String>> retainResources) {
             $.retainResources = retainResources;
@@ -304,9 +314,9 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retainResources(List<String> retainResources) {
             return retainResources(Output.of(retainResources));
@@ -314,23 +324,44 @@ public final class NodePoolArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retainResources(String... retainResources) {
             return retainResources(List.of(retainResources));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<NodePoolTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<NodePoolTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(NodePoolTagArgs... tags) {
             return tags(List.of(tags));
         }

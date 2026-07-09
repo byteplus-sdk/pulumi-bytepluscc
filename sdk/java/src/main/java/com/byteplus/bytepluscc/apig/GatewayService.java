@@ -21,225 +21,291 @@ import javax.annotation.Nullable;
 
 /**
  * A service is a set of routes exposed as entry points to distinguish traffic sources and protocols, enabling business, environment, and logical tenant isolation. Services can bind independent access domains, allowing access by domain.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.apig.GatewayService;
+ * import com.byteplus.bytepluscc.apig.GatewayServiceArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.GatewayServiceAuthSpecArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.GatewayServiceServiceNetworkSpecArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var apigGatewayServiceDemo = new GatewayService("apigGatewayServiceDemo", GatewayServiceArgs.builder()
+ *             .serviceName("ccapi-terraform-1")
+ *             .gatewayId("gd6l9lbilgrmdxxxxxx")
+ *             .protocols(
+ *                 "HTTP",
+ *                 "HTTPS")
+ *             .authSpec(GatewayServiceAuthSpecArgs.builder()
+ *                 .enable(true)
+ *                 .build())
+ *             .comments("test")
+ *             .serviceType("AIProvider")
+ *             .serviceNetworkSpec(GatewayServiceServiceNetworkSpecArgs.builder()
+ *                 .enable_public_network(true)
+ *                 .enable_private_network(false)
+ *                 .private_network_ip(Arrays.asList())
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:apig/gatewayService:GatewayService example &#34;service_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:apig/gatewayService:GatewayService")
 public class GatewayService extends com.pulumi.resources.CustomResource {
     /**
      * Authentication configuration.
-     * 
+     *
      */
     @Export(name="authSpec", refs={GatewayServiceAuthSpec.class}, tree="[0]")
     private Output<GatewayServiceAuthSpec> authSpec;
 
     /**
      * @return Authentication configuration.
-     * 
+     *
      */
     public Output<GatewayServiceAuthSpec> authSpec() {
         return this.authSpec;
     }
     /**
      * Remarks. Length must be 0–253 characters.
-     * 
+     *
      */
     @Export(name="comments", refs={String.class}, tree="[0]")
     private Output<String> comments;
 
     /**
      * @return Remarks. Length must be 0–253 characters.
-     * 
+     *
      */
     public Output<String> comments() {
         return this.comments;
     }
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
+    /**
+     * Custom domain list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="customDomains", refs={List.class,GatewayServiceCustomDomain.class}, tree="[0,1]")
     private Output<List<GatewayServiceCustomDomain>> customDomains;
 
+    /**
+     * @return Custom domain list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<GatewayServiceCustomDomain>> customDomains() {
         return this.customDomains;
     }
     /**
      * Domain details.
-     * 
+     *
      */
     @Export(name="domainSpec", refs={GatewayServiceDomainSpec.class}, tree="[0]")
     private Output<GatewayServiceDomainSpec> domainSpec;
 
     /**
      * @return Domain details.
-     * 
+     *
      */
     public Output<GatewayServiceDomainSpec> domainSpec() {
         return this.domainSpec;
     }
     /**
      * Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
-     * 
+     *
      */
     @Export(name="domainType", refs={String.class}, tree="[0]")
     private Output<String> domainType;
 
     /**
      * @return Domain type. Options: DefaultDomain: Default domain. CustomDomain: Custom domain.
-     * 
+     *
      */
     public Output<String> domainType() {
         return this.domainType;
     }
+    /**
+     * Default domain.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="domains", refs={List.class,GatewayServiceDomain.class}, tree="[0,1]")
     private Output<List<GatewayServiceDomain>> domains;
 
+    /**
+     * @return Default domain.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<GatewayServiceDomain>> domains() {
         return this.domains;
     }
     /**
      * Gateway ID.
-     * 
+     *
      */
     @Export(name="gatewayId", refs={String.class}, tree="[0]")
     private Output<String> gatewayId;
 
     /**
      * @return Gateway ID.
-     * 
+     *
      */
     public Output<String> gatewayId() {
         return this.gatewayId;
     }
     /**
      * Gateway name.
-     * 
+     *
      */
     @Export(name="gatewayName", refs={String.class}, tree="[0]")
     private Output<String> gatewayName;
 
     /**
      * @return Gateway name.
-     * 
+     *
      */
     public Output<String> gatewayName() {
         return this.gatewayName;
     }
     /**
      * Error message for service creation failure, deletion failure, or abnormal status.
-     * 
+     *
      */
     @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
      * @return Error message for service creation failure, deletion failure, or abnormal status.
-     * 
+     *
      */
     public Output<String> message() {
         return this.message;
     }
     /**
      * Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
-     * 
+     *
      */
     @Export(name="protocols", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> protocols;
 
     /**
      * @return Supported protocols. Options: HTTP: HTTP. HTTPS: HTTPS.
-     * 
+     *
      */
     public Output<List<String>> protocols() {
         return this.protocols;
     }
     /**
      * Service ID.
-     * 
+     *
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
      * @return Service ID.
-     * 
+     *
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
      * Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
-     * 
+     *
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
      * @return Service name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length must be 2–128 characters. Cannot start with a hyphen (-).
-     * 
+     *
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
     /**
      * Default domain network configuration..
-     * 
+     *
      */
     @Export(name="serviceNetworkSpec", refs={GatewayServiceServiceNetworkSpec.class}, tree="[0]")
     private Output<GatewayServiceServiceNetworkSpec> serviceNetworkSpec;
 
     /**
      * @return Default domain network configuration..
-     * 
+     *
      */
     public Output<GatewayServiceServiceNetworkSpec> serviceNetworkSpec() {
         return this.serviceNetworkSpec;
     }
     /**
      * Service type. Options: AIProvider: AI model proxy.
-     * 
+     *
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
      * @return Service type. Options: AIProvider: AI model proxy.
-     * 
+     *
      */
     public Output<String> serviceType() {
         return this.serviceType;
     }
     /**
      * Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Creating: Creating. CreatedFailed: Creation failed. Running: Running. Deleting: Deleting. DeletedFailed: Deletion failed. Abnormal: Abnormal.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;

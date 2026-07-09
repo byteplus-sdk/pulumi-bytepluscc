@@ -20,197 +20,263 @@ import javax.annotation.Nullable;
 
 /**
  * By establishing a connection between the private network and the transit router, you can enable private network communication between the private network and the transit router.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.transitrouter.VpcAttachment;
+ * import com.byteplus.bytepluscc.transitrouter.VpcAttachmentArgs;
+ * import com.pulumi.bytepluscc.transitrouter.inputs.VpcAttachmentAttachPointArgs;
+ * import com.pulumi.bytepluscc.transitrouter.inputs.VpcAttachmentTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var transitRouterVpcAttachmentDemo = new VpcAttachment("transitRouterVpcAttachmentDemo", VpcAttachmentArgs.builder()
+ *             .applianceModeEnabled(false)
+ *             .attachPoints(VpcAttachmentAttachPointArgs.builder()
+ *                 .subnet_id("subnet-ijifxxxxx8culvzg85")
+ *                 .zone_id("cn-beijing-a")
+ *                 .build())
+ *             .autoPublishRouteEnabled(false)
+ *             .description("test")
+ *             .ipv6Enabled(false)
+ *             .tags(VpcAttachmentTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .transitRouterAttachmentName("ccapi-test-1")
+ *             .transitRouterId("tr-mjl8xxxxxg5smt1boobol4")
+ *             .vpcId("vpc-btg9hmxxxxx0b2tnp1on8")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/vpcAttachment:VpcAttachment example &#34;transit_router_id|transit_router_attachment_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:transitrouter/vpcAttachment:VpcAttachment")
 public class VpcAttachment extends com.pulumi.resources.CustomResource {
     /**
      * Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-     * 
+     *
      */
     @Export(name="applianceModeEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> applianceModeEnabled;
 
     /**
      * @return Whether to enable path consistency mode. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. When enabled, TR forwarding traffic to this VPC connection will select the same availability zone connection point for both request and return traffic. false: No.
-     * 
+     *
      */
     public Output<Boolean> applianceModeEnabled() {
         return this.applianceModeEnabled;
     }
+    /**
+     * Network instance connection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="attachPoints", refs={List.class,VpcAttachmentAttachPoint.class}, tree="[0,1]")
     private Output<List<VpcAttachmentAttachPoint>> attachPoints;
 
+    /**
+     * @return Network instance connection list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<VpcAttachmentAttachPoint>> attachPoints() {
         return this.attachPoints;
     }
     /**
      * Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-     * 
+     *
      */
     @Export(name="autoPublishRouteEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Whether to automatically synchronize TR routes to the network instance route table. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. The system will automatically synchronize route entries from the TR route table associated with this network instance connection to the network instance&#39;s route table. The system will only synchronize TR routes if this parameter is set to true and there are route entries in the associated TR route table. false (default): No.
-     * 
+     *
      */
     public Output<Boolean> autoPublishRouteEnabled() {
         return this.autoPublishRouteEnabled;
     }
     /**
      * Maximum bandwidth for the network instance connection, in Gbps.
-     * 
+     *
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Maximum bandwidth for the network instance connection, in Gbps.
-     * 
+     *
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-     * 
+     *
      */
     @Export(name="ipv6Enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> ipv6Enabled;
 
     /**
      * @return Whether to enable IPv6. Enter the following enumerated values exactly as shown; do not use other values. true: Yes. false: No.
-     * 
+     *
      */
     public Output<Boolean> ipv6Enabled() {
         return this.ipv6Enabled;
     }
     /**
      * Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Network instance connection status. Creating: Creating. Deleting: Deleting. Pending: Configuring. Available: Available.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,VpcAttachmentTag.class}, tree="[0,1]")
     private Output<List<VpcAttachmentTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<VpcAttachmentTag>> tags() {
         return this.tags;
     }
     /**
      * Network instance connection ID.
-     * 
+     *
      */
     @Export(name="transitRouterAttachmentId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentId;
 
     /**
      * @return Network instance connection ID.
-     * 
+     *
      */
     public Output<String> transitRouterAttachmentId() {
         return this.transitRouterAttachmentId;
     }
     /**
      * Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     * 
+     *
      */
     @Export(name="transitRouterAttachmentName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     * 
+     *
      */
     public Output<String> transitRouterAttachmentName() {
         return this.transitRouterAttachmentName;
     }
     /**
      * Transit router instance ID.
-     * 
+     *
      */
     @Export(name="transitRouterId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID.
-     * 
+     *
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
     /**
      * Update time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Private network instance ID.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network instance ID.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;

@@ -17,19 +17,15 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
     public static final EndpointPublicAddressArgs Empty = new EndpointPublicAddressArgs();
 
     /**
-     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-     * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-     * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-     * 
+     * Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+     *
      */
     @Import(name="domainPrefix")
     private @Nullable Output<String> domainPrefix;
 
     /**
-     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-     * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-     * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-     * 
+     * @return Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+     *
      */
     public Optional<Output<String>> domainPrefix() {
         return Optional.ofNullable(this.domainPrefix);
@@ -37,14 +33,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
     /**
      * EIP ID, valid only for Public addresses.
-     * 
+     *
      */
     @Import(name="eipId", required=true)
     private Output<String> eipId;
 
     /**
      * @return EIP ID, valid only for Public addresses.
-     * 
+     *
      */
     public Output<String> eipId() {
         return this.eipId;
@@ -52,14 +48,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
     /**
      * Instance connection endpoint ID.
-     * 
+     *
      */
     @Import(name="endpointId", required=true)
     private Output<String> endpointId;
 
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     public Output<String> endpointId() {
         return this.endpointId;
@@ -67,14 +63,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
     /**
      * Instance ID.
-     * 
+     *
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
@@ -82,14 +78,14 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
     /**
      * Port.
-     * 
+     *
      */
     @Import(name="port")
     private @Nullable Output<String> port;
 
     /**
      * @return Port.
-     * 
+     *
      */
     public Optional<Output<String>> port() {
         return Optional.ofNullable(this.port);
@@ -124,12 +120,10 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-         * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-         * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-         * 
+         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domainPrefix(@Nullable Output<String> domainPrefix) {
             $.domainPrefix = domainPrefix;
@@ -137,12 +131,10 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
         }
 
         /**
-         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase
-         * letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must
-         * be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
-         * 
+         * @param domainPrefix Connection address prefix. The prefix must meet the following rules: start with a lowercase letter, end with a lowercase letter or digit, and must include at least two types among lowercase letters, digits, and hyphens (-). The prefix must be at least 8 characters long, and the total connection address length (prefix + suffix) must not exceed 63 characters.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domainPrefix(String domainPrefix) {
             return domainPrefix(Output.of(domainPrefix));
@@ -150,9 +142,9 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
         /**
          * @param eipId EIP ID, valid only for Public addresses.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(Output<String> eipId) {
             $.eipId = eipId;
@@ -161,9 +153,9 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
         /**
          * @param eipId EIP ID, valid only for Public addresses.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(String eipId) {
             return eipId(Output.of(eipId));
@@ -171,9 +163,9 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -182,9 +174,9 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -192,9 +184,9 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -203,9 +195,9 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -213,9 +205,9 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
         /**
          * @param port Port.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(@Nullable Output<String> port) {
             $.port = port;
@@ -224,9 +216,9 @@ public final class EndpointPublicAddressArgs extends com.pulumi.resources.Resour
 
         /**
          * @param port Port.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(String port) {
             return port(Output.of(port));

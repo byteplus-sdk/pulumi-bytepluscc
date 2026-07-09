@@ -22,14 +22,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
-     * 
+     *
      */
     @Import(name="advancedFeatures")
     private @Nullable Output<String> advancedFeatures;
 
     /**
      * @return Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
-     * 
+     *
      */
     public Optional<Output<String>> advancedFeatures() {
         return Optional.ofNullable(this.advancedFeatures);
@@ -37,14 +37,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist ID list permitted for access.
-     * 
+     *
      */
     @Import(name="allowListIds")
     private @Nullable Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID list permitted for access.
-     * 
+     *
      */
     public Optional<Output<List<String>>> allowListIds() {
         return Optional.ofNullable(this.allowListIds);
@@ -52,14 +52,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Payment method.
-     * 
+     *
      */
     @Import(name="chargeInfo")
     private @Nullable Output<InstanceChargeInfoArgs> chargeInfo;
 
     /**
      * @return Payment method.
-     * 
+     *
      */
     public Optional<Output<InstanceChargeInfoArgs>> chargeInfo() {
         return Optional.ofNullable(this.chargeInfo);
@@ -67,14 +67,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
-     * 
+     *
      */
     @Import(name="dbEngineVersion", required=true)
     private Output<String> dbEngineVersion;
 
     /**
      * @return Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
-     * 
+     *
      */
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
@@ -82,14 +82,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -97,14 +97,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
-     * 
+     *
      */
     @Import(name="instanceType", required=true)
     private Output<String> instanceType;
 
     /**
      * @return Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
-     * 
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;
@@ -112,14 +112,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
-     * 
+     *
      */
     @Import(name="maintenanceTime")
     private @Nullable Output<String> maintenanceTime;
 
     /**
      * @return Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
-     * 
+     *
      */
     public Optional<Output<String>> maintenanceTime() {
         return Optional.ofNullable(this.maintenanceTime);
@@ -127,14 +127,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Primary node ID. This parameter is required when manually switching master and standby nodes.
-     * 
+     *
      */
     @Import(name="masterNodeId")
     private @Nullable Output<String> masterNodeId;
 
     /**
      * @return Primary node ID. This parameter is required when manually switching master and standby nodes.
-     * 
+     *
      */
     public Optional<Output<String>> masterNodeId() {
         return Optional.ofNullable(this.masterNodeId);
@@ -142,14 +142,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance specification code.
-     * 
+     *
      */
     @Import(name="nodeSpec", required=true)
     private Output<String> nodeSpec;
 
     /**
      * @return Instance specification code.
-     * 
+     *
      */
     public Output<String> nodeSpec() {
         return this.nodeSpec;
@@ -157,14 +157,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -172,14 +172,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
-     * 
+     *
      */
     @Import(name="serverCollation")
     private @Nullable Output<String> serverCollation;
 
     /**
      * @return Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
-     * 
+     *
      */
     public Optional<Output<String>> serverCollation() {
         return Optional.ofNullable(this.serverCollation);
@@ -187,14 +187,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
-     * 
+     *
      */
     @Import(name="storageSpace", required=true)
     private Output<Integer> storageSpace;
 
     /**
      * @return Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
-     * 
+     *
      */
     public Output<Integer> storageSpace() {
         return this.storageSpace;
@@ -202,14 +202,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
-     * 
+     *
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -217,36 +217,46 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
-     * 
+     *
      */
     @Import(name="superAccountPassword", required=true)
     private Output<String> superAccountPassword;
 
     /**
      * @return Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
-     * 
+     *
      */
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Time zone.
-     * 
+     *
      */
     @Import(name="timeZone", required=true)
     private Output<String> timeZone;
 
     /**
      * @return Time zone.
-     * 
+     *
      */
     public Output<String> timeZone() {
         return this.timeZone;
@@ -254,14 +264,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return VPC ID
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -269,14 +279,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
-     * 
+     *
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -325,9 +335,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param advancedFeatures Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder advancedFeatures(@Nullable Output<String> advancedFeatures) {
             $.advancedFeatures = advancedFeatures;
@@ -336,9 +346,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param advancedFeatures Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder advancedFeatures(String advancedFeatures) {
             return advancedFeatures(Output.of(advancedFeatures));
@@ -346,9 +356,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list permitted for access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(@Nullable Output<List<String>> allowListIds) {
             $.allowListIds = allowListIds;
@@ -357,9 +367,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list permitted for access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(List<String> allowListIds) {
             return allowListIds(Output.of(allowListIds));
@@ -367,9 +377,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list permitted for access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(String... allowListIds) {
             return allowListIds(List.of(allowListIds));
@@ -377,9 +387,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeInfo Payment method.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeInfo(@Nullable Output<InstanceChargeInfoArgs> chargeInfo) {
             $.chargeInfo = chargeInfo;
@@ -388,9 +398,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeInfo Payment method.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeInfo(InstanceChargeInfoArgs chargeInfo) {
             return chargeInfo(Output.of(chargeInfo));
@@ -398,9 +408,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersion Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dbEngineVersion(Output<String> dbEngineVersion) {
             $.dbEngineVersion = dbEngineVersion;
@@ -409,9 +419,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersion Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dbEngineVersion(String dbEngineVersion) {
             return dbEngineVersion(Output.of(dbEngineVersion));
@@ -419,9 +429,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -430,9 +440,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -440,9 +450,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -451,9 +461,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -461,9 +471,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceTime Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceTime(@Nullable Output<String> maintenanceTime) {
             $.maintenanceTime = maintenanceTime;
@@ -472,9 +482,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceTime Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceTime(String maintenanceTime) {
             return maintenanceTime(Output.of(maintenanceTime));
@@ -482,9 +492,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterNodeId Primary node ID. This parameter is required when manually switching master and standby nodes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterNodeId(@Nullable Output<String> masterNodeId) {
             $.masterNodeId = masterNodeId;
@@ -493,9 +503,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterNodeId Primary node ID. This parameter is required when manually switching master and standby nodes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterNodeId(String masterNodeId) {
             return masterNodeId(Output.of(masterNodeId));
@@ -503,9 +513,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeSpec Instance specification code.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeSpec(Output<String> nodeSpec) {
             $.nodeSpec = nodeSpec;
@@ -514,9 +524,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeSpec Instance specification code.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeSpec(String nodeSpec) {
             return nodeSpec(Output.of(nodeSpec));
@@ -524,9 +534,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -535,9 +545,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -545,9 +555,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverCollation Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverCollation(@Nullable Output<String> serverCollation) {
             $.serverCollation = serverCollation;
@@ -556,9 +566,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverCollation Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverCollation(String serverCollation) {
             return serverCollation(Output.of(serverCollation));
@@ -566,9 +576,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageSpace Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageSpace(Output<Integer> storageSpace) {
             $.storageSpace = storageSpace;
@@ -577,9 +587,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageSpace Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageSpace(Integer storageSpace) {
             return storageSpace(Output.of(storageSpace));
@@ -587,9 +597,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -598,9 +608,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -608,9 +618,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param superAccountPassword Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder superAccountPassword(Output<String> superAccountPassword) {
             $.superAccountPassword = superAccountPassword;
@@ -619,32 +629,53 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param superAccountPassword Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder superAccountPassword(String superAccountPassword) {
             return superAccountPassword(Output.of(superAccountPassword));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param timeZone Time zone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeZone(Output<String> timeZone) {
             $.timeZone = timeZone;
@@ -653,9 +684,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeZone Time zone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeZone(String timeZone) {
             return timeZone(Output.of(timeZone));
@@ -663,9 +694,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -674,9 +705,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -684,9 +715,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -695,9 +726,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

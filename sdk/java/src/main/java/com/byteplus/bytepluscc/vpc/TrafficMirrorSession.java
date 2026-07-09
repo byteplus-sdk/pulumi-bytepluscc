@@ -18,32 +18,32 @@ import javax.annotation.Nullable;
 
 /**
  * The mirror session links the mirror source, mirror destination, and filter conditions, enabling private network forwarding of traffic copied from the mirror source to the mirror destination. It serves as the carrier for traffic mirroring
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vpc.TrafficMirrorSession;
  * import com.byteplus.bytepluscc.vpc.TrafficMirrorSessionArgs;
  * import com.pulumi.bytepluscc.vpc.inputs.TrafficMirrorSessionTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vPCTrafficMirrorSessionDemo = new TrafficMirrorSession("vPCTrafficMirrorSessionDemo", TrafficMirrorSessionArgs.builder()
  *             .description("test-description")
@@ -60,234 +60,244 @@ import javax.annotation.Nullable;
  *             .trafficMirrorTargetId("tmt-ij32u0acvta874o8ctxxxxx")
  *             .virtualNetworkId(13)
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpc/trafficMirrorSession:TrafficMirrorSession example &#34;traffic_mirror_session_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpc/trafficMirrorSession:TrafficMirrorSession")
 public class TrafficMirrorSession extends com.pulumi.resources.CustomResource {
     /**
      * Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
-     * 
+     *
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Session billing status. Normal: Billing in progress.   - FinancialLocked: Locked due to overdue payment
-     * 
+     *
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Mirror session instance description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Mirror session instance description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Lock reason
-     * 
+     *
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return Lock reason
-     * 
+     *
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
-     * 
+     *
      */
     @Export(name="networkInterfaceId", refs={String.class}, tree="[0]")
     private Output<String> networkInterfaceId;
 
     /**
      * @return Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
-     * 
+     *
      */
     public Output<String> networkInterfaceId() {
         return this.networkInterfaceId;
     }
     /**
      * Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
-     * 
+     *
      */
     @Export(name="packetLength", refs={Integer.class}, tree="[0]")
     private Output<Integer> packetLength;
 
     /**
      * @return Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
-     * 
+     *
      */
     public Output<Integer> packetLength() {
         return this.packetLength;
     }
     /**
      * Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
-     * 
+     *
      */
     @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**
      * @return Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
-     * 
+     *
      */
     public Output<Integer> priority() {
         return this.priority;
     }
     /**
      * Name of the associated project
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the associated project
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Session status
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Session status
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,TrafficMirrorSessionTag.class}, tree="[0,1]")
     private Output<List<TrafficMirrorSessionTag>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<TrafficMirrorSessionTag>> tags() {
         return this.tags;
     }
     /**
      * Filter condition instance ID
-     * 
+     *
      */
     @Export(name="trafficMirrorFilterId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorFilterId;
 
     /**
      * @return Filter condition instance ID
-     * 
+     *
      */
     public Output<String> trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
     }
     /**
      * Mirror session instance ID
-     * 
+     *
      */
     @Export(name="trafficMirrorSessionId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorSessionId;
 
     /**
      * @return Mirror session instance ID
-     * 
+     *
      */
     public Output<String> trafficMirrorSessionId() {
         return this.trafficMirrorSessionId;
     }
     /**
      * Mirror session name
-     * 
+     *
      */
     @Export(name="trafficMirrorSessionName", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorSessionName;
 
     /**
      * @return Mirror session name
-     * 
+     *
      */
     public Output<String> trafficMirrorSessionName() {
         return this.trafficMirrorSessionName;
     }
     /**
      * Mirror source instance list
-     * 
+     *
      */
     @Export(name="trafficMirrorSourceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> trafficMirrorSourceIds;
 
     /**
      * @return Mirror source instance list
-     * 
+     *
      */
     public Output<List<String>> trafficMirrorSourceIds() {
         return this.trafficMirrorSourceIds;
     }
     /**
      * Mirror destination instance ID
-     * 
+     *
      */
     @Export(name="trafficMirrorTargetId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorTargetId;
 
     /**
      * @return Mirror destination instance ID
-     * 
+     *
      */
     public Output<String> trafficMirrorTargetId() {
         return this.trafficMirrorTargetId;
     }
     /**
      * Mirror session VNI. Range: 1–16777215
-     * 
+     *
      */
     @Export(name="virtualNetworkId", refs={Integer.class}, tree="[0]")
     private Output<Integer> virtualNetworkId;
 
     /**
      * @return Mirror session VNI. Range: 1–16777215
-     * 
+     *
      */
     public Output<Integer> virtualNetworkId() {
         return this.virtualNetworkId;

@@ -26,14 +26,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). An instance can bind up to 100 allowlists.
-     * 
+     *
      */
     @Import(name="allowListIds")
     private @Nullable Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). An instance can bind up to 100 allowlists.
-     * 
+     *
      */
     public Optional<Output<List<String>>> allowListIds() {
         return Optional.ofNullable(this.allowListIds);
@@ -41,14 +41,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Payment method
-     * 
+     *
      */
     @Import(name="chargeDetail")
     private @Nullable Output<InstanceChargeDetailArgs> chargeDetail;
 
     /**
      * @return Payment method
-     * 
+     *
      */
     public Optional<Output<InstanceChargeDetailArgs>> chargeDetail() {
         return Optional.ofNullable(this.chargeDetail);
@@ -56,14 +56,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance creation time
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Instance creation time
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -71,14 +71,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Synchronization mode. Value: Async (asynchronous synchronization)
-     * 
+     *
      */
     @Import(name="dataSyncMode")
     private @Nullable Output<String> dataSyncMode;
 
     /**
      * @return Synchronization mode. Value: Async (asynchronous synchronization)
-     * 
+     *
      */
     public Optional<Output<String>> dataSyncMode() {
         return Optional.ofNullable(this.dataSyncMode);
@@ -86,36 +86,46 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Compatible version
-     * 
+     *
      */
     @Import(name="dbEngineVersion")
     private @Nullable Output<String> dbEngineVersion;
 
     /**
      * @return Compatible version
-     * 
+     *
      */
     public Optional<Output<String>> dbEngineVersion() {
         return Optional.ofNullable(this.dbEngineVersion);
     }
 
+    /**
+     * Instance connection information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="endpoints")
     private @Nullable Output<List<InstanceEndpointArgs>> endpoints;
 
+    /**
+     * @return Instance connection information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceEndpointArgs>>> endpoints() {
         return Optional.ofNullable(this.endpoints);
     }
 
     /**
      * Instance ID
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -123,14 +133,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance name
-     * 
+     *
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Instance name
-     * 
+     *
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -138,14 +148,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance status
-     * 
+     *
      */
     @Import(name="instanceStatus")
     private @Nullable Output<String> instanceStatus;
 
     /**
      * @return Instance status
-     * 
+     *
      */
     public Optional<Output<String>> instanceStatus() {
         return Optional.ofNullable(this.instanceStatus);
@@ -153,14 +163,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance type. Value: HA (high availability edition)
-     * 
+     *
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
      * @return Instance type. Value: HA (high availability edition)
-     * 
+     *
      */
     public Optional<Output<String>> instanceType() {
         return Optional.ofNullable(this.instanceType);
@@ -168,14 +178,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance maintenance window
-     * 
+     *
      */
     @Import(name="maintenanceWindow")
     private @Nullable Output<InstanceMaintenanceWindowArgs> maintenanceWindow;
 
     /**
      * @return Instance maintenance window
-     * 
+     *
      */
     public Optional<Output<InstanceMaintenanceWindowArgs>> maintenanceWindow() {
         return Optional.ofNullable(this.maintenanceWindow);
@@ -183,36 +193,46 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Memory size, unit: GB
-     * 
+     *
      */
     @Import(name="memory")
     private @Nullable Output<Double> memory;
 
     /**
      * @return Memory size, unit: GB
-     * 
+     *
      */
     public Optional<Output<Double>> memory() {
         return Optional.ofNullable(this.memory);
     }
 
+    /**
+     * Instance specification configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="nodeInfos")
     private @Nullable Output<List<InstanceNodeInfoArgs>> nodeInfos;
 
+    /**
+     * @return Instance specification configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceNodeInfoArgs>>> nodeInfos() {
         return Optional.ofNullable(this.nodeInfos);
     }
 
     /**
      * Number of nodes
-     * 
+     *
      */
     @Import(name="nodeNumber")
     private @Nullable Output<Double> nodeNumber;
 
     /**
      * @return Number of nodes
-     * 
+     *
      */
     public Optional<Output<Double>> nodeNumber() {
         return Optional.ofNullable(this.nodeNumber);
@@ -220,14 +240,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Primary node specification
-     * 
+     *
      */
     @Import(name="nodeSpec")
     private @Nullable Output<String> nodeSpec;
 
     /**
      * @return Primary node specification
-     * 
+     *
      */
     public Optional<Output<String>> nodeSpec() {
         return Optional.ofNullable(this.nodeSpec);
@@ -235,36 +255,46 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project. Default value: default project
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project. Default value: default project
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Replication slot list for the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="replicationSlots")
     private @Nullable Output<List<InstanceReplicationSlotArgs>> replicationSlots;
 
+    /**
+     * @return Replication slot list for the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceReplicationSlotArgs>>> replicationSlots() {
         return Optional.ofNullable(this.replicationSlots);
     }
 
     /**
      * Restore backup data to the current instance
-     * 
+     *
      */
     @Import(name="restoreToExistedInstance")
     private @Nullable Output<InstanceRestoreToExistedInstanceArgs> restoreToExistedInstance;
 
     /**
      * @return Restore backup data to the current instance
-     * 
+     *
      */
     public Optional<Output<InstanceRestoreToExistedInstanceArgs>> restoreToExistedInstance() {
         return Optional.ofNullable(this.restoreToExistedInstance);
@@ -272,14 +302,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Data file space used by the primary node. Unit: Byte
-     * 
+     *
      */
     @Import(name="storageDataUse")
     private @Nullable Output<Double> storageDataUse;
 
     /**
      * @return Data file space used by the primary node. Unit: Byte
-     * 
+     *
      */
     public Optional<Output<Double>> storageDataUse() {
         return Optional.ofNullable(this.storageDataUse);
@@ -287,14 +317,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log file space used by the primary node. Unit: Byte
-     * 
+     *
      */
     @Import(name="storageLogUse")
     private @Nullable Output<Double> storageLogUse;
 
     /**
      * @return Log file space used by the primary node. Unit: Byte
-     * 
+     *
      */
     public Optional<Output<Double>> storageLogUse() {
         return Optional.ofNullable(this.storageLogUse);
@@ -302,14 +332,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
-     * 
+     *
      */
     @Import(name="storageSpace")
     private @Nullable Output<Double> storageSpace;
 
     /**
      * @return Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
-     * 
+     *
      */
     public Optional<Output<Double>> storageSpace() {
         return Optional.ofNullable(this.storageSpace);
@@ -317,14 +347,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Temporary file space used by the primary node. Unit: Byte
-     * 
+     *
      */
     @Import(name="storageTempUse")
     private @Nullable Output<Double> storageTempUse;
 
     /**
      * @return Temporary file space used by the primary node. Unit: Byte
-     * 
+     *
      */
     public Optional<Output<Double>> storageTempUse() {
         return Optional.ofNullable(this.storageTempUse);
@@ -332,14 +362,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance storage type, fixed value LocalSSD (local SSD disk)
-     * 
+     *
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
      * @return Instance storage type, fixed value LocalSSD (local SSD disk)
-     * 
+     *
      */
     public Optional<Output<String>> storageType() {
         return Optional.ofNullable(this.storageType);
@@ -347,14 +377,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Used storage space of the instance. Unit: Byte
-     * 
+     *
      */
     @Import(name="storageUse")
     private @Nullable Output<Double> storageUse;
 
     /**
      * @return Used storage space of the instance. Unit: Byte
-     * 
+     *
      */
     public Optional<Output<Double>> storageUse() {
         return Optional.ofNullable(this.storageUse);
@@ -362,14 +392,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Used WAL file space of the instance&#39;s primary node. Unit: Byte
-     * 
+     *
      */
     @Import(name="storageWalUse")
     private @Nullable Output<Double> storageWalUse;
 
     /**
      * @return Used WAL file space of the instance&#39;s primary node. Unit: Byte
-     * 
+     *
      */
     public Optional<Output<Double>> storageWalUse() {
         return Optional.ofNullable(this.storageWalUse);
@@ -377,36 +407,46 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID
-     * 
+     *
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID
-     * 
+     *
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * Tag information of the cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Tag information of the cloud disk
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Instance update time
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Instance update time
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -414,14 +454,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CPU size. For example: 1 means 1U
-     * 
+     *
      */
     @Import(name="vcpu")
     private @Nullable Output<Double> vcpu;
 
     /**
      * @return CPU size. For example: 1 means 1U
-     * 
+     *
      */
     public Optional<Output<Double>> vcpu() {
         return Optional.ofNullable(this.vcpu);
@@ -429,14 +469,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Use this parameter to specify the private network for the instance
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Use this parameter to specify the private network for the instance
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -444,14 +484,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID
-     * 
+     *
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability zone ID
-     * 
+     *
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -513,9 +553,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). An instance can bind up to 100 allowlists.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(@Nullable Output<List<String>> allowListIds) {
             $.allowListIds = allowListIds;
@@ -524,9 +564,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). An instance can bind up to 100 allowlists.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(List<String> allowListIds) {
             return allowListIds(Output.of(allowListIds));
@@ -534,9 +574,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). An instance can bind up to 100 allowlists.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(String... allowListIds) {
             return allowListIds(List.of(allowListIds));
@@ -544,9 +584,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeDetail Payment method
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeDetail(@Nullable Output<InstanceChargeDetailArgs> chargeDetail) {
             $.chargeDetail = chargeDetail;
@@ -555,9 +595,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeDetail Payment method
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeDetail(InstanceChargeDetailArgs chargeDetail) {
             return chargeDetail(Output.of(chargeDetail));
@@ -565,9 +605,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Instance creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -576,9 +616,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Instance creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -586,9 +626,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dataSyncMode Synchronization mode. Value: Async (asynchronous synchronization)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dataSyncMode(@Nullable Output<String> dataSyncMode) {
             $.dataSyncMode = dataSyncMode;
@@ -597,9 +637,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dataSyncMode Synchronization mode. Value: Async (asynchronous synchronization)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dataSyncMode(String dataSyncMode) {
             return dataSyncMode(Output.of(dataSyncMode));
@@ -607,9 +647,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersion Compatible version
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dbEngineVersion(@Nullable Output<String> dbEngineVersion) {
             $.dbEngineVersion = dbEngineVersion;
@@ -618,32 +658,53 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersion Compatible version
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dbEngineVersion(String dbEngineVersion) {
             return dbEngineVersion(Output.of(dbEngineVersion));
         }
 
+        /**
+         * @param endpoints Instance connection information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(@Nullable Output<List<InstanceEndpointArgs>> endpoints) {
             $.endpoints = endpoints;
             return this;
         }
 
+        /**
+         * @param endpoints Instance connection information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(List<InstanceEndpointArgs> endpoints) {
             return endpoints(Output.of(endpoints));
         }
 
+        /**
+         * @param endpoints Instance connection information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(InstanceEndpointArgs... endpoints) {
             return endpoints(List.of(endpoints));
         }
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -652,9 +713,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -662,9 +723,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -673,9 +734,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -683,9 +744,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceStatus Instance status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceStatus(@Nullable Output<String> instanceStatus) {
             $.instanceStatus = instanceStatus;
@@ -694,9 +755,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceStatus Instance status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceStatus(String instanceStatus) {
             return instanceStatus(Output.of(instanceStatus));
@@ -704,9 +765,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Instance type. Value: HA (high availability edition)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(@Nullable Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -715,9 +776,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Instance type. Value: HA (high availability edition)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -725,9 +786,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceWindow Instance maintenance window
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceWindow(@Nullable Output<InstanceMaintenanceWindowArgs> maintenanceWindow) {
             $.maintenanceWindow = maintenanceWindow;
@@ -736,9 +797,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceWindow Instance maintenance window
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceWindow(InstanceMaintenanceWindowArgs maintenanceWindow) {
             return maintenanceWindow(Output.of(maintenanceWindow));
@@ -746,9 +807,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param memory Memory size, unit: GB
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder memory(@Nullable Output<Double> memory) {
             $.memory = memory;
@@ -757,32 +818,53 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param memory Memory size, unit: GB
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder memory(Double memory) {
             return memory(Output.of(memory));
         }
 
+        /**
+         * @param nodeInfos Instance specification configuration
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder nodeInfos(@Nullable Output<List<InstanceNodeInfoArgs>> nodeInfos) {
             $.nodeInfos = nodeInfos;
             return this;
         }
 
+        /**
+         * @param nodeInfos Instance specification configuration
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder nodeInfos(List<InstanceNodeInfoArgs> nodeInfos) {
             return nodeInfos(Output.of(nodeInfos));
         }
 
+        /**
+         * @param nodeInfos Instance specification configuration
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder nodeInfos(InstanceNodeInfoArgs... nodeInfos) {
             return nodeInfos(List.of(nodeInfos));
         }
 
         /**
          * @param nodeNumber Number of nodes
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeNumber(@Nullable Output<Double> nodeNumber) {
             $.nodeNumber = nodeNumber;
@@ -791,9 +873,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeNumber Number of nodes
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeNumber(Double nodeNumber) {
             return nodeNumber(Output.of(nodeNumber));
@@ -801,9 +883,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeSpec Primary node specification
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeSpec(@Nullable Output<String> nodeSpec) {
             $.nodeSpec = nodeSpec;
@@ -812,9 +894,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeSpec Primary node specification
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeSpec(String nodeSpec) {
             return nodeSpec(Output.of(nodeSpec));
@@ -822,9 +904,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project. Default value: default project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -833,32 +915,53 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project. Default value: default project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param replicationSlots Replication slot list for the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder replicationSlots(@Nullable Output<List<InstanceReplicationSlotArgs>> replicationSlots) {
             $.replicationSlots = replicationSlots;
             return this;
         }
 
+        /**
+         * @param replicationSlots Replication slot list for the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder replicationSlots(List<InstanceReplicationSlotArgs> replicationSlots) {
             return replicationSlots(Output.of(replicationSlots));
         }
 
+        /**
+         * @param replicationSlots Replication slot list for the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder replicationSlots(InstanceReplicationSlotArgs... replicationSlots) {
             return replicationSlots(List.of(replicationSlots));
         }
 
         /**
          * @param restoreToExistedInstance Restore backup data to the current instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder restoreToExistedInstance(@Nullable Output<InstanceRestoreToExistedInstanceArgs> restoreToExistedInstance) {
             $.restoreToExistedInstance = restoreToExistedInstance;
@@ -867,9 +970,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param restoreToExistedInstance Restore backup data to the current instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder restoreToExistedInstance(InstanceRestoreToExistedInstanceArgs restoreToExistedInstance) {
             return restoreToExistedInstance(Output.of(restoreToExistedInstance));
@@ -877,9 +980,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageDataUse Data file space used by the primary node. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageDataUse(@Nullable Output<Double> storageDataUse) {
             $.storageDataUse = storageDataUse;
@@ -888,9 +991,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageDataUse Data file space used by the primary node. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageDataUse(Double storageDataUse) {
             return storageDataUse(Output.of(storageDataUse));
@@ -898,9 +1001,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageLogUse Log file space used by the primary node. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageLogUse(@Nullable Output<Double> storageLogUse) {
             $.storageLogUse = storageLogUse;
@@ -909,9 +1012,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageLogUse Log file space used by the primary node. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageLogUse(Double storageLogUse) {
             return storageLogUse(Output.of(storageLogUse));
@@ -919,9 +1022,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageSpace Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageSpace(@Nullable Output<Double> storageSpace) {
             $.storageSpace = storageSpace;
@@ -930,9 +1033,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageSpace Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageSpace(Double storageSpace) {
             return storageSpace(Output.of(storageSpace));
@@ -940,9 +1043,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageTempUse Temporary file space used by the primary node. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageTempUse(@Nullable Output<Double> storageTempUse) {
             $.storageTempUse = storageTempUse;
@@ -951,9 +1054,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageTempUse Temporary file space used by the primary node. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageTempUse(Double storageTempUse) {
             return storageTempUse(Output.of(storageTempUse));
@@ -961,9 +1064,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Instance storage type, fixed value LocalSSD (local SSD disk)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageType(@Nullable Output<String> storageType) {
             $.storageType = storageType;
@@ -972,9 +1075,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Instance storage type, fixed value LocalSSD (local SSD disk)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageType(String storageType) {
             return storageType(Output.of(storageType));
@@ -982,9 +1085,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageUse Used storage space of the instance. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageUse(@Nullable Output<Double> storageUse) {
             $.storageUse = storageUse;
@@ -993,9 +1096,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageUse Used storage space of the instance. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageUse(Double storageUse) {
             return storageUse(Output.of(storageUse));
@@ -1003,9 +1106,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageWalUse Used WAL file space of the instance&#39;s primary node. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageWalUse(@Nullable Output<Double> storageWalUse) {
             $.storageWalUse = storageWalUse;
@@ -1014,9 +1117,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageWalUse Used WAL file space of the instance&#39;s primary node. Unit: Byte
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageWalUse(Double storageWalUse) {
             return storageWalUse(Output.of(storageWalUse));
@@ -1024,9 +1127,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -1035,32 +1138,53 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Tag information of the cloud disk
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the cloud disk
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the cloud disk
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updateTime Instance update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -1069,9 +1193,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Instance update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -1079,9 +1203,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vcpu CPU size. For example: 1 means 1U
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vcpu(@Nullable Output<Double> vcpu) {
             $.vcpu = vcpu;
@@ -1090,9 +1214,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vcpu CPU size. For example: 1 means 1U
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vcpu(Double vcpu) {
             return vcpu(Output.of(vcpu));
@@ -1100,9 +1224,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Use this parameter to specify the private network for the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -1111,9 +1235,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Use this parameter to specify the private network for the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -1121,9 +1245,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -1132,9 +1256,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

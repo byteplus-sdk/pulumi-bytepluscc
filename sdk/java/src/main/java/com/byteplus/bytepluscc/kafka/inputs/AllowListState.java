@@ -20,14 +20,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
-     * 
+     *
      */
     @Import(name="allowList")
     private @Nullable Output<String> allowList;
 
     /**
      * @return Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
-     * 
+     *
      */
     public Optional<Output<String>> allowList() {
         return Optional.ofNullable(this.allowList);
@@ -35,14 +35,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist description. Maximum length: 200 characters
-     * 
+     *
      */
     @Import(name="allowListDesc")
     private @Nullable Output<String> allowListDesc;
 
     /**
      * @return Allowlist description. Maximum length: 200 characters
-     * 
+     *
      */
     public Optional<Output<String>> allowListDesc() {
         return Optional.ofNullable(this.allowListDesc);
@@ -50,14 +50,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist ID
-     * 
+     *
      */
     @Import(name="allowListId")
     private @Nullable Output<String> allowListId;
 
     /**
      * @return Allowlist ID
-     * 
+     *
      */
     public Optional<Output<String>> allowListId() {
         return Optional.ofNullable(this.allowListId);
@@ -65,14 +65,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of rules specified in the allowlist
-     * 
+     *
      */
     @Import(name="allowListIpNum")
     private @Nullable Output<Integer> allowListIpNum;
 
     /**
      * @return Number of rules specified in the allowlist
-     * 
+     *
      */
     public Optional<Output<Integer>> allowListIpNum() {
         return Optional.ofNullable(this.allowListIpNum);
@@ -80,14 +80,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
-     * 
+     *
      */
     @Import(name="allowListName")
     private @Nullable Output<String> allowListName;
 
     /**
      * @return Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
-     * 
+     *
      */
     public Optional<Output<String>> allowListName() {
         return Optional.ofNullable(this.allowListName);
@@ -95,14 +95,14 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
-     * 
+     *
      */
     @Import(name="applyInstanceNum")
     private @Nullable Output<Integer> applyInstanceNum;
 
     /**
      * @return Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
-     * 
+     *
      */
     public Optional<Output<Integer>> applyInstanceNum() {
         return Optional.ofNullable(this.applyInstanceNum);
@@ -110,22 +110,32 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of instances bound to the allowlist
-     * 
+     *
      */
     @Import(name="associatedInstanceNum")
     private @Nullable Output<Integer> associatedInstanceNum;
 
     /**
      * @return Number of instances bound to the allowlist
-     * 
+     *
      */
     public Optional<Output<Integer>> associatedInstanceNum() {
         return Optional.ofNullable(this.associatedInstanceNum);
     }
 
+    /**
+     * Information about the instance bound to the allowlist
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="associatedInstances")
     private @Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances;
 
+    /**
+     * @return Information about the instance bound to the allowlist
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AllowListAssociatedInstanceArgs>>> associatedInstances() {
         return Optional.ofNullable(this.associatedInstances);
     }
@@ -163,9 +173,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowList Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowList(@Nullable Output<String> allowList) {
             $.allowList = allowList;
@@ -174,9 +184,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowList Allowlist rule list. Supports specifying IP addresses or IP ranges. Separate multiple IP addresses or ranges with commas (,). Each allowlist can contain up to 300 IP addresses or ranges
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowList(String allowList) {
             return allowList(Output.of(allowList));
@@ -184,9 +194,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Allowlist description. Maximum length: 200 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListDesc(@Nullable Output<String> allowListDesc) {
             $.allowListDesc = allowListDesc;
@@ -195,9 +205,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListDesc Allowlist description. Maximum length: 200 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListDesc(String allowListDesc) {
             return allowListDesc(Output.of(allowListDesc));
@@ -205,9 +215,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListId Allowlist ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListId(@Nullable Output<String> allowListId) {
             $.allowListId = allowListId;
@@ -216,9 +226,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListId Allowlist ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListId(String allowListId) {
             return allowListId(Output.of(allowListId));
@@ -226,9 +236,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIpNum Number of rules specified in the allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIpNum(@Nullable Output<Integer> allowListIpNum) {
             $.allowListIpNum = allowListIpNum;
@@ -237,9 +247,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIpNum Number of rules specified in the allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIpNum(Integer allowListIpNum) {
             return allowListIpNum(Output.of(allowListIpNum));
@@ -247,9 +257,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListName(@Nullable Output<String> allowListName) {
             $.allowListName = allowListName;
@@ -258,9 +268,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListName Allowlist rule name. Length: 1–128 characters. Can only contain Chinese characters, letters, numbers, underscores, and hyphens (-). Cannot start with a number or hyphen (-). The allowlist name must be unique within the current region
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListName(String allowListName) {
             return allowListName(Output.of(allowListName));
@@ -268,9 +278,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param applyInstanceNum Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder applyInstanceNum(@Nullable Output<Integer> applyInstanceNum) {
             $.applyInstanceNum = applyInstanceNum;
@@ -279,9 +289,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param applyInstanceNum Number of instances already bound to this allowlist. If the AllowList parameter is specified, this field is required to indicate the expected number of instances affected after rule modification. If the expected number does not match the actual number, the request fails
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder applyInstanceNum(Integer applyInstanceNum) {
             return applyInstanceNum(Output.of(applyInstanceNum));
@@ -289,9 +299,9 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceNum Number of instances bound to the allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedInstanceNum(@Nullable Output<Integer> associatedInstanceNum) {
             $.associatedInstanceNum = associatedInstanceNum;
@@ -300,23 +310,44 @@ public final class AllowListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceNum Number of instances bound to the allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedInstanceNum(Integer associatedInstanceNum) {
             return associatedInstanceNum(Output.of(associatedInstanceNum));
         }
 
+        /**
+         * @param associatedInstances Information about the instance bound to the allowlist
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associatedInstances(@Nullable Output<List<AllowListAssociatedInstanceArgs>> associatedInstances) {
             $.associatedInstances = associatedInstances;
             return this;
         }
 
+        /**
+         * @param associatedInstances Information about the instance bound to the allowlist
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associatedInstances(List<AllowListAssociatedInstanceArgs> associatedInstances) {
             return associatedInstances(Output.of(associatedInstances));
         }
 
+        /**
+         * @param associatedInstances Information about the instance bound to the allowlist
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associatedInstances(AllowListAssociatedInstanceArgs... associatedInstances) {
             return associatedInstances(List.of(associatedInstances));
         }

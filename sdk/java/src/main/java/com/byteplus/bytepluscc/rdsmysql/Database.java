@@ -17,93 +17,142 @@ import javax.annotation.Nullable;
 
 /**
  * Database
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.Database;
+ * import com.byteplus.bytepluscc.rdsmysql.DatabaseArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.DatabaseDatabasePrivilegeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var databaseDemo = new Database("databaseDemo", DatabaseArgs.builder()
+ *             .characterSetName("utf8")
+ *             .databasePrivileges(DatabaseDatabasePrivilegeArgs.builder()
+ *                 .account_name("a***")
+ *                 .account_privilege("ReadOnly")
+ *                 .host("%")
+ *                 .build())
+ *             .description("Demo Example")
+ *             .instanceId("mysql-779***")
+ *             .name("rdstest")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/database:Database example &#34;instance_id|name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdsmysql/database:Database")
 public class Database extends com.pulumi.resources.CustomResource {
     /**
      * Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
-     * 
+     *
      */
     @Export(name="characterSetName", refs={String.class}, tree="[0]")
     private Output<String> characterSetName;
 
     /**
      * @return Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
-     * 
+     *
      */
     public Output<String> characterSetName() {
         return this.characterSetName;
     }
+    /**
+     * Database privilege authorization information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="databasePrivileges", refs={List.class,DatabaseDatabasePrivilege.class}, tree="[0,1]")
     private Output<List<DatabaseDatabasePrivilege>> databasePrivileges;
 
+    /**
+     * @return Database privilege authorization information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DatabaseDatabasePrivilege>> databasePrivileges() {
         return this.databasePrivileges;
     }
     /**
      * Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Database instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Database instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Database status. Values: Unavailable (not available), Available (available).
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Database status. Values: Unavailable (not available), Available (available).
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;

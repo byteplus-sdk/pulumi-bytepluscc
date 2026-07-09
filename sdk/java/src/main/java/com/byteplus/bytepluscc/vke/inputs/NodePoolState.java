@@ -25,14 +25,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node pool scaling policy configuration.
-     * 
+     *
      */
     @Import(name="autoScaling")
     private @Nullable Output<NodePoolAutoScalingArgs> autoScaling;
 
     /**
      * @return Node pool scaling policy configuration.
-     * 
+     *
      */
     public Optional<Output<NodePoolAutoScalingArgs>> autoScaling() {
         return Optional.ofNullable(this.autoScaling);
@@ -40,14 +40,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the cluster where the node pool is located
-     * 
+     *
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
      * @return ID of the cluster where the node pool is located
-     * 
+     *
      */
     public Optional<Output<String>> clusterId() {
         return Optional.ofNullable(this.clusterId);
@@ -55,14 +55,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node pool creation time
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Node pool creation time
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -70,14 +70,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kubernetes-related configuration for the node pool
-     * 
+     *
      */
     @Import(name="kubernetesConfig")
     private @Nullable Output<NodePoolKubernetesConfigArgs> kubernetesConfig;
 
     /**
      * @return Kubernetes-related configuration for the node pool
-     * 
+     *
      */
     public Optional<Output<NodePoolKubernetesConfigArgs>> kubernetesConfig() {
         return Optional.ofNullable(this.kubernetesConfig);
@@ -85,14 +85,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Managed node pool configuration
-     * 
+     *
      */
     @Import(name="management")
     private @Nullable Output<NodePoolManagementArgs> management;
 
     /**
      * @return Managed node pool configuration
-     * 
+     *
      */
     public Optional<Output<NodePoolManagementArgs>> management() {
         return Optional.ofNullable(this.management);
@@ -100,14 +100,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -115,14 +115,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud server (ECS) instance configuration in the node pool
-     * 
+     *
      */
     @Import(name="nodeConfig")
     private @Nullable Output<NodePoolNodeConfigArgs> nodeConfig;
 
     /**
      * @return Cloud server (ECS) instance configuration in the node pool
-     * 
+     *
      */
     public Optional<Output<NodePoolNodeConfigArgs>> nodeConfig() {
         return Optional.ofNullable(this.nodeConfig);
@@ -130,14 +130,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node pool ID
-     * 
+     *
      */
     @Import(name="nodePoolId")
     private @Nullable Output<String> nodePoolId;
 
     /**
      * @return Node pool ID
-     * 
+     *
      */
     public Optional<Output<String>> nodePoolId() {
         return Optional.ofNullable(this.nodePoolId);
@@ -145,14 +145,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node statistics in the node pool.
-     * 
+     *
      */
     @Import(name="nodeStatistics")
     private @Nullable Output<NodePoolNodeStatisticsArgs> nodeStatistics;
 
     /**
      * @return Node statistics in the node pool.
-     * 
+     *
      */
     public Optional<Output<NodePoolNodeStatisticsArgs>> nodeStatistics() {
         return Optional.ofNullable(this.nodeStatistics);
@@ -160,14 +160,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-     * 
+     *
      */
     @Import(name="retainResources")
     private @Nullable Output<List<String>> retainResources;
 
     /**
      * @return When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-     * 
+     *
      */
     public Optional<Output<List<String>>> retainResources() {
         return Optional.ofNullable(this.retainResources);
@@ -175,36 +175,46 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Node pool status
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<NodePoolStatusArgs> status;
 
     /**
      * @return Node pool status
-     * 
+     *
      */
     public Optional<Output<NodePoolStatusArgs>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<NodePoolTagArgs>> tags;
 
+    /**
+     * @return Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NodePoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Node pool update time
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Node pool update time
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -248,9 +258,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoScaling Node pool scaling policy configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoScaling(@Nullable Output<NodePoolAutoScalingArgs> autoScaling) {
             $.autoScaling = autoScaling;
@@ -259,9 +269,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoScaling Node pool scaling policy configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoScaling(NodePoolAutoScalingArgs autoScaling) {
             return autoScaling(Output.of(autoScaling));
@@ -269,9 +279,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterId ID of the cluster where the node pool is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(@Nullable Output<String> clusterId) {
             $.clusterId = clusterId;
@@ -280,9 +290,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterId ID of the cluster where the node pool is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(String clusterId) {
             return clusterId(Output.of(clusterId));
@@ -290,9 +300,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Node pool creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -301,9 +311,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Node pool creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -311,9 +321,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kubernetesConfig Kubernetes-related configuration for the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesConfig(@Nullable Output<NodePoolKubernetesConfigArgs> kubernetesConfig) {
             $.kubernetesConfig = kubernetesConfig;
@@ -322,9 +332,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kubernetesConfig Kubernetes-related configuration for the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesConfig(NodePoolKubernetesConfigArgs kubernetesConfig) {
             return kubernetesConfig(Output.of(kubernetesConfig));
@@ -332,9 +342,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param management Managed node pool configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder management(@Nullable Output<NodePoolManagementArgs> management) {
             $.management = management;
@@ -343,9 +353,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param management Managed node pool configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder management(NodePoolManagementArgs management) {
             return management(Output.of(management));
@@ -353,9 +363,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -364,9 +374,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -374,9 +384,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeConfig(@Nullable Output<NodePoolNodeConfigArgs> nodeConfig) {
             $.nodeConfig = nodeConfig;
@@ -385,9 +395,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeConfig(NodePoolNodeConfigArgs nodeConfig) {
             return nodeConfig(Output.of(nodeConfig));
@@ -395,9 +405,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodePoolId Node pool ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodePoolId(@Nullable Output<String> nodePoolId) {
             $.nodePoolId = nodePoolId;
@@ -406,9 +416,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodePoolId Node pool ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodePoolId(String nodePoolId) {
             return nodePoolId(Output.of(nodePoolId));
@@ -416,9 +426,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeStatistics Node statistics in the node pool.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeStatistics(@Nullable Output<NodePoolNodeStatisticsArgs> nodeStatistics) {
             $.nodeStatistics = nodeStatistics;
@@ -427,9 +437,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeStatistics Node statistics in the node pool.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeStatistics(NodePoolNodeStatisticsArgs nodeStatistics) {
             return nodeStatistics(Output.of(nodeStatistics));
@@ -437,9 +447,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retainResources(@Nullable Output<List<String>> retainResources) {
             $.retainResources = retainResources;
@@ -448,9 +458,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retainResources(List<String> retainResources) {
             return retainResources(Output.of(retainResources));
@@ -458,9 +468,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retainResources When deleting a node pool, specify related resources to retain. Values: Empty value (default): delete associated resources Ecs: when deleting the node pool, retain ECS instances in the node pool. If the node pool contains prepaid ECS instances and retaining ECS is not selected, this API only removes the ECS instance from the node pool and does not delete it. You can query the instance via the ECS console or ECS API and perform subsequent operations as needed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retainResources(String... retainResources) {
             return retainResources(List.of(retainResources));
@@ -468,9 +478,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Node pool status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<NodePoolStatusArgs> status) {
             $.status = status;
@@ -479,32 +489,53 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Node pool status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(NodePoolStatusArgs status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<NodePoolTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<NodePoolTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(NodePoolTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updatedTime Node pool update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -513,9 +544,9 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Node pool update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

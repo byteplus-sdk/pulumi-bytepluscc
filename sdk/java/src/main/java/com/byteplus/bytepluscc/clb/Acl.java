@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * CLB provides listener-level access control. If you want to allow only certain IPs or deny only certain IPs from accessing the CLB instance through the listener port, you can set an access control policy for the listener.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,24 +36,24 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.clb.AclArgs;
  * import com.pulumi.bytepluscc.clb.inputs.AclAclEntryArgs;
  * import com.pulumi.bytepluscc.clb.inputs.AclTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var aclDemo = new Acl("aclDemo", AclArgs.builder()
  *             .aclName("AclDemo")
  *             .description("AclDemo Example")
  *             .projectName("default")
- *             .aclEntries(            
+ *             .aclEntries(
  *                 AclAclEntryArgs.builder()
  *                     .description("AclDemo description")
  *                     .entry("1.1.2.2/32")
@@ -67,162 +67,192 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:clb/acl:Acl example &#34;acl_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:clb/acl:Acl")
 public class Acl extends com.pulumi.resources.CustomResource {
+    /**
+     * Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="aclEntries", refs={List.class,AclAclEntry.class}, tree="[0,1]")
     private Output<List<AclAclEntry>> aclEntries;
 
+    /**
+     * @return Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AclAclEntry>> aclEntries() {
         return this.aclEntries;
     }
     /**
      * Number of IP entries contained in the access control policy group.
-     * 
+     *
      */
     @Export(name="aclEntryCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> aclEntryCount;
 
     /**
      * @return Number of IP entries contained in the access control policy group.
-     * 
+     *
      */
     public Output<Integer> aclEntryCount() {
         return this.aclEntryCount;
     }
     /**
      * Access control policy group ID
-     * 
+     *
      */
     @Export(name="aclId", refs={String.class}, tree="[0]")
     private Output<String> aclId;
 
     /**
      * @return Access control policy group ID
-     * 
+     *
      */
     public Output<String> aclId() {
         return this.aclId;
     }
     /**
      * Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-     * 
+     *
      */
     @Export(name="aclName", refs={String.class}, tree="[0]")
     private Output<String> aclName;
 
     /**
      * @return Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-     * 
+     *
      */
     public Output<String> aclName() {
         return this.aclName;
     }
     /**
      * Creation time of the access control policy group
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the access control policy group
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * Detailed information about listeners associated with the access control policy group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="listeners", refs={List.class,AclListener.class}, tree="[0,1]")
     private Output<List<AclListener>> listeners;
 
+    /**
+     * @return Detailed information about listeners associated with the access control policy group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AclListener>> listeners() {
         return this.listeners;
     }
     /**
      * Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Is this a managed resource. true: yes. false: no.
-     * 
+     *
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
      * @return Is this a managed resource. true: yes. false: no.
-     * 
+     *
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
      * Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,AclTag.class}, tree="[0,1]")
     private Output<List<AclTag>> tags;
 
+    /**
+     * @return Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AclTag>> tags() {
         return this.tags;
     }
     /**
      * Last operation time of the access control policy group
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last operation time of the access control policy group
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

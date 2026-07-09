@@ -24,14 +24,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
-     * 
+     *
      */
     @Import(name="accessMode")
     private @Nullable Output<Integer> accessMode;
 
     /**
      * @return Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
-     * 
+     *
      */
     public Optional<Output<Integer>> accessMode() {
         return Optional.ofNullable(this.accessMode);
@@ -39,14 +39,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
-     * 
+     *
      */
     @Import(name="advancedDefenseIp")
     private @Nullable Output<String> advancedDefenseIp;
 
     /**
      * @return High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
-     * 
+     *
      */
     public Optional<Output<String>> advancedDefenseIp() {
         return Optional.ofNullable(this.advancedDefenseIp);
@@ -54,14 +54,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
-     * 
+     *
      */
     @Import(name="advancedDefenseIpv6")
     private @Nullable Output<String> advancedDefenseIpv6;
 
     /**
      * @return High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
-     * 
+     *
      */
     public Optional<Output<String>> advancedDefenseIpv6() {
         return Optional.ofNullable(this.advancedDefenseIpv6);
@@ -69,14 +69,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * API protection policy enabled. 0: Off, 1: On
-     * 
+     *
      */
     @Import(name="apiEnable")
     private @Nullable Output<Integer> apiEnable;
 
     /**
      * @return API protection policy enabled. 0: Off, 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> apiEnable() {
         return Optional.ofNullable(this.apiEnable);
@@ -84,14 +84,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Attack status. 0: No attack detected, 1: Attack detected.
-     * 
+     *
      */
     @Import(name="attackStatus")
     private @Nullable Output<Integer> attackStatus;
 
     /**
      * @return Attack status. 0: No attack detected, 1: Attack detected.
-     * 
+     *
      */
     public Optional<Output<Integer>> attackStatus() {
         return Optional.ofNullable(this.attackStatus);
@@ -99,14 +99,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
-     * 
+     *
      */
     @Import(name="autoCcEnable")
     private @Nullable Output<Integer> autoCcEnable;
 
     /**
      * @return Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
-     * 
+     *
      */
     public Optional<Output<Integer>> autoCcEnable() {
         return Optional.ofNullable(this.autoCcEnable);
@@ -114,36 +114,46 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
-     * 
+     *
      */
     @Import(name="automaticBlackEnable")
     private @Nullable Output<Integer> automaticBlackEnable;
 
     /**
      * @return Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
-     * 
+     *
      */
     public Optional<Output<Integer>> automaticBlackEnable() {
         return Optional.ofNullable(this.automaticBlackEnable);
     }
 
+    /**
+     * Origin configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="backendGroups")
     private @Nullable Output<List<DomainBackendGroupArgs>> backendGroups;
 
+    /**
+     * @return Origin configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainBackendGroupArgs>>> backendGroups() {
         return Optional.ofNullable(this.backendGroups);
     }
 
     /**
      * Denylist policy enabled. 0: Off, 1: On
-     * 
+     *
      */
     @Import(name="blackIpEnable")
     private @Nullable Output<Integer> blackIpEnable;
 
     /**
      * @return Denylist policy enabled. 0: Off, 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> blackIpEnable() {
         return Optional.ofNullable(this.blackIpEnable);
@@ -151,14 +161,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
-     * 
+     *
      */
     @Import(name="blackLctEnable")
     private @Nullable Output<Integer> blackLctEnable;
 
     /**
      * @return Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
-     * 
+     *
      */
     public Optional<Output<Integer>> blackLctEnable() {
         return Optional.ofNullable(this.blackLctEnable);
@@ -166,14 +176,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Dynamic token protection enabled
-     * 
+     *
      */
     @Import(name="botDytokenEnable")
     private @Nullable Output<Integer> botDytokenEnable;
 
     /**
      * @return Dynamic token protection enabled
-     * 
+     *
      */
     public Optional<Output<Integer>> botDytokenEnable() {
         return Optional.ofNullable(this.botDytokenEnable);
@@ -183,7 +193,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * Bot rate limit policy enabled.
      * 0: Off
      * 1: On
-     * 
+     *
      */
     @Import(name="botFrequencyEnable")
     private @Nullable Output<Integer> botFrequencyEnable;
@@ -192,7 +202,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * @return Bot rate limit policy enabled.
      * 0: Off
      * 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> botFrequencyEnable() {
         return Optional.ofNullable(this.botFrequencyEnable);
@@ -202,7 +212,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * Bot statistics protection policy enabled.
      * 0: Off
      * 1: On
-     * 
+     *
      */
     @Import(name="botRepeatEnable")
     private @Nullable Output<Integer> botRepeatEnable;
@@ -211,7 +221,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * @return Bot statistics protection policy enabled.
      * 0: Off
      * 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> botRepeatEnable() {
         return Optional.ofNullable(this.botRepeatEnable);
@@ -223,7 +233,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * 2: Intercept
      * 6: JS Challenge
      * 7: CAPTCHA.
-     * 
+     *
      */
     @Import(name="botSequenceDefaultAction")
     private @Nullable Output<Integer> botSequenceDefaultAction;
@@ -234,7 +244,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * 2: Intercept
      * 6: JS Challenge
      * 7: CAPTCHA.
-     * 
+     *
      */
     public Optional<Output<Integer>> botSequenceDefaultAction() {
         return Optional.ofNullable(this.botSequenceDefaultAction);
@@ -244,7 +254,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * Whether to enable bot behavior map.
      * 0: Off
      * 1: On.
-     * 
+     *
      */
     @Import(name="botSequenceEnable")
     private @Nullable Output<Integer> botSequenceEnable;
@@ -253,7 +263,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * @return Whether to enable bot behavior map.
      * 0: Off
      * 1: On.
-     * 
+     *
      */
     public Optional<Output<Integer>> botSequenceEnable() {
         return Optional.ofNullable(this.botSequenceEnable);
@@ -263,7 +273,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * Whether to enable CC protection policy.
      * 0: Disabled
      * 1: Enabled.
-     * 
+     *
      */
     @Import(name="ccEnable")
     private @Nullable Output<Integer> ccEnable;
@@ -272,7 +282,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * @return Whether to enable CC protection policy.
      * 0: Disabled
      * 1: Enabled.
-     * 
+     *
      */
     public Optional<Output<Integer>> ccEnable() {
         return Optional.ofNullable(this.ccEnable);
@@ -280,14 +290,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate ID managed in Certificate Center
-     * 
+     *
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
      * @return Certificate ID managed in Certificate Center
-     * 
+     *
      */
     public Optional<Output<String>> certificateId() {
         return Optional.ofNullable(this.certificateId);
@@ -295,14 +305,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate name. Displayed when protocol type includes HTTPS.
-     * 
+     *
      */
     @Import(name="certificateName")
     private @Nullable Output<String> certificateName;
 
     /**
      * @return Certificate name. Displayed when protocol type includes HTTPS.
-     * 
+     *
      */
     public Optional<Output<String>> certificateName() {
         return Optional.ofNullable(this.certificateName);
@@ -310,14 +320,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate hosting platform: waf/certificate_service.
-     * 
+     *
      */
     @Import(name="certificatePlatform")
     private @Nullable Output<String> certificatePlatform;
 
     /**
      * @return Certificate hosting platform: waf/certificate_service.
-     * 
+     *
      */
     public Optional<Output<String>> certificatePlatform() {
         return Optional.ofNullable(this.certificatePlatform);
@@ -325,14 +335,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CLB instance ID.
-     * 
+     *
      */
     @Import(name="clbInstanceIds")
     private @Nullable Output<String> clbInstanceIds;
 
     /**
      * @return CLB instance ID.
-     * 
+     *
      */
     public Optional<Output<String>> clbInstanceIds() {
         return Optional.ofNullable(this.clbInstanceIds);
@@ -340,14 +350,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CLB listener ID.
-     * 
+     *
      */
     @Import(name="clbListenerId")
     private @Nullable Output<String> clbListenerId;
 
     /**
      * @return CLB listener ID.
-     * 
+     *
      */
     public Optional<Output<String>> clbListenerId() {
         return Optional.ofNullable(this.clbListenerId);
@@ -355,14 +365,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CLB backend server group ID.
-     * 
+     *
      */
     @Import(name="clbPoolId")
     private @Nullable Output<String> clbPoolId;
 
     /**
      * @return CLB backend server group ID.
-     * 
+     *
      */
     public Optional<Output<String>> clbPoolId() {
         return Optional.ofNullable(this.clbPoolId);
@@ -370,14 +380,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CLB backend server ID
-     * 
+     *
      */
     @Import(name="clbServerId")
     private @Nullable Output<String> clbServerId;
 
     /**
      * @return CLB backend server ID
-     * 
+     *
      */
     public Optional<Output<String>> clbServerId() {
         return Optional.ofNullable(this.clbServerId);
@@ -385,14 +395,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
-     * 
+     *
      */
     @Import(name="clientIpLocation")
     private @Nullable Output<Integer> clientIpLocation;
 
     /**
      * @return Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
-     * 
+     *
      */
     public Optional<Output<Integer>> clientIpLocation() {
         return Optional.ofNullable(this.clientIpLocation);
@@ -400,36 +410,46 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum client request body size (MB).
-     * 
+     *
      */
     @Import(name="clientMaxBodySize")
     private @Nullable Output<Integer> clientMaxBodySize;
 
     /**
      * @return Maximum client request body size (MB).
-     * 
+     *
      */
     public Optional<Output<Integer>> clientMaxBodySize() {
         return Optional.ofNullable(this.clientMaxBodySize);
     }
 
+    /**
+     * LB access parameters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="cloudAccessConfigs")
     private @Nullable Output<List<DomainCloudAccessConfigArgs>> cloudAccessConfigs;
 
+    /**
+     * @return LB access parameters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainCloudAccessConfigArgs>>> cloudAccessConfigs() {
         return Optional.ofNullable(this.cloudAccessConfigs);
     }
 
     /**
      * CNAME record.
-     * 
+     *
      */
     @Import(name="cname")
     private @Nullable Output<String> cname;
 
     /**
      * @return CNAME record.
-     * 
+     *
      */
     public Optional<Output<String>> cname() {
         return Optional.ofNullable(this.cname);
@@ -437,14 +457,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable custom bot protection.
-     * 
+     *
      */
     @Import(name="customBotEnable")
     private @Nullable Output<Integer> customBotEnable;
 
     /**
      * @return Whether to enable custom bot protection.
-     * 
+     *
      */
     public Optional<Output<Integer>> customBotEnable() {
         return Optional.ofNullable(this.customBotEnable);
@@ -452,14 +472,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom header.
-     * 
+     *
      */
     @Import(name="customHeaders")
     private @Nullable Output<List<String>> customHeaders;
 
     /**
      * @return Custom header.
-     * 
+     *
      */
     public Optional<Output<List<String>>> customHeaders() {
         return Optional.ofNullable(this.customHeaders);
@@ -467,14 +487,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable custom response.
-     * 
+     *
      */
     @Import(name="customRspEnable")
     private @Nullable Output<Integer> customRspEnable;
 
     /**
      * @return Whether to enable custom response.
-     * 
+     *
      */
     public Optional<Output<Integer>> customRspEnable() {
         return Optional.ofNullable(this.customRspEnable);
@@ -482,14 +502,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom SNI.
-     * 
+     *
      */
     @Import(name="customSni")
     private @Nullable Output<String> customSni;
 
     /**
      * @return Custom SNI.
-     * 
+     *
      */
     public Optional<Output<String>> customSni() {
         return Optional.ofNullable(this.customSni);
@@ -504,7 +524,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
      * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
      * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
-     * 
+     *
      */
     @Import(name="defenceMode")
     private @Nullable Output<Integer> defenceMode;
@@ -518,7 +538,7 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
      * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
      * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
      * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
-     * 
+     *
      */
     public Optional<Output<Integer>> defenceMode() {
         return Optional.ofNullable(this.defenceMode);
@@ -526,14 +546,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Data leakage protection enabled
-     * 
+     *
      */
     @Import(name="dlpEnable")
     private @Nullable Output<Integer> dlpEnable;
 
     /**
      * @return Data leakage protection enabled
-     * 
+     *
      */
     public Optional<Output<Integer>> dlpEnable() {
         return Optional.ofNullable(this.dlpEnable);
@@ -541,14 +561,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Protected domain information. Supports wildcard and exact domains
-     * 
+     *
      */
     @Import(name="domain")
     private @Nullable Output<String> domain;
 
     /**
      * @return Protected domain information. Supports wildcard and exact domains
-     * 
+     *
      */
     public Optional<Output<String>> domain() {
         return Optional.ofNullable(this.domain);
@@ -556,14 +576,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User-defined redirection enabled. 0: Off, 1: On
-     * 
+     *
      */
     @Import(name="enableCustomRedirect")
     private @Nullable Output<Integer> enableCustomRedirect;
 
     /**
      * @return User-defined redirection enabled. 0: Off, 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> enableCustomRedirect() {
         return Optional.ofNullable(this.enableCustomRedirect);
@@ -571,14 +591,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
-     * 
+     *
      */
     @Import(name="enableHttp2")
     private @Nullable Output<Integer> enableHttp2;
 
     /**
      * @return Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
-     * 
+     *
      */
     public Optional<Output<Integer>> enableHttp2() {
         return Optional.ofNullable(this.enableHttp2);
@@ -586,14 +606,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv6 request protection supported. 0: Off, 1: On
-     * 
+     *
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Integer> enableIpv6;
 
     /**
      * @return IPv6 request protection supported. 0: Off, 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> enableIpv6() {
         return Optional.ofNullable(this.enableIpv6);
@@ -601,14 +621,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable SNI configuration. 0: Off, 1: On.
-     * 
+     *
      */
     @Import(name="enableSni")
     private @Nullable Output<Integer> enableSni;
 
     /**
      * @return Whether to enable SNI configuration. 0: Off, 1: On.
-     * 
+     *
      */
     public Optional<Output<Integer>> enableSni() {
         return Optional.ofNullable(this.enableSni);
@@ -616,14 +636,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Persistent connection reuse count
-     * 
+     *
      */
     @Import(name="keepAliveRequest")
     private @Nullable Output<Integer> keepAliveRequest;
 
     /**
      * @return Persistent connection reuse count
-     * 
+     *
      */
     public Optional<Output<Integer>> keepAliveRequest() {
         return Optional.ofNullable(this.keepAliveRequest);
@@ -631,14 +651,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Persistent connection keep-alive time (seconds)
-     * 
+     *
      */
     @Import(name="keepAliveTimeout")
     private @Nullable Output<Integer> keepAliveTimeout;
 
     /**
      * @return Persistent connection keep-alive time (seconds)
-     * 
+     *
      */
     public Optional<Output<Integer>> keepAliveTimeout() {
         return Optional.ofNullable(this.keepAliveTimeout);
@@ -646,14 +666,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
-     * 
+     *
      */
     @Import(name="lbAlgorithm")
     private @Nullable Output<String> lbAlgorithm;
 
     /**
      * @return Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
-     * 
+     *
      */
     public Optional<Output<String>> lbAlgorithm() {
         return Optional.ofNullable(this.lbAlgorithm);
@@ -661,14 +681,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port number
-     * 
+     *
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
      * @return Port number
-     * 
+     *
      */
     public Optional<Output<Integer>> port() {
         return Optional.ofNullable(this.port);
@@ -676,14 +696,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -691,14 +711,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Protocol following enabled. 0: Off, 1: On
-     * 
+     *
      */
     @Import(name="protocolFollow")
     private @Nullable Output<Integer> protocolFollow;
 
     /**
      * @return Protocol following enabled. 0: Off, 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> protocolFollow() {
         return Optional.ofNullable(this.protocolFollow);
@@ -706,14 +726,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access port information
-     * 
+     *
      */
     @Import(name="protocolPorts")
     private @Nullable Output<DomainProtocolPortsArgs> protocolPorts;
 
     /**
      * @return Access port information
-     * 
+     *
      */
     public Optional<Output<DomainProtocolPortsArgs>> protocolPorts() {
         return Optional.ofNullable(this.protocolPorts);
@@ -721,14 +741,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access protocol type: supports HTTP/HTTPS
-     * 
+     *
      */
     @Import(name="protocols")
     private @Nullable Output<List<String>> protocols;
 
     /**
      * @return Access protocol type: supports HTTP/HTTPS
-     * 
+     *
      */
     public Optional<Output<List<String>>> protocols() {
         return Optional.ofNullable(this.protocols);
@@ -736,14 +756,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Proxy configuration enabled. 0: Off, 1: On
-     * 
+     *
      */
     @Import(name="proxyConfig")
     private @Nullable Output<Integer> proxyConfig;
 
     /**
      * @return Proxy configuration enabled. 0: Off, 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> proxyConfig() {
         return Optional.ofNullable(this.proxyConfig);
@@ -751,14 +771,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Connection timeout between WAF and backend server (seconds).
-     * 
+     *
      */
     @Import(name="proxyConnectTimeout")
     private @Nullable Output<Integer> proxyConnectTimeout;
 
     /**
      * @return Connection timeout between WAF and backend server (seconds).
-     * 
+     *
      */
     public Optional<Output<Integer>> proxyConnectTimeout() {
         return Optional.ofNullable(this.proxyConnectTimeout);
@@ -766,14 +786,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of reusable WAF origin persistent connections.
-     * 
+     *
      */
     @Import(name="proxyKeepAlive")
     private @Nullable Output<Integer> proxyKeepAlive;
 
     /**
      * @return Number of reusable WAF origin persistent connections.
-     * 
+     *
      */
     public Optional<Output<Integer>> proxyKeepAlive() {
         return Optional.ofNullable(this.proxyKeepAlive);
@@ -781,14 +801,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Idle persistent connection timeout (seconds)
-     * 
+     *
      */
     @Import(name="proxyKeepAliveTimeout")
     private @Nullable Output<Integer> proxyKeepAliveTimeout;
 
     /**
      * @return Idle persistent connection timeout (seconds)
-     * 
+     *
      */
     public Optional<Output<Integer>> proxyKeepAliveTimeout() {
         return Optional.ofNullable(this.proxyKeepAliveTimeout);
@@ -796,14 +816,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for WAF to read response from backend server (seconds).
-     * 
+     *
      */
     @Import(name="proxyReadTimeout")
     private @Nullable Output<Integer> proxyReadTimeout;
 
     /**
      * @return Timeout for WAF to read response from backend server (seconds).
-     * 
+     *
      */
     public Optional<Output<Integer>> proxyReadTimeout() {
         return Optional.ofNullable(this.proxyReadTimeout);
@@ -811,14 +831,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * WAF origin retry count.
-     * 
+     *
      */
     @Import(name="proxyRetry")
     private @Nullable Output<Integer> proxyRetry;
 
     /**
      * @return WAF origin retry count.
-     * 
+     *
      */
     public Optional<Output<Integer>> proxyRetry() {
         return Optional.ofNullable(this.proxyRetry);
@@ -826,14 +846,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for WAF to transmit request to backend server (seconds).
-     * 
+     *
      */
     @Import(name="proxyWriteTimeout")
     private @Nullable Output<Integer> proxyWriteTimeout;
 
     /**
      * @return Timeout for WAF to transmit request to backend server (seconds).
-     * 
+     *
      */
     public Optional<Output<Integer>> proxyWriteTimeout() {
         return Optional.ofNullable(this.proxyWriteTimeout);
@@ -841,14 +861,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CNAME access origin method. 0: Private network origin, 1: Public network origin.
-     * 
+     *
      */
     @Import(name="publicRealServer")
     private @Nullable Output<Integer> publicRealServer;
 
     /**
      * @return CNAME access origin method. 0: Private network origin, 1: Public network origin.
-     * 
+     *
      */
     public Optional<Output<Integer>> publicRealServer() {
         return Optional.ofNullable(this.publicRealServer);
@@ -856,14 +876,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable abnormal response protection.
-     * 
+     *
      */
     @Import(name="rspAbnormalEnable")
     private @Nullable Output<Integer> rspAbnormalEnable;
 
     /**
      * @return Whether to enable abnormal response protection.
-     * 
+     *
      */
     public Optional<Output<Integer>> rspAbnormalEnable() {
         return Optional.ofNullable(this.rspAbnormalEnable);
@@ -871,14 +891,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Service IP
-     * 
+     *
      */
     @Import(name="serverIps")
     private @Nullable Output<String> serverIps;
 
     /**
      * @return Service IP
-     * 
+     *
      */
     public Optional<Output<String>> serverIps() {
         return Optional.ofNullable(this.serverIps);
@@ -886,14 +906,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * WAF origin IP.
-     * 
+     *
      */
     @Import(name="srcIps")
     private @Nullable Output<String> srcIps;
 
     /**
      * @return WAF origin IP.
-     * 
+     *
      */
     public Optional<Output<String>> srcIps() {
         return Optional.ofNullable(this.srcIps);
@@ -901,14 +921,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Origin protocol.
-     * 
+     *
      */
     @Import(name="srcProtocol")
     private @Nullable Output<String> srcProtocol;
 
     /**
      * @return Origin protocol.
-     * 
+     *
      */
     public Optional<Output<String>> srcProtocol() {
         return Optional.ofNullable(this.srcProtocol);
@@ -916,14 +936,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cipher suite
-     * 
+     *
      */
     @Import(name="sslCiphers")
     private @Nullable Output<List<String>> sslCiphers;
 
     /**
      * @return Cipher suite
-     * 
+     *
      */
     public Optional<Output<List<String>>> sslCiphers() {
         return Optional.ofNullable(this.sslCiphers);
@@ -931,14 +951,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
-     * 
+     *
      */
     @Import(name="sslProtocols")
     private @Nullable Output<List<String>> sslProtocols;
 
     /**
      * @return TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
-     * 
+     *
      */
     public Optional<Output<List<String>>> sslProtocols() {
         return Optional.ofNullable(this.sslProtocols);
@@ -946,14 +966,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<Integer> status;
 
     /**
      * @return Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
-     * 
+     *
      */
     public Optional<Output<Integer>> status() {
         return Optional.ofNullable(this.status);
@@ -961,14 +981,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable managed bot protection.
-     * 
+     *
      */
     @Import(name="systemBotEnable")
     private @Nullable Output<Integer> systemBotEnable;
 
     /**
      * @return Whether to enable managed bot protection.
-     * 
+     *
      */
     public Optional<Output<Integer>> systemBotEnable() {
         return Optional.ofNullable(this.systemBotEnable);
@@ -976,36 +996,46 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable anti-tampering.
-     * 
+     *
      */
     @Import(name="tamperProofEnable")
     private @Nullable Output<Integer> tamperProofEnable;
 
     /**
      * @return Whether to enable anti-tampering.
-     * 
+     *
      */
     public Optional<Output<Integer>> tamperProofEnable() {
         return Optional.ofNullable(this.tamperProofEnable);
     }
 
+    /**
+     * TCP listener configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tcpListenerConfigs")
     private @Nullable Output<List<DomainTcpListenerConfigArgs>> tcpListenerConfigs;
 
+    /**
+     * @return TCP listener configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainTcpListenerConfigArgs>>> tcpListenerConfigs() {
         return Optional.ofNullable(this.tcpListenerConfigs);
     }
 
     /**
      * Log service enabled. 0: Off, 1: On
-     * 
+     *
      */
     @Import(name="tlsEnable")
     private @Nullable Output<Integer> tlsEnable;
 
     /**
      * @return Log service enabled. 0: Off, 1: On
-     * 
+     *
      */
     public Optional<Output<Integer>> tlsEnable() {
         return Optional.ofNullable(this.tlsEnable);
@@ -1013,14 +1043,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log field configuration details
-     * 
+     *
      */
     @Import(name="tlsFieldsConfig")
     private @Nullable Output<DomainTlsFieldsConfigArgs> tlsFieldsConfig;
 
     /**
      * @return Log field configuration details
-     * 
+     *
      */
     public Optional<Output<DomainTlsFieldsConfigArgs>> tlsFieldsConfig() {
         return Optional.ofNullable(this.tlsFieldsConfig);
@@ -1028,14 +1058,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Update time
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -1043,14 +1073,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID。
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID。
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -1058,14 +1088,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * WAF protection enabled
-     * 
+     *
      */
     @Import(name="wafEnable")
     private @Nullable Output<Integer> wafEnable;
 
     /**
      * @return WAF protection enabled
-     * 
+     *
      */
     public Optional<Output<Integer>> wafEnable() {
         return Optional.ofNullable(this.wafEnable);
@@ -1073,14 +1103,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist request protection enabled
-     * 
+     *
      */
     @Import(name="wafWhiteReqEnable")
     private @Nullable Output<Integer> wafWhiteReqEnable;
 
     /**
      * @return Allowlist request protection enabled
-     * 
+     *
      */
     public Optional<Output<Integer>> wafWhiteReqEnable() {
         return Optional.ofNullable(this.wafWhiteReqEnable);
@@ -1088,14 +1118,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable allowlist protection.
-     * 
+     *
      */
     @Import(name="whiteEnable")
     private @Nullable Output<Integer> whiteEnable;
 
     /**
      * @return Whether to enable allowlist protection.
-     * 
+     *
      */
     public Optional<Output<Integer>> whiteEnable() {
         return Optional.ofNullable(this.whiteEnable);
@@ -1103,14 +1133,14 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Field allowlist protection enabled
-     * 
+     *
      */
     @Import(name="whiteFieldEnable")
     private @Nullable Output<Integer> whiteFieldEnable;
 
     /**
      * @return Field allowlist protection enabled
-     * 
+     *
      */
     public Optional<Output<Integer>> whiteFieldEnable() {
         return Optional.ofNullable(this.whiteFieldEnable);
@@ -1213,9 +1243,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accessMode Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accessMode(@Nullable Output<Integer> accessMode) {
             $.accessMode = accessMode;
@@ -1224,9 +1254,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accessMode Access mode. 10: CNAME access, 11: Layer 7 load balancing (CLB) access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accessMode(Integer accessMode) {
             return accessMode(Output.of(accessMode));
@@ -1234,9 +1264,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param advancedDefenseIp High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder advancedDefenseIp(@Nullable Output<String> advancedDefenseIp) {
             $.advancedDefenseIp = advancedDefenseIp;
@@ -1245,9 +1275,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param advancedDefenseIp High defense instance IP. Displayed for high-defense WAF access; otherwise blank.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder advancedDefenseIp(String advancedDefenseIp) {
             return advancedDefenseIp(Output.of(advancedDefenseIp));
@@ -1255,9 +1285,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param advancedDefenseIpv6 High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder advancedDefenseIpv6(@Nullable Output<String> advancedDefenseIpv6) {
             $.advancedDefenseIpv6 = advancedDefenseIpv6;
@@ -1266,9 +1296,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param advancedDefenseIpv6 High defense instance IPv6. Displayed for high-defense WAF access; otherwise blank.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder advancedDefenseIpv6(String advancedDefenseIpv6) {
             return advancedDefenseIpv6(Output.of(advancedDefenseIpv6));
@@ -1276,9 +1306,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param apiEnable API protection policy enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder apiEnable(@Nullable Output<Integer> apiEnable) {
             $.apiEnable = apiEnable;
@@ -1287,9 +1317,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param apiEnable API protection policy enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder apiEnable(Integer apiEnable) {
             return apiEnable(Output.of(apiEnable));
@@ -1297,9 +1327,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param attackStatus Attack status. 0: No attack detected, 1: Attack detected.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder attackStatus(@Nullable Output<Integer> attackStatus) {
             $.attackStatus = attackStatus;
@@ -1308,9 +1338,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param attackStatus Attack status. 0: No attack detected, 1: Attack detected.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder attackStatus(Integer attackStatus) {
             return attackStatus(Output.of(attackStatus));
@@ -1318,9 +1348,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoCcEnable Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoCcEnable(@Nullable Output<Integer> autoCcEnable) {
             $.autoCcEnable = autoCcEnable;
@@ -1329,9 +1359,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoCcEnable Whether to enable intelligent CC protection policy. 0: Disabled, 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoCcEnable(Integer autoCcEnable) {
             return autoCcEnable(Output.of(autoCcEnable));
@@ -1339,9 +1369,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param automaticBlackEnable Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder automaticBlackEnable(@Nullable Output<Integer> automaticBlackEnable) {
             $.automaticBlackEnable = automaticBlackEnable;
@@ -1350,32 +1380,53 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param automaticBlackEnable Whether to enable automatic blocking. 0: Disabled, 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder automaticBlackEnable(Integer automaticBlackEnable) {
             return automaticBlackEnable(Output.of(automaticBlackEnable));
         }
 
+        /**
+         * @param backendGroups Origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backendGroups(@Nullable Output<List<DomainBackendGroupArgs>> backendGroups) {
             $.backendGroups = backendGroups;
             return this;
         }
 
+        /**
+         * @param backendGroups Origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backendGroups(List<DomainBackendGroupArgs> backendGroups) {
             return backendGroups(Output.of(backendGroups));
         }
 
+        /**
+         * @param backendGroups Origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backendGroups(DomainBackendGroupArgs... backendGroups) {
             return backendGroups(List.of(backendGroups));
         }
 
         /**
          * @param blackIpEnable Denylist policy enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder blackIpEnable(@Nullable Output<Integer> blackIpEnable) {
             $.blackIpEnable = blackIpEnable;
@@ -1384,9 +1435,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param blackIpEnable Denylist policy enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder blackIpEnable(Integer blackIpEnable) {
             return blackIpEnable(Output.of(blackIpEnable));
@@ -1394,9 +1445,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param blackLctEnable Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder blackLctEnable(@Nullable Output<Integer> blackLctEnable) {
             $.blackLctEnable = blackLctEnable;
@@ -1405,9 +1456,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param blackLctEnable Whether to enable regional blocking policy. 0: Disabled; 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder blackLctEnable(Integer blackLctEnable) {
             return blackLctEnable(Output.of(blackLctEnable));
@@ -1415,9 +1466,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param botDytokenEnable Dynamic token protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botDytokenEnable(@Nullable Output<Integer> botDytokenEnable) {
             $.botDytokenEnable = botDytokenEnable;
@@ -1426,9 +1477,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param botDytokenEnable Dynamic token protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botDytokenEnable(Integer botDytokenEnable) {
             return botDytokenEnable(Output.of(botDytokenEnable));
@@ -1438,9 +1489,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * @param botFrequencyEnable Bot rate limit policy enabled.
          * 0: Off
          * 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botFrequencyEnable(@Nullable Output<Integer> botFrequencyEnable) {
             $.botFrequencyEnable = botFrequencyEnable;
@@ -1451,9 +1502,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * @param botFrequencyEnable Bot rate limit policy enabled.
          * 0: Off
          * 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botFrequencyEnable(Integer botFrequencyEnable) {
             return botFrequencyEnable(Output.of(botFrequencyEnable));
@@ -1463,9 +1514,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * @param botRepeatEnable Bot statistics protection policy enabled.
          * 0: Off
          * 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botRepeatEnable(@Nullable Output<Integer> botRepeatEnable) {
             $.botRepeatEnable = botRepeatEnable;
@@ -1476,9 +1527,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * @param botRepeatEnable Bot statistics protection policy enabled.
          * 0: Off
          * 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botRepeatEnable(Integer botRepeatEnable) {
             return botRepeatEnable(Output.of(botRepeatEnable));
@@ -1490,9 +1541,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * 2: Intercept
          * 6: JS Challenge
          * 7: CAPTCHA.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botSequenceDefaultAction(@Nullable Output<Integer> botSequenceDefaultAction) {
             $.botSequenceDefaultAction = botSequenceDefaultAction;
@@ -1505,9 +1556,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * 2: Intercept
          * 6: JS Challenge
          * 7: CAPTCHA.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botSequenceDefaultAction(Integer botSequenceDefaultAction) {
             return botSequenceDefaultAction(Output.of(botSequenceDefaultAction));
@@ -1517,9 +1568,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * @param botSequenceEnable Whether to enable bot behavior map.
          * 0: Off
          * 1: On.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botSequenceEnable(@Nullable Output<Integer> botSequenceEnable) {
             $.botSequenceEnable = botSequenceEnable;
@@ -1530,9 +1581,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * @param botSequenceEnable Whether to enable bot behavior map.
          * 0: Off
          * 1: On.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder botSequenceEnable(Integer botSequenceEnable) {
             return botSequenceEnable(Output.of(botSequenceEnable));
@@ -1542,9 +1593,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * @param ccEnable Whether to enable CC protection policy.
          * 0: Disabled
          * 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ccEnable(@Nullable Output<Integer> ccEnable) {
             $.ccEnable = ccEnable;
@@ -1555,9 +1606,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * @param ccEnable Whether to enable CC protection policy.
          * 0: Disabled
          * 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ccEnable(Integer ccEnable) {
             return ccEnable(Output.of(ccEnable));
@@ -1565,9 +1616,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID managed in Certificate Center
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateId(@Nullable Output<String> certificateId) {
             $.certificateId = certificateId;
@@ -1576,9 +1627,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID managed in Certificate Center
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateId(String certificateId) {
             return certificateId(Output.of(certificateId));
@@ -1586,9 +1637,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateName Certificate name. Displayed when protocol type includes HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateName(@Nullable Output<String> certificateName) {
             $.certificateName = certificateName;
@@ -1597,9 +1648,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateName Certificate name. Displayed when protocol type includes HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateName(String certificateName) {
             return certificateName(Output.of(certificateName));
@@ -1607,9 +1658,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificatePlatform Certificate hosting platform: waf/certificate_service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificatePlatform(@Nullable Output<String> certificatePlatform) {
             $.certificatePlatform = certificatePlatform;
@@ -1618,9 +1669,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificatePlatform Certificate hosting platform: waf/certificate_service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificatePlatform(String certificatePlatform) {
             return certificatePlatform(Output.of(certificatePlatform));
@@ -1628,9 +1679,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clbInstanceIds CLB instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clbInstanceIds(@Nullable Output<String> clbInstanceIds) {
             $.clbInstanceIds = clbInstanceIds;
@@ -1639,9 +1690,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clbInstanceIds CLB instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clbInstanceIds(String clbInstanceIds) {
             return clbInstanceIds(Output.of(clbInstanceIds));
@@ -1649,9 +1700,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clbListenerId CLB listener ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clbListenerId(@Nullable Output<String> clbListenerId) {
             $.clbListenerId = clbListenerId;
@@ -1660,9 +1711,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clbListenerId CLB listener ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clbListenerId(String clbListenerId) {
             return clbListenerId(Output.of(clbListenerId));
@@ -1670,9 +1721,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clbPoolId CLB backend server group ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clbPoolId(@Nullable Output<String> clbPoolId) {
             $.clbPoolId = clbPoolId;
@@ -1681,9 +1732,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clbPoolId CLB backend server group ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clbPoolId(String clbPoolId) {
             return clbPoolId(Output.of(clbPoolId));
@@ -1691,9 +1742,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clbServerId CLB backend server ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clbServerId(@Nullable Output<String> clbServerId) {
             $.clbServerId = clbServerId;
@@ -1702,9 +1753,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clbServerId CLB backend server ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clbServerId(String clbServerId) {
             return clbServerId(Output.of(clbServerId));
@@ -1712,9 +1763,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientIpLocation Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clientIpLocation(@Nullable Output<Integer> clientIpLocation) {
             $.clientIpLocation = clientIpLocation;
@@ -1723,9 +1774,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientIpLocation Client IP acquisition method. 0: Custom header field, 1: Use the first public IP address in the X-Forwarded-For (XFF) field as the real client IP address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clientIpLocation(Integer clientIpLocation) {
             return clientIpLocation(Output.of(clientIpLocation));
@@ -1733,9 +1784,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientMaxBodySize Maximum client request body size (MB).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clientMaxBodySize(@Nullable Output<Integer> clientMaxBodySize) {
             $.clientMaxBodySize = clientMaxBodySize;
@@ -1744,32 +1795,53 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clientMaxBodySize Maximum client request body size (MB).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clientMaxBodySize(Integer clientMaxBodySize) {
             return clientMaxBodySize(Output.of(clientMaxBodySize));
         }
 
+        /**
+         * @param cloudAccessConfigs LB access parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cloudAccessConfigs(@Nullable Output<List<DomainCloudAccessConfigArgs>> cloudAccessConfigs) {
             $.cloudAccessConfigs = cloudAccessConfigs;
             return this;
         }
 
+        /**
+         * @param cloudAccessConfigs LB access parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cloudAccessConfigs(List<DomainCloudAccessConfigArgs> cloudAccessConfigs) {
             return cloudAccessConfigs(Output.of(cloudAccessConfigs));
         }
 
+        /**
+         * @param cloudAccessConfigs LB access parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cloudAccessConfigs(DomainCloudAccessConfigArgs... cloudAccessConfigs) {
             return cloudAccessConfigs(List.of(cloudAccessConfigs));
         }
 
         /**
          * @param cname CNAME record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cname(@Nullable Output<String> cname) {
             $.cname = cname;
@@ -1778,9 +1850,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cname CNAME record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cname(String cname) {
             return cname(Output.of(cname));
@@ -1788,9 +1860,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customBotEnable Whether to enable custom bot protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customBotEnable(@Nullable Output<Integer> customBotEnable) {
             $.customBotEnable = customBotEnable;
@@ -1799,9 +1871,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customBotEnable Whether to enable custom bot protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customBotEnable(Integer customBotEnable) {
             return customBotEnable(Output.of(customBotEnable));
@@ -1809,9 +1881,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customHeaders Custom header.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customHeaders(@Nullable Output<List<String>> customHeaders) {
             $.customHeaders = customHeaders;
@@ -1820,9 +1892,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customHeaders Custom header.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customHeaders(List<String> customHeaders) {
             return customHeaders(Output.of(customHeaders));
@@ -1830,9 +1902,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customHeaders Custom header.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customHeaders(String... customHeaders) {
             return customHeaders(List.of(customHeaders));
@@ -1840,9 +1912,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customRspEnable Whether to enable custom response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customRspEnable(@Nullable Output<Integer> customRspEnable) {
             $.customRspEnable = customRspEnable;
@@ -1851,9 +1923,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customRspEnable Whether to enable custom response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customRspEnable(Integer customRspEnable) {
             return customRspEnable(Output.of(customRspEnable));
@@ -1861,9 +1933,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customSni Custom SNI.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customSni(@Nullable Output<String> customSni) {
             $.customSni = customSni;
@@ -1872,9 +1944,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customSni Custom SNI.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customSni(String customSni) {
             return customSni(Output.of(customSni));
@@ -1889,9 +1961,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
          * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
          * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder defenceMode(@Nullable Output<Integer> defenceMode) {
             $.defenceMode = defenceMode;
@@ -1907,9 +1979,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
          * 5: Partially enabled. The default protection mode is enabled, but some exception instances are in paused protection or origin mode.
          * 6: Partially paused. The default protection mode is paused, but some exception instances are in enabled protection or origin mode.
          * 7: Partially origin. The default protection mode is origin mode, but some exception instances are in enabled protection or paused protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder defenceMode(Integer defenceMode) {
             return defenceMode(Output.of(defenceMode));
@@ -1917,9 +1989,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dlpEnable Data leakage protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dlpEnable(@Nullable Output<Integer> dlpEnable) {
             $.dlpEnable = dlpEnable;
@@ -1928,9 +2000,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dlpEnable Data leakage protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dlpEnable(Integer dlpEnable) {
             return dlpEnable(Output.of(dlpEnable));
@@ -1938,9 +2010,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Protected domain information. Supports wildcard and exact domains
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domain(@Nullable Output<String> domain) {
             $.domain = domain;
@@ -1949,9 +2021,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Protected domain information. Supports wildcard and exact domains
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
@@ -1959,9 +2031,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableCustomRedirect User-defined redirection enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableCustomRedirect(@Nullable Output<Integer> enableCustomRedirect) {
             $.enableCustomRedirect = enableCustomRedirect;
@@ -1970,9 +2042,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableCustomRedirect User-defined redirection enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableCustomRedirect(Integer enableCustomRedirect) {
             return enableCustomRedirect(Output.of(enableCustomRedirect));
@@ -1980,9 +2052,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableHttp2 Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableHttp2(@Nullable Output<Integer> enableHttp2) {
             $.enableHttp2 = enableHttp2;
@@ -1991,9 +2063,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableHttp2 Whether to enable HTTP/2.0. 0: Disabled, 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableHttp2(Integer enableHttp2) {
             return enableHttp2(Output.of(enableHttp2));
@@ -2001,9 +2073,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIpv6 IPv6 request protection supported. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIpv6(@Nullable Output<Integer> enableIpv6) {
             $.enableIpv6 = enableIpv6;
@@ -2012,9 +2084,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIpv6 IPv6 request protection supported. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIpv6(Integer enableIpv6) {
             return enableIpv6(Output.of(enableIpv6));
@@ -2022,9 +2094,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableSni Whether to enable SNI configuration. 0: Off, 1: On.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableSni(@Nullable Output<Integer> enableSni) {
             $.enableSni = enableSni;
@@ -2033,9 +2105,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableSni Whether to enable SNI configuration. 0: Off, 1: On.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableSni(Integer enableSni) {
             return enableSni(Output.of(enableSni));
@@ -2043,9 +2115,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keepAliveRequest Persistent connection reuse count
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keepAliveRequest(@Nullable Output<Integer> keepAliveRequest) {
             $.keepAliveRequest = keepAliveRequest;
@@ -2054,9 +2126,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keepAliveRequest Persistent connection reuse count
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keepAliveRequest(Integer keepAliveRequest) {
             return keepAliveRequest(Output.of(keepAliveRequest));
@@ -2064,9 +2136,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keepAliveTimeout Persistent connection keep-alive time (seconds)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keepAliveTimeout(@Nullable Output<Integer> keepAliveTimeout) {
             $.keepAliveTimeout = keepAliveTimeout;
@@ -2075,9 +2147,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keepAliveTimeout Persistent connection keep-alive time (seconds)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keepAliveTimeout(Integer keepAliveTimeout) {
             return keepAliveTimeout(Output.of(keepAliveTimeout));
@@ -2085,9 +2157,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lbAlgorithm Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lbAlgorithm(@Nullable Output<String> lbAlgorithm) {
             $.lbAlgorithm = lbAlgorithm;
@@ -2096,9 +2168,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lbAlgorithm Load balancing algorithm type. wrr: Weighted round robin, wlc: Weighted least connections, sh: Source address hash.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lbAlgorithm(String lbAlgorithm) {
             return lbAlgorithm(Output.of(lbAlgorithm));
@@ -2106,9 +2178,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port number
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(@Nullable Output<Integer> port) {
             $.port = port;
@@ -2117,9 +2189,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port number
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
@@ -2127,9 +2199,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -2138,9 +2210,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -2148,9 +2220,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolFollow Protocol following enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocolFollow(@Nullable Output<Integer> protocolFollow) {
             $.protocolFollow = protocolFollow;
@@ -2159,9 +2231,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolFollow Protocol following enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocolFollow(Integer protocolFollow) {
             return protocolFollow(Output.of(protocolFollow));
@@ -2169,9 +2241,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolPorts Access port information
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocolPorts(@Nullable Output<DomainProtocolPortsArgs> protocolPorts) {
             $.protocolPorts = protocolPorts;
@@ -2180,9 +2252,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocolPorts Access port information
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocolPorts(DomainProtocolPortsArgs protocolPorts) {
             return protocolPorts(Output.of(protocolPorts));
@@ -2190,9 +2262,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocols Access protocol type: supports HTTP/HTTPS
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocols(@Nullable Output<List<String>> protocols) {
             $.protocols = protocols;
@@ -2201,9 +2273,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocols Access protocol type: supports HTTP/HTTPS
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocols(List<String> protocols) {
             return protocols(Output.of(protocols));
@@ -2211,9 +2283,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocols Access protocol type: supports HTTP/HTTPS
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocols(String... protocols) {
             return protocols(List.of(protocols));
@@ -2221,9 +2293,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyConfig Proxy configuration enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyConfig(@Nullable Output<Integer> proxyConfig) {
             $.proxyConfig = proxyConfig;
@@ -2232,9 +2304,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyConfig Proxy configuration enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyConfig(Integer proxyConfig) {
             return proxyConfig(Output.of(proxyConfig));
@@ -2242,9 +2314,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyConnectTimeout Connection timeout between WAF and backend server (seconds).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyConnectTimeout(@Nullable Output<Integer> proxyConnectTimeout) {
             $.proxyConnectTimeout = proxyConnectTimeout;
@@ -2253,9 +2325,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyConnectTimeout Connection timeout between WAF and backend server (seconds).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyConnectTimeout(Integer proxyConnectTimeout) {
             return proxyConnectTimeout(Output.of(proxyConnectTimeout));
@@ -2263,9 +2335,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyKeepAlive Number of reusable WAF origin persistent connections.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyKeepAlive(@Nullable Output<Integer> proxyKeepAlive) {
             $.proxyKeepAlive = proxyKeepAlive;
@@ -2274,9 +2346,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyKeepAlive Number of reusable WAF origin persistent connections.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyKeepAlive(Integer proxyKeepAlive) {
             return proxyKeepAlive(Output.of(proxyKeepAlive));
@@ -2284,9 +2356,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyKeepAliveTimeout Idle persistent connection timeout (seconds)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyKeepAliveTimeout(@Nullable Output<Integer> proxyKeepAliveTimeout) {
             $.proxyKeepAliveTimeout = proxyKeepAliveTimeout;
@@ -2295,9 +2367,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyKeepAliveTimeout Idle persistent connection timeout (seconds)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyKeepAliveTimeout(Integer proxyKeepAliveTimeout) {
             return proxyKeepAliveTimeout(Output.of(proxyKeepAliveTimeout));
@@ -2305,9 +2377,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyReadTimeout Timeout for WAF to read response from backend server (seconds).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyReadTimeout(@Nullable Output<Integer> proxyReadTimeout) {
             $.proxyReadTimeout = proxyReadTimeout;
@@ -2316,9 +2388,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyReadTimeout Timeout for WAF to read response from backend server (seconds).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyReadTimeout(Integer proxyReadTimeout) {
             return proxyReadTimeout(Output.of(proxyReadTimeout));
@@ -2326,9 +2398,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyRetry WAF origin retry count.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyRetry(@Nullable Output<Integer> proxyRetry) {
             $.proxyRetry = proxyRetry;
@@ -2337,9 +2409,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyRetry WAF origin retry count.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyRetry(Integer proxyRetry) {
             return proxyRetry(Output.of(proxyRetry));
@@ -2347,9 +2419,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyWriteTimeout Timeout for WAF to transmit request to backend server (seconds).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyWriteTimeout(@Nullable Output<Integer> proxyWriteTimeout) {
             $.proxyWriteTimeout = proxyWriteTimeout;
@@ -2358,9 +2430,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyWriteTimeout Timeout for WAF to transmit request to backend server (seconds).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyWriteTimeout(Integer proxyWriteTimeout) {
             return proxyWriteTimeout(Output.of(proxyWriteTimeout));
@@ -2368,9 +2440,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicRealServer CNAME access origin method. 0: Private network origin, 1: Public network origin.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicRealServer(@Nullable Output<Integer> publicRealServer) {
             $.publicRealServer = publicRealServer;
@@ -2379,9 +2451,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicRealServer CNAME access origin method. 0: Private network origin, 1: Public network origin.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicRealServer(Integer publicRealServer) {
             return publicRealServer(Output.of(publicRealServer));
@@ -2389,9 +2461,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rspAbnormalEnable Whether to enable abnormal response protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rspAbnormalEnable(@Nullable Output<Integer> rspAbnormalEnable) {
             $.rspAbnormalEnable = rspAbnormalEnable;
@@ -2400,9 +2472,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rspAbnormalEnable Whether to enable abnormal response protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rspAbnormalEnable(Integer rspAbnormalEnable) {
             return rspAbnormalEnable(Output.of(rspAbnormalEnable));
@@ -2410,9 +2482,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverIps Service IP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverIps(@Nullable Output<String> serverIps) {
             $.serverIps = serverIps;
@@ -2421,9 +2493,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serverIps Service IP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serverIps(String serverIps) {
             return serverIps(Output.of(serverIps));
@@ -2431,9 +2503,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param srcIps WAF origin IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder srcIps(@Nullable Output<String> srcIps) {
             $.srcIps = srcIps;
@@ -2442,9 +2514,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param srcIps WAF origin IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder srcIps(String srcIps) {
             return srcIps(Output.of(srcIps));
@@ -2452,9 +2524,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param srcProtocol Origin protocol.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder srcProtocol(@Nullable Output<String> srcProtocol) {
             $.srcProtocol = srcProtocol;
@@ -2463,9 +2535,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param srcProtocol Origin protocol.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder srcProtocol(String srcProtocol) {
             return srcProtocol(Output.of(srcProtocol));
@@ -2473,9 +2545,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslCiphers Cipher suite
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sslCiphers(@Nullable Output<List<String>> sslCiphers) {
             $.sslCiphers = sslCiphers;
@@ -2484,9 +2556,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslCiphers Cipher suite
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sslCiphers(List<String> sslCiphers) {
             return sslCiphers(Output.of(sslCiphers));
@@ -2494,9 +2566,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslCiphers Cipher suite
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sslCiphers(String... sslCiphers) {
             return sslCiphers(List.of(sslCiphers));
@@ -2504,9 +2576,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslProtocols TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sslProtocols(@Nullable Output<List<String>> sslProtocols) {
             $.sslProtocols = sslProtocols;
@@ -2515,9 +2587,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslProtocols TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sslProtocols(List<String> sslProtocols) {
             return sslProtocols(Output.of(sslProtocols));
@@ -2525,9 +2597,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sslProtocols TLS protocol version. For example: TLSv1, TLSv1.1, TLSv1.2, TLSv1.3
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sslProtocols(String... sslProtocols) {
             return sslProtocols(List.of(sslProtocols));
@@ -2535,9 +2607,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<Integer> status) {
             $.status = status;
@@ -2546,9 +2618,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Access status. 0: Normal, 1: DNS not resolved, 2: Configuring, 3: Configuration failed, 4: Configuration not effective, 5: Updating, 6: Instance deleted.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(Integer status) {
             return status(Output.of(status));
@@ -2556,9 +2628,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param systemBotEnable Whether to enable managed bot protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder systemBotEnable(@Nullable Output<Integer> systemBotEnable) {
             $.systemBotEnable = systemBotEnable;
@@ -2567,9 +2639,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param systemBotEnable Whether to enable managed bot protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder systemBotEnable(Integer systemBotEnable) {
             return systemBotEnable(Output.of(systemBotEnable));
@@ -2577,9 +2649,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tamperProofEnable Whether to enable anti-tampering.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tamperProofEnable(@Nullable Output<Integer> tamperProofEnable) {
             $.tamperProofEnable = tamperProofEnable;
@@ -2588,32 +2660,53 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tamperProofEnable Whether to enable anti-tampering.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tamperProofEnable(Integer tamperProofEnable) {
             return tamperProofEnable(Output.of(tamperProofEnable));
         }
 
+        /**
+         * @param tcpListenerConfigs TCP listener configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tcpListenerConfigs(@Nullable Output<List<DomainTcpListenerConfigArgs>> tcpListenerConfigs) {
             $.tcpListenerConfigs = tcpListenerConfigs;
             return this;
         }
 
+        /**
+         * @param tcpListenerConfigs TCP listener configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tcpListenerConfigs(List<DomainTcpListenerConfigArgs> tcpListenerConfigs) {
             return tcpListenerConfigs(Output.of(tcpListenerConfigs));
         }
 
+        /**
+         * @param tcpListenerConfigs TCP listener configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tcpListenerConfigs(DomainTcpListenerConfigArgs... tcpListenerConfigs) {
             return tcpListenerConfigs(List.of(tcpListenerConfigs));
         }
 
         /**
          * @param tlsEnable Log service enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tlsEnable(@Nullable Output<Integer> tlsEnable) {
             $.tlsEnable = tlsEnable;
@@ -2622,9 +2715,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsEnable Log service enabled. 0: Off, 1: On
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tlsEnable(Integer tlsEnable) {
             return tlsEnable(Output.of(tlsEnable));
@@ -2632,9 +2725,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsFieldsConfig Log field configuration details
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tlsFieldsConfig(@Nullable Output<DomainTlsFieldsConfigArgs> tlsFieldsConfig) {
             $.tlsFieldsConfig = tlsFieldsConfig;
@@ -2643,9 +2736,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsFieldsConfig Log field configuration details
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tlsFieldsConfig(DomainTlsFieldsConfigArgs tlsFieldsConfig) {
             return tlsFieldsConfig(Output.of(tlsFieldsConfig));
@@ -2653,9 +2746,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -2664,9 +2757,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -2674,9 +2767,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID。
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -2685,9 +2778,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID。
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -2695,9 +2788,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafEnable WAF protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafEnable(@Nullable Output<Integer> wafEnable) {
             $.wafEnable = wafEnable;
@@ -2706,9 +2799,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafEnable WAF protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafEnable(Integer wafEnable) {
             return wafEnable(Output.of(wafEnable));
@@ -2716,9 +2809,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafWhiteReqEnable Allowlist request protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafWhiteReqEnable(@Nullable Output<Integer> wafWhiteReqEnable) {
             $.wafWhiteReqEnable = wafWhiteReqEnable;
@@ -2727,9 +2820,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafWhiteReqEnable Allowlist request protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafWhiteReqEnable(Integer wafWhiteReqEnable) {
             return wafWhiteReqEnable(Output.of(wafWhiteReqEnable));
@@ -2737,9 +2830,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param whiteEnable Whether to enable allowlist protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder whiteEnable(@Nullable Output<Integer> whiteEnable) {
             $.whiteEnable = whiteEnable;
@@ -2748,9 +2841,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param whiteEnable Whether to enable allowlist protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder whiteEnable(Integer whiteEnable) {
             return whiteEnable(Output.of(whiteEnable));
@@ -2758,9 +2851,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param whiteFieldEnable Field allowlist protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder whiteFieldEnable(@Nullable Output<Integer> whiteFieldEnable) {
             $.whiteFieldEnable = whiteFieldEnable;
@@ -2769,9 +2862,9 @@ public final class DomainState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param whiteFieldEnable Field allowlist protection enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder whiteFieldEnable(Integer whiteFieldEnable) {
             return whiteFieldEnable(Output.of(whiteFieldEnable));

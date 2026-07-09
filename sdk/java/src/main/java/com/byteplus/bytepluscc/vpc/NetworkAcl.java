@@ -22,165 +22,285 @@ import javax.annotation.Nullable;
 
 /**
  * The network ACL controls inbound and outbound traffic for subnets. It is designed based on the allowlist principle: traffic entering or leaving a subnet must be permitted by a network ACL rule to pass through.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.NetworkAcl;
+ * import com.byteplus.bytepluscc.vpc.NetworkAclArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.NetworkAclIngressAclEntryArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.NetworkAclEgressAclEntryArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.NetworkAclResourceArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.NetworkAclTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var networkAclDemo = new NetworkAcl("networkAclDemo", NetworkAclArgs.builder()
+ *             .vpcId("vpc-rrco37ovjq4gv0x58xxxxxx")
+ *             .networkAclName("NetworkAclDemo")
+ *             .description("NetworkAclDemo-Description")
+ *             .projectName("default")
+ *             .ingressAclEntries(NetworkAclIngressAclEntryArgs.builder()
+ *                 .cidr_ip("10.0.1.0/24")
+ *                 .description("test-rule")
+ *                 .network_acl_entry_name("test-entries")
+ *                 .policy("drop")
+ *                 .port("80/80")
+ *                 .protocol("tcp")
+ *                 .build())
+ *             .egressAclEntries(NetworkAclEgressAclEntryArgs.builder()
+ *                 .cidr_ip("0.0.0.0/0")
+ *                 .description("test-rule")
+ *                 .network_acl_entry_name("test-entries")
+ *                 .policy("accept")
+ *                 .port("-1/-1")
+ *                 .protocol("all")
+ *                 .build())
+ *             .resources(NetworkAclResourceArgs.builder()
+ *                 .resource_id("subnet-3nrjlvvxo4gsg931ebxxxxxx")
+ *                 .build())
+ *             .tags(NetworkAclTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpc/networkAcl:NetworkAcl example &#34;network_acl_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpc/networkAcl:NetworkAcl")
 public class NetworkAcl extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the network ACL.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the network ACL.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
+    /**
+     * Default outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="defaultEgressAclEntries", refs={List.class,NetworkAclDefaultEgressAclEntry.class}, tree="[0,1]")
     private Output<List<NetworkAclDefaultEgressAclEntry>> defaultEgressAclEntries;
 
+    /**
+     * @return Default outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NetworkAclDefaultEgressAclEntry>> defaultEgressAclEntries() {
         return this.defaultEgressAclEntries;
     }
+    /**
+     * Default inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="defaultIngressAclEntries", refs={List.class,NetworkAclDefaultIngressAclEntry.class}, tree="[0,1]")
     private Output<List<NetworkAclDefaultIngressAclEntry>> defaultIngressAclEntries;
 
+    /**
+     * @return Default inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NetworkAclDefaultIngressAclEntry>> defaultIngressAclEntries() {
         return this.defaultIngressAclEntries;
     }
     /**
      * Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Network ACL description. Length must be 0–255 characters. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * Outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="egressAclEntries", refs={List.class,NetworkAclEgressAclEntry.class}, tree="[0,1]")
     private Output<List<NetworkAclEgressAclEntry>> egressAclEntries;
 
+    /**
+     * @return Outbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NetworkAclEgressAclEntry>> egressAclEntries() {
         return this.egressAclEntries;
     }
+    /**
+     * Inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="ingressAclEntries", refs={List.class,NetworkAclIngressAclEntry.class}, tree="[0,1]")
     private Output<List<NetworkAclIngressAclEntry>> ingressAclEntries;
 
+    /**
+     * @return Inbound ACL rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NetworkAclIngressAclEntry>> ingressAclEntries() {
         return this.ingressAclEntries;
     }
     /**
      * Network ACL ID.
-     * 
+     *
      */
     @Export(name="networkAclId", refs={String.class}, tree="[0]")
     private Output<String> networkAclId;
 
     /**
      * @return Network ACL ID.
-     * 
+     *
      */
     public Output<String> networkAclId() {
         return this.networkAclId;
     }
     /**
      * Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
-     * 
+     *
      */
     @Export(name="networkAclName", refs={String.class}, tree="[0]")
     private Output<String> networkAclName;
 
     /**
      * @return Network ACL name. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-).
-     * 
+     *
      */
     public Output<String> networkAclName() {
         return this.networkAclName;
     }
     /**
      * Name of the project associated with the network ACL. If not specified, added to the default project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project associated with the network ACL. If not specified, added to the default project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Associated resource list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="resources", refs={List.class,NetworkAclResource.class}, tree="[0,1]")
     private Output<List<NetworkAclResource>> resources;
 
+    /**
+     * @return Associated resource list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NetworkAclResource>> resources() {
         return this.resources;
     }
     /**
      * Status of the network ACL. Available: Available. Creating: Creating.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the network ACL. Available: Available. Creating: Creating.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,NetworkAclTag.class}, tree="[0,1]")
     private Output<List<NetworkAclTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NetworkAclTag>> tags() {
         return this.tags;
     }
     /**
      * Last updated time of the network ACL.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last updated time of the network ACL.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * ID of the VPC associated with the network ACL.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC associated with the network ACL.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;

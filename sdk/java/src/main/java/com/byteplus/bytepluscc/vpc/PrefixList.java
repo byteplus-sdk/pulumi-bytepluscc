@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * A prefix list is a collection of CIDR blocks used to simplify the configuration of security group rules and route table entries. When the prefix list is modified, all associated resources are updated synchronously.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,18 +36,18 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.vpc.PrefixListArgs;
  * import com.pulumi.bytepluscc.vpc.inputs.PrefixListPrefixListEntryArgs;
  * import com.pulumi.bytepluscc.vpc.inputs.PrefixListTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var prefixlistDemo = new PrefixList("prefixlistDemo", PrefixListArgs.builder()
  *             .description("PrefixlistDemo Example")
@@ -64,182 +64,222 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpc/prefixList:PrefixList example &#34;prefix_list_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpc/prefixList:PrefixList")
 public class PrefixList extends com.pulumi.resources.CustomResource {
     /**
      * Number of resources associated with the prefix list.
-     * 
+     *
      */
     @Export(name="associationCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> associationCount;
 
     /**
      * @return Number of resources associated with the prefix list.
-     * 
+     *
      */
     public Output<Integer> associationCount() {
         return this.associationCount;
     }
+    /**
+     * Route table information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associationsRouteTables", refs={List.class,PrefixListAssociationsRouteTable.class}, tree="[0,1]")
     private Output<List<PrefixListAssociationsRouteTable>> associationsRouteTables;
 
+    /**
+     * @return Route table information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<PrefixListAssociationsRouteTable>> associationsRouteTables() {
         return this.associationsRouteTables;
     }
+    /**
+     * Security group information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associationsSecurityGroups", refs={List.class,PrefixListAssociationsSecurityGroup.class}, tree="[0,1]")
     private Output<List<PrefixListAssociationsSecurityGroup>> associationsSecurityGroups;
 
+    /**
+     * @return Security group information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<PrefixListAssociationsSecurityGroup>> associationsSecurityGroups() {
         return this.associationsSecurityGroups;
     }
     /**
      * Creation time of the prefix list.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the prefix list.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
-     * 
+     *
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
      * @return IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
-     * 
+     *
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
     }
     /**
      * Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
-     * 
+     *
      */
     @Export(name="maxEntries", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxEntries;
 
     /**
      * @return Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
-     * 
+     *
      */
     public Output<Integer> maxEntries() {
         return this.maxEntries;
     }
+    /**
+     * CIDR of the prefix list entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="prefixListEntries", refs={List.class,PrefixListPrefixListEntry.class}, tree="[0,1]")
     private Output<List<PrefixListPrefixListEntry>> prefixListEntries;
 
+    /**
+     * @return CIDR of the prefix list entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<PrefixListPrefixListEntry>> prefixListEntries() {
         return this.prefixListEntries;
     }
     /**
      * Prefix list ID.
-     * 
+     *
      */
     @Export(name="prefixListId", refs={String.class}, tree="[0]")
     private Output<String> prefixListId;
 
     /**
      * @return Prefix list ID.
-     * 
+     *
      */
     public Output<String> prefixListId() {
         return this.prefixListId;
     }
     /**
      * Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-     * 
+     *
      */
     @Export(name="prefixListName", refs={String.class}, tree="[0]")
     private Output<String> prefixListName;
 
     /**
      * @return Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-     * 
+     *
      */
     public Output<String> prefixListName() {
         return this.prefixListName;
     }
     /**
      * Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,PrefixListTag.class}, tree="[0,1]")
     private Output<List<PrefixListTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<PrefixListTag>> tags() {
         return this.tags;
     }
     /**
      * Last modification time of the prefix list.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last modification time of the prefix list.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

@@ -16,102 +16,112 @@ import javax.annotation.Nullable;
 public final class IndexUserInnerKeyValueValue {
     /**
      * @return Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
-     * 
+     *
      */
     private @Nullable Boolean autoIndexFlag;
     /**
      * @return Whether to distinguish case. Default is false.
-     * 
+     *
      */
     private @Nullable Boolean caseSensitive;
     /**
      * @return Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
-     * 
+     *
      */
     private @Nullable String delimiter;
     /**
      * @return When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
-     * 
+     *
      */
     private @Nullable Boolean includeChinese;
     /**
      * @return Create indexes for all fields with text values in the JSON field.
-     * 
+     *
      */
     private @Nullable Boolean indexAll;
     /**
      * @return Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
-     * 
+     *
      */
     private @Nullable Boolean indexSqlAll;
+    /**
+     * @return When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<IndexUserInnerKeyValueValueJsonKey> jsonKeys;
     /**
      * @return Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
-     * 
+     *
      */
     private @Nullable Boolean sqlFlag;
     /**
      * @return Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
-     * 
+     *
      */
     private @Nullable String valueType;
 
     private IndexUserInnerKeyValueValue() {}
     /**
      * @return Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
-     * 
+     *
      */
     public Optional<Boolean> autoIndexFlag() {
         return Optional.ofNullable(this.autoIndexFlag);
     }
     /**
      * @return Whether to distinguish case. Default is false.
-     * 
+     *
      */
     public Optional<Boolean> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
     }
     /**
      * @return Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
-     * 
+     *
      */
     public Optional<String> delimiter() {
         return Optional.ofNullable(this.delimiter);
     }
     /**
      * @return When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
-     * 
+     *
      */
     public Optional<Boolean> includeChinese() {
         return Optional.ofNullable(this.includeChinese);
     }
     /**
      * @return Create indexes for all fields with text values in the JSON field.
-     * 
+     *
      */
     public Optional<Boolean> indexAll() {
         return Optional.ofNullable(this.indexAll);
     }
     /**
      * @return Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
-     * 
+     *
      */
     public Optional<Boolean> indexSqlAll() {
         return Optional.ofNullable(this.indexSqlAll);
     }
+    /**
+     * @return When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<IndexUserInnerKeyValueValueJsonKey> jsonKeys() {
         return this.jsonKeys == null ? List.of() : this.jsonKeys;
     }
     /**
      * @return Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
-     * 
+     *
      */
     public Optional<Boolean> sqlFlag() {
         return Optional.ofNullable(this.sqlFlag);
     }
     /**
      * @return Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
-     * 
+     *
      */
     public Optional<String> valueType() {
         return Optional.ofNullable(this.valueType);

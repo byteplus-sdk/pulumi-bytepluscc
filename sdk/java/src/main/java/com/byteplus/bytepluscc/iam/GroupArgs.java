@@ -19,23 +19,33 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final GroupArgs Empty = new GroupArgs();
 
+    /**
+     * Policy information bound to the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="attachedPolicies")
     private @Nullable Output<List<GroupAttachedPolicyArgs>> attachedPolicies;
 
+    /**
+     * @return Policy information bound to the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GroupAttachedPolicyArgs>>> attachedPolicies() {
         return Optional.ofNullable(this.attachedPolicies);
     }
 
     /**
      * User group description. Maximum length: 128 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return User group description. Maximum length: 128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -43,14 +53,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User group display name. Maximum length: 64 characters.
-     * 
+     *
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return User group display name. Maximum length: 64 characters.
-     * 
+     *
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
@@ -58,22 +68,32 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-     * 
+     *
      */
     @Import(name="userGroupName", required=true)
     private Output<String> userGroupName;
 
     /**
      * @return User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-     * 
+     *
      */
     public Output<String> userGroupName() {
         return this.userGroupName;
     }
 
+    /**
+     * User information associated with the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="users")
     private @Nullable Output<List<GroupUserArgs>> users;
 
+    /**
+     * @return User information associated with the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GroupUserArgs>>> users() {
         return Optional.ofNullable(this.users);
     }
@@ -106,24 +126,45 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
             $ = new GroupArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachedPolicies(@Nullable Output<List<GroupAttachedPolicyArgs>> attachedPolicies) {
             $.attachedPolicies = attachedPolicies;
             return this;
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachedPolicies(List<GroupAttachedPolicyArgs> attachedPolicies) {
             return attachedPolicies(Output.of(attachedPolicies));
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachedPolicies(GroupAttachedPolicyArgs... attachedPolicies) {
             return attachedPolicies(List.of(attachedPolicies));
         }
 
         /**
          * @param description User group description. Maximum length: 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -132,9 +173,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description User group description. Maximum length: 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -142,9 +183,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName User group display name. Maximum length: 64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
@@ -153,9 +194,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName User group display name. Maximum length: 64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
@@ -163,9 +204,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userGroupName User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userGroupName(Output<String> userGroupName) {
             $.userGroupName = userGroupName;
@@ -174,23 +215,44 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userGroupName User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userGroupName(String userGroupName) {
             return userGroupName(Output.of(userGroupName));
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder users(@Nullable Output<List<GroupUserArgs>> users) {
             $.users = users;
             return this;
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder users(List<GroupUserArgs> users) {
             return users(Output.of(users));
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder users(GroupUserArgs... users) {
             return users(List.of(users));
         }

@@ -13,56 +13,66 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceConnectionInfo {
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceConnectionInfoAddress> addresses;
     /**
      * @return Description.
-     * 
+     *
      */
     private @Nullable String description;
     /**
      * @return Terminal ID.
-     * 
+     *
      */
     private @Nullable String endpointId;
     /**
      * @return Terminal name.
-     * 
+     *
      */
     private @Nullable String endpointName;
     /**
      * @return Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
-     * 
+     *
      */
     private @Nullable String endpointType;
 
     private InstanceConnectionInfo() {}
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceConnectionInfoAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }
     /**
      * @return Description.
-     * 
+     *
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Terminal ID.
-     * 
+     *
      */
     public Optional<String> endpointId() {
         return Optional.ofNullable(this.endpointId);
     }
     /**
      * @return Terminal name.
-     * 
+     *
      */
     public Optional<String> endpointName() {
         return Optional.ofNullable(this.endpointName);
     }
     /**
      * @return Terminal type. Possible values: Primary: primary node terminal. ROCluster: read-only cluster terminal. RO: read-only node terminal.
-     * 
+     *
      */
     public Optional<String> endpointType() {
         return Optional.ofNullable(this.endpointType);

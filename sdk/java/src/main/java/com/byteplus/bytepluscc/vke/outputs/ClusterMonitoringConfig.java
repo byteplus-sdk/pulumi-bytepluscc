@@ -14,32 +14,42 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class ClusterMonitoringConfig {
+    /**
+     * @return List of monitoring component configurations.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<ClusterMonitoringConfigComponentConfig> componentConfigs;
     /**
      * @return Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
-     * 
+     *
      */
     private @Nullable Boolean enableMetricsExternalCollection;
     /**
      * @return Workspace ID to which the monitoring data belongs.
-     * 
+     *
      */
     private @Nullable String workspaceId;
 
     private ClusterMonitoringConfig() {}
+    /**
+     * @return List of monitoring component configurations.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<ClusterMonitoringConfigComponentConfig> componentConfigs() {
         return this.componentConfigs == null ? List.of() : this.componentConfigs;
     }
     /**
      * @return Whether to enable external Prometheus to collect control plane component metrics for the cluster. Parameter values: true: enabled. false: not enabled.
-     * 
+     *
      */
     public Optional<Boolean> enableMetricsExternalCollection() {
         return Optional.ofNullable(this.enableMetricsExternalCollection);
     }
     /**
      * @return Workspace ID to which the monitoring data belongs.
-     * 
+     *
      */
     public Optional<String> workspaceId() {
         return Optional.ofNullable(this.workspaceId);

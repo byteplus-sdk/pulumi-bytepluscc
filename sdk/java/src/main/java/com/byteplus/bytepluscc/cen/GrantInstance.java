@@ -15,31 +15,31 @@ import javax.annotation.Nullable;
 
 /**
  * Authorize this account&#39;s network instance for use by the specified account&#39;s Cloud Enterprise Network instance
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.cen.GrantInstance;
  * import com.byteplus.bytepluscc.cen.GrantInstanceArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cenGranInstanceDemo = new GrantInstance("cenGranInstanceDemo", GrantInstanceArgs.builder()
  *             .cenId("cen-2v72wo******")
@@ -48,102 +48,102 @@ import javax.annotation.Nullable;
  *             .instanceRegionId("cn-beijing")
  *             .instanceType("VPC")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cen/grantInstance:GrantInstance example &#34;instance_id|cen_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cen/grantInstance:GrantInstance")
 public class GrantInstance extends com.pulumi.resources.CustomResource {
     /**
      * Cloud Enterprise Network instance ID of the other party&#39;s account
-     * 
+     *
      */
     @Export(name="cenId", refs={String.class}, tree="[0]")
     private Output<String> cenId;
 
     /**
      * @return Cloud Enterprise Network instance ID of the other party&#39;s account
-     * 
+     *
      */
     public Output<String> cenId() {
         return this.cenId;
     }
     /**
      * Other party&#39;s account
-     * 
+     *
      */
     @Export(name="cenOwnerId", refs={String.class}, tree="[0]")
     private Output<String> cenOwnerId;
 
     /**
      * @return Other party&#39;s account
-     * 
+     *
      */
     public Output<String> cenOwnerId() {
         return this.cenOwnerId;
     }
     /**
      * Network instance authorization time
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Network instance authorization time
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * ID of the network instance to be authorized
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return ID of the network instance to be authorized
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Region where the network instance is located
-     * 
+     *
      */
     @Export(name="instanceRegionId", refs={String.class}, tree="[0]")
     private Output<String> instanceRegionId;
 
     /**
      * @return Region where the network instance is located
-     * 
+     *
      */
     public Output<String> instanceRegionId() {
         return this.instanceRegionId;
     }
     /**
      * Network instance type. Options: VPC: Virtual Private Cloud. DCGW: Direct Connect Gateway
-     * 
+     *
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Network instance type. Options: VPC: Virtual Private Cloud. DCGW: Direct Connect Gateway
-     * 
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;

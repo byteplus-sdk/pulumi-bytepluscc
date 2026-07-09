@@ -21,380 +21,449 @@ import javax.annotation.Nullable;
 
 /**
  * The NLB instance receives user access requests and forwards them to backend servers based on the configuration of listeners and server groups.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.clb.Nlb;
+ * import com.byteplus.bytepluscc.clb.NlbArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.NlbZoneMappingArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.NlbTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var nLBDemo = new Nlb("nLBDemo", NlbArgs.builder()
+ *             .ipv4NetworkType("intranet")
+ *             .securityGroupIds("sg-13fg4nslwnwu83n6nu5a7xxxx")
+ *             .vpcId("vpc-13ffun9olqz9c3n6nu43bxxxx")
+ *             .loadBalancerName("NLBDemo")
+ *             .description("NLBDemom")
+ *             .projectName("default")
+ *             .ipAddressVersion("ipv4")
+ *             .crossZoneEnabled(false)
+ *             .zoneMappings(NlbZoneMappingArgs.builder()
+ *                 .subnet_id("subnet-mjoyynjt59ts5smt1bncxxxx")
+ *                 .zone_id("cn-beijing-a")
+ *                 .ipv_4_address("192.168.xx.2")
+ *                 .build())
+ *             .modificationProtectionStatus("ConsoleProtection")
+ *             .tags(NlbTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:clb/nlb:Nlb example &#34;load_balancer_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:clb/nlb:Nlb")
 public class Nlb extends com.pulumi.resources.CustomResource {
     /**
      * Access log information of the NLB instance.
-     * 
+     *
      */
     @Export(name="accessLog", refs={NlbAccessLog.class}, tree="[0]")
     private Output<NlbAccessLog> accessLog;
 
     /**
      * @return Access log information of the NLB instance.
-     * 
+     *
      */
     public Output<NlbAccessLog> accessLog() {
         return this.accessLog;
     }
     /**
      * Account ID to which the NLB instance belongs.
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID to which the NLB instance belongs.
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
-     * 
+     *
      */
     @Export(name="billingStatus", refs={String.class}, tree="[0]")
     private Output<String> billingStatus;
 
     /**
      * @return Billing status of the NLB instance. Normal: normal, FinancialLocked: locked.
-     * 
+     *
      */
     public Output<String> billingStatus() {
         return this.billingStatus;
     }
     /**
      * Billing type of the NLB instance. 3: pay-as-you-go
-     * 
+     *
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return Billing type of the NLB instance. 3: pay-as-you-go
-     * 
+     *
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Creation time of the NLB instance.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the NLB instance.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
-     * 
+     *
      */
     @Export(name="crossZoneEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> crossZoneEnabled;
 
     /**
      * @return Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
-     * 
+     *
      */
     public Output<Boolean> crossZoneEnabled() {
         return this.crossZoneEnabled;
     }
     /**
      * Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * DNS address of the NLB instance.
-     * 
+     *
      */
     @Export(name="dnsName", refs={String.class}, tree="[0]")
     private Output<String> dnsName;
 
     /**
      * @return DNS address of the NLB instance.
-     * 
+     *
      */
     public Output<String> dnsName() {
         return this.dnsName;
     }
     /**
      * Time when the NLB instance is suspended due to overdue payment.
-     * 
+     *
      */
     @Export(name="expectedOverdueTime", refs={String.class}, tree="[0]")
     private Output<String> expectedOverdueTime;
 
     /**
      * @return Time when the NLB instance is suspended due to overdue payment.
-     * 
+     *
      */
     public Output<String> expectedOverdueTime() {
         return this.expectedOverdueTime;
     }
     /**
      * IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
-     * 
+     *
      */
     @Export(name="ipAddressVersion", refs={String.class}, tree="[0]")
     private Output<String> ipAddressVersion;
 
     /**
      * @return IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
-     * 
+     *
      */
     public Output<String> ipAddressVersion() {
         return this.ipAddressVersion;
     }
     /**
      * Shared bandwidth package ID for IPv4 type.
-     * 
+     *
      */
     @Export(name="ipv4BandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> ipv4BandwidthPackageId;
 
     /**
      * @return Shared bandwidth package ID for IPv4 type.
-     * 
+     *
      */
     public Output<String> ipv4BandwidthPackageId() {
         return this.ipv4BandwidthPackageId;
     }
     /**
      * IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
-     * 
+     *
      */
     @Export(name="ipv4NetworkType", refs={String.class}, tree="[0]")
     private Output<String> ipv4NetworkType;
 
     /**
      * @return IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
-     * 
+     *
      */
     public Output<String> ipv4NetworkType() {
         return this.ipv4NetworkType;
     }
     /**
      * Shared bandwidth package ID for IPv6 type.
-     * 
+     *
      */
     @Export(name="ipv6BandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> ipv6BandwidthPackageId;
 
     /**
      * @return Shared bandwidth package ID for IPv6 type.
-     * 
+     *
      */
     public Output<String> ipv6BandwidthPackageId() {
         return this.ipv6BandwidthPackageId;
     }
     /**
      * IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
-     * 
+     *
      */
     @Export(name="ipv6NetworkType", refs={String.class}, tree="[0]")
     private Output<String> ipv6NetworkType;
 
     /**
      * @return IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
-     * 
+     *
      */
     public Output<String> ipv6NetworkType() {
         return this.ipv6NetworkType;
     }
     /**
      * NLB instance ID.
-     * 
+     *
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
      * @return NLB instance ID.
-     * 
+     *
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
      * Name of the NLB instance.
-     * 
+     *
      */
     @Export(name="loadBalancerName", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerName;
 
     /**
      * @return Name of the NLB instance.
-     * 
+     *
      */
     public Output<String> loadBalancerName() {
         return this.loadBalancerName;
     }
     /**
      * Managed security group ID automatically associated with the NLB instance by the system.
-     * 
+     *
      */
     @Export(name="managedSecurityGroupId", refs={String.class}, tree="[0]")
     private Output<String> managedSecurityGroupId;
 
     /**
      * @return Managed security group ID automatically associated with the NLB instance by the system.
-     * 
+     *
      */
     public Output<String> managedSecurityGroupId() {
         return this.managedSecurityGroupId;
     }
     /**
      * Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
-     * 
+     *
      */
     @Export(name="modificationProtectionStatus", refs={String.class}, tree="[0]")
     private Output<String> modificationProtectionStatus;
 
     /**
      * @return Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
-     * 
+     *
      */
     public Output<String> modificationProtectionStatus() {
         return this.modificationProtectionStatus;
     }
     /**
      * Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
-     * 
+     *
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Time when the NLB instance is locked. If the BillingStatus parameter is Normal, this parameter returns an empty string.
-     * 
+     *
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Name of the project to which the NLB instance belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the NLB instance belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
-     * 
+     *
      */
     @Export(name="reclaimedTime", refs={String.class}, tree="[0]")
     private Output<String> reclaimedTime;
 
     /**
      * @return Expected reclamation time of the NLB instance. If the BillingStatus parameter is Normal, this parameter returns an empty string.
-     * 
+     *
      */
     public Output<String> reclaimedTime() {
         return this.reclaimedTime;
     }
     /**
      * List of security group IDs associated with the NLB instance.
-     * 
+     *
      */
     @Export(name="securityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIds;
 
     /**
      * @return List of security group IDs associated with the NLB instance.
-     * 
+     *
      */
     public Output<List<String>> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
      * Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the NLB instance. Inactive: stopped. Active: running. Creating: creating. Provisioning: creating (this status only appears when creating an NLB instance via API). Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,NlbTag.class}, tree="[0,1]")
     private Output<List<NlbTag>> tags;
 
+    /**
+     * @return Tag information of the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NlbTag>> tags() {
         return this.tags;
     }
     /**
      * Update time of the NLB instance.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time of the NLB instance.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * VPC ID to which the NLB instance belongs.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID to which the NLB instance belongs.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
+    /**
+     * Availability zone information for the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="zoneMappings", refs={List.class,NlbZoneMapping.class}, tree="[0,1]")
     private Output<List<NlbZoneMapping>> zoneMappings;
 
+    /**
+     * @return Availability zone information for the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NlbZoneMapping>> zoneMappings() {
         return this.zoneMappings;
     }

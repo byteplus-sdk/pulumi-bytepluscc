@@ -21,14 +21,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of abnormal machines.
-     * 
+     *
      */
     @Import(name="abnormalHeartbeatStatusNumber")
     private @Nullable Output<Integer> abnormalHeartbeatStatusNumber;
 
     /**
      * @return Number of abnormal machines.
-     * 
+     *
      */
     public Optional<Output<Integer>> abnormalHeartbeatStatusNumber() {
         return Optional.ofNullable(this.abnormalHeartbeatStatusNumber);
@@ -36,14 +36,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Latest agent version.
-     * 
+     *
      */
     @Import(name="agentLatestVersion")
     private @Nullable Output<String> agentLatestVersion;
 
     /**
      * @return Latest agent version.
-     * 
+     *
      */
     public Optional<Output<String>> agentLatestVersion() {
         return Optional.ofNullable(this.agentLatestVersion);
@@ -51,14 +51,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether LogCollector installed on machine group servers enables automatic upgrade. true: Log Service will check for upgrade conditions during the specified time period each day. If conditions are met, LogCollector upgrades automatically without manual intervention. false: (default) LogCollector does not upgrade automatically. Only LogCollector V1.0.8 and later versions support automatic upgrade.
-     * 
+     *
      */
     @Import(name="autoUpdate")
     private @Nullable Output<Boolean> autoUpdate;
 
     /**
      * @return Whether LogCollector installed on machine group servers enables automatic upgrade. true: Log Service will check for upgrade conditions during the specified time period each day. If conditions are met, LogCollector upgrades automatically without manual intervention. false: (default) LogCollector does not upgrade automatically. Only LogCollector V1.0.8 and later versions support automatic upgrade.
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoUpdate() {
         return Optional.ofNullable(this.autoUpdate);
@@ -66,14 +66,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time.
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -81,14 +81,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Clean all machines with abnormal heartbeat in the machine group with one click. Machines without heartbeat records cannot be deleted currently
-     * 
+     *
      */
     @Import(name="deleteAbnormalHosts")
     private @Nullable Output<Boolean> deleteAbnormalHosts;
 
     /**
      * @return Clean all machines with abnormal heartbeat in the machine group with one click. Machines without heartbeat records cannot be deleted currently
-     * 
+     *
      */
     public Optional<Output<Boolean>> deleteAbnormalHosts() {
         return Optional.ofNullable(this.deleteAbnormalHosts);
@@ -96,14 +96,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of machines.
-     * 
+     *
      */
     @Import(name="hostCount")
     private @Nullable Output<Integer> hostCount;
 
     /**
      * @return Number of machines.
-     * 
+     *
      */
     public Optional<Output<Integer>> hostCount() {
         return Optional.ofNullable(this.hostCount);
@@ -111,14 +111,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Host group ID
-     * 
+     *
      */
     @Import(name="hostGroupId")
     private @Nullable Output<String> hostGroupId;
 
     /**
      * @return Host group ID
-     * 
+     *
      */
     public Optional<Output<String>> hostGroupId() {
         return Optional.ofNullable(this.hostGroupId);
@@ -126,14 +126,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Host group name
-     * 
+     *
      */
     @Import(name="hostGroupName")
     private @Nullable Output<String> hostGroupName;
 
     /**
      * @return Host group name
-     * 
+     *
      */
     public Optional<Output<String>> hostGroupName() {
         return Optional.ofNullable(this.hostGroupName);
@@ -141,14 +141,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Type of machine group. Includes: IP: machine IP. Set the machine IP list using the HostIpList parameter. Label: machine identifier. Set the machine identifier using the HostIdentifier parameter.
-     * 
+     *
      */
     @Import(name="hostGroupType")
     private @Nullable Output<String> hostGroupType;
 
     /**
      * @return Type of machine group. Includes: IP: machine IP. Set the machine IP list using the HostIpList parameter. Label: machine identifier. Set the machine identifier using the HostIdentifier parameter.
-     * 
+     *
      */
     public Optional<Output<String>> hostGroupType() {
         return Optional.ofNullable(this.hostGroupType);
@@ -156,14 +156,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Machine identifier. Required when HostGroupType is Label.
-     * 
+     *
      */
     @Import(name="hostIdentifier")
     private @Nullable Output<String> hostIdentifier;
 
     /**
      * @return Machine identifier. Required when HostGroupType is Label.
-     * 
+     *
      */
     public Optional<Output<String>> hostIdentifier() {
         return Optional.ofNullable(this.hostIdentifier);
@@ -171,14 +171,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of IP addresses for the host group. Required when HostGroupType is IP.
-     * 
+     *
      */
     @Import(name="hostIpLists")
     private @Nullable Output<List<String>> hostIpLists;
 
     /**
      * @return List of IP addresses for the host group. Required when HostGroupType is IP.
-     * 
+     *
      */
     public Optional<Output<List<String>>> hostIpLists() {
         return Optional.ofNullable(this.hostIpLists);
@@ -186,14 +186,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IAM project name. If this parameter is not specified, Log Service adds the machine group to the IAM project named default.
-     * 
+     *
      */
     @Import(name="iamProjectName")
     private @Nullable Output<String> iamProjectName;
 
     /**
      * @return IAM project name. If this parameter is not specified, Log Service adds the machine group to the IAM project named default.
-     * 
+     *
      */
     public Optional<Output<String>> iamProjectName() {
         return Optional.ofNullable(this.iamProjectName);
@@ -201,14 +201,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Modification time.
-     * 
+     *
      */
     @Import(name="modifyTime")
     private @Nullable Output<String> modifyTime;
 
     /**
      * @return Modification time.
-     * 
+     *
      */
     public Optional<Output<String>> modifyTime() {
         return Optional.ofNullable(this.modifyTime);
@@ -216,14 +216,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of healthy machines.
-     * 
+     *
      */
     @Import(name="normalHeartbeatStatusNumber")
     private @Nullable Output<Integer> normalHeartbeatStatusNumber;
 
     /**
      * @return Number of healthy machines.
-     * 
+     *
      */
     public Optional<Output<Integer>> normalHeartbeatStatusNumber() {
         return Optional.ofNullable(this.normalHeartbeatStatusNumber);
@@ -231,36 +231,46 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of rules
-     * 
+     *
      */
     @Import(name="ruleCount")
     private @Nullable Output<Integer> ruleCount;
 
     /**
      * @return Number of rules
-     * 
+     *
      */
     public Optional<Output<Integer>> ruleCount() {
         return Optional.ofNullable(this.ruleCount);
     }
 
+    /**
+     * Collection configuration information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="rules")
     private @Nullable Output<List<HostGroupRuleArgs>> rules;
 
+    /**
+     * @return Collection configuration information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<HostGroupRuleArgs>>> rules() {
         return Optional.ofNullable(this.rules);
     }
 
     /**
      * Enable Logcollector service log feature. true: enabled. false: (default) disabled.
-     * 
+     *
      */
     @Import(name="serviceLogging")
     private @Nullable Output<Boolean> serviceLogging;
 
     /**
      * @return Enable Logcollector service log feature. true: enabled. false: (default) disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> serviceLogging() {
         return Optional.ofNullable(this.serviceLogging);
@@ -268,14 +278,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Auto upgrade end time in HH:MM format. Required only when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak business hours. LogCollector may restart during the auto upgrade, but logs will not be lost.
-     * 
+     *
      */
     @Import(name="updateEndTime")
     private @Nullable Output<String> updateEndTime;
 
     /**
      * @return Auto upgrade end time in HH:MM format. Required only when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak business hours. LogCollector may restart during the auto upgrade, but logs will not be lost.
-     * 
+     *
      */
     public Optional<Output<String>> updateEndTime() {
         return Optional.ofNullable(this.updateEndTime);
@@ -283,14 +293,14 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Automatic upgrade start time, in HH:MM format. Only required when AutoUpdate is set to true. It is recommended to schedule automatic upgrades during off-peak hours. LogCollector may restart during the upgrade, but logs will not be lost.
-     * 
+     *
      */
     @Import(name="updateStartTime")
     private @Nullable Output<String> updateStartTime;
 
     /**
      * @return Automatic upgrade start time, in HH:MM format. Only required when AutoUpdate is set to true. It is recommended to schedule automatic upgrades during off-peak hours. LogCollector may restart during the upgrade, but logs will not be lost.
-     * 
+     *
      */
     public Optional<Output<String>> updateStartTime() {
         return Optional.ofNullable(this.updateStartTime);
@@ -340,9 +350,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param abnormalHeartbeatStatusNumber Number of abnormal machines.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder abnormalHeartbeatStatusNumber(@Nullable Output<Integer> abnormalHeartbeatStatusNumber) {
             $.abnormalHeartbeatStatusNumber = abnormalHeartbeatStatusNumber;
@@ -351,9 +361,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param abnormalHeartbeatStatusNumber Number of abnormal machines.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder abnormalHeartbeatStatusNumber(Integer abnormalHeartbeatStatusNumber) {
             return abnormalHeartbeatStatusNumber(Output.of(abnormalHeartbeatStatusNumber));
@@ -361,9 +371,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param agentLatestVersion Latest agent version.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder agentLatestVersion(@Nullable Output<String> agentLatestVersion) {
             $.agentLatestVersion = agentLatestVersion;
@@ -372,9 +382,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param agentLatestVersion Latest agent version.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder agentLatestVersion(String agentLatestVersion) {
             return agentLatestVersion(Output.of(agentLatestVersion));
@@ -382,9 +392,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoUpdate Whether LogCollector installed on machine group servers enables automatic upgrade. true: Log Service will check for upgrade conditions during the specified time period each day. If conditions are met, LogCollector upgrades automatically without manual intervention. false: (default) LogCollector does not upgrade automatically. Only LogCollector V1.0.8 and later versions support automatic upgrade.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoUpdate(@Nullable Output<Boolean> autoUpdate) {
             $.autoUpdate = autoUpdate;
@@ -393,9 +403,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoUpdate Whether LogCollector installed on machine group servers enables automatic upgrade. true: Log Service will check for upgrade conditions during the specified time period each day. If conditions are met, LogCollector upgrades automatically without manual intervention. false: (default) LogCollector does not upgrade automatically. Only LogCollector V1.0.8 and later versions support automatic upgrade.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoUpdate(Boolean autoUpdate) {
             return autoUpdate(Output.of(autoUpdate));
@@ -403,9 +413,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -414,9 +424,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -424,9 +434,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteAbnormalHosts Clean all machines with abnormal heartbeat in the machine group with one click. Machines without heartbeat records cannot be deleted currently
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteAbnormalHosts(@Nullable Output<Boolean> deleteAbnormalHosts) {
             $.deleteAbnormalHosts = deleteAbnormalHosts;
@@ -435,9 +445,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteAbnormalHosts Clean all machines with abnormal heartbeat in the machine group with one click. Machines without heartbeat records cannot be deleted currently
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteAbnormalHosts(Boolean deleteAbnormalHosts) {
             return deleteAbnormalHosts(Output.of(deleteAbnormalHosts));
@@ -445,9 +455,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostCount Number of machines.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostCount(@Nullable Output<Integer> hostCount) {
             $.hostCount = hostCount;
@@ -456,9 +466,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostCount Number of machines.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostCount(Integer hostCount) {
             return hostCount(Output.of(hostCount));
@@ -466,9 +476,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostGroupId Host group ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostGroupId(@Nullable Output<String> hostGroupId) {
             $.hostGroupId = hostGroupId;
@@ -477,9 +487,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostGroupId Host group ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostGroupId(String hostGroupId) {
             return hostGroupId(Output.of(hostGroupId));
@@ -487,9 +497,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostGroupName Host group name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostGroupName(@Nullable Output<String> hostGroupName) {
             $.hostGroupName = hostGroupName;
@@ -498,9 +508,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostGroupName Host group name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostGroupName(String hostGroupName) {
             return hostGroupName(Output.of(hostGroupName));
@@ -508,9 +518,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostGroupType Type of machine group. Includes: IP: machine IP. Set the machine IP list using the HostIpList parameter. Label: machine identifier. Set the machine identifier using the HostIdentifier parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostGroupType(@Nullable Output<String> hostGroupType) {
             $.hostGroupType = hostGroupType;
@@ -519,9 +529,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostGroupType Type of machine group. Includes: IP: machine IP. Set the machine IP list using the HostIpList parameter. Label: machine identifier. Set the machine identifier using the HostIdentifier parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostGroupType(String hostGroupType) {
             return hostGroupType(Output.of(hostGroupType));
@@ -529,9 +539,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostIdentifier Machine identifier. Required when HostGroupType is Label.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostIdentifier(@Nullable Output<String> hostIdentifier) {
             $.hostIdentifier = hostIdentifier;
@@ -540,9 +550,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostIdentifier Machine identifier. Required when HostGroupType is Label.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostIdentifier(String hostIdentifier) {
             return hostIdentifier(Output.of(hostIdentifier));
@@ -550,9 +560,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostIpLists List of IP addresses for the host group. Required when HostGroupType is IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostIpLists(@Nullable Output<List<String>> hostIpLists) {
             $.hostIpLists = hostIpLists;
@@ -561,9 +571,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostIpLists List of IP addresses for the host group. Required when HostGroupType is IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostIpLists(List<String> hostIpLists) {
             return hostIpLists(Output.of(hostIpLists));
@@ -571,9 +581,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param hostIpLists List of IP addresses for the host group. Required when HostGroupType is IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostIpLists(String... hostIpLists) {
             return hostIpLists(List.of(hostIpLists));
@@ -581,9 +591,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iamProjectName IAM project name. If this parameter is not specified, Log Service adds the machine group to the IAM project named default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder iamProjectName(@Nullable Output<String> iamProjectName) {
             $.iamProjectName = iamProjectName;
@@ -592,9 +602,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iamProjectName IAM project name. If this parameter is not specified, Log Service adds the machine group to the IAM project named default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder iamProjectName(String iamProjectName) {
             return iamProjectName(Output.of(iamProjectName));
@@ -602,9 +612,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Modification time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modifyTime(@Nullable Output<String> modifyTime) {
             $.modifyTime = modifyTime;
@@ -613,9 +623,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Modification time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modifyTime(String modifyTime) {
             return modifyTime(Output.of(modifyTime));
@@ -623,9 +633,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param normalHeartbeatStatusNumber Number of healthy machines.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder normalHeartbeatStatusNumber(@Nullable Output<Integer> normalHeartbeatStatusNumber) {
             $.normalHeartbeatStatusNumber = normalHeartbeatStatusNumber;
@@ -634,9 +644,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param normalHeartbeatStatusNumber Number of healthy machines.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder normalHeartbeatStatusNumber(Integer normalHeartbeatStatusNumber) {
             return normalHeartbeatStatusNumber(Output.of(normalHeartbeatStatusNumber));
@@ -644,9 +654,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleCount Number of rules
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleCount(@Nullable Output<Integer> ruleCount) {
             $.ruleCount = ruleCount;
@@ -655,32 +665,53 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleCount Number of rules
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleCount(Integer ruleCount) {
             return ruleCount(Output.of(ruleCount));
         }
 
+        /**
+         * @param rules Collection configuration information list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder rules(@Nullable Output<List<HostGroupRuleArgs>> rules) {
             $.rules = rules;
             return this;
         }
 
+        /**
+         * @param rules Collection configuration information list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder rules(List<HostGroupRuleArgs> rules) {
             return rules(Output.of(rules));
         }
 
+        /**
+         * @param rules Collection configuration information list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder rules(HostGroupRuleArgs... rules) {
             return rules(List.of(rules));
         }
 
         /**
          * @param serviceLogging Enable Logcollector service log feature. true: enabled. false: (default) disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceLogging(@Nullable Output<Boolean> serviceLogging) {
             $.serviceLogging = serviceLogging;
@@ -689,9 +720,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceLogging Enable Logcollector service log feature. true: enabled. false: (default) disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceLogging(Boolean serviceLogging) {
             return serviceLogging(Output.of(serviceLogging));
@@ -699,9 +730,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateEndTime Auto upgrade end time in HH:MM format. Required only when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak business hours. LogCollector may restart during the auto upgrade, but logs will not be lost.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateEndTime(@Nullable Output<String> updateEndTime) {
             $.updateEndTime = updateEndTime;
@@ -710,9 +741,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateEndTime Auto upgrade end time in HH:MM format. Required only when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak business hours. LogCollector may restart during the auto upgrade, but logs will not be lost.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateEndTime(String updateEndTime) {
             return updateEndTime(Output.of(updateEndTime));
@@ -720,9 +751,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateStartTime Automatic upgrade start time, in HH:MM format. Only required when AutoUpdate is set to true. It is recommended to schedule automatic upgrades during off-peak hours. LogCollector may restart during the upgrade, but logs will not be lost.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateStartTime(@Nullable Output<String> updateStartTime) {
             $.updateStartTime = updateStartTime;
@@ -731,9 +762,9 @@ public final class HostGroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateStartTime Automatic upgrade start time, in HH:MM format. Only required when AutoUpdate is set to true. It is recommended to schedule automatic upgrades during off-peak hours. LogCollector may restart during the upgrade, but logs will not be lost.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateStartTime(String updateStartTime) {
             return updateStartTime(Output.of(updateStartTime));

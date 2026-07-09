@@ -19,14 +19,14 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the IPv6 gateway instance
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time of the IPv6 gateway instance
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -34,14 +34,14 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -49,14 +49,14 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv6 gateway instance ID
-     * 
+     *
      */
     @Import(name="ipv6GatewayId")
     private @Nullable Output<String> ipv6GatewayId;
 
     /**
      * @return IPv6 gateway instance ID
-     * 
+     *
      */
     public Optional<Output<String>> ipv6GatewayId() {
         return Optional.ofNullable(this.ipv6GatewayId);
@@ -64,14 +64,14 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -79,14 +79,14 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the IPv6 gateway belongs
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the IPv6 gateway belongs
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -94,14 +94,14 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Route table ID associated with the IPv6 gateway instance
-     * 
+     *
      */
     @Import(name="routeTableId")
     private @Nullable Output<String> routeTableId;
 
     /**
      * @return Route table ID associated with the IPv6 gateway instance
-     * 
+     *
      */
     public Optional<Output<String>> routeTableId() {
         return Optional.ofNullable(this.routeTableId);
@@ -109,36 +109,46 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<Ipv6GatewayTagArgs>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<Ipv6GatewayTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Modification time of the IPv6 gateway instance
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Modification time of the IPv6 gateway instance
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -146,14 +156,14 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -194,9 +204,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time of the IPv6 gateway instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -205,9 +215,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time of the IPv6 gateway instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -215,9 +225,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -226,9 +236,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the IPv6 gateway instance. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -236,9 +246,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6GatewayId IPv6 gateway instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6GatewayId(@Nullable Output<String> ipv6GatewayId) {
             $.ipv6GatewayId = ipv6GatewayId;
@@ -247,9 +257,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6GatewayId IPv6 gateway instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6GatewayId(String ipv6GatewayId) {
             return ipv6GatewayId(Output.of(ipv6GatewayId));
@@ -257,9 +267,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -268,9 +278,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Name of the IPv6 gateway instance. Length limit: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). If not specified, defaults to the IPv6 gateway ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -278,9 +288,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the IPv6 gateway belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -289,9 +299,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the IPv6 gateway belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -299,9 +309,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTableId Route table ID associated with the IPv6 gateway instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder routeTableId(@Nullable Output<String> routeTableId) {
             $.routeTableId = routeTableId;
@@ -310,9 +320,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param routeTableId Route table ID associated with the IPv6 gateway instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder routeTableId(String routeTableId) {
             return routeTableId(Output.of(routeTableId));
@@ -320,9 +330,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -331,32 +341,53 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Operating status of the IPv6 gateway instance. Possible values: Creating: Creating. Deleting: Deleting. Available: Available
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<Ipv6GatewayTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<Ipv6GatewayTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(Ipv6GatewayTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updatedTime Modification time of the IPv6 gateway instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -365,9 +396,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Modification time of the IPv6 gateway instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -375,9 +406,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -386,9 +417,9 @@ public final class Ipv6GatewayState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID to be associated with the IPv6 gateway instance. Each VPC can only be associated with one IPv6 gateway instance. Ensure the VPC to be associated is not linked to another IPv6 gateway instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

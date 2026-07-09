@@ -24,36 +24,46 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
     /**
      * Configure kubelet CpuManagerPolicy. Supports none and static policies
-     * 
+     *
      */
     @Import(name="cpuManagerPolicy")
     private @Nullable Output<String> cpuManagerPolicy;
 
     /**
      * @return Configure kubelet CpuManagerPolicy. Supports none and static policies
-     * 
+     *
      */
     public Optional<Output<String>> cpuManagerPolicy() {
         return Optional.ofNullable(this.cpuManagerPolicy);
     }
 
+    /**
+     * Set of hard thresholds for triggering Pod eviction
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="evictionHards")
     private @Nullable Output<List<NodePoolKubernetesConfigKubeletConfigEvictionHardArgs>> evictionHards;
 
+    /**
+     * @return Set of hard thresholds for triggering Pod eviction
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NodePoolKubernetesConfigKubeletConfigEvictionHardArgs>>> evictionHards() {
         return Optional.ofNullable(this.evictionHards);
     }
 
     /**
      * Feature gate
-     * 
+     *
      */
     @Import(name="featureGates")
     private @Nullable Output<NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs> featureGates;
 
     /**
      * @return Feature gate
-     * 
+     *
      */
     public Optional<Output<NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs>> featureGates() {
         return Optional.ofNullable(this.featureGates);
@@ -61,14 +71,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
     /**
      * Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
-     * 
+     *
      */
     @Import(name="kubeApiBurst")
     private @Nullable Output<Integer> kubeApiBurst;
 
     /**
      * @return Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
-     * 
+     *
      */
     public Optional<Output<Integer>> kubeApiBurst() {
         return Optional.ofNullable(this.kubeApiBurst);
@@ -76,36 +86,46 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
     /**
      * Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
-     * 
+     *
      */
     @Import(name="kubeApiQps")
     private @Nullable Output<Integer> kubeApiQps;
 
     /**
      * @return Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
-     * 
+     *
      */
     public Optional<Output<Integer>> kubeApiQps() {
         return Optional.ofNullable(this.kubeApiQps);
     }
 
+    /**
+     * Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="kubeReserveds")
     private @Nullable Output<List<NodePoolKubernetesConfigKubeletConfigKubeReservedArgs>> kubeReserveds;
 
+    /**
+     * @return Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NodePoolKubernetesConfigKubeletConfigKubeReservedArgs>>> kubeReserveds() {
         return Optional.ofNullable(this.kubeReserveds);
     }
 
     /**
      * Configure the maximum number of Pods supported by kubelet
-     * 
+     *
      */
     @Import(name="maxPods")
     private @Nullable Output<Integer> maxPods;
 
     /**
      * @return Configure the maximum number of Pods supported by kubelet
-     * 
+     *
      */
     public Optional<Output<Integer>> maxPods() {
         return Optional.ofNullable(this.maxPods);
@@ -113,14 +133,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
     /**
      * Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-     * 
+     *
      */
     @Import(name="registryBurst")
     private @Nullable Output<Integer> registryBurst;
 
     /**
      * @return Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-     * 
+     *
      */
     public Optional<Output<Integer>> registryBurst() {
         return Optional.ofNullable(this.registryBurst);
@@ -128,14 +148,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
     /**
      * Used to limit the QPS cap for the image repository
-     * 
+     *
      */
     @Import(name="registryPullQps")
     private @Nullable Output<Integer> registryPullQps;
 
     /**
      * @return Used to limit the QPS cap for the image repository
-     * 
+     *
      */
     public Optional<Output<Integer>> registryPullQps() {
         return Optional.ofNullable(this.registryPullQps);
@@ -143,36 +163,46 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
     /**
      * Pull images sequentially
-     * 
+     *
      */
     @Import(name="serializeImagePulls")
     private @Nullable Output<Boolean> serializeImagePulls;
 
     /**
      * @return Pull images sequentially
-     * 
+     *
      */
     public Optional<Output<Boolean>> serializeImagePulls() {
         return Optional.ofNullable(this.serializeImagePulls);
     }
 
+    /**
+     * Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="systemReserveds")
     private @Nullable Output<List<NodePoolKubernetesConfigKubeletConfigSystemReservedArgs>> systemReserveds;
 
+    /**
+     * @return Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NodePoolKubernetesConfigKubeletConfigSystemReservedArgs>>> systemReserveds() {
         return Optional.ofNullable(this.systemReserveds);
     }
 
     /**
      * Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
-     * 
+     *
      */
     @Import(name="topologyManagerPolicy")
     private @Nullable Output<String> topologyManagerPolicy;
 
     /**
      * @return Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
-     * 
+     *
      */
     public Optional<Output<String>> topologyManagerPolicy() {
         return Optional.ofNullable(this.topologyManagerPolicy);
@@ -180,14 +210,14 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
     /**
      * Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
-     * 
+     *
      */
     @Import(name="topologyManagerScope")
     private @Nullable Output<String> topologyManagerScope;
 
     /**
      * @return Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
-     * 
+     *
      */
     public Optional<Output<String>> topologyManagerScope() {
         return Optional.ofNullable(this.topologyManagerScope);
@@ -231,9 +261,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param cpuManagerPolicy Configure kubelet CpuManagerPolicy. Supports none and static policies
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cpuManagerPolicy(@Nullable Output<String> cpuManagerPolicy) {
             $.cpuManagerPolicy = cpuManagerPolicy;
@@ -242,32 +272,53 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param cpuManagerPolicy Configure kubelet CpuManagerPolicy. Supports none and static policies
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cpuManagerPolicy(String cpuManagerPolicy) {
             return cpuManagerPolicy(Output.of(cpuManagerPolicy));
         }
 
+        /**
+         * @param evictionHards Set of hard thresholds for triggering Pod eviction
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder evictionHards(@Nullable Output<List<NodePoolKubernetesConfigKubeletConfigEvictionHardArgs>> evictionHards) {
             $.evictionHards = evictionHards;
             return this;
         }
 
+        /**
+         * @param evictionHards Set of hard thresholds for triggering Pod eviction
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder evictionHards(List<NodePoolKubernetesConfigKubeletConfigEvictionHardArgs> evictionHards) {
             return evictionHards(Output.of(evictionHards));
         }
 
+        /**
+         * @param evictionHards Set of hard thresholds for triggering Pod eviction
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder evictionHards(NodePoolKubernetesConfigKubeletConfigEvictionHardArgs... evictionHards) {
             return evictionHards(List.of(evictionHards));
         }
 
         /**
          * @param featureGates Feature gate
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder featureGates(@Nullable Output<NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs> featureGates) {
             $.featureGates = featureGates;
@@ -276,9 +327,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param featureGates Feature gate
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder featureGates(NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs featureGates) {
             return featureGates(Output.of(featureGates));
@@ -286,9 +337,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param kubeApiBurst Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubeApiBurst(@Nullable Output<Integer> kubeApiBurst) {
             $.kubeApiBurst = kubeApiBurst;
@@ -297,9 +348,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param kubeApiBurst Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubeApiBurst(Integer kubeApiBurst) {
             return kubeApiBurst(Output.of(kubeApiBurst));
@@ -307,9 +358,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param kubeApiQps Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubeApiQps(@Nullable Output<Integer> kubeApiQps) {
             $.kubeApiQps = kubeApiQps;
@@ -318,32 +369,53 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param kubeApiQps Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubeApiQps(Integer kubeApiQps) {
             return kubeApiQps(Output.of(kubeApiQps));
         }
 
+        /**
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder kubeReserveds(@Nullable Output<List<NodePoolKubernetesConfigKubeletConfigKubeReservedArgs>> kubeReserveds) {
             $.kubeReserveds = kubeReserveds;
             return this;
         }
 
+        /**
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder kubeReserveds(List<NodePoolKubernetesConfigKubeletConfigKubeReservedArgs> kubeReserveds) {
             return kubeReserveds(Output.of(kubeReserveds));
         }
 
+        /**
+         * @param kubeReserveds Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder kubeReserveds(NodePoolKubernetesConfigKubeletConfigKubeReservedArgs... kubeReserveds) {
             return kubeReserveds(List.of(kubeReserveds));
         }
 
         /**
          * @param maxPods Configure the maximum number of Pods supported by kubelet
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maxPods(@Nullable Output<Integer> maxPods) {
             $.maxPods = maxPods;
@@ -352,9 +424,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param maxPods Configure the maximum number of Pods supported by kubelet
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maxPods(Integer maxPods) {
             return maxPods(Output.of(maxPods));
@@ -362,9 +434,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param registryBurst Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder registryBurst(@Nullable Output<Integer> registryBurst) {
             $.registryBurst = registryBurst;
@@ -373,9 +445,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param registryBurst Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder registryBurst(Integer registryBurst) {
             return registryBurst(Output.of(registryBurst));
@@ -383,9 +455,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param registryPullQps Used to limit the QPS cap for the image repository
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder registryPullQps(@Nullable Output<Integer> registryPullQps) {
             $.registryPullQps = registryPullQps;
@@ -394,9 +466,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param registryPullQps Used to limit the QPS cap for the image repository
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder registryPullQps(Integer registryPullQps) {
             return registryPullQps(Output.of(registryPullQps));
@@ -404,9 +476,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param serializeImagePulls Pull images sequentially
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serializeImagePulls(@Nullable Output<Boolean> serializeImagePulls) {
             $.serializeImagePulls = serializeImagePulls;
@@ -415,32 +487,53 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param serializeImagePulls Pull images sequentially
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serializeImagePulls(Boolean serializeImagePulls) {
             return serializeImagePulls(Output.of(serializeImagePulls));
         }
 
+        /**
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder systemReserveds(@Nullable Output<List<NodePoolKubernetesConfigKubeletConfigSystemReservedArgs>> systemReserveds) {
             $.systemReserveds = systemReserveds;
             return this;
         }
 
+        /**
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder systemReserveds(List<NodePoolKubernetesConfigKubeletConfigSystemReservedArgs> systemReserveds) {
             return systemReserveds(Output.of(systemReserveds));
         }
 
+        /**
+         * @param systemReserveds Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder systemReserveds(NodePoolKubernetesConfigKubeletConfigSystemReservedArgs... systemReserveds) {
             return systemReserveds(List.of(systemReserveds));
         }
 
         /**
          * @param topologyManagerPolicy Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topologyManagerPolicy(@Nullable Output<String> topologyManagerPolicy) {
             $.topologyManagerPolicy = topologyManagerPolicy;
@@ -449,9 +542,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param topologyManagerPolicy Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topologyManagerPolicy(String topologyManagerPolicy) {
             return topologyManagerPolicy(Output.of(topologyManagerPolicy));
@@ -459,9 +552,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param topologyManagerScope Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topologyManagerScope(@Nullable Output<String> topologyManagerScope) {
             $.topologyManagerScope = topologyManagerScope;
@@ -470,9 +563,9 @@ public final class NodePoolKubernetesConfigKubeletConfigArgs extends com.pulumi.
 
         /**
          * @param topologyManagerScope Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topologyManagerScope(String topologyManagerScope) {
             return topologyManagerScope(Output.of(topologyManagerScope));

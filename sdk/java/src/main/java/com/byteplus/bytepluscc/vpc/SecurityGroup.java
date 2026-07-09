@@ -20,161 +20,253 @@ import javax.annotation.Nullable;
 
 /**
  * A security group is a logical grouping that provides access policies for NICs within the same private network that share security requirements and mutual trust. You can control inbound and outbound traffic for associated NICs by configuring security group rules
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.SecurityGroup;
+ * import com.byteplus.bytepluscc.vpc.SecurityGroupArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.SecurityGroupIngressPermissionArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.SecurityGroupEgressPermissionArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.SecurityGroupTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var securityGroupDemo = new SecurityGroup("securityGroupDemo", SecurityGroupArgs.builder()
+ *             .vpcId("vpc-xxxx")
+ *             .securityGroupName("SecurityGroupDemo")
+ *             .description("SecurityGroupDemo description")
+ *             .projectName("default")
+ *             .ingressPermissions(SecurityGroupIngressPermissionArgs.builder()
+ *                 .description("test-rule")
+ *                 .policy("drop")
+ *                 .port_end(1)
+ *                 .port_start(1)
+ *                 .priority(11)
+ *                 .protocol("tcp")
+ *                 .cidr_ip("192.168.xx.0/26")
+ *                 .prefix_list_id("")
+ *                 .source_group_id("")
+ *                 .build())
+ *             .egressPermissions(SecurityGroupEgressPermissionArgs.builder()
+ *                 .description("test-rule")
+ *                 .policy("drop")
+ *                 .port_end(-1)
+ *                 .port_start(-1)
+ *                 .priority(100)
+ *                 .protocol("all")
+ *                 .cidr_ip("192.168.xx.0/26")
+ *                 .prefix_list_id("list-xxx")
+ *                 .source_group_id("group-xxx")
+ *                 .build())
+ *             .tags(SecurityGroupTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpc/securityGroup:SecurityGroup example &#34;security_group_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpc/securityGroup:SecurityGroup")
 public class SecurityGroup extends com.pulumi.resources.CustomResource {
     /**
      * Security group creation time
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Security group creation time
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the security group. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). If not specified, defaults to an empty string
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="egressPermissions", refs={List.class,SecurityGroupEgressPermission.class}, tree="[0,1]")
     private Output<List<SecurityGroupEgressPermission>> egressPermissions;
 
+    /**
+     * @return Description for outbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<SecurityGroupEgressPermission>> egressPermissions() {
         return this.egressPermissions;
     }
+    /**
+     * Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="ingressPermissions", refs={List.class,SecurityGroupIngressPermission.class}, tree="[0,1]")
     private Output<List<SecurityGroupIngressPermission>> ingressPermissions;
 
+    /**
+     * @return Description for inbound security group rule. Unchanged information is returned as original; unfilled or changed content is considered modified. Please fill in as needed
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<SecurityGroupIngressPermission>> ingressPermissions() {
         return this.ingressPermissions;
     }
     /**
      * Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the security group belongs. Default project is &#39;default&#39; if not specified
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Security group ID
-     * 
+     *
      */
     @Export(name="securityGroupId", refs={String.class}, tree="[0]")
     private Output<String> securityGroupId;
 
     /**
      * @return Security group ID
-     * 
+     *
      */
     public Output<String> securityGroupId() {
         return this.securityGroupId;
     }
     /**
      * Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
-     * 
+     *
      */
     @Export(name="securityGroupName", refs={String.class}, tree="[0]")
     private Output<String> securityGroupName;
 
     /**
      * @return Security group name. Length: 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Default is security group ID if not specified
-     * 
+     *
      */
     public Output<String> securityGroupName() {
         return this.securityGroupName;
     }
     /**
      * Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
-     * 
+     *
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
      * @return Indicates whether the security group is managed. true means managed security group, false means unmanaged security group
-     * 
+     *
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
      * Security group status. Available means available for use, Creating means being created
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Security group status. Available means available for use, Creating means being created
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,SecurityGroupTag.class}, tree="[0,1]")
     private Output<List<SecurityGroupTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<SecurityGroupTag>> tags() {
         return this.tags;
     }
     /**
      * Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Security group type. 1. default: default security group. 2. normal: custom security group. 3. VpnGW: VPN gateway security group. 4. NatGW: NAT gateway security group. 5. cidr_only: CIDR-Only security group
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * VPC ID to which the security group belongs
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID to which the security group belongs
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;

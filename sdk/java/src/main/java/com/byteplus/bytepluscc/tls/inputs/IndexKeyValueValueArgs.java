@@ -20,14 +20,14 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
-     * 
+     *
      */
     @Import(name="autoIndexFlag")
     private @Nullable Output<Boolean> autoIndexFlag;
 
     /**
      * @return Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoIndexFlag() {
         return Optional.ofNullable(this.autoIndexFlag);
@@ -35,14 +35,14 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Whether to distinguish case. Default is false.
-     * 
+     *
      */
     @Import(name="caseSensitive")
     private @Nullable Output<Boolean> caseSensitive;
 
     /**
      * @return Whether to distinguish case. Default is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> caseSensitive() {
         return Optional.ofNullable(this.caseSensitive);
@@ -50,14 +50,14 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
-     * 
+     *
      */
     @Import(name="delimiter")
     private @Nullable Output<String> delimiter;
 
     /**
      * @return Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
-     * 
+     *
      */
     public Optional<Output<String>> delimiter() {
         return Optional.ofNullable(this.delimiter);
@@ -65,14 +65,14 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
     /**
      * When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
-     * 
+     *
      */
     @Import(name="includeChinese")
     private @Nullable Output<Boolean> includeChinese;
 
     /**
      * @return When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
-     * 
+     *
      */
     public Optional<Output<Boolean>> includeChinese() {
         return Optional.ofNullable(this.includeChinese);
@@ -80,14 +80,14 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Create indexes for all fields with text values in the JSON field.
-     * 
+     *
      */
     @Import(name="indexAll")
     private @Nullable Output<Boolean> indexAll;
 
     /**
      * @return Create indexes for all fields with text values in the JSON field.
-     * 
+     *
      */
     public Optional<Output<Boolean>> indexAll() {
         return Optional.ofNullable(this.indexAll);
@@ -95,36 +95,46 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
-     * 
+     *
      */
     @Import(name="indexSqlAll")
     private @Nullable Output<Boolean> indexSqlAll;
 
     /**
      * @return Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
-     * 
+     *
      */
     public Optional<Output<Boolean>> indexSqlAll() {
         return Optional.ofNullable(this.indexSqlAll);
     }
 
+    /**
+     * When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="jsonKeys")
     private @Nullable Output<List<IndexKeyValueValueJsonKeyArgs>> jsonKeys;
 
+    /**
+     * @return When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<IndexKeyValueValueJsonKeyArgs>>> jsonKeys() {
         return Optional.ofNullable(this.jsonKeys);
     }
 
     /**
      * Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
-     * 
+     *
      */
     @Import(name="sqlFlag")
     private @Nullable Output<Boolean> sqlFlag;
 
     /**
      * @return Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
-     * 
+     *
      */
     public Optional<Output<Boolean>> sqlFlag() {
         return Optional.ofNullable(this.sqlFlag);
@@ -132,14 +142,14 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
-     * 
+     *
      */
     @Import(name="valueType")
     private @Nullable Output<String> valueType;
 
     /**
      * @return Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
-     * 
+     *
      */
     public Optional<Output<String>> valueType() {
         return Optional.ofNullable(this.valueType);
@@ -179,9 +189,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param autoIndexFlag Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoIndexFlag(@Nullable Output<Boolean> autoIndexFlag) {
             $.autoIndexFlag = autoIndexFlag;
@@ -190,9 +200,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param autoIndexFlag Indicates whether the index was added automatically. true: The index was added automatically. false: The index was not added automatically.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoIndexFlag(Boolean autoIndexFlag) {
             return autoIndexFlag(Output.of(autoIndexFlag));
@@ -200,9 +210,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param caseSensitive Whether to distinguish case. Default is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder caseSensitive(@Nullable Output<Boolean> caseSensitive) {
             $.caseSensitive = caseSensitive;
@@ -211,9 +221,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param caseSensitive Whether to distinguish case. Default is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder caseSensitive(Boolean caseSensitive) {
             return caseSensitive(Output.of(caseSensitive));
@@ -221,9 +231,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param delimiter Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder delimiter(@Nullable Output<String> delimiter) {
             $.delimiter = delimiter;
@@ -232,9 +242,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param delimiter Token separators for the field. Default is empty (&#34;&#34;). Each character in the string represents a token separator. Length: 0–256 bytes. If the length is 0, segmentation is disabled. Only one or more of the following characters are supported: letters, numbers, and !{@literal @}#%^&amp;*()-_=\\&#34;&#39;, &lt;&gt;/?|;:\	\r[]{}. . Supports configuring both Chinese characters and token separators simultaneously.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder delimiter(String delimiter) {
             return delimiter(Output.of(delimiter));
@@ -242,9 +252,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param includeChinese When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder includeChinese(@Nullable Output<Boolean> includeChinese) {
             $.includeChinese = includeChinese;
@@ -253,9 +263,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param includeChinese When searching, determines whether to segment Chinese log content according to Chinese syntax. Enabled: Chinese characters in logs are segmented based on common Chinese syntax; custom segmentation for Chinese content is not supported. Non-Chinese characters in logs are segmented using the token separators specified in the parameter. Disabled: Logs are segmented using the token separators specified in the parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder includeChinese(Boolean includeChinese) {
             return includeChinese(Output.of(includeChinese));
@@ -263,9 +273,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param indexAll Create indexes for all fields with text values in the JSON field.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder indexAll(@Nullable Output<Boolean> indexAll) {
             $.indexAll = indexAll;
@@ -274,9 +284,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param indexAll Create indexes for all fields with text values in the JSON field.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder indexAll(Boolean indexAll) {
             return indexAll(Output.of(indexAll));
@@ -284,9 +294,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param indexSqlAll Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder indexSqlAll(@Nullable Output<Boolean> indexSqlAll) {
             $.indexSqlAll = indexSqlAll;
@@ -295,32 +305,53 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param indexSqlAll Enable automatic indexing and statistics for JSON fields. true: Enable automatic indexing and statistics. false: Disable automatic indexing and statistics.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder indexSqlAll(Boolean indexSqlAll) {
             return indexSqlAll(Output.of(indexSqlAll));
         }
 
+        /**
+         * @param jsonKeys When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder jsonKeys(@Nullable Output<List<IndexKeyValueValueJsonKeyArgs>> jsonKeys) {
             $.jsonKeys = jsonKeys;
             return this;
         }
 
+        /**
+         * @param jsonKeys When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder jsonKeys(List<IndexKeyValueValueJsonKeyArgs> jsonKeys) {
             return jsonKeys(Output.of(jsonKeys));
         }
 
+        /**
+         * @param jsonKeys When ValueType is json, you can configure key-value indexes for JSON subfields using the JsonKeys field, which is an array of KeyValueInfo. Each element in the JsonKeys list is a KeyValueInfo, and you can further nest text, long, and double type subfields. For subfields in JSON key-value indexes, use . to indicate the hierarchy between JSON fields. For example, the JSON field namelist contains a text-type subfield totalcount and a JSON-type info, which itself contains the field name. Each field name should be configured as totalcount and info.name, respectively. The SqlFlag setting for subfield key-value indexes defined in JsonKeys must match their parent field, meaning they must be enabled or disabled together. The default is disabled. Subfields do not support separate settings for Delimiter, CaseSensitive, or IncludeChinese. For text-type fields, CaseSensitive, Delimiter, and IncludeChinese always inherit the parent field settings. This is only set when ValueType is json.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder jsonKeys(IndexKeyValueValueJsonKeyArgs... jsonKeys) {
             return jsonKeys(List.of(jsonKeys));
         }
 
         /**
          * @param sqlFlag Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sqlFlag(@Nullable Output<Boolean> sqlFlag) {
             $.sqlFlag = sqlFlag;
@@ -329,9 +360,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param sqlFlag Whether analysis is enabled for the field. Default is false. After enabling statistical analysis, you can configure token delimiters and whether to include Chinese content.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sqlFlag(Boolean sqlFlag) {
             return sqlFlag(Output.of(sqlFlag));
@@ -339,9 +370,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param valueType Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder valueType(@Nullable Output<String> valueType) {
             $.valueType = valueType;
@@ -350,9 +381,9 @@ public final class IndexKeyValueValueArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param valueType Field type. Currently supports long, double, text, and json. The long and double types do not support configuring delimiters, including Chinese, or case sensitivity. Only the json type supports further configuration of JsonKeys subfields.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder valueType(String valueType) {
             return valueType(Output.of(valueType));

@@ -22,253 +22,436 @@ import javax.annotation.Nullable;
 
 /**
  * The log service provides log collection tools such as LogCollector and multi-language SDKs, supports various log collection methods, is compatible with open-source protocol frameworks like Kafka and OpenTelemetry, and supports log data collection from host applications, K8s clusters, mobile clients, Volcano Engine cloud products, and other cloud vendors.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.Rule;
+ * import com.byteplus.bytepluscc.tls.RuleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleContainerRuleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleExcludePathArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleExtractRuleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleHostGroupInfoArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleUserDefineRuleArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleUserDefineRuleAdvancedArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleUserDefineRuleFieldArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.RuleUserDefineRulePluginArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var tLSRuleDemo = new Rule("tLSRuleDemo", RuleArgs.builder()
+ *             .containerRule(RuleContainerRuleArgs.builder()
+ *                 .container_name_regex("ccapi-test")
+ *                 .env_tag(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k1"),
+ *                     Map.entry("val", "v1")
+ *                 )))
+ *                 .exclude_container_env_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k2"),
+ *                     Map.entry("val", "v2")
+ *                 )))
+ *                 .exclude_container_label_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k2"),
+ *                     Map.entry("val", "v2")
+ *                 )))
+ *                 .include_container_env_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k1"),
+ *                     Map.entry("val", "v1")
+ *                 )))
+ *                 .include_container_label_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k1"),
+ *                     Map.entry("val", "v1")
+ *                 )))
+ *                 .kubernetes_rule(Map.ofEntries(
+ *                     Map.entry("annotationTag", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k1"),
+ *                         Map.entry("val", "v1")
+ *                     ))),
+ *                     Map.entry("enableAllLabelTag", true),
+ *                     Map.entry("excludePodAnnotationRegex", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k2"),
+ *                         Map.entry("val", "v2")
+ *                     ))),
+ *                     Map.entry("excludePodLabelRegex", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k2"),
+ *                         Map.entry("val", "v2")
+ *                     ))),
+ *                     Map.entry("includePodAnnotationRegex", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k1"),
+ *                         Map.entry("val", "v1")
+ *                     ))),
+ *                     Map.entry("includePodLabelRegex", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k1"),
+ *                         Map.entry("val", "v1")
+ *                     ))),
+ *                     Map.entry("labelTag", Arrays.asList(Map.ofEntries(
+ *                         Map.entry("key", "k1"),
+ *                         Map.entry("val", "v1")
+ *                     ))),
+ *                     Map.entry("namespaceNameRegex", "ccapi"),
+ *                     Map.entry("podNameRegex", "ccapi"),
+ *                     Map.entry("workloadNameRegex", "ccapi"),
+ *                     Map.entry("workloadType", "Deployment")
+ *                 ))
+ *                 .stream("")
+ *                 .build())
+ *             .excludePaths(RuleExcludePathArgs.builder()
+ *                 .type("Path")
+ *                 .value("/test")
+ *                 .build())
+ *             .extractRule(RuleExtractRuleArgs.builder()
+ *                 .begin_regex("")
+ *                 .delimiter(" ")
+ *                 .enable_nanosecond(true)
+ *                 .filter_key_regex(Arrays.asList(Map.ofEntries(
+ *                     Map.entry("key", "k1"),
+ *                     Map.entry("regex", "v1")
+ *                 )))
+ *                 .keys("k1")
+ *                 .log_regex("")
+ *                 .log_template(Map.ofEntries(
+ *                     Map.entry("format", ""),
+ *                     Map.entry("type", "")
+ *                 ))
+ *                 .quote("")
+ *                 .time_extract_regex("dsfasdf")
+ *                 .time_format("%Y-%m-%d %H:%M:%S.%f")
+ *                 .time_key("time_key")
+ *                 .time_sample("2006-01-02T15:04:05Z07:00")
+ *                 .time_zone("Etc/GMT+12")
+ *                 .un_match_log_key("LogParseFailed")
+ *                 .un_match_up_load_switch(true)
+ *                 .build())
+ *             .hostGroupInfos(RuleHostGroupInfoArgs.builder()
+ *                 .host_group_id("38feb3b9-xxxxx-de52cxxxxx")
+ *                 .build())
+ *             .inputType(2)
+ *             .logSample("asdfasf")
+ *             .logType("delimiter_log")
+ *             .paths("/test")
+ *             .ruleName("dx-rule-1")
+ *             .topicId("b881e3cd-xxxxx-966f-fe98xxxxxxx")
+ *             .userDefineRule(RuleUserDefineRuleArgs.builder()
+ *                 .advanced(RuleUserDefineRuleAdvancedArgs.builder()
+ *                     .closeEof(false)
+ *                     .closeInactive(10)
+ *                     .closeRemoved(false)
+ *                     .closeRenamed(false)
+ *                     .closeTimeout(0)
+ *                     .noLineTerminatorEofMaxTime(0)
+ *                     .build())
+ *                 .enable_host_group_label(true)
+ *                 .enable_hostname(true)
+ *                 .enable_raw_log(true)
+ *                 .fields(RuleUserDefineRuleFieldArgs.builder()
+ *                     .key("k1")
+ *                     .val("v1")
+ *                     .build())
+ *                 .host_group_label_key("host_group_label")
+ *                 .hostname_key("hostname")
+ *                 .ignore_older(72)
+ *                 .multi_collects_type("RuleID")
+ *                 .parse_path_rule(Map.ofEntries(
+ *                     Map.entry("keys", Arrays.asList(
+ *                         "instance-id",
+ *                         "pod-name")),
+ *                     Map.entry("pathSample", "/var/logs/instanceid_any_podname/test.log"),
+ *                     Map.entry("regex", "/var/logs/([a-z]*)_any_([a-z]*)/test.log")
+ *                 ))
+ *                 .plugin(RuleUserDefineRulePluginArgs.builder()
+ *                     .processors("{}")
+ *                     .build())
+ *                 .raw_log_key("raw")
+ *                 .shard_hash_key(Map.of("hashKey", "2342134"))
+ *                 .tail_files(true)
+ *                 .tail_size_kb(10240)
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:tls/rule:Rule example &#34;rule_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:tls/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * Container log collection rules.
-     * 
+     *
      */
     @Export(name="containerRule", refs={RuleContainerRule.class}, tree="[0]")
     private Output<RuleContainerRule> containerRule;
 
     /**
      * @return Container log collection rules.
-     * 
+     *
      */
     public Output<RuleContainerRule> containerRule() {
         return this.containerRule;
     }
     /**
      * Time when the collection configuration was created.
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Time when the collection configuration was created.
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
+    /**
+     * Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="excludePaths", refs={List.class,RuleExcludePath.class}, tree="[0,1]")
     private Output<List<RuleExcludePath>> excludePaths;
 
+    /**
+     * @return Denylist entries for collection. You can create up to 10 denylist entries. When InputType=0 or InputType=2: If Type is Path, Value represents a directory. Supports exact match and wildcard pattern matching. Wildcards supported: *, ?. The ** wildcard is not supported. If Type is File, Value represents a file name. Supports exact match and wildcard pattern matching. Wildcards supported: **, *, ?. Only one ** wildcard can be configured at most. When InputType=1: Configuring a denylist is not allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RuleExcludePath>> excludePaths() {
         return this.excludePaths;
     }
     /**
      * Log extraction rules. Note: This parameter is required if LogType is set to any type other than minimalist*log or json*log.
-     * 
+     *
      */
     @Export(name="extractRule", refs={RuleExtractRule.class}, tree="[0]")
     private Output<RuleExtractRule> extractRule;
 
     /**
      * @return Log extraction rules. Note: This parameter is required if LogType is set to any type other than minimalist*log or json*log.
-     * 
+     *
      */
     public Output<RuleExtractRule> extractRule() {
         return this.extractRule;
     }
+    /**
+     * Machine group information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="hostGroupInfos", refs={List.class,RuleHostGroupInfo.class}, tree="[0,1]")
     private Output<List<RuleHostGroupInfo>> hostGroupInfos;
 
+    /**
+     * @return Machine group information list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RuleHostGroupInfo>> hostGroupInfos() {
         return this.hostGroupInfos;
     }
     /**
      * Collection type. 0: (Default) Host log file. 1: K8s container stdout. 2: K8s container internal log file.
-     * 
+     *
      */
     @Export(name="inputType", refs={Integer.class}, tree="[0]")
     private Output<Integer> inputType;
 
     /**
      * @return Collection type. 0: (Default) Host log file. 1: K8s container stdout. 2: K8s container internal log file.
-     * 
+     *
      */
     public Output<Integer> inputType() {
         return this.inputType;
     }
     /**
      * Log sample. Maximum length is 3000 characters. Log sample content must match the collection mode. Single-line full-text mode and JSON mode do not require a log sample. Other modes require a log sample, and the content must match the collection mode.
-     * 
+     *
      */
     @Export(name="logSample", refs={String.class}, tree="[0]")
     private Output<String> logSample;
 
     /**
      * @return Log sample. Maximum length is 3000 characters. Log sample content must match the collection mode. Single-line full-text mode and JSON mode do not require a log sample. Other modes require a log sample, and the content must match the collection mode.
-     * 
+     *
      */
     public Output<String> logSample() {
         return this.logSample;
     }
     /**
      * Collection mode. minimalist*log: (Default) Single-line full-text mode. json*log: JSON mode. delimiter*log: Delimiter mode. multiline*log: Multi-line full-text mode. fullregex_log: Full regex mode.
-     * 
+     *
      */
     @Export(name="logType", refs={String.class}, tree="[0]")
     private Output<String> logType;
 
     /**
      * @return Collection mode. minimalist*log: (Default) Single-line full-text mode. json*log: JSON mode. delimiter*log: Delimiter mode. multiline*log: Multi-line full-text mode. fullregex_log: Full regex mode.
-     * 
+     *
      */
     public Output<String> logType() {
         return this.logType;
     }
     /**
      * Collection configuration modification time.
-     * 
+     *
      */
     @Export(name="modifyTime", refs={String.class}, tree="[0]")
     private Output<String> modifyTime;
 
     /**
      * @return Collection configuration modification time.
-     * 
+     *
      */
     public Output<String> modifyTime() {
         return this.modifyTime;
     }
     /**
      * Collection path list. You can create up to 10 collection paths. Collection paths must be specified as absolute paths; relative paths are not supported. When InputType=0 or InputType=2, collection paths support exact match and wildcard mode. Wildcards only support **, *, and ?, but you can configure at most one ** wildcard. When InputType=1, you do not need to configure the collection path list.
-     * 
+     *
      */
     @Export(name="paths", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> paths;
 
     /**
      * @return Collection path list. You can create up to 10 collection paths. Collection paths must be specified as absolute paths; relative paths are not supported. When InputType=0 or InputType=2, collection paths support exact match and wildcard mode. Wildcards only support **, *, and ?, but you can configure at most one ** wildcard. When InputType=1, you do not need to configure the collection path list.
-     * 
+     *
      */
     public Output<List<String>> paths() {
         return this.paths;
     }
     /**
      * Collection configuration status. 0: Running. 1: Paused.
-     * 
+     *
      */
     @Export(name="pause", refs={Integer.class}, tree="[0]")
     private Output<Integer> pause;
 
     /**
      * @return Collection configuration status. 0: Running. 1: Paused.
-     * 
+     *
      */
     public Output<Integer> pause() {
         return this.pause;
     }
     /**
      * ID of the project to which the collection configuration belongs.
-     * 
+     *
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
      * @return ID of the project to which the collection configuration belongs.
-     * 
+     *
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
      * Name of the project to which the collection configuration belongs
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the collection configuration belongs
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Collection configuration ID.
-     * 
+     *
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Collection configuration ID.
-     * 
+     *
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
      * Collection configuration name. Please refer to the resource naming rules. Must be unique within a log topic.
-     * 
+     *
      */
     @Export(name="ruleName", refs={String.class}, tree="[0]")
     private Output<String> ruleName;
 
     /**
      * @return Collection configuration name. Please refer to the resource naming rules. Must be unique within a log topic.
-     * 
+     *
      */
     public Output<String> ruleName() {
         return this.ruleName;
     }
     /**
      * Log topic ID to which the collection configuration belongs.
-     * 
+     *
      */
     @Export(name="topicId", refs={String.class}, tree="[0]")
     private Output<String> topicId;
 
     /**
      * @return Log topic ID to which the collection configuration belongs.
-     * 
+     *
      */
     public Output<String> topicId() {
         return this.topicId;
     }
     /**
      * Name of the log topic to which the collection configuration belongs.
-     * 
+     *
      */
     @Export(name="topicName", refs={String.class}, tree="[0]")
     private Output<String> topicName;
 
     /**
      * @return Name of the log topic to which the collection configuration belongs.
-     * 
+     *
      */
     public Output<String> topicName() {
         return this.topicName;
     }
     /**
      * User-defined collection rules.
-     * 
+     *
      */
     @Export(name="userDefineRule", refs={RuleUserDefineRule.class}, tree="[0]")
     private Output<RuleUserDefineRule> userDefineRule;
 
     /**
      * @return User-defined collection rules.
-     * 
+     *
      */
     public Output<RuleUserDefineRule> userDefineRule() {
         return this.userDefineRule;

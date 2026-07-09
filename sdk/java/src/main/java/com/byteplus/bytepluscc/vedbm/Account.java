@@ -16,31 +16,31 @@ import javax.annotation.Nullable;
 
 /**
  * Database Account Management
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vedbm.Account;
  * import com.byteplus.bytepluscc.vedbm.AccountArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vEDBMAccountDemo = new Account("vEDBMAccountDemo", AccountArgs.builder()
  *             .instanceId("vedbm-r5zxxxxjdabv")
@@ -49,102 +49,102 @@ import javax.annotation.Nullable;
  *             .accountType("Super")
  *             .accountDesc("this is a super account")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vedbm/account:Account example &#34;instance_id|account_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vedbm/account:Account")
 public class Account extends com.pulumi.resources.CustomResource {
     /**
      * Account Description
-     * 
+     *
      */
     @Export(name="accountDesc", refs={String.class}, tree="[0]")
     private Output<String> accountDesc;
 
     /**
      * @return Account Description
-     * 
+     *
      */
     public Output<String> accountDesc() {
         return this.accountDesc;
     }
     /**
      * Account Name
-     * 
+     *
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
      * @return Account Name
-     * 
+     *
      */
     public Output<String> accountName() {
         return this.accountName;
     }
     /**
      * Database Account Password
-     * 
+     *
      */
     @Export(name="accountPassword", refs={String.class}, tree="[0]")
     private Output<String> accountPassword;
 
     /**
      * @return Database Account Password
-     * 
+     *
      */
     public Output<String> accountPassword() {
         return this.accountPassword;
     }
     /**
      * Account Type
-     * 
+     *
      */
     @Export(name="accountType", refs={String.class}, tree="[0]")
     private Output<String> accountType;
 
     /**
      * @return Account Type
-     * 
+     *
      */
     public Output<String> accountType() {
         return this.accountType;
     }
     /**
      * Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Reset high-privilege account permissions. Only applicable to Super accounts. If users modify high-privilege account permissions via SQL on the backend, subsequent features may become unavailable. Therefore, this function is provided to restore all permissions with one click.
-     * 
+     *
      */
     @Export(name="resetPrivilege", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> resetPrivilege;
 
     /**
      * @return Reset high-privilege account permissions. Only applicable to Super accounts. If users modify high-privilege account permissions via SQL on the backend, subsequent features may become unavailable. Therefore, this function is provided to restore all permissions with one click.
-     * 
+     *
      */
     public Output<Boolean> resetPrivilege() {
         return this.resetPrivilege;

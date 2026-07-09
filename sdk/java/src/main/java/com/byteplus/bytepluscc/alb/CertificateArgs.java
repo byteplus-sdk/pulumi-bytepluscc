@@ -20,14 +20,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
-     * 
+     *
      */
     @Import(name="certificateId")
     private @Nullable Output<String> certificateId;
 
     /**
      * @return Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
-     * 
+     *
      */
     public Optional<Output<String>> certificateId() {
         return Optional.ofNullable(this.certificateId);
@@ -35,14 +35,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
-     * 
+     *
      */
     @Import(name="certificateName")
     private @Nullable Output<String> certificateName;
 
     /**
      * @return Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
-     * 
+     *
      */
     public Optional<Output<String>> certificateName() {
         return Optional.ofNullable(this.certificateName);
@@ -50,14 +50,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate type. Options: CA: CA certificate; Server: server certificate
-     * 
+     *
      */
     @Import(name="certificateType", required=true)
     private Output<String> certificateType;
 
     /**
      * @return Certificate type. Options: CA: CA certificate; Server: server certificate
-     * 
+     *
      */
     public Output<String> certificateType() {
         return this.certificateType;
@@ -65,14 +65,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Certificate description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Certificate description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -80,14 +80,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
-     * 
+     *
      */
     @Import(name="oldCertificateId")
     private @Nullable Output<String> oldCertificateId;
 
     /**
      * @return Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
-     * 
+     *
      */
     public Optional<Output<String>> oldCertificateId() {
         return Optional.ofNullable(this.oldCertificateId);
@@ -95,14 +95,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Server certificate private key. Required when certificate type is Server
-     * 
+     *
      */
     @Import(name="privateKey")
     private @Nullable Output<String> privateKey;
 
     /**
      * @return Server certificate private key. Required when certificate type is Server
-     * 
+     *
      */
     public Optional<Output<String>> privateKey() {
         return Optional.ofNullable(this.privateKey);
@@ -110,14 +110,14 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -125,22 +125,32 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Server certificate public key
-     * 
+     *
      */
     @Import(name="publicKey")
     private @Nullable Output<String> publicKey;
 
     /**
      * @return Server certificate public key
-     * 
+     *
      */
     public Optional<Output<String>> publicKey() {
         return Optional.ofNullable(this.publicKey);
     }
 
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<CertificateTagArgs>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<CertificateTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -179,9 +189,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateId(@Nullable Output<String> certificateId) {
             $.certificateId = certificateId;
@@ -190,9 +200,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateId Certificate ID. When the replacement mode is stock, this refers to the existing certificate ID used for replacement.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateId(String certificateId) {
             return certificateId(Output.of(certificateId));
@@ -200,9 +210,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateName Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateName(@Nullable Output<String> certificateName) {
             $.certificateName = certificateName;
@@ -211,9 +221,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateName Certificate name. Length must be between 1 and 128 characters, start with a letter or Chinese character, and may include numbers, periods (.), underscores (_), and hyphens (-)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateName(String certificateName) {
             return certificateName(Output.of(certificateName));
@@ -221,9 +231,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateType Certificate type. Options: CA: CA certificate; Server: server certificate
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateType(Output<String> certificateType) {
             $.certificateType = certificateType;
@@ -232,9 +242,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateType Certificate type. Options: CA: CA certificate; Server: server certificate
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateType(String certificateType) {
             return certificateType(Output.of(certificateType));
@@ -242,9 +252,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Certificate description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -253,9 +263,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Certificate description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -263,9 +273,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param oldCertificateId Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder oldCertificateId(@Nullable Output<String> oldCertificateId) {
             $.oldCertificateId = oldCertificateId;
@@ -274,9 +284,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param oldCertificateId Old certificate ID to be replaced. Setting this field indicates that the certificate is created in replacement mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder oldCertificateId(String oldCertificateId) {
             return oldCertificateId(Output.of(oldCertificateId));
@@ -284,9 +294,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateKey Server certificate private key. Required when certificate type is Server
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder privateKey(@Nullable Output<String> privateKey) {
             $.privateKey = privateKey;
@@ -295,9 +305,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateKey Server certificate private key. Required when certificate type is Server
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder privateKey(String privateKey) {
             return privateKey(Output.of(privateKey));
@@ -305,9 +315,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -316,9 +326,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -326,9 +336,9 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicKey Server certificate public key
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicKey(@Nullable Output<String> publicKey) {
             $.publicKey = publicKey;
@@ -337,23 +347,44 @@ public final class CertificateArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicKey Server certificate public key
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicKey(String publicKey) {
             return publicKey(Output.of(publicKey));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<CertificateTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<CertificateTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(CertificateTagArgs... tags) {
             return tags(List.of(tags));
         }

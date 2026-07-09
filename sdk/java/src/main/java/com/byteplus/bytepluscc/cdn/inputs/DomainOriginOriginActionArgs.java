@@ -15,9 +15,19 @@ public final class DomainOriginOriginActionArgs extends com.pulumi.resources.Res
 
     public static final DomainOriginOriginActionArgs Empty = new DomainOriginOriginActionArgs();
 
+    /**
+     * Indicates a list of origin configurations. Each configuration can include one or more origins.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="originLines", required=true)
     private Output<List<DomainOriginOriginActionOriginLineArgs>> originLines;
 
+    /**
+     * @return Indicates a list of origin configurations. Each configuration can include one or more origins.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DomainOriginOriginActionOriginLineArgs>> originLines() {
         return this.originLines;
     }
@@ -46,15 +56,36 @@ public final class DomainOriginOriginActionArgs extends com.pulumi.resources.Res
             $ = new DomainOriginOriginActionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param originLines Indicates a list of origin configurations. Each configuration can include one or more origins.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originLines(Output<List<DomainOriginOriginActionOriginLineArgs>> originLines) {
             $.originLines = originLines;
             return this;
         }
 
+        /**
+         * @param originLines Indicates a list of origin configurations. Each configuration can include one or more origins.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originLines(List<DomainOriginOriginActionOriginLineArgs> originLines) {
             return originLines(Output.of(originLines));
         }
 
+        /**
+         * @param originLines Indicates a list of origin configurations. Each configuration can include one or more origins.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originLines(DomainOriginOriginActionOriginLineArgs... originLines) {
             return originLines(List.of(originLines));
         }

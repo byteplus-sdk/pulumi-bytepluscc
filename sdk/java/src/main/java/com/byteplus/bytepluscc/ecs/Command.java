@@ -20,239 +20,314 @@ import javax.annotation.Nullable;
 
 /**
  * Custom commands are features provided by Cloud Assistant to meet your personalized O&amp;M needs. If the preset public commands do not meet your requirements, you can create custom commands and batch execute your custom commands on instances using O&amp;M tasks.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.ecs.Command;
+ * import com.byteplus.bytepluscc.ecs.CommandArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.CommandParameterDefinitionArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.CommandTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var commandDemo = new Command("commandDemo", CommandArgs.builder()
+ *             .commandContent("IyEvYmluL2Jhc2gKCm1rZGlyIHt7ZGxxxxx")
+ *             .description("CommandDemo Example")
+ *             .enableParameter(true)
+ *             .name("commandtest")
+ *             .parameterDefinitions(CommandParameterDefinitionArgs.builder()
+ *                 .type("Digit")
+ *                 .name("dirname")
+ *                 .required(true)
+ *                 .default_value("10")
+ *                 .min_length(0)
+ *                 .max_length(0)
+ *                 .min_value("5")
+ *                 .max_value("100")
+ *                 .decimal_precision(0)
+ *                 .build())
+ *             .projectName("default")
+ *             .tags(CommandTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .timeout(60)
+ *             .type("Shell")
+ *             .username("rxxxx")
+ *             .workingDir("/home")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:ecs/command:Command example &#34;command_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:ecs/command:Command")
 public class Command extends com.pulumi.resources.CustomResource {
     /**
      * Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
-     * 
+     *
      */
     @Export(name="commandContent", refs={String.class}, tree="[0]")
     private Output<String> commandContent;
 
     /**
      * @return Command content. Enter the command content according to the ContentEncoding parameter. Command content must not exceed 16 KB.
-     * 
+     *
      */
     public Output<String> commandContent() {
         return this.commandContent;
     }
     /**
      * Custom command ID.
-     * 
+     *
      */
     @Export(name="commandId", refs={String.class}, tree="[0]")
     private Output<String> commandId;
 
     /**
      * @return Custom command ID.
-     * 
+     *
      */
     public Output<String> commandId() {
         return this.commandId;
     }
     /**
      * Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
-     * 
+     *
      */
     @Export(name="contentEncoding", refs={String.class}, tree="[0]")
     private Output<String> contentEncoding;
 
     /**
      * @return Whether the command content is processed with Base64 encoding. Base64 (default): Processed with Base64 encoding. PlainText: Not encoded.
-     * 
+     *
      */
     public Output<String> contentEncoding() {
         return this.contentEncoding;
     }
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Command description. Defaults to an empty string. Character length: 0~256. No restriction on special characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
-     * 
+     *
      */
     @Export(name="enableParameter", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableParameter;
 
     /**
      * @return Whether the created command uses custom parameters. false: Default, does not use custom parameters. true: Uses custom parameters.
-     * 
+     *
      */
     public Output<Boolean> enableParameter() {
         return this.enableParameter;
     }
     /**
      * Number of times the command has been invoked.
-     * 
+     *
      */
     @Export(name="invocationTimes", refs={Integer.class}, tree="[0]")
     private Output<Integer> invocationTimes;
 
     /**
      * @return Number of times the command has been invoked.
-     * 
+     *
      */
     public Output<Integer> invocationTimes() {
         return this.invocationTimes;
     }
     /**
      * Command name. Character length: 1~32. No restriction on special characters.
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Command name. Character length: 1~32. No restriction on special characters.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
+    /**
+     * Custom parameter definition information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="parameterDefinitions", refs={List.class,CommandParameterDefinition.class}, tree="[0,1]")
     private Output<List<CommandParameterDefinition>> parameterDefinitions;
 
+    /**
+     * @return Custom parameter definition information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<CommandParameterDefinition>> parameterDefinitions() {
         return this.parameterDefinitions;
     }
     /**
      * Project to which the resource belongs. Each resource can belong to only one project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs. Each resource can belong to only one project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Command provider.
-     * 
+     *
      */
     @Export(name="providerName", refs={String.class}, tree="[0]")
     private Output<String> providerName;
 
     /**
      * @return Command provider.
-     * 
+     *
      */
     public Output<String> providerName() {
         return this.providerName;
     }
+    /**
+     * Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,CommandTag.class}, tree="[0,1]")
     private Output<List<CommandTag>> tags;
 
+    /**
+     * @return Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<CommandTag>> tags() {
         return this.tags;
     }
     /**
      * Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
-     * 
+     *
      */
     @Export(name="timeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> timeout;
 
     /**
      * @return Maximum timeout for executing the created command on ECS instances, in seconds. Value range: 30~86400. Default: 60.
-     * 
+     *
      */
     public Output<Integer> timeout() {
         return this.timeout;
     }
     /**
      * Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Command type. Shell: Creates a Shell script for Linux instances. Python: Creates a Python script. Bat: Creates a Bat script. PowerShell: Creates a PowerShell script.
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Update time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Username for executing the command.
-     * 
+     *
      */
     @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
      * @return Username for executing the command.
-     * 
+     *
      */
     public Output<String> username() {
         return this.username;
     }
     /**
      * Directory where the created command runs on ECS instances.
-     * 
+     *
      */
     @Export(name="workingDir", refs={String.class}, tree="[0]")
     private Output<String> workingDir;
 
     /**
      * @return Directory where the created command runs on ECS instances.
-     * 
+     *
      */
     public Output<String> workingDir() {
         return this.workingDir;

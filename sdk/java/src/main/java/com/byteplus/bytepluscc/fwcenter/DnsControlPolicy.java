@@ -20,197 +20,255 @@ import javax.annotation.Nullable;
 
 /**
  * Domain denylist access control policy.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.fwcenter.DnsControlPolicy;
+ * import com.byteplus.bytepluscc.fwcenter.DnsControlPolicyArgs;
+ * import com.pulumi.bytepluscc.fwcenter.inputs.DnsControlPolicySourceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var fWCenterDnsControlPolicyDemo = new DnsControlPolicy("fWCenterDnsControlPolicyDemo", DnsControlPolicyArgs.builder()
+ *             .description("FWCenterDnsControlPolicyDemo test")
+ *             .destination("www.xxxx.com")
+ *             .destinationType("domain")
+ *             .internetFirewallId("ifw-yebxxxxx0iac7gxxxxx")
+ *             .sources(DnsControlPolicySourceArgs.builder()
+ *                 .region("ap-southeast-1")
+ *                 .vpc_id("vpc-3rehw4xxxxk2ixxxxx")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy example &#34;rule_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy")
 public class DnsControlPolicy extends com.pulumi.resources.CustomResource {
     /**
      * User&#39;s unique identifier.
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return User&#39;s unique identifier.
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Policy description information.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Policy description information.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
-     * 
+     *
      */
     @Export(name="destination", refs={String.class}, tree="[0]")
     private Output<String> destination;
 
     /**
      * @return Access target, which can be the unique identifier of a domain or domain address book. Currently, only one address book is supported.
-     * 
+     *
      */
     public Output<String> destination() {
         return this.destination;
     }
     /**
      * Domain address book name list.
-     * 
+     *
      */
     @Export(name="destinationGroupLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> destinationGroupLists;
 
     /**
      * @return Domain address book name list.
-     * 
+     *
      */
     public Output<List<String>> destinationGroupLists() {
         return this.destinationGroupLists;
     }
     /**
      * Type of access target. domain: domain; group: domain address book.
-     * 
+     *
      */
     @Export(name="destinationType", refs={String.class}, tree="[0]")
     private Output<String> destinationType;
 
     /**
      * @return Type of access target. domain: domain; group: domain address book.
-     * 
+     *
      */
     public Output<String> destinationType() {
         return this.destinationType;
     }
+    /**
+     * Domain list in the domain address book.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="domainListV1s", refs={List.class,DnsControlPolicyDomainListV1.class}, tree="[0,1]")
     private Output<List<DnsControlPolicyDomainListV1>> domainListV1s;
 
+    /**
+     * @return Domain list in the domain address book.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DnsControlPolicyDomainListV1>> domainListV1s() {
         return this.domainListV1s;
     }
     /**
      * Domain list.
-     * 
+     *
      */
     @Export(name="domainLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> domainLists;
 
     /**
      * @return Domain list.
-     * 
+     *
      */
     public Output<List<String>> domainLists() {
         return this.domainLists;
     }
     /**
      * Hit count, indicating the number of times the domain denylist access control policy was triggered.
-     * 
+     *
      */
     @Export(name="hitCnt", refs={Integer.class}, tree="[0]")
     private Output<Integer> hitCnt;
 
     /**
      * @return Hit count, indicating the number of times the domain denylist access control policy was triggered.
-     * 
+     *
      */
     public Output<Integer> hitCnt() {
         return this.hitCnt;
     }
     /**
      * Internet border firewall instance ID.
-     * 
+     *
      */
     @Export(name="internetFirewallId", refs={String.class}, tree="[0]")
     private Output<String> internetFirewallId;
 
     /**
      * @return Internet border firewall instance ID.
-     * 
+     *
      */
     public Output<String> internetFirewallId() {
         return this.internetFirewallId;
     }
     /**
      * Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
-     * 
+     *
      */
     @Export(name="lastHitTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> lastHitTime;
 
     /**
      * @return Latest hit timestamp, indicating the last time the domain denylist access control policy was triggered.
-     * 
+     *
      */
     public Output<Integer> lastHitTime() {
         return this.lastHitTime;
     }
     /**
      * Unique identifier of the access control policy.
-     * 
+     *
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Unique identifier of the access control policy.
-     * 
+     *
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
+    /**
+     * Access source information, including VPC list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="sources", refs={List.class,DnsControlPolicySource.class}, tree="[0,1]")
     private Output<List<DnsControlPolicySource>> sources;
 
+    /**
+     * @return Access source information, including VPC list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DnsControlPolicySource>> sources() {
         return this.sources;
     }
     /**
      * Switch status of the domain denylist access control policy. false: Off; true: On.
-     * 
+     *
      */
     @Export(name="status", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> status;
 
     /**
      * @return Switch status of the domain denylist access control policy. false: Off; true: On.
-     * 
+     *
      */
     public Output<Boolean> status() {
         return this.status;
     }
     /**
      * Number of policies occupied by this domain denylist access control policy.
-     * 
+     *
      */
     @Export(name="useCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> useCount;
 
     /**
      * @return Number of policies occupied by this domain denylist access control policy.
-     * 
+     *
      */
     public Output<Integer> useCount() {
         return this.useCount;

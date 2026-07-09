@@ -16,31 +16,31 @@ import javax.annotation.Nullable;
 
 /**
  * RDS PostgreSQL Database Account
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.rdspostgresql.DbAccount;
  * import com.byteplus.bytepluscc.rdspostgresql.DbAccountArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var rDSPostgreSQLDBAccountNormalDemo = new DbAccount("rDSPostgreSQLDBAccountNormalDemo", DbAccountArgs.builder()
  *             .instanceId("postgres-xxxxxxx")
@@ -50,102 +50,102 @@ import javax.annotation.Nullable;
  *             .accountPrivileges("Inherit,Login,CreateRole,CreateDB")
  *             .notAllowPrivileges("DDL")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdspostgresql/dbAccount:DbAccount example &#34;instance_id|account_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdspostgresql/dbAccount:DbAccount")
 public class DbAccount extends com.pulumi.resources.CustomResource {
     /**
      * Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
-     * 
+     *
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
      * @return Database account name. The account name rules are as follows: Length must be 2–63 characters. Can contain letters, numbers, underscores (*), or hyphens (-). Must start with a letter and end with a letter or number. Cannot start with pg*. Reserved keywords cannot be used. For all disabled keywords, see Disabled Keywords.
-     * 
+     *
      */
     public Output<String> accountName() {
         return this.accountName;
     }
     /**
      * Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !{@literal @}#$%^*()&amp;_+-=.
-     * 
+     *
      */
     @Export(name="accountPassword", refs={String.class}, tree="[0]")
     private Output<String> accountPassword;
 
     /**
      * @return Database account password. The password rules are as follows: Length must be 8–32 characters. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters. Supported special characters: !{@literal @}#$%^*()&amp;_+-=.
-     * 
+     *
      */
     public Output<String> accountPassword() {
         return this.accountPassword;
     }
     /**
      * Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
-     * 
+     *
      */
     @Export(name="accountPrivileges", refs={String.class}, tree="[0]")
     private Output<String> accountPrivileges;
 
     /**
      * @return Account permission information. Separate multiple permissions with commas (,). Valid values: Login: Login permission. Inherit: Inherit permission. CreateRole: Create role permission. CreateDB: Create database permission. Note: If the account type is high privilege, you do not need to provide this parameter; all permissions are supported by default. If the account type is normal, you can provide this parameter; the default values are Login and Inherit. If the account type is instance read-only, that is, AccountType is set to InstanceReadOnly, this parameter is not supported.
-     * 
+     *
      */
     public Output<String> accountPrivileges() {
         return this.accountPrivileges;
     }
     /**
      * Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
-     * 
+     *
      */
     @Export(name="accountType", refs={String.class}, tree="[0]")
     private Output<String> accountType;
 
     /**
      * @return Database account type. Valid values: Super: High privilege account. Normal: Normal account. InstanceReadOnly: Instance read-only account.
-     * 
+     *
      */
     public Output<String> accountType() {
         return this.accountType;
     }
     /**
      * Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
-     * 
+     *
      */
     @Export(name="notAllowPrivileges", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> notAllowPrivileges;
 
     /**
      * @return Permissions disabled for the account. Currently, only DDL is supported. Note: This field can only be provided for high privilege or normal accounts, that is, when AccountType is set to Super or Normal.
-     * 
+     *
      */
     public Output<List<String>> notAllowPrivileges() {
         return this.notAllowPrivileges;

@@ -21,211 +21,289 @@ import javax.annotation.Nullable;
 
 /**
  * Topic refers to the message subject and is used to categorize messages. Supports resource management at the Topic level, including creating, viewing, and deleting Topics.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.kafka.Topic;
+ * import com.byteplus.bytepluscc.kafka.TopicArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.TopicAccessPolicyArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.TopicTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var kafkaTopicDemo = new Topic("kafkaTopicDemo", TopicArgs.builder()
+ *             .accessPolicies(
+ *                 TopicAccessPolicyArgs.builder()
+ *                     .user_name("KafkaTopicDemo-A")
+ *                     .access_policy("Pub")
+ *                     .build(),
+ *                 TopicAccessPolicyArgs.builder()
+ *                     .user_name("KafkaTopicDemo-B")
+ *                     .access_policy("Sub")
+ *                     .build(),
+ *                 TopicAccessPolicyArgs.builder()
+ *                     .user_name("KafkaTopicDemo-C")
+ *                     .access_policy("PubSub")
+ *                     .build())
+ *             .allAuthority(true)
+ *             .cleanupPolicies(
+ *                 "delete",
+ *                 "compact")
+ *             .description("KafkaTopicDemo")
+ *             .instanceId("kafka-c****f")
+ *             .parameters("{\"LogRetentionHours\":\"3\",\"MessageMaxByte\":\"2\",\"MinInsyncReplicaNumber\":\"1\"}")
+ *             .partitionNumber(1)
+ *             .replicaNumber(1)
+ *             .topicName("KafkaTopicDemo")
+ *             .tags(TopicTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:kafka/topic:Topic example &#34;instance_id|topic_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:kafka/topic:Topic")
 public class Topic extends com.pulumi.resources.CustomResource {
+    /**
+     * Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="accessPolicies", refs={List.class,TopicAccessPolicy.class}, tree="[0,1]")
     private Output<List<TopicAccessPolicy>> accessPolicies;
 
+    /**
+     * @return Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<TopicAccessPolicy>> accessPolicies() {
         return this.accessPolicies;
     }
     /**
      * Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
-     * 
+     *
      */
     @Export(name="allAuthority", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> allAuthority;
 
     /**
      * @return Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
-     * 
+     *
      */
     public Output<Boolean> allAuthority() {
         return this.allAuthority;
     }
     /**
      * Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
-     * 
+     *
      */
     @Export(name="cleanupPolicies", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> cleanupPolicies;
 
     /**
      * @return Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
-     * 
+     *
      */
     public Output<List<String>> cleanupPolicies() {
         return this.cleanupPolicies;
     }
     /**
      * Topic creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Topic creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Topic description. Maximum length: 128 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Topic description. Maximum length: 128 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Message retention period, in hours. The retention period at the Topic level ranges from 1 to 2160 hours (90 days).
-     * 
+     *
      */
     @Export(name="logRetentionHours", refs={Integer.class}, tree="[0]")
     private Output<Integer> logRetentionHours;
 
     /**
      * @return Message retention period, in hours. The retention period at the Topic level ranges from 1 to 2160 hours (90 days).
-     * 
+     *
      */
     public Output<Integer> logRetentionHours() {
         return this.logRetentionHours;
     }
     /**
      * Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
-     * 
+     *
      */
     @Export(name="parameters", refs={String.class}, tree="[0]")
     private Output<String> parameters;
 
     /**
      * @return Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
-     * 
+     *
      */
     public Output<String> parameters() {
         return this.parameters;
     }
     /**
      * Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
-     * 
+     *
      */
     @Export(name="partitionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> partitionNumber;
 
     /**
      * @return Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
-     * 
+     *
      */
     public Output<Integer> partitionNumber() {
         return this.partitionNumber;
     }
     /**
      * Number of Topic replicas. Can be set to 2 or 3; the default is 3.
-     * 
+     *
      */
     @Export(name="replicaNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> replicaNumber;
 
     /**
      * @return Number of Topic replicas. Can be set to 2 or 3; the default is 3.
-     * 
+     *
      */
     public Output<Integer> replicaNumber() {
         return this.replicaNumber;
     }
     /**
      * Topic status.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Topic status.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Topic label information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,TopicTag.class}, tree="[0,1]")
     private Output<List<TopicTag>> tags;
 
+    /**
+     * @return Topic label information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<TopicTag>> tags() {
         return this.tags;
     }
     /**
      * Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
-     * 
+     *
      */
     @Export(name="topicName", refs={String.class}, tree="[0]")
     private Output<String> topicName;
 
     /**
      * @return Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
-     * 
+     *
      */
     public Output<String> topicName() {
         return this.topicName;
     }
     /**
      * The current Topic data size as a percentage of the instance&#39;s total storage space. Displayed on the console as a percentage with two decimal places.
-     * 
+     *
      */
     @Export(name="usedStoragePercentageInInstance", refs={Double.class}, tree="[0]")
     private Output<Double> usedStoragePercentageInInstance;
 
     /**
      * @return The current Topic data size as a percentage of the instance&#39;s total storage space. Displayed on the console as a percentage with two decimal places.
-     * 
+     *
      */
     public Output<Double> usedStoragePercentageInInstance() {
         return this.usedStoragePercentageInInstance;
     }
     /**
      * Total storage space currently used by the Topic.
-     * 
+     *
      */
     @Export(name="usedStorageSpaceInBytes", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedStorageSpaceInBytes;
 
     /**
      * @return Total storage space currently used by the Topic.
-     * 
+     *
      */
     public Output<Integer> usedStorageSpaceInBytes() {
         return this.usedStorageSpaceInBytes;

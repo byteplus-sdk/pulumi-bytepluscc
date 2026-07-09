@@ -16,30 +16,40 @@ import javax.annotation.Nullable;
 public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules {
     /**
      * @return Indicates the configuration policy for authentication request headers.
-     * 
+     *
      */
     private @Nullable DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents requestHeaderComponents;
+    /**
+     * @return Specifies a set of authentication request header settings Note that when the content delivery network initiates an authentication request, the following headers may already be included in the request: X-Forwarded-Protocol, X-Forwarded-Proto, X-Client-Scheme: all three headers indicate the protocol used by the user request and are equivalent X-Real-IP: indicates the user&#39;s real IP address This header value is not affected by proxy servers X-Forwarded-For: indicates the user&#39;s IP address If the user&#39;s request passes through a proxy server, this header value becomes the proxy server&#39;s IP address It is not recommended to configure these headers in this parameter If you set these headers, their original values will be overwritten
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance> requestHeaderInstances;
     /**
      * @return Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
-     * 
+     *
      */
     private @Nullable String requestHost;
 
     private DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRules() {}
     /**
      * @return Indicates the configuration policy for authentication request headers.
-     * 
+     *
      */
     public Optional<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderComponents> requestHeaderComponents() {
         return Optional.ofNullable(this.requestHeaderComponents);
     }
+    /**
+     * @return Specifies a set of authentication request header settings Note that when the content delivery network initiates an authentication request, the following headers may already be included in the request: X-Forwarded-Protocol, X-Forwarded-Proto, X-Client-Scheme: all three headers indicate the protocol used by the user request and are equivalent X-Real-IP: indicates the user&#39;s real IP address This header value is not affected by proxy servers X-Forwarded-For: indicates the user&#39;s IP address If the user&#39;s request passes through a proxy server, this header value becomes the proxy server&#39;s IP address It is not recommended to configure these headers in this parameter If you set these headers, their original values will be overwritten
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionRequestHeaderRulesRequestHeaderInstance> requestHeaderInstances() {
         return this.requestHeaderInstances == null ? List.of() : this.requestHeaderInstances;
     }
     /**
      * @return Indicates the value of the HOST header in authentication requests. The default value for this parameter is default, meaning the HOST header matches your acceleration domain name.
-     * 
+     *
      */
     public Optional<String> requestHost() {
         return Optional.ofNullable(this.requestHost);

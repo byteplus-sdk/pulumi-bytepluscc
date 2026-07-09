@@ -21,14 +21,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
     /**
      * Mirror session instance description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Mirror session instance description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -36,14 +36,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
     /**
      * Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
-     * 
+     *
      */
     @Import(name="networkInterfaceId", required=true)
     private Output<String> networkInterfaceId;
 
     /**
      * @return Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
-     * 
+     *
      */
     public Output<String> networkInterfaceId() {
         return this.networkInterfaceId;
@@ -51,14 +51,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
     /**
      * Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
-     * 
+     *
      */
     @Import(name="packetLength")
     private @Nullable Output<Integer> packetLength;
 
     /**
      * @return Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
-     * 
+     *
      */
     public Optional<Output<Integer>> packetLength() {
         return Optional.ofNullable(this.packetLength);
@@ -66,14 +66,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
     /**
      * Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
-     * 
+     *
      */
     @Import(name="priority", required=true)
     private Output<Integer> priority;
 
     /**
      * @return Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
-     * 
+     *
      */
     public Output<Integer> priority() {
         return this.priority;
@@ -81,36 +81,46 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
     /**
      * Name of the associated project
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the associated project
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<TrafficMirrorSessionTagArgs>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TrafficMirrorSessionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Filter condition instance ID
-     * 
+     *
      */
     @Import(name="trafficMirrorFilterId", required=true)
     private Output<String> trafficMirrorFilterId;
 
     /**
      * @return Filter condition instance ID
-     * 
+     *
      */
     public Output<String> trafficMirrorFilterId() {
         return this.trafficMirrorFilterId;
@@ -118,14 +128,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
     /**
      * Mirror session name
-     * 
+     *
      */
     @Import(name="trafficMirrorSessionName")
     private @Nullable Output<String> trafficMirrorSessionName;
 
     /**
      * @return Mirror session name
-     * 
+     *
      */
     public Optional<Output<String>> trafficMirrorSessionName() {
         return Optional.ofNullable(this.trafficMirrorSessionName);
@@ -133,14 +143,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
     /**
      * Mirror destination instance ID
-     * 
+     *
      */
     @Import(name="trafficMirrorTargetId", required=true)
     private Output<String> trafficMirrorTargetId;
 
     /**
      * @return Mirror destination instance ID
-     * 
+     *
      */
     public Output<String> trafficMirrorTargetId() {
         return this.trafficMirrorTargetId;
@@ -148,14 +158,14 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
     /**
      * Mirror session VNI. Range: 1–16777215
-     * 
+     *
      */
     @Import(name="virtualNetworkId")
     private @Nullable Output<Integer> virtualNetworkId;
 
     /**
      * @return Mirror session VNI. Range: 1–16777215
-     * 
+     *
      */
     public Optional<Output<Integer>> virtualNetworkId() {
         return Optional.ofNullable(this.virtualNetworkId);
@@ -196,9 +206,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param description Mirror session instance description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -207,9 +217,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param description Mirror session instance description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -217,9 +227,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param networkInterfaceId Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkInterfaceId(Output<String> networkInterfaceId) {
             $.networkInterfaceId = networkInterfaceId;
@@ -228,9 +238,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param networkInterfaceId Mirror source instance ID. Currently, only ECS primary and secondary network interfaces are supported
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkInterfaceId(String networkInterfaceId) {
             return networkInterfaceId(Output.of(networkInterfaceId));
@@ -238,9 +248,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param packetLength Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder packetLength(@Nullable Output<Integer> packetLength) {
             $.packetLength = packetLength;
@@ -249,9 +259,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param packetLength Mirror session MTU. Values exceeding this will be truncated. Range: 64–9600
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder packetLength(Integer packetLength) {
             return packetLength(Output.of(packetLength));
@@ -259,9 +269,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param priority Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder priority(Output<Integer> priority) {
             $.priority = priority;
@@ -270,9 +280,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param priority Mirror session priority. Range: 1–32766. Priority values must be unique within the same account
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder priority(Integer priority) {
             return priority(Output.of(priority));
@@ -280,9 +290,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Name of the associated project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -291,32 +301,53 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Name of the associated project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<TrafficMirrorSessionTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<TrafficMirrorSessionTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(TrafficMirrorSessionTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param trafficMirrorFilterId Filter condition instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorFilterId(Output<String> trafficMirrorFilterId) {
             $.trafficMirrorFilterId = trafficMirrorFilterId;
@@ -325,9 +356,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param trafficMirrorFilterId Filter condition instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorFilterId(String trafficMirrorFilterId) {
             return trafficMirrorFilterId(Output.of(trafficMirrorFilterId));
@@ -335,9 +366,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param trafficMirrorSessionName Mirror session name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorSessionName(@Nullable Output<String> trafficMirrorSessionName) {
             $.trafficMirrorSessionName = trafficMirrorSessionName;
@@ -346,9 +377,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param trafficMirrorSessionName Mirror session name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorSessionName(String trafficMirrorSessionName) {
             return trafficMirrorSessionName(Output.of(trafficMirrorSessionName));
@@ -356,9 +387,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param trafficMirrorTargetId Mirror destination instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorTargetId(Output<String> trafficMirrorTargetId) {
             $.trafficMirrorTargetId = trafficMirrorTargetId;
@@ -367,9 +398,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param trafficMirrorTargetId Mirror destination instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorTargetId(String trafficMirrorTargetId) {
             return trafficMirrorTargetId(Output.of(trafficMirrorTargetId));
@@ -377,9 +408,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param virtualNetworkId Mirror session VNI. Range: 1–16777215
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder virtualNetworkId(@Nullable Output<Integer> virtualNetworkId) {
             $.virtualNetworkId = virtualNetworkId;
@@ -388,9 +419,9 @@ public final class TrafficMirrorSessionArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param virtualNetworkId Mirror session VNI. Range: 1–16777215
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder virtualNetworkId(Integer virtualNetworkId) {
             return virtualNetworkId(Output.of(virtualNetworkId));

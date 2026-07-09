@@ -22,225 +22,300 @@ import javax.annotation.Nullable;
 
 /**
  * ALB distributes incoming traffic based on the forwarding rules you set. You can configure multiple forwarding rules for a single listener. Basic edition ALB instances support forwarding rules based on domain and path. Standard edition ALB instances support forwarding rules based on domain, path, and HTTP headers, and support composite forwarding conditions.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.alb.Rule;
+ * import com.byteplus.bytepluscc.alb.RuleArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.RuleRewriteConfigArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.RuleForwardGroupConfigArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var albRuleDemo = new Rule("albRuleDemo", RuleArgs.builder()
+ *             .description("test-rewrite")
+ *             .domain("www.xxxx.test.com")
+ *             .listenerId("lsn-bdwhrmgvcyyo8dv4xxxxxx")
+ *             .rewriteConfig(RuleRewriteConfigArgs.builder()
+ *                 .rewrite_path("/test")
+ *                 .build())
+ *             .rewriteEnabled("on")
+ *             .ruleAction("")
+ *             .trafficLimitEnabled("off")
+ *             .trafficLimitQps(0)
+ *             .url("/")
+ *             .forwardGroupConfig(RuleForwardGroupConfigArgs.builder()
+ *                 .server_group_tuples(Arrays.asList(
+ *                     Map.ofEntries(
+ *                         Map.entry("serverGroupId", "rsp-1pf4pgyq8zitc845wfxxxxxx"),
+ *                         Map.entry("weight", 100)
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("serverGroupId", "rsp-1pf4pgyq8zitc845wfxxxxxx"),
+ *                         Map.entry("weight", 100)
+ *                     )))
+ *                 .sticky_session_enabled("on")
+ *                 .sticky_session_timeout(2000)
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:alb/rule:Rule example &#34;listener_id|rule_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:alb/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * Forwarding rule description.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Forwarding rule description.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Domain name of the forwarding rule.
-     * 
+     *
      */
     @Export(name="domain", refs={String.class}, tree="[0]")
     private Output<String> domain;
 
     /**
      * @return Domain name of the forwarding rule.
-     * 
+     *
      */
     public Output<String> domain() {
         return this.domain;
     }
     /**
      * Forwarding rule server group configuration.
-     * 
+     *
      */
     @Export(name="forwardGroupConfig", refs={RuleForwardGroupConfig.class}, tree="[0]")
     private Output<RuleForwardGroupConfig> forwardGroupConfig;
 
     /**
      * @return Forwarding rule server group configuration.
-     * 
+     *
      */
     public Output<RuleForwardGroupConfig> forwardGroupConfig() {
         return this.forwardGroupConfig;
     }
     /**
      * Listener ID.
-     * 
+     *
      */
     @Export(name="listenerId", refs={String.class}, tree="[0]")
     private Output<String> listenerId;
 
     /**
      * @return Listener ID.
-     * 
+     *
      */
     public Output<String> listenerId() {
         return this.listenerId;
     }
     /**
      * Standard edition forwarding rule priority.
-     * 
+     *
      */
     @Export(name="priority", refs={Integer.class}, tree="[0]")
     private Output<Integer> priority;
 
     /**
      * @return Standard edition forwarding rule priority.
-     * 
+     *
      */
     public Output<Integer> priority() {
         return this.priority;
     }
     /**
      * Redirect-related configuration information.
-     * 
+     *
      */
     @Export(name="redirectConfig", refs={RuleRedirectConfig.class}, tree="[0]")
     private Output<RuleRedirectConfig> redirectConfig;
 
     /**
      * @return Redirect-related configuration information.
-     * 
+     *
      */
     public Output<RuleRedirectConfig> redirectConfig() {
         return this.redirectConfig;
     }
     /**
      * Redirect-related configuration information.
-     * 
+     *
      */
     @Export(name="rewriteConfig", refs={RuleRewriteConfig.class}, tree="[0]")
     private Output<RuleRewriteConfig> rewriteConfig;
 
     /**
      * @return Redirect-related configuration information.
-     * 
+     *
      */
     public Output<RuleRewriteConfig> rewriteConfig() {
         return this.rewriteConfig;
     }
     /**
      * Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
-     * 
+     *
      */
     @Export(name="rewriteEnabled", refs={String.class}, tree="[0]")
     private Output<String> rewriteEnabled;
 
     /**
      * @return Forwarding rule rewrite configuration switch. on: enabled. off: disabled.
-     * 
+     *
      */
     public Output<String> rewriteEnabled() {
         return this.rewriteEnabled;
     }
     /**
      * Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
-     * 
+     *
      */
     @Export(name="ruleAction", refs={String.class}, tree="[0]")
     private Output<String> ruleAction;
 
     /**
      * @return Forwarding rule action. Empty: default forward to server group. Redirect: redirect.
-     * 
+     *
      */
     public Output<String> ruleAction() {
         return this.ruleAction;
     }
+    /**
+     * Standard edition forwarding rule action.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="ruleActions", refs={List.class,RuleRuleAction.class}, tree="[0,1]")
     private Output<List<RuleRuleAction>> ruleActions;
 
+    /**
+     * @return Standard edition forwarding rule action.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RuleRuleAction>> ruleActions() {
         return this.ruleActions;
     }
+    /**
+     * Standard edition forwarding rule condition.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="ruleConditions", refs={List.class,RuleRuleCondition.class}, tree="[0,1]")
     private Output<List<RuleRuleCondition>> ruleConditions;
 
+    /**
+     * @return Standard edition forwarding rule condition.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RuleRuleCondition>> ruleConditions() {
         return this.ruleConditions;
     }
     /**
      * Forwarding rule ID.
-     * 
+     *
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Forwarding rule ID.
-     * 
+     *
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
      * Backend server group ID associated with the forwarding rule.
-     * 
+     *
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
      * @return Backend server group ID associated with the forwarding rule.
-     * 
+     *
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
      * Forwarding rule QPS throttling switch. on: enabled. off: disabled.
-     * 
+     *
      */
     @Export(name="trafficLimitEnabled", refs={String.class}, tree="[0]")
     private Output<String> trafficLimitEnabled;
 
     /**
      * @return Forwarding rule QPS throttling switch. on: enabled. off: disabled.
-     * 
+     *
      */
     public Output<String> trafficLimitEnabled() {
         return this.trafficLimitEnabled;
     }
     /**
      * Requests per second. Range: 100–100000.
-     * 
+     *
      */
     @Export(name="trafficLimitQps", refs={Integer.class}, tree="[0]")
     private Output<Integer> trafficLimitQps;
 
     /**
      * @return Requests per second. Range: 100–100000.
-     * 
+     *
      */
     public Output<Integer> trafficLimitQps() {
         return this.trafficLimitQps;
     }
     /**
      * Forwarding rule URL.
-     * 
+     *
      */
     @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
      * @return Forwarding rule URL.
-     * 
+     *
      */
     public Output<String> url() {
         return this.url;

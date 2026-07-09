@@ -21,449 +21,532 @@ import javax.annotation.Nullable;
 
 /**
  * Kafka Message Queue is a distributed messaging middleware service built on Apache Kafka. It features high throughput and scalability, provides stream data publishing/subscription and multi-replica storage mechanisms, and is widely used in log compression and collection, stream data processing, message decoupling, and traffic peak shaving scenarios.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.kafka.Instance;
+ * import com.byteplus.bytepluscc.kafka.InstanceArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.InstanceChargeInfoArgs;
+ * import com.pulumi.bytepluscc.kafka.inputs.InstanceTagArgs;
+ * import static com.pulumi.codegen.internal.Serialization.*;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var kafkaInstanceDemo = new Instance("kafkaInstanceDemo", InstanceArgs.builder()
+ *             .chargeInfo(InstanceChargeInfoArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .build())
+ *             .computeSpec("kafka.20xrate.hw")
+ *             .eipId("eip-****")
+ *             .instanceDescription("CCAPI-TEST")
+ *             .instanceName("CCAPI-TEST")
+ *             .subnetId("subnet-****")
+ *             .ipWhiteLists("acl-****")
+ *             .parameters(serializeJson(
+ *                 jsonObject(
+ *                     jsonProperty("MessageMaxByte", "10"),
+ *                     jsonProperty("LogRetentionHours", "72"),
+ *                     jsonProperty("OffsetRetentionMinutes", "4320"),
+ *                     jsonProperty("MessageTimestampType", "CreateTime"),
+ *                     jsonProperty("AutoDeleteGroup", "true"),
+ *                     jsonProperty("LogAutoDeletion", "true"),
+ *                     jsonProperty("LogAutoDeletionPercent", "90"),
+ *                     jsonProperty("TransactionDisabled", "false")
+ *                 )))
+ *             .partitionNumber(350)
+ *             .storageSpace(300)
+ *             .storageType("ESSD_PL0")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .version("2.8.2")
+ *             .vpcId("vpc-****")
+ *             .zoneId("cn-beijing-a")
+ *             .projectName("default")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:kafka/instance:Instance example &#34;instance_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:kafka/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Main account ID for creating the instance.
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Main account ID for creating the instance.
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Billing type and related billing information for the Kafka instance.
-     * 
+     *
      */
     @Export(name="chargeInfo", refs={InstanceChargeInfo.class}, tree="[0]")
     private Output<InstanceChargeInfo> chargeInfo;
 
     /**
      * @return Billing type and related billing information for the Kafka instance.
-     * 
+     *
      */
     public Output<InstanceChargeInfo> chargeInfo() {
         return this.chargeInfo;
     }
     /**
      * Instance compute specification.
-     * 
+     *
      */
     @Export(name="computeSpec", refs={String.class}, tree="[0]")
     private Output<String> computeSpec;
 
     /**
      * @return Instance compute specification.
-     * 
+     *
      */
     public Output<String> computeSpec() {
         return this.computeSpec;
     }
+    /**
+     * Connection information for the Kafka instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="connectionInfos", refs={List.class,InstanceConnectionInfo.class}, tree="[0,1]")
     private Output<List<InstanceConnectionInfo>> connectionInfos;
 
+    /**
+     * @return Connection information for the Kafka instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceConnectionInfo>> connectionInfos() {
         return this.connectionInfos;
     }
     /**
      * Instance creation time. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Instance creation time. Time format: YYYY-MM-DD&#39;T&#39;HH:MM:SS&#39;Z&#39;.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * EIP ID.
-     * 
+     *
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
      * @return EIP ID.
-     * 
+     *
      */
     public Output<String> eipId() {
         return this.eipId;
     }
     /**
      * Brief description of the Kafka instance. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Export(name="instanceDescription", refs={String.class}, tree="[0]")
     private Output<String> instanceDescription;
 
     /**
      * @return Brief description of the Kafka instance. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> instanceDescription() {
         return this.instanceDescription;
     }
     /**
      * Kafka instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Kafka instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
      * Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
-     * 
+     *
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
      * @return Status of the Kafka instance. Error: error, Deleting: deleting, Creating: deploying, Upgrading: upgrading, Updating: updating, Running: running, Scaling: scaling, Rebuilding: rebuilding, Destroying: destroying, Restarting: restarting, Migrating: migrating, Restoring: restoring, Importing: importing, NetCreating: applying for public network, NetReleasing: releasing public network, Rollingback: rolling back, CreateFailed: creation failed, UpgradeFailed: upgrade failed, ScaleFailed: scaling failed, RestartFailed: restart failed
-     * 
+     *
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
      * List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
-     * 
+     *
      */
     @Export(name="ipWhiteLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipWhiteLists;
 
     /**
      * @return List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
-     * 
+     *
      */
     public Output<List<String>> ipWhiteLists() {
         return this.ipWhiteLists;
     }
     /**
      * Whether to enable rebalancing.
-     * 
+     *
      */
     @Export(name="needRebalance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> needRebalance;
 
     /**
      * @return Whether to enable rebalancing.
-     * 
+     *
      */
     public Output<Boolean> needRebalance() {
         return this.needRebalance;
     }
     /**
      * Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
-     * 
+     *
      */
     @Export(name="parameters", refs={String.class}, tree="[0]")
     private Output<String> parameters;
 
     /**
      * @return Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
-     * 
+     *
      */
     public Output<String> parameters() {
         return this.parameters;
     }
     /**
      * Number of partitions.
-     * 
+     *
      */
     @Export(name="partitionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> partitionNumber;
 
     /**
      * @return Number of partitions.
-     * 
+     *
      */
     public Output<Integer> partitionNumber() {
         return this.partitionNumber;
     }
     /**
      * Whether to enable public network domain resolution.
-     * 
+     *
      */
     @Export(name="privateDomainOnPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> privateDomainOnPublic;
 
     /**
      * @return Whether to enable public network domain resolution.
-     * 
+     *
      */
     public Output<Boolean> privateDomainOnPublic() {
         return this.privateDomainOnPublic;
     }
     /**
      * IAM project to which the currently created Kafka instance belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return IAM project to which the currently created Kafka instance belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Instance storage space, measured in GiB, must be specified as a multiple of 100.
-     * 
+     *
      */
     @Export(name="storageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSpace;
 
     /**
      * @return Instance storage space, measured in GiB, must be specified as a multiple of 100.
-     * 
+     *
      */
     public Output<Integer> storageSpace() {
         return this.storageSpace;
     }
     /**
      * Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
-     * 
+     *
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
      * @return Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
-     * 
+     *
      */
     public Output<String> storageType() {
         return this.storageType;
     }
     /**
      * VPC subnet ID where the instance is located.
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return VPC subnet ID where the instance is located.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * List of topics under a Kafka instance
-     * 
+     *
      */
     @Export(name="topics", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> topics;
 
     /**
      * @return List of topics under a Kafka instance
-     * 
+     *
      */
     public Output<List<String>> topics() {
         return this.topics;
     }
     /**
      * The remaining number of available consumer groups for the current instance.
-     * 
+     *
      */
     @Export(name="usableGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usableGroupNumber;
 
     /**
      * @return The remaining number of available consumer groups for the current instance.
-     * 
+     *
      */
     public Output<Integer> usableGroupNumber() {
         return this.usableGroupNumber;
     }
     /**
      * Number of available partitions remaining for the current instance.
-     * 
+     *
      */
     @Export(name="usablePartitionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usablePartitionNumber;
 
     /**
      * @return Number of available partitions remaining for the current instance.
-     * 
+     *
      */
     public Output<Integer> usablePartitionNumber() {
         return this.usablePartitionNumber;
     }
     /**
      * Number of consumer groups (Group) currently created in the instance.
-     * 
+     *
      */
     @Export(name="usedGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedGroupNumber;
 
     /**
      * @return Number of consumer groups (Group) currently created in the instance.
-     * 
+     *
      */
     public Output<Integer> usedGroupNumber() {
         return this.usedGroupNumber;
     }
     /**
      * Number of partitions currently used by the instance.
-     * 
+     *
      */
     @Export(name="usedPartitionNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedPartitionNumber;
 
     /**
      * @return Number of partitions currently used by the instance.
-     * 
+     *
      */
     public Output<Integer> usedPartitionNumber() {
         return this.usedPartitionNumber;
     }
     /**
      * Used storage space of the instance, measured in GiB.
-     * 
+     *
      */
     @Export(name="usedStorageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedStorageSpace;
 
     /**
      * @return Used storage space of the instance, measured in GiB.
-     * 
+     *
      */
     public Output<Integer> usedStorageSpace() {
         return this.usedStorageSpace;
     }
     /**
      * Number of topics created in the current instance.
-     * 
+     *
      */
     @Export(name="usedTopicNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> usedTopicNumber;
 
     /**
      * @return Number of topics created in the current instance.
-     * 
+     *
      */
     public Output<Integer> usedTopicNumber() {
         return this.usedTopicNumber;
     }
     /**
      * SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
-     * 
+     *
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
      * @return SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
-     * 
+     *
      */
     public Output<String> userName() {
         return this.userName;
     }
     /**
      * Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
-     * 
+     *
      */
     @Export(name="userPassword", refs={String.class}, tree="[0]")
     private Output<String> userPassword;
 
     /**
      * @return Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
-     * 
+     *
      */
     public Output<String> userPassword() {
         return this.userPassword;
     }
     /**
      * Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
-     * 
+     *
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
      * @return Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
-     * 
+     *
      */
     public Output<String> version() {
         return this.version;
     }
     /**
      * Private network (VPC) ID where the instance is located.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network (VPC) ID where the instance is located.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;

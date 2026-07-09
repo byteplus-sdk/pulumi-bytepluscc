@@ -22,302 +22,332 @@ import javax.annotation.Nullable;
 public final class LaunchTemplateLaunchTemplateVersion {
     /**
      * @return When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
-     * 
+     *
      */
     private @Nullable Integer deploymentSetGroupNumber;
     /**
      * @return Deployment set ID the instance needs to join.
-     * 
+     *
      */
     private @Nullable String deploymentSetId;
     /**
      * @return Instance description
-     * 
+     *
      */
     private @Nullable String description;
     /**
      * @return Public IP information bound to the instance
-     * 
+     *
      */
     private @Nullable LaunchTemplateLaunchTemplateVersionEip eip;
     /**
      * @return Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
-     * 
+     *
      */
     private @Nullable String hostName;
     /**
      * @return When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
-     * 
+     *
      */
     private @Nullable String hpcClusterId;
     /**
      * @return Image ID.
-     * 
+     *
      */
     private @Nullable String imageId;
     /**
      * @return Image name.
-     * 
+     *
      */
     private @Nullable String imageName;
     /**
      * @return Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
-     * 
+     *
      */
     private @Nullable String instanceChargeType;
     /**
      * @return Instance name.
-     * 
+     *
      */
     private @Nullable String instanceName;
     /**
      * @return Instance specification
-     * 
+     *
      */
     private @Nullable String instanceTypeId;
     /**
      * @return Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
-     * 
+     *
      */
     private @Nullable Boolean keepImageCredential;
     /**
      * @return Key pair bound to the instance.
-     * 
+     *
      */
     private @Nullable String keyPairName;
+    /**
+     * @return Network interface information mounted to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<LaunchTemplateLaunchTemplateVersionNetworkInterface> networkInterfaces;
     /**
      * @return Project associated with the instance.
-     * 
+     *
      */
     private @Nullable String projectName;
     /**
      * @return Elastic reservation order information
-     * 
+     *
      */
     private @Nullable LaunchTemplateLaunchTemplateVersionScheduledInstance scheduledInstance;
     /**
      * @return Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-     * 
+     *
      */
     private @Nullable String securityEnhancementStrategy;
     /**
      * @return Maximum hourly price for preemptible instances
-     * 
+     *
      */
     private @Nullable Double spotPriceLimit;
     /**
      * @return Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
-     * 
+     *
      */
     private @Nullable String spotStrategy;
     /**
      * @return Starting number for the sequential suffix
-     * 
+     *
      */
     private @Nullable Integer suffixIndex;
+    /**
+     * @return Tag information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<LaunchTemplateLaunchTemplateVersionTag> tags;
     /**
      * @return Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
-     * 
+     *
      */
     private @Nullable Boolean uniqueSuffix;
     /**
      * @return Custom data for the instance.
-     * 
+     *
      */
     private @Nullable String userData;
     /**
      * @return Template version description.
-     * 
+     *
      */
     private @Nullable String versionDescription;
+    /**
+     * @return Cloud disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<LaunchTemplateLaunchTemplateVersionVolume> volumes;
     /**
      * @return Private network ID.
-     * 
+     *
      */
     private @Nullable String vpcId;
     /**
      * @return Instance availability zone ID
-     * 
+     *
      */
     private @Nullable String zoneId;
 
     private LaunchTemplateLaunchTemplateVersion() {}
     /**
      * @return When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
-     * 
+     *
      */
     public Optional<Integer> deploymentSetGroupNumber() {
         return Optional.ofNullable(this.deploymentSetGroupNumber);
     }
     /**
      * @return Deployment set ID the instance needs to join.
-     * 
+     *
      */
     public Optional<String> deploymentSetId() {
         return Optional.ofNullable(this.deploymentSetId);
     }
     /**
      * @return Instance description
-     * 
+     *
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Public IP information bound to the instance
-     * 
+     *
      */
     public Optional<LaunchTemplateLaunchTemplateVersionEip> eip() {
         return Optional.ofNullable(this.eip);
     }
     /**
      * @return Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
-     * 
+     *
      */
     public Optional<String> hostName() {
         return Optional.ofNullable(this.hostName);
     }
     /**
      * @return When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
-     * 
+     *
      */
     public Optional<String> hpcClusterId() {
         return Optional.ofNullable(this.hpcClusterId);
     }
     /**
      * @return Image ID.
-     * 
+     *
      */
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     /**
      * @return Image name.
-     * 
+     *
      */
     public Optional<String> imageName() {
         return Optional.ofNullable(this.imageName);
     }
     /**
      * @return Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
-     * 
+     *
      */
     public Optional<String> instanceChargeType() {
         return Optional.ofNullable(this.instanceChargeType);
     }
     /**
      * @return Instance name.
-     * 
+     *
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
      * @return Instance specification
-     * 
+     *
      */
     public Optional<String> instanceTypeId() {
         return Optional.ofNullable(this.instanceTypeId);
     }
     /**
      * @return Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
-     * 
+     *
      */
     public Optional<Boolean> keepImageCredential() {
         return Optional.ofNullable(this.keepImageCredential);
     }
     /**
      * @return Key pair bound to the instance.
-     * 
+     *
      */
     public Optional<String> keyPairName() {
         return Optional.ofNullable(this.keyPairName);
     }
+    /**
+     * @return Network interface information mounted to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<LaunchTemplateLaunchTemplateVersionNetworkInterface> networkInterfaces() {
         return this.networkInterfaces == null ? List.of() : this.networkInterfaces;
     }
     /**
      * @return Project associated with the instance.
-     * 
+     *
      */
     public Optional<String> projectName() {
         return Optional.ofNullable(this.projectName);
     }
     /**
      * @return Elastic reservation order information
-     * 
+     *
      */
     public Optional<LaunchTemplateLaunchTemplateVersionScheduledInstance> scheduledInstance() {
         return Optional.ofNullable(this.scheduledInstance);
     }
     /**
      * @return Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-     * 
+     *
      */
     public Optional<String> securityEnhancementStrategy() {
         return Optional.ofNullable(this.securityEnhancementStrategy);
     }
     /**
      * @return Maximum hourly price for preemptible instances
-     * 
+     *
      */
     public Optional<Double> spotPriceLimit() {
         return Optional.ofNullable(this.spotPriceLimit);
     }
     /**
      * @return Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
-     * 
+     *
      */
     public Optional<String> spotStrategy() {
         return Optional.ofNullable(this.spotStrategy);
     }
     /**
      * @return Starting number for the sequential suffix
-     * 
+     *
      */
     public Optional<Integer> suffixIndex() {
         return Optional.ofNullable(this.suffixIndex);
     }
+    /**
+     * @return Tag information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<LaunchTemplateLaunchTemplateVersionTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
-     * 
+     *
      */
     public Optional<Boolean> uniqueSuffix() {
         return Optional.ofNullable(this.uniqueSuffix);
     }
     /**
      * @return Custom data for the instance.
-     * 
+     *
      */
     public Optional<String> userData() {
         return Optional.ofNullable(this.userData);
     }
     /**
      * @return Template version description.
-     * 
+     *
      */
     public Optional<String> versionDescription() {
         return Optional.ofNullable(this.versionDescription);
     }
+    /**
+     * @return Cloud disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<LaunchTemplateLaunchTemplateVersionVolume> volumes() {
         return this.volumes == null ? List.of() : this.volumes;
     }
     /**
      * @return Private network ID.
-     * 
+     *
      */
     public Optional<String> vpcId() {
         return Optional.ofNullable(this.vpcId);
     }
     /**
      * @return Instance availability zone ID
-     * 
+     *
      */
     public Optional<String> zoneId() {
         return Optional.ofNullable(this.zoneId);

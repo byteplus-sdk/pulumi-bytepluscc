@@ -19,14 +19,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * Creation time of the gateway endpoint
-     * 
+     *
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Creation time of the gateway endpoint
-     * 
+     *
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -34,14 +34,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * Description of the gateway endpoint
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the gateway endpoint
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -49,14 +49,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * ID of the gateway endpoint
-     * 
+     *
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return ID of the gateway endpoint
-     * 
+     *
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -64,14 +64,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the gateway endpoint
-     * 
+     *
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
      * @return Name of the gateway endpoint
-     * 
+     *
      */
     public Optional<Output<String>> endpointName() {
         return Optional.ofNullable(this.endpointName);
@@ -79,14 +79,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the project to which the gateway endpoint belongs
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the gateway endpoint belongs
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -94,14 +94,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * ID of the gateway endpoint service
-     * 
+     *
      */
     @Import(name="serviceId")
     private @Nullable Output<String> serviceId;
 
     /**
      * @return ID of the gateway endpoint service
-     * 
+     *
      */
     public Optional<Output<String>> serviceId() {
         return Optional.ofNullable(this.serviceId);
@@ -109,14 +109,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the gateway endpoint service
-     * 
+     *
      */
     @Import(name="serviceName")
     private @Nullable Output<String> serviceName;
 
     /**
      * @return Name of the gateway endpoint service
-     * 
+     *
      */
     public Optional<Output<String>> serviceName() {
         return Optional.ofNullable(this.serviceName);
@@ -124,36 +124,46 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * Status of the gateway endpoint. Creating: Being created. Pending: Configuration being modified. Available: Available. Deleting: Being deleted.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the gateway endpoint. Creating: Being created. Pending: Configuration being modified. Available: Available. Deleting: Being deleted.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<GatewayEndpointTagArgs>> tags;
 
+    /**
+     * @return Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GatewayEndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Most recent operation time of the gateway endpoint
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the gateway endpoint
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -161,14 +171,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * ID of the VPC to which the gateway endpoint belongs
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the gateway endpoint belongs
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -176,14 +186,14 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
     /**
      * Access policy of the gateway endpoint. If not specified, the default policy is used. The default policy allows the gateway endpoint to access all bucket resources in the object storage service.
-     * 
+     *
      */
     @Import(name="vpcPolicy")
     private @Nullable Output<String> vpcPolicy;
 
     /**
      * @return Access policy of the gateway endpoint. If not specified, the default policy is used. The default policy allows the gateway endpoint to access all bucket resources in the object storage service.
-     * 
+     *
      */
     public Optional<Output<String>> vpcPolicy() {
         return Optional.ofNullable(this.vpcPolicy);
@@ -226,9 +236,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param creationTime Creation time of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -237,9 +247,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param creationTime Creation time of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -247,9 +257,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -258,9 +268,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -268,9 +278,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointId ID of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -279,9 +289,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointId ID of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -289,9 +299,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointName Name of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointName(@Nullable Output<String> endpointName) {
             $.endpointName = endpointName;
@@ -300,9 +310,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointName Name of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointName(String endpointName) {
             return endpointName(Output.of(endpointName));
@@ -310,9 +320,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param projectName Name of the project to which the gateway endpoint belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -321,9 +331,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param projectName Name of the project to which the gateway endpoint belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -331,9 +341,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceId ID of the gateway endpoint service
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceId(@Nullable Output<String> serviceId) {
             $.serviceId = serviceId;
@@ -342,9 +352,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceId ID of the gateway endpoint service
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceId(String serviceId) {
             return serviceId(Output.of(serviceId));
@@ -352,9 +362,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceName Name of the gateway endpoint service
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceName(@Nullable Output<String> serviceName) {
             $.serviceName = serviceName;
@@ -363,9 +373,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param serviceName Name of the gateway endpoint service
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
@@ -373,9 +383,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Status of the gateway endpoint. Creating: Being created. Pending: Configuration being modified. Available: Available. Deleting: Being deleted.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -384,32 +394,53 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Status of the gateway endpoint. Creating: Being created. Pending: Configuration being modified. Available: Available. Deleting: Being deleted.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<GatewayEndpointTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<GatewayEndpointTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(GatewayEndpointTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updateTime Most recent operation time of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -418,9 +449,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param updateTime Most recent operation time of the gateway endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -428,9 +459,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpcId ID of the VPC to which the gateway endpoint belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -439,9 +470,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpcId ID of the VPC to which the gateway endpoint belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -449,9 +480,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpcPolicy Access policy of the gateway endpoint. If not specified, the default policy is used. The default policy allows the gateway endpoint to access all bucket resources in the object storage service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcPolicy(@Nullable Output<String> vpcPolicy) {
             $.vpcPolicy = vpcPolicy;
@@ -460,9 +491,9 @@ public final class GatewayEndpointState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpcPolicy Access policy of the gateway endpoint. If not specified, the default policy is used. The default policy allows the gateway endpoint to access all bucket resources in the object storage service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcPolicy(String vpcPolicy) {
             return vpcPolicy(Output.of(vpcPolicy));

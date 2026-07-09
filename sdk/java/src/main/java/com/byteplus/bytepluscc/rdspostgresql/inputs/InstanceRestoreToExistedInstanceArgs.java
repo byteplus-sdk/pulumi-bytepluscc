@@ -19,36 +19,46 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
 
     /**
      * Backup set ID
-     * 
+     *
      */
     @Import(name="backupId")
     private @Nullable Output<String> backupId;
 
     /**
      * @return Backup set ID
-     * 
+     *
      */
     public Optional<Output<String>> backupId() {
         return Optional.ofNullable(this.backupId);
     }
 
+    /**
+     * List of databases to restore
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="databases")
     private @Nullable Output<List<InstanceRestoreToExistedInstanceDatabaseArgs>> databases;
 
+    /**
+     * @return List of databases to restore
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceRestoreToExistedInstanceDatabaseArgs>>> databases() {
         return Optional.ofNullable(this.databases);
     }
 
     /**
      * Source instance ID
-     * 
+     *
      */
     @Import(name="sourceDbInstanceId")
     private @Nullable Output<String> sourceDbInstanceId;
 
     /**
      * @return Source instance ID
-     * 
+     *
      */
     public Optional<Output<String>> sourceDbInstanceId() {
         return Optional.ofNullable(this.sourceDbInstanceId);
@@ -56,14 +66,14 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
 
     /**
      * Database account for the target instance
-     * 
+     *
      */
     @Import(name="targetDbInstanceAccount")
     private @Nullable Output<String> targetDbInstanceAccount;
 
     /**
      * @return Database account for the target instance
-     * 
+     *
      */
     public Optional<Output<String>> targetDbInstanceAccount() {
         return Optional.ofNullable(this.targetDbInstanceAccount);
@@ -98,9 +108,9 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
 
         /**
          * @param backupId Backup set ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupId(@Nullable Output<String> backupId) {
             $.backupId = backupId;
@@ -109,32 +119,53 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
 
         /**
          * @param backupId Backup set ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupId(String backupId) {
             return backupId(Output.of(backupId));
         }
 
+        /**
+         * @param databases List of databases to restore
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder databases(@Nullable Output<List<InstanceRestoreToExistedInstanceDatabaseArgs>> databases) {
             $.databases = databases;
             return this;
         }
 
+        /**
+         * @param databases List of databases to restore
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder databases(List<InstanceRestoreToExistedInstanceDatabaseArgs> databases) {
             return databases(Output.of(databases));
         }
 
+        /**
+         * @param databases List of databases to restore
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder databases(InstanceRestoreToExistedInstanceDatabaseArgs... databases) {
             return databases(List.of(databases));
         }
 
         /**
          * @param sourceDbInstanceId Source instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceDbInstanceId(@Nullable Output<String> sourceDbInstanceId) {
             $.sourceDbInstanceId = sourceDbInstanceId;
@@ -143,9 +174,9 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
 
         /**
          * @param sourceDbInstanceId Source instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceDbInstanceId(String sourceDbInstanceId) {
             return sourceDbInstanceId(Output.of(sourceDbInstanceId));
@@ -153,9 +184,9 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
 
         /**
          * @param targetDbInstanceAccount Database account for the target instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder targetDbInstanceAccount(@Nullable Output<String> targetDbInstanceAccount) {
             $.targetDbInstanceAccount = targetDbInstanceAccount;
@@ -164,9 +195,9 @@ public final class InstanceRestoreToExistedInstanceArgs extends com.pulumi.resou
 
         /**
          * @param targetDbInstanceAccount Database account for the target instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder targetDbInstanceAccount(String targetDbInstanceAccount) {
             return targetDbInstanceAccount(Output.of(targetDbInstanceAccount));

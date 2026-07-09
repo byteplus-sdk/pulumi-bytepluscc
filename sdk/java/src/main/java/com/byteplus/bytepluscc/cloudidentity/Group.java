@@ -17,135 +17,186 @@ import javax.annotation.Nullable;
 
 /**
  * When you need to grant SSO authorization to Cloud Identity Center users in bulk, you can first manage users in bulk through user groups
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cloudidentity.Group;
+ * import com.byteplus.bytepluscc.cloudidentity.GroupArgs;
+ * import com.pulumi.bytepluscc.cloudidentity.inputs.GroupMemberArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var cloudIdentityGroupDemo = new Group("cloudIdentityGroupDemo", GroupArgs.builder()
+ *             .description("ccapi-multi-des")
+ *             .displayName("test for ccapi")
+ *             .groupName("ccapi-multi")
+ *             .joinType("Manual")
+ *             .members(
+ *                 GroupMemberArgs.builder()
+ *                     .user_id("***********")
+ *                     .build(),
+ *                 GroupMemberArgs.builder()
+ *                     .user_id("*************")
+ *                     .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cloudidentity/group:Group example &#34;group_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cloudidentity/group:Group")
 public class Group extends com.pulumi.resources.CustomResource {
     /**
      * Creation Time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation Time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Display Name
-     * 
+     *
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
      * @return Display Name
-     * 
+     *
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
      * User Group ID
-     * 
+     *
      */
     @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
      * @return User Group ID
-     * 
+     *
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
      * User Group Name
-     * 
+     *
      */
     @Export(name="groupName", refs={String.class}, tree="[0]")
     private Output<String> groupName;
 
     /**
      * @return User Group Name
-     * 
+     *
      */
     public Output<String> groupName() {
         return this.groupName;
     }
     /**
      * User Group Type
-     * 
+     *
      */
     @Export(name="joinType", refs={String.class}, tree="[0]")
     private Output<String> joinType;
 
     /**
      * @return User Group Type
-     * 
+     *
      */
     public Output<String> joinType() {
         return this.joinType;
     }
+    /**
+     * User Group Member List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="members", refs={List.class,GroupMember.class}, tree="[0,1]")
     private Output<List<GroupMember>> members;
 
+    /**
+     * @return User Group Member List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<GroupMember>> members() {
         return this.members;
     }
     /**
      * User Group Source
-     * 
+     *
      */
     @Export(name="source", refs={String.class}, tree="[0]")
     private Output<String> source;
 
     /**
      * @return User Group Source
-     * 
+     *
      */
     public Output<String> source() {
         return this.source;
     }
     /**
      * Update Time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update Time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

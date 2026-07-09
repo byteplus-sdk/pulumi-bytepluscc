@@ -20,14 +20,14 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
     /**
      * Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
     /**
      * Resource ID of the mirror target.
-     * 
+     *
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return Resource ID of the mirror target.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
@@ -50,14 +50,14 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
     /**
      * Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
-     * 
+     *
      */
     @Import(name="instanceType", required=true)
     private Output<String> instanceType;
 
     /**
      * @return Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
-     * 
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;
@@ -65,36 +65,46 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
     /**
      * Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Tag information of the mirror target.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<TrafficMirrorTargetTagArgs>> tags;
 
+    /**
+     * @return Tag information of the mirror target.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TrafficMirrorTargetTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
-     * 
+     *
      */
     @Import(name="trafficMirrorTargetName")
     private @Nullable Output<String> trafficMirrorTargetName;
 
     /**
      * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
-     * 
+     *
      */
     public Optional<Output<String>> trafficMirrorTargetName() {
         return Optional.ofNullable(this.trafficMirrorTargetName);
@@ -131,9 +141,9 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param description Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -142,9 +152,9 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param description Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -152,9 +162,9 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param instanceId Resource ID of the mirror target.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -163,9 +173,9 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param instanceId Resource ID of the mirror target.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -173,9 +183,9 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param instanceType Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -184,9 +194,9 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param instanceType Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -194,9 +204,9 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param projectName Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -205,32 +215,53 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param projectName Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Tag information of the mirror target.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<TrafficMirrorTargetTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the mirror target.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<TrafficMirrorTargetTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the mirror target.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(TrafficMirrorTargetTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param trafficMirrorTargetName Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorTargetName(@Nullable Output<String> trafficMirrorTargetName) {
             $.trafficMirrorTargetName = trafficMirrorTargetName;
@@ -239,9 +270,9 @@ public final class TrafficMirrorTargetArgs extends com.pulumi.resources.Resource
 
         /**
          * @param trafficMirrorTargetName Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficMirrorTargetName(String trafficMirrorTargetName) {
             return trafficMirrorTargetName(Output.of(trafficMirrorTargetName));

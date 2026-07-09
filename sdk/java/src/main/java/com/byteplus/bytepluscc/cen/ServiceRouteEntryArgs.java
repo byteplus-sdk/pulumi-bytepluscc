@@ -20,14 +20,14 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Cloud Enterprise Network instance ID.
-     * 
+     *
      */
     @Import(name="cenId", required=true)
     private Output<String> cenId;
 
     /**
      * @return Cloud Enterprise Network instance ID.
-     * 
+     *
      */
     public Output<String> cenId() {
         return this.cenId;
@@ -35,14 +35,14 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Resource creation time.
-     * 
+     *
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Resource creation time.
-     * 
+     *
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -50,14 +50,14 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Custom remarks for the route.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Custom remarks for the route.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -65,14 +65,14 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Address range where the cloud service is deployed.
-     * 
+     *
      */
     @Import(name="destinationCidrBlock", required=true)
     private Output<String> destinationCidrBlock;
 
     /**
      * @return Address range where the cloud service is deployed.
-     * 
+     *
      */
     public Output<String> destinationCidrBlock() {
         return this.destinationCidrBlock;
@@ -80,36 +80,46 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
     /**
      * Route publishing scope mode.
-     * 
+     *
      */
     @Import(name="publishMode")
     private @Nullable Output<String> publishMode;
 
     /**
      * @return Route publishing scope mode.
-     * 
+     *
      */
     public Optional<Output<String>> publishMode() {
         return Optional.ofNullable(this.publishMode);
     }
 
+    /**
+     * List of network instances associated with batch route publishing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="publishToInstances")
     private @Nullable Output<List<ServiceRouteEntryPublishToInstanceArgs>> publishToInstances;
 
+    /**
+     * @return List of network instances associated with batch route publishing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ServiceRouteEntryPublishToInstanceArgs>>> publishToInstances() {
         return Optional.ofNullable(this.publishToInstances);
     }
 
     /**
      * Private network ID bound to the backend cloud service.
-     * 
+     *
      */
     @Import(name="serviceVpcId", required=true)
     private Output<String> serviceVpcId;
 
     /**
      * @return Private network ID bound to the backend cloud service.
-     * 
+     *
      */
     public Output<String> serviceVpcId() {
         return this.serviceVpcId;
@@ -147,9 +157,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenId Cloud Enterprise Network instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenId(Output<String> cenId) {
             $.cenId = cenId;
@@ -158,9 +168,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenId Cloud Enterprise Network instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenId(String cenId) {
             return cenId(Output.of(cenId));
@@ -168,9 +178,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param creationTime Resource creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -179,9 +189,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param creationTime Resource creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -189,9 +199,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Custom remarks for the route.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -200,9 +210,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Custom remarks for the route.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -210,9 +220,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destinationCidrBlock Address range where the cloud service is deployed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder destinationCidrBlock(Output<String> destinationCidrBlock) {
             $.destinationCidrBlock = destinationCidrBlock;
@@ -221,9 +231,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param destinationCidrBlock Address range where the cloud service is deployed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder destinationCidrBlock(String destinationCidrBlock) {
             return destinationCidrBlock(Output.of(destinationCidrBlock));
@@ -231,9 +241,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param publishMode Route publishing scope mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publishMode(@Nullable Output<String> publishMode) {
             $.publishMode = publishMode;
@@ -242,32 +252,53 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param publishMode Route publishing scope mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publishMode(String publishMode) {
             return publishMode(Output.of(publishMode));
         }
 
+        /**
+         * @param publishToInstances List of network instances associated with batch route publishing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder publishToInstances(@Nullable Output<List<ServiceRouteEntryPublishToInstanceArgs>> publishToInstances) {
             $.publishToInstances = publishToInstances;
             return this;
         }
 
+        /**
+         * @param publishToInstances List of network instances associated with batch route publishing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder publishToInstances(List<ServiceRouteEntryPublishToInstanceArgs> publishToInstances) {
             return publishToInstances(Output.of(publishToInstances));
         }
 
+        /**
+         * @param publishToInstances List of network instances associated with batch route publishing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder publishToInstances(ServiceRouteEntryPublishToInstanceArgs... publishToInstances) {
             return publishToInstances(List.of(publishToInstances));
         }
 
         /**
          * @param serviceVpcId Private network ID bound to the backend cloud service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceVpcId(Output<String> serviceVpcId) {
             $.serviceVpcId = serviceVpcId;
@@ -276,9 +307,9 @@ public final class ServiceRouteEntryArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param serviceVpcId Private network ID bound to the backend cloud service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceVpcId(String serviceVpcId) {
             return serviceVpcId(Output.of(serviceVpcId));

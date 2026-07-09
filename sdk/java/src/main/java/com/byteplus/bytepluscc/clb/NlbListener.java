@@ -20,32 +20,32 @@ import javax.annotation.Nullable;
 
 /**
  * The listener monitors user access requests received by the NLB instance based on the specified protocol and port. NLB forwards requests to healthy backend servers in the associated server group according to the scheduling algorithm configured for that group.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.clb.NlbListener;
  * import com.byteplus.bytepluscc.clb.NlbListenerArgs;
  * import com.pulumi.bytepluscc.clb.inputs.NlbListenerTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cLBNLBListenerDemo = new NlbListener("cLBNLBListenerDemo", NlbListenerArgs.builder()
  *             .loadBalancerId("nlb-11zz9w3jqptz449iegfwvxxxx")
@@ -61,254 +61,274 @@ import javax.annotation.Nullable;
  *                 .value("Test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:clb/nlbListener:NlbListener example &#34;listener_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:clb/nlbListener:NlbListener")
 public class NlbListener extends com.pulumi.resources.CustomResource {
     /**
      * TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
-     * 
+     *
      */
     @Export(name="certificateId", refs={String.class}, tree="[0]")
     private Output<String> certificateId;
 
     /**
      * @return TLS listener server certificate ID. Only SSL certificates from the certificate center are supported.
-     * 
+     *
      */
     public Output<String> certificateId() {
         return this.certificateId;
     }
     /**
      * Listener connection timeout (seconds)
-     * 
+     *
      */
     @Export(name="connectionTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> connectionTimeout;
 
     /**
      * @return Listener connection timeout (seconds)
-     * 
+     *
      */
     public Output<Integer> connectionTimeout() {
         return this.connectionTimeout;
     }
     /**
      * Listener creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Listener creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Listener description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Listener description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Listener enabled: true (enabled); false (disabled)
-     * 
+     *
      */
     @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
      * @return Listener enabled: true (enabled); false (disabled)
-     * 
+     *
      */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
     /**
      * End port for all-port listening. Valid only when Port is 0.
-     * 
+     *
      */
     @Export(name="endPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> endPort;
 
     /**
      * @return End port for all-port listening. Valid only when Port is 0.
-     * 
+     *
      */
     public Output<Integer> endPort() {
         return this.endPort;
     }
+    /**
+     * Backend instance health check response information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="healths", refs={List.class,NlbListenerHealth.class}, tree="[0,1]")
     private Output<List<NlbListenerHealth>> healths;
 
+    /**
+     * @return Backend instance health check response information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NlbListenerHealth>> healths() {
         return this.healths;
     }
     /**
      * Listener unique identifier
-     * 
+     *
      */
     @Export(name="listenerId", refs={String.class}, tree="[0]")
     private Output<String> listenerId;
 
     /**
      * @return Listener unique identifier
-     * 
+     *
      */
     public Output<String> listenerId() {
         return this.listenerId;
     }
     /**
      * Listener name
-     * 
+     *
      */
     @Export(name="listenerName", refs={String.class}, tree="[0]")
     private Output<String> listenerName;
 
     /**
      * @return Listener name
-     * 
+     *
      */
     public Output<String> listenerName() {
         return this.listenerName;
     }
     /**
      * Load balancer instance ID
-     * 
+     *
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
      * @return Load balancer instance ID
-     * 
+     *
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
      * Port on which the listener receives requests. 0 indicates all-port listening is enabled.
-     * 
+     *
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Port on which the listener receives requests. 0 indicates all-port listening is enabled.
-     * 
+     *
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Listener protocol type: TCP, UDP, TLS
-     * 
+     *
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return Listener protocol type: TCP, UDP, TLS
-     * 
+     *
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
-     * 
+     *
      */
     @Export(name="securityPolicyId", refs={String.class}, tree="[0]")
     private Output<String> securityPolicyId;
 
     /**
      * @return TLS security policy ID. Supports both system security policies and custom security policies. System security policy values: .tls*cipher*policy*1*0 .tls*cipher*policy*1*1 .tls*cipher*policy*1*2 .tls*cipher*policy*1*2*strict .tls*cipher*policy*1*2*strict*with*1_3. For custom security policies, enter the custom security policy ID. This parameter is required when Protocol is TLS.
-     * 
+     *
      */
     public Output<String> securityPolicyId() {
         return this.securityPolicyId;
     }
     /**
      * Server group ID associated with the listener
-     * 
+     *
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
      * @return Server group ID associated with the listener
-     * 
+     *
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
      * Start port for all-port listening. Valid only when Port is 0.
-     * 
+     *
      */
     @Export(name="startPort", refs={Integer.class}, tree="[0]")
     private Output<Integer> startPort;
 
     /**
      * @return Start port for all-port listening. Valid only when Port is 0.
-     * 
+     *
      */
     public Output<Integer> startPort() {
         return this.startPort;
     }
     /**
      * Listener status
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Listener status
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Resource tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,NlbListenerTag.class}, tree="[0,1]")
     private Output<List<NlbListenerTag>> tags;
 
+    /**
+     * @return Resource tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NlbListenerTag>> tags() {
         return this.tags;
     }
     /**
      * Listener&#39;s most recent operation time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Listener&#39;s most recent operation time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

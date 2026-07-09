@@ -18,135 +18,182 @@ import javax.annotation.Nullable;
 
 /**
  * RabbitMQ access allowlist
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rabbitmq.AllowList;
+ * import com.byteplus.bytepluscc.rabbitmq.AllowListArgs;
+ * import com.pulumi.bytepluscc.rabbitmq.inputs.AllowListAssociatedInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rabbitMQAllowListDemo = new AllowList("rabbitMQAllowListDemo", AllowListArgs.builder()
+ *             .allowListType("IPv4")
+ *             .allowList("192.x.0.0/24")
+ *             .allowListName("ccapi-test")
+ *             .allowListDesc("test-desc")
+ *             .associatedInstances(AllowListAssociatedInstanceArgs.builder()
+ *                 .instance_id("rbtmq-a69238e***")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rabbitmq/allowList:AllowList example &#34;allow_list_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rabbitmq/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
-     * 
+     *
      */
     @Export(name="allowList", refs={String.class}, tree="[0]")
     private Output<String> allowList;
 
     /**
      * @return IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
-     * 
+     *
      */
     public Output<String> allowList() {
         return this.allowList;
     }
     /**
      * Allowlist Description
-     * 
+     *
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
      * @return Allowlist Description
-     * 
+     *
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
      * Allowlist ID
-     * 
+     *
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
      * @return Allowlist ID
-     * 
+     *
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
      * Total number of IP addresses (or address ranges) in the allowlist
-     * 
+     *
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
      * @return Total number of IP addresses (or address ranges) in the allowlist
-     * 
+     *
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
      * Allowlist Name
-     * 
+     *
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
      * @return Allowlist Name
-     * 
+     *
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
      * IP address type in the allowlist. Only IPv4 is currently supported
-     * 
+     *
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
      * @return IP address type in the allowlist. Only IPv4 is currently supported
-     * 
+     *
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
      * Total number of instances bound to the allowlist
-     * 
+     *
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
      * @return Total number of instances bound to the allowlist
-     * 
+     *
      */
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * List of bound instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return List of bound instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }
     /**
      * Allowlist modification method. Default is Cover
-     * 
+     *
      */
     @Export(name="modifyMode", refs={String.class}, tree="[0]")
     private Output<String> modifyMode;
 
     /**
      * @return Allowlist modification method. Default is Cover
-     * 
+     *
      */
     public Output<String> modifyMode() {
         return this.modifyMode;

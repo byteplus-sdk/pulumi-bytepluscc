@@ -18,23 +18,33 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
 
     public static final DomainConditionalOriginOriginRuleConditionArgs Empty = new DomainConditionalOriginOriginRuleConditionArgs();
 
+    /**
+     * ConditionGroups
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="conditionGroups")
     private @Nullable Output<List<DomainConditionalOriginOriginRuleConditionConditionGroupArgs>> conditionGroups;
 
+    /**
+     * @return ConditionGroups
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainConditionalOriginOriginRuleConditionConditionGroupArgs>>> conditionGroups() {
         return Optional.ofNullable(this.conditionGroups);
     }
 
     /**
      * Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
-     * 
+     *
      */
     @Import(name="connective")
     private @Nullable Output<String> connective;
 
     /**
      * @return Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
-     * 
+     *
      */
     public Optional<Output<String>> connective() {
         return Optional.ofNullable(this.connective);
@@ -42,14 +52,14 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
 
     /**
      * Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
-     * 
+     *
      */
     @Import(name="isGroup")
     private @Nullable Output<Boolean> isGroup;
 
     /**
      * @return Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
-     * 
+     *
      */
     public Optional<Output<Boolean>> isGroup() {
         return Optional.ofNullable(this.isGroup);
@@ -81,24 +91,45 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
             $ = new DomainConditionalOriginOriginRuleConditionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditionGroups ConditionGroups
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditionGroups(@Nullable Output<List<DomainConditionalOriginOriginRuleConditionConditionGroupArgs>> conditionGroups) {
             $.conditionGroups = conditionGroups;
             return this;
         }
 
+        /**
+         * @param conditionGroups ConditionGroups
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditionGroups(List<DomainConditionalOriginOriginRuleConditionConditionGroupArgs> conditionGroups) {
             return conditionGroups(Output.of(conditionGroups));
         }
 
+        /**
+         * @param conditionGroups ConditionGroups
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditionGroups(DomainConditionalOriginOriginRuleConditionConditionGroupArgs... conditionGroups) {
             return conditionGroups(List.of(conditionGroups));
         }
 
         /**
          * @param connective Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connective(@Nullable Output<String> connective) {
             $.connective = connective;
@@ -107,9 +138,9 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
 
         /**
          * @param connective Specifies the relationship between these condition groups. This parameter has the following values: or: Indicates an &#39;or&#39; relationship. In this case, if any condition group is met, the user request matches the rule. and: Indicates an &#39;and&#39; relationship. In this case, all condition groups must be met for the user request to match the rule. The default value is or.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connective(String connective) {
             return connective(Output.of(connective));
@@ -117,9 +148,9 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
 
         /**
          * @param isGroup Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isGroup(@Nullable Output<Boolean> isGroup) {
             $.isGroup = isGroup;
@@ -128,9 +159,9 @@ public final class DomainConditionalOriginOriginRuleConditionArgs extends com.pu
 
         /**
          * @param isGroup Indicates whether each filter condition is a condition group. The value of this parameter is always true, meaning each filter condition is a condition group. Currently, each condition group can only contain one filter condition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isGroup(Boolean isGroup) {
             return isGroup(Output.of(isGroup));

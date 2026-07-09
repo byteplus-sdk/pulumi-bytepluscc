@@ -27,14 +27,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
-     * 
+     *
      */
     @Import(name="addressIpVersion")
     private @Nullable Output<String> addressIpVersion;
 
     /**
      * @return IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
-     * 
+     *
      */
     public Optional<Output<String>> addressIpVersion() {
         return Optional.ofNullable(this.addressIpVersion);
@@ -42,14 +42,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the bound shared bandwidth package, enabling bandwidth sharing.
-     * 
+     *
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
      * @return ID of the bound shared bandwidth package, enabling bandwidth sharing.
-     * 
+     *
      */
     public Optional<Output<String>> bandwidthPackageId() {
         return Optional.ofNullable(this.bandwidthPackageId);
@@ -57,14 +57,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Delete protection switch. on: enabled; off: disabled.
-     * 
+     *
      */
     @Import(name="deleteProtection")
     private @Nullable Output<String> deleteProtection;
 
     /**
      * @return Delete protection switch. on: enabled; off: disabled.
-     * 
+     *
      */
     public Optional<Output<String>> deleteProtection() {
         return Optional.ofNullable(this.deleteProtection);
@@ -72,14 +72,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the ALB instance.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the ALB instance.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -87,14 +87,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing configuration for public IP, only applicable to public instances.
-     * 
+     *
      */
     @Import(name="eipBillingConfig")
     private @Nullable Output<LoadBalancerEipBillingConfigArgs> eipBillingConfig;
 
     /**
      * @return Billing configuration for public IP, only applicable to public instances.
-     * 
+     *
      */
     public Optional<Output<LoadBalancerEipBillingConfigArgs>> eipBillingConfig() {
         return Optional.ofNullable(this.eipBillingConfig);
@@ -102,14 +102,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Global accelerator configuration, used to improve cross-region access speed.
-     * 
+     *
      */
     @Import(name="globalAccelerator")
     private @Nullable Output<LoadBalancerGlobalAcceleratorArgs> globalAccelerator;
 
     /**
      * @return Global accelerator configuration, used to improve cross-region access speed.
-     * 
+     *
      */
     public Optional<Output<LoadBalancerGlobalAcceleratorArgs>> globalAccelerator() {
         return Optional.ofNullable(this.globalAccelerator);
@@ -117,14 +117,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Health check log information in the ALB instance
-     * 
+     *
      */
     @Import(name="healthLog")
     private @Nullable Output<LoadBalancerHealthLogArgs> healthLog;
 
     /**
      * @return Health check log information in the ALB instance
-     * 
+     *
      */
     public Optional<Output<LoadBalancerHealthLogArgs>> healthLog() {
         return Optional.ofNullable(this.healthLog);
@@ -132,14 +132,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
-     * 
+     *
      */
     @Import(name="ipv6BandwidthPackageId")
     private @Nullable Output<String> ipv6BandwidthPackageId;
 
     /**
      * @return When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
-     * 
+     *
      */
     public Optional<Output<String>> ipv6BandwidthPackageId() {
         return Optional.ofNullable(this.ipv6BandwidthPackageId);
@@ -147,14 +147,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing configuration for IPv6 public IP, only applicable to public instances.
-     * 
+     *
      */
     @Import(name="ipv6EipBillingConfig")
     private @Nullable Output<LoadBalancerIpv6EipBillingConfigArgs> ipv6EipBillingConfig;
 
     /**
      * @return Billing configuration for IPv6 public IP, only applicable to public instances.
-     * 
+     *
      */
     public Optional<Output<LoadBalancerIpv6EipBillingConfigArgs>> ipv6EipBillingConfig() {
         return Optional.ofNullable(this.ipv6EipBillingConfig);
@@ -162,14 +162,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
-     * 
+     *
      */
     @Import(name="loadBalancerBillingType")
     private @Nullable Output<Integer> loadBalancerBillingType;
 
     /**
      * @return ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
-     * 
+     *
      */
     public Optional<Output<Integer>> loadBalancerBillingType() {
         return Optional.ofNullable(this.loadBalancerBillingType);
@@ -177,14 +177,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Version of the application load balancer. Basic: Basic version; Standard: Standard version.
-     * 
+     *
      */
     @Import(name="loadBalancerEdition")
     private @Nullable Output<String> loadBalancerEdition;
 
     /**
      * @return Version of the application load balancer. Basic: Basic version; Standard: Standard version.
-     * 
+     *
      */
     public Optional<Output<String>> loadBalancerEdition() {
         return Optional.ofNullable(this.loadBalancerEdition);
@@ -192,14 +192,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the ALB instance.
-     * 
+     *
      */
     @Import(name="loadBalancerName")
     private @Nullable Output<String> loadBalancerName;
 
     /**
      * @return Name of the ALB instance.
-     * 
+     *
      */
     public Optional<Output<String>> loadBalancerName() {
         return Optional.ofNullable(this.loadBalancerName);
@@ -207,14 +207,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
-     * 
+     *
      */
     @Import(name="modificationProtectionReason")
     private @Nullable Output<String> modificationProtectionReason;
 
     /**
      * @return Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
-     * 
+     *
      */
     public Optional<Output<String>> modificationProtectionReason() {
         return Optional.ofNullable(this.modificationProtectionReason);
@@ -222,14 +222,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
-     * 
+     *
      */
     @Import(name="modificationProtectionStatus")
     private @Nullable Output<String> modificationProtectionStatus;
 
     /**
      * @return Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
-     * 
+     *
      */
     public Optional<Output<String>> modificationProtectionStatus() {
         return Optional.ofNullable(this.modificationProtectionStatus);
@@ -237,14 +237,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the instance belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -252,36 +252,46 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ALB supports the Proxy Protocol and records the client&#39;s real IP.
-     * 
+     *
      */
     @Import(name="proxyProtocolEnabled")
     private @Nullable Output<String> proxyProtocolEnabled;
 
     /**
      * @return ALB supports the Proxy Protocol and records the client&#39;s real IP.
-     * 
+     *
      */
     public Optional<Output<String>> proxyProtocolEnabled() {
         return Optional.ofNullable(this.proxyProtocolEnabled);
     }
 
+    /**
+     * List of tags bound to the instance, used for categorization and billing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<LoadBalancerTagArgs>> tags;
 
+    /**
+     * @return List of tags bound to the instance, used for categorization and billing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<LoadBalancerTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Access log information in the ALB instance
-     * 
+     *
      */
     @Import(name="tlsAccessLog")
     private @Nullable Output<LoadBalancerTlsAccessLogArgs> tlsAccessLog;
 
     /**
      * @return Access log information in the ALB instance
-     * 
+     *
      */
     public Optional<Output<LoadBalancerTlsAccessLogArgs>> tlsAccessLog() {
         return Optional.ofNullable(this.tlsAccessLog);
@@ -289,14 +299,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
-     * 
+     *
      */
     @Import(name="type", required=true)
     private Output<String> type;
 
     /**
      * @return Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;
@@ -304,14 +314,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -319,14 +329,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the WAF security protection instance bound to the ALB instance.
-     * 
+     *
      */
     @Import(name="wafInstanceId")
     private @Nullable Output<String> wafInstanceId;
 
     /**
      * @return ID of the WAF security protection instance bound to the ALB instance.
-     * 
+     *
      */
     public Optional<Output<String>> wafInstanceId() {
         return Optional.ofNullable(this.wafInstanceId);
@@ -334,14 +344,14 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name protected by WAF, used for precise rule matching.
-     * 
+     *
      */
     @Import(name="wafProtectedDomain")
     private @Nullable Output<String> wafProtectedDomain;
 
     /**
      * @return Domain name protected by WAF, used for precise rule matching.
-     * 
+     *
      */
     public Optional<Output<String>> wafProtectedDomain() {
         return Optional.ofNullable(this.wafProtectedDomain);
@@ -349,22 +359,32 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * WAF security protection switch. on: enabled; off: disabled.
-     * 
+     *
      */
     @Import(name="wafProtectionEnabled")
     private @Nullable Output<String> wafProtectionEnabled;
 
     /**
      * @return WAF security protection switch. on: enabled; off: disabled.
-     * 
+     *
      */
     public Optional<Output<String>> wafProtectionEnabled() {
         return Optional.ofNullable(this.wafProtectionEnabled);
     }
 
+    /**
+     * Availability zone mapping list, defines which availability zones the instance provides services in.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="zoneMappings")
     private @Nullable Output<List<LoadBalancerZoneMappingArgs>> zoneMappings;
 
+    /**
+     * @return Availability zone mapping list, defines which availability zones the instance provides services in.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<LoadBalancerZoneMappingArgs>>> zoneMappings() {
         return Optional.ofNullable(this.zoneMappings);
     }
@@ -418,9 +438,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressIpVersion IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder addressIpVersion(@Nullable Output<String> addressIpVersion) {
             $.addressIpVersion = addressIpVersion;
@@ -429,9 +449,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressIpVersion IP type of the ALB instance. IPv4: IPv4 type; DualStack: IPv4 &amp; IPv6 dual stack type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder addressIpVersion(String addressIpVersion) {
             return addressIpVersion(Output.of(addressIpVersion));
@@ -439,9 +459,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidthPackageId ID of the bound shared bandwidth package, enabling bandwidth sharing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidthPackageId(@Nullable Output<String> bandwidthPackageId) {
             $.bandwidthPackageId = bandwidthPackageId;
@@ -450,9 +470,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidthPackageId ID of the bound shared bandwidth package, enabling bandwidth sharing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidthPackageId(String bandwidthPackageId) {
             return bandwidthPackageId(Output.of(bandwidthPackageId));
@@ -460,9 +480,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteProtection Delete protection switch. on: enabled; off: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteProtection(@Nullable Output<String> deleteProtection) {
             $.deleteProtection = deleteProtection;
@@ -471,9 +491,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteProtection Delete protection switch. on: enabled; off: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteProtection(String deleteProtection) {
             return deleteProtection(Output.of(deleteProtection));
@@ -481,9 +501,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the ALB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -492,9 +512,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the ALB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -502,9 +522,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipBillingConfig Billing configuration for public IP, only applicable to public instances.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipBillingConfig(@Nullable Output<LoadBalancerEipBillingConfigArgs> eipBillingConfig) {
             $.eipBillingConfig = eipBillingConfig;
@@ -513,9 +533,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipBillingConfig Billing configuration for public IP, only applicable to public instances.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipBillingConfig(LoadBalancerEipBillingConfigArgs eipBillingConfig) {
             return eipBillingConfig(Output.of(eipBillingConfig));
@@ -523,9 +543,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param globalAccelerator Global accelerator configuration, used to improve cross-region access speed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder globalAccelerator(@Nullable Output<LoadBalancerGlobalAcceleratorArgs> globalAccelerator) {
             $.globalAccelerator = globalAccelerator;
@@ -534,9 +554,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param globalAccelerator Global accelerator configuration, used to improve cross-region access speed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder globalAccelerator(LoadBalancerGlobalAcceleratorArgs globalAccelerator) {
             return globalAccelerator(Output.of(globalAccelerator));
@@ -544,9 +564,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthLog Health check log information in the ALB instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthLog(@Nullable Output<LoadBalancerHealthLogArgs> healthLog) {
             $.healthLog = healthLog;
@@ -555,9 +575,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthLog Health check log information in the ALB instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthLog(LoadBalancerHealthLogArgs healthLog) {
             return healthLog(Output.of(healthLog));
@@ -565,9 +585,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6BandwidthPackageId When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6BandwidthPackageId(@Nullable Output<String> ipv6BandwidthPackageId) {
             $.ipv6BandwidthPackageId = ipv6BandwidthPackageId;
@@ -576,9 +596,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6BandwidthPackageId When creating a public ALB instance, specify the shared bandwidth package ID to which the IPv6 public bandwidth will be added.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6BandwidthPackageId(String ipv6BandwidthPackageId) {
             return ipv6BandwidthPackageId(Output.of(ipv6BandwidthPackageId));
@@ -586,9 +606,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6EipBillingConfig Billing configuration for IPv6 public IP, only applicable to public instances.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6EipBillingConfig(@Nullable Output<LoadBalancerIpv6EipBillingConfigArgs> ipv6EipBillingConfig) {
             $.ipv6EipBillingConfig = ipv6EipBillingConfig;
@@ -597,9 +617,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6EipBillingConfig Billing configuration for IPv6 public IP, only applicable to public instances.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6EipBillingConfig(LoadBalancerIpv6EipBillingConfigArgs ipv6EipBillingConfig) {
             return ipv6EipBillingConfig(Output.of(ipv6EipBillingConfig));
@@ -607,9 +627,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerBillingType ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerBillingType(@Nullable Output<Integer> loadBalancerBillingType) {
             $.loadBalancerBillingType = loadBalancerBillingType;
@@ -618,9 +638,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerBillingType ALB instance billing type. Currently, only pay-as-you-go is supported (value is 1).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerBillingType(Integer loadBalancerBillingType) {
             return loadBalancerBillingType(Output.of(loadBalancerBillingType));
@@ -628,9 +648,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerEdition Version of the application load balancer. Basic: Basic version; Standard: Standard version.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerEdition(@Nullable Output<String> loadBalancerEdition) {
             $.loadBalancerEdition = loadBalancerEdition;
@@ -639,9 +659,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerEdition Version of the application load balancer. Basic: Basic version; Standard: Standard version.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerEdition(String loadBalancerEdition) {
             return loadBalancerEdition(Output.of(loadBalancerEdition));
@@ -649,9 +669,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerName Name of the ALB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerName(@Nullable Output<String> loadBalancerName) {
             $.loadBalancerName = loadBalancerName;
@@ -660,9 +680,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerName Name of the ALB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerName(String loadBalancerName) {
             return loadBalancerName(Output.of(loadBalancerName));
@@ -670,9 +690,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionReason Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionReason(@Nullable Output<String> modificationProtectionReason) {
             $.modificationProtectionReason = modificationProtectionReason;
@@ -681,9 +701,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionReason Reason for modification protection. This parameter is valid and legitimate only when ModificationProtectionStatus is ConsoleProtection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionReason(String modificationProtectionReason) {
             return modificationProtectionReason(Output.of(modificationProtectionReason));
@@ -691,9 +711,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionStatus Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionStatus(@Nullable Output<String> modificationProtectionStatus) {
             $.modificationProtectionStatus = modificationProtectionStatus;
@@ -702,9 +722,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionStatus Modification protection status. NonProtection: Not protected; ConsoleProtection: Console modification protection, instance configuration cannot be modified through the console.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionStatus(String modificationProtectionStatus) {
             return modificationProtectionStatus(Output.of(modificationProtectionStatus));
@@ -712,9 +732,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -723,9 +743,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -733,9 +753,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyProtocolEnabled ALB supports the Proxy Protocol and records the client&#39;s real IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyProtocolEnabled(@Nullable Output<String> proxyProtocolEnabled) {
             $.proxyProtocolEnabled = proxyProtocolEnabled;
@@ -744,32 +764,53 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param proxyProtocolEnabled ALB supports the Proxy Protocol and records the client&#39;s real IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder proxyProtocolEnabled(String proxyProtocolEnabled) {
             return proxyProtocolEnabled(Output.of(proxyProtocolEnabled));
         }
 
+        /**
+         * @param tags List of tags bound to the instance, used for categorization and billing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<LoadBalancerTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags List of tags bound to the instance, used for categorization and billing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<LoadBalancerTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags List of tags bound to the instance, used for categorization and billing.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(LoadBalancerTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param tlsAccessLog Access log information in the ALB instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tlsAccessLog(@Nullable Output<LoadBalancerTlsAccessLogArgs> tlsAccessLog) {
             $.tlsAccessLog = tlsAccessLog;
@@ -778,9 +819,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tlsAccessLog Access log information in the ALB instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tlsAccessLog(LoadBalancerTlsAccessLogArgs tlsAccessLog) {
             return tlsAccessLog(Output.of(tlsAccessLog));
@@ -788,9 +829,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(Output<String> type) {
             $.type = type;
@@ -799,9 +840,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Type of ALB instance. Values are public or private. public: Creates a public load balancer instance. The system assigns a public IP address and a private IP address, which can forward both public and private network requests. private: Creates a private load balancer instance. The system assigns a private IP address, used only for forwarding private network requests.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -809,9 +850,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -820,9 +861,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the Virtual Private Cloud (VPC) to which the load balancer instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -830,9 +871,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafInstanceId ID of the WAF security protection instance bound to the ALB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafInstanceId(@Nullable Output<String> wafInstanceId) {
             $.wafInstanceId = wafInstanceId;
@@ -841,9 +882,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafInstanceId ID of the WAF security protection instance bound to the ALB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafInstanceId(String wafInstanceId) {
             return wafInstanceId(Output.of(wafInstanceId));
@@ -851,9 +892,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafProtectedDomain Domain name protected by WAF, used for precise rule matching.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafProtectedDomain(@Nullable Output<String> wafProtectedDomain) {
             $.wafProtectedDomain = wafProtectedDomain;
@@ -862,9 +903,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafProtectedDomain Domain name protected by WAF, used for precise rule matching.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafProtectedDomain(String wafProtectedDomain) {
             return wafProtectedDomain(Output.of(wafProtectedDomain));
@@ -872,9 +913,9 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafProtectionEnabled WAF security protection switch. on: enabled; off: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafProtectionEnabled(@Nullable Output<String> wafProtectionEnabled) {
             $.wafProtectionEnabled = wafProtectionEnabled;
@@ -883,23 +924,44 @@ public final class LoadBalancerArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wafProtectionEnabled WAF security protection switch. on: enabled; off: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder wafProtectionEnabled(String wafProtectionEnabled) {
             return wafProtectionEnabled(Output.of(wafProtectionEnabled));
         }
 
+        /**
+         * @param zoneMappings Availability zone mapping list, defines which availability zones the instance provides services in.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zoneMappings(@Nullable Output<List<LoadBalancerZoneMappingArgs>> zoneMappings) {
             $.zoneMappings = zoneMappings;
             return this;
         }
 
+        /**
+         * @param zoneMappings Availability zone mapping list, defines which availability zones the instance provides services in.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zoneMappings(List<LoadBalancerZoneMappingArgs> zoneMappings) {
             return zoneMappings(Output.of(zoneMappings));
         }
 
+        /**
+         * @param zoneMappings Availability zone mapping list, defines which availability zones the instance provides services in.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zoneMappings(LoadBalancerZoneMappingArgs... zoneMappings) {
             return zoneMappings(List.of(zoneMappings));
         }

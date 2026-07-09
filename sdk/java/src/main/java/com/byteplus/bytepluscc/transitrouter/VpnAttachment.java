@@ -18,32 +18,32 @@ import javax.annotation.Nullable;
 
 /**
  * By establishing a connection between the IPsec connection of the VPN and the transit router, you can enable communication between the VPN-connected network and the private network of the transit router.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.transitrouter.VpnAttachment;
  * import com.byteplus.bytepluscc.transitrouter.VpnAttachmentArgs;
  * import com.pulumi.bytepluscc.transitrouter.inputs.VpnAttachmentTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var transitRouterVpnAttachmentDemo = new VpnAttachment("transitRouterVpnAttachmentDemo", VpnAttachmentArgs.builder()
  *             .description("test")
@@ -57,206 +57,216 @@ import javax.annotation.Nullable;
  *             .vpnConnectionId("vgc-ij0yxxxxx474o8cux0n08t")
  *             .zoneId("cn-beijing-a")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/vpnAttachment:VpnAttachment example &#34;transit_router_id|transit_router_attachment_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:transitrouter/vpnAttachment:VpnAttachment")
 public class VpnAttachment extends com.pulumi.resources.CustomResource {
     /**
      * Whether to automatically sync TR routes to the network instance route table.
-     * 
+     *
      */
     @Export(name="autoPublishRouteEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Whether to automatically sync TR routes to the network instance route table.
-     * 
+     *
      */
     public Output<Boolean> autoPublishRouteEnabled() {
         return this.autoPublishRouteEnabled;
     }
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
-     * 
+     *
      */
     @Export(name="healthCheckRevokeRouteEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> healthCheckRevokeRouteEnabled;
 
     /**
      * @return Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
-     * 
+     *
      */
     public Output<Boolean> healthCheckRevokeRouteEnabled() {
         return this.healthCheckRevokeRouteEnabled;
     }
     /**
      * Whether to enable IPv6.
-     * 
+     *
      */
     @Export(name="ipv6Enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> ipv6Enabled;
 
     /**
      * @return Whether to enable IPv6.
-     * 
+     *
      */
     public Output<Boolean> ipv6Enabled() {
         return this.ipv6Enabled;
     }
     /**
      * Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Network instance connection status. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,VpnAttachmentTag.class}, tree="[0,1]")
     private Output<List<VpnAttachmentTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<VpnAttachmentTag>> tags() {
         return this.tags;
     }
     /**
      * Network instance connection ID.
-     * 
+     *
      */
     @Export(name="transitRouterAttachmentId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentId;
 
     /**
      * @return Network instance connection ID.
-     * 
+     *
      */
     public Output<String> transitRouterAttachmentId() {
         return this.transitRouterAttachmentId;
     }
     /**
      * Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     * 
+     *
      */
     @Export(name="transitRouterAttachmentName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentName;
 
     /**
      * @return Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     * 
+     *
      */
     public Output<String> transitRouterAttachmentName() {
         return this.transitRouterAttachmentName;
     }
     /**
      * Transit router instance ID.
-     * 
+     *
      */
     @Export(name="transitRouterId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID.
-     * 
+     *
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
     /**
      * Associated TR route table ID.
-     * 
+     *
      */
     @Export(name="transitRouterRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableId;
 
     /**
      * @return Associated TR route table ID.
-     * 
+     *
      */
     public Output<String> transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;
     }
     /**
      * Update time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * IPsec connection ID.
-     * 
+     *
      */
     @Export(name="vpnConnectionId", refs={String.class}, tree="[0]")
     private Output<String> vpnConnectionId;
 
     /**
      * @return IPsec connection ID.
-     * 
+     *
      */
     public Output<String> vpnConnectionId() {
         return this.vpnConnectionId;
     }
     /**
      * ID of the availability zone to which the IPsec connection belongs.
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return ID of the availability zone to which the IPsec connection belongs.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;

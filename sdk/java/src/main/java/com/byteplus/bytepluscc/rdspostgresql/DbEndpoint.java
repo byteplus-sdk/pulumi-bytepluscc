@@ -22,261 +22,309 @@ import javax.annotation.Nullable;
 
 /**
  * The connection endpoint is a network proxy service positioned between the database and the application, handling all requests from the application to the database. It features high availability, high performance, maintainability, and ease of use, and supports advanced functions such as read/write splitting and load balancing. The PostgreSQL cloud database provides two types of endpoints: default endpoint and custom read-only endpoint.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdspostgresql.DbEndpoint;
+ * import com.byteplus.bytepluscc.rdspostgresql.DbEndpointArgs;
+ * import com.pulumi.bytepluscc.rdspostgresql.inputs.DbEndpointPublicAddressesArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rdsPostgresqlDbEndpointDemo = new DbEndpoint("rdsPostgresqlDbEndpointDemo", DbEndpointArgs.builder()
+ *             .endpointName("ccapi-test-1")
+ *             .endpointType("Custom")
+ *             .instanceId("postgres-9dxxxxxd")
+ *             .nodes("Primary")
+ *             .readWriteMode("ReadWrite")
+ *             .publicAddresses(DbEndpointPublicAddressesArgs.builder()
+ *                 .eip_id("eip-0xxxxx8c45")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdspostgresql/dbEndpoint:DbEndpoint example &#34;instance_id|endpoint_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdspostgresql/dbEndpoint:DbEndpoint")
 public class DbEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
-     * 
+     *
      */
     @Export(name="autoAddNewNodes", refs={String.class}, tree="[0]")
     private Output<String> autoAddNewNodes;
 
     /**
      * @return When the endpoint type is read/write or read-only, you can configure whether new nodes are automatically added. Values: Enable: Automatically add. Disable: Do not automatically add (default).
-     * 
+     *
      */
     public Output<String> autoAddNewNodes() {
         return this.autoAddNewNodes;
     }
     /**
      * Address description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Address description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
-     * 
+     *
      */
     @Export(name="enableReadOnly", refs={String.class}, tree="[0]")
     private Output<String> enableReadOnly;
 
     /**
      * @return Whether global read-only is enabled. Enable: Enabled. Disable: Not enabled.
-     * 
+     *
      */
     public Output<String> enableReadOnly() {
         return this.enableReadOnly;
     }
     /**
      * Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
-     * 
+     *
      */
     @Export(name="enableReadWriteSplitting", refs={String.class}, tree="[0]")
     private Output<String> enableReadWriteSplitting;
 
     /**
      * @return Whether read/write splitting is enabled. Values: Enable: Enabled. Disable: Not enabled.
-     * 
+     *
      */
     public Output<String> enableReadWriteSplitting() {
         return this.enableReadWriteSplitting;
     }
     /**
      * Instance connection endpoint ID.
-     * 
+     *
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Instance connection endpoint name.
-     * 
+     *
      */
     @Export(name="endpointName", refs={String.class}, tree="[0]")
     private Output<String> endpointName;
 
     /**
      * @return Instance connection endpoint name.
-     * 
+     *
      */
     public Output<String> endpointName() {
         return this.endpointName;
     }
     /**
      * Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
-     * 
+     *
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
      * @return Endpoint type: Cluster: default endpoint (created by default). Custom: custom endpoint.
-     * 
+     *
      */
     public Output<String> endpointType() {
         return this.endpointType;
     }
     /**
      * Public service zone connection address
-     * 
+     *
      */
     @Export(name="innerAddresses", refs={DbEndpointInnerAddresses.class}, tree="[0]")
     private Output<DbEndpointInnerAddresses> innerAddresses;
 
     /**
      * @return Public service zone connection address
-     * 
+     *
      */
     public Output<DbEndpointInnerAddresses> innerAddresses() {
         return this.innerAddresses;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
-     * 
+     *
      */
     @Export(name="nodes", refs={String.class}, tree="[0]")
     private Output<String> nodes;
 
     /**
      * @return List of nodes configured for the connection endpoint. Note: Required when EndpointType is Custom. The primary node does not require a node ID; use the string &#39;Primary&#39;.
-     * 
+     *
      */
     public Output<String> nodes() {
         return this.nodes;
     }
     /**
      * Private network connection address
-     * 
+     *
      */
     @Export(name="privateAddresses", refs={DbEndpointPrivateAddresses.class}, tree="[0]")
     private Output<DbEndpointPrivateAddresses> privateAddresses;
 
     /**
      * @return Private network connection address
-     * 
+     *
      */
     public Output<DbEndpointPrivateAddresses> privateAddresses() {
         return this.privateAddresses;
     }
     /**
      * Public network connection address
-     * 
+     *
      */
     @Export(name="publicAddresses", refs={DbEndpointPublicAddresses.class}, tree="[0]")
     private Output<DbEndpointPublicAddresses> publicAddresses;
 
     /**
      * @return Public network connection address
-     * 
+     *
      */
     public Output<DbEndpointPublicAddresses> publicAddresses() {
         return this.publicAddresses;
     }
     /**
      * Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
-     * 
+     *
      */
     @Export(name="readOnlyNodeDistributionType", refs={String.class}, tree="[0]")
     private Output<String> readOnlyNodeDistributionType;
 
     /**
      * @return Read-only weight allocation mode. Values: Default: standard weight allocation (default). Custom: custom weight allocation.
-     * 
+     *
      */
     public Output<String> readOnlyNodeDistributionType() {
         return this.readOnlyNodeDistributionType;
     }
     /**
      * Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
-     * 
+     *
      */
     @Export(name="readOnlyNodeMaxDelayTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> readOnlyNodeMaxDelayTime;
 
     /**
      * @return Maximum latency threshold for read-only nodes. When the latency of a read-only node exceeds this value, read traffic will not be sent to that node. Unit: seconds. Range: 0~3600. Default: 30. Note: This parameter can be set for default endpoints with read/write splitting enabled.
-     * 
+     *
      */
     public Output<Integer> readOnlyNodeMaxDelayTime() {
         return this.readOnlyNodeMaxDelayTime;
     }
+    /**
+     * List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="readOnlyNodeWeights", refs={List.class,DbEndpointReadOnlyNodeWeight.class}, tree="[0,1]")
     private Output<List<DbEndpointReadOnlyNodeWeight>> readOnlyNodeWeights;
 
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DbEndpointReadOnlyNodeWeight>> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights;
     }
     /**
      * Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
-     * 
+     *
      */
     @Export(name="readWriteMode", refs={String.class}, tree="[0]")
     private Output<String> readWriteMode;
 
     /**
      * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
-     * 
+     *
      */
     public Output<String> readWriteMode() {
         return this.readWriteMode;
     }
     /**
      * After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
-     * 
+     *
      */
     @Export(name="readWriteProxyConnection", refs={Integer.class}, tree="[0]")
     private Output<Integer> readWriteProxyConnection;
 
     /**
      * @return After enabling read/write splitting for the endpoint, set the number of proxy connections for the endpoint. The minimum value for proxy connections is 20. The maximum value depends on the specifications of the primary node; different specifications support different maximum proxy connections. For details, see product specifications.
-     * 
+     *
      */
     public Output<Integer> readWriteProxyConnection() {
         return this.readWriteProxyConnection;
     }
     /**
      * Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
-     * 
+     *
      */
     @Export(name="writeNodeHaltWriting", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> writeNodeHaltWriting;
 
     /**
      * @return Whether the endpoint sends write requests to the write node (currently only the primary node is the write node). Values: true: Yes (default). false: No.
-     * 
+     *
      */
     public Output<Boolean> writeNodeHaltWriting() {
         return this.writeNodeHaltWriting;

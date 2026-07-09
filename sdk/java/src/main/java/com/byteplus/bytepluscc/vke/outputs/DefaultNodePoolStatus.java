@@ -13,20 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DefaultNodePoolStatus {
+    /**
+     * @return Status conditions of the node pool in its current primary state, indicating the reason for entering this state
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DefaultNodePoolStatusCondition> conditions;
     /**
      * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
-     * 
+     *
      */
     private @Nullable String phase;
 
     private DefaultNodePoolStatus() {}
+    /**
+     * @return Status conditions of the node pool in its current primary state, indicating the reason for entering this state
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DefaultNodePoolStatusCondition> conditions() {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
      * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
-     * 
+     *
      */
     public Optional<String> phase() {
         return Optional.ofNullable(this.phase);

@@ -21,174 +21,184 @@ import javax.annotation.Nullable;
 public final class HostGroupRuleUserDefineRule {
     /**
      * @return Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
-     * 
+     *
      */
     private @Nullable HostGroupRuleUserDefineRuleAdvanced advanced;
     /**
      * @return Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
-     * 
+     *
      */
     private @Nullable Boolean enableHostGroupLabel;
     /**
      * @return Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source&#39;s hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
-     * 
+     *
      */
     private @Nullable Boolean enableHostname;
     /**
      * @return Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
-     * 
+     *
      */
     private @Nullable Boolean enableRawLog;
+    /**
+     * @return Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<HostGroupRuleUserDefineRuleField> fields;
     /**
      * @return Field name used to store machine group label information.
-     * 
+     *
      */
     private @Nullable String hostGroupLabelKey;
     /**
      * @return hostname field name. Only required when EnableHostname is set to true.
-     * 
+     *
      */
     private @Nullable String hostnameKey;
     /**
      * @return Ignore log files that have not been updated for a specified duration, in hours.
-     * 
+     *
      */
     private @Nullable Integer ignoreOlder;
     /**
      * @return Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
-     * 
+     *
      */
     private @Nullable String multiCollectsType;
     /**
      * @return Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
-     * 
+     *
      */
     private @Nullable HostGroupRuleUserDefineRuleParsePathRule parsePathRule;
     /**
      * @return LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
-     * 
+     *
      */
     private @Nullable HostGroupRuleUserDefineRulePlugin plugin;
     /**
      * @return Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
-     * 
+     *
      */
     private @Nullable String rawLogKey;
     /**
      * @return Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
-     * 
+     *
      */
     private @Nullable HostGroupRuleUserDefineRuleShardHashKey shardHashKey;
     /**
      * @return LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
-     * 
+     *
      */
     private @Nullable Boolean tailFiles;
     /**
      * @return Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
-     * 
+     *
      */
     private @Nullable Integer tailSizeKb;
 
     private HostGroupRuleUserDefineRule() {}
     /**
      * @return Advanced parameters are used for extended configuration. After enabling extended configuration, you can customize advanced behaviors of LogCollector, such as when to release file handles. Note: If multiple conditions for releasing handles are specified, the handle will be released and log file monitoring will end as soon as any condition is met.
-     * 
+     *
      */
     public Optional<HostGroupRuleUserDefineRuleAdvanced> advanced() {
         return Optional.ofNullable(this.advanced);
     }
     /**
      * @return Whether to upload the Label information of the host group to the log service. Disabled by default. true: LogCollector uploads the Label information of the host group to the specified field. You can specify the field name in the HostGroupLabelKey parameter. false (default): LogCollector does not upload the Label information of the host group.
-     * 
+     *
      */
     public Optional<Boolean> enableHostGroupLabel() {
         return Optional.ofNullable(this.enableHostGroupLabel);
     }
     /**
      * @return Whether to upload the hostname field. Default is disabled. true: Adds a field to the original log to record the log source&#39;s hostname. Specify the hostname field name using HostnameKey. false (default): Does not add the hostname field.
-     * 
+     *
      */
     public Optional<Boolean> enableHostname() {
         return Optional.ofNullable(this.enableHostname);
     }
     /**
      * @return Whether to upload raw logs. true: Upload raw logs. false (default): Do not upload raw logs.
-     * 
+     *
      */
     public Optional<Boolean> enableRawLog() {
         return Optional.ofNullable(this.enableRawLog);
     }
+    /**
+     * @return Add constant fields to logs. Constant fields must follow these restrictions: Up to 5 constant fields can be uploaded. Field name (Key) must be unique and not empty. Length: 1–128 characters, including letters, numbers, and special characters (-*./), and cannot start with an underscore. Field value (Value) must not be empty, maximum length is 512 KiB.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<HostGroupRuleUserDefineRuleField> fields() {
         return this.fields == null ? List.of() : this.fields;
     }
     /**
      * @return Field name used to store machine group label information.
-     * 
+     *
      */
     public Optional<String> hostGroupLabelKey() {
         return Optional.ofNullable(this.hostGroupLabelKey);
     }
     /**
      * @return hostname field name. Only required when EnableHostname is set to true.
-     * 
+     *
      */
     public Optional<String> hostnameKey() {
         return Optional.ofNullable(this.hostnameKey);
     }
     /**
      * @return Ignore log files that have not been updated for a specified duration, in hours.
-     * 
+     *
      */
     public Optional<Integer> ignoreOlder() {
         return Optional.ofNullable(this.ignoreOlder);
     }
     /**
      * @return Allows multiple log file collections. Empty: Uses the log file ID (including file inode, device, and checksum of the first N bytes) to uniquely identify the log file. RuleID: Uses the collection rule ID and log file ID to uniquely identify the log file. TopicIDRuleName: Uses the log topic ID, collection rule Name, and log file ID to uniquely identify the log file.
-     * 
+     *
      */
     public Optional<String> multiCollectsType() {
         return Optional.ofNullable(this.multiCollectsType);
     }
     /**
      * @return Rules for parsing the collection path. After setting the rule, fields in the collection path are extracted using the specified regex and added as metadata to the log data. Note: This parameter is not supported when collecting container standard output.
-     * 
+     *
      */
     public Optional<HostGroupRuleUserDefineRuleParsePathRule> parsePathRule() {
         return Optional.ofNullable(this.parsePathRule);
     }
     /**
      * @return LogCollector plugin configuration. After enabling plugin configuration, you can add one or more LogCollector processor plugins to parse logs with complex or variable structures.
-     * 
+     *
      */
     public Optional<HostGroupRuleUserDefineRulePlugin> plugin() {
         return Optional.ofNullable(this.plugin);
     }
     /**
      * @return Original log field name. Only effective when EnableRawLog is set to true. RawLogKey defaults to **raw**, meaning the original log data will be encapsulated in the **raw** field and uploaded to the log service together with the parsed log data
-     * 
+     *
      */
     public Optional<String> rawLogKey() {
         return Optional.ofNullable(this.rawLogKey);
     }
     /**
      * @return Rules for routing log partitions. If this parameter is not set, logs are written using the default load balancing mode, and packets are written to any available Shard. If set, logs are collected using the HashKey routing Shard mode, and the log service writes data to the Shard containing the specified Key value.
-     * 
+     *
      */
     public Optional<HostGroupRuleUserDefineRuleShardHashKey> shardHashKey() {
         return Optional.ofNullable(this.shardHashKey);
     }
     /**
      * @return LogCollector collection strategy, specifying whether LogCollector collects incremental logs or full logs. The default is false, which means full log collection. true: incremental collection. When LogCollector collects logs, it only collects newly added content in the file. When a monitored log file receives new log entries, LogCollector is triggered to collect logs. For log files being collected for the first time, LogCollector automatically determines the collection position based on the incremental threshold TailSizeKb you specify. If the new file size does not exceed the incremental threshold, collection starts from the beginning of the new file. If the new file size exceeds the incremental threshold, collection starts from the position at the end of the file minus the incremental threshold, meaning only incremental logs are collected. For log files that are not being collected for the first time, LogCollector determines the collection position based on the Checkpoint and continues collecting. false: (default) full collection. LogCollector collects logs from the beginning of each file, including historical log data.
-     * 
+     *
      */
     public Optional<Boolean> tailFiles() {
         return Optional.ofNullable(this.tailFiles);
     }
     /**
      * @return Incremental collection backtracking threshold, in KiB. When LogCollector uses incremental collection, for the first collection of a log file: if the new log file size does not exceed the TailSizeKb value, collection starts from the beginning of the file. If the new log file size exceeds the TailSizeKb value, collection starts from the position TailSizeKb from the end of the file.
-     * 
+     *
      */
     public Optional<Integer> tailSizeKb() {
         return Optional.ofNullable(this.tailSizeKb);

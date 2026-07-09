@@ -29,1013 +29,1149 @@ import javax.annotation.Nullable;
 
 /**
  * Volcano Engine Cloud Database MySQL Edition is an elastic and reliable online relational database service built on the open-source MySQL database. MySQL instances are deployed using cloud-native methods and local SSD storage, delivering high-performance read and write capabilities. The service is fully compatible with the MySQL engine and offers a complete suite of solutions, including instance management, backup and recovery, log management, monitoring and alerts, and data migration. This helps enterprises simplify complex database management and operations, allowing them to focus more time and resources on their core business.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.Instance;
+ * import com.byteplus.bytepluscc.rdsmysql.InstanceArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.InstanceNodeArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.InstanceChargeDetailArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.InstanceMaintenanceWindowArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.InstanceAutoStorageScalingConfigArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.InstanceTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rDSMySQLInstanceDemo = new Instance("rDSMySQLInstanceDemo", InstanceArgs.builder()
+ *             .deletionProtection("Disabled")
+ *             .dbEngineVersion("MySQL_5_7")
+ *             .nodes(
+ *                 InstanceNodeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .node_spec("rds.mysql.c.s.1c2g")
+ *                     .node_type("Primary")
+ *                     .build(),
+ *                 InstanceNodeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .node_spec("rds.mysql.c.s.1c2g")
+ *                     .node_type("Secondary")
+ *                     .build(),
+ *                 InstanceNodeArgs.builder()
+ *                     .zone_id("cn-beijing-a")
+ *                     .node_spec("rds.mysql.c.s.1c2g")
+ *                     .node_type("ReadOnly")
+ *                     .build())
+ *             .storageType("CloudESSD_PL0")
+ *             .storageSpace(100)
+ *             .instanceType("DoubleNode")
+ *             .vpcId("vpc-rrco37ovjq4gv0x58xxxxx")
+ *             .subnetId("subnet-rrwqhg3qzxfkv0x57xxxxx")
+ *             .instanceName("RDSMySQLInstanceDemo-PostPaid")
+ *             .superAccountName("test_account")
+ *             .superAccountPassword("***********")
+ *             .lowerCaseTableNames("1")
+ *             .dbTimeZone("UTC +08:00")
+ *             .chargeDetail(InstanceChargeDetailArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .auto_renew(false)
+ *                 .number(1)
+ *                 .build())
+ *             .allowListIds(
+ *                 "acl-8cde5e16f44143788234ca4489xxxxx",
+ *                 "acl-31f6053bd6be4cff88c1b205d20xxxxx")
+ *             .port(3306)
+ *             .maintenanceWindow(InstanceMaintenanceWindowArgs.builder()
+ *                 .day_kind("Week")
+ *                 .day_of_week(Arrays.asList("Monday"))
+ *                 .maintenance_time("18:00Z-21:59Z")
+ *                 .build())
+ *             .autoStorageScalingConfig(InstanceAutoStorageScalingConfigArgs.builder()
+ *                 .enable_storage_auto_scale(true)
+ *                 .storage_threshold(10)
+ *                 .storage_upper_bound(3000)
+ *                 .build())
+ *             .projectName("default")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/instance:Instance example &#34;instance_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdsmysql/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
+    /**
+     * Connection information for the default endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="addressObjects", refs={List.class,InstanceAddressObject.class}, tree="[0,1]")
     private Output<List<InstanceAddressObject>> addressObjects;
 
+    /**
+     * @return Connection information for the default endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceAddressObject>> addressObjects() {
         return this.addressObjects;
     }
     /**
      * Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
-     * 
+     *
      */
     @Export(name="allowListIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
-     * 
+     *
      */
     public Output<List<String>> allowListIds() {
         return this.allowListIds;
     }
     /**
      * Allowlist version
-     * 
+     *
      */
     @Export(name="allowListVersion", refs={String.class}, tree="[0]")
     private Output<String> allowListVersion;
 
     /**
      * @return Allowlist version
-     * 
+     *
      */
     public Output<String> allowListVersion() {
         return this.allowListVersion;
     }
     /**
      * Auto scaling configuration
-     * 
+     *
      */
     @Export(name="autoStorageScalingConfig", refs={InstanceAutoStorageScalingConfig.class}, tree="[0]")
     private Output<InstanceAutoStorageScalingConfig> autoStorageScalingConfig;
 
     /**
      * @return Auto scaling configuration
-     * 
+     *
      */
     public Output<InstanceAutoStorageScalingConfig> autoStorageScalingConfig() {
         return this.autoStorageScalingConfig;
     }
     /**
      * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
-     * 
+     *
      */
     @Export(name="autoUpgradeMinorVersion", refs={String.class}, tree="[0]")
     private Output<String> autoUpgradeMinorVersion;
 
     /**
      * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
-     * 
+     *
      */
     public Output<String> autoUpgradeMinorVersion() {
         return this.autoUpgradeMinorVersion;
     }
     /**
      * Space used by audit logs in backup.
-     * 
+     *
      */
     @Export(name="backupAuditLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupAuditLogSize;
 
     /**
      * @return Space used by audit logs in backup.
-     * 
+     *
      */
     public Output<Integer> backupAuditLogSize() {
         return this.backupAuditLogSize;
     }
     /**
      * Space used by binlog logs in backup.
-     * 
+     *
      */
     @Export(name="backupBinLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupBinLogSize;
 
     /**
      * @return Space used by binlog logs in backup.
-     * 
+     *
      */
     public Output<Integer> backupBinLogSize() {
         return this.backupBinLogSize;
     }
     /**
      * Space used by data in backup.
-     * 
+     *
      */
     @Export(name="backupDataSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupDataSize;
 
     /**
      * @return Space used by data in backup.
-     * 
+     *
      */
     public Output<Integer> backupDataSize() {
         return this.backupDataSize;
     }
     /**
      * Space used by error logs in backups.
-     * 
+     *
      */
     @Export(name="backupErrorLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupErrorLogSize;
 
     /**
      * @return Space used by error logs in backups.
-     * 
+     *
      */
     public Output<Integer> backupErrorLogSize() {
         return this.backupErrorLogSize;
     }
     /**
      * Free backup storage space, in GB
-     * 
+     *
      */
     @Export(name="backupFreeQuotaSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupFreeQuotaSize;
 
     /**
      * @return Free backup storage space, in GB
-     * 
+     *
      */
     public Output<Integer> backupFreeQuotaSize() {
         return this.backupFreeQuotaSize;
     }
     /**
      * Space used by logs in backups.
-     * 
+     *
      */
     @Export(name="backupLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupLogSize;
 
     /**
      * @return Space used by logs in backups.
-     * 
+     *
      */
     public Output<Integer> backupLogSize() {
         return this.backupLogSize;
     }
     /**
      * Instance backup policy configuration.
-     * 
+     *
      */
     @Export(name="backupPolicy", refs={InstanceBackupPolicy.class}, tree="[0]")
     private Output<InstanceBackupPolicy> backupPolicy;
 
     /**
      * @return Instance backup policy configuration.
-     * 
+     *
      */
     public Output<InstanceBackupPolicy> backupPolicy() {
         return this.backupPolicy;
     }
     /**
      * Space used by slow logs in backups.
-     * 
+     *
      */
     @Export(name="backupSlowLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> backupSlowLogSize;
 
     /**
      * @return Space used by slow logs in backups.
-     * 
+     *
      */
     public Output<Integer> backupSlowLogSize() {
         return this.backupSlowLogSize;
     }
     /**
      * Backup space used by the instance, in GB
-     * 
+     *
      */
     @Export(name="backupUse", refs={Double.class}, tree="[0]")
     private Output<Double> backupUse;
 
     /**
      * @return Backup space used by the instance, in GB
-     * 
+     *
      */
     public Output<Double> backupUse() {
         return this.backupUse;
     }
     /**
      * Space used by Binlog logs in basic backups.
-     * 
+     *
      */
     @Export(name="basicBackupBinlogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> basicBackupBinlogSize;
 
     /**
      * @return Space used by Binlog logs in basic backups.
-     * 
+     *
      */
     public Output<Integer> basicBackupBinlogSize() {
         return this.basicBackupBinlogSize;
     }
     /**
      * Space used by data in the base backup
-     * 
+     *
      */
     @Export(name="basicBackupDataSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> basicBackupDataSize;
 
     /**
      * @return Space used by data in the base backup
-     * 
+     *
      */
     public Output<Integer> basicBackupDataSize() {
         return this.basicBackupDataSize;
     }
     /**
      * Billing method
-     * 
+     *
      */
     @Export(name="chargeDetail", refs={InstanceChargeDetail.class}, tree="[0]")
     private Output<InstanceChargeDetail> chargeDetail;
 
     /**
      * @return Billing method
-     * 
+     *
      */
     public Output<InstanceChargeDetail> chargeDetail() {
         return this.chargeDetail;
     }
     /**
      * Number of CPU cores for the database proxy service of the instance
-     * 
+     *
      */
     @Export(name="cpuNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> cpuNum;
 
     /**
      * @return Number of CPU cores for the database proxy service of the instance
-     * 
+     *
      */
     public Output<Integer> cpuNum() {
         return this.cpuNum;
     }
     /**
      * Instance creation local time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Instance creation local time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Instance kernel minor version.
-     * 
+     *
      */
     @Export(name="currentKernelVersion", refs={String.class}, tree="[0]")
     private Output<String> currentKernelVersion;
 
     /**
      * @return Instance kernel minor version.
-     * 
+     *
      */
     public Output<String> currentKernelVersion() {
         return this.currentKernelVersion;
     }
     /**
      * Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
-     * 
+     *
      */
     @Export(name="dbEngineVersion", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersion;
 
     /**
      * @return Compatible versions. Values: MySQL*5*7: MySQL 5.7 version. MySQL*8*0: MySQL 8.0 version
-     * 
+     *
      */
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
      * Parameter template ID. Default value is the default parameter template for the database engine version
-     * 
+     *
      */
     @Export(name="dbParamGroupId", refs={String.class}, tree="[0]")
     private Output<String> dbParamGroupId;
 
     /**
      * @return Parameter template ID. Default value is the default parameter template for the database engine version
-     * 
+     *
      */
     public Output<String> dbParamGroupId() {
         return this.dbParamGroupId;
     }
     /**
      * Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
-     * 
+     *
      */
     @Export(name="dbTimeZone", refs={String.class}, tree="[0]")
     private Output<String> dbTimeZone;
 
     /**
      * @return Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
-     * 
+     *
      */
     public Output<String> dbTimeZone() {
         return this.dbTimeZone;
     }
     /**
      * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
-     * 
+     *
      */
     @Export(name="deletionProtection", refs={String.class}, tree="[0]")
     private Output<String> deletionProtection;
 
     /**
      * @return Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
-     * 
+     *
      */
     public Output<String> deletionProtection() {
         return this.deletionProtection;
     }
+    /**
+     * Disaster recovery instance information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="disasterRecoveryInstances", refs={List.class,InstanceDisasterRecoveryInstance.class}, tree="[0,1]")
     private Output<List<InstanceDisasterRecoveryInstance>> disasterRecoveryInstances;
 
+    /**
+     * @return Disaster recovery instance information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceDisasterRecoveryInstance>> disasterRecoveryInstances() {
         return this.disasterRecoveryInstances;
     }
     /**
      * ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
-     * 
+     *
      */
     @Export(name="drDtsTaskId", refs={String.class}, tree="[0]")
     private Output<String> drDtsTaskId;
 
     /**
      * @return ID of the data synchronization link between the primary and disaster recovery instances in the DTS data synchronization task.
-     * 
+     *
      */
     public Output<String> drDtsTaskId() {
         return this.drDtsTaskId;
     }
     /**
      * Name of synchronization tasks between primary and disaster recovery instances.
-     * 
+     *
      */
     @Export(name="drDtsTaskName", refs={String.class}, tree="[0]")
     private Output<String> drDtsTaskName;
 
     /**
      * @return Name of synchronization tasks between primary and disaster recovery instances.
-     * 
+     *
      */
     public Output<String> drDtsTaskName() {
         return this.drDtsTaskName;
     }
     /**
      * Status of synchronization tasks between primary and disaster recovery instances.
-     * 
+     *
      */
     @Export(name="drDtsTaskStatus", refs={String.class}, tree="[0]")
     private Output<String> drDtsTaskStatus;
 
     /**
      * @return Status of synchronization tasks between primary and disaster recovery instances.
-     * 
+     *
      */
     public Output<String> drDtsTaskStatus() {
         return this.drDtsTaskStatus;
     }
     /**
      * Latency between the disaster recovery instance and the primary instance.
-     * 
+     *
      */
     @Export(name="drSecondsBehindMaster", refs={Integer.class}, tree="[0]")
     private Output<Integer> drSecondsBehindMaster;
 
     /**
      * @return Latency between the disaster recovery instance and the primary instance.
-     * 
+     *
      */
     public Output<Integer> drSecondsBehindMaster() {
         return this.drSecondsBehindMaster;
     }
+    /**
+     * Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
 
+    /**
+     * @return Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
     /**
      * Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
-     * 
+     *
      */
     @Export(name="engineType", refs={String.class}, tree="[0]")
     private Output<String> engineType;
 
     /**
      * @return Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
-     * 
+     *
      */
     public Output<String> engineType() {
         return this.engineType;
     }
     /**
      * Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
-     * 
+     *
      */
     @Export(name="globalReadOnly", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> globalReadOnly;
 
     /**
      * @return Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
-     * 
+     *
      */
     public Output<Boolean> globalReadOnly() {
         return this.globalReadOnly;
     }
     /**
      * Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
-     * 
+     *
      */
     @Export(name="hasDisasterRecoveryInstances", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> hasDisasterRecoveryInstances;
 
     /**
      * @return Whether the instance has a disaster recovery instance. Values: true: Yes. false: No.
-     * 
+     *
      */
     public Output<Boolean> hasDisasterRecoveryInstances() {
         return this.hasDisasterRecoveryInstances;
     }
     /**
      * Is the instance in blue-green deployment? Values: true: yes. false: no.
-     * 
+     *
      */
     @Export(name="hasGreenInstance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> hasGreenInstance;
 
     /**
      * @return Is the instance in blue-green deployment? Values: true: yes. false: no.
-     * 
+     *
      */
     public Output<Boolean> hasGreenInstance() {
         return this.hasGreenInstance;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance name.
-     * 
+     *
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name.
-     * 
+     *
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
      * Instance status.
-     * 
+     *
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
      * @return Instance status.
-     * 
+     *
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
      * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
-     * 
+     *
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
-     * 
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
-     * 
+     *
      */
     @Export(name="lowerCaseTableNames", refs={String.class}, tree="[0]")
     private Output<String> lowerCaseTableNames;
 
     /**
      * @return Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
-     * 
+     *
      */
     public Output<String> lowerCaseTableNames() {
         return this.lowerCaseTableNames;
     }
     /**
      * Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
-     * 
+     *
      */
     @Export(name="maintenanceWindow", refs={InstanceMaintenanceWindow.class}, tree="[0]")
     private Output<InstanceMaintenanceWindow> maintenanceWindow;
 
     /**
      * @return Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
-     * 
+     *
      */
     public Output<InstanceMaintenanceWindow> maintenanceWindow() {
         return this.maintenanceWindow;
     }
     /**
      * Primary instance ID
-     * 
+     *
      */
     @Export(name="masterInstanceId", refs={String.class}, tree="[0]")
     private Output<String> masterInstanceId;
 
     /**
      * @return Primary instance ID
-     * 
+     *
      */
     public Output<String> masterInstanceId() {
         return this.masterInstanceId;
     }
     /**
      * Primary instance name.
-     * 
+     *
      */
     @Export(name="masterInstanceName", refs={String.class}, tree="[0]")
     private Output<String> masterInstanceName;
 
     /**
      * @return Primary instance name.
-     * 
+     *
      */
     public Output<String> masterInstanceName() {
         return this.masterInstanceName;
     }
     /**
      * Memory size. Unit: GB.
-     * 
+     *
      */
     @Export(name="memory", refs={Integer.class}, tree="[0]")
     private Output<Integer> memory;
 
     /**
      * @return Memory size. Unit: GB.
-     * 
+     *
      */
     public Output<Integer> memory() {
         return this.memory;
     }
     /**
      * Average CPU usage of the primary node in the instance over the past minute.
-     * 
+     *
      */
     @Export(name="nodeCpuUsedPercentage", refs={Double.class}, tree="[0]")
     private Output<Double> nodeCpuUsedPercentage;
 
     /**
      * @return Average CPU usage of the primary node in the instance over the past minute.
-     * 
+     *
      */
     public Output<Double> nodeCpuUsedPercentage() {
         return this.nodeCpuUsedPercentage;
     }
     /**
      * Average memory usage of the primary node over the past minute
-     * 
+     *
      */
     @Export(name="nodeMemoryUsedPercentage", refs={Double.class}, tree="[0]")
     private Output<Double> nodeMemoryUsedPercentage;
 
     /**
      * @return Average memory usage of the primary node over the past minute
-     * 
+     *
      */
     public Output<Double> nodeMemoryUsedPercentage() {
         return this.nodeMemoryUsedPercentage;
     }
     /**
      * Number of nodes.
-     * 
+     *
      */
     @Export(name="nodeNumber", refs={String.class}, tree="[0]")
     private Output<String> nodeNumber;
 
     /**
      * @return Number of nodes.
-     * 
+     *
      */
     public Output<String> nodeNumber() {
         return this.nodeNumber;
     }
     /**
      * Average disk usage of the primary node over the past minute
-     * 
+     *
      */
     @Export(name="nodeSpaceUsedPercentage", refs={Double.class}, tree="[0]")
     private Output<Double> nodeSpaceUsedPercentage;
 
     /**
      * @return Average disk usage of the primary node over the past minute
-     * 
+     *
      */
     public Output<Double> nodeSpaceUsedPercentage() {
         return this.nodeSpaceUsedPercentage;
     }
     /**
      * Node specifications.
-     * 
+     *
      */
     @Export(name="nodeSpec", refs={String.class}, tree="[0]")
     private Output<String> nodeSpec;
 
     /**
      * @return Node specifications.
-     * 
+     *
      */
     public Output<String> nodeSpec() {
         return this.nodeSpec;
     }
+    /**
+     * Instance node information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="nodes", refs={List.class,InstanceNode.class}, tree="[0,1]")
     private Output<List<InstanceNode>> nodes;
 
+    /**
+     * @return Instance node information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceNode>> nodes() {
         return this.nodes;
     }
     /**
      * Parameter template ID.
-     * 
+     *
      */
     @Export(name="parameterTemplateId", refs={String.class}, tree="[0]")
     private Output<String> parameterTemplateId;
 
     /**
      * @return Parameter template ID.
-     * 
+     *
      */
     public Output<String> parameterTemplateId() {
         return this.parameterTemplateId;
     }
     /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
-     * 
+     *
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
-     * 
+     *
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
-     * 
+     *
      */
     @Export(name="privateIpAddress", refs={String.class}, tree="[0]")
     private Output<String> privateIpAddress;
 
     /**
      * @return Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
-     * 
+     *
      */
     public Output<String> privateIpAddress() {
         return this.privateIpAddress;
     }
     /**
      * Project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * proxy information
-     * 
+     *
      */
     @Export(name="proxyDetail", refs={InstanceProxyDetail.class}, tree="[0]")
     private Output<InstanceProxyDetail> proxyDetail;
 
     /**
      * @return proxy information
-     * 
+     *
      */
     public Output<InstanceProxyDetail> proxyDetail() {
         return this.proxyDetail;
     }
     /**
      * Space used by audit logs in instance storage
-     * 
+     *
      */
     @Export(name="storageAuditLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageAuditLogSize;
 
     /**
      * @return Space used by audit logs in instance storage
-     * 
+     *
      */
     public Output<Integer> storageAuditLogSize() {
         return this.storageAuditLogSize;
     }
     /**
      * Binlog space usage in the instance storage
-     * 
+     *
      */
     @Export(name="storageBinLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageBinLogSize;
 
     /**
      * @return Binlog space usage in the instance storage
-     * 
+     *
      */
     public Output<Integer> storageBinLogSize() {
         return this.storageBinLogSize;
     }
     /**
      * Space used by data in instance storage.
-     * 
+     *
      */
     @Export(name="storageDataSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageDataSize;
 
     /**
      * @return Space used by data in instance storage.
-     * 
+     *
      */
     public Output<Integer> storageDataSize() {
         return this.storageDataSize;
     }
     /**
      * Space used by error logs in instance storage.
-     * 
+     *
      */
     @Export(name="storageErrorLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageErrorLogSize;
 
     /**
      * @return Space used by error logs in instance storage.
-     * 
+     *
      */
     public Output<Integer> storageErrorLogSize() {
         return this.storageErrorLogSize;
     }
     /**
      * Space used by logs in the instance storage
-     * 
+     *
      */
     @Export(name="storageLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageLogSize;
 
     /**
      * @return Space used by logs in the instance storage
-     * 
+     *
      */
     public Output<Integer> storageLogSize() {
         return this.storageLogSize;
     }
     /**
      * Space used by slow logs in instance storage
-     * 
+     *
      */
     @Export(name="storageSlowLogSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSlowLogSize;
 
     /**
      * @return Space used by slow logs in instance storage
-     * 
+     *
      */
     public Output<Integer> storageSlowLogSize() {
         return this.storageSlowLogSize;
     }
     /**
      * Total storage space of the instance, in GB
-     * 
+     *
      */
     @Export(name="storageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSpace;
 
     /**
      * @return Total storage space of the instance, in GB
-     * 
+     *
      */
     public Output<Integer> storageSpace() {
         return this.storageSpace;
     }
     /**
      * Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
-     * 
+     *
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
      * @return Instance storage type. Value range: LocalSSD: local disk. CloudESSD*FlexPL: FlexPL cloud disk. CloudESSD*PL0: PL0 cloud disk.
-     * 
+     *
      */
     public Output<String> storageType() {
         return this.storageType;
     }
     /**
      * Storage space used by the instance, in GB
-     * 
+     *
      */
     @Export(name="storageUse", refs={Double.class}, tree="[0]")
     private Output<Double> storageUse;
 
     /**
      * @return Storage space used by the instance, in GB
-     * 
+     *
      */
     public Output<Double> storageUse() {
         return this.storageUse;
     }
     /**
      * Subnet ID.
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
      * High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
-     * 
+     *
      */
     @Export(name="superAccountName", refs={String.class}, tree="[0]")
     private Output<String> superAccountName;
 
     /**
      * @return High-privilege account name. If this parameter is not provided, a high-privilege account will not be created by default.
-     * 
+     *
      */
     public Output<String> superAccountName() {
         return this.superAccountName;
     }
     /**
      * Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
-     * 
+     *
      */
     @Export(name="superAccountPassword", refs={String.class}, tree="[0]")
     private Output<String> superAccountPassword;
 
     /**
      * @return Password for high-privilege account. Password rules: 8–32 characters in length. Must contain at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
-     * 
+     *
      */
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
     }
     /**
      * Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
-     * 
+     *
      */
     @Export(name="syncMode", refs={String.class}, tree="[0]")
     private Output<String> syncMode;
 
     /**
      * @return Data synchronization mode: SemiSync: semi-synchronous. Async: asynchronous
-     * 
+     *
      */
     public Output<String> syncMode() {
         return this.syncMode;
     }
+    /**
+     * RDS MySQL instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return RDS MySQL instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Time zone
-     * 
+     *
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
      * @return Time zone
-     * 
+     *
      */
     public Output<String> timeZone() {
         return this.timeZone;
     }
     /**
      * Instance updates local time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Instance updates local time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * CPU size. For example: 1 means 1U.
-     * 
+     *
      */
     @Export(name="vcpu", refs={Integer.class}, tree="[0]")
     private Output<Integer> vcpu;
 
     /**
      * @return CPU size. For example: 1 means 1U.
-     * 
+     *
      */
     public Output<Integer> vcpu() {
         return this.vcpu;
     }
     /**
      * VPC (Virtual Private Cloud) ID.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC (Virtual Private Cloud) ID.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone of the instance&#39;s primary node.
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone of the instance&#39;s primary node.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
     }
     /**
      * List of availability zones for each node in the instance.
-     * 
+     *
      */
     @Export(name="zoneIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> zoneIds;
 
     /**
      * @return List of availability zones for each node in the instance.
-     * 
+     *
      */
     public Output<List<String>> zoneIds() {
         return this.zoneIds;

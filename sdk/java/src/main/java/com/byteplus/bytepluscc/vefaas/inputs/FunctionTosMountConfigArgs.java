@@ -20,14 +20,14 @@ public final class FunctionTosMountConfigArgs extends com.pulumi.resources.Resou
 
     /**
      * AKSK with TOS domain access permission.
-     * 
+     *
      */
     @Import(name="credentials")
     private @Nullable Output<FunctionTosMountConfigCredentialsArgs> credentials;
 
     /**
      * @return AKSK with TOS domain access permission.
-     * 
+     *
      */
     public Optional<Output<FunctionTosMountConfigCredentialsArgs>> credentials() {
         return Optional.ofNullable(this.credentials);
@@ -35,22 +35,32 @@ public final class FunctionTosMountConfigArgs extends com.pulumi.resources.Resou
 
     /**
      * Enable TOS storage mount.
-     * 
+     *
      */
     @Import(name="enableTos")
     private @Nullable Output<Boolean> enableTos;
 
     /**
      * @return Enable TOS storage mount.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableTos() {
         return Optional.ofNullable(this.enableTos);
     }
 
+    /**
+     * TOS storage configuration list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="mountPoints")
     private @Nullable Output<List<FunctionTosMountConfigMountPointArgs>> mountPoints;
 
+    /**
+     * @return TOS storage configuration list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<FunctionTosMountConfigMountPointArgs>>> mountPoints() {
         return Optional.ofNullable(this.mountPoints);
     }
@@ -83,9 +93,9 @@ public final class FunctionTosMountConfigArgs extends com.pulumi.resources.Resou
 
         /**
          * @param credentials AKSK with TOS domain access permission.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder credentials(@Nullable Output<FunctionTosMountConfigCredentialsArgs> credentials) {
             $.credentials = credentials;
@@ -94,9 +104,9 @@ public final class FunctionTosMountConfigArgs extends com.pulumi.resources.Resou
 
         /**
          * @param credentials AKSK with TOS domain access permission.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder credentials(FunctionTosMountConfigCredentialsArgs credentials) {
             return credentials(Output.of(credentials));
@@ -104,9 +114,9 @@ public final class FunctionTosMountConfigArgs extends com.pulumi.resources.Resou
 
         /**
          * @param enableTos Enable TOS storage mount.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableTos(@Nullable Output<Boolean> enableTos) {
             $.enableTos = enableTos;
@@ -115,23 +125,44 @@ public final class FunctionTosMountConfigArgs extends com.pulumi.resources.Resou
 
         /**
          * @param enableTos Enable TOS storage mount.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableTos(Boolean enableTos) {
             return enableTos(Output.of(enableTos));
         }
 
+        /**
+         * @param mountPoints TOS storage configuration list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder mountPoints(@Nullable Output<List<FunctionTosMountConfigMountPointArgs>> mountPoints) {
             $.mountPoints = mountPoints;
             return this;
         }
 
+        /**
+         * @param mountPoints TOS storage configuration list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder mountPoints(List<FunctionTosMountConfigMountPointArgs> mountPoints) {
             return mountPoints(Output.of(mountPoints));
         }
 
+        /**
+         * @param mountPoints TOS storage configuration list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder mountPoints(FunctionTosMountConfigMountPointArgs... mountPoints) {
             return mountPoints(List.of(mountPoints));
         }

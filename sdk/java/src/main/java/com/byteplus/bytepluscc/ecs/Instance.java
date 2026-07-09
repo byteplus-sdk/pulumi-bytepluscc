@@ -32,803 +32,969 @@ import javax.annotation.Nullable;
 
 /**
  * Represents an Elastic Compute Service (ECS) instance resource.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.ecs.Instance;
+ * import com.byteplus.bytepluscc.ecs.InstanceArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.InstanceImageArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.InstanceEipAddressArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.InstancePrimaryNetworkInterfaceArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.InstanceSecondaryNetworkInterfaceArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.InstancePlacementArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.InstanceSystemVolumeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var ecsInstanceDemo = new Instance("ecsInstanceDemo", InstanceArgs.builder()
+ *             .password("**********")
+ *             .instanceChargeType("PostPaid")
+ *             .instanceName("EcsInstanceDemo")
+ *             .spotStrategy("NoSpot")
+ *             .hostname("EcsInstanceDemo")
+ *             .description("EcsInstanceDemo Description")
+ *             .projectName("default")
+ *             .instanceType("ecs.g4i.large")
+ *             .deletionProtection(false)
+ *             .zoneId("cn-beijing-a")
+ *             .deploymentSetId("dps-ydzccfzqjoaa98kxxxxx")
+ *             .deploymentSetGroupNumber(1)
+ *             .image(InstanceImageArgs.builder()
+ *                 .image_id("image-aagd56zrw2jtdroxxxxx")
+ *                 .build())
+ *             .vpcId("vpc-rrco37ovjq4gv0x58zxxxxx")
+ *             .eipAddress(InstanceEipAddressArgs.builder()
+ *                 .charge_type("PayByTraffic")
+ *                 .bandwidth_mbps(5)
+ *                 .isp("BGP")
+ *                 .release_with_instance(false)
+ *                 .bandwidth_package_id("")
+ *                 .build())
+ *             .primaryNetworkInterface(InstancePrimaryNetworkInterfaceArgs.builder()
+ *                 .security_group_ids(Arrays.asList("sg-1v9zvjkmx14w51j8e73xxxxx"))
+ *                 .subnet_id("subnet-rrwqhg3qzxfkv0x57gxxxxx")
+ *                 .ipv_6_address_count(1)
+ *                 .build())
+ *             .secondaryNetworkInterfaces(InstanceSecondaryNetworkInterfaceArgs.builder()
+ *                 .security_group_ids(Arrays.asList("sg-1v9zvjkmx14w51j8e73xxxxx"))
+ *                 .subnet_id("subnet-rrwqhg3qzxfkv0x57gxxxxx")
+ *                 .build())
+ *             .placement(InstancePlacementArgs.builder()
+ *                 .affinity("Default")
+ *                 .dedicated_host_cluster_id("")
+ *                 .tenancy("Default")
+ *                 .dedicated_host_id("")
+ *                 .build())
+ *             .systemVolume(InstanceSystemVolumeArgs.builder()
+ *                 .size(50)
+ *                 .delete_with_instance(true)
+ *                 .volume_type("ESSD_FlexPL")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:ecs/instance:Instance example &#34;instance_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:ecs/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Affinity group ID.
-     * 
+     *
      */
     @Export(name="affinityGroupId", refs={String.class}, tree="[0]")
     private Output<String> affinityGroupId;
 
     /**
      * @return Affinity group ID.
-     * 
+     *
      */
     public Output<String> affinityGroupId() {
         return this.affinityGroupId;
     }
     /**
-     * Affinity group specification. Value: 2. **Note:** - Currently, only high performance computing NPU-type hpcpci3
-     * instances (by invitation) support affinity groups. - This feature is in invitation testing. To try it, please contact
-     * your account manager.
-     * 
+     * Affinity group specification. Value: 2.
+     *
+     *   **Note:**
+     *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
+     *     - This feature is in invitation testing. To try it, please contact your account manager.
+     *
      */
     @Export(name="affinityGroupSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> affinityGroupSize;
 
     /**
-     * @return Affinity group specification. Value: 2. **Note:** - Currently, only high performance computing NPU-type hpcpci3
-     * instances (by invitation) support affinity groups. - This feature is in invitation testing. To try it, please contact
-     * your account manager.
-     * 
+     * @return Affinity group specification. Value: 2.
+     *
+     *   **Note:**
+     *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
+     *     - This feature is in invitation testing. To try it, please contact your account manager.
+     *
      */
     public Output<Integer> affinityGroupSize() {
         return this.affinityGroupSize;
     }
     /**
-     * Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is
-     * insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only
-     * generates the order without charging. You can log in to the order management page to complete payment after the order is
-     * generated.
-     * 
+     * Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only generates the order without charging. You can log in to the order management page to complete payment after the order is generated.
+     *
      */
     @Export(name="autoPay", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoPay;
 
     /**
-     * @return Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is
-     * insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only
-     * generates the order without charging. You can log in to the order management page to complete payment after the order is
-     * generated.
-     * 
+     * @return Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only generates the order without charging. You can log in to the order management page to complete payment after the order is generated.
+     *
      */
     public Output<Boolean> autoPay() {
         return this.autoPay;
     }
     /**
-     * Whether the instance will be automatically renewed upon expiration. Values: - true: Auto renewal - false (default): No
-     * auto renewal **Note:** This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * Whether the instance will be automatically renewed upon expiration. Values:
+     *     - true: Auto renewal
+     *     - false (default): No auto renewal
+     *
+     *   **Note:**
+     *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     @Export(name="autoRenew", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoRenew;
 
     /**
-     * @return Whether the instance will be automatically renewed upon expiration. Values: - true: Auto renewal - false (default): No
-     * auto renewal **Note:** This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * @return Whether the instance will be automatically renewed upon expiration. Values:
+     *     - true: Auto renewal
+     *     - false (default): No auto renewal
+     *
+     *   **Note:**
+     *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
     }
     /**
-     * Duration for each automatic renewal. - This parameter takes effect only when `AutoRenew` is set to `True`. Default value
-     * is 1. - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
-     * 
+     * Duration for each automatic renewal.
+     *     - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
+     *     - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
+     *
      */
     @Export(name="autoRenewPeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> autoRenewPeriod;
 
     /**
-     * @return Duration for each automatic renewal. - This parameter takes effect only when `AutoRenew` is set to `True`. Default value
-     * is 1. - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
-     * 
+     * @return Duration for each automatic renewal.
+     *     - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
+     *     - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
+     *
      */
     public Output<Integer> autoRenewPeriod() {
         return this.autoRenewPeriod;
     }
     /**
-     * Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency. **Note:**
-     * - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo
-     *   frequencies and more information, see [Instance Specifications
-     *   Introduction](https://www.volcengine.com/docs/6396/70840). - This feature is in invitation-only testing. To use it,
-     *   please contact your account manager.
-     * 
+     * Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency.
+     *
+     *   **Note:**
+     *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
+     *     - This feature is in invitation-only testing. To use it, please contact your account manager.
+     *
      */
     @Export(name="cpuMaxFrequency", refs={Double.class}, tree="[0]")
     private Output<Double> cpuMaxFrequency;
 
     /**
-     * @return Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency. **Note:**
-     * - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo
-     *   frequencies and more information, see [Instance Specifications
-     *   Introduction](https://www.volcengine.com/docs/6396/70840). - This feature is in invitation-only testing. To use it,
-     *   please contact your account manager.
-     * 
+     * @return Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency.
+     *
+     *   **Note:**
+     *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
+     *     - This feature is in invitation-only testing. To use it, please contact your account manager.
+     *
      */
     public Output<Double> cpuMaxFrequency() {
         return this.cpuMaxFrequency;
     }
     /**
      * The CPU options for the instance.
-     * 
+     *
      */
     @Export(name="cpuMemory", refs={InstanceCpuMemory.class}, tree="[0]")
     private Output<InstanceCpuMemory> cpuMemory;
 
     /**
      * @return The CPU options for the instance.
-     * 
+     *
      */
     public Output<InstanceCpuMemory> cpuMemory() {
         return this.cpuMemory;
     }
     /**
      * Instance creation time.
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Instance creation time.
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
-     * Burstable instance operating mode. Values: - Standard: Standard mode. - Unlimited: Unlimited performance mode (not
-     * supported yet). **Note:** - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e.,
-     * burstable instances. - If not specified or left empty, burstable instances default to `Standard` mode.
-     * 
+     * Burstable instance operating mode. Values:
+     *     - Standard: Standard mode.
+     *     - Unlimited: Unlimited performance mode (not supported yet).
+     *
+     *   **Note:**
+     *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
+     *     - If not specified or left empty, burstable instances default to `Standard` mode.
+     *
      */
     @Export(name="creditSpecification", refs={String.class}, tree="[0]")
     private Output<String> creditSpecification;
 
     /**
-     * @return Burstable instance operating mode. Values: - Standard: Standard mode. - Unlimited: Unlimited performance mode (not
-     * supported yet). **Note:** - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e.,
-     * burstable instances. - If not specified or left empty, burstable instances default to `Standard` mode.
-     * 
+     * @return Burstable instance operating mode. Values:
+     *     - Standard: Standard mode.
+     *     - Unlimited: Unlimited performance mode (not supported yet).
+     *
+     *   **Note:**
+     *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
+     *     - If not specified or left empty, burstable instances default to `Standard` mode.
+     *
      */
     public Output<String> creditSpecification() {
         return this.creditSpecification;
     }
     /**
-     * Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values: -
-     * true: Enable instance deletion protection - false (default): Disable instance deletion protection When deletion
-     * protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code.
-     * To delete the instance, disable deletion protection first
-     * 
+     * Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
+     *     - true: Enable instance deletion protection
+     *     - false (default): Disable instance deletion protection
+     *   When deletion protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code. To delete the instance, disable deletion protection first
+     *
      */
     @Export(name="deletionProtection", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deletionProtection;
 
     /**
-     * @return Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values: -
-     * true: Enable instance deletion protection - false (default): Disable instance deletion protection When deletion
-     * protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code.
-     * To delete the instance, disable deletion protection first
-     * 
+     * @return Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
+     *     - true: Enable instance deletion protection
+     *     - false (default): Disable instance deletion protection
+     *   When deletion protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code. To delete the instance, disable deletion protection first
+     *
      */
     public Output<Boolean> deletionProtection() {
         return this.deletionProtection;
     }
     /**
-     * When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify
-     * the group number of the instance within the deployment set. Value range: 1–7.
-     * 
+     * When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify the group number of the instance within the deployment set. Value range: 1–7.
+     *
      */
     @Export(name="deploymentSetGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> deploymentSetGroupNumber;
 
     /**
-     * @return When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify
-     * the group number of the instance within the deployment set. Value range: 1–7.
-     * 
+     * @return When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify the group number of the instance within the deployment set. Value range: 1–7.
+     *
      */
     public Output<Integer> deploymentSetGroupNumber() {
         return this.deploymentSetGroupNumber;
     }
     /**
-     * The deployment set ID the instance needs to join. - You can call the
-     * [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets. - For more
-     * information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
-     * 
+     * The deployment set ID the instance needs to join.
+     *     - You can call the [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets.
+     *     - For more information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
+     *
      */
     @Export(name="deploymentSetId", refs={String.class}, tree="[0]")
     private Output<String> deploymentSetId;
 
     /**
-     * @return The deployment set ID the instance needs to join. - You can call the
-     * [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets. - For more
-     * information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
-     * 
+     * @return The deployment set ID the instance needs to join.
+     *     - You can call the [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets.
+     *     - For more information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
+     *
      */
     public Output<String> deploymentSetId() {
         return this.deploymentSetId;
     }
     /**
-     * The description of the instance. Default is an empty string. - Must start with a letter or Chinese character - Can only
-     * contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma
-     * &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39; - Maximum length is 255 characters
-     * 
+     * The description of the instance. Default is an empty string.
+     *     - Must start with a letter or Chinese character
+     *     - Can only contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;
+     *     - Maximum length is 255 characters
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
-     * @return The description of the instance. Default is an empty string. - Must start with a letter or Chinese character - Can only
-     * contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma
-     * &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39; - Maximum length is 255 characters
-     * 
+     * @return The description of the instance. Default is an empty string.
+     *     - Must start with a letter or Chinese character
+     *     - Can only contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;
+     *     - Maximum length is 255 characters
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * The EIP address of the instance.
-     * 
+     *
      */
     @Export(name="eipAddress", refs={InstanceEipAddress.class}, tree="[0]")
     private Output<InstanceEipAddress> eipAddress;
 
     /**
      * @return The EIP address of the instance.
-     * 
+     *
      */
     public Output<InstanceEipAddress> eipAddress() {
         return this.eipAddress;
     }
     /**
-     * Elastic reservation instance type. Values: NoEsi: Non-elastic reservation instance. Esi: Elastic reservation instance.
-     * Segmented: Elastic reservation instance - time segment type.
-     * 
+     * Elastic reservation instance type. Values: NoEsi: Non-elastic reservation instance. Esi: Elastic reservation instance. Segmented: Elastic reservation instance   - time segment type.
+     *
      */
     @Export(name="elasticScheduledInstanceType", refs={String.class}, tree="[0]")
     private Output<String> elasticScheduledInstanceType;
 
     /**
-     * @return Elastic reservation instance type. Values: NoEsi: Non-elastic reservation instance. Esi: Elastic reservation instance.
-     * Segmented: Elastic reservation instance - time segment type.
-     * 
+     * @return Elastic reservation instance type. Values: NoEsi: Non-elastic reservation instance. Esi: Elastic reservation instance. Segmented: Elastic reservation instance   - time segment type.
+     *
      */
     public Output<String> elasticScheduledInstanceType() {
         return this.elasticScheduledInstanceType;
     }
     /**
-     * Whether jumbo frames are enabled for the instance. Values: - false: Jumbo frames are disabled. All network interfaces
-     * have an MTU of 1500. - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
-     * 
+     * Whether jumbo frames are enabled for the instance. Values:
+     *     - false: Jumbo frames are disabled. All network interfaces have an MTU of 1500.
+     *     - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
+     *
      */
     @Export(name="enableJumboFrame", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableJumboFrame;
 
     /**
-     * @return Whether jumbo frames are enabled for the instance. Values: - false: Jumbo frames are disabled. All network interfaces
-     * have an MTU of 1500. - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
-     * 
+     * @return Whether jumbo frames are enabled for the instance. Values:
+     *     - false: Jumbo frames are disabled. All network interfaces have an MTU of 1500.
+     *     - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
+     *
      */
     public Output<Boolean> enableJumboFrame() {
         return this.enableJumboFrame;
     }
     /**
      * The expiration time of the instance.
-     * 
+     *
      */
     @Export(name="expiredAt", refs={String.class}, tree="[0]")
     private Output<String> expiredAt;
 
     /**
      * @return The expiration time of the instance.
-     * 
+     *
      */
     public Output<String> expiredAt() {
         return this.expiredAt;
     }
     /**
-     * Instance hostname, which is the computer name inside the instance operating system. - Linux instances: - Letters,
-     * numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed. - Cannot start or end with a hyphen or period, and cannot use
-     * consecutive hyphens and periods. - Linux system hostname length must be between 2 and 63 characters. - Windows
-     * instances: - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers. - Cannot start or
-     * end with a hyphen, and cannot use consecutive hyphens. - Windows system hostname length must be between 2 and 15
-     * characters.
-     * 
+     * Instance hostname, which is the computer name inside the instance operating system.
+     *     - Linux instances:
+     *       - Letters, numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed.
+     *       - Cannot start or end with a hyphen or period, and cannot use consecutive hyphens and periods.
+     *       - Linux system hostname length must be between 2 and 63 characters.
+     *     - Windows instances:
+     *       - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers.
+     *       - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
+     *       - Windows system hostname length must be between 2 and 15 characters.
+     *
      */
     @Export(name="hostname", refs={String.class}, tree="[0]")
     private Output<String> hostname;
 
     /**
-     * @return Instance hostname, which is the computer name inside the instance operating system. - Linux instances: - Letters,
-     * numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed. - Cannot start or end with a hyphen or period, and cannot use
-     * consecutive hyphens and periods. - Linux system hostname length must be between 2 and 63 characters. - Windows
-     * instances: - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers. - Cannot start or
-     * end with a hyphen, and cannot use consecutive hyphens. - Windows system hostname length must be between 2 and 15
-     * characters.
-     * 
+     * @return Instance hostname, which is the computer name inside the instance operating system.
+     *     - Linux instances:
+     *       - Letters, numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed.
+     *       - Cannot start or end with a hyphen or period, and cannot use consecutive hyphens and periods.
+     *       - Linux system hostname length must be between 2 and 63 characters.
+     *     - Windows instances:
+     *       - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers.
+     *       - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
+     *       - Windows system hostname length must be between 2 and 15 characters.
+     *
      */
     public Output<String> hostname() {
         return this.hostname;
     }
     /**
-     * ID of the high performance computing cluster to which the instance belongs. **Note:** This parameter is only effective
-     * and required when creating high performance computing GPU instances.
-     * 
+     * ID of the high performance computing cluster to which the instance belongs.
+     *
+     *   **Note:**
+     *   This parameter is only effective and required when creating high performance computing GPU instances.
+     *
      */
     @Export(name="hpcClusterId", refs={String.class}, tree="[0]")
     private Output<String> hpcClusterId;
 
     /**
-     * @return ID of the high performance computing cluster to which the instance belongs. **Note:** This parameter is only effective
-     * and required when creating high performance computing GPU instances.
-     * 
+     * @return ID of the high performance computing cluster to which the instance belongs.
+     *
+     *   **Note:**
+     *   This parameter is only effective and required when creating high performance computing GPU instances.
+     *
      */
     public Output<String> hpcClusterId() {
         return this.hpcClusterId;
     }
     /**
      * The image of the instance.
-     * 
+     *
      */
     @Export(name="image", refs={InstanceImage.class}, tree="[0]")
     private Output<InstanceImage> image;
 
     /**
      * @return The image of the instance.
-     * 
+     *
      */
     public Output<InstanceImage> image() {
         return this.image;
     }
     /**
-     * Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert.
-     * false (default): Do not convert.
-     * 
+     * Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert. false (default): Do not convert.
+     *
      */
     @Export(name="includeDataVolumes", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> includeDataVolumes;
 
     /**
-     * @return Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert.
-     * false (default): Do not convert.
-     * 
+     * @return Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert. false (default): Do not convert.
+     *
      */
     public Output<Boolean> includeDataVolumes() {
         return this.includeDataVolumes;
     }
     /**
-     * Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false
-     * (default): Do not install during creation.
-     * 
+     * Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false (default): Do not install during creation.
+     *
      */
     @Export(name="installRunCommandAgent", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> installRunCommandAgent;
 
     /**
-     * @return Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false
-     * (default): Do not install during creation.
-     * 
+     * @return Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false (default): Do not install during creation.
+     *
      */
     public Output<Boolean> installRunCommandAgent() {
         return this.installRunCommandAgent;
     }
     /**
-     * The billing type for the instance and cloud disk. Values: - PostPaid: Pay-as-you-go - PrePaid: Subscription. Please
-     * ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be
-     * returned.
-     * 
+     * The billing type for the instance and cloud disk. Values:
+     *     - PostPaid: Pay-as-you-go
+     *     - PrePaid: Subscription. Please ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be returned.
+     *
      */
     @Export(name="instanceChargeType", refs={String.class}, tree="[0]")
     private Output<String> instanceChargeType;
 
     /**
-     * @return The billing type for the instance and cloud disk. Values: - PostPaid: Pay-as-you-go - PrePaid: Subscription. Please
-     * ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be
-     * returned.
-     * 
+     * @return The billing type for the instance and cloud disk. Values:
+     *     - PostPaid: Pay-as-you-go
+     *     - PrePaid: Subscription. Please ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be returned.
+     *
      */
     public Output<String> instanceChargeType() {
         return this.instanceChargeType;
     }
     /**
      * The ECS instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return The ECS instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * Instance name - Must start with a letter or Chinese character - Can only contain Chinese characters, letters, numbers,
-     * underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34; - Length limit: 1–128 characters
-     * 
+     * Instance name
+     *     - Must start with a letter or Chinese character
+     *     - Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;
+     *     - Length limit: 1–128 characters
+     *
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
-     * @return Instance name - Must start with a letter or Chinese character - Can only contain Chinese characters, letters, numbers,
-     * underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34; - Length limit: 1–128 characters
-     * 
+     * @return Instance name
+     *     - Must start with a letter or Chinese character
+     *     - Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;
+     *     - Length limit: 1–128 characters
+     *
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
-     * Instance specification. - Product selection: You can refer to [Instance Specifications
-     * Introduction](https://www.volcengine.com/docs/6396/70840) or call
-     * [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance
-     * Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications. - Inventory
-     * query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute
-     * resources in the zone.
-     * 
+     * Instance specification.
+     *     - Product selection: You can refer to [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840) or call [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications.
+     *     - Inventory query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute resources in the zone.
+     *
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
-     * @return Instance specification. - Product selection: You can refer to [Instance Specifications
-     * Introduction](https://www.volcengine.com/docs/6396/70840) or call
-     * [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance
-     * Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications. - Inventory
-     * query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute
-     * resources in the zone.
-     * 
+     * @return Instance specification.
+     *     - Product selection: You can refer to [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840) or call [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications.
+     *     - Inventory query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute resources in the zone.
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Instance key pair name
-     * 
+     *
      */
     @Export(name="keyPair", refs={InstanceKeyPair.class}, tree="[0]")
     private Output<InstanceKeyPair> keyPair;
 
     /**
      * @return Instance key pair name
-     * 
+     *
      */
     public Output<InstanceKeyPair> keyPair() {
         return this.keyPair;
     }
+    /**
+     * Local disk configuration information for the instance
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="localVolumes", refs={List.class,InstanceLocalVolume.class}, tree="[0,1]")
     private Output<List<InstanceLocalVolume>> localVolumes;
 
+    /**
+     * @return Local disk configuration information for the instance
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceLocalVolume>> localVolumes() {
         return this.localVolumes;
     }
     /**
      * The operating system type of the instance.
-     * 
+     *
      */
     @Export(name="operationSystem", refs={InstanceOperationSystem.class}, tree="[0]")
     private Output<InstanceOperationSystem> operationSystem;
 
     /**
      * @return The operating system type of the instance.
-     * 
+     *
      */
     public Output<InstanceOperationSystem> operationSystem() {
         return this.operationSystem;
     }
     /**
      * The password of the instance.
-     * 
+     *
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
      * @return The password of the instance.
-     * 
+     *
      */
     public Output<String> password() {
         return this.password;
     }
     /**
-     * Resource purchase duration (N). - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9,
-     * 12, 24, 36, 48, 60. - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5. **Note:** This parameter is valid and
-     * required only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * Resource purchase duration (N).
+     *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
+     *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
+     *
+     *   **Note:**
+     *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
-     * @return Resource purchase duration (N). - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9,
-     * 12, 24, 36, 48, 60. - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5. **Note:** This parameter is valid and
-     * required only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * @return Resource purchase duration (N).
+     *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
+     *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
+     *
+     *   **Note:**
+     *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
-     * The unit for the duration of resource purchase. Values: - Month (default): Month - Year: Year **Note:** This parameter
-     * is effective only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * The unit for the duration of resource purchase. Values:
+     *     - Month (default): Month
+     *     - Year: Year
+     *
+     *   **Note:**
+     *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
-     * @return The unit for the duration of resource purchase. Values: - Month (default): Month - Year: Year **Note:** This parameter
-     * is effective only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * @return The unit for the duration of resource purchase. Values:
+     *     - Month (default): Month
+     *     - Year: Year
+     *
+     *   **Note:**
+     *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
      * The deployment information of the instance.
-     * 
+     *
      */
     @Export(name="placement", refs={InstancePlacement.class}, tree="[0]")
     private Output<InstancePlacement> placement;
 
     /**
      * @return The deployment information of the instance.
-     * 
+     *
      */
     public Output<InstancePlacement> placement() {
         return this.placement;
     }
     /**
      * Primary network interface card of the instance.
-     * 
+     *
      */
     @Export(name="primaryNetworkInterface", refs={InstancePrimaryNetworkInterface.class}, tree="[0]")
     private Output<InstancePrimaryNetworkInterface> primaryNetworkInterface;
 
     /**
      * @return Primary network interface card of the instance.
-     * 
+     *
      */
     public Output<InstancePrimaryNetworkInterface> primaryNetworkInterface() {
         return this.primaryNetworkInterface;
     }
     /**
      * Project name to which the instance belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the instance belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
-     * When querying high performance computing GPU instances, returns the RDMA IP addresses of each network interface card in
-     * a list.
-     * 
+     * When querying high performance computing GPU instances, returns the RDMA IP addresses of each network interface card in a list.
+     *
      */
     @Export(name="rdmaIpAddresses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> rdmaIpAddresses;
 
     /**
-     * @return When querying high performance computing GPU instances, returns the RDMA IP addresses of each network interface card in
-     * a list.
-     * 
+     * @return When querying high performance computing GPU instances, returns the RDMA IP addresses of each network interface card in a list.
+     *
      */
     public Output<List<String>> rdmaIpAddresses() {
         return this.rdmaIpAddresses;
     }
+    /**
+     * RDMA information for each network interface.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="rdmaNetworkInterfaceDetails", refs={List.class,InstanceRdmaNetworkInterfaceDetail.class}, tree="[0,1]")
     private Output<List<InstanceRdmaNetworkInterfaceDetail>> rdmaNetworkInterfaceDetails;
 
+    /**
+     * @return RDMA information for each network interface.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceRdmaNetworkInterfaceDetail>> rdmaNetworkInterfaceDetails() {
         return this.rdmaNetworkInterfaceDetails;
     }
     /**
      * Renewal information.
-     * 
+     *
      */
     @Export(name="renewInfo", refs={InstanceRenewInfo.class}, tree="[0]")
     private Output<InstanceRenewInfo> renewInfo;
 
     /**
      * @return Renewal information.
-     * 
+     *
      */
     public Output<InstanceRenewInfo> renewInfo() {
         return this.renewInfo;
     }
     /**
      * IAM role name bound to the instance
-     * 
+     *
      */
     @Export(name="roleNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> roleNames;
 
     /**
      * @return IAM role name bound to the instance
-     * 
+     *
      */
     public Output<List<String>> roleNames() {
         return this.roleNames;
     }
+    /**
+     * Auxiliary network interface card of the instance.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="secondaryNetworkInterfaces", refs={List.class,InstanceSecondaryNetworkInterface.class}, tree="[0,1]")
     private Output<List<InstanceSecondaryNetworkInterface>> secondaryNetworkInterfaces;
 
+    /**
+     * @return Auxiliary network interface card of the instance.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceSecondaryNetworkInterface>> secondaryNetworkInterfaces() {
         return this.secondaryNetworkInterfaces;
     }
     /**
-     * Maximum hourly price for spot instances. - Supports up to three decimal places. - Only effective when `SpotStrategy` is
-     * set to `SpotWithPriceLimit`. - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for
-     * the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to
-     * `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does
-     * not need to be filled in.
-     * 
+     * Maximum hourly price for spot instances.
+     *     - Supports up to three decimal places.
+     *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
+     *     - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does not need to be filled in.
+     *
      */
     @Export(name="spotPriceLimit", refs={Double.class}, tree="[0]")
     private Output<Double> spotPriceLimit;
 
     /**
-     * @return Maximum hourly price for spot instances. - Supports up to three decimal places. - Only effective when `SpotStrategy` is
-     * set to `SpotWithPriceLimit`. - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for
-     * the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to
-     * `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does
-     * not need to be filled in.
-     * 
+     * @return Maximum hourly price for spot instances.
+     *     - Supports up to three decimal places.
+     *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
+     *     - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does not need to be filled in.
+     *
      */
     public Output<Double> spotPriceLimit() {
         return this.spotPriceLimit;
     }
     /**
-     * Spot strategy. Values: - NoSpot (default): Non-spot instance. - SpotWithPriceLimit: Spot instance with price limit. -
-     * SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
-     * 
+     * Spot strategy. Values:
+     *     - NoSpot (default): Non-spot instance.
+     *     - SpotWithPriceLimit: Spot instance with price limit.
+     *     - SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
+     *
      */
     @Export(name="spotStrategy", refs={String.class}, tree="[0]")
     private Output<String> spotStrategy;
 
     /**
-     * @return Spot strategy. Values: - NoSpot (default): Non-spot instance. - SpotWithPriceLimit: Spot instance with price limit. -
-     * SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
-     * 
+     * @return Spot strategy. Values:
+     *     - NoSpot (default): Non-spot instance.
+     *     - SpotWithPriceLimit: Spot instance with price limit.
+     *     - SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
+     *
      */
     public Output<String> spotStrategy() {
         return this.spotStrategy;
     }
     /**
-     * Instance status. Values: CREATING: Creating RUNNING: Running STOPPING: Stopping STOPPED: Stopped REBOOTING: Rebooting
-     * STARTING: Starting REBUILDING: Rebuilding RESIZING: Resizing ERROR: Error DELETING: Deleting
-     * 
+     * Instance status. Values:
+     *   CREATING: Creating
+     *   RUNNING: Running
+     *   STOPPING: Stopping
+     *   STOPPED: Stopped
+     *   REBOOTING: Rebooting
+     *   STARTING: Starting
+     *   REBUILDING: Rebuilding
+     *   RESIZING: Resizing
+     *   ERROR: Error
+     *   DELETING: Deleting
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Instance status. Values: CREATING: Creating RUNNING: Running STOPPING: Stopping STOPPED: Stopped REBOOTING: Rebooting
-     * STARTING: Starting REBUILDING: Rebuilding RESIZING: Resizing ERROR: Error DELETING: Deleting
-     * 
+     * @return Instance status. Values:
+     *   CREATING: Creating
+     *   RUNNING: Running
+     *   STOPPING: Stopping
+     *   STOPPED: Stopped
+     *   REBOOTING: Rebooting
+     *   STARTING: Starting
+     *   REBUILDING: Rebuilding
+     *   RESIZING: Resizing
+     *   ERROR: Error
+     *   DELETING: Deleting
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
-     * StoppedMode string Optional Example value: KeepCharging Stopped mode. Valid values: KeepCharging: Standard stopped mode.
-     * After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the
-     * same as before stopping. StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources
-     * (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and
-     * continue to be billed. For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped
-     * mode for pay-as-you-go billing. Default value: If you have enabled the default cost-saving stopped mode in the cloud
-     * server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
-     * NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
-     * 
+     * StoppedMode string Optional Example value: KeepCharging
+     *   Stopped mode. Valid values:
+     *   KeepCharging: Standard stopped mode. After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the same as before stopping.
+     *   StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and continue to be billed.
+     *   For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped mode for pay-as-you-go billing.
+     *   Default value: If you have enabled the default cost-saving stopped mode in the cloud server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
+     *   NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
+     *
      */
     @Export(name="stoppedMode", refs={String.class}, tree="[0]")
     private Output<String> stoppedMode;
 
     /**
-     * @return StoppedMode string Optional Example value: KeepCharging Stopped mode. Valid values: KeepCharging: Standard stopped mode.
-     * After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the
-     * same as before stopping. StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources
-     * (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and
-     * continue to be billed. For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped
-     * mode for pay-as-you-go billing. Default value: If you have enabled the default cost-saving stopped mode in the cloud
-     * server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
-     * NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
-     * 
+     * @return StoppedMode string Optional Example value: KeepCharging
+     *   Stopped mode. Valid values:
+     *   KeepCharging: Standard stopped mode. After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the same as before stopping.
+     *   StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and continue to be billed.
+     *   For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped mode for pay-as-you-go billing.
+     *   Default value: If you have enabled the default cost-saving stopped mode in the cloud server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
+     *   NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
+     *
      */
     public Output<String> stoppedMode() {
         return this.stoppedMode;
     }
     /**
      * The system volume of the instance.
-     * 
+     *
      */
     @Export(name="systemVolume", refs={InstanceSystemVolume.class}, tree="[0]")
     private Output<InstanceSystemVolume> systemVolume;
 
     /**
      * @return The system volume of the instance.
-     * 
+     *
      */
     public Output<InstanceSystemVolume> systemVolume() {
         return this.systemVolume;
     }
+    /**
+     * Tags
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Tags
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * The update time of the instance.
-     * 
+     *
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return The update time of the instance.
-     * 
+     *
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
-     * Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded. - Linux instances:
-     * Script content must not exceed 16 KB and must be Base64 encoded. - Windows instances: Script content must not exceed 8
-     * KB and does not require Base64 encoding
-     * 
+     * Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded.
+     *     - Linux instances: Script content must not exceed 16 KB and must be Base64 encoded.
+     *     - Windows instances: Script content must not exceed 8 KB and does not require Base64 encoding
+     *
      */
     @Export(name="userData", refs={String.class}, tree="[0]")
     private Output<String> userData;
 
     /**
-     * @return Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded. - Linux instances:
-     * Script content must not exceed 16 KB and must be Base64 encoded. - Windows instances: Script content must not exceed 8
-     * KB and does not require Base64 encoding
-     * 
+     * @return Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded.
+     *     - Linux instances: Script content must not exceed 16 KB and must be Base64 encoded.
+     *     - Windows instances: Script content must not exceed 8 KB and does not require Base64 encoding
+     *
      */
     public Output<String> userData() {
         return this.userData;
     }
     /**
-     * The private network ID to which the instance belongs. You can call the
-     * [DescribeVpcs](https://www.volcengine.com/docs/6563/66127) API to obtain VPC information for the target region.
-     * 
+     * The private network ID to which the instance belongs. You can call the [DescribeVpcs](https://www.volcengine.com/docs/6563/66127) API to obtain VPC information for the target region.
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
-     * @return The private network ID to which the instance belongs. You can call the
-     * [DescribeVpcs](https://www.volcengine.com/docs/6563/66127) API to obtain VPC information for the target region.
-     * 
+     * @return The private network ID to which the instance belongs. You can call the [DescribeVpcs](https://www.volcengine.com/docs/6563/66127) API to obtain VPC information for the target region.
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * The availability zone ID where the instance is located.
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return The availability zone ID where the instance is located.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;

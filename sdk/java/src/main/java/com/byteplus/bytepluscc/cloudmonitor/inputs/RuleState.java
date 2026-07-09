@@ -28,14 +28,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
-     * 
+     *
      */
     @Import(name="alertMethods")
     private @Nullable Output<List<String>> alertMethods;
 
     /**
      * @return Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
-     * 
+     *
      */
     public Optional<Output<List<String>>> alertMethods() {
         return Optional.ofNullable(this.alertMethods);
@@ -43,14 +43,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert status. alerting: In alert; normal: Normal.
-     * 
+     *
      */
     @Import(name="alertState")
     private @Nullable Output<String> alertState;
 
     /**
      * @return Alert status. alerting: In alert; normal: Normal.
-     * 
+     *
      */
     public Optional<Output<String>> alertState() {
         return Optional.ofNullable(this.alertState);
@@ -58,36 +58,46 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
-     * 
+     *
      */
     @Import(name="conditionOperator")
     private @Nullable Output<String> conditionOperator;
 
     /**
      * @return Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
-     * 
+     *
      */
     public Optional<Output<String>> conditionOperator() {
         return Optional.ofNullable(this.conditionOperator);
     }
 
+    /**
+     * Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="conditions")
     private @Nullable Output<List<RuleConditionArgs>> conditions;
 
+    /**
+     * @return Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RuleConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
     }
 
     /**
      * When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
-     * 
+     *
      */
     @Import(name="contactGroupIds")
     private @Nullable Output<List<String>> contactGroupIds;
 
     /**
      * @return When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
-     * 
+     *
      */
     public Optional<Output<List<String>>> contactGroupIds() {
         return Optional.ofNullable(this.contactGroupIds);
@@ -95,14 +105,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert policy creation time, in timestamp format.
-     * 
+     *
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Alert policy creation time, in timestamp format.
-     * 
+     *
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -110,14 +120,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -125,14 +135,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
-     * 
+     *
      */
     @Import(name="dimensionConditions")
     private @Nullable Output<RuleDimensionConditionsArgs> dimensionConditions;
 
     /**
      * @return Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
-     * 
+     *
      */
     public Optional<Output<RuleDimensionConditionsArgs>> dimensionConditions() {
         return Optional.ofNullable(this.dimensionConditions);
@@ -140,14 +150,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
-     * 
+     *
      */
     @Import(name="effectEndAt")
     private @Nullable Output<String> effectEndAt;
 
     /**
      * @return End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
-     * 
+     *
      */
     public Optional<Output<String>> effectEndAt() {
         return Optional.ofNullable(this.effectEndAt);
@@ -155,14 +165,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
-     * 
+     *
      */
     @Import(name="effectStartAt")
     private @Nullable Output<String> effectStartAt;
 
     /**
      * @return Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
-     * 
+     *
      */
     public Optional<Output<String>> effectStartAt() {
         return Optional.ofNullable(this.effectStartAt);
@@ -170,14 +180,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert policy status. enable: enabled, disable: disabled
-     * 
+     *
      */
     @Import(name="enableState")
     private @Nullable Output<String> enableState;
 
     /**
      * @return Alert policy status. enable: enabled, disable: disabled
-     * 
+     *
      */
     public Optional<Output<String>> enableState() {
         return Optional.ofNullable(this.enableState);
@@ -185,14 +195,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
-     * 
+     *
      */
     @Import(name="evaluationCount")
     private @Nullable Output<Integer> evaluationCount;
 
     /**
      * @return Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
-     * 
+     *
      */
     public Optional<Output<Integer>> evaluationCount() {
         return Optional.ofNullable(this.evaluationCount);
@@ -200,36 +210,46 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert level. critical: critical, warning: warning, notice: notification
-     * 
+     *
      */
     @Import(name="level")
     private @Nullable Output<String> level;
 
     /**
      * @return Alert level. critical: critical, warning: warning, notice: notification
-     * 
+     *
      */
     public Optional<Output<String>> level() {
         return Optional.ofNullable(this.level);
     }
 
+    /**
+     * Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="levelConditions")
     private @Nullable Output<List<RuleLevelConditionArgs>> levelConditions;
 
+    /**
+     * @return Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RuleLevelConditionArgs>>> levelConditions() {
         return Optional.ofNullable(this.levelConditions);
     }
 
     /**
      * Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
-     * 
+     *
      */
     @Import(name="multipleConditions")
     private @Nullable Output<Boolean> multipleConditions;
 
     /**
      * @return Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
-     * 
+     *
      */
     public Optional<Output<Boolean>> multipleConditions() {
         return Optional.ofNullable(this.multipleConditions);
@@ -237,14 +257,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
-     * 
+     *
      */
     @Import(name="namespace")
     private @Nullable Output<String> namespace;
 
     /**
      * @return The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
-     * 
+     *
      */
     public Optional<Output<String>> namespace() {
         return Optional.ofNullable(this.namespace);
@@ -252,14 +272,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * No data alert.
-     * 
+     *
      */
     @Import(name="noData")
     private @Nullable Output<RuleNoDataArgs> noData;
 
     /**
      * @return No data alert.
-     * 
+     *
      */
     public Optional<Output<RuleNoDataArgs>> noData() {
         return Optional.ofNullable(this.noData);
@@ -267,36 +287,46 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
-     * 
+     *
      */
     @Import(name="notificationId")
     private @Nullable Output<String> notificationId;
 
     /**
      * @return Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
-     * 
+     *
      */
     public Optional<Output<String>> notificationId() {
         return Optional.ofNullable(this.notificationId);
     }
 
+    /**
+     * Notification template configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="notifyTemplates")
     private @Nullable Output<List<RuleNotifyTemplateArgs>> notifyTemplates;
 
+    /**
+     * @return Notification template configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RuleNotifyTemplateArgs>>> notifyTemplates() {
         return Optional.ofNullable(this.notifyTemplates);
     }
 
     /**
      * Resource ID detected by the alert policy.
-     * 
+     *
      */
     @Import(name="originalDimensions")
     private @Nullable Output<RuleOriginalDimensionsArgs> originalDimensions;
 
     /**
      * @return Resource ID detected by the alert policy.
-     * 
+     *
      */
     public Optional<Output<RuleOriginalDimensionsArgs>> originalDimensions() {
         return Optional.ofNullable(this.originalDimensions);
@@ -304,14 +334,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name to which the alert policy belongs. If not specified, it defaults to the default project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the alert policy belongs. If not specified, it defaults to the default project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -319,14 +349,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert recovery notification.
-     * 
+     *
      */
     @Import(name="recoveryNotify")
     private @Nullable Output<RuleRecoveryNotifyArgs> recoveryNotify;
 
     /**
      * @return Alert recovery notification.
-     * 
+     *
      */
     public Optional<Output<RuleRecoveryNotifyArgs>> recoveryNotify() {
         return Optional.ofNullable(this.recoveryNotify);
@@ -334,14 +364,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
-     * 
+     *
      */
     @Import(name="regions")
     private @Nullable Output<List<String>> regions;
 
     /**
      * @return Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
-     * 
+     *
      */
     public Optional<Output<List<String>>> regions() {
         return Optional.ofNullable(this.regions);
@@ -349,14 +379,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Resource type detected by the alert policy.
-     * 
+     *
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
      * @return Resource type detected by the alert policy.
-     * 
+     *
      */
     public Optional<Output<String>> resourceType() {
         return Optional.ofNullable(this.resourceType);
@@ -364,14 +394,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alarm policy ID.
-     * 
+     *
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
      * @return Alarm policy ID.
-     * 
+     *
      */
     public Optional<Output<String>> ruleId() {
         return Optional.ofNullable(this.ruleId);
@@ -379,14 +409,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
-     * 
+     *
      */
     @Import(name="ruleName")
     private @Nullable Output<String> ruleName;
 
     /**
      * @return Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
-     * 
+     *
      */
     public Optional<Output<String>> ruleName() {
         return Optional.ofNullable(this.ruleName);
@@ -394,14 +424,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
-     * 
+     *
      */
     @Import(name="ruleType")
     private @Nullable Output<String> ruleType;
 
     /**
      * @return Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
-     * 
+     *
      */
     public Optional<Output<String>> ruleType() {
         return Optional.ofNullable(this.ruleType);
@@ -409,14 +439,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
-     * 
+     *
      */
     @Import(name="silenceTime")
     private @Nullable Output<Integer> silenceTime;
 
     /**
      * @return Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
-     * 
+     *
      */
     public Optional<Output<Integer>> silenceTime() {
         return Optional.ofNullable(this.silenceTime);
@@ -424,36 +454,46 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
-     * 
+     *
      */
     @Import(name="subNamespace")
     private @Nullable Output<String> subNamespace;
 
     /**
      * @return Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
-     * 
+     *
      */
     public Optional<Output<String>> subNamespace() {
         return Optional.ofNullable(this.subNamespace);
     }
 
+    /**
+     * Bind alert policy to Tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<RuleTagArgs>> tags;
 
+    /**
+     * @return Bind alert policy to Tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RuleTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Alarm policy update time, in timestamp format.
-     * 
+     *
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Alarm policy update time, in timestamp format.
-     * 
+     *
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -461,14 +501,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alarm callback URL bound to the alarm policy.
-     * 
+     *
      */
     @Import(name="webhook")
     private @Nullable Output<String> webhook;
 
     /**
      * @return Alarm callback URL bound to the alarm policy.
-     * 
+     *
      */
     public Optional<Output<String>> webhook() {
         return Optional.ofNullable(this.webhook);
@@ -476,14 +516,14 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alarm callback ID list when an alarm occurs.
-     * 
+     *
      */
     @Import(name="webhookIds")
     private @Nullable Output<List<String>> webhookIds;
 
     /**
      * @return Alarm callback ID list when an alarm occurs.
-     * 
+     *
      */
     public Optional<Output<List<String>>> webhookIds() {
         return Optional.ofNullable(this.webhookIds);
@@ -547,9 +587,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alertMethods Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alertMethods(@Nullable Output<List<String>> alertMethods) {
             $.alertMethods = alertMethods;
@@ -558,9 +598,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alertMethods Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alertMethods(List<String> alertMethods) {
             return alertMethods(Output.of(alertMethods));
@@ -568,9 +608,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alertMethods Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alertMethods(String... alertMethods) {
             return alertMethods(List.of(alertMethods));
@@ -578,9 +618,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alertState Alert status. alerting: In alert; normal: Normal.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alertState(@Nullable Output<String> alertState) {
             $.alertState = alertState;
@@ -589,9 +629,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alertState Alert status. alerting: In alert; normal: Normal.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alertState(String alertState) {
             return alertState(Output.of(alertState));
@@ -599,9 +639,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param conditionOperator Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder conditionOperator(@Nullable Output<String> conditionOperator) {
             $.conditionOperator = conditionOperator;
@@ -610,32 +650,53 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param conditionOperator Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder conditionOperator(String conditionOperator) {
             return conditionOperator(Output.of(conditionOperator));
         }
 
+        /**
+         * @param conditions Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditions(@Nullable Output<List<RuleConditionArgs>> conditions) {
             $.conditions = conditions;
             return this;
         }
 
+        /**
+         * @param conditions Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditions(List<RuleConditionArgs> conditions) {
             return conditions(Output.of(conditions));
         }
 
+        /**
+         * @param conditions Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditions(RuleConditionArgs... conditions) {
             return conditions(List.of(conditions));
         }
 
         /**
          * @param contactGroupIds When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder contactGroupIds(@Nullable Output<List<String>> contactGroupIds) {
             $.contactGroupIds = contactGroupIds;
@@ -644,9 +705,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactGroupIds When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder contactGroupIds(List<String> contactGroupIds) {
             return contactGroupIds(Output.of(contactGroupIds));
@@ -654,9 +715,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactGroupIds When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder contactGroupIds(String... contactGroupIds) {
             return contactGroupIds(List.of(contactGroupIds));
@@ -664,9 +725,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Alert policy creation time, in timestamp format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -675,9 +736,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Alert policy creation time, in timestamp format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -685,9 +746,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -696,9 +757,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -706,9 +767,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dimensionConditions Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dimensionConditions(@Nullable Output<RuleDimensionConditionsArgs> dimensionConditions) {
             $.dimensionConditions = dimensionConditions;
@@ -717,9 +778,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dimensionConditions Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dimensionConditions(RuleDimensionConditionsArgs dimensionConditions) {
             return dimensionConditions(Output.of(dimensionConditions));
@@ -727,9 +788,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param effectEndAt End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder effectEndAt(@Nullable Output<String> effectEndAt) {
             $.effectEndAt = effectEndAt;
@@ -738,9 +799,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param effectEndAt End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder effectEndAt(String effectEndAt) {
             return effectEndAt(Output.of(effectEndAt));
@@ -748,9 +809,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param effectStartAt Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder effectStartAt(@Nullable Output<String> effectStartAt) {
             $.effectStartAt = effectStartAt;
@@ -759,9 +820,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param effectStartAt Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder effectStartAt(String effectStartAt) {
             return effectStartAt(Output.of(effectStartAt));
@@ -769,9 +830,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableState Alert policy status. enable: enabled, disable: disabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableState(@Nullable Output<String> enableState) {
             $.enableState = enableState;
@@ -780,9 +841,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableState Alert policy status. enable: enabled, disable: disabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableState(String enableState) {
             return enableState(Output.of(enableState));
@@ -790,9 +851,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param evaluationCount Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder evaluationCount(@Nullable Output<Integer> evaluationCount) {
             $.evaluationCount = evaluationCount;
@@ -801,9 +862,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param evaluationCount Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder evaluationCount(Integer evaluationCount) {
             return evaluationCount(Output.of(evaluationCount));
@@ -811,9 +872,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param level Alert level. critical: critical, warning: warning, notice: notification
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder level(@Nullable Output<String> level) {
             $.level = level;
@@ -822,32 +883,53 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param level Alert level. critical: critical, warning: warning, notice: notification
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder level(String level) {
             return level(Output.of(level));
         }
 
+        /**
+         * @param levelConditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder levelConditions(@Nullable Output<List<RuleLevelConditionArgs>> levelConditions) {
             $.levelConditions = levelConditions;
             return this;
         }
 
+        /**
+         * @param levelConditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder levelConditions(List<RuleLevelConditionArgs> levelConditions) {
             return levelConditions(Output.of(levelConditions));
         }
 
+        /**
+         * @param levelConditions Alert severity configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder levelConditions(RuleLevelConditionArgs... levelConditions) {
             return levelConditions(List.of(levelConditions));
         }
 
         /**
          * @param multipleConditions Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multipleConditions(@Nullable Output<Boolean> multipleConditions) {
             $.multipleConditions = multipleConditions;
@@ -856,9 +938,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multipleConditions Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multipleConditions(Boolean multipleConditions) {
             return multipleConditions(Output.of(multipleConditions));
@@ -866,9 +948,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param namespace The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder namespace(@Nullable Output<String> namespace) {
             $.namespace = namespace;
@@ -877,9 +959,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param namespace The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder namespace(String namespace) {
             return namespace(Output.of(namespace));
@@ -887,9 +969,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param noData No data alert.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder noData(@Nullable Output<RuleNoDataArgs> noData) {
             $.noData = noData;
@@ -898,9 +980,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param noData No data alert.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder noData(RuleNoDataArgs noData) {
             return noData(Output.of(noData));
@@ -908,9 +990,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param notificationId Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder notificationId(@Nullable Output<String> notificationId) {
             $.notificationId = notificationId;
@@ -919,32 +1001,53 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param notificationId Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder notificationId(String notificationId) {
             return notificationId(Output.of(notificationId));
         }
 
+        /**
+         * @param notifyTemplates Notification template configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder notifyTemplates(@Nullable Output<List<RuleNotifyTemplateArgs>> notifyTemplates) {
             $.notifyTemplates = notifyTemplates;
             return this;
         }
 
+        /**
+         * @param notifyTemplates Notification template configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder notifyTemplates(List<RuleNotifyTemplateArgs> notifyTemplates) {
             return notifyTemplates(Output.of(notifyTemplates));
         }
 
+        /**
+         * @param notifyTemplates Notification template configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder notifyTemplates(RuleNotifyTemplateArgs... notifyTemplates) {
             return notifyTemplates(List.of(notifyTemplates));
         }
 
         /**
          * @param originalDimensions Resource ID detected by the alert policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originalDimensions(@Nullable Output<RuleOriginalDimensionsArgs> originalDimensions) {
             $.originalDimensions = originalDimensions;
@@ -953,9 +1056,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originalDimensions Resource ID detected by the alert policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originalDimensions(RuleOriginalDimensionsArgs originalDimensions) {
             return originalDimensions(Output.of(originalDimensions));
@@ -963,9 +1066,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the alert policy belongs. If not specified, it defaults to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -974,9 +1077,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the alert policy belongs. If not specified, it defaults to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -984,9 +1087,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recoveryNotify Alert recovery notification.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recoveryNotify(@Nullable Output<RuleRecoveryNotifyArgs> recoveryNotify) {
             $.recoveryNotify = recoveryNotify;
@@ -995,9 +1098,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recoveryNotify Alert recovery notification.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recoveryNotify(RuleRecoveryNotifyArgs recoveryNotify) {
             return recoveryNotify(Output.of(recoveryNotify));
@@ -1005,9 +1108,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param regions Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder regions(@Nullable Output<List<String>> regions) {
             $.regions = regions;
@@ -1016,9 +1119,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param regions Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder regions(List<String> regions) {
             return regions(Output.of(regions));
@@ -1026,9 +1129,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param regions Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder regions(String... regions) {
             return regions(List.of(regions));
@@ -1036,9 +1139,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceType Resource type detected by the alert policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourceType(@Nullable Output<String> resourceType) {
             $.resourceType = resourceType;
@@ -1047,9 +1150,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceType Resource type detected by the alert policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));
@@ -1057,9 +1160,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId Alarm policy ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleId(@Nullable Output<String> ruleId) {
             $.ruleId = ruleId;
@@ -1068,9 +1171,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId Alarm policy ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleId(String ruleId) {
             return ruleId(Output.of(ruleId));
@@ -1078,9 +1181,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleName Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleName(@Nullable Output<String> ruleName) {
             $.ruleName = ruleName;
@@ -1089,9 +1192,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleName Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleName(String ruleName) {
             return ruleName(Output.of(ruleName));
@@ -1099,9 +1202,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleType Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleType(@Nullable Output<String> ruleType) {
             $.ruleType = ruleType;
@@ -1110,9 +1213,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleType Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleType(String ruleType) {
             return ruleType(Output.of(ruleType));
@@ -1120,9 +1223,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param silenceTime Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder silenceTime(@Nullable Output<Integer> silenceTime) {
             $.silenceTime = silenceTime;
@@ -1131,9 +1234,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param silenceTime Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder silenceTime(Integer silenceTime) {
             return silenceTime(Output.of(silenceTime));
@@ -1141,9 +1244,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subNamespace Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subNamespace(@Nullable Output<String> subNamespace) {
             $.subNamespace = subNamespace;
@@ -1152,32 +1255,53 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subNamespace Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subNamespace(String subNamespace) {
             return subNamespace(Output.of(subNamespace));
         }
 
+        /**
+         * @param tags Bind alert policy to Tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<RuleTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Bind alert policy to Tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<RuleTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Bind alert policy to Tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(RuleTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updatedAt Alarm policy update time, in timestamp format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -1186,9 +1310,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Alarm policy update time, in timestamp format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));
@@ -1196,9 +1320,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param webhook Alarm callback URL bound to the alarm policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhook(@Nullable Output<String> webhook) {
             $.webhook = webhook;
@@ -1207,9 +1331,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param webhook Alarm callback URL bound to the alarm policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhook(String webhook) {
             return webhook(Output.of(webhook));
@@ -1217,9 +1341,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param webhookIds Alarm callback ID list when an alarm occurs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookIds(@Nullable Output<List<String>> webhookIds) {
             $.webhookIds = webhookIds;
@@ -1228,9 +1352,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param webhookIds Alarm callback ID list when an alarm occurs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookIds(List<String> webhookIds) {
             return webhookIds(Output.of(webhookIds));
@@ -1238,9 +1362,9 @@ public final class RuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param webhookIds Alarm callback ID list when an alarm occurs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookIds(String... webhookIds) {
             return webhookIds(List.of(webhookIds));

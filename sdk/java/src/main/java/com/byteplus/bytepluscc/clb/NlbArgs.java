@@ -22,14 +22,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account ID to which the NLB instance belongs.
-     * 
+     *
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return Account ID to which the NLB instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -37,14 +37,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
-     * 
+     *
      */
     @Import(name="crossZoneEnabled")
     private @Nullable Output<Boolean> crossZoneEnabled;
 
     /**
      * @return Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> crossZoneEnabled() {
         return Optional.ofNullable(this.crossZoneEnabled);
@@ -52,14 +52,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -67,14 +67,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
-     * 
+     *
      */
     @Import(name="ipAddressVersion")
     private @Nullable Output<String> ipAddressVersion;
 
     /**
      * @return IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
-     * 
+     *
      */
     public Optional<Output<String>> ipAddressVersion() {
         return Optional.ofNullable(this.ipAddressVersion);
@@ -82,14 +82,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Shared bandwidth package ID for IPv4 type.
-     * 
+     *
      */
     @Import(name="ipv4BandwidthPackageId")
     private @Nullable Output<String> ipv4BandwidthPackageId;
 
     /**
      * @return Shared bandwidth package ID for IPv4 type.
-     * 
+     *
      */
     public Optional<Output<String>> ipv4BandwidthPackageId() {
         return Optional.ofNullable(this.ipv4BandwidthPackageId);
@@ -97,14 +97,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
-     * 
+     *
      */
     @Import(name="ipv4NetworkType", required=true)
     private Output<String> ipv4NetworkType;
 
     /**
      * @return IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
-     * 
+     *
      */
     public Output<String> ipv4NetworkType() {
         return this.ipv4NetworkType;
@@ -112,14 +112,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Shared bandwidth package ID for IPv6 type.
-     * 
+     *
      */
     @Import(name="ipv6BandwidthPackageId")
     private @Nullable Output<String> ipv6BandwidthPackageId;
 
     /**
      * @return Shared bandwidth package ID for IPv6 type.
-     * 
+     *
      */
     public Optional<Output<String>> ipv6BandwidthPackageId() {
         return Optional.ofNullable(this.ipv6BandwidthPackageId);
@@ -127,14 +127,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
-     * 
+     *
      */
     @Import(name="ipv6NetworkType")
     private @Nullable Output<String> ipv6NetworkType;
 
     /**
      * @return IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
-     * 
+     *
      */
     public Optional<Output<String>> ipv6NetworkType() {
         return Optional.ofNullable(this.ipv6NetworkType);
@@ -142,14 +142,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the NLB instance.
-     * 
+     *
      */
     @Import(name="loadBalancerName")
     private @Nullable Output<String> loadBalancerName;
 
     /**
      * @return Name of the NLB instance.
-     * 
+     *
      */
     public Optional<Output<String>> loadBalancerName() {
         return Optional.ofNullable(this.loadBalancerName);
@@ -157,14 +157,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
-     * 
+     *
      */
     @Import(name="modificationProtectionStatus")
     private @Nullable Output<String> modificationProtectionStatus;
 
     /**
      * @return Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
-     * 
+     *
      */
     public Optional<Output<String>> modificationProtectionStatus() {
         return Optional.ofNullable(this.modificationProtectionStatus);
@@ -172,14 +172,14 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the NLB instance belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the NLB instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -187,44 +187,64 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of security group IDs associated with the NLB instance.
-     * 
+     *
      */
     @Import(name="securityGroupIds", required=true)
     private Output<List<String>> securityGroupIds;
 
     /**
      * @return List of security group IDs associated with the NLB instance.
-     * 
+     *
      */
     public Output<List<String>> securityGroupIds() {
         return this.securityGroupIds;
     }
 
+    /**
+     * Tag information of the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<NlbTagArgs>> tags;
 
+    /**
+     * @return Tag information of the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NlbTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * VPC ID to which the NLB instance belongs.
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return VPC ID to which the NLB instance belongs.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
 
+    /**
+     * Availability zone information for the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="zoneMappings", required=true)
     private Output<List<NlbZoneMappingArgs>> zoneMappings;
 
+    /**
+     * @return Availability zone information for the NLB instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<NlbZoneMappingArgs>> zoneMappings() {
         return this.zoneMappings;
     }
@@ -269,9 +289,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Account ID to which the NLB instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -280,9 +300,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Account ID to which the NLB instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -290,9 +310,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param crossZoneEnabled Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder crossZoneEnabled(@Nullable Output<Boolean> crossZoneEnabled) {
             $.crossZoneEnabled = crossZoneEnabled;
@@ -301,9 +321,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param crossZoneEnabled Whether the NLB instance has cross-availability zone forwarding enabled. true (default): enabled. false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder crossZoneEnabled(Boolean crossZoneEnabled) {
             return crossZoneEnabled(Output.of(crossZoneEnabled));
@@ -311,9 +331,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -322,9 +342,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the NLB instance. Must start with a letter, number, or Chinese character and can include the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -332,9 +352,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressVersion IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddressVersion(@Nullable Output<String> ipAddressVersion) {
             $.ipAddressVersion = ipAddressVersion;
@@ -343,9 +363,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressVersion IP address type of the NLB instance. ipv4: IPv4 version. dualstack: dual stack, supports both IPv4 and IPv6 versions.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddressVersion(String ipAddressVersion) {
             return ipAddressVersion(Output.of(ipAddressVersion));
@@ -353,9 +373,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv4BandwidthPackageId Shared bandwidth package ID for IPv4 type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv4BandwidthPackageId(@Nullable Output<String> ipv4BandwidthPackageId) {
             $.ipv4BandwidthPackageId = ipv4BandwidthPackageId;
@@ -364,9 +384,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv4BandwidthPackageId Shared bandwidth package ID for IPv4 type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv4BandwidthPackageId(String ipv4BandwidthPackageId) {
             return ipv4BandwidthPackageId(Output.of(ipv4BandwidthPackageId));
@@ -374,9 +394,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv4NetworkType IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv4NetworkType(Output<String> ipv4NetworkType) {
             $.ipv4NetworkType = ipv4NetworkType;
@@ -385,9 +405,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv4NetworkType IPv4 network type of the NLB instance. internet: public network type. intranet: private network type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv4NetworkType(String ipv4NetworkType) {
             return ipv4NetworkType(Output.of(ipv4NetworkType));
@@ -395,9 +415,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6BandwidthPackageId Shared bandwidth package ID for IPv6 type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6BandwidthPackageId(@Nullable Output<String> ipv6BandwidthPackageId) {
             $.ipv6BandwidthPackageId = ipv6BandwidthPackageId;
@@ -406,9 +426,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6BandwidthPackageId Shared bandwidth package ID for IPv6 type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6BandwidthPackageId(String ipv6BandwidthPackageId) {
             return ipv6BandwidthPackageId(Output.of(ipv6BandwidthPackageId));
@@ -416,9 +436,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6NetworkType IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6NetworkType(@Nullable Output<String> ipv6NetworkType) {
             $.ipv6NetworkType = ipv6NetworkType;
@@ -427,9 +447,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6NetworkType IPv6 network type of the NLB instance. internet: public network type. intranet: private network type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6NetworkType(String ipv6NetworkType) {
             return ipv6NetworkType(Output.of(ipv6NetworkType));
@@ -437,9 +457,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerName Name of the NLB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerName(@Nullable Output<String> loadBalancerName) {
             $.loadBalancerName = loadBalancerName;
@@ -448,9 +468,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerName Name of the NLB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerName(String loadBalancerName) {
             return loadBalancerName(Output.of(loadBalancerName));
@@ -458,9 +478,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionStatus Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionStatus(@Nullable Output<String> modificationProtectionStatus) {
             $.modificationProtectionStatus = modificationProtectionStatus;
@@ -469,9 +489,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionStatus Whether modification protection is enabled for the NLB instance in the console. NonProtection or empty: disabled, allows modification or deletion of the instance via the console. ConsoleProtection: enabled, prevents modification or deletion of the instance via the console.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionStatus(String modificationProtectionStatus) {
             return modificationProtectionStatus(Output.of(modificationProtectionStatus));
@@ -479,9 +499,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the NLB instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -490,9 +510,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the NLB instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -500,9 +520,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds List of security group IDs associated with the NLB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIds(Output<List<String>> securityGroupIds) {
             $.securityGroupIds = securityGroupIds;
@@ -511,9 +531,9 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds List of security group IDs associated with the NLB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIds(List<String> securityGroupIds) {
             return securityGroupIds(Output.of(securityGroupIds));
@@ -521,32 +541,53 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds List of security group IDs associated with the NLB instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIds(String... securityGroupIds) {
             return securityGroupIds(List.of(securityGroupIds));
         }
 
+        /**
+         * @param tags Tag information of the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<NlbTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<NlbTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(NlbTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpcId VPC ID to which the NLB instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -555,23 +596,44 @@ public final class NlbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID to which the NLB instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
         }
 
+        /**
+         * @param zoneMappings Availability zone information for the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zoneMappings(Output<List<NlbZoneMappingArgs>> zoneMappings) {
             $.zoneMappings = zoneMappings;
             return this;
         }
 
+        /**
+         * @param zoneMappings Availability zone information for the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zoneMappings(List<NlbZoneMappingArgs> zoneMappings) {
             return zoneMappings(Output.of(zoneMappings));
         }
 
+        /**
+         * @param zoneMappings Availability zone information for the NLB instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zoneMappings(NlbZoneMappingArgs... zoneMappings) {
             return zoneMappings(List.of(zoneMappings));
         }

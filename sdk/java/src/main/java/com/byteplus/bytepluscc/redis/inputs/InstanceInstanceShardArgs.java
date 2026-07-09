@@ -20,36 +20,46 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
 
     /**
      * Number of nodes in each shard
-     * 
+     *
      */
     @Import(name="nodeNumber")
     private @Nullable Output<Integer> nodeNumber;
 
     /**
      * @return Number of nodes in each shard
-     * 
+     *
      */
     public Optional<Output<Integer>> nodeNumber() {
         return Optional.ofNullable(this.nodeNumber);
     }
 
+    /**
+     * Detailed list of all Server nodes in the shard.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="serverNodes")
     private @Nullable Output<List<InstanceInstanceShardServerNodeArgs>> serverNodes;
 
+    /**
+     * @return Detailed list of all Server nodes in the shard.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceInstanceShardServerNodeArgs>>> serverNodes() {
         return Optional.ofNullable(this.serverNodes);
     }
 
     /**
      * Shard ID.
-     * 
+     *
      */
     @Import(name="shardId")
     private @Nullable Output<String> shardId;
 
     /**
      * @return Shard ID.
-     * 
+     *
      */
     public Optional<Output<String>> shardId() {
         return Optional.ofNullable(this.shardId);
@@ -83,9 +93,9 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
 
         /**
          * @param nodeNumber Number of nodes in each shard
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeNumber(@Nullable Output<Integer> nodeNumber) {
             $.nodeNumber = nodeNumber;
@@ -94,32 +104,53 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
 
         /**
          * @param nodeNumber Number of nodes in each shard
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeNumber(Integer nodeNumber) {
             return nodeNumber(Output.of(nodeNumber));
         }
 
+        /**
+         * @param serverNodes Detailed list of all Server nodes in the shard.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverNodes(@Nullable Output<List<InstanceInstanceShardServerNodeArgs>> serverNodes) {
             $.serverNodes = serverNodes;
             return this;
         }
 
+        /**
+         * @param serverNodes Detailed list of all Server nodes in the shard.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverNodes(List<InstanceInstanceShardServerNodeArgs> serverNodes) {
             return serverNodes(Output.of(serverNodes));
         }
 
+        /**
+         * @param serverNodes Detailed list of all Server nodes in the shard.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverNodes(InstanceInstanceShardServerNodeArgs... serverNodes) {
             return serverNodes(List.of(serverNodes));
         }
 
         /**
          * @param shardId Shard ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shardId(@Nullable Output<String> shardId) {
             $.shardId = shardId;
@@ -128,9 +159,9 @@ public final class InstanceInstanceShardArgs extends com.pulumi.resources.Resour
 
         /**
          * @param shardId Shard ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shardId(String shardId) {
             return shardId(Output.of(shardId));

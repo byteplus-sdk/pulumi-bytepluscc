@@ -13,20 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainRemoteAuth {
+    /**
+     * @return Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DomainRemoteAuthRemoteAuthRule> remoteAuthRules;
     /**
      * @return Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
-     * 
+     *
      */
     private @Nullable Boolean switch_;
 
     private DomainRemoteAuth() {}
+    /**
+     * @return Specifies the list of remote authentication configuration rules. When Switch is true, this parameter is required. You can add only one configuration rule.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DomainRemoteAuthRemoteAuthRule> remoteAuthRules() {
         return this.remoteAuthRules == null ? List.of() : this.remoteAuthRules;
     }
     /**
      * @return Indicates whether this feature is enabled. The parameter values are as follows: true: enables the feature. false: disables the feature.
-     * 
+     *
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);

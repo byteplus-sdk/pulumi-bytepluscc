@@ -21,14 +21,14 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account information description, maximum length 256 characters.
-     * 
+     *
      */
     @Import(name="accountDesc")
     private @Nullable Output<String> accountDesc;
 
     /**
      * @return Account information description, maximum length 256 characters.
-     * 
+     *
      */
     public Optional<Output<String>> accountDesc() {
         return Optional.ofNullable(this.accountDesc);
@@ -36,14 +36,14 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
-     * 
+     *
      */
     @Import(name="accountName", required=true)
     private Output<String> accountName;
 
     /**
      * @return Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
-     * 
+     *
      */
     public Output<String> accountName() {
         return this.accountName;
@@ -51,36 +51,46 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
-     * 
+     *
      */
     @Import(name="accountPassword", required=true)
     private Output<String> accountPassword;
 
     /**
      * @return Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
-     * 
+     *
      */
     public Output<String> accountPassword() {
         return this.accountPassword;
     }
 
+    /**
+     * Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="accountPrivileges")
     private @Nullable Output<List<DbAccountAccountPrivilegeArgs>> accountPrivileges;
 
+    /**
+     * @return Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DbAccountAccountPrivilegeArgs>>> accountPrivileges() {
         return Optional.ofNullable(this.accountPrivileges);
     }
 
     /**
      * Account type. Value options: Super: high-privilege account. Normal: regular account.
-     * 
+     *
      */
     @Import(name="accountType", required=true)
     private Output<String> accountType;
 
     /**
      * @return Account type. Value options: Super: high-privilege account. Normal: regular account.
-     * 
+     *
      */
     public Output<String> accountType() {
         return this.accountType;
@@ -88,14 +98,14 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address from which the specified database account can access the database.
-     * 
+     *
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
      * @return IP address from which the specified database account can access the database.
-     * 
+     *
      */
     public Optional<Output<String>> host() {
         return Optional.ofNullable(this.host);
@@ -103,22 +113,32 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID.
-     * 
+     *
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
 
+    /**
+     * Account table column permission settings.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tableColumnPrivileges")
     private @Nullable Output<List<DbAccountTableColumnPrivilegeArgs>> tableColumnPrivileges;
 
+    /**
+     * @return Account table column permission settings.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DbAccountTableColumnPrivilegeArgs>>> tableColumnPrivileges() {
         return Optional.ofNullable(this.tableColumnPrivileges);
     }
@@ -156,9 +176,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountDesc Account information description, maximum length 256 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountDesc(@Nullable Output<String> accountDesc) {
             $.accountDesc = accountDesc;
@@ -167,9 +187,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountDesc Account information description, maximum length 256 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountDesc(String accountDesc) {
             return accountDesc(Output.of(accountDesc));
@@ -177,9 +197,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountName Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountName(Output<String> accountName) {
             $.accountName = accountName;
@@ -188,9 +208,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountName Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountName(String accountName) {
             return accountName(Output.of(accountName));
@@ -198,9 +218,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountPassword Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountPassword(Output<String> accountPassword) {
             $.accountPassword = accountPassword;
@@ -209,32 +229,53 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountPassword Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountPassword(String accountPassword) {
             return accountPassword(Output.of(accountPassword));
         }
 
+        /**
+         * @param accountPrivileges Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accountPrivileges(@Nullable Output<List<DbAccountAccountPrivilegeArgs>> accountPrivileges) {
             $.accountPrivileges = accountPrivileges;
             return this;
         }
 
+        /**
+         * @param accountPrivileges Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accountPrivileges(List<DbAccountAccountPrivilegeArgs> accountPrivileges) {
             return accountPrivileges(Output.of(accountPrivileges));
         }
 
+        /**
+         * @param accountPrivileges Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accountPrivileges(DbAccountAccountPrivilegeArgs... accountPrivileges) {
             return accountPrivileges(List.of(accountPrivileges));
         }
 
         /**
          * @param accountType Account type. Value options: Super: high-privilege account. Normal: regular account.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountType(Output<String> accountType) {
             $.accountType = accountType;
@@ -243,9 +284,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountType Account type. Value options: Super: high-privilege account. Normal: regular account.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountType(String accountType) {
             return accountType(Output.of(accountType));
@@ -253,9 +294,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host IP address from which the specified database account can access the database.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder host(@Nullable Output<String> host) {
             $.host = host;
@@ -264,9 +305,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host IP address from which the specified database account can access the database.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder host(String host) {
             return host(Output.of(host));
@@ -274,9 +315,9 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -285,23 +326,44 @@ public final class DbAccountArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
         }
 
+        /**
+         * @param tableColumnPrivileges Account table column permission settings.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tableColumnPrivileges(@Nullable Output<List<DbAccountTableColumnPrivilegeArgs>> tableColumnPrivileges) {
             $.tableColumnPrivileges = tableColumnPrivileges;
             return this;
         }
 
+        /**
+         * @param tableColumnPrivileges Account table column permission settings.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tableColumnPrivileges(List<DbAccountTableColumnPrivilegeArgs> tableColumnPrivileges) {
             return tableColumnPrivileges(Output.of(tableColumnPrivileges));
         }
 
+        /**
+         * @param tableColumnPrivileges Account table column permission settings.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tableColumnPrivileges(DbAccountTableColumnPrivilegeArgs... tableColumnPrivileges) {
             return tableColumnPrivileges(List.of(tableColumnPrivileges));
         }

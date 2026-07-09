@@ -21,14 +21,14 @@ import javax.annotation.Nullable;
 
 /**
  * Container Registry (CR) provides secure, highly available hosting services for container images, Helm Charts, and other OCI-compliant cloud-native artifacts, making it easy for enterprise users to manage the full lifecycle of container images and Helm Charts
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -36,18 +36,18 @@ import javax.annotation.Nullable;
  * import com.byteplus.bytepluscc.cr.RegistryArgs;
  * import com.pulumi.bytepluscc.cr.inputs.RegistryEndpointArgs;
  * import com.pulumi.bytepluscc.cr.inputs.RegistryTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cRRegistryDemo = new Registry("cRRegistryDemo", RegistryArgs.builder()
  *             .project("default")
@@ -61,178 +61,188 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cr/registry:Registry example &#34;name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cr/registry:Registry")
 public class Registry extends com.pulumi.resources.CustomResource {
     /**
      * Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
-     * 
+     *
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
      * @return Billing type for the container registry instance. Currently, only PostCharge pay-as-you-go mode is supported
-     * 
+     *
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
      * Creation time of the container registry instance
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the container registry instance
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Public endpoint information for the image repository instance.
-     * 
+     *
      */
     @Export(name="endpoint", refs={RegistryEndpoint.class}, tree="[0]")
     private Output<RegistryEndpoint> endpoint;
 
     /**
      * @return Public endpoint information for the image repository instance.
-     * 
+     *
      */
     public Output<RegistryEndpoint> endpoint() {
         return this.endpoint;
     }
     /**
      * Instance expiration time is only available for HybridCharge billing type
-     * 
+     *
      */
     @Export(name="expireTime", refs={String.class}, tree="[0]")
     private Output<String> expireTime;
 
     /**
      * @return Instance expiration time is only available for HybridCharge billing type
-     * 
+     *
      */
     public Output<String> expireTime() {
         return this.expireTime;
     }
     /**
      * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Enter the project to associate with the instance. Each instance can only be associated with one project
-     * 
+     *
      */
     @Export(name="project", refs={String.class}, tree="[0]")
     private Output<String> project;
 
     /**
      * @return Enter the project to associate with the instance. Each instance can only be associated with one project
-     * 
+     *
      */
     public Output<String> project() {
         return this.project;
     }
     /**
      * ProxyCache configuration. Required when set as ProxyCache
-     * 
+     *
      */
     @Export(name="proxyCache", refs={RegistryProxyCache.class}, tree="[0]")
     private Output<RegistryProxyCache> proxyCache;
 
     /**
      * @return ProxyCache configuration. Required when set as ProxyCache
-     * 
+     *
      */
     public Output<RegistryProxyCache> proxyCache() {
         return this.proxyCache;
     }
     /**
      * Set as ProxyCache instance
-     * 
+     *
      */
     @Export(name="proxyCacheEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> proxyCacheEnabled;
 
     /**
      * @return Set as ProxyCache instance
-     * 
+     *
      */
     public Output<Boolean> proxyCacheEnabled() {
         return this.proxyCacheEnabled;
     }
     /**
      * Instance auto-renewal type is only available for HybridCharge billing type
-     * 
+     *
      */
     @Export(name="renewType", refs={String.class}, tree="[0]")
     private Output<String> renewType;
 
     /**
      * @return Instance auto-renewal type is only available for HybridCharge billing type
-     * 
+     *
      */
     public Output<String> renewType() {
         return this.renewType;
     }
     /**
      * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-     * 
+     *
      */
     @Export(name="status", refs={RegistryStatus.class}, tree="[0]")
     private Output<RegistryStatus> status;
 
     /**
      * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-     * 
+     *
      */
     public Output<RegistryStatus> status() {
         return this.status;
     }
+    /**
+     * Instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,RegistryTag.class}, tree="[0,1]")
     private Output<List<RegistryTag>> tags;
 
+    /**
+     * @return Instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RegistryTag>> tags() {
         return this.tags;
     }
     /**
      * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;

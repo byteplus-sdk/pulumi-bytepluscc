@@ -20,14 +20,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer group description, up to 128 characters
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Consumer group description, up to 128 characters
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-     * 
+     *
      */
     @Import(name="groupId", required=true)
     private Output<String> groupId;
 
     /**
      * @return Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-     * 
+     *
      */
     public Output<String> groupId() {
         return this.groupId;
@@ -50,22 +50,32 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     * 
+     *
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
 
+    /**
+     * Group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<GroupTagArgs>> tags;
 
+    /**
+     * @return Group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GroupTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -99,9 +109,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Consumer group description, up to 128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -110,9 +120,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Consumer group description, up to 128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -120,9 +130,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupId Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groupId(Output<String> groupId) {
             $.groupId = groupId;
@@ -131,9 +141,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groupId Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groupId(String groupId) {
             return groupId(Output.of(groupId));
@@ -141,9 +151,9 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -152,23 +162,44 @@ public final class GroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<GroupTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<GroupTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(GroupTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -16,31 +16,31 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud enterprise network route entry, used to publish the route entry of a network instance to the cloud enterprise network
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.cen.RouteEntry;
  * import com.byteplus.bytepluscc.cen.RouteEntryArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cENRouteEntryDemo = new RouteEntry("cENRouteEntryDemo", RouteEntryArgs.builder()
  *             .instanceType("VPC")
@@ -49,144 +49,144 @@ import javax.annotation.Nullable;
  *             .destinationCidrBlock("192.x.0.0/24")
  *             .cenId("cen-2v73nw1h8a03k6x7e8xxxxx")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cen/routeEntry:RouteEntry example &#34;cen_id|destination_cidr_block|instance_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cen/routeEntry:RouteEntry")
 public class RouteEntry extends com.pulumi.resources.CustomResource {
     /**
      * AS path
-     * 
+     *
      */
     @Export(name="asPaths", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> asPaths;
 
     /**
      * @return AS path
-     * 
+     *
      */
     public Output<List<String>> asPaths() {
         return this.asPaths;
     }
     /**
      * Cloud enterprise network instance ID
-     * 
+     *
      */
     @Export(name="cenId", refs={String.class}, tree="[0]")
     private Output<String> cenId;
 
     /**
      * @return Cloud enterprise network instance ID
-     * 
+     *
      */
     public Output<String> cenId() {
         return this.cenId;
     }
     /**
      * Destination CIDR of the route entry
-     * 
+     *
      */
     @Export(name="destinationCidrBlock", refs={String.class}, tree="[0]")
     private Output<String> destinationCidrBlock;
 
     /**
      * @return Destination CIDR of the route entry
-     * 
+     *
      */
     public Output<String> destinationCidrBlock() {
         return this.destinationCidrBlock;
     }
     /**
      * Network instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Network instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Region ID of the network instance
-     * 
+     *
      */
     @Export(name="instanceRegionId", refs={String.class}, tree="[0]")
     private Output<String> instanceRegionId;
 
     /**
      * @return Region ID of the network instance
-     * 
+     *
      */
     public Output<String> instanceRegionId() {
         return this.instanceRegionId;
     }
     /**
      * Network instance type
-     * 
+     *
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Network instance type
-     * 
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Publish status of the route entry
-     * 
+     *
      */
     @Export(name="publishStatus", refs={String.class}, tree="[0]")
     private Output<String> publishStatus;
 
     /**
      * @return Publish status of the route entry
-     * 
+     *
      */
     public Output<String> publishStatus() {
         return this.publishStatus;
     }
     /**
      * Effective status of the route entry
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Effective status of the route entry
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Route entry type
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Route entry type
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;

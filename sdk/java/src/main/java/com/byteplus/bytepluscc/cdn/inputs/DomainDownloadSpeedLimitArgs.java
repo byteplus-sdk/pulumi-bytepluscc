@@ -17,23 +17,33 @@ public final class DomainDownloadSpeedLimitArgs extends com.pulumi.resources.Res
 
     public static final DomainDownloadSpeedLimitArgs Empty = new DomainDownloadSpeedLimitArgs();
 
+    /**
+     * Indicates the rule for download rate limiting. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="downloadSpeedLimitRules")
     private @Nullable Output<List<DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs>> downloadSpeedLimitRules;
 
+    /**
+     * @return Indicates the rule for download rate limiting. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs>>> downloadSpeedLimitRules() {
         return Optional.ofNullable(this.downloadSpeedLimitRules);
     }
 
     /**
      * Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     * 
+     *
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -64,24 +74,45 @@ public final class DomainDownloadSpeedLimitArgs extends com.pulumi.resources.Res
             $ = new DomainDownloadSpeedLimitArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param downloadSpeedLimitRules Indicates the rule for download rate limiting. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder downloadSpeedLimitRules(@Nullable Output<List<DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs>> downloadSpeedLimitRules) {
             $.downloadSpeedLimitRules = downloadSpeedLimitRules;
             return this;
         }
 
+        /**
+         * @param downloadSpeedLimitRules Indicates the rule for download rate limiting. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder downloadSpeedLimitRules(List<DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs> downloadSpeedLimitRules) {
             return downloadSpeedLimitRules(Output.of(downloadSpeedLimitRules));
         }
 
+        /**
+         * @param downloadSpeedLimitRules Indicates the rule for download rate limiting. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder downloadSpeedLimitRules(DomainDownloadSpeedLimitDownloadSpeedLimitRuleArgs... downloadSpeedLimitRules) {
             return downloadSpeedLimitRules(List.of(downloadSpeedLimitRules));
         }
 
         /**
          * @param switch_ Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -90,9 +121,9 @@ public final class DomainDownloadSpeedLimitArgs extends com.pulumi.resources.Res
 
         /**
          * @param switch_ Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

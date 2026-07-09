@@ -18,23 +18,33 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final MountServiceArgs Empty = new MountServiceArgs();
 
+    /**
+     * Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="attachFileSystems")
     private @Nullable Output<List<MountServiceAttachFileSystemArgs>> attachFileSystems;
 
+    /**
+     * @return Mount instance information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<MountServiceAttachFileSystemArgs>>> attachFileSystems() {
         return Optional.ofNullable(this.attachFileSystems);
     }
 
     /**
      * Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-     * 
+     *
      */
     @Import(name="mountServiceName", required=true)
     private Output<String> mountServiceName;
 
     /**
      * @return Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-     * 
+     *
      */
     public Output<String> mountServiceName() {
         return this.mountServiceName;
@@ -42,14 +52,14 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Client management node type.
-     * 
+     *
      */
     @Import(name="nodeType", required=true)
     private Output<String> nodeType;
 
     /**
      * @return Client management node type.
-     * 
+     *
      */
     public Output<String> nodeType() {
         return this.nodeType;
@@ -57,14 +67,14 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project.
-     * 
+     *
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
      * @return Project.
-     * 
+     *
      */
     public Optional<Output<String>> project() {
         return Optional.ofNullable(this.project);
@@ -72,14 +82,14 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID.
-     * 
+     *
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
@@ -87,14 +97,14 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network ID.
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -102,14 +112,14 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID.
-     * 
+     *
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -145,24 +155,45 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
             $ = new MountServiceArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachFileSystems(@Nullable Output<List<MountServiceAttachFileSystemArgs>> attachFileSystems) {
             $.attachFileSystems = attachFileSystems;
             return this;
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachFileSystems(List<MountServiceAttachFileSystemArgs> attachFileSystems) {
             return attachFileSystems(Output.of(attachFileSystems));
         }
 
+        /**
+         * @param attachFileSystems Mount instance information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachFileSystems(MountServiceAttachFileSystemArgs... attachFileSystems) {
             return attachFileSystems(List.of(attachFileSystems));
         }
 
         /**
          * @param mountServiceName Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mountServiceName(Output<String> mountServiceName) {
             $.mountServiceName = mountServiceName;
@@ -171,9 +202,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mountServiceName Mount service name. Naming rules: Must start with a Chinese or English character. Only Chinese characters, letters, numbers, periods (.), underscores (_), or hyphens (-) are allowed. Length must be between 1 and 128 characters. The mount service name must be unique within each region and account; duplicates are not allowed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mountServiceName(String mountServiceName) {
             return mountServiceName(Output.of(mountServiceName));
@@ -181,9 +212,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeType Client management node type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeType(Output<String> nodeType) {
             $.nodeType = nodeType;
@@ -192,9 +223,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeType Client management node type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeType(String nodeType) {
             return nodeType(Output.of(nodeType));
@@ -202,9 +233,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder project(@Nullable Output<String> project) {
             $.project = project;
@@ -213,9 +244,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder project(String project) {
             return project(Output.of(project));
@@ -223,9 +254,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -234,9 +265,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
@@ -244,9 +275,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -255,9 +286,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -265,9 +296,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -276,9 +307,9 @@ public final class MountServiceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

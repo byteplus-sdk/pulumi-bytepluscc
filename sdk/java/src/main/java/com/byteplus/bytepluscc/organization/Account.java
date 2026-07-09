@@ -19,359 +19,413 @@ import javax.annotation.Nullable;
 
 /**
  * View and manage all accounts in your organization. Each account can be placed directly in the root node or moved to any organizational node hierarchy you create. Each account can belong to only one node. You can manage your organizational structure and member accounts in a layered tree structure
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.organization.Account;
+ * import com.byteplus.bytepluscc.organization.AccountArgs;
+ * import com.pulumi.bytepluscc.organization.inputs.AccountSecureContactInfoArgs;
+ * import com.pulumi.bytepluscc.organization.inputs.AccountTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var organizationAccountDemo = new Account("organizationAccountDemo", AccountArgs.builder()
+ *             .accountName("testdemo")
+ *             .description("test-desc")
+ *             .orgUnitId("7538034613*****190")
+ *             .showName("test-show-name")
+ *             .allowConsole(1)
+ *             .secureContactInfo(AccountSecureContactInfoArgs.builder()
+ *                 .new_email("")
+ *                 .new_phone("*********")
+ *                 .build())
+ *             .tags(AccountTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:organization/account:Account example &#34;account_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:organization/account:Account")
 public class Account extends com.pulumi.resources.CustomResource {
     /**
      * Volcano account ID
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Volcano account ID
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Account name. 5–20 characters
-     * 
+     *
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
      * @return Account name. 5–20 characters
-     * 
+     *
      */
     public Output<String> accountName() {
         return this.accountName;
     }
     /**
      * Allow console access: 1. Allowed, 2. Not allowed
-     * 
+     *
      */
     @Export(name="allowConsole", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowConsole;
 
     /**
      * @return Allow console access: 1. Allowed, 2. Not allowed
-     * 
+     *
      */
     public Output<Integer> allowConsole() {
         return this.allowConsole;
     }
     /**
      * Allow exit: 1. Allowed, 2. Not allowed
-     * 
+     *
      */
     @Export(name="allowExit", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowExit;
 
     /**
      * @return Allow exit: 1. Allowed, 2. Not allowed
-     * 
+     *
      */
     public Output<Integer> allowExit() {
         return this.allowExit;
     }
     /**
      * Creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Deletion flag
-     * 
+     *
      */
     @Export(name="deleteUk", refs={String.class}, tree="[0]")
     private Output<String> deleteUk;
 
     /**
      * @return Deletion flag
-     * 
+     *
      */
     public Output<String> deleteUk() {
         return this.deleteUk;
     }
     /**
      * Deletion time
-     * 
+     *
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Deletion time
-     * 
+     *
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * IAM role name
-     * 
+     *
      */
     @Export(name="iamRole", refs={String.class}, tree="[0]")
     private Output<String> iamRole;
 
     /**
      * @return IAM role name
-     * 
+     *
      */
     public Output<String> iamRole() {
         return this.iamRole;
     }
     /**
      * Administrator status: 0. Non-administrator, 1. Administrator
-     * 
+     *
      */
     @Export(name="isOwner", refs={Integer.class}, tree="[0]")
     private Output<Integer> isOwner;
 
     /**
      * @return Administrator status: 0. Non-administrator, 1. Administrator
-     * 
+     *
      */
     public Output<Integer> isOwner() {
         return this.isOwner;
     }
     /**
      * Join type: 1. Create, 2. Invite
-     * 
+     *
      */
     @Export(name="joinType", refs={Integer.class}, tree="[0]")
     private Output<Integer> joinType;
 
     /**
      * @return Join type: 1. Create, 2. Invite
-     * 
+     *
      */
     public Output<Integer> joinType() {
         return this.joinType;
     }
     /**
      * Subject name
-     * 
+     *
      */
     @Export(name="mainName", refs={String.class}, tree="[0]")
     private Output<String> mainName;
 
     /**
      * @return Subject name
-     * 
+     *
      */
     public Output<String> mainName() {
         return this.mainName;
     }
     /**
      * Organization member account ID
-     * 
+     *
      */
     @Export(name="memberAccountId", refs={String.class}, tree="[0]")
     private Output<String> memberAccountId;
 
     /**
      * @return Organization member account ID
-     * 
+     *
      */
     public Output<String> memberAccountId() {
         return this.memberAccountId;
     }
     /**
      * Organization ID
-     * 
+     *
      */
     @Export(name="orgId", refs={String.class}, tree="[0]")
     private Output<String> orgId;
 
     /**
      * @return Organization ID
-     * 
+     *
      */
     public Output<String> orgId() {
         return this.orgId;
     }
     /**
      * Organization type: 1. Enterprise organization
-     * 
+     *
      */
     @Export(name="orgType", refs={Integer.class}, tree="[0]")
     private Output<Integer> orgType;
 
     /**
      * @return Organization type: 1. Enterprise organization
-     * 
+     *
      */
     public Output<Integer> orgType() {
         return this.orgType;
     }
     /**
      * Organizational unit ID. Enter 0 to join the root unit
-     * 
+     *
      */
     @Export(name="orgUnitId", refs={String.class}, tree="[0]")
     private Output<String> orgUnitId;
 
     /**
      * @return Organizational unit ID. Enter 0 to join the root unit
-     * 
+     *
      */
     public Output<String> orgUnitId() {
         return this.orgUnitId;
     }
     /**
      * Organizational unit name
-     * 
+     *
      */
     @Export(name="orgUnitName", refs={String.class}, tree="[0]")
     private Output<String> orgUnitName;
 
     /**
      * @return Organizational unit name
-     * 
+     *
      */
     public Output<String> orgUnitName() {
         return this.orgUnitName;
     }
     /**
      * Authentication subject ID
-     * 
+     *
      */
     @Export(name="orgVerificationId", refs={String.class}, tree="[0]")
     private Output<String> orgVerificationId;
 
     /**
      * @return Authentication subject ID
-     * 
+     *
      */
     public Output<String> orgVerificationId() {
         return this.orgVerificationId;
     }
     /**
      * Administrator ID
-     * 
+     *
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
      * @return Administrator ID
-     * 
+     *
      */
     public Output<String> owner() {
         return this.owner;
     }
     /**
      * Account password
-     * 
+     *
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
      * @return Account password
-     * 
+     *
      */
     public Output<String> password() {
         return this.password;
     }
     /**
      * Security contact information
-     * 
+     *
      */
     @Export(name="secureContactInfo", refs={AccountSecureContactInfo.class}, tree="[0]")
     private Output<AccountSecureContactInfo> secureContactInfo;
 
     /**
      * @return Security contact information
-     * 
+     *
      */
     public Output<AccountSecureContactInfo> secureContactInfo() {
         return this.secureContactInfo;
     }
     /**
      * Display name
-     * 
+     *
      */
     @Export(name="showName", refs={String.class}, tree="[0]")
     private Output<String> showName;
 
     /**
      * @return Display name
-     * 
+     *
      */
     public Output<String> showName() {
         return this.showName;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,AccountTag.class}, tree="[0,1]")
     private Output<List<AccountTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AccountTag>> tags() {
         return this.tags;
     }
     /**
      * Update time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
-     * 
+     *
      */
     @Export(name="verificationRelationId", refs={String.class}, tree="[0]")
     private Output<String> verificationRelationId;
 
     /**
      * @return Inherited authentication subject account ID, required when creating an account for a non-administrator authentication subject. The account must have joined the enterprise organization. If not specified, the authentication subject of the enterprise organization administrator is inherited by default
-     * 
+     *
      */
     public Output<String> verificationRelationId() {
         return this.verificationRelationId;

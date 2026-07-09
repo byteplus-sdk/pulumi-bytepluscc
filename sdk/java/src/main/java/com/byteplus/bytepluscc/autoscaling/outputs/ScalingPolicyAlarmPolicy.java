@@ -16,66 +16,76 @@ import javax.annotation.Nullable;
 public final class ScalingPolicyAlarmPolicy {
     /**
      * @return Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
-     * 
+     *
      */
     private @Nullable ScalingPolicyAlarmPolicyCondition condition;
     /**
      * @return Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
-     * 
+     *
      */
     private @Nullable String conditionOperator;
+    /**
+     * @return Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<ScalingPolicyAlarmPolicyCondition> conditions;
     /**
      * @return The effective period for the alarm task.
-     * 
+     *
      */
     private @Nullable String effective;
     /**
      * @return Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
-     * 
+     *
      */
     private @Nullable Integer evaluationCount;
     /**
      * @return Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
-     * 
+     *
      */
     private @Nullable String ruleType;
 
     private ScalingPolicyAlarmPolicy() {}
     /**
      * @return Detailed monitoring metric information for single-metric monitoring. Valid only when ScalingPolicyType is set to Alarm.
-     * 
+     *
      */
     public Optional<ScalingPolicyAlarmPolicyCondition> condition() {
         return Optional.ofNullable(this.condition);
     }
     /**
      * @return Determination conditions for multi-metric alarms. &amp;&amp;: Alarm is triggered only when all metrics meet the conditions. || (default): Alarm is triggered when any metric meets the condition.
-     * 
+     *
      */
     public Optional<String> conditionOperator() {
         return Optional.ofNullable(this.conditionOperator);
     }
+    /**
+     * @return Detailed information about monitoring metrics for multi-metric monitoring. Valid only when ScalingPolicyType is set to Alarm. You must configure either AlarmPolicy.Condition.x or AlarmPolicy.Conditions.x parameters. If both are configured, only AlarmPolicy.Conditions.x takes effect.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<ScalingPolicyAlarmPolicyCondition> conditions() {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
      * @return The effective period for the alarm task.
-     * 
+     *
      */
     public Optional<String> effective() {
         return Optional.ofNullable(this.effective);
     }
     /**
      * @return Scaling actions are triggered when monitoring metric data reaches the threshold for several consecutive times. Valid only when ScalingPolicyType is set to Alarm and required.
-     * 
+     *
      */
     public Optional<Integer> evaluationCount() {
         return Optional.ofNullable(this.evaluationCount);
     }
     /**
      * @return Type of alarm task. Options: Static: static monitoring collected by agent. Valid only when ScalingPolicyType is set to Alarm and required.
-     * 
+     *
      */
     public Optional<String> ruleType() {
         return Optional.ofNullable(this.ruleType);

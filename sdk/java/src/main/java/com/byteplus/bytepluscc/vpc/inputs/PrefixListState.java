@@ -23,43 +23,63 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of resources associated with the prefix list.
-     * 
+     *
      */
     @Import(name="associationCount")
     private @Nullable Output<Integer> associationCount;
 
     /**
      * @return Number of resources associated with the prefix list.
-     * 
+     *
      */
     public Optional<Output<Integer>> associationCount() {
         return Optional.ofNullable(this.associationCount);
     }
 
+    /**
+     * Route table information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="associationsRouteTables")
     private @Nullable Output<List<PrefixListAssociationsRouteTableArgs>> associationsRouteTables;
 
+    /**
+     * @return Route table information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PrefixListAssociationsRouteTableArgs>>> associationsRouteTables() {
         return Optional.ofNullable(this.associationsRouteTables);
     }
 
+    /**
+     * Security group information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="associationsSecurityGroups")
     private @Nullable Output<List<PrefixListAssociationsSecurityGroupArgs>> associationsSecurityGroups;
 
+    /**
+     * @return Security group information associated with the prefix list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PrefixListAssociationsSecurityGroupArgs>>> associationsSecurityGroups() {
         return Optional.ofNullable(this.associationsSecurityGroups);
     }
 
     /**
      * Creation time of the prefix list.
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time of the prefix list.
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -67,14 +87,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -82,14 +102,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
-     * 
+     *
      */
     @Import(name="ipVersion")
     private @Nullable Output<String> ipVersion;
 
     /**
      * @return IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
-     * 
+     *
      */
     public Optional<Output<String>> ipVersion() {
         return Optional.ofNullable(this.ipVersion);
@@ -97,36 +117,46 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
-     * 
+     *
      */
     @Import(name="maxEntries")
     private @Nullable Output<Integer> maxEntries;
 
     /**
      * @return Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
-     * 
+     *
      */
     public Optional<Output<Integer>> maxEntries() {
         return Optional.ofNullable(this.maxEntries);
     }
 
+    /**
+     * CIDR of the prefix list entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="prefixListEntries")
     private @Nullable Output<List<PrefixListPrefixListEntryArgs>> prefixListEntries;
 
+    /**
+     * @return CIDR of the prefix list entry.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PrefixListPrefixListEntryArgs>>> prefixListEntries() {
         return Optional.ofNullable(this.prefixListEntries);
     }
 
     /**
      * Prefix list ID.
-     * 
+     *
      */
     @Import(name="prefixListId")
     private @Nullable Output<String> prefixListId;
 
     /**
      * @return Prefix list ID.
-     * 
+     *
      */
     public Optional<Output<String>> prefixListId() {
         return Optional.ofNullable(this.prefixListId);
@@ -134,14 +164,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-     * 
+     *
      */
     @Import(name="prefixListName")
     private @Nullable Output<String> prefixListName;
 
     /**
      * @return Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-     * 
+     *
      */
     public Optional<Output<String>> prefixListName() {
         return Optional.ofNullable(this.prefixListName);
@@ -149,14 +179,14 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -164,36 +194,46 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<PrefixListTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PrefixListTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Last modification time of the prefix list.
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Last modification time of the prefix list.
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -238,9 +278,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associationCount Number of resources associated with the prefix list.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associationCount(@Nullable Output<Integer> associationCount) {
             $.associationCount = associationCount;
@@ -249,45 +289,87 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associationCount Number of resources associated with the prefix list.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associationCount(Integer associationCount) {
             return associationCount(Output.of(associationCount));
         }
 
+        /**
+         * @param associationsRouteTables Route table information associated with the prefix list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associationsRouteTables(@Nullable Output<List<PrefixListAssociationsRouteTableArgs>> associationsRouteTables) {
             $.associationsRouteTables = associationsRouteTables;
             return this;
         }
 
+        /**
+         * @param associationsRouteTables Route table information associated with the prefix list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associationsRouteTables(List<PrefixListAssociationsRouteTableArgs> associationsRouteTables) {
             return associationsRouteTables(Output.of(associationsRouteTables));
         }
 
+        /**
+         * @param associationsRouteTables Route table information associated with the prefix list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associationsRouteTables(PrefixListAssociationsRouteTableArgs... associationsRouteTables) {
             return associationsRouteTables(List.of(associationsRouteTables));
         }
 
+        /**
+         * @param associationsSecurityGroups Security group information associated with the prefix list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associationsSecurityGroups(@Nullable Output<List<PrefixListAssociationsSecurityGroupArgs>> associationsSecurityGroups) {
             $.associationsSecurityGroups = associationsSecurityGroups;
             return this;
         }
 
+        /**
+         * @param associationsSecurityGroups Security group information associated with the prefix list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associationsSecurityGroups(List<PrefixListAssociationsSecurityGroupArgs> associationsSecurityGroups) {
             return associationsSecurityGroups(Output.of(associationsSecurityGroups));
         }
 
+        /**
+         * @param associationsSecurityGroups Security group information associated with the prefix list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associationsSecurityGroups(PrefixListAssociationsSecurityGroupArgs... associationsSecurityGroups) {
             return associationsSecurityGroups(List.of(associationsSecurityGroups));
         }
 
         /**
          * @param createdTime Creation time of the prefix list.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -296,9 +378,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Creation time of the prefix list.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -306,9 +388,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -317,9 +399,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the prefix list. Length limit: 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -327,9 +409,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipVersion IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipVersion(@Nullable Output<String> ipVersion) {
             $.ipVersion = ipVersion;
@@ -338,9 +420,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipVersion IP version type. Values: IPv4 (default): IPv4 type. IPv6: IPv6 type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipVersion(String ipVersion) {
             return ipVersion(Output.of(ipVersion));
@@ -348,9 +430,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxEntries Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maxEntries(@Nullable Output<Integer> maxEntries) {
             $.maxEntries = maxEntries;
@@ -359,32 +441,53 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxEntries Maximum number of entries, that is, the maximum number of entries that can be added to the prefix list. Value range: 1–200.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maxEntries(Integer maxEntries) {
             return maxEntries(Output.of(maxEntries));
         }
 
+        /**
+         * @param prefixListEntries CIDR of the prefix list entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder prefixListEntries(@Nullable Output<List<PrefixListPrefixListEntryArgs>> prefixListEntries) {
             $.prefixListEntries = prefixListEntries;
             return this;
         }
 
+        /**
+         * @param prefixListEntries CIDR of the prefix list entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder prefixListEntries(List<PrefixListPrefixListEntryArgs> prefixListEntries) {
             return prefixListEntries(Output.of(prefixListEntries));
         }
 
+        /**
+         * @param prefixListEntries CIDR of the prefix list entry.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder prefixListEntries(PrefixListPrefixListEntryArgs... prefixListEntries) {
             return prefixListEntries(List.of(prefixListEntries));
         }
 
         /**
          * @param prefixListId Prefix list ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prefixListId(@Nullable Output<String> prefixListId) {
             $.prefixListId = prefixListId;
@@ -393,9 +496,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prefixListId Prefix list ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prefixListId(String prefixListId) {
             return prefixListId(Output.of(prefixListId));
@@ -403,9 +506,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prefixListName Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prefixListName(@Nullable Output<String> prefixListName) {
             $.prefixListName = prefixListName;
@@ -414,9 +517,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prefixListName Name of the prefix list. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prefixListName(String prefixListName) {
             return prefixListName(Output.of(prefixListName));
@@ -424,9 +527,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -435,9 +538,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the prefix list belongs. If not specified, it is added to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -445,9 +548,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -456,32 +559,53 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the prefix list. Values: Available: available; Creating: creating; Deleting: deleting; Pending: modifying.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<PrefixListTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<PrefixListTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(PrefixListTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updatedTime Last modification time of the prefix list.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -490,9 +614,9 @@ public final class PrefixListState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Last modification time of the prefix list.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

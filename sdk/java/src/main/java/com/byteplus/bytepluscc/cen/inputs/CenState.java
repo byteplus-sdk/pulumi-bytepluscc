@@ -20,14 +20,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account ID to which the CEN instance belongs
-     * 
+     *
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return Account ID to which the CEN instance belongs
-     * 
+     *
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -35,14 +35,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Bandwidth package ID
-     * 
+     *
      */
     @Import(name="cenBandwidthPackageIds")
     private @Nullable Output<List<String>> cenBandwidthPackageIds;
 
     /**
      * @return Bandwidth package ID
-     * 
+     *
      */
     public Optional<Output<List<String>>> cenBandwidthPackageIds() {
         return Optional.ofNullable(this.cenBandwidthPackageIds);
@@ -50,14 +50,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CEN instance ID
-     * 
+     *
      */
     @Import(name="cenId")
     private @Nullable Output<String> cenId;
 
     /**
      * @return CEN instance ID
-     * 
+     *
      */
     public Optional<Output<String>> cenId() {
         return Optional.ofNullable(this.cenId);
@@ -65,14 +65,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
-     * 
+     *
      */
     @Import(name="cenName")
     private @Nullable Output<String> cenName;
 
     /**
      * @return Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
-     * 
+     *
      */
     public Optional<Output<String>> cenName() {
         return Optional.ofNullable(this.cenName);
@@ -80,14 +80,14 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time when the CEN instance was created
-     * 
+     *
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Time when the CEN instance was created
-     * 
+     *
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -95,36 +95,46 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * List of associated network instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="instances")
     private @Nullable Output<List<CenInstanceArgs>> instances;
 
+    /**
+     * @return List of associated network instances
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<CenInstanceArgs>>> instances() {
         return Optional.ofNullable(this.instances);
     }
 
     /**
      * Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -132,36 +142,46 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<CenTagArgs>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<CenTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Time when the CEN instance was updated
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Time when the CEN instance was updated
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -203,9 +223,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Account ID to which the CEN instance belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -214,9 +234,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Account ID to which the CEN instance belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -224,9 +244,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cenBandwidthPackageIds Bandwidth package ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageIds(@Nullable Output<List<String>> cenBandwidthPackageIds) {
             $.cenBandwidthPackageIds = cenBandwidthPackageIds;
@@ -235,9 +255,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cenBandwidthPackageIds Bandwidth package ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageIds(List<String> cenBandwidthPackageIds) {
             return cenBandwidthPackageIds(Output.of(cenBandwidthPackageIds));
@@ -245,9 +265,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cenBandwidthPackageIds Bandwidth package ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageIds(String... cenBandwidthPackageIds) {
             return cenBandwidthPackageIds(List.of(cenBandwidthPackageIds));
@@ -255,9 +275,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cenId CEN instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenId(@Nullable Output<String> cenId) {
             $.cenId = cenId;
@@ -266,9 +286,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cenId CEN instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenId(String cenId) {
             return cenId(Output.of(cenId));
@@ -276,9 +296,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cenName Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenName(@Nullable Output<String> cenName) {
             $.cenName = cenName;
@@ -287,9 +307,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cenName Name of the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If not specified, defaults to the CEN instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenName(String cenName) {
             return cenName(Output.of(cenName));
@@ -297,9 +317,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param creationTime Time when the CEN instance was created
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -308,9 +328,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param creationTime Time when the CEN instance was created
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -318,9 +338,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -329,32 +349,53 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description for the CEN instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to empty
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param instances List of associated network instances
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instances(@Nullable Output<List<CenInstanceArgs>> instances) {
             $.instances = instances;
             return this;
         }
 
+        /**
+         * @param instances List of associated network instances
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instances(List<CenInstanceArgs> instances) {
             return instances(Output.of(instances));
         }
 
+        /**
+         * @param instances List of associated network instances
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder instances(CenInstanceArgs... instances) {
             return instances(List.of(instances));
         }
 
         /**
          * @param projectName Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -363,9 +404,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the CEN instance belongs. If not specified, defaults to &#39;default&#39;
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -373,9 +414,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -384,32 +425,53 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the CEN instance. Creating: Creating Deleting: Deleting Pending: Configuring Available: Available
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<CenTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<CenTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(CenTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updateTime Time when the CEN instance was updated
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -418,9 +480,9 @@ public final class CenState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Time when the CEN instance was updated
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

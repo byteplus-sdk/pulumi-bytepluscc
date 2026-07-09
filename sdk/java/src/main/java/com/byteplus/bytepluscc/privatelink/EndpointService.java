@@ -21,393 +21,464 @@ import javax.annotation.Nullable;
 
 /**
  * The endpoint service enables private network connections between VPCs via endpoints.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.privatelink.EndpointService;
+ * import com.byteplus.bytepluscc.privatelink.EndpointServiceArgs;
+ * import com.pulumi.bytepluscc.privatelink.inputs.EndpointServiceResourceArgs;
+ * import com.pulumi.bytepluscc.privatelink.inputs.EndpointServiceTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var privateLinkEndpointServiceDemo = new EndpointService("privateLinkEndpointServiceDemo", EndpointServiceArgs.builder()
+ *             .serviceType("Interface")
+ *             .ipAddressVersions("ipv4")
+ *             .serviceResourceType("CLB")
+ *             .resources(EndpointServiceResourceArgs.builder()
+ *                 .resource_id("clb-rr0o8ni4dxxxx58wxxxxx")
+ *                 .zone_ids(Arrays.asList("cn-beijing-c"))
+ *                 .build())
+ *             .autoAcceptEnabled(true)
+ *             .privateDnsEnabled(true)
+ *             .privateDnsType("public")
+ *             .privateDnsName("*.www.example.com")
+ *             .description("PrivateLinkEndpointServiceDemo description")
+ *             .projectName("default")
+ *             .tags(EndpointServiceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .payer("Endpoint")
+ *             .enableVerifyPrivateDns(true)
+ *             .permitAccountIds("*")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:privatelink/endpointService:EndpointService example &#34;service_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:privatelink/endpointService:EndpointService")
 public class EndpointService extends com.pulumi.resources.CustomResource {
     /**
      * Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
-     * 
+     *
      */
     @Export(name="autoAcceptEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoAcceptEnabled;
 
     /**
      * @return Whether to automatically accept endpoint connections. true: The endpoint service automatically accepts endpoint connections. false: The endpoint service does not automatically accept endpoint connections; you must manually accept them by calling the EnableVpcEndpointConnection API.
-     * 
+     *
      */
     public Output<Boolean> autoAcceptEnabled() {
         return this.autoAcceptEnabled;
     }
     /**
      * Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
-     * 
+     *
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return Billing type of the endpoint service. 0: No charge. 3: Pay-as-you-go.
-     * 
+     *
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
-     * 
+     *
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Whether the endpoint service is locked. Normal: normal. FinancialLocked: locked. If this parameter is empty, the endpoint service is not locked.
-     * 
+     *
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time of the endpoint service.
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the endpoint service.
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Description of the endpoint service.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the endpoint service.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
-     * 
+     *
      */
     @Export(name="enableVerifyPrivateDns", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableVerifyPrivateDns;
 
     /**
      * @return Verify the DNS name of the specified endpoint service. Only verification of public domain names is supported. true: enabled. false: not enabled.
-     * 
+     *
      */
     public Output<Boolean> enableVerifyPrivateDns() {
         return this.enableVerifyPrivateDns;
     }
     /**
      * IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
-     * 
+     *
      */
     @Export(name="ipAddressVersions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipAddressVersions;
 
     /**
      * @return IP protocol type of the endpoint service. If the return value only contains ipv4, the endpoint service is IPv4 type and only supports IPv4 services. If the return value contains both ipv4 and ipv6, the endpoint service is dual-stack and supports both IPv4 and IPv6 services.
-     * 
+     *
      */
     public Output<List<String>> ipAddressVersions() {
         return this.ipAddressVersions;
     }
     /**
      * Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
-     * 
+     *
      */
     @Export(name="payer", refs={String.class}, tree="[0]")
     private Output<String> payer;
 
     /**
      * @return Billing account for the private network connection. Endpoint: endpoint account. EndpointService: endpoint service account.
-     * 
+     *
      */
     public Output<String> payer() {
         return this.payer;
     }
     /**
      * Details of authorized allowlist accounts.
-     * 
+     *
      */
     @Export(name="permitAccountIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> permitAccountIds;
 
     /**
      * @return Details of authorized allowlist accounts.
-     * 
+     *
      */
     public Output<List<String>> permitAccountIds() {
         return this.permitAccountIds;
     }
     /**
      * Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
-     * 
+     *
      */
     @Export(name="privateDnsEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> privateDnsEnabled;
 
     /**
      * @return Whether the endpoint service enables private DNS name. false: Not enabled. true: Enabled.
-     * 
+     *
      */
     public Output<Boolean> privateDnsEnabled() {
         return this.privateDnsEnabled;
     }
     /**
      * Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
-     * 
+     *
      */
     @Export(name="privateDnsName", refs={String.class}, tree="[0]")
     private Output<String> privateDnsName;
 
     /**
      * @return Private DNS name of the endpoint service. If the PrivateDNSEnabled parameter returns false, this parameter is empty.
-     * 
+     *
      */
     public Output<String> privateDnsName() {
         return this.privateDnsName;
     }
     /**
      * Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
-     * 
+     *
      */
     @Export(name="privateDnsNameConfiguration", refs={EndpointServicePrivateDnsNameConfiguration.class}, tree="[0]")
     private Output<EndpointServicePrivateDnsNameConfiguration> privateDnsNameConfiguration;
 
     /**
      * @return Configuration information for the private DNS name of the endpoint service. Note: If PrivateDNSType is private, this parameter is not returned.
-     * 
+     *
      */
     public Output<EndpointServicePrivateDnsNameConfiguration> privateDnsNameConfiguration() {
         return this.privateDnsNameConfiguration;
     }
     /**
      * Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
-     * 
+     *
      */
     @Export(name="privateDnsType", refs={String.class}, tree="[0]")
     private Output<String> privateDnsType;
 
     /**
      * @return Domain name type of the private DNS name. public: public network. Note: If the custom private domain name feature is not enabled, this parameter is not returned.
-     * 
+     *
      */
     public Output<String> privateDnsType() {
         return this.privateDnsType;
     }
     /**
      * Project name to which the endpoint service belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the endpoint service belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Resources provided by the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="resources", refs={List.class,EndpointServiceResource.class}, tree="[0,1]")
     private Output<List<EndpointServiceResource>> resources;
 
+    /**
+     * @return Resources provided by the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<EndpointServiceResource>> resources() {
         return this.resources;
     }
     /**
      * Service domain name of the endpoint service.
-     * 
+     *
      */
     @Export(name="serviceDomain", refs={String.class}, tree="[0]")
     private Output<String> serviceDomain;
 
     /**
      * @return Service domain name of the endpoint service.
-     * 
+     *
      */
     public Output<String> serviceDomain() {
         return this.serviceDomain;
     }
     /**
      * Endpoint service ID.
-     * 
+     *
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
      * @return Endpoint service ID.
-     * 
+     *
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
      * Name of the endpoint service.
-     * 
+     *
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
      * @return Name of the endpoint service.
-     * 
+     *
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
     /**
      * Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-     * 
+     *
      */
     @Export(name="serviceNameManaged", refs={String.class}, tree="[0]")
     private Output<String> serviceNameManaged;
 
     /**
      * @return Whether this is a managed endpoint service. false: not a managed endpoint service. true: managed endpoint service. If the account owning the endpoint service has not enabled managed endpoint service functionality, this parameter is not returned.
-     * 
+     *
      */
     public Output<String> serviceNameManaged() {
         return this.serviceNameManaged;
     }
     /**
      * Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
-     * 
+     *
      */
     @Export(name="serviceNameSuffix", refs={String.class}, tree="[0]")
     private Output<String> serviceNameSuffix;
 
     /**
      * @return Suffix for the endpoint service name. This parameter is currently in beta testing. If you need to use different name suffixes to distinguish business scenarios, please contact your account manager.
-     * 
+     *
      */
     public Output<String> serviceNameSuffix() {
         return this.serviceNameSuffix;
     }
     /**
      * Current service principal.
-     * 
+     *
      */
     @Export(name="serviceOwner", refs={String.class}, tree="[0]")
     private Output<String> serviceOwner;
 
     /**
      * @return Current service principal.
-     * 
+     *
      */
     public Output<String> serviceOwner() {
         return this.serviceOwner;
     }
     /**
      * Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
-     * 
+     *
      */
     @Export(name="serviceResourceType", refs={String.class}, tree="[0]")
     private Output<String> serviceResourceType;
 
     /**
      * @return Type of service resource. CLB: Load Balancer CLB. ALB: Application Load Balancer ALB. RDSMySQL: Cloud Database MySQL Edition.
-     * 
+     *
      */
     public Output<String> serviceResourceType() {
         return this.serviceResourceType;
     }
     /**
      * Type of the endpoint service. Interface: Interface endpoint service.
-     * 
+     *
      */
     @Export(name="serviceType", refs={String.class}, tree="[0]")
     private Output<String> serviceType;
 
     /**
      * @return Type of the endpoint service. Interface: Interface endpoint service.
-     * 
+     *
      */
     public Output<String> serviceType() {
         return this.serviceType;
     }
     /**
      * Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the endpoint service. Creating: being created. Pending: configuration being modified. Available: available. Deleting: being deleted.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,EndpointServiceTag.class}, tree="[0,1]")
     private Output<List<EndpointServiceTag>> tags;
 
+    /**
+     * @return Tag information of the endpoint service.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<EndpointServiceTag>> tags() {
         return this.tags;
     }
     /**
      * Most recent operation time of the endpoint service.
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the endpoint service.
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
-     * 
+     *
      */
     @Export(name="wildcardDomainEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> wildcardDomainEnabled;
 
     /**
      * @return Whether to enable wildcard domain name. true: Enabled. false: Not enabled.
-     * 
+     *
      */
     public Output<Boolean> wildcardDomainEnabled() {
         return this.wildcardDomainEnabled;
     }
     /**
      * Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
-     * 
+     *
      */
     @Export(name="zoneIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> zoneIds;
 
     /**
      * @return Availability zone where the endpoint service provides service. Note: If the ServiceResourceType parameter returns RDSMySQL, this parameter returns an empty value.
-     * 
+     *
      */
     public Output<List<String>> zoneIds() {
         return this.zoneIds;

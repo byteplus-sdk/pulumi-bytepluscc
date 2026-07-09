@@ -32,422 +32,452 @@ import javax.annotation.Nullable;
 public final class InstanceInstanceConfiguration {
     /**
      * @return Administrator password.
-     * 
+     *
      */
     private @Nullable String adminPassword;
     /**
      * @return Administrator username.
-     * 
+     *
      */
     private @Nullable String adminUserName;
     /**
      * @return Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
-     * 
+     *
      */
     private @Nullable Boolean autoRenew;
     /**
      * @return Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
-     * 
+     *
      */
     private @Nullable String chargeType;
     /**
      * @return Number of cold nodes.
-     * 
+     *
      */
     private @Nullable Integer coldNodeNumber;
     /**
      * @return Node specification details for cold nodes
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationColdNodeResourceSpec coldNodeResourceSpec;
     /**
      * @return Details of cold node storage specification configuration
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationColdNodeStorageSpec coldNodeStorageSpec;
     /**
      * @return Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
-     * 
+     *
      */
     private @Nullable String configurationCode;
     /**
      * @return Coordinator node count
-     * 
+     *
      */
     private @Nullable Integer coordinatorNodeNumber;
     /**
      * @return Node specification configuration details for coordinator node.
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationCoordinatorNodeResourceSpec coordinatorNodeResourceSpec;
     /**
      * @return Storage specification configuration details for coordinator node.
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationCoordinatorNodeStorageSpec coordinatorNodeStorageSpec;
     /**
      * @return Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
-     * 
+     *
      */
     private @Nullable Boolean deletionProtection;
     /**
      * @return Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
-     * 
+     *
      */
     private @Nullable Boolean enableHttps;
     /**
      * @return Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
-     * 
+     *
      */
     private @Nullable Boolean enablePureMaster;
     /**
      * @return Number of data nodes
-     * 
+     *
      */
     private @Nullable Integer hotNodeNumber;
     /**
      * @return Node specification configuration details for data node.
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationHotNodeResourceSpec hotNodeResourceSpec;
     /**
      * @return Data node storage specification configuration details
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationHotNodeStorageSpec hotNodeStorageSpec;
     /**
      * @return Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     private @Nullable String instanceName;
     /**
      * @return Number of Kibana nodes
-     * 
+     *
      */
     private @Nullable Integer kibanaNodeNumber;
     /**
      * @return Kibana node specification configuration details
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationKibanaNodeResourceSpec kibanaNodeResourceSpec;
     /**
      * @return Number of master nodes.
-     * 
+     *
      */
     private @Nullable Integer masterNodeNumber;
     /**
      * @return Master node specification configuration details
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationMasterNodeResourceSpec masterNodeResourceSpec;
     /**
      * @return Storage specification details for master node
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationMasterNodeStorageSpec masterNodeStorageSpec;
+    /**
+     * @return Instance public network specification configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceInstanceConfigurationNetworkSpec> networkSpecs;
+    /**
+     * @return Configuration of node counts and specifications in the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceInstanceConfigurationNodeSpecsAssign> nodeSpecsAssigns;
     /**
      * @return Subscription instance purchase duration, in months.
-     * 
+     *
      */
     private @Nullable Integer period;
     /**
      * @return Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
-     * 
+     *
      */
     private @Nullable String projectName;
     /**
      * @return Instance region
-     * 
+     *
      */
     private @Nullable String regionId;
     /**
      * @return Set subnet information for the instance. Note: The subnet must be in the primary zone.
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationSubnet subnet;
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceInstanceConfigurationTag> tags;
     /**
      * @return API version. Value: 2023-01-01.
-     * 
+     *
      */
     private @Nullable String version;
     /**
      * @return Set VPC information for the instance
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationVpc vpc;
     /**
      * @return Warm node count.
-     * 
+     *
      */
     private @Nullable Integer warmNodeNumber;
     /**
      * @return Warm node specification configuration details.
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationWarmNodeResourceSpec warmNodeResourceSpec;
     /**
      * @return Storage specification details for warm nodes
-     * 
+     *
      */
     private @Nullable InstanceInstanceConfigurationWarmNodeStorageSpec warmNodeStorageSpec;
     /**
      * @return Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
-     * 
+     *
      */
     private @Nullable String zoneId;
     /**
      * @return Number of instance availability zones.
-     * 
+     *
      */
     private @Nullable Integer zoneNumber;
 
     private InstanceInstanceConfiguration() {}
     /**
      * @return Administrator password.
-     * 
+     *
      */
     public Optional<String> adminPassword() {
         return Optional.ofNullable(this.adminPassword);
     }
     /**
      * @return Administrator username.
-     * 
+     *
      */
     public Optional<String> adminUserName() {
         return Optional.ofNullable(this.adminUserName);
     }
     /**
      * @return Whether the subscription instance is set to auto-renewal. true: Auto-renewal; the system will automatically renew the instance before each expiration. false: Auto-renewal is not enabled; manual renewal is required before the instance expires. For more information, see Instance renewal.
-     * 
+     *
      */
     public Optional<Boolean> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
     }
     /**
      * @return Instance billing type. PostPaid: Pay-as-you-go. PrePaid: Subscription
-     * 
+     *
      */
     public Optional<String> chargeType() {
         return Optional.ofNullable(this.chargeType);
     }
     /**
      * @return Number of cold nodes.
-     * 
+     *
      */
     public Optional<Integer> coldNodeNumber() {
         return Optional.ofNullable(this.coldNodeNumber);
     }
     /**
      * @return Node specification details for cold nodes
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationColdNodeResourceSpec> coldNodeResourceSpec() {
         return Optional.ofNullable(this.coldNodeResourceSpec);
     }
     /**
      * @return Details of cold node storage specification configuration
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationColdNodeStorageSpec> coldNodeStorageSpec() {
         return Optional.ofNullable(this.coldNodeStorageSpec);
     }
     /**
      * @return Billing configuration code, obtainable via the DescribeNodeAvailableSpecs API.
-     * 
+     *
      */
     public Optional<String> configurationCode() {
         return Optional.ofNullable(this.configurationCode);
     }
     /**
      * @return Coordinator node count
-     * 
+     *
      */
     public Optional<Integer> coordinatorNodeNumber() {
         return Optional.ofNullable(this.coordinatorNodeNumber);
     }
     /**
      * @return Node specification configuration details for coordinator node.
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationCoordinatorNodeResourceSpec> coordinatorNodeResourceSpec() {
         return Optional.ofNullable(this.coordinatorNodeResourceSpec);
     }
     /**
      * @return Storage specification configuration details for coordinator node.
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationCoordinatorNodeStorageSpec> coordinatorNodeStorageSpec() {
         return Optional.ofNullable(this.coordinatorNodeStorageSpec);
     }
     /**
      * @return Enable instance deletion protection. Values: true: Enable instance deletion protection. false: Disable instance deletion protection. Note: After enabling deletion protection, you cannot delete the instance via console or API
-     * 
+     *
      */
     public Optional<Boolean> deletionProtection() {
         return Optional.ofNullable(this.deletionProtection);
     }
     /**
      * @return Enable HTTPS access protocol. true: Enable HTTPS access. false: Disable HTTPS, use HTTP access. Note: If you choose HTTP access, you can access without security authentication and transmit data in plain HTTP. Ensure the security of your access environment and do not expose the API to the public network. After the instance is created, you can modify the transmission protocol as needed. For related documentation, see Switch Instance Transmission Protocol
-     * 
+     *
      */
     public Optional<Boolean> enableHttps() {
         return Optional.ofNullable(this.enableHttps);
     }
     /**
      * @return Whether the master node is dedicated. true: Master node is dedicated. false: Master node is combined with data node, that is, uses Hot node.
-     * 
+     *
      */
     public Optional<Boolean> enablePureMaster() {
         return Optional.ofNullable(this.enablePureMaster);
     }
     /**
      * @return Number of data nodes
-     * 
+     *
      */
     public Optional<Integer> hotNodeNumber() {
         return Optional.ofNullable(this.hotNodeNumber);
     }
     /**
      * @return Node specification configuration details for data node.
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationHotNodeResourceSpec> hotNodeResourceSpec() {
         return Optional.ofNullable(this.hotNodeResourceSpec);
     }
     /**
      * @return Data node storage specification configuration details
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationHotNodeStorageSpec> hotNodeStorageSpec() {
         return Optional.ofNullable(this.hotNodeStorageSpec);
     }
     /**
      * @return Set a custom instance name. Only Chinese characters, letters, numbers, hyphens (-), and underscores (_) are allowed. The name cannot start or end with a number or hyphen (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
      * @return Number of Kibana nodes
-     * 
+     *
      */
     public Optional<Integer> kibanaNodeNumber() {
         return Optional.ofNullable(this.kibanaNodeNumber);
     }
     /**
      * @return Kibana node specification configuration details
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationKibanaNodeResourceSpec> kibanaNodeResourceSpec() {
         return Optional.ofNullable(this.kibanaNodeResourceSpec);
     }
     /**
      * @return Number of master nodes.
-     * 
+     *
      */
     public Optional<Integer> masterNodeNumber() {
         return Optional.ofNullable(this.masterNodeNumber);
     }
     /**
      * @return Master node specification configuration details
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationMasterNodeResourceSpec> masterNodeResourceSpec() {
         return Optional.ofNullable(this.masterNodeResourceSpec);
     }
     /**
      * @return Storage specification details for master node
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationMasterNodeStorageSpec> masterNodeStorageSpec() {
         return Optional.ofNullable(this.masterNodeStorageSpec);
     }
+    /**
+     * @return Instance public network specification configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceInstanceConfigurationNetworkSpec> networkSpecs() {
         return this.networkSpecs == null ? List.of() : this.networkSpecs;
     }
+    /**
+     * @return Configuration of node counts and specifications in the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceInstanceConfigurationNodeSpecsAssign> nodeSpecsAssigns() {
         return this.nodeSpecsAssigns == null ? List.of() : this.nodeSpecsAssigns;
     }
     /**
      * @return Subscription instance purchase duration, in months.
-     * 
+     *
      */
     public Optional<Integer> period() {
         return Optional.ofNullable(this.period);
     }
     /**
      * @return Set the project for your cloud search instance as needed to facilitate grouping and management of cloud resources. Projects provide a resource management method that helps maintain resource independence and data security. You can also view resource consumption bills by project, making it easier to calculate cloud resource usage costs. For more information, see Project Overview
-     * 
+     *
      */
     public Optional<String> projectName() {
         return Optional.ofNullable(this.projectName);
     }
     /**
      * @return Instance region
-     * 
+     *
      */
     public Optional<String> regionId() {
         return Optional.ofNullable(this.regionId);
     }
     /**
      * @return Set subnet information for the instance. Note: The subnet must be in the primary zone.
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationSubnet> subnet() {
         return Optional.ofNullable(this.subnet);
     }
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceInstanceConfigurationTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return API version. Value: 2023-01-01.
-     * 
+     *
      */
     public Optional<String> version() {
         return Optional.ofNullable(this.version);
     }
     /**
      * @return Set VPC information for the instance
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationVpc> vpc() {
         return Optional.ofNullable(this.vpc);
     }
     /**
      * @return Warm node count.
-     * 
+     *
      */
     public Optional<Integer> warmNodeNumber() {
         return Optional.ofNullable(this.warmNodeNumber);
     }
     /**
      * @return Warm node specification configuration details.
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationWarmNodeResourceSpec> warmNodeResourceSpec() {
         return Optional.ofNullable(this.warmNodeResourceSpec);
     }
     /**
      * @return Storage specification details for warm nodes
-     * 
+     *
      */
     public Optional<InstanceInstanceConfigurationWarmNodeStorageSpec> warmNodeStorageSpec() {
         return Optional.ofNullable(this.warmNodeStorageSpec);
     }
     /**
      * @return Zone where the instance is located. Note: For multi-zone deployment, enter multiple ZoneIds separated by commas, e.g., cn-beijing-a,cn-beijing-c. The leftmost ZoneId is the primary zone, others are backup zones.
-     * 
+     *
      */
     public Optional<String> zoneId() {
         return Optional.ofNullable(this.zoneId);
     }
     /**
      * @return Number of instance availability zones.
-     * 
+     *
      */
     public Optional<Integer> zoneNumber() {
         return Optional.ofNullable(this.zoneNumber);

@@ -24,23 +24,33 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     public static final UserState Empty = new UserState();
 
+    /**
+     * Sub-user&#39;s access key.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="accessKeys")
     private @Nullable Output<List<UserAccessKeyArgs>> accessKeys;
 
+    /**
+     * @return Sub-user&#39;s access key.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<UserAccessKeyArgs>>> accessKeys() {
         return Optional.ofNullable(this.accessKeys);
     }
 
     /**
      * Main account to which the sub-user belongs.
-     * 
+     *
      */
     @Import(name="accountId")
     private @Nullable Output<Double> accountId;
 
     /**
      * @return Main account to which the sub-user belongs.
-     * 
+     *
      */
     public Optional<Output<Double>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -48,14 +58,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sub-user&#39;s creation time.
-     * 
+     *
      */
     @Import(name="createDate")
     private @Nullable Output<String> createDate;
 
     /**
      * @return Sub-user&#39;s creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createDate() {
         return Optional.ofNullable(this.createDate);
@@ -63,14 +73,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description for the sub-user, up to 255 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description for the sub-user, up to 255 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -78,14 +88,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
-     * 
+     *
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
-     * 
+     *
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
@@ -93,14 +103,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sub-user&#39;s email address.
-     * 
+     *
      */
     @Import(name="email")
     private @Nullable Output<String> email;
 
     /**
      * @return Sub-user&#39;s email address.
-     * 
+     *
      */
     public Optional<Output<String>> email() {
         return Optional.ofNullable(this.email);
@@ -108,14 +118,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-     * 
+     *
      */
     @Import(name="emailIsVerify")
     private @Nullable Output<Boolean> emailIsVerify;
 
     /**
      * @return Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-     * 
+     *
      */
     public Optional<Output<Boolean>> emailIsVerify() {
         return Optional.ofNullable(this.emailIsVerify);
@@ -123,14 +133,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User group to which the sub-user belongs.
-     * 
+     *
      */
     @Import(name="groups")
     private @Nullable Output<List<String>> groups;
 
     /**
      * @return User group to which the sub-user belongs.
-     * 
+     *
      */
     public Optional<Output<List<String>>> groups() {
         return Optional.ofNullable(this.groups);
@@ -138,14 +148,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Login configuration for the sub-user.
-     * 
+     *
      */
     @Import(name="loginProfile")
     private @Nullable Output<UserLoginProfileArgs> loginProfile;
 
     /**
      * @return Login configuration for the sub-user.
-     * 
+     *
      */
     public Optional<Output<UserLoginProfileArgs>> loginProfile() {
         return Optional.ofNullable(this.loginProfile);
@@ -153,14 +163,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sub-user&#39;s mobile number.
-     * 
+     *
      */
     @Import(name="mobilePhone")
     private @Nullable Output<String> mobilePhone;
 
     /**
      * @return Sub-user&#39;s mobile number.
-     * 
+     *
      */
     public Optional<Output<String>> mobilePhone() {
         return Optional.ofNullable(this.mobilePhone);
@@ -168,58 +178,78 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-     * 
+     *
      */
     @Import(name="mobilePhoneIsVerify")
     private @Nullable Output<Boolean> mobilePhoneIsVerify;
 
     /**
      * @return Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-     * 
+     *
      */
     public Optional<Output<Boolean>> mobilePhoneIsVerify() {
         return Optional.ofNullable(this.mobilePhoneIsVerify);
     }
 
+    /**
+     * Sub-user&#39;s permission policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="policies")
     private @Nullable Output<List<UserPolicyArgs>> policies;
 
+    /**
+     * @return Sub-user&#39;s permission policy.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<UserPolicyArgs>>> policies() {
         return Optional.ofNullable(this.policies);
     }
 
     /**
      * Operation protection configuration for the sub-user.
-     * 
+     *
      */
     @Import(name="securityConfig")
     private @Nullable Output<UserSecurityConfigArgs> securityConfig;
 
     /**
      * @return Operation protection configuration for the sub-user.
-     * 
+     *
      */
     public Optional<Output<UserSecurityConfigArgs>> securityConfig() {
         return Optional.ofNullable(this.securityConfig);
     }
 
+    /**
+     * Sub-user&#39;s resource tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<UserTagArgs>> tags;
 
+    /**
+     * @return Sub-user&#39;s resource tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<UserTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * TRN expression for the sub-user.
-     * 
+     *
      */
     @Import(name="trn")
     private @Nullable Output<String> trn;
 
     /**
      * @return TRN expression for the sub-user.
-     * 
+     *
      */
     public Optional<Output<String>> trn() {
         return Optional.ofNullable(this.trn);
@@ -227,14 +257,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Update time for the sub-user.
-     * 
+     *
      */
     @Import(name="updateDate")
     private @Nullable Output<String> updateDate;
 
     /**
      * @return Update time for the sub-user.
-     * 
+     *
      */
     public Optional<Output<String>> updateDate() {
         return Optional.ofNullable(this.updateDate);
@@ -242,14 +272,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sub-user&#39;s ID.
-     * 
+     *
      */
     @Import(name="userId")
     private @Nullable Output<Integer> userId;
 
     /**
      * @return Sub-user&#39;s ID.
-     * 
+     *
      */
     public Optional<Output<Integer>> userId() {
         return Optional.ofNullable(this.userId);
@@ -257,14 +287,14 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
-     * 
+     *
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
      * @return Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
-     * 
+     *
      */
     public Optional<Output<String>> userName() {
         return Optional.ofNullable(this.userName);
@@ -311,24 +341,45 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
             $ = new UserState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessKeys Sub-user&#39;s access key.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accessKeys(@Nullable Output<List<UserAccessKeyArgs>> accessKeys) {
             $.accessKeys = accessKeys;
             return this;
         }
 
+        /**
+         * @param accessKeys Sub-user&#39;s access key.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accessKeys(List<UserAccessKeyArgs> accessKeys) {
             return accessKeys(Output.of(accessKeys));
         }
 
+        /**
+         * @param accessKeys Sub-user&#39;s access key.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accessKeys(UserAccessKeyArgs... accessKeys) {
             return accessKeys(List.of(accessKeys));
         }
 
         /**
          * @param accountId Main account to which the sub-user belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(@Nullable Output<Double> accountId) {
             $.accountId = accountId;
@@ -337,9 +388,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId Main account to which the sub-user belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(Double accountId) {
             return accountId(Output.of(accountId));
@@ -347,9 +398,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createDate Sub-user&#39;s creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createDate(@Nullable Output<String> createDate) {
             $.createDate = createDate;
@@ -358,9 +409,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createDate Sub-user&#39;s creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createDate(String createDate) {
             return createDate(Output.of(createDate));
@@ -368,9 +419,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description for the sub-user, up to 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -379,9 +430,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description for the sub-user, up to 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -389,9 +440,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
@@ -400,9 +451,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName Display name for the sub-user, user display name. Length 1–128. Supports Chinese, English, numbers, spaces, and .-_{@literal @} characters only.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
@@ -410,9 +461,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param email Sub-user&#39;s email address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder email(@Nullable Output<String> email) {
             $.email = email;
@@ -421,9 +472,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param email Sub-user&#39;s email address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder email(String email) {
             return email(Output.of(email));
@@ -431,9 +482,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param emailIsVerify Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder emailIsVerify(@Nullable Output<Boolean> emailIsVerify) {
             $.emailIsVerify = emailIsVerify;
@@ -442,9 +493,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param emailIsVerify Whether the sub-user&#39;s email address is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder emailIsVerify(Boolean emailIsVerify) {
             return emailIsVerify(Output.of(emailIsVerify));
@@ -452,9 +503,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groups User group to which the sub-user belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groups(@Nullable Output<List<String>> groups) {
             $.groups = groups;
@@ -463,9 +514,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groups User group to which the sub-user belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groups(List<String> groups) {
             return groups(Output.of(groups));
@@ -473,9 +524,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param groups User group to which the sub-user belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder groups(String... groups) {
             return groups(List.of(groups));
@@ -483,9 +534,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loginProfile Login configuration for the sub-user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loginProfile(@Nullable Output<UserLoginProfileArgs> loginProfile) {
             $.loginProfile = loginProfile;
@@ -494,9 +545,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loginProfile Login configuration for the sub-user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loginProfile(UserLoginProfileArgs loginProfile) {
             return loginProfile(Output.of(loginProfile));
@@ -504,9 +555,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mobilePhone Sub-user&#39;s mobile number.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mobilePhone(@Nullable Output<String> mobilePhone) {
             $.mobilePhone = mobilePhone;
@@ -515,9 +566,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mobilePhone Sub-user&#39;s mobile number.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mobilePhone(String mobilePhone) {
             return mobilePhone(Output.of(mobilePhone));
@@ -525,9 +576,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mobilePhoneIsVerify Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mobilePhoneIsVerify(@Nullable Output<Boolean> mobilePhoneIsVerify) {
             $.mobilePhoneIsVerify = mobilePhoneIsVerify;
@@ -536,32 +587,53 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mobilePhoneIsVerify Whether the sub-user&#39;s phone number is verified. &#39;true&#39; means verified, &#39;false&#39; means not verified.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mobilePhoneIsVerify(Boolean mobilePhoneIsVerify) {
             return mobilePhoneIsVerify(Output.of(mobilePhoneIsVerify));
         }
 
+        /**
+         * @param policies Sub-user&#39;s permission policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder policies(@Nullable Output<List<UserPolicyArgs>> policies) {
             $.policies = policies;
             return this;
         }
 
+        /**
+         * @param policies Sub-user&#39;s permission policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder policies(List<UserPolicyArgs> policies) {
             return policies(Output.of(policies));
         }
 
+        /**
+         * @param policies Sub-user&#39;s permission policy.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder policies(UserPolicyArgs... policies) {
             return policies(List.of(policies));
         }
 
         /**
          * @param securityConfig Operation protection configuration for the sub-user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityConfig(@Nullable Output<UserSecurityConfigArgs> securityConfig) {
             $.securityConfig = securityConfig;
@@ -570,32 +642,53 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityConfig Operation protection configuration for the sub-user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityConfig(UserSecurityConfigArgs securityConfig) {
             return securityConfig(Output.of(securityConfig));
         }
 
+        /**
+         * @param tags Sub-user&#39;s resource tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<UserTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Sub-user&#39;s resource tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<UserTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Sub-user&#39;s resource tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(UserTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param trn TRN expression for the sub-user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(@Nullable Output<String> trn) {
             $.trn = trn;
@@ -604,9 +697,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trn TRN expression for the sub-user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(String trn) {
             return trn(Output.of(trn));
@@ -614,9 +707,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateDate Update time for the sub-user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateDate(@Nullable Output<String> updateDate) {
             $.updateDate = updateDate;
@@ -625,9 +718,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateDate Update time for the sub-user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateDate(String updateDate) {
             return updateDate(Output.of(updateDate));
@@ -635,9 +728,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userId Sub-user&#39;s ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userId(@Nullable Output<Integer> userId) {
             $.userId = userId;
@@ -646,9 +739,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userId Sub-user&#39;s ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userId(Integer userId) {
             return userId(Output.of(userId));
@@ -656,9 +749,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userName Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userName(@Nullable Output<String> userName) {
             $.userName = userName;
@@ -667,9 +760,9 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userName Sub-user name, username. Length 1–64. Supports English, numbers, underscores, and .-{@literal @} characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userName(String userName) {
             return userName(Output.of(userName));

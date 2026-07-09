@@ -16,249 +16,265 @@ import javax.annotation.Nullable;
 
 /**
  * Fileset details
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vepfs.Fileset;
  * import com.byteplus.bytepluscc.vepfs.FilesetArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vEPFSFilesetDemo = new Fileset("vEPFSFilesetDemo", FilesetArgs.builder()
  *             .filesetName("ccapi-test")
  *             .fileSystemId("vepfs-cnbj81448xxxxx")
  *             .filesetPathOnCreate("/test1/")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vepfs/fileset:Fileset example &#34;file_system_id|fileset_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vepfs/fileset:Fileset")
 public class Fileset extends com.pulumi.resources.CustomResource {
     /**
      * Bandwidth Qos
-     * 
+     *
      */
     @Export(name="bandwidthQos", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidthQos;
 
     /**
      * @return Bandwidth Qos
-     * 
+     *
      */
     public Output<Integer> bandwidthQos() {
         return this.bandwidthQos;
     }
     /**
      * Capacity quota limit (GiB)
-     * 
+     *
      */
     @Export(name="capacityLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> capacityLimit;
 
     /**
      * @return Capacity quota limit (GiB)
-     * 
+     *
      */
     public Output<Integer> capacityLimit() {
         return this.capacityLimit;
     }
     /**
      * Used capacity (GiB)
-     * 
+     *
      */
     @Export(name="capacityUsed", refs={Integer.class}, tree="[0]")
     private Output<Integer> capacityUsed;
 
     /**
      * @return Used capacity (GiB)
-     * 
+     *
      */
     public Output<Integer> capacityUsed() {
         return this.capacityUsed;
     }
     /**
      * Fileset creation time
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Fileset creation time
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
-     * File or directory quota. A value of `0` means no file or directory quota is set
-     * 
+     * File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
+     *
      */
     @Export(name="fileLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> fileLimit;
 
     /**
-     * @return File or directory quota. A value of `0` means no file or directory quota is set
-     * 
+     * @return File or directory quota. A value of &lt;span pulumi-lang-nodejs=&#34;`0`&#34; pulumi-lang-dotnet=&#34;`0`&#34; pulumi-lang-go=&#34;`0`&#34; pulumi-lang-python=&#34;`0`&#34; pulumi-lang-yaml=&#34;`0`&#34; pulumi-lang-java=&#34;`0`&#34; pulumi-lang-hcl=&#34;`0`&#34;&gt;`0`&lt;/span&gt; means no file or directory quota is set
+     *
      */
     public Output<Integer> fileLimit() {
         return this.fileLimit;
     }
     /**
      * File system ID
-     * 
+     *
      */
     @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
      * @return File system ID
-     * 
+     *
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
     }
     /**
      * Used file count
-     * 
+     *
      */
     @Export(name="fileUsed", refs={Integer.class}, tree="[0]")
     private Output<Integer> fileUsed;
 
     /**
      * @return Used file count
-     * 
+     *
      */
     public Output<Integer> fileUsed() {
         return this.fileUsed;
     }
     /**
      * Fileset ID。
-     * 
+     *
      */
     @Export(name="filesetId", refs={String.class}, tree="[0]")
     private Output<String> filesetId;
 
     /**
      * @return Fileset ID。
-     * 
+     *
      */
     public Output<String> filesetId() {
         return this.filesetId;
     }
     /**
      * Fileset name
-     * 
+     *
      */
     @Export(name="filesetName", refs={String.class}, tree="[0]")
     private Output<String> filesetName;
 
     /**
      * @return Fileset name
-     * 
+     *
      */
     public Output<String> filesetName() {
         return this.filesetName;
     }
     /**
      * Fileset absolute path
-     * 
+     *
      */
     @Export(name="filesetPath", refs={String.class}, tree="[0]")
     private Output<String> filesetPath;
 
     /**
      * @return Fileset absolute path
-     * 
+     *
      */
     public Output<String> filesetPath() {
         return this.filesetPath;
     }
     /**
      * Fileset absolute path at creation
-     * 
+     *
      */
     @Export(name="filesetPathOnCreate", refs={String.class}, tree="[0]")
     private Output<String> filesetPathOnCreate;
 
     /**
      * @return Fileset absolute path at creation
-     * 
+     *
      */
     public Output<String> filesetPathOnCreate() {
         return this.filesetPathOnCreate;
     }
     /**
      * IOPS Qos。
-     * 
+     *
      */
     @Export(name="iopsQos", refs={Integer.class}, tree="[0]")
     private Output<Integer> iopsQos;
 
     /**
      * @return IOPS Qos。
-     * 
+     *
      */
     public Output<Integer> iopsQos() {
         return this.iopsQos;
     }
     /**
      * Fileset inode limit
-     * 
+     *
      */
     @Export(name="maxInodeNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxInodeNum;
 
     /**
      * @return Fileset inode limit
-     * 
+     *
      */
     public Output<Integer> maxInodeNum() {
         return this.maxInodeNum;
     }
     /**
-     * Fileset status. The possible values are: - `Creating`: Creating - `CreateError`: Creation failed - `Running`: Running -
-     * `Updating`: Updating - `UpdateError`: Update failed - `Deleting`: Deleting - `DeleteError`: Deletion failed - `Deleted`:
-     * Deleted - `Error`: Error
-     * 
+     * Fileset status. The possible values are:
+     *
+     *     - `Creating`: Creating
+     *     - `CreateError`: Creation failed
+     *     - `Running`: Running
+     *     - `Updating`: Updating
+     *     - `UpdateError`: Update failed
+     *     - `Deleting`: Deleting
+     *     - `DeleteError`: Deletion failed
+     *     - `Deleted`: Deleted
+     *     - `Error`: Error
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
-     * @return Fileset status. The possible values are: - `Creating`: Creating - `CreateError`: Creation failed - `Running`: Running -
-     * `Updating`: Updating - `UpdateError`: Update failed - `Deleting`: Deleting - `DeleteError`: Deletion failed - `Deleted`:
-     * Deleted - `Error`: Error
-     * 
+     * @return Fileset status. The possible values are:
+     *
+     *     - `Creating`: Creating
+     *     - `CreateError`: Creation failed
+     *     - `Running`: Running
+     *     - `Updating`: Updating
+     *     - `UpdateError`: Update failed
+     *     - `Deleting`: Deleting
+     *     - `DeleteError`: Deletion failed
+     *     - `Deleted`: Deleted
+     *     - `Error`: Error
+     *
      */
     public Output<String> status() {
         return this.status;

@@ -27,14 +27,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     @Import(name="asymmetricCiphertext")
     private @Nullable Output<KeyAsymmetricCiphertextArgs> asymmetricCiphertext;
 
     /**
      * @return Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     public Optional<Output<KeyAsymmetricCiphertextArgs>> asymmetricCiphertext() {
         return Optional.ofNullable(this.asymmetricCiphertext);
@@ -42,14 +42,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     @Import(name="asymmetricSignature")
     private @Nullable Output<KeyAsymmetricSignatureArgs> asymmetricSignature;
 
     /**
      * @return Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     public Optional<Output<KeyAsymmetricSignatureArgs>> asymmetricSignature() {
         return Optional.ofNullable(this.asymmetricSignature);
@@ -57,14 +57,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     @Import(name="ciphertext")
     private @Nullable Output<KeyCiphertextArgs> ciphertext;
 
     /**
      * @return Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     public Optional<Output<KeyCiphertextArgs>> ciphertext() {
         return Optional.ofNullable(this.ciphertext);
@@ -72,14 +72,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key creation time.
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<Integer> createdTime;
 
     /**
      * @return Key creation time.
-     * 
+     *
      */
     public Optional<Output<Integer>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -87,14 +87,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key description: Length 0–8192 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Key description: Length 0–8192 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -102,14 +102,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User master key archive operation (enter 1 to archive, 2 to unarchive).
-     * 
+     *
      */
     @Import(name="keyArchiveOperation")
     private @Nullable Output<Integer> keyArchiveOperation;
 
     /**
      * @return User master key archive operation (enter 1 to archive, 2 to unarchive).
-     * 
+     *
      */
     public Optional<Output<Integer>> keyArchiveOperation() {
         return Optional.ofNullable(this.keyArchiveOperation);
@@ -117,14 +117,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User master key enable operation (enter 1 to enable, 2 to disable).
-     * 
+     *
      */
     @Import(name="keyEnableOperation")
     private @Nullable Output<Integer> keyEnableOperation;
 
     /**
      * @return User master key enable operation (enter 1 to enable, 2 to disable).
-     * 
+     *
      */
     public Optional<Output<Integer>> keyEnableOperation() {
         return Optional.ofNullable(this.keyEnableOperation);
@@ -132,14 +132,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key unique identifier in UUID format.
-     * 
+     *
      */
     @Import(name="keyId")
     private @Nullable Output<String> keyId;
 
     /**
      * @return Key unique identifier in UUID format.
-     * 
+     *
      */
     public Optional<Output<String>> keyId() {
         return Optional.ofNullable(this.keyId);
@@ -147,14 +147,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key material expiration time. If empty, the key does not expire.
-     * 
+     *
      */
     @Import(name="keyMaterialExpireTime")
     private @Nullable Output<String> keyMaterialExpireTime;
 
     /**
      * @return Key material expiration time. If empty, the key does not expire.
-     * 
+     *
      */
     public Optional<Output<String>> keyMaterialExpireTime() {
         return Optional.ofNullable(this.keyMaterialExpireTime);
@@ -162,14 +162,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-     * 
+     *
      */
     @Import(name="keyName")
     private @Nullable Output<String> keyName;
 
     /**
      * @return Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-     * 
+     *
      */
     public Optional<Output<String>> keyName() {
         return Optional.ofNullable(this.keyName);
@@ -177,14 +177,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
-     * 
+     *
      */
     @Import(name="keyPrimaryRegion")
     private @Nullable Output<String> keyPrimaryRegion;
 
     /**
      * @return Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
-     * 
+     *
      */
     public Optional<Output<String>> keyPrimaryRegion() {
         return Optional.ofNullable(this.keyPrimaryRegion);
@@ -192,14 +192,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User master key rotation operation (enter 1 to enable, 2 to disable).
-     * 
+     *
      */
     @Import(name="keyRotationOperation")
     private @Nullable Output<Integer> keyRotationOperation;
 
     /**
      * @return User master key rotation operation (enter 1 to enable, 2 to disable).
-     * 
+     *
      */
     public Optional<Output<Integer>> keyRotationOperation() {
         return Optional.ofNullable(this.keyRotationOperation);
@@ -207,14 +207,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
-     * 
+     *
      */
     @Import(name="keySpec")
     private @Nullable Output<String> keySpec;
 
     /**
      * @return Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
-     * 
+     *
      */
     public Optional<Output<String>> keySpec() {
         return Optional.ofNullable(this.keySpec);
@@ -222,14 +222,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
-     * 
+     *
      */
     @Import(name="keyState")
     private @Nullable Output<String> keyState;
 
     /**
      * @return Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
-     * 
+     *
      */
     public Optional<Output<String>> keyState() {
         return Optional.ofNullable(this.keyState);
@@ -237,14 +237,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
-     * 
+     *
      */
     @Import(name="keyUsage")
     private @Nullable Output<String> keyUsage;
 
     /**
      * @return Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
-     * 
+     *
      */
     public Optional<Output<String>> keyUsage() {
         return Optional.ofNullable(this.keyUsage);
@@ -252,14 +252,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-     * 
+     *
      */
     @Import(name="keyringName")
     private @Nullable Output<String> keyringName;
 
     /**
      * @return Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-     * 
+     *
      */
     public Optional<Output<String>> keyringName() {
         return Optional.ofNullable(this.keyringName);
@@ -267,14 +267,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key last rotation time.
-     * 
+     *
      */
     @Import(name="lastRotationTime")
     private @Nullable Output<String> lastRotationTime;
 
     /**
      * @return Key last rotation time.
-     * 
+     *
      */
     public Optional<Output<String>> lastRotationTime() {
         return Optional.ofNullable(this.lastRotationTime);
@@ -282,14 +282,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Is this a multi-region type master key.
-     * 
+     *
      */
     @Import(name="multiRegion")
     private @Nullable Output<Boolean> multiRegion;
 
     /**
      * @return Is this a multi-region type master key.
-     * 
+     *
      */
     public Optional<Output<Boolean>> multiRegion() {
         return Optional.ofNullable(this.multiRegion);
@@ -297,14 +297,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Multi-region key configuration information.
-     * 
+     *
      */
     @Import(name="multiRegionConfiguration")
     private @Nullable Output<KeyMultiRegionConfigurationArgs> multiRegionConfiguration;
 
     /**
      * @return Multi-region key configuration information.
-     * 
+     *
      */
     public Optional<Output<KeyMultiRegionConfigurationArgs>> multiRegionConfiguration() {
         return Optional.ofNullable(this.multiRegionConfiguration);
@@ -312,14 +312,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key source. Options: CloudKMS, External, ExternalKeyStore.
-     * 
+     *
      */
     @Import(name="origin")
     private @Nullable Output<String> origin;
 
     /**
      * @return Key source. Options: CloudKMS, External, ExternalKeyStore.
-     * 
+     *
      */
     public Optional<Output<String>> origin() {
         return Optional.ofNullable(this.origin);
@@ -327,14 +327,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key protection level. Options: SOFTWARE, HSM.
-     * 
+     *
      */
     @Import(name="protectionLevel")
     private @Nullable Output<String> protectionLevel;
 
     /**
      * @return Key protection level. Options: SOFTWARE, HSM.
-     * 
+     *
      */
     public Optional<Output<String>> protectionLevel() {
         return Optional.ofNullable(this.protectionLevel);
@@ -342,14 +342,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     @Import(name="reEncrypt")
     private @Nullable Output<KeyReEncryptArgs> reEncrypt;
 
     /**
      * @return Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     public Optional<Output<KeyReEncryptArgs>> reEncrypt() {
         return Optional.ofNullable(this.reEncrypt);
@@ -357,14 +357,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     @Import(name="replicateKey")
     private @Nullable Output<KeyReplicateKeyArgs> replicateKey;
 
     /**
      * @return Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-     * 
+     *
      */
     public Optional<Output<KeyReplicateKeyArgs>> replicateKey() {
         return Optional.ofNullable(this.replicateKey);
@@ -372,14 +372,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key rotation period (days). Range: [90, 2560].
-     * 
+     *
      */
     @Import(name="rotateInterval")
     private @Nullable Output<Integer> rotateInterval;
 
     /**
      * @return Key rotation period (days). Range: [90, 2560].
-     * 
+     *
      */
     public Optional<Output<Integer>> rotateInterval() {
         return Optional.ofNullable(this.rotateInterval);
@@ -387,14 +387,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key rotation status. Options: Enable, Disable.
-     * 
+     *
      */
     @Import(name="rotateState")
     private @Nullable Output<String> rotateState;
 
     /**
      * @return Key rotation status. Options: Enable, Disable.
-     * 
+     *
      */
     public Optional<Output<String>> rotateState() {
         return Optional.ofNullable(this.rotateState);
@@ -402,14 +402,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key deletion time.
-     * 
+     *
      */
     @Import(name="scheduleDeleteTime")
     private @Nullable Output<String> scheduleDeleteTime;
 
     /**
      * @return Key deletion time.
-     * 
+     *
      */
     public Optional<Output<String>> scheduleDeleteTime() {
         return Optional.ofNullable(this.scheduleDeleteTime);
@@ -417,36 +417,46 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key rotation time.
-     * 
+     *
      */
     @Import(name="scheduleRotationTime")
     private @Nullable Output<String> scheduleRotationTime;
 
     /**
      * @return Key rotation time.
-     * 
+     *
      */
     public Optional<Output<String>> scheduleRotationTime() {
         return Optional.ofNullable(this.scheduleRotationTime);
     }
 
+    /**
+     * KMS key label information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<KeyTagArgs>> tags;
 
+    /**
+     * @return KMS key label information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<KeyTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
-     * 
+     *
      */
     @Import(name="trn")
     private @Nullable Output<String> trn;
 
     /**
      * @return Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
-     * 
+     *
      */
     public Optional<Output<String>> trn() {
         return Optional.ofNullable(this.trn);
@@ -454,14 +464,14 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key update time.
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<Integer> updatedTime;
 
     /**
      * @return Key update time.
-     * 
+     *
      */
     public Optional<Output<Integer>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -522,9 +532,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asymmetricCiphertext Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder asymmetricCiphertext(@Nullable Output<KeyAsymmetricCiphertextArgs> asymmetricCiphertext) {
             $.asymmetricCiphertext = asymmetricCiphertext;
@@ -533,9 +543,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asymmetricCiphertext Asymmetric encryption action parameters and results. AsymmetricEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder asymmetricCiphertext(KeyAsymmetricCiphertextArgs asymmetricCiphertext) {
             return asymmetricCiphertext(Output.of(asymmetricCiphertext));
@@ -543,9 +553,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asymmetricSignature Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder asymmetricSignature(@Nullable Output<KeyAsymmetricSignatureArgs> asymmetricSignature) {
             $.asymmetricSignature = asymmetricSignature;
@@ -554,9 +564,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param asymmetricSignature Asymmetric signature action parameters and results. AsymmetricSign can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder asymmetricSignature(KeyAsymmetricSignatureArgs asymmetricSignature) {
             return asymmetricSignature(Output.of(asymmetricSignature));
@@ -564,9 +574,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ciphertext Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ciphertext(@Nullable Output<KeyCiphertextArgs> ciphertext) {
             $.ciphertext = ciphertext;
@@ -575,9 +585,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ciphertext Symmetric encryption action parameters and results. Encrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ciphertext(KeyCiphertextArgs ciphertext) {
             return ciphertext(Output.of(ciphertext));
@@ -585,9 +595,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Key creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<Integer> createdTime) {
             $.createdTime = createdTime;
@@ -596,9 +606,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Key creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(Integer createdTime) {
             return createdTime(Output.of(createdTime));
@@ -606,9 +616,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Key description: Length 0–8192 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -617,9 +627,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Key description: Length 0–8192 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -627,9 +637,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyArchiveOperation User master key archive operation (enter 1 to archive, 2 to unarchive).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyArchiveOperation(@Nullable Output<Integer> keyArchiveOperation) {
             $.keyArchiveOperation = keyArchiveOperation;
@@ -638,9 +648,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyArchiveOperation User master key archive operation (enter 1 to archive, 2 to unarchive).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyArchiveOperation(Integer keyArchiveOperation) {
             return keyArchiveOperation(Output.of(keyArchiveOperation));
@@ -648,9 +658,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyEnableOperation User master key enable operation (enter 1 to enable, 2 to disable).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyEnableOperation(@Nullable Output<Integer> keyEnableOperation) {
             $.keyEnableOperation = keyEnableOperation;
@@ -659,9 +669,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyEnableOperation User master key enable operation (enter 1 to enable, 2 to disable).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyEnableOperation(Integer keyEnableOperation) {
             return keyEnableOperation(Output.of(keyEnableOperation));
@@ -669,9 +679,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyId Key unique identifier in UUID format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyId(@Nullable Output<String> keyId) {
             $.keyId = keyId;
@@ -680,9 +690,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyId Key unique identifier in UUID format.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyId(String keyId) {
             return keyId(Output.of(keyId));
@@ -690,9 +700,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyMaterialExpireTime Key material expiration time. If empty, the key does not expire.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyMaterialExpireTime(@Nullable Output<String> keyMaterialExpireTime) {
             $.keyMaterialExpireTime = keyMaterialExpireTime;
@@ -701,9 +711,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyMaterialExpireTime Key material expiration time. If empty, the key does not expire.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyMaterialExpireTime(String keyMaterialExpireTime) {
             return keyMaterialExpireTime(Output.of(keyMaterialExpireTime));
@@ -711,9 +721,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyName Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyName(@Nullable Output<String> keyName) {
             $.keyName = keyName;
@@ -722,9 +732,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyName Master key name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyName(String keyName) {
             return keyName(Output.of(keyName));
@@ -732,9 +742,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyPrimaryRegion Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyPrimaryRegion(@Nullable Output<String> keyPrimaryRegion) {
             $.keyPrimaryRegion = keyPrimaryRegion;
@@ -743,9 +753,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyPrimaryRegion Primary region of the multi-region key. Set the target primary region during the Create/Update phase; the current primary region is returned during the Read phase.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyPrimaryRegion(String keyPrimaryRegion) {
             return keyPrimaryRegion(Output.of(keyPrimaryRegion));
@@ -753,9 +763,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyRotationOperation User master key rotation operation (enter 1 to enable, 2 to disable).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyRotationOperation(@Nullable Output<Integer> keyRotationOperation) {
             $.keyRotationOperation = keyRotationOperation;
@@ -764,9 +774,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyRotationOperation User master key rotation operation (enter 1 to enable, 2 to disable).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyRotationOperation(Integer keyRotationOperation) {
             return keyRotationOperation(Output.of(keyRotationOperation));
@@ -774,9 +784,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keySpec Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keySpec(@Nullable Output<String> keySpec) {
             $.keySpec = keySpec;
@@ -785,9 +795,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keySpec Symmetric keys: SYMMETRIC*256, SYMMETRIC*128; asymmetric keys: RSA*2048, RSA*3072, RSA*4096, EC*P256, EC*P256K, EC*P384, EC*P521, EC*SM2.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keySpec(String keySpec) {
             return keySpec(Output.of(keySpec));
@@ -795,9 +805,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyState Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyState(@Nullable Output<String> keyState) {
             $.keyState = keyState;
@@ -806,9 +816,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyState Key status: Enable, Disable, PendingDelete, Archived, PendingImport.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyState(String keyState) {
             return keyState(Output.of(keyState));
@@ -816,9 +826,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyUsage Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyUsage(@Nullable Output<String> keyUsage) {
             $.keyUsage = keyUsage;
@@ -827,9 +837,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyUsage Key usage. Options: ENCRYPT*DECRYPT, SIGN*VERIFY, GENERATE*VERIFY*MAC.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyUsage(String keyUsage) {
             return keyUsage(Output.of(keyUsage));
@@ -837,9 +847,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyringName Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyringName(@Nullable Output<String> keyringName) {
             $.keyringName = keyringName;
@@ -848,9 +858,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyringName Key ring name. Length 2–31 characters. Valid characters: [a-zA-Z0-9-_].
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyringName(String keyringName) {
             return keyringName(Output.of(keyringName));
@@ -858,9 +868,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastRotationTime Key last rotation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastRotationTime(@Nullable Output<String> lastRotationTime) {
             $.lastRotationTime = lastRotationTime;
@@ -869,9 +879,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastRotationTime Key last rotation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastRotationTime(String lastRotationTime) {
             return lastRotationTime(Output.of(lastRotationTime));
@@ -879,9 +889,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiRegion Is this a multi-region type master key.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiRegion(@Nullable Output<Boolean> multiRegion) {
             $.multiRegion = multiRegion;
@@ -890,9 +900,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiRegion Is this a multi-region type master key.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiRegion(Boolean multiRegion) {
             return multiRegion(Output.of(multiRegion));
@@ -900,9 +910,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiRegionConfiguration Multi-region key configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiRegionConfiguration(@Nullable Output<KeyMultiRegionConfigurationArgs> multiRegionConfiguration) {
             $.multiRegionConfiguration = multiRegionConfiguration;
@@ -911,9 +921,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiRegionConfiguration Multi-region key configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiRegionConfiguration(KeyMultiRegionConfigurationArgs multiRegionConfiguration) {
             return multiRegionConfiguration(Output.of(multiRegionConfiguration));
@@ -921,9 +931,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param origin Key source. Options: CloudKMS, External, ExternalKeyStore.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder origin(@Nullable Output<String> origin) {
             $.origin = origin;
@@ -932,9 +942,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param origin Key source. Options: CloudKMS, External, ExternalKeyStore.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder origin(String origin) {
             return origin(Output.of(origin));
@@ -942,9 +952,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protectionLevel Key protection level. Options: SOFTWARE, HSM.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protectionLevel(@Nullable Output<String> protectionLevel) {
             $.protectionLevel = protectionLevel;
@@ -953,9 +963,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protectionLevel Key protection level. Options: SOFTWARE, HSM.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protectionLevel(String protectionLevel) {
             return protectionLevel(Output.of(protectionLevel));
@@ -963,9 +973,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param reEncrypt Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder reEncrypt(@Nullable Output<KeyReEncryptArgs> reEncrypt) {
             $.reEncrypt = reEncrypt;
@@ -974,9 +984,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param reEncrypt Re-encryption action parameters and results. ReEncrypt can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder reEncrypt(KeyReEncryptArgs reEncrypt) {
             return reEncrypt(Output.of(reEncrypt));
@@ -984,9 +994,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param replicateKey Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replicateKey(@Nullable Output<KeyReplicateKeyArgs> replicateKey) {
             $.replicateKey = replicateKey;
@@ -995,9 +1005,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param replicateKey Replicate key action parameters and results. ReplicateKey can be triggered during the Create/Update phase; the result is only guaranteed to be returned in the current response.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replicateKey(KeyReplicateKeyArgs replicateKey) {
             return replicateKey(Output.of(replicateKey));
@@ -1005,9 +1015,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rotateInterval Key rotation period (days). Range: [90, 2560].
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rotateInterval(@Nullable Output<Integer> rotateInterval) {
             $.rotateInterval = rotateInterval;
@@ -1016,9 +1026,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rotateInterval Key rotation period (days). Range: [90, 2560].
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rotateInterval(Integer rotateInterval) {
             return rotateInterval(Output.of(rotateInterval));
@@ -1026,9 +1036,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rotateState Key rotation status. Options: Enable, Disable.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rotateState(@Nullable Output<String> rotateState) {
             $.rotateState = rotateState;
@@ -1037,9 +1047,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rotateState Key rotation status. Options: Enable, Disable.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rotateState(String rotateState) {
             return rotateState(Output.of(rotateState));
@@ -1047,9 +1057,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scheduleDeleteTime Key deletion time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scheduleDeleteTime(@Nullable Output<String> scheduleDeleteTime) {
             $.scheduleDeleteTime = scheduleDeleteTime;
@@ -1058,9 +1068,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scheduleDeleteTime Key deletion time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scheduleDeleteTime(String scheduleDeleteTime) {
             return scheduleDeleteTime(Output.of(scheduleDeleteTime));
@@ -1068,9 +1078,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scheduleRotationTime Key rotation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scheduleRotationTime(@Nullable Output<String> scheduleRotationTime) {
             $.scheduleRotationTime = scheduleRotationTime;
@@ -1079,32 +1089,53 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param scheduleRotationTime Key rotation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scheduleRotationTime(String scheduleRotationTime) {
             return scheduleRotationTime(Output.of(scheduleRotationTime));
         }
 
+        /**
+         * @param tags KMS key label information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<KeyTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags KMS key label information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<KeyTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags KMS key label information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(KeyTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param trn Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(@Nullable Output<String> trn) {
             $.trn = trn;
@@ -1113,9 +1144,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trn Resource name. Format should be trn:${Service}:${Region}:${AccountID}:${ResourcePath}.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(String trn) {
             return trn(Output.of(trn));
@@ -1123,9 +1154,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Key update time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<Integer> updatedTime) {
             $.updatedTime = updatedTime;
@@ -1134,9 +1165,9 @@ public final class KeyState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime Key update time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(Integer updatedTime) {
             return updatedTime(Output.of(updatedTime));

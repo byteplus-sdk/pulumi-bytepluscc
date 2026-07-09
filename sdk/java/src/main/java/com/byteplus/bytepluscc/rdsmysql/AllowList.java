@@ -20,253 +20,320 @@ import javax.annotation.Nullable;
 
 /**
  * The allowlist is a security measure for database connections. Only IP addresses in the allowlist can access the database.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.AllowList;
+ * import com.byteplus.bytepluscc.rdsmysql.AllowListArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.AllowListSecurityGroupBindInfoArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rdsMysqlAllowListDemo = new AllowList("rdsMysqlAllowListDemo", AllowListArgs.builder()
+ *             .userAllowLists("1.2.3.4")
+ *             .allowListCategory("Default")
+ *             .allowListDesc("this is a test")
+ *             .allowListName("ccapi-test-2")
+ *             .allowListType("IPv4")
+ *             .projectName("default")
+ *             .securityGroupBindInfos(
+ *                 AllowListSecurityGroupBindInfoArgs.builder()
+ *                     .bind_mode("AssociateEcsIp")
+ *                     .security_group_id("sg-1a10axxxxxvepkdgqgnu")
+ *                     .security_group_name("Default")
+ *                     .build(),
+ *                 AllowListSecurityGroupBindInfoArgs.builder()
+ *                     .bind_mode("IngressDirectionIp")
+ *                     .security_group_id("sg-3nqt4kwxxxxx931ebkntmrc")
+ *                     .security_group_name("Default")
+ *                     .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/allowList:AllowList example &#34;allow_list_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdsmysql/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
-     * 
+     *
      */
     @Export(name="allowListCategory", refs={String.class}, tree="[0]")
     private Output<String> allowListCategory;
 
     /**
      * @return Allowlist category. Values: Ordinary: Ordinary allowlist. Default: Default allowlist. Note: When used as a request parameter, the default value is Ordinary.
-     * 
+     *
      */
     public Output<String> allowListCategory() {
         return this.allowListCategory;
     }
     /**
      * Allowlist remarks.
-     * 
+     *
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
      * @return Allowlist remarks.
-     * 
+     *
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
      * Allowlist ID.
-     * 
+     *
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
      * @return Allowlist ID.
-     * 
+     *
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
      * Total number of IP addresses (or ranges) in the allowlist.
-     * 
+     *
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
      * @return Total number of IP addresses (or ranges) in the allowlist.
-     * 
+     *
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
      * Allowlist name.
-     * 
+     *
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
      * @return Allowlist name.
-     * 
+     *
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
      * IP address types in the allowlist. Only IPv4 addresses are currently supported.
-     * 
+     *
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
      * @return IP address types in the allowlist. Only IPv4 addresses are currently supported.
-     * 
+     *
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
      * IP address list in the allowlist
-     * 
+     *
      */
     @Export(name="allowLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowLists;
 
     /**
      * @return IP address list in the allowlist
-     * 
+     *
      */
     public Output<List<String>> allowLists() {
         return this.allowLists;
     }
     /**
      * Total number of instances bound to the allowlist.
-     * 
+     *
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
      * @return Total number of instances bound to the allowlist.
-     * 
+     *
      */
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }
     /**
      * Ignore instance status check. Values: true: Yes. false: No. Default value.
-     * 
+     *
      */
     @Export(name="ignoreInstanceStatus", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> ignoreInstanceStatus;
 
     /**
      * @return Ignore instance status check. Values: true: Yes. false: No. Default value.
-     * 
+     *
      */
     public Output<Boolean> ignoreInstanceStatus() {
         return this.ignoreInstanceStatus;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
-     * 
+     *
      */
     @Export(name="ipLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> ipLists;
 
     /**
      * @return List of IP addresses and IP ranges included in the allowlist. Returned when the WithIpList request parameter is set to true; returns null when set to false or not specified.
-     * 
+     *
      */
     public Output<List<String>> ipLists() {
         return this.ipLists;
     }
     /**
      * Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
-     * 
+     *
      */
     @Export(name="modifyMode", refs={String.class}, tree="[0]")
     private Output<String> modifyMode;
 
     /**
      * @return Modification method. Available values: Cover (default): Overwrite the original allowlist with the values from the AllowList parameter. Append: Add the IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove the IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
-     * 
+     *
      */
     public Output<String> modifyMode() {
         return this.modifyMode;
     }
     /**
      * Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project. Note: If the AK/SK used to call the API belongs to a sub-account that only has permission for a specific project, you need to provide this request parameter.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="securityGroupBindInfos", refs={List.class,AllowListSecurityGroupBindInfo.class}, tree="[0,1]")
     private Output<List<AllowListSecurityGroupBindInfo>> securityGroupBindInfos;
 
+    /**
+     * @return Information about the security group associated with the allowlist. Note: This field cannot be used together with SecurityGroupIds.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AllowListSecurityGroupBindInfo>> securityGroupBindInfos() {
         return this.securityGroupBindInfos;
     }
     /**
      * List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
-     * 
+     *
      */
     @Export(name="securityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIds;
 
     /**
      * @return List of security group IDs to associate. Note: You can call the DescribeSecurityGroups API to query security group information, including security group IDs. A single allowlist can add up to 10 security groups at a time. This field cannot be used together with SecurityGroupBindInfos.
-     * 
+     *
      */
     public Output<List<String>> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
      * Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
-     * 
+     *
      */
     @Export(name="updateSecurityGroup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> updateSecurityGroup;
 
     /**
      * @return Whether to update the security group bound to the allowlist. true: update. false: do not update. Default value. This field is effective only when the allowlist is already bound to a security group. You can call the DescribeAllowLists API to check if the allowlist is bound to a security group.
-     * 
+     *
      */
     public Output<Boolean> updateSecurityGroup() {
         return this.updateSecurityGroup;
     }
     /**
      * IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
-     * 
+     *
      */
     @Export(name="userAllowLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> userAllowLists;
 
     /**
      * @return IP addresses entered by the user in this list. The IPs in the AllowList field are the union of IPs included in UserAllowList and SecurityGroupBindInfos.
-     * 
+     *
      */
     public Output<List<String>> userAllowLists() {
         return this.userAllowLists;

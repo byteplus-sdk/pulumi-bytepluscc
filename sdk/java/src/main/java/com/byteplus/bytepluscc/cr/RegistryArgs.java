@@ -22,14 +22,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Public endpoint information for the image repository instance.
-     * 
+     *
      */
     @Import(name="endpoint")
     private @Nullable Output<RegistryEndpointArgs> endpoint;
 
     /**
      * @return Public endpoint information for the image repository instance.
-     * 
+     *
      */
     public Optional<Output<RegistryEndpointArgs>> endpoint() {
         return Optional.ofNullable(this.endpoint);
@@ -37,14 +37,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-     * 
+     *
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
@@ -52,14 +52,14 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enter the project to associate with the instance. Each instance can only be associated with one project
-     * 
+     *
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
      * @return Enter the project to associate with the instance. Each instance can only be associated with one project
-     * 
+     *
      */
     public Optional<Output<String>> project() {
         return Optional.ofNullable(this.project);
@@ -67,36 +67,46 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<RegistryStatusArgs> status;
 
     /**
      * @return Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-     * 
+     *
      */
     public Optional<Output<RegistryStatusArgs>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<RegistryTagArgs>> tags;
 
+    /**
+     * @return Instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RegistryTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-     * 
+     *
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-     * 
+     *
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -133,9 +143,9 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpoint Public endpoint information for the image repository instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpoint(@Nullable Output<RegistryEndpointArgs> endpoint) {
             $.endpoint = endpoint;
@@ -144,9 +154,9 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpoint Public endpoint information for the image repository instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpoint(RegistryEndpointArgs endpoint) {
             return endpoint(Output.of(endpoint));
@@ -154,9 +164,9 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -165,9 +175,9 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Standard edition instance name. Names must be unique within the same region. Supports lowercase English letters, numbers, and hyphens (-). Numbers cannot be the first character, and hyphens (-) cannot be the first or last character. Length must be 3–30 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -175,9 +185,9 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder project(@Nullable Output<String> project) {
             $.project = project;
@@ -186,9 +196,9 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Enter the project to associate with the instance. Each instance can only be associated with one project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder project(String project) {
             return project(Output.of(project));
@@ -196,9 +206,9 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<RegistryStatusArgs> status) {
             $.status = status;
@@ -207,32 +217,53 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Container registry instance status consists of Phase and Conditions. Valid Phase and Conditions combinations are as follows: {Creating, [Progressing]}: Creating, {Running, [Ok]}: Running, {Running, [Degraded]}: Running, {Stopped, [Balance]}: Suspended due to insufficient balance, {Stopped, [Released]}: Pending reclamation, {Stopped, [Released, Balance]}: Suspended due to insufficient balance, {Starting, [Progressing]}: Starting, {Deleting, [Progressing]}: Deleting, {Failed, [Unknown]}: Abnormal
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(RegistryStatusArgs status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<RegistryTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<RegistryTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(RegistryTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -241,9 +272,9 @@ public final class RegistryArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type If not specified, a standard edition instance will be created by default. Enterprise: Standard edition, Micro: Micro edition
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(String type) {
             return type(Output.of(type));

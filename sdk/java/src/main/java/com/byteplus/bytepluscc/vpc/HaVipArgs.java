@@ -20,14 +20,14 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the public IP bound to the HAVIP
-     * 
+     *
      */
     @Import(name="associatedEipId")
     private @Nullable Output<String> associatedEipId;
 
     /**
      * @return ID of the public IP bound to the HAVIP
-     * 
+     *
      */
     public Optional<Output<String>> associatedEipId() {
         return Optional.ofNullable(this.associatedEipId);
@@ -35,14 +35,14 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of instance IDs bound to the HAVIP
-     * 
+     *
      */
     @Import(name="associatedInstanceIds")
     private @Nullable Output<List<String>> associatedInstanceIds;
 
     /**
      * @return List of instance IDs bound to the HAVIP
-     * 
+     *
      */
     public Optional<Output<List<String>>> associatedInstanceIds() {
         return Optional.ofNullable(this.associatedInstanceIds);
@@ -50,14 +50,14 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-     * 
+     *
      */
     @Import(name="associatedInstanceType")
     private @Nullable Output<String> associatedInstanceType;
 
     /**
      * @return Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-     * 
+     *
      */
     public Optional<Output<String>> associatedInstanceType() {
         return Optional.ofNullable(this.associatedInstanceType);
@@ -65,14 +65,14 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the HAVIP. Length limit: 0–255 characters
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the HAVIP. Length limit: 0–255 characters
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -80,14 +80,14 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-     * 
+     *
      */
     @Import(name="haVipName")
     private @Nullable Output<String> haVipName;
 
     /**
      * @return Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-     * 
+     *
      */
     public Optional<Output<String>> haVipName() {
         return Optional.ofNullable(this.haVipName);
@@ -95,14 +95,14 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address of the HAVIP
-     * 
+     *
      */
     @Import(name="ipAddress")
     private @Nullable Output<String> ipAddress;
 
     /**
      * @return IP address of the HAVIP
-     * 
+     *
      */
     public Optional<Output<String>> ipAddress() {
         return Optional.ofNullable(this.ipAddress);
@@ -110,22 +110,32 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID to which the HAVIP belongs
-     * 
+     *
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID to which the HAVIP belongs
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
 
+    /**
+     * Tags associated with the HAVIP
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<HaVipTagArgs>> tags;
 
+    /**
+     * @return Tags associated with the HAVIP
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<HaVipTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -163,9 +173,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedEipId ID of the public IP bound to the HAVIP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedEipId(@Nullable Output<String> associatedEipId) {
             $.associatedEipId = associatedEipId;
@@ -174,9 +184,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedEipId ID of the public IP bound to the HAVIP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedEipId(String associatedEipId) {
             return associatedEipId(Output.of(associatedEipId));
@@ -184,9 +194,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceIds List of instance IDs bound to the HAVIP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedInstanceIds(@Nullable Output<List<String>> associatedInstanceIds) {
             $.associatedInstanceIds = associatedInstanceIds;
@@ -195,9 +205,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceIds List of instance IDs bound to the HAVIP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedInstanceIds(List<String> associatedInstanceIds) {
             return associatedInstanceIds(Output.of(associatedInstanceIds));
@@ -205,9 +215,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceIds List of instance IDs bound to the HAVIP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedInstanceIds(String... associatedInstanceIds) {
             return associatedInstanceIds(List.of(associatedInstanceIds));
@@ -215,9 +225,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceType Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedInstanceType(@Nullable Output<String> associatedInstanceType) {
             $.associatedInstanceType = associatedInstanceType;
@@ -226,9 +236,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param associatedInstanceType Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associatedInstanceType(String associatedInstanceType) {
             return associatedInstanceType(Output.of(associatedInstanceType));
@@ -236,9 +246,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the HAVIP. Length limit: 0–255 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -247,9 +257,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the HAVIP. Length limit: 0–255 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -257,9 +267,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param haVipName Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder haVipName(@Nullable Output<String> haVipName) {
             $.haVipName = haVipName;
@@ -268,9 +278,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param haVipName Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder haVipName(String haVipName) {
             return haVipName(Output.of(haVipName));
@@ -278,9 +288,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddress IP address of the HAVIP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddress(@Nullable Output<String> ipAddress) {
             $.ipAddress = ipAddress;
@@ -289,9 +299,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddress IP address of the HAVIP
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
@@ -299,9 +309,9 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID to which the HAVIP belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -310,23 +320,44 @@ public final class HaVipArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID to which the HAVIP belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Tags associated with the HAVIP
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<HaVipTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags associated with the HAVIP
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<HaVipTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags associated with the HAVIP
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(HaVipTagArgs... tags) {
             return tags(List.of(tags));
         }

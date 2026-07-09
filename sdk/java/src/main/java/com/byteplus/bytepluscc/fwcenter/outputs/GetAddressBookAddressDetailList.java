@@ -12,38 +12,38 @@ import java.util.Objects;
 public final class GetAddressBookAddressDetailList {
     /**
      * @return Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
-     * 
+     *
      */
     private String address;
     /**
      * @return Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
-     * 
+     *
      */
     private String description;
     /**
-     * @return Address type, returned during queries. `ip`: IPv4 address; `ipv6`: IPv6 address; `domain`: domain name; `port`: port.
-     * 
+     * @return Address type, returned during queries. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port.
+     *
      */
     private String type;
 
     private GetAddressBookAddressDetailList() {}
     /**
      * @return Detailed information about the address in the address book. The specific content depends on the address book type. If GroupType is ip, enter an IPv4 address or CIDRv4; if ipv6, enter an IPv6 address or CIDRv6; if port, enter port information (a single port such as 22 or a port range such as 100/200); if domain, enter domain information.
-     * 
+     *
      */
     public String address() {
         return this.address;
     }
     /**
      * @return Detailed description of a single address in the address book, used to explain the specific purpose or other relevant information for that address.
-     * 
+     *
      */
     public String description() {
         return this.description;
     }
     /**
-     * @return Address type, returned during queries. `ip`: IPv4 address; `ipv6`: IPv6 address; `domain`: domain name; `port`: port.
-     * 
+     * @return Address type, returned during queries. &lt;span pulumi-lang-nodejs=&#34;`ip`&#34; pulumi-lang-dotnet=&#34;`Ip`&#34; pulumi-lang-go=&#34;`ip`&#34; pulumi-lang-python=&#34;`ip`&#34; pulumi-lang-yaml=&#34;`ip`&#34; pulumi-lang-java=&#34;`ip`&#34; pulumi-lang-hcl=&#34;`ip`&#34;&gt;`ip`&lt;/span&gt;: IPv4 address; &lt;span pulumi-lang-nodejs=&#34;`ipv6`&#34; pulumi-lang-dotnet=&#34;`Ipv6`&#34; pulumi-lang-go=&#34;`ipv6`&#34; pulumi-lang-python=&#34;`ipv6`&#34; pulumi-lang-yaml=&#34;`ipv6`&#34; pulumi-lang-java=&#34;`ipv6`&#34; pulumi-lang-hcl=&#34;`ipv6`&#34;&gt;`ipv6`&lt;/span&gt;: IPv6 address; &lt;span pulumi-lang-nodejs=&#34;`domain`&#34; pulumi-lang-dotnet=&#34;`Domain`&#34; pulumi-lang-go=&#34;`domain`&#34; pulumi-lang-python=&#34;`domain`&#34; pulumi-lang-yaml=&#34;`domain`&#34; pulumi-lang-java=&#34;`domain`&#34; pulumi-lang-hcl=&#34;`domain`&#34;&gt;`domain`&lt;/span&gt;: domain name; &lt;span pulumi-lang-nodejs=&#34;`port`&#34; pulumi-lang-dotnet=&#34;`Port`&#34; pulumi-lang-go=&#34;`port`&#34; pulumi-lang-python=&#34;`port`&#34; pulumi-lang-yaml=&#34;`port`&#34; pulumi-lang-java=&#34;`port`&#34; pulumi-lang-hcl=&#34;`port`&#34;&gt;`port`&lt;/span&gt;: port.
+     *
      */
     public String type() {
         return this.type;

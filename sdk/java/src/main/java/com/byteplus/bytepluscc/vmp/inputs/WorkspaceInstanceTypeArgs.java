@@ -20,14 +20,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Maximum active time series count
-     * 
+     *
      */
     @Import(name="activeSeries")
     private @Nullable Output<Integer> activeSeries;
 
     /**
      * @return Maximum active time series count
-     * 
+     *
      */
     public Optional<Output<Integer>> activeSeries() {
         return Optional.ofNullable(this.activeSeries);
@@ -35,36 +35,46 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Number of availability zones (az)
-     * 
+     *
      */
     @Import(name="availabilityZoneReplicas")
     private @Nullable Output<Integer> availabilityZoneReplicas;
 
     /**
      * @return Number of availability zones (az)
-     * 
+     *
      */
     public Optional<Output<Integer>> availabilityZoneReplicas() {
         return Optional.ofNullable(this.availabilityZoneReplicas);
     }
 
+    /**
+     * Billing parameter list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="calculatePriceParams")
     private @Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>> calculatePriceParams;
 
+    /**
+     * @return Billing parameter list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>>> calculatePriceParams() {
         return Optional.ofNullable(this.calculatePriceParams);
     }
 
     /**
      * Downsampling policy
-     * 
+     *
      */
     @Import(name="downsamplingPeriods")
     private @Nullable Output<List<String>> downsamplingPeriods;
 
     /**
      * @return Downsampling policy
-     * 
+     *
      */
     public Optional<Output<List<String>>> downsamplingPeriods() {
         return Optional.ofNullable(this.downsamplingPeriods);
@@ -72,14 +82,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Maximum samples written per second
-     * 
+     *
      */
     @Import(name="ingestSamplesPerSecond")
     private @Nullable Output<Integer> ingestSamplesPerSecond;
 
     /**
      * @return Maximum samples written per second
-     * 
+     *
      */
     public Optional<Output<Integer>> ingestSamplesPerSecond() {
         return Optional.ofNullable(this.ingestSamplesPerSecond);
@@ -87,14 +97,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Maximum query concurrency
-     * 
+     *
      */
     @Import(name="queryConcurrency")
     private @Nullable Output<Integer> queryConcurrency;
 
     /**
      * @return Maximum query concurrency
-     * 
+     *
      */
     public Optional<Output<Integer>> queryConcurrency() {
         return Optional.ofNullable(this.queryConcurrency);
@@ -102,14 +112,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Maximum query QPS
-     * 
+     *
      */
     @Import(name="queryPerSecond")
     private @Nullable Output<Integer> queryPerSecond;
 
     /**
      * @return Maximum query QPS
-     * 
+     *
      */
     public Optional<Output<Integer>> queryPerSecond() {
         return Optional.ofNullable(this.queryPerSecond);
@@ -117,14 +127,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Number of data replicas per availability zone (az)
-     * 
+     *
      */
     @Import(name="replicasPerZone")
     private @Nullable Output<Integer> replicasPerZone;
 
     /**
      * @return Number of data replicas per availability zone (az)
-     * 
+     *
      */
     public Optional<Output<Integer>> replicasPerZone() {
         return Optional.ofNullable(this.replicasPerZone);
@@ -132,14 +142,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Maximum data retention period
-     * 
+     *
      */
     @Import(name="retentionPeriod")
     private @Nullable Output<String> retentionPeriod;
 
     /**
      * @return Maximum data retention period
-     * 
+     *
      */
     public Optional<Output<String>> retentionPeriod() {
         return Optional.ofNullable(this.retentionPeriod);
@@ -147,14 +157,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Maximum samples scanned per second
-     * 
+     *
      */
     @Import(name="scanSamplesPerSecond")
     private @Nullable Output<Integer> scanSamplesPerSecond;
 
     /**
      * @return Maximum samples scanned per second
-     * 
+     *
      */
     public Optional<Output<Integer>> scanSamplesPerSecond() {
         return Optional.ofNullable(this.scanSamplesPerSecond);
@@ -162,14 +172,14 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
     /**
      * Maximum time series scanned per second
-     * 
+     *
      */
     @Import(name="scanSeriesPerSecond")
     private @Nullable Output<Integer> scanSeriesPerSecond;
 
     /**
      * @return Maximum time series scanned per second
-     * 
+     *
      */
     public Optional<Output<Integer>> scanSeriesPerSecond() {
         return Optional.ofNullable(this.scanSeriesPerSecond);
@@ -211,9 +221,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param activeSeries Maximum active time series count
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder activeSeries(@Nullable Output<Integer> activeSeries) {
             $.activeSeries = activeSeries;
@@ -222,9 +232,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param activeSeries Maximum active time series count
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder activeSeries(Integer activeSeries) {
             return activeSeries(Output.of(activeSeries));
@@ -232,9 +242,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param availabilityZoneReplicas Number of availability zones (az)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder availabilityZoneReplicas(@Nullable Output<Integer> availabilityZoneReplicas) {
             $.availabilityZoneReplicas = availabilityZoneReplicas;
@@ -243,32 +253,53 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param availabilityZoneReplicas Number of availability zones (az)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder availabilityZoneReplicas(Integer availabilityZoneReplicas) {
             return availabilityZoneReplicas(Output.of(availabilityZoneReplicas));
         }
 
+        /**
+         * @param calculatePriceParams Billing parameter list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder calculatePriceParams(@Nullable Output<List<WorkspaceInstanceTypeCalculatePriceParamArgs>> calculatePriceParams) {
             $.calculatePriceParams = calculatePriceParams;
             return this;
         }
 
+        /**
+         * @param calculatePriceParams Billing parameter list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder calculatePriceParams(List<WorkspaceInstanceTypeCalculatePriceParamArgs> calculatePriceParams) {
             return calculatePriceParams(Output.of(calculatePriceParams));
         }
 
+        /**
+         * @param calculatePriceParams Billing parameter list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder calculatePriceParams(WorkspaceInstanceTypeCalculatePriceParamArgs... calculatePriceParams) {
             return calculatePriceParams(List.of(calculatePriceParams));
         }
 
         /**
          * @param downsamplingPeriods Downsampling policy
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder downsamplingPeriods(@Nullable Output<List<String>> downsamplingPeriods) {
             $.downsamplingPeriods = downsamplingPeriods;
@@ -277,9 +308,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param downsamplingPeriods Downsampling policy
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder downsamplingPeriods(List<String> downsamplingPeriods) {
             return downsamplingPeriods(Output.of(downsamplingPeriods));
@@ -287,9 +318,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param downsamplingPeriods Downsampling policy
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder downsamplingPeriods(String... downsamplingPeriods) {
             return downsamplingPeriods(List.of(downsamplingPeriods));
@@ -297,9 +328,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param ingestSamplesPerSecond Maximum samples written per second
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ingestSamplesPerSecond(@Nullable Output<Integer> ingestSamplesPerSecond) {
             $.ingestSamplesPerSecond = ingestSamplesPerSecond;
@@ -308,9 +339,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param ingestSamplesPerSecond Maximum samples written per second
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ingestSamplesPerSecond(Integer ingestSamplesPerSecond) {
             return ingestSamplesPerSecond(Output.of(ingestSamplesPerSecond));
@@ -318,9 +349,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param queryConcurrency Maximum query concurrency
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder queryConcurrency(@Nullable Output<Integer> queryConcurrency) {
             $.queryConcurrency = queryConcurrency;
@@ -329,9 +360,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param queryConcurrency Maximum query concurrency
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder queryConcurrency(Integer queryConcurrency) {
             return queryConcurrency(Output.of(queryConcurrency));
@@ -339,9 +370,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param queryPerSecond Maximum query QPS
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder queryPerSecond(@Nullable Output<Integer> queryPerSecond) {
             $.queryPerSecond = queryPerSecond;
@@ -350,9 +381,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param queryPerSecond Maximum query QPS
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder queryPerSecond(Integer queryPerSecond) {
             return queryPerSecond(Output.of(queryPerSecond));
@@ -360,9 +391,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param replicasPerZone Number of data replicas per availability zone (az)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replicasPerZone(@Nullable Output<Integer> replicasPerZone) {
             $.replicasPerZone = replicasPerZone;
@@ -371,9 +402,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param replicasPerZone Number of data replicas per availability zone (az)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replicasPerZone(Integer replicasPerZone) {
             return replicasPerZone(Output.of(replicasPerZone));
@@ -381,9 +412,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param retentionPeriod Maximum data retention period
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retentionPeriod(@Nullable Output<String> retentionPeriod) {
             $.retentionPeriod = retentionPeriod;
@@ -392,9 +423,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param retentionPeriod Maximum data retention period
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retentionPeriod(String retentionPeriod) {
             return retentionPeriod(Output.of(retentionPeriod));
@@ -402,9 +433,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param scanSamplesPerSecond Maximum samples scanned per second
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scanSamplesPerSecond(@Nullable Output<Integer> scanSamplesPerSecond) {
             $.scanSamplesPerSecond = scanSamplesPerSecond;
@@ -413,9 +444,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param scanSamplesPerSecond Maximum samples scanned per second
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scanSamplesPerSecond(Integer scanSamplesPerSecond) {
             return scanSamplesPerSecond(Output.of(scanSamplesPerSecond));
@@ -423,9 +454,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param scanSeriesPerSecond Maximum time series scanned per second
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scanSeriesPerSecond(@Nullable Output<Integer> scanSeriesPerSecond) {
             $.scanSeriesPerSecond = scanSeriesPerSecond;
@@ -434,9 +465,9 @@ public final class WorkspaceInstanceTypeArgs extends com.pulumi.resources.Resour
 
         /**
          * @param scanSeriesPerSecond Maximum time series scanned per second
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scanSeriesPerSecond(Integer scanSeriesPerSecond) {
             return scanSeriesPerSecond(Output.of(scanSeriesPerSecond));

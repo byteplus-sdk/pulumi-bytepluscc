@@ -15,30 +15,40 @@ import javax.annotation.Nullable;
 public final class GroupAttachedPolicy {
     /**
      * @return Policy name.
-     * 
+     *
      */
     private @Nullable String policyName;
+    /**
+     * @return Scope of policy authorization, specifically the project scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<GroupAttachedPolicyPolicyScope> policyScopes;
     /**
      * @return Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
-     * 
+     *
      */
     private @Nullable String policyType;
 
     private GroupAttachedPolicy() {}
     /**
      * @return Policy name.
-     * 
+     *
      */
     public Optional<String> policyName() {
         return Optional.ofNullable(this.policyName);
     }
+    /**
+     * @return Scope of policy authorization, specifically the project scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<GroupAttachedPolicyPolicyScope> policyScopes() {
         return this.policyScopes == null ? List.of() : this.policyScopes;
     }
     /**
      * @return Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
-     * 
+     *
      */
     public Optional<String> policyType() {
         return Optional.ofNullable(this.policyType);

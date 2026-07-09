@@ -21,14 +21,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Bandwidth peak of the transit router bandwidth package, in Mbps.
-     * 
+     *
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth peak of the transit router bandwidth package, in Mbps.
-     * 
+     *
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -36,14 +36,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Billing method of the transit router bandwidth package. 1: subscription (yearly/monthly).
-     * 
+     *
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return Billing method of the transit router bandwidth package. 1: subscription (yearly/monthly).
-     * 
+     *
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -51,14 +51,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Description of the transit router bandwidth package.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the transit router bandwidth package.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -66,14 +66,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Carrier for cross-border bandwidth package. ChinaUnicom: China Unicom ChinaTelecom: China Telecom
-     * 
+     *
      */
     @Import(name="lineOperator")
     private @Nullable Output<String> lineOperator;
 
     /**
      * @return Carrier for cross-border bandwidth package. ChinaUnicom: China Unicom ChinaTelecom: China Telecom
-     * 
+     *
      */
     public Optional<Output<String>> lineOperator() {
         return Optional.ofNullable(this.lineOperator);
@@ -81,14 +81,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Local geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland Asia: Asia-Pacific
-     * 
+     *
      */
     @Import(name="localGeographicRegionSetId", required=true)
     private Output<String> localGeographicRegionSetId;
 
     /**
      * @return Local geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland Asia: Asia-Pacific
-     * 
+     *
      */
     public Output<String> localGeographicRegionSetId() {
         return this.localGeographicRegionSetId;
@@ -96,14 +96,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Peer geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     @Import(name="peerGeographicRegionSetId", required=true)
     private Output<String> peerGeographicRegionSetId;
 
     /**
      * @return Peer geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     public Output<String> peerGeographicRegionSetId() {
         return this.peerGeographicRegionSetId;
@@ -111,14 +111,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Purchase duration of the transit router bandwidth package.
-     * 
+     *
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Purchase duration of the transit router bandwidth package.
-     * 
+     *
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -126,14 +126,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Billing cycle of the transit router bandwidth package. Month: billed monthly. Year: billed yearly.
-     * 
+     *
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
      * @return Billing cycle of the transit router bandwidth package. Month: billed monthly. Year: billed yearly.
-     * 
+     *
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -141,14 +141,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Name of the project to which the transit router bandwidth package belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the transit router bandwidth package belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -156,14 +156,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Number of auto-renewals. Value can be -1 or 1–100. Default is -1, which means unlimited auto-renewals.
-     * 
+     *
      */
     @Import(name="remainRenewTimes")
     private @Nullable Output<Integer> remainRenewTimes;
 
     /**
      * @return Number of auto-renewals. Value can be -1 or 1–100. Default is -1, which means unlimited auto-renewals.
-     * 
+     *
      */
     public Optional<Output<Integer>> remainRenewTimes() {
         return Optional.ofNullable(this.remainRenewTimes);
@@ -171,14 +171,14 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Duration of each auto-renewal, in months.
-     * 
+     *
      */
     @Import(name="renewPeriod")
     private @Nullable Output<Integer> renewPeriod;
 
     /**
      * @return Duration of each auto-renewal, in months.
-     * 
+     *
      */
     public Optional<Output<Integer>> renewPeriod() {
         return Optional.ofNullable(this.renewPeriod);
@@ -186,36 +186,46 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
     /**
      * Renewal type for transit router bandwidth package. Manual: Manual renewal Auto: Automatic renewal NoRenew: Do not renew
-     * 
+     *
      */
     @Import(name="renewType")
     private @Nullable Output<String> renewType;
 
     /**
      * @return Renewal type for transit router bandwidth package. Manual: Manual renewal Auto: Automatic renewal NoRenew: Do not renew
-     * 
+     *
      */
     public Optional<Output<String>> renewType() {
         return Optional.ofNullable(this.renewType);
     }
 
+    /**
+     * Tag information of the transit router bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<TransitRouterBandwidthPackageTagArgs>> tags;
 
+    /**
+     * @return Tag information of the transit router bandwidth package.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TransitRouterBandwidthPackageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Name of the transit router bandwidth package.
-     * 
+     *
      */
     @Import(name="transitRouterBandwidthPackageName")
     private @Nullable Output<String> transitRouterBandwidthPackageName;
 
     /**
      * @return Name of the transit router bandwidth package.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterBandwidthPackageName() {
         return Optional.ofNullable(this.transitRouterBandwidthPackageName);
@@ -260,9 +270,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param bandwidth Bandwidth peak of the transit router bandwidth package, in Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -271,9 +281,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param bandwidth Bandwidth peak of the transit router bandwidth package, in Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -281,9 +291,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param billingType Billing method of the transit router bandwidth package. 1: subscription (yearly/monthly).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -292,9 +302,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param billingType Billing method of the transit router bandwidth package. 1: subscription (yearly/monthly).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -302,9 +312,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param description Description of the transit router bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -313,9 +323,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param description Description of the transit router bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -323,9 +333,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param lineOperator Carrier for cross-border bandwidth package. ChinaUnicom: China Unicom ChinaTelecom: China Telecom
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineOperator(@Nullable Output<String> lineOperator) {
             $.lineOperator = lineOperator;
@@ -334,9 +344,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param lineOperator Carrier for cross-border bandwidth package. ChinaUnicom: China Unicom ChinaTelecom: China Telecom
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineOperator(String lineOperator) {
             return lineOperator(Output.of(lineOperator));
@@ -344,9 +354,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param localGeographicRegionSetId Local geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland Asia: Asia-Pacific
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localGeographicRegionSetId(Output<String> localGeographicRegionSetId) {
             $.localGeographicRegionSetId = localGeographicRegionSetId;
@@ -355,9 +365,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param localGeographicRegionSetId Local geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland Asia: Asia-Pacific
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localGeographicRegionSetId(String localGeographicRegionSetId) {
             return localGeographicRegionSetId(Output.of(localGeographicRegionSetId));
@@ -365,9 +375,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param peerGeographicRegionSetId Peer geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerGeographicRegionSetId(Output<String> peerGeographicRegionSetId) {
             $.peerGeographicRegionSetId = peerGeographicRegionSetId;
@@ -376,9 +386,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param peerGeographicRegionSetId Peer geographic region ID for transit router bandwidth package interconnection. China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerGeographicRegionSetId(String peerGeographicRegionSetId) {
             return peerGeographicRegionSetId(Output.of(peerGeographicRegionSetId));
@@ -386,9 +396,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param period Purchase duration of the transit router bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -397,9 +407,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param period Purchase duration of the transit router bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -407,9 +417,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param periodUnit Billing cycle of the transit router bandwidth package. Month: billed monthly. Year: billed yearly.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -418,9 +428,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param periodUnit Billing cycle of the transit router bandwidth package. Month: billed monthly. Year: billed yearly.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -428,9 +438,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param projectName Name of the project to which the transit router bandwidth package belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -439,9 +449,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param projectName Name of the project to which the transit router bandwidth package belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -449,9 +459,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param remainRenewTimes Number of auto-renewals. Value can be -1 or 1–100. Default is -1, which means unlimited auto-renewals.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remainRenewTimes(@Nullable Output<Integer> remainRenewTimes) {
             $.remainRenewTimes = remainRenewTimes;
@@ -460,9 +470,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param remainRenewTimes Number of auto-renewals. Value can be -1 or 1–100. Default is -1, which means unlimited auto-renewals.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remainRenewTimes(Integer remainRenewTimes) {
             return remainRenewTimes(Output.of(remainRenewTimes));
@@ -470,9 +480,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param renewPeriod Duration of each auto-renewal, in months.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewPeriod(@Nullable Output<Integer> renewPeriod) {
             $.renewPeriod = renewPeriod;
@@ -481,9 +491,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param renewPeriod Duration of each auto-renewal, in months.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewPeriod(Integer renewPeriod) {
             return renewPeriod(Output.of(renewPeriod));
@@ -491,9 +501,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param renewType Renewal type for transit router bandwidth package. Manual: Manual renewal Auto: Automatic renewal NoRenew: Do not renew
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewType(@Nullable Output<String> renewType) {
             $.renewType = renewType;
@@ -502,32 +512,53 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param renewType Renewal type for transit router bandwidth package. Manual: Manual renewal Auto: Automatic renewal NoRenew: Do not renew
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewType(String renewType) {
             return renewType(Output.of(renewType));
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<TransitRouterBandwidthPackageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<TransitRouterBandwidthPackageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information of the transit router bandwidth package.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(TransitRouterBandwidthPackageTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param transitRouterBandwidthPackageName Name of the transit router bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterBandwidthPackageName(@Nullable Output<String> transitRouterBandwidthPackageName) {
             $.transitRouterBandwidthPackageName = transitRouterBandwidthPackageName;
@@ -536,9 +567,9 @@ public final class TransitRouterBandwidthPackageArgs extends com.pulumi.resource
 
         /**
          * @param transitRouterBandwidthPackageName Name of the transit router bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterBandwidthPackageName(String transitRouterBandwidthPackageName) {
             return transitRouterBandwidthPackageName(Output.of(transitRouterBandwidthPackageName));

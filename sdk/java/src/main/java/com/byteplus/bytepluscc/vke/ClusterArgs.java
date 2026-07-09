@@ -27,14 +27,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network configuration for the cluster control plane and some nodes.
-     * 
+     *
      */
     @Import(name="clusterConfig")
     private @Nullable Output<ClusterClusterConfigArgs> clusterConfig;
 
     /**
      * @return Network configuration for the cluster control plane and some nodes.
-     * 
+     *
      */
     public Optional<Output<ClusterClusterConfigArgs>> clusterConfig() {
         return Optional.ofNullable(this.clusterConfig);
@@ -42,14 +42,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
-     * 
+     *
      */
     @Import(name="deleteProtectionEnabled")
     private @Nullable Output<Boolean> deleteProtectionEnabled;
 
     /**
      * @return Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
-     * 
+     *
      */
     public Optional<Output<Boolean>> deleteProtectionEnabled() {
         return Optional.ofNullable(this.deleteProtectionEnabled);
@@ -57,14 +57,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster description. Maximum length is 300 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Cluster description. Maximum length is 300 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -72,14 +72,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IRSA (IAM Role for Service Account) capability parameter configuration
-     * 
+     *
      */
     @Import(name="irsaConfig")
     private @Nullable Output<ClusterIrsaConfigArgs> irsaConfig;
 
     /**
      * @return IRSA (IAM Role for Service Account) capability parameter configuration
-     * 
+     *
      */
     public Optional<Output<ClusterIrsaConfigArgs>> irsaConfig() {
         return Optional.ofNullable(this.irsaConfig);
@@ -87,14 +87,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
-     * 
+     *
      */
     @Import(name="kubernetesVersionCreate")
     private @Nullable Output<String> kubernetesVersionCreate;
 
     /**
      * @return Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
-     * 
+     *
      */
     public Optional<Output<String>> kubernetesVersionCreate() {
         return Optional.ofNullable(this.kubernetesVersionCreate);
@@ -102,14 +102,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster log configuration information.
-     * 
+     *
      */
     @Import(name="loggingConfig")
     private @Nullable Output<ClusterLoggingConfigArgs> loggingConfig;
 
     /**
      * @return Cluster log configuration information.
-     * 
+     *
      */
     public Optional<Output<ClusterLoggingConfigArgs>> loggingConfig() {
         return Optional.ofNullable(this.loggingConfig);
@@ -117,14 +117,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Monitoring configuration information.
-     * 
+     *
      */
     @Import(name="monitoringConfig")
     private @Nullable Output<ClusterMonitoringConfigArgs> monitoringConfig;
 
     /**
      * @return Monitoring configuration information.
-     * 
+     *
      */
     public Optional<Output<ClusterMonitoringConfigArgs>> monitoringConfig() {
         return Optional.ofNullable(this.monitoringConfig);
@@ -132,14 +132,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
-     * 
+     *
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
@@ -147,14 +147,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Pod network configuration.
-     * 
+     *
      */
     @Import(name="podsConfig")
     private @Nullable Output<ClusterPodsConfigArgs> podsConfig;
 
     /**
      * @return Pod network configuration.
-     * 
+     *
      */
     public Optional<Output<ClusterPodsConfigArgs>> podsConfig() {
         return Optional.ofNullable(this.podsConfig);
@@ -162,14 +162,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -177,14 +177,14 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network configuration for the service.
-     * 
+     *
      */
     @Import(name="servicesConfig")
     private @Nullable Output<ClusterServicesConfigArgs> servicesConfig;
 
     /**
      * @return Network configuration for the service.
-     * 
+     *
      */
     public Optional<Output<ClusterServicesConfigArgs>> servicesConfig() {
         return Optional.ofNullable(this.servicesConfig);
@@ -192,22 +192,32 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cluster source region
-     * 
+     *
      */
     @Import(name="sourceRegion")
     private @Nullable Output<String> sourceRegion;
 
     /**
      * @return Cluster source region
-     * 
+     *
      */
     public Optional<Output<String>> sourceRegion() {
         return Optional.ofNullable(this.sourceRegion);
     }
 
+    /**
+     * Cluster tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<ClusterTagArgs>> tags;
 
+    /**
+     * @return Cluster tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ClusterTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -250,9 +260,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterConfig Network configuration for the cluster control plane and some nodes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterConfig(@Nullable Output<ClusterClusterConfigArgs> clusterConfig) {
             $.clusterConfig = clusterConfig;
@@ -261,9 +271,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterConfig Network configuration for the cluster control plane and some nodes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterConfig(ClusterClusterConfigArgs clusterConfig) {
             return clusterConfig(Output.of(clusterConfig));
@@ -271,9 +281,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteProtectionEnabled Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteProtectionEnabled(@Nullable Output<Boolean> deleteProtectionEnabled) {
             $.deleteProtectionEnabled = deleteProtectionEnabled;
@@ -282,9 +292,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteProtectionEnabled Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteProtectionEnabled(Boolean deleteProtectionEnabled) {
             return deleteProtectionEnabled(Output.of(deleteProtectionEnabled));
@@ -292,9 +302,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Cluster description. Maximum length is 300 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -303,9 +313,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Cluster description. Maximum length is 300 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -313,9 +323,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param irsaConfig IRSA (IAM Role for Service Account) capability parameter configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder irsaConfig(@Nullable Output<ClusterIrsaConfigArgs> irsaConfig) {
             $.irsaConfig = irsaConfig;
@@ -324,9 +334,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param irsaConfig IRSA (IAM Role for Service Account) capability parameter configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder irsaConfig(ClusterIrsaConfigArgs irsaConfig) {
             return irsaConfig(Output.of(irsaConfig));
@@ -334,9 +344,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kubernetesVersionCreate Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesVersionCreate(@Nullable Output<String> kubernetesVersionCreate) {
             $.kubernetesVersionCreate = kubernetesVersionCreate;
@@ -345,9 +355,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kubernetesVersionCreate Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesVersionCreate(String kubernetesVersionCreate) {
             return kubernetesVersionCreate(Output.of(kubernetesVersionCreate));
@@ -355,9 +365,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loggingConfig Cluster log configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loggingConfig(@Nullable Output<ClusterLoggingConfigArgs> loggingConfig) {
             $.loggingConfig = loggingConfig;
@@ -366,9 +376,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loggingConfig Cluster log configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loggingConfig(ClusterLoggingConfigArgs loggingConfig) {
             return loggingConfig(Output.of(loggingConfig));
@@ -376,9 +386,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param monitoringConfig Monitoring configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder monitoringConfig(@Nullable Output<ClusterMonitoringConfigArgs> monitoringConfig) {
             $.monitoringConfig = monitoringConfig;
@@ -387,9 +397,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param monitoringConfig Monitoring configuration information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder monitoringConfig(ClusterMonitoringConfigArgs monitoringConfig) {
             return monitoringConfig(Output.of(monitoringConfig));
@@ -397,9 +407,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -408,9 +418,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -418,9 +428,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param podsConfig Pod network configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder podsConfig(@Nullable Output<ClusterPodsConfigArgs> podsConfig) {
             $.podsConfig = podsConfig;
@@ -429,9 +439,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param podsConfig Pod network configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder podsConfig(ClusterPodsConfigArgs podsConfig) {
             return podsConfig(Output.of(podsConfig));
@@ -439,9 +449,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -450,9 +460,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -460,9 +470,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param servicesConfig Network configuration for the service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder servicesConfig(@Nullable Output<ClusterServicesConfigArgs> servicesConfig) {
             $.servicesConfig = servicesConfig;
@@ -471,9 +481,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param servicesConfig Network configuration for the service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder servicesConfig(ClusterServicesConfigArgs servicesConfig) {
             return servicesConfig(Output.of(servicesConfig));
@@ -481,9 +491,9 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceRegion Cluster source region
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceRegion(@Nullable Output<String> sourceRegion) {
             $.sourceRegion = sourceRegion;
@@ -492,23 +502,44 @@ public final class ClusterArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceRegion Cluster source region
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceRegion(String sourceRegion) {
             return sourceRegion(Output.of(sourceRegion));
         }
 
+        /**
+         * @param tags Cluster tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<ClusterTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Cluster tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<ClusterTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Cluster tags.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(ClusterTagArgs... tags) {
             return tags(List.of(tags));
         }

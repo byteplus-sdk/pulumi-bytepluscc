@@ -19,95 +19,115 @@ import javax.annotation.Nullable;
 public final class NodePoolKubernetesConfig {
     /**
      * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
-     * 
+     *
      */
     private @Nullable Boolean autoSyncDisabled;
     /**
      * @return Node pool Containerd configuration
-     * 
+     *
      */
     private @Nullable NodePoolKubernetesConfigContainerdConfig containerdConfig;
     /**
      * @return Node blocking configuration. Parameter values: false: not blocked; true: blocked
-     * 
+     *
      */
     private @Nullable Boolean cordon;
     /**
      * @return Kubelet component configuration
-     * 
+     *
      */
     private @Nullable NodePoolKubernetesConfigKubeletConfig kubeletConfig;
+    /**
+     * @return Kubernetes label information for node pools/nodes
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<NodePoolKubernetesConfigLabel> labels;
     /**
      * @return Prefix for node object metadata name in Kubernetes
-     * 
+     *
      */
     private @Nullable String namePrefix;
     /**
      * @return Suffix for node object metadata name in Kubernetes
-     * 
+     *
      */
     private @Nullable String nameSuffix;
     /**
      * @return Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
-     * 
+     *
      */
     private @Nullable Boolean nameUseHostname;
+    /**
+     * @return Kubernetes taint information for node pools/nodes
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<NodePoolKubernetesConfigTaint> taints;
 
     private NodePoolKubernetesConfig() {}
     /**
      * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
-     * 
+     *
      */
     public Optional<Boolean> autoSyncDisabled() {
         return Optional.ofNullable(this.autoSyncDisabled);
     }
     /**
      * @return Node pool Containerd configuration
-     * 
+     *
      */
     public Optional<NodePoolKubernetesConfigContainerdConfig> containerdConfig() {
         return Optional.ofNullable(this.containerdConfig);
     }
     /**
      * @return Node blocking configuration. Parameter values: false: not blocked; true: blocked
-     * 
+     *
      */
     public Optional<Boolean> cordon() {
         return Optional.ofNullable(this.cordon);
     }
     /**
      * @return Kubelet component configuration
-     * 
+     *
      */
     public Optional<NodePoolKubernetesConfigKubeletConfig> kubeletConfig() {
         return Optional.ofNullable(this.kubeletConfig);
     }
+    /**
+     * @return Kubernetes label information for node pools/nodes
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<NodePoolKubernetesConfigLabel> labels() {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
      * @return Prefix for node object metadata name in Kubernetes
-     * 
+     *
      */
     public Optional<String> namePrefix() {
         return Optional.ofNullable(this.namePrefix);
     }
     /**
      * @return Suffix for node object metadata name in Kubernetes
-     * 
+     *
      */
     public Optional<String> nameSuffix() {
         return Optional.ofNullable(this.nameSuffix);
     }
     /**
      * @return Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
-     * 
+     *
      */
     public Optional<Boolean> nameUseHostname() {
         return Optional.ofNullable(this.nameUseHostname);
     }
+    /**
+     * @return Kubernetes taint information for node pools/nodes
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<NodePoolKubernetesConfigTaint> taints() {
         return this.taints == null ? List.of() : this.taints;
     }

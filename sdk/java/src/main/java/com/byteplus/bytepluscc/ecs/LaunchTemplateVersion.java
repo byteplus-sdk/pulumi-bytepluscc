@@ -24,399 +24,514 @@ import javax.annotation.Nullable;
 
 /**
  * Instance launch template version is a collection of instance configuration information used for quick instance purchase. In the template, you can store all configuration information except passwords, including key pairs, compute specifications, disks, network, etc. If all configuration information is valid, you can purchase an instance with one click without repeated configuration
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.ecs.LaunchTemplateVersion;
+ * import com.byteplus.bytepluscc.ecs.LaunchTemplateVersionArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionEipArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionNetworkInterfaceArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionScheduledInstanceArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionTagArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.LaunchTemplateVersionVolumeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var ecsLaunchTemplateVersionDemo = new LaunchTemplateVersion("ecsLaunchTemplateVersionDemo", LaunchTemplateVersionArgs.builder()
+ *             .deploymentSetGroupNumber(0)
+ *             .deploymentSetId("dps-ydzc5xxxxxx5b9vu")
+ *             .description("ecs_launch_template_version test")
+ *             .eip(LaunchTemplateVersionEipArgs.builder()
+ *                 .bandwidth(1)
+ *                 .bandwidth_package_id("bwp-1a1fvbxxxxxx8nvepl9jzfmf")
+ *                 .billing_type(0)
+ *                 .isp("BGP")
+ *                 .release_with_instance(true)
+ *                 .security_protection_instance_id(0)
+ *                 .security_protection_types(Arrays.asList("AntiDDoS_Enhanced"))
+ *                 .build())
+ *             .hostName("myname")
+ *             .imageId("image-yzpvmxxxxxxgqcsdamq")
+ *             .imageName("Ubuntu 24.04 with LLM Knowledge Base 64 bit")
+ *             .instanceChargeType("PostPaid")
+ *             .instanceName("test-version")
+ *             .instanceTypeId("ecs.g4i.large")
+ *             .keepImageCredential(false)
+ *             .keyPairName("MigrationKey-job-yecd7dromy38dfaxgxt8")
+ *             .launchTemplateId("lt-yefdzjlbxxxxxxylmkj")
+ *             .networkInterfaces(LaunchTemplateVersionNetworkInterfaceArgs.builder()
+ *                 .security_group_ids(Arrays.asList("sg-1jolcljxxxxxx1n7ampe70vpx"))
+ *                 .subnet_id("subnet-btd4nxxxxxxb2tl1jdsb")
+ *                 .build())
+ *             .projectName("default")
+ *             .scheduledInstance(LaunchTemplateVersionScheduledInstanceArgs.builder()
+ *                 .scheduled_instance_description("test")
+ *                 .scheduled_instance_name("test-template")
+ *                 .build())
+ *             .securityEnhancementStrategy("Active")
+ *             .spotStrategy("NoSpot")
+ *             .suffixIndex(1)
+ *             .tags(LaunchTemplateVersionTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .uniqueSuffix(false)
+ *             .userData("ZWNobyBoZWxsbyBlY3Mh")
+ *             .versionDescription("test")
+ *             .volumes(LaunchTemplateVersionVolumeArgs.builder()
+ *                 .delete_with_instance(true)
+ *                 .extra_performance_iops(0)
+ *                 .extra_performance_throughput_mb(0)
+ *                 .extra_performance_type_id("")
+ *                 .size(50)
+ *                 .snapshot_id("")
+ *                 .volume_type("ESSD_PL0")
+ *                 .build())
+ *             .vpcId("vpc-1jolcldhxxxxxxmq5q7yms")
+ *             .zoneId("cn-beijing-a")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion example &#34;launch_template_id|version_number&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion")
 public class LaunchTemplateVersion extends com.pulumi.resources.CustomResource {
     /**
      * When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
-     * 
+     *
      */
     @Export(name="deploymentSetGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> deploymentSetGroupNumber;
 
     /**
      * @return When the deployment set policy for an ECS instance is set to AvailabilityGroup, use this parameter to specify the group number within the deployment set.
-     * 
+     *
      */
     public Output<Integer> deploymentSetGroupNumber() {
         return this.deploymentSetGroupNumber;
     }
     /**
      * Deployment set ID to join for the instance.
-     * 
+     *
      */
     @Export(name="deploymentSetId", refs={String.class}, tree="[0]")
     private Output<String> deploymentSetId;
 
     /**
      * @return Deployment set ID to join for the instance.
-     * 
+     *
      */
     public Output<String> deploymentSetId() {
         return this.deploymentSetId;
     }
     /**
      * Instance description.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Instance description.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Public IP information bound to the instance.
-     * 
+     *
      */
     @Export(name="eip", refs={LaunchTemplateVersionEip.class}, tree="[0]")
     private Output<LaunchTemplateVersionEip> eip;
 
     /**
      * @return Public IP information bound to the instance.
-     * 
+     *
      */
     public Output<LaunchTemplateVersionEip> eip() {
         return this.eip;
     }
     /**
      * Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
-     * 
+     *
      */
     @Export(name="hostName", refs={String.class}, tree="[0]")
     private Output<String> hostName;
 
     /**
      * @return Instance hostname. Linux hostname length: 2–59 characters. Windows hostname length: 2–10 characters
-     * 
+     *
      */
     public Output<String> hostName() {
         return this.hostName;
     }
     /**
      * Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
-     * 
+     *
      */
     @Export(name="hpcClusterId", refs={String.class}, tree="[0]")
     private Output<String> hpcClusterId;
 
     /**
      * @return Specify the high-performance computing cluster ID when creating a high-performance computing GPU instance.
-     * 
+     *
      */
     public Output<String> hpcClusterId() {
         return this.hpcClusterId;
     }
     /**
      * Image ID
-     * 
+     *
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
      * @return Image ID
-     * 
+     *
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
      * Image name.
-     * 
+     *
      */
     @Export(name="imageName", refs={String.class}, tree="[0]")
     private Output<String> imageName;
 
     /**
      * @return Image name.
-     * 
+     *
      */
     public Output<String> imageName() {
         return this.imageName;
     }
     /**
      * Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
-     * 
+     *
      */
     @Export(name="instanceChargeType", refs={String.class}, tree="[0]")
     private Output<String> instanceChargeType;
 
     /**
      * @return Billing type for the instance and cloud disk. Value: PostPaid: Pay-as-you-go. PrePaid: Subscription. Esi: Elastic reservation instance. Segmented: Time-segmented elastic reservation instance.
-     * 
+     *
      */
     public Output<String> instanceChargeType() {
         return this.instanceChargeType;
     }
     /**
      * Instance name.
-     * 
+     *
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name.
-     * 
+     *
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
      * Instance specifications
-     * 
+     *
      */
     @Export(name="instanceTypeId", refs={String.class}, tree="[0]")
     private Output<String> instanceTypeId;
 
     /**
      * @return Instance specifications
-     * 
+     *
      */
     public Output<String> instanceTypeId() {
         return this.instanceTypeId;
     }
     /**
      * Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
-     * 
+     *
      */
     @Export(name="keepImageCredential", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> keepImageCredential;
 
     /**
      * @return Retain image settings. Value: true: Retain image settings. If retained, the preset password or key pair in the image will be used to log in to the instance. false (default): Do not retain image settings.
-     * 
+     *
      */
     public Output<Boolean> keepImageCredential() {
         return this.keepImageCredential;
     }
     /**
      * Key pair bound to the instance.
-     * 
+     *
      */
     @Export(name="keyPairName", refs={String.class}, tree="[0]")
     private Output<String> keyPairName;
 
     /**
      * @return Key pair bound to the instance.
-     * 
+     *
      */
     public Output<String> keyPairName() {
         return this.keyPairName;
     }
     /**
      * Instance launch template ID.
-     * 
+     *
      */
     @Export(name="launchTemplateId", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateId;
 
     /**
      * @return Instance launch template ID.
-     * 
+     *
      */
     public Output<String> launchTemplateId() {
         return this.launchTemplateId;
     }
+    /**
+     * Network interface information attached to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="networkInterfaces", refs={List.class,LaunchTemplateVersionNetworkInterface.class}, tree="[0,1]")
     private Output<List<LaunchTemplateVersionNetworkInterface>> networkInterfaces;
 
+    /**
+     * @return Network interface information attached to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<LaunchTemplateVersionNetworkInterface>> networkInterfaces() {
         return this.networkInterfaces;
     }
     /**
      * Project to which the instance belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the instance belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Elastic reservation order information
-     * 
+     *
      */
     @Export(name="scheduledInstance", refs={LaunchTemplateVersionScheduledInstance.class}, tree="[0]")
     private Output<LaunchTemplateVersionScheduledInstance> scheduledInstance;
 
     /**
      * @return Elastic reservation order information
-     * 
+     *
      */
     public Output<LaunchTemplateVersionScheduledInstance> scheduledInstance() {
         return this.scheduledInstance;
     }
     /**
      * Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
-     * 
+     *
      */
     @Export(name="securityEnhancementStrategy", refs={String.class}, tree="[0]")
     private Output<String> securityEnhancementStrategy;
 
     /**
      * @return Enable security hardening. Active: Enable security hardening, effective only for public images. InActive: Disable security hardening, effective for all images.
-     * 
+     *
      */
     public Output<String> securityEnhancementStrategy() {
         return this.securityEnhancementStrategy;
     }
     /**
      * Maximum hourly price for preemptible instances.
-     * 
+     *
      */
     @Export(name="spotPriceLimit", refs={Double.class}, tree="[0]")
     private Output<Double> spotPriceLimit;
 
     /**
      * @return Maximum hourly price for preemptible instances.
-     * 
+     *
      */
     public Output<Double> spotPriceLimit() {
         return this.spotPriceLimit;
     }
     /**
      * Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
-     * 
+     *
      */
     @Export(name="spotStrategy", refs={String.class}, tree="[0]")
     private Output<String> spotStrategy;
 
     /**
      * @return Preemptive strategy for pay-as-you-go billing. Values: NoSpot: Creates a standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, creating a preemptive instance that follows the current market price. SpotWithPriceLimit: Creates a preemptive instance with a bid limit
-     * 
+     *
      */
     public Output<String> spotStrategy() {
         return this.spotStrategy;
     }
     /**
      * Starting sequence number for the ordered suffix.
-     * 
+     *
      */
     @Export(name="suffixIndex", refs={Integer.class}, tree="[0]")
     private Output<Integer> suffixIndex;
 
     /**
      * @return Starting sequence number for the ordered suffix.
-     * 
+     *
      */
     public Output<Integer> suffixIndex() {
         return this.suffixIndex;
     }
+    /**
+     * Instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,LaunchTemplateVersionTag.class}, tree="[0,1]")
     private Output<List<LaunchTemplateVersionTag>> tags;
 
+    /**
+     * @return Instance tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<LaunchTemplateVersionTag>> tags() {
         return this.tags;
     }
     /**
      * Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
-     * 
+     *
      */
     @Export(name="uniqueSuffix", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> uniqueSuffix;
 
     /**
      * @return Indicates whether to automatically add an ordered suffix to Hostname and InstanceName when creating multiple instances.
-     * 
+     *
      */
     public Output<Boolean> uniqueSuffix() {
         return this.uniqueSuffix;
     }
     /**
      * Custom data for the instance.
-     * 
+     *
      */
     @Export(name="userData", refs={String.class}, tree="[0]")
     private Output<String> userData;
 
     /**
      * @return Custom data for the instance.
-     * 
+     *
      */
     public Output<String> userData() {
         return this.userData;
     }
     /**
      * Template version description.
-     * 
+     *
      */
     @Export(name="versionDescription", refs={String.class}, tree="[0]")
     private Output<String> versionDescription;
 
     /**
      * @return Template version description.
-     * 
+     *
      */
     public Output<String> versionDescription() {
         return this.versionDescription;
     }
     /**
      * Template version number.
-     * 
+     *
      */
     @Export(name="versionNumber", refs={String.class}, tree="[0]")
     private Output<String> versionNumber;
 
     /**
      * @return Template version number.
-     * 
+     *
      */
     public Output<String> versionNumber() {
         return this.versionNumber;
     }
+    /**
+     * Disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="volumes", refs={List.class,LaunchTemplateVersionVolume.class}, tree="[0,1]")
     private Output<List<LaunchTemplateVersionVolume>> volumes;
 
+    /**
+     * @return Disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<LaunchTemplateVersionVolume>> volumes() {
         return this.volumes;
     }
     /**
      * Private network ID
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network ID
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone ID of the instance
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID of the instance
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;

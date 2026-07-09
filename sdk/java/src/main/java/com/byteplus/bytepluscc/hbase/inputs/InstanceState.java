@@ -23,14 +23,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-     * 
+     *
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
      * @return Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
@@ -38,14 +38,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
-     * 
+     *
      */
     @Import(name="chargeStatus")
     private @Nullable Output<String> chargeStatus;
 
     /**
      * @return Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
-     * 
+     *
      */
     public Optional<Output<String>> chargeStatus() {
         return Optional.ofNullable(this.chargeStatus);
@@ -53,14 +53,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-     * 
+     *
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
      * @return Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-     * 
+     *
      */
     public Optional<Output<String>> chargeType() {
         return Optional.ofNullable(this.chargeType);
@@ -68,14 +68,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total capacity-type storage space for the instance, in GiB.
-     * 
+     *
      */
     @Import(name="coldStorage")
     private @Nullable Output<Integer> coldStorage;
 
     /**
      * @return Total capacity-type storage space for the instance, in GiB.
-     * 
+     *
      */
     public Optional<Output<Integer>> coldStorage() {
         return Optional.ofNullable(this.coldStorage);
@@ -83,14 +83,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance creation time (UTC).
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Instance creation time (UTC).
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -98,14 +98,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-     * 
+     *
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
      * @return Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-     * 
+     *
      */
     public Optional<Output<String>> deletionProtection() {
         return Optional.ofNullable(this.deletionProtection);
@@ -113,14 +113,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-     * 
+     *
      */
     @Import(name="enableAuth")
     private @Nullable Output<Boolean> enableAuth;
 
     /**
      * @return Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableAuth() {
         return Optional.ofNullable(this.enableAuth);
@@ -128,36 +128,46 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-     * 
+     *
      */
     @Import(name="enableCloudStorage")
     private @Nullable Output<Boolean> enableCloudStorage;
 
     /**
      * @return Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableCloudStorage() {
         return Optional.ofNullable(this.enableCloudStorage);
     }
 
+    /**
+     * Connection address information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="endpoints")
     private @Nullable Output<List<InstanceEndpointArgs>> endpoints;
 
+    /**
+     * @return Connection address information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceEndpointArgs>>> endpoints() {
         return Optional.ofNullable(this.endpoints);
     }
 
     /**
      * HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-     * 
+     *
      */
     @Import(name="engineVersion")
     private @Nullable Output<String> engineVersion;
 
     /**
      * @return HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-     * 
+     *
      */
     public Optional<Output<String>> engineVersion() {
         return Optional.ofNullable(this.engineVersion);
@@ -165,14 +175,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -180,14 +190,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance name
-     * 
+     *
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Instance name
-     * 
+     *
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -195,14 +205,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance type. Currently, only Standard is supported. The default value is Standard
-     * 
+     *
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
      * @return Instance type. Currently, only Standard is supported. The default value is Standard
-     * 
+     *
      */
     public Optional<Output<String>> instanceType() {
         return Optional.ofNullable(this.instanceType);
@@ -210,14 +220,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
-     * 
+     *
      */
     @Import(name="masterCount")
     private @Nullable Output<Integer> masterCount;
 
     /**
      * @return Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
-     * 
+     *
      */
     public Optional<Output<Integer>> masterCount() {
         return Optional.ofNullable(this.masterCount);
@@ -225,14 +235,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-     * 
+     *
      */
     @Import(name="masterSpec")
     private @Nullable Output<String> masterSpec;
 
     /**
      * @return Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-     * 
+     *
      */
     public Optional<Output<String>> masterSpec() {
         return Optional.ofNullable(this.masterSpec);
@@ -240,14 +250,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-     * 
+     *
      */
     @Import(name="multiAz")
     private @Nullable Output<Boolean> multiAz;
 
     /**
      * @return Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-     * 
+     *
      */
     public Optional<Output<Boolean>> multiAz() {
         return Optional.ofNullable(this.multiAz);
@@ -255,14 +265,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Real-time primary availability zone subnet ID.
-     * 
+     *
      */
     @Import(name="primarySubnetId")
     private @Nullable Output<String> primarySubnetId;
 
     /**
      * @return Real-time primary availability zone subnet ID.
-     * 
+     *
      */
     public Optional<Output<String>> primarySubnetId() {
         return Optional.ofNullable(this.primarySubnetId);
@@ -270,14 +280,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Real-time primary zone ID
-     * 
+     *
      */
     @Import(name="primaryZoneId")
     private @Nullable Output<String> primaryZoneId;
 
     /**
      * @return Real-time primary zone ID
-     * 
+     *
      */
     public Optional<Output<String>> primaryZoneId() {
         return Optional.ofNullable(this.primaryZoneId);
@@ -285,14 +295,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name of the instance
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name of the instance
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -300,14 +310,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-     * 
+     *
      */
     @Import(name="purchaseMonths")
     private @Nullable Output<Integer> purchaseMonths;
 
     /**
      * @return Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-     * 
+     *
      */
     public Optional<Output<Integer>> purchaseMonths() {
         return Optional.ofNullable(this.purchaseMonths);
@@ -315,14 +325,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Region ID of the instance.
-     * 
+     *
      */
     @Import(name="regionId")
     private @Nullable Output<String> regionId;
 
     /**
      * @return Region ID of the instance.
-     * 
+     *
      */
     public Optional<Output<String>> regionId() {
         return Optional.ofNullable(this.regionId);
@@ -330,14 +340,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of RegionServer nodes
-     * 
+     *
      */
     @Import(name="rsCount")
     private @Nullable Output<Integer> rsCount;
 
     /**
      * @return Number of RegionServer nodes
-     * 
+     *
      */
     public Optional<Output<Integer>> rsCount() {
         return Optional.ofNullable(this.rsCount);
@@ -345,14 +355,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * RegionServer node specification code.
-     * 
+     *
      */
     @Import(name="rsSpec")
     private @Nullable Output<String> rsSpec;
 
     /**
      * @return RegionServer node specification code.
-     * 
+     *
      */
     public Optional<Output<String>> rsSpec() {
         return Optional.ofNullable(this.rsSpec);
@@ -360,14 +370,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Real-time standby availability zone subnet ID.
-     * 
+     *
      */
     @Import(name="standbySubnetId")
     private @Nullable Output<String> standbySubnetId;
 
     /**
      * @return Real-time standby availability zone subnet ID.
-     * 
+     *
      */
     public Optional<Output<String>> standbySubnetId() {
         return Optional.ofNullable(this.standbySubnetId);
@@ -375,14 +385,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Real-time standby zone ID
-     * 
+     *
      */
     @Import(name="standbyZoneId")
     private @Nullable Output<String> standbyZoneId;
 
     /**
      * @return Real-time standby zone ID
-     * 
+     *
      */
     public Optional<Output<String>> standbyZoneId() {
         return Optional.ofNullable(this.standbyZoneId);
@@ -390,14 +400,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Current status of the instance. For more details about instance status, see Instance Status Description
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Current status of the instance. For more details about instance status, see Instance Status Description
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -405,14 +415,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total storage capacity of the instance, unit: GiB.
-     * 
+     *
      */
     @Import(name="storageCapacity")
     private @Nullable Output<Integer> storageCapacity;
 
     /**
      * @return Total storage capacity of the instance, unit: GiB.
-     * 
+     *
      */
     public Optional<Output<Integer>> storageCapacity() {
         return Optional.ofNullable(this.storageCapacity);
@@ -420,14 +430,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-     * 
+     *
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
      * @return Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-     * 
+     *
      */
     public Optional<Output<String>> storageType() {
         return Optional.ofNullable(this.storageType);
@@ -435,36 +445,46 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-     * 
+     *
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-     * 
+     *
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Capacity-type storage space used by the instance, in MiB
-     * 
+     *
      */
     @Import(name="usedColdStorage")
     private @Nullable Output<Integer> usedColdStorage;
 
     /**
      * @return Capacity-type storage space used by the instance, in MiB
-     * 
+     *
      */
     public Optional<Output<Integer>> usedColdStorage() {
         return Optional.ofNullable(this.usedColdStorage);
@@ -472,14 +492,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Storage capacity used by the primary instance, in MiB
-     * 
+     *
      */
     @Import(name="usedStorage")
     private @Nullable Output<Double> usedStorage;
 
     /**
      * @return Storage capacity used by the primary instance, in MiB
-     * 
+     *
      */
     public Optional<Output<Double>> usedStorage() {
         return Optional.ofNullable(this.usedStorage);
@@ -487,14 +507,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -502,14 +522,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the private network to which the instance belongs.
-     * 
+     *
      */
     @Import(name="vpcName")
     private @Nullable Output<String> vpcName;
 
     /**
      * @return Name of the private network to which the instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> vpcName() {
         return Optional.ofNullable(this.vpcName);
@@ -517,14 +537,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Zone ID of the instance
-     * 
+     *
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Zone ID of the instance
-     * 
+     *
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -532,14 +552,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the availability zone to which the instance belongs.
-     * 
+     *
      */
     @Import(name="zoneName")
     private @Nullable Output<String> zoneName;
 
     /**
      * @return Name of the availability zone to which the instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> zoneName() {
         return Optional.ofNullable(this.zoneName);
@@ -606,9 +626,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
             $.autoRenew = autoRenew;
@@ -617,9 +637,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
@@ -627,9 +647,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeStatus Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeStatus(@Nullable Output<String> chargeStatus) {
             $.chargeStatus = chargeStatus;
@@ -638,9 +658,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeStatus Billing status. Values: Normal: normal. Overdue: overdue. Shutdown: shutdown.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeStatus(String chargeStatus) {
             return chargeStatus(Output.of(chargeStatus));
@@ -648,9 +668,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeType(@Nullable Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -659,9 +679,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -669,9 +689,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param coldStorage Total capacity-type storage space for the instance, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder coldStorage(@Nullable Output<Integer> coldStorage) {
             $.coldStorage = coldStorage;
@@ -680,9 +700,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param coldStorage Total capacity-type storage space for the instance, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder coldStorage(Integer coldStorage) {
             return coldStorage(Output.of(coldStorage));
@@ -690,9 +710,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Instance creation time (UTC).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -701,9 +721,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Instance creation time (UTC).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -711,9 +731,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletionProtection Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletionProtection(@Nullable Output<String> deletionProtection) {
             $.deletionProtection = deletionProtection;
@@ -722,9 +742,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletionProtection Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletionProtection(String deletionProtection) {
             return deletionProtection(Output.of(deletionProtection));
@@ -732,9 +752,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableAuth Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableAuth(@Nullable Output<Boolean> enableAuth) {
             $.enableAuth = enableAuth;
@@ -743,9 +763,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableAuth Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableAuth(Boolean enableAuth) {
             return enableAuth(Output.of(enableAuth));
@@ -753,9 +773,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableCloudStorage Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableCloudStorage(@Nullable Output<Boolean> enableCloudStorage) {
             $.enableCloudStorage = enableCloudStorage;
@@ -764,32 +784,53 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableCloudStorage Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableCloudStorage(Boolean enableCloudStorage) {
             return enableCloudStorage(Output.of(enableCloudStorage));
         }
 
+        /**
+         * @param endpoints Connection address information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(@Nullable Output<List<InstanceEndpointArgs>> endpoints) {
             $.endpoints = endpoints;
             return this;
         }
 
+        /**
+         * @param endpoints Connection address information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(List<InstanceEndpointArgs> endpoints) {
             return endpoints(Output.of(endpoints));
         }
 
+        /**
+         * @param endpoints Connection address information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(InstanceEndpointArgs... endpoints) {
             return endpoints(List.of(endpoints));
         }
 
         /**
          * @param engineVersion HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineVersion(@Nullable Output<String> engineVersion) {
             $.engineVersion = engineVersion;
@@ -798,9 +839,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param engineVersion HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineVersion(String engineVersion) {
             return engineVersion(Output.of(engineVersion));
@@ -808,9 +849,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -819,9 +860,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -829,9 +870,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -840,9 +881,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -850,9 +891,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Instance type. Currently, only Standard is supported. The default value is Standard
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(@Nullable Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -861,9 +902,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Instance type. Currently, only Standard is supported. The default value is Standard
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -871,9 +912,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterCount Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterCount(@Nullable Output<Integer> masterCount) {
             $.masterCount = masterCount;
@@ -882,9 +923,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterCount Number of Master nodes. For single-zone deployment, 2 Master nodes are included by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterCount(Integer masterCount) {
             return masterCount(Output.of(masterCount));
@@ -892,9 +933,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterSpec Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterSpec(@Nullable Output<String> masterSpec) {
             $.masterSpec = masterSpec;
@@ -903,9 +944,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterSpec Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterSpec(String masterSpec) {
             return masterSpec(Output.of(masterSpec));
@@ -913,9 +954,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiAz Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiAz(@Nullable Output<Boolean> multiAz) {
             $.multiAz = multiAz;
@@ -924,9 +965,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiAz Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiAz(Boolean multiAz) {
             return multiAz(Output.of(multiAz));
@@ -934,9 +975,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param primarySubnetId Real-time primary availability zone subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder primarySubnetId(@Nullable Output<String> primarySubnetId) {
             $.primarySubnetId = primarySubnetId;
@@ -945,9 +986,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param primarySubnetId Real-time primary availability zone subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder primarySubnetId(String primarySubnetId) {
             return primarySubnetId(Output.of(primarySubnetId));
@@ -955,9 +996,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param primaryZoneId Real-time primary zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder primaryZoneId(@Nullable Output<String> primaryZoneId) {
             $.primaryZoneId = primaryZoneId;
@@ -966,9 +1007,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param primaryZoneId Real-time primary zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder primaryZoneId(String primaryZoneId) {
             return primaryZoneId(Output.of(primaryZoneId));
@@ -976,9 +1017,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name of the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -987,9 +1028,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name of the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -997,9 +1038,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param purchaseMonths Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder purchaseMonths(@Nullable Output<Integer> purchaseMonths) {
             $.purchaseMonths = purchaseMonths;
@@ -1008,9 +1049,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param purchaseMonths Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder purchaseMonths(Integer purchaseMonths) {
             return purchaseMonths(Output.of(purchaseMonths));
@@ -1018,9 +1059,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param regionId Region ID of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder regionId(@Nullable Output<String> regionId) {
             $.regionId = regionId;
@@ -1029,9 +1070,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param regionId Region ID of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder regionId(String regionId) {
             return regionId(Output.of(regionId));
@@ -1039,9 +1080,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rsCount Number of RegionServer nodes
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rsCount(@Nullable Output<Integer> rsCount) {
             $.rsCount = rsCount;
@@ -1050,9 +1091,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rsCount Number of RegionServer nodes
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rsCount(Integer rsCount) {
             return rsCount(Output.of(rsCount));
@@ -1060,9 +1101,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rsSpec RegionServer node specification code.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rsSpec(@Nullable Output<String> rsSpec) {
             $.rsSpec = rsSpec;
@@ -1071,9 +1112,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rsSpec RegionServer node specification code.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rsSpec(String rsSpec) {
             return rsSpec(Output.of(rsSpec));
@@ -1081,9 +1122,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param standbySubnetId Real-time standby availability zone subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder standbySubnetId(@Nullable Output<String> standbySubnetId) {
             $.standbySubnetId = standbySubnetId;
@@ -1092,9 +1133,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param standbySubnetId Real-time standby availability zone subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder standbySubnetId(String standbySubnetId) {
             return standbySubnetId(Output.of(standbySubnetId));
@@ -1102,9 +1143,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param standbyZoneId Real-time standby zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder standbyZoneId(@Nullable Output<String> standbyZoneId) {
             $.standbyZoneId = standbyZoneId;
@@ -1113,9 +1154,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param standbyZoneId Real-time standby zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder standbyZoneId(String standbyZoneId) {
             return standbyZoneId(Output.of(standbyZoneId));
@@ -1123,9 +1164,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Current status of the instance. For more details about instance status, see Instance Status Description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -1134,9 +1175,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Current status of the instance. For more details about instance status, see Instance Status Description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -1144,9 +1185,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageCapacity Total storage capacity of the instance, unit: GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageCapacity(@Nullable Output<Integer> storageCapacity) {
             $.storageCapacity = storageCapacity;
@@ -1155,9 +1196,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageCapacity Total storage capacity of the instance, unit: GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageCapacity(Integer storageCapacity) {
             return storageCapacity(Output.of(storageCapacity));
@@ -1165,9 +1206,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageType(@Nullable Output<String> storageType) {
             $.storageType = storageType;
@@ -1176,9 +1217,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageType(String storageType) {
             return storageType(Output.of(storageType));
@@ -1186,9 +1227,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -1197,32 +1238,53 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param usedColdStorage Capacity-type storage space used by the instance, in MiB
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usedColdStorage(@Nullable Output<Integer> usedColdStorage) {
             $.usedColdStorage = usedColdStorage;
@@ -1231,9 +1293,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param usedColdStorage Capacity-type storage space used by the instance, in MiB
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usedColdStorage(Integer usedColdStorage) {
             return usedColdStorage(Output.of(usedColdStorage));
@@ -1241,9 +1303,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param usedStorage Storage capacity used by the primary instance, in MiB
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usedStorage(@Nullable Output<Double> usedStorage) {
             $.usedStorage = usedStorage;
@@ -1252,9 +1314,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param usedStorage Storage capacity used by the primary instance, in MiB
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usedStorage(Double usedStorage) {
             return usedStorage(Output.of(usedStorage));
@@ -1262,9 +1324,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -1273,9 +1335,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -1283,9 +1345,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcName Name of the private network to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcName(@Nullable Output<String> vpcName) {
             $.vpcName = vpcName;
@@ -1294,9 +1356,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcName Name of the private network to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcName(String vpcName) {
             return vpcName(Output.of(vpcName));
@@ -1304,9 +1366,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Zone ID of the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -1315,9 +1377,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Zone ID of the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));
@@ -1325,9 +1387,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Name of the availability zone to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneName(@Nullable Output<String> zoneName) {
             $.zoneName = zoneName;
@@ -1336,9 +1398,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Name of the availability zone to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneName(String zoneName) {
             return zoneName(Output.of(zoneName));

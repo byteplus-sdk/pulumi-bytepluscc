@@ -17,311 +17,359 @@ import javax.annotation.Nullable;
 
 /**
  * Resource definition for the scheduled SQL analysis task.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.tls.ScheduleSqlTask;
+ * import com.byteplus.bytepluscc.tls.ScheduleSqlTaskArgs;
+ * import com.pulumi.bytepluscc.tls.inputs.ScheduleSqlTaskRequestCycleArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App }{{@code
+ *     public static void main(String[] args) }{{@code
+ *         Pulumi.run(App::stack);
+ *     }}{@code
+ *
+ *     public static void stack(Context ctx) }{{@code
+ *         var tLSScheduleSqlTaskDemo = new ScheduleSqlTask("tLSScheduleSqlTaskDemo", ScheduleSqlTaskArgs.builder()
+ *             .description("testdesc")
+ *             .destRegion("cn-beijing")
+ *             .destTopicId("42fedbb3-2c2a-4822-bc30-9c5cc****")
+ *             .processEndTime(0)
+ *             .processSqlDelay(60)
+ *             .taskType(0)
+ *             .processStartTime(1773072000)
+ *             .processTimeWindow("}{@literal @}{@code m-15m,}{@literal @}{@code m")
+ *             .query("* | SELECT * limit 10")
+ *             .requestCycle(ScheduleSqlTaskRequestCycleArgs.builder()
+ *                 .cron_tab("0 19 * * *")
+ *                 .cron_time_zone("GMT+08:00")
+ *                 .time(2)
+ *                 .type("Fixed")
+ *                 .build())
+ *             .sourceTopicId("22fca26e-a776-4925-a3ca-a9bb6d***")
+ *             .status(1)
+ *             .taskName("test")
+ *             .build());
+ *
+ *     }}{@code
+ * }}{@code
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask example &#34;task_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask")
 public class ScheduleSqlTask extends com.pulumi.resources.CustomResource {
     /**
      * Creation time (seconds-level Unix timestamp).
-     * 
+     *
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
      * @return Creation time (seconds-level Unix timestamp).
-     * 
+     *
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
      * Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, &#39;, \, and \ are not supported. Length: 0–64 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Brief description of the scheduled SQL analysis task. Characters &lt;&gt;, &#39;, \, and \ are not supported. Length: 0–64 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Target log project ID.
-     * 
+     *
      */
     @Export(name="destProjectId", refs={String.class}, tree="[0]")
     private Output<String> destProjectId;
 
     /**
      * @return Target log project ID.
-     * 
+     *
      */
     public Output<String> destProjectId() {
         return this.destProjectId;
     }
     /**
      * Region of the target log topic. The default is the current region.
-     * 
+     *
      */
     @Export(name="destRegion", refs={String.class}, tree="[0]")
     private Output<String> destRegion;
 
     /**
      * @return Region of the target log topic. The default is the current region.
-     * 
+     *
      */
     public Output<String> destRegion() {
         return this.destRegion;
     }
     /**
      * Target log topic ID for storing scheduled SQL analysis result data.
-     * 
+     *
      */
     @Export(name="destTopicId", refs={String.class}, tree="[0]")
     private Output<String> destTopicId;
 
     /**
      * @return Target log topic ID for storing scheduled SQL analysis result data.
-     * 
+     *
      */
     public Output<String> destTopicId() {
         return this.destTopicId;
     }
     /**
      * Target log topic name.
-     * 
+     *
      */
     @Export(name="destTopicName", refs={String.class}, tree="[0]")
     private Output<String> destTopicName;
 
     /**
      * @return Target log topic name.
-     * 
+     *
      */
     public Output<String> destTopicName() {
         return this.destTopicName;
     }
     /**
      * End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
-     * 
+     *
      */
     @Export(name="processEndTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> processEndTime;
 
     /**
      * @return End time for scheduling the scheduled SQL analysis task, in seconds-level timestamp format. If not configured, the scheduled SQL analysis task runs continuously. After the end time is reached, the log service will no longer create instances or execute scheduled SQL analysis, but the task status remains running until manually paused.
-     * 
+     *
      */
     public Output<Integer> processEndTime() {
         return this.processEndTime;
     }
     /**
      * Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
-     * 
+     *
      */
     @Export(name="processSqlDelay", refs={Integer.class}, tree="[0]")
     private Output<Integer> processSqlDelay;
 
     /**
      * @return Delay time for each schedule. Range: 0–120 seconds. If not configured, defaults to 0, meaning no delay.
-     * 
+     *
      */
     public Output<Integer> processSqlDelay() {
         return this.processSqlDelay;
     }
     /**
      * Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
-     * 
+     *
      */
     @Export(name="processStartTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> processStartTime;
 
     /**
      * @return Start time for scheduling the scheduled SQL analysis task, which is the time the first instance is created. Format: seconds-level timestamp.
-     * 
+     *
      */
     public Output<Integer> processStartTime() {
         return this.processStartTime;
     }
     /**
      * SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
-     * 
+     *
      */
     @Export(name="processTimeWindow", refs={String.class}, tree="[0]")
     private Output<String> processTimeWindow;
 
     /**
      * @return SQL time window, which is the time range for log retrieval and analysis when scheduled SQL analysis tasks run, in left-closed, right-open format. Maximum is 24 hours, minimum is 1 minute.
-     * 
+     *
      */
     public Output<String> processTimeWindow() {
         return this.processTimeWindow;
     }
     /**
      * The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service&#39;s retrieval and analysis syntax.
-     * 
+     *
      */
     @Export(name="query", refs={String.class}, tree="[0]")
     private Output<String> query;
 
     /**
      * @return The scheduled SQL analysis task periodically executes retrieval and analysis statements, which must comply with the log service&#39;s retrieval and analysis syntax.
-     * 
+     *
      */
     public Output<String> query() {
         return this.query;
     }
     /**
      * Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
-     * 
+     *
      */
     @Export(name="requestCycle", refs={ScheduleSqlTaskRequestCycle.class}, tree="[0]")
     private Output<ScheduleSqlTaskRequestCycle> requestCycle;
 
     /**
      * @return Scheduling period for the scheduled SQL analysis task. The scheduling period determines the scheduling time for each instance. It is recommended that the scheduling period is not less than the SQL time window.
-     * 
+     *
      */
     public Output<ScheduleSqlTaskRequestCycle> requestCycle() {
         return this.requestCycle;
     }
     /**
      * Source log project ID.
-     * 
+     *
      */
     @Export(name="sourceProjectId", refs={String.class}, tree="[0]")
     private Output<String> sourceProjectId;
 
     /**
      * @return Source log project ID.
-     * 
+     *
      */
     public Output<String> sourceProjectId() {
         return this.sourceProjectId;
     }
     /**
      * Source log project name.
-     * 
+     *
      */
     @Export(name="sourceProjectName", refs={String.class}, tree="[0]")
     private Output<String> sourceProjectName;
 
     /**
      * @return Source log project name.
-     * 
+     *
      */
     public Output<String> sourceProjectName() {
         return this.sourceProjectName;
     }
     /**
      * ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
-     * 
+     *
      */
     @Export(name="sourceTopicId", refs={String.class}, tree="[0]")
     private Output<String> sourceTopicId;
 
     /**
      * @return ID of the log topic containing the original logs for scheduled SQL analysis. Only log topics in the current region are supported.
-     * 
+     *
      */
     public Output<String> sourceTopicId() {
         return this.sourceTopicId;
     }
     /**
      * Source log topic name.
-     * 
+     *
      */
     @Export(name="sourceTopicName", refs={String.class}, tree="[0]")
     private Output<String> sourceTopicName;
 
     /**
      * @return Source log topic name.
-     * 
+     *
      */
     public Output<String> sourceTopicName() {
         return this.sourceTopicName;
     }
     /**
      * Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
-     * 
+     *
      */
     @Export(name="status", refs={Integer.class}, tree="[0]")
     private Output<Integer> status;
 
     /**
      * @return Whether to start the scheduled SQL analysis task immediately after completing task configuration. Options: 0 Off; 1 Start immediately.
-     * 
+     *
      */
     public Output<Integer> status() {
         return this.status;
     }
     /**
      * Task ID.
-     * 
+     *
      */
     @Export(name="taskId", refs={String.class}, tree="[0]")
     private Output<String> taskId;
 
     /**
      * @return Task ID.
-     * 
+     *
      */
     public Output<String> taskId() {
         return this.taskId;
     }
     /**
      * Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
-     * 
+     *
      */
     @Export(name="taskName", refs={String.class}, tree="[0]")
     private Output<String> taskName;
 
     /**
      * @return Name of the scheduled SQL analysis task. Refer to the resource naming rules for naming conventions.
-     * 
+     *
      */
     public Output<String> taskName() {
         return this.taskName;
     }
     /**
      * Task type: 0 means log to log; 1 means log to metric.
-     * 
+     *
      */
     @Export(name="taskType", refs={Integer.class}, tree="[0]")
     private Output<Integer> taskType;
 
     /**
      * @return Task type: 0 means log to log; 1 means log to metric.
-     * 
+     *
      */
     public Output<Integer> taskType() {
         return this.taskType;
     }
     /**
      * Modification time (seconds-level Unix timestamp).
-     * 
+     *
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
      * @return Modification time (seconds-level Unix timestamp).
-     * 
+     *
      */
     public Output<Integer> updatedTime() {
         return this.updatedTime;

@@ -16,90 +16,90 @@ import javax.annotation.Nullable;
 
 /**
  * Domain backup plan configuration.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.dns.BackupSchedule;
  * import com.byteplus.bytepluscc.dns.BackupScheduleArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var dNSBackupScheduleDemo = new BackupSchedule("dNSBackupScheduleDemo", BackupScheduleArgs.builder()
  *             .zid("2xxxx71")
  *             .schedule(1)
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:dns/backupSchedule:BackupSchedule example &#34;zid&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:dns/backupSchedule:BackupSchedule")
 public class BackupSchedule extends com.pulumi.resources.CustomResource {
     /**
      * Backup quantity limit.
-     * 
+     *
      */
     @Export(name="countLimit", refs={Integer.class}, tree="[0]")
     private Output<Integer> countLimit;
 
     /**
      * @return Backup quantity limit.
-     * 
+     *
      */
     public Output<Integer> countLimit() {
         return this.countLimit;
     }
     /**
      * Backup plan:   - 0: Disable automatic backup.   - 1: Automatically back up every hour.   - 2: Automatically back up every day.   - 3: Automatically back up every month.
-     * 
+     *
      */
     @Export(name="schedule", refs={Integer.class}, tree="[0]")
     private Output<Integer> schedule;
 
     /**
      * @return Backup plan:   - 0: Disable automatic backup.   - 1: Automatically back up every hour.   - 2: Automatically back up every day.   - 3: Automatically back up every month.
-     * 
+     *
      */
     public Output<Integer> schedule() {
         return this.schedule;
     }
     /**
      * You need to obtain the ID of the domain name for the backup plan. You can call the ListZones API to get the domain name ID.
-     * 
+     *
      */
     @Export(name="zid", refs={String.class}, tree="[0]")
     private Output<String> zid;
 
     /**
      * @return You need to obtain the ID of the domain name for the backup plan. You can call the ListZones API to get the domain name ID.
-     * 
+     *
      */
     public Output<String> zid() {
         return this.zid;

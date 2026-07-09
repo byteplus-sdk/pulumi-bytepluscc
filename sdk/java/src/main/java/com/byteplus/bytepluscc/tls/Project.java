@@ -18,32 +18,32 @@ import javax.annotation.Nullable;
 
 /**
  * A log project is a data management unit used for tenant resource isolation and control. Typically, each log project corresponds to an application, service, or product
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.tls.Project;
  * import com.byteplus.bytepluscc.tls.ProjectArgs;
  * import com.pulumi.bytepluscc.tls.inputs.ProjectTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var tLSProjectDemo = new Project("tLSProjectDemo", ProjectArgs.builder()
  *             .projectName("ccapi_test")
@@ -54,122 +54,132 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:tls/project:Project example &#34;project_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:tls/project:Project")
 public class Project extends com.pulumi.resources.CustomResource {
     /**
      * Log project creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Log project creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Brief description of the log project
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Brief description of the log project
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * The IAM project associated with the log project
-     * 
+     *
      */
     @Export(name="iamProjectName", refs={String.class}, tree="[0]")
     private Output<String> iamProjectName;
 
     /**
      * @return The IAM project associated with the log project
-     * 
+     *
      */
     public Output<String> iamProjectName() {
         return this.iamProjectName;
     }
     /**
      * Private network connection domain name
-     * 
+     *
      */
     @Export(name="innerNetDomain", refs={String.class}, tree="[0]")
     private Output<String> innerNetDomain;
 
     /**
      * @return Private network connection domain name
-     * 
+     *
      */
     public Output<String> innerNetDomain() {
         return this.innerNetDomain;
     }
     /**
      * Log project ID
-     * 
+     *
      */
     @Export(name="projectId", refs={String.class}, tree="[0]")
     private Output<String> projectId;
 
     /**
      * @return Log project ID
-     * 
+     *
      */
     public Output<String> projectId() {
         return this.projectId;
     }
     /**
      * Log project name
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Log project name
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,ProjectTag.class}, tree="[0,1]")
     private Output<List<ProjectTag>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ProjectTag>> tags() {
         return this.tags;
     }
     /**
      * Number of log topics in the current log project
-     * 
+     *
      */
     @Export(name="topicCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> topicCount;
 
     /**
      * @return Number of log topics in the current log project
-     * 
+     *
      */
     public Output<Integer> topicCount() {
         return this.topicCount;

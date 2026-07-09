@@ -22,299 +22,319 @@ import javax.annotation.Nullable;
 public final class NodePoolNodeConfig {
     /**
      * @return Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
-     * 
+     *
      */
     private @Nullable Boolean additionalContainerStorageEnabled;
     /**
      * @return Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
-     * 
+     *
      */
     private @Nullable Boolean autoRenew;
     /**
      * @return Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
-     * 
+     *
      */
     private @Nullable Integer autoRenewPeriod;
+    /**
+     * @return Node data disk configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<NodePoolNodeConfigDataVolume> dataVolumes;
     /**
      * @return Group number of the instance in the deployment set; 0 means not set
-     * 
+     *
      */
     private @Nullable Integer deploymentSetGroupNumber;
     /**
      * @return Deployment Set ID to be added to the instance
-     * 
+     *
      */
     private @Nullable String deploymentSetId;
     /**
      * @return The host name corresponding to the node.
-     * 
+     *
      */
     private @Nullable String hostname;
     /**
      * @return High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-     * 
+     *
      */
     private @Nullable List<String> hpcClusterIds;
     /**
      * @return Image ID used by the cloud server corresponding to the node
-     * 
+     *
      */
     private @Nullable String imageId;
     /**
      * @return Custom script executed after node creation and initialization. Shell script in Base64 encoding
-     * 
+     *
      */
     private @Nullable String initializeScript;
     /**
      * @return Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
-     * 
+     *
      */
     private @Nullable String instanceChargeType;
     /**
      * @return Node (instance) name
-     * 
+     *
      */
     private @Nullable String instanceName;
     /**
      * @return List of cloud server instance type IDs corresponding to the nodes
-     * 
+     *
      */
     private @Nullable List<String> instanceTypeIds;
     /**
      * @return Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
-     * 
+     *
      */
     private @Nullable NodePoolNodeConfigInstancesDistribution instancesDistribution;
     /**
      * @return Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
-     * 
+     *
      */
     private @Nullable String namePrefix;
     /**
      * @return Network communication mode between nodes
-     * 
+     *
      */
     private @Nullable String networkTrafficMode;
     /**
      * @return Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
-     * 
+     *
      */
     private @Nullable Integer period;
     /**
      * @return Script to execute before deploying the node
-     * 
+     *
      */
     private @Nullable String preScript;
     /**
      * @return Project to which the ECS belongs. Each ECS can only belong to one project.
-     * 
+     *
      */
     private @Nullable String projectName;
     /**
      * @return Configuration for automatic public network access for nodes
-     * 
+     *
      */
     private @Nullable NodePoolNodeConfigPublicAccessConfig publicAccessConfig;
     /**
      * @return Enable public network access for nodes automatically. Options:   - false: off   - true: on
-     * 
+     *
      */
     private @Nullable Boolean publicAccessEnabled;
     /**
      * @return Node security configuration
-     * 
+     *
      */
     private @Nullable NodePoolNodeConfigSecurity security;
     /**
      * @return Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
-     * 
+     *
      */
     private @Nullable String spotStrategy;
     /**
      * @return List of subnet IDs for the node network.
-     * 
+     *
      */
     private @Nullable List<String> subnetIds;
     /**
      * @return System disk configuration for the node
-     * 
+     *
      */
     private @Nullable NodePoolNodeConfigSystemVolume systemVolume;
+    /**
+     * @return Label information configured for the node pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<NodePoolNodeConfigTag> tags;
 
     private NodePoolNodeConfig() {}
     /**
      * @return Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
-     * 
+     *
      */
     public Optional<Boolean> additionalContainerStorageEnabled() {
         return Optional.ofNullable(this.additionalContainerStorageEnabled);
     }
     /**
      * @return Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
-     * 
+     *
      */
     public Optional<Boolean> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
     }
     /**
      * @return Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
-     * 
+     *
      */
     public Optional<Integer> autoRenewPeriod() {
         return Optional.ofNullable(this.autoRenewPeriod);
     }
+    /**
+     * @return Node data disk configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<NodePoolNodeConfigDataVolume> dataVolumes() {
         return this.dataVolumes == null ? List.of() : this.dataVolumes;
     }
     /**
      * @return Group number of the instance in the deployment set; 0 means not set
-     * 
+     *
      */
     public Optional<Integer> deploymentSetGroupNumber() {
         return Optional.ofNullable(this.deploymentSetGroupNumber);
     }
     /**
      * @return Deployment Set ID to be added to the instance
-     * 
+     *
      */
     public Optional<String> deploymentSetId() {
         return Optional.ofNullable(this.deploymentSetId);
     }
     /**
      * @return The host name corresponding to the node.
-     * 
+     *
      */
     public Optional<String> hostname() {
         return Optional.ofNullable(this.hostname);
     }
     /**
      * @return High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-     * 
+     *
      */
     public List<String> hpcClusterIds() {
         return this.hpcClusterIds == null ? List.of() : this.hpcClusterIds;
     }
     /**
      * @return Image ID used by the cloud server corresponding to the node
-     * 
+     *
      */
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     /**
      * @return Custom script executed after node creation and initialization. Shell script in Base64 encoding
-     * 
+     *
      */
     public Optional<String> initializeScript() {
         return Optional.ofNullable(this.initializeScript);
     }
     /**
      * @return Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
-     * 
+     *
      */
     public Optional<String> instanceChargeType() {
         return Optional.ofNullable(this.instanceChargeType);
     }
     /**
      * @return Node (instance) name
-     * 
+     *
      */
     public Optional<String> instanceName() {
         return Optional.ofNullable(this.instanceName);
     }
     /**
      * @return List of cloud server instance type IDs corresponding to the nodes
-     * 
+     *
      */
     public List<String> instanceTypeIds() {
         return this.instanceTypeIds == null ? List.of() : this.instanceTypeIds;
     }
     /**
      * @return Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
-     * 
+     *
      */
     public Optional<NodePoolNodeConfigInstancesDistribution> instancesDistribution() {
         return Optional.ofNullable(this.instancesDistribution);
     }
     /**
      * @return Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
-     * 
+     *
      */
     public Optional<String> namePrefix() {
         return Optional.ofNullable(this.namePrefix);
     }
     /**
      * @return Network communication mode between nodes
-     * 
+     *
      */
     public Optional<String> networkTrafficMode() {
         return Optional.ofNullable(this.networkTrafficMode);
     }
     /**
      * @return Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
-     * 
+     *
      */
     public Optional<Integer> period() {
         return Optional.ofNullable(this.period);
     }
     /**
      * @return Script to execute before deploying the node
-     * 
+     *
      */
     public Optional<String> preScript() {
         return Optional.ofNullable(this.preScript);
     }
     /**
      * @return Project to which the ECS belongs. Each ECS can only belong to one project.
-     * 
+     *
      */
     public Optional<String> projectName() {
         return Optional.ofNullable(this.projectName);
     }
     /**
      * @return Configuration for automatic public network access for nodes
-     * 
+     *
      */
     public Optional<NodePoolNodeConfigPublicAccessConfig> publicAccessConfig() {
         return Optional.ofNullable(this.publicAccessConfig);
     }
     /**
      * @return Enable public network access for nodes automatically. Options:   - false: off   - true: on
-     * 
+     *
      */
     public Optional<Boolean> publicAccessEnabled() {
         return Optional.ofNullable(this.publicAccessEnabled);
     }
     /**
      * @return Node security configuration
-     * 
+     *
      */
     public Optional<NodePoolNodeConfigSecurity> security() {
         return Optional.ofNullable(this.security);
     }
     /**
      * @return Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
-     * 
+     *
      */
     public Optional<String> spotStrategy() {
         return Optional.ofNullable(this.spotStrategy);
     }
     /**
      * @return List of subnet IDs for the node network.
-     * 
+     *
      */
     public List<String> subnetIds() {
         return this.subnetIds == null ? List.of() : this.subnetIds;
     }
     /**
      * @return System disk configuration for the node
-     * 
+     *
      */
     public Optional<NodePoolNodeConfigSystemVolume> systemVolume() {
         return Optional.ofNullable(this.systemVolume);
     }
+    /**
+     * @return Label information configured for the node pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<NodePoolNodeConfigTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }

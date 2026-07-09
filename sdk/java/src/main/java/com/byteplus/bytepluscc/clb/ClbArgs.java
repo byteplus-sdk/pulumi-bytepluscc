@@ -26,14 +26,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access log information in the load balancer instance
-     * 
+     *
      */
     @Import(name="accessLog")
     private @Nullable Output<ClbAccessLogArgs> accessLog;
 
     /**
      * @return Access log information in the load balancer instance
-     * 
+     *
      */
     public Optional<Output<ClbAccessLogArgs>> accessLog() {
         return Optional.ofNullable(this.accessLog);
@@ -41,14 +41,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
-     * 
+     *
      */
     @Import(name="addressIpVersion")
     private @Nullable Output<String> addressIpVersion;
 
     /**
      * @return IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
-     * 
+     *
      */
     public Optional<Output<String>> addressIpVersion() {
         return Optional.ofNullable(this.addressIpVersion);
@@ -56,14 +56,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowed port ranges
-     * 
+     *
      */
     @Import(name="allowedPorts")
     private @Nullable Output<List<String>> allowedPorts;
 
     /**
      * @return Allowed port ranges
-     * 
+     *
      */
     public Optional<Output<List<String>>> allowedPorts() {
         return Optional.ofNullable(this.allowedPorts);
@@ -71,14 +71,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
-     * 
+     *
      */
     @Import(name="autoRenewal")
     private @Nullable Output<Boolean> autoRenewal;
 
     /**
      * @return Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoRenewal() {
         return Optional.ofNullable(this.autoRenewal);
@@ -86,14 +86,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable bypass security group feature
-     * 
+     *
      */
     @Import(name="bypassSecurityGroupEnabled")
     private @Nullable Output<String> bypassSecurityGroupEnabled;
 
     /**
      * @return Whether to enable bypass security group feature
-     * 
+     *
      */
     public Optional<Output<String>> bypassSecurityGroupEnabled() {
         return Optional.ofNullable(this.bypassSecurityGroupEnabled);
@@ -101,14 +101,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the load balancer instance
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the load balancer instance
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -116,14 +116,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Public IP information of the load balancer instance
-     * 
+     *
      */
     @Import(name="eip")
     private @Nullable Output<ClbEipArgs> eip;
 
     /**
      * @return Public IP information of the load balancer instance
-     * 
+     *
      */
     public Optional<Output<ClbEipArgs>> eip() {
         return Optional.ofNullable(this.eip);
@@ -131,14 +131,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
-     * 
+     *
      */
     @Import(name="eniAddressNum")
     private @Nullable Output<Double> eniAddressNum;
 
     /**
      * @return Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
-     * 
+     *
      */
     public Optional<Output<Double>> eniAddressNum() {
         return Optional.ofNullable(this.eniAddressNum);
@@ -146,14 +146,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
-     * 
+     *
      */
     @Import(name="enis")
     private @Nullable Output<ClbEnisArgs> enis;
 
     /**
      * @return List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
-     * 
+     *
      */
     public Optional<Output<ClbEnisArgs>> enis() {
         return Optional.ofNullable(this.enis);
@@ -161,36 +161,46 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Dedicated cluster ID
-     * 
+     *
      */
     @Import(name="exclusiveClusterId")
     private @Nullable Output<String> exclusiveClusterId;
 
     /**
      * @return Dedicated cluster ID
-     * 
+     *
      */
     public Optional<Output<String>> exclusiveClusterId() {
         return Optional.ofNullable(this.exclusiveClusterId);
     }
 
+    /**
+     * Listener information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="listeners")
     private @Nullable Output<List<ClbListenerArgs>> listeners;
 
+    /**
+     * @return Listener information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ClbListenerArgs>>> listeners() {
         return Optional.ofNullable(this.listeners);
     }
 
     /**
      * CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
-     * 
+     *
      */
     @Import(name="loadBalancerBillingType")
     private @Nullable Output<Double> loadBalancerBillingType;
 
     /**
      * @return CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
-     * 
+     *
      */
     public Optional<Output<Double>> loadBalancerBillingType() {
         return Optional.ofNullable(this.loadBalancerBillingType);
@@ -198,14 +208,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the load balancer instance
-     * 
+     *
      */
     @Import(name="loadBalancerName")
     private @Nullable Output<String> loadBalancerName;
 
     /**
      * @return Name of the load balancer instance
-     * 
+     *
      */
     public Optional<Output<String>> loadBalancerName() {
         return Optional.ofNullable(this.loadBalancerName);
@@ -213,14 +223,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
-     * 
+     *
      */
     @Import(name="loadBalancerSpec")
     private @Nullable Output<String> loadBalancerSpec;
 
     /**
      * @return CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
-     * 
+     *
      */
     public Optional<Output<String>> loadBalancerSpec() {
         return Optional.ofNullable(this.loadBalancerSpec);
@@ -228,14 +238,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Main availability zone ID of the load balancer instance
-     * 
+     *
      */
     @Import(name="masterZoneId")
     private @Nullable Output<String> masterZoneId;
 
     /**
      * @return Main availability zone ID of the load balancer instance
-     * 
+     *
      */
     public Optional<Output<String>> masterZoneId() {
         return Optional.ofNullable(this.masterZoneId);
@@ -243,14 +253,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
-     * 
+     *
      */
     @Import(name="modificationProtectionReason")
     private @Nullable Output<String> modificationProtectionReason;
 
     /**
      * @return Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
-     * 
+     *
      */
     public Optional<Output<String>> modificationProtectionReason() {
         return Optional.ofNullable(this.modificationProtectionReason);
@@ -258,14 +268,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
-     * 
+     *
      */
     @Import(name="modificationProtectionStatus")
     private @Nullable Output<String> modificationProtectionStatus;
 
     /**
      * @return Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
-     * 
+     *
      */
     public Optional<Output<String>> modificationProtectionStatus() {
         return Optional.ofNullable(this.modificationProtectionStatus);
@@ -273,14 +283,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether it is a new architecture
-     * 
+     *
      */
     @Import(name="newArch")
     private @Nullable Output<Boolean> newArch;
 
     /**
      * @return Whether it is a new architecture
-     * 
+     *
      */
     public Optional<Output<Boolean>> newArch() {
         return Optional.ofNullable(this.newArch);
@@ -288,14 +298,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
-     * 
+     *
      */
     @Import(name="orderId")
     private @Nullable Output<String> orderId;
 
     /**
      * @return Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
-     * 
+     *
      */
     public Optional<Output<String>> orderId() {
         return Optional.ofNullable(this.orderId);
@@ -303,14 +313,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
-     * 
+     *
      */
     @Import(name="period")
     private @Nullable Output<Double> period;
 
     /**
      * @return Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
-     * 
+     *
      */
     public Optional<Output<Double>> period() {
         return Optional.ofNullable(this.period);
@@ -318,14 +328,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
-     * 
+     *
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
      * @return Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
-     * 
+     *
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -333,36 +343,46 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project associated with the CLB instance
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project associated with the CLB instance
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Backend server group information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="serverGroups")
     private @Nullable Output<List<ClbServerGroupArgs>> serverGroups;
 
+    /**
+     * @return Backend server group information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ClbServerGroupArgs>>> serverGroups() {
         return Optional.ofNullable(this.serverGroups);
     }
 
     /**
      * Secondary availability zone ID of the load balancer instance
-     * 
+     *
      */
     @Import(name="slaveZoneId")
     private @Nullable Output<String> slaveZoneId;
 
     /**
      * @return Secondary availability zone ID of the load balancer instance
-     * 
+     *
      */
     public Optional<Output<String>> slaveZoneId() {
         return Optional.ofNullable(this.slaveZoneId);
@@ -370,36 +390,46 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID within the VPC of the load balancer instance
-     * 
+     *
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return Subnet ID within the VPC of the load balancer instance
-     * 
+     *
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * CLB instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<ClbTagArgs>> tags;
 
+    /**
+     * @return CLB instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ClbTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
-     * 
+     *
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
-     * 
+     *
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -407,14 +437,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID of the load balancer instance
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID of the load balancer instance
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -422,14 +452,14 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone type of the load balancer instance
-     * 
+     *
      */
     @Import(name="zoneType")
     private @Nullable Output<String> zoneType;
 
     /**
      * @return Availability zone type of the load balancer instance
-     * 
+     *
      */
     public Optional<Output<String>> zoneType() {
         return Optional.ofNullable(this.zoneType);
@@ -489,9 +519,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accessLog Access log information in the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accessLog(@Nullable Output<ClbAccessLogArgs> accessLog) {
             $.accessLog = accessLog;
@@ -500,9 +530,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accessLog Access log information in the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accessLog(ClbAccessLogArgs accessLog) {
             return accessLog(Output.of(accessLog));
@@ -510,9 +540,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressIpVersion IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder addressIpVersion(@Nullable Output<String> addressIpVersion) {
             $.addressIpVersion = addressIpVersion;
@@ -521,9 +551,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addressIpVersion IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder addressIpVersion(String addressIpVersion) {
             return addressIpVersion(Output.of(addressIpVersion));
@@ -531,9 +561,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowedPorts Allowed port ranges
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowedPorts(@Nullable Output<List<String>> allowedPorts) {
             $.allowedPorts = allowedPorts;
@@ -542,9 +572,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowedPorts Allowed port ranges
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowedPorts(List<String> allowedPorts) {
             return allowedPorts(Output.of(allowedPorts));
@@ -552,9 +582,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowedPorts Allowed port ranges
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowedPorts(String... allowedPorts) {
             return allowedPorts(List.of(allowedPorts));
@@ -562,9 +592,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenewal Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenewal(@Nullable Output<Boolean> autoRenewal) {
             $.autoRenewal = autoRenewal;
@@ -573,9 +603,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenewal Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenewal(Boolean autoRenewal) {
             return autoRenewal(Output.of(autoRenewal));
@@ -583,9 +613,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bypassSecurityGroupEnabled Whether to enable bypass security group feature
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bypassSecurityGroupEnabled(@Nullable Output<String> bypassSecurityGroupEnabled) {
             $.bypassSecurityGroupEnabled = bypassSecurityGroupEnabled;
@@ -594,9 +624,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bypassSecurityGroupEnabled Whether to enable bypass security group feature
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bypassSecurityGroupEnabled(String bypassSecurityGroupEnabled) {
             return bypassSecurityGroupEnabled(Output.of(bypassSecurityGroupEnabled));
@@ -604,9 +634,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -615,9 +645,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -625,9 +655,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eip Public IP information of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eip(@Nullable Output<ClbEipArgs> eip) {
             $.eip = eip;
@@ -636,9 +666,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eip Public IP information of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eip(ClbEipArgs eip) {
             return eip(Output.of(eip));
@@ -646,9 +676,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eniAddressNum Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eniAddressNum(@Nullable Output<Double> eniAddressNum) {
             $.eniAddressNum = eniAddressNum;
@@ -657,9 +687,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eniAddressNum Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eniAddressNum(Double eniAddressNum) {
             return eniAddressNum(Output.of(eniAddressNum));
@@ -667,9 +697,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enis List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enis(@Nullable Output<ClbEnisArgs> enis) {
             $.enis = enis;
@@ -678,9 +708,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enis List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enis(ClbEnisArgs enis) {
             return enis(Output.of(enis));
@@ -688,9 +718,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exclusiveClusterId Dedicated cluster ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder exclusiveClusterId(@Nullable Output<String> exclusiveClusterId) {
             $.exclusiveClusterId = exclusiveClusterId;
@@ -699,32 +729,53 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exclusiveClusterId Dedicated cluster ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder exclusiveClusterId(String exclusiveClusterId) {
             return exclusiveClusterId(Output.of(exclusiveClusterId));
         }
 
+        /**
+         * @param listeners Listener information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder listeners(@Nullable Output<List<ClbListenerArgs>> listeners) {
             $.listeners = listeners;
             return this;
         }
 
+        /**
+         * @param listeners Listener information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder listeners(List<ClbListenerArgs> listeners) {
             return listeners(Output.of(listeners));
         }
 
+        /**
+         * @param listeners Listener information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder listeners(ClbListenerArgs... listeners) {
             return listeners(List.of(listeners));
         }
 
         /**
          * @param loadBalancerBillingType CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerBillingType(@Nullable Output<Double> loadBalancerBillingType) {
             $.loadBalancerBillingType = loadBalancerBillingType;
@@ -733,9 +784,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerBillingType CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerBillingType(Double loadBalancerBillingType) {
             return loadBalancerBillingType(Output.of(loadBalancerBillingType));
@@ -743,9 +794,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerName Name of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerName(@Nullable Output<String> loadBalancerName) {
             $.loadBalancerName = loadBalancerName;
@@ -754,9 +805,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerName Name of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerName(String loadBalancerName) {
             return loadBalancerName(Output.of(loadBalancerName));
@@ -764,9 +815,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerSpec CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerSpec(@Nullable Output<String> loadBalancerSpec) {
             $.loadBalancerSpec = loadBalancerSpec;
@@ -775,9 +826,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param loadBalancerSpec CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder loadBalancerSpec(String loadBalancerSpec) {
             return loadBalancerSpec(Output.of(loadBalancerSpec));
@@ -785,9 +836,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterZoneId Main availability zone ID of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterZoneId(@Nullable Output<String> masterZoneId) {
             $.masterZoneId = masterZoneId;
@@ -796,9 +847,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterZoneId Main availability zone ID of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterZoneId(String masterZoneId) {
             return masterZoneId(Output.of(masterZoneId));
@@ -806,9 +857,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionReason Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionReason(@Nullable Output<String> modificationProtectionReason) {
             $.modificationProtectionReason = modificationProtectionReason;
@@ -817,9 +868,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionReason Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionReason(String modificationProtectionReason) {
             return modificationProtectionReason(Output.of(modificationProtectionReason));
@@ -827,9 +878,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionStatus Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionStatus(@Nullable Output<String> modificationProtectionStatus) {
             $.modificationProtectionStatus = modificationProtectionStatus;
@@ -838,9 +889,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modificationProtectionStatus Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modificationProtectionStatus(String modificationProtectionStatus) {
             return modificationProtectionStatus(Output.of(modificationProtectionStatus));
@@ -848,9 +899,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param newArch Whether it is a new architecture
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder newArch(@Nullable Output<Boolean> newArch) {
             $.newArch = newArch;
@@ -859,9 +910,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param newArch Whether it is a new architecture
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder newArch(Boolean newArch) {
             return newArch(Output.of(newArch));
@@ -869,9 +920,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param orderId Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder orderId(@Nullable Output<String> orderId) {
             $.orderId = orderId;
@@ -880,9 +931,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param orderId Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder orderId(String orderId) {
             return orderId(Output.of(orderId));
@@ -890,9 +941,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(@Nullable Output<Double> period) {
             $.period = period;
@@ -901,9 +952,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(Double period) {
             return period(Output.of(period));
@@ -911,9 +962,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -922,9 +973,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -932,9 +983,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project associated with the CLB instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -943,32 +994,53 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project associated with the CLB instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param serverGroups Backend server group information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverGroups(@Nullable Output<List<ClbServerGroupArgs>> serverGroups) {
             $.serverGroups = serverGroups;
             return this;
         }
 
+        /**
+         * @param serverGroups Backend server group information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverGroups(List<ClbServerGroupArgs> serverGroups) {
             return serverGroups(Output.of(serverGroups));
         }
 
+        /**
+         * @param serverGroups Backend server group information in the load balancer instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder serverGroups(ClbServerGroupArgs... serverGroups) {
             return serverGroups(List.of(serverGroups));
         }
 
         /**
          * @param slaveZoneId Secondary availability zone ID of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder slaveZoneId(@Nullable Output<String> slaveZoneId) {
             $.slaveZoneId = slaveZoneId;
@@ -977,9 +1049,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param slaveZoneId Secondary availability zone ID of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder slaveZoneId(String slaveZoneId) {
             return slaveZoneId(Output.of(slaveZoneId));
@@ -987,9 +1059,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID within the VPC of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -998,32 +1070,53 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID within the VPC of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags CLB instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<ClbTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags CLB instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<ClbTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags CLB instance tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(ClbTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param type CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -1032,9 +1125,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -1042,9 +1135,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -1053,9 +1146,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -1063,9 +1156,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneType Availability zone type of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneType(@Nullable Output<String> zoneType) {
             $.zoneType = zoneType;
@@ -1074,9 +1167,9 @@ public final class ClbArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneType Availability zone type of the load balancer instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneType(String zoneType) {
             return zoneType(Output.of(zoneType));

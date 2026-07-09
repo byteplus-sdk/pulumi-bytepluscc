@@ -16,31 +16,31 @@ import javax.annotation.Nullable;
 /**
  * After you create a Cloud Identity Center user, you need to grant the user login access to each account.
  * When users require access to Volcano Engine cloud resources with permissions that share abstractable characteristics, such as network operations permissions or security management permissions, you can predefine permission sets in the Cloud Identity Center as templates. You can achieve centralized authorization based on these permission sets. The Cloud Identity Center will synchronize and distribute permission sets to each account, reducing enterprise permission management costs.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.cloudidentity.PermissionSetAssignment;
  * import com.byteplus.bytepluscc.cloudidentity.PermissionSetAssignmentArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cloudIdentityPermissionSetAssignmentDemo = new PermissionSetAssignment("cloudIdentityPermissionSetAssignmentDemo", PermissionSetAssignmentArgs.builder()
  *             .permissionSetId("897569*****")
@@ -48,130 +48,130 @@ import javax.annotation.Nullable;
  *             .principalType("User")
  *             .targetId("21036*****")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cloudidentity/permissionSetAssignment:PermissionSetAssignment example &#34;target_id|principal_id|permission_set_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cloudidentity/permissionSetAssignment:PermissionSetAssignment")
 public class PermissionSetAssignment extends com.pulumi.resources.CustomResource {
     /**
      * Authorization creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Authorization creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Permission set ID
-     * 
+     *
      */
     @Export(name="permissionSetId", refs={String.class}, tree="[0]")
     private Output<String> permissionSetId;
 
     /**
      * @return Permission set ID
-     * 
+     *
      */
     public Output<String> permissionSetId() {
         return this.permissionSetId;
     }
     /**
      * Permission set name
-     * 
+     *
      */
     @Export(name="permissionSetName", refs={String.class}, tree="[0]")
     private Output<String> permissionSetName;
 
     /**
      * @return Permission set name
-     * 
+     *
      */
     public Output<String> permissionSetName() {
         return this.permissionSetName;
     }
     /**
      * Cloud Identity Center object ID
-     * 
+     *
      */
     @Export(name="principalId", refs={String.class}, tree="[0]")
     private Output<String> principalId;
 
     /**
      * @return Cloud Identity Center object ID
-     * 
+     *
      */
     public Output<String> principalId() {
         return this.principalId;
     }
     /**
      * Cloud Identity Center object name
-     * 
+     *
      */
     @Export(name="principalName", refs={String.class}, tree="[0]")
     private Output<String> principalName;
 
     /**
      * @return Cloud Identity Center object name
-     * 
+     *
      */
     public Output<String> principalName() {
         return this.principalName;
     }
     /**
      * Cloud Identity Center object type: User or Group
-     * 
+     *
      */
     @Export(name="principalType", refs={String.class}, tree="[0]")
     private Output<String> principalType;
 
     /**
      * @return Cloud Identity Center object type: User or Group
-     * 
+     *
      */
     public Output<String> principalType() {
         return this.principalType;
     }
     /**
      * Authorized account ID
-     * 
+     *
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
      * @return Authorized account ID
-     * 
+     *
      */
     public Output<String> targetId() {
         return this.targetId;
     }
     /**
      * Authorized account name
-     * 
+     *
      */
     @Export(name="targetName", refs={String.class}, tree="[0]")
     private Output<String> targetName;
 
     /**
      * @return Authorized account name
-     * 
+     *
      */
     public Output<String> targetName() {
         return this.targetName;

@@ -20,14 +20,14 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
     /**
      * Namespace Description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Namespace Description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
     /**
      * Namespace Name
-     * 
+     *
      */
     @Import(name="namespaceName", required=true)
     private Output<String> namespaceName;
 
     /**
      * @return Namespace Name
-     * 
+     *
      */
     public Output<String> namespaceName() {
         return this.namespaceName;
@@ -50,22 +50,32 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
     /**
      * Project Associated with Namespace
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project Associated with Namespace
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Namespace Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<PermissionNamespaceTagArgs>> tags;
 
+    /**
+     * @return Namespace Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PermissionNamespaceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -99,9 +109,9 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param description Namespace Description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -110,9 +120,9 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param description Namespace Description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -120,9 +130,9 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param namespaceName Namespace Name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder namespaceName(Output<String> namespaceName) {
             $.namespaceName = namespaceName;
@@ -131,9 +141,9 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param namespaceName Namespace Name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder namespaceName(String namespaceName) {
             return namespaceName(Output.of(namespaceName));
@@ -141,9 +151,9 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param projectName Project Associated with Namespace
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -152,23 +162,44 @@ public final class PermissionNamespaceArgs extends com.pulumi.resources.Resource
 
         /**
          * @param projectName Project Associated with Namespace
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<PermissionNamespaceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<PermissionNamespaceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(PermissionNamespaceTagArgs... tags) {
             return tags(List.of(tags));
         }

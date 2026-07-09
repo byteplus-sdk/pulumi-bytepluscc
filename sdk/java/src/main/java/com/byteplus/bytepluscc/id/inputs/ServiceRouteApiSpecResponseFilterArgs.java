@@ -19,23 +19,33 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
     public static final ServiceRouteApiSpecResponseFilterArgs Empty = new ServiceRouteApiSpecResponseFilterArgs();
 
+    /**
+     * Attribute mapping list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="attributes")
     private @Nullable Output<List<ServiceRouteApiSpecResponseFilterAttributeArgs>> attributes;
 
+    /**
+     * @return Attribute mapping list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ServiceRouteApiSpecResponseFilterAttributeArgs>>> attributes() {
         return Optional.ofNullable(this.attributes);
     }
 
     /**
      * Array path JSON Pointer
-     * 
+     *
      */
     @Import(name="filterPath")
     private @Nullable Output<String> filterPath;
 
     /**
      * @return Array path JSON Pointer
-     * 
+     *
      */
     public Optional<Output<String>> filterPath() {
         return Optional.ofNullable(this.filterPath);
@@ -43,14 +53,14 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
     /**
      * ID field name
-     * 
+     *
      */
     @Import(name="idField")
     private @Nullable Output<String> idField;
 
     /**
      * @return ID field name
-     * 
+     *
      */
     public Optional<Output<String>> idField() {
         return Optional.ofNullable(this.idField);
@@ -58,14 +68,14 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
     /**
      * Whether used for authentication
-     * 
+     *
      */
     @Import(name="isAuth")
     private @Nullable Output<Boolean> isAuth;
 
     /**
      * @return Whether used for authentication
-     * 
+     *
      */
     public Optional<Output<Boolean>> isAuth() {
         return Optional.ofNullable(this.isAuth);
@@ -73,14 +83,14 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
     /**
      * Filter mode enumeration value
-     * 
+     *
      */
     @Import(name="mode")
     private @Nullable Output<Integer> mode;
 
     /**
      * @return Filter mode enumeration value
-     * 
+     *
      */
     public Optional<Output<Integer>> mode() {
         return Optional.ofNullable(this.mode);
@@ -88,14 +98,14 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
     /**
      * Resource path JSON Pointer
-     * 
+     *
      */
     @Import(name="resourcePath")
     private @Nullable Output<String> resourcePath;
 
     /**
      * @return Resource path JSON Pointer
-     * 
+     *
      */
     public Optional<Output<String>> resourcePath() {
         return Optional.ofNullable(this.resourcePath);
@@ -103,14 +113,14 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
     /**
      * Filtered resource type
-     * 
+     *
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
      * @return Filtered resource type
-     * 
+     *
      */
     public Optional<Output<String>> resourceType() {
         return Optional.ofNullable(this.resourceType);
@@ -146,24 +156,45 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
             $ = new ServiceRouteApiSpecResponseFilterArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param attributes Attribute mapping list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attributes(@Nullable Output<List<ServiceRouteApiSpecResponseFilterAttributeArgs>> attributes) {
             $.attributes = attributes;
             return this;
         }
 
+        /**
+         * @param attributes Attribute mapping list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attributes(List<ServiceRouteApiSpecResponseFilterAttributeArgs> attributes) {
             return attributes(Output.of(attributes));
         }
 
+        /**
+         * @param attributes Attribute mapping list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attributes(ServiceRouteApiSpecResponseFilterAttributeArgs... attributes) {
             return attributes(List.of(attributes));
         }
 
         /**
          * @param filterPath Array path JSON Pointer
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder filterPath(@Nullable Output<String> filterPath) {
             $.filterPath = filterPath;
@@ -172,9 +203,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param filterPath Array path JSON Pointer
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder filterPath(String filterPath) {
             return filterPath(Output.of(filterPath));
@@ -182,9 +213,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param idField ID field name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder idField(@Nullable Output<String> idField) {
             $.idField = idField;
@@ -193,9 +224,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param idField ID field name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder idField(String idField) {
             return idField(Output.of(idField));
@@ -203,9 +234,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param isAuth Whether used for authentication
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isAuth(@Nullable Output<Boolean> isAuth) {
             $.isAuth = isAuth;
@@ -214,9 +245,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param isAuth Whether used for authentication
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isAuth(Boolean isAuth) {
             return isAuth(Output.of(isAuth));
@@ -224,9 +255,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param mode Filter mode enumeration value
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mode(@Nullable Output<Integer> mode) {
             $.mode = mode;
@@ -235,9 +266,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param mode Filter mode enumeration value
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mode(Integer mode) {
             return mode(Output.of(mode));
@@ -245,9 +276,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param resourcePath Resource path JSON Pointer
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourcePath(@Nullable Output<String> resourcePath) {
             $.resourcePath = resourcePath;
@@ -256,9 +287,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param resourcePath Resource path JSON Pointer
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourcePath(String resourcePath) {
             return resourcePath(Output.of(resourcePath));
@@ -266,9 +297,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param resourceType Filtered resource type
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourceType(@Nullable Output<String> resourceType) {
             $.resourceType = resourceType;
@@ -277,9 +308,9 @@ public final class ServiceRouteApiSpecResponseFilterArgs extends com.pulumi.reso
 
         /**
          * @param resourceType Filtered resource type
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));

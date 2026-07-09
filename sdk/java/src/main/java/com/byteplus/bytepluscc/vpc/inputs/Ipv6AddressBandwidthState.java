@@ -21,14 +21,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth ID
-     * 
+     *
      */
     @Import(name="allocationId")
     private @Nullable Output<String> allocationId;
 
     /**
      * @return IPv6 public bandwidth ID
-     * 
+     *
      */
     public Optional<Output<String>> allocationId() {
         return Optional.ofNullable(this.allocationId);
@@ -36,14 +36,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth cap
-     * 
+     *
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return IPv6 public bandwidth cap
-     * 
+     *
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -51,14 +51,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 shared bandwidth package ID
-     * 
+     *
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
      * @return IPv6 shared bandwidth package ID
-     * 
+     *
      */
     public Optional<Output<String>> bandwidthPackageId() {
         return Optional.ofNullable(this.bandwidthPackageId);
@@ -66,14 +66,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-     * 
+     *
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-     * 
+     *
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -81,14 +81,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
-     * 
+     *
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
-     * 
+     *
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -96,14 +96,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth activation time
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return IPv6 public bandwidth activation time
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -111,14 +111,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth deletion time
-     * 
+     *
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
      * @return IPv6 public bandwidth deletion time
-     * 
+     *
      */
     public Optional<Output<String>> deletedTime() {
         return Optional.ofNullable(this.deletedTime);
@@ -126,14 +126,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * Instance ID associated with IPv6 public bandwidth
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID associated with IPv6 public bandwidth
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -141,14 +141,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
-     * 
+     *
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
      * @return Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
-     * 
+     *
      */
     public Optional<Output<String>> instanceType() {
         return Optional.ofNullable(this.instanceType);
@@ -156,14 +156,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 address
-     * 
+     *
      */
     @Import(name="ipv6Address")
     private @Nullable Output<String> ipv6Address;
 
     /**
      * @return IPv6 address
-     * 
+     *
      */
     public Optional<Output<String>> ipv6Address() {
         return Optional.ofNullable(this.ipv6Address);
@@ -171,14 +171,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 gateway ID
-     * 
+     *
      */
     @Import(name="ipv6GatewayId")
     private @Nullable Output<String> ipv6GatewayId;
 
     /**
      * @return IPv6 gateway ID
-     * 
+     *
      */
     public Optional<Output<String>> ipv6GatewayId() {
         return Optional.ofNullable(this.ipv6GatewayId);
@@ -186,14 +186,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth line type. BGP: BGP (multi-line).
-     * 
+     *
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
      * @return IPv6 public bandwidth line type. BGP: BGP (multi-line).
-     * 
+     *
      */
     public Optional<Output<String>> isp() {
         return Optional.ofNullable(this.isp);
@@ -201,14 +201,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
-     * 
+     *
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
      * @return Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
-     * 
+     *
      */
     public Optional<Output<String>> lockReason() {
         return Optional.ofNullable(this.lockReason);
@@ -216,14 +216,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
-     * 
+     *
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
      * @return IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
-     * 
+     *
      */
     public Optional<Output<String>> networkType() {
         return Optional.ofNullable(this.networkType);
@@ -231,14 +231,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth deactivation time due to overdue payment
-     * 
+     *
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
      * @return IPv6 public bandwidth deactivation time due to overdue payment
-     * 
+     *
      */
     public Optional<Output<String>> overdueTime() {
         return Optional.ofNullable(this.overdueTime);
@@ -246,14 +246,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth project
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return IPv6 public bandwidth project
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -261,14 +261,14 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * Service hosting status
-     * 
+     *
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
      * @return Service hosting status
-     * 
+     *
      */
     public Optional<Output<Boolean>> serviceManaged() {
         return Optional.ofNullable(this.serviceManaged);
@@ -276,36 +276,46 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
     /**
      * IPv6 public bandwidth status. Creating: Creating. Available: Available.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return IPv6 public bandwidth status. Creating: Creating. Available: Available.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<Ipv6AddressBandwidthTagArgs>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<Ipv6AddressBandwidthTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * IPv6 public bandwidth last operation time
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return IPv6 public bandwidth last operation time
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -356,9 +366,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param allocationId IPv6 public bandwidth ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allocationId(@Nullable Output<String> allocationId) {
             $.allocationId = allocationId;
@@ -367,9 +377,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param allocationId IPv6 public bandwidth ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allocationId(String allocationId) {
             return allocationId(Output.of(allocationId));
@@ -377,9 +387,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param bandwidth IPv6 public bandwidth cap
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -388,9 +398,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param bandwidth IPv6 public bandwidth cap
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -398,9 +408,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param bandwidthPackageId IPv6 shared bandwidth package ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidthPackageId(@Nullable Output<String> bandwidthPackageId) {
             $.bandwidthPackageId = bandwidthPackageId;
@@ -409,9 +419,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param bandwidthPackageId IPv6 shared bandwidth package ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidthPackageId(String bandwidthPackageId) {
             return bandwidthPackageId(Output.of(bandwidthPackageId));
@@ -419,9 +429,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param billingType IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -430,9 +440,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param billingType IPv6 public bandwidth billing type. 2: Pay-as-you-go   - billed by bandwidth cap. 3: Pay-as-you-go   - billed by actual traffic.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -440,9 +450,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param businessStatus Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -451,9 +461,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param businessStatus Whether IPv6 public bandwidth is locked. Normal: Normal. FinancialLocked: Locked.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -461,9 +471,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param createdTime IPv6 public bandwidth activation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -472,9 +482,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param createdTime IPv6 public bandwidth activation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -482,9 +492,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param deletedTime IPv6 public bandwidth deletion time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletedTime(@Nullable Output<String> deletedTime) {
             $.deletedTime = deletedTime;
@@ -493,9 +503,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param deletedTime IPv6 public bandwidth deletion time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletedTime(String deletedTime) {
             return deletedTime(Output.of(deletedTime));
@@ -503,9 +513,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceId Instance ID associated with IPv6 public bandwidth
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -514,9 +524,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceId Instance ID associated with IPv6 public bandwidth
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -524,9 +534,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceType Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(@Nullable Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -535,9 +545,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param instanceType Instance type associated with IPv6 public bandwidth. EcsInstance: Cloud server instance. ClbInstance: Load balancer.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -545,9 +555,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param ipv6Address IPv6 address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6Address(@Nullable Output<String> ipv6Address) {
             $.ipv6Address = ipv6Address;
@@ -556,9 +566,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param ipv6Address IPv6 address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6Address(String ipv6Address) {
             return ipv6Address(Output.of(ipv6Address));
@@ -566,9 +576,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param ipv6GatewayId IPv6 gateway ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6GatewayId(@Nullable Output<String> ipv6GatewayId) {
             $.ipv6GatewayId = ipv6GatewayId;
@@ -577,9 +587,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param ipv6GatewayId IPv6 gateway ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6GatewayId(String ipv6GatewayId) {
             return ipv6GatewayId(Output.of(ipv6GatewayId));
@@ -587,9 +597,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param isp IPv6 public bandwidth line type. BGP: BGP (multi-line).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isp(@Nullable Output<String> isp) {
             $.isp = isp;
@@ -598,9 +608,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param isp IPv6 public bandwidth line type. BGP: BGP (multi-line).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isp(String isp) {
             return isp(Output.of(isp));
@@ -608,9 +618,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param lockReason Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lockReason(@Nullable Output<String> lockReason) {
             $.lockReason = lockReason;
@@ -619,9 +629,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param lockReason Reason for IPv6 public bandwidth lock. This parameter is returned only when IPv6 public bandwidth is in FinancialLocked status. Financial: Locked due to overdue payment. Security: Locked due to security reasons.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lockReason(String lockReason) {
             return lockReason(Output.of(lockReason));
@@ -629,9 +639,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param networkType IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkType(@Nullable Output<String> networkType) {
             $.networkType = networkType;
@@ -640,9 +650,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param networkType IPv6 address communication type. Private: Private network communication type. Public: Public network communication type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkType(String networkType) {
             return networkType(Output.of(networkType));
@@ -650,9 +660,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param overdueTime IPv6 public bandwidth deactivation time due to overdue payment
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overdueTime(@Nullable Output<String> overdueTime) {
             $.overdueTime = overdueTime;
@@ -661,9 +671,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param overdueTime IPv6 public bandwidth deactivation time due to overdue payment
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overdueTime(String overdueTime) {
             return overdueTime(Output.of(overdueTime));
@@ -671,9 +681,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param projectName IPv6 public bandwidth project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -682,9 +692,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param projectName IPv6 public bandwidth project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -692,9 +702,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param serviceManaged Service hosting status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceManaged(@Nullable Output<Boolean> serviceManaged) {
             $.serviceManaged = serviceManaged;
@@ -703,9 +713,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param serviceManaged Service hosting status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceManaged(Boolean serviceManaged) {
             return serviceManaged(Output.of(serviceManaged));
@@ -713,9 +723,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param status IPv6 public bandwidth status. Creating: Creating. Available: Available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -724,32 +734,53 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param status IPv6 public bandwidth status. Creating: Creating. Available: Available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<Ipv6AddressBandwidthTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<Ipv6AddressBandwidthTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(Ipv6AddressBandwidthTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updatedTime IPv6 public bandwidth last operation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -758,9 +789,9 @@ public final class Ipv6AddressBandwidthState extends com.pulumi.resources.Resour
 
         /**
          * @param updatedTime IPv6 public bandwidth last operation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

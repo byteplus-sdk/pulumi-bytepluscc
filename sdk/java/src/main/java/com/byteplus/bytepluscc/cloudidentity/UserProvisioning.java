@@ -15,31 +15,31 @@ import javax.annotation.Nullable;
 
 /**
  * After you create a Cloud Identity Center user, you need to grant the user login access to each account.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.cloudidentity.UserProvisioning;
  * import com.byteplus.bytepluscc.cloudidentity.UserProvisioningArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cloudIdentityUserProvisioningDemo = new UserProvisioning("cloudIdentityUserProvisioningDemo", UserProvisioningArgs.builder()
  *             .targetId("2103612***")
@@ -51,200 +51,200 @@ import javax.annotation.Nullable;
  *             .description("ccapi-test")
  *             .duplicationSuffix("-cctest")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cloudidentity/userProvisioning:UserProvisioning example &#34;user_provisioning_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cloudidentity/userProvisioning:UserProvisioning")
 public class UserProvisioning extends com.pulumi.resources.CustomResource {
     /**
      * Creation Time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation Time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Deletion Policy
-     * 
+     *
      */
     @Export(name="deletionStrategy", refs={String.class}, tree="[0]")
     private Output<String> deletionStrategy;
 
     /**
      * @return Deletion Policy
-     * 
+     *
      */
     public Output<String> deletionStrategy() {
         return this.deletionStrategy;
     }
     /**
      * Task Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Task Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Username Conflict Policy
-     * 
+     *
      */
     @Export(name="duplicationStrategy", refs={String.class}, tree="[0]")
     private Output<String> duplicationStrategy;
 
     /**
      * @return Username Conflict Policy
-     * 
+     *
      */
     public Output<String> duplicationStrategy() {
         return this.duplicationStrategy;
     }
     /**
      * Suffix for IAM user name in this synchronization
-     * 
+     *
      */
     @Export(name="duplicationSuffix", refs={String.class}, tree="[0]")
     private Output<String> duplicationSuffix;
 
     /**
      * @return Suffix for IAM user name in this synchronization
-     * 
+     *
      */
     public Output<String> duplicationSuffix() {
         return this.duplicationSuffix;
     }
     /**
      * Identity Source Conflict Policy
-     * 
+     *
      */
     @Export(name="identitySourceStrategy", refs={String.class}, tree="[0]")
     private Output<String> identitySourceStrategy;
 
     /**
      * @return Identity Source Conflict Policy
-     * 
+     *
      */
     public Output<String> identitySourceStrategy() {
         return this.identitySourceStrategy;
     }
     /**
      * Identity ID
-     * 
+     *
      */
     @Export(name="principalId", refs={String.class}, tree="[0]")
     private Output<String> principalId;
 
     /**
      * @return Identity ID
-     * 
+     *
      */
     public Output<String> principalId() {
         return this.principalId;
     }
     /**
      * Target Name
-     * 
+     *
      */
     @Export(name="principalName", refs={String.class}, tree="[0]")
     private Output<String> principalName;
 
     /**
      * @return Target Name
-     * 
+     *
      */
     public Output<String> principalName() {
         return this.principalName;
     }
     /**
      * Identity Type
-     * 
+     *
      */
     @Export(name="principalType", refs={String.class}, tree="[0]")
     private Output<String> principalType;
 
     /**
      * @return Identity Type
-     * 
+     *
      */
     public Output<String> principalType() {
         return this.principalType;
     }
     /**
      * Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
-     * 
+     *
      */
     @Export(name="provisionStatus", refs={String.class}, tree="[0]")
     private Output<String> provisionStatus;
 
     /**
      * @return Authorization Task Status. Provisioned: authorization successful, Provisioning: authorizing, DeleteProvisioning: revoking authorization, DeleteProvisioned: authorization revoked successfully.
-     * 
+     *
      */
     public Output<String> provisionStatus() {
         return this.provisionStatus;
     }
     /**
      * Target ID
-     * 
+     *
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
      * @return Target ID
-     * 
+     *
      */
     public Output<String> targetId() {
         return this.targetId;
     }
     /**
      * Update Time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update Time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * IAM User Synchronization Task ID
-     * 
+     *
      */
     @Export(name="userProvisioningId", refs={String.class}, tree="[0]")
     private Output<String> userProvisioningId;
 
     /**
      * @return IAM User Synchronization Task ID
-     * 
+     *
      */
     public Output<String> userProvisioningId() {
         return this.userProvisioningId;

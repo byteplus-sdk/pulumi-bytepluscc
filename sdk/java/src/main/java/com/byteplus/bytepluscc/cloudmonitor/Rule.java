@@ -26,447 +26,575 @@ import javax.annotation.Nullable;
 
 /**
  * If you need to monitor the data status of a cloud product resource, you can create a cloud monitoring alert policy. When the monitored resource data meets the alert trigger conditions, the system will send alert notifications using your specified method, helping you quickly identify resources with abnormal data.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cloudmonitor.Rule;
+ * import com.byteplus.bytepluscc.cloudmonitor.RuleArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleOriginalDimensionsArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleNoDataArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleLevelConditionArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleLevelConditionConditionArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleConditionArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleRecoveryNotifyArgs;
+ * import com.pulumi.bytepluscc.cloudmonitor.inputs.RuleTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var cloudMonitorRuleDemo = new Rule("cloudMonitorRuleDemo", RuleArgs.builder()
+ *             .ruleName("CloudMonitorRuleDemo")
+ *             .description("this is a description")
+ *             .ruleType("static")
+ *             .namespace("VCM_AgentKitMcp")
+ *             .subNamespace("MCP_Service")
+ *             .originalDimensions(RuleOriginalDimensionsArgs.builder()
+ *                 .key("ResourceID")
+ *                 .values("*")
+ *                 .build())
+ *             .level("warning")
+ *             .evaluationCount(1)
+ *             .enableState("enable")
+ *             .regions("cn-beijing")
+ *             .multipleConditions(false)
+ *             .noData(RuleNoDataArgs.builder()
+ *                 .enable(false)
+ *                 .evaluation_count(4)
+ *                 .build())
+ *             .levelConditions(RuleLevelConditionArgs.builder()
+ *                 .level("warning")
+ *                 .conditions(RuleLevelConditionConditionArgs.builder()
+ *                     .metricName("istio_requests_total")
+ *                     .statistics("sum")
+ *                     .comparisonOperator(">")
+ *                     .threshold("100000")
+ *                     .metricUnit("Count")
+ *                     .build())
+ *                 .build())
+ *             .conditions(RuleConditionArgs.builder()
+ *                 .metric_name("istio_requests_total")
+ *                 .statistics("sum")
+ *                 .comparison_operator(">")
+ *                 .threshold("100000")
+ *                 .metric_unit("Count")
+ *                 .build())
+ *             .conditionOperator("&&")
+ *             .silenceTime(5)
+ *             .recoveryNotify(RuleRecoveryNotifyArgs.builder()
+ *                 .enable(true)
+ *                 .build())
+ *             .projectName("default")
+ *             .tags(RuleTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .alertMethods(
+ *                 "Email",
+ *                 "Webhook")
+ *             .webhookIds("2005838xxxxx67xxxxx")
+ *             .contactGroupIds("20041xxxxxx06xxxxx")
+ *             .effectStartAt("00:00")
+ *             .effectEndAt("23:59")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cloudmonitor/rule:Rule example &#34;rule_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cloudmonitor/rule:Rule")
 public class Rule extends com.pulumi.resources.CustomResource {
     /**
      * Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
-     * 
+     *
      */
     @Export(name="alertMethods", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> alertMethods;
 
     /**
      * @return Alert notification method. Email: email, Phone: phone, SMS: SMS, Webhook: webhook callback.
-     * 
+     *
      */
     public Output<List<String>> alertMethods() {
         return this.alertMethods;
     }
     /**
      * Alert status. alerting: In alert; normal: Normal.
-     * 
+     *
      */
     @Export(name="alertState", refs={String.class}, tree="[0]")
     private Output<String> alertState;
 
     /**
      * @return Alert status. alerting: In alert; normal: Normal.
-     * 
+     *
      */
     public Output<String> alertState() {
         return this.alertState;
     }
     /**
      * Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
-     * 
+     *
      */
     @Export(name="conditionOperator", refs={String.class}, tree="[0]")
     private Output<String> conditionOperator;
 
     /**
      * @return Multi-metric determination condition. &amp;&amp;: Alert is triggered only if all metrics meet the condition; ||: Alert is triggered if any metric meets the condition.
-     * 
+     *
      */
     public Output<String> conditionOperator() {
         return this.conditionOperator;
     }
+    /**
+     * Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="conditions", refs={List.class,RuleCondition.class}, tree="[0,1]")
     private Output<List<RuleCondition>> conditions;
 
+    /**
+     * @return Alert conditions. Array format; supports multiple metric evaluation statements, up to 10.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RuleCondition>> conditions() {
         return this.conditions;
     }
     /**
      * When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
-     * 
+     *
      */
     @Export(name="contactGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> contactGroupIds;
 
     /**
      * @return When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
-     * 
+     *
      */
     public Output<List<String>> contactGroupIds() {
         return this.contactGroupIds;
     }
     /**
      * Alert policy creation time, in timestamp format.
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Alert policy creation time, in timestamp format.
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
-     * 
+     *
      */
     @Export(name="dimensionConditions", refs={RuleDimensionConditions.class}, tree="[0]")
     private Output<RuleDimensionConditions> dimensionConditions;
 
     /**
      * @return Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
-     * 
+     *
      */
     public Output<RuleDimensionConditions> dimensionConditions() {
         return this.dimensionConditions;
     }
     /**
      * End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
-     * 
+     *
      */
     @Export(name="effectEndAt", refs={String.class}, tree="[0]")
     private Output<String> effectEndAt;
 
     /**
      * @return End time for the alert policy to take effect, in HH:MM format, for example: 23:59. Note: EffectEndAt must be later than EffectStartAt.
-     * 
+     *
      */
     public Output<String> effectEndAt() {
         return this.effectEndAt;
     }
     /**
      * Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
-     * 
+     *
      */
     @Export(name="effectStartAt", refs={String.class}, tree="[0]")
     private Output<String> effectStartAt;
 
     /**
      * @return Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
-     * 
+     *
      */
     public Output<String> effectStartAt() {
         return this.effectStartAt;
     }
     /**
      * Alert policy status. enable: enabled, disable: disabled
-     * 
+     *
      */
     @Export(name="enableState", refs={String.class}, tree="[0]")
     private Output<String> enableState;
 
     /**
      * @return Alert policy status. enable: enabled, disable: disabled
-     * 
+     *
      */
     public Output<String> enableState() {
         return this.enableState;
     }
     /**
      * Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
-     * 
+     *
      */
     @Export(name="evaluationCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> evaluationCount;
 
     /**
      * @return Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
-     * 
+     *
      */
     public Output<Integer> evaluationCount() {
         return this.evaluationCount;
     }
     /**
      * Alert level. critical: critical, warning: warning, notice: notification
-     * 
+     *
      */
     @Export(name="level", refs={String.class}, tree="[0]")
     private Output<String> level;
 
     /**
      * @return Alert level. critical: critical, warning: warning, notice: notification
-     * 
+     *
      */
     public Output<String> level() {
         return this.level;
     }
+    /**
+     * Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="levelConditions", refs={List.class,RuleLevelCondition.class}, tree="[0,1]")
     private Output<List<RuleLevelCondition>> levelConditions;
 
+    /**
+     * @return Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RuleLevelCondition>> levelConditions() {
         return this.levelConditions;
     }
     /**
      * Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
-     * 
+     *
      */
     @Export(name="multipleConditions", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> multipleConditions;
 
     /**
      * @return Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
-     * 
+     *
      */
     public Output<Boolean> multipleConditions() {
         return this.multipleConditions;
     }
     /**
      * The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
-     * 
+     *
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
      * @return The cloud product to which the monitoring metric of this policy belongs. For details, see Namespace for each product under Cloud Product Monitoring Metrics.
-     * 
+     *
      */
     public Output<String> namespace() {
         return this.namespace;
     }
     /**
      * No data alert.
-     * 
+     *
      */
     @Export(name="noData", refs={RuleNoData.class}, tree="[0]")
     private Output<RuleNoData> noData;
 
     /**
      * @return No data alert.
-     * 
+     *
      */
     public Output<RuleNoData> noData() {
         return this.noData;
     }
     /**
      * Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
-     * 
+     *
      */
     @Export(name="notificationId", refs={String.class}, tree="[0]")
     private Output<String> notificationId;
 
     /**
      * @return Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
-     * 
+     *
      */
     public Output<String> notificationId() {
         return this.notificationId;
     }
+    /**
+     * Notification template configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="notifyTemplates", refs={List.class,RuleNotifyTemplate.class}, tree="[0,1]")
     private Output<List<RuleNotifyTemplate>> notifyTemplates;
 
+    /**
+     * @return Notification template configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RuleNotifyTemplate>> notifyTemplates() {
         return this.notifyTemplates;
     }
     /**
      * Resource ID detected by the alert policy.
-     * 
+     *
      */
     @Export(name="originalDimensions", refs={RuleOriginalDimensions.class}, tree="[0]")
     private Output<RuleOriginalDimensions> originalDimensions;
 
     /**
      * @return Resource ID detected by the alert policy.
-     * 
+     *
      */
     public Output<RuleOriginalDimensions> originalDimensions() {
         return this.originalDimensions;
     }
     /**
      * Project name to which the alert policy belongs. If not specified, it defaults to the default project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the alert policy belongs. If not specified, it defaults to the default project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Alert recovery notification.
-     * 
+     *
      */
     @Export(name="recoveryNotify", refs={RuleRecoveryNotify.class}, tree="[0]")
     private Output<RuleRecoveryNotify> recoveryNotify;
 
     /**
      * @return Alert recovery notification.
-     * 
+     *
      */
     public Output<RuleRecoveryNotify> recoveryNotify() {
         return this.recoveryNotify;
     }
     /**
      * Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
-     * 
+     *
      */
     @Export(name="regions", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> regions;
 
     /**
      * @return Availability Zone ID of the cloud product. When RuleType is static, only one Availability Zone ID can be configured. When RuleType is dynamic, multiple Availability Zone IDs can be configured. Separate multiple Availability Zone IDs with commas. Note: If set to ALL, all availability zones of the cloud product are selected.
-     * 
+     *
      */
     public Output<List<String>> regions() {
         return this.regions;
     }
     /**
      * Resource type detected by the alert policy.
-     * 
+     *
      */
     @Export(name="resourceType", refs={String.class}, tree="[0]")
     private Output<String> resourceType;
 
     /**
      * @return Resource type detected by the alert policy.
-     * 
+     *
      */
     public Output<String> resourceType() {
         return this.resourceType;
     }
     /**
      * Alarm policy ID.
-     * 
+     *
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Alarm policy ID.
-     * 
+     *
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
      * Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
-     * 
+     *
      */
     @Export(name="ruleName", refs={String.class}, tree="[0]")
     private Output<String> ruleName;
 
     /**
      * @return Alert policy name. Length must be between 1 and 128 characters. Cannot start with a digit or hyphen -.
-     * 
+     *
      */
     public Output<String> ruleName() {
         return this.ruleName;
     }
     /**
      * Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
-     * 
+     *
      */
     @Export(name="ruleType", refs={String.class}, tree="[0]")
     private Output<String> ruleType;
 
     /**
      * @return Alert policy type. static: manual selection, dynamic: select by resource name, project, and tag.
-     * 
+     *
      */
     public Output<String> ruleType() {
         return this.ruleType;
     }
     /**
      * Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
-     * 
+     *
      */
     @Export(name="silenceTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> silenceTime;
 
     /**
      * @return Alert sending interval, in minutes. Supported values: 5, 10, 15, 30, 60, 180, 360, 720, 1440.
-     * 
+     *
      */
     public Output<Integer> silenceTime() {
         return this.silenceTime;
     }
     /**
      * Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
-     * 
+     *
      */
     @Export(name="subNamespace", refs={String.class}, tree="[0]")
     private Output<String> subNamespace;
 
     /**
      * @return Dimension of the metric referenced by this policy. For details, see SubNamespace for each product in Cloud Product Monitoring Metrics.
-     * 
+     *
      */
     public Output<String> subNamespace() {
         return this.subNamespace;
     }
+    /**
+     * Bind alert policy to Tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,RuleTag.class}, tree="[0,1]")
     private Output<List<RuleTag>> tags;
 
+    /**
+     * @return Bind alert policy to Tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RuleTag>> tags() {
         return this.tags;
     }
     /**
      * Alarm policy update time, in timestamp format.
-     * 
+     *
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Alarm policy update time, in timestamp format.
-     * 
+     *
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * Alarm callback URL bound to the alarm policy.
-     * 
+     *
      */
     @Export(name="webhook", refs={String.class}, tree="[0]")
     private Output<String> webhook;
 
     /**
      * @return Alarm callback URL bound to the alarm policy.
-     * 
+     *
      */
     public Output<String> webhook() {
         return this.webhook;
     }
     /**
      * Alarm callback ID list when an alarm occurs.
-     * 
+     *
      */
     @Export(name="webhookIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> webhookIds;
 
     /**
      * @return Alarm callback ID list when an alarm occurs.
-     * 
+     *
      */
     public Output<List<String>> webhookIds() {
         return this.webhookIds;

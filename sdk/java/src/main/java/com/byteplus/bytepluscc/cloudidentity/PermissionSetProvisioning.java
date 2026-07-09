@@ -15,146 +15,146 @@ import javax.annotation.Nullable;
 
 /**
  * Deploy permission set to the specified account
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.cloudidentity.PermissionSetProvisioning;
  * import com.byteplus.bytepluscc.cloudidentity.PermissionSetProvisioningArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cloudIdentityPermissionSetProvisioningDemo = new PermissionSetProvisioning("cloudIdentityPermissionSetProvisioningDemo", PermissionSetProvisioningArgs.builder()
  *             .permissionSetId("897569*****")
  *             .targetId("21036*****")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cloudidentity/permissionSetProvisioning:PermissionSetProvisioning example &#34;permission_set_id|target_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cloudidentity/permissionSetProvisioning:PermissionSetProvisioning")
 public class PermissionSetProvisioning extends com.pulumi.resources.CustomResource {
     /**
      * Creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Permission set ID
-     * 
+     *
      */
     @Export(name="permissionSetId", refs={String.class}, tree="[0]")
     private Output<String> permissionSetId;
 
     /**
      * @return Permission set ID
-     * 
+     *
      */
     public Output<String> permissionSetId() {
         return this.permissionSetId;
     }
     /**
      * Permission set name
-     * 
+     *
      */
     @Export(name="permissionSetName", refs={String.class}, tree="[0]")
     private Output<String> permissionSetName;
 
     /**
      * @return Permission set name
-     * 
+     *
      */
     public Output<String> permissionSetName() {
         return this.permissionSetName;
     }
     /**
      * Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
-     * 
+     *
      */
     @Export(name="provisioningStatus", refs={String.class}, tree="[0]")
     private Output<String> provisioningStatus;
 
     /**
      * @return Permission set status Running: In progress, Reprovision Required: Redeployment required, Provision Failed: Deployment failed, Provisioned: Deployed
-     * 
+     *
      */
     public Output<String> provisioningStatus() {
         return this.provisioningStatus;
     }
     /**
      * Authorized account ID
-     * 
+     *
      */
     @Export(name="targetId", refs={String.class}, tree="[0]")
     private Output<String> targetId;
 
     /**
      * @return Authorized account ID
-     * 
+     *
      */
     public Output<String> targetId() {
         return this.targetId;
     }
     /**
      * Account name
-     * 
+     *
      */
     @Export(name="targetName", refs={String.class}, tree="[0]")
     private Output<String> targetName;
 
     /**
      * @return Account name
-     * 
+     *
      */
     public Output<String> targetName() {
         return this.targetName;
     }
     /**
      * Update time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

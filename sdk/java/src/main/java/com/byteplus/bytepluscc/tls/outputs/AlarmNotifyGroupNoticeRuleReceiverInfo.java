@@ -16,174 +16,184 @@ import javax.annotation.Nullable;
 public final class AlarmNotifyGroupNoticeRuleReceiverInfo {
     /**
      * @return Alarm content template ID.
-     * 
+     *
      */
     private @Nullable String alarmContentTemplateId;
     /**
      * @return User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     private @Nullable List<String> alarmWebhookAtGroups;
     /**
      * @return Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     private @Nullable List<String> alarmWebhookAtUsers;
     /**
      * @return Alarm webhook integration configuration ID.
-     * 
+     *
      */
     private @Nullable String alarmWebhookIntegrationId;
     /**
      * @return Name of the alarm Webhook integration configuration.
-     * 
+     *
      */
     private @Nullable String alarmWebhookIntegrationName;
     /**
      * @return Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     private @Nullable Boolean alarmWebhookIsAtAll;
     /**
      * @return End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
-     * 
+     *
      */
     private @Nullable String endTime;
     /**
      * @return Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
-     * 
+     *
      */
     private @Nullable String generalWebhookBody;
+    /**
+     * @return Custom callback request headers for the interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader> generalWebhookHeaders;
     /**
      * @return Custom callback method for the interface. Only POST or PUT is supported.
-     * 
+     *
      */
     private @Nullable String generalWebhookMethod;
     /**
      * @return Custom callback URL for the interface.
-     * 
+     *
      */
     private @Nullable String generalWebhookUrl;
     /**
      * @return Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
-     * 
+     *
      */
     private @Nullable List<String> receiverChannels;
     /**
      * @return IAM user or user group name.
-     * 
+     *
      */
     private @Nullable List<String> receiverNames;
     /**
      * @return Recipient type. Options: User: IAM user; UserGroup: IAM user group.
-     * 
+     *
      */
     private @Nullable String receiverType;
     /**
      * @return Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
-     * 
+     *
      */
     private @Nullable String startTime;
 
     private AlarmNotifyGroupNoticeRuleReceiverInfo() {}
     /**
      * @return Alarm content template ID.
-     * 
+     *
      */
     public Optional<String> alarmContentTemplateId() {
         return Optional.ofNullable(this.alarmContentTemplateId);
     }
     /**
      * @return User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     public List<String> alarmWebhookAtGroups() {
         return this.alarmWebhookAtGroups == null ? List.of() : this.alarmWebhookAtGroups;
     }
     /**
      * @return Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     public List<String> alarmWebhookAtUsers() {
         return this.alarmWebhookAtUsers == null ? List.of() : this.alarmWebhookAtUsers;
     }
     /**
      * @return Alarm webhook integration configuration ID.
-     * 
+     *
      */
     public Optional<String> alarmWebhookIntegrationId() {
         return Optional.ofNullable(this.alarmWebhookIntegrationId);
     }
     /**
      * @return Name of the alarm Webhook integration configuration.
-     * 
+     *
      */
     public Optional<String> alarmWebhookIntegrationName() {
         return Optional.ofNullable(this.alarmWebhookIntegrationName);
     }
     /**
      * @return Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     public Optional<Boolean> alarmWebhookIsAtAll() {
         return Optional.ofNullable(this.alarmWebhookIsAtAll);
     }
     /**
      * @return End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
-     * 
+     *
      */
     public Optional<String> endTime() {
         return Optional.ofNullable(this.endTime);
     }
     /**
      * @return Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
-     * 
+     *
      */
     public Optional<String> generalWebhookBody() {
         return Optional.ofNullable(this.generalWebhookBody);
     }
+    /**
+     * @return Custom callback request headers for the interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeader> generalWebhookHeaders() {
         return this.generalWebhookHeaders == null ? List.of() : this.generalWebhookHeaders;
     }
     /**
      * @return Custom callback method for the interface. Only POST or PUT is supported.
-     * 
+     *
      */
     public Optional<String> generalWebhookMethod() {
         return Optional.ofNullable(this.generalWebhookMethod);
     }
     /**
      * @return Custom callback URL for the interface.
-     * 
+     *
      */
     public Optional<String> generalWebhookUrl() {
         return Optional.ofNullable(this.generalWebhookUrl);
     }
     /**
      * @return Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
-     * 
+     *
      */
     public List<String> receiverChannels() {
         return this.receiverChannels == null ? List.of() : this.receiverChannels;
     }
     /**
      * @return IAM user or user group name.
-     * 
+     *
      */
     public List<String> receiverNames() {
         return this.receiverNames == null ? List.of() : this.receiverNames;
     }
     /**
      * @return Recipient type. Options: User: IAM user; UserGroup: IAM user group.
-     * 
+     *
      */
     public Optional<String> receiverType() {
         return Optional.ofNullable(this.receiverType);
     }
     /**
      * @return Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
-     * 
+     *
      */
     public Optional<String> startTime() {
         return Optional.ofNullable(this.startTime);

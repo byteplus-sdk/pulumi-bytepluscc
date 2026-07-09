@@ -17,31 +17,31 @@ import javax.annotation.Nullable;
 
 /**
  * Container Service provides cluster RBAC authorization, granting RBAC access permissions to IAM users or roles. This includes accessible resources, scope of permissions, and predefined role types, enabling better management of cluster security access control and meeting enterprise users&#39; requirements for fine-grained resource access control.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vke.Permission;
  * import com.byteplus.bytepluscc.vke.PermissionArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vKEPermissionDemo = new Permission("vKEPermissionDemo", PermissionArgs.builder()
  *             .roleDomain("namespace")
@@ -52,270 +52,270 @@ import javax.annotation.Nullable;
  *             .granteeId(59433888)
  *             .granteeType("User")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vke/permission:Permission example &#34;permission_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vke/permission:Permission")
 public class Permission extends com.pulumi.resources.CustomResource {
     /**
      * Time when the RBAC policy resource was authorized.
-     * 
+     *
      */
     @Export(name="authorizedAt", refs={String.class}, tree="[0]")
     private Output<String> authorizedAt;
 
     /**
      * @return Time when the RBAC policy resource was authorized.
-     * 
+     *
      */
     public Output<String> authorizedAt() {
         return this.authorizedAt;
     }
     /**
      * Grantor ID. Can be an IAM user ID or an IAM role ID.
-     * 
+     *
      */
     @Export(name="authorizerId", refs={Integer.class}, tree="[0]")
     private Output<Integer> authorizerId;
 
     /**
      * @return Grantor ID. Can be an IAM user ID or an IAM role ID.
-     * 
+     *
      */
     public Output<Integer> authorizerId() {
         return this.authorizerId;
     }
     /**
      * Grantor name
-     * 
+     *
      */
     @Export(name="authorizerName", refs={String.class}, tree="[0]")
     private Output<String> authorizerName;
 
     /**
      * @return Grantor name
-     * 
+     *
      */
     public Output<String> authorizerName() {
         return this.authorizerName;
     }
     /**
      * Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
-     * 
+     *
      */
     @Export(name="authorizerType", refs={String.class}, tree="[0]")
     private Output<String> authorizerType;
 
     /**
      * @return Type of grantor. Possible values: User: IAM user. Role: IAM role. Account: account.
-     * 
+     *
      */
     public Output<String> authorizerType() {
         return this.authorizerType;
     }
     /**
      * Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
-     * 
+     *
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID to be authorized for the IAM user or role. This parameter is required when roleDomain is namespace or cluster.
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Time when the RBAC policy resource was created.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Time when the RBAC policy resource was created.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Grantee ID. Can be an IAM user ID or an IAM role ID.
-     * 
+     *
      */
     @Export(name="granteeId", refs={Integer.class}, tree="[0]")
     private Output<Integer> granteeId;
 
     /**
      * @return Grantee ID. Can be an IAM user ID or an IAM role ID.
-     * 
+     *
      */
     public Output<Integer> granteeId() {
         return this.granteeId;
     }
     /**
      * Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
-     * 
+     *
      */
     @Export(name="granteeType", refs={String.class}, tree="[0]")
     private Output<String> granteeType;
 
     /**
      * @return Type of grantee. Possible values: User: IAM user. Role: IAM role. Account: account.
-     * 
+     *
      */
     public Output<String> granteeType() {
         return this.granteeType;
     }
     /**
      * Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
-     * 
+     *
      */
     @Export(name="isCustomRole", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isCustomRole;
 
     /**
      * @return Whether the RBAC role granted to the grantee is a custom role. Possible values: true: custom role. false (default): system predefined role.
-     * 
+     *
      */
     public Output<Boolean> isCustomRole() {
         return this.isCustomRole;
     }
     /**
      * The object name of the RBAC policy resource in Kubernetes.
-     * 
+     *
      */
     @Export(name="kubeRoleBindingName", refs={String.class}, tree="[0]")
     private Output<String> kubeRoleBindingName;
 
     /**
      * @return The object name of the RBAC policy resource in Kubernetes.
-     * 
+     *
      */
     public Output<String> kubeRoleBindingName() {
         return this.kubeRoleBindingName;
     }
     /**
      * Authorization details message.
-     * 
+     *
      */
     @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
      * @return Authorization details message.
-     * 
+     *
      */
     public Output<String> message() {
         return this.message;
     }
     /**
      * Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
-     * 
+     *
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
      * @return Namespace name to be authorized for the IAM user or role. This parameter is required when roleDomain equals namespace. If roleDomain does not equal namespace, this parameter is not effective.
-     * 
+     *
      */
     public Output<String> namespace() {
         return this.namespace;
     }
     /**
      * RBAC policy resource ID.
-     * 
+     *
      */
     @Export(name="permissionId", refs={String.class}, tree="[0]")
     private Output<String> permissionId;
 
     /**
      * @return RBAC policy resource ID.
-     * 
+     *
      */
     public Output<String> permissionId() {
         return this.permissionId;
     }
     /**
      * Project selector
-     * 
+     *
      */
     @Export(name="projectSelector", refs={String.class}, tree="[0]")
     private Output<String> projectSelector;
 
     /**
      * @return Project selector
-     * 
+     *
      */
     public Output<String> projectSelector() {
         return this.projectSelector;
     }
     /**
      * Time when authorization is revoked.
-     * 
+     *
      */
     @Export(name="revokedAt", refs={String.class}, tree="[0]")
     private Output<String> revokedAt;
 
     /**
      * @return Time when authorization is revoked.
-     * 
+     *
      */
     public Output<String> revokedAt() {
         return this.revokedAt;
     }
     /**
      * The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
-     * 
+     *
      */
     @Export(name="roleDomain", refs={String.class}, tree="[0]")
     private Output<String> roleDomain;
 
     /**
      * @return The permission type granted to an IAM user or role. Possible values: namespace: grants permissions at the namespace level. cluster: grants permissions at the cluster level. all_clusters: grants permissions at the cluster level for all clusters under the current account.
-     * 
+     *
      */
     public Output<String> roleDomain() {
         return this.roleDomain;
     }
     /**
      * Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
-     * 
+     *
      */
     @Export(name="roleName", refs={String.class}, tree="[0]")
     private Output<String> roleName;
 
     /**
      * @return Name of the RBAC role granted to the grantee. This parameter must be specified. When roleDomain is all_clusters, custom role names are not allowed.
-     * 
+     *
      */
     public Output<String> roleName() {
         return this.roleName;
     }
     /**
      * Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the RBAC access policy resource. Possible values: Success: authorization succeeded. Failed: authorization failed. Pending: authorization in progress. PartialSuccess: partial authorization succeeded.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;

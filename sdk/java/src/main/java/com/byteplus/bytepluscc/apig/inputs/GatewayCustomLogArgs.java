@@ -18,23 +18,53 @@ public final class GatewayCustomLogArgs extends com.pulumi.resources.ResourceArg
 
     public static final GatewayCustomLogArgs Empty = new GatewayCustomLogArgs();
 
+    /**
+     * Custom Variable Information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="customVariables")
     private @Nullable Output<List<GatewayCustomLogCustomVariableArgs>> customVariables;
 
+    /**
+     * @return Custom Variable Information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GatewayCustomLogCustomVariableArgs>>> customVariables() {
         return Optional.ofNullable(this.customVariables);
     }
 
+    /**
+     * Request Header Information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="requestHeaders")
     private @Nullable Output<List<GatewayCustomLogRequestHeaderArgs>> requestHeaders;
 
+    /**
+     * @return Request Header Information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GatewayCustomLogRequestHeaderArgs>>> requestHeaders() {
         return Optional.ofNullable(this.requestHeaders);
     }
 
+    /**
+     * Response Header Information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="responseHeaders")
     private @Nullable Output<List<GatewayCustomLogResponseHeaderArgs>> responseHeaders;
 
+    /**
+     * @return Response Header Information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GatewayCustomLogResponseHeaderArgs>>> responseHeaders() {
         return Optional.ofNullable(this.responseHeaders);
     }
@@ -65,41 +95,104 @@ public final class GatewayCustomLogArgs extends com.pulumi.resources.ResourceArg
             $ = new GatewayCustomLogArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customVariables Custom Variable Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customVariables(@Nullable Output<List<GatewayCustomLogCustomVariableArgs>> customVariables) {
             $.customVariables = customVariables;
             return this;
         }
 
+        /**
+         * @param customVariables Custom Variable Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customVariables(List<GatewayCustomLogCustomVariableArgs> customVariables) {
             return customVariables(Output.of(customVariables));
         }
 
+        /**
+         * @param customVariables Custom Variable Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customVariables(GatewayCustomLogCustomVariableArgs... customVariables) {
             return customVariables(List.of(customVariables));
         }
 
+        /**
+         * @param requestHeaders Request Header Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder requestHeaders(@Nullable Output<List<GatewayCustomLogRequestHeaderArgs>> requestHeaders) {
             $.requestHeaders = requestHeaders;
             return this;
         }
 
+        /**
+         * @param requestHeaders Request Header Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder requestHeaders(List<GatewayCustomLogRequestHeaderArgs> requestHeaders) {
             return requestHeaders(Output.of(requestHeaders));
         }
 
+        /**
+         * @param requestHeaders Request Header Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder requestHeaders(GatewayCustomLogRequestHeaderArgs... requestHeaders) {
             return requestHeaders(List.of(requestHeaders));
         }
 
+        /**
+         * @param responseHeaders Response Header Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder responseHeaders(@Nullable Output<List<GatewayCustomLogResponseHeaderArgs>> responseHeaders) {
             $.responseHeaders = responseHeaders;
             return this;
         }
 
+        /**
+         * @param responseHeaders Response Header Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder responseHeaders(List<GatewayCustomLogResponseHeaderArgs> responseHeaders) {
             return responseHeaders(Output.of(responseHeaders));
         }
 
+        /**
+         * @param responseHeaders Response Header Information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder responseHeaders(GatewayCustomLogResponseHeaderArgs... responseHeaders) {
             return responseHeaders(List.of(responseHeaders));
         }

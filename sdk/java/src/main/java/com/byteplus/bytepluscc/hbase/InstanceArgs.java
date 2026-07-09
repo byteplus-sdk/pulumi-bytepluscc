@@ -23,14 +23,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-     * 
+     *
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
      * @return Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
@@ -38,14 +38,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-     * 
+     *
      */
     @Import(name="chargeType", required=true)
     private Output<String> chargeType;
 
     /**
      * @return Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-     * 
+     *
      */
     public Output<String> chargeType() {
         return this.chargeType;
@@ -53,14 +53,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total capacity-type storage space for the instance, in GiB.
-     * 
+     *
      */
     @Import(name="coldStorage")
     private @Nullable Output<Integer> coldStorage;
 
     /**
      * @return Total capacity-type storage space for the instance, in GiB.
-     * 
+     *
      */
     public Optional<Output<Integer>> coldStorage() {
         return Optional.ofNullable(this.coldStorage);
@@ -68,14 +68,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-     * 
+     *
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
      * @return Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-     * 
+     *
      */
     public Optional<Output<String>> deletionProtection() {
         return Optional.ofNullable(this.deletionProtection);
@@ -83,14 +83,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-     * 
+     *
      */
     @Import(name="enableAuth")
     private @Nullable Output<Boolean> enableAuth;
 
     /**
      * @return Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableAuth() {
         return Optional.ofNullable(this.enableAuth);
@@ -98,36 +98,46 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-     * 
+     *
      */
     @Import(name="enableCloudStorage")
     private @Nullable Output<Boolean> enableCloudStorage;
 
     /**
      * @return Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableCloudStorage() {
         return Optional.ofNullable(this.enableCloudStorage);
     }
 
+    /**
+     * Connection address information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="endpoints")
     private @Nullable Output<List<InstanceEndpointArgs>> endpoints;
 
+    /**
+     * @return Connection address information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceEndpointArgs>>> endpoints() {
         return Optional.ofNullable(this.endpoints);
     }
 
     /**
      * HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-     * 
+     *
      */
     @Import(name="engineVersion", required=true)
     private Output<String> engineVersion;
 
     /**
      * @return HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-     * 
+     *
      */
     public Output<String> engineVersion() {
         return this.engineVersion;
@@ -135,14 +145,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance name
-     * 
+     *
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Instance name
-     * 
+     *
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -150,14 +160,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance type. Currently, only Standard is supported. The default value is Standard
-     * 
+     *
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
      * @return Instance type. Currently, only Standard is supported. The default value is Standard
-     * 
+     *
      */
     public Optional<Output<String>> instanceType() {
         return Optional.ofNullable(this.instanceType);
@@ -165,14 +175,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-     * 
+     *
      */
     @Import(name="masterSpec", required=true)
     private Output<String> masterSpec;
 
     /**
      * @return Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-     * 
+     *
      */
     public Output<String> masterSpec() {
         return this.masterSpec;
@@ -180,14 +190,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-     * 
+     *
      */
     @Import(name="multiAz")
     private @Nullable Output<Boolean> multiAz;
 
     /**
      * @return Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-     * 
+     *
      */
     public Optional<Output<Boolean>> multiAz() {
         return Optional.ofNullable(this.multiAz);
@@ -195,14 +205,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name of the instance
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name of the instance
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -210,14 +220,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-     * 
+     *
      */
     @Import(name="purchaseMonths")
     private @Nullable Output<Integer> purchaseMonths;
 
     /**
      * @return Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-     * 
+     *
      */
     public Optional<Output<Integer>> purchaseMonths() {
         return Optional.ofNullable(this.purchaseMonths);
@@ -225,14 +235,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Region ID of the instance.
-     * 
+     *
      */
     @Import(name="regionId", required=true)
     private Output<String> regionId;
 
     /**
      * @return Region ID of the instance.
-     * 
+     *
      */
     public Output<String> regionId() {
         return this.regionId;
@@ -240,14 +250,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of RegionServer nodes
-     * 
+     *
      */
     @Import(name="rsCount", required=true)
     private Output<Integer> rsCount;
 
     /**
      * @return Number of RegionServer nodes
-     * 
+     *
      */
     public Output<Integer> rsCount() {
         return this.rsCount;
@@ -255,14 +265,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * RegionServer node specification code.
-     * 
+     *
      */
     @Import(name="rsSpec", required=true)
     private Output<String> rsSpec;
 
     /**
      * @return RegionServer node specification code.
-     * 
+     *
      */
     public Output<String> rsSpec() {
         return this.rsSpec;
@@ -270,14 +280,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total storage capacity of the instance, unit: GiB.
-     * 
+     *
      */
     @Import(name="storageCapacity", required=true)
     private Output<Integer> storageCapacity;
 
     /**
      * @return Total storage capacity of the instance, unit: GiB.
-     * 
+     *
      */
     public Output<Integer> storageCapacity() {
         return this.storageCapacity;
@@ -285,14 +295,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-     * 
+     *
      */
     @Import(name="storageType", required=true)
     private Output<String> storageType;
 
     /**
      * @return Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-     * 
+     *
      */
     public Output<String> storageType() {
         return this.storageType;
@@ -300,36 +310,46 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-     * 
+     *
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
 
+    /**
+     * Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -337,14 +357,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Zone ID of the instance
-     * 
+     *
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return Zone ID of the instance
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -398,9 +418,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
             $.autoRenew = autoRenew;
@@ -409,9 +429,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Whether auto-renewal is enabled for subscription scenarios. Values: true: auto-renewal enabled. false: auto-renewal not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
@@ -419,9 +439,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeType(Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -430,9 +450,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Billing type. Values: PostPaid: pay-as-you-go (postpaid). PrePaid: subscription (prepaid, yearly/monthly).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
@@ -440,9 +460,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param coldStorage Total capacity-type storage space for the instance, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder coldStorage(@Nullable Output<Integer> coldStorage) {
             $.coldStorage = coldStorage;
@@ -451,9 +471,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param coldStorage Total capacity-type storage space for the instance, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder coldStorage(Integer coldStorage) {
             return coldStorage(Output.of(coldStorage));
@@ -461,9 +481,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletionProtection Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletionProtection(@Nullable Output<String> deletionProtection) {
             $.deletionProtection = deletionProtection;
@@ -472,9 +492,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletionProtection Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletionProtection(String deletionProtection) {
             return deletionProtection(Output.of(deletionProtection));
@@ -482,9 +502,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableAuth Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableAuth(@Nullable Output<Boolean> enableAuth) {
             $.enableAuth = enableAuth;
@@ -493,9 +513,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableAuth Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableAuth(Boolean enableAuth) {
             return enableAuth(Output.of(enableAuth));
@@ -503,9 +523,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableCloudStorage Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableCloudStorage(@Nullable Output<Boolean> enableCloudStorage) {
             $.enableCloudStorage = enableCloudStorage;
@@ -514,32 +534,53 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableCloudStorage Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableCloudStorage(Boolean enableCloudStorage) {
             return enableCloudStorage(Output.of(enableCloudStorage));
         }
 
+        /**
+         * @param endpoints Connection address information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(@Nullable Output<List<InstanceEndpointArgs>> endpoints) {
             $.endpoints = endpoints;
             return this;
         }
 
+        /**
+         * @param endpoints Connection address information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(List<InstanceEndpointArgs> endpoints) {
             return endpoints(Output.of(endpoints));
         }
 
+        /**
+         * @param endpoints Connection address information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(InstanceEndpointArgs... endpoints) {
             return endpoints(List.of(endpoints));
         }
 
         /**
          * @param engineVersion HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineVersion(Output<String> engineVersion) {
             $.engineVersion = engineVersion;
@@ -548,9 +589,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param engineVersion HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineVersion(String engineVersion) {
             return engineVersion(Output.of(engineVersion));
@@ -558,9 +599,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -569,9 +610,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -579,9 +620,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Instance type. Currently, only Standard is supported. The default value is Standard
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(@Nullable Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -590,9 +631,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Instance type. Currently, only Standard is supported. The default value is Standard
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -600,9 +641,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterSpec Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterSpec(Output<String> masterSpec) {
             $.masterSpec = masterSpec;
@@ -611,9 +652,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param masterSpec Master node specification code. For information about supported specifications for Master nodes, see Instance Specifications. The number of Master nodes is fixed and cannot be changed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterSpec(String masterSpec) {
             return masterSpec(Output.of(masterSpec));
@@ -621,9 +662,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiAz Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiAz(@Nullable Output<Boolean> multiAz) {
             $.multiAz = multiAz;
@@ -632,9 +673,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiAz Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiAz(Boolean multiAz) {
             return multiAz(Output.of(multiAz));
@@ -642,9 +683,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name of the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -653,9 +694,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name of the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -663,9 +704,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param purchaseMonths Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder purchaseMonths(@Nullable Output<Integer> purchaseMonths) {
             $.purchaseMonths = purchaseMonths;
@@ -674,9 +715,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param purchaseMonths Purchase duration, in months. The value range is: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. When ChargeType is PrePaid, this parameter is required
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder purchaseMonths(Integer purchaseMonths) {
             return purchaseMonths(Output.of(purchaseMonths));
@@ -684,9 +725,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param regionId Region ID of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder regionId(Output<String> regionId) {
             $.regionId = regionId;
@@ -695,9 +736,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param regionId Region ID of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder regionId(String regionId) {
             return regionId(Output.of(regionId));
@@ -705,9 +746,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rsCount Number of RegionServer nodes
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rsCount(Output<Integer> rsCount) {
             $.rsCount = rsCount;
@@ -716,9 +757,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rsCount Number of RegionServer nodes
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rsCount(Integer rsCount) {
             return rsCount(Output.of(rsCount));
@@ -726,9 +767,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rsSpec RegionServer node specification code.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rsSpec(Output<String> rsSpec) {
             $.rsSpec = rsSpec;
@@ -737,9 +778,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rsSpec RegionServer node specification code.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rsSpec(String rsSpec) {
             return rsSpec(Output.of(rsSpec));
@@ -747,9 +788,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageCapacity Total storage capacity of the instance, unit: GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageCapacity(Output<Integer> storageCapacity) {
             $.storageCapacity = storageCapacity;
@@ -758,9 +799,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageCapacity Total storage capacity of the instance, unit: GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageCapacity(Integer storageCapacity) {
             return storageCapacity(Output.of(storageCapacity));
@@ -768,9 +809,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageType(Output<String> storageType) {
             $.storageType = storageType;
@@ -779,9 +820,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Instance storage type. Values: HdfsHdd: HDD file storage. HdfsSsd: SSD file storage.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageType(String storageType) {
             return storageType(Output.of(storageType));
@@ -789,9 +830,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -800,32 +841,53 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Subnet ID of the instance. For single-zone instances, only one subnet ID for the zone is included
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Array of tag keys and tag values to bind. Supports passing multiple sets of tag key-value objects at once, separated by commas (,). Up to 20 tag key-value pairs can be passed at a time, and up to 50 tags can be bound to a single instance. Tag keys and values must comply with the setting rules. For details, see Tag Setting Rules
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpcId Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -834,9 +896,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network ID. You can call the DescribeVpcs API to query information about private networks available for HBase instance creation, including the private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -844,9 +906,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Zone ID of the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -855,9 +917,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Zone ID of the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

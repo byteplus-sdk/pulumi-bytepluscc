@@ -21,217 +21,294 @@ import javax.annotation.Nullable;
 
 /**
  * Forwarding rule details
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.privatezone.ResolverRule;
+ * import com.byteplus.bytepluscc.privatezone.ResolverRuleArgs;
+ * import com.pulumi.bytepluscc.privatezone.inputs.ResolverRuleTagArgs;
+ * import com.pulumi.bytepluscc.privatezone.inputs.ResolverRuleVpCArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var privateZoneResolverRuleDemo = new ResolverRule("privateZoneResolverRuleDemo", ResolverRuleArgs.builder()
+ *             .line("电信")
+ *             .name("PrivateZoneResolverRuleDemo")
+ *             .tags(ResolverRuleTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .type("LINE")
+ *             .vpCs(
+ *                 ResolverRuleVpCArgs.builder()
+ *                     .region("cn-beijing")
+ *                     .vpc_id("vpc-3nqt4kq87xn28931eclihh90****")
+ *                     .build(),
+ *                 ResolverRuleVpCArgs.builder()
+ *                     .region("cn-beijing")
+ *                     .vpc_id("vpc-1a10aeq5vr2tc8nvepkauwljx****")
+ *                     .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:privatezone/resolverRule:ResolverRule example &#34;rule_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:privatezone/resolverRule:ResolverRule")
 public class ResolverRule extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the forwarding rule
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the forwarding rule
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Whether the forwarding rule is enabled. true: enabled. false: disabled
-     * 
+     *
      */
     @Export(name="enable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enable;
 
     /**
      * @return Whether the forwarding rule is enabled. true: enabled. false: disabled
-     * 
+     *
      */
     public Output<Boolean> enable() {
         return this.enable;
     }
     /**
      * Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-     * 
+     *
      */
     @Export(name="endpointId", refs={Integer.class}, tree="[0]")
     private Output<Integer> endpointId;
 
     /**
      * @return Endpoint ID. This parameter is only valid and required when the Type parameter is OUTBOUND
-     * 
+     *
      */
     public Output<Integer> endpointId() {
         return this.endpointId;
     }
     /**
      * TRN of the endpoint
-     * 
+     *
      */
     @Export(name="endpointTrn", refs={String.class}, tree="[0]")
     private Output<String> endpointTrn;
 
     /**
      * @return TRN of the endpoint
-     * 
+     *
      */
     public Output<String> endpointTrn() {
         return this.endpointTrn;
     }
+    /**
+     * IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="forwardIPs", refs={List.class,ResolverRuleForwardIP.class}, tree="[0,1]")
     private Output<List<ResolverRuleForwardIP>> forwardIPs;
 
+    /**
+     * @return IP address and port of the external DNS server. You can add up to 10 IP addresses. This parameter is only valid and required when the Type parameter is OUTBOUND
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ResolverRuleForwardIP>> forwardIPs() {
         return this.forwardIPs;
     }
     /**
      * Account ID of the last update to the forwarding rule
-     * 
+     *
      */
     @Export(name="lastOperator", refs={String.class}, tree="[0]")
     private Output<String> lastOperator;
 
     /**
      * @return Account ID of the last update to the forwarding rule
-     * 
+     *
      */
     public Output<String> lastOperator() {
         return this.lastOperator;
     }
     /**
      * Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
-     * 
+     *
      */
     @Export(name="line", refs={String.class}, tree="[0]")
     private Output<String> line;
 
     /**
      * @return Carrier for the outbound IP address of the recursive DNS server. This parameter is only valid when the Type parameter is LINE. Supported values: Mobile: China Mobile, Telecom: China Telecom, Unicom: China Unicom
-     * 
+     *
      */
     public Output<String> line() {
         return this.line;
     }
     /**
      * Name of the forwarding rule. Supports UTF-8 format
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Name of the forwarding rule. Supports UTF-8 format
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Project name associated with the forwarding rule. Default is default
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name associated with the forwarding rule. Default is default
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Forwarding rule ID
-     * 
+     *
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return Forwarding rule ID
-     * 
+     *
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
+    /**
+     * One or more tags associated with the forwarding rule
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,ResolverRuleTag.class}, tree="[0,1]")
     private Output<List<ResolverRuleTag>> tags;
 
+    /**
+     * @return One or more tags associated with the forwarding rule
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ResolverRuleTag>> tags() {
         return this.tags;
     }
     /**
      * Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Forwarding rule type. OUTBOUND: Forward to external DNS server. LINE: Carrier for the outbound IP address of the custom public recursive DNS server
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Update time of the forwarding rule
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time of the forwarding rule
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
+    /**
+     * VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="vpCs", refs={List.class,ResolverRuleVpC.class}, tree="[0,1]")
     private Output<List<ResolverRuleVpC>> vpCs;
 
+    /**
+     * @return VPC associated with the forwarding rule. The forwarding rule takes effect in the associated VPC. When the Type parameter is OUTBOUND, the VPC region must match the region of the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ResolverRuleVpC>> vpCs() {
         return this.vpCs;
     }
     /**
      * TRN of one or more VPCs associated with the domain name
-     * 
+     *
      */
     @Export(name="vpcTrns", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> vpcTrns;
 
     /**
      * @return TRN of one or more VPCs associated with the domain name
-     * 
+     *
      */
     public Output<List<String>> vpcTrns() {
         return this.vpcTrns;
     }
     /**
      * Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
-     * 
+     *
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
      * @return Domain name(s) associated with the forwarding rule. You can enter one or more domain names. Separate multiple domain names with English commas. Up to 500 domain names are supported. This parameter is only valid and required when the Type parameter is OUTBOUND. If you set this parameter to *, the forwarding rule applies to all domain names associated with the VPC
-     * 
+     *
      */
     public Output<String> zoneName() {
         return this.zoneName;

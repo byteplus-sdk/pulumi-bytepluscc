@@ -19,14 +19,14 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
     /**
      * Webhook integration configuration creation time
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Webhook integration configuration creation time
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -34,36 +34,46 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
     /**
      * Webhook integration configuration last modified time
-     * 
+     *
      */
     @Import(name="modifyTime")
     private @Nullable Output<String> modifyTime;
 
     /**
      * @return Webhook integration configuration last modified time
-     * 
+     *
      */
     public Optional<Output<String>> modifyTime() {
         return Optional.ofNullable(this.modifyTime);
     }
 
+    /**
+     * Custom Webhook request headers. Required when WebhookType is set to custom
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="webhookHeaders")
     private @Nullable Output<List<AlarmWebhookIntegrationTypeWebhookHeaderArgs>> webhookHeaders;
 
+    /**
+     * @return Custom Webhook request headers. Required when WebhookType is set to custom
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AlarmWebhookIntegrationTypeWebhookHeaderArgs>>> webhookHeaders() {
         return Optional.ofNullable(this.webhookHeaders);
     }
 
     /**
      * Webhook integration configuration ID
-     * 
+     *
      */
     @Import(name="webhookId")
     private @Nullable Output<String> webhookId;
 
     /**
      * @return Webhook integration configuration ID
-     * 
+     *
      */
     public Optional<Output<String>> webhookId() {
         return Optional.ofNullable(this.webhookId);
@@ -71,14 +81,14 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
     /**
      * Custom Webhook request methods; only POST and PUT are supported
-     * 
+     *
      */
     @Import(name="webhookMethod")
     private @Nullable Output<String> webhookMethod;
 
     /**
      * @return Custom Webhook request methods; only POST and PUT are supported
-     * 
+     *
      */
     public Optional<Output<String>> webhookMethod() {
         return Optional.ofNullable(this.webhookMethod);
@@ -86,14 +96,14 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
     /**
      * Webhook integration configuration name
-     * 
+     *
      */
     @Import(name="webhookName")
     private @Nullable Output<String> webhookName;
 
     /**
      * @return Webhook integration configuration name
-     * 
+     *
      */
     public Optional<Output<String>> webhookName() {
         return Optional.ofNullable(this.webhookName);
@@ -101,14 +111,14 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
     /**
      * Webhook encryption key. If WebhookType is set to lark and signature verification is enabled in the Feishu bot security settings, enter the Feishu bot signature key here. For details, refer to the custom bot usage guide. If WebhookType is set to dingtalk and a signature value is configured in the DingTalk bot, enter the DingTalk bot signature value here. For details, refer to bot development documentation
-     * 
+     *
      */
     @Import(name="webhookSecret")
     private @Nullable Output<String> webhookSecret;
 
     /**
      * @return Webhook encryption key. If WebhookType is set to lark and signature verification is enabled in the Feishu bot security settings, enter the Feishu bot signature key here. For details, refer to the custom bot usage guide. If WebhookType is set to dingtalk and a signature value is configured in the DingTalk bot, enter the DingTalk bot signature value here. For details, refer to bot development documentation
-     * 
+     *
      */
     public Optional<Output<String>> webhookSecret() {
         return Optional.ofNullable(this.webhookSecret);
@@ -116,14 +126,14 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
     /**
      * Webhook type. custom: custom Webhook address. lark: Feishu. dingtalk: DingTalk. wechat: WeCom
-     * 
+     *
      */
     @Import(name="webhookType")
     private @Nullable Output<String> webhookType;
 
     /**
      * @return Webhook type. custom: custom Webhook address. lark: Feishu. dingtalk: DingTalk. wechat: WeCom
-     * 
+     *
      */
     public Optional<Output<String>> webhookType() {
         return Optional.ofNullable(this.webhookType);
@@ -131,14 +141,14 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
     /**
      * Webhook request URL
-     * 
+     *
      */
     @Import(name="webhookUrl")
     private @Nullable Output<String> webhookUrl;
 
     /**
      * @return Webhook request URL
-     * 
+     *
      */
     public Optional<Output<String>> webhookUrl() {
         return Optional.ofNullable(this.webhookUrl);
@@ -178,9 +188,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param createTime Webhook integration configuration creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -189,9 +199,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param createTime Webhook integration configuration creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -199,9 +209,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param modifyTime Webhook integration configuration last modified time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modifyTime(@Nullable Output<String> modifyTime) {
             $.modifyTime = modifyTime;
@@ -210,32 +220,53 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param modifyTime Webhook integration configuration last modified time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modifyTime(String modifyTime) {
             return modifyTime(Output.of(modifyTime));
         }
 
+        /**
+         * @param webhookHeaders Custom Webhook request headers. Required when WebhookType is set to custom
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder webhookHeaders(@Nullable Output<List<AlarmWebhookIntegrationTypeWebhookHeaderArgs>> webhookHeaders) {
             $.webhookHeaders = webhookHeaders;
             return this;
         }
 
+        /**
+         * @param webhookHeaders Custom Webhook request headers. Required when WebhookType is set to custom
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder webhookHeaders(List<AlarmWebhookIntegrationTypeWebhookHeaderArgs> webhookHeaders) {
             return webhookHeaders(Output.of(webhookHeaders));
         }
 
+        /**
+         * @param webhookHeaders Custom Webhook request headers. Required when WebhookType is set to custom
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder webhookHeaders(AlarmWebhookIntegrationTypeWebhookHeaderArgs... webhookHeaders) {
             return webhookHeaders(List.of(webhookHeaders));
         }
 
         /**
          * @param webhookId Webhook integration configuration ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookId(@Nullable Output<String> webhookId) {
             $.webhookId = webhookId;
@@ -244,9 +275,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookId Webhook integration configuration ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookId(String webhookId) {
             return webhookId(Output.of(webhookId));
@@ -254,9 +285,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookMethod Custom Webhook request methods; only POST and PUT are supported
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookMethod(@Nullable Output<String> webhookMethod) {
             $.webhookMethod = webhookMethod;
@@ -265,9 +296,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookMethod Custom Webhook request methods; only POST and PUT are supported
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookMethod(String webhookMethod) {
             return webhookMethod(Output.of(webhookMethod));
@@ -275,9 +306,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookName Webhook integration configuration name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookName(@Nullable Output<String> webhookName) {
             $.webhookName = webhookName;
@@ -286,9 +317,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookName Webhook integration configuration name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookName(String webhookName) {
             return webhookName(Output.of(webhookName));
@@ -296,9 +327,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookSecret Webhook encryption key. If WebhookType is set to lark and signature verification is enabled in the Feishu bot security settings, enter the Feishu bot signature key here. For details, refer to the custom bot usage guide. If WebhookType is set to dingtalk and a signature value is configured in the DingTalk bot, enter the DingTalk bot signature value here. For details, refer to bot development documentation
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookSecret(@Nullable Output<String> webhookSecret) {
             $.webhookSecret = webhookSecret;
@@ -307,9 +338,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookSecret Webhook encryption key. If WebhookType is set to lark and signature verification is enabled in the Feishu bot security settings, enter the Feishu bot signature key here. For details, refer to the custom bot usage guide. If WebhookType is set to dingtalk and a signature value is configured in the DingTalk bot, enter the DingTalk bot signature value here. For details, refer to bot development documentation
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookSecret(String webhookSecret) {
             return webhookSecret(Output.of(webhookSecret));
@@ -317,9 +348,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookType Webhook type. custom: custom Webhook address. lark: Feishu. dingtalk: DingTalk. wechat: WeCom
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookType(@Nullable Output<String> webhookType) {
             $.webhookType = webhookType;
@@ -328,9 +359,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookType Webhook type. custom: custom Webhook address. lark: Feishu. dingtalk: DingTalk. wechat: WeCom
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookType(String webhookType) {
             return webhookType(Output.of(webhookType));
@@ -338,9 +369,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookUrl Webhook request URL
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookUrl(@Nullable Output<String> webhookUrl) {
             $.webhookUrl = webhookUrl;
@@ -349,9 +380,9 @@ public final class AlarmWebhookIntegrationTypeState extends com.pulumi.resources
 
         /**
          * @param webhookUrl Webhook request URL
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder webhookUrl(String webhookUrl) {
             return webhookUrl(Output.of(webhookUrl));

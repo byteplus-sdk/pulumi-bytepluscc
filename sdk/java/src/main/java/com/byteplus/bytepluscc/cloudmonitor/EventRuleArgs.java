@@ -18,32 +18,42 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
     public static final EventRuleArgs Empty = new EventRuleArgs();
 
     /**
-     * Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-     * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
-     * 
+     * Rule description
+     *   Must not start with a digit, hyphen (-), or Chinese punctuation
+     *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+     *   Length limit: 0–255 characters
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-     * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
-     * 
+     * @return Rule description
+     *   Must not start with a digit, hyphen (-), or Chinese punctuation
+     *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+     *   Length limit: 0–255 characters
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
     /**
-     * Rule status enable: Rule enabled disable: Rule disabled
-     * 
+     * Rule status
+     *
+     *   enable: Rule enabled
+     *   disable: Rule disabled
+     *
      */
     @Import(name="enableState")
     private @Nullable Output<String> enableState;
 
     /**
-     * @return Rule status enable: Rule enabled disable: Rule disabled
-     * 
+     * @return Rule status
+     *
+     *   enable: Rule enabled
+     *   disable: Rule disabled
+     *
      */
     public Optional<Output<String>> enableState() {
         return Optional.ofNullable(this.enableState);
@@ -51,14 +61,14 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Event bus name. Currently, only &#39;default&#39; can be entered
-     * 
+     *
      */
     @Import(name="eventBusName", required=true)
     private Output<String> eventBusName;
 
     /**
      * @return Event bus name. Currently, only &#39;default&#39; can be entered
-     * 
+     *
      */
     public Output<String> eventBusName() {
         return this.eventBusName;
@@ -66,14 +76,14 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Event source
-     * 
+     *
      */
     @Import(name="eventSource", required=true)
     private Output<String> eventSource;
 
     /**
      * @return Event source
-     * 
+     *
      */
     public Output<String> eventSource() {
         return this.eventSource;
@@ -81,31 +91,29 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Event type
-     * 
+     *
      */
     @Import(name="eventTypes", required=true)
     private Output<List<String>> eventTypes;
 
     /**
      * @return Event type
-     * 
+     *
      */
     public Output<List<String>> eventTypes() {
         return this.eventTypes;
     }
 
     /**
-     * Filter mode, also known as event matching rule. Used for creation and modification. Format:
-     * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
-     * 
+     * Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+     *
      */
     @Import(name="filterPatternInput")
     private @Nullable Output<String> filterPatternInput;
 
     /**
-     * @return Filter mode, also known as event matching rule. Used for creation and modification. Format:
-     * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
-     * 
+     * @return Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+     *
      */
     public Optional<Output<String>> filterPatternInput() {
         return Optional.ofNullable(this.filterPatternInput);
@@ -113,14 +121,14 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert rule severity
-     * 
+     *
      */
     @Import(name="level", required=true)
     private Output<String> level;
 
     /**
      * @return Alert rule severity
-     * 
+     *
      */
     public Output<String> level() {
         return this.level;
@@ -128,29 +136,33 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Policy ID
-     * 
+     *
      */
     @Import(name="notificationId")
     private @Nullable Output<String> notificationId;
 
     /**
      * @return Policy ID
-     * 
+     *
      */
     public Optional<Output<String>> notificationId() {
         return Optional.ofNullable(this.notificationId);
     }
 
     /**
-     * Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
-     * 
+     * Rule name
+     *   Length limit: 1–128 characters
+     *   Must not start with a digit or hyphen (-)
+     *
      */
     @Import(name="ruleName", required=true)
     private Output<String> ruleName;
 
     /**
-     * @return Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
-     * 
+     * @return Rule name
+     *   Length limit: 1–128 characters
+     *   Must not start with a digit or hyphen (-)
+     *
      */
     public Output<String> ruleName() {
         return this.ruleName;
@@ -189,11 +201,13 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-         * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
-         * 
+         * @param description Rule description
+         *   Must not start with a digit, hyphen (-), or Chinese punctuation
+         *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+         *   Length limit: 0–255 characters
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -201,21 +215,26 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description Rule description Must not start with a digit, hyphen (-), or Chinese punctuation Can only contain Chinese characters,
-         * letters, digits, underscore (_), hyphen (-), or Chinese punctuation Length limit: 0–255 characters
-         * 
+         * @param description Rule description
+         *   Must not start with a digit, hyphen (-), or Chinese punctuation
+         *   Can only contain Chinese characters, letters, digits, underscore (_), hyphen (-), or Chinese punctuation
+         *   Length limit: 0–255 characters
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
         /**
-         * @param enableState Rule status enable: Rule enabled disable: Rule disabled
-         * 
+         * @param enableState Rule status
+         *
+         *   enable: Rule enabled
+         *   disable: Rule disabled
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableState(@Nullable Output<String> enableState) {
             $.enableState = enableState;
@@ -223,10 +242,13 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableState Rule status enable: Rule enabled disable: Rule disabled
-         * 
+         * @param enableState Rule status
+         *
+         *   enable: Rule enabled
+         *   disable: Rule disabled
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableState(String enableState) {
             return enableState(Output.of(enableState));
@@ -234,9 +256,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eventBusName Event bus name. Currently, only &#39;default&#39; can be entered
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eventBusName(Output<String> eventBusName) {
             $.eventBusName = eventBusName;
@@ -245,9 +267,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eventBusName Event bus name. Currently, only &#39;default&#39; can be entered
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eventBusName(String eventBusName) {
             return eventBusName(Output.of(eventBusName));
@@ -255,9 +277,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eventSource Event source
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eventSource(Output<String> eventSource) {
             $.eventSource = eventSource;
@@ -266,9 +288,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eventSource Event source
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eventSource(String eventSource) {
             return eventSource(Output.of(eventSource));
@@ -276,9 +298,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eventTypes Event type
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eventTypes(Output<List<String>> eventTypes) {
             $.eventTypes = eventTypes;
@@ -287,9 +309,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eventTypes Event type
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eventTypes(List<String> eventTypes) {
             return eventTypes(Output.of(eventTypes));
@@ -297,20 +319,19 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eventTypes Event type
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eventTypes(String... eventTypes) {
             return eventTypes(List.of(eventTypes));
         }
 
         /**
-         * @param filterPatternInput Filter mode, also known as event matching rule. Used for creation and modification. Format:
-         * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
-         * 
+         * @param filterPatternInput Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+         *
          * @return builder
-         * 
+         *
          */
         public Builder filterPatternInput(@Nullable Output<String> filterPatternInput) {
             $.filterPatternInput = filterPatternInput;
@@ -318,11 +339,10 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param filterPatternInput Filter mode, also known as event matching rule. Used for creation and modification. Format:
-         * {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
-         * 
+         * @param filterPatternInput Filter mode, also known as event matching rule. Used for creation and modification. Format: {&#34;Data&#34;:{&#34;autoscaling&#34;:[&#34;1&#34;,&#34;3&#34;],&#34;ecs&#34;:[&#34;2&#34;]}}
+         *
          * @return builder
-         * 
+         *
          */
         public Builder filterPatternInput(String filterPatternInput) {
             return filterPatternInput(Output.of(filterPatternInput));
@@ -330,9 +350,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param level Alert rule severity
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder level(Output<String> level) {
             $.level = level;
@@ -341,9 +361,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param level Alert rule severity
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder level(String level) {
             return level(Output.of(level));
@@ -351,9 +371,9 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param notificationId Policy ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder notificationId(@Nullable Output<String> notificationId) {
             $.notificationId = notificationId;
@@ -362,19 +382,21 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param notificationId Policy ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder notificationId(String notificationId) {
             return notificationId(Output.of(notificationId));
         }
 
         /**
-         * @param ruleName Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
-         * 
+         * @param ruleName Rule name
+         *   Length limit: 1–128 characters
+         *   Must not start with a digit or hyphen (-)
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleName(Output<String> ruleName) {
             $.ruleName = ruleName;
@@ -382,10 +404,12 @@ public final class EventRuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ruleName Rule name Length limit: 1–128 characters Must not start with a digit or hyphen (-)
-         * 
+         * @param ruleName Rule name
+         *   Length limit: 1–128 characters
+         *   Must not start with a digit or hyphen (-)
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleName(String ruleName) {
             return ruleName(Output.of(ruleName));

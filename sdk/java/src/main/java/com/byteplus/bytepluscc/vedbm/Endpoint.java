@@ -20,255 +20,298 @@ import javax.annotation.Nullable;
 
 /**
  * Database connection terminal management
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vedbm.Endpoint;
+ * import com.byteplus.bytepluscc.vedbm.EndpointArgs;
+ * import com.pulumi.bytepluscc.vedbm.inputs.EndpointPublicAddressesArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var vEDBMEndpointDemo = new Endpoint("vEDBMEndpointDemo", EndpointArgs.builder()
+ *             .publicAddresses(EndpointPublicAddressesArgs.builder()
+ *                 .eip_id("eip-ij2xxxxx74o8cubosgei")
+ *                 .build())
+ *             .autoAddNewNodes(true)
+ *             .consistLevel("Eventual")
+ *             .description("this is a test")
+ *             .distributedTransaction(false)
+ *             .endpointName("ccapi-test-1001")
+ *             .endpointType("Custom")
+ *             .instanceId("vedbm-jxxxxttjdcea")
+ *             .masterAcceptReadRequests(false)
+ *             .nodeIds("vedbm-jxxxxttjdcea-1")
+ *             .readWriteMode("ReadOnly")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vedbm/endpoint:Endpoint example &#34;instance_id|endpoint_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vedbm/endpoint:Endpoint")
 public class Endpoint extends com.pulumi.resources.CustomResource {
     /**
      * Whether new read-only nodes are automatically added to this terminal
-     * 
+     *
      */
     @Export(name="autoAddNewNodes", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoAddNewNodes;
 
     /**
      * @return Whether new read-only nodes are automatically added to this terminal
-     * 
+     *
      */
     public Output<Boolean> autoAddNewNodes() {
         return this.autoAddNewNodes;
     }
     /**
      * Consistency level
-     * 
+     *
      */
     @Export(name="consistLevel", refs={String.class}, tree="[0]")
     private Output<String> consistLevel;
 
     /**
      * @return Consistency level
-     * 
+     *
      */
     public Output<String> consistLevel() {
         return this.consistLevel;
     }
     /**
      * Data synchronization timeout
-     * 
+     *
      */
     @Export(name="consistTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> consistTimeout;
 
     /**
      * @return Data synchronization timeout
-     * 
+     *
      */
     public Output<Integer> consistTimeout() {
         return this.consistTimeout;
     }
     /**
      * Policy after synchronization timeout
-     * 
+     *
      */
     @Export(name="consistTimeoutAction", refs={String.class}, tree="[0]")
     private Output<String> consistTimeoutAction;
 
     /**
      * @return Policy after synchronization timeout
-     * 
+     *
      */
     public Output<String> consistTimeoutAction() {
         return this.consistTimeoutAction;
     }
     /**
      * Description of the connection terminal
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the connection terminal
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Enable transaction splitting
-     * 
+     *
      */
     @Export(name="distributedTransaction", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> distributedTransaction;
 
     /**
      * @return Enable transaction splitting
-     * 
+     *
      */
     public Output<Boolean> distributedTransaction() {
         return this.distributedTransaction;
     }
     /**
      * New private network address prefix
-     * 
+     *
      */
     @Export(name="domainPrefix", refs={String.class}, tree="[0]")
     private Output<String> domainPrefix;
 
     /**
      * @return New private network address prefix
-     * 
+     *
      */
     public Output<String> domainPrefix() {
         return this.domainPrefix;
     }
     /**
      * ID of the created connection terminal
-     * 
+     *
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return ID of the created connection terminal
-     * 
+     *
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Connection terminal name
-     * 
+     *
      */
     @Export(name="endpointName", refs={String.class}, tree="[0]")
     private Output<String> endpointName;
 
     /**
      * @return Connection terminal name
-     * 
+     *
      */
     public Output<String> endpointName() {
         return this.endpointName;
     }
     /**
      * Connection terminal type, fixed as Custom
-     * 
+     *
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
      * @return Connection terminal type, fixed as Custom
-     * 
+     *
      */
     public Output<String> endpointType() {
         return this.endpointType;
     }
     /**
      * Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Whether the primary node accepts read requests
-     * 
+     *
      */
     @Export(name="masterAcceptReadRequests", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> masterAcceptReadRequests;
 
     /**
      * @return Whether the primary node accepts read requests
-     * 
+     *
      */
     public Output<Boolean> masterAcceptReadRequests() {
         return this.masterAcceptReadRequests;
     }
     /**
      * Node list configured for the connection terminal
-     * 
+     *
      */
     @Export(name="nodeIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> nodeIds;
 
     /**
      * @return Node list configured for the connection terminal
-     * 
+     *
      */
     public Output<List<String>> nodeIds() {
         return this.nodeIds;
     }
     /**
      * Instance access port
-     * 
+     *
      */
     @Export(name="port", refs={String.class}, tree="[0]")
     private Output<String> port;
 
     /**
      * @return Instance access port
-     * 
+     *
      */
     public Output<String> port() {
         return this.port;
     }
     /**
      * Private address information
-     * 
+     *
      */
     @Export(name="privateAddresses", refs={EndpointPrivateAddresses.class}, tree="[0]")
     private Output<EndpointPrivateAddresses> privateAddresses;
 
     /**
      * @return Private address information
-     * 
+     *
      */
     public Output<EndpointPrivateAddresses> privateAddresses() {
         return this.privateAddresses;
     }
     /**
      * Public address information
-     * 
+     *
      */
     @Export(name="publicAddresses", refs={EndpointPublicAddresses.class}, tree="[0]")
     private Output<EndpointPublicAddresses> publicAddresses;
 
     /**
      * @return Public address information
-     * 
+     *
      */
     public Output<EndpointPublicAddresses> publicAddresses() {
         return this.publicAddresses;
     }
     /**
      * Terminal read/write mode
-     * 
+     *
      */
     @Export(name="readWriteMode", refs={String.class}, tree="[0]")
     private Output<String> readWriteMode;
 
     /**
      * @return Terminal read/write mode
-     * 
+     *
      */
     public Output<String> readWriteMode() {
         return this.readWriteMode;

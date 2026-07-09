@@ -18,31 +18,31 @@ import javax.annotation.Nullable;
 
 /**
  * A deployment set is a strategy that controls the distribution of instances at the underlying hardware level, enabling physical-level security isolation. By creating deployment sets, you can distribute instances across different underlying hardware to ensure disaster recovery and high availability for your business.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.ecs.DeploymentSet;
  * import com.byteplus.bytepluscc.ecs.DeploymentSetArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var ecsDeploymentSetDemo = new DeploymentSet("ecsDeploymentSetDemo", DeploymentSetArgs.builder()
  *             .description("this is a test DeploymentSet")
@@ -52,164 +52,174 @@ import javax.annotation.Nullable;
  *             .deploymentSetGroupNumber(1)
  *             .strategy("Availability")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:ecs/deploymentSet:DeploymentSet example &#34;deployment_set_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:ecs/deploymentSet:DeploymentSet")
 public class DeploymentSet extends com.pulumi.resources.CustomResource {
+    /**
+     * Instance launch template version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="capacities", refs={List.class,DeploymentSetCapacity.class}, tree="[0,1]")
     private Output<List<DeploymentSetCapacity>> capacities;
 
+    /**
+     * @return Instance launch template version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DeploymentSetCapacity>> capacities() {
         return this.capacities;
     }
     /**
      * Deployment set creation time.
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Deployment set creation time.
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Deployment set group index. Value range: 1–7.
-     * 
+     *
      */
     @Export(name="deploymentSetGroupNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> deploymentSetGroupNumber;
 
     /**
      * @return Deployment set group index. Value range: 1–7.
-     * 
+     *
      */
     public Output<Integer> deploymentSetGroupNumber() {
         return this.deploymentSetGroupNumber;
     }
     /**
      * Deployment set ID.
-     * 
+     *
      */
     @Export(name="deploymentSetId", refs={String.class}, tree="[0]")
     private Output<String> deploymentSetId;
 
     /**
      * @return Deployment set ID.
-     * 
+     *
      */
     public Output<String> deploymentSetId() {
         return this.deploymentSetId;
     }
     /**
      * Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
-     * 
+     *
      */
     @Export(name="deploymentSetName", refs={String.class}, tree="[0]")
     private Output<String> deploymentSetName;
 
     /**
      * @return Deployment set name. Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length limit: 1–128 characters.
-     * 
+     *
      */
     public Output<String> deploymentSetName() {
         return this.deploymentSetName;
     }
     /**
      * Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Deployment set description. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, digits, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;. Length limit: within 255 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
-     * 
+     *
      */
     @Export(name="granularity", refs={String.class}, tree="[0]")
     private Output<String> granularity;
 
     /**
      * @return Deployment granularity. Options: host: physical machine. rack: rack. switch: switch.
-     * 
+     *
      */
     public Output<String> granularity() {
         return this.granularity;
     }
     /**
      * Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
-     * 
+     *
      */
     @Export(name="groupCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> groupCount;
 
     /**
      * @return Number of deployment set groups. Set the group count for the deployment set group high availability policy. Value range: 1–7. Default: 7.
-     * 
+     *
      */
     public Output<Integer> groupCount() {
         return this.groupCount;
     }
     /**
      * Number of ECS instances in the deployment set.
-     * 
+     *
      */
     @Export(name="instanceAmount", refs={Integer.class}, tree="[0]")
     private Output<Integer> instanceAmount;
 
     /**
      * @return Number of ECS instances in the deployment set.
-     * 
+     *
      */
     public Output<Integer> instanceAmount() {
         return this.instanceAmount;
     }
     /**
      * List of ECS instance IDs in the deployment set.
-     * 
+     *
      */
     @Export(name="instanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> instanceIds;
 
     /**
      * @return List of ECS instance IDs in the deployment set.
-     * 
+     *
      */
     public Output<List<String>> instanceIds() {
         return this.instanceIds;
     }
     /**
      * Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
-     * 
+     *
      */
     @Export(name="strategy", refs={String.class}, tree="[0]")
     private Output<String> strategy;
 
     /**
      * @return Deployment policy. Options: Availability (default): high availability policy. AvailabilityGroup: deployment set group high availability policy.
-     * 
+     *
      */
     public Output<String> strategy() {
         return this.strategy;

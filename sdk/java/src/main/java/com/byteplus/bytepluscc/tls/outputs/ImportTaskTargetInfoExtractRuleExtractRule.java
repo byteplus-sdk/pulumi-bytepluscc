@@ -17,150 +17,160 @@ import javax.annotation.Nullable;
 public final class ImportTaskTargetInfoExtractRuleExtractRule {
     /**
      * @return Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
-     * 
+     *
      */
     private @Nullable String beginRegex;
     /**
      * @return Delimiter. Only valid when LogType is delimiter_log.
-     * 
+     *
      */
     private @Nullable String delimiter;
     /**
      * @return Enable nanoseconds.
-     * 
+     *
      */
     private @Nullable Boolean enableNanosecond;
+    /**
+     * @return Filter key regular expression.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex> filterKeyRegexes;
     /**
      * @return List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
-     * 
+     *
      */
     private @Nullable List<String> keys;
     /**
      * @return Log regular expression
-     * 
+     *
      */
     private @Nullable String logRegex;
     /**
      * @return Log template.
-     * 
+     *
      */
     private @Nullable ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate logTemplate;
     /**
      * @return Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
-     * 
+     *
      */
     private @Nullable String quote;
     /**
      * @return Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
-     * 
+     *
      */
     private @Nullable String timeFormat;
     /**
      * @return Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
-     * 
+     *
      */
     private @Nullable String timeKey;
     /**
      * @return Time sample. Used to verify whether the entered time parsing format is correct
-     * 
+     *
      */
     private @Nullable String timeSample;
     /**
      * @return When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
-     * 
+     *
      */
     private @Nullable String unMatchLogKey;
     /**
      * @return Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-     * 
+     *
      */
     private @Nullable Boolean unMatchUpLoadSwitch;
 
     private ImportTaskTargetInfoExtractRuleExtractRule() {}
     /**
      * @return Regular expression for identifying the first line of each log. The matched part is treated as the start of the log. When LogType is set to multiline_log, you must configure a log sample
-     * 
+     *
      */
     public Optional<String> beginRegex() {
         return Optional.ofNullable(this.beginRegex);
     }
     /**
      * @return Delimiter. Only valid when LogType is delimiter_log.
-     * 
+     *
      */
     public Optional<String> delimiter() {
         return Optional.ofNullable(this.delimiter);
     }
     /**
      * @return Enable nanoseconds.
-     * 
+     *
      */
     public Optional<Boolean> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
     }
+    /**
+     * @return Filter key regular expression.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<ImportTaskTargetInfoExtractRuleExtractRuleFilterKeyRegex> filterKeyRegexes() {
         return this.filterKeyRegexes == null ? List.of() : this.filterKeyRegexes;
     }
     /**
      * @return List of log field names (Key). Valid only when LogType is delimiter_log. Supports up to 100 field names. Duplicate field names are not allowed, and all field names cannot be left blank
-     * 
+     *
      */
     public List<String> keys() {
         return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return Log regular expression
-     * 
+     *
      */
     public Optional<String> logRegex() {
         return Optional.ofNullable(this.logRegex);
     }
     /**
      * @return Log template.
-     * 
+     *
      */
     public Optional<ImportTaskTargetInfoExtractRuleExtractRuleLogTemplate> logTemplate() {
         return Optional.ofNullable(this.logTemplate);
     }
     /**
      * @return Quotation mark. Content enclosed by the quotation mark will not be separated and will be parsed as a complete field. Only valid when LogType is delimiter_log.
-     * 
+     *
      */
     public Optional<String> quote() {
         return Optional.ofNullable(this.quote);
     }
     /**
      * @return Parsing format for the time field. If you use a specified time field in the log as the log timestamp, you must fill in TimeKey and TimeFormat. TimeKey and TimeFormat must be paired. For configuration details, see time format.
-     * 
+     *
      */
     public Optional<String> timeFormat() {
         return Optional.ofNullable(this.timeFormat);
     }
     /**
      * @return Name of the log time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must appear in pairs
-     * 
+     *
      */
     public Optional<String> timeKey() {
         return Optional.ofNullable(this.timeKey);
     }
     /**
      * @return Time sample. Used to verify whether the entered time parsing format is correct
-     * 
+     *
      */
     public Optional<String> timeSample() {
         return Optional.ofNullable(this.timeSample);
     }
     /**
      * @return When uploading logs that failed to parse, specify the key name for the failed logs. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together.
-     * 
+     *
      */
     public Optional<String> unMatchLogKey() {
         return Optional.ofNullable(this.unMatchLogKey);
     }
     /**
      * @return Whether to upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be paired. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-     * 
+     *
      */
     public Optional<Boolean> unMatchUpLoadSwitch() {
         return Optional.ofNullable(this.unMatchUpLoadSwitch);

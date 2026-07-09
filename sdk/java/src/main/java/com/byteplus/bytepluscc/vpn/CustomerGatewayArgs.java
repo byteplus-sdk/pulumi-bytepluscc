@@ -21,14 +21,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
-     * 
+     *
      */
     @Import(name="asn")
     private @Nullable Output<Integer> asn;
 
     /**
      * @return User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
-     * 
+     *
      */
     public Optional<Output<Integer>> asn() {
         return Optional.ofNullable(this.asn);
@@ -36,14 +36,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
-     * 
+     *
      */
     @Import(name="customerGatewayName")
     private @Nullable Output<String> customerGatewayName;
 
     /**
      * @return User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
-     * 
+     *
      */
     public Optional<Output<String>> customerGatewayName() {
         return Optional.ofNullable(this.customerGatewayName);
@@ -51,14 +51,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -66,14 +66,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
-     * 
+     *
      */
     @Import(name="ipAddress", required=true)
     private Output<String> ipAddress;
 
     /**
      * @return Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
-     * 
+     *
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
@@ -81,14 +81,14 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
-     * 
+     *
      */
     @Import(name="ipVersion")
     private @Nullable Output<String> ipVersion;
 
     /**
      * @return IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
-     * 
+     *
      */
     public Optional<Output<String>> ipVersion() {
         return Optional.ofNullable(this.ipVersion);
@@ -96,22 +96,32 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<CustomerGatewayTagArgs>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<CustomerGatewayTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -148,9 +158,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param asn User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder asn(@Nullable Output<Integer> asn) {
             $.asn = asn;
@@ -159,9 +169,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param asn User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder asn(Integer asn) {
             return asn(Output.of(asn));
@@ -169,9 +179,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param customerGatewayName User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerGatewayName(@Nullable Output<String> customerGatewayName) {
             $.customerGatewayName = customerGatewayName;
@@ -180,9 +190,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param customerGatewayName User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerGatewayName(String customerGatewayName) {
             return customerGatewayName(Output.of(customerGatewayName));
@@ -190,9 +200,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param description Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -201,9 +211,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param description Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -211,9 +221,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ipAddress Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddress(Output<String> ipAddress) {
             $.ipAddress = ipAddress;
@@ -222,9 +232,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ipAddress Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddress(String ipAddress) {
             return ipAddress(Output.of(ipAddress));
@@ -232,9 +242,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ipVersion IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipVersion(@Nullable Output<String> ipVersion) {
             $.ipVersion = ipVersion;
@@ -243,9 +253,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ipVersion IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipVersion(String ipVersion) {
             return ipVersion(Output.of(ipVersion));
@@ -253,9 +263,9 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param projectName Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -264,23 +274,44 @@ public final class CustomerGatewayArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param projectName Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<CustomerGatewayTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<CustomerGatewayTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(CustomerGatewayTagArgs... tags) {
             return tags(List.of(tags));
         }

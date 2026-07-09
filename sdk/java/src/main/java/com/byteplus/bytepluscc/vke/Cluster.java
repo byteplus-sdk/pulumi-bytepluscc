@@ -26,303 +26,375 @@ import javax.annotation.Nullable;
 
 /**
  * Container Service deeply integrates next-generation cloud-native technologies to provide high-performance Kubernetes cluster management centered on containers. Build highly available Kubernetes clusters in the cloud with one click and achieve visualized full lifecycle management of containerized applications, helping users quickly build containerized applications.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vke.Cluster;
+ * import com.byteplus.bytepluscc.vke.ClusterArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.ClusterClusterConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.ClusterPodsConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.ClusterServicesConfigArgs;
+ * import com.pulumi.bytepluscc.vke.inputs.ClusterTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var vKEClusterDemo = new Cluster("vKEClusterDemo", ClusterArgs.builder()
+ *             .projectName("default")
+ *             .name("VKEClusterDemo")
+ *             .description("VKEClusterDemo")
+ *             .deleteProtectionEnabled(true)
+ *             .clusterConfig(ClusterClusterConfigArgs.builder()
+ *                 .subnet_ids(Arrays.asList("subnet-***"))
+ *                 .api_server_public_access_enabled(true)
+ *                 .api_server_public_access_config(Map.of("publicAccessNetworkConfig", Map.ofEntries(
+ *                     Map.entry("billingType", 3),
+ *                     Map.entry("bandwidth", 1),
+ *                     Map.entry("isp", "BGP")
+ *                 )))
+ *                 .resource_public_access_default_enabled(true)
+ *                 .build())
+ *             .podsConfig(ClusterPodsConfigArgs.builder()
+ *                 .pod_network_mode("VpcCniShared")
+ *                 .vpc_cni_config(Map.ofEntries(
+ *                     Map.entry("subnetIds", Arrays.asList("subnet-***")),
+ *                     Map.entry("trunkEniEnabled", false)
+ *                 ))
+ *                 .build())
+ *             .servicesConfig(ClusterServicesConfigArgs.builder()
+ *                 .service_cidrsv_4(Arrays.asList("172.22.xxx.0/22"))
+ *                 .build())
+ *             .tags(ClusterTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .kubernetesVersionCreate("1.30")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vke/cluster:Cluster example &#34;cluster_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vke/cluster:Cluster")
 public class Cluster extends com.pulumi.resources.CustomResource {
     /**
      * Network configuration for the cluster control plane and some nodes.
-     * 
+     *
      */
     @Export(name="clusterConfig", refs={ClusterClusterConfig.class}, tree="[0]")
     private Output<ClusterClusterConfig> clusterConfig;
 
     /**
      * @return Network configuration for the cluster control plane and some nodes.
-     * 
+     *
      */
     public Output<ClusterClusterConfig> clusterConfig() {
         return this.clusterConfig;
     }
     /**
      * Cluster ID.
-     * 
+     *
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID.
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Cluster creation time. Standard RFC3339 format, UTC+0.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Cluster creation time. Standard RFC3339 format, UTC+0.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
-     * 
+     *
      */
     @Export(name="deleteProtectionEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteProtectionEnabled;
 
     /**
      * @return Cluster deletion protection. Values: false (default): Deletion protection is disabled. true: Deletion protection is enabled; the cluster cannot be deleted directly.
-     * 
+     *
      */
     public Output<Boolean> deleteProtectionEnabled() {
         return this.deleteProtectionEnabled;
     }
     /**
      * Cluster description. Maximum length is 300 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Cluster description. Maximum length is 300 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * IRSA (IAM Role for Service Account) capability parameter configuration
-     * 
+     *
      */
     @Export(name="irsaConfig", refs={ClusterIrsaConfig.class}, tree="[0]")
     private Output<ClusterIrsaConfig> irsaConfig;
 
     /**
      * @return IRSA (IAM Role for Service Account) capability parameter configuration
-     * 
+     *
      */
     public Output<ClusterIrsaConfig> irsaConfig() {
         return this.irsaConfig;
     }
     /**
      * Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
-     * 
+     *
      */
     @Export(name="kubernetesVersion", refs={String.class}, tree="[0]")
     private Output<String> kubernetesVersion;
 
     /**
      * @return Cluster Kubernetes version in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version (for query use)
-     * 
+     *
      */
     public Output<String> kubernetesVersion() {
         return this.kubernetesVersion;
     }
     /**
      * Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
-     * 
+     *
      */
     @Export(name="kubernetesVersionCreate", refs={String.class}, tree="[0]")
     private Output<String> kubernetesVersionCreate;
 
     /**
      * @return Kubernetes version of the cluster, in the format x.xx. When creating a cluster, the system automatically matches the latest VKE version corresponding to this Kubernetes version. (For creation)
-     * 
+     *
      */
     public Output<String> kubernetesVersionCreate() {
         return this.kubernetesVersionCreate;
     }
     /**
      * Cluster log configuration information.
-     * 
+     *
      */
     @Export(name="loggingConfig", refs={ClusterLoggingConfig.class}, tree="[0]")
     private Output<ClusterLoggingConfig> loggingConfig;
 
     /**
      * @return Cluster log configuration information.
-     * 
+     *
      */
     public Output<ClusterLoggingConfig> loggingConfig() {
         return this.loggingConfig;
     }
     /**
      * Cluster status description.
-     * 
+     *
      */
     @Export(name="message", refs={String.class}, tree="[0]")
     private Output<String> message;
 
     /**
      * @return Cluster status description.
-     * 
+     *
      */
     public Output<String> message() {
         return this.message;
     }
     /**
      * Monitoring configuration information.
-     * 
+     *
      */
     @Export(name="monitoringConfig", refs={ClusterMonitoringConfig.class}, tree="[0]")
     private Output<ClusterMonitoringConfig> monitoringConfig;
 
     /**
      * @return Monitoring configuration information.
-     * 
+     *
      */
     public Output<ClusterMonitoringConfig> monitoringConfig() {
         return this.monitoringConfig;
     }
     /**
      * Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Cluster name. Must be unique within the same region. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length must be 2–64 characters.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Statistics of node counts for each main status in the cluster.
-     * 
+     *
      */
     @Export(name="nodeStatistics", refs={ClusterNodeStatistics.class}, tree="[0]")
     private Output<ClusterNodeStatistics> nodeStatistics;
 
     /**
      * @return Statistics of node counts for each main status in the cluster.
-     * 
+     *
      */
     public Output<ClusterNodeStatistics> nodeStatistics() {
         return this.nodeStatistics;
     }
     /**
      * Pod network configuration.
-     * 
+     *
      */
     @Export(name="podsConfig", refs={ClusterPodsConfig.class}, tree="[0]")
     private Output<ClusterPodsConfig> podsConfig;
 
     /**
      * @return Pod network configuration.
-     * 
+     *
      */
     public Output<ClusterPodsConfig> podsConfig() {
         return this.podsConfig;
     }
     /**
      * Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the cluster belongs. A cluster can belong to only one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length: 64 characters. Default: default.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Network configuration for the service.
-     * 
+     *
      */
     @Export(name="servicesConfig", refs={ClusterServicesConfig.class}, tree="[0]")
     private Output<ClusterServicesConfig> servicesConfig;
 
     /**
      * @return Network configuration for the service.
-     * 
+     *
      */
     public Output<ClusterServicesConfig> servicesConfig() {
         return this.servicesConfig;
     }
     /**
      * Cluster source region
-     * 
+     *
      */
     @Export(name="sourceRegion", refs={String.class}, tree="[0]")
     private Output<String> sourceRegion;
 
     /**
      * @return Cluster source region
-     * 
+     *
      */
     public Output<String> sourceRegion() {
         return this.sourceRegion;
     }
     /**
      * Cluster status.
-     * 
+     *
      */
     @Export(name="status", refs={ClusterStatus.class}, tree="[0]")
     private Output<ClusterStatus> status;
 
     /**
      * @return Cluster status.
-     * 
+     *
      */
     public Output<ClusterStatus> status() {
         return this.status;
     }
+    /**
+     * Cluster tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,ClusterTag.class}, tree="[0,1]")
     private Output<List<ClusterTag>> tags;
 
+    /**
+     * @return Cluster tags.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClusterTag>> tags() {
         return this.tags;
     }
     /**
      * Cluster type.
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Cluster type.
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Last update time of the cluster. Standard RFC3339 format, UTC+0.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last update time of the cluster. Standard RFC3339 format, UTC+0.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

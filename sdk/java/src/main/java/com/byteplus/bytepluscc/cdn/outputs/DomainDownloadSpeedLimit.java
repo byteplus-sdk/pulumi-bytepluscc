@@ -13,20 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainDownloadSpeedLimit {
+    /**
+     * @return Indicates the rule for download rate limiting. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DomainDownloadSpeedLimitDownloadSpeedLimitRule> downloadSpeedLimitRules;
     /**
      * @return Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     * 
+     *
      */
     private @Nullable Boolean switch_;
 
     private DomainDownloadSpeedLimit() {}
+    /**
+     * @return Indicates the rule for download rate limiting. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DomainDownloadSpeedLimitDownloadSpeedLimitRule> downloadSpeedLimitRules() {
         return this.downloadSpeedLimitRules == null ? List.of() : this.downloadSpeedLimitRules;
     }
     /**
      * @return Indicates whether this feature is enabled. The parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     * 
+     *
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);

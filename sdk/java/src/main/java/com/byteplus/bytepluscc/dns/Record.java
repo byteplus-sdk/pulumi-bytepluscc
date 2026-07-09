@@ -18,31 +18,31 @@ import javax.annotation.Nullable;
 
 /**
  * DNS record resource, used to create, query, update, delete, and list a single DNS record under a specified domain name.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.dns.Record;
  * import com.byteplus.bytepluscc.dns.RecordArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var dNSRecordDemo = new Record("dNSRecordDemo", RecordArgs.builder()
  *             .zid("xxxxxx")
@@ -55,256 +55,256 @@ import javax.annotation.Nullable;
  *             .weight(2)
  *             .enable(false)
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:dns/record:Record example &#34;zid|record_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:dns/record:Record")
 public class Record extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the DNS record.
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Creation time of the DNS record.
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Whether the DNS record is enabled; if disabled, the record is inactive.
-     * 
+     *
      */
     @Export(name="enable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enable;
 
     /**
      * @return Whether the DNS record is enabled; if disabled, the record is inactive.
-     * 
+     *
      */
     public Output<Boolean> enable() {
         return this.enable;
     }
     /**
      * Host name included in the DNS record, using FQDN (Fully Qualified Domain Name) format; this field is deprecated.
-     * 
+     *
      */
     @Export(name="fqdn", refs={String.class}, tree="[0]")
     private Output<String> fqdn;
 
     /**
      * @return Host name included in the DNS record, using FQDN (Fully Qualified Domain Name) format; this field is deprecated.
-     * 
+     *
      */
     public Output<String> fqdn() {
         return this.fqdn;
     }
     /**
      * Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-     * 
+     *
      */
     @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
      * @return Host record, the prefix of the subdomain; `{@literal @}` represents the root domain itself.
-     * 
+     *
      */
     public Output<String> host() {
         return this.host;
     }
     /**
-     * Line code corresponding to the DNS record, such as `default`.
-     * 
+     * Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
+     *
      */
     @Export(name="line", refs={String.class}, tree="[0]")
     private Output<String> line;
 
     /**
-     * @return Line code corresponding to the DNS record, such as `default`.
-     * 
+     * @return Line code corresponding to the DNS record, such as &lt;span pulumi-lang-nodejs=&#34;`default`&#34; pulumi-lang-dotnet=&#34;`Default`&#34; pulumi-lang-go=&#34;`default`&#34; pulumi-lang-python=&#34;`default`&#34; pulumi-lang-yaml=&#34;`default`&#34; pulumi-lang-java=&#34;`default`&#34; pulumi-lang-hcl=&#34;`default`&#34;&gt;`default`&lt;/span&gt;.
+     *
      */
     public Output<String> line() {
         return this.line;
     }
     /**
      * List of account IDs that recently operated on this DNS record.
-     * 
+     *
      */
     @Export(name="operators", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> operators;
 
     /**
      * @return List of account IDs that recently operated on this DNS record.
-     * 
+     *
      */
     public Output<List<String>> operators() {
         return this.operators;
     }
     /**
      * Host name included in the DNS record, using PQDN (Partially Qualified Domain Name) format.
-     * 
+     *
      */
     @Export(name="pqdn", refs={String.class}, tree="[0]")
     private Output<String> pqdn;
 
     /**
      * @return Host name included in the DNS record, using PQDN (Partially Qualified Domain Name) format.
-     * 
+     *
      */
     public Output<String> pqdn() {
         return this.pqdn;
     }
     /**
      * Unique ID of the DNS record.
-     * 
+     *
      */
     @Export(name="recordId", refs={String.class}, tree="[0]")
     private Output<String> recordId;
 
     /**
      * @return Unique ID of the DNS record.
-     * 
+     *
      */
     public Output<String> recordId() {
         return this.recordId;
     }
     /**
      * ID of the record set containing the DNS record; returned only for A, AAAA, and CNAME types.
-     * 
+     *
      */
     @Export(name="recordSetId", refs={String.class}, tree="[0]")
     private Output<String> recordSetId;
 
     /**
      * @return ID of the record set containing the DNS record; returned only for A, AAAA, and CNAME types.
-     * 
+     *
      */
     public Output<String> recordSetId() {
         return this.recordSetId;
     }
     /**
      * Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-     * 
+     *
      */
     @Export(name="remark", refs={String.class}, tree="[0]")
     private Output<String> remark;
 
     /**
      * @return Remarks for the DNS record, supports UTF-8 encoding and up to 16 characters.
-     * 
+     *
      */
     public Output<String> remark() {
         return this.remark;
     }
     /**
      * Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-     * 
+     *
      */
     @Export(name="tags", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> tags;
 
     /**
      * @return Tag information for the DNS record; if it contains `GTMLock`, the record is associated with a GTM instance.
-     * 
+     *
      */
     public Output<List<String>> tags() {
         return this.tags;
     }
     /**
      * Expiration time of the DNS record, in seconds.
-     * 
+     *
      */
     @Export(name="ttl", refs={Integer.class}, tree="[0]")
     private Output<Integer> ttl;
 
     /**
      * @return Expiration time of the DNS record, in seconds.
-     * 
+     *
      */
     public Output<Integer> ttl() {
         return this.ttl;
     }
     /**
      * Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Record type, such as `A`, `AAAA`, `CNAME`, `NS`, `MX`, `SRV`, `TXT`.
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Last updated time of the DNS record.
-     * 
+     *
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Last updated time of the DNS record.
-     * 
+     *
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * Record value of the DNS record.
-     * 
+     *
      */
     @Export(name="value", refs={String.class}, tree="[0]")
     private Output<String> value;
 
     /**
      * @return Record value of the DNS record.
-     * 
+     *
      */
     public Output<String> value() {
         return this.value;
     }
     /**
      * Weight of the DNS record, effective only when load balancing is enabled for the record set.
-     * 
+     *
      */
     @Export(name="weight", refs={Integer.class}, tree="[0]")
     private Output<Integer> weight;
 
     /**
      * @return Weight of the DNS record, effective only when load balancing is enabled for the record set.
-     * 
+     *
      */
     public Output<Integer> weight() {
         return this.weight;
     }
     /**
      * Domain name ID, can be obtained via interfaces such as `ListZones`.
-     * 
+     *
      */
     @Export(name="zid", refs={String.class}, tree="[0]")
     private Output<String> zid;
 
     /**
      * @return Domain name ID, can be obtained via interfaces such as `ListZones`.
-     * 
+     *
      */
     public Output<String> zid() {
         return this.zid;

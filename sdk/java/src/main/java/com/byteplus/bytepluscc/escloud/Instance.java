@@ -22,625 +22,731 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud Search Service is a fully managed, one-stop information retrieval and analytics platform compatible with Elasticsearch, OpenSearch, Kibana, Dashboards, Cerebro, and common open-source plugins. It supports scenarios such as full-text search, vector search, hybrid search, AI search, and spatiotemporal retrieval. With Cloud Search Service, you can deploy with one click, scale elastically, simplify operations, and quickly build log analysis and information retrieval analytics for real-world business.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.escloud.Instance;
+ * import com.byteplus.bytepluscc.escloud.InstanceArgs;
+ * import com.pulumi.bytepluscc.escloud.inputs.InstanceInstanceConfigurationArgs;
+ * import com.pulumi.bytepluscc.escloud.inputs.InstanceInstanceConfigurationVpcArgs;
+ * import com.pulumi.bytepluscc.escloud.inputs.InstanceInstanceConfigurationSubnetArgs;
+ * import com.pulumi.bytepluscc.escloud.inputs.InstanceInstanceConfigurationTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var eSCloudInstanceDemo = new Instance("eSCloudInstanceDemo", InstanceArgs.builder()
+ *             .instanceConfiguration(InstanceInstanceConfigurationArgs.builder()
+ *                 .vpc(InstanceInstanceConfigurationVpcArgs.builder()
+ *                     .vpcId("vpc-1a1vgeo93xxxg8nvepjyxxxxx")
+ *                     .vpcName("ESCloudInstanceDemo-vpc")
+ *                     .build())
+ *                 .subnet(InstanceInstanceConfigurationSubnetArgs.builder()
+ *                     .subnetId("subnet-3nrb3atxxxf40931eb4xxxxx")
+ *                     .subnetName("ESCloudInstanceDemo-Subnet")
+ *                     .build())
+ *                 .zone_id("cn-beijing-d")
+ *                 .version("V7_10")
+ *                 .region_id("cn-beijing")
+ *                 .charge_type("PostPaid")
+ *                 .enable_https(true)
+ *                 .project_name("default")
+ *                 .instance_name("ESCloudInstanceDemo")
+ *                 .enable_pure_master(true)
+ *                 .node_specs_assigns(Arrays.asList(
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Hot"),
+ *                         Map.entry("number", 1),
+ *                         Map.entry("storageSize", 100),
+ *                         Map.entry("storageSpecName", "es.volume.essd.pl0"),
+ *                         Map.entry("resourceSpecName", "es.x2.medium"),
+ *                         Map.entry("extraPerformance", Map.of("throughput", 0))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Master"),
+ *                         Map.entry("number", 3),
+ *                         Map.entry("storageSize", 20),
+ *                         Map.entry("storageSpecName", "es.volume.essd.pl0"),
+ *                         Map.entry("resourceSpecName", "es.x2.medium"),
+ *                         Map.entry("extraPerformance", Map.of("throughput", 0))
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Kibana"),
+ *                         Map.entry("number", 1),
+ *                         Map.entry("storageSize", 0),
+ *                         Map.entry("storageSpecName", ""),
+ *                         Map.entry("resourceSpecName", "kibana.x2.small"),
+ *                         Map.entry("extraPerformance", Map.of("throughput", 0))
+ *                     )))
+ *                 .configuration_code("es.standard")
+ *                 .deletion_protection(true)
+ *                 .network_specs(Arrays.asList(
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Elasticsearch"),
+ *                         Map.entry("bandwidth", 1),
+ *                         Map.entry("isOpen", true),
+ *                         Map.entry("specName", "es.eip.bgp_fixed_bandwidth")
+ *                     ),
+ *                     Map.ofEntries(
+ *                         Map.entry("type", "Kibana"),
+ *                         Map.entry("bandwidth", 1),
+ *                         Map.entry("isOpen", true),
+ *                         Map.entry("specName", "es.eip.bgp_fixed_bandwidth")
+ *                     )))
+ *                 .admin_password("********")
+ *                 .tags(InstanceInstanceConfigurationTagArgs.builder()
+ *                     .key("env")
+ *                     .value("test")
+ *                     .build())
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:escloud/instance:Instance example &#34;instance_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:escloud/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
-     * 
+     *
      */
     @Export(name="cerebroEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> cerebroEnabled;
 
     /**
      * @return Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
-     * 
+     *
      */
     public Output<Boolean> cerebroEnabled() {
         return this.cerebroEnabled;
     }
     /**
      * Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     @Export(name="cerebroPrivateDomain", refs={String.class}, tree="[0]")
     private Output<String> cerebroPrivateDomain;
 
     /**
      * @return Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     public Output<String> cerebroPrivateDomain() {
         return this.cerebroPrivateDomain;
     }
     /**
      * Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     @Export(name="cerebroPublicDomain", refs={String.class}, tree="[0]")
     private Output<String> cerebroPublicDomain;
 
     /**
      * @return Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     public Output<String> cerebroPublicDomain() {
         return this.cerebroPublicDomain;
     }
     /**
      * Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
-     * 
+     *
      */
     @Export(name="chargeEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> chargeEnabled;
 
     /**
      * @return Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
-     * 
+     *
      */
     public Output<Boolean> chargeEnabled() {
         return this.chargeEnabled;
     }
     /**
      * ID of the cluster to which the instance belongs.
-     * 
+     *
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return ID of the cluster to which the instance belongs.
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Instance creation time.
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Instance creation time.
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-     * 
+     *
      */
     @Export(name="enableEsPrivateDomainPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableEsPrivateDomainPublic;
 
     /**
      * @return Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-     * 
+     *
      */
     public Output<Boolean> enableEsPrivateDomainPublic() {
         return this.enableEsPrivateDomainPublic;
     }
     /**
      * Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
-     * 
+     *
      */
     @Export(name="enableEsPrivateNetwork", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableEsPrivateNetwork;
 
     /**
      * @return Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
-     * 
+     *
      */
     public Output<Boolean> enableEsPrivateNetwork() {
         return this.enableEsPrivateNetwork;
     }
     /**
      * Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
-     * 
+     *
      */
     @Export(name="enableEsPublicNetwork", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableEsPublicNetwork;
 
     /**
      * @return Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
-     * 
+     *
      */
     public Output<Boolean> enableEsPublicNetwork() {
         return this.enableEsPublicNetwork;
     }
     /**
      * Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-     * 
+     *
      */
     @Export(name="enableKibanaPrivateDomainPublic", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableKibanaPrivateDomainPublic;
 
     /**
      * @return Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-     * 
+     *
      */
     public Output<Boolean> enableKibanaPrivateDomainPublic() {
         return this.enableKibanaPrivateDomainPublic;
     }
     /**
      * Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
-     * 
+     *
      */
     @Export(name="enableKibanaPrivateNetwork", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableKibanaPrivateNetwork;
 
     /**
      * @return Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
-     * 
+     *
      */
     public Output<Boolean> enableKibanaPrivateNetwork() {
         return this.enableKibanaPrivateNetwork;
     }
     /**
      * Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
-     * 
+     *
      */
     @Export(name="enableKibanaPublicNetwork", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableKibanaPublicNetwork;
 
     /**
      * @return Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
-     * 
+     *
      */
     public Output<Boolean> enableKibanaPublicNetwork() {
         return this.enableKibanaPublicNetwork;
     }
     /**
      * EIP bound to the instance.
-     * 
+     *
      */
     @Export(name="esEip", refs={String.class}, tree="[0]")
     private Output<String> esEip;
 
     /**
      * @return EIP bound to the instance.
-     * 
+     *
      */
     public Output<String> esEip() {
         return this.esEip;
     }
     /**
      * ID of the EIP bound to the instance
-     * 
+     *
      */
     @Export(name="esEipId", refs={String.class}, tree="[0]")
     private Output<String> esEipId;
 
     /**
      * @return ID of the EIP bound to the instance
-     * 
+     *
      */
     public Output<String> esEipId() {
         return this.esEipId;
     }
     /**
      * Instance private network access address.
-     * 
+     *
      */
     @Export(name="esPrivateEndpoint", refs={String.class}, tree="[0]")
     private Output<String> esPrivateEndpoint;
 
     /**
      * @return Instance private network access address.
-     * 
+     *
      */
     public Output<String> esPrivateEndpoint() {
         return this.esPrivateEndpoint;
     }
     /**
      * Instance private network address access allowlist. Same as ESPrivateIpWhitelist
-     * 
+     *
      */
     @Export(name="esPrivateIpAllowList", refs={String.class}, tree="[0]")
     private Output<String> esPrivateIpAllowList;
 
     /**
      * @return Instance private network address access allowlist. Same as ESPrivateIpWhitelist
-     * 
+     *
      */
     public Output<String> esPrivateIpAllowList() {
         return this.esPrivateIpAllowList;
     }
     /**
      * Instance private network address access allowlist
-     * 
+     *
      */
     @Export(name="esPrivateIpWhitelist", refs={String.class}, tree="[0]")
     private Output<String> esPrivateIpWhitelist;
 
     /**
      * @return Instance private network address access allowlist
-     * 
+     *
      */
     public Output<String> esPrivateIpWhitelist() {
         return this.esPrivateIpWhitelist;
     }
     /**
      * ES public network bandwidth, unit: Mbps.
-     * 
+     *
      */
     @Export(name="esPubBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> esPubBandwidth;
 
     /**
      * @return ES public network bandwidth, unit: Mbps.
-     * 
+     *
      */
     public Output<Integer> esPubBandwidth() {
         return this.esPubBandwidth;
     }
     /**
      * Instance public access address
-     * 
+     *
      */
     @Export(name="esPublicEndpoint", refs={String.class}, tree="[0]")
     private Output<String> esPublicEndpoint;
 
     /**
      * @return Instance public access address
-     * 
+     *
      */
     public Output<String> esPublicEndpoint() {
         return this.esPublicEndpoint;
     }
     /**
      * Instance public IP address access allowlist. Same as ESPublicIpWhitelist
-     * 
+     *
      */
     @Export(name="esPublicIpAllowList", refs={String.class}, tree="[0]")
     private Output<String> esPublicIpAllowList;
 
     /**
      * @return Instance public IP address access allowlist. Same as ESPublicIpWhitelist
-     * 
+     *
      */
     public Output<String> esPublicIpAllowList() {
         return this.esPublicIpAllowList;
     }
     /**
      * Allowlist for instance public network address access.
-     * 
+     *
      */
     @Export(name="esPublicIpWhitelist", refs={String.class}, tree="[0]")
     private Output<String> esPublicIpWhitelist;
 
     /**
      * @return Allowlist for instance public network address access.
-     * 
+     *
      */
     public Output<String> esPublicIpWhitelist() {
         return this.esPublicIpWhitelist;
     }
     /**
      * Expiration time for subscription instance payment
-     * 
+     *
      */
     @Export(name="expireDate", refs={String.class}, tree="[0]")
     private Output<String> expireDate;
 
     /**
      * @return Expiration time for subscription instance payment
-     * 
+     *
      */
     public Output<String> expireDate() {
         return this.expireDate;
     }
     /**
      * Instance configuration details
-     * 
+     *
      */
     @Export(name="instanceConfiguration", refs={InstanceInstanceConfiguration.class}, tree="[0]")
     private Output<InstanceInstanceConfiguration> instanceConfiguration;
 
     /**
      * @return Instance configuration details
-     * 
+     *
      */
     public Output<InstanceInstanceConfiguration> instanceConfiguration() {
         return this.instanceConfiguration;
     }
     /**
      * Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Kibana parameter configuration
-     * 
+     *
      */
     @Export(name="kibanaConfig", refs={InstanceKibanaConfig.class}, tree="[0]")
     private Output<InstanceKibanaConfig> kibanaConfig;
 
     /**
      * @return Kibana parameter configuration
-     * 
+     *
      */
     public Output<InstanceKibanaConfig> kibanaConfig() {
         return this.kibanaConfig;
     }
     /**
      * EIP bound to Kibana
-     * 
+     *
      */
     @Export(name="kibanaEip", refs={String.class}, tree="[0]")
     private Output<String> kibanaEip;
 
     /**
      * @return EIP bound to Kibana
-     * 
+     *
      */
     public Output<String> kibanaEip() {
         return this.kibanaEip;
     }
     /**
      * ID of the EIP bound to Kibana.
-     * 
+     *
      */
     @Export(name="kibanaEipId", refs={String.class}, tree="[0]")
     private Output<String> kibanaEipId;
 
     /**
      * @return ID of the EIP bound to Kibana.
-     * 
+     *
      */
     public Output<String> kibanaEipId() {
         return this.kibanaEipId;
     }
     /**
      * Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
-     * 
+     *
      */
     @Export(name="kibanaPrivateDomain", refs={String.class}, tree="[0]")
     private Output<String> kibanaPrivateDomain;
 
     /**
      * @return Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
-     * 
+     *
      */
     public Output<String> kibanaPrivateDomain() {
         return this.kibanaPrivateDomain;
     }
     /**
      * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
-     * 
+     *
      */
     @Export(name="kibanaPrivateIpAllowList", refs={String.class}, tree="[0]")
     private Output<String> kibanaPrivateIpAllowList;
 
     /**
      * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
-     * 
+     *
      */
     public Output<String> kibanaPrivateIpAllowList() {
         return this.kibanaPrivateIpAllowList;
     }
     /**
      * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
-     * 
+     *
      */
     @Export(name="kibanaPrivateIpWhitelist", refs={String.class}, tree="[0]")
     private Output<String> kibanaPrivateIpWhitelist;
 
     /**
      * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
-     * 
+     *
      */
     public Output<String> kibanaPrivateIpWhitelist() {
         return this.kibanaPrivateIpWhitelist;
     }
     /**
      * Kibana public network bandwidth, unit: Mbps
-     * 
+     *
      */
     @Export(name="kibanaPubBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> kibanaPubBandwidth;
 
     /**
      * @return Kibana public network bandwidth, unit: Mbps
-     * 
+     *
      */
     public Output<Integer> kibanaPubBandwidth() {
         return this.kibanaPubBandwidth;
     }
     /**
      * Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     @Export(name="kibanaPublicDomain", refs={String.class}, tree="[0]")
     private Output<String> kibanaPublicDomain;
 
     /**
      * @return Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     public Output<String> kibanaPublicDomain() {
         return this.kibanaPublicDomain;
     }
     /**
      * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
-     * 
+     *
      */
     @Export(name="kibanaPublicIpAllowList", refs={String.class}, tree="[0]")
     private Output<String> kibanaPublicIpAllowList;
 
     /**
      * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
-     * 
+     *
      */
     public Output<String> kibanaPublicIpAllowList() {
         return this.kibanaPublicIpAllowList;
     }
     /**
      * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
-     * 
+     *
      */
     @Export(name="kibanaPublicIpWhitelist", refs={String.class}, tree="[0]")
     private Output<String> kibanaPublicIpWhitelist;
 
     /**
      * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
-     * 
+     *
      */
     public Output<String> kibanaPublicIpWhitelist() {
         return this.kibanaPublicIpWhitelist;
     }
     /**
      * Primary availability zone
-     * 
+     *
      */
     @Export(name="mainZoneId", refs={String.class}, tree="[0]")
     private Output<String> mainZoneId;
 
     /**
      * @return Primary availability zone
-     * 
+     *
      */
     public Output<String> mainZoneId() {
         return this.mainZoneId;
     }
     /**
      * Instance maintenance date.
-     * 
+     *
      */
     @Export(name="maintenanceDays", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> maintenanceDays;
 
     /**
      * @return Instance maintenance date.
-     * 
+     *
      */
     public Output<List<String>> maintenanceDays() {
         return this.maintenanceDays;
     }
     /**
      * Instance maintenance window.
-     * 
+     *
      */
     @Export(name="maintenanceTime", refs={String.class}, tree="[0]")
     private Output<String> maintenanceTime;
 
     /**
      * @return Instance maintenance window.
-     * 
+     *
      */
     public Output<String> maintenanceTime() {
         return this.maintenanceTime;
     }
     /**
      * Current instance status
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Current instance status
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Sub-instance activation status
-     * 
+     *
      */
     @Export(name="subInstanceEnable", refs={String.class}, tree="[0]")
     private Output<String> subInstanceEnable;
 
     /**
      * @return Sub-instance activation status
-     * 
+     *
      */
     public Output<String> subInstanceEnable() {
         return this.subInstanceEnable;
     }
+    /**
+     * Enterprise SQL analytics instance configuration information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="subInstances", refs={List.class,InstanceSubInstance.class}, tree="[0,1]")
     private Output<List<InstanceSubInstance>> subInstances;
 
+    /**
+     * @return Enterprise SQL analytics instance configuration information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceSubInstance>> subInstances() {
         return this.subInstances;
     }
     /**
      * Whether cold nodes are supported
-     * 
+     *
      */
     @Export(name="supportColdNode", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> supportColdNode;
 
     /**
      * @return Whether cold nodes are supported
-     * 
+     *
      */
     public Output<Boolean> supportColdNode() {
         return this.supportColdNode;
     }
     /**
      * Total number of nodes in the instance
-     * 
+     *
      */
     @Export(name="totalNodes", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalNodes;
 
     /**
      * @return Total number of nodes in the instance
-     * 
+     *
      */
     public Output<Integer> totalNodes() {
         return this.totalNodes;
     }
     /**
      * Data migration task information
-     * 
+     *
      */
     @Export(name="transferInfo", refs={InstanceTransferInfo.class}, tree="[0]")
     private Output<InstanceTransferInfo> transferInfo;
 
     /**
      * @return Data migration task information
-     * 
+     *
      */
     public Output<InstanceTransferInfo> transferInfo() {
         return this.transferInfo;
     }
     /**
      * Instance owner&#39;s user ID
-     * 
+     *
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
      * @return Instance owner&#39;s user ID
-     * 
+     *
      */
     public Output<String> userId() {
         return this.userId;

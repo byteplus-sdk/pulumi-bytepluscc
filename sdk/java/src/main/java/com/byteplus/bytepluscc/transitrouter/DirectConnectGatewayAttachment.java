@@ -19,32 +19,32 @@ import javax.annotation.Nullable;
 
 /**
  * Direct connect gateway type network instance connection resource
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.transitrouter.DirectConnectGatewayAttachment;
  * import com.byteplus.bytepluscc.transitrouter.DirectConnectGatewayAttachmentArgs;
  * import com.pulumi.bytepluscc.transitrouter.inputs.DirectConnectGatewayAttachmentTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var directConnectGatewayAttachmentDemo = new DirectConnectGatewayAttachment("directConnectGatewayAttachmentDemo", DirectConnectGatewayAttachmentArgs.builder()
  *             .directConnectGatewayId("dcg-1714vlpplhxc1f*****")
@@ -56,192 +56,202 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/directConnectGatewayAttachment:DirectConnectGatewayAttachment example &#34;transit_router_id|transit_router_attachment_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:transitrouter/directConnectGatewayAttachment:DirectConnectGatewayAttachment")
 public class DirectConnectGatewayAttachment extends com.pulumi.resources.CustomResource {
     /**
      * Account ID to which the network instance connection belongs
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID to which the network instance connection belongs
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Whether to automatically synchronize TR routes to the network instance route table
-     * 
+     *
      */
     @Export(name="autoPublishRouteEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Whether to automatically synchronize TR routes to the network instance route table
-     * 
+     *
      */
     public Output<Boolean> autoPublishRouteEnabled() {
         return this.autoPublishRouteEnabled;
     }
     /**
      * Maximum bandwidth of the network instance connection, in Gbps
-     * 
+     *
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Maximum bandwidth of the network instance connection, in Gbps
-     * 
+     *
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Creation time of the network instance connection
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the network instance connection
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length can be 0–255 characters. If this parameter is not provided or no value is passed, the default is an empty string
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-     * 
+     *
      */
     @Export(name="directConnectGatewayId", refs={String.class}, tree="[0]")
     private Output<String> directConnectGatewayId;
 
     /**
      * @return Direct connect gateway ID. You can call the DescribeDirectConnectGateways API to obtain the direct connect gateway ID
-     * 
+     *
      */
     public Output<String> directConnectGatewayId() {
         return this.directConnectGatewayId;
     }
     /**
      * Whether to enable IPv6
-     * 
+     *
      */
     @Export(name="ipv6Enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> ipv6Enabled;
 
     /**
      * @return Whether to enable IPv6
-     * 
+     *
      */
     public Output<Boolean> ipv6Enabled() {
         return this.ipv6Enabled;
     }
     /**
      * Status of the network instance connection. Creating means being created, Deleting means being deleted, Pending means being configured, Available means available
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the network instance connection. Creating means being created, Deleting means being deleted, Pending means being configured, Available means available
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the network instance connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,DirectConnectGatewayAttachmentTag.class}, tree="[0,1]")
     private Output<List<DirectConnectGatewayAttachmentTag>> tags;
 
+    /**
+     * @return Tag information of the network instance connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DirectConnectGatewayAttachmentTag>> tags() {
         return this.tags;
     }
     /**
      * Network instance connection ID
-     * 
+     *
      */
     @Export(name="transitRouterAttachmentId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentId;
 
     /**
      * @return Network instance connection ID
-     * 
+     *
      */
     public Output<String> transitRouterAttachmentId() {
         return this.transitRouterAttachmentId;
     }
     /**
      * Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-     * 
+     *
      */
     @Export(name="transitRouterAttachmentName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the network instance connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length can be 1–128 characters. If this parameter is not provided or no value is passed, the default is the network instance connection ID
-     * 
+     *
      */
     public Output<String> transitRouterAttachmentName() {
         return this.transitRouterAttachmentName;
     }
     /**
      * Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-     * 
+     *
      */
     @Export(name="transitRouterId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID. You can call the DescribeTransitRouters API to obtain the transit router instance ID
-     * 
+     *
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
     /**
      * Most recent operation time of the network instance connection
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the network instance connection
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

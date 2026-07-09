@@ -17,86 +17,86 @@ import javax.annotation.Nullable;
 
 /**
  * Enterprise Organization Management
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.organization.Organization;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var organizationDemo = new Organization("organizationDemo");
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:organization/organization:Organization example &#34;organization_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:organization/organization:Organization")
 public class Organization extends com.pulumi.resources.CustomResource {
     /**
      * Organization Details
-     * 
+     *
      */
     @Export(name="organization", refs={OrganizationOrganization.class}, tree="[0]")
     private Output<OrganizationOrganization> organization;
 
     /**
      * @return Organization Details
-     * 
+     *
      */
     public Output<OrganizationOrganization> organization() {
         return this.organization;
     }
     /**
      * Organization ID
-     * 
+     *
      */
     @Export(name="organizationId", refs={String.class}, tree="[0]")
     private Output<String> organizationId;
 
     /**
      * @return Organization ID
-     * 
+     *
      */
     public Output<String> organizationId() {
         return this.organizationId;
     }
     /**
      * Administrator Details
-     * 
+     *
      */
     @Export(name="owner", refs={OrganizationOwner.class}, tree="[0]")
     private Output<OrganizationOwner> owner;
 
     /**
      * @return Administrator Details
-     * 
+     *
      */
     public Output<OrganizationOwner> owner() {
         return this.owner;

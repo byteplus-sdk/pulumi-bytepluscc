@@ -22,14 +22,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
-     * 
+     *
      */
     @Import(name="autoRenew")
     private @Nullable Output<String> autoRenew;
 
     /**
      * @return Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
-     * 
+     *
      */
     public Optional<Output<String>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
@@ -37,14 +37,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
-     * 
+     *
      */
     @Import(name="billingPeriod")
     private @Nullable Output<String> billingPeriod;
 
     /**
      * @return Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
-     * 
+     *
      */
     public Optional<Output<String>> billingPeriod() {
         return Optional.ofNullable(this.billingPeriod);
@@ -52,14 +52,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
-     * 
+     *
      */
     @Import(name="billingType", required=true)
     private Output<String> billingType;
 
     /**
      * @return Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
-     * 
+     *
      */
     public Output<String> billingType() {
         return this.billingType;
@@ -67,14 +67,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Instance description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -82,14 +82,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
-     * 
+     *
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
      * @return Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
-     * 
+     *
      */
     public Optional<Output<String>> eipId() {
         return Optional.ofNullable(this.eipId);
@@ -97,14 +97,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Response data for all instance endpoints
-     * 
+     *
      */
     @Import(name="endpoints")
     private @Nullable Output<InstanceEndpointsArgs> endpoints;
 
     /**
      * @return Response data for all instance endpoints
-     * 
+     *
      */
     public Optional<Output<InstanceEndpointsArgs>> endpoints() {
         return Optional.ofNullable(this.endpoints);
@@ -112,14 +112,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Message retention period for all Topics under the instance, in hours
-     * 
+     *
      */
     @Import(name="messageRetention")
     private @Nullable Output<Integer> messageRetention;
 
     /**
      * @return Message retention period for all Topics under the instance, in hours
-     * 
+     *
      */
     public Optional<Output<Integer>> messageRetention() {
         return Optional.ofNullable(this.messageRetention);
@@ -127,14 +127,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
-     * 
+     *
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
@@ -142,14 +142,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name associated with the instance
-     * 
+     *
      */
     @Import(name="projectName", required=true)
     private Output<String> projectName;
 
     /**
      * @return Project name associated with the instance
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
@@ -157,14 +157,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Security group list used by the instance
-     * 
+     *
      */
     @Import(name="securityGroupIdLists", required=true)
     private Output<List<String>> securityGroupIdLists;
 
     /**
      * @return Security group list used by the instance
-     * 
+     *
      */
     public Output<List<String>> securityGroupIdLists() {
         return this.securityGroupIdLists;
@@ -172,14 +172,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance specification
-     * 
+     *
      */
     @Import(name="specification", required=true)
     private Output<String> specification;
 
     /**
      * @return Instance specification
-     * 
+     *
      */
     public Output<String> specification() {
         return this.specification;
@@ -187,36 +187,46 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet list used by the instance
-     * 
+     *
      */
     @Import(name="subnetIdLists", required=true)
     private Output<List<String>> subnetIdLists;
 
     /**
      * @return Subnet list used by the instance
-     * 
+     *
      */
     public Output<List<String>> subnetIdLists() {
         return this.subnetIdLists;
     }
 
+    /**
+     * Instance resource tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Instance resource tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Purchase duration for yearly/monthly subscription instances, in months
-     * 
+     *
      */
     @Import(name="times")
     private @Nullable Output<Integer> times;
 
     /**
      * @return Purchase duration for yearly/monthly subscription instances, in months
-     * 
+     *
      */
     public Optional<Output<Integer>> times() {
         return Optional.ofNullable(this.times);
@@ -224,14 +234,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID where the instance is located
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return VPC ID where the instance is located
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -239,14 +249,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of availability zones for the instance
-     * 
+     *
      */
     @Import(name="zoneIdLists", required=true)
     private Output<List<String>> zoneIdLists;
 
     /**
      * @return List of availability zones for the instance
-     * 
+     *
      */
     public Output<List<String>> zoneIdLists() {
         return this.zoneIdLists;
@@ -293,9 +303,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(@Nullable Output<String> autoRenew) {
             $.autoRenew = autoRenew;
@@ -304,9 +314,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Enable auto-renewal. Possible values: true: Enable auto-renewal. false: Disable auto-renewal.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(String autoRenew) {
             return autoRenew(Output.of(autoRenew));
@@ -314,9 +324,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingPeriod Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingPeriod(@Nullable Output<String> billingPeriod) {
             $.billingPeriod = billingPeriod;
@@ -325,9 +335,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingPeriod Unit of purchase duration. Options: MONTHLY—monthly subscription; YEARLY—yearly subscription
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingPeriod(String billingPeriod) {
             return billingPeriod(Output.of(billingPeriod));
@@ -335,9 +345,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(Output<String> billingType) {
             $.billingType = billingType;
@@ -346,9 +356,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType Instance billing method. Options: POST—pay-as-you-go; MIX—yearly/monthly subscription
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(String billingType) {
             return billingType(Output.of(billingType));
@@ -356,9 +366,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Instance description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -367,9 +377,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Instance description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -377,9 +387,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipId Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(@Nullable Output<String> eipId) {
             $.eipId = eipId;
@@ -388,9 +398,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipId Whether public access is enabled for the instance. If public access is required, configure the ID of a public IP in the same region
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(String eipId) {
             return eipId(Output.of(eipId));
@@ -398,9 +408,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpoints Response data for all instance endpoints
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpoints(@Nullable Output<InstanceEndpointsArgs> endpoints) {
             $.endpoints = endpoints;
@@ -409,9 +419,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpoints Response data for all instance endpoints
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpoints(InstanceEndpointsArgs endpoints) {
             return endpoints(Output.of(endpoints));
@@ -419,9 +429,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param messageRetention Message retention period for all Topics under the instance, in hours
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder messageRetention(@Nullable Output<Integer> messageRetention) {
             $.messageRetention = messageRetention;
@@ -430,9 +440,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param messageRetention Message retention period for all Topics under the instance, in hours
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder messageRetention(Integer messageRetention) {
             return messageRetention(Output.of(messageRetention));
@@ -440,9 +450,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -451,9 +461,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Custom BMQ instance name. Constraints: must consist of lowercase letters, numbers, and hyphens (-). Length: 1–64 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -461,9 +471,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(Output<String> projectName) {
             $.projectName = projectName;
@@ -472,9 +482,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name associated with the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -482,9 +492,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIdLists Security group list used by the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIdLists(Output<List<String>> securityGroupIdLists) {
             $.securityGroupIdLists = securityGroupIdLists;
@@ -493,9 +503,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIdLists Security group list used by the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIdLists(List<String> securityGroupIdLists) {
             return securityGroupIdLists(Output.of(securityGroupIdLists));
@@ -503,9 +513,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIdLists Security group list used by the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIdLists(String... securityGroupIdLists) {
             return securityGroupIdLists(List.of(securityGroupIdLists));
@@ -513,9 +523,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param specification Instance specification
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder specification(Output<String> specification) {
             $.specification = specification;
@@ -524,9 +534,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param specification Instance specification
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder specification(String specification) {
             return specification(Output.of(specification));
@@ -534,9 +544,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIdLists Subnet list used by the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIdLists(Output<List<String>> subnetIdLists) {
             $.subnetIdLists = subnetIdLists;
@@ -545,9 +555,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIdLists Subnet list used by the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIdLists(List<String> subnetIdLists) {
             return subnetIdLists(Output.of(subnetIdLists));
@@ -555,32 +565,53 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetIdLists Subnet list used by the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIdLists(String... subnetIdLists) {
             return subnetIdLists(List.of(subnetIdLists));
         }
 
+        /**
+         * @param tags Instance resource tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Instance resource tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Instance resource tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param times Purchase duration for yearly/monthly subscription instances, in months
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder times(@Nullable Output<Integer> times) {
             $.times = times;
@@ -589,9 +620,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param times Purchase duration for yearly/monthly subscription instances, in months
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder times(Integer times) {
             return times(Output.of(times));
@@ -599,9 +630,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID where the instance is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -610,9 +641,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID where the instance is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -620,9 +651,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneIdLists List of availability zones for the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneIdLists(Output<List<String>> zoneIdLists) {
             $.zoneIdLists = zoneIdLists;
@@ -631,9 +662,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneIdLists List of availability zones for the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneIdLists(List<String> zoneIdLists) {
             return zoneIdLists(Output.of(zoneIdLists));
@@ -641,9 +672,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneIdLists List of availability zones for the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneIdLists(String... zoneIdLists) {
             return zoneIdLists(List.of(zoneIdLists));

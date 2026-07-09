@@ -18,31 +18,31 @@ import javax.annotation.Nullable;
 
 /**
  * The user gateway is a collection and abstraction of information on your local gateway side. With the user gateway, you can register local gateway information to the cloud VPC. One user gateway can connect to multiple VPN gateways
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vpn.CustomerGateway;
  * import com.byteplus.bytepluscc.vpn.CustomerGatewayArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vpncustomergatewayDemo = new CustomerGateway("vpncustomergatewayDemo", CustomerGatewayArgs.builder()
  *             .asn(64513)
@@ -52,192 +52,202 @@ import javax.annotation.Nullable;
  *             .ipVersion("ipv4")
  *             .projectName("default")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpn/customerGateway:CustomerGateway example &#34;customer_gateway_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpn/customerGateway:CustomerGateway")
 public class CustomerGateway extends com.pulumi.resources.CustomResource {
     /**
      * ID of the account to which the user gateway belongs
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return ID of the account to which the user gateway belongs
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
-     * 
+     *
      */
     @Export(name="asn", refs={Integer.class}, tree="[0]")
     private Output<Integer> asn;
 
     /**
      * @return User gateway ASN (Autonomous System Number). This parameter is required if you need to use BGP functionality. Valid ASN range is 1–4294967295 (excluding 137718, 150436, and 65533)
-     * 
+     *
      */
     public Output<Integer> asn() {
         return this.asn;
     }
     /**
      * Number of IPsec connections associated with the user gateway
-     * 
+     *
      */
     @Export(name="connectionCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> connectionCount;
 
     /**
      * @return Number of IPsec connections associated with the user gateway
-     * 
+     *
      */
     public Output<Integer> connectionCount() {
         return this.connectionCount;
     }
     /**
      * Time when the user gateway was created
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Time when the user gateway was created
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Gateway ID
-     * 
+     *
      */
     @Export(name="customerGatewayId", refs={String.class}, tree="[0]")
     private Output<String> customerGatewayId;
 
     /**
      * @return Gateway ID
-     * 
+     *
      */
     public Output<String> customerGatewayId() {
         return this.customerGatewayId;
     }
     /**
      * User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
-     * 
+     *
      */
     @Export(name="customerGatewayName", refs={String.class}, tree="[0]")
     private Output<String> customerGatewayName;
 
     /**
      * @return User gateway name. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the user gateway ID
-     * 
+     *
      */
     public Output<String> customerGatewayName() {
         return this.customerGatewayName;
     }
     /**
      * Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the user gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, defaults to an empty string
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
-     * 
+     *
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
      * @return Static public IP address of the peer local data center gateway or the VPN gateway egress IP address of another VPC. If the peer does not have a fixed static public IP, enter 0.0.0.0 here
-     * 
+     *
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
      * IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
-     * 
+     *
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
      * @return IP address protocol type for the VPN gateway. Options: ipv4 (default), ipv6
-     * 
+     *
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
     }
     /**
      * Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the user gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the user gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,CustomerGatewayTag.class}, tree="[0,1]")
     private Output<List<CustomerGatewayTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<CustomerGatewayTag>> tags() {
         return this.tags;
     }
     /**
      * Time when the user gateway was updated
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Time when the user gateway was updated
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

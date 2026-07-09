@@ -18,23 +18,33 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final ContactGroupArgs Empty = new ContactGroupArgs();
 
+    /**
+     * Contact information in the contact group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="contacts")
     private @Nullable Output<List<ContactGroupContactArgs>> contacts;
 
+    /**
+     * @return Contact information in the contact group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ContactGroupContactArgs>>> contacts() {
         return Optional.ofNullable(this.contacts);
     }
 
     /**
      * Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -42,14 +52,14 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-     * 
+     *
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
@@ -81,24 +91,45 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
             $ = new ContactGroupArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param contacts Contact information in the contact group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder contacts(@Nullable Output<List<ContactGroupContactArgs>> contacts) {
             $.contacts = contacts;
             return this;
         }
 
+        /**
+         * @param contacts Contact information in the contact group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder contacts(List<ContactGroupContactArgs> contacts) {
             return contacts(Output.of(contacts));
         }
 
+        /**
+         * @param contacts Contact information in the contact group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder contacts(ContactGroupContactArgs... contacts) {
             return contacts(List.of(contacts));
         }
 
         /**
          * @param description Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -107,9 +138,9 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Contact group description. If left blank, defaults to an empty string. Length must be between 1 and 255 characters. Chinese, English, underscores, and other special characters are allowed
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -117,9 +148,9 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -128,9 +159,9 @@ public final class ContactGroupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Contact group name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores _, and hyphens -. Length must be between 1 and 128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));

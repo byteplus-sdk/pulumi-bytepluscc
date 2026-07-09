@@ -18,23 +18,33 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final BackupArgs Empty = new BackupArgs();
 
+    /**
+     * Backup database information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="backupMetas")
     private @Nullable Output<List<BackupBackupMetaArgs>> backupMetas;
 
+    /**
+     * @return Backup database information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<BackupBackupMetaArgs>>> backupMetas() {
         return Optional.ofNullable(this.backupMetas);
     }
 
     /**
      * Backup type. Values: Full (full backup), Diff (incremental/differential backup), Log (log backup).
-     * 
+     *
      */
     @Import(name="backupType")
     private @Nullable Output<String> backupType;
 
     /**
      * @return Backup type. Values: Full (full backup), Diff (incremental/differential backup), Log (log backup).
-     * 
+     *
      */
     public Optional<Output<String>> backupType() {
         return Optional.ofNullable(this.backupType);
@@ -42,14 +52,14 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID.
-     * 
+     *
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
@@ -81,24 +91,45 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
             $ = new BackupArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param backupMetas Backup database information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backupMetas(@Nullable Output<List<BackupBackupMetaArgs>> backupMetas) {
             $.backupMetas = backupMetas;
             return this;
         }
 
+        /**
+         * @param backupMetas Backup database information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backupMetas(List<BackupBackupMetaArgs> backupMetas) {
             return backupMetas(Output.of(backupMetas));
         }
 
+        /**
+         * @param backupMetas Backup database information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backupMetas(BackupBackupMetaArgs... backupMetas) {
             return backupMetas(List.of(backupMetas));
         }
 
         /**
          * @param backupType Backup type. Values: Full (full backup), Diff (incremental/differential backup), Log (log backup).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupType(@Nullable Output<String> backupType) {
             $.backupType = backupType;
@@ -107,9 +138,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupType Backup type. Values: Full (full backup), Diff (incremental/differential backup), Log (log backup).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupType(String backupType) {
             return backupType(Output.of(backupType));
@@ -117,9 +148,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -128,9 +159,9 @@ public final class BackupArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));

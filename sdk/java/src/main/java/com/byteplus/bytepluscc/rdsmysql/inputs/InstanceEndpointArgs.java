@@ -21,23 +21,33 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     public static final InstanceEndpointArgs Empty = new InstanceEndpointArgs();
 
+    /**
+     * Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="addresses")
     private @Nullable Output<List<InstanceEndpointAddressArgs>> addresses;
 
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceEndpointAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
     }
 
     /**
      * When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
-     * 
+     *
      */
     @Import(name="autoAddNewNodes")
     private @Nullable Output<String> autoAddNewNodes;
 
     /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
-     * 
+     *
      */
     public Optional<Output<String>> autoAddNewNodes() {
         return Optional.ofNullable(this.autoAddNewNodes);
@@ -45,14 +55,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Connection endpoint tag.
-     * 
+     *
      */
     @Import(name="connectionInfoTags")
     private @Nullable Output<List<String>> connectionInfoTags;
 
     /**
      * @return Connection endpoint tag.
-     * 
+     *
      */
     public Optional<Output<List<String>>> connectionInfoTags() {
         return Optional.ofNullable(this.connectionInfoTags);
@@ -60,14 +70,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
-     * 
+     *
      */
     @Import(name="connectionMode")
     private @Nullable Output<String> connectionMode;
 
     /**
      * @return Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
-     * 
+     *
      */
     public Optional<Output<String>> connectionMode() {
         return Optional.ofNullable(this.connectionMode);
@@ -75,36 +85,46 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
-     * 
+     *
      */
     @Import(name="connectionPoolType")
     private @Nullable Output<String> connectionPoolType;
 
     /**
      * @return Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
-     * 
+     *
      */
     public Optional<Output<String>> connectionPoolType() {
         return Optional.ofNullable(this.connectionPoolType);
     }
 
+    /**
+     * Custom routing and forwarding rules for connected terminals.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="customRouteStrategies")
     private @Nullable Output<List<InstanceEndpointCustomRouteStrategyArgs>> customRouteStrategies;
 
+    /**
+     * @return Custom routing and forwarding rules for connected terminals.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceEndpointCustomRouteStrategyArgs>>> customRouteStrategies() {
         return Optional.ofNullable(this.customRouteStrategies);
     }
 
     /**
      * Description of the connection endpoint
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the connection endpoint
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -112,14 +132,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Enable connection keep-alive. Options: true: yes. false: no
-     * 
+     *
      */
     @Import(name="enableConnectionPersistent")
     private @Nullable Output<Boolean> enableConnectionPersistent;
 
     /**
      * @return Enable connection keep-alive. Options: true: yes. false: no
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableConnectionPersistent() {
         return Optional.ofNullable(this.enableConnectionPersistent);
@@ -127,14 +147,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
-     * 
+     *
      */
     @Import(name="enableReadOnly")
     private @Nullable Output<String> enableReadOnly;
 
     /**
      * @return Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
-     * 
+     *
      */
     public Optional<Output<String>> enableReadOnly() {
         return Optional.ofNullable(this.enableReadOnly);
@@ -142,14 +162,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
-     * 
+     *
      */
     @Import(name="enableReadWriteSplitting")
     private @Nullable Output<String> enableReadWriteSplitting;
 
     /**
      * @return Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
-     * 
+     *
      */
     public Optional<Output<String>> enableReadWriteSplitting() {
         return Optional.ofNullable(this.enableReadWriteSplitting);
@@ -157,14 +177,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Instance connection endpoint ID.
-     * 
+     *
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -172,14 +192,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Instance connection endpoint name.
-     * 
+     *
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
      * @return Instance connection endpoint name.
-     * 
+     *
      */
     public Optional<Output<String>> endpointName() {
         return Optional.ofNullable(this.endpointName);
@@ -187,14 +207,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Endpoint type. Value: Custom, custom endpoint.
-     * 
+     *
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
      * @return Endpoint type. Value: Custom, custom endpoint.
-     * 
+     *
      */
     public Optional<Output<String>> endpointType() {
         return Optional.ofNullable(this.endpointType);
@@ -202,14 +222,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
-     * 
+     *
      */
     @Import(name="idleConnectionReclaim")
     private @Nullable Output<Boolean> idleConnectionReclaim;
 
     /**
      * @return Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> idleConnectionReclaim() {
         return Optional.ofNullable(this.idleConnectionReclaim);
@@ -217,14 +237,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether to enable transaction separation. Values: true: Yes. false: No.
-     * 
+     *
      */
     @Import(name="implicitTransSplit")
     private @Nullable Output<Boolean> implicitTransSplit;
 
     /**
      * @return Whether to enable transaction separation. Values: true: Yes. false: No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> implicitTransSplit() {
         return Optional.ofNullable(this.implicitTransSplit);
@@ -232,14 +252,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Whether to enable primary node routing. Values: true: Yes. false: No.
-     * 
+     *
      */
     @Import(name="masterNodeRouting")
     private @Nullable Output<Boolean> masterNodeRouting;
 
     /**
      * @return Whether to enable primary node routing. Values: true: Yes. false: No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> masterNodeRouting() {
         return Optional.ofNullable(this.masterNodeRouting);
@@ -247,14 +267,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
-     * 
+     *
      */
     @Import(name="masterProtectorTimeout")
     private @Nullable Output<Integer> masterProtectorTimeout;
 
     /**
      * @return Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
-     * 
+     *
      */
     public Optional<Output<Integer>> masterProtectorTimeout() {
         return Optional.ofNullable(this.masterProtectorTimeout);
@@ -262,14 +282,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
-     * 
+     *
      */
     @Import(name="multiStatementsMode")
     private @Nullable Output<String> multiStatementsMode;
 
     /**
      * @return Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
-     * 
+     *
      */
     public Optional<Output<String>> multiStatementsMode() {
         return Optional.ofNullable(this.multiStatementsMode);
@@ -277,14 +297,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Overload protection enabled. Values: true: yes. false: no
-     * 
+     *
      */
     @Import(name="overloadProtection")
     private @Nullable Output<Boolean> overloadProtection;
 
     /**
      * @return Overload protection enabled. Values: true: yes. false: no
-     * 
+     *
      */
     public Optional<Output<Boolean>> overloadProtection() {
         return Optional.ofNullable(this.overloadProtection);
@@ -292,14 +312,14 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
-     * 
+     *
      */
     @Import(name="readOnlyNodeDistributionType")
     private @Nullable Output<String> readOnlyNodeDistributionType;
 
     /**
      * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
-     * 
+     *
      */
     public Optional<Output<String>> readOnlyNodeDistributionType() {
         return Optional.ofNullable(this.readOnlyNodeDistributionType);
@@ -307,36 +327,46 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
-     * 
+     *
      */
     @Import(name="readOnlyNodeMaxDelayTime")
     private @Nullable Output<Integer> readOnlyNodeMaxDelayTime;
 
     /**
      * @return Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
-     * 
+     *
      */
     public Optional<Output<Integer>> readOnlyNodeMaxDelayTime() {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
     }
 
+    /**
+     * List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="readOnlyNodeWeights")
     private @Nullable Output<List<InstanceEndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights;
 
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceEndpointReadOnlyNodeWeightArgs>>> readOnlyNodeWeights() {
         return Optional.ofNullable(this.readOnlyNodeWeights);
     }
 
     /**
      * Read/write mode: ReadWrite: read/write. ReadOnly: read-only
-     * 
+     *
      */
     @Import(name="readWriteMode")
     private @Nullable Output<String> readWriteMode;
 
     /**
      * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only
-     * 
+     *
      */
     public Optional<Output<String>> readWriteMode() {
         return Optional.ofNullable(this.readWriteMode);
@@ -388,24 +418,45 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
             $ = new InstanceEndpointArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param addresses Address list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder addresses(@Nullable Output<List<InstanceEndpointAddressArgs>> addresses) {
             $.addresses = addresses;
             return this;
         }
 
+        /**
+         * @param addresses Address list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder addresses(List<InstanceEndpointAddressArgs> addresses) {
             return addresses(Output.of(addresses));
         }
 
+        /**
+         * @param addresses Address list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder addresses(InstanceEndpointAddressArgs... addresses) {
             return addresses(List.of(addresses));
         }
 
         /**
          * @param autoAddNewNodes When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoAddNewNodes(@Nullable Output<String> autoAddNewNodes) {
             $.autoAddNewNodes = autoAddNewNodes;
@@ -414,9 +465,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoAddNewNodes When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoAddNewNodes(String autoAddNewNodes) {
             return autoAddNewNodes(Output.of(autoAddNewNodes));
@@ -424,9 +475,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param connectionInfoTags Connection endpoint tag.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionInfoTags(@Nullable Output<List<String>> connectionInfoTags) {
             $.connectionInfoTags = connectionInfoTags;
@@ -435,9 +486,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param connectionInfoTags Connection endpoint tag.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionInfoTags(List<String> connectionInfoTags) {
             return connectionInfoTags(Output.of(connectionInfoTags));
@@ -445,9 +496,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param connectionInfoTags Connection endpoint tag.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionInfoTags(String... connectionInfoTags) {
             return connectionInfoTags(List.of(connectionInfoTags));
@@ -455,9 +506,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param connectionMode Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionMode(@Nullable Output<String> connectionMode) {
             $.connectionMode = connectionMode;
@@ -466,9 +517,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param connectionMode Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionMode(String connectionMode) {
             return connectionMode(Output.of(connectionMode));
@@ -476,9 +527,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param connectionPoolType Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionPoolType(@Nullable Output<String> connectionPoolType) {
             $.connectionPoolType = connectionPoolType;
@@ -487,32 +538,53 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param connectionPoolType Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionPoolType(String connectionPoolType) {
             return connectionPoolType(Output.of(connectionPoolType));
         }
 
+        /**
+         * @param customRouteStrategies Custom routing and forwarding rules for connected terminals.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customRouteStrategies(@Nullable Output<List<InstanceEndpointCustomRouteStrategyArgs>> customRouteStrategies) {
             $.customRouteStrategies = customRouteStrategies;
             return this;
         }
 
+        /**
+         * @param customRouteStrategies Custom routing and forwarding rules for connected terminals.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customRouteStrategies(List<InstanceEndpointCustomRouteStrategyArgs> customRouteStrategies) {
             return customRouteStrategies(Output.of(customRouteStrategies));
         }
 
+        /**
+         * @param customRouteStrategies Custom routing and forwarding rules for connected terminals.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customRouteStrategies(InstanceEndpointCustomRouteStrategyArgs... customRouteStrategies) {
             return customRouteStrategies(List.of(customRouteStrategies));
         }
 
         /**
          * @param description Description of the connection endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -521,9 +593,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the connection endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -531,9 +603,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableConnectionPersistent Enable connection keep-alive. Options: true: yes. false: no
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableConnectionPersistent(@Nullable Output<Boolean> enableConnectionPersistent) {
             $.enableConnectionPersistent = enableConnectionPersistent;
@@ -542,9 +614,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableConnectionPersistent Enable connection keep-alive. Options: true: yes. false: no
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableConnectionPersistent(Boolean enableConnectionPersistent) {
             return enableConnectionPersistent(Output.of(enableConnectionPersistent));
@@ -552,9 +624,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableReadOnly Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableReadOnly(@Nullable Output<String> enableReadOnly) {
             $.enableReadOnly = enableReadOnly;
@@ -563,9 +635,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableReadOnly Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableReadOnly(String enableReadOnly) {
             return enableReadOnly(Output.of(enableReadOnly));
@@ -573,9 +645,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableReadWriteSplitting Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableReadWriteSplitting(@Nullable Output<String> enableReadWriteSplitting) {
             $.enableReadWriteSplitting = enableReadWriteSplitting;
@@ -584,9 +656,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param enableReadWriteSplitting Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableReadWriteSplitting(String enableReadWriteSplitting) {
             return enableReadWriteSplitting(Output.of(enableReadWriteSplitting));
@@ -594,9 +666,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -605,9 +677,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointId Instance connection endpoint ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -615,9 +687,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointName Instance connection endpoint name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointName(@Nullable Output<String> endpointName) {
             $.endpointName = endpointName;
@@ -626,9 +698,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointName Instance connection endpoint name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointName(String endpointName) {
             return endpointName(Output.of(endpointName));
@@ -636,9 +708,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointType Endpoint type. Value: Custom, custom endpoint.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointType(@Nullable Output<String> endpointType) {
             $.endpointType = endpointType;
@@ -647,9 +719,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointType Endpoint type. Value: Custom, custom endpoint.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointType(String endpointType) {
             return endpointType(Output.of(endpointType));
@@ -657,9 +729,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param idleConnectionReclaim Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder idleConnectionReclaim(@Nullable Output<Boolean> idleConnectionReclaim) {
             $.idleConnectionReclaim = idleConnectionReclaim;
@@ -668,9 +740,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param idleConnectionReclaim Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder idleConnectionReclaim(Boolean idleConnectionReclaim) {
             return idleConnectionReclaim(Output.of(idleConnectionReclaim));
@@ -678,9 +750,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param implicitTransSplit Whether to enable transaction separation. Values: true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder implicitTransSplit(@Nullable Output<Boolean> implicitTransSplit) {
             $.implicitTransSplit = implicitTransSplit;
@@ -689,9 +761,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param implicitTransSplit Whether to enable transaction separation. Values: true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder implicitTransSplit(Boolean implicitTransSplit) {
             return implicitTransSplit(Output.of(implicitTransSplit));
@@ -699,9 +771,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param masterNodeRouting Whether to enable primary node routing. Values: true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterNodeRouting(@Nullable Output<Boolean> masterNodeRouting) {
             $.masterNodeRouting = masterNodeRouting;
@@ -710,9 +782,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param masterNodeRouting Whether to enable primary node routing. Values: true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterNodeRouting(Boolean masterNodeRouting) {
             return masterNodeRouting(Output.of(masterNodeRouting));
@@ -720,9 +792,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param masterProtectorTimeout Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterProtectorTimeout(@Nullable Output<Integer> masterProtectorTimeout) {
             $.masterProtectorTimeout = masterProtectorTimeout;
@@ -731,9 +803,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param masterProtectorTimeout Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder masterProtectorTimeout(Integer masterProtectorTimeout) {
             return masterProtectorTimeout(Output.of(masterProtectorTimeout));
@@ -741,9 +813,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param multiStatementsMode Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiStatementsMode(@Nullable Output<String> multiStatementsMode) {
             $.multiStatementsMode = multiStatementsMode;
@@ -752,9 +824,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param multiStatementsMode Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiStatementsMode(String multiStatementsMode) {
             return multiStatementsMode(Output.of(multiStatementsMode));
@@ -762,9 +834,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param overloadProtection Overload protection enabled. Values: true: yes. false: no
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overloadProtection(@Nullable Output<Boolean> overloadProtection) {
             $.overloadProtection = overloadProtection;
@@ -773,9 +845,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param overloadProtection Overload protection enabled. Values: true: yes. false: no
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overloadProtection(Boolean overloadProtection) {
             return overloadProtection(Output.of(overloadProtection));
@@ -783,9 +855,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readOnlyNodeDistributionType Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder readOnlyNodeDistributionType(@Nullable Output<String> readOnlyNodeDistributionType) {
             $.readOnlyNodeDistributionType = readOnlyNodeDistributionType;
@@ -794,9 +866,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readOnlyNodeDistributionType Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder readOnlyNodeDistributionType(String readOnlyNodeDistributionType) {
             return readOnlyNodeDistributionType(Output.of(readOnlyNodeDistributionType));
@@ -804,9 +876,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readOnlyNodeMaxDelayTime Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder readOnlyNodeMaxDelayTime(@Nullable Output<Integer> readOnlyNodeMaxDelayTime) {
             $.readOnlyNodeMaxDelayTime = readOnlyNodeMaxDelayTime;
@@ -815,32 +887,53 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readOnlyNodeMaxDelayTime Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder readOnlyNodeMaxDelayTime(Integer readOnlyNodeMaxDelayTime) {
             return readOnlyNodeMaxDelayTime(Output.of(readOnlyNodeMaxDelayTime));
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder readOnlyNodeWeights(@Nullable Output<List<InstanceEndpointReadOnlyNodeWeightArgs>> readOnlyNodeWeights) {
             $.readOnlyNodeWeights = readOnlyNodeWeights;
             return this;
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder readOnlyNodeWeights(List<InstanceEndpointReadOnlyNodeWeightArgs> readOnlyNodeWeights) {
             return readOnlyNodeWeights(Output.of(readOnlyNodeWeights));
         }
 
+        /**
+         * @param readOnlyNodeWeights List of nodes configured for the connection endpoint and their corresponding read-only weights.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder readOnlyNodeWeights(InstanceEndpointReadOnlyNodeWeightArgs... readOnlyNodeWeights) {
             return readOnlyNodeWeights(List.of(readOnlyNodeWeights));
         }
 
         /**
          * @param readWriteMode Read/write mode: ReadWrite: read/write. ReadOnly: read-only
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder readWriteMode(@Nullable Output<String> readWriteMode) {
             $.readWriteMode = readWriteMode;
@@ -849,9 +942,9 @@ public final class InstanceEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param readWriteMode Read/write mode: ReadWrite: read/write. ReadOnly: read-only
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder readWriteMode(String readWriteMode) {
             return readWriteMode(Output.of(readWriteMode));

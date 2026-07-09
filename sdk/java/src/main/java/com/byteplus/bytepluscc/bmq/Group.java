@@ -18,150 +18,200 @@ import javax.annotation.Nullable;
 
 /**
  * A group of consumers with the same Group ID. When multiple consumers in the same Group consume a Topic, each message is delivered to only one consumer, enabling load balancing. Using Groups ensures that messages in a Topic are consumed in parallel.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.bmq.Group;
+ * import com.byteplus.bytepluscc.bmq.GroupArgs;
+ * import com.pulumi.bytepluscc.bmq.inputs.GroupResetInfoArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var bMQGroupDemo = new Group("bMQGroupDemo", GroupArgs.builder()
+ *             .description("this is test group")
+ *             .groupName("cBMQGroupDemo")
+ *             .instanceId("bmq-4ld4vpjzd32tq1gxxxxx")
+ *             .resetInfo(GroupResetInfoArgs.builder()
+ *                 .topic_id("5f81fcab96cb46c7955659fdxxxxx")
+ *                 .reset_by("OFFSET")
+ *                 .offset_type("LATEST")
+ *                 .reset_value(4)
+ *                 .partition_id(1)
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:bmq/group:Group example &#34;group_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:bmq/group:Group")
 public class Group extends com.pulumi.resources.CustomResource {
     /**
      * Consumer Group creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Consumer Group creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Consumer Group description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Consumer Group description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Consumer Group ID
-     * 
+     *
      */
     @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
      * @return Consumer Group ID
-     * 
+     *
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
      * Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
-     * 
+     *
      */
     @Export(name="groupName", refs={String.class}, tree="[0]")
     private Output<String> groupName;
 
     /**
      * @return Set a custom Consumer Group name. Constraints: Only lowercase English letters, numbers, underscores, and hyphens (-) are allowed. Length must be 3–64 characters.
-     * 
+     *
      */
     public Output<String> groupName() {
         return this.groupName;
     }
     /**
      * BMQ instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return BMQ instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * User ID of the Consumer Group owner
-     * 
+     *
      */
     @Export(name="ownerId", refs={String.class}, tree="[0]")
     private Output<String> ownerId;
 
     /**
      * @return User ID of the Consumer Group owner
-     * 
+     *
      */
     public Output<String> ownerId() {
         return this.ownerId;
     }
     /**
      * Name of the Consumer Group owner
-     * 
+     *
      */
     @Export(name="ownerName", refs={String.class}, tree="[0]")
     private Output<String> ownerName;
 
     /**
      * @return Name of the Consumer Group owner
-     * 
+     *
      */
     public Output<String> ownerName() {
         return this.ownerName;
     }
     /**
      * Reset consumption offset information
-     * 
+     *
      */
     @Export(name="resetInfo", refs={GroupResetInfo.class}, tree="[0]")
     private Output<GroupResetInfo> resetInfo;
 
     /**
      * @return Reset consumption offset information
-     * 
+     *
      */
     public Output<GroupResetInfo> resetInfo() {
         return this.resetInfo;
     }
     /**
      * Consumer Group status
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Consumer Group status
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Topic list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="topicInfos", refs={List.class,GroupTopicInfo.class}, tree="[0,1]")
     private Output<List<GroupTopicInfo>> topicInfos;
 
+    /**
+     * @return Topic list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<GroupTopicInfo>> topicInfos() {
         return this.topicInfos;
     }

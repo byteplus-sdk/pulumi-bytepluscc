@@ -24,14 +24,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
-     * 
+     *
      */
     @Import(name="authType")
     private @Nullable Output<String> authType;
 
     /**
      * @return Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
-     * 
+     *
      */
     public Optional<Output<String>> authType() {
         return Optional.ofNullable(this.authType);
@@ -39,14 +39,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
-     * 
+     *
      */
     @Import(name="bearerToken")
     private @Nullable Output<String> bearerToken;
 
     /**
      * @return Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
-     * 
+     *
      */
     public Optional<Output<String>> bearerToken() {
         return Optional.ofNullable(this.bearerToken);
@@ -54,14 +54,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace creation time, RFC3339 format
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Workspace creation time, RFC3339 format
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -69,14 +69,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable workspace deletion protection: true for enabled, false for disabled
-     * 
+     *
      */
     @Import(name="deleteProtectionEnabled")
     private @Nullable Output<Boolean> deleteProtectionEnabled;
 
     /**
      * @return Enable workspace deletion protection: true for enabled, false for disabled
-     * 
+     *
      */
     public Optional<Output<Boolean>> deleteProtectionEnabled() {
         return Optional.ofNullable(this.deleteProtectionEnabled);
@@ -84,14 +84,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace description, string, length limit 0–200
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Workspace description, string, length limit 0–200
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -99,14 +99,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace specification details
-     * 
+     *
      */
     @Import(name="instanceType")
     private @Nullable Output<WorkspaceInstanceTypeArgs> instanceType;
 
     /**
      * @return Workspace specification details
-     * 
+     *
      */
     public Optional<Output<WorkspaceInstanceTypeArgs>> instanceType() {
         return Optional.ofNullable(this.instanceType);
@@ -114,14 +114,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
-     * 
+     *
      */
     @Import(name="instanceTypeId")
     private @Nullable Output<String> instanceTypeId;
 
     /**
      * @return Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
-     * 
+     *
      */
     public Optional<Output<String>> instanceTypeId() {
         return Optional.ofNullable(this.instanceTypeId);
@@ -129,14 +129,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace name, string, length limit 1–100
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Workspace name, string, length limit 1–100
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -144,14 +144,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace expected overdue recovery time, RFC3339 format
-     * 
+     *
      */
     @Import(name="overdueReclaimTime")
     private @Nullable Output<String> overdueReclaimTime;
 
     /**
      * @return Workspace expected overdue recovery time, RFC3339 format
-     * 
+     *
      */
     public Optional<Output<String>> overdueReclaimTime() {
         return Optional.ofNullable(this.overdueReclaimTime);
@@ -159,14 +159,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace BasicAuth password
-     * 
+     *
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
      * @return Workspace BasicAuth password
-     * 
+     *
      */
     public Optional<Output<String>> password() {
         return Optional.ofNullable(this.password);
@@ -174,14 +174,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -189,14 +189,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace public Push Gateway URL address.
-     * 
+     *
      */
     @Import(name="prometheusPushEndpoint")
     private @Nullable Output<String> prometheusPushEndpoint;
 
     /**
      * @return Workspace public Push Gateway URL address.
-     * 
+     *
      */
     public Optional<Output<String>> prometheusPushEndpoint() {
         return Optional.ofNullable(this.prometheusPushEndpoint);
@@ -204,14 +204,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace Push Gateway URL address
-     * 
+     *
      */
     @Import(name="prometheusPushIntranetEndpoint")
     private @Nullable Output<String> prometheusPushIntranetEndpoint;
 
     /**
      * @return Workspace Push Gateway URL address
-     * 
+     *
      */
     public Optional<Output<String>> prometheusPushIntranetEndpoint() {
         return Optional.ofNullable(this.prometheusPushIntranetEndpoint);
@@ -219,14 +219,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace public Query URL address.
-     * 
+     *
      */
     @Import(name="prometheusQueryEndpoint")
     private @Nullable Output<String> prometheusQueryEndpoint;
 
     /**
      * @return Workspace public Query URL address.
-     * 
+     *
      */
     public Optional<Output<String>> prometheusQueryEndpoint() {
         return Optional.ofNullable(this.prometheusQueryEndpoint);
@@ -234,14 +234,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace Query URL address
-     * 
+     *
      */
     @Import(name="prometheusQueryIntranetEndpoint")
     private @Nullable Output<String> prometheusQueryIntranetEndpoint;
 
     /**
      * @return Workspace Query URL address
-     * 
+     *
      */
     public Optional<Output<String>> prometheusQueryIntranetEndpoint() {
         return Optional.ofNullable(this.prometheusQueryIntranetEndpoint);
@@ -249,14 +249,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace public RemoteWrite URL address.
-     * 
+     *
      */
     @Import(name="prometheusWriteEndpoint")
     private @Nullable Output<String> prometheusWriteEndpoint;
 
     /**
      * @return Workspace public RemoteWrite URL address.
-     * 
+     *
      */
     public Optional<Output<String>> prometheusWriteEndpoint() {
         return Optional.ofNullable(this.prometheusWriteEndpoint);
@@ -264,14 +264,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace RemoteWrite URL address
-     * 
+     *
      */
     @Import(name="prometheusWriteIntranetEndpoint")
     private @Nullable Output<String> prometheusWriteIntranetEndpoint;
 
     /**
      * @return Workspace RemoteWrite URL address
-     * 
+     *
      */
     public Optional<Output<String>> prometheusWriteIntranetEndpoint() {
         return Optional.ofNullable(this.prometheusWriteIntranetEndpoint);
@@ -279,14 +279,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable workspace public access capability. true: enabled, false: disabled.
-     * 
+     *
      */
     @Import(name="publicAccessEnabled")
     private @Nullable Output<Boolean> publicAccessEnabled;
 
     /**
      * @return Whether to enable workspace public access capability. true: enabled, false: disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> publicAccessEnabled() {
         return Optional.ofNullable(this.publicAccessEnabled);
@@ -294,14 +294,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace public Query bandwidth (Mbps).
-     * 
+     *
      */
     @Import(name="publicQueryBandwidth")
     private @Nullable Output<Integer> publicQueryBandwidth;
 
     /**
      * @return Workspace public Query bandwidth (Mbps).
-     * 
+     *
      */
     public Optional<Output<Integer>> publicQueryBandwidth() {
         return Optional.ofNullable(this.publicQueryBandwidth);
@@ -309,14 +309,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace public RemoteWrite bandwidth (Mbps).
-     * 
+     *
      */
     @Import(name="publicWriteBandwidth")
     private @Nullable Output<Integer> publicWriteBandwidth;
 
     /**
      * @return Workspace public RemoteWrite bandwidth (Mbps).
-     * 
+     *
      */
     public Optional<Output<Integer>> publicWriteBandwidth() {
         return Optional.ofNullable(this.publicWriteBandwidth);
@@ -324,14 +324,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace quota details
-     * 
+     *
      */
     @Import(name="quota")
     private @Nullable Output<WorkspaceQuotaArgs> quota;
 
     /**
      * @return Workspace quota details
-     * 
+     *
      */
     public Optional<Output<WorkspaceQuotaArgs>> quota() {
         return Optional.ofNullable(this.quota);
@@ -339,14 +339,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace public Query search latency offset.
-     * 
+     *
      */
     @Import(name="searchLatencyOffset")
     private @Nullable Output<String> searchLatencyOffset;
 
     /**
      * @return Workspace public Query search latency offset.
-     * 
+     *
      */
     public Optional<Output<String>> searchLatencyOffset() {
         return Optional.ofNullable(this.searchLatencyOffset);
@@ -354,36 +354,46 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Workspace tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<WorkspaceTagArgs>> tags;
 
+    /**
+     * @return Workspace tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<WorkspaceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Workspace usage
-     * 
+     *
      */
     @Import(name="usage")
     private @Nullable Output<WorkspaceUsageArgs> usage;
 
     /**
      * @return Workspace usage
-     * 
+     *
      */
     public Optional<Output<WorkspaceUsageArgs>> usage() {
         return Optional.ofNullable(this.usage);
@@ -391,14 +401,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace BasicAuth username
-     * 
+     *
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
      * @return Workspace BasicAuth username
-     * 
+     *
      */
     public Optional<Output<String>> username() {
         return Optional.ofNullable(this.username);
@@ -406,14 +416,14 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workspace ID
-     * 
+     *
      */
     @Import(name="workspaceId")
     private @Nullable Output<String> workspaceId;
 
     /**
      * @return Workspace ID
-     * 
+     *
      */
     public Optional<Output<String>> workspaceId() {
         return Optional.ofNullable(this.workspaceId);
@@ -471,9 +481,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param authType Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder authType(@Nullable Output<String> authType) {
             $.authType = authType;
@@ -482,9 +492,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param authType Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder authType(String authType) {
             return authType(Output.of(authType));
@@ -492,9 +502,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bearerToken Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bearerToken(@Nullable Output<String> bearerToken) {
             $.bearerToken = bearerToken;
@@ -503,9 +513,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bearerToken Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bearerToken(String bearerToken) {
             return bearerToken(Output.of(bearerToken));
@@ -513,9 +523,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Workspace creation time, RFC3339 format
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -524,9 +534,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Workspace creation time, RFC3339 format
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -534,9 +544,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteProtectionEnabled Enable workspace deletion protection: true for enabled, false for disabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteProtectionEnabled(@Nullable Output<Boolean> deleteProtectionEnabled) {
             $.deleteProtectionEnabled = deleteProtectionEnabled;
@@ -545,9 +555,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deleteProtectionEnabled Enable workspace deletion protection: true for enabled, false for disabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deleteProtectionEnabled(Boolean deleteProtectionEnabled) {
             return deleteProtectionEnabled(Output.of(deleteProtectionEnabled));
@@ -555,9 +565,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Workspace description, string, length limit 0–200
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -566,9 +576,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Workspace description, string, length limit 0–200
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -576,9 +586,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Workspace specification details
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(@Nullable Output<WorkspaceInstanceTypeArgs> instanceType) {
             $.instanceType = instanceType;
@@ -587,9 +597,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceType Workspace specification details
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(WorkspaceInstanceTypeArgs instanceType) {
             return instanceType(Output.of(instanceType));
@@ -597,9 +607,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceTypeId Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceTypeId(@Nullable Output<String> instanceTypeId) {
             $.instanceTypeId = instanceTypeId;
@@ -608,9 +618,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceTypeId Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceTypeId(String instanceTypeId) {
             return instanceTypeId(Output.of(instanceTypeId));
@@ -618,9 +628,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Workspace name, string, length limit 1–100
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -629,9 +639,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Workspace name, string, length limit 1–100
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -639,9 +649,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param overdueReclaimTime Workspace expected overdue recovery time, RFC3339 format
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overdueReclaimTime(@Nullable Output<String> overdueReclaimTime) {
             $.overdueReclaimTime = overdueReclaimTime;
@@ -650,9 +660,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param overdueReclaimTime Workspace expected overdue recovery time, RFC3339 format
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overdueReclaimTime(String overdueReclaimTime) {
             return overdueReclaimTime(Output.of(overdueReclaimTime));
@@ -660,9 +670,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param password Workspace BasicAuth password
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder password(@Nullable Output<String> password) {
             $.password = password;
@@ -671,9 +681,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param password Workspace BasicAuth password
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder password(String password) {
             return password(Output.of(password));
@@ -681,9 +691,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -692,9 +702,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -702,9 +712,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusPushEndpoint Workspace public Push Gateway URL address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusPushEndpoint(@Nullable Output<String> prometheusPushEndpoint) {
             $.prometheusPushEndpoint = prometheusPushEndpoint;
@@ -713,9 +723,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusPushEndpoint Workspace public Push Gateway URL address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusPushEndpoint(String prometheusPushEndpoint) {
             return prometheusPushEndpoint(Output.of(prometheusPushEndpoint));
@@ -723,9 +733,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusPushIntranetEndpoint Workspace Push Gateway URL address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusPushIntranetEndpoint(@Nullable Output<String> prometheusPushIntranetEndpoint) {
             $.prometheusPushIntranetEndpoint = prometheusPushIntranetEndpoint;
@@ -734,9 +744,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusPushIntranetEndpoint Workspace Push Gateway URL address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusPushIntranetEndpoint(String prometheusPushIntranetEndpoint) {
             return prometheusPushIntranetEndpoint(Output.of(prometheusPushIntranetEndpoint));
@@ -744,9 +754,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusQueryEndpoint Workspace public Query URL address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusQueryEndpoint(@Nullable Output<String> prometheusQueryEndpoint) {
             $.prometheusQueryEndpoint = prometheusQueryEndpoint;
@@ -755,9 +765,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusQueryEndpoint Workspace public Query URL address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusQueryEndpoint(String prometheusQueryEndpoint) {
             return prometheusQueryEndpoint(Output.of(prometheusQueryEndpoint));
@@ -765,9 +775,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusQueryIntranetEndpoint Workspace Query URL address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusQueryIntranetEndpoint(@Nullable Output<String> prometheusQueryIntranetEndpoint) {
             $.prometheusQueryIntranetEndpoint = prometheusQueryIntranetEndpoint;
@@ -776,9 +786,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusQueryIntranetEndpoint Workspace Query URL address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusQueryIntranetEndpoint(String prometheusQueryIntranetEndpoint) {
             return prometheusQueryIntranetEndpoint(Output.of(prometheusQueryIntranetEndpoint));
@@ -786,9 +796,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusWriteEndpoint Workspace public RemoteWrite URL address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusWriteEndpoint(@Nullable Output<String> prometheusWriteEndpoint) {
             $.prometheusWriteEndpoint = prometheusWriteEndpoint;
@@ -797,9 +807,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusWriteEndpoint Workspace public RemoteWrite URL address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusWriteEndpoint(String prometheusWriteEndpoint) {
             return prometheusWriteEndpoint(Output.of(prometheusWriteEndpoint));
@@ -807,9 +817,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusWriteIntranetEndpoint Workspace RemoteWrite URL address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusWriteIntranetEndpoint(@Nullable Output<String> prometheusWriteIntranetEndpoint) {
             $.prometheusWriteIntranetEndpoint = prometheusWriteIntranetEndpoint;
@@ -818,9 +828,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param prometheusWriteIntranetEndpoint Workspace RemoteWrite URL address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder prometheusWriteIntranetEndpoint(String prometheusWriteIntranetEndpoint) {
             return prometheusWriteIntranetEndpoint(Output.of(prometheusWriteIntranetEndpoint));
@@ -828,9 +838,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicAccessEnabled Whether to enable workspace public access capability. true: enabled, false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicAccessEnabled(@Nullable Output<Boolean> publicAccessEnabled) {
             $.publicAccessEnabled = publicAccessEnabled;
@@ -839,9 +849,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicAccessEnabled Whether to enable workspace public access capability. true: enabled, false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicAccessEnabled(Boolean publicAccessEnabled) {
             return publicAccessEnabled(Output.of(publicAccessEnabled));
@@ -849,9 +859,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicQueryBandwidth Workspace public Query bandwidth (Mbps).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicQueryBandwidth(@Nullable Output<Integer> publicQueryBandwidth) {
             $.publicQueryBandwidth = publicQueryBandwidth;
@@ -860,9 +870,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicQueryBandwidth Workspace public Query bandwidth (Mbps).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicQueryBandwidth(Integer publicQueryBandwidth) {
             return publicQueryBandwidth(Output.of(publicQueryBandwidth));
@@ -870,9 +880,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicWriteBandwidth Workspace public RemoteWrite bandwidth (Mbps).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicWriteBandwidth(@Nullable Output<Integer> publicWriteBandwidth) {
             $.publicWriteBandwidth = publicWriteBandwidth;
@@ -881,9 +891,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicWriteBandwidth Workspace public RemoteWrite bandwidth (Mbps).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicWriteBandwidth(Integer publicWriteBandwidth) {
             return publicWriteBandwidth(Output.of(publicWriteBandwidth));
@@ -891,9 +901,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param quota Workspace quota details
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder quota(@Nullable Output<WorkspaceQuotaArgs> quota) {
             $.quota = quota;
@@ -902,9 +912,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param quota Workspace quota details
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder quota(WorkspaceQuotaArgs quota) {
             return quota(Output.of(quota));
@@ -912,9 +922,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param searchLatencyOffset Workspace public Query search latency offset.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder searchLatencyOffset(@Nullable Output<String> searchLatencyOffset) {
             $.searchLatencyOffset = searchLatencyOffset;
@@ -923,9 +933,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param searchLatencyOffset Workspace public Query search latency offset.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder searchLatencyOffset(String searchLatencyOffset) {
             return searchLatencyOffset(Output.of(searchLatencyOffset));
@@ -933,9 +943,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -944,32 +954,53 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Workspace tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<WorkspaceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Workspace tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<WorkspaceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Workspace tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(WorkspaceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param usage Workspace usage
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usage(@Nullable Output<WorkspaceUsageArgs> usage) {
             $.usage = usage;
@@ -978,9 +1009,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param usage Workspace usage
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usage(WorkspaceUsageArgs usage) {
             return usage(Output.of(usage));
@@ -988,9 +1019,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param username Workspace BasicAuth username
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder username(@Nullable Output<String> username) {
             $.username = username;
@@ -999,9 +1030,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param username Workspace BasicAuth username
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder username(String username) {
             return username(Output.of(username));
@@ -1009,9 +1040,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workspaceId Workspace ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workspaceId(@Nullable Output<String> workspaceId) {
             $.workspaceId = workspaceId;
@@ -1020,9 +1051,9 @@ public final class WorkspaceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workspaceId Workspace ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workspaceId(String workspaceId) {
             return workspaceId(Output.of(workspaceId));

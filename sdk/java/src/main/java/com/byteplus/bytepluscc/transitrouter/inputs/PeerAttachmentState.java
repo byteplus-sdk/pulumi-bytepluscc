@@ -21,14 +21,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-     * 
+     *
      */
     @Import(name="autoPublishRouteEnabled")
     private @Nullable Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoPublishRouteEnabled() {
         return Optional.ofNullable(this.autoPublishRouteEnabled);
@@ -36,14 +36,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Bandwidth for cross-region connection, measured in Mbps. The maximum bandwidth cannot exceed the remaining unallocated bandwidth limit of the specified transit router bandwidth package.
-     * 
+     *
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth for cross-region connection, measured in Mbps. The maximum bandwidth cannot exceed the remaining unallocated bandwidth limit of the specified transit router bandwidth package.
-     * 
+     *
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -51,14 +51,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Creation time of the cross-region connection.
-     * 
+     *
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Creation time of the cross-region connection.
-     * 
+     *
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -66,14 +66,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Description of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -81,14 +81,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Enable IPv6. true: Yes. false: No.
-     * 
+     *
      */
     @Import(name="ipv6Enabled")
     private @Nullable Output<Boolean> ipv6Enabled;
 
     /**
      * @return Enable IPv6. true: Yes. false: No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> ipv6Enabled() {
         return Optional.ofNullable(this.ipv6Enabled);
@@ -96,14 +96,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * ID of the peer transit router instance. You can call the DescribeTransitRouters API to obtain the transit router instance ID.
-     * 
+     *
      */
     @Import(name="peerTransitRouterId")
     private @Nullable Output<String> peerTransitRouterId;
 
     /**
      * @return ID of the peer transit router instance. You can call the DescribeTransitRouters API to obtain the transit router instance ID.
-     * 
+     *
      */
     public Optional<Output<String>> peerTransitRouterId() {
         return Optional.ofNullable(this.peerTransitRouterId);
@@ -111,14 +111,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Region ID of the peer transit router instance. Refer to the region documentation to obtain the region ID.
-     * 
+     *
      */
     @Import(name="peerTransitRouterRegionId")
     private @Nullable Output<String> peerTransitRouterRegionId;
 
     /**
      * @return Region ID of the peer transit router instance. Refer to the region documentation to obtain the region ID.
-     * 
+     *
      */
     public Optional<Output<String>> peerTransitRouterRegionId() {
         return Optional.ofNullable(this.peerTransitRouterRegionId);
@@ -126,36 +126,46 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Status of the cross-region connection. Creating: In progress. Deleting: In progress. Pending: Configuring. Available: Available.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the cross-region connection. Creating: In progress. Deleting: In progress. Pending: Configuring. Available: Available.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag list for the cross-region connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<PeerAttachmentTagArgs>> tags;
 
+    /**
+     * @return Tag list for the cross-region connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PeerAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * ID of the cross-region connection.
-     * 
+     *
      */
     @Import(name="transitRouterAttachmentId")
     private @Nullable Output<String> transitRouterAttachmentId;
 
     /**
      * @return ID of the cross-region connection.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterAttachmentId() {
         return Optional.ofNullable(this.transitRouterAttachmentId);
@@ -163,14 +173,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Name of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-     * 
+     *
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
         return Optional.ofNullable(this.transitRouterAttachmentName);
@@ -178,14 +188,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * ID of the transit router bandwidth package. You can call the DescribeTransitRouters API to obtain the transit router instance ID. If this parameter is provided, the Bandwidth parameter must also be provided. If this parameter is not provided, the Bandwidth parameter is not required.
-     * 
+     *
      */
     @Import(name="transitRouterBandwidthPackageId")
     private @Nullable Output<String> transitRouterBandwidthPackageId;
 
     /**
      * @return ID of the transit router bandwidth package. You can call the DescribeTransitRouters API to obtain the transit router instance ID. If this parameter is provided, the Bandwidth parameter must also be provided. If this parameter is not provided, the Bandwidth parameter is not required.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterBandwidthPackageId() {
         return Optional.ofNullable(this.transitRouterBandwidthPackageId);
@@ -193,14 +203,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * ID of the forwarding policy associated with the cross-region connection.
-     * 
+     *
      */
     @Import(name="transitRouterForwardPolicyTableId")
     private @Nullable Output<String> transitRouterForwardPolicyTableId;
 
     /**
      * @return ID of the forwarding policy associated with the cross-region connection.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterForwardPolicyTableId() {
         return Optional.ofNullable(this.transitRouterForwardPolicyTableId);
@@ -208,14 +218,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * ID of the local transit router instance.
-     * 
+     *
      */
     @Import(name="transitRouterId")
     private @Nullable Output<String> transitRouterId;
 
     /**
      * @return ID of the local transit router instance.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterId() {
         return Optional.ofNullable(this.transitRouterId);
@@ -223,14 +233,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Associated forwarding route table for the cross-region connection.
-     * 
+     *
      */
     @Import(name="transitRouterRouteTableId")
     private @Nullable Output<String> transitRouterRouteTableId;
 
     /**
      * @return Associated forwarding route table for the cross-region connection.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterRouteTableId() {
         return Optional.ofNullable(this.transitRouterRouteTableId);
@@ -238,14 +248,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * ID of the traffic marking policy associated with the cross-region connection.
-     * 
+     *
      */
     @Import(name="transitRouterTrafficQosMarkingPolicyId")
     private @Nullable Output<String> transitRouterTrafficQosMarkingPolicyId;
 
     /**
      * @return ID of the traffic marking policy associated with the cross-region connection.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterTrafficQosMarkingPolicyId() {
         return Optional.ofNullable(this.transitRouterTrafficQosMarkingPolicyId);
@@ -253,14 +263,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * ID of the flow queue policy associated with the cross-region connection.
-     * 
+     *
      */
     @Import(name="transitRouterTrafficQosQueuePolicyId")
     private @Nullable Output<String> transitRouterTrafficQosQueuePolicyId;
 
     /**
      * @return ID of the flow queue policy associated with the cross-region connection.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterTrafficQosQueuePolicyId() {
         return Optional.ofNullable(this.transitRouterTrafficQosQueuePolicyId);
@@ -268,14 +278,14 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
     /**
      * Last operation time of the cross-region connection.
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Last operation time of the cross-region connection.
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -324,9 +334,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param autoPublishRouteEnabled Automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoPublishRouteEnabled(@Nullable Output<Boolean> autoPublishRouteEnabled) {
             $.autoPublishRouteEnabled = autoPublishRouteEnabled;
@@ -335,9 +345,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param autoPublishRouteEnabled Automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoPublishRouteEnabled(Boolean autoPublishRouteEnabled) {
             return autoPublishRouteEnabled(Output.of(autoPublishRouteEnabled));
@@ -345,9 +355,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param bandwidth Bandwidth for cross-region connection, measured in Mbps. The maximum bandwidth cannot exceed the remaining unallocated bandwidth limit of the specified transit router bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -356,9 +366,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param bandwidth Bandwidth for cross-region connection, measured in Mbps. The maximum bandwidth cannot exceed the remaining unallocated bandwidth limit of the specified transit router bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -366,9 +376,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param creationTime Creation time of the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -377,9 +387,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param creationTime Creation time of the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -387,9 +397,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param description Description of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -398,9 +408,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param description Description of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -408,9 +418,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ipv6Enabled Enable IPv6. true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6Enabled(@Nullable Output<Boolean> ipv6Enabled) {
             $.ipv6Enabled = ipv6Enabled;
@@ -419,9 +429,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param ipv6Enabled Enable IPv6. true: Yes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6Enabled(Boolean ipv6Enabled) {
             return ipv6Enabled(Output.of(ipv6Enabled));
@@ -429,9 +439,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param peerTransitRouterId ID of the peer transit router instance. You can call the DescribeTransitRouters API to obtain the transit router instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerTransitRouterId(@Nullable Output<String> peerTransitRouterId) {
             $.peerTransitRouterId = peerTransitRouterId;
@@ -440,9 +450,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param peerTransitRouterId ID of the peer transit router instance. You can call the DescribeTransitRouters API to obtain the transit router instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerTransitRouterId(String peerTransitRouterId) {
             return peerTransitRouterId(Output.of(peerTransitRouterId));
@@ -450,9 +460,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param peerTransitRouterRegionId Region ID of the peer transit router instance. Refer to the region documentation to obtain the region ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerTransitRouterRegionId(@Nullable Output<String> peerTransitRouterRegionId) {
             $.peerTransitRouterRegionId = peerTransitRouterRegionId;
@@ -461,9 +471,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param peerTransitRouterRegionId Region ID of the peer transit router instance. Refer to the region documentation to obtain the region ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerTransitRouterRegionId(String peerTransitRouterRegionId) {
             return peerTransitRouterRegionId(Output.of(peerTransitRouterRegionId));
@@ -471,9 +481,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param status Status of the cross-region connection. Creating: In progress. Deleting: In progress. Pending: Configuring. Available: Available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -482,32 +492,53 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param status Status of the cross-region connection. Creating: In progress. Deleting: In progress. Pending: Configuring. Available: Available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag list for the cross-region connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<PeerAttachmentTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list for the cross-region connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<PeerAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list for the cross-region connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(PeerAttachmentTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param transitRouterAttachmentId ID of the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterAttachmentId(@Nullable Output<String> transitRouterAttachmentId) {
             $.transitRouterAttachmentId = transitRouterAttachmentId;
@@ -516,9 +547,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterAttachmentId ID of the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterAttachmentId(String transitRouterAttachmentId) {
             return transitRouterAttachmentId(Output.of(transitRouterAttachmentId));
@@ -526,9 +557,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterAttachmentName Name of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterAttachmentName(@Nullable Output<String> transitRouterAttachmentName) {
             $.transitRouterAttachmentName = transitRouterAttachmentName;
@@ -537,9 +568,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterAttachmentName Name of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterAttachmentName(String transitRouterAttachmentName) {
             return transitRouterAttachmentName(Output.of(transitRouterAttachmentName));
@@ -547,9 +578,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterBandwidthPackageId ID of the transit router bandwidth package. You can call the DescribeTransitRouters API to obtain the transit router instance ID. If this parameter is provided, the Bandwidth parameter must also be provided. If this parameter is not provided, the Bandwidth parameter is not required.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterBandwidthPackageId(@Nullable Output<String> transitRouterBandwidthPackageId) {
             $.transitRouterBandwidthPackageId = transitRouterBandwidthPackageId;
@@ -558,9 +589,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterBandwidthPackageId ID of the transit router bandwidth package. You can call the DescribeTransitRouters API to obtain the transit router instance ID. If this parameter is provided, the Bandwidth parameter must also be provided. If this parameter is not provided, the Bandwidth parameter is not required.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterBandwidthPackageId(String transitRouterBandwidthPackageId) {
             return transitRouterBandwidthPackageId(Output.of(transitRouterBandwidthPackageId));
@@ -568,9 +599,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterForwardPolicyTableId ID of the forwarding policy associated with the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterForwardPolicyTableId(@Nullable Output<String> transitRouterForwardPolicyTableId) {
             $.transitRouterForwardPolicyTableId = transitRouterForwardPolicyTableId;
@@ -579,9 +610,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterForwardPolicyTableId ID of the forwarding policy associated with the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterForwardPolicyTableId(String transitRouterForwardPolicyTableId) {
             return transitRouterForwardPolicyTableId(Output.of(transitRouterForwardPolicyTableId));
@@ -589,9 +620,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterId ID of the local transit router instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(@Nullable Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -600,9 +631,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterId ID of the local transit router instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));
@@ -610,9 +641,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterRouteTableId Associated forwarding route table for the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableId(@Nullable Output<String> transitRouterRouteTableId) {
             $.transitRouterRouteTableId = transitRouterRouteTableId;
@@ -621,9 +652,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterRouteTableId Associated forwarding route table for the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableId(String transitRouterRouteTableId) {
             return transitRouterRouteTableId(Output.of(transitRouterRouteTableId));
@@ -631,9 +662,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterTrafficQosMarkingPolicyId ID of the traffic marking policy associated with the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterTrafficQosMarkingPolicyId(@Nullable Output<String> transitRouterTrafficQosMarkingPolicyId) {
             $.transitRouterTrafficQosMarkingPolicyId = transitRouterTrafficQosMarkingPolicyId;
@@ -642,9 +673,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterTrafficQosMarkingPolicyId ID of the traffic marking policy associated with the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterTrafficQosMarkingPolicyId(String transitRouterTrafficQosMarkingPolicyId) {
             return transitRouterTrafficQosMarkingPolicyId(Output.of(transitRouterTrafficQosMarkingPolicyId));
@@ -652,9 +683,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterTrafficQosQueuePolicyId ID of the flow queue policy associated with the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterTrafficQosQueuePolicyId(@Nullable Output<String> transitRouterTrafficQosQueuePolicyId) {
             $.transitRouterTrafficQosQueuePolicyId = transitRouterTrafficQosQueuePolicyId;
@@ -663,9 +694,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param transitRouterTrafficQosQueuePolicyId ID of the flow queue policy associated with the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterTrafficQosQueuePolicyId(String transitRouterTrafficQosQueuePolicyId) {
             return transitRouterTrafficQosQueuePolicyId(Output.of(transitRouterTrafficQosQueuePolicyId));
@@ -673,9 +704,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param updateTime Last operation time of the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -684,9 +715,9 @@ public final class PeerAttachmentState extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param updateTime Last operation time of the cross-region connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

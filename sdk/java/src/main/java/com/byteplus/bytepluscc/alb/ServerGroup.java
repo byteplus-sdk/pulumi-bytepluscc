@@ -22,259 +22,356 @@ import javax.annotation.Nullable;
 
 /**
  * A server group is a logical collection of backend servers. The ALB instance determines which server group to forward client requests to based on your configured forwarding rules. Then, the ALB instance distributes requests to backend servers within the server group according to your configured load balancing policy. Backend servers receive and process the requests.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.alb.ServerGroup;
+ * import com.byteplus.bytepluscc.alb.ServerGroupArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ServerGroupHealthCheckArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ServerGroupStickySessionConfigArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ServerGroupServerArgs;
+ * import com.pulumi.bytepluscc.alb.inputs.ServerGroupTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var albServergroupDemo = new ServerGroup("albServergroupDemo", ServerGroupArgs.builder()
+ *             .vpcId("vpc-13f8***")
+ *             .serverGroupName("test-servergroup")
+ *             .serverGroupType("instance")
+ *             .protocol("HTTP")
+ *             .scheduler("wrr")
+ *             .crossZoneEnabled("on")
+ *             .healthCheck(ServerGroupHealthCheckArgs.builder()
+ *                 .enabled("on")
+ *                 .port(80)
+ *                 .interval(2)
+ *                 .timeout(5)
+ *                 .healthy_threshold(3)
+ *                 .unhealthy_threshold(3)
+ *                 .method("GET")
+ *                 .http_version("HTTP1.1")
+ *                 .uri("/health")
+ *                 .http_code("http_2xx")
+ *                 .build())
+ *             .stickySessionConfig(ServerGroupStickySessionConfigArgs.builder()
+ *                 .sticky_session_enabled("on")
+ *                 .sticky_session_type("insert")
+ *                 .cookie_timeout(1000)
+ *                 .build())
+ *             .servers(ServerGroupServerArgs.builder()
+ *                 .instance_id("i-ye3***")
+ *                 .type("ecs")
+ *                 .ip("192.168.1.**")
+ *                 .port(80)
+ *                 .weight(10)
+ *                 .build())
+ *             .tags(ServerGroupTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:alb/serverGroup:ServerGroup example &#34;server_group_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:alb/serverGroup:ServerGroup")
 public class ServerGroup extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the backend server group.
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the backend server group.
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
-     * 
+     *
      */
     @Export(name="crossZoneEnabled", refs={String.class}, tree="[0]")
     private Output<String> crossZoneEnabled;
 
     /**
      * @return Whether to enable cross-zone load balancing for the server group. Values: on (default): enabled, off: disabled.
-     * 
+     *
      */
     public Output<String> crossZoneEnabled() {
         return this.crossZoneEnabled;
     }
     /**
      * Description of the backend server group.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the backend server group.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Server group health check configuration information.
-     * 
+     *
      */
     @Export(name="healthCheck", refs={ServerGroupHealthCheck.class}, tree="[0]")
     private Output<ServerGroupHealthCheck> healthCheck;
 
     /**
      * @return Server group health check configuration information.
-     * 
+     *
      */
     public Output<ServerGroupHealthCheck> healthCheck() {
         return this.healthCheck;
     }
     /**
      * IP address type of the server group. Only IPv4 is supported.
-     * 
+     *
      */
     @Export(name="ipAddressType", refs={String.class}, tree="[0]")
     private Output<String> ipAddressType;
 
     /**
      * @return IP address type of the server group. Only IPv4 is supported.
-     * 
+     *
      */
     public Output<String> ipAddressType() {
         return this.ipAddressType;
     }
+    /**
+     * Listener information associated with the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="listeners", refs={List.class,ServerGroupListener.class}, tree="[0,1]")
     private Output<List<ServerGroupListener>> listeners;
 
+    /**
+     * @return Listener information associated with the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ServerGroupListener>> listeners() {
         return this.listeners;
     }
     /**
      * Name of the project to which the backend server group belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the backend server group belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Backend protocol: HTTP, HTTPS.
-     * 
+     *
      */
     @Export(name="protocol", refs={String.class}, tree="[0]")
     private Output<String> protocol;
 
     /**
      * @return Backend protocol: HTTP, HTTPS.
-     * 
+     *
      */
     public Output<String> protocol() {
         return this.protocol;
     }
     /**
      * Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
-     * 
+     *
      */
     @Export(name="scheduler", refs={String.class}, tree="[0]")
     private Output<String> scheduler;
 
     /**
      * @return Scheduling algorithm. Parameter values: wrr: Weighted round robin. wlc: Weighted least connections. sh: Source IP hash.
-     * 
+     *
      */
     public Output<String> scheduler() {
         return this.scheduler;
     }
     /**
      * Number of backend servers in the server group.
-     * 
+     *
      */
     @Export(name="serverCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> serverCount;
 
     /**
      * @return Number of backend servers in the server group.
-     * 
+     *
      */
     public Output<Integer> serverCount() {
         return this.serverCount;
     }
     /**
      * ID of the backend server group.
-     * 
+     *
      */
     @Export(name="serverGroupId", refs={String.class}, tree="[0]")
     private Output<String> serverGroupId;
 
     /**
      * @return ID of the backend server group.
-     * 
+     *
      */
     public Output<String> serverGroupId() {
         return this.serverGroupId;
     }
     /**
      * Name of the backend server group.
-     * 
+     *
      */
     @Export(name="serverGroupName", refs={String.class}, tree="[0]")
     private Output<String> serverGroupName;
 
     /**
      * @return Name of the backend server group.
-     * 
+     *
      */
     public Output<String> serverGroupName() {
         return this.serverGroupName;
     }
     /**
      * Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-     * 
+     *
      */
     @Export(name="serverGroupType", refs={String.class}, tree="[0]")
     private Output<String> serverGroupType;
 
     /**
      * @return Type of backend server group. instance: Server type. This type of server group supports adding ECS and ENI instances as backend servers. ip: IP type. This type of server group supports adding IP addresses as backend servers.
-     * 
+     *
      */
     public Output<String> serverGroupType() {
         return this.serverGroupType;
     }
+    /**
+     * Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="servers", refs={List.class,ServerGroupServer.class}, tree="[0,1]")
     private Output<List<ServerGroupServer>> servers;
 
+    /**
+     * @return Information about servers in the backend server group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ServerGroupServer>> servers() {
         return this.servers;
     }
     /**
      * Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Server group status. Creating: creating. Active: running. Configuring: configuring. Deleting: deleting.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Session persistence parameter information.
-     * 
+     *
      */
     @Export(name="stickySessionConfig", refs={ServerGroupStickySessionConfig.class}, tree="[0]")
     private Output<ServerGroupStickySessionConfig> stickySessionConfig;
 
     /**
      * @return Session persistence parameter information.
-     * 
+     *
      */
     public Output<ServerGroupStickySessionConfig> stickySessionConfig() {
         return this.stickySessionConfig;
     }
+    /**
+     * Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,ServerGroupTag.class}, tree="[0,1]")
     private Output<List<ServerGroupTag>> tags;
 
+    /**
+     * @return Tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ServerGroupTag>> tags() {
         return this.tags;
     }
     /**
      * Last operation time of the backend server group.
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last operation time of the backend server group.
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * ID of the VPC to which the backend server group belongs.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the backend server group belongs.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;

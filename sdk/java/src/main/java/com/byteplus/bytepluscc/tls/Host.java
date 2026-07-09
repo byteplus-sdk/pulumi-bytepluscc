@@ -16,104 +16,104 @@ import javax.annotation.Nullable;
 
 /**
  * Host in the log service, used to manage server nodes for log collection
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.tls.Host;
  * import com.byteplus.bytepluscc.tls.HostArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var tLSHostDemo = new Host("tLSHostDemo", HostArgs.builder()
  *             .hostGroupId("cef95463-1bc0-410f-9c4b-3114xxxxxx")
  *             .ip("192.168.1.3")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:tls/host:Host example &#34;host_group_id|ip&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:tls/host:Host")
 public class Host extends com.pulumi.resources.CustomResource {
     /**
      * Agent heartbeat status. 0: Heartbeat normal 1: Heartbeat abnormal
-     * 
+     *
      */
     @Export(name="heartbeatStatus", refs={Integer.class}, tree="[0]")
     private Output<Integer> heartbeatStatus;
 
     /**
      * @return Agent heartbeat status. 0: Heartbeat normal 1: Heartbeat abnormal
-     * 
+     *
      */
     public Output<Integer> heartbeatStatus() {
         return this.heartbeatStatus;
     }
     /**
      * Machine group ID to which the host belongs
-     * 
+     *
      */
     @Export(name="hostGroupId", refs={String.class}, tree="[0]")
     private Output<String> hostGroupId;
 
     /**
      * @return Machine group ID to which the host belongs
-     * 
+     *
      */
     public Output<String> hostGroupId() {
         return this.hostGroupId;
     }
     /**
      * Host IP address
-     * 
+     *
      */
     @Export(name="ip", refs={String.class}, tree="[0]")
     private Output<String> ip;
 
     /**
      * @return Host IP address
-     * 
+     *
      */
     public Output<String> ip() {
         return this.ip;
     }
     /**
      * Log collector version
-     * 
+     *
      */
     @Export(name="logCollectorVersion", refs={String.class}, tree="[0]")
     private Output<String> logCollectorVersion;
 
     /**
      * @return Log collector version
-     * 
+     *
      */
     public Output<String> logCollectorVersion() {
         return this.logCollectorVersion;

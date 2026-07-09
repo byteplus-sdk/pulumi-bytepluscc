@@ -20,32 +20,32 @@ import javax.annotation.Nullable;
 
 /**
  * The file system provides file storage services through the standard NFS protocol for remote network file access. After creating a mount point in the management console, you can access the file system on your client as needed using the standard POSIX interface
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.filenas.Instance;
  * import com.byteplus.bytepluscc.filenas.InstanceArgs;
  * import com.pulumi.bytepluscc.filenas.inputs.InstanceCapacityArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var fileNASInstanceDemo = new Instance("fileNASInstanceDemo", InstanceArgs.builder()
  *             .fileSystemName("FileNASInstanceDemo")
@@ -57,262 +57,272 @@ import javax.annotation.Nullable;
  *             .protocolType("NFS")
  *             .zoneId("cn-beijing-x")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:filenas/instance:Instance example &#34;file_system_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:filenas/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Cache performance information
-     * 
+     *
      */
     @Export(name="cachePerformance", refs={InstanceCachePerformance.class}, tree="[0]")
     private Output<InstanceCachePerformance> cachePerformance;
 
     /**
      * @return Cache performance information
-     * 
+     *
      */
     public Output<InstanceCachePerformance> cachePerformance() {
         return this.cachePerformance;
     }
     /**
      * File system capacity
-     * 
+     *
      */
     @Export(name="capacity", refs={InstanceCapacity.class}, tree="[0]")
     private Output<InstanceCapacity> capacity;
 
     /**
      * @return File system capacity
-     * 
+     *
      */
     public Output<InstanceCapacity> capacity() {
         return this.capacity;
     }
     /**
      * Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
-     * 
+     *
      */
     @Export(name="chargeType", refs={String.class}, tree="[0]")
     private Output<String> chargeType;
 
     /**
      * @return Billing type. Value: PayAsYouGo, indicates pay-as-you-go billing
-     * 
+     *
      */
     public Output<String> chargeType() {
         return this.chargeType;
     }
     /**
      * Creation time
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * File system ID
-     * 
+     *
      */
     @Export(name="fileSystemId", refs={String.class}, tree="[0]")
     private Output<String> fileSystemId;
 
     /**
      * @return File system ID
-     * 
+     *
      */
     public Output<String> fileSystemId() {
         return this.fileSystemId;
     }
     /**
      * File system name
-     * 
+     *
      */
     @Export(name="fileSystemName", refs={String.class}, tree="[0]")
     private Output<String> fileSystemName;
 
     /**
      * @return File system name
-     * 
+     *
      */
     public Output<String> fileSystemName() {
         return this.fileSystemName;
     }
     /**
      * File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
-     * 
+     *
      */
     @Export(name="fileSystemType", refs={String.class}, tree="[0]")
     private Output<String> fileSystemType;
 
     /**
      * @return File system type. Possible values: Extreme: NAS Extreme type; Capacity: NAS Capacity type; Cache: NAS Cache type
-     * 
+     *
      */
     public Output<String> fileSystemType() {
         return this.fileSystemType;
     }
     /**
      * Project, default value is the Default project
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project, default value is the Default project
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
-     * 
+     *
      */
     @Export(name="protocolType", refs={String.class}, tree="[0]")
     private Output<String> protocolType;
 
     /**
      * @return File system protocol type. Value: NFS, indicates NFS protocol, commonly used for Linux clients
-     * 
+     *
      */
     public Output<String> protocolType() {
         return this.protocolType;
     }
     /**
      * Number of snapshots
-     * 
+     *
      */
     @Export(name="snapshotCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> snapshotCount;
 
     /**
      * @return Number of snapshots
-     * 
+     *
      */
     public Output<Integer> snapshotCount() {
         return this.snapshotCount;
     }
     /**
      * Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
-     * 
+     *
      */
     @Export(name="snapshotId", refs={String.class}, tree="[0]")
     private Output<String> snapshotId;
 
     /**
      * @return Snapshot ID used at creation. If this parameter is provided, the file system will be created from the snapshot
-     * 
+     *
      */
     public Output<String> snapshotId() {
         return this.snapshotId;
     }
     /**
      * File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return File system status. Possible values: Unknown: Status unknown. Running: File system running. Creating: File system being created. Expanding: File system being upgraded. Error: File system error. Deleting: File system being deleted. DeleteError: File system deletion failed. Deleted: File system deleted. Stopped: File system stopped.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Storage type. Value: Standard, indicates standard type
-     * 
+     *
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
      * @return Storage type. Value: Standard, indicates standard type
-     * 
+     *
      */
     public Output<String> storageType() {
         return this.storageType;
     }
+    /**
+     * File system tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return File system tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Update time
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * Availability Zone ID
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability Zone ID
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
     }
     /**
      * Availability Zone name
-     * 
+     *
      */
     @Export(name="zoneName", refs={String.class}, tree="[0]")
     private Output<String> zoneName;
 
     /**
      * @return Availability Zone name
-     * 
+     *
      */
     public Output<String> zoneName() {
         return this.zoneName;

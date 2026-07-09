@@ -20,14 +20,14 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workload pool creation time
-     * 
+     *
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Workload pool creation time
-     * 
+     *
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -35,14 +35,14 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workload pool description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Workload pool description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -50,14 +50,14 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * OIDC discovery endpoint
-     * 
+     *
      */
     @Import(name="discoveryUrl")
     private @Nullable Output<String> discoveryUrl;
 
     /**
      * @return OIDC discovery endpoint
-     * 
+     *
      */
     public Optional<Output<String>> discoveryUrl() {
         return Optional.ofNullable(this.discoveryUrl);
@@ -65,36 +65,46 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<WorkloadPoolTagArgs>> tags;
 
+    /**
+     * @return Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<WorkloadPoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Number of associated credentials
-     * 
+     *
      */
     @Import(name="totalCredentials")
     private @Nullable Output<Integer> totalCredentials;
 
     /**
      * @return Number of associated credentials
-     * 
+     *
      */
     public Optional<Output<Integer>> totalCredentials() {
         return Optional.ofNullable(this.totalCredentials);
@@ -102,14 +112,14 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of workloads
-     * 
+     *
      */
     @Import(name="totalWorkloads")
     private @Nullable Output<Integer> totalWorkloads;
 
     /**
      * @return Number of workloads
-     * 
+     *
      */
     public Optional<Output<Integer>> totalWorkloads() {
         return Optional.ofNullable(this.totalWorkloads);
@@ -117,14 +127,14 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workload pool Trn
-     * 
+     *
      */
     @Import(name="trn")
     private @Nullable Output<String> trn;
 
     /**
      * @return Workload pool Trn
-     * 
+     *
      */
     public Optional<Output<String>> trn() {
         return Optional.ofNullable(this.trn);
@@ -132,14 +142,14 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workload pool update time
-     * 
+     *
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Workload pool update time
-     * 
+     *
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -147,14 +157,14 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workload pool ID
-     * 
+     *
      */
     @Import(name="workloadPoolId")
     private @Nullable Output<String> workloadPoolId;
 
     /**
      * @return Workload pool ID
-     * 
+     *
      */
     public Optional<Output<String>> workloadPoolId() {
         return Optional.ofNullable(this.workloadPoolId);
@@ -162,14 +172,14 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Workload pool name
-     * 
+     *
      */
     @Import(name="workloadPoolName")
     private @Nullable Output<String> workloadPoolName;
 
     /**
      * @return Workload pool name
-     * 
+     *
      */
     public Optional<Output<String>> workloadPoolName() {
         return Optional.ofNullable(this.workloadPoolName);
@@ -211,9 +221,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Workload pool creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -222,9 +232,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Workload pool creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -232,9 +242,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Workload pool description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -243,9 +253,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Workload pool description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -253,9 +263,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param discoveryUrl OIDC discovery endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder discoveryUrl(@Nullable Output<String> discoveryUrl) {
             $.discoveryUrl = discoveryUrl;
@@ -264,9 +274,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param discoveryUrl OIDC discovery endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder discoveryUrl(String discoveryUrl) {
             return discoveryUrl(Output.of(discoveryUrl));
@@ -274,9 +284,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -285,32 +295,53 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<WorkloadPoolTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<WorkloadPoolTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Resource tags. You can categorize instances by tags to facilitate instance search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(WorkloadPoolTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param totalCredentials Number of associated credentials
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder totalCredentials(@Nullable Output<Integer> totalCredentials) {
             $.totalCredentials = totalCredentials;
@@ -319,9 +350,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param totalCredentials Number of associated credentials
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder totalCredentials(Integer totalCredentials) {
             return totalCredentials(Output.of(totalCredentials));
@@ -329,9 +360,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param totalWorkloads Number of workloads
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder totalWorkloads(@Nullable Output<Integer> totalWorkloads) {
             $.totalWorkloads = totalWorkloads;
@@ -340,9 +371,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param totalWorkloads Number of workloads
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder totalWorkloads(Integer totalWorkloads) {
             return totalWorkloads(Output.of(totalWorkloads));
@@ -350,9 +381,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trn Workload pool Trn
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(@Nullable Output<String> trn) {
             $.trn = trn;
@@ -361,9 +392,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trn Workload pool Trn
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(String trn) {
             return trn(Output.of(trn));
@@ -371,9 +402,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Workload pool update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -382,9 +413,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Workload pool update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));
@@ -392,9 +423,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workloadPoolId Workload pool ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workloadPoolId(@Nullable Output<String> workloadPoolId) {
             $.workloadPoolId = workloadPoolId;
@@ -403,9 +434,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workloadPoolId Workload pool ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workloadPoolId(String workloadPoolId) {
             return workloadPoolId(Output.of(workloadPoolId));
@@ -413,9 +444,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workloadPoolName Workload pool name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workloadPoolName(@Nullable Output<String> workloadPoolName) {
             $.workloadPoolName = workloadPoolName;
@@ -424,9 +455,9 @@ public final class WorkloadPoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workloadPoolName Workload pool name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workloadPoolName(String workloadPoolName) {
             return workloadPoolName(Output.of(workloadPoolName));

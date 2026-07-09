@@ -18,32 +18,32 @@ import javax.annotation.Nullable;
 
 /**
  * Function service supports integration with Kafka message queue. By creating a Kafka trigger, the function service acts as a consumer to consume messages from Kafka and passes them to your function, triggering your function logic. You do not need to handle the details of message consumption; just write the function to process messages.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vefaas.KafkaTrigger;
  * import com.byteplus.bytepluscc.vefaas.KafkaTriggerArgs;
  * import com.pulumi.bytepluscc.vefaas.inputs.KafkaTriggerKafkaCredentialsArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vefaasTriggerDemo = new KafkaTrigger("vefaasTriggerDemo", KafkaTriggerArgs.builder()
  *             .functionId("djb27tnr****")
@@ -62,242 +62,242 @@ import javax.annotation.Nullable;
  *             .batchFlushDurationMilliseconds(8637)
  *             .batchSize(709)
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vefaas/kafkaTrigger:KafkaTrigger example &#34;function_id|kafka_trigger_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vefaas/kafkaTrigger:KafkaTrigger")
 public class KafkaTrigger extends com.pulumi.resources.CustomResource {
     /**
      * Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
-     * 
+     *
      */
     @Export(name="batchFlushDurationMilliseconds", refs={Integer.class}, tree="[0]")
     private Output<Integer> batchFlushDurationMilliseconds;
 
     /**
      * @return Maximum wait time for batch consumption by the trigger. Unit: milliseconds (ms). Valid range: 1000–60000 ms. Default: 1000 ms.
-     * 
+     *
      */
     public Output<Integer> batchFlushDurationMilliseconds() {
         return this.batchFlushDurationMilliseconds;
     }
     /**
      * Number of messages per batch for trigger batch consumption.
-     * 
+     *
      */
     @Export(name="batchSize", refs={Integer.class}, tree="[0]")
     private Output<Integer> batchSize;
 
     /**
      * @return Number of messages per batch for trigger batch consumption.
-     * 
+     *
      */
     public Output<Integer> batchSize() {
         return this.batchSize;
     }
     /**
      * Consumer group name of the Kafka message queue instance.
-     * 
+     *
      */
     @Export(name="consumerGroup", refs={String.class}, tree="[0]")
     private Output<String> consumerGroup;
 
     /**
      * @return Consumer group name of the Kafka message queue instance.
-     * 
+     *
      */
     public Output<String> consumerGroup() {
         return this.consumerGroup;
     }
     /**
      * Kafka trigger creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Kafka trigger creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description of the Kafka trigger. Limited to 200 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the Kafka trigger. Limited to 200 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Enable the trigger when creating it. Options: true—enable. false—disable.
-     * 
+     *
      */
     @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
      * @return Enable the trigger when creating it. Options: true—enable. false—disable.
-     * 
+     *
      */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
     /**
      * Function ID.
-     * 
+     *
      */
     @Export(name="functionId", refs={String.class}, tree="[0]")
     private Output<String> functionId;
 
     /**
      * @return Function ID.
-     * 
+     *
      */
     public Output<String> functionId() {
         return this.functionId;
     }
     /**
      * Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
-     * 
+     *
      */
     @Export(name="kafkaCredentials", refs={KafkaTriggerKafkaCredentials.class}, tree="[0]")
     private Output<KafkaTriggerKafkaCredentials> kafkaCredentials;
 
     /**
      * @return Kafka identity authentication. Function service uses Kafka ACL permission policies to authenticate message consumption for SASL users of types PLAIN and SCRAM-SHA-256.
-     * 
+     *
      */
     public Output<KafkaTriggerKafkaCredentials> kafkaCredentials() {
         return this.kafkaCredentials;
     }
     /**
      * Kafka trigger ID.
-     * 
+     *
      */
     @Export(name="kafkaTriggerId", refs={String.class}, tree="[0]")
     private Output<String> kafkaTriggerId;
 
     /**
      * @return Kafka trigger ID.
-     * 
+     *
      */
     public Output<String> kafkaTriggerId() {
         return this.kafkaTriggerId;
     }
     /**
      * Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
-     * 
+     *
      */
     @Export(name="maximumRetryAttempts", refs={Integer.class}, tree="[0]")
     private Output<Integer> maximumRetryAttempts;
 
     /**
      * @return Maximum number of retries when the function encounters a runtime error (including user code errors and runtime errors). Valid values: positive integers from 0 to 100.
-     * 
+     *
      */
     public Output<Integer> maximumRetryAttempts() {
         return this.maximumRetryAttempts;
     }
     /**
      * Kafka message queue instance ID.
-     * 
+     *
      */
     @Export(name="mqInstanceId", refs={String.class}, tree="[0]")
     private Output<String> mqInstanceId;
 
     /**
      * @return Kafka message queue instance ID.
-     * 
+     *
      */
     public Output<String> mqInstanceId() {
         return this.mqInstanceId;
     }
     /**
      * Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Kafka trigger name. Trigger names must be unique within the same function. Only uppercase and lowercase letters, numbers, and underscores are allowed, must start with a letter, and be 4–63 characters long.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
-     * 
+     *
      */
     @Export(name="startingPosition", refs={String.class}, tree="[0]")
     private Output<String> startingPosition;
 
     /**
      * @return Specify the starting position for consuming messages in the Topic. Options: Latest—consume only messages produced after subscribing to the Topic. Earliest—consume from the first message produced in the Topic.
-     * 
+     *
      */
     public Output<String> startingPosition() {
         return this.startingPosition;
     }
     /**
      * Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Kafka trigger status. Parameter values: ready—running, failed—failed, pending—starting.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Topic name of the Kafka message queue instance.
-     * 
+     *
      */
     @Export(name="topicName", refs={String.class}, tree="[0]")
     private Output<String> topicName;
 
     /**
      * @return Topic name of the Kafka message queue instance.
-     * 
+     *
      */
     public Output<String> topicName() {
         return this.topicName;
     }
     /**
      * Last update time of the Kafka trigger.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last update time of the Kafka trigger.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

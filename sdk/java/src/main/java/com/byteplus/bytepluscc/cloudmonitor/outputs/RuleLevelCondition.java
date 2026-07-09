@@ -13,20 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class RuleLevelCondition {
+    /**
+     * @return Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<RuleLevelConditionCondition> conditions;
     /**
      * @return Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
-     * 
+     *
      */
     private @Nullable String level;
 
     private RuleLevelCondition() {}
+    /**
+     * @return Alert severity configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<RuleLevelConditionCondition> conditions() {
         return this.conditions == null ? List.of() : this.conditions;
     }
     /**
      * @return Alert notification level. Options: notice: notification, warning: warning, critical: critical, recovery: recovery.
-     * 
+     *
      */
     public Optional<String> level() {
         return Optional.ofNullable(this.level);

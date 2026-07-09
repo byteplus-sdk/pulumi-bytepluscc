@@ -20,14 +20,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-     * 
+     *
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-     * 
+     *
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -35,14 +35,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Billing status of the bandwidth package instance. 0: Creating 1: Running 3: Unsubscribed 4: Expired and stopped 5: Expired and recycled 8: Unsubscribed and stopped
-     * 
+     *
      */
     @Import(name="billingStatus")
     private @Nullable Output<Integer> billingStatus;
 
     /**
      * @return Billing status of the bandwidth package instance. 0: Creating 1: Running 3: Unsubscribed 4: Expired and stopped 5: Expired and recycled 8: Unsubscribed and stopped
-     * 
+     *
      */
     public Optional<Output<Integer>> billingStatus() {
         return Optional.ofNullable(this.billingStatus);
@@ -50,14 +50,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-     * 
+     *
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-     * 
+     *
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -65,14 +65,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Frozen status of the bandwidth package. Normal: normal. FinancialLocked: frozen.
-     * 
+     *
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Frozen status of the bandwidth package. Normal: normal. FinancialLocked: frozen.
-     * 
+     *
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -80,14 +80,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Bandwidth package ID.
-     * 
+     *
      */
     @Import(name="cenBandwidthPackageId")
     private @Nullable Output<String> cenBandwidthPackageId;
 
     /**
      * @return Bandwidth package ID.
-     * 
+     *
      */
     public Optional<Output<String>> cenBandwidthPackageId() {
         return Optional.ofNullable(this.cenBandwidthPackageId);
@@ -95,14 +95,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-     * 
+     *
      */
     @Import(name="cenBandwidthPackageName")
     private @Nullable Output<String> cenBandwidthPackageName;
 
     /**
      * @return Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-     * 
+     *
      */
     public Optional<Output<String>> cenBandwidthPackageName() {
         return Optional.ofNullable(this.cenBandwidthPackageName);
@@ -110,14 +110,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * List of associated CEN instance IDs.
-     * 
+     *
      */
     @Import(name="cenIds")
     private @Nullable Output<List<String>> cenIds;
 
     /**
      * @return List of associated CEN instance IDs.
-     * 
+     *
      */
     public Optional<Output<List<String>>> cenIds() {
         return Optional.ofNullable(this.cenIds);
@@ -125,14 +125,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Creation time of the bandwidth package.
-     * 
+     *
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Creation time of the bandwidth package.
-     * 
+     *
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -140,14 +140,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Deletion time of the bandwidth package.
-     * 
+     *
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
      * @return Deletion time of the bandwidth package.
-     * 
+     *
      */
     public Optional<Output<String>> deletedTime() {
         return Optional.ofNullable(this.deletedTime);
@@ -155,14 +155,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -170,14 +170,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Expiration time of the bandwidth package.
-     * 
+     *
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
      * @return Expiration time of the bandwidth package.
-     * 
+     *
      */
     public Optional<Output<String>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
@@ -185,14 +185,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-     * 
+     *
      */
     @Import(name="lineOperator")
     private @Nullable Output<String> lineOperator;
 
     /**
      * @return Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-     * 
+     *
      */
     public Optional<Output<String>> lineOperator() {
         return Optional.ofNullable(this.lineOperator);
@@ -200,14 +200,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     @Import(name="localGeographicRegionSetId")
     private @Nullable Output<String> localGeographicRegionSetId;
 
     /**
      * @return Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     public Optional<Output<String>> localGeographicRegionSetId() {
         return Optional.ofNullable(this.localGeographicRegionSetId);
@@ -215,14 +215,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     @Import(name="peerGeographicRegionSetId")
     private @Nullable Output<String> peerGeographicRegionSetId;
 
     /**
      * @return Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     public Optional<Output<String>> peerGeographicRegionSetId() {
         return Optional.ofNullable(this.peerGeographicRegionSetId);
@@ -230,14 +230,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-     * 
+     *
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-     * 
+     *
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -245,14 +245,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-     * 
+     *
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
      * @return Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-     * 
+     *
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -260,14 +260,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -275,14 +275,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Recycle time after the bandwidth package instance expires.
-     * 
+     *
      */
     @Import(name="reclaimTime")
     private @Nullable Output<String> reclaimTime;
 
     /**
      * @return Recycle time after the bandwidth package instance expires.
-     * 
+     *
      */
     public Optional<Output<String>> reclaimTime() {
         return Optional.ofNullable(this.reclaimTime);
@@ -290,14 +290,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-     * 
+     *
      */
     @Import(name="remainRenewTimes")
     private @Nullable Output<Integer> remainRenewTimes;
 
     /**
      * @return Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-     * 
+     *
      */
     public Optional<Output<Integer>> remainRenewTimes() {
         return Optional.ofNullable(this.remainRenewTimes);
@@ -305,14 +305,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Remaining bandwidth, measured in Mbps.
-     * 
+     *
      */
     @Import(name="remainingBandwidth")
     private @Nullable Output<Integer> remainingBandwidth;
 
     /**
      * @return Remaining bandwidth, measured in Mbps.
-     * 
+     *
      */
     public Optional<Output<Integer>> remainingBandwidth() {
         return Optional.ofNullable(this.remainingBandwidth);
@@ -320,14 +320,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-     * 
+     *
      */
     @Import(name="renewPeriod")
     private @Nullable Output<Integer> renewPeriod;
 
     /**
      * @return Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-     * 
+     *
      */
     public Optional<Output<Integer>> renewPeriod() {
         return Optional.ofNullable(this.renewPeriod);
@@ -335,14 +335,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-     * 
+     *
      */
     @Import(name="renewType")
     private @Nullable Output<String> renewType;
 
     /**
      * @return Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-     * 
+     *
      */
     public Optional<Output<String>> renewType() {
         return Optional.ofNullable(this.renewType);
@@ -350,36 +350,46 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Status of the bandwidth package. Creating: Being created. Deleting: Being deleted. Pending: In progress. Available: Unbound. InUse: Bound.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the bandwidth package. Creating: Being created. Deleting: Being deleted. Pending: In progress. Available: Unbound. InUse: Bound.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<BandwidthPackageTagArgs>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<BandwidthPackageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Update time of the bandwidth package.
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Update time of the bandwidth package.
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -435,9 +445,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidth Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -446,9 +456,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidth Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -456,9 +466,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param billingStatus Billing status of the bandwidth package instance. 0: Creating 1: Running 3: Unsubscribed 4: Expired and stopped 5: Expired and recycled 8: Unsubscribed and stopped
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingStatus(@Nullable Output<Integer> billingStatus) {
             $.billingStatus = billingStatus;
@@ -467,9 +477,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param billingStatus Billing status of the bandwidth package instance. 0: Creating 1: Running 3: Unsubscribed 4: Expired and stopped 5: Expired and recycled 8: Unsubscribed and stopped
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingStatus(Integer billingStatus) {
             return billingStatus(Output.of(billingStatus));
@@ -477,9 +487,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param billingType Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -488,9 +498,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param billingType Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -498,9 +508,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param businessStatus Frozen status of the bandwidth package. Normal: normal. FinancialLocked: frozen.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -509,9 +519,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param businessStatus Frozen status of the bandwidth package. Normal: normal. FinancialLocked: frozen.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -519,9 +529,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenBandwidthPackageId Bandwidth package ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageId(@Nullable Output<String> cenBandwidthPackageId) {
             $.cenBandwidthPackageId = cenBandwidthPackageId;
@@ -530,9 +540,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenBandwidthPackageId Bandwidth package ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageId(String cenBandwidthPackageId) {
             return cenBandwidthPackageId(Output.of(cenBandwidthPackageId));
@@ -540,9 +550,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenBandwidthPackageName Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageName(@Nullable Output<String> cenBandwidthPackageName) {
             $.cenBandwidthPackageName = cenBandwidthPackageName;
@@ -551,9 +561,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenBandwidthPackageName Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageName(String cenBandwidthPackageName) {
             return cenBandwidthPackageName(Output.of(cenBandwidthPackageName));
@@ -561,9 +571,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenIds List of associated CEN instance IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenIds(@Nullable Output<List<String>> cenIds) {
             $.cenIds = cenIds;
@@ -572,9 +582,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenIds List of associated CEN instance IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenIds(List<String> cenIds) {
             return cenIds(Output.of(cenIds));
@@ -582,9 +592,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param cenIds List of associated CEN instance IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenIds(String... cenIds) {
             return cenIds(List.of(cenIds));
@@ -592,9 +602,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param creationTime Creation time of the bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -603,9 +613,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param creationTime Creation time of the bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -613,9 +623,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param deletedTime Deletion time of the bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletedTime(@Nullable Output<String> deletedTime) {
             $.deletedTime = deletedTime;
@@ -624,9 +634,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param deletedTime Deletion time of the bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletedTime(String deletedTime) {
             return deletedTime(Output.of(deletedTime));
@@ -634,9 +644,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -645,9 +655,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -655,9 +665,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param expiredTime Expiration time of the bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expiredTime(@Nullable Output<String> expiredTime) {
             $.expiredTime = expiredTime;
@@ -666,9 +676,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param expiredTime Expiration time of the bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expiredTime(String expiredTime) {
             return expiredTime(Output.of(expiredTime));
@@ -676,9 +686,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param lineOperator Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineOperator(@Nullable Output<String> lineOperator) {
             $.lineOperator = lineOperator;
@@ -687,9 +697,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param lineOperator Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineOperator(String lineOperator) {
             return lineOperator(Output.of(lineOperator));
@@ -697,9 +707,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param localGeographicRegionSetId Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localGeographicRegionSetId(@Nullable Output<String> localGeographicRegionSetId) {
             $.localGeographicRegionSetId = localGeographicRegionSetId;
@@ -708,9 +718,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param localGeographicRegionSetId Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localGeographicRegionSetId(String localGeographicRegionSetId) {
             return localGeographicRegionSetId(Output.of(localGeographicRegionSetId));
@@ -718,9 +728,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param peerGeographicRegionSetId Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerGeographicRegionSetId(@Nullable Output<String> peerGeographicRegionSetId) {
             $.peerGeographicRegionSetId = peerGeographicRegionSetId;
@@ -729,9 +739,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param peerGeographicRegionSetId Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerGeographicRegionSetId(String peerGeographicRegionSetId) {
             return peerGeographicRegionSetId(Output.of(peerGeographicRegionSetId));
@@ -739,9 +749,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param period Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -750,9 +760,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param period Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -760,9 +770,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param periodUnit Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -771,9 +781,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param periodUnit Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -781,9 +791,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -792,9 +802,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -802,9 +812,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param reclaimTime Recycle time after the bandwidth package instance expires.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder reclaimTime(@Nullable Output<String> reclaimTime) {
             $.reclaimTime = reclaimTime;
@@ -813,9 +823,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param reclaimTime Recycle time after the bandwidth package instance expires.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder reclaimTime(String reclaimTime) {
             return reclaimTime(Output.of(reclaimTime));
@@ -823,9 +833,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param remainRenewTimes Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remainRenewTimes(@Nullable Output<Integer> remainRenewTimes) {
             $.remainRenewTimes = remainRenewTimes;
@@ -834,9 +844,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param remainRenewTimes Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remainRenewTimes(Integer remainRenewTimes) {
             return remainRenewTimes(Output.of(remainRenewTimes));
@@ -844,9 +854,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param remainingBandwidth Remaining bandwidth, measured in Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remainingBandwidth(@Nullable Output<Integer> remainingBandwidth) {
             $.remainingBandwidth = remainingBandwidth;
@@ -855,9 +865,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param remainingBandwidth Remaining bandwidth, measured in Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remainingBandwidth(Integer remainingBandwidth) {
             return remainingBandwidth(Output.of(remainingBandwidth));
@@ -865,9 +875,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param renewPeriod Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewPeriod(@Nullable Output<Integer> renewPeriod) {
             $.renewPeriod = renewPeriod;
@@ -876,9 +886,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param renewPeriod Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewPeriod(Integer renewPeriod) {
             return renewPeriod(Output.of(renewPeriod));
@@ -886,9 +896,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param renewType Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewType(@Nullable Output<String> renewType) {
             $.renewType = renewType;
@@ -897,9 +907,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param renewType Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewType(String renewType) {
             return renewType(Output.of(renewType));
@@ -907,9 +917,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Status of the bandwidth package. Creating: Being created. Deleting: Being deleted. Pending: In progress. Available: Unbound. InUse: Bound.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -918,32 +928,53 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Status of the bandwidth package. Creating: Being created. Deleting: Being deleted. Pending: In progress. Available: Unbound. InUse: Bound.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<BandwidthPackageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<BandwidthPackageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(BandwidthPackageTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updateTime Update time of the bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -952,9 +983,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updateTime Update time of the bandwidth package.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

@@ -16,102 +16,112 @@ import javax.annotation.Nullable;
 public final class GroupTopicInfo {
     /**
      * @return Topic creation time
-     * 
+     *
      */
     private @Nullable String createTime;
     /**
      * @return Topic description
-     * 
+     *
      */
     private @Nullable String description;
     /**
      * @return Number of unconsumed messages in the Topic
-     * 
+     *
      */
     private @Nullable Integer lag;
+    /**
+     * @return Partition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<GroupTopicInfoPartitionInfo> partitionInfos;
     /**
      * @return Number of Topic partitions
-     * 
+     *
      */
     private @Nullable Integer partitions;
     /**
      * @return Retention period of data in the Topic, in hours
-     * 
+     *
      */
     private @Nullable Integer retention;
     /**
      * @return Topic status
-     * 
+     *
      */
     private @Nullable String status;
     /**
      * @return Topic ID。
-     * 
+     *
      */
     private @Nullable String topicId;
     /**
      * @return Topic name
-     * 
+     *
      */
     private @Nullable String topicName;
 
     private GroupTopicInfo() {}
     /**
      * @return Topic creation time
-     * 
+     *
      */
     public Optional<String> createTime() {
         return Optional.ofNullable(this.createTime);
     }
     /**
      * @return Topic description
-     * 
+     *
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Number of unconsumed messages in the Topic
-     * 
+     *
      */
     public Optional<Integer> lag() {
         return Optional.ofNullable(this.lag);
     }
+    /**
+     * @return Partition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<GroupTopicInfoPartitionInfo> partitionInfos() {
         return this.partitionInfos == null ? List.of() : this.partitionInfos;
     }
     /**
      * @return Number of Topic partitions
-     * 
+     *
      */
     public Optional<Integer> partitions() {
         return Optional.ofNullable(this.partitions);
     }
     /**
      * @return Retention period of data in the Topic, in hours
-     * 
+     *
      */
     public Optional<Integer> retention() {
         return Optional.ofNullable(this.retention);
     }
     /**
      * @return Topic status
-     * 
+     *
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
     /**
      * @return Topic ID。
-     * 
+     *
      */
     public Optional<String> topicId() {
         return Optional.ofNullable(this.topicId);
     }
     /**
      * @return Topic name
-     * 
+     *
      */
     public Optional<String> topicName() {
         return Optional.ofNullable(this.topicName);

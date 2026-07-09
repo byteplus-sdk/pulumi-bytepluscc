@@ -21,14 +21,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
-     * 
+     *
      */
     @Import(name="aggregationInterval")
     private @Nullable Output<Integer> aggregationInterval;
 
     /**
      * @return Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
-     * 
+     *
      */
     public Optional<Output<Integer>> aggregationInterval() {
         return Optional.ofNullable(this.aggregationInterval);
@@ -36,14 +36,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
-     * 
+     *
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
-     * 
+     *
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -51,14 +51,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the flow log.
-     * 
+     *
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Creation time of the flow log.
-     * 
+     *
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -66,14 +66,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -81,14 +81,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
-     * 
+     *
      */
     @Import(name="enableIndex")
     private @Nullable Output<Boolean> enableIndex;
 
     /**
      * @return Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableIndex() {
         return Optional.ofNullable(this.enableIndex);
@@ -96,14 +96,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Stream log ID.
-     * 
+     *
      */
     @Import(name="flowLogId")
     private @Nullable Output<String> flowLogId;
 
     /**
      * @return Stream log ID.
-     * 
+     *
      */
     public Optional<Output<String>> flowLogId() {
         return Optional.ofNullable(this.flowLogId);
@@ -111,14 +111,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
-     * 
+     *
      */
     @Import(name="flowLogName")
     private @Nullable Output<String> flowLogName;
 
     /**
      * @return Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
-     * 
+     *
      */
     public Optional<Output<String>> flowLogName() {
         return Optional.ofNullable(this.flowLogName);
@@ -126,14 +126,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
-     * 
+     *
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
      * @return Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
-     * 
+     *
      */
     public Optional<Output<String>> lockReason() {
         return Optional.ofNullable(this.lockReason);
@@ -141,14 +141,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Flow log project ID.
-     * 
+     *
      */
     @Import(name="logProjectId")
     private @Nullable Output<String> logProjectId;
 
     /**
      * @return Flow log project ID.
-     * 
+     *
      */
     public Optional<Output<String>> logProjectId() {
         return Optional.ofNullable(this.logProjectId);
@@ -156,14 +156,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-     * 
+     *
      */
     @Import(name="logProjectName")
     private @Nullable Output<String> logProjectName;
 
     /**
      * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-     * 
+     *
      */
     public Optional<Output<String>> logProjectName() {
         return Optional.ofNullable(this.logProjectName);
@@ -171,14 +171,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Flow log topic ID.
-     * 
+     *
      */
     @Import(name="logTopicId")
     private @Nullable Output<String> logTopicId;
 
     /**
      * @return Flow log topic ID.
-     * 
+     *
      */
     public Optional<Output<String>> logTopicId() {
         return Optional.ofNullable(this.logTopicId);
@@ -186,14 +186,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-     * 
+     *
      */
     @Import(name="logTopicName")
     private @Nullable Output<String> logTopicName;
 
     /**
      * @return Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-     * 
+     *
      */
     public Optional<Output<String>> logTopicName() {
         return Optional.ofNullable(this.logTopicName);
@@ -201,14 +201,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the flow log belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the flow log belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -216,14 +216,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Resource ID for traffic capture.
-     * 
+     *
      */
     @Import(name="resourceId")
     private @Nullable Output<String> resourceId;
 
     /**
      * @return Resource ID for traffic capture.
-     * 
+     *
      */
     public Optional<Output<String>> resourceId() {
         return Optional.ofNullable(this.resourceId);
@@ -231,14 +231,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
-     * 
+     *
      */
     @Import(name="resourceType")
     private @Nullable Output<String> resourceType;
 
     /**
      * @return Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
-     * 
+     *
      */
     public Optional<Output<String>> resourceType() {
         return Optional.ofNullable(this.resourceType);
@@ -246,36 +246,46 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information for the flow log.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<FlowLogTagArgs>> tags;
 
+    /**
+     * @return Tag information for the flow log.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<FlowLogTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
-     * 
+     *
      */
     @Import(name="trafficType")
     private @Nullable Output<String> trafficType;
 
     /**
      * @return Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
-     * 
+     *
      */
     public Optional<Output<String>> trafficType() {
         return Optional.ofNullable(this.trafficType);
@@ -283,14 +293,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time when the stream log was updated.
-     * 
+     *
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Time when the stream log was updated.
-     * 
+     *
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -298,14 +308,14 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC ID for the flow log.
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return VPC ID for the flow log.
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -356,9 +366,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aggregationInterval Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder aggregationInterval(@Nullable Output<Integer> aggregationInterval) {
             $.aggregationInterval = aggregationInterval;
@@ -367,9 +377,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aggregationInterval Stream log sampling interval. Options: 1: 1 minute. 5: 5 minutes. 10 (default): 10 minutes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder aggregationInterval(Integer aggregationInterval) {
             return aggregationInterval(Output.of(aggregationInterval));
@@ -377,9 +387,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param businessStatus Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -388,9 +398,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param businessStatus Whether the flow log is locked. Normal: normal. FinancialLocked: locked.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -398,9 +408,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Creation time of the flow log.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -409,9 +419,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Creation time of the flow log.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -419,9 +429,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -430,9 +440,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the stream log. Length limit: 0–255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -440,9 +450,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIndex Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIndex(@Nullable Output<Boolean> enableIndex) {
             $.enableIndex = enableIndex;
@@ -451,9 +461,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIndex Whether to automatically configure indexes. Indexes are used for retrieving and analyzing data. Stream logs must have indexes configured before retrieval and analysis. true: Yes. false (default): No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIndex(Boolean enableIndex) {
             return enableIndex(Output.of(enableIndex));
@@ -461,9 +471,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param flowLogId Stream log ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder flowLogId(@Nullable Output<String> flowLogId) {
             $.flowLogId = flowLogId;
@@ -472,9 +482,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param flowLogId Stream log ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder flowLogId(String flowLogId) {
             return flowLogId(Output.of(flowLogId));
@@ -482,9 +492,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param flowLogName Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder flowLogName(@Nullable Output<String> flowLogName) {
             $.flowLogName = flowLogName;
@@ -493,9 +503,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param flowLogName Name of the flow log. Length must be 1–128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the flow log instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder flowLogName(String flowLogName) {
             return flowLogName(Output.of(flowLogName));
@@ -503,9 +513,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lockReason Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lockReason(@Nullable Output<String> lockReason) {
             $.lockReason = lockReason;
@@ -514,9 +524,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lockReason Reason for stream log lock. financial: Locked due to overdue payment. unlock: In the process of restoring after payment following suspension due to overdue payment. Empty value: Not locked.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lockReason(String lockReason) {
             return lockReason(Output.of(lockReason));
@@ -524,9 +534,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logProjectId Flow log project ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logProjectId(@Nullable Output<String> logProjectId) {
             $.logProjectId = logProjectId;
@@ -535,9 +545,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logProjectId Flow log project ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logProjectId(String logProjectId) {
             return logProjectId(Output.of(logProjectId));
@@ -545,9 +555,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logProjectName Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logProjectName(@Nullable Output<String> logProjectName) {
             $.logProjectName = logProjectName;
@@ -556,9 +566,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logProjectName Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logProjectName(String logProjectName) {
             return logProjectName(Output.of(logProjectName));
@@ -566,9 +576,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logTopicId Flow log topic ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logTopicId(@Nullable Output<String> logTopicId) {
             $.logTopicId = logTopicId;
@@ -577,9 +587,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logTopicId Flow log topic ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logTopicId(String logTopicId) {
             return logTopicId(Output.of(logTopicId));
@@ -587,9 +597,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logTopicName Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logTopicName(@Nullable Output<String> logTopicName) {
             $.logTopicName = logTopicName;
@@ -598,9 +608,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logTopicName Name of the flow log project. The name can only contain lowercase letters, numbers, and hyphens (-). It must start and end with a lowercase letter or number. The name must be 3–63 characters long.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logTopicName(String logTopicName) {
             return logTopicName(Output.of(logTopicName));
@@ -608,9 +618,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the flow log belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -619,9 +629,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the flow log belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -629,9 +639,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceId Resource ID for traffic capture.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourceId(@Nullable Output<String> resourceId) {
             $.resourceId = resourceId;
@@ -640,9 +650,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceId Resource ID for traffic capture.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourceId(String resourceId) {
             return resourceId(Output.of(resourceId));
@@ -650,9 +660,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceType Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourceType(@Nullable Output<String> resourceType) {
             $.resourceType = resourceType;
@@ -661,9 +671,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param resourceType Resource type for traffic collection. Values: vpc: Virtual Private Cloud. subnet: subnet. eni: network interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder resourceType(String resourceType) {
             return resourceType(Output.of(resourceType));
@@ -671,9 +681,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -682,32 +692,53 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the flow log. Values: Active: active. Pending: pending. Inactive: inactive. Creating: creating. Deleting: deleting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information for the flow log.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<FlowLogTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information for the flow log.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<FlowLogTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information for the flow log.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(FlowLogTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param trafficType Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficType(@Nullable Output<String> trafficType) {
             $.trafficType = trafficType;
@@ -716,9 +747,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trafficType Type of traffic collected. Values: All: all traffic. Allow: traffic allowed by network ACLs and security groups. Drop: traffic denied by network ACLs and security groups.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trafficType(String trafficType) {
             return trafficType(Output.of(trafficType));
@@ -726,9 +757,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Time when the stream log was updated.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -737,9 +768,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Time when the stream log was updated.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));
@@ -747,9 +778,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID for the flow log.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -758,9 +789,9 @@ public final class FlowLogState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId VPC ID for the flow log.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

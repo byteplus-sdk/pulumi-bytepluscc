@@ -18,30 +18,50 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
     public static final ClusterApplicationExtraArgs Empty = new ClusterApplicationExtraArgs();
 
+    /**
+     * Custom deployment topology list for service components.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="applicationComponentLayouts")
     private @Nullable Output<List<ClusterApplicationExtraApplicationComponentLayoutArgs>> applicationComponentLayouts;
 
+    /**
+     * @return Custom deployment topology list for service components.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ClusterApplicationExtraApplicationComponentLayoutArgs>>> applicationComponentLayouts() {
         return Optional.ofNullable(this.applicationComponentLayouts);
     }
 
+    /**
+     * Custom configuration parameter list for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="applicationConfigs")
     private @Nullable Output<List<ClusterApplicationExtraApplicationConfigArgs>> applicationConfigs;
 
+    /**
+     * @return Custom configuration parameter list for services.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ClusterApplicationExtraApplicationConfigArgs>>> applicationConfigs() {
         return Optional.ofNullable(this.applicationConfigs);
     }
 
     /**
      * Application name.
-     * 
+     *
      */
     @Import(name="applicationName")
     private @Nullable Output<String> applicationName;
 
     /**
      * @return Application name.
-     * 
+     *
      */
     public Optional<Output<String>> applicationName() {
         return Optional.ofNullable(this.applicationName);
@@ -49,14 +69,14 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
     /**
      * Metadata connection ID.
-     * 
+     *
      */
     @Import(name="connectionId")
     private @Nullable Output<String> connectionId;
 
     /**
      * @return Metadata connection ID.
-     * 
+     *
      */
     public Optional<Output<String>> connectionId() {
         return Optional.ofNullable(this.connectionId);
@@ -64,14 +84,14 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
     /**
      * Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
-     * 
+     *
      */
     @Import(name="connectionType")
     private @Nullable Output<String> connectionType;
 
     /**
      * @return Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
-     * 
+     *
      */
     public Optional<Output<String>> connectionType() {
         return Optional.ofNullable(this.connectionType);
@@ -105,37 +125,79 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
             $ = new ClusterApplicationExtraArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param applicationComponentLayouts Custom deployment topology list for service components.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder applicationComponentLayouts(@Nullable Output<List<ClusterApplicationExtraApplicationComponentLayoutArgs>> applicationComponentLayouts) {
             $.applicationComponentLayouts = applicationComponentLayouts;
             return this;
         }
 
+        /**
+         * @param applicationComponentLayouts Custom deployment topology list for service components.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder applicationComponentLayouts(List<ClusterApplicationExtraApplicationComponentLayoutArgs> applicationComponentLayouts) {
             return applicationComponentLayouts(Output.of(applicationComponentLayouts));
         }
 
+        /**
+         * @param applicationComponentLayouts Custom deployment topology list for service components.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder applicationComponentLayouts(ClusterApplicationExtraApplicationComponentLayoutArgs... applicationComponentLayouts) {
             return applicationComponentLayouts(List.of(applicationComponentLayouts));
         }
 
+        /**
+         * @param applicationConfigs Custom configuration parameter list for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder applicationConfigs(@Nullable Output<List<ClusterApplicationExtraApplicationConfigArgs>> applicationConfigs) {
             $.applicationConfigs = applicationConfigs;
             return this;
         }
 
+        /**
+         * @param applicationConfigs Custom configuration parameter list for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder applicationConfigs(List<ClusterApplicationExtraApplicationConfigArgs> applicationConfigs) {
             return applicationConfigs(Output.of(applicationConfigs));
         }
 
+        /**
+         * @param applicationConfigs Custom configuration parameter list for services.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder applicationConfigs(ClusterApplicationExtraApplicationConfigArgs... applicationConfigs) {
             return applicationConfigs(List.of(applicationConfigs));
         }
 
         /**
          * @param applicationName Application name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder applicationName(@Nullable Output<String> applicationName) {
             $.applicationName = applicationName;
@@ -144,9 +206,9 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
         /**
          * @param applicationName Application name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder applicationName(String applicationName) {
             return applicationName(Output.of(applicationName));
@@ -154,9 +216,9 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
         /**
          * @param connectionId Metadata connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionId(@Nullable Output<String> connectionId) {
             $.connectionId = connectionId;
@@ -165,9 +227,9 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
         /**
          * @param connectionId Metadata connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionId(String connectionId) {
             return connectionId(Output.of(connectionId));
@@ -175,9 +237,9 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
         /**
          * @param connectionType Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionType(@Nullable Output<String> connectionType) {
             $.connectionType = connectionType;
@@ -186,9 +248,9 @@ public final class ClusterApplicationExtraArgs extends com.pulumi.resources.Reso
 
         /**
          * @param connectionType Metadata connection type. BUILT*IN*MYSQL: built-in database. EXTERNAL*MYSQL: external database. HIVE*METASTORE: HMS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionType(String connectionType) {
             return connectionType(Output.of(connectionType));

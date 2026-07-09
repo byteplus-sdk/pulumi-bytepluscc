@@ -18,31 +18,31 @@ import javax.annotation.Nullable;
 
 /**
  * Domain groups are used for centralized management of multiple domains. You can batch associate rules and manage them collectively.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.waf.HostGroup;
  * import com.byteplus.bytepluscc.waf.HostGroupArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var example = new HostGroup("example", HostGroupArgs.builder()
  *             .description("测试域名组描述")
@@ -50,122 +50,132 @@ import javax.annotation.Nullable;
  *             .hostLists("www.testwaf.com")
  *             .name("test-host-group-full")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:waf/hostGroup:HostGroup example &#34;host_group_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:waf/hostGroup:HostGroup")
 public class HostGroup extends com.pulumi.resources.CustomResource {
     /**
      * Domain group description.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Domain group description.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Number of domains in the domain group.
-     * 
+     *
      */
     @Export(name="hostCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> hostCount;
 
     /**
      * @return Number of domains in the domain group.
-     * 
+     *
      */
     public Output<Integer> hostCount() {
         return this.hostCount;
     }
     /**
      * Domain group ID.
-     * 
+     *
      */
     @Export(name="hostGroupId", refs={String.class}, tree="[0]")
     private Output<String> hostGroupId;
 
     /**
      * @return Domain group ID.
-     * 
+     *
      */
     public Output<String> hostGroupId() {
         return this.hostGroupId;
     }
     /**
      * Domains in the domain group. The list can be filtered by the first element.
-     * 
+     *
      */
     @Export(name="hostLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> hostLists;
 
     /**
      * @return Domains in the domain group. The list can be filtered by the first element.
-     * 
+     *
      */
     public Output<List<String>> hostLists() {
         return this.hostLists;
     }
     /**
      * Domain group name.
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Domain group name.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Project name.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Associated rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="relatedRules", refs={List.class,HostGroupRelatedRule.class}, tree="[0,1]")
     private Output<List<HostGroupRelatedRule>> relatedRules;
 
+    /**
+     * @return Associated rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<HostGroupRelatedRule>> relatedRules() {
         return this.relatedRules;
     }
     /**
      * Domain group update time.
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Domain group update time.
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

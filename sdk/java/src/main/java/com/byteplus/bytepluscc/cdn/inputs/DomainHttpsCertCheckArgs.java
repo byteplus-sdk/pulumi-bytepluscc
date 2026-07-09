@@ -17,23 +17,33 @@ public final class DomainHttpsCertCheckArgs extends com.pulumi.resources.Resourc
 
     public static final DomainHttpsCertCheckArgs Empty = new DomainHttpsCertCheckArgs();
 
+    /**
+     * Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="certInfoLists")
     private @Nullable Output<List<DomainHttpsCertCheckCertInfoListArgs>> certInfoLists;
 
+    /**
+     * @return Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainHttpsCertCheckCertInfoListArgs>>> certInfoLists() {
         return Optional.ofNullable(this.certInfoLists);
     }
 
     /**
      * Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-     * 
+     *
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -64,24 +74,45 @@ public final class DomainHttpsCertCheckArgs extends com.pulumi.resources.Resourc
             $ = new DomainHttpsCertCheckArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param certInfoLists Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder certInfoLists(@Nullable Output<List<DomainHttpsCertCheckCertInfoListArgs>> certInfoLists) {
             $.certInfoLists = certInfoLists;
             return this;
         }
 
+        /**
+         * @param certInfoLists Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder certInfoLists(List<DomainHttpsCertCheckCertInfoListArgs> certInfoLists) {
             return certInfoLists(Output.of(certInfoLists));
         }
 
+        /**
+         * @param certInfoLists Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder certInfoLists(DomainHttpsCertCheckCertInfoListArgs... certInfoLists) {
             return certInfoLists(List.of(certInfoLists));
         }
 
         /**
          * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -90,9 +121,9 @@ public final class DomainHttpsCertCheckArgs extends com.pulumi.resources.Resourc
 
         /**
          * @param switch_ Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

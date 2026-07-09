@@ -21,14 +21,14 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the endpoint node. The default value is an empty string. It must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the endpoint node. The default value is an empty string. It must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -36,14 +36,14 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Endpoint name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the endpoint ID.
-     * 
+     *
      */
     @Import(name="endpointName")
     private @Nullable Output<String> endpointName;
 
     /**
      * @return Endpoint name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the endpoint ID.
-     * 
+     *
      */
     public Optional<Output<String>> endpointName() {
         return Optional.ofNullable(this.endpointName);
@@ -51,14 +51,14 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IP protocol type for the interface endpoint. Options are ipv4 and ipv6. The default for interface endpoints is ipv4. If only ipv4 is used, do not provide this parameter. If the interface endpoint is dual stack (ipv4 &amp; ipv6), you must provide this parameter. Before providing it, ensure the following: your account has enabled IPv6 for private network connections; the subnet associated with the interface endpoint has enabled the IPv6 segment; the endpoint service associated with the interface endpoint is dual stack. Parameter -N: indicates the sequence number of the IP protocol type for the interface endpoint, with a range of 1–2. Use &amp; to separate the sequence numbers of the two IP protocol types. Currently, only providing IPv6 is not supported.
-     * 
+     *
      */
     @Import(name="ipAddressVersions")
     private @Nullable Output<List<String>> ipAddressVersions;
 
     /**
      * @return IP protocol type for the interface endpoint. Options are ipv4 and ipv6. The default for interface endpoints is ipv4. If only ipv4 is used, do not provide this parameter. If the interface endpoint is dual stack (ipv4 &amp; ipv6), you must provide this parameter. Before providing it, ensure the following: your account has enabled IPv6 for private network connections; the subnet associated with the interface endpoint has enabled the IPv6 segment; the endpoint service associated with the interface endpoint is dual stack. Parameter -N: indicates the sequence number of the IP protocol type for the interface endpoint, with a range of 1–2. Use &amp; to separate the sequence numbers of the two IP protocol types. Currently, only providing IPv6 is not supported.
-     * 
+     *
      */
     public Optional<Output<List<String>>> ipAddressVersions() {
         return Optional.ofNullable(this.ipAddressVersions);
@@ -66,14 +66,14 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable private DNS name. false (default): disabled. true: enabled.
-     * 
+     *
      */
     @Import(name="privateDnsEnabled")
     private @Nullable Output<Boolean> privateDnsEnabled;
 
     /**
      * @return Enable private DNS name. false (default): disabled. true: enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> privateDnsEnabled() {
         return Optional.ofNullable(this.privateDnsEnabled);
@@ -81,14 +81,14 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project to which the endpoint node belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the endpoint node belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -96,14 +96,14 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the security group to be bound to the endpoint. You can call the DescribeSecurityGroups API to obtain the security group ID. Parameter -N: Indicates the sequence number of the security group ID, value range: 1–5. Separate multiple security group IDs with &amp;.
-     * 
+     *
      */
     @Import(name="securityGroupIds")
     private @Nullable Output<List<String>> securityGroupIds;
 
     /**
      * @return ID of the security group to be bound to the endpoint. You can call the DescribeSecurityGroups API to obtain the security group ID. Parameter -N: Indicates the sequence number of the security group ID, value range: 1–5. Separate multiple security group IDs with &amp;.
-     * 
+     *
      */
     public Optional<Output<List<String>>> securityGroupIds() {
         return Optional.ofNullable(this.securityGroupIds);
@@ -111,14 +111,14 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the endpoint service to be associated. You can call the DescribeVpcEndpointServices API to obtain the endpoint service ID.
-     * 
+     *
      */
     @Import(name="serviceId")
     private @Nullable Output<String> serviceId;
 
     /**
      * @return ID of the endpoint service to be associated. You can call the DescribeVpcEndpointServices API to obtain the endpoint service ID.
-     * 
+     *
      */
     public Optional<Output<String>> serviceId() {
         return Optional.ofNullable(this.serviceId);
@@ -126,14 +126,14 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the endpoint is managed. false: Unmanaged endpoint. true: Managed endpoint.
-     * 
+     *
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
      * @return Whether the endpoint is managed. false: Unmanaged endpoint. true: Managed endpoint.
-     * 
+     *
      */
     public Optional<Output<Boolean>> serviceManaged() {
         return Optional.ofNullable(this.serviceManaged);
@@ -141,44 +141,64 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the endpoint service to be associated.
-     * 
+     *
      */
     @Import(name="serviceName")
     private @Nullable Output<String> serviceName;
 
     /**
      * @return Name of the endpoint service to be associated.
-     * 
+     *
      */
     public Optional<Output<String>> serviceName() {
         return Optional.ofNullable(this.serviceName);
     }
 
+    /**
+     * Endpoint user tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpcEndpointTagArgs>> tags;
 
+    /**
+     * @return Endpoint user tag.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpcEndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * ID of the VPC to which the endpoint belongs. You can call the DescribeVpcs API to obtain the VPC ID.
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the endpoint belongs. You can call the DescribeVpcs API to obtain the VPC ID.
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
     }
 
+    /**
+     * Availability zone of the endpoint node.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="zones")
     private @Nullable Output<List<VpcEndpointZoneArgs>> zones;
 
+    /**
+     * @return Availability zone of the endpoint node.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpcEndpointZoneArgs>>> zones() {
         return Optional.ofNullable(this.zones);
     }
@@ -220,9 +240,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the endpoint node. The default value is an empty string. It must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -231,9 +251,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the endpoint node. The default value is an empty string. It must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -241,9 +261,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointName Endpoint name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the endpoint ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointName(@Nullable Output<String> endpointName) {
             $.endpointName = endpointName;
@@ -252,9 +272,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endpointName Endpoint name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the endpoint ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointName(String endpointName) {
             return endpointName(Output.of(endpointName));
@@ -262,9 +282,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressVersions IP protocol type for the interface endpoint. Options are ipv4 and ipv6. The default for interface endpoints is ipv4. If only ipv4 is used, do not provide this parameter. If the interface endpoint is dual stack (ipv4 &amp; ipv6), you must provide this parameter. Before providing it, ensure the following: your account has enabled IPv6 for private network connections; the subnet associated with the interface endpoint has enabled the IPv6 segment; the endpoint service associated with the interface endpoint is dual stack. Parameter -N: indicates the sequence number of the IP protocol type for the interface endpoint, with a range of 1–2. Use &amp; to separate the sequence numbers of the two IP protocol types. Currently, only providing IPv6 is not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddressVersions(@Nullable Output<List<String>> ipAddressVersions) {
             $.ipAddressVersions = ipAddressVersions;
@@ -273,9 +293,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressVersions IP protocol type for the interface endpoint. Options are ipv4 and ipv6. The default for interface endpoints is ipv4. If only ipv4 is used, do not provide this parameter. If the interface endpoint is dual stack (ipv4 &amp; ipv6), you must provide this parameter. Before providing it, ensure the following: your account has enabled IPv6 for private network connections; the subnet associated with the interface endpoint has enabled the IPv6 segment; the endpoint service associated with the interface endpoint is dual stack. Parameter -N: indicates the sequence number of the IP protocol type for the interface endpoint, with a range of 1–2. Use &amp; to separate the sequence numbers of the two IP protocol types. Currently, only providing IPv6 is not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddressVersions(List<String> ipAddressVersions) {
             return ipAddressVersions(Output.of(ipAddressVersions));
@@ -283,9 +303,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAddressVersions IP protocol type for the interface endpoint. Options are ipv4 and ipv6. The default for interface endpoints is ipv4. If only ipv4 is used, do not provide this parameter. If the interface endpoint is dual stack (ipv4 &amp; ipv6), you must provide this parameter. Before providing it, ensure the following: your account has enabled IPv6 for private network connections; the subnet associated with the interface endpoint has enabled the IPv6 segment; the endpoint service associated with the interface endpoint is dual stack. Parameter -N: indicates the sequence number of the IP protocol type for the interface endpoint, with a range of 1–2. Use &amp; to separate the sequence numbers of the two IP protocol types. Currently, only providing IPv6 is not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAddressVersions(String... ipAddressVersions) {
             return ipAddressVersions(List.of(ipAddressVersions));
@@ -293,9 +313,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateDnsEnabled Enable private DNS name. false (default): disabled. true: enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder privateDnsEnabled(@Nullable Output<Boolean> privateDnsEnabled) {
             $.privateDnsEnabled = privateDnsEnabled;
@@ -304,9 +324,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param privateDnsEnabled Enable private DNS name. false (default): disabled. true: enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder privateDnsEnabled(Boolean privateDnsEnabled) {
             return privateDnsEnabled(Output.of(privateDnsEnabled));
@@ -314,9 +334,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the endpoint node belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -325,9 +345,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the endpoint node belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -335,9 +355,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds ID of the security group to be bound to the endpoint. You can call the DescribeSecurityGroups API to obtain the security group ID. Parameter -N: Indicates the sequence number of the security group ID, value range: 1–5. Separate multiple security group IDs with &amp;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIds(@Nullable Output<List<String>> securityGroupIds) {
             $.securityGroupIds = securityGroupIds;
@@ -346,9 +366,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds ID of the security group to be bound to the endpoint. You can call the DescribeSecurityGroups API to obtain the security group ID. Parameter -N: Indicates the sequence number of the security group ID, value range: 1–5. Separate multiple security group IDs with &amp;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIds(List<String> securityGroupIds) {
             return securityGroupIds(Output.of(securityGroupIds));
@@ -356,9 +376,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param securityGroupIds ID of the security group to be bound to the endpoint. You can call the DescribeSecurityGroups API to obtain the security group ID. Parameter -N: Indicates the sequence number of the security group ID, value range: 1–5. Separate multiple security group IDs with &amp;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityGroupIds(String... securityGroupIds) {
             return securityGroupIds(List.of(securityGroupIds));
@@ -366,9 +386,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceId ID of the endpoint service to be associated. You can call the DescribeVpcEndpointServices API to obtain the endpoint service ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceId(@Nullable Output<String> serviceId) {
             $.serviceId = serviceId;
@@ -377,9 +397,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceId ID of the endpoint service to be associated. You can call the DescribeVpcEndpointServices API to obtain the endpoint service ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceId(String serviceId) {
             return serviceId(Output.of(serviceId));
@@ -387,9 +407,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceManaged Whether the endpoint is managed. false: Unmanaged endpoint. true: Managed endpoint.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceManaged(@Nullable Output<Boolean> serviceManaged) {
             $.serviceManaged = serviceManaged;
@@ -398,9 +418,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceManaged Whether the endpoint is managed. false: Unmanaged endpoint. true: Managed endpoint.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceManaged(Boolean serviceManaged) {
             return serviceManaged(Output.of(serviceManaged));
@@ -408,9 +428,9 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceName Name of the endpoint service to be associated.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceName(@Nullable Output<String> serviceName) {
             $.serviceName = serviceName;
@@ -419,32 +439,53 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceName Name of the endpoint service to be associated.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceName(String serviceName) {
             return serviceName(Output.of(serviceName));
         }
 
+        /**
+         * @param tags Endpoint user tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<VpcEndpointTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Endpoint user tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<VpcEndpointTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Endpoint user tag.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(VpcEndpointTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpcId ID of the VPC to which the endpoint belongs. You can call the DescribeVpcs API to obtain the VPC ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -453,23 +494,44 @@ public final class VpcEndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC to which the endpoint belongs. You can call the DescribeVpcs API to obtain the VPC ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
         }
 
+        /**
+         * @param zones Availability zone of the endpoint node.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zones(@Nullable Output<List<VpcEndpointZoneArgs>> zones) {
             $.zones = zones;
             return this;
         }
 
+        /**
+         * @param zones Availability zone of the endpoint node.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zones(List<VpcEndpointZoneArgs> zones) {
             return zones(Output.of(zones));
         }
 
+        /**
+         * @param zones Availability zone of the endpoint node.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zones(VpcEndpointZoneArgs... zones) {
             return zones(List.of(zones));
         }

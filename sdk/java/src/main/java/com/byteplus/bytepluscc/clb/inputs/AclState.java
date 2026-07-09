@@ -21,23 +21,33 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
     public static final AclState Empty = new AclState();
 
+    /**
+     * Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="aclEntries")
     private @Nullable Output<List<AclAclEntryArgs>> aclEntries;
 
+    /**
+     * @return Detailed information about IP entries in the access control policy group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AclAclEntryArgs>>> aclEntries() {
         return Optional.ofNullable(this.aclEntries);
     }
 
     /**
      * Number of IP entries contained in the access control policy group.
-     * 
+     *
      */
     @Import(name="aclEntryCount")
     private @Nullable Output<Integer> aclEntryCount;
 
     /**
      * @return Number of IP entries contained in the access control policy group.
-     * 
+     *
      */
     public Optional<Output<Integer>> aclEntryCount() {
         return Optional.ofNullable(this.aclEntryCount);
@@ -45,14 +55,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Access control policy group ID
-     * 
+     *
      */
     @Import(name="aclId")
     private @Nullable Output<String> aclId;
 
     /**
      * @return Access control policy group ID
-     * 
+     *
      */
     public Optional<Output<String>> aclId() {
         return Optional.ofNullable(this.aclId);
@@ -60,14 +70,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-     * 
+     *
      */
     @Import(name="aclName")
     private @Nullable Output<String> aclName;
 
     /**
      * @return Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-     * 
+     *
      */
     public Optional<Output<String>> aclName() {
         return Optional.ofNullable(this.aclName);
@@ -75,14 +85,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the access control policy group
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time of the access control policy group
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -90,36 +100,46 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Detailed information about listeners associated with the access control policy group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="listeners")
     private @Nullable Output<List<AclListenerArgs>> listeners;
 
+    /**
+     * @return Detailed information about listeners associated with the access control policy group
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AclListenerArgs>>> listeners() {
         return Optional.ofNullable(this.listeners);
     }
 
     /**
      * Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -127,14 +147,14 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Is this a managed resource. true: yes. false: no.
-     * 
+     *
      */
     @Import(name="serviceManaged")
     private @Nullable Output<Boolean> serviceManaged;
 
     /**
      * @return Is this a managed resource. true: yes. false: no.
-     * 
+     *
      */
     public Optional<Output<Boolean>> serviceManaged() {
         return Optional.ofNullable(this.serviceManaged);
@@ -142,36 +162,46 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<AclTagArgs>> tags;
 
+    /**
+     * @return Detailed information about access control policy group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AclTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Last operation time of the access control policy group
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Last operation time of the access control policy group
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -212,24 +242,45 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
             $ = new AclState(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder aclEntries(@Nullable Output<List<AclAclEntryArgs>> aclEntries) {
             $.aclEntries = aclEntries;
             return this;
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder aclEntries(List<AclAclEntryArgs> aclEntries) {
             return aclEntries(Output.of(aclEntries));
         }
 
+        /**
+         * @param aclEntries Detailed information about IP entries in the access control policy group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder aclEntries(AclAclEntryArgs... aclEntries) {
             return aclEntries(List.of(aclEntries));
         }
 
         /**
          * @param aclEntryCount Number of IP entries contained in the access control policy group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder aclEntryCount(@Nullable Output<Integer> aclEntryCount) {
             $.aclEntryCount = aclEntryCount;
@@ -238,9 +289,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclEntryCount Number of IP entries contained in the access control policy group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder aclEntryCount(Integer aclEntryCount) {
             return aclEntryCount(Output.of(aclEntryCount));
@@ -248,9 +299,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclId Access control policy group ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder aclId(@Nullable Output<String> aclId) {
             $.aclId = aclId;
@@ -259,9 +310,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclId Access control policy group ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder aclId(String aclId) {
             return aclId(Output.of(aclId));
@@ -269,9 +320,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclName Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder aclName(@Nullable Output<String> aclName) {
             $.aclName = aclName;
@@ -280,9 +331,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param aclName Name of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the access control policy group ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder aclName(String aclName) {
             return aclName(Output.of(aclName));
@@ -290,9 +341,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time of the access control policy group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -301,9 +352,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time of the access control policy group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -311,9 +362,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -322,32 +373,53 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the access control policy group. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param listeners Detailed information about listeners associated with the access control policy group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder listeners(@Nullable Output<List<AclListenerArgs>> listeners) {
             $.listeners = listeners;
             return this;
         }
 
+        /**
+         * @param listeners Detailed information about listeners associated with the access control policy group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder listeners(List<AclListenerArgs> listeners) {
             return listeners(Output.of(listeners));
         }
 
+        /**
+         * @param listeners Detailed information about listeners associated with the access control policy group
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder listeners(AclListenerArgs... listeners) {
             return listeners(List.of(listeners));
         }
 
         /**
          * @param projectName Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -356,9 +428,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project to which the access control policy group belongs. If not specified, defaults to &#39;default&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -366,9 +438,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceManaged Is this a managed resource. true: yes. false: no.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceManaged(@Nullable Output<Boolean> serviceManaged) {
             $.serviceManaged = serviceManaged;
@@ -377,9 +449,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceManaged Is this a managed resource. true: yes. false: no.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceManaged(Boolean serviceManaged) {
             return serviceManaged(Output.of(serviceManaged));
@@ -387,9 +459,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -398,32 +470,53 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Status of the access control policy group. Creating: creating. Active: available. Configuring: configuring. Deleting: deleting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<AclTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<AclTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Detailed information about access control policy group tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(AclTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updateTime Last operation time of the access control policy group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -432,9 +525,9 @@ public final class AclState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Last operation time of the access control policy group
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

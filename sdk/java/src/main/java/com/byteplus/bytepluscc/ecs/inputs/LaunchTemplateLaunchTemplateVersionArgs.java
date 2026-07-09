@@ -26,14 +26,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
-     * 
+     *
      */
     @Import(name="deploymentSetGroupNumber")
     private @Nullable Output<Integer> deploymentSetGroupNumber;
 
     /**
      * @return When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
-     * 
+     *
      */
     public Optional<Output<Integer>> deploymentSetGroupNumber() {
         return Optional.ofNullable(this.deploymentSetGroupNumber);
@@ -41,14 +41,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Deployment set ID the instance needs to join.
-     * 
+     *
      */
     @Import(name="deploymentSetId")
     private @Nullable Output<String> deploymentSetId;
 
     /**
      * @return Deployment set ID the instance needs to join.
-     * 
+     *
      */
     public Optional<Output<String>> deploymentSetId() {
         return Optional.ofNullable(this.deploymentSetId);
@@ -56,14 +56,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Instance description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Instance description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -71,14 +71,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Public IP information bound to the instance
-     * 
+     *
      */
     @Import(name="eip")
     private @Nullable Output<LaunchTemplateLaunchTemplateVersionEipArgs> eip;
 
     /**
      * @return Public IP information bound to the instance
-     * 
+     *
      */
     public Optional<Output<LaunchTemplateLaunchTemplateVersionEipArgs>> eip() {
         return Optional.ofNullable(this.eip);
@@ -86,14 +86,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
-     * 
+     *
      */
     @Import(name="hostName")
     private @Nullable Output<String> hostName;
 
     /**
      * @return Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
-     * 
+     *
      */
     public Optional<Output<String>> hostName() {
         return Optional.ofNullable(this.hostName);
@@ -101,14 +101,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
-     * 
+     *
      */
     @Import(name="hpcClusterId")
     private @Nullable Output<String> hpcClusterId;
 
     /**
      * @return When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
-     * 
+     *
      */
     public Optional<Output<String>> hpcClusterId() {
         return Optional.ofNullable(this.hpcClusterId);
@@ -116,14 +116,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Image ID.
-     * 
+     *
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
      * @return Image ID.
-     * 
+     *
      */
     public Optional<Output<String>> imageId() {
         return Optional.ofNullable(this.imageId);
@@ -131,14 +131,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Image name.
-     * 
+     *
      */
     @Import(name="imageName")
     private @Nullable Output<String> imageName;
 
     /**
      * @return Image name.
-     * 
+     *
      */
     public Optional<Output<String>> imageName() {
         return Optional.ofNullable(this.imageName);
@@ -146,14 +146,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
-     * 
+     *
      */
     @Import(name="instanceChargeType")
     private @Nullable Output<String> instanceChargeType;
 
     /**
      * @return Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
-     * 
+     *
      */
     public Optional<Output<String>> instanceChargeType() {
         return Optional.ofNullable(this.instanceChargeType);
@@ -161,14 +161,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Instance name.
-     * 
+     *
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Instance name.
-     * 
+     *
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -176,14 +176,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Instance specification
-     * 
+     *
      */
     @Import(name="instanceTypeId")
     private @Nullable Output<String> instanceTypeId;
 
     /**
      * @return Instance specification
-     * 
+     *
      */
     public Optional<Output<String>> instanceTypeId() {
         return Optional.ofNullable(this.instanceTypeId);
@@ -191,14 +191,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
-     * 
+     *
      */
     @Import(name="keepImageCredential")
     private @Nullable Output<Boolean> keepImageCredential;
 
     /**
      * @return Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
-     * 
+     *
      */
     public Optional<Output<Boolean>> keepImageCredential() {
         return Optional.ofNullable(this.keepImageCredential);
@@ -206,36 +206,46 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Key pair bound to the instance.
-     * 
+     *
      */
     @Import(name="keyPairName")
     private @Nullable Output<String> keyPairName;
 
     /**
      * @return Key pair bound to the instance.
-     * 
+     *
      */
     public Optional<Output<String>> keyPairName() {
         return Optional.ofNullable(this.keyPairName);
     }
 
+    /**
+     * Network interface information mounted to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="networkInterfaces")
     private @Nullable Output<List<LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs>> networkInterfaces;
 
+    /**
+     * @return Network interface information mounted to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs>>> networkInterfaces() {
         return Optional.ofNullable(this.networkInterfaces);
     }
 
     /**
      * Project associated with the instance.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project associated with the instance.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -243,14 +253,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Elastic reservation order information
-     * 
+     *
      */
     @Import(name="scheduledInstance")
     private @Nullable Output<LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs> scheduledInstance;
 
     /**
      * @return Elastic reservation order information
-     * 
+     *
      */
     public Optional<Output<LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs>> scheduledInstance() {
         return Optional.ofNullable(this.scheduledInstance);
@@ -258,14 +268,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-     * 
+     *
      */
     @Import(name="securityEnhancementStrategy")
     private @Nullable Output<String> securityEnhancementStrategy;
 
     /**
      * @return Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-     * 
+     *
      */
     public Optional<Output<String>> securityEnhancementStrategy() {
         return Optional.ofNullable(this.securityEnhancementStrategy);
@@ -273,14 +283,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Maximum hourly price for preemptible instances
-     * 
+     *
      */
     @Import(name="spotPriceLimit")
     private @Nullable Output<Double> spotPriceLimit;
 
     /**
      * @return Maximum hourly price for preemptible instances
-     * 
+     *
      */
     public Optional<Output<Double>> spotPriceLimit() {
         return Optional.ofNullable(this.spotPriceLimit);
@@ -288,14 +298,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
-     * 
+     *
      */
     @Import(name="spotStrategy")
     private @Nullable Output<String> spotStrategy;
 
     /**
      * @return Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
-     * 
+     *
      */
     public Optional<Output<String>> spotStrategy() {
         return Optional.ofNullable(this.spotStrategy);
@@ -303,36 +313,46 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Starting number for the sequential suffix
-     * 
+     *
      */
     @Import(name="suffixIndex")
     private @Nullable Output<Integer> suffixIndex;
 
     /**
      * @return Starting number for the sequential suffix
-     * 
+     *
      */
     public Optional<Output<Integer>> suffixIndex() {
         return Optional.ofNullable(this.suffixIndex);
     }
 
+    /**
+     * Tag information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<LaunchTemplateLaunchTemplateVersionTagArgs>> tags;
 
+    /**
+     * @return Tag information for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<LaunchTemplateLaunchTemplateVersionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
-     * 
+     *
      */
     @Import(name="uniqueSuffix")
     private @Nullable Output<Boolean> uniqueSuffix;
 
     /**
      * @return Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
-     * 
+     *
      */
     public Optional<Output<Boolean>> uniqueSuffix() {
         return Optional.ofNullable(this.uniqueSuffix);
@@ -340,14 +360,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Custom data for the instance.
-     * 
+     *
      */
     @Import(name="userData")
     private @Nullable Output<String> userData;
 
     /**
      * @return Custom data for the instance.
-     * 
+     *
      */
     public Optional<Output<String>> userData() {
         return Optional.ofNullable(this.userData);
@@ -355,36 +375,46 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Template version description.
-     * 
+     *
      */
     @Import(name="versionDescription")
     private @Nullable Output<String> versionDescription;
 
     /**
      * @return Template version description.
-     * 
+     *
      */
     public Optional<Output<String>> versionDescription() {
         return Optional.ofNullable(this.versionDescription);
     }
 
+    /**
+     * Cloud disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="volumes")
     private @Nullable Output<List<LaunchTemplateLaunchTemplateVersionVolumeArgs>> volumes;
 
+    /**
+     * @return Cloud disk information bound to the instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<LaunchTemplateLaunchTemplateVersionVolumeArgs>>> volumes() {
         return Optional.ofNullable(this.volumes);
     }
 
     /**
      * Private network ID.
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network ID.
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -392,14 +422,14 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
     /**
      * Instance availability zone ID
-     * 
+     *
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Instance availability zone ID
-     * 
+     *
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -457,9 +487,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param deploymentSetGroupNumber When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetGroupNumber(@Nullable Output<Integer> deploymentSetGroupNumber) {
             $.deploymentSetGroupNumber = deploymentSetGroupNumber;
@@ -468,9 +498,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param deploymentSetGroupNumber When the ECS instance needs to join or adjust the deployment set strategy to the deployment set group high availability strategy (AvailabilityGroup), you can use this parameter to specify the group number of the instance in the deployment set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetGroupNumber(Integer deploymentSetGroupNumber) {
             return deploymentSetGroupNumber(Output.of(deploymentSetGroupNumber));
@@ -478,9 +508,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param deploymentSetId Deployment set ID the instance needs to join.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetId(@Nullable Output<String> deploymentSetId) {
             $.deploymentSetId = deploymentSetId;
@@ -489,9 +519,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param deploymentSetId Deployment set ID the instance needs to join.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetId(String deploymentSetId) {
             return deploymentSetId(Output.of(deploymentSetId));
@@ -499,9 +529,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param description Instance description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -510,9 +540,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param description Instance description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -520,9 +550,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param eip Public IP information bound to the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eip(@Nullable Output<LaunchTemplateLaunchTemplateVersionEipArgs> eip) {
             $.eip = eip;
@@ -531,9 +561,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param eip Public IP information bound to the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eip(LaunchTemplateLaunchTemplateVersionEipArgs eip) {
             return eip(Output.of(eip));
@@ -541,9 +571,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param hostName Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostName(@Nullable Output<String> hostName) {
             $.hostName = hostName;
@@ -552,9 +582,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param hostName Instance hostname. For Linux, the hostname length must be 2–59 characters. For Windows, the hostname length must be 2–10 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostName(String hostName) {
             return hostName(Output.of(hostName));
@@ -562,9 +592,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param hpcClusterId When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hpcClusterId(@Nullable Output<String> hpcClusterId) {
             $.hpcClusterId = hpcClusterId;
@@ -573,9 +603,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param hpcClusterId When creating a high-performance computing GPU instance, please specify the high-performance computing cluster ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hpcClusterId(String hpcClusterId) {
             return hpcClusterId(Output.of(hpcClusterId));
@@ -583,9 +613,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param imageId Image ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder imageId(@Nullable Output<String> imageId) {
             $.imageId = imageId;
@@ -594,9 +624,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param imageId Image ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder imageId(String imageId) {
             return imageId(Output.of(imageId));
@@ -604,9 +634,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param imageName Image name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder imageName(@Nullable Output<String> imageName) {
             $.imageName = imageName;
@@ -615,9 +645,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param imageName Image name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder imageName(String imageName) {
             return imageName(Output.of(imageName));
@@ -625,9 +655,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param instanceChargeType Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceChargeType(@Nullable Output<String> instanceChargeType) {
             $.instanceChargeType = instanceChargeType;
@@ -636,9 +666,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param instanceChargeType Billing type for the instance and cloud disk. Options: PostPaid: Pay-as-you-go. PrePaid: Yearly/monthly subscription. Esi: Elastic reservation instance. Segmented: Time-based elastic reservation instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceChargeType(String instanceChargeType) {
             return instanceChargeType(Output.of(instanceChargeType));
@@ -646,9 +676,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param instanceName Instance name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -657,9 +687,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param instanceName Instance name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -667,9 +697,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param instanceTypeId Instance specification
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceTypeId(@Nullable Output<String> instanceTypeId) {
             $.instanceTypeId = instanceTypeId;
@@ -678,9 +708,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param instanceTypeId Instance specification
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceTypeId(String instanceTypeId) {
             return instanceTypeId(Output.of(instanceTypeId));
@@ -688,9 +718,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param keepImageCredential Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keepImageCredential(@Nullable Output<Boolean> keepImageCredential) {
             $.keepImageCredential = keepImageCredential;
@@ -699,9 +729,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param keepImageCredential Whether to retain image settings. Values: true: Retain image settings. If retained, the instance will use the preset password or key pair from the image for login. false (default): Do not retain image settings.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keepImageCredential(Boolean keepImageCredential) {
             return keepImageCredential(Output.of(keepImageCredential));
@@ -709,9 +739,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param keyPairName Key pair bound to the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyPairName(@Nullable Output<String> keyPairName) {
             $.keyPairName = keyPairName;
@@ -720,32 +750,53 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param keyPairName Key pair bound to the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyPairName(String keyPairName) {
             return keyPairName(Output.of(keyPairName));
         }
 
+        /**
+         * @param networkInterfaces Network interface information mounted to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder networkInterfaces(@Nullable Output<List<LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs>> networkInterfaces) {
             $.networkInterfaces = networkInterfaces;
             return this;
         }
 
+        /**
+         * @param networkInterfaces Network interface information mounted to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder networkInterfaces(List<LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs> networkInterfaces) {
             return networkInterfaces(Output.of(networkInterfaces));
         }
 
+        /**
+         * @param networkInterfaces Network interface information mounted to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder networkInterfaces(LaunchTemplateLaunchTemplateVersionNetworkInterfaceArgs... networkInterfaces) {
             return networkInterfaces(List.of(networkInterfaces));
         }
 
         /**
          * @param projectName Project associated with the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -754,9 +805,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param projectName Project associated with the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -764,9 +815,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param scheduledInstance Elastic reservation order information
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scheduledInstance(@Nullable Output<LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs> scheduledInstance) {
             $.scheduledInstance = scheduledInstance;
@@ -775,9 +826,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param scheduledInstance Elastic reservation order information
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder scheduledInstance(LaunchTemplateLaunchTemplateVersionScheduledInstanceArgs scheduledInstance) {
             return scheduledInstance(Output.of(scheduledInstance));
@@ -785,9 +836,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param securityEnhancementStrategy Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityEnhancementStrategy(@Nullable Output<String> securityEnhancementStrategy) {
             $.securityEnhancementStrategy = securityEnhancementStrategy;
@@ -796,9 +847,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param securityEnhancementStrategy Enable security hardening. Active: Enable security hardening, applies only to public images. InActive: Disable security hardening, applies to all images.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityEnhancementStrategy(String securityEnhancementStrategy) {
             return securityEnhancementStrategy(Output.of(securityEnhancementStrategy));
@@ -806,9 +857,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param spotPriceLimit Maximum hourly price for preemptible instances
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spotPriceLimit(@Nullable Output<Double> spotPriceLimit) {
             $.spotPriceLimit = spotPriceLimit;
@@ -817,9 +868,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param spotPriceLimit Maximum hourly price for preemptible instances
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spotPriceLimit(Double spotPriceLimit) {
             return spotPriceLimit(Output.of(spotPriceLimit));
@@ -827,9 +878,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param spotStrategy Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spotStrategy(@Nullable Output<String> spotStrategy) {
             $.spotStrategy = spotStrategy;
@@ -838,9 +889,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param spotStrategy Preemptible strategy for pay-as-you-go billing. Options: NoSpot: Create a regular pay-as-you-go instance. SpotAsPriceGo: System automatically bids, follows the current market price for preemptible instances. SpotWithPriceLimit: Preemptible instance with a bid limit.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spotStrategy(String spotStrategy) {
             return spotStrategy(Output.of(spotStrategy));
@@ -848,9 +899,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param suffixIndex Starting number for the sequential suffix
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder suffixIndex(@Nullable Output<Integer> suffixIndex) {
             $.suffixIndex = suffixIndex;
@@ -859,32 +910,53 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param suffixIndex Starting number for the sequential suffix
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder suffixIndex(Integer suffixIndex) {
             return suffixIndex(Output.of(suffixIndex));
         }
 
+        /**
+         * @param tags Tag information for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<LaunchTemplateLaunchTemplateVersionTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<LaunchTemplateLaunchTemplateVersionTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(LaunchTemplateLaunchTemplateVersionTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param uniqueSuffix Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder uniqueSuffix(@Nullable Output<Boolean> uniqueSuffix) {
             $.uniqueSuffix = uniqueSuffix;
@@ -893,9 +965,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param uniqueSuffix Indicates whether to automatically add sequential suffixes to Hostname and InstanceName when creating multiple instances
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder uniqueSuffix(Boolean uniqueSuffix) {
             return uniqueSuffix(Output.of(uniqueSuffix));
@@ -903,9 +975,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param userData Custom data for the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userData(@Nullable Output<String> userData) {
             $.userData = userData;
@@ -914,9 +986,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param userData Custom data for the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userData(String userData) {
             return userData(Output.of(userData));
@@ -924,9 +996,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param versionDescription Template version description.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder versionDescription(@Nullable Output<String> versionDescription) {
             $.versionDescription = versionDescription;
@@ -935,32 +1007,53 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param versionDescription Template version description.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder versionDescription(String versionDescription) {
             return versionDescription(Output.of(versionDescription));
         }
 
+        /**
+         * @param volumes Cloud disk information bound to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder volumes(@Nullable Output<List<LaunchTemplateLaunchTemplateVersionVolumeArgs>> volumes) {
             $.volumes = volumes;
             return this;
         }
 
+        /**
+         * @param volumes Cloud disk information bound to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder volumes(List<LaunchTemplateLaunchTemplateVersionVolumeArgs> volumes) {
             return volumes(Output.of(volumes));
         }
 
+        /**
+         * @param volumes Cloud disk information bound to the instance
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder volumes(LaunchTemplateLaunchTemplateVersionVolumeArgs... volumes) {
             return volumes(List.of(volumes));
         }
 
         /**
          * @param vpcId Private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -969,9 +1062,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param vpcId Private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -979,9 +1072,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param zoneId Instance availability zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -990,9 +1083,9 @@ public final class LaunchTemplateLaunchTemplateVersionArgs extends com.pulumi.re
 
         /**
          * @param zoneId Instance availability zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

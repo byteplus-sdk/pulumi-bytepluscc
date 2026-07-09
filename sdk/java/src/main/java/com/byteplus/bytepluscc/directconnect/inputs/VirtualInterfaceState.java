@@ -21,14 +21,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * ID of the account to which the dedicated line gateway belongs.
-     * 
+     *
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return ID of the account to which the dedicated line gateway belongs.
-     * 
+     *
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -36,14 +36,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Bandwidth limit of the virtual interface, in Mbps.
-     * 
+     *
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth limit of the virtual interface, in Mbps.
-     * 
+     *
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -51,14 +51,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * BFD detection interval (ms).
-     * 
+     *
      */
     @Import(name="bfdDetectInterval")
     private @Nullable Output<Integer> bfdDetectInterval;
 
     /**
      * @return BFD detection interval (ms).
-     * 
+     *
      */
     public Optional<Output<Integer>> bfdDetectInterval() {
         return Optional.ofNullable(this.bfdDetectInterval);
@@ -66,14 +66,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * BFD detection count.
-     * 
+     *
      */
     @Import(name="bfdDetectMultiplier")
     private @Nullable Output<Integer> bfdDetectMultiplier;
 
     /**
      * @return BFD detection count.
-     * 
+     *
      */
     public Optional<Output<Integer>> bfdDetectMultiplier() {
         return Optional.ofNullable(this.bfdDetectMultiplier);
@@ -81,14 +81,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Time when the virtual interface was created.
-     * 
+     *
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Time when the virtual interface was created.
-     * 
+     *
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -96,14 +96,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Description of the virtual interface.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -111,14 +111,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * ID of the physical dedicated line associated with the virtual interface.
-     * 
+     *
      */
     @Import(name="directConnectConnectionId")
     private @Nullable Output<String> directConnectConnectionId;
 
     /**
      * @return ID of the physical dedicated line associated with the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> directConnectConnectionId() {
         return Optional.ofNullable(this.directConnectConnectionId);
@@ -126,14 +126,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * ID of the dedicated gateway associated with the virtual interface.
-     * 
+     *
      */
     @Import(name="directConnectGatewayId")
     private @Nullable Output<String> directConnectGatewayId;
 
     /**
      * @return ID of the dedicated gateway associated with the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> directConnectGatewayId() {
         return Optional.ofNullable(this.directConnectGatewayId);
@@ -141,14 +141,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Enable BFD detection. true: enabled false: disabled.
-     * 
+     *
      */
     @Import(name="enableBfd")
     private @Nullable Output<Boolean> enableBfd;
 
     /**
      * @return Enable BFD detection. true: enabled false: disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableBfd() {
         return Optional.ofNullable(this.enableBfd);
@@ -156,14 +156,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Enable BFD detection echo packet mode. true: enabled false: disabled.
-     * 
+     *
      */
     @Import(name="enableBfdEcho")
     private @Nullable Output<Boolean> enableBfdEcho;
 
     /**
      * @return Enable BFD detection echo packet mode. true: enabled false: disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableBfdEcho() {
         return Optional.ofNullable(this.enableBfdEcho);
@@ -171,14 +171,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Is NQA detection enabled? true: enabled false: not enabled.
-     * 
+     *
      */
     @Import(name="enableNqa")
     private @Nullable Output<Boolean> enableNqa;
 
     /**
      * @return Is NQA detection enabled? true: enabled false: not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableNqa() {
         return Optional.ofNullable(this.enableNqa);
@@ -186,14 +186,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Local gateway interconnection IP address of the virtual interface.
-     * 
+     *
      */
     @Import(name="localIp")
     private @Nullable Output<String> localIp;
 
     /**
      * @return Local gateway interconnection IP address of the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> localIp() {
         return Optional.ofNullable(this.localIp);
@@ -201,14 +201,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * IPv6 address of the local gateway interconnection IP for the virtual interface.
-     * 
+     *
      */
     @Import(name="localIpv6Ip")
     private @Nullable Output<String> localIpv6Ip;
 
     /**
      * @return IPv6 address of the local gateway interconnection IP for the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> localIpv6Ip() {
         return Optional.ofNullable(this.localIpv6Ip);
@@ -216,14 +216,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Interval for sending consecutive probe packets in NQA detection.
-     * 
+     *
      */
     @Import(name="nqaDetectInterval")
     private @Nullable Output<Integer> nqaDetectInterval;
 
     /**
      * @return Interval for sending consecutive probe packets in NQA detection.
-     * 
+     *
      */
     public Optional<Output<Integer>> nqaDetectInterval() {
         return Optional.ofNullable(this.nqaDetectInterval);
@@ -231,14 +231,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * NQA detection count. If the number of consecutive NQA detection failures reaches the set count, the link is considered faulty.
-     * 
+     *
      */
     @Import(name="nqaDetectMultiplier")
     private @Nullable Output<Integer> nqaDetectMultiplier;
 
     /**
      * @return NQA detection count. If the number of consecutive NQA detection failures reaches the set count, the link is considered faulty.
-     * 
+     *
      */
     public Optional<Output<Integer>> nqaDetectMultiplier() {
         return Optional.ofNullable(this.nqaDetectMultiplier);
@@ -246,14 +246,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Peer gateway interconnection IP address of the virtual interface.
-     * 
+     *
      */
     @Import(name="peerIp")
     private @Nullable Output<String> peerIp;
 
     /**
      * @return Peer gateway interconnection IP address of the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> peerIp() {
         return Optional.ofNullable(this.peerIp);
@@ -261,14 +261,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * IPv6 address of the peer gateway interconnection IP for the virtual interface.
-     * 
+     *
      */
     @Import(name="peerIpv6Ip")
     private @Nullable Output<String> peerIpv6Ip;
 
     /**
      * @return IPv6 address of the peer gateway interconnection IP for the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> peerIpv6Ip() {
         return Optional.ofNullable(this.peerIpv6Ip);
@@ -276,14 +276,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Route type of the virtual interface.
-     * 
+     *
      */
     @Import(name="routeType")
     private @Nullable Output<String> routeType;
 
     /**
      * @return Route type of the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> routeType() {
         return Optional.ofNullable(this.routeType);
@@ -291,36 +291,46 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Status of the virtual interface. Creating: creating Deleting: deleting Pending: configuring Available: available.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the virtual interface. Creating: creating Deleting: deleting Pending: configuring Available: available.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * All tag information added to the virtual interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<VirtualInterfaceTagArgs>> tags;
 
+    /**
+     * @return All tag information added to the virtual interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VirtualInterfaceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Time when the virtual interface was updated.
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Time when the virtual interface was updated.
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -328,14 +338,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * ID of the virtual interface.
-     * 
+     *
      */
     @Import(name="virtualInterfaceId")
     private @Nullable Output<String> virtualInterfaceId;
 
     /**
      * @return ID of the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> virtualInterfaceId() {
         return Optional.ofNullable(this.virtualInterfaceId);
@@ -343,14 +353,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * Name of the virtual interface.
-     * 
+     *
      */
     @Import(name="virtualInterfaceName")
     private @Nullable Output<String> virtualInterfaceName;
 
     /**
      * @return Name of the virtual interface.
-     * 
+     *
      */
     public Optional<Output<String>> virtualInterfaceName() {
         return Optional.ofNullable(this.virtualInterfaceName);
@@ -358,14 +368,14 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
     /**
      * VLAN ID of the virtual interface.
-     * 
+     *
      */
     @Import(name="vlanId")
     private @Nullable Output<Integer> vlanId;
 
     /**
      * @return VLAN ID of the virtual interface.
-     * 
+     *
      */
     public Optional<Output<Integer>> vlanId() {
         return Optional.ofNullable(this.vlanId);
@@ -420,9 +430,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param accountId ID of the account to which the dedicated line gateway belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -431,9 +441,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param accountId ID of the account to which the dedicated line gateway belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -441,9 +451,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidth Bandwidth limit of the virtual interface, in Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -452,9 +462,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidth Bandwidth limit of the virtual interface, in Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -462,9 +472,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bfdDetectInterval BFD detection interval (ms).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bfdDetectInterval(@Nullable Output<Integer> bfdDetectInterval) {
             $.bfdDetectInterval = bfdDetectInterval;
@@ -473,9 +483,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bfdDetectInterval BFD detection interval (ms).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bfdDetectInterval(Integer bfdDetectInterval) {
             return bfdDetectInterval(Output.of(bfdDetectInterval));
@@ -483,9 +493,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bfdDetectMultiplier BFD detection count.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bfdDetectMultiplier(@Nullable Output<Integer> bfdDetectMultiplier) {
             $.bfdDetectMultiplier = bfdDetectMultiplier;
@@ -494,9 +504,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bfdDetectMultiplier BFD detection count.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bfdDetectMultiplier(Integer bfdDetectMultiplier) {
             return bfdDetectMultiplier(Output.of(bfdDetectMultiplier));
@@ -504,9 +514,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param creationTime Time when the virtual interface was created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -515,9 +525,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param creationTime Time when the virtual interface was created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -525,9 +535,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Description of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -536,9 +546,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Description of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -546,9 +556,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param directConnectConnectionId ID of the physical dedicated line associated with the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectConnectionId(@Nullable Output<String> directConnectConnectionId) {
             $.directConnectConnectionId = directConnectConnectionId;
@@ -557,9 +567,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param directConnectConnectionId ID of the physical dedicated line associated with the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectConnectionId(String directConnectConnectionId) {
             return directConnectConnectionId(Output.of(directConnectConnectionId));
@@ -567,9 +577,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param directConnectGatewayId ID of the dedicated gateway associated with the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectGatewayId(@Nullable Output<String> directConnectGatewayId) {
             $.directConnectGatewayId = directConnectGatewayId;
@@ -578,9 +588,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param directConnectGatewayId ID of the dedicated gateway associated with the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectGatewayId(String directConnectGatewayId) {
             return directConnectGatewayId(Output.of(directConnectGatewayId));
@@ -588,9 +598,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableBfd Enable BFD detection. true: enabled false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableBfd(@Nullable Output<Boolean> enableBfd) {
             $.enableBfd = enableBfd;
@@ -599,9 +609,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableBfd Enable BFD detection. true: enabled false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableBfd(Boolean enableBfd) {
             return enableBfd(Output.of(enableBfd));
@@ -609,9 +619,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableBfdEcho Enable BFD detection echo packet mode. true: enabled false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableBfdEcho(@Nullable Output<Boolean> enableBfdEcho) {
             $.enableBfdEcho = enableBfdEcho;
@@ -620,9 +630,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableBfdEcho Enable BFD detection echo packet mode. true: enabled false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableBfdEcho(Boolean enableBfdEcho) {
             return enableBfdEcho(Output.of(enableBfdEcho));
@@ -630,9 +640,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableNqa Is NQA detection enabled? true: enabled false: not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableNqa(@Nullable Output<Boolean> enableNqa) {
             $.enableNqa = enableNqa;
@@ -641,9 +651,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableNqa Is NQA detection enabled? true: enabled false: not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableNqa(Boolean enableNqa) {
             return enableNqa(Output.of(enableNqa));
@@ -651,9 +661,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param localIp Local gateway interconnection IP address of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localIp(@Nullable Output<String> localIp) {
             $.localIp = localIp;
@@ -662,9 +672,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param localIp Local gateway interconnection IP address of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localIp(String localIp) {
             return localIp(Output.of(localIp));
@@ -672,9 +682,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param localIpv6Ip IPv6 address of the local gateway interconnection IP for the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localIpv6Ip(@Nullable Output<String> localIpv6Ip) {
             $.localIpv6Ip = localIpv6Ip;
@@ -683,9 +693,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param localIpv6Ip IPv6 address of the local gateway interconnection IP for the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localIpv6Ip(String localIpv6Ip) {
             return localIpv6Ip(Output.of(localIpv6Ip));
@@ -693,9 +703,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param nqaDetectInterval Interval for sending consecutive probe packets in NQA detection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nqaDetectInterval(@Nullable Output<Integer> nqaDetectInterval) {
             $.nqaDetectInterval = nqaDetectInterval;
@@ -704,9 +714,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param nqaDetectInterval Interval for sending consecutive probe packets in NQA detection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nqaDetectInterval(Integer nqaDetectInterval) {
             return nqaDetectInterval(Output.of(nqaDetectInterval));
@@ -714,9 +724,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param nqaDetectMultiplier NQA detection count. If the number of consecutive NQA detection failures reaches the set count, the link is considered faulty.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nqaDetectMultiplier(@Nullable Output<Integer> nqaDetectMultiplier) {
             $.nqaDetectMultiplier = nqaDetectMultiplier;
@@ -725,9 +735,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param nqaDetectMultiplier NQA detection count. If the number of consecutive NQA detection failures reaches the set count, the link is considered faulty.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nqaDetectMultiplier(Integer nqaDetectMultiplier) {
             return nqaDetectMultiplier(Output.of(nqaDetectMultiplier));
@@ -735,9 +745,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param peerIp Peer gateway interconnection IP address of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerIp(@Nullable Output<String> peerIp) {
             $.peerIp = peerIp;
@@ -746,9 +756,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param peerIp Peer gateway interconnection IP address of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerIp(String peerIp) {
             return peerIp(Output.of(peerIp));
@@ -756,9 +766,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param peerIpv6Ip IPv6 address of the peer gateway interconnection IP for the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerIpv6Ip(@Nullable Output<String> peerIpv6Ip) {
             $.peerIpv6Ip = peerIpv6Ip;
@@ -767,9 +777,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param peerIpv6Ip IPv6 address of the peer gateway interconnection IP for the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerIpv6Ip(String peerIpv6Ip) {
             return peerIpv6Ip(Output.of(peerIpv6Ip));
@@ -777,9 +787,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param routeType Route type of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder routeType(@Nullable Output<String> routeType) {
             $.routeType = routeType;
@@ -788,9 +798,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param routeType Route type of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder routeType(String routeType) {
             return routeType(Output.of(routeType));
@@ -798,9 +808,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Status of the virtual interface. Creating: creating Deleting: deleting Pending: configuring Available: available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -809,32 +819,53 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Status of the virtual interface. Creating: creating Deleting: deleting Pending: configuring Available: available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags All tag information added to the virtual interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<VirtualInterfaceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags All tag information added to the virtual interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<VirtualInterfaceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags All tag information added to the virtual interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(VirtualInterfaceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updateTime Time when the virtual interface was updated.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -843,9 +874,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updateTime Time when the virtual interface was updated.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -853,9 +884,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param virtualInterfaceId ID of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder virtualInterfaceId(@Nullable Output<String> virtualInterfaceId) {
             $.virtualInterfaceId = virtualInterfaceId;
@@ -864,9 +895,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param virtualInterfaceId ID of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder virtualInterfaceId(String virtualInterfaceId) {
             return virtualInterfaceId(Output.of(virtualInterfaceId));
@@ -874,9 +905,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param virtualInterfaceName Name of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder virtualInterfaceName(@Nullable Output<String> virtualInterfaceName) {
             $.virtualInterfaceName = virtualInterfaceName;
@@ -885,9 +916,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param virtualInterfaceName Name of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder virtualInterfaceName(String virtualInterfaceName) {
             return virtualInterfaceName(Output.of(virtualInterfaceName));
@@ -895,9 +926,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param vlanId VLAN ID of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vlanId(@Nullable Output<Integer> vlanId) {
             $.vlanId = vlanId;
@@ -906,9 +937,9 @@ public final class VirtualInterfaceState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param vlanId VLAN ID of the virtual interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vlanId(Integer vlanId) {
             return vlanId(Output.of(vlanId));

@@ -22,32 +22,32 @@ import javax.annotation.Nullable;
 
 /**
  * Workspace is an abstract integration of data collection and rules in the VMP service, providing users with physical or logical isolation for Prometheus capabilities. You can create different workspaces in the VMP service, and data in different workspaces is isolated from each other
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vmp.Workspace;
  * import com.byteplus.bytepluscc.vmp.WorkspaceArgs;
  * import com.pulumi.bytepluscc.vmp.inputs.WorkspaceTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var workspaceDemo = new Workspace("workspaceDemo", WorkspaceArgs.builder()
  *             .authType("BearerToken")
@@ -66,388 +66,398 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vmp/workspace:Workspace example &#34;workspace_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vmp/workspace:Workspace")
 public class Workspace extends com.pulumi.resources.CustomResource {
     /**
      * Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
-     * 
+     *
      */
     @Export(name="authType", refs={String.class}, tree="[0]")
     private Output<String> authType;
 
     /**
      * @return Workspace authentication type. Options: BasicAuth: Basic authentication, requires Username and Password for authentication. BearerToken: Token authentication, requires BearerToken for authentication. None: No custom authentication required. Note: When the authentication type is set to None, AK/SK authentication is used by default.
-     * 
+     *
      */
     public Output<String> authType() {
         return this.authType;
     }
     /**
      * Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
-     * 
+     *
      */
     @Export(name="bearerToken", refs={String.class}, tree="[0]")
     private Output<String> bearerToken;
 
     /**
      * @return Workspace Bearer Token. Note: Configure this parameter only when the AuthType parameter is set to BearerToken.
-     * 
+     *
      */
     public Output<String> bearerToken() {
         return this.bearerToken;
     }
     /**
      * Workspace creation time, RFC3339 format
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Workspace creation time, RFC3339 format
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Enable workspace deletion protection: true for enabled, false for disabled
-     * 
+     *
      */
     @Export(name="deleteProtectionEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteProtectionEnabled;
 
     /**
      * @return Enable workspace deletion protection: true for enabled, false for disabled
-     * 
+     *
      */
     public Output<Boolean> deleteProtectionEnabled() {
         return this.deleteProtectionEnabled;
     }
     /**
      * Workspace description, string, length limit 0–200
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Workspace description, string, length limit 0–200
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Workspace specification details
-     * 
+     *
      */
     @Export(name="instanceType", refs={WorkspaceInstanceType.class}, tree="[0]")
     private Output<WorkspaceInstanceType> instanceType;
 
     /**
      * @return Workspace specification details
-     * 
+     *
      */
     public Output<WorkspaceInstanceType> instanceType() {
         return this.instanceType;
     }
     /**
      * Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
-     * 
+     *
      */
     @Export(name="instanceTypeId", refs={String.class}, tree="[0]")
     private Output<String> instanceTypeId;
 
     /**
      * @return Workspace specifications: vmp.standard.15d: workspace with 15 days storage duration. vmp.standard.30d: workspace with 30 days storage duration. vmp.standard.90d: workspace with 90 days storage duration. vmp.standard.180d: workspace with 180 days storage duration. vmp.standard.1y: workspace with 1 year storage duration
-     * 
+     *
      */
     public Output<String> instanceTypeId() {
         return this.instanceTypeId;
     }
     /**
      * Workspace name, string, length limit 1–100
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Workspace name, string, length limit 1–100
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Workspace expected overdue recovery time, RFC3339 format
-     * 
+     *
      */
     @Export(name="overdueReclaimTime", refs={String.class}, tree="[0]")
     private Output<String> overdueReclaimTime;
 
     /**
      * @return Workspace expected overdue recovery time, RFC3339 format
-     * 
+     *
      */
     public Output<String> overdueReclaimTime() {
         return this.overdueReclaimTime;
     }
     /**
      * Workspace BasicAuth password
-     * 
+     *
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
      * @return Workspace BasicAuth password
-     * 
+     *
      */
     public Output<String> password() {
         return this.password;
     }
     /**
      * Project name
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Workspace public Push Gateway URL address.
-     * 
+     *
      */
     @Export(name="prometheusPushEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusPushEndpoint;
 
     /**
      * @return Workspace public Push Gateway URL address.
-     * 
+     *
      */
     public Output<String> prometheusPushEndpoint() {
         return this.prometheusPushEndpoint;
     }
     /**
      * Workspace Push Gateway URL address
-     * 
+     *
      */
     @Export(name="prometheusPushIntranetEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusPushIntranetEndpoint;
 
     /**
      * @return Workspace Push Gateway URL address
-     * 
+     *
      */
     public Output<String> prometheusPushIntranetEndpoint() {
         return this.prometheusPushIntranetEndpoint;
     }
     /**
      * Workspace public Query URL address.
-     * 
+     *
      */
     @Export(name="prometheusQueryEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusQueryEndpoint;
 
     /**
      * @return Workspace public Query URL address.
-     * 
+     *
      */
     public Output<String> prometheusQueryEndpoint() {
         return this.prometheusQueryEndpoint;
     }
     /**
      * Workspace Query URL address
-     * 
+     *
      */
     @Export(name="prometheusQueryIntranetEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusQueryIntranetEndpoint;
 
     /**
      * @return Workspace Query URL address
-     * 
+     *
      */
     public Output<String> prometheusQueryIntranetEndpoint() {
         return this.prometheusQueryIntranetEndpoint;
     }
     /**
      * Workspace public RemoteWrite URL address.
-     * 
+     *
      */
     @Export(name="prometheusWriteEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusWriteEndpoint;
 
     /**
      * @return Workspace public RemoteWrite URL address.
-     * 
+     *
      */
     public Output<String> prometheusWriteEndpoint() {
         return this.prometheusWriteEndpoint;
     }
     /**
      * Workspace RemoteWrite URL address
-     * 
+     *
      */
     @Export(name="prometheusWriteIntranetEndpoint", refs={String.class}, tree="[0]")
     private Output<String> prometheusWriteIntranetEndpoint;
 
     /**
      * @return Workspace RemoteWrite URL address
-     * 
+     *
      */
     public Output<String> prometheusWriteIntranetEndpoint() {
         return this.prometheusWriteIntranetEndpoint;
     }
     /**
      * Whether to enable workspace public access capability. true: enabled, false: disabled.
-     * 
+     *
      */
     @Export(name="publicAccessEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> publicAccessEnabled;
 
     /**
      * @return Whether to enable workspace public access capability. true: enabled, false: disabled.
-     * 
+     *
      */
     public Output<Boolean> publicAccessEnabled() {
         return this.publicAccessEnabled;
     }
     /**
      * Workspace public Query bandwidth (Mbps).
-     * 
+     *
      */
     @Export(name="publicQueryBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> publicQueryBandwidth;
 
     /**
      * @return Workspace public Query bandwidth (Mbps).
-     * 
+     *
      */
     public Output<Integer> publicQueryBandwidth() {
         return this.publicQueryBandwidth;
     }
     /**
      * Workspace public RemoteWrite bandwidth (Mbps).
-     * 
+     *
      */
     @Export(name="publicWriteBandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> publicWriteBandwidth;
 
     /**
      * @return Workspace public RemoteWrite bandwidth (Mbps).
-     * 
+     *
      */
     public Output<Integer> publicWriteBandwidth() {
         return this.publicWriteBandwidth;
     }
     /**
      * Workspace quota details
-     * 
+     *
      */
     @Export(name="quota", refs={WorkspaceQuota.class}, tree="[0]")
     private Output<WorkspaceQuota> quota;
 
     /**
      * @return Workspace quota details
-     * 
+     *
      */
     public Output<WorkspaceQuota> quota() {
         return this.quota;
     }
     /**
      * Workspace public Query search latency offset.
-     * 
+     *
      */
     @Export(name="searchLatencyOffset", refs={String.class}, tree="[0]")
     private Output<String> searchLatencyOffset;
 
     /**
      * @return Workspace public Query search latency offset.
-     * 
+     *
      */
     public Output<String> searchLatencyOffset() {
         return this.searchLatencyOffset;
     }
     /**
      * Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Workspace status. Values: Creating: creating Active: active Updating: updating Deleting: deleting OverdueShutted: overdue shutdown Resuming: resuming Error: error
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Workspace tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,WorkspaceTag.class}, tree="[0,1]")
     private Output<List<WorkspaceTag>> tags;
 
+    /**
+     * @return Workspace tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<WorkspaceTag>> tags() {
         return this.tags;
     }
     /**
      * Workspace usage
-     * 
+     *
      */
     @Export(name="usage", refs={WorkspaceUsage.class}, tree="[0]")
     private Output<WorkspaceUsage> usage;
 
     /**
      * @return Workspace usage
-     * 
+     *
      */
     public Output<WorkspaceUsage> usage() {
         return this.usage;
     }
     /**
      * Workspace BasicAuth username
-     * 
+     *
      */
     @Export(name="username", refs={String.class}, tree="[0]")
     private Output<String> username;
 
     /**
      * @return Workspace BasicAuth username
-     * 
+     *
      */
     public Output<String> username() {
         return this.username;
     }
     /**
      * Workspace ID
-     * 
+     *
      */
     @Export(name="workspaceId", refs={String.class}, tree="[0]")
     private Output<String> workspaceId;
 
     /**
      * @return Workspace ID
-     * 
+     *
      */
     public Output<String> workspaceId() {
         return this.workspaceId;

@@ -30,192 +30,208 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     public static final InstanceArgs Empty = new InstanceArgs();
 
     /**
-     * Affinity group specification. Value: 2. **Note:** - Currently, only high performance computing NPU-type hpcpci3
-     * instances (by invitation) support affinity groups. - This feature is in invitation testing. To try it, please contact
-     * your account manager.
-     * 
+     * Affinity group specification. Value: 2.
+     *
+     *   **Note:**
+     *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
+     *     - This feature is in invitation testing. To try it, please contact your account manager.
+     *
      */
     @Import(name="affinityGroupSize")
     private @Nullable Output<Integer> affinityGroupSize;
 
     /**
-     * @return Affinity group specification. Value: 2. **Note:** - Currently, only high performance computing NPU-type hpcpci3
-     * instances (by invitation) support affinity groups. - This feature is in invitation testing. To try it, please contact
-     * your account manager.
-     * 
+     * @return Affinity group specification. Value: 2.
+     *
+     *   **Note:**
+     *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
+     *     - This feature is in invitation testing. To try it, please contact your account manager.
+     *
      */
     public Optional<Output<Integer>> affinityGroupSize() {
         return Optional.ofNullable(this.affinityGroupSize);
     }
 
     /**
-     * Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is
-     * insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only
-     * generates the order without charging. You can log in to the order management page to complete payment after the order is
-     * generated.
-     * 
+     * Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only generates the order without charging. You can log in to the order management page to complete payment after the order is generated.
+     *
      */
     @Import(name="autoPay")
     private @Nullable Output<Boolean> autoPay;
 
     /**
-     * @return Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is
-     * insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only
-     * generates the order without charging. You can log in to the order management page to complete payment after the order is
-     * generated.
-     * 
+     * @return Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only generates the order without charging. You can log in to the order management page to complete payment after the order is generated.
+     *
      */
     public Optional<Output<Boolean>> autoPay() {
         return Optional.ofNullable(this.autoPay);
     }
 
     /**
-     * Whether the instance will be automatically renewed upon expiration. Values: - true: Auto renewal - false (default): No
-     * auto renewal **Note:** This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * Whether the instance will be automatically renewed upon expiration. Values:
+     *     - true: Auto renewal
+     *     - false (default): No auto renewal
+     *
+     *   **Note:**
+     *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
-     * @return Whether the instance will be automatically renewed upon expiration. Values: - true: Auto renewal - false (default): No
-     * auto renewal **Note:** This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * @return Whether the instance will be automatically renewed upon expiration. Values:
+     *     - true: Auto renewal
+     *     - false (default): No auto renewal
+     *
+     *   **Note:**
+     *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
     }
 
     /**
-     * Duration for each automatic renewal. - This parameter takes effect only when `AutoRenew` is set to `True`. Default value
-     * is 1. - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
-     * 
+     * Duration for each automatic renewal.
+     *     - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
+     *     - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
+     *
      */
     @Import(name="autoRenewPeriod")
     private @Nullable Output<Integer> autoRenewPeriod;
 
     /**
-     * @return Duration for each automatic renewal. - This parameter takes effect only when `AutoRenew` is set to `True`. Default value
-     * is 1. - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
-     * 
+     * @return Duration for each automatic renewal.
+     *     - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
+     *     - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
+     *
      */
     public Optional<Output<Integer>> autoRenewPeriod() {
         return Optional.ofNullable(this.autoRenewPeriod);
     }
 
     /**
-     * Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency. **Note:**
-     * - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo
-     *   frequencies and more information, see [Instance Specifications
-     *   Introduction](https://www.volcengine.com/docs/6396/70840). - This feature is in invitation-only testing. To use it,
-     *   please contact your account manager.
-     * 
+     * Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency.
+     *
+     *   **Note:**
+     *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
+     *     - This feature is in invitation-only testing. To use it, please contact your account manager.
+     *
      */
     @Import(name="cpuMaxFrequency")
     private @Nullable Output<Double> cpuMaxFrequency;
 
     /**
-     * @return Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency. **Note:**
-     * - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo
-     *   frequencies and more information, see [Instance Specifications
-     *   Introduction](https://www.volcengine.com/docs/6396/70840). - This feature is in invitation-only testing. To use it,
-     *   please contact your account manager.
-     * 
+     * @return Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency.
+     *
+     *   **Note:**
+     *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
+     *     - This feature is in invitation-only testing. To use it, please contact your account manager.
+     *
      */
     public Optional<Output<Double>> cpuMaxFrequency() {
         return Optional.ofNullable(this.cpuMaxFrequency);
     }
 
     /**
-     * Burstable instance operating mode. Values: - Standard: Standard mode. - Unlimited: Unlimited performance mode (not
-     * supported yet). **Note:** - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e.,
-     * burstable instances. - If not specified or left empty, burstable instances default to `Standard` mode.
-     * 
+     * Burstable instance operating mode. Values:
+     *     - Standard: Standard mode.
+     *     - Unlimited: Unlimited performance mode (not supported yet).
+     *
+     *   **Note:**
+     *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
+     *     - If not specified or left empty, burstable instances default to `Standard` mode.
+     *
      */
     @Import(name="creditSpecification")
     private @Nullable Output<String> creditSpecification;
 
     /**
-     * @return Burstable instance operating mode. Values: - Standard: Standard mode. - Unlimited: Unlimited performance mode (not
-     * supported yet). **Note:** - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e.,
-     * burstable instances. - If not specified or left empty, burstable instances default to `Standard` mode.
-     * 
+     * @return Burstable instance operating mode. Values:
+     *     - Standard: Standard mode.
+     *     - Unlimited: Unlimited performance mode (not supported yet).
+     *
+     *   **Note:**
+     *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
+     *     - If not specified or left empty, burstable instances default to `Standard` mode.
+     *
      */
     public Optional<Output<String>> creditSpecification() {
         return Optional.ofNullable(this.creditSpecification);
     }
 
     /**
-     * Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values: -
-     * true: Enable instance deletion protection - false (default): Disable instance deletion protection When deletion
-     * protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code.
-     * To delete the instance, disable deletion protection first
-     * 
+     * Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
+     *     - true: Enable instance deletion protection
+     *     - false (default): Disable instance deletion protection
+     *   When deletion protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code. To delete the instance, disable deletion protection first
+     *
      */
     @Import(name="deletionProtection")
     private @Nullable Output<Boolean> deletionProtection;
 
     /**
-     * @return Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values: -
-     * true: Enable instance deletion protection - false (default): Disable instance deletion protection When deletion
-     * protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code.
-     * To delete the instance, disable deletion protection first
-     * 
+     * @return Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
+     *     - true: Enable instance deletion protection
+     *     - false (default): Disable instance deletion protection
+     *   When deletion protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code. To delete the instance, disable deletion protection first
+     *
      */
     public Optional<Output<Boolean>> deletionProtection() {
         return Optional.ofNullable(this.deletionProtection);
     }
 
     /**
-     * When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify
-     * the group number of the instance within the deployment set. Value range: 1–7.
-     * 
+     * When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify the group number of the instance within the deployment set. Value range: 1–7.
+     *
      */
     @Import(name="deploymentSetGroupNumber")
     private @Nullable Output<Integer> deploymentSetGroupNumber;
 
     /**
-     * @return When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify
-     * the group number of the instance within the deployment set. Value range: 1–7.
-     * 
+     * @return When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify the group number of the instance within the deployment set. Value range: 1–7.
+     *
      */
     public Optional<Output<Integer>> deploymentSetGroupNumber() {
         return Optional.ofNullable(this.deploymentSetGroupNumber);
     }
 
     /**
-     * The deployment set ID the instance needs to join. - You can call the
-     * [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets. - For more
-     * information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
-     * 
+     * The deployment set ID the instance needs to join.
+     *     - You can call the [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets.
+     *     - For more information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
+     *
      */
     @Import(name="deploymentSetId")
     private @Nullable Output<String> deploymentSetId;
 
     /**
-     * @return The deployment set ID the instance needs to join. - You can call the
-     * [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets. - For more
-     * information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
-     * 
+     * @return The deployment set ID the instance needs to join.
+     *     - You can call the [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets.
+     *     - For more information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
+     *
      */
     public Optional<Output<String>> deploymentSetId() {
         return Optional.ofNullable(this.deploymentSetId);
     }
 
     /**
-     * The description of the instance. Default is an empty string. - Must start with a letter or Chinese character - Can only
-     * contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma
-     * &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39; - Maximum length is 255 characters
-     * 
+     * The description of the instance. Default is an empty string.
+     *     - Must start with a letter or Chinese character
+     *     - Can only contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;
+     *     - Maximum length is 255 characters
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
-     * @return The description of the instance. Default is an empty string. - Must start with a letter or Chinese character - Can only
-     * contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma
-     * &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39; - Maximum length is 255 characters
-     * 
+     * @return The description of the instance. Default is an empty string.
+     *     - Must start with a letter or Chinese character
+     *     - Can only contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;
+     *     - Maximum length is 255 characters
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -223,73 +239,85 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The EIP address of the instance.
-     * 
+     *
      */
     @Import(name="eipAddress")
     private @Nullable Output<InstanceEipAddressArgs> eipAddress;
 
     /**
      * @return The EIP address of the instance.
-     * 
+     *
      */
     public Optional<Output<InstanceEipAddressArgs>> eipAddress() {
         return Optional.ofNullable(this.eipAddress);
     }
 
     /**
-     * Whether jumbo frames are enabled for the instance. Values: - false: Jumbo frames are disabled. All network interfaces
-     * have an MTU of 1500. - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
-     * 
+     * Whether jumbo frames are enabled for the instance. Values:
+     *     - false: Jumbo frames are disabled. All network interfaces have an MTU of 1500.
+     *     - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
+     *
      */
     @Import(name="enableJumboFrame")
     private @Nullable Output<Boolean> enableJumboFrame;
 
     /**
-     * @return Whether jumbo frames are enabled for the instance. Values: - false: Jumbo frames are disabled. All network interfaces
-     * have an MTU of 1500. - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
-     * 
+     * @return Whether jumbo frames are enabled for the instance. Values:
+     *     - false: Jumbo frames are disabled. All network interfaces have an MTU of 1500.
+     *     - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
+     *
      */
     public Optional<Output<Boolean>> enableJumboFrame() {
         return Optional.ofNullable(this.enableJumboFrame);
     }
 
     /**
-     * Instance hostname, which is the computer name inside the instance operating system. - Linux instances: - Letters,
-     * numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed. - Cannot start or end with a hyphen or period, and cannot use
-     * consecutive hyphens and periods. - Linux system hostname length must be between 2 and 63 characters. - Windows
-     * instances: - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers. - Cannot start or
-     * end with a hyphen, and cannot use consecutive hyphens. - Windows system hostname length must be between 2 and 15
-     * characters.
-     * 
+     * Instance hostname, which is the computer name inside the instance operating system.
+     *     - Linux instances:
+     *       - Letters, numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed.
+     *       - Cannot start or end with a hyphen or period, and cannot use consecutive hyphens and periods.
+     *       - Linux system hostname length must be between 2 and 63 characters.
+     *     - Windows instances:
+     *       - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers.
+     *       - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
+     *       - Windows system hostname length must be between 2 and 15 characters.
+     *
      */
     @Import(name="hostname")
     private @Nullable Output<String> hostname;
 
     /**
-     * @return Instance hostname, which is the computer name inside the instance operating system. - Linux instances: - Letters,
-     * numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed. - Cannot start or end with a hyphen or period, and cannot use
-     * consecutive hyphens and periods. - Linux system hostname length must be between 2 and 63 characters. - Windows
-     * instances: - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers. - Cannot start or
-     * end with a hyphen, and cannot use consecutive hyphens. - Windows system hostname length must be between 2 and 15
-     * characters.
-     * 
+     * @return Instance hostname, which is the computer name inside the instance operating system.
+     *     - Linux instances:
+     *       - Letters, numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed.
+     *       - Cannot start or end with a hyphen or period, and cannot use consecutive hyphens and periods.
+     *       - Linux system hostname length must be between 2 and 63 characters.
+     *     - Windows instances:
+     *       - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers.
+     *       - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
+     *       - Windows system hostname length must be between 2 and 15 characters.
+     *
      */
     public Optional<Output<String>> hostname() {
         return Optional.ofNullable(this.hostname);
     }
 
     /**
-     * ID of the high performance computing cluster to which the instance belongs. **Note:** This parameter is only effective
-     * and required when creating high performance computing GPU instances.
-     * 
+     * ID of the high performance computing cluster to which the instance belongs.
+     *
+     *   **Note:**
+     *   This parameter is only effective and required when creating high performance computing GPU instances.
+     *
      */
     @Import(name="hpcClusterId")
     private @Nullable Output<String> hpcClusterId;
 
     /**
-     * @return ID of the high performance computing cluster to which the instance belongs. **Note:** This parameter is only effective
-     * and required when creating high performance computing GPU instances.
-     * 
+     * @return ID of the high performance computing cluster to which the instance belongs.
+     *
+     *   **Note:**
+     *   This parameter is only effective and required when creating high performance computing GPU instances.
+     *
      */
     public Optional<Output<String>> hpcClusterId() {
         return Optional.ofNullable(this.hpcClusterId);
@@ -297,109 +325,103 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The image of the instance.
-     * 
+     *
      */
     @Import(name="image", required=true)
     private Output<InstanceImageArgs> image;
 
     /**
      * @return The image of the instance.
-     * 
+     *
      */
     public Output<InstanceImageArgs> image() {
         return this.image;
     }
 
     /**
-     * Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert.
-     * false (default): Do not convert.
-     * 
+     * Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert. false (default): Do not convert.
+     *
      */
     @Import(name="includeDataVolumes")
     private @Nullable Output<Boolean> includeDataVolumes;
 
     /**
-     * @return Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert.
-     * false (default): Do not convert.
-     * 
+     * @return Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert. false (default): Do not convert.
+     *
      */
     public Optional<Output<Boolean>> includeDataVolumes() {
         return Optional.ofNullable(this.includeDataVolumes);
     }
 
     /**
-     * Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false
-     * (default): Do not install during creation.
-     * 
+     * Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false (default): Do not install during creation.
+     *
      */
     @Import(name="installRunCommandAgent")
     private @Nullable Output<Boolean> installRunCommandAgent;
 
     /**
-     * @return Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false
-     * (default): Do not install during creation.
-     * 
+     * @return Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false (default): Do not install during creation.
+     *
      */
     public Optional<Output<Boolean>> installRunCommandAgent() {
         return Optional.ofNullable(this.installRunCommandAgent);
     }
 
     /**
-     * The billing type for the instance and cloud disk. Values: - PostPaid: Pay-as-you-go - PrePaid: Subscription. Please
-     * ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be
-     * returned.
-     * 
+     * The billing type for the instance and cloud disk. Values:
+     *     - PostPaid: Pay-as-you-go
+     *     - PrePaid: Subscription. Please ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be returned.
+     *
      */
     @Import(name="instanceChargeType")
     private @Nullable Output<String> instanceChargeType;
 
     /**
-     * @return The billing type for the instance and cloud disk. Values: - PostPaid: Pay-as-you-go - PrePaid: Subscription. Please
-     * ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be
-     * returned.
-     * 
+     * @return The billing type for the instance and cloud disk. Values:
+     *     - PostPaid: Pay-as-you-go
+     *     - PrePaid: Subscription. Please ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be returned.
+     *
      */
     public Optional<Output<String>> instanceChargeType() {
         return Optional.ofNullable(this.instanceChargeType);
     }
 
     /**
-     * Instance name - Must start with a letter or Chinese character - Can only contain Chinese characters, letters, numbers,
-     * underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34; - Length limit: 1–128 characters
-     * 
+     * Instance name
+     *     - Must start with a letter or Chinese character
+     *     - Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;
+     *     - Length limit: 1–128 characters
+     *
      */
     @Import(name="instanceName", required=true)
     private Output<String> instanceName;
 
     /**
-     * @return Instance name - Must start with a letter or Chinese character - Can only contain Chinese characters, letters, numbers,
-     * underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34; - Length limit: 1–128 characters
-     * 
+     * @return Instance name
+     *     - Must start with a letter or Chinese character
+     *     - Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;
+     *     - Length limit: 1–128 characters
+     *
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
 
     /**
-     * Instance specification. - Product selection: You can refer to [Instance Specifications
-     * Introduction](https://www.volcengine.com/docs/6396/70840) or call
-     * [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance
-     * Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications. - Inventory
-     * query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute
-     * resources in the zone.
-     * 
+     * Instance specification.
+     *     - Product selection: You can refer to [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840) or call [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications.
+     *     - Inventory query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute resources in the zone.
+     *
      */
     @Import(name="instanceType", required=true)
     private Output<String> instanceType;
 
     /**
-     * @return Instance specification. - Product selection: You can refer to [Instance Specifications
-     * Introduction](https://www.volcengine.com/docs/6396/70840) or call
-     * [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance
-     * Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications. - Inventory
-     * query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute
-     * resources in the zone.
-     * 
+     * @return Instance specification.
+     *     - Product selection: You can refer to [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840) or call [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications.
+     *     - Inventory query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute resources in the zone.
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;
@@ -407,14 +429,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance key pair name
-     * 
+     *
      */
     @Import(name="keyPair")
     private @Nullable Output<InstanceKeyPairArgs> keyPair;
 
     /**
      * @return Instance key pair name
-     * 
+     *
      */
     public Optional<Output<InstanceKeyPairArgs>> keyPair() {
         return Optional.ofNullable(this.keyPair);
@@ -422,50 +444,64 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The password of the instance.
-     * 
+     *
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
      * @return The password of the instance.
-     * 
+     *
      */
     public Optional<Output<String>> password() {
         return Optional.ofNullable(this.password);
     }
 
     /**
-     * Resource purchase duration (N). - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9,
-     * 12, 24, 36, 48, 60. - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5. **Note:** This parameter is valid and
-     * required only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * Resource purchase duration (N).
+     *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
+     *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
+     *
+     *   **Note:**
+     *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
-     * @return Resource purchase duration (N). - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9,
-     * 12, 24, 36, 48, 60. - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5. **Note:** This parameter is valid and
-     * required only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * @return Resource purchase duration (N).
+     *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
+     *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
+     *
+     *   **Note:**
+     *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
     }
 
     /**
-     * The unit for the duration of resource purchase. Values: - Month (default): Month - Year: Year **Note:** This parameter
-     * is effective only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * The unit for the duration of resource purchase. Values:
+     *     - Month (default): Month
+     *     - Year: Year
+     *
+     *   **Note:**
+     *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
-     * @return The unit for the duration of resource purchase. Values: - Month (default): Month - Year: Year **Note:** This parameter
-     * is effective only when `InstanceChargeType` is set to `PrePaid`.
-     * 
+     * @return The unit for the duration of resource purchase. Values:
+     *     - Month (default): Month
+     *     - Year: Year
+     *
+     *   **Note:**
+     *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+     *
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -473,14 +509,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The deployment information of the instance.
-     * 
+     *
      */
     @Import(name="placement")
     private @Nullable Output<InstancePlacementArgs> placement;
 
     /**
      * @return The deployment information of the instance.
-     * 
+     *
      */
     public Optional<Output<InstancePlacementArgs>> placement() {
         return Optional.ofNullable(this.placement);
@@ -488,14 +524,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Primary network interface card of the instance.
-     * 
+     *
      */
     @Import(name="primaryNetworkInterface", required=true)
     private Output<InstancePrimaryNetworkInterfaceArgs> primaryNetworkInterface;
 
     /**
      * @return Primary network interface card of the instance.
-     * 
+     *
      */
     public Output<InstancePrimaryNetworkInterfaceArgs> primaryNetworkInterface() {
         return this.primaryNetworkInterface;
@@ -503,14 +539,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name to which the instance belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -518,14 +554,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Renewal information.
-     * 
+     *
      */
     @Import(name="renewInfo")
     private @Nullable Output<InstanceRenewInfoArgs> renewInfo;
 
     /**
      * @return Renewal information.
-     * 
+     *
      */
     public Optional<Output<InstanceRenewInfoArgs>> renewInfo() {
         return Optional.ofNullable(this.renewInfo);
@@ -533,107 +569,135 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IAM role name bound to the instance
-     * 
+     *
      */
     @Import(name="roleNames")
     private @Nullable Output<List<String>> roleNames;
 
     /**
      * @return IAM role name bound to the instance
-     * 
+     *
      */
     public Optional<Output<List<String>>> roleNames() {
         return Optional.ofNullable(this.roleNames);
     }
 
+    /**
+     * Auxiliary network interface card of the instance.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="secondaryNetworkInterfaces")
     private @Nullable Output<List<InstanceSecondaryNetworkInterfaceArgs>> secondaryNetworkInterfaces;
 
+    /**
+     * @return Auxiliary network interface card of the instance.
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceSecondaryNetworkInterfaceArgs>>> secondaryNetworkInterfaces() {
         return Optional.ofNullable(this.secondaryNetworkInterfaces);
     }
 
     /**
-     * Maximum hourly price for spot instances. - Supports up to three decimal places. - Only effective when `SpotStrategy` is
-     * set to `SpotWithPriceLimit`. - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for
-     * the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to
-     * `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does
-     * not need to be filled in.
-     * 
+     * Maximum hourly price for spot instances.
+     *     - Supports up to three decimal places.
+     *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
+     *     - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does not need to be filled in.
+     *
      */
     @Import(name="spotPriceLimit")
     private @Nullable Output<Double> spotPriceLimit;
 
     /**
-     * @return Maximum hourly price for spot instances. - Supports up to three decimal places. - Only effective when `SpotStrategy` is
-     * set to `SpotWithPriceLimit`. - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for
-     * the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to
-     * `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does
-     * not need to be filled in.
-     * 
+     * @return Maximum hourly price for spot instances.
+     *     - Supports up to three decimal places.
+     *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
+     *     - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does not need to be filled in.
+     *
      */
     public Optional<Output<Double>> spotPriceLimit() {
         return Optional.ofNullable(this.spotPriceLimit);
     }
 
     /**
-     * Spot strategy. Values: - NoSpot (default): Non-spot instance. - SpotWithPriceLimit: Spot instance with price limit. -
-     * SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
-     * 
+     * Spot strategy. Values:
+     *     - NoSpot (default): Non-spot instance.
+     *     - SpotWithPriceLimit: Spot instance with price limit.
+     *     - SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
+     *
      */
     @Import(name="spotStrategy")
     private @Nullable Output<String> spotStrategy;
 
     /**
-     * @return Spot strategy. Values: - NoSpot (default): Non-spot instance. - SpotWithPriceLimit: Spot instance with price limit. -
-     * SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
-     * 
+     * @return Spot strategy. Values:
+     *     - NoSpot (default): Non-spot instance.
+     *     - SpotWithPriceLimit: Spot instance with price limit.
+     *     - SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
+     *
      */
     public Optional<Output<String>> spotStrategy() {
         return Optional.ofNullable(this.spotStrategy);
     }
 
     /**
-     * Instance status. Values: CREATING: Creating RUNNING: Running STOPPING: Stopping STOPPED: Stopped REBOOTING: Rebooting
-     * STARTING: Starting REBUILDING: Rebuilding RESIZING: Resizing ERROR: Error DELETING: Deleting
-     * 
+     * Instance status. Values:
+     *   CREATING: Creating
+     *   RUNNING: Running
+     *   STOPPING: Stopping
+     *   STOPPED: Stopped
+     *   REBOOTING: Rebooting
+     *   STARTING: Starting
+     *   REBUILDING: Rebuilding
+     *   RESIZING: Resizing
+     *   ERROR: Error
+     *   DELETING: Deleting
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
-     * @return Instance status. Values: CREATING: Creating RUNNING: Running STOPPING: Stopping STOPPED: Stopped REBOOTING: Rebooting
-     * STARTING: Starting REBUILDING: Rebuilding RESIZING: Resizing ERROR: Error DELETING: Deleting
-     * 
+     * @return Instance status. Values:
+     *   CREATING: Creating
+     *   RUNNING: Running
+     *   STOPPING: Stopping
+     *   STOPPED: Stopped
+     *   REBOOTING: Rebooting
+     *   STARTING: Starting
+     *   REBUILDING: Rebuilding
+     *   RESIZING: Resizing
+     *   ERROR: Error
+     *   DELETING: Deleting
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
     /**
-     * StoppedMode string Optional Example value: KeepCharging Stopped mode. Valid values: KeepCharging: Standard stopped mode.
-     * After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the
-     * same as before stopping. StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources
-     * (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and
-     * continue to be billed. For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped
-     * mode for pay-as-you-go billing. Default value: If you have enabled the default cost-saving stopped mode in the cloud
-     * server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
-     * NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
-     * 
+     * StoppedMode string Optional Example value: KeepCharging
+     *   Stopped mode. Valid values:
+     *   KeepCharging: Standard stopped mode. After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the same as before stopping.
+     *   StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and continue to be billed.
+     *   For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped mode for pay-as-you-go billing.
+     *   Default value: If you have enabled the default cost-saving stopped mode in the cloud server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
+     *   NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
+     *
      */
     @Import(name="stoppedMode")
     private @Nullable Output<String> stoppedMode;
 
     /**
-     * @return StoppedMode string Optional Example value: KeepCharging Stopped mode. Valid values: KeepCharging: Standard stopped mode.
-     * After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the
-     * same as before stopping. StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources
-     * (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and
-     * continue to be billed. For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped
-     * mode for pay-as-you-go billing. Default value: If you have enabled the default cost-saving stopped mode in the cloud
-     * server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
-     * NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
-     * 
+     * @return StoppedMode string Optional Example value: KeepCharging
+     *   Stopped mode. Valid values:
+     *   KeepCharging: Standard stopped mode. After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the same as before stopping.
+     *   StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and continue to be billed.
+     *   For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped mode for pay-as-you-go billing.
+     *   Default value: If you have enabled the default cost-saving stopped mode in the cloud server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
+     *   NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
+     *
      */
     public Optional<Output<String>> stoppedMode() {
         return Optional.ofNullable(this.stoppedMode);
@@ -641,40 +705,50 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The system volume of the instance.
-     * 
+     *
      */
     @Import(name="systemVolume", required=true)
     private Output<InstanceSystemVolumeArgs> systemVolume;
 
     /**
      * @return The system volume of the instance.
-     * 
+     *
      */
     public Output<InstanceSystemVolumeArgs> systemVolume() {
         return this.systemVolume;
     }
 
+    /**
+     * Tags
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Tags
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
-     * Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded. - Linux instances:
-     * Script content must not exceed 16 KB and must be Base64 encoded. - Windows instances: Script content must not exceed 8
-     * KB and does not require Base64 encoding
-     * 
+     * Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded.
+     *     - Linux instances: Script content must not exceed 16 KB and must be Base64 encoded.
+     *     - Windows instances: Script content must not exceed 8 KB and does not require Base64 encoding
+     *
      */
     @Import(name="userData")
     private @Nullable Output<String> userData;
 
     /**
-     * @return Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded. - Linux instances:
-     * Script content must not exceed 16 KB and must be Base64 encoded. - Windows instances: Script content must not exceed 8
-     * KB and does not require Base64 encoding
-     * 
+     * @return Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded.
+     *     - Linux instances: Script content must not exceed 16 KB and must be Base64 encoded.
+     *     - Windows instances: Script content must not exceed 8 KB and does not require Base64 encoding
+     *
      */
     public Optional<Output<String>> userData() {
         return Optional.ofNullable(this.userData);
@@ -682,14 +756,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The availability zone ID where the instance is located.
-     * 
+     *
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return The availability zone ID where the instance is located.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -757,12 +831,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param affinityGroupSize Affinity group specification. Value: 2. **Note:** - Currently, only high performance computing NPU-type hpcpci3
-         * instances (by invitation) support affinity groups. - This feature is in invitation testing. To try it, please contact
-         * your account manager.
-         * 
+         * @param affinityGroupSize Affinity group specification. Value: 2.
+         *
+         *   **Note:**
+         *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
+         *     - This feature is in invitation testing. To try it, please contact your account manager.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder affinityGroupSize(@Nullable Output<Integer> affinityGroupSize) {
             $.affinityGroupSize = affinityGroupSize;
@@ -770,25 +846,24 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param affinityGroupSize Affinity group specification. Value: 2. **Note:** - Currently, only high performance computing NPU-type hpcpci3
-         * instances (by invitation) support affinity groups. - This feature is in invitation testing. To try it, please contact
-         * your account manager.
-         * 
+         * @param affinityGroupSize Affinity group specification. Value: 2.
+         *
+         *   **Note:**
+         *     - Currently, only high performance computing NPU-type hpcpci3 instances (by invitation) support affinity groups.
+         *     - This feature is in invitation testing. To try it, please contact your account manager.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder affinityGroupSize(Integer affinityGroupSize) {
             return affinityGroupSize(Output.of(affinityGroupSize));
         }
 
         /**
-         * @param autoPay Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is
-         * insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only
-         * generates the order without charging. You can log in to the order management page to complete payment after the order is
-         * generated.
-         * 
+         * @param autoPay Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only generates the order without charging. You can log in to the order management page to complete payment after the order is generated.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoPay(@Nullable Output<Boolean> autoPay) {
             $.autoPay = autoPay;
@@ -796,24 +871,25 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoPay Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is
-         * insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only
-         * generates the order without charging. You can log in to the order management page to complete payment after the order is
-         * generated.
-         * 
+         * @param autoPay Auto payment option. Valid values: true: Auto payment. Ensure your account balance is sufficient; if the balance is insufficient, an exception order will be generated and the billing mode conversion will fail. false (default): Only generates the order without charging. You can log in to the order management page to complete payment after the order is generated.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoPay(Boolean autoPay) {
             return autoPay(Output.of(autoPay));
         }
 
         /**
-         * @param autoRenew Whether the instance will be automatically renewed upon expiration. Values: - true: Auto renewal - false (default): No
-         * auto renewal **Note:** This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
-         * 
+         * @param autoRenew Whether the instance will be automatically renewed upon expiration. Values:
+         *     - true: Auto renewal
+         *     - false (default): No auto renewal
+         *
+         *   **Note:**
+         *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
             $.autoRenew = autoRenew;
@@ -821,22 +897,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenew Whether the instance will be automatically renewed upon expiration. Values: - true: Auto renewal - false (default): No
-         * auto renewal **Note:** This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
-         * 
+         * @param autoRenew Whether the instance will be automatically renewed upon expiration. Values:
+         *     - true: Auto renewal
+         *     - false (default): No auto renewal
+         *
+         *   **Note:**
+         *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
         }
 
         /**
-         * @param autoRenewPeriod Duration for each automatic renewal. - This parameter takes effect only when `AutoRenew` is set to `True`. Default value
-         * is 1. - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
-         * 
+         * @param autoRenewPeriod Duration for each automatic renewal.
+         *     - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
+         *     - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenewPeriod(@Nullable Output<Integer> autoRenewPeriod) {
             $.autoRenewPeriod = autoRenewPeriod;
@@ -844,25 +925,26 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoRenewPeriod Duration for each automatic renewal. - This parameter takes effect only when `AutoRenew` is set to `True`. Default value
-         * is 1. - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
-         * 
+         * @param autoRenewPeriod Duration for each automatic renewal.
+         *     - This parameter takes effect only when `AutoRenew` is set to `True`. Default value is 1.
+         *     - When `PeriodUnit` is `Month`, valid values are 1, 2, 3, 6, 12.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenewPeriod(Integer autoRenewPeriod) {
             return autoRenewPeriod(Output.of(autoRenewPeriod));
         }
 
         /**
-         * @param cpuMaxFrequency Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency. **Note:**
-         * - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo
-         *   frequencies and more information, see [Instance Specifications
-         *   Introduction](https://www.volcengine.com/docs/6396/70840). - This feature is in invitation-only testing. To use it,
-         *   please contact your account manager.
-         * 
+         * @param cpuMaxFrequency Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency.
+         *
+         *   **Note:**
+         *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
+         *     - This feature is in invitation-only testing. To use it, please contact your account manager.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cpuMaxFrequency(@Nullable Output<Double> cpuMaxFrequency) {
             $.cpuMaxFrequency = cpuMaxFrequency;
@@ -870,26 +952,30 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param cpuMaxFrequency Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency. **Note:**
-         * - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo
-         *   frequencies and more information, see [Instance Specifications
-         *   Introduction](https://www.volcengine.com/docs/6396/70840). - This feature is in invitation-only testing. To use it,
-         *   please contact your account manager.
-         * 
+         * @param cpuMaxFrequency Specify the maximum CPU frequency, in GHz. Value range: between the CPU&#39;s base frequency and turbo frequency.
+         *
+         *   **Note:**
+         *     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
+         *     - This feature is in invitation-only testing. To use it, please contact your account manager.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cpuMaxFrequency(Double cpuMaxFrequency) {
             return cpuMaxFrequency(Output.of(cpuMaxFrequency));
         }
 
         /**
-         * @param creditSpecification Burstable instance operating mode. Values: - Standard: Standard mode. - Unlimited: Unlimited performance mode (not
-         * supported yet). **Note:** - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e.,
-         * burstable instances. - If not specified or left empty, burstable instances default to `Standard` mode.
-         * 
+         * @param creditSpecification Burstable instance operating mode. Values:
+         *     - Standard: Standard mode.
+         *     - Unlimited: Unlimited performance mode (not supported yet).
+         *
+         *   **Note:**
+         *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
+         *     - If not specified or left empty, burstable instances default to `Standard` mode.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creditSpecification(@Nullable Output<String> creditSpecification) {
             $.creditSpecification = creditSpecification;
@@ -897,25 +983,29 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param creditSpecification Burstable instance operating mode. Values: - Standard: Standard mode. - Unlimited: Unlimited performance mode (not
-         * supported yet). **Note:** - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e.,
-         * burstable instances. - If not specified or left empty, burstable instances default to `Standard` mode.
-         * 
+         * @param creditSpecification Burstable instance operating mode. Values:
+         *     - Standard: Standard mode.
+         *     - Unlimited: Unlimited performance mode (not supported yet).
+         *
+         *   **Note:**
+         *     - This parameter is only effective when `InstanceTypeId` is set to ecs.t2 series, i.e., burstable instances.
+         *     - If not specified or left empty, burstable instances default to `Standard` mode.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creditSpecification(String creditSpecification) {
             return creditSpecification(Output.of(creditSpecification));
         }
 
         /**
-         * @param deletionProtection Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values: -
-         * true: Enable instance deletion protection - false (default): Disable instance deletion protection When deletion
-         * protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code.
-         * To delete the instance, disable deletion protection first
-         * 
+         * @param deletionProtection Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
+         *     - true: Enable instance deletion protection
+         *     - false (default): Disable instance deletion protection
+         *   When deletion protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code. To delete the instance, disable deletion protection first
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletionProtection(@Nullable Output<Boolean> deletionProtection) {
             $.deletionProtection = deletionProtection;
@@ -923,24 +1013,23 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deletionProtection Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values: -
-         * true: Enable instance deletion protection - false (default): Disable instance deletion protection When deletion
-         * protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code.
-         * To delete the instance, disable deletion protection first
-         * 
+         * @param deletionProtection Instance deletion protection attribute, specifies whether the instance can be deleted via the console or API. Values:
+         *     - true: Enable instance deletion protection
+         *     - false (default): Disable instance deletion protection
+         *   When deletion protection is enabled, attempts to delete the instance via the console or API will return a deletion failure error code. To delete the instance, disable deletion protection first
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletionProtection(Boolean deletionProtection) {
             return deletionProtection(Output.of(deletionProtection));
         }
 
         /**
-         * @param deploymentSetGroupNumber When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify
-         * the group number of the instance within the deployment set. Value range: 1–7.
-         * 
+         * @param deploymentSetGroupNumber When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify the group number of the instance within the deployment set. Value range: 1–7.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetGroupNumber(@Nullable Output<Integer> deploymentSetGroupNumber) {
             $.deploymentSetGroupNumber = deploymentSetGroupNumber;
@@ -948,23 +1037,22 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deploymentSetGroupNumber When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify
-         * the group number of the instance within the deployment set. Value range: 1–7.
-         * 
+         * @param deploymentSetGroupNumber When the deployment set policy for an ECS instance is set to Availability Group, you can use this parameter to specify the group number of the instance within the deployment set. Value range: 1–7.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetGroupNumber(Integer deploymentSetGroupNumber) {
             return deploymentSetGroupNumber(Output.of(deploymentSetGroupNumber));
         }
 
         /**
-         * @param deploymentSetId The deployment set ID the instance needs to join. - You can call the
-         * [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets. - For more
-         * information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
-         * 
+         * @param deploymentSetId The deployment set ID the instance needs to join.
+         *     - You can call the [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets.
+         *     - For more information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetId(@Nullable Output<String> deploymentSetId) {
             $.deploymentSetId = deploymentSetId;
@@ -972,24 +1060,25 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param deploymentSetId The deployment set ID the instance needs to join. - You can call the
-         * [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets. - For more
-         * information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
-         * 
+         * @param deploymentSetId The deployment set ID the instance needs to join.
+         *     - You can call the [DescribeDeploymentSets](https://www.volcengine.com/docs/6396/70873) API to query existing deployment sets.
+         *     - For more information about deployment sets, see [Deployment Set](https://www.volcengine.com/docs/6396/70871).
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deploymentSetId(String deploymentSetId) {
             return deploymentSetId(Output.of(deploymentSetId));
         }
 
         /**
-         * @param description The description of the instance. Default is an empty string. - Must start with a letter or Chinese character - Can only
-         * contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma
-         * &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39; - Maximum length is 255 characters
-         * 
+         * @param description The description of the instance. Default is an empty string.
+         *     - Must start with a letter or Chinese character
+         *     - Can only contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;
+         *     - Maximum length is 255 characters
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -997,12 +1086,13 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param description The description of the instance. Default is an empty string. - Must start with a letter or Chinese character - Can only
-         * contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma
-         * &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39; - Maximum length is 255 characters
-         * 
+         * @param description The description of the instance. Default is an empty string.
+         *     - Must start with a letter or Chinese character
+         *     - Can only contain Chinese characters, letters, numbers, period &#39;.&#39;, space, underscore &#39;_&#39;, hyphen &#39;-&#39;, equals &#39;=&#39;, English comma &#39;,&#39;, Chinese comma &#39;，&#39;, and Chinese period &#39;。&#39;
+         *     - Maximum length is 255 characters
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -1010,9 +1100,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipAddress The EIP address of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipAddress(@Nullable Output<InstanceEipAddressArgs> eipAddress) {
             $.eipAddress = eipAddress;
@@ -1021,20 +1111,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipAddress The EIP address of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipAddress(InstanceEipAddressArgs eipAddress) {
             return eipAddress(Output.of(eipAddress));
         }
 
         /**
-         * @param enableJumboFrame Whether jumbo frames are enabled for the instance. Values: - false: Jumbo frames are disabled. All network interfaces
-         * have an MTU of 1500. - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
-         * 
+         * @param enableJumboFrame Whether jumbo frames are enabled for the instance. Values:
+         *     - false: Jumbo frames are disabled. All network interfaces have an MTU of 1500.
+         *     - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableJumboFrame(@Nullable Output<Boolean> enableJumboFrame) {
             $.enableJumboFrame = enableJumboFrame;
@@ -1042,26 +1133,30 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param enableJumboFrame Whether jumbo frames are enabled for the instance. Values: - false: Jumbo frames are disabled. All network interfaces
-         * have an MTU of 1500. - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
-         * 
+         * @param enableJumboFrame Whether jumbo frames are enabled for the instance. Values:
+         *     - false: Jumbo frames are disabled. All network interfaces have an MTU of 1500.
+         *     - true: Jumbo frames are enabled. All network interfaces have an MTU of 8500
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableJumboFrame(Boolean enableJumboFrame) {
             return enableJumboFrame(Output.of(enableJumboFrame));
         }
 
         /**
-         * @param hostname Instance hostname, which is the computer name inside the instance operating system. - Linux instances: - Letters,
-         * numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed. - Cannot start or end with a hyphen or period, and cannot use
-         * consecutive hyphens and periods. - Linux system hostname length must be between 2 and 63 characters. - Windows
-         * instances: - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers. - Cannot start or
-         * end with a hyphen, and cannot use consecutive hyphens. - Windows system hostname length must be between 2 and 15
-         * characters.
-         * 
+         * @param hostname Instance hostname, which is the computer name inside the instance operating system.
+         *     - Linux instances:
+         *       - Letters, numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed.
+         *       - Cannot start or end with a hyphen or period, and cannot use consecutive hyphens and periods.
+         *       - Linux system hostname length must be between 2 and 63 characters.
+         *     - Windows instances:
+         *       - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers.
+         *       - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
+         *       - Windows system hostname length must be between 2 and 15 characters.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostname(@Nullable Output<String> hostname) {
             $.hostname = hostname;
@@ -1069,26 +1164,31 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hostname Instance hostname, which is the computer name inside the instance operating system. - Linux instances: - Letters,
-         * numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed. - Cannot start or end with a hyphen or period, and cannot use
-         * consecutive hyphens and periods. - Linux system hostname length must be between 2 and 63 characters. - Windows
-         * instances: - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers. - Cannot start or
-         * end with a hyphen, and cannot use consecutive hyphens. - Windows system hostname length must be between 2 and 15
-         * characters.
-         * 
+         * @param hostname Instance hostname, which is the computer name inside the instance operating system.
+         *     - Linux instances:
+         *       - Letters, numbers, periods (&#39;.&#39;), and hyphens (&#39;-&#39;) are allowed.
+         *       - Cannot start or end with a hyphen or period, and cannot use consecutive hyphens and periods.
+         *       - Linux system hostname length must be between 2 and 63 characters.
+         *     - Windows instances:
+         *       - Letters, numbers, and hyphens (&#39;-&#39;) are allowed, but the hostname cannot be all numbers.
+         *       - Cannot start or end with a hyphen, and cannot use consecutive hyphens.
+         *       - Windows system hostname length must be between 2 and 15 characters.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hostname(String hostname) {
             return hostname(Output.of(hostname));
         }
 
         /**
-         * @param hpcClusterId ID of the high performance computing cluster to which the instance belongs. **Note:** This parameter is only effective
-         * and required when creating high performance computing GPU instances.
-         * 
+         * @param hpcClusterId ID of the high performance computing cluster to which the instance belongs.
+         *
+         *   **Note:**
+         *   This parameter is only effective and required when creating high performance computing GPU instances.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hpcClusterId(@Nullable Output<String> hpcClusterId) {
             $.hpcClusterId = hpcClusterId;
@@ -1096,11 +1196,13 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param hpcClusterId ID of the high performance computing cluster to which the instance belongs. **Note:** This parameter is only effective
-         * and required when creating high performance computing GPU instances.
-         * 
+         * @param hpcClusterId ID of the high performance computing cluster to which the instance belongs.
+         *
+         *   **Note:**
+         *   This parameter is only effective and required when creating high performance computing GPU instances.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder hpcClusterId(String hpcClusterId) {
             return hpcClusterId(Output.of(hpcClusterId));
@@ -1108,9 +1210,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param image The image of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder image(Output<InstanceImageArgs> image) {
             $.image = image;
@@ -1119,20 +1221,19 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param image The image of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder image(InstanceImageArgs image) {
             return image(Output.of(image));
         }
 
         /**
-         * @param includeDataVolumes Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert.
-         * false (default): Do not convert.
-         * 
+         * @param includeDataVolumes Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert. false (default): Do not convert.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder includeDataVolumes(@Nullable Output<Boolean> includeDataVolumes) {
             $.includeDataVolumes = includeDataVolumes;
@@ -1140,22 +1241,20 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param includeDataVolumes Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert.
-         * false (default): Do not convert.
-         * 
+         * @param includeDataVolumes Whether to convert all pay-as-you-go data disks attached to the instance to subscription data disks. true: Convert. false (default): Do not convert.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder includeDataVolumes(Boolean includeDataVolumes) {
             return includeDataVolumes(Output.of(includeDataVolumes));
         }
 
         /**
-         * @param installRunCommandAgent Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false
-         * (default): Do not install during creation.
-         * 
+         * @param installRunCommandAgent Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false (default): Do not install during creation.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder installRunCommandAgent(@Nullable Output<Boolean> installRunCommandAgent) {
             $.installRunCommandAgent = installRunCommandAgent;
@@ -1163,23 +1262,22 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param installRunCommandAgent Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false
-         * (default): Do not install during creation.
-         * 
+         * @param installRunCommandAgent Whether to install Cloud Assistant Agent when creating the instance. Values: true: Install during creation. false (default): Do not install during creation.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder installRunCommandAgent(Boolean installRunCommandAgent) {
             return installRunCommandAgent(Output.of(installRunCommandAgent));
         }
 
         /**
-         * @param instanceChargeType The billing type for the instance and cloud disk. Values: - PostPaid: Pay-as-you-go - PrePaid: Subscription. Please
-         * ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be
-         * returned.
-         * 
+         * @param instanceChargeType The billing type for the instance and cloud disk. Values:
+         *     - PostPaid: Pay-as-you-go
+         *     - PrePaid: Subscription. Please ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be returned.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceChargeType(@Nullable Output<String> instanceChargeType) {
             $.instanceChargeType = instanceChargeType;
@@ -1187,23 +1285,25 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceChargeType The billing type for the instance and cloud disk. Values: - PostPaid: Pay-as-you-go - PrePaid: Subscription. Please
-         * ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be
-         * returned.
-         * 
+         * @param instanceChargeType The billing type for the instance and cloud disk. Values:
+         *     - PostPaid: Pay-as-you-go
+         *     - PrePaid: Subscription. Please ensure your account supports balance payment or credit payment, otherwise an InvalidInstanceChargeType error will be returned.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceChargeType(String instanceChargeType) {
             return instanceChargeType(Output.of(instanceChargeType));
         }
 
         /**
-         * @param instanceName Instance name - Must start with a letter or Chinese character - Can only contain Chinese characters, letters, numbers,
-         * underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34; - Length limit: 1–128 characters
-         * 
+         * @param instanceName Instance name
+         *     - Must start with a letter or Chinese character
+         *     - Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;
+         *     - Length limit: 1–128 characters
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -1211,26 +1311,25 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceName Instance name - Must start with a letter or Chinese character - Can only contain Chinese characters, letters, numbers,
-         * underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34; - Length limit: 1–128 characters
-         * 
+         * @param instanceName Instance name
+         *     - Must start with a letter or Chinese character
+         *     - Can only contain Chinese characters, letters, numbers, underscores &#34;_&#34;, hyphens &#34;-&#34;, and periods &#34;.&#34;
+         *     - Length limit: 1–128 characters
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
         }
 
         /**
-         * @param instanceType Instance specification. - Product selection: You can refer to [Instance Specifications
-         * Introduction](https://www.volcengine.com/docs/6396/70840) or call
-         * [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance
-         * Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications. - Inventory
-         * query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute
-         * resources in the zone.
-         * 
+         * @param instanceType Instance specification.
+         *     - Product selection: You can refer to [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840) or call [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications.
+         *     - Inventory query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute resources in the zone.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(Output<String> instanceType) {
             $.instanceType = instanceType;
@@ -1238,15 +1337,12 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType Instance specification. - Product selection: You can refer to [Instance Specifications
-         * Introduction](https://www.volcengine.com/docs/6396/70840) or call
-         * [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance
-         * Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications. - Inventory
-         * query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute
-         * resources in the zone.
-         * 
+         * @param instanceType Instance specification.
+         *     - Product selection: You can refer to [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840) or call [DescribeInstanceTypes](https://www.volcengine.com/docs/6396/92769) to view performance data, and refer to [Instance Selection Best Practices](https://www.volcengine.com/docs/6396/74174) to learn how to choose specifications.
+         *     - Inventory query: You can call [DescribeAvailableResource](https://www.volcengine.com/docs/6396/76279) to check available compute resources in the zone.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceType(String instanceType) {
             return instanceType(Output.of(instanceType));
@@ -1254,9 +1350,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyPair Instance key pair name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyPair(@Nullable Output<InstanceKeyPairArgs> keyPair) {
             $.keyPair = keyPair;
@@ -1265,9 +1361,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyPair Instance key pair name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyPair(InstanceKeyPairArgs keyPair) {
             return keyPair(Output.of(keyPair));
@@ -1275,9 +1371,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param password The password of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder password(@Nullable Output<String> password) {
             $.password = password;
@@ -1286,21 +1382,24 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param password The password of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder password(String password) {
             return password(Output.of(password));
         }
 
         /**
-         * @param period Resource purchase duration (N). - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9,
-         * 12, 24, 36, 48, 60. - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5. **Note:** This parameter is valid and
-         * required only when `InstanceChargeType` is set to `PrePaid`.
-         * 
+         * @param period Resource purchase duration (N).
+         *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
+         *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
+         *
+         *   **Note:**
+         *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -1308,23 +1407,30 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param period Resource purchase duration (N). - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9,
-         * 12, 24, 36, 48, 60. - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5. **Note:** This parameter is valid and
-         * required only when `InstanceChargeType` is set to `PrePaid`.
-         * 
+         * @param period Resource purchase duration (N).
+         *     - When `PeriodUnit` is `Month` (default), valid values are 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60.
+         *     - When `PeriodUnit` is `Year`, valid values are 1, 2, 3, 4, 5.
+         *
+         *   **Note:**
+         *   This parameter is valid and required only when `InstanceChargeType` is set to `PrePaid`.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
         }
 
         /**
-         * @param periodUnit The unit for the duration of resource purchase. Values: - Month (default): Month - Year: Year **Note:** This parameter
-         * is effective only when `InstanceChargeType` is set to `PrePaid`.
-         * 
+         * @param periodUnit The unit for the duration of resource purchase. Values:
+         *     - Month (default): Month
+         *     - Year: Year
+         *
+         *   **Note:**
+         *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -1332,11 +1438,15 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param periodUnit The unit for the duration of resource purchase. Values: - Month (default): Month - Year: Year **Note:** This parameter
-         * is effective only when `InstanceChargeType` is set to `PrePaid`.
-         * 
+         * @param periodUnit The unit for the duration of resource purchase. Values:
+         *     - Month (default): Month
+         *     - Year: Year
+         *
+         *   **Note:**
+         *   This parameter is effective only when `InstanceChargeType` is set to `PrePaid`.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -1344,9 +1454,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param placement The deployment information of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder placement(@Nullable Output<InstancePlacementArgs> placement) {
             $.placement = placement;
@@ -1355,9 +1465,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param placement The deployment information of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder placement(InstancePlacementArgs placement) {
             return placement(Output.of(placement));
@@ -1365,9 +1475,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param primaryNetworkInterface Primary network interface card of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder primaryNetworkInterface(Output<InstancePrimaryNetworkInterfaceArgs> primaryNetworkInterface) {
             $.primaryNetworkInterface = primaryNetworkInterface;
@@ -1376,9 +1486,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param primaryNetworkInterface Primary network interface card of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder primaryNetworkInterface(InstancePrimaryNetworkInterfaceArgs primaryNetworkInterface) {
             return primaryNetworkInterface(Output.of(primaryNetworkInterface));
@@ -1386,9 +1496,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -1397,9 +1507,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -1407,9 +1517,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param renewInfo Renewal information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewInfo(@Nullable Output<InstanceRenewInfoArgs> renewInfo) {
             $.renewInfo = renewInfo;
@@ -1418,9 +1528,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param renewInfo Renewal information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewInfo(InstanceRenewInfoArgs renewInfo) {
             return renewInfo(Output.of(renewInfo));
@@ -1428,9 +1538,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param roleNames IAM role name bound to the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder roleNames(@Nullable Output<List<String>> roleNames) {
             $.roleNames = roleNames;
@@ -1439,9 +1549,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param roleNames IAM role name bound to the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder roleNames(List<String> roleNames) {
             return roleNames(Output.of(roleNames));
@@ -1449,36 +1559,56 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param roleNames IAM role name bound to the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder roleNames(String... roleNames) {
             return roleNames(List.of(roleNames));
         }
 
+        /**
+         * @param secondaryNetworkInterfaces Auxiliary network interface card of the instance.
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder secondaryNetworkInterfaces(@Nullable Output<List<InstanceSecondaryNetworkInterfaceArgs>> secondaryNetworkInterfaces) {
             $.secondaryNetworkInterfaces = secondaryNetworkInterfaces;
             return this;
         }
 
+        /**
+         * @param secondaryNetworkInterfaces Auxiliary network interface card of the instance.
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder secondaryNetworkInterfaces(List<InstanceSecondaryNetworkInterfaceArgs> secondaryNetworkInterfaces) {
             return secondaryNetworkInterfaces(Output.of(secondaryNetworkInterfaces));
         }
 
+        /**
+         * @param secondaryNetworkInterfaces Auxiliary network interface card of the instance.
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder secondaryNetworkInterfaces(InstanceSecondaryNetworkInterfaceArgs... secondaryNetworkInterfaces) {
             return secondaryNetworkInterfaces(List.of(secondaryNetworkInterfaces));
         }
 
         /**
-         * @param spotPriceLimit Maximum hourly price for spot instances. - Supports up to three decimal places. - Only effective when `SpotStrategy` is
-         * set to `SpotWithPriceLimit`. - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for
-         * the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to
-         * `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does
-         * not need to be filled in.
-         * 
+         * @param spotPriceLimit Maximum hourly price for spot instances.
+         *     - Supports up to three decimal places.
+         *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
+         *     - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does not need to be filled in.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spotPriceLimit(@Nullable Output<Double> spotPriceLimit) {
             $.spotPriceLimit = spotPriceLimit;
@@ -1486,25 +1616,26 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param spotPriceLimit Maximum hourly price for spot instances. - Supports up to three decimal places. - Only effective when `SpotStrategy` is
-         * set to `SpotWithPriceLimit`. - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for
-         * the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to
-         * `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does
-         * not need to be filled in.
-         * 
+         * @param spotPriceLimit Maximum hourly price for spot instances.
+         *     - Supports up to three decimal places.
+         *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
+         *     - When `SpotStrategy` is set to `SpotWithPriceLimit`, you can set a custom price limit for the spot instance. If the market price exceeds your bid, the instance will be released. When `SpotStrategy` is set to `SpotAsPriceGo`, you accept the system&#39;s automatic bidding, following the current market price, and this parameter does not need to be filled in.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spotPriceLimit(Double spotPriceLimit) {
             return spotPriceLimit(Output.of(spotPriceLimit));
         }
 
         /**
-         * @param spotStrategy Spot strategy. Values: - NoSpot (default): Non-spot instance. - SpotWithPriceLimit: Spot instance with price limit. -
-         * SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
-         * 
+         * @param spotStrategy Spot strategy. Values:
+         *     - NoSpot (default): Non-spot instance.
+         *     - SpotWithPriceLimit: Spot instance with price limit.
+         *     - SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spotStrategy(@Nullable Output<String> spotStrategy) {
             $.spotStrategy = spotStrategy;
@@ -1512,22 +1643,33 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param spotStrategy Spot strategy. Values: - NoSpot (default): Non-spot instance. - SpotWithPriceLimit: Spot instance with price limit. -
-         * SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
-         * 
+         * @param spotStrategy Spot strategy. Values:
+         *     - NoSpot (default): Non-spot instance.
+         *     - SpotWithPriceLimit: Spot instance with price limit.
+         *     - SpotAsPriceGo: System bids automatically, following the current market price for spot instances.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spotStrategy(String spotStrategy) {
             return spotStrategy(Output.of(spotStrategy));
         }
 
         /**
-         * @param status Instance status. Values: CREATING: Creating RUNNING: Running STOPPING: Stopping STOPPED: Stopped REBOOTING: Rebooting
-         * STARTING: Starting REBUILDING: Rebuilding RESIZING: Resizing ERROR: Error DELETING: Deleting
-         * 
+         * @param status Instance status. Values:
+         *   CREATING: Creating
+         *   RUNNING: Running
+         *   STOPPING: Stopping
+         *   STOPPED: Stopped
+         *   REBOOTING: Rebooting
+         *   STARTING: Starting
+         *   REBUILDING: Rebuilding
+         *   RESIZING: Resizing
+         *   ERROR: Error
+         *   DELETING: Deleting
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -1535,28 +1677,36 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Instance status. Values: CREATING: Creating RUNNING: Running STOPPING: Stopping STOPPED: Stopped REBOOTING: Rebooting
-         * STARTING: Starting REBUILDING: Rebuilding RESIZING: Resizing ERROR: Error DELETING: Deleting
-         * 
+         * @param status Instance status. Values:
+         *   CREATING: Creating
+         *   RUNNING: Running
+         *   STOPPING: Stopping
+         *   STOPPED: Stopped
+         *   REBOOTING: Rebooting
+         *   STARTING: Starting
+         *   REBUILDING: Rebuilding
+         *   RESIZING: Resizing
+         *   ERROR: Error
+         *   DELETING: Deleting
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
         /**
-         * @param stoppedMode StoppedMode string Optional Example value: KeepCharging Stopped mode. Valid values: KeepCharging: Standard stopped mode.
-         * After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the
-         * same as before stopping. StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources
-         * (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and
-         * continue to be billed. For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped
-         * mode for pay-as-you-go billing. Default value: If you have enabled the default cost-saving stopped mode in the cloud
-         * server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
-         * NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
-         * 
+         * @param stoppedMode StoppedMode string Optional Example value: KeepCharging
+         *   Stopped mode. Valid values:
+         *   KeepCharging: Standard stopped mode. After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the same as before stopping.
+         *   StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and continue to be billed.
+         *   For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped mode for pay-as-you-go billing.
+         *   Default value: If you have enabled the default cost-saving stopped mode in the cloud server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
+         *   NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder stoppedMode(@Nullable Output<String> stoppedMode) {
             $.stoppedMode = stoppedMode;
@@ -1564,17 +1714,16 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param stoppedMode StoppedMode string Optional Example value: KeepCharging Stopped mode. Valid values: KeepCharging: Standard stopped mode.
-         * After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the
-         * same as before stopping. StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources
-         * (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and
-         * continue to be billed. For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped
-         * mode for pay-as-you-go billing. Default value: If you have enabled the default cost-saving stopped mode in the cloud
-         * server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
-         * NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
-         * 
+         * @param stoppedMode StoppedMode string Optional Example value: KeepCharging
+         *   Stopped mode. Valid values:
+         *   KeepCharging: Standard stopped mode. After stopping, the instance and its associated resources are retained and continue to be billed. Charges remain the same as before stopping.
+         *   StopCharging: Cost-saving stopped mode. After stopping, the instance&#39;s computing resources (vCPU, GPU, and memory) are reclaimed and billing stops. Attached cloud disks, images, and public IPs are retained and continue to be billed.
+         *   For conditions to enable cost-saving stopped mode, see the description of cost-saving stopped mode for pay-as-you-go billing.
+         *   Default value: If you have enabled the default cost-saving stopped mode in the cloud server console and meet the conditions, the default value is StopCharging. Otherwise, the default value is KeepCharging.
+         *   NotApplicable: Indicates that this instance does not support cost-saving stopped mode.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder stoppedMode(String stoppedMode) {
             return stoppedMode(Output.of(stoppedMode));
@@ -1582,9 +1731,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param systemVolume The system volume of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder systemVolume(Output<InstanceSystemVolumeArgs> systemVolume) {
             $.systemVolume = systemVolume;
@@ -1593,34 +1742,55 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param systemVolume The system volume of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder systemVolume(InstanceSystemVolumeArgs systemVolume) {
             return systemVolume(Output.of(systemVolume));
         }
 
+        /**
+         * @param tags Tags
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
-         * @param userData Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded. - Linux instances:
-         * Script content must not exceed 16 KB and must be Base64 encoded. - Windows instances: Script content must not exceed 8
-         * KB and does not require Base64 encoding
-         * 
+         * @param userData Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded.
+         *     - Linux instances: Script content must not exceed 16 KB and must be Base64 encoded.
+         *     - Windows instances: Script content must not exceed 8 KB and does not require Base64 encoding
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userData(@Nullable Output<String> userData) {
             $.userData = userData;
@@ -1628,12 +1798,12 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param userData Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded. - Linux instances:
-         * Script content must not exceed 16 KB and must be Base64 encoded. - Windows instances: Script content must not exceed 8
-         * KB and does not require Base64 encoding
-         * 
+         * @param userData Custom data for the instance. Default is empty. The final UserData passed will be Base64 encoded.
+         *     - Linux instances: Script content must not exceed 16 KB and must be Base64 encoded.
+         *     - Windows instances: Script content must not exceed 8 KB and does not require Base64 encoding
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userData(String userData) {
             return userData(Output.of(userData));
@@ -1641,9 +1811,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId The availability zone ID where the instance is located.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -1652,9 +1822,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId The availability zone ID where the instance is located.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

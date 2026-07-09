@@ -20,14 +20,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Creation time of the health check template.
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time of the health check template.
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -35,14 +35,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -50,14 +50,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
-     * 
+     *
      */
     @Import(name="healthCheckDomain")
     private @Nullable Output<String> healthCheckDomain;
 
     /**
      * @return Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckDomain() {
         return Optional.ofNullable(this.healthCheckDomain);
@@ -65,14 +65,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
-     * 
+     *
      */
     @Import(name="healthCheckHttpCode")
     private @Nullable Output<String> healthCheckHttpCode;
 
     /**
      * @return HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckHttpCode() {
         return Optional.ofNullable(this.healthCheckHttpCode);
@@ -80,14 +80,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
-     * 
+     *
      */
     @Import(name="healthCheckHttpVersion")
     private @Nullable Output<String> healthCheckHttpVersion;
 
     /**
      * @return HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckHttpVersion() {
         return Optional.ofNullable(this.healthCheckHttpVersion);
@@ -95,14 +95,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
-     * 
+     *
      */
     @Import(name="healthCheckInterval")
     private @Nullable Output<Integer> healthCheckInterval;
 
     /**
      * @return Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
-     * 
+     *
      */
     public Optional<Output<Integer>> healthCheckInterval() {
         return Optional.ofNullable(this.healthCheckInterval);
@@ -110,14 +110,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
-     * 
+     *
      */
     @Import(name="healthCheckMethod")
     private @Nullable Output<String> healthCheckMethod;
 
     /**
      * @return Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckMethod() {
         return Optional.ofNullable(this.healthCheckMethod);
@@ -125,14 +125,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
-     * 
+     *
      */
     @Import(name="healthCheckPort")
     private @Nullable Output<Integer> healthCheckPort;
 
     /**
      * @return Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
-     * 
+     *
      */
     public Optional<Output<Integer>> healthCheckPort() {
         return Optional.ofNullable(this.healthCheckPort);
@@ -140,14 +140,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Protocol for the health check. HTTP or TCP.
-     * 
+     *
      */
     @Import(name="healthCheckProtocol")
     private @Nullable Output<String> healthCheckProtocol;
 
     /**
      * @return Protocol for the health check. HTTP or TCP.
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckProtocol() {
         return Optional.ofNullable(this.healthCheckProtocol);
@@ -155,14 +155,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Health check template ID.
-     * 
+     *
      */
     @Import(name="healthCheckTemplateId")
     private @Nullable Output<String> healthCheckTemplateId;
 
     /**
      * @return Health check template ID.
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckTemplateId() {
         return Optional.ofNullable(this.healthCheckTemplateId);
@@ -170,14 +170,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Import(name="healthCheckTemplateName")
     private @Nullable Output<String> healthCheckTemplateName;
 
     /**
      * @return Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckTemplateName() {
         return Optional.ofNullable(this.healthCheckTemplateName);
@@ -185,14 +185,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
-     * 
+     *
      */
     @Import(name="healthCheckTimeout")
     private @Nullable Output<Integer> healthCheckTimeout;
 
     /**
      * @return Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
-     * 
+     *
      */
     public Optional<Output<Integer>> healthCheckTimeout() {
         return Optional.ofNullable(this.healthCheckTimeout);
@@ -200,14 +200,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
-     * 
+     *
      */
     @Import(name="healthCheckUri")
     private @Nullable Output<String> healthCheckUri;
 
     /**
      * @return Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
-     * 
+     *
      */
     public Optional<Output<String>> healthCheckUri() {
         return Optional.ofNullable(this.healthCheckUri);
@@ -215,14 +215,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Health threshold for the health check. Default is 3. Range: 2–10 times.
-     * 
+     *
      */
     @Import(name="healthyThreshold")
     private @Nullable Output<Integer> healthyThreshold;
 
     /**
      * @return Health threshold for the health check. Default is 3. Range: 2–10 times.
-     * 
+     *
      */
     public Optional<Output<Integer>> healthyThreshold() {
         return Optional.ofNullable(this.healthyThreshold);
@@ -230,36 +230,46 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Project name to which the health check template belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the health check template belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * List of tags associated with the health check template.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<HealthCheckTemplateTagArgs>> tags;
 
+    /**
+     * @return List of tags associated with the health check template.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<HealthCheckTemplateTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
-     * 
+     *
      */
     @Import(name="unhealthyThreshold")
     private @Nullable Output<Integer> unhealthyThreshold;
 
     /**
      * @return Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
-     * 
+     *
      */
     public Optional<Output<Integer>> unhealthyThreshold() {
         return Optional.ofNullable(this.unhealthyThreshold);
@@ -267,14 +277,14 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
     /**
      * Last operation time of the health check template.
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Last operation time of the health check template.
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -323,9 +333,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param createTime Creation time of the health check template.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -334,9 +344,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param createTime Creation time of the health check template.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -344,9 +354,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param description Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -355,9 +365,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param description Description of the health check. Cannot start with http:// or https://. Must begin with a letter or Chinese character. May include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be 1–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -365,9 +375,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckDomain Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckDomain(@Nullable Output<String> healthCheckDomain) {
             $.healthCheckDomain = healthCheckDomain;
@@ -376,9 +386,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckDomain Domain name for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must contain at least one &#39;.&#39;, and cannot start or end with &#39;.&#39;. The string can contain letters, numbers, &#39;-&#39;, and &#39;.&#39; characters. &#39;-&#39; cannot appear at the beginning or end of the string. Length must be between 1 and 128 characters. If not specified, this parameter is empty and the load balancer uses the private IP address of each backend server for health checks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckDomain(String healthCheckDomain) {
             return healthCheckDomain(Output.of(healthCheckDomain));
@@ -386,9 +396,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckHttpCode HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckHttpCode(@Nullable Output<String> healthCheckHttpCode) {
             $.healthCheckHttpCode = healthCheckHttpCode;
@@ -397,9 +407,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckHttpCode HTTP status codes indicating a successful health check. Separate multiple codes with commas. This parameter is only effective when HealthCheckProtocol is set to HTTP. Options: http*2xx (default), http*3xx (default), http*4xx, http*5xx.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckHttpCode(String healthCheckHttpCode) {
             return healthCheckHttpCode(Output.of(healthCheckHttpCode));
@@ -407,9 +417,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckHttpVersion HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckHttpVersion(@Nullable Output<String> healthCheckHttpVersion) {
             $.healthCheckHttpVersion = healthCheckHttpVersion;
@@ -418,9 +428,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckHttpVersion HTTP protocol version for health checks. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: HTTP1.0 (default), HTTP1.1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckHttpVersion(String healthCheckHttpVersion) {
             return healthCheckHttpVersion(Output.of(healthCheckHttpVersion));
@@ -428,9 +438,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckInterval Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckInterval(@Nullable Output<Integer> healthCheckInterval) {
             $.healthCheckInterval = healthCheckInterval;
@@ -439,9 +449,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckInterval Interval for performing health checks. Default is 2 seconds. Range: 1–300 seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckInterval(Integer healthCheckInterval) {
             return healthCheckInterval(Output.of(healthCheckInterval));
@@ -449,9 +459,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckMethod Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckMethod(@Nullable Output<String> healthCheckMethod) {
             $.healthCheckMethod = healthCheckMethod;
@@ -460,9 +470,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckMethod Health check method. This parameter is effective only when HealthCheckProtocol is set to HTTP. Options: GETHEAD (default method)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckMethod(String healthCheckMethod) {
             return healthCheckMethod(Output.of(healthCheckMethod));
@@ -470,9 +480,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckPort Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckPort(@Nullable Output<Integer> healthCheckPort) {
             $.healthCheckPort = healthCheckPort;
@@ -481,9 +491,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckPort Port for the health check. Options: 0: Use the backend server port for health checks. 1–65535: Use the specified port for health checks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckPort(Integer healthCheckPort) {
             return healthCheckPort(Output.of(healthCheckPort));
@@ -491,9 +501,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckProtocol Protocol for the health check. HTTP or TCP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckProtocol(@Nullable Output<String> healthCheckProtocol) {
             $.healthCheckProtocol = healthCheckProtocol;
@@ -502,9 +512,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckProtocol Protocol for the health check. HTTP or TCP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckProtocol(String healthCheckProtocol) {
             return healthCheckProtocol(Output.of(healthCheckProtocol));
@@ -512,9 +522,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckTemplateId Health check template ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckTemplateId(@Nullable Output<String> healthCheckTemplateId) {
             $.healthCheckTemplateId = healthCheckTemplateId;
@@ -523,9 +533,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckTemplateId Health check template ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckTemplateId(String healthCheckTemplateId) {
             return healthCheckTemplateId(Output.of(healthCheckTemplateId));
@@ -533,9 +543,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckTemplateName Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckTemplateName(@Nullable Output<String> healthCheckTemplateName) {
             $.healthCheckTemplateName = healthCheckTemplateName;
@@ -544,9 +554,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckTemplateName Name of the health check template. Cannot start with http:// or https://. Must start with a letter or Chinese character. Can contain numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckTemplateName(String healthCheckTemplateName) {
             return healthCheckTemplateName(Output.of(healthCheckTemplateName));
@@ -554,9 +564,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckTimeout Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckTimeout(@Nullable Output<Integer> healthCheckTimeout) {
             $.healthCheckTimeout = healthCheckTimeout;
@@ -565,9 +575,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckTimeout Response timeout for the health check. Default is 2 seconds. Range: 1–60 seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckTimeout(Integer healthCheckTimeout) {
             return healthCheckTimeout(Output.of(healthCheckTimeout));
@@ -575,9 +585,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckUri Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckUri(@Nullable Output<String> healthCheckUri) {
             $.healthCheckUri = healthCheckUri;
@@ -586,9 +596,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthCheckUri Path for the health check. This parameter is only effective when HealthCheckProtocol is set to HTTP. Requirements: Must start with &#39;/&#39;. Can only contain letters, numbers, &#39;-&#39;, &#39;_&#39;, &#39;/&#39;, &#39;.&#39;, &#39;%&#39;, &#39;?&#39;, &#39;#&#39;, &#39;&amp;&#39;, &#39;=&#39; characters. Length must be between 1 and 128 characters. If not specified, defaults to &#39;/&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckUri(String healthCheckUri) {
             return healthCheckUri(Output.of(healthCheckUri));
@@ -596,9 +606,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthyThreshold Health threshold for the health check. Default is 3. Range: 2–10 times.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthyThreshold(@Nullable Output<Integer> healthyThreshold) {
             $.healthyThreshold = healthyThreshold;
@@ -607,9 +617,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param healthyThreshold Health threshold for the health check. Default is 3. Range: 2–10 times.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthyThreshold(Integer healthyThreshold) {
             return healthyThreshold(Output.of(healthyThreshold));
@@ -617,9 +627,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Project name to which the health check template belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -628,32 +638,53 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Project name to which the health check template belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags List of tags associated with the health check template.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<HealthCheckTemplateTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags List of tags associated with the health check template.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<HealthCheckTemplateTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags List of tags associated with the health check template.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(HealthCheckTemplateTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param unhealthyThreshold Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder unhealthyThreshold(@Nullable Output<Integer> unhealthyThreshold) {
             $.unhealthyThreshold = unhealthyThreshold;
@@ -662,9 +693,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param unhealthyThreshold Unhealthy threshold for health checks. Default is 3; range is 2–10 times.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder unhealthyThreshold(Integer unhealthyThreshold) {
             return unhealthyThreshold(Output.of(unhealthyThreshold));
@@ -672,9 +703,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param updateTime Last operation time of the health check template.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -683,9 +714,9 @@ public final class HealthCheckTemplateState extends com.pulumi.resources.Resourc
 
         /**
          * @param updateTime Last operation time of the health check template.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

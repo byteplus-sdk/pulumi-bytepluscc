@@ -21,36 +21,46 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Target address type of the address pool. If you do not set this parameter, Cloud Scheduling GTM will automatically determine the target address type. ipv4: IPv4 address. ipv6: IPv6 address. cname: Domain name
-     * 
+     *
      */
     @Import(name="addrType")
     private @Nullable Output<String> addrType;
 
     /**
      * @return Target address type of the address pool. If you do not set this parameter, Cloud Scheduling GTM will automatically determine the target address type. ipv4: IPv4 address. ipv6: IPv6 address. cname: Domain name
-     * 
+     *
      */
     public Optional<Output<String>> addrType() {
         return Optional.ofNullable(this.addrType);
     }
 
+    /**
+     * List of target addresses in the address pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="addresses")
     private @Nullable Output<List<PoolAddressArgs>> addresses;
 
+    /**
+     * @return List of target addresses in the address pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PoolAddressArgs>>> addresses() {
         return Optional.ofNullable(this.addresses);
     }
 
     /**
      * Address pool capacity
-     * 
+     *
      */
     @Import(name="capacity")
     private @Nullable Output<Integer> capacity;
 
     /**
      * @return Address pool capacity
-     * 
+     *
      */
     public Optional<Output<Integer>> capacity() {
         return Optional.ofNullable(this.capacity);
@@ -58,14 +68,14 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Capacity mode, indicates whether to configure address pool capacity or address capacity
-     * 
+     *
      */
     @Import(name="capacityMode")
     private @Nullable Output<String> capacityMode;
 
     /**
      * @return Capacity mode, indicates whether to configure address pool capacity or address capacity
-     * 
+     *
      */
     public Optional<Output<String>> capacityMode() {
         return Optional.ofNullable(this.capacityMode);
@@ -73,14 +83,14 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -88,14 +98,14 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the address pool can be deleted. true: The address pool is not referenced by any routing rule and can be deleted. false: The address pool is referenced by one or more routing rules and cannot be deleted
-     * 
+     *
      */
     @Import(name="deletable")
     private @Nullable Output<Boolean> deletable;
 
     /**
      * @return Whether the address pool can be deleted. true: The address pool is not referenced by any routing rule and can be deleted. false: The address pool is referenced by one or more routing rules and cannot be deleted
-     * 
+     *
      */
     public Optional<Output<Boolean>> deletable() {
         return Optional.ofNullable(this.deletable);
@@ -103,14 +113,14 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * UUID of the associated GTM instance
-     * 
+     *
      */
     @Import(name="gtmId")
     private @Nullable Output<String> gtmId;
 
     /**
      * @return UUID of the associated GTM instance
-     * 
+     *
      */
     public Optional<Output<String>> gtmId() {
         return Optional.ofNullable(this.gtmId);
@@ -118,14 +128,14 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Address pool name. UTF-8 format. Maximum length is 64 UTF-8 characters
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Address pool name. UTF-8 format. Maximum length is 64 UTF-8 characters
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -133,14 +143,14 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Address pool ID
-     * 
+     *
      */
     @Import(name="poolId")
     private @Nullable Output<String> poolId;
 
     /**
      * @return Address pool ID
-     * 
+     *
      */
     public Optional<Output<String>> poolId() {
         return Optional.ofNullable(this.poolId);
@@ -148,14 +158,14 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Address pool remarks. Default is an empty string. UTF-8 format. Maximum length is 128 UTF-8 characters
-     * 
+     *
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Address pool remarks. Default is an empty string. UTF-8 format. Maximum length is 128 UTF-8 characters
-     * 
+     *
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
@@ -163,14 +173,14 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Update time
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -212,9 +222,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addrType Target address type of the address pool. If you do not set this parameter, Cloud Scheduling GTM will automatically determine the target address type. ipv4: IPv4 address. ipv6: IPv6 address. cname: Domain name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder addrType(@Nullable Output<String> addrType) {
             $.addrType = addrType;
@@ -223,32 +233,53 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param addrType Target address type of the address pool. If you do not set this parameter, Cloud Scheduling GTM will automatically determine the target address type. ipv4: IPv4 address. ipv6: IPv6 address. cname: Domain name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder addrType(String addrType) {
             return addrType(Output.of(addrType));
         }
 
+        /**
+         * @param addresses List of target addresses in the address pool
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder addresses(@Nullable Output<List<PoolAddressArgs>> addresses) {
             $.addresses = addresses;
             return this;
         }
 
+        /**
+         * @param addresses List of target addresses in the address pool
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder addresses(List<PoolAddressArgs> addresses) {
             return addresses(Output.of(addresses));
         }
 
+        /**
+         * @param addresses List of target addresses in the address pool
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder addresses(PoolAddressArgs... addresses) {
             return addresses(List.of(addresses));
         }
 
         /**
          * @param capacity Address pool capacity
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder capacity(@Nullable Output<Integer> capacity) {
             $.capacity = capacity;
@@ -257,9 +288,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacity Address pool capacity
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder capacity(Integer capacity) {
             return capacity(Output.of(capacity));
@@ -267,9 +298,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacityMode Capacity mode, indicates whether to configure address pool capacity or address capacity
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder capacityMode(@Nullable Output<String> capacityMode) {
             $.capacityMode = capacityMode;
@@ -278,9 +309,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param capacityMode Capacity mode, indicates whether to configure address pool capacity or address capacity
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder capacityMode(String capacityMode) {
             return capacityMode(Output.of(capacityMode));
@@ -288,9 +319,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -299,9 +330,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -309,9 +340,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletable Whether the address pool can be deleted. true: The address pool is not referenced by any routing rule and can be deleted. false: The address pool is referenced by one or more routing rules and cannot be deleted
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletable(@Nullable Output<Boolean> deletable) {
             $.deletable = deletable;
@@ -320,9 +351,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletable Whether the address pool can be deleted. true: The address pool is not referenced by any routing rule and can be deleted. false: The address pool is referenced by one or more routing rules and cannot be deleted
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletable(Boolean deletable) {
             return deletable(Output.of(deletable));
@@ -330,9 +361,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gtmId UUID of the associated GTM instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder gtmId(@Nullable Output<String> gtmId) {
             $.gtmId = gtmId;
@@ -341,9 +372,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param gtmId UUID of the associated GTM instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder gtmId(String gtmId) {
             return gtmId(Output.of(gtmId));
@@ -351,9 +382,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Address pool name. UTF-8 format. Maximum length is 64 UTF-8 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -362,9 +393,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Address pool name. UTF-8 format. Maximum length is 64 UTF-8 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -372,9 +403,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param poolId Address pool ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder poolId(@Nullable Output<String> poolId) {
             $.poolId = poolId;
@@ -383,9 +414,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param poolId Address pool ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder poolId(String poolId) {
             return poolId(Output.of(poolId));
@@ -393,9 +424,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Address pool remarks. Default is an empty string. UTF-8 format. Maximum length is 128 UTF-8 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -404,9 +435,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Address pool remarks. Default is an empty string. UTF-8 format. Maximum length is 128 UTF-8 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
@@ -414,9 +445,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -425,9 +456,9 @@ public final class PoolState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

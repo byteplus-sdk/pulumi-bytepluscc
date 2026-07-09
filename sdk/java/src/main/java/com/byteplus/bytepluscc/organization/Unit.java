@@ -16,217 +16,217 @@ import javax.annotation.Nullable;
 
 /**
  * The administrator account that created the enterprise organization can create organizational units to build the enterprise&#39;s organizational structure and manage accounts by organizational unit. Organizational units can have multiple hierarchical levels, and administrator accounts can belong to any organizational unit node at any level.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.organization.Unit;
  * import com.byteplus.bytepluscc.organization.UnitArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var organizationUnitDemo = new Unit("organizationUnitDemo", UnitArgs.builder()
  *             .parentId("735281472xxxx3651635")
  *             .name("OrganizationUnitDemo")
  *             .description("OrganizationUnitDemo description")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:organization/unit:Unit example &#34;org_unit_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:organization/unit:Unit")
 public class Unit extends com.pulumi.resources.CustomResource {
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Deletion flag.
-     * 
+     *
      */
     @Export(name="deleteUk", refs={String.class}, tree="[0]")
     private Output<String> deleteUk;
 
     /**
      * @return Deletion flag.
-     * 
+     *
      */
     public Output<String> deleteUk() {
         return this.deleteUk;
     }
     /**
      * Deletion time.
-     * 
+     *
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Deletion time.
-     * 
+     *
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Depth.
-     * 
+     *
      */
     @Export(name="depth", refs={Integer.class}, tree="[0]")
     private Output<Integer> depth;
 
     /**
      * @return Depth.
-     * 
+     *
      */
     public Output<Integer> depth() {
         return this.depth;
     }
     /**
      * Description.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Organizational unit name.
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Organizational unit name.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Organization ID.
-     * 
+     *
      */
     @Export(name="orgId", refs={String.class}, tree="[0]")
     private Output<String> orgId;
 
     /**
      * @return Organization ID.
-     * 
+     *
      */
     public Output<String> orgId() {
         return this.orgId;
     }
     /**
      * Organization type. Enterprise organization: 1
-     * 
+     *
      */
     @Export(name="orgType", refs={Integer.class}, tree="[0]")
     private Output<Integer> orgType;
 
     /**
      * @return Organization type. Enterprise organization: 1
-     * 
+     *
      */
     public Output<Integer> orgType() {
         return this.orgType;
     }
     /**
      * Organizational unit ID.
-     * 
+     *
      */
     @Export(name="orgUnitId", refs={String.class}, tree="[0]")
     private Output<String> orgUnitId;
 
     /**
      * @return Organizational unit ID.
-     * 
+     *
      */
     public Output<String> orgUnitId() {
         return this.orgUnitId;
     }
     /**
      * Administrator ID.
-     * 
+     *
      */
     @Export(name="owner", refs={String.class}, tree="[0]")
     private Output<String> owner;
 
     /**
      * @return Administrator ID.
-     * 
+     *
      */
     public Output<String> owner() {
         return this.owner;
     }
     /**
      * Parent unit ID.
-     * 
+     *
      */
     @Export(name="parentId", refs={String.class}, tree="[0]")
     private Output<String> parentId;
 
     /**
      * @return Parent unit ID.
-     * 
+     *
      */
     public Output<String> parentId() {
         return this.parentId;
     }
     /**
      * Update time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

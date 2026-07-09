@@ -17,31 +17,31 @@ import javax.annotation.Nullable;
 
 /**
  * Resource project (Project) provides a mechanism for resource group management, helping you achieve logical resource isolation. You can use resource projects for project-based authorization, billing, and other operations.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.iam.Project;
  * import com.byteplus.bytepluscc.iam.ProjectArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var iAMProjectDemo = new Project("iAMProjectDemo", ProjectArgs.builder()
  *             .description("IAMProjectDemo description")
@@ -49,158 +49,158 @@ import javax.annotation.Nullable;
  *             .displayName("IAMProjectDemo")
  *             .parentProjectName("default")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:iam/project:Project example &#34;project_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:iam/project:Project")
 public class Project extends com.pulumi.resources.CustomResource {
     /**
      * Account ID
-     * 
+     *
      */
     @Export(name="accountId", refs={Integer.class}, tree="[0]")
     private Output<Integer> accountId;
 
     /**
      * @return Account ID
-     * 
+     *
      */
     public Output<Integer> accountId() {
         return this.accountId;
     }
     /**
      * Creation Time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation Time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Display Name
-     * 
+     *
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
      * @return Display Name
-     * 
+     *
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
      * Visible
-     * 
+     *
      */
     @Export(name="hasPermission", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> hasPermission;
 
     /**
      * @return Visible
-     * 
+     *
      */
     public Output<Boolean> hasPermission() {
         return this.hasPermission;
     }
     /**
      * Parent Project Name
-     * 
+     *
      */
     @Export(name="parentProjectName", refs={String.class}, tree="[0]")
     private Output<String> parentProjectName;
 
     /**
      * @return Parent Project Name
-     * 
+     *
      */
     public Output<String> parentProjectName() {
         return this.parentProjectName;
     }
     /**
      * Project Path
-     * 
+     *
      */
     @Export(name="path", refs={String.class}, tree="[0]")
     private Output<String> path;
 
     /**
      * @return Project Path
-     * 
+     *
      */
     public Output<String> path() {
         return this.path;
     }
     /**
      * Project Name
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project Name
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Enabled Status
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Enabled Status
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Update Time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update Time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

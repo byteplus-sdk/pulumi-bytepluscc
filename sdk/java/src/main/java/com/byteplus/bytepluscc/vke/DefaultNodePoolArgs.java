@@ -22,14 +22,14 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Cluster ID where the node pool is located
-     * 
+     *
      */
     @Import(name="clusterId", required=true)
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID where the node pool is located
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
@@ -37,14 +37,14 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Kubernetes-related configuration for the node pool
-     * 
+     *
      */
     @Import(name="kubernetesConfig")
     private @Nullable Output<DefaultNodePoolKubernetesConfigArgs> kubernetesConfig;
 
     /**
      * @return Kubernetes-related configuration for the node pool
-     * 
+     *
      */
     public Optional<Output<DefaultNodePoolKubernetesConfigArgs>> kubernetesConfig() {
         return Optional.ofNullable(this.kubernetesConfig);
@@ -52,22 +52,32 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
     /**
      * Cloud server (ECS) instance configuration in the node pool
-     * 
+     *
      */
     @Import(name="nodeConfig", required=true)
     private Output<DefaultNodePoolNodeConfigArgs> nodeConfig;
 
     /**
      * @return Cloud server (ECS) instance configuration in the node pool
-     * 
+     *
      */
     public Output<DefaultNodePoolNodeConfigArgs> nodeConfig() {
         return this.nodeConfig;
     }
 
+    /**
+     * Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<DefaultNodePoolTagArgs>> tags;
 
+    /**
+     * @return Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DefaultNodePoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -101,9 +111,9 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param clusterId Cluster ID where the node pool is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(Output<String> clusterId) {
             $.clusterId = clusterId;
@@ -112,9 +122,9 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param clusterId Cluster ID where the node pool is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(String clusterId) {
             return clusterId(Output.of(clusterId));
@@ -122,9 +132,9 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param kubernetesConfig Kubernetes-related configuration for the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesConfig(@Nullable Output<DefaultNodePoolKubernetesConfigArgs> kubernetesConfig) {
             $.kubernetesConfig = kubernetesConfig;
@@ -133,9 +143,9 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param kubernetesConfig Kubernetes-related configuration for the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesConfig(DefaultNodePoolKubernetesConfigArgs kubernetesConfig) {
             return kubernetesConfig(Output.of(kubernetesConfig));
@@ -143,9 +153,9 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeConfig(Output<DefaultNodePoolNodeConfigArgs> nodeConfig) {
             $.nodeConfig = nodeConfig;
@@ -154,23 +164,44 @@ public final class DefaultNodePoolArgs extends com.pulumi.resources.ResourceArgs
 
         /**
          * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeConfig(DefaultNodePoolNodeConfigArgs nodeConfig) {
             return nodeConfig(Output.of(nodeConfig));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<DefaultNodePoolTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<DefaultNodePoolTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(DefaultNodePoolTagArgs... tags) {
             return tags(List.of(tags));
         }

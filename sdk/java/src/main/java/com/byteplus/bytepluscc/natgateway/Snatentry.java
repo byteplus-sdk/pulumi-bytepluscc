@@ -15,31 +15,31 @@ import javax.annotation.Nullable;
 
 /**
  * When multiple cloud server instances in a private network need to access the public network, you can use SNAT rules of the public NAT gateway to save public IPs and avoid exposing cloud server IPs directly to the public network for secure, convenient, and efficient access. SNAT rules support four granularities: private network, subnet, cloud server, and custom network segment. Configure flexibly based on your business needs.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.natgateway.Snatentry;
  * import com.byteplus.bytepluscc.natgateway.SnatentryArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var natGatewaySnatentryDemo = new Snatentry("natGatewaySnatentryDemo", SnatentryArgs.builder()
  *             .natGatewayId("ngw-2pc28yhdpbx8g227qo1xxxxx")
@@ -47,144 +47,144 @@ import javax.annotation.Nullable;
  *             .snatEntryName("test")
  *             .sourceCidr("0.0.0.0/0")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:natgateway/snatentry:Snatentry example &#34;snat_entry_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:natgateway/snatentry:Snatentry")
 public class Snatentry extends com.pulumi.resources.CustomResource {
     /**
      * IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
-     * 
+     *
      */
     @Export(name="eipAddress", refs={String.class}, tree="[0]")
     private Output<String> eipAddress;
 
     /**
      * @return IP address of the public IP associated with the SNAT rule. Returns the IP address for a single public IP. Returns IP addresses for multiple public IPs.
-     * 
+     *
      */
     public Output<String> eipAddress() {
         return this.eipAddress;
     }
     /**
      * ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
-     * 
+     *
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
      * @return ID of the public IP associated with the SNAT rule. Returns the ID for a single public IP. Returns IDs for multiple public IPs.
-     * 
+     *
      */
     public Output<String> eipId() {
         return this.eipId;
     }
     /**
      * ID of the NAT gateway associated with the SNAT rule
-     * 
+     *
      */
     @Export(name="natGatewayId", refs={String.class}, tree="[0]")
     private Output<String> natGatewayId;
 
     /**
      * @return ID of the NAT gateway associated with the SNAT rule
-     * 
+     *
      */
     public Output<String> natGatewayId() {
         return this.natGatewayId;
     }
     /**
      * ID of the transit IP for the private NAT gateway
-     * 
+     *
      */
     @Export(name="natIpId", refs={String.class}, tree="[0]")
     private Output<String> natIpId;
 
     /**
      * @return ID of the transit IP for the private NAT gateway
-     * 
+     *
      */
     public Output<String> natIpId() {
         return this.natIpId;
     }
     /**
      * ID of the SNAT rule
-     * 
+     *
      */
     @Export(name="snatEntryId", refs={String.class}, tree="[0]")
     private Output<String> snatEntryId;
 
     /**
      * @return ID of the SNAT rule
-     * 
+     *
      */
     public Output<String> snatEntryId() {
         return this.snatEntryId;
     }
     /**
      * Name of the SNAT rule
-     * 
+     *
      */
     @Export(name="snatEntryName", refs={String.class}, tree="[0]")
     private Output<String> snatEntryName;
 
     /**
      * @return Name of the SNAT rule
-     * 
+     *
      */
     public Output<String> snatEntryName() {
         return this.snatEntryName;
     }
     /**
      * Network segment corresponding to the SNAT rule
-     * 
+     *
      */
     @Export(name="sourceCidr", refs={String.class}, tree="[0]")
     private Output<String> sourceCidr;
 
     /**
      * @return Network segment corresponding to the SNAT rule
-     * 
+     *
      */
     public Output<String> sourceCidr() {
         return this.sourceCidr;
     }
     /**
      * Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the SNAT rule. Creating: being created. Deleting: being deleted. Available: available.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * ID of the subnet associated with the SNAT rule
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return ID of the subnet associated with the SNAT rule
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;

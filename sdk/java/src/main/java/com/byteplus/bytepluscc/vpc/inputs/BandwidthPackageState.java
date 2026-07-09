@@ -22,14 +22,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
-     * 
+     *
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
-     * 
+     *
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -37,14 +37,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Bandwidth package ID
-     * 
+     *
      */
     @Import(name="bandwidthPackageId")
     private @Nullable Output<String> bandwidthPackageId;
 
     /**
      * @return Bandwidth package ID
-     * 
+     *
      */
     public Optional<Output<String>> bandwidthPackageId() {
         return Optional.ofNullable(this.bandwidthPackageId);
@@ -52,14 +52,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-     * 
+     *
      */
     @Import(name="bandwidthPackageName")
     private @Nullable Output<String> bandwidthPackageName;
 
     /**
      * @return Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-     * 
+     *
      */
     public Optional<Output<String>> bandwidthPackageName() {
         return Optional.ofNullable(this.bandwidthPackageName);
@@ -67,14 +67,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
-     * 
+     *
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
-     * 
+     *
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -82,14 +82,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Billing status
-     * 
+     *
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Billing status
-     * 
+     *
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -97,14 +97,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Creation time
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -112,14 +112,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Deletion time
-     * 
+     *
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
      * @return Deletion time
-     * 
+     *
      */
     public Optional<Output<String>> deletedTime() {
         return Optional.ofNullable(this.deletedTime);
@@ -127,36 +127,46 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="eipAddresses")
     private @Nullable Output<List<BandwidthPackageEipAddressArgs>> eipAddresses;
 
+    /**
+     * @return List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<BandwidthPackageEipAddressArgs>>> eipAddresses() {
         return Optional.ofNullable(this.eipAddresses);
     }
 
     /**
      * Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
-     * 
+     *
      */
     @Import(name="enableDualStack")
     private @Nullable Output<Boolean> enableDualStack;
 
     /**
      * @return Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableDualStack() {
         return Optional.ofNullable(this.enableDualStack);
@@ -164,14 +174,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Expiration time
-     * 
+     *
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
      * @return Expiration time
-     * 
+     *
      */
     public Optional<Output<String>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
@@ -179,14 +189,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
-     * 
+     *
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
      * @return Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
-     * 
+     *
      */
     public Optional<Output<String>> isp() {
         return Optional.ofNullable(this.isp);
@@ -194,14 +204,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Overdue time
-     * 
+     *
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
      * @return Overdue time
-     * 
+     *
      */
     public Optional<Output<String>> overdueTime() {
         return Optional.ofNullable(this.overdueTime);
@@ -209,14 +219,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Duration for purchasing yearly/monthly shared bandwidth package, default is &#39;1&#39;. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
-     * 
+     *
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Duration for purchasing yearly/monthly shared bandwidth package, default is &#39;1&#39;. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
-     * 
+     *
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -224,14 +234,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
-     * 
+     *
      */
     @Import(name="periodUnit")
     private @Nullable Output<Integer> periodUnit;
 
     /**
      * @return Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
-     * 
+     *
      */
     public Optional<Output<Integer>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -239,14 +249,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Project name. If not specified, added to the default project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name. If not specified, added to the default project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -254,14 +264,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
-     * 
+     *
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
      * @return IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
-     * 
+     *
      */
     public Optional<Output<String>> protocol() {
         return Optional.ofNullable(this.protocol);
@@ -269,14 +279,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
-     * 
+     *
      */
     @Import(name="ratio")
     private @Nullable Output<Integer> ratio;
 
     /**
      * @return 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
-     * 
+     *
      */
     public Optional<Output<Integer>> ratio() {
         return Optional.ofNullable(this.ratio);
@@ -284,14 +294,14 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
-     * 
+     *
      */
     @Import(name="securityProtectionTypes")
     private @Nullable Output<List<String>> securityProtectionTypes;
 
     /**
      * @return Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
-     * 
+     *
      */
     public Optional<Output<List<String>>> securityProtectionTypes() {
         return Optional.ofNullable(this.securityProtectionTypes);
@@ -299,36 +309,46 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
     /**
      * Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<BandwidthPackageTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<BandwidthPackageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Update time
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -381,9 +401,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidth Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -392,9 +412,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidth Bandwidth cap of the shared bandwidth package, unit: Mbps. If BillingType is 1: range is 5–5000. If BillingType is 2, 3, or 4: range is 2–5000.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -402,9 +422,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidthPackageId Bandwidth package ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidthPackageId(@Nullable Output<String> bandwidthPackageId) {
             $.bandwidthPackageId = bandwidthPackageId;
@@ -413,9 +433,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidthPackageId Bandwidth package ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidthPackageId(String bandwidthPackageId) {
             return bandwidthPackageId(Output.of(bandwidthPackageId));
@@ -423,9 +443,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidthPackageName Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidthPackageName(@Nullable Output<String> bandwidthPackageName) {
             $.bandwidthPackageName = bandwidthPackageName;
@@ -434,9 +454,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param bandwidthPackageName Bandwidth package name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidthPackageName(String bandwidthPackageName) {
             return bandwidthPackageName(Output.of(bandwidthPackageName));
@@ -444,9 +464,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param billingType Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -455,9 +475,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param billingType Billing methods for shared bandwidth packages. Options are: 1: Annual/monthly subscription. 2: Billed by bandwidth cap (default). 3: Billed by peak traffic. 4: Billed by traditional 95th percentile (minimum ratio defaults to 20%).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -465,9 +485,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param businessStatus Billing status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -476,9 +496,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param businessStatus Billing status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -486,9 +506,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param createdTime Creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -497,9 +517,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param createdTime Creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -507,9 +527,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param deletedTime Deletion time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletedTime(@Nullable Output<String> deletedTime) {
             $.deletedTime = deletedTime;
@@ -518,9 +538,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param deletedTime Deletion time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletedTime(String deletedTime) {
             return deletedTime(Output.of(deletedTime));
@@ -528,9 +548,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -539,32 +559,53 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param description Description, limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param eipAddresses List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder eipAddresses(@Nullable Output<List<BandwidthPackageEipAddressArgs>> eipAddresses) {
             $.eipAddresses = eipAddresses;
             return this;
         }
 
+        /**
+         * @param eipAddresses List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder eipAddresses(List<BandwidthPackageEipAddressArgs> eipAddresses) {
             return eipAddresses(Output.of(eipAddresses));
         }
 
+        /**
+         * @param eipAddresses List of public IP information added to the shared bandwidth package. All of the following conditions must be met: 1. All IPs have the same line type. 2. All IPs have the same security protection type. 3. All IPs are in the same region. 4. Public IP or IPv6 public bandwidth is billed by usage.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder eipAddresses(BandwidthPackageEipAddressArgs... eipAddresses) {
             return eipAddresses(List.of(eipAddresses));
         }
 
         /**
          * @param enableDualStack Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableDualStack(@Nullable Output<Boolean> enableDualStack) {
             $.enableDualStack = enableDualStack;
@@ -573,9 +614,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableDualStack Enable dual stack. Options: true: enable dual stack; false: do not enable dual stack.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableDualStack(Boolean enableDualStack) {
             return enableDualStack(Output.of(enableDualStack));
@@ -583,9 +624,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param expiredTime Expiration time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expiredTime(@Nullable Output<String> expiredTime) {
             $.expiredTime = expiredTime;
@@ -594,9 +635,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param expiredTime Expiration time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expiredTime(String expiredTime) {
             return expiredTime(Output.of(expiredTime));
@@ -604,9 +645,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param isp Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isp(@Nullable Output<String> isp) {
             $.isp = isp;
@@ -615,9 +656,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param isp Line type, default is BGP. BGP: BGP (multi-line). 1. If your account has applied for and enabled static single line permissions, you can use the following values: 1.1, ChinaMobile: China Mobile static single line. 1.2, ChinaTelecom: China Telecom static single line. 1.3, ChinaUnicom: China Unicom static single line. 2. If your account has applied for and enabled BGP single line permissions, you can use SingleLine*BGP. 3. If your account has applied for and enabled Premium BGP permissions, you can use Premium*BGP. 4. If your account has applied for and enabled Fusion BGP permissions, you can use Fusion*BGP. 5. If your account has applied for and enabled Economical static single line permissions, you can use the following values: 5.1, ChinaMobile*Value: China Mobile economical static single line. 5.2, ChinaUnicom*Value: China Unicom economical static single line. 5.3, ChinaTelecom*Value: China Telecom economical static single line.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isp(String isp) {
             return isp(Output.of(isp));
@@ -625,9 +666,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param overdueTime Overdue time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overdueTime(@Nullable Output<String> overdueTime) {
             $.overdueTime = overdueTime;
@@ -636,9 +677,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param overdueTime Overdue time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overdueTime(String overdueTime) {
             return overdueTime(Output.of(overdueTime));
@@ -646,9 +687,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param period Duration for purchasing yearly/monthly shared bandwidth package, default is &#39;1&#39;. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -657,9 +698,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param period Duration for purchasing yearly/monthly shared bandwidth package, default is &#39;1&#39;. If PeriodUnit is 1, Period can be 1–9, 12, 24, or 36. If PeriodUnit is 2, Period can be 1–3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -667,9 +708,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param periodUnit Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(@Nullable Output<Integer> periodUnit) {
             $.periodUnit = periodUnit;
@@ -678,9 +719,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param periodUnit Unit for the duration when purchasing an annual/monthly subscription shared bandwidth package. Options are: 1: Month (default). 2: Year.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(Integer periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -688,9 +729,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Project name. If not specified, added to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -699,9 +740,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param projectName Project name. If not specified, added to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -709,9 +750,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param protocol IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocol(@Nullable Output<String> protocol) {
             $.protocol = protocol;
@@ -720,9 +761,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param protocol IP protocol of the shared bandwidth package. Options are: Dual-stack: Dual-stack protocol type. IPv4: IPv4 protocol type. This parameter supports Dual-stack only when BillingType is 2 or 4.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -730,9 +771,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param ratio 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ratio(@Nullable Output<Integer> ratio) {
             $.ratio = ratio;
@@ -741,9 +782,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param ratio 95 billing minimum ratio, unit: %, this parameter is returned only for 95 billing shared bandwidth package instances.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ratio(Integer ratio) {
             return ratio(Output.of(ratio));
@@ -751,9 +792,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param securityProtectionTypes Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityProtectionTypes(@Nullable Output<List<String>> securityProtectionTypes) {
             $.securityProtectionTypes = securityProtectionTypes;
@@ -762,9 +803,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param securityProtectionTypes Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityProtectionTypes(List<String> securityProtectionTypes) {
             return securityProtectionTypes(Output.of(securityProtectionTypes));
@@ -772,9 +813,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param securityProtectionTypes Security protection type of the shared bandwidth package. AntiDDoS_Enhanced: Create an enhanced protection shared bandwidth package, which supports adding public IPs with basic protection. If not specified, it means a basic protection shared bandwidth package, which supports adding public IPs with enhanced protection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder securityProtectionTypes(String... securityProtectionTypes) {
             return securityProtectionTypes(List.of(securityProtectionTypes));
@@ -782,9 +823,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -793,32 +834,53 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param status Status of the shared bandwidth package. Creating: In progress. Available: Available. Deleting: In progress.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<BandwidthPackageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<BandwidthPackageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(BandwidthPackageTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updatedTime Update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -827,9 +889,9 @@ public final class BandwidthPackageState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param updatedTime Update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

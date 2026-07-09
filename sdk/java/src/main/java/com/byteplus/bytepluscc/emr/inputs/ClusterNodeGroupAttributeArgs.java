@@ -22,14 +22,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
-     * 
+     *
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
-     * 
+     *
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -37,36 +37,46 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
-     * 
+     *
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
      * @return Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
-     * 
+     *
      */
     public Optional<Output<String>> chargeType() {
         return Optional.ofNullable(this.chargeType);
     }
 
+    /**
+     * Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="dataDisks")
     private @Nullable Output<List<ClusterNodeGroupAttributeDataDiskArgs>> dataDisks;
 
+    /**
+     * @return Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ClusterNodeGroupAttributeDataDiskArgs>>> dataDisks() {
         return Optional.ofNullable(this.dataDisks);
     }
 
     /**
      * Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
-     * 
+     *
      */
     @Import(name="ecsInstanceTypes")
     private @Nullable Output<List<String>> ecsInstanceTypes;
 
     /**
      * @return Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
-     * 
+     *
      */
     public Optional<Output<List<String>>> ecsInstanceTypes() {
         return Optional.ofNullable(this.ecsInstanceTypes);
@@ -74,14 +84,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * ECS key pair name.
-     * 
+     *
      */
     @Import(name="ecsKeyPairName")
     private @Nullable Output<String> ecsKeyPairName;
 
     /**
      * @return ECS key pair name.
-     * 
+     *
      */
     public Optional<Output<String>> ecsKeyPairName() {
         return Optional.ofNullable(this.ecsKeyPairName);
@@ -89,14 +99,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Password for ECS root account.
-     * 
+     *
      */
     @Import(name="ecsPassword")
     private @Nullable Output<String> ecsPassword;
 
     /**
      * @return Password for ECS root account.
-     * 
+     *
      */
     public Optional<Output<String>> ecsPassword() {
         return Optional.ofNullable(this.ecsPassword);
@@ -104,14 +114,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Current expected number of nodes to purchase for the node group.
-     * 
+     *
      */
     @Import(name="nodeCount")
     private @Nullable Output<Integer> nodeCount;
 
     /**
      * @return Current expected number of nodes to purchase for the node group.
-     * 
+     *
      */
     public Optional<Output<Integer>> nodeCount() {
         return Optional.ofNullable(this.nodeCount);
@@ -119,14 +129,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
-     * 
+     *
      */
     @Import(name="nodeGroupName")
     private @Nullable Output<String> nodeGroupName;
 
     /**
      * @return Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
-     * 
+     *
      */
     public Optional<Output<String>> nodeGroupName() {
         return Optional.ofNullable(this.nodeGroupName);
@@ -134,14 +144,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Node group type.
-     * 
+     *
      */
     @Import(name="nodeGroupType")
     private @Nullable Output<String> nodeGroupType;
 
     /**
      * @return Node group type.
-     * 
+     *
      */
     public Optional<Output<String>> nodeGroupType() {
         return Optional.ofNullable(this.nodeGroupType);
@@ -149,14 +159,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
-     * 
+     *
      */
     @Import(name="subnetIds")
     private @Nullable Output<List<String>> subnetIds;
 
     /**
      * @return Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
-     * 
+     *
      */
     public Optional<Output<List<String>>> subnetIds() {
         return Optional.ofNullable(this.subnetIds);
@@ -164,14 +174,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * System disk configuration.
-     * 
+     *
      */
     @Import(name="systemDisk")
     private @Nullable Output<ClusterNodeGroupAttributeSystemDiskArgs> systemDisk;
 
     /**
      * @return System disk configuration.
-     * 
+     *
      */
     public Optional<Output<ClusterNodeGroupAttributeSystemDiskArgs>> systemDisk() {
         return Optional.ofNullable(this.systemDisk);
@@ -179,14 +189,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Whether to attach public IP.
-     * 
+     *
      */
     @Import(name="withPublicIp")
     private @Nullable Output<Boolean> withPublicIp;
 
     /**
      * @return Whether to attach public IP.
-     * 
+     *
      */
     public Optional<Output<Boolean>> withPublicIp() {
         return Optional.ofNullable(this.withPublicIp);
@@ -194,14 +204,14 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
     /**
      * Availability zone ID.
-     * 
+     *
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     * 
+     *
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -245,9 +255,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param bandwidth Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -256,9 +266,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param bandwidth Public bandwidth. Default is 8M. If the user changes it later, EMR needs to synchronize this information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -266,9 +276,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param chargeType Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeType(@Nullable Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -277,32 +287,53 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param chargeType Node group billing type. If empty, reuses the cluster&#39;s chargeType. Master and Core groups must reuse the cluster-level billing type. When the cluster&#39;s chargeType is PRE, the task node group&#39;s chargeType can be set to POST. When the cluster&#39;s chargeType is POST, the node group&#39;s chargeType defaults to POST, and this parameter setting on the node group is invalid.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
         }
 
+        /**
+         * @param dataDisks Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder dataDisks(@Nullable Output<List<ClusterNodeGroupAttributeDataDiskArgs>> dataDisks) {
             $.dataDisks = dataDisks;
             return this;
         }
 
+        /**
+         * @param dataDisks Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder dataDisks(List<ClusterNodeGroupAttributeDataDiskArgs> dataDisks) {
             return dataDisks(Output.of(dataDisks));
         }
 
+        /**
+         * @param dataDisks Data disk configuration. Only disks of the same specification are supported within a single node group. The list length is limited to 1.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder dataDisks(ClusterNodeGroupAttributeDataDiskArgs... dataDisks) {
             return dataDisks(List.of(dataDisks));
         }
 
         /**
          * @param ecsInstanceTypes Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ecsInstanceTypes(@Nullable Output<List<String>> ecsInstanceTypes) {
             $.ecsInstanceTypes = ecsInstanceTypes;
@@ -311,9 +342,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param ecsInstanceTypes Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ecsInstanceTypes(List<String> ecsInstanceTypes) {
             return ecsInstanceTypes(Output.of(ecsInstanceTypes));
@@ -321,9 +352,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param ecsInstanceTypes Node group&#39;s ECS instance type list. Only one instance type can be set. The list length is limited to 1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ecsInstanceTypes(String... ecsInstanceTypes) {
             return ecsInstanceTypes(List.of(ecsInstanceTypes));
@@ -331,9 +362,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param ecsKeyPairName ECS key pair name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ecsKeyPairName(@Nullable Output<String> ecsKeyPairName) {
             $.ecsKeyPairName = ecsKeyPairName;
@@ -342,9 +373,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param ecsKeyPairName ECS key pair name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ecsKeyPairName(String ecsKeyPairName) {
             return ecsKeyPairName(Output.of(ecsKeyPairName));
@@ -352,9 +383,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param ecsPassword Password for ECS root account.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ecsPassword(@Nullable Output<String> ecsPassword) {
             $.ecsPassword = ecsPassword;
@@ -363,9 +394,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param ecsPassword Password for ECS root account.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ecsPassword(String ecsPassword) {
             return ecsPassword(Output.of(ecsPassword));
@@ -373,9 +404,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param nodeCount Current expected number of nodes to purchase for the node group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeCount(@Nullable Output<Integer> nodeCount) {
             $.nodeCount = nodeCount;
@@ -384,9 +415,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param nodeCount Current expected number of nodes to purchase for the node group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeCount(Integer nodeCount) {
             return nodeCount(Output.of(nodeCount));
@@ -394,9 +425,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param nodeGroupName Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeGroupName(@Nullable Output<String> nodeGroupName) {
             $.nodeGroupName = nodeGroupName;
@@ -405,9 +436,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param nodeGroupName Length: 1–128 characters. Cannot start with http: or https:. Can include Chinese, English, numbers, underscores (_), or hyphens (-).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeGroupName(String nodeGroupName) {
             return nodeGroupName(Output.of(nodeGroupName));
@@ -415,9 +446,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param nodeGroupType Node group type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeGroupType(@Nullable Output<String> nodeGroupType) {
             $.nodeGroupType = nodeGroupType;
@@ -426,9 +457,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param nodeGroupType Node group type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeGroupType(String nodeGroupType) {
             return nodeGroupType(Output.of(nodeGroupType));
@@ -436,9 +467,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param subnetIds Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIds(@Nullable Output<List<String>> subnetIds) {
             $.subnetIds = subnetIds;
@@ -447,9 +478,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param subnetIds Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIds(List<String> subnetIds) {
             return subnetIds(Output.of(subnetIds));
@@ -457,9 +488,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param subnetIds Subnet ID list. Currently, only one parameter can be passed, and all node groups must use the same subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetIds(String... subnetIds) {
             return subnetIds(List.of(subnetIds));
@@ -467,9 +498,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param systemDisk System disk configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder systemDisk(@Nullable Output<ClusterNodeGroupAttributeSystemDiskArgs> systemDisk) {
             $.systemDisk = systemDisk;
@@ -478,9 +509,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param systemDisk System disk configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder systemDisk(ClusterNodeGroupAttributeSystemDiskArgs systemDisk) {
             return systemDisk(Output.of(systemDisk));
@@ -488,9 +519,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param withPublicIp Whether to attach public IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder withPublicIp(@Nullable Output<Boolean> withPublicIp) {
             $.withPublicIp = withPublicIp;
@@ -499,9 +530,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param withPublicIp Whether to attach public IP.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder withPublicIp(Boolean withPublicIp) {
             return withPublicIp(Output.of(withPublicIp));
@@ -509,9 +540,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param zoneId Availability zone ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -520,9 +551,9 @@ public final class ClusterNodeGroupAttributeArgs extends com.pulumi.resources.Re
 
         /**
          * @param zoneId Availability zone ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

@@ -16,86 +16,86 @@ import javax.annotation.Nullable;
 
 /**
  * Service control policy activation status
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.organization.ServiceControlPolicyEnabler;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var example = new ServiceControlPolicyEnabler("example");
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:organization/serviceControlPolicyEnabler:ServiceControlPolicyEnabler example &#34;organization_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:organization/serviceControlPolicyEnabler:ServiceControlPolicyEnabler")
 public class ServiceControlPolicyEnabler extends com.pulumi.resources.CustomResource {
     /**
      * Can the FullAccess policy be unbound?
-     * 
+     *
      */
     @Export(name="canFullAccessDetach", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> canFullAccessDetach;
 
     /**
      * @return Can the FullAccess policy be unbound?
-     * 
+     *
      */
     public Output<Boolean> canFullAccessDetach() {
         return this.canFullAccessDetach;
     }
     /**
      * Organization ID
-     * 
+     *
      */
     @Export(name="organizationId", refs={String.class}, tree="[0]")
     private Output<String> organizationId;
 
     /**
      * @return Organization ID
-     * 
+     *
      */
     public Output<String> organizationId() {
         return this.organizationId;
     }
     /**
      * Activation status, Enabled Disabled PendingEnable PendingDisable
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Activation status, Enabled Disabled PendingEnable PendingDisable
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;

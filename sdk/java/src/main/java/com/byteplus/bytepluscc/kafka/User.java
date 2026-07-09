@@ -16,31 +16,31 @@ import javax.annotation.Nullable;
 
 /**
  * SASL user details
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.kafka.User;
  * import com.byteplus.bytepluscc.kafka.UserArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var kafkaUserDemo = new User("kafkaUserDemo", UserArgs.builder()
  *             .instanceId("kafka-cnngavomxxxxxx")
@@ -49,126 +49,146 @@ import javax.annotation.Nullable;
  *             .allAuthority(true)
  *             .description("vip")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:kafka/user:User example &#34;instance_id|user_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:kafka/user:User")
 public class User extends com.pulumi.resources.CustomResource {
     /**
-     * Whether the user has default read and write permissions for all Topics - true: This user has read and write permissions
-     * for all Topics - false: This user does not have read and write permissions for all Topics
-     * 
+     * Whether the user has default read and write permissions for all Topics
+     *     - true: This user has read and write permissions for all Topics
+     *     - false: This user does not have read and write permissions for all Topics
+     *
      */
     @Export(name="allAuthority", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> allAuthority;
 
     /**
-     * @return Whether the user has default read and write permissions for all Topics - true: This user has read and write permissions
-     * for all Topics - false: This user does not have read and write permissions for all Topics
-     * 
+     * @return Whether the user has default read and write permissions for all Topics
+     *     - true: This user has read and write permissions for all Topics
+     *     - false: This user does not have read and write permissions for all Topics
+     *
      */
     public Output<Boolean> allAuthority() {
         return this.allAuthority;
     }
     /**
      * SASL user creation time
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return SASL user creation time
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * SASL user description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return SASL user description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Instance ID to which the user belongs
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID to which the user belongs
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
-     * SASL user type (password type). Supported types: - Scram: SASL user of SCRAM type - Plain: SASL user of PLAIN type
-     * **Note:** If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
-     * 
+     * SASL user type (password type). Supported types:
+     *     - Scram: SASL user of SCRAM type
+     *     - Plain: SASL user of PLAIN type
+     *
+     *   **Note:**
+     *   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
+     *
      */
     @Export(name="passwordType", refs={String.class}, tree="[0]")
     private Output<String> passwordType;
 
     /**
-     * @return SASL user type (password type). Supported types: - Scram: SASL user of SCRAM type - Plain: SASL user of PLAIN type
-     * **Note:** If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
-     * 
+     * @return SASL user type (password type). Supported types:
+     *     - Scram: SASL user of SCRAM type
+     *     - Plain: SASL user of PLAIN type
+     *
+     *   **Note:**
+     *   If you create a PLAIN type user, it takes effect after a 1-minute delay. Please wait after creation.
+     *
      */
     public Output<String> passwordType() {
         return this.passwordType;
     }
     /**
-     * SASL username. Must meet the following requirements: - Consists of letters, numbers, hyphens (-), or underscores (_) -
-     * Length: 3–64 characters - Username cannot be set to admin or monitor, and must be unique within the instance
-     * 
+     * SASL username. Must meet the following requirements:
+     *
+     *     - Consists of letters, numbers, hyphens (-), or underscores (_)
+     *     - Length: 3–64 characters
+     *     - Username cannot be set to admin or monitor, and must be unique within the instance
+     *
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
-     * @return SASL username. Must meet the following requirements: - Consists of letters, numbers, hyphens (-), or underscores (_) -
-     * Length: 3–64 characters - Username cannot be set to admin or monitor, and must be unique within the instance
-     * 
+     * @return SASL username. Must meet the following requirements:
+     *
+     *     - Consists of letters, numbers, hyphens (-), or underscores (_)
+     *     - Length: 3–64 characters
+     *     - Username cannot be set to admin or monitor, and must be unique within the instance
+     *
      */
     public Output<String> userName() {
         return this.userName;
     }
     /**
-     * SASL user password. Must meet the following requirements: - Length: 8–32 characters - Must include at least three of
-     * the following: uppercase letters, lowercase letters, numbers, special characters - Supported special characters:
-     * `!{@literal @}#$%^&amp;*()_+-=`
-     * 
+     * SASL user password. Must meet the following requirements:
+     *
+     *     - Length: 8–32 characters
+     *     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
+     *     - Supported special characters: `!{@literal @}#$%^&amp;*()_+-=`
+     *
      */
     @Export(name="userPassword", refs={String.class}, tree="[0]")
     private Output<String> userPassword;
 
     /**
-     * @return SASL user password. Must meet the following requirements: - Length: 8–32 characters - Must include at least three of
-     * the following: uppercase letters, lowercase letters, numbers, special characters - Supported special characters:
-     * `!{@literal @}#$%^&amp;*()_+-=`
-     * 
+     * @return SASL user password. Must meet the following requirements:
+     *
+     *     - Length: 8–32 characters
+     *     - Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters
+     *     - Supported special characters: `!{@literal @}#$%^&amp;*()_+-=`
+     *
      */
     public Output<String> userPassword() {
         return this.userPassword;

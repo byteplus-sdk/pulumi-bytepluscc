@@ -16,30 +16,40 @@ import javax.annotation.Nullable;
 public final class DomainBackendGroup {
     /**
      * @return Access port number.
-     * 
+     *
      */
     private @Nullable List<Integer> accessPorts;
+    /**
+     * @return Origin group details.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DomainBackendGroupBackend> backends;
     /**
      * @return Origin group name.
-     * 
+     *
      */
     private @Nullable String name;
 
     private DomainBackendGroup() {}
     /**
      * @return Access port number.
-     * 
+     *
      */
     public List<Integer> accessPorts() {
         return this.accessPorts == null ? List.of() : this.accessPorts;
     }
+    /**
+     * @return Origin group details.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DomainBackendGroupBackend> backends() {
         return this.backends == null ? List.of() : this.backends;
     }
     /**
      * @return Origin group name.
-     * 
+     *
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);

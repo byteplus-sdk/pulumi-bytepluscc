@@ -20,14 +20,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Alarm content template ID.
-     * 
+     *
      */
     @Import(name="alarmContentTemplateId")
     private @Nullable Output<String> alarmContentTemplateId;
 
     /**
      * @return Alarm content template ID.
-     * 
+     *
      */
     public Optional<Output<String>> alarmContentTemplateId() {
         return Optional.ofNullable(this.alarmContentTemplateId);
@@ -35,14 +35,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     @Import(name="alarmWebhookAtGroups")
     private @Nullable Output<List<String>> alarmWebhookAtGroups;
 
     /**
      * @return User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     public Optional<Output<List<String>>> alarmWebhookAtGroups() {
         return Optional.ofNullable(this.alarmWebhookAtGroups);
@@ -50,14 +50,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     @Import(name="alarmWebhookAtUsers")
     private @Nullable Output<List<String>> alarmWebhookAtUsers;
 
     /**
      * @return Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     public Optional<Output<List<String>>> alarmWebhookAtUsers() {
         return Optional.ofNullable(this.alarmWebhookAtUsers);
@@ -65,14 +65,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Alarm webhook integration configuration ID.
-     * 
+     *
      */
     @Import(name="alarmWebhookIntegrationId")
     private @Nullable Output<String> alarmWebhookIntegrationId;
 
     /**
      * @return Alarm webhook integration configuration ID.
-     * 
+     *
      */
     public Optional<Output<String>> alarmWebhookIntegrationId() {
         return Optional.ofNullable(this.alarmWebhookIntegrationId);
@@ -80,14 +80,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Name of the alarm Webhook integration configuration.
-     * 
+     *
      */
     @Import(name="alarmWebhookIntegrationName")
     private @Nullable Output<String> alarmWebhookIntegrationName;
 
     /**
      * @return Name of the alarm Webhook integration configuration.
-     * 
+     *
      */
     public Optional<Output<String>> alarmWebhookIntegrationName() {
         return Optional.ofNullable(this.alarmWebhookIntegrationName);
@@ -95,14 +95,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     @Import(name="alarmWebhookIsAtAll")
     private @Nullable Output<Boolean> alarmWebhookIsAtAll;
 
     /**
      * @return Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-     * 
+     *
      */
     public Optional<Output<Boolean>> alarmWebhookIsAtAll() {
         return Optional.ofNullable(this.alarmWebhookIsAtAll);
@@ -110,14 +110,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
-     * 
+     *
      */
     @Import(name="endTime")
     private @Nullable Output<String> endTime;
 
     /**
      * @return End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
-     * 
+     *
      */
     public Optional<Output<String>> endTime() {
         return Optional.ofNullable(this.endTime);
@@ -125,36 +125,46 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
-     * 
+     *
      */
     @Import(name="generalWebhookBody")
     private @Nullable Output<String> generalWebhookBody;
 
     /**
      * @return Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
-     * 
+     *
      */
     public Optional<Output<String>> generalWebhookBody() {
         return Optional.ofNullable(this.generalWebhookBody);
     }
 
+    /**
+     * Custom callback request headers for the interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="generalWebhookHeaders")
     private @Nullable Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs>> generalWebhookHeaders;
 
+    /**
+     * @return Custom callback request headers for the interface.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs>>> generalWebhookHeaders() {
         return Optional.ofNullable(this.generalWebhookHeaders);
     }
 
     /**
      * Custom callback method for the interface. Only POST or PUT is supported.
-     * 
+     *
      */
     @Import(name="generalWebhookMethod")
     private @Nullable Output<String> generalWebhookMethod;
 
     /**
      * @return Custom callback method for the interface. Only POST or PUT is supported.
-     * 
+     *
      */
     public Optional<Output<String>> generalWebhookMethod() {
         return Optional.ofNullable(this.generalWebhookMethod);
@@ -162,14 +172,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Custom callback URL for the interface.
-     * 
+     *
      */
     @Import(name="generalWebhookUrl")
     private @Nullable Output<String> generalWebhookUrl;
 
     /**
      * @return Custom callback URL for the interface.
-     * 
+     *
      */
     public Optional<Output<String>> generalWebhookUrl() {
         return Optional.ofNullable(this.generalWebhookUrl);
@@ -177,14 +187,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
-     * 
+     *
      */
     @Import(name="receiverChannels")
     private @Nullable Output<List<String>> receiverChannels;
 
     /**
      * @return Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
-     * 
+     *
      */
     public Optional<Output<List<String>>> receiverChannels() {
         return Optional.ofNullable(this.receiverChannels);
@@ -192,14 +202,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * IAM user or user group name.
-     * 
+     *
      */
     @Import(name="receiverNames")
     private @Nullable Output<List<String>> receiverNames;
 
     /**
      * @return IAM user or user group name.
-     * 
+     *
      */
     public Optional<Output<List<String>>> receiverNames() {
         return Optional.ofNullable(this.receiverNames);
@@ -207,14 +217,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Recipient type. Options: User: IAM user; UserGroup: IAM user group.
-     * 
+     *
      */
     @Import(name="receiverType")
     private @Nullable Output<String> receiverType;
 
     /**
      * @return Recipient type. Options: User: IAM user; UserGroup: IAM user group.
-     * 
+     *
      */
     public Optional<Output<String>> receiverType() {
         return Optional.ofNullable(this.receiverType);
@@ -222,14 +232,14 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
     /**
      * Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
-     * 
+     *
      */
     @Import(name="startTime")
     private @Nullable Output<String> startTime;
 
     /**
      * @return Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
-     * 
+     *
      */
     public Optional<Output<String>> startTime() {
         return Optional.ofNullable(this.startTime);
@@ -275,9 +285,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmContentTemplateId Alarm content template ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmContentTemplateId(@Nullable Output<String> alarmContentTemplateId) {
             $.alarmContentTemplateId = alarmContentTemplateId;
@@ -286,9 +296,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmContentTemplateId Alarm content template ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmContentTemplateId(String alarmContentTemplateId) {
             return alarmContentTemplateId(Output.of(alarmContentTemplateId));
@@ -296,9 +306,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookAtGroups User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookAtGroups(@Nullable Output<List<String>> alarmWebhookAtGroups) {
             $.alarmWebhookAtGroups = alarmWebhookAtGroups;
@@ -307,9 +317,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookAtGroups User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookAtGroups(List<String> alarmWebhookAtGroups) {
             return alarmWebhookAtGroups(Output.of(alarmWebhookAtGroups));
@@ -317,9 +327,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookAtGroups User group name to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookAtGroups(String... alarmWebhookAtGroups) {
             return alarmWebhookAtGroups(List.of(alarmWebhookAtGroups));
@@ -327,9 +337,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookAtUsers Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookAtUsers(@Nullable Output<List<String>> alarmWebhookAtUsers) {
             $.alarmWebhookAtUsers = alarmWebhookAtUsers;
@@ -338,9 +348,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookAtUsers Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookAtUsers(List<String> alarmWebhookAtUsers) {
             return alarmWebhookAtUsers(Output.of(alarmWebhookAtUsers));
@@ -348,9 +358,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookAtUsers Username to notify when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookAtUsers(String... alarmWebhookAtUsers) {
             return alarmWebhookAtUsers(List.of(alarmWebhookAtUsers));
@@ -358,9 +368,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookIntegrationId Alarm webhook integration configuration ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookIntegrationId(@Nullable Output<String> alarmWebhookIntegrationId) {
             $.alarmWebhookIntegrationId = alarmWebhookIntegrationId;
@@ -369,9 +379,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookIntegrationId Alarm webhook integration configuration ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookIntegrationId(String alarmWebhookIntegrationId) {
             return alarmWebhookIntegrationId(Output.of(alarmWebhookIntegrationId));
@@ -379,9 +389,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookIntegrationName Name of the alarm Webhook integration configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookIntegrationName(@Nullable Output<String> alarmWebhookIntegrationName) {
             $.alarmWebhookIntegrationName = alarmWebhookIntegrationName;
@@ -390,9 +400,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookIntegrationName Name of the alarm Webhook integration configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookIntegrationName(String alarmWebhookIntegrationName) {
             return alarmWebhookIntegrationName(Output.of(alarmWebhookIntegrationName));
@@ -400,9 +410,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookIsAtAll Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookIsAtAll(@Nullable Output<Boolean> alarmWebhookIsAtAll) {
             $.alarmWebhookIsAtAll = alarmWebhookIsAtAll;
@@ -411,9 +421,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param alarmWebhookIsAtAll Whether to notify everyone when sending notifications to Feishu, DingTalk, or WeCom via Webhook integration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alarmWebhookIsAtAll(Boolean alarmWebhookIsAtAll) {
             return alarmWebhookIsAtAll(Output.of(alarmWebhookIsAtAll));
@@ -421,9 +431,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param endTime End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endTime(@Nullable Output<String> endTime) {
             $.endTime = endTime;
@@ -432,9 +442,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param endTime End time for receiving alarm notifications. Uses 24-hour format: HH:mm:ss, with a valid range of 00:00:00–23:59:59. StartTime cannot be greater than EndTime.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endTime(String endTime) {
             return endTime(Output.of(endTime));
@@ -442,9 +452,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param generalWebhookBody Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder generalWebhookBody(@Nullable Output<String> generalWebhookBody) {
             $.generalWebhookBody = generalWebhookBody;
@@ -453,32 +463,53 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param generalWebhookBody Custom WebHook request body. It is recommended to set the request body according to the callback interface requirements of the corresponding service.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder generalWebhookBody(String generalWebhookBody) {
             return generalWebhookBody(Output.of(generalWebhookBody));
         }
 
+        /**
+         * @param generalWebhookHeaders Custom callback request headers for the interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder generalWebhookHeaders(@Nullable Output<List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs>> generalWebhookHeaders) {
             $.generalWebhookHeaders = generalWebhookHeaders;
             return this;
         }
 
+        /**
+         * @param generalWebhookHeaders Custom callback request headers for the interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder generalWebhookHeaders(List<AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs> generalWebhookHeaders) {
             return generalWebhookHeaders(Output.of(generalWebhookHeaders));
         }
 
+        /**
+         * @param generalWebhookHeaders Custom callback request headers for the interface.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder generalWebhookHeaders(AlarmNotifyGroupNoticeRuleReceiverInfoGeneralWebhookHeaderArgs... generalWebhookHeaders) {
             return generalWebhookHeaders(List.of(generalWebhookHeaders));
         }
 
         /**
          * @param generalWebhookMethod Custom callback method for the interface. Only POST or PUT is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder generalWebhookMethod(@Nullable Output<String> generalWebhookMethod) {
             $.generalWebhookMethod = generalWebhookMethod;
@@ -487,9 +518,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param generalWebhookMethod Custom callback method for the interface. Only POST or PUT is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder generalWebhookMethod(String generalWebhookMethod) {
             return generalWebhookMethod(Output.of(generalWebhookMethod));
@@ -497,9 +528,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param generalWebhookUrl Custom callback URL for the interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder generalWebhookUrl(@Nullable Output<String> generalWebhookUrl) {
             $.generalWebhookUrl = generalWebhookUrl;
@@ -508,9 +539,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param generalWebhookUrl Custom callback URL for the interface.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder generalWebhookUrl(String generalWebhookUrl) {
             return generalWebhookUrl(Output.of(generalWebhookUrl));
@@ -518,9 +549,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param receiverChannels Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder receiverChannels(@Nullable Output<List<String>> receiverChannels) {
             $.receiverChannels = receiverChannels;
@@ -529,9 +560,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param receiverChannels Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder receiverChannels(List<String> receiverChannels) {
             return receiverChannels(Output.of(receiverChannels));
@@ -539,9 +570,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param receiverChannels Notification channels. Supports one or more channels. Options: Email, Sms, Phone, GeneralWebhook, Lark, DingTalk, WeChat.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder receiverChannels(String... receiverChannels) {
             return receiverChannels(List.of(receiverChannels));
@@ -549,9 +580,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param receiverNames IAM user or user group name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder receiverNames(@Nullable Output<List<String>> receiverNames) {
             $.receiverNames = receiverNames;
@@ -560,9 +591,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param receiverNames IAM user or user group name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder receiverNames(List<String> receiverNames) {
             return receiverNames(Output.of(receiverNames));
@@ -570,9 +601,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param receiverNames IAM user or user group name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder receiverNames(String... receiverNames) {
             return receiverNames(List.of(receiverNames));
@@ -580,9 +611,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param receiverType Recipient type. Options: User: IAM user; UserGroup: IAM user group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder receiverType(@Nullable Output<String> receiverType) {
             $.receiverType = receiverType;
@@ -591,9 +622,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param receiverType Recipient type. Options: User: IAM user; UserGroup: IAM user group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder receiverType(String receiverType) {
             return receiverType(Output.of(receiverType));
@@ -601,9 +632,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param startTime Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder startTime(@Nullable Output<String> startTime) {
             $.startTime = startTime;
@@ -612,9 +643,9 @@ public final class AlarmNotifyGroupNoticeRuleReceiverInfoArgs extends com.pulumi
 
         /**
          * @param startTime Alarm notification start time. Uses 24-hour format (HH:mm:ss), valid range is 00:00:00–23:59:59. StartTime cannot be later than EndTime.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder startTime(String startTime) {
             return startTime(Output.of(startTime));

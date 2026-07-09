@@ -16,42 +16,52 @@ import javax.annotation.Nullable;
 public final class AlarmNotifyGroupNoticeRule {
     /**
      * @return Whether there is an end node afterwards.
-     * 
+     *
      */
     private @Nullable Boolean hasEndNode;
     /**
      * @return Condition for whether to proceed to the next level.
-     * 
+     *
      */
     private @Nullable Boolean hasNext;
+    /**
+     * @return Notification channel information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<AlarmNotifyGroupNoticeRuleReceiverInfo> receiverInfos;
     /**
      * @return Rule node. JSON format.
-     * 
+     *
      */
     private @Nullable String ruleNode;
 
     private AlarmNotifyGroupNoticeRule() {}
     /**
      * @return Whether there is an end node afterwards.
-     * 
+     *
      */
     public Optional<Boolean> hasEndNode() {
         return Optional.ofNullable(this.hasEndNode);
     }
     /**
      * @return Condition for whether to proceed to the next level.
-     * 
+     *
      */
     public Optional<Boolean> hasNext() {
         return Optional.ofNullable(this.hasNext);
     }
+    /**
+     * @return Notification channel information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<AlarmNotifyGroupNoticeRuleReceiverInfo> receiverInfos() {
         return this.receiverInfos == null ? List.of() : this.receiverInfos;
     }
     /**
      * @return Rule node. JSON format.
-     * 
+     *
      */
     public Optional<String> ruleNode() {
         return Optional.ofNullable(this.ruleNode);

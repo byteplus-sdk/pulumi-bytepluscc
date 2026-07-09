@@ -23,14 +23,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command content.
-     * 
+     *
      */
     @Import(name="commandContent")
     private @Nullable Output<String> commandContent;
 
     /**
      * @return Command content.
-     * 
+     *
      */
     public Optional<Output<String>> commandContent() {
         return Optional.ofNullable(this.commandContent);
@@ -38,14 +38,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the invoked command.
-     * 
+     *
      */
     @Import(name="commandDescription")
     private @Nullable Output<String> commandDescription;
 
     /**
      * @return Description of the invoked command.
-     * 
+     *
      */
     public Optional<Output<String>> commandDescription() {
         return Optional.ofNullable(this.commandDescription);
@@ -53,14 +53,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command ID.
-     * 
+     *
      */
     @Import(name="commandId")
     private @Nullable Output<String> commandId;
 
     /**
      * @return Command ID.
-     * 
+     *
      */
     public Optional<Output<String>> commandId() {
         return Optional.ofNullable(this.commandId);
@@ -68,14 +68,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command name when the task is triggered.
-     * 
+     *
      */
     @Import(name="commandName")
     private @Nullable Output<String> commandName;
 
     /**
      * @return Command name when the task is triggered.
-     * 
+     *
      */
     public Optional<Output<String>> commandName() {
         return Optional.ofNullable(this.commandName);
@@ -83,14 +83,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Provider of the invoked command.
-     * 
+     *
      */
     @Import(name="commandProvider")
     private @Nullable Output<String> commandProvider;
 
     /**
      * @return Provider of the invoked command.
-     * 
+     *
      */
     public Optional<Output<String>> commandProvider() {
         return Optional.ofNullable(this.commandProvider);
@@ -98,14 +98,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Command type triggered by the job.
-     * 
+     *
      */
     @Import(name="commandType")
     private @Nullable Output<String> commandType;
 
     /**
      * @return Command type triggered by the job.
-     * 
+     *
      */
     public Optional<Output<String>> commandType() {
         return Optional.ofNullable(this.commandType);
@@ -113,14 +113,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
-     * 
+     *
      */
     @Import(name="enableParameter")
     private @Nullable Output<Boolean> enableParameter;
 
     /**
      * @return Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableParameter() {
         return Optional.ofNullable(this.enableParameter);
@@ -128,14 +128,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Task end time.
-     * 
+     *
      */
     @Import(name="endTime")
     private @Nullable Output<String> endTime;
 
     /**
      * @return Task end time.
-     * 
+     *
      */
     public Optional<Output<String>> endTime() {
         return Optional.ofNullable(this.endTime);
@@ -143,14 +143,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
-     * 
+     *
      */
     @Import(name="frequency")
     private @Nullable Output<String> frequency;
 
     /**
      * @return Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
-     * 
+     *
      */
     public Optional<Output<String>> frequency() {
         return Optional.ofNullable(this.frequency);
@@ -158,14 +158,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID list, supports up to 200 IDs.
-     * 
+     *
      */
     @Import(name="instanceIds")
     private @Nullable Output<List<String>> instanceIds;
 
     /**
      * @return Instance ID list, supports up to 200 IDs.
-     * 
+     *
      */
     public Optional<Output<List<String>>> instanceIds() {
         return Optional.ofNullable(this.instanceIds);
@@ -173,14 +173,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of instances executed.
-     * 
+     *
      */
     @Import(name="instanceNumber")
     private @Nullable Output<Integer> instanceNumber;
 
     /**
      * @return Number of instances executed.
-     * 
+     *
      */
     public Optional<Output<Integer>> instanceNumber() {
         return Optional.ofNullable(this.instanceNumber);
@@ -188,14 +188,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Job description. Defaults to an empty string and must not exceed 256 characters.
-     * 
+     *
      */
     @Import(name="invocationDescription")
     private @Nullable Output<String> invocationDescription;
 
     /**
      * @return Job description. Defaults to an empty string and must not exceed 256 characters.
-     * 
+     *
      */
     public Optional<Output<String>> invocationDescription() {
         return Optional.ofNullable(this.invocationDescription);
@@ -203,14 +203,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Task execution ID.
-     * 
+     *
      */
     @Import(name="invocationId")
     private @Nullable Output<String> invocationId;
 
     /**
      * @return Task execution ID.
-     * 
+     *
      */
     public Optional<Output<String>> invocationId() {
         return Optional.ofNullable(this.invocationId);
@@ -218,36 +218,46 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
-     * 
+     *
      */
     @Import(name="invocationName")
     private @Nullable Output<String> invocationName;
 
     /**
      * @return Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
-     * 
+     *
      */
     public Optional<Output<String>> invocationName() {
         return Optional.ofNullable(this.invocationName);
     }
 
+    /**
+     * Result of command execution on a single instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="invocationResults")
     private @Nullable Output<List<InvocationInvocationResultArgs>> invocationResults;
 
+    /**
+     * @return Result of command execution on a single instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InvocationInvocationResultArgs>>> invocationResults() {
         return Optional.ofNullable(this.invocationResults);
     }
 
     /**
      * Overall execution status of the command.
-     * 
+     *
      */
     @Import(name="invocationStatus")
     private @Nullable Output<String> invocationStatus;
 
     /**
      * @return Overall execution status of the command.
-     * 
+     *
      */
     public Optional<Output<String>> invocationStatus() {
         return Optional.ofNullable(this.invocationStatus);
@@ -255,36 +265,46 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Execution time.
-     * 
+     *
      */
     @Import(name="launchTime")
     private @Nullable Output<String> launchTime;
 
     /**
      * @return Execution time.
-     * 
+     *
      */
     public Optional<Output<String>> launchTime() {
         return Optional.ofNullable(this.launchTime);
     }
 
+    /**
+     * Custom parameter definition for the command triggered by the task.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="parameterDefinitions")
     private @Nullable Output<List<InvocationParameterDefinitionArgs>> parameterDefinitions;
 
+    /**
+     * @return Custom parameter definition for the command triggered by the task.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InvocationParameterDefinitionArgs>>> parameterDefinitions() {
         return Optional.ofNullable(this.parameterDefinitions);
     }
 
     /**
      * When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
-     * 
+     *
      */
     @Import(name="parameters")
     private @Nullable Output<String> parameters;
 
     /**
      * @return When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
-     * 
+     *
      */
     public Optional<Output<String>> parameters() {
         return Optional.ofNullable(this.parameters);
@@ -292,14 +312,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the resource belongs; each resource can belong to only one project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs; each resource can belong to only one project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -307,14 +327,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cycle end time, applicable only to periodic tasks (Rate).
-     * 
+     *
      */
     @Import(name="recurrenceEndTime")
     private @Nullable Output<String> recurrenceEndTime;
 
     /**
      * @return Cycle end time, applicable only to periodic tasks (Rate).
-     * 
+     *
      */
     public Optional<Output<String>> recurrenceEndTime() {
         return Optional.ofNullable(this.recurrenceEndTime);
@@ -322,14 +342,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
-     * 
+     *
      */
     @Import(name="repeatMode")
     private @Nullable Output<String> repeatMode;
 
     /**
      * @return Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
-     * 
+     *
      */
     public Optional<Output<String>> repeatMode() {
         return Optional.ofNullable(this.repeatMode);
@@ -337,36 +357,46 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Task start time.
-     * 
+     *
      */
     @Import(name="startTime")
     private @Nullable Output<String> startTime;
 
     /**
      * @return Task start time.
-     * 
+     *
      */
     public Optional<Output<String>> startTime() {
         return Optional.ofNullable(this.startTime);
     }
 
+    /**
+     * Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InvocationTagArgs>> tags;
 
+    /**
+     * @return Tag key-value pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InvocationTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
-     * 
+     *
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
      * @return Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
-     * 
+     *
      */
     public Optional<Output<Integer>> timeout() {
         return Optional.ofNullable(this.timeout);
@@ -374,14 +404,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User name for executing the command in the ECS instance.
-     * 
+     *
      */
     @Import(name="username")
     private @Nullable Output<String> username;
 
     /**
      * @return User name for executing the command in the ECS instance.
-     * 
+     *
      */
     public Optional<Output<String>> username() {
         return Optional.ofNullable(this.username);
@@ -389,14 +419,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Password for custom Windows user.
-     * 
+     *
      */
     @Import(name="windowsPassword")
     private @Nullable Output<String> windowsPassword;
 
     /**
      * @return Password for custom Windows user.
-     * 
+     *
      */
     public Optional<Output<String>> windowsPassword() {
         return Optional.ofNullable(this.windowsPassword);
@@ -404,14 +434,14 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Directory where the created command runs in the ECS instance.
-     * 
+     *
      */
     @Import(name="workingDir")
     private @Nullable Output<String> workingDir;
 
     /**
      * @return Directory where the created command runs in the ECS instance.
-     * 
+     *
      */
     public Optional<Output<String>> workingDir() {
         return Optional.ofNullable(this.workingDir);
@@ -470,9 +500,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandContent Command content.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandContent(@Nullable Output<String> commandContent) {
             $.commandContent = commandContent;
@@ -481,9 +511,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandContent Command content.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandContent(String commandContent) {
             return commandContent(Output.of(commandContent));
@@ -491,9 +521,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandDescription Description of the invoked command.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandDescription(@Nullable Output<String> commandDescription) {
             $.commandDescription = commandDescription;
@@ -502,9 +532,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandDescription Description of the invoked command.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandDescription(String commandDescription) {
             return commandDescription(Output.of(commandDescription));
@@ -512,9 +542,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandId Command ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandId(@Nullable Output<String> commandId) {
             $.commandId = commandId;
@@ -523,9 +553,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandId Command ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandId(String commandId) {
             return commandId(Output.of(commandId));
@@ -533,9 +563,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandName Command name when the task is triggered.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandName(@Nullable Output<String> commandName) {
             $.commandName = commandName;
@@ -544,9 +574,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandName Command name when the task is triggered.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandName(String commandName) {
             return commandName(Output.of(commandName));
@@ -554,9 +584,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandProvider Provider of the invoked command.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandProvider(@Nullable Output<String> commandProvider) {
             $.commandProvider = commandProvider;
@@ -565,9 +595,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandProvider Provider of the invoked command.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandProvider(String commandProvider) {
             return commandProvider(Output.of(commandProvider));
@@ -575,9 +605,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandType Command type triggered by the job.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandType(@Nullable Output<String> commandType) {
             $.commandType = commandType;
@@ -586,9 +616,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param commandType Command type triggered by the job.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder commandType(String commandType) {
             return commandType(Output.of(commandType));
@@ -596,9 +626,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableParameter Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableParameter(@Nullable Output<Boolean> enableParameter) {
             $.enableParameter = enableParameter;
@@ -607,9 +637,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableParameter Whether the invoked command uses custom parameters. true: enabled. false: not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableParameter(Boolean enableParameter) {
             return enableParameter(Output.of(enableParameter));
@@ -617,9 +647,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endTime Task end time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endTime(@Nullable Output<String> endTime) {
             $.endTime = endTime;
@@ -628,9 +658,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param endTime Task end time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endTime(String endTime) {
             return endTime(Output.of(endTime));
@@ -638,9 +668,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param frequency Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder frequency(@Nullable Output<String> frequency) {
             $.frequency = frequency;
@@ -649,9 +679,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param frequency Execution frequency. This parameter is required when RepeatMode=Rate. Format: \n\n\n\n. Interval units supported: minutes (5m–60m), hours (1h–24h), and days (1d–7d). The interval is based on a fixed frequency and is independent of the actual job execution time. After job creation, it executes once based on LaunchTime, and the next execution time is determined by the interval setting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder frequency(String frequency) {
             return frequency(Output.of(frequency));
@@ -659,9 +689,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds Instance ID list, supports up to 200 IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(@Nullable Output<List<String>> instanceIds) {
             $.instanceIds = instanceIds;
@@ -670,9 +700,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds Instance ID list, supports up to 200 IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(List<String> instanceIds) {
             return instanceIds(Output.of(instanceIds));
@@ -680,9 +710,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds Instance ID list, supports up to 200 IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(String... instanceIds) {
             return instanceIds(List.of(instanceIds));
@@ -690,9 +720,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceNumber Number of instances executed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceNumber(@Nullable Output<Integer> instanceNumber) {
             $.instanceNumber = instanceNumber;
@@ -701,9 +731,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceNumber Number of instances executed.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceNumber(Integer instanceNumber) {
             return instanceNumber(Output.of(instanceNumber));
@@ -711,9 +741,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationDescription Job description. Defaults to an empty string and must not exceed 256 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder invocationDescription(@Nullable Output<String> invocationDescription) {
             $.invocationDescription = invocationDescription;
@@ -722,9 +752,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationDescription Job description. Defaults to an empty string and must not exceed 256 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder invocationDescription(String invocationDescription) {
             return invocationDescription(Output.of(invocationDescription));
@@ -732,9 +762,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationId Task execution ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder invocationId(@Nullable Output<String> invocationId) {
             $.invocationId = invocationId;
@@ -743,9 +773,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationId Task execution ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder invocationId(String invocationId) {
             return invocationId(Output.of(invocationId));
@@ -753,9 +783,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationName Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder invocationName(@Nullable Output<String> invocationName) {
             $.invocationName = invocationName;
@@ -764,32 +794,53 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationName Job name. Maximum 64 characters. No restriction on special characters. Job names can be duplicated within the same region.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder invocationName(String invocationName) {
             return invocationName(Output.of(invocationName));
         }
 
+        /**
+         * @param invocationResults Result of command execution on a single instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder invocationResults(@Nullable Output<List<InvocationInvocationResultArgs>> invocationResults) {
             $.invocationResults = invocationResults;
             return this;
         }
 
+        /**
+         * @param invocationResults Result of command execution on a single instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder invocationResults(List<InvocationInvocationResultArgs> invocationResults) {
             return invocationResults(Output.of(invocationResults));
         }
 
+        /**
+         * @param invocationResults Result of command execution on a single instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder invocationResults(InvocationInvocationResultArgs... invocationResults) {
             return invocationResults(List.of(invocationResults));
         }
 
         /**
          * @param invocationStatus Overall execution status of the command.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder invocationStatus(@Nullable Output<String> invocationStatus) {
             $.invocationStatus = invocationStatus;
@@ -798,9 +849,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param invocationStatus Overall execution status of the command.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder invocationStatus(String invocationStatus) {
             return invocationStatus(Output.of(invocationStatus));
@@ -808,9 +859,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param launchTime Execution time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder launchTime(@Nullable Output<String> launchTime) {
             $.launchTime = launchTime;
@@ -819,32 +870,53 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param launchTime Execution time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder launchTime(String launchTime) {
             return launchTime(Output.of(launchTime));
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition for the command triggered by the task.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder parameterDefinitions(@Nullable Output<List<InvocationParameterDefinitionArgs>> parameterDefinitions) {
             $.parameterDefinitions = parameterDefinitions;
             return this;
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition for the command triggered by the task.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder parameterDefinitions(List<InvocationParameterDefinitionArgs> parameterDefinitions) {
             return parameterDefinitions(Output.of(parameterDefinitions));
         }
 
+        /**
+         * @param parameterDefinitions Custom parameter definition for the command triggered by the task.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder parameterDefinitions(InvocationParameterDefinitionArgs... parameterDefinitions) {
             return parameterDefinitions(List.of(parameterDefinitions));
         }
 
         /**
          * @param parameters When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder parameters(@Nullable Output<String> parameters) {
             $.parameters = parameters;
@@ -853,9 +925,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parameters When the command includes custom parameters, use this parameter to pass custom parameter key-value pairs. The number of custom parameters ranges from 0 to 60. Key cannot be an empty string and supports up to 64 characters. Value can be an empty string. The combined length of custom parameters and original command content after Base64 encoding must not exceed 16 KB. The set of custom parameter names must be a subset of the parameter set defined when creating the command. Default values are used for parameters not provided.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder parameters(String parameters) {
             return parameters(Output.of(parameters));
@@ -863,9 +935,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs; each resource can belong to only one project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -874,9 +946,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs; each resource can belong to only one project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -884,9 +956,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recurrenceEndTime Cycle end time, applicable only to periodic tasks (Rate).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recurrenceEndTime(@Nullable Output<String> recurrenceEndTime) {
             $.recurrenceEndTime = recurrenceEndTime;
@@ -895,9 +967,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recurrenceEndTime Cycle end time, applicable only to periodic tasks (Rate).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recurrenceEndTime(String recurrenceEndTime) {
             return recurrenceEndTime(Output.of(recurrenceEndTime));
@@ -905,9 +977,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param repeatMode Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder repeatMode(@Nullable Output<String> repeatMode) {
             $.repeatMode = repeatMode;
@@ -916,9 +988,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param repeatMode Set the command execution mode. Once: Default, executes the command immediately. Rate: Executes the command periodically; specify the execution cycle using the Frequency parameter and Rate expression. Fixed: Executes the command at a scheduled time; specify the execution time using the LaunchTime parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder repeatMode(String repeatMode) {
             return repeatMode(Output.of(repeatMode));
@@ -926,9 +998,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param startTime Task start time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder startTime(@Nullable Output<String> startTime) {
             $.startTime = startTime;
@@ -937,32 +1009,53 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param startTime Task start time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder startTime(String startTime) {
             return startTime(Output.of(startTime));
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InvocationTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InvocationTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag key-value pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InvocationTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param timeout Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeout(@Nullable Output<Integer> timeout) {
             $.timeout = timeout;
@@ -971,9 +1064,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeout Maximum timeout for command execution in ECS instances, in seconds. Default: 60. Optional range: 30–86400.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeout(Integer timeout) {
             return timeout(Output.of(timeout));
@@ -981,9 +1074,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param username User name for executing the command in the ECS instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder username(@Nullable Output<String> username) {
             $.username = username;
@@ -992,9 +1085,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param username User name for executing the command in the ECS instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder username(String username) {
             return username(Output.of(username));
@@ -1002,9 +1095,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param windowsPassword Password for custom Windows user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder windowsPassword(@Nullable Output<String> windowsPassword) {
             $.windowsPassword = windowsPassword;
@@ -1013,9 +1106,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param windowsPassword Password for custom Windows user.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder windowsPassword(String windowsPassword) {
             return windowsPassword(Output.of(windowsPassword));
@@ -1023,9 +1116,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workingDir Directory where the created command runs in the ECS instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workingDir(@Nullable Output<String> workingDir) {
             $.workingDir = workingDir;
@@ -1034,9 +1127,9 @@ public final class InvocationState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param workingDir Directory where the created command runs in the ECS instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder workingDir(String workingDir) {
             return workingDir(Output.of(workingDir));

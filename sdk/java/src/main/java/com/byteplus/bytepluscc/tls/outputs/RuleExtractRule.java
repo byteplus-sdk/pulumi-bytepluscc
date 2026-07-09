@@ -17,174 +17,184 @@ import javax.annotation.Nullable;
 public final class RuleExtractRule {
     /**
      * @return Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
-     * 
+     *
      */
     private @Nullable String beginRegex;
     /**
      * @return Log delimiter. Valid only when LogType is delimiter_log.
-     * 
+     *
      */
     private @Nullable String delimiter;
     /**
      * @return Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-     * 
+     *
      */
     private @Nullable Boolean enableNanosecond;
+    /**
+     * @return Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<RuleExtractRuleFilterKeyRegex> filterKeyRegexes;
     /**
      * @return List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
-     * 
+     *
      */
     private @Nullable List<String> keys;
     /**
      * @return The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
-     * 
+     *
      */
     private @Nullable String logRegex;
     /**
      * @return Automatically extract log fields based on the specified log template
-     * 
+     *
      */
     private @Nullable RuleExtractRuleLogTemplate logTemplate;
     /**
      * @return Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
-     * 
+     *
      */
     private @Nullable String quote;
     /**
      * @return Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
-     * 
+     *
      */
     private @Nullable String timeExtractRegex;
     /**
      * @return Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
-     * 
+     *
      */
     private @Nullable String timeFormat;
     /**
      * @return Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
-     * 
+     *
      */
     private @Nullable String timeKey;
     /**
      * @return Time sample. Used to check whether the entered time parsing format is correct.
-     * 
+     *
      */
     private @Nullable String timeSample;
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-     * 
+     *
      */
     private @Nullable String timeZone;
     /**
      * @return Key name for unmatched logs.
-     * 
+     *
      */
     private @Nullable String unMatchLogKey;
     /**
      * @return Switch for uploading unmatched logs.
-     * 
+     *
      */
     private @Nullable Boolean unMatchUpLoadSwitch;
 
     private RuleExtractRule() {}
     /**
      * @return Regular expression that the first line of the log must match. Valid only when LogType is multiline*log or fullregex*log. Must be a valid regular expression.
-     * 
+     *
      */
     public Optional<String> beginRegex() {
         return Optional.ofNullable(this.beginRegex);
     }
     /**
      * @return Log delimiter. Valid only when LogType is delimiter_log.
-     * 
+     *
      */
     public Optional<String> delimiter() {
         return Optional.ofNullable(this.delimiter);
     }
     /**
      * @return Enable nanosecond precision time. When enabled, log time parsing will include and report nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-     * 
+     *
      */
     public Optional<Boolean> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
     }
+    /**
+     * @return Filter rule list. When LogType is minimalist*log or multiline*log, you can configure up to 1 filter rule, and the filter field name key must be content. When LogType is delimiter*log, json*log, or fullregex*log, you can configure up to 5 filter rules, and the filter field name key cannot be duplicated or empty. The regular expression for the filter field&#39;s log content must be a valid regular expression and is limited to 256 characters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<RuleExtractRuleFilterKeyRegex> filterKeyRegexes() {
         return this.filterKeyRegexes == null ? List.of() : this.filterKeyRegexes;
     }
     /**
      * @return List of log field names (Key). This is only valid when LogType is delimiter*log or fullregex*log. You can configure up to 100 field names. When LogType is delimiter*log, field names must be unique and cannot all be empty. When LogType is fullregex*log, field names must be unique and cannot be empty.
-     * 
+     *
      */
     public List<String> keys() {
         return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return The entire log must match the specified regular expression. This is only valid when the collected log type is fullregex_log. Must be a valid regular expression.
-     * 
+     *
      */
     public Optional<String> logRegex() {
         return Optional.ofNullable(this.logRegex);
     }
     /**
      * @return Automatically extract log fields based on the specified log template
-     * 
+     *
      */
     public Optional<RuleExtractRuleLogTemplate> logTemplate() {
         return Optional.ofNullable(this.logTemplate);
     }
     /**
      * @return Quoting character. Content wrapped by a quoting character will not be split but parsed as a complete field. Only valid when LogType is delimiter_log.
-     * 
+     *
      */
     public Optional<String> quote() {
         return Optional.ofNullable(this.quote);
     }
     /**
      * @return Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time
-     * 
+     *
      */
     public Optional<String> timeExtractRegex() {
         return Optional.ofNullable(this.timeExtractRegex);
     }
     /**
      * @return Parsing format for the time field. If you use a specific time field in the log as the log timestamp, you must provide both TimeKey and TimeFormat. TimeKey and TimeFormat must be used together.
-     * 
+     *
      */
     public Optional<String> timeFormat() {
         return Optional.ofNullable(this.timeFormat);
     }
     /**
      * @return Name of the log time field. If you want to use a specific time field in the log as the log timestamp, you need to specify both TimeKey and TimeFormat. TimeKey and TimeFormat must be provided together.
-     * 
+     *
      */
     public Optional<String> timeKey() {
         return Optional.ofNullable(this.timeKey);
     }
     /**
      * @return Time sample. Used to check whether the entered time parsing format is correct.
-     * 
+     *
      */
     public Optional<String> timeSample() {
         return Optional.ofNullable(this.timeSample);
     }
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC. GMT format: GMT+08:00. UTC format: Asia/Shanghai.
-     * 
+     *
      */
     public Optional<String> timeZone() {
         return Optional.ofNullable(this.timeZone);
     }
     /**
      * @return Key name for unmatched logs.
-     * 
+     *
      */
     public Optional<String> unMatchLogKey() {
         return Optional.ofNullable(this.unMatchLogKey);
     }
     /**
      * @return Switch for uploading unmatched logs.
-     * 
+     *
      */
     public Optional<Boolean> unMatchUpLoadSwitch() {
         return Optional.ofNullable(this.unMatchUpLoadSwitch);

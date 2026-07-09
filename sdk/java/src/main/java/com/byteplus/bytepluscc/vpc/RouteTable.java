@@ -19,231 +19,306 @@ import javax.annotation.Nullable;
 
 /**
  * A route table consists of a series of route entries that specify the next hop cloud resource for private network traffic. Each subnet must be associated with only one route table, allowing resources within the subnet to forward traffic via the route table
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.RouteTable;
+ * import com.byteplus.bytepluscc.vpc.RouteTableArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.RouteTableCustomRouteEntryArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.RouteTableTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var routeTableDemo = new RouteTable("routeTableDemo", RouteTableArgs.builder()
+ *             .vpcId("vpc-xxxxx")
+ *             .routeTableName("routeTableDemo")
+ *             .description("routeTableDemo description")
+ *             .projectName("default")
+ *             .subnetIds("subnet-rrxxxxxx")
+ *             .customRouteEntries(RouteTableCustomRouteEntryArgs.builder()
+ *                 .destination_cidr_block("192.168.x.0/30")
+ *                 .next_hop_type("Instance")
+ *                 .next_hop_id("i-xxxx")
+ *                 .build())
+ *             .tags(RouteTableTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpc/routeTable:RouteTable example &#34;route_table_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpc/routeTable:RouteTable")
 public class RouteTable extends com.pulumi.resources.CustomResource {
     /**
      * Account ID owning the route table
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID owning the route table
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
-     * 
+     *
      */
     @Export(name="associateType", refs={String.class}, tree="[0]")
     private Output<String> associateType;
 
     /**
      * @return Association type for route table creation input. 1. Subnet: Subnet association 2. Gateway: Gateway association
-     * 
+     *
      */
     public Output<String> associateType() {
         return this.associateType;
     }
     /**
      * Route Table Creation Time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Route Table Creation Time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
+    /**
+     * List of custom route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="customRouteEntries", refs={List.class,RouteTableCustomRouteEntry.class}, tree="[0,1]")
     private Output<List<RouteTableCustomRouteEntry>> customRouteEntries;
 
+    /**
+     * @return List of custom route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RouteTableCustomRouteEntry>> customRouteEntries() {
         return this.customRouteEntries;
     }
     /**
      * Route Table Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Route Table Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * IPv4 Gateway ID associated with the route table
-     * 
+     *
      */
     @Export(name="ipv4GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv4GatewayId;
 
     /**
      * @return IPv4 Gateway ID associated with the route table
-     * 
+     *
      */
     public Output<String> ipv4GatewayId() {
         return this.ipv4GatewayId;
     }
     /**
      * IPv6 Gateway ID associated with the route table
-     * 
+     *
      */
     @Export(name="ipv6GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv6GatewayId;
 
     /**
      * @return IPv6 Gateway ID associated with the route table
-     * 
+     *
      */
     public Output<String> ipv6GatewayId() {
         return this.ipv6GatewayId;
     }
     /**
      * Name of the project owning the route table
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project owning the route table
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Route Table ID
-     * 
+     *
      */
     @Export(name="routeTableId", refs={String.class}, tree="[0]")
     private Output<String> routeTableId;
 
     /**
      * @return Route Table ID
-     * 
+     *
      */
     public Output<String> routeTableId() {
         return this.routeTableId;
     }
     /**
      * Route Table Name
-     * 
+     *
      */
     @Export(name="routeTableName", refs={String.class}, tree="[0]")
     private Output<String> routeTableName;
 
     /**
      * @return Route Table Name
-     * 
+     *
      */
     public Output<String> routeTableName() {
         return this.routeTableName;
     }
     /**
      * Route table type. 1. Custom: Custom route table 2. System: System route table
-     * 
+     *
      */
     @Export(name="routeTableType", refs={String.class}, tree="[0]")
     private Output<String> routeTableType;
 
     /**
      * @return Route table type. 1. Custom: Custom route table 2. System: System route table
-     * 
+     *
      */
     public Output<String> routeTableType() {
         return this.routeTableType;
     }
     /**
      * List of associated subnet IDs
-     * 
+     *
      */
     @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
      * @return List of associated subnet IDs
-     * 
+     *
      */
     public Output<List<String>> subnetIds() {
         return this.subnetIds;
     }
+    /**
+     * List of system default route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="systemRouteEntries", refs={List.class,RouteTableSystemRouteEntry.class}, tree="[0,1]")
     private Output<List<RouteTableSystemRouteEntry>> systemRouteEntries;
 
+    /**
+     * @return List of system default route entries associated with the route table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RouteTableSystemRouteEntry>> systemRouteEntries() {
         return this.systemRouteEntries;
     }
+    /**
+     * Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,RouteTableTag.class}, tree="[0,1]")
     private Output<List<RouteTableTag>> tags;
 
+    /**
+     * @return Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RouteTableTag>> tags() {
         return this.tags;
     }
     /**
      * Route Table Last Updated Time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Route Table Last Updated Time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * ID of the VPC owning the route table
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC owning the route table
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * VPC Name
-     * 
+     *
      */
     @Export(name="vpcName", refs={String.class}, tree="[0]")
     private Output<String> vpcName;
 
     /**
      * @return VPC Name
-     * 
+     *
      */
     public Output<String> vpcName() {
         return this.vpcName;

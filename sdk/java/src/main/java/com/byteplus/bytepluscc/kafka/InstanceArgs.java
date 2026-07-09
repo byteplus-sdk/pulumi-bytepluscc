@@ -23,14 +23,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Billing type and related billing information for the Kafka instance.
-     * 
+     *
      */
     @Import(name="chargeInfo")
     private @Nullable Output<InstanceChargeInfoArgs> chargeInfo;
 
     /**
      * @return Billing type and related billing information for the Kafka instance.
-     * 
+     *
      */
     public Optional<Output<InstanceChargeInfoArgs>> chargeInfo() {
         return Optional.ofNullable(this.chargeInfo);
@@ -38,14 +38,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance compute specification.
-     * 
+     *
      */
     @Import(name="computeSpec", required=true)
     private Output<String> computeSpec;
 
     /**
      * @return Instance compute specification.
-     * 
+     *
      */
     public Output<String> computeSpec() {
         return this.computeSpec;
@@ -53,14 +53,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * EIP ID.
-     * 
+     *
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
      * @return EIP ID.
-     * 
+     *
      */
     public Optional<Output<String>> eipId() {
         return Optional.ofNullable(this.eipId);
@@ -68,14 +68,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Brief description of the Kafka instance. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Import(name="instanceDescription")
     private @Nullable Output<String> instanceDescription;
 
     /**
      * @return Brief description of the Kafka instance. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> instanceDescription() {
         return Optional.ofNullable(this.instanceDescription);
@@ -83,14 +83,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -98,14 +98,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
-     * 
+     *
      */
     @Import(name="ipWhiteLists")
     private @Nullable Output<List<String>> ipWhiteLists;
 
     /**
      * @return List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
-     * 
+     *
      */
     public Optional<Output<List<String>>> ipWhiteLists() {
         return Optional.ofNullable(this.ipWhiteLists);
@@ -113,14 +113,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable rebalancing.
-     * 
+     *
      */
     @Import(name="needRebalance")
     private @Nullable Output<Boolean> needRebalance;
 
     /**
      * @return Whether to enable rebalancing.
-     * 
+     *
      */
     public Optional<Output<Boolean>> needRebalance() {
         return Optional.ofNullable(this.needRebalance);
@@ -128,14 +128,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
-     * 
+     *
      */
     @Import(name="parameters")
     private @Nullable Output<String> parameters;
 
     /**
      * @return Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
-     * 
+     *
      */
     public Optional<Output<String>> parameters() {
         return Optional.ofNullable(this.parameters);
@@ -143,14 +143,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of partitions.
-     * 
+     *
      */
     @Import(name="partitionNumber")
     private @Nullable Output<Integer> partitionNumber;
 
     /**
      * @return Number of partitions.
-     * 
+     *
      */
     public Optional<Output<Integer>> partitionNumber() {
         return Optional.ofNullable(this.partitionNumber);
@@ -158,14 +158,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IAM project to which the currently created Kafka instance belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return IAM project to which the currently created Kafka instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -173,14 +173,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance storage space, measured in GiB, must be specified as a multiple of 100.
-     * 
+     *
      */
     @Import(name="storageSpace")
     private @Nullable Output<Integer> storageSpace;
 
     /**
      * @return Instance storage space, measured in GiB, must be specified as a multiple of 100.
-     * 
+     *
      */
     public Optional<Output<Integer>> storageSpace() {
         return Optional.ofNullable(this.storageSpace);
@@ -188,14 +188,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
-     * 
+     *
      */
     @Import(name="storageType")
     private @Nullable Output<String> storageType;
 
     /**
      * @return Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
-     * 
+     *
      */
     public Optional<Output<String>> storageType() {
         return Optional.ofNullable(this.storageType);
@@ -203,36 +203,46 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * VPC subnet ID where the instance is located.
-     * 
+     *
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return VPC subnet ID where the instance is located.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
 
+    /**
+     * Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
-     * 
+     *
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
      * @return SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
-     * 
+     *
      */
     public Optional<Output<String>> userName() {
         return Optional.ofNullable(this.userName);
@@ -240,14 +250,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
-     * 
+     *
      */
     @Import(name="userPassword")
     private @Nullable Output<String> userPassword;
 
     /**
      * @return Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
-     * 
+     *
      */
     public Optional<Output<String>> userPassword() {
         return Optional.ofNullable(this.userPassword);
@@ -255,14 +265,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
-     * 
+     *
      */
     @Import(name="version", required=true)
     private Output<String> version;
 
     /**
      * @return Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
-     * 
+     *
      */
     public Output<String> version() {
         return this.version;
@@ -270,14 +280,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network (VPC) ID where the instance is located.
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return Private network (VPC) ID where the instance is located.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -285,14 +295,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
-     * 
+     *
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -342,9 +352,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeInfo Billing type and related billing information for the Kafka instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeInfo(@Nullable Output<InstanceChargeInfoArgs> chargeInfo) {
             $.chargeInfo = chargeInfo;
@@ -353,9 +363,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeInfo Billing type and related billing information for the Kafka instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeInfo(InstanceChargeInfoArgs chargeInfo) {
             return chargeInfo(Output.of(chargeInfo));
@@ -363,9 +373,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param computeSpec Instance compute specification.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder computeSpec(Output<String> computeSpec) {
             $.computeSpec = computeSpec;
@@ -374,9 +384,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param computeSpec Instance compute specification.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder computeSpec(String computeSpec) {
             return computeSpec(Output.of(computeSpec));
@@ -384,9 +394,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipId EIP ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(@Nullable Output<String> eipId) {
             $.eipId = eipId;
@@ -395,9 +405,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipId EIP ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(String eipId) {
             return eipId(Output.of(eipId));
@@ -405,9 +415,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceDescription Brief description of the Kafka instance. Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceDescription(@Nullable Output<String> instanceDescription) {
             $.instanceDescription = instanceDescription;
@@ -416,9 +426,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceDescription Brief description of the Kafka instance. Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceDescription(String instanceDescription) {
             return instanceDescription(Output.of(instanceDescription));
@@ -426,9 +436,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -437,9 +447,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Name of the Kafka instance. Only Chinese characters, letters, numbers, underscores (_), and hyphens (-) are allowed. Cannot start with a number or hyphen (-). Length must be between 1 and 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -447,9 +457,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipWhiteLists List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipWhiteLists(@Nullable Output<List<String>> ipWhiteLists) {
             $.ipWhiteLists = ipWhiteLists;
@@ -458,9 +468,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipWhiteLists List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipWhiteLists(List<String> ipWhiteLists) {
             return ipWhiteLists(Output.of(ipWhiteLists));
@@ -468,9 +478,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipWhiteLists List of allowlist IDs bound to the instance. After binding an allowlist, only IP addresses and ranges configured in the allowlist can access this instance. If this parameter is not set, the new Kafka instance will bind the allowlist &#39;default&#39;, with IP address 0.0.0.0, allowing all addresses to access the Kafka instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipWhiteLists(String... ipWhiteLists) {
             return ipWhiteLists(List.of(ipWhiteLists));
@@ -478,9 +488,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param needRebalance Whether to enable rebalancing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder needRebalance(@Nullable Output<Boolean> needRebalance) {
             $.needRebalance = needRebalance;
@@ -489,9 +499,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param needRebalance Whether to enable rebalancing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder needRebalance(Boolean needRebalance) {
             return needRebalance(Output.of(needRebalance));
@@ -499,9 +509,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parameters Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder parameters(@Nullable Output<String> parameters) {
             $.parameters = parameters;
@@ -510,9 +520,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parameters Initial parameter configuration for Kafka instances, formatted as JSON. Parameter list: Maximum message size (MessageMaxByte) 1–12 MB, default 10; message retention time (LogRetentionHours) 0–2160 hours, default 72; offset retention duration (OffsetRetentionMinutes) 1–10080 minutes, default 4320; message timestamp type (MessageTimestampType) LogAppendTime/CreateTime—time when the message is written to the server or when the producer creates the message.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder parameters(String parameters) {
             return parameters(Output.of(parameters));
@@ -520,9 +530,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param partitionNumber Number of partitions.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder partitionNumber(@Nullable Output<Integer> partitionNumber) {
             $.partitionNumber = partitionNumber;
@@ -531,9 +541,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param partitionNumber Number of partitions.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder partitionNumber(Integer partitionNumber) {
             return partitionNumber(Output.of(partitionNumber));
@@ -541,9 +551,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName IAM project to which the currently created Kafka instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -552,9 +562,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName IAM project to which the currently created Kafka instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -562,9 +572,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageSpace Instance storage space, measured in GiB, must be specified as a multiple of 100.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageSpace(@Nullable Output<Integer> storageSpace) {
             $.storageSpace = storageSpace;
@@ -573,9 +583,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageSpace Instance storage space, measured in GiB, must be specified as a multiple of 100.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageSpace(Integer storageSpace) {
             return storageSpace(Output.of(storageSpace));
@@ -583,9 +593,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageType(@Nullable Output<String> storageType) {
             $.storageType = storageType;
@@ -594,9 +604,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param storageType Cloud disk type for Kafka instance data storage. Can be set to ESSD*FlexPL or ESSD*PL0; default is ESSD_FlexPL.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageType(String storageType) {
             return storageType(Output.of(storageType));
@@ -604,9 +614,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId VPC subnet ID where the instance is located.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -615,32 +625,53 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId VPC subnet ID where the instance is located.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Cloud resource tags. You can categorize instances by tags for easier search and resource aggregation.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param userName SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userName(@Nullable Output<String> userName) {
             $.userName = userName;
@@ -649,9 +680,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userName SASL/PLAIN username. Requirements: 1. Consists of lowercase letters, numbers, hyphens (-), or underscores. 2. Length: 3–64 characters. 3. Username cannot be set to admin or monitor, and must be unique within the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
@@ -659,9 +690,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userPassword Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userPassword(@Nullable Output<String> userPassword) {
             $.userPassword = userPassword;
@@ -670,9 +701,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userPassword Password for SASL/PLAIN users. Must meet the following requirements: 1. Length between 8 and 32 characters 2. Must contain any three of the following: uppercase letters, lowercase letters, numbers, special characters 3. Supported special characters: !{@literal @}#$%^&amp;*()_+-=
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userPassword(String userPassword) {
             return userPassword(Output.of(userPassword));
@@ -680,9 +711,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param version Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder version(Output<String> version) {
             $.version = version;
@@ -691,9 +722,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param version Supported Kafka versions. Currently supported versions include 2.2.2 and 2.8.2.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder version(String version) {
             return version(Output.of(version));
@@ -701,9 +732,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network (VPC) ID where the instance is located.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -712,9 +743,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Private network (VPC) ID where the instance is located.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -722,9 +753,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -733,9 +764,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID where the instance is located. Message Queue for Kafka instances support cross-AZ deployment; separate multiple availability zone IDs with commas.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

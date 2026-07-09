@@ -22,14 +22,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-     * 
+     *
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-     * 
+     *
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -37,14 +37,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -52,14 +52,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-     * 
+     *
      */
     @Import(name="natGatewayName")
     private @Nullable Output<String> natGatewayName;
 
     /**
      * @return Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-     * 
+     *
      */
     public Optional<Output<String>> natGatewayName() {
         return Optional.ofNullable(this.natGatewayName);
@@ -67,14 +67,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-     * 
+     *
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
      * @return NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-     * 
+     *
      */
     public Optional<Output<String>> networkType() {
         return Optional.ofNullable(this.networkType);
@@ -82,14 +82,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-     * 
+     *
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-     * 
+     *
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -97,14 +97,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-     * 
+     *
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
      * @return Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-     * 
+     *
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -112,14 +112,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -127,14 +127,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable intelligent scheduling
-     * 
+     *
      */
     @Import(name="smartScheduleEnabled")
     private @Nullable Output<Boolean> smartScheduleEnabled;
 
     /**
      * @return Whether to enable intelligent scheduling
-     * 
+     *
      */
     public Optional<Output<Boolean>> smartScheduleEnabled() {
         return Optional.ofNullable(this.smartScheduleEnabled);
@@ -142,14 +142,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-     * 
+     *
      */
     @Import(name="smartScheduleRule")
     private @Nullable Output<String> smartScheduleRule;
 
     /**
      * @return Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-     * 
+     *
      */
     public Optional<Output<String>> smartScheduleRule() {
         return Optional.ofNullable(this.smartScheduleRule);
@@ -157,14 +157,14 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-     * 
+     *
      */
     @Import(name="spec")
     private @Nullable Output<String> spec;
 
     /**
      * @return NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-     * 
+     *
      */
     public Optional<Output<String>> spec() {
         return Optional.ofNullable(this.spec);
@@ -172,36 +172,46 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-     * 
+     *
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-     * 
+     *
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<NgwTagArgs>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<NgwTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * ID of the private network where the NAT Gateway is located
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return ID of the private network where the NAT Gateway is located
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -245,9 +255,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -256,9 +266,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param billingType NAT Gateway billing mode. Possible values: 1: Subscription. 2 (default): Pay-as-you-go by specification. 3: Pay-as-you-go by usage. When NetworkType is set to intranet, only 3 is supported and required for this parameter.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -266,9 +276,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -277,9 +287,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 1 to 255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -287,9 +297,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayName Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder natGatewayName(@Nullable Output<String> natGatewayName) {
             $.natGatewayName = natGatewayName;
@@ -298,9 +308,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natGatewayName Name of the NAT Gateway. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters. If not specified, defaults to the NAT Gateway instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder natGatewayName(String natGatewayName) {
             return natGatewayName(Output.of(natGatewayName));
@@ -308,9 +318,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkType NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkType(@Nullable Output<String> networkType) {
             $.networkType = networkType;
@@ -319,9 +329,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param networkType NAT Gateway type. internet: Public NAT Gateway. intranet: Private NAT Gateway.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkType(String networkType) {
             return networkType(Output.of(networkType));
@@ -329,9 +339,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -340,9 +350,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param period Duration for purchasing a subscription NAT Gateway, default is 1. If PeriodUnit is Month, Period can be 1 ~ 9, 12, 24, 36. If PeriodUnit is Year, Period can be 1 ~ 3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -350,9 +360,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -361,9 +371,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param periodUnit Unit for subscription NAT Gateway duration, default is Month. Month: month. Year: year.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -371,9 +381,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -382,9 +392,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the NAT Gateway belongs to. If not specified, defaults to the &#39;default&#39; project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -392,9 +402,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smartScheduleEnabled Whether to enable intelligent scheduling
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder smartScheduleEnabled(@Nullable Output<Boolean> smartScheduleEnabled) {
             $.smartScheduleEnabled = smartScheduleEnabled;
@@ -403,9 +413,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smartScheduleEnabled Whether to enable intelligent scheduling
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder smartScheduleEnabled(Boolean smartScheduleEnabled) {
             return smartScheduleEnabled(Output.of(smartScheduleEnabled));
@@ -413,9 +423,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smartScheduleRule Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder smartScheduleRule(@Nullable Output<String> smartScheduleRule) {
             $.smartScheduleRule = smartScheduleRule;
@@ -424,9 +434,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param smartScheduleRule Intelligent scheduling policy rules. ChinaMobile: China Mobile. ChinaUnicom: China Unicom. ChinaTelecom: China Telecom. BGP: BGP multi-line.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder smartScheduleRule(String smartScheduleRule) {
             return smartScheduleRule(Output.of(smartScheduleRule));
@@ -434,9 +444,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param spec NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spec(@Nullable Output<String> spec) {
             $.spec = spec;
@@ -445,9 +455,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param spec NAT Gateway specification. Small (default): Small. Medium: Medium. Large: Large. Extra*Large*1: Extra Large 1. Extra*Large*2: Extra Large 2.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spec(String spec) {
             return spec(Output.of(spec));
@@ -455,9 +465,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -466,32 +476,53 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId ID of the subnet where the NAT gateway is located. The input subnet must be a subnet of the private network specified by VpcId. There must be at least one available private IP in the subnet. The system automatically generates a NAT gateway network interface that will occupy one private IP in this subnet. The availability zone of the subnet must have deployed NAT gateway resources. The availability zone of the subnet will be used as the primary availability zone for the NAT gateway and will automatically associate with a backup availability zone. When the primary availability zone fails, the NAT gateway automatically switches to the backup availability zone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<NgwTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<NgwTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(NgwTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpcId ID of the private network where the NAT Gateway is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -500,9 +531,9 @@ public final class NgwArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the private network where the NAT Gateway is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

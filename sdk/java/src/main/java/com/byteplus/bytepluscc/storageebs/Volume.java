@@ -22,31 +22,31 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud disk is a block storage device with high availability, high reliability, high performance, and elastic scalability. It can be used as a scalable disk for cloud servers and elastic container services.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.storageebs.Volume;
  * import com.byteplus.bytepluscc.storageebs.VolumeArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var volumeDemo = new Volume("volumeDemo", VolumeArgs.builder()
  *             .volumeName("EBS-VolumeDemo")
@@ -54,430 +54,440 @@ import javax.annotation.Nullable;
  *             .size(10.0)
  *             .zoneId("cn-beijing-x")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:storageebs/volume:Volume example &#34;volume_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:storageebs/volume:Volume")
 public class Volume extends com.pulumi.resources.CustomResource {
     /**
      * Automatic snapshot policy ID.
-     * 
+     *
      */
     @Export(name="autoSnapshotPolicyId", refs={String.class}, tree="[0]")
     private Output<String> autoSnapshotPolicyId;
 
     /**
      * @return Automatic snapshot policy ID.
-     * 
+     *
      */
     public Output<String> autoSnapshotPolicyId() {
         return this.autoSnapshotPolicyId;
     }
     /**
      * Automatic snapshot policy name.
-     * 
+     *
      */
     @Export(name="autoSnapshotPolicyName", refs={String.class}, tree="[0]")
     private Output<String> autoSnapshotPolicyName;
 
     /**
      * @return Automatic snapshot policy name.
-     * 
+     *
      */
     public Output<String> autoSnapshotPolicyName() {
         return this.autoSnapshotPolicyName;
     }
     /**
      * Baseline performance.
-     * 
+     *
      */
     @Export(name="baselinePerformance", refs={VolumeBaselinePerformance.class}, tree="[0]")
     private Output<VolumeBaselinePerformance> baselinePerformance;
 
     /**
      * @return Baseline performance.
-     * 
+     *
      */
     public Output<VolumeBaselinePerformance> baselinePerformance() {
         return this.baselinePerformance;
     }
     /**
      * Disk creation time.
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Disk creation time.
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
-     * 
+     *
      */
     @Export(name="deleteWithInstance", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deleteWithInstance;
 
     /**
      * @return When releasing the instance, specify whether the disk is released along with the instance. Value description: true: The disk is released with the instance. false: The disk is not released with the instance.
-     * 
+     *
      */
     public Output<Boolean> deleteWithInstance() {
         return this.deleteWithInstance;
     }
     /**
      * Disk description. Default is empty. Length must be between 1 and 255 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Disk description. Default is empty. Length must be between 1 and 255 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Device name
-     * 
+     *
      */
     @Export(name="deviceName", refs={String.class}, tree="[0]")
     private Output<String> deviceName;
 
     /**
      * @return Device name
-     * 
+     *
      */
     public Output<String> deviceName() {
         return this.deviceName;
     }
     /**
      * Specific error
-     * 
+     *
      */
     @Export(name="errorDetail", refs={String.class}, tree="[0]")
     private Output<String> errorDetail;
 
     /**
      * @return Specific error
-     * 
+     *
      */
     public Output<String> errorDetail() {
         return this.errorDetail;
     }
     /**
      * Expiration time for yearly/monthly subscription.
-     * 
+     *
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Expiration time for yearly/monthly subscription.
-     * 
+     *
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * Extra performance.
-     * 
+     *
      */
     @Export(name="extraPerformance", refs={VolumeExtraPerformance.class}, tree="[0]")
     private Output<VolumeExtraPerformance> extraPerformance;
 
     /**
      * @return Extra performance.
-     * 
+     *
      */
     public Output<VolumeExtraPerformance> extraPerformance() {
         return this.extraPerformance;
     }
     /**
      * Image ID in the disk.
-     * 
+     *
      */
     @Export(name="imageId", refs={String.class}, tree="[0]")
     private Output<String> imageId;
 
     /**
      * @return Image ID in the disk.
-     * 
+     *
      */
     public Output<String> imageId() {
         return this.imageId;
     }
     /**
      * ECS instance ID mounted when creating the cloud disk.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return ECS instance ID mounted when creating the cloud disk.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
-     * 
+     *
      */
     @Export(name="kind", refs={String.class}, tree="[0]")
     private Output<String> kind;
 
     /**
      * @return Disk attribute. data indicates a data disk. The default value is data. Note: Only data disks can be created.
-     * 
+     *
      */
     public Output<String> kind() {
         return this.kind;
     }
     /**
      * Disk overdue reclamation time.
-     * 
+     *
      */
     @Export(name="overdueReclaimTime", refs={String.class}, tree="[0]")
     private Output<String> overdueReclaimTime;
 
     /**
      * @return Disk overdue reclamation time.
-     * 
+     *
      */
     public Output<String> overdueReclaimTime() {
         return this.overdueReclaimTime;
     }
     /**
      * Disk overdue shutdown time.
-     * 
+     *
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Disk overdue shutdown time.
-     * 
+     *
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
-     * 
+     *
      */
     @Export(name="payType", refs={String.class}, tree="[0]")
     private Output<String> payType;
 
     /**
      * @return Payment type. Description: Pre: Prepaid (annual/monthly). Post: Postpaid (pay-as-you-go).
-     * 
+     *
      */
     public Output<String> payType() {
         return this.payType;
     }
     /**
      * Project name to which the disk will be added.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the disk will be added.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
-     * 
+     *
      */
     @Export(name="renewType", refs={Double.class}, tree="[0]")
     private Output<Double> renewType;
 
     /**
      * @return Renewal method 1: Manual renewal 2: Automatic renewal 3: Do not renew upon expiration.
-     * 
+     *
      */
     public Output<Double> renewType() {
         return this.renewType;
     }
     /**
      * Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
-     * 
+     *
      */
     @Export(name="size", refs={Double.class}, tree="[0]")
     private Output<Double> size;
 
     /**
      * @return Size: data disk capacity in GiB. The capacity ranges for different types of data disks are as follows: ESSD*PL0: 10~65536 GiB; ESSD*FlexPL: 10~65536 GiB; TSSD_TL0: 40~65536 GiB
-     * 
+     *
      */
     public Output<Double> size() {
         return this.size;
     }
     /**
      * Snapshot count.
-     * 
+     *
      */
     @Export(name="snapshotCount", refs={Double.class}, tree="[0]")
     private Output<Double> snapshotCount;
 
     /**
      * @return Snapshot count.
-     * 
+     *
      */
     public Output<Double> snapshotCount() {
         return this.snapshotCount;
     }
     /**
      * Source snapshot.
-     * 
+     *
      */
     @Export(name="sourceSnapshotId", refs={String.class}, tree="[0]")
     private Output<String> sourceSnapshotId;
 
     /**
      * @return Source snapshot.
-     * 
+     *
      */
     public Output<String> sourceSnapshotId() {
         return this.sourceSnapshotId;
     }
     /**
      * Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Disk status. Value description: available: Available. mounting: Mounting. mounted: Mounted. unmounting: Unmounting. creating: Creating. deleting: Deleting. error: Error. expanding: Expanding.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Disk tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,VolumeTag.class}, tree="[0,1]")
     private Output<List<VolumeTag>> tags;
 
+    /**
+     * @return Disk tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<VolumeTag>> tags() {
         return this.tags;
     }
     /**
      * Total performance.
-     * 
+     *
      */
     @Export(name="totalPerformance", refs={VolumeTotalPerformance.class}, tree="[0]")
     private Output<VolumeTotalPerformance> totalPerformance;
 
     /**
      * @return Total performance.
-     * 
+     *
      */
     public Output<VolumeTotalPerformance> totalPerformance() {
         return this.totalPerformance;
     }
     /**
      * Transaction status 0: Creating 1: Running 2: Creation failed
-     * 
+     *
      */
     @Export(name="tradeStatus", refs={Double.class}, tree="[0]")
     private Output<Double> tradeStatus;
 
     /**
      * @return Transaction status 0: Creating 1: Running 2: Creation failed
-     * 
+     *
      */
     public Output<Double> tradeStatus() {
         return this.tradeStatus;
     }
     /**
      * Disk update time.
-     * 
+     *
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Disk update time.
-     * 
+     *
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * Disk ID.
-     * 
+     *
      */
     @Export(name="volumeId", refs={String.class}, tree="[0]")
     private Output<String> volumeId;
 
     /**
      * @return Disk ID.
-     * 
+     *
      */
     public Output<String> volumeId() {
         return this.volumeId;
     }
     /**
      * Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Export(name="volumeName", refs={String.class}, tree="[0]")
     private Output<String> volumeName;
 
     /**
      * @return Disk display name. Naming rules: The first character must be a Chinese character, a letter, or an underscore (*). Can contain Chinese characters, letters, numbers, underscores (*), or hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> volumeName() {
         return this.volumeName;
     }
     /**
      * Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
-     * 
+     *
      */
     @Export(name="volumeType", refs={String.class}, tree="[0]")
     private Output<String> volumeType;
 
     /**
      * @return Disk type. Value description: ESSD*PL0: Ultra-fast SSD disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD disk, FlexPL specification. TSSD_TL0: Throughput SSD disk.
-     * 
+     *
      */
     public Output<String> volumeType() {
         return this.volumeType;
     }
     /**
      * Availability zone ID.
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;

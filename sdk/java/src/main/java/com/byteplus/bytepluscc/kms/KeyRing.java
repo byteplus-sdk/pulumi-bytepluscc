@@ -16,31 +16,31 @@ import javax.annotation.Nullable;
 
 /**
  * A collection for managing user keys; users place keys of the same type or purpose in the same keyring for easier management
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.kms.KeyRing;
  * import com.byteplus.bytepluscc.kms.KeyRingArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var kmskeyringDemo = new KeyRing("kmskeyringDemo", KeyRingArgs.builder()
  *             .description("this is a test update")
@@ -48,144 +48,144 @@ import javax.annotation.Nullable;
  *             .keyringType("CustomKeyring")
  *             .projectName("default")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:kms/keyRing:KeyRing example &#34;key_ring_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:kms/keyRing:KeyRing")
 public class KeyRing extends com.pulumi.resources.CustomResource {
     /**
      * Keyring creation date
-     * 
+     *
      */
     @Export(name="createDate", refs={Integer.class}, tree="[0]")
     private Output<Integer> createDate;
 
     /**
      * @return Keyring creation date
-     * 
+     *
      */
     public Output<Integer> createDate() {
         return this.createDate;
     }
     /**
      * Keyring description, length: 0–8192 characters
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Keyring description, length: 0–8192 characters
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Number of keys in keyring
-     * 
+     *
      */
     @Export(name="keyCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> keyCount;
 
     /**
      * @return Number of keys in keyring
-     * 
+     *
      */
     public Output<Integer> keyCount() {
         return this.keyCount;
     }
     /**
      * Keyring unique identifier, in UUID format
-     * 
+     *
      */
     @Export(name="keyRingId", refs={String.class}, tree="[0]")
     private Output<String> keyRingId;
 
     /**
      * @return Keyring unique identifier, in UUID format
-     * 
+     *
      */
     public Output<String> keyRingId() {
         return this.keyRingId;
     }
     /**
      * Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
-     * 
+     *
      */
     @Export(name="keyringName", refs={String.class}, tree="[0]")
     private Output<String> keyringName;
 
     /**
      * @return Keyring name, length: 2–31 characters. Valid characters: [a-zA-Z0-9-_]
-     * 
+     *
      */
     public Output<String> keyringName() {
         return this.keyringName;
     }
     /**
      * Keyring type, value: CustomKeyring
-     * 
+     *
      */
     @Export(name="keyringType", refs={String.class}, tree="[0]")
     private Output<String> keyringType;
 
     /**
      * @return Keyring type, value: CustomKeyring
-     * 
+     *
      */
     public Output<String> keyringType() {
         return this.keyringType;
     }
     /**
      * Project name, default value: default
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name, default value: default
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Keyring tenant ID
-     * 
+     *
      */
     @Export(name="uid", refs={String.class}, tree="[0]")
     private Output<String> uid;
 
     /**
      * @return Keyring tenant ID
-     * 
+     *
      */
     public Output<String> uid() {
         return this.uid;
     }
     /**
      * Keyring update date
-     * 
+     *
      */
     @Export(name="updateDate", refs={Integer.class}, tree="[0]")
     private Output<Integer> updateDate;
 
     /**
      * @return Keyring update date
-     * 
+     *
      */
     public Output<Integer> updateDate() {
         return this.updateDate;

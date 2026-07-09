@@ -16,108 +16,108 @@ import javax.annotation.Nullable;
 
 /**
  * User group management is supported in E-MapReduce (EMR) clusters, allowing you to create, edit, and delete user groups.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.emr.ClusterUserGroup;
  * import com.byteplus.bytepluscc.emr.ClusterUserGroupArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var eMRClusterUserGroupDemo = new ClusterUserGroup("eMRClusterUserGroupDemo", ClusterUserGroupArgs.builder()
  *             .clusterId("emr-xxxxxxxxxx")
  *             .userGroupName("ccapi-tf-users-2")
  *             .description("EMRClusterUserGroupDemo")
- *             .members(            
+ *             .members(
  *                 "emrclusteruserdemo1",
  *                 "emrclusteruserdemo3")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:emr/clusterUserGroup:ClusterUserGroup example &#34;cluster_id|user_group_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:emr/clusterUserGroup:ClusterUserGroup")
 public class ClusterUserGroup extends com.pulumi.resources.CustomResource {
     /**
      * Cluster ID.
-     * 
+     *
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID.
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * User group description.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return User group description.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Operations on special users, such as admin, are not supported.
-     * 
+     *
      */
     @Export(name="members", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> members;
 
     /**
      * @return Operations on special users, such as admin, are not supported.
-     * 
+     *
      */
     public Output<List<String>> members() {
         return this.members;
     }
     /**
      * User group name.
-     * 
+     *
      */
     @Export(name="userGroupName", refs={String.class}, tree="[0]")
     private Output<String> userGroupName;
 
     /**
      * @return User group name.
-     * 
+     *
      */
     public Output<String> userGroupName() {
         return this.userGroupName;

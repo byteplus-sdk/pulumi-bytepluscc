@@ -14,83 +14,78 @@ public final class Config {
 
     private static final com.pulumi.Config config = com.pulumi.Config.of("bytepluscc");
 /**
- * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY`
- * environment variable
- * 
+ * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+ *
  */
     public Optional<String> accessKey() {
         return Codegen.stringProp("accessKey").config(config).env("BYTEPLUS_ACCESS_KEY").get();
     }
 /**
- * An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
- * 
+ * An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
+ *
  */
     public Optional<AssumeRole> assumeRole() {
         return Codegen.objectProp("assumeRole", AssumeRole.class).config(config).get();
     }
 /**
- * CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and
- * colons (:) to separate each header key from its corresponding value.
- * 
+ * CUSTOMER HEADERS for Byteplus Provider. The&lt;span pulumi-lang-nodejs=&#34; customerHeaders &#34; pulumi-lang-dotnet=&#34; CustomerHeaders &#34; pulumi-lang-go=&#34; customerHeaders &#34; pulumi-lang-python=&#34; customer_headers &#34; pulumi-lang-yaml=&#34; customerHeaders &#34; pulumi-lang-java=&#34; customerHeaders &#34; pulumi-lang-hcl=&#34; customer_headers &#34;&gt; customerHeaders &lt;/span&gt;field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
+ *
  */
     public Optional<String> customerHeaders() {
         return Codegen.stringProp("customerHeaders").config(config).env("BYTEPLUS_CUSTOMER_HEADERS").get();
     }
 /**
  * Disable SSL for Byteplus Provider
- * 
+ *
  */
     public Optional<Boolean> disableSsl() {
         return Codegen.booleanProp("disableSsl").config(config).env("BYTEPLUS_DISABLE_SSL").get();
     }
 /**
- * An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
- * 
+ * An &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`endpoints`&#34; pulumi-lang-dotnet=&#34;`Endpoints`&#34; pulumi-lang-go=&#34;`endpoints`&#34; pulumi-lang-python=&#34;`endpoints`&#34; pulumi-lang-yaml=&#34;`endpoints`&#34; pulumi-lang-java=&#34;`endpoints`&#34; pulumi-lang-hcl=&#34;`endpoints`&#34;&gt;`endpoints`&lt;/span&gt; block may be in the configuration.
+ *
  */
     public Optional<Endpoints> endpoints() {
         return Codegen.objectProp("endpoints", Endpoints.class).config(config).get();
     }
 /**
  * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
- * 
+ *
  */
     public Optional<String> filePath() {
         return Codegen.stringProp("filePath").config(config).env("BYTEPLUS_FILE_PATH").get();
     }
 /**
  * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
- * 
+ *
  */
     public Optional<String> profile() {
         return Codegen.stringProp("profile").config(config).env("BYTEPLUS_PROFILE").get();
     }
 /**
  * PROXY URL for Byteplus Provider
- * 
+ *
  */
     public Optional<String> proxyUrl() {
         return Codegen.stringProp("proxyUrl").config(config).env("BYTEPLUS_PROXY_URL").get();
     }
 /**
- * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to
- * `ap-southeast-1` when not provided.
- * 
+ * The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
+ *
  */
     public Optional<String> region() {
         return Codegen.stringProp("region").config(config).env("BYTEPLUS_REGION").get();
     }
 /**
- * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY`
- * environment variable
- * 
+ * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+ *
  */
     public Optional<String> secretKey() {
         return Codegen.stringProp("secretKey").config(config).env("BYTEPLUS_SECRET_KEY").get();
     }
 /**
- * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced
- * from the `BYTEPLUS_SESSION_TOKEN` environment variable
- * 
+ * The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
+ *
  */
     public Optional<String> sessionToken() {
         return Codegen.stringProp("sessionToken").config(config).env("BYTEPLUS_SESSION_TOKEN").get();

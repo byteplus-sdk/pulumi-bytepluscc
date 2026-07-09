@@ -23,497 +23,579 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud Database SQL Server Edition is a stable, reliable, and scalable online database service built on the world-class commercial database product Microsoft SQL Server. Creating an instance is the first step to using Cloud Database SQL Server Edition
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmssql.Instance;
+ * import com.byteplus.bytepluscc.rdsmssql.InstanceArgs;
+ * import com.pulumi.bytepluscc.rdsmssql.inputs.InstanceChargeInfoArgs;
+ * import com.pulumi.bytepluscc.rdsmssql.inputs.InstanceTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rDSMsSQLInstanceDemo = new Instance("rDSMsSQLInstanceDemo", InstanceArgs.builder()
+ *             .nodeSpec("rds.mssql.3il.x8.medium.s1")
+ *             .zoneId("cn-beijing-a")
+ *             .subnetId("subnet-1a0zgr5e7hslc8nvepxxxxx")
+ *             .dbEngineVersion("SQLServer_2019_Std")
+ *             .instanceType("Basic")
+ *             .storageSpace(20)
+ *             .vpcId("vpc-3nqt4kq87xn2893xxxxx")
+ *             .instanceName("RDSMsSQLInstanceDemo")
+ *             .superAccountPassword("********")
+ *             .serverCollation("Chinese_PRC_CI_AS")
+ *             .timeZone("China Standard Time")
+ *             .chargeInfo(InstanceChargeInfoArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .build())
+ *             .projectName("default")
+ *             .maintenanceTime("18:00Z-21:59Z")
+ *             .allowListIds("acl-03f197e136c843b29e47de74e9xxxxx")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdsmssql/instance:Instance example &#34;instance_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdsmssql/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
-     * 
+     *
      */
     @Export(name="advancedFeatures", refs={String.class}, tree="[0]")
     private Output<String> advancedFeatures;
 
     /**
      * @return Advanced instance features to modify. This API currently requires allowlisting. To use it, contact technical support. Example value: {&#34;Key&#34;:&#34;Value&#34;}
-     * 
+     *
      */
     public Output<String> advancedFeatures() {
         return this.advancedFeatures;
     }
     /**
      * Allowlist ID list permitted for access.
-     * 
+     *
      */
     @Export(name="allowListIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID list permitted for access.
-     * 
+     *
      */
     public Output<List<String>> allowListIds() {
         return this.allowListIds;
     }
     /**
      * Used backup space for the instance, in GiB.
-     * 
+     *
      */
     @Export(name="backupUse", refs={Double.class}, tree="[0]")
     private Output<Double> backupUse;
 
     /**
      * @return Used backup space for the instance, in GiB.
-     * 
+     *
      */
     public Output<Double> backupUse() {
         return this.backupUse;
     }
     /**
      * Payment method.
-     * 
+     *
      */
     @Export(name="chargeInfo", refs={InstanceChargeInfo.class}, tree="[0]")
     private Output<InstanceChargeInfo> chargeInfo;
 
     /**
      * @return Payment method.
-     * 
+     *
      */
     public Output<InstanceChargeInfo> chargeInfo() {
         return this.chargeInfo;
     }
+    /**
+     * Connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="connectionInfos", refs={List.class,InstanceConnectionInfo.class}, tree="[0,1]")
     private Output<List<InstanceConnectionInfo>> connectionInfos;
 
+    /**
+     * @return Connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceConnectionInfo>> connectionInfos() {
         return this.connectionInfos;
     }
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
-     * 
+     *
      */
     @Export(name="dbEngineVersion", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersion;
 
     /**
      * @return Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
-     * 
+     *
      */
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
      * Kernel version number.
-     * 
+     *
      */
     @Export(name="innerVersion", refs={String.class}, tree="[0]")
     private Output<String> innerVersion;
 
     /**
      * @return Kernel version number.
-     * 
+     *
      */
     public Output<String> innerVersion() {
         return this.innerVersion;
     }
     /**
      * Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
-     * 
+     *
      */
     @Export(name="instanceCategory", refs={String.class}, tree="[0]")
     private Output<String> instanceCategory;
 
     /**
      * @return Instance category. Values: Primary: primary instance. ReadOnly: read-only instance.
-     * 
+     *
      */
     public Output<String> instanceCategory() {
         return this.instanceCategory;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name. Naming rules: Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
      * Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
-     * 
+     *
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
      * @return Instance status. Values: Running: running. Creating: creating. CreateFailed: creation failed. Deleting: deleting. Restarting: restarting. Updating: updating. MasterChanging: primary node switching. Error: error.
-     * 
+     *
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
      * Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
-     * 
+     *
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Instance type. Available values: HA (High Availability), Basic, Cluster. Supported types vary by engine version: 2019 Std supports HA/Basic; 2019 Ent supports Cluster/Basic; 2019 Web supports Basic.
-     * 
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
-     * 
+     *
      */
     @Export(name="maintenanceTime", refs={String.class}, tree="[0]")
     private Output<String> maintenanceTime;
 
     /**
      * @return Instance maintenance window. Format: HH:mmZ-HH:mmZ (UTC time). Default: UTC18:00Z-21:59Z (Beijing time 02:00-05:59). Note: To ensure cloud database stability, the system performs maintenance on instances periodically. It is recommended to set the maintenance window during off-peak hours to avoid business impact. During the maintenance window, the instance may experience 1–2 brief disconnections. Ensure your application supports automatic reconnection. The minimum maintenance window is 1 hour, the maximum is 24 hours, and cross-day maintenance windows are not allowed.
-     * 
+     *
      */
     public Output<String> maintenanceTime() {
         return this.maintenanceTime;
     }
     /**
      * Primary node ID. This parameter is required when manually switching master and standby nodes.
-     * 
+     *
      */
     @Export(name="masterNodeId", refs={String.class}, tree="[0]")
     private Output<String> masterNodeId;
 
     /**
      * @return Primary node ID. This parameter is required when manually switching master and standby nodes.
-     * 
+     *
      */
     public Output<String> masterNodeId() {
         return this.masterNodeId;
     }
     /**
      * Memory size, in GiB.
-     * 
+     *
      */
     @Export(name="memory", refs={Integer.class}, tree="[0]")
     private Output<Integer> memory;
 
     /**
      * @return Memory size, in GiB.
-     * 
+     *
      */
     public Output<Integer> memory() {
         return this.memory;
     }
+    /**
+     * Instance node information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="nodeDetailInfos", refs={List.class,InstanceNodeDetailInfo.class}, tree="[0,1]")
     private Output<List<InstanceNodeDetailInfo>> nodeDetailInfos;
 
+    /**
+     * @return Instance node information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceNodeDetailInfo>> nodeDetailInfos() {
         return this.nodeDetailInfos;
     }
     /**
      * Instance specification code.
-     * 
+     *
      */
     @Export(name="nodeSpec", refs={String.class}, tree="[0]")
     private Output<String> nodeSpec;
 
     /**
      * @return Instance specification code.
-     * 
+     *
      */
     public Output<String> nodeSpec() {
         return this.nodeSpec;
     }
     /**
      * Port.
-     * 
+     *
      */
     @Export(name="port", refs={String.class}, tree="[0]")
     private Output<String> port;
 
     /**
      * @return Port.
-     * 
+     *
      */
     public Output<String> port() {
         return this.port;
     }
     /**
      * Primary instance ID. If this field is empty, this instance is the primary instance.
-     * 
+     *
      */
     @Export(name="primaryInstanceId", refs={String.class}, tree="[0]")
     private Output<String> primaryInstanceId;
 
     /**
      * @return Primary instance ID. If this field is empty, this instance is the primary instance.
-     * 
+     *
      */
     public Output<String> primaryInstanceId() {
         return this.primaryInstanceId;
     }
     /**
      * Project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Number of read-only instances.
-     * 
+     *
      */
     @Export(name="readOnlyNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> readOnlyNumber;
 
     /**
      * @return Number of read-only instances.
-     * 
+     *
      */
     public Output<Integer> readOnlyNumber() {
         return this.readOnlyNumber;
     }
     /**
      * Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
-     * 
+     *
      */
     @Export(name="serverCollation", refs={String.class}, tree="[0]")
     private Output<String> serverCollation;
 
     /**
      * @return Instance collation. Default: Chinese*PRC*CI*AS. Most native collations are supported. Available values: Latin1*General*CI*AS, Latin1*General*CS*AS, SQL*Latin1*General*CP1*CI*AS, SQL*Latin1*General*CP1*CS*AS, Chinese*PRC*CI*AS, Chinese*PRC*CS*AS, Chinese*PRC*BIN, Japanese*CI*AS, Japanese*CS*AS, Chinese*Taiwan*Stroke*CI*AS, Chinese*Taiwan*Stroke*CS*AS, Thai*CI*AS, Chinese*PRC*CI*AI, Chinese*PRC*BIN2, Cyrillic*General*CI_AS.
-     * 
+     *
      */
     public Output<String> serverCollation() {
         return this.serverCollation;
     }
     /**
      * Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
-     * 
+     *
      */
     @Export(name="slowQueryEnable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> slowQueryEnable;
 
     /**
      * @return Indicates whether slow logs are enabled. Available values: true: slow logs enabled. false: slow logs disabled.
-     * 
+     *
      */
     public Output<Boolean> slowQueryEnable() {
         return this.slowQueryEnable;
     }
     /**
      * Slow log threshold. Range: [1~10], unit: seconds (s).
-     * 
+     *
      */
     @Export(name="slowQueryTime", refs={String.class}, tree="[0]")
     private Output<String> slowQueryTime;
 
     /**
      * @return Slow log threshold. Range: [1~10], unit: seconds (s).
-     * 
+     *
      */
     public Output<String> slowQueryTime() {
         return this.slowQueryTime;
     }
     /**
      * Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
-     * 
+     *
      */
     @Export(name="storageSpace", refs={Integer.class}, tree="[0]")
     private Output<Integer> storageSpace;
 
     /**
      * @return Storage size, in GiB. Range: 20 GiB ~ 4000 GiB, increment: 10 GiB.
-     * 
+     *
      */
     public Output<Integer> storageSpace() {
         return this.storageSpace;
     }
     /**
      * Instance storage type.
-     * 
+     *
      */
     @Export(name="storageType", refs={String.class}, tree="[0]")
     private Output<String> storageType;
 
     /**
      * @return Instance storage type.
-     * 
+     *
      */
     public Output<String> storageType() {
         return this.storageType;
     }
     /**
      * Used storage space for the instance. Unit: GiB.
-     * 
+     *
      */
     @Export(name="storageUse", refs={Double.class}, tree="[0]")
     private Output<Double> storageUse;
 
     /**
      * @return Used storage space for the instance. Unit: GiB.
-     * 
+     *
      */
     public Output<Double> storageUse() {
         return this.storageUse;
     }
     /**
      * Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID. If the primary and standby nodes are in different availability zones, their subnets must be set to the corresponding private network subnets for each zone. Use a semicolon (;) to separate multiple zones.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
      * Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
-     * 
+     *
      */
     @Export(name="superAccountPassword", refs={String.class}, tree="[0]")
     private Output<String> superAccountPassword;
 
     /**
      * @return Password for the high-privilege account. Password rules: 8–32 characters; must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=.
-     * 
+     *
      */
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Time zone.
-     * 
+     *
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
      * @return Time zone.
-     * 
+     *
      */
     public Output<String> timeZone() {
         return this.timeZone;
     }
     /**
      * Update time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * CPU size. For example: 1 means 1 core.
-     * 
+     *
      */
     @Export(name="vcpu", refs={Integer.class}, tree="[0]")
     private Output<Integer> vcpu;
 
     /**
      * @return CPU size. For example: 1 means 1 core.
-     * 
+     *
      */
     public Output<Integer> vcpu() {
         return this.vcpu;
     }
     /**
      * VPC ID
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
-     * 
+     *
      */
     @Export(name="zoneId", refs={String.class}, tree="[0]")
     private Output<String> zoneId;
 
     /**
      * @return Availability zone of the node. If the primary and standby nodes are in different availability zones, use a semicolon (;) to separate them. The first is the primary node&#39;s zone by default, the second is the standby node&#39;s zone.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;

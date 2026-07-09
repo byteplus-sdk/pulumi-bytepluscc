@@ -11,9 +11,19 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules {
+    /**
+     * @return Indicates a variable list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance> customVariableInstances;
 
     private DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRules() {}
+    /**
+     * @return Indicates a variable list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstance> customVariableInstances() {
         return this.customVariableInstances == null ? List.of() : this.customVariableInstances;
     }

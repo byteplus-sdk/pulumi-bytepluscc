@@ -23,14 +23,14 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable load balancing: 0 to disable, 1 to enable. Default is 0
-     * 
+     *
      */
     @Import(name="lineMode")
     private @Nullable Output<Integer> lineMode;
 
     /**
      * @return Enable load balancing: 0 to disable, 1 to enable. Default is 0
-     * 
+     *
      */
     public Optional<Output<Integer>> lineMode() {
         return Optional.ofNullable(this.lineMode);
@@ -38,14 +38,14 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the project the domain belongs to. Default is default
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project the domain belongs to. Default is default
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -53,14 +53,14 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable recursive resolution: true to enable, false to disable. Default is false
-     * 
+     *
      */
     @Import(name="recursionMode")
     private @Nullable Output<Boolean> recursionMode;
 
     /**
      * @return Enable recursive resolution: true to enable, false to disable. Default is false
-     * 
+     *
      */
     public Optional<Output<Boolean>> recursionMode() {
         return Optional.ofNullable(this.recursionMode);
@@ -68,43 +68,63 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Remarks. Default is an empty string
-     * 
+     *
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Remarks. Default is an empty string
-     * 
+     *
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
     }
 
+    /**
+     * One or more tags associated with the domain. A resource can be associated with up to 50 tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<PrivateZoneTagArgs>> tags;
 
+    /**
+     * @return One or more tags associated with the domain. A resource can be associated with up to 50 tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PrivateZoneTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
+    /**
+     * One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="vpcs")
     private @Nullable Output<List<PrivateZoneVpcArgs>> vpcs;
 
+    /**
+     * @return One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PrivateZoneVpcArgs>>> vpcs() {
         return Optional.ofNullable(this.vpcs);
     }
 
     /**
      * Domain name, can be a second-level or multi-level domain
-     * 
+     *
      */
     @Import(name="zoneName", required=true)
     private Output<String> zoneName;
 
     /**
      * @return Domain name, can be a second-level or multi-level domain
-     * 
+     *
      */
     public Output<String> zoneName() {
         return this.zoneName;
@@ -142,9 +162,9 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lineMode Enable load balancing: 0 to disable, 1 to enable. Default is 0
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineMode(@Nullable Output<Integer> lineMode) {
             $.lineMode = lineMode;
@@ -153,9 +173,9 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lineMode Enable load balancing: 0 to disable, 1 to enable. Default is 0
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineMode(Integer lineMode) {
             return lineMode(Output.of(lineMode));
@@ -163,9 +183,9 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the domain belongs to. Default is default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -174,9 +194,9 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the project the domain belongs to. Default is default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -184,9 +204,9 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recursionMode Enable recursive resolution: true to enable, false to disable. Default is false
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recursionMode(@Nullable Output<Boolean> recursionMode) {
             $.recursionMode = recursionMode;
@@ -195,9 +215,9 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recursionMode Enable recursive resolution: true to enable, false to disable. Default is false
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recursionMode(Boolean recursionMode) {
             return recursionMode(Output.of(recursionMode));
@@ -205,9 +225,9 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remarks. Default is an empty string
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -216,45 +236,87 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remarks. Default is an empty string
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
         }
 
+        /**
+         * @param tags One or more tags associated with the domain. A resource can be associated with up to 50 tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<PrivateZoneTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags One or more tags associated with the domain. A resource can be associated with up to 50 tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<PrivateZoneTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags One or more tags associated with the domain. A resource can be associated with up to 50 tags
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(PrivateZoneTagArgs... tags) {
             return tags(List.of(tags));
         }
 
+        /**
+         * @param vpcs One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder vpcs(@Nullable Output<List<PrivateZoneVpcArgs>> vpcs) {
             $.vpcs = vpcs;
             return this;
         }
 
+        /**
+         * @param vpcs One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder vpcs(List<PrivateZoneVpcArgs> vpcs) {
             return vpcs(Output.of(vpcs));
         }
 
+        /**
+         * @param vpcs One or more VPCs associated with the domain. Domain resolution is only effective within the associated VPCs
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder vpcs(PrivateZoneVpcArgs... vpcs) {
             return vpcs(List.of(vpcs));
         }
 
         /**
          * @param zoneName Domain name, can be a second-level or multi-level domain
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneName(Output<String> zoneName) {
             $.zoneName = zoneName;
@@ -263,9 +325,9 @@ public final class PrivateZoneArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneName Domain name, can be a second-level or multi-level domain
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneName(String zoneName) {
             return zoneName(Output.of(zoneName));

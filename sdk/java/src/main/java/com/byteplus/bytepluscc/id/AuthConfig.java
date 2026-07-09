@@ -18,149 +18,202 @@ import javax.annotation.Nullable;
 
 /**
  * Inbound Authentication Configuration
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.id.AuthConfig;
+ * import com.byteplus.bytepluscc.id.AuthConfigArgs;
+ * import com.pulumi.bytepluscc.id.inputs.AuthConfigJwtAuthConfigArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var example = new AuthConfig("example", AuthConfigArgs.builder()
+ *             .configName("测试JWT认证配置")
+ *             .description("用于测试的JWT入站认证配置")
+ *             .instanceId("example")
+ *             .jwtAuthConfig(AuthConfigJwtAuthConfigArgs.builder()
+ *                 .discovery_url("https://example1.com/.well-known/openid-configuration")
+ *                 .allowed_audiences(Arrays.asList(
+ *                     "api.example.com",
+ *                     "mobile.example.com"))
+ *                 .allowed_clients(Arrays.asList(
+ *                     "web-client",
+ *                     "app-client"))
+ *                 .build())
+ *             .authType("Jwt")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:id/authConfig:AuthConfig example &#34;inbound_auth_config_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:id/authConfig:AuthConfig")
 public class AuthConfig extends com.pulumi.resources.CustomResource {
+    /**
+     * ApiKey Authentication Configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="apiKeyAuthConfigs", refs={List.class,AuthConfigApiKeyAuthConfig.class}, tree="[0,1]")
     private Output<List<AuthConfigApiKeyAuthConfig>> apiKeyAuthConfigs;
 
+    /**
+     * @return ApiKey Authentication Configuration
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AuthConfigApiKeyAuthConfig>> apiKeyAuthConfigs() {
         return this.apiKeyAuthConfigs;
     }
     /**
      * Authentication Type. Only Jwt or ApiKey is allowed
-     * 
+     *
      */
     @Export(name="authType", refs={String.class}, tree="[0]")
     private Output<String> authType;
 
     /**
      * @return Authentication Type. Only Jwt or ApiKey is allowed
-     * 
+     *
      */
     public Output<String> authType() {
         return this.authType;
     }
     /**
      * Configuration Name
-     * 
+     *
      */
     @Export(name="configName", refs={String.class}, tree="[0]")
     private Output<String> configName;
 
     /**
      * @return Configuration Name
-     * 
+     *
      */
     public Output<String> configName() {
         return this.configName;
     }
     /**
      * Creation Time
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Creation Time
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Configuration Description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Configuration Description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Inbound Authentication Configuration ID
-     * 
+     *
      */
     @Export(name="inboundAuthConfigId", refs={String.class}, tree="[0]")
     private Output<String> inboundAuthConfigId;
 
     /**
      * @return Inbound Authentication Configuration ID
-     * 
+     *
      */
     public Output<String> inboundAuthConfigId() {
         return this.inboundAuthConfigId;
     }
     /**
      * Bound Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Bound Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * JWT Authentication Configuration
-     * 
+     *
      */
     @Export(name="jwtAuthConfig", refs={AuthConfigJwtAuthConfig.class}, tree="[0]")
     private Output<AuthConfigJwtAuthConfig> jwtAuthConfig;
 
     /**
      * @return JWT Authentication Configuration
-     * 
+     *
      */
     public Output<AuthConfigJwtAuthConfig> jwtAuthConfig() {
         return this.jwtAuthConfig;
     }
     /**
      * Resource TRN
-     * 
+     *
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Resource TRN
-     * 
+     *
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Update Time
-     * 
+     *
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Update Time
-     * 
+     *
      */
     public Output<String> updatedAt() {
         return this.updatedAt;

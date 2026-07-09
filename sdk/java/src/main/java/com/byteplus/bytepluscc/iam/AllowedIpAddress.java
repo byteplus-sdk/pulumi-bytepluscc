@@ -19,36 +19,36 @@ import javax.annotation.Nullable;
 
 /**
  * IP allowlist configuration
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.iam.AllowedIpAddress;
  * import com.byteplus.bytepluscc.iam.AllowedIpAddressArgs;
  * import com.pulumi.bytepluscc.iam.inputs.AllowedIpAddressIpListArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var iAMAllowedIpAddressDemo = new AllowedIpAddress("iAMAllowedIpAddressDemo", AllowedIpAddressArgs.builder()
  *             .userId("2109xxxxx")
- *             .ipLists(            
+ *             .ipLists(
  *                 AllowedIpAddressIpListArgs.builder()
  *                     .ip("192.168.1.100")
  *                     .description("test1")
@@ -62,66 +62,76 @@ import javax.annotation.Nullable;
  *                     .description("test3")
  *                     .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:iam/allowedIpAddress:AllowedIpAddress example &#34;user_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:iam/allowedIpAddress:AllowedIpAddress")
 public class AllowedIpAddress extends com.pulumi.resources.CustomResource {
     /**
      * Enable IP allowlist
-     * 
+     *
      */
     @Export(name="enableIpList", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableIpList;
 
     /**
      * @return Enable IP allowlist
-     * 
+     *
      */
     public Output<Boolean> enableIpList() {
         return this.enableIpList;
     }
+    /**
+     * IP allowlist list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="ipLists", refs={List.class,AllowedIpAddressIpList.class}, tree="[0,1]")
     private Output<List<AllowedIpAddressIpList>> ipLists;
 
+    /**
+     * @return IP allowlist list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AllowedIpAddressIpList>> ipLists() {
         return this.ipLists;
     }
     /**
      * IP allowlist quota for current identity
-     * 
+     *
      */
     @Export(name="quota", refs={Integer.class}, tree="[0]")
     private Output<Integer> quota;
 
     /**
      * @return IP allowlist quota for current identity
-     * 
+     *
      */
     public Output<Integer> quota() {
         return this.quota;
     }
     /**
      * Sub-user ID
-     * 
+     *
      */
     @Export(name="userId", refs={String.class}, tree="[0]")
     private Output<String> userId;
 
     /**
      * @return Sub-user ID
-     * 
+     *
      */
     public Output<String> userId() {
         return this.userId;

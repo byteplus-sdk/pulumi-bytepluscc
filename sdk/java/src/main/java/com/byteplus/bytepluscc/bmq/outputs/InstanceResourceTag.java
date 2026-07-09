@@ -13,20 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceResourceTag {
+    /**
+     * @return Tag key-value pair
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceResourceTagTagKv> tagKvs;
     /**
      * @return Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
-     * 
+     *
      */
     private @Nullable String type;
 
     private InstanceResourceTag() {}
+    /**
+     * @return Tag key-value pair
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceResourceTagTagKv> tagKvs() {
         return this.tagKvs == null ? List.of() : this.tagKvs;
     }
     /**
      * @return Tag type. Options: CUSTOM—custom tag; SYSTEM—system tag
-     * 
+     *
      */
     public Optional<String> type() {
         return Optional.ofNullable(this.type);

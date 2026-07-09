@@ -18,149 +18,205 @@ import javax.annotation.Nullable;
 
 /**
  * After you create a MongoDB document database instance, you can set an allowlist for the instance to permit external devices to access it. This article describes how to set an allowlist in the console.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.mongodb.AllowList;
+ * import com.byteplus.bytepluscc.mongodb.AllowListArgs;
+ * import com.pulumi.bytepluscc.mongodb.inputs.AllowListAssociatedInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var mongoDBAllowListDemo = new AllowList("mongoDBAllowListDemo", AllowListArgs.builder()
+ *             .allowListName("mongodb_allowlist-1")
+ *             .allowListType("IPv4")
+ *             .projectName("default")
+ *             .allowListDesc("test")
+ *             .allowListCategory("Ordinary")
+ *             .allowLists(
+ *                 "0.0.0.0/0",
+ *                 "127.0.0.1",
+ *                 "192.168.1.0/24")
+ *             .associatedInstances(
+ *                 AllowListAssociatedInstanceArgs.builder()
+ *                     .instance_id("mongo-shard-d838exxxxx")
+ *                     .build(),
+ *                 AllowListAssociatedInstanceArgs.builder()
+ *                     .instance_id("mongo-replica-63axxxxx")
+ *                     .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:mongodb/allowList:AllowList example &#34;allow_list_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:mongodb/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
-     * 
+     *
      */
     @Export(name="allowListCategory", refs={String.class}, tree="[0]")
     private Output<String> allowListCategory;
 
     /**
      * @return Allowlist type. Valid values: Ordinary: ordinary allowlist; Default: default allowlist.
-     * 
+     *
      */
     public Output<String> allowListCategory() {
         return this.allowListCategory;
     }
     /**
      * Allowlist remarks. Maximum length: 200 characters.
-     * 
+     *
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
      * @return Allowlist remarks. Maximum length: 200 characters.
-     * 
+     *
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
      * Allowlist ID.
-     * 
+     *
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
      * @return Allowlist ID.
-     * 
+     *
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
      * Total number of IP addresses (or address ranges) in the allowlist.
-     * 
+     *
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
      * @return Total number of IP addresses (or address ranges) in the allowlist.
-     * 
+     *
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
      * Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
-     * 
+     *
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
      * @return Allowlist name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 1–128 characters.
-     * 
+     *
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
      * IP address type in the allowlist. Only IPv4 addresses are currently supported.
-     * 
+     *
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
      * @return IP address type in the allowlist. Only IPv4 addresses are currently supported.
-     * 
+     *
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
      * Enter an IP address or a CIDR-format IP address range.
-     * 
+     *
      */
     @Export(name="allowLists", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowLists;
 
     /**
      * @return Enter an IP address or a CIDR-format IP address range.
-     * 
+     *
      */
     public Output<List<String>> allowLists() {
         return this.allowLists;
     }
     /**
      * Total number of instances bound to the current allowlist.
-     * 
+     *
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
      * @return Total number of instances bound to the current allowlist.
-     * 
+     *
      */
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return Instance information bound to the current allowlist.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }
     /**
      * Project to which the current allowlist belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the current allowlist belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;

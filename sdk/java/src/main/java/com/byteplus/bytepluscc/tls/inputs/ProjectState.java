@@ -20,14 +20,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log project creation time
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Log project creation time
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -35,14 +35,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Brief description of the log project
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Brief description of the log project
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -50,14 +50,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The IAM project associated with the log project
-     * 
+     *
      */
     @Import(name="iamProjectName")
     private @Nullable Output<String> iamProjectName;
 
     /**
      * @return The IAM project associated with the log project
-     * 
+     *
      */
     public Optional<Output<String>> iamProjectName() {
         return Optional.ofNullable(this.iamProjectName);
@@ -65,14 +65,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Private network connection domain name
-     * 
+     *
      */
     @Import(name="innerNetDomain")
     private @Nullable Output<String> innerNetDomain;
 
     /**
      * @return Private network connection domain name
-     * 
+     *
      */
     public Optional<Output<String>> innerNetDomain() {
         return Optional.ofNullable(this.innerNetDomain);
@@ -80,14 +80,14 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log project ID
-     * 
+     *
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
      * @return Log project ID
-     * 
+     *
      */
     public Optional<Output<String>> projectId() {
         return Optional.ofNullable(this.projectId);
@@ -95,36 +95,46 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log project name
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Log project name
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<ProjectTagArgs>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ProjectTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Number of log topics in the current log project
-     * 
+     *
      */
     @Import(name="topicCount")
     private @Nullable Output<Integer> topicCount;
 
     /**
      * @return Number of log topics in the current log project
-     * 
+     *
      */
     public Optional<Output<Integer>> topicCount() {
         return Optional.ofNullable(this.topicCount);
@@ -163,9 +173,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Log project creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -174,9 +184,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime Log project creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -184,9 +194,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Brief description of the log project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -195,9 +205,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Brief description of the log project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -205,9 +215,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iamProjectName The IAM project associated with the log project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder iamProjectName(@Nullable Output<String> iamProjectName) {
             $.iamProjectName = iamProjectName;
@@ -216,9 +226,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iamProjectName The IAM project associated with the log project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder iamProjectName(String iamProjectName) {
             return iamProjectName(Output.of(iamProjectName));
@@ -226,9 +236,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param innerNetDomain Private network connection domain name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder innerNetDomain(@Nullable Output<String> innerNetDomain) {
             $.innerNetDomain = innerNetDomain;
@@ -237,9 +247,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param innerNetDomain Private network connection domain name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder innerNetDomain(String innerNetDomain) {
             return innerNetDomain(Output.of(innerNetDomain));
@@ -247,9 +257,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectId Log project ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectId(@Nullable Output<String> projectId) {
             $.projectId = projectId;
@@ -258,9 +268,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectId Log project ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
@@ -268,9 +278,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Log project name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -279,32 +289,53 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Log project name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<ProjectTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<ProjectTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(ProjectTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param topicCount Number of log topics in the current log project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicCount(@Nullable Output<Integer> topicCount) {
             $.topicCount = topicCount;
@@ -313,9 +344,9 @@ public final class ProjectState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicCount Number of log topics in the current log project
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicCount(Integer topicCount) {
             return topicCount(Output.of(topicCount));

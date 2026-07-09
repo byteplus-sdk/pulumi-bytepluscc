@@ -21,14 +21,14 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -36,36 +36,46 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
-     * 
+     *
      */
     @Import(name="healthCheckRevokeRouteEnabled")
     private @Nullable Output<Boolean> healthCheckRevokeRouteEnabled;
 
     /**
      * @return Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
-     * 
+     *
      */
     public Optional<Output<Boolean>> healthCheckRevokeRouteEnabled() {
         return Optional.ofNullable(this.healthCheckRevokeRouteEnabled);
     }
 
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<VpnAttachmentTagArgs>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpnAttachmentTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     * 
+     *
      */
     @Import(name="transitRouterAttachmentName")
     private @Nullable Output<String> transitRouterAttachmentName;
 
     /**
      * @return Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterAttachmentName() {
         return Optional.ofNullable(this.transitRouterAttachmentName);
@@ -73,14 +83,14 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Transit router instance ID.
-     * 
+     *
      */
     @Import(name="transitRouterId", required=true)
     private Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID.
-     * 
+     *
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
@@ -88,14 +98,14 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Associated TR route table ID.
-     * 
+     *
      */
     @Import(name="transitRouterRouteTableId")
     private @Nullable Output<String> transitRouterRouteTableId;
 
     /**
      * @return Associated TR route table ID.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterRouteTableId() {
         return Optional.ofNullable(this.transitRouterRouteTableId);
@@ -103,14 +113,14 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPsec connection ID.
-     * 
+     *
      */
     @Import(name="vpnConnectionId", required=true)
     private Output<String> vpnConnectionId;
 
     /**
      * @return IPsec connection ID.
-     * 
+     *
      */
     public Output<String> vpnConnectionId() {
         return this.vpnConnectionId;
@@ -118,14 +128,14 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the availability zone to which the IPsec connection belongs.
-     * 
+     *
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return ID of the availability zone to which the IPsec connection belongs.
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -164,9 +174,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -175,9 +185,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Network instance connection description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -185,9 +195,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthCheckRevokeRouteEnabled Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckRevokeRouteEnabled(@Nullable Output<Boolean> healthCheckRevokeRouteEnabled) {
             $.healthCheckRevokeRouteEnabled = healthCheckRevokeRouteEnabled;
@@ -196,32 +206,53 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param healthCheckRevokeRouteEnabled Whether to enable health check route convergence. true: Yes. Effective only when the IPsec connection has health check enabled; supports convergence of static routes only, not BGP routes. false: No.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder healthCheckRevokeRouteEnabled(Boolean healthCheckRevokeRouteEnabled) {
             return healthCheckRevokeRouteEnabled(Output.of(healthCheckRevokeRouteEnabled));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<VpnAttachmentTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<VpnAttachmentTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(VpnAttachmentTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param transitRouterAttachmentName Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterAttachmentName(@Nullable Output<String> transitRouterAttachmentName) {
             $.transitRouterAttachmentName = transitRouterAttachmentName;
@@ -230,9 +261,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterAttachmentName Network instance connection name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the network instance connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterAttachmentName(String transitRouterAttachmentName) {
             return transitRouterAttachmentName(Output.of(transitRouterAttachmentName));
@@ -240,9 +271,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterId Transit router instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -251,9 +282,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterId Transit router instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));
@@ -261,9 +292,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterRouteTableId Associated TR route table ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableId(@Nullable Output<String> transitRouterRouteTableId) {
             $.transitRouterRouteTableId = transitRouterRouteTableId;
@@ -272,9 +303,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transitRouterRouteTableId Associated TR route table ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableId(String transitRouterRouteTableId) {
             return transitRouterRouteTableId(Output.of(transitRouterRouteTableId));
@@ -282,9 +313,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpnConnectionId IPsec connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpnConnectionId(Output<String> vpnConnectionId) {
             $.vpnConnectionId = vpnConnectionId;
@@ -293,9 +324,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpnConnectionId IPsec connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpnConnectionId(String vpnConnectionId) {
             return vpnConnectionId(Output.of(vpnConnectionId));
@@ -303,9 +334,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId ID of the availability zone to which the IPsec connection belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -314,9 +345,9 @@ public final class VpnAttachmentArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId ID of the availability zone to which the IPsec connection belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

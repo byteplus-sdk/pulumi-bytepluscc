@@ -22,14 +22,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup creation end time (UTC)
-     * 
+     *
      */
     @Import(name="backupEndTime")
     private @Nullable Output<String> backupEndTime;
 
     /**
      * @return Backup creation end time (UTC)
-     * 
+     *
      */
     public Optional<Output<String>> backupEndTime() {
         return Optional.ofNullable(this.backupEndTime);
@@ -37,14 +37,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup file name
-     * 
+     *
      */
     @Import(name="backupFileName")
     private @Nullable Output<String> backupFileName;
 
     /**
      * @return Backup file name
-     * 
+     *
      */
     public Optional<Output<String>> backupFileName() {
         return Optional.ofNullable(this.backupFileName);
@@ -52,14 +52,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup file size (bytes)
-     * 
+     *
      */
     @Import(name="backupFileSize")
     private @Nullable Output<Integer> backupFileSize;
 
     /**
      * @return Backup file size (bytes)
-     * 
+     *
      */
     public Optional<Output<Integer>> backupFileSize() {
         return Optional.ofNullable(this.backupFileSize);
@@ -67,36 +67,46 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup ID
-     * 
+     *
      */
     @Import(name="backupId")
     private @Nullable Output<String> backupId;
 
     /**
      * @return Backup ID
-     * 
+     *
      */
     public Optional<Output<String>> backupId() {
         return Optional.ofNullable(this.backupId);
     }
 
+    /**
+     * When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="backupMetas")
     private @Nullable Output<List<BackupBackupMetaArgs>> backupMetas;
 
+    /**
+     * @return When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<BackupBackupMetaArgs>>> backupMetas() {
         return Optional.ofNullable(this.backupMetas);
     }
 
     /**
      * Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
-     * 
+     *
      */
     @Import(name="backupMethod")
     private @Nullable Output<String> backupMethod;
 
     /**
      * @return Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
-     * 
+     *
      */
     public Optional<Output<String>> backupMethod() {
         return Optional.ofNullable(this.backupMethod);
@@ -104,14 +114,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup name
-     * 
+     *
      */
     @Import(name="backupName")
     private @Nullable Output<String> backupName;
 
     /**
      * @return Backup name
-     * 
+     *
      */
     public Optional<Output<String>> backupName() {
         return Optional.ofNullable(this.backupName);
@@ -119,14 +129,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup region
-     * 
+     *
      */
     @Import(name="backupRegion")
     private @Nullable Output<String> backupRegion;
 
     /**
      * @return Backup region
-     * 
+     *
      */
     public Optional<Output<String>> backupRegion() {
         return Optional.ofNullable(this.backupRegion);
@@ -134,14 +144,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup creation start time (UTC)
-     * 
+     *
      */
     @Import(name="backupStartTime")
     private @Nullable Output<String> backupStartTime;
 
     /**
      * @return Backup creation start time (UTC)
-     * 
+     *
      */
     public Optional<Output<String>> backupStartTime() {
         return Optional.ofNullable(this.backupStartTime);
@@ -149,14 +159,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup status. Values: Success, Failed, Running
-     * 
+     *
      */
     @Import(name="backupStatus")
     private @Nullable Output<String> backupStatus;
 
     /**
      * @return Backup status. Values: Success, Failed, Running
-     * 
+     *
      */
     public Optional<Output<String>> backupStatus() {
         return Optional.ofNullable(this.backupStatus);
@@ -164,14 +174,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
-     * 
+     *
      */
     @Import(name="backupType")
     private @Nullable Output<String> backupType;
 
     /**
      * @return Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
-     * 
+     *
      */
     public Optional<Output<String>> backupType() {
         return Optional.ofNullable(this.backupType);
@@ -179,14 +189,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Consistency time point
-     * 
+     *
      */
     @Import(name="consistentTime")
     private @Nullable Output<String> consistentTime;
 
     /**
      * @return Consistency time point
-     * 
+     *
      */
     public Optional<Output<String>> consistentTime() {
         return Optional.ofNullable(this.consistentTime);
@@ -194,14 +204,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup creator. Values: System (system), User (user)
-     * 
+     *
      */
     @Import(name="createType")
     private @Nullable Output<String> createType;
 
     /**
      * @return Backup creator. Values: System (system), User (user)
-     * 
+     *
      */
     public Optional<Output<String>> createType() {
         return Optional.ofNullable(this.createType);
@@ -209,36 +219,46 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
-     * 
+     *
      */
     @Import(name="dbEngineVersion")
     private @Nullable Output<String> dbEngineVersion;
 
     /**
      * @return Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
-     * 
+     *
      */
     public Optional<Output<String>> dbEngineVersion() {
         return Optional.ofNullable(this.dbEngineVersion);
     }
 
+    /**
+     * Database and table information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="dbTableInfos")
     private @Nullable Output<List<BackupDbTableInfoArgs>> dbTableInfos;
 
+    /**
+     * @return Database and table information list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<BackupDbTableInfoArgs>>> dbTableInfos() {
         return Optional.ofNullable(this.dbTableInfos);
     }
 
     /**
      * Download status
-     * 
+     *
      */
     @Import(name="downloadStatus")
     private @Nullable Output<String> downloadStatus;
 
     /**
      * @return Download status
-     * 
+     *
      */
     public Optional<Output<String>> downloadStatus() {
         return Optional.ofNullable(this.downloadStatus);
@@ -246,14 +266,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
-     * 
+     *
      */
     @Import(name="engineType")
     private @Nullable Output<String> engineType;
 
     /**
      * @return Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
-     * 
+     *
      */
     public Optional<Output<String>> engineType() {
         return Optional.ofNullable(this.engineType);
@@ -261,14 +281,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Error message for backup failure
-     * 
+     *
      */
     @Import(name="errorMessage")
     private @Nullable Output<String> errorMessage;
 
     /**
      * @return Error message for backup failure
-     * 
+     *
      */
     public Optional<Output<String>> errorMessage() {
         return Optional.ofNullable(this.errorMessage);
@@ -276,14 +296,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Backup expiration time (UTC)
-     * 
+     *
      */
     @Import(name="expiredTime")
     private @Nullable Output<String> expiredTime;
 
     /**
      * @return Backup expiration time (UTC)
-     * 
+     *
      */
     public Optional<Output<String>> expiredTime() {
         return Optional.ofNullable(this.expiredTime);
@@ -291,14 +311,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -306,14 +326,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether encrypted
-     * 
+     *
      */
     @Import(name="isEncrypted")
     private @Nullable Output<Boolean> isEncrypted;
 
     /**
      * @return Whether encrypted
-     * 
+     *
      */
     public Optional<Output<Boolean>> isEncrypted() {
         return Optional.ofNullable(this.isEncrypted);
@@ -321,14 +341,14 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether expired
-     * 
+     *
      */
     @Import(name="isExpired")
     private @Nullable Output<Boolean> isExpired;
 
     /**
      * @return Whether expired
-     * 
+     *
      */
     public Optional<Output<Boolean>> isExpired() {
         return Optional.ofNullable(this.isExpired);
@@ -381,9 +401,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupEndTime Backup creation end time (UTC)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupEndTime(@Nullable Output<String> backupEndTime) {
             $.backupEndTime = backupEndTime;
@@ -392,9 +412,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupEndTime Backup creation end time (UTC)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupEndTime(String backupEndTime) {
             return backupEndTime(Output.of(backupEndTime));
@@ -402,9 +422,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupFileName Backup file name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupFileName(@Nullable Output<String> backupFileName) {
             $.backupFileName = backupFileName;
@@ -413,9 +433,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupFileName Backup file name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupFileName(String backupFileName) {
             return backupFileName(Output.of(backupFileName));
@@ -423,9 +443,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupFileSize Backup file size (bytes)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupFileSize(@Nullable Output<Integer> backupFileSize) {
             $.backupFileSize = backupFileSize;
@@ -434,9 +454,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupFileSize Backup file size (bytes)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupFileSize(Integer backupFileSize) {
             return backupFileSize(Output.of(backupFileSize));
@@ -444,9 +464,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupId Backup ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupId(@Nullable Output<String> backupId) {
             $.backupId = backupId;
@@ -455,32 +475,53 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupId Backup ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupId(String backupId) {
             return backupId(Output.of(backupId));
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backupMetas(@Nullable Output<List<BackupBackupMetaArgs>> backupMetas) {
             $.backupMetas = backupMetas;
             return this;
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backupMetas(List<BackupBackupMetaArgs> backupMetas) {
             return backupMetas(Output.of(backupMetas));
         }
 
+        /**
+         * @param backupMetas When creating a logical backup of database tables, this is used to specify the database and table information to be backed up
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backupMetas(BackupBackupMetaArgs... backupMetas) {
             return backupMetas(List.of(backupMetas));
         }
 
         /**
          * @param backupMethod Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupMethod(@Nullable Output<String> backupMethod) {
             $.backupMethod = backupMethod;
@@ -489,9 +530,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupMethod Backup type. Values: Physical (physical backup), Logical (logical backup), Snapshot (snapshot backup)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupMethod(String backupMethod) {
             return backupMethod(Output.of(backupMethod));
@@ -499,9 +540,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupName Backup name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupName(@Nullable Output<String> backupName) {
             $.backupName = backupName;
@@ -510,9 +551,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupName Backup name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupName(String backupName) {
             return backupName(Output.of(backupName));
@@ -520,9 +561,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupRegion Backup region
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupRegion(@Nullable Output<String> backupRegion) {
             $.backupRegion = backupRegion;
@@ -531,9 +572,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupRegion Backup region
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupRegion(String backupRegion) {
             return backupRegion(Output.of(backupRegion));
@@ -541,9 +582,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupStartTime Backup creation start time (UTC)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupStartTime(@Nullable Output<String> backupStartTime) {
             $.backupStartTime = backupStartTime;
@@ -552,9 +593,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupStartTime Backup creation start time (UTC)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupStartTime(String backupStartTime) {
             return backupStartTime(Output.of(backupStartTime));
@@ -562,9 +603,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupStatus Backup status. Values: Success, Failed, Running
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupStatus(@Nullable Output<String> backupStatus) {
             $.backupStatus = backupStatus;
@@ -573,9 +614,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupStatus Backup status. Values: Success, Failed, Running
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupStatus(String backupStatus) {
             return backupStatus(Output.of(backupStatus));
@@ -583,9 +624,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupType Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupType(@Nullable Output<String> backupType) {
             $.backupType = backupType;
@@ -594,9 +635,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupType Backup method. Values: Full (full/database table backup), Increment (incremental backup), DumpAll (full database backup)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupType(String backupType) {
             return backupType(Output.of(backupType));
@@ -604,9 +645,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param consistentTime Consistency time point
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder consistentTime(@Nullable Output<String> consistentTime) {
             $.consistentTime = consistentTime;
@@ -615,9 +656,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param consistentTime Consistency time point
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder consistentTime(String consistentTime) {
             return consistentTime(Output.of(consistentTime));
@@ -625,9 +666,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createType Backup creator. Values: System (system), User (user)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createType(@Nullable Output<String> createType) {
             $.createType = createType;
@@ -636,9 +677,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createType Backup creator. Values: System (system), User (user)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createType(String createType) {
             return createType(Output.of(createType));
@@ -646,9 +687,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersion Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dbEngineVersion(@Nullable Output<String> dbEngineVersion) {
             $.dbEngineVersion = dbEngineVersion;
@@ -657,32 +698,53 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dbEngineVersion Compatible version. Values: MySQL*5*7: MySQL 5.7 version; MySQL*8*0: MySQL 8.0 version
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dbEngineVersion(String dbEngineVersion) {
             return dbEngineVersion(Output.of(dbEngineVersion));
         }
 
+        /**
+         * @param dbTableInfos Database and table information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder dbTableInfos(@Nullable Output<List<BackupDbTableInfoArgs>> dbTableInfos) {
             $.dbTableInfos = dbTableInfos;
             return this;
         }
 
+        /**
+         * @param dbTableInfos Database and table information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder dbTableInfos(List<BackupDbTableInfoArgs> dbTableInfos) {
             return dbTableInfos(Output.of(dbTableInfos));
         }
 
+        /**
+         * @param dbTableInfos Database and table information list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder dbTableInfos(BackupDbTableInfoArgs... dbTableInfos) {
             return dbTableInfos(List.of(dbTableInfos));
         }
 
         /**
          * @param downloadStatus Download status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder downloadStatus(@Nullable Output<String> downloadStatus) {
             $.downloadStatus = downloadStatus;
@@ -691,9 +753,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadStatus Download status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder downloadStatus(String downloadStatus) {
             return downloadStatus(Output.of(downloadStatus));
@@ -701,9 +763,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param engineType Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineType(@Nullable Output<String> engineType) {
             $.engineType = engineType;
@@ -712,9 +774,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param engineType Database engine type. Values: InnoDB: InnoDB engine; RocksDB: RocksDB engine
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineType(String engineType) {
             return engineType(Output.of(engineType));
@@ -722,9 +784,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param errorMessage Error message for backup failure
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder errorMessage(@Nullable Output<String> errorMessage) {
             $.errorMessage = errorMessage;
@@ -733,9 +795,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param errorMessage Error message for backup failure
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder errorMessage(String errorMessage) {
             return errorMessage(Output.of(errorMessage));
@@ -743,9 +805,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Backup expiration time (UTC)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expiredTime(@Nullable Output<String> expiredTime) {
             $.expiredTime = expiredTime;
@@ -754,9 +816,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expiredTime Backup expiration time (UTC)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expiredTime(String expiredTime) {
             return expiredTime(Output.of(expiredTime));
@@ -764,9 +826,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -775,9 +837,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -785,9 +847,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isEncrypted Whether encrypted
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isEncrypted(@Nullable Output<Boolean> isEncrypted) {
             $.isEncrypted = isEncrypted;
@@ -796,9 +858,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isEncrypted Whether encrypted
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isEncrypted(Boolean isEncrypted) {
             return isEncrypted(Output.of(isEncrypted));
@@ -806,9 +868,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isExpired Whether expired
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isExpired(@Nullable Output<Boolean> isExpired) {
             $.isExpired = isExpired;
@@ -817,9 +879,9 @@ public final class BackupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isExpired Whether expired
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isExpired(Boolean isExpired) {
             return isExpired(Output.of(isExpired));

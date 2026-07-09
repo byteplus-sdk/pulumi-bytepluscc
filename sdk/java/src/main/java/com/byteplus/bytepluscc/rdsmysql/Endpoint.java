@@ -21,365 +21,450 @@ import javax.annotation.Nullable;
 
 /**
  * The endpoint is a network proxy service provided by Cloud Database MySQL Edition, located between the database and application. Based on endpoint functionality, endpoints are classified as proxy endpoints and direct endpoints. Connections via proxy endpoints pass through the proxy and support features such as read/write splitting, load balancing, idle connection recycling, and Multi-Statements. Connections via direct endpoints connect directly to the corresponding node and do not support proxy-related features.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.Endpoint;
+ * import com.byteplus.bytepluscc.rdsmysql.EndpointArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.EndpointReadOnlyNodeWeightArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rdsMysqlEndpointDemo = new Endpoint("rdsMysqlEndpointDemo", EndpointArgs.builder()
+ *             .autoAddNewNodes(false)
+ *             .connectionMode("Proxy")
+ *             .connectionPoolType("Transaction")
+ *             .description("this is a description")
+ *             .enableConnectionPersistent(true)
+ *             .endpointName("ccapi-test-1")
+ *             .endpointType("Custom")
+ *             .idleConnectionReclaim(true)
+ *             .implicitTransSplit(true)
+ *             .instanceId("mysql-2e229xxxxxd5")
+ *             .masterNodeRouting(false)
+ *             .masterProtectorTimeout(60)
+ *             .multiStatementsMode("Strict")
+ *             .nodes("Primary,mysql-2e229xxxxxdd5-r442d,mysql-2e2xxxxxdd5-r8d0f")
+ *             .overloadProtection(true)
+ *             .readOnlyNodeDistributionType("RoundRobinCustom")
+ *             .readOnlyNodeMaxDelayTime(30)
+ *             .readOnlyNodeWeights(
+ *                 EndpointReadOnlyNodeWeightArgs.builder()
+ *                     .node_id("")
+ *                     .node_type("Primary")
+ *                     .weight(100)
+ *                     .build(),
+ *                 EndpointReadOnlyNodeWeightArgs.builder()
+ *                     .node_id("mysql-2e2xxxxx4dd5-r442d")
+ *                     .node_type("ReadOnly")
+ *                     .weight(200)
+ *                     .build(),
+ *                 EndpointReadOnlyNodeWeightArgs.builder()
+ *                     .node_id("mysql-2e22xxxxxdd5-r8d0f")
+ *                     .node_type("ReadOnly")
+ *                     .weight(300)
+ *                     .build())
+ *             .readWriteMode("ReadWrite")
+ *             .readWriteSpliting(true)
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/endpoint:Endpoint example &#34;instance_id|endpoint_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdsmysql/endpoint:Endpoint")
 public class Endpoint extends com.pulumi.resources.CustomResource {
+    /**
+     * Endpoint address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="addresses", refs={List.class,EndpointAddress.class}, tree="[0,1]")
     private Output<List<EndpointAddress>> addresses;
 
+    /**
+     * @return Endpoint address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<EndpointAddress>> addresses() {
         return this.addresses;
     }
     /**
      * When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
-     * 
+     *
      */
     @Export(name="autoAddNewNodes", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoAddNewNodes;
 
     /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes are automatically added. Values: true: automatically added. false: not automatically added (default).
-     * 
+     *
      */
     public Output<Boolean> autoAddNewNodes() {
         return this.autoAddNewNodes;
     }
     /**
      * Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
-     * 
+     *
      */
     @Export(name="connectAllSlaveNodes", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> connectAllSlaveNodes;
 
     /**
      * @return Associate all replica nodes. Values: true: enabled (default). false: disabled. Note: Only read-only endpoints of multi-node instances support this configuration. This feature can be disabled only if the instance has two or more replica nodes.
-     * 
+     *
      */
     public Output<Boolean> connectAllSlaveNodes() {
         return this.connectAllSlaveNodes;
     }
     /**
      * Connection endpoint tags.
-     * 
+     *
      */
     @Export(name="connectionInfoTags", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> connectionInfoTags;
 
     /**
      * @return Connection endpoint tags.
-     * 
+     *
      */
     public Output<List<String>> connectionInfoTags() {
         return this.connectionInfoTags;
     }
     /**
      * Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
-     * 
+     *
      */
     @Export(name="connectionMode", refs={String.class}, tree="[0]")
     private Output<String> connectionMode;
 
     /**
      * @return Endpoint type. Options: Proxy: proxy endpoint. Direct: direct endpoint. Note: If the database proxy feature is enabled for the instance, you can select Proxy or Direct. If the database proxy feature is not enabled, only Direct is available. You can call the DescribeDBInstanceDetail API to check the status of the database proxy feature for the instance.
-     * 
+     *
      */
     public Output<String> connectionMode() {
         return this.connectionMode;
     }
     /**
      * Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
-     * 
+     *
      */
     @Export(name="connectionPoolType", refs={String.class}, tree="[0]")
     private Output<String> connectionPoolType;
 
     /**
      * @return Connection pool type for proxy endpoints. Options: Transaction: transaction-level connection pool (default). Direct: direct mode. Note: Single-node instances do not support this feature.
-     * 
+     *
      */
     public Output<String> connectionPoolType() {
         return this.connectionPoolType;
     }
     /**
      * SQL forwarding rules for the connection endpoint.
-     * 
+     *
      */
     @Export(name="customRouteStrategy", refs={EndpointCustomRouteStrategy.class}, tree="[0]")
     private Output<EndpointCustomRouteStrategy> customRouteStrategy;
 
     /**
      * @return SQL forwarding rules for the connection endpoint.
-     * 
+     *
      */
     public Output<EndpointCustomRouteStrategy> customRouteStrategy() {
         return this.customRouteStrategy;
     }
     /**
      * Remarks.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Remarks.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
-     * 
+     *
      */
     @Export(name="enableConnectionPersistent", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableConnectionPersistent;
 
     /**
      * @return Enable connection keep-alive for the endpoint. Values: true: enabled. false: disabled. Note: Only proxy endpoints support this setting.
-     * 
+     *
      */
     public Output<Boolean> enableConnectionPersistent() {
         return this.enableConnectionPersistent;
     }
     /**
      * Enable global read-only. Values: Enable: enabled. Disable: not enabled.
-     * 
+     *
      */
     @Export(name="enableReadOnly", refs={String.class}, tree="[0]")
     private Output<String> enableReadOnly;
 
     /**
      * @return Enable global read-only. Values: Enable: enabled. Disable: not enabled.
-     * 
+     *
      */
     public Output<String> enableReadOnly() {
         return this.enableReadOnly;
     }
     /**
      * Instance connection endpoint ID.
-     * 
+     *
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Instance connection endpoint name.
-     * 
+     *
      */
     @Export(name="endpointName", refs={String.class}, tree="[0]")
     private Output<String> endpointName;
 
     /**
      * @return Instance connection endpoint name.
-     * 
+     *
      */
     public Output<String> endpointName() {
         return this.endpointName;
     }
     /**
      * Endpoint type. Value: Custom (custom endpoint).
-     * 
+     *
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
      * @return Endpoint type. Value: Custom (custom endpoint).
-     * 
+     *
      */
     public Output<String> endpointType() {
         return this.endpointType;
     }
     /**
      * Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
-     * 
+     *
      */
     @Export(name="idleConnectionReclaim", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> idleConnectionReclaim;
 
     /**
      * @return Enable idle connection recycling. true: enabled. false: not enabled. Note: This field is returned only for proxy endpoints.
-     * 
+     *
      */
     public Output<Boolean> idleConnectionReclaim() {
         return this.idleConnectionReclaim;
     }
     /**
      * Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
-     * 
+     *
      */
     @Export(name="implicitTransSplit", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> implicitTransSplit;
 
     /**
      * @return Enable transaction separation. Options: true: yes. false: no. Note: Only proxy endpoints return this field.
-     * 
+     *
      */
     public Output<Boolean> implicitTransSplit() {
         return this.implicitTransSplit;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
-     * 
+     *
      */
     @Export(name="masterNodeRouting", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> masterNodeRouting;
 
     /**
      * @return Enable primary node routing. Values: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
-     * 
+     *
      */
     public Output<Boolean> masterNodeRouting() {
         return this.masterNodeRouting;
     }
     /**
      * Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
-     * 
+     *
      */
     @Export(name="masterProtectorTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> masterProtectorTimeout;
 
     /**
      * @return Overload protection timeout. Value range: integer between 60~7200. Unit: seconds. Note: This field is returned only for proxy endpoints.
-     * 
+     *
      */
     public Output<Integer> masterProtectorTimeout() {
         return this.masterProtectorTimeout;
     }
     /**
      * Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
-     * 
+     *
      */
     @Export(name="multiStatementsMode", refs={String.class}, tree="[0]")
     private Output<String> multiStatementsMode;
 
     /**
      * @return Multi-Statements mode for proxy endpoints. Options: Strict: strict mode (default). Loose: loose mode.
-     * 
+     *
      */
     public Output<String> multiStatementsMode() {
         return this.multiStatementsMode;
     }
     /**
      * List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
-     * 
+     *
      */
     @Export(name="nodes", refs={String.class}, tree="[0]")
     private Output<String> nodes;
 
     /**
      * @return List of node IDs configured for the connection endpoint. Required when EndpointType is Custom. Note: To add the primary node to the endpoint, do not enter the primary node ID; just enter Primary. Separate multiple node IDs with commas (,).
-     * 
+     *
      */
     public Output<String> nodes() {
         return this.nodes;
     }
     /**
      * Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
-     * 
+     *
      */
     @Export(name="overloadProtection", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> overloadProtection;
 
     /**
      * @return Enable overload protection. Options: true: enabled. false: disabled. Note: This field is returned only for proxy endpoints.
-     * 
+     *
      */
     public Output<Boolean> overloadProtection() {
         return this.overloadProtection;
     }
     /**
      * Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
-     * 
+     *
      */
     @Export(name="readOnlyNodeDistributionType", refs={String.class}, tree="[0]")
     private Output<String> readOnlyNodeDistributionType;
 
     /**
      * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, the value range is: LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, the value range is: Default: automatic allocation based on specification weight. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weight round-robin scheduling. RoundRobinAuto: automatic weight allocation round-robin scheduling.
-     * 
+     *
      */
     public Output<String> readOnlyNodeDistributionType() {
         return this.readOnlyNodeDistributionType;
     }
     /**
      * Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
-     * 
+     *
      */
     @Export(name="readOnlyNodeMaxDelayTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> readOnlyNodeMaxDelayTime;
 
     /**
      * @return Read-only node latency threshold. Value range: 1~3600. Default: 30. Unit: seconds.
-     * 
+     *
      */
     public Output<Integer> readOnlyNodeMaxDelayTime() {
         return this.readOnlyNodeMaxDelayTime;
     }
+    /**
+     * List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="readOnlyNodeWeights", refs={List.class,EndpointReadOnlyNodeWeight.class}, tree="[0,1]")
     private Output<List<EndpointReadOnlyNodeWeight>> readOnlyNodeWeights;
 
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<EndpointReadOnlyNodeWeight>> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights;
     }
     /**
      * Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
-     * 
+     *
      */
     @Export(name="readWriteMode", refs={String.class}, tree="[0]")
     private Output<String> readWriteMode;
 
     /**
      * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only.
-     * 
+     *
      */
     public Output<String> readWriteMode() {
         return this.readWriteMode;
     }
     /**
      * Enable read/write splitting. Values: true: enabled (default). false: disabled.
-     * 
+     *
      */
     @Export(name="readWriteSpliting", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> readWriteSpliting;
 
     /**
      * @return Enable read/write splitting. Values: true: enabled (default). false: disabled.
-     * 
+     *
      */
     public Output<Boolean> readWriteSpliting() {
         return this.readWriteSpliting;

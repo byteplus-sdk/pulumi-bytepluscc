@@ -19,183 +19,285 @@ import javax.annotation.Nullable;
 
 /**
  * A role is a virtual identity in the IAM system that grants certain access permissions within an account to various identity entities. Trusted identity entities can assume this role to access cloud resources within the account.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.iam.Role;
+ * import com.byteplus.bytepluscc.iam.RoleArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.RolePolicyArgs;
+ * import com.pulumi.bytepluscc.iam.inputs.RoleTagArgs;
+ * import static com.pulumi.codegen.internal.Serialization.*;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var roleDemo = new Role("roleDemo", RoleArgs.builder()
+ *             .roleName("RoleDemo")
+ *             .description("role attach policies")
+ *             .maxSessionDuration(3600)
+ *             .trustPolicyDocument(serializeJson(
+ *                 jsonObject(
+ *                     jsonProperty("Statement", jsonArray(jsonObject(
+ *                         jsonProperty("Effect", "Allow"),
+ *                         jsonProperty("Action", jsonArray("sts:AssumeRole")),
+ *                         jsonProperty("Principal", jsonObject(
+ *                             jsonProperty("Service", jsonArray("auto_scaling"))
+ *                         ))
+ *                     )))
+ *                 )))
+ *             .policies(
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("VPCFullAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("SGFullAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("RTCReadOnlyAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("IAMReadOnlyAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("EIPFullAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("AdministratorAccess")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ *                     .policy_name("SSLAccessCLBRolePolicy")
+ *                     .policy_type("System")
+ *                     .build(),
+ *                 RolePolicyArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression),
+ *                     RolePolicyArgs.builder()
+ * %!v(PANIC=Format method: interface conversion: model.Expression is *model.TemplateExpression, not *model.LiteralValueExpression))
+ *                     .tags(RoleTagArgs.builder()
+ *                         .key("env")
+ *                         .value("test")
+ *                         .build())
+ *                     .build());
+ *
+ *             }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:iam/role:Role example &#34;role_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:iam/role:Role")
 public class Role extends com.pulumi.resources.CustomResource {
     /**
      * Role creation time
-     * 
+     *
      */
     @Export(name="createDate", refs={String.class}, tree="[0]")
     private Output<String> createDate;
 
     /**
      * @return Role creation time
-     * 
+     *
      */
     public Output<String> createDate() {
         return this.createDate;
     }
     /**
      * Role description, maximum length 128
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Role description, maximum length 128
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Role display name, maximum length 64
-     * 
+     *
      */
     @Export(name="displayName", refs={String.class}, tree="[0]")
     private Output<String> displayName;
 
     /**
      * @return Role display name, maximum length 64
-     * 
+     *
      */
     public Output<String> displayName() {
         return this.displayName;
     }
     /**
      * Service-linked role or not: 0 for No, 1 for Yes
-     * 
+     *
      */
     @Export(name="isServiceLinkedRole", refs={Integer.class}, tree="[0]")
     private Output<Integer> isServiceLinkedRole;
 
     /**
      * @return Service-linked role or not: 0 for No, 1 for Yes
-     * 
+     *
      */
     public Output<Integer> isServiceLinkedRole() {
         return this.isServiceLinkedRole;
     }
     /**
      * Maximum session duration for the role. Maximum session duration for the role. Limits the maximum validity period of temporary security credentials generated by role assumption. Value range: 3600–43200, unit: seconds, default is 43200
-     * 
+     *
      */
     @Export(name="maxSessionDuration", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxSessionDuration;
 
     /**
      * @return Maximum session duration for the role. Maximum session duration for the role. Limits the maximum validity period of temporary security credentials generated by role assumption. Value range: 3600–43200, unit: seconds, default is 43200
-     * 
+     *
      */
     public Output<Integer> maxSessionDuration() {
         return this.maxSessionDuration;
     }
+    /**
+     * Role Strategy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="policies", refs={List.class,RolePolicy.class}, tree="[0,1]")
     private Output<List<RolePolicy>> policies;
 
+    /**
+     * @return Role Strategy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RolePolicy>> policies() {
         return this.policies;
     }
     /**
      * Role ID
-     * 
+     *
      */
     @Export(name="roleId", refs={Integer.class}, tree="[0]")
     private Output<Integer> roleId;
 
     /**
      * @return Role ID
-     * 
+     *
      */
     public Output<Integer> roleId() {
         return this.roleId;
     }
     /**
      * Role name, length 1–64, supports English letters, numbers, and .-_ characters
-     * 
+     *
      */
     @Export(name="roleName", refs={String.class}, tree="[0]")
     private Output<String> roleName;
 
     /**
      * @return Role name, length 1–64, supports English letters, numbers, and .-_ characters
-     * 
+     *
      */
     public Output<String> roleName() {
         return this.roleName;
     }
     /**
      * Service associated with the service-linked role to be created.
-     * 
+     *
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
      * @return Service associated with the service-linked role to be created.
-     * 
+     *
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
+    /**
+     * Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,RoleTag.class}, tree="[0,1]")
     private Output<List<RoleTag>> tags;
 
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<RoleTag>> tags() {
         return this.tags;
     }
     /**
      * Role TRN
-     * 
+     *
      */
     @Export(name="trn", refs={String.class}, tree="[0]")
     private Output<String> trn;
 
     /**
      * @return Role TRN
-     * 
+     *
      */
     public Output<String> trn() {
         return this.trn;
     }
     /**
      * Role trust policy. The trust policy follows resource-based policy rules in IAM policy syntax.
-     * 
+     *
      */
     @Export(name="trustPolicyDocument", refs={String.class}, tree="[0]")
     private Output<String> trustPolicyDocument;
 
     /**
      * @return Role trust policy. The trust policy follows resource-based policy rules in IAM policy syntax.
-     * 
+     *
      */
     public Output<String> trustPolicyDocument() {
         return this.trustPolicyDocument;
     }
     /**
      * Role update time
-     * 
+     *
      */
     @Export(name="updateDate", refs={String.class}, tree="[0]")
     private Output<String> updateDate;
 
     /**
      * @return Role update time
-     * 
+     *
      */
     public Output<String> updateDate() {
         return this.updateDate;

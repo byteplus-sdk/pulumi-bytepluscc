@@ -17,32 +17,32 @@ import javax.annotation.Nullable;
 
 /**
  * Gateway endpoint
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.privatelink.GatewayEndpoint;
  * import com.byteplus.bytepluscc.privatelink.GatewayEndpointArgs;
  * import com.pulumi.bytepluscc.privatelink.inputs.GatewayEndpointTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var privateLinkGatewayEndpointDemo = new GatewayEndpoint("privateLinkGatewayEndpointDemo", GatewayEndpointArgs.builder()
  *             .description("ccapi-test")
@@ -56,178 +56,188 @@ import javax.annotation.Nullable;
  *                 .build())
  *             .serviceId("gwepsvc-3rxxxxxxsk2ilz3f62")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:privatelink/gatewayEndpoint:GatewayEndpoint example &#34;endpoint_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:privatelink/gatewayEndpoint:GatewayEndpoint")
 public class GatewayEndpoint extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the gateway endpoint
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the gateway endpoint
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the gateway endpoint
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the gateway endpoint
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * ID of the gateway endpoint
-     * 
+     *
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return ID of the gateway endpoint
-     * 
+     *
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * Name of the gateway endpoint
-     * 
+     *
      */
     @Export(name="endpointName", refs={String.class}, tree="[0]")
     private Output<String> endpointName;
 
     /**
      * @return Name of the gateway endpoint
-     * 
+     *
      */
     public Output<String> endpointName() {
         return this.endpointName;
     }
     /**
      * Name of the project to which the gateway endpoint belongs
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the gateway endpoint belongs
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * ID of the gateway endpoint service
-     * 
+     *
      */
     @Export(name="serviceId", refs={String.class}, tree="[0]")
     private Output<String> serviceId;
 
     /**
      * @return ID of the gateway endpoint service
-     * 
+     *
      */
     public Output<String> serviceId() {
         return this.serviceId;
     }
     /**
      * Name of the gateway endpoint service
-     * 
+     *
      */
     @Export(name="serviceName", refs={String.class}, tree="[0]")
     private Output<String> serviceName;
 
     /**
      * @return Name of the gateway endpoint service
-     * 
+     *
      */
     public Output<String> serviceName() {
         return this.serviceName;
     }
     /**
      * Status of the gateway endpoint. Creating: Being created. Pending: Configuration being modified. Available: Available. Deleting: Being deleted.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the gateway endpoint. Creating: Being created. Pending: Configuration being modified. Available: Available. Deleting: Being deleted.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,GatewayEndpointTag.class}, tree="[0,1]")
     private Output<List<GatewayEndpointTag>> tags;
 
+    /**
+     * @return Tag information of the endpoint. Length limit: 1–128 characters. Case sensitive. Key cannot start with volc: or sys: in any combination of uppercase or lowercase letters. Cannot start or end with a space. Letters, numbers, spaces (), underscores (_), periods (.), colons (:), slashes (/), equals (=), plus (+), minus (-), and {@literal @} are allowed.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<GatewayEndpointTag>> tags() {
         return this.tags;
     }
     /**
      * Most recent operation time of the gateway endpoint
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the gateway endpoint
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * ID of the VPC to which the gateway endpoint belongs
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the gateway endpoint belongs
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Access policy of the gateway endpoint. If not specified, the default policy is used. The default policy allows the gateway endpoint to access all bucket resources in the object storage service.
-     * 
+     *
      */
     @Export(name="vpcPolicy", refs={String.class}, tree="[0]")
     private Output<String> vpcPolicy;
 
     /**
      * @return Access policy of the gateway endpoint. If not specified, the default policy is used. The default policy allows the gateway endpoint to access all bucket resources in the object storage service.
-     * 
+     *
      */
     public Output<String> vpcPolicy() {
         return this.vpcPolicy;

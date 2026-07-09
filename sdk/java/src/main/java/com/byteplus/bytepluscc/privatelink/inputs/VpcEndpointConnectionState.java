@@ -21,14 +21,14 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-     * 
+     *
      */
     @Import(name="bps")
     private @Nullable Output<Integer> bps;
 
     /**
      * @return Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-     * 
+     *
      */
     public Optional<Output<Integer>> bps() {
         return Optional.ofNullable(this.bps);
@@ -36,14 +36,14 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * Status of the endpoint connection. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed. PartialFailed: partial connection failure. ServiceDeleted: service deleted
-     * 
+     *
      */
     @Import(name="connectionStatus")
     private @Nullable Output<String> connectionStatus;
 
     /**
      * @return Status of the endpoint connection. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed. PartialFailed: partial connection failure. ServiceDeleted: service deleted
-     * 
+     *
      */
     public Optional<Output<String>> connectionStatus() {
         return Optional.ofNullable(this.connectionStatus);
@@ -51,14 +51,14 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * Creation time of the endpoint connection
-     * 
+     *
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Creation time of the endpoint connection
-     * 
+     *
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -66,14 +66,14 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * Endpoint ID
-     * 
+     *
      */
     @Import(name="endpointId")
     private @Nullable Output<String> endpointId;
 
     /**
      * @return Endpoint ID
-     * 
+     *
      */
     public Optional<Output<String>> endpointId() {
         return Optional.ofNullable(this.endpointId);
@@ -81,14 +81,14 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * Account ID to which the endpoint belongs
-     * 
+     *
      */
     @Import(name="endpointOwnerAccountId")
     private @Nullable Output<String> endpointOwnerAccountId;
 
     /**
      * @return Account ID to which the endpoint belongs
-     * 
+     *
      */
     public Optional<Output<String>> endpointOwnerAccountId() {
         return Optional.ofNullable(this.endpointOwnerAccountId);
@@ -96,14 +96,14 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * ID of the VPC to which the endpoint network interface belongs
-     * 
+     *
      */
     @Import(name="endpointVpcId")
     private @Nullable Output<String> endpointVpcId;
 
     /**
      * @return ID of the VPC to which the endpoint network interface belongs
-     * 
+     *
      */
     public Optional<Output<String>> endpointVpcId() {
         return Optional.ofNullable(this.endpointVpcId);
@@ -111,14 +111,14 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * New service resource ID
-     * 
+     *
      */
     @Import(name="replaceResourceId")
     private @Nullable Output<String> replaceResourceId;
 
     /**
      * @return New service resource ID
-     * 
+     *
      */
     public Optional<Output<String>> replaceResourceId() {
         return Optional.ofNullable(this.replaceResourceId);
@@ -126,36 +126,46 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * Whether to operate the endpoint connection for seamless service resource replacement. true: yes, disconnect the old service resource for the seamless replacement endpoint connection. false: no, reject the specified endpoint connection. If this parameter is empty, the specified endpoint connection is rejected
-     * 
+     *
      */
     @Import(name="replacingResource")
     private @Nullable Output<String> replacingResource;
 
     /**
      * @return Whether to operate the endpoint connection for seamless service resource replacement. true: yes, disconnect the old service resource for the seamless replacement endpoint connection. false: no, reject the specified endpoint connection. If this parameter is empty, the specified endpoint connection is rejected
-     * 
+     *
      */
     public Optional<Output<String>> replacingResource() {
         return Optional.ofNullable(this.replacingResource);
     }
 
+    /**
+     * Specified service resource
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="resourcesAllocates")
     private @Nullable Output<List<VpcEndpointConnectionResourcesAllocateArgs>> resourcesAllocates;
 
+    /**
+     * @return Specified service resource
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpcEndpointConnectionResourcesAllocateArgs>>> resourcesAllocates() {
         return Optional.ofNullable(this.resourcesAllocates);
     }
 
     /**
      * Endpoint service ID
-     * 
+     *
      */
     @Import(name="serviceId")
     private @Nullable Output<String> serviceId;
 
     /**
      * @return Endpoint service ID
-     * 
+     *
      */
     public Optional<Output<String>> serviceId() {
         return Optional.ofNullable(this.serviceId);
@@ -163,14 +173,14 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * Most recent operation time of the endpoint connection
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the endpoint connection
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -178,22 +188,32 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
     /**
      * Endpoint zone ID
-     * 
+     *
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Endpoint zone ID
-     * 
+     *
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
     }
 
+    /**
+     * Details of the endpoint zone
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="zones")
     private @Nullable Output<List<VpcEndpointConnectionZoneArgs>> zones;
 
+    /**
+     * @return Details of the endpoint zone
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpcEndpointConnectionZoneArgs>>> zones() {
         return Optional.ofNullable(this.zones);
     }
@@ -236,9 +256,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param bps Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bps(@Nullable Output<Integer> bps) {
             $.bps = bps;
@@ -247,9 +267,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param bps Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bps(Integer bps) {
             return bps(Output.of(bps));
@@ -257,9 +277,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param connectionStatus Status of the endpoint connection. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed. PartialFailed: partial connection failure. ServiceDeleted: service deleted
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionStatus(@Nullable Output<String> connectionStatus) {
             $.connectionStatus = connectionStatus;
@@ -268,9 +288,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param connectionStatus Status of the endpoint connection. PendingAcceptance: waiting for connection. Connecting: connecting. Connected: connected. Disconnecting: disconnecting. Rejected: connection rejected. Failed: connection failed. PartialFailed: partial connection failure. ServiceDeleted: service deleted
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder connectionStatus(String connectionStatus) {
             return connectionStatus(Output.of(connectionStatus));
@@ -278,9 +298,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param creationTime Creation time of the endpoint connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -289,9 +309,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param creationTime Creation time of the endpoint connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -299,9 +319,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param endpointId Endpoint ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(@Nullable Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -310,9 +330,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param endpointId Endpoint ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
@@ -320,9 +340,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param endpointOwnerAccountId Account ID to which the endpoint belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointOwnerAccountId(@Nullable Output<String> endpointOwnerAccountId) {
             $.endpointOwnerAccountId = endpointOwnerAccountId;
@@ -331,9 +351,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param endpointOwnerAccountId Account ID to which the endpoint belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointOwnerAccountId(String endpointOwnerAccountId) {
             return endpointOwnerAccountId(Output.of(endpointOwnerAccountId));
@@ -341,9 +361,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param endpointVpcId ID of the VPC to which the endpoint network interface belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointVpcId(@Nullable Output<String> endpointVpcId) {
             $.endpointVpcId = endpointVpcId;
@@ -352,9 +372,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param endpointVpcId ID of the VPC to which the endpoint network interface belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointVpcId(String endpointVpcId) {
             return endpointVpcId(Output.of(endpointVpcId));
@@ -362,9 +382,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param replaceResourceId New service resource ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replaceResourceId(@Nullable Output<String> replaceResourceId) {
             $.replaceResourceId = replaceResourceId;
@@ -373,9 +393,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param replaceResourceId New service resource ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replaceResourceId(String replaceResourceId) {
             return replaceResourceId(Output.of(replaceResourceId));
@@ -383,9 +403,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param replacingResource Whether to operate the endpoint connection for seamless service resource replacement. true: yes, disconnect the old service resource for the seamless replacement endpoint connection. false: no, reject the specified endpoint connection. If this parameter is empty, the specified endpoint connection is rejected
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replacingResource(@Nullable Output<String> replacingResource) {
             $.replacingResource = replacingResource;
@@ -394,32 +414,53 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param replacingResource Whether to operate the endpoint connection for seamless service resource replacement. true: yes, disconnect the old service resource for the seamless replacement endpoint connection. false: no, reject the specified endpoint connection. If this parameter is empty, the specified endpoint connection is rejected
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replacingResource(String replacingResource) {
             return replacingResource(Output.of(replacingResource));
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder resourcesAllocates(@Nullable Output<List<VpcEndpointConnectionResourcesAllocateArgs>> resourcesAllocates) {
             $.resourcesAllocates = resourcesAllocates;
             return this;
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder resourcesAllocates(List<VpcEndpointConnectionResourcesAllocateArgs> resourcesAllocates) {
             return resourcesAllocates(Output.of(resourcesAllocates));
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder resourcesAllocates(VpcEndpointConnectionResourcesAllocateArgs... resourcesAllocates) {
             return resourcesAllocates(List.of(resourcesAllocates));
         }
 
         /**
          * @param serviceId Endpoint service ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceId(@Nullable Output<String> serviceId) {
             $.serviceId = serviceId;
@@ -428,9 +469,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param serviceId Endpoint service ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceId(String serviceId) {
             return serviceId(Output.of(serviceId));
@@ -438,9 +479,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param updateTime Most recent operation time of the endpoint connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -449,9 +490,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param updateTime Most recent operation time of the endpoint connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -459,9 +500,9 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param zoneId Endpoint zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -470,23 +511,44 @@ public final class VpcEndpointConnectionState extends com.pulumi.resources.Resou
 
         /**
          * @param zoneId Endpoint zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));
         }
 
+        /**
+         * @param zones Details of the endpoint zone
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zones(@Nullable Output<List<VpcEndpointConnectionZoneArgs>> zones) {
             $.zones = zones;
             return this;
         }
 
+        /**
+         * @param zones Details of the endpoint zone
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zones(List<VpcEndpointConnectionZoneArgs> zones) {
             return zones(Output.of(zones));
         }
 
+        /**
+         * @param zones Details of the endpoint zone
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder zones(VpcEndpointConnectionZoneArgs... zones) {
             return zones(List.of(zones));
         }

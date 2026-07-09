@@ -20,36 +20,46 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SAML Certificate Expiration Reminder Time
-     * 
+     *
      */
     @Import(name="certificateExpireTime")
     private @Nullable Output<String> certificateExpireTime;
 
     /**
      * @return SAML Certificate Expiration Reminder Time
-     * 
+     *
      */
     public Optional<Output<String>> certificateExpireTime() {
         return Optional.ofNullable(this.certificateExpireTime);
     }
 
+    /**
+     * Certificate List
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="certificates")
     private @Nullable Output<List<SamlProviderCertificateArgs>> certificates;
 
+    /**
+     * @return Certificate List
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<SamlProviderCertificateArgs>>> certificates() {
         return Optional.ofNullable(this.certificates);
     }
 
     /**
      * Creation Time
-     * 
+     *
      */
     @Import(name="createDate")
     private @Nullable Output<String> createDate;
 
     /**
      * @return Creation Time
-     * 
+     *
      */
     public Optional<Output<String>> createDate() {
         return Optional.ofNullable(this.createDate);
@@ -57,14 +67,14 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SAML Identity Provider Description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return SAML Identity Provider Description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -72,14 +82,14 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Base64 Encoded SAML Identity Provider Metadata File
-     * 
+     *
      */
     @Import(name="encodedSamlMetadataDocument")
     private @Nullable Output<String> encodedSamlMetadataDocument;
 
     /**
      * @return Base64 Encoded SAML Identity Provider Metadata File
-     * 
+     *
      */
     public Optional<Output<String>> encodedSamlMetadataDocument() {
         return Optional.ofNullable(this.encodedSamlMetadataDocument);
@@ -87,44 +97,54 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * SAML Identity Provider Name
-     * 
+     *
      */
     @Import(name="samlProviderName")
     private @Nullable Output<String> samlProviderName;
 
     /**
      * @return SAML Identity Provider Name
-     * 
+     *
      */
     public Optional<Output<String>> samlProviderName() {
         return Optional.ofNullable(this.samlProviderName);
     }
 
     /**
-     * Identity Provider SSO Type 1. Role SSO 2. User SSO
-     * 
+     * Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
+     *
      */
     @Import(name="ssoType")
     private @Nullable Output<Integer> ssoType;
 
     /**
-     * @return Identity Provider SSO Type 1. Role SSO 2. User SSO
-     * 
+     * @return Identity Provider SSO Type
+     *   1. Role SSO
+     *   2. User SSO
+     *
      */
     public Optional<Output<Integer>> ssoType() {
         return Optional.ofNullable(this.ssoType);
     }
 
     /**
-     * Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
-     * 
+     * Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
+     *
      */
     @Import(name="status")
     private @Nullable Output<Integer> status;
 
     /**
-     * @return Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
-     * 
+     * @return Identity Provider Status (User SSO Only)
+     *   1. Enabled
+     *   2. Enabled and other login methods disabled
+     *   3. Disabled
+     *
      */
     public Optional<Output<Integer>> status() {
         return Optional.ofNullable(this.status);
@@ -132,14 +152,14 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Identity Provider Trn
-     * 
+     *
      */
     @Import(name="trn")
     private @Nullable Output<String> trn;
 
     /**
      * @return Identity Provider Trn
-     * 
+     *
      */
     public Optional<Output<String>> trn() {
         return Optional.ofNullable(this.trn);
@@ -147,14 +167,14 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Update Time
-     * 
+     *
      */
     @Import(name="updateDate")
     private @Nullable Output<String> updateDate;
 
     /**
      * @return Update Time
-     * 
+     *
      */
     public Optional<Output<String>> updateDate() {
         return Optional.ofNullable(this.updateDate);
@@ -195,9 +215,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateExpireTime SAML Certificate Expiration Reminder Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateExpireTime(@Nullable Output<String> certificateExpireTime) {
             $.certificateExpireTime = certificateExpireTime;
@@ -206,32 +226,53 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param certificateExpireTime SAML Certificate Expiration Reminder Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder certificateExpireTime(String certificateExpireTime) {
             return certificateExpireTime(Output.of(certificateExpireTime));
         }
 
+        /**
+         * @param certificates Certificate List
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder certificates(@Nullable Output<List<SamlProviderCertificateArgs>> certificates) {
             $.certificates = certificates;
             return this;
         }
 
+        /**
+         * @param certificates Certificate List
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder certificates(List<SamlProviderCertificateArgs> certificates) {
             return certificates(Output.of(certificates));
         }
 
+        /**
+         * @param certificates Certificate List
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder certificates(SamlProviderCertificateArgs... certificates) {
             return certificates(List.of(certificates));
         }
 
         /**
          * @param createDate Creation Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createDate(@Nullable Output<String> createDate) {
             $.createDate = createDate;
@@ -240,9 +281,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createDate Creation Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createDate(String createDate) {
             return createDate(Output.of(createDate));
@@ -250,9 +291,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description SAML Identity Provider Description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -261,9 +302,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description SAML Identity Provider Description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -271,9 +312,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param encodedSamlMetadataDocument Base64 Encoded SAML Identity Provider Metadata File
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder encodedSamlMetadataDocument(@Nullable Output<String> encodedSamlMetadataDocument) {
             $.encodedSamlMetadataDocument = encodedSamlMetadataDocument;
@@ -282,9 +323,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param encodedSamlMetadataDocument Base64 Encoded SAML Identity Provider Metadata File
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder encodedSamlMetadataDocument(String encodedSamlMetadataDocument) {
             return encodedSamlMetadataDocument(Output.of(encodedSamlMetadataDocument));
@@ -292,9 +333,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param samlProviderName SAML Identity Provider Name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder samlProviderName(@Nullable Output<String> samlProviderName) {
             $.samlProviderName = samlProviderName;
@@ -303,19 +344,21 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param samlProviderName SAML Identity Provider Name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder samlProviderName(String samlProviderName) {
             return samlProviderName(Output.of(samlProviderName));
         }
 
         /**
-         * @param ssoType Identity Provider SSO Type 1. Role SSO 2. User SSO
-         * 
+         * @param ssoType Identity Provider SSO Type
+         *   1. Role SSO
+         *   2. User SSO
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ssoType(@Nullable Output<Integer> ssoType) {
             $.ssoType = ssoType;
@@ -323,20 +366,25 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param ssoType Identity Provider SSO Type 1. Role SSO 2. User SSO
-         * 
+         * @param ssoType Identity Provider SSO Type
+         *   1. Role SSO
+         *   2. User SSO
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ssoType(Integer ssoType) {
             return ssoType(Output.of(ssoType));
         }
 
         /**
-         * @param status Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
-         * 
+         * @param status Identity Provider Status (User SSO Only)
+         *   1. Enabled
+         *   2. Enabled and other login methods disabled
+         *   3. Disabled
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<Integer> status) {
             $.status = status;
@@ -344,10 +392,13 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param status Identity Provider Status (User SSO Only) 1. Enabled 2. Enabled and other login methods disabled 3. Disabled
-         * 
+         * @param status Identity Provider Status (User SSO Only)
+         *   1. Enabled
+         *   2. Enabled and other login methods disabled
+         *   3. Disabled
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(Integer status) {
             return status(Output.of(status));
@@ -355,9 +406,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trn Identity Provider Trn
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(@Nullable Output<String> trn) {
             $.trn = trn;
@@ -366,9 +417,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param trn Identity Provider Trn
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(String trn) {
             return trn(Output.of(trn));
@@ -376,9 +427,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateDate Update Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateDate(@Nullable Output<String> updateDate) {
             $.updateDate = updateDate;
@@ -387,9 +438,9 @@ public final class SamlProviderState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateDate Update Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateDate(String updateDate) {
             return updateDate(Output.of(updateDate));

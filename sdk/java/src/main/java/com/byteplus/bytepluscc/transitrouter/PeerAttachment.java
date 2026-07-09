@@ -19,32 +19,32 @@ import javax.annotation.Nullable;
 
 /**
  * A connection established between TR instances in two different regions enables cross-region communication.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.transitrouter.PeerAttachment;
  * import com.byteplus.bytepluscc.transitrouter.PeerAttachmentArgs;
  * import com.pulumi.bytepluscc.transitrouter.inputs.PeerAttachmentTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var transitRouterPeerAttachmentDemo = new PeerAttachment("transitRouterPeerAttachmentDemo", PeerAttachmentArgs.builder()
  *             .transitRouterId("tr-mjcxxxx")
@@ -59,262 +59,272 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/peerAttachment:PeerAttachment example &#34;transit_router_attachment_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:transitrouter/peerAttachment:PeerAttachment")
 public class PeerAttachment extends com.pulumi.resources.CustomResource {
     /**
      * Automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-     * 
+     *
      */
     @Export(name="autoPublishRouteEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoPublishRouteEnabled;
 
     /**
      * @return Automatically synchronize TR routes to the network instance route table. true: Yes. false: No.
-     * 
+     *
      */
     public Output<Boolean> autoPublishRouteEnabled() {
         return this.autoPublishRouteEnabled;
     }
     /**
      * Bandwidth for cross-region connection, measured in Mbps. The maximum bandwidth cannot exceed the remaining unallocated bandwidth limit of the specified transit router bandwidth package.
-     * 
+     *
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth for cross-region connection, measured in Mbps. The maximum bandwidth cannot exceed the remaining unallocated bandwidth limit of the specified transit router bandwidth package.
-     * 
+     *
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * Creation time of the cross-region connection.
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the cross-region connection.
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Enable IPv6. true: Yes. false: No.
-     * 
+     *
      */
     @Export(name="ipv6Enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> ipv6Enabled;
 
     /**
      * @return Enable IPv6. true: Yes. false: No.
-     * 
+     *
      */
     public Output<Boolean> ipv6Enabled() {
         return this.ipv6Enabled;
     }
     /**
      * ID of the peer transit router instance. You can call the DescribeTransitRouters API to obtain the transit router instance ID.
-     * 
+     *
      */
     @Export(name="peerTransitRouterId", refs={String.class}, tree="[0]")
     private Output<String> peerTransitRouterId;
 
     /**
      * @return ID of the peer transit router instance. You can call the DescribeTransitRouters API to obtain the transit router instance ID.
-     * 
+     *
      */
     public Output<String> peerTransitRouterId() {
         return this.peerTransitRouterId;
     }
     /**
      * Region ID of the peer transit router instance. Refer to the region documentation to obtain the region ID.
-     * 
+     *
      */
     @Export(name="peerTransitRouterRegionId", refs={String.class}, tree="[0]")
     private Output<String> peerTransitRouterRegionId;
 
     /**
      * @return Region ID of the peer transit router instance. Refer to the region documentation to obtain the region ID.
-     * 
+     *
      */
     public Output<String> peerTransitRouterRegionId() {
         return this.peerTransitRouterRegionId;
     }
     /**
      * Status of the cross-region connection. Creating: In progress. Deleting: In progress. Pending: Configuring. Available: Available.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the cross-region connection. Creating: In progress. Deleting: In progress. Pending: Configuring. Available: Available.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list for the cross-region connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,PeerAttachmentTag.class}, tree="[0,1]")
     private Output<List<PeerAttachmentTag>> tags;
 
+    /**
+     * @return Tag list for the cross-region connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<PeerAttachmentTag>> tags() {
         return this.tags;
     }
     /**
      * ID of the cross-region connection.
-     * 
+     *
      */
     @Export(name="transitRouterAttachmentId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentId;
 
     /**
      * @return ID of the cross-region connection.
-     * 
+     *
      */
     public Output<String> transitRouterAttachmentId() {
         return this.transitRouterAttachmentId;
     }
     /**
      * Name of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-     * 
+     *
      */
     @Export(name="transitRouterAttachmentName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterAttachmentName;
 
     /**
      * @return Name of the cross-region connection. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-     * 
+     *
      */
     public Output<String> transitRouterAttachmentName() {
         return this.transitRouterAttachmentName;
     }
     /**
      * ID of the transit router bandwidth package. You can call the DescribeTransitRouters API to obtain the transit router instance ID. If this parameter is provided, the Bandwidth parameter must also be provided. If this parameter is not provided, the Bandwidth parameter is not required.
-     * 
+     *
      */
     @Export(name="transitRouterBandwidthPackageId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterBandwidthPackageId;
 
     /**
      * @return ID of the transit router bandwidth package. You can call the DescribeTransitRouters API to obtain the transit router instance ID. If this parameter is provided, the Bandwidth parameter must also be provided. If this parameter is not provided, the Bandwidth parameter is not required.
-     * 
+     *
      */
     public Output<String> transitRouterBandwidthPackageId() {
         return this.transitRouterBandwidthPackageId;
     }
     /**
      * ID of the forwarding policy associated with the cross-region connection.
-     * 
+     *
      */
     @Export(name="transitRouterForwardPolicyTableId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterForwardPolicyTableId;
 
     /**
      * @return ID of the forwarding policy associated with the cross-region connection.
-     * 
+     *
      */
     public Output<String> transitRouterForwardPolicyTableId() {
         return this.transitRouterForwardPolicyTableId;
     }
     /**
      * ID of the local transit router instance.
-     * 
+     *
      */
     @Export(name="transitRouterId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterId;
 
     /**
      * @return ID of the local transit router instance.
-     * 
+     *
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
     /**
      * Associated forwarding route table for the cross-region connection.
-     * 
+     *
      */
     @Export(name="transitRouterRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableId;
 
     /**
      * @return Associated forwarding route table for the cross-region connection.
-     * 
+     *
      */
     public Output<String> transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;
     }
     /**
      * ID of the traffic marking policy associated with the cross-region connection.
-     * 
+     *
      */
     @Export(name="transitRouterTrafficQosMarkingPolicyId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterTrafficQosMarkingPolicyId;
 
     /**
      * @return ID of the traffic marking policy associated with the cross-region connection.
-     * 
+     *
      */
     public Output<String> transitRouterTrafficQosMarkingPolicyId() {
         return this.transitRouterTrafficQosMarkingPolicyId;
     }
     /**
      * ID of the flow queue policy associated with the cross-region connection.
-     * 
+     *
      */
     @Export(name="transitRouterTrafficQosQueuePolicyId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterTrafficQosQueuePolicyId;
 
     /**
      * @return ID of the flow queue policy associated with the cross-region connection.
-     * 
+     *
      */
     public Output<String> transitRouterTrafficQosQueuePolicyId() {
         return this.transitRouterTrafficQosQueuePolicyId;
     }
     /**
      * Last operation time of the cross-region connection.
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last operation time of the cross-region connection.
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

@@ -16,213 +16,249 @@ import javax.annotation.Nullable;
 
 /**
  * By creating or deleting static routes in route tables associated with network instance connections or cross-region connections, you can flexibly control traffic direction in the transit router
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.transitrouter.TransitRouterRouteEntry;
+ * import com.byteplus.bytepluscc.transitrouter.TransitRouterRouteEntryArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var transitRouterRouteEntryDemo = new TransitRouterRouteEntry("transitRouterRouteEntryDemo", TransitRouterRouteEntryArgs.builder()
+ *             .description("Demo Example")
+ *             .destinationCidrBlock("192.168.1.101/*")
+ *             .transitRouterRouteEntryName("test-Attachmentkua")
+ *             .transitRouterRouteTableId("tr-rtb-mijcn***")
+ *             .transitRouterRouteEntryNextHopId("tr-attach-13fs****")
+ *             .transitRouterRouteEntryNextHopType("Attachment")
+ *             .transitRouterRouteEntryType("Propagated")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry example &#34;transit_router_route_table_id|transit_router_route_entry_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry")
 public class TransitRouterRouteEntry extends com.pulumi.resources.CustomResource {
     /**
      * AS path of the route entry
-     * 
+     *
      */
     @Export(name="asPaths", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> asPaths;
 
     /**
      * @return AS path of the route entry
-     * 
+     *
      */
     public Output<List<String>> asPaths() {
         return this.asPaths;
     }
     /**
      * Creation time of the route entry
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the route entry
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the TR route table entry. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If this parameter is not provided or no value is specified, the default is an empty string
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Destination CIDR block of the route entry
-     * 
+     *
      */
     @Export(name="destinationCidrBlock", refs={String.class}, tree="[0]")
     private Output<String> destinationCidrBlock;
 
     /**
      * @return Destination CIDR block of the route entry
-     * 
+     *
      */
     public Output<String> destinationCidrBlock() {
         return this.destinationCidrBlock;
     }
     /**
      * Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the route entry. Available: Available. Creating: Creating. Pending: Configuring. Deleting: Deleting. Conflicted: Inactive
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * ID of the TR route entry
-     * 
+     *
      */
     @Export(name="transitRouterRouteEntryId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryId;
 
     /**
      * @return ID of the TR route entry
-     * 
+     *
      */
     public Output<String> transitRouterRouteEntryId() {
         return this.transitRouterRouteEntryId;
     }
     /**
      * Name of the route entry
-     * 
+     *
      */
     @Export(name="transitRouterRouteEntryName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryName;
 
     /**
      * @return Name of the route entry
-     * 
+     *
      */
     public Output<String> transitRouterRouteEntryName() {
         return this.transitRouterRouteEntryName;
     }
     /**
      * Next hop ID of the route entry
-     * 
+     *
      */
     @Export(name="transitRouterRouteEntryNextHopId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryNextHopId;
 
     /**
      * @return Next hop ID of the route entry
-     * 
+     *
      */
     public Output<String> transitRouterRouteEntryNextHopId() {
         return this.transitRouterRouteEntryNextHopId;
     }
     /**
      * Next hop network instance ID of the route entry
-     * 
+     *
      */
     @Export(name="transitRouterRouteEntryNextHopResourceId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryNextHopResourceId;
 
     /**
      * @return Next hop network instance ID of the route entry
-     * 
+     *
      */
     public Output<String> transitRouterRouteEntryNextHopResourceId() {
         return this.transitRouterRouteEntryNextHopResourceId;
     }
     /**
      * Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
-     * 
+     *
      */
     @Export(name="transitRouterRouteEntryNextHopResourceType", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryNextHopResourceType;
 
     /**
      * @return Type of the next hop network instance for the route entry. VPC: Virtual Private Cloud. VPN: VPN connection. DirectConnectGateway: Direct Connect Gateway. TransitRouter: Transit Router
-     * 
+     *
      */
     public Output<String> transitRouterRouteEntryNextHopResourceType() {
         return this.transitRouterRouteEntryNextHopResourceType;
     }
     /**
      * Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
-     * 
+     *
      */
     @Export(name="transitRouterRouteEntryNextHopType", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryNextHopType;
 
     /**
      * @return Next hop type of the route entry. Valid values: Attachment: Network instance. Traffic matching this route entry will be forwarded to the specified network instance. BlackHole: Black hole. Traffic matching this route entry will be dropped
-     * 
+     *
      */
     public Output<String> transitRouterRouteEntryNextHopType() {
         return this.transitRouterRouteEntryNextHopType;
     }
     /**
      * Type of the route entry. Static: Static route. Propagated: Learned route
-     * 
+     *
      */
     @Export(name="transitRouterRouteEntryType", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteEntryType;
 
     /**
      * @return Type of the route entry. Static: Static route. Propagated: Learned route
-     * 
+     *
      */
     public Output<String> transitRouterRouteEntryType() {
         return this.transitRouterRouteEntryType;
     }
     /**
      * ID of the route table associated with the transit router instance
-     * 
+     *
      */
     @Export(name="transitRouterRouteTableId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterRouteTableId;
 
     /**
      * @return ID of the route table associated with the transit router instance
-     * 
+     *
      */
     public Output<String> transitRouterRouteTableId() {
         return this.transitRouterRouteTableId;
     }
     /**
      * Last updated time of the route entry
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last updated time of the route entry
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

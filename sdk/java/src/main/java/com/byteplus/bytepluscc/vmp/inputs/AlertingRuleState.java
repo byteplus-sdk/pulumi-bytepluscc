@@ -23,36 +23,46 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert rule ID
-     * 
+     *
      */
     @Import(name="alertingRuleId")
     private @Nullable Output<String> alertingRuleId;
 
     /**
      * @return Alert rule ID
-     * 
+     *
      */
     public Optional<Output<String>> alertingRuleId() {
         return Optional.ofNullable(this.alertingRuleId);
     }
 
+    /**
+     * Annotation attached to the alert
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="annotations")
     private @Nullable Output<List<AlertingRuleAnnotationArgs>> annotations;
 
+    /**
+     * @return Annotation attached to the alert
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AlertingRuleAnnotationArgs>>> annotations() {
         return Optional.ofNullable(this.annotations);
     }
 
     /**
      * Alert rule creation time
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Alert rule creation time
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -60,43 +70,63 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert rule description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Alert rule description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Tags attached to the alert
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="labels")
     private @Nullable Output<List<AlertingRuleLabelArgs>> labels;
 
+    /**
+     * @return Tags attached to the alert
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AlertingRuleLabelArgs>>> labels() {
         return Optional.ofNullable(this.labels);
     }
 
+    /**
+     * Alert severity
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="levels")
     private @Nullable Output<List<AlertingRuleLevelArgs>> levels;
 
+    /**
+     * @return Alert severity
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AlertingRuleLevelArgs>>> levels() {
         return Optional.ofNullable(this.levels);
     }
 
     /**
      * Alert rule name
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Alert rule name
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -104,14 +134,14 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert aggregation policy ID
-     * 
+     *
      */
     @Import(name="notifyGroupPolicyId")
     private @Nullable Output<String> notifyGroupPolicyId;
 
     /**
      * @return Alert aggregation policy ID
-     * 
+     *
      */
     public Optional<Output<String>> notifyGroupPolicyId() {
         return Optional.ofNullable(this.notifyGroupPolicyId);
@@ -119,14 +149,14 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert notification policy ID
-     * 
+     *
      */
     @Import(name="notifyPolicyId")
     private @Nullable Output<String> notifyPolicyId;
 
     /**
      * @return Alert notification policy ID
-     * 
+     *
      */
     public Optional<Output<String>> notifyPolicyId() {
         return Optional.ofNullable(this.notifyPolicyId);
@@ -134,14 +164,14 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert configuration
-     * 
+     *
      */
     @Import(name="query")
     private @Nullable Output<AlertingRuleQueryArgs> query;
 
     /**
      * @return Alert configuration
-     * 
+     *
      */
     public Optional<Output<AlertingRuleQueryArgs>> query() {
         return Optional.ofNullable(this.query);
@@ -149,36 +179,46 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert rule status: Running (monitoring), Disabled (disabled)
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Alert rule status: Running (monitoring), Disabled (disabled)
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<AlertingRuleTagArgs>> tags;
 
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AlertingRuleTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Alert rule type. Allowed values: vmp/PromQL
-     * 
+     *
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return Alert rule type. Allowed values: vmp/PromQL
-     * 
+     *
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -186,14 +226,14 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert rule update time
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Alert rule update time
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -238,9 +278,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alertingRuleId Alert rule ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alertingRuleId(@Nullable Output<String> alertingRuleId) {
             $.alertingRuleId = alertingRuleId;
@@ -249,32 +289,53 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param alertingRuleId Alert rule ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder alertingRuleId(String alertingRuleId) {
             return alertingRuleId(Output.of(alertingRuleId));
         }
 
+        /**
+         * @param annotations Annotation attached to the alert
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder annotations(@Nullable Output<List<AlertingRuleAnnotationArgs>> annotations) {
             $.annotations = annotations;
             return this;
         }
 
+        /**
+         * @param annotations Annotation attached to the alert
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder annotations(List<AlertingRuleAnnotationArgs> annotations) {
             return annotations(Output.of(annotations));
         }
 
+        /**
+         * @param annotations Annotation attached to the alert
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder annotations(AlertingRuleAnnotationArgs... annotations) {
             return annotations(List.of(annotations));
         }
 
         /**
          * @param createTime Alert rule creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -283,9 +344,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Alert rule creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -293,9 +354,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Alert rule description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -304,45 +365,87 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Alert rule description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param labels Tags attached to the alert
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(@Nullable Output<List<AlertingRuleLabelArgs>> labels) {
             $.labels = labels;
             return this;
         }
 
+        /**
+         * @param labels Tags attached to the alert
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(List<AlertingRuleLabelArgs> labels) {
             return labels(Output.of(labels));
         }
 
+        /**
+         * @param labels Tags attached to the alert
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(AlertingRuleLabelArgs... labels) {
             return labels(List.of(labels));
         }
 
+        /**
+         * @param levels Alert severity
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder levels(@Nullable Output<List<AlertingRuleLevelArgs>> levels) {
             $.levels = levels;
             return this;
         }
 
+        /**
+         * @param levels Alert severity
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder levels(List<AlertingRuleLevelArgs> levels) {
             return levels(Output.of(levels));
         }
 
+        /**
+         * @param levels Alert severity
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder levels(AlertingRuleLevelArgs... levels) {
             return levels(List.of(levels));
         }
 
         /**
          * @param name Alert rule name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -351,9 +454,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Alert rule name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -361,9 +464,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param notifyGroupPolicyId Alert aggregation policy ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder notifyGroupPolicyId(@Nullable Output<String> notifyGroupPolicyId) {
             $.notifyGroupPolicyId = notifyGroupPolicyId;
@@ -372,9 +475,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param notifyGroupPolicyId Alert aggregation policy ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder notifyGroupPolicyId(String notifyGroupPolicyId) {
             return notifyGroupPolicyId(Output.of(notifyGroupPolicyId));
@@ -382,9 +485,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param notifyPolicyId Alert notification policy ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder notifyPolicyId(@Nullable Output<String> notifyPolicyId) {
             $.notifyPolicyId = notifyPolicyId;
@@ -393,9 +496,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param notifyPolicyId Alert notification policy ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder notifyPolicyId(String notifyPolicyId) {
             return notifyPolicyId(Output.of(notifyPolicyId));
@@ -403,9 +506,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param query Alert configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder query(@Nullable Output<AlertingRuleQueryArgs> query) {
             $.query = query;
@@ -414,9 +517,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param query Alert configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder query(AlertingRuleQueryArgs query) {
             return query(Output.of(query));
@@ -424,9 +527,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Alert rule status: Running (monitoring), Disabled (disabled)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -435,32 +538,53 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Alert rule status: Running (monitoring), Disabled (disabled)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<AlertingRuleTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<AlertingRuleTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(AlertingRuleTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param type Alert rule type. Allowed values: vmp/PromQL
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -469,9 +593,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type Alert rule type. Allowed values: vmp/PromQL
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -479,9 +603,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Alert rule update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -490,9 +614,9 @@ public final class AlertingRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Alert rule update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

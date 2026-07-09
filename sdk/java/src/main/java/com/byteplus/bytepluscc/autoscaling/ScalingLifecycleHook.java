@@ -17,115 +17,154 @@ import javax.annotation.Nullable;
 
 /**
  * After the scaling group triggers scaling rules, health checks, and instance count checks, the lifecycle hook can suspend instances that are in the &#39;joining&#39;, &#39;removing&#39;, or &#39;disabling&#39; state, putting them into the joining/removing suspended state. The instances are now in a waiting state, and you can perform custom operations during this period until the lifecycle hook times out or you manually end the suspension.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingLifecycleHook;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingLifecycleHookArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingLifecycleHookLifecycleCommandArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var scalingLifecycleHookDemo = new ScalingLifecycleHook("scalingLifecycleHookDemo", ScalingLifecycleHookArgs.builder()
+ *             .scalingGroupId("scg-yexxxxxxv6yn56hnvlm")
+ *             .lifecycleHookName("ccapi-dx-1")
+ *             .lifecycleHookType("SCALE_IN")
+ *             .lifecycleHookTimeout(1800)
+ *             .lifecycleHookPolicy("CONTINUE")
+ *             .lifecycleCommand(ScalingLifecycleHookLifecycleCommandArgs.builder()
+ *                 .command_id("cmd-ybv3xxxxxxx51qxnx")
+ *                 .parameters("{\"KEY_PAIR_ID\":\"1024\",\"KEY_PAIR_TIMEOUT\":\"360\"}")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:autoscaling/scalingLifecycleHook:ScalingLifecycleHook example &#34;scaling_group_id|lifecycle_hook_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:autoscaling/scalingLifecycleHook:ScalingLifecycleHook")
 public class ScalingLifecycleHook extends com.pulumi.resources.CustomResource {
     /**
      * Cloud Assistant command information.
-     * 
+     *
      */
     @Export(name="lifecycleCommand", refs={ScalingLifecycleHookLifecycleCommand.class}, tree="[0]")
     private Output<ScalingLifecycleHookLifecycleCommand> lifecycleCommand;
 
     /**
      * @return Cloud Assistant command information.
-     * 
+     *
      */
     public Output<ScalingLifecycleHookLifecycleCommand> lifecycleCommand() {
         return this.lifecycleCommand;
     }
     /**
      * Lifecycle hook ID.
-     * 
+     *
      */
     @Export(name="lifecycleHookId", refs={String.class}, tree="[0]")
     private Output<String> lifecycleHookId;
 
     /**
      * @return Lifecycle hook ID.
-     * 
+     *
      */
     public Output<String> lifecycleHookId() {
         return this.lifecycleHookId;
     }
     /**
      * Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Export(name="lifecycleHookName", refs={String.class}, tree="[0]")
     private Output<String> lifecycleHookName;
 
     /**
      * @return Lifecycle hook name, cannot be modified after creation. Values: Cannot start with a digit, hyphen, or underscore. Can only contain Chinese characters, letters, digits, underscores, and hyphens. Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> lifecycleHookName() {
         return this.lifecycleHookName;
     }
     /**
      * Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
-     * 
+     *
      */
     @Export(name="lifecycleHookPolicy", refs={String.class}, tree="[0]")
     private Output<String> lifecycleHookPolicy;
 
     /**
      * @return Policy executed after the instance suspension ends. Values: CONTINUE: Continue execution. REJECT: Abort subsequent actions. ROLLBACK: For elastic scale-in activities, the release of ECS instances is rejected and rollback is performed; for elastic scale-out activities, the effect is the same as REJECT.
-     * 
+     *
      */
     public Output<String> lifecycleHookPolicy() {
         return this.lifecycleHookPolicy;
     }
     /**
      * Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
-     * 
+     *
      */
     @Export(name="lifecycleHookTimeout", refs={Integer.class}, tree="[0]")
     private Output<Integer> lifecycleHookTimeout;
 
     /**
      * @return Duration for which the ECS instance remains suspended. After timeout, the suspended state ends automatically and scaling actions continue according to the execution policy. Please evaluate the processing time for custom operations and set an appropriate timeout. Values: 30 to 21600 (6 hours), unit: s, must be an integer.
-     * 
+     *
      */
     public Output<Integer> lifecycleHookTimeout() {
         return this.lifecycleHookTimeout;
     }
     /**
      * Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
-     * 
+     *
      */
     @Export(name="lifecycleHookType", refs={String.class}, tree="[0]")
     private Output<String> lifecycleHookType;
 
     /**
      * @return Type of scaling activity. When a specified type of scaling activity occurs, the lifecycle hook is triggered and the ECS instance is suspended. Values: SCALE*IN: Elastic scale-in activity. SCALE*OUT: Elastic scale-out activity.
-     * 
+     *
      */
     public Output<String> lifecycleHookType() {
         return this.lifecycleHookType;
     }
     /**
      * Scaling group ID.
-     * 
+     *
      */
     @Export(name="scalingGroupId", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupId;
 
     /**
      * @return Scaling group ID.
-     * 
+     *
      */
     public Output<String> scalingGroupId() {
         return this.scalingGroupId;

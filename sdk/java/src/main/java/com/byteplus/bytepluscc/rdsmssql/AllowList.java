@@ -18,177 +18,227 @@ import javax.annotation.Nullable;
 
 /**
  * API request parameter - Create RDS SQL Server allowlist (CreateAllowList)
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmssql.AllowList;
+ * import com.byteplus.bytepluscc.rdsmssql.AllowListArgs;
+ * import com.pulumi.bytepluscc.rdsmssql.inputs.AllowListAssociatedInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rDSMsSQLAllowlistDemo = new AllowList("rDSMsSQLAllowlistDemo", AllowListArgs.builder()
+ *             .projectName("default")
+ *             .allowListName("ccapi-test-all")
+ *             .allowListDesc("ccapi-test")
+ *             .allowListType("IPv4")
+ *             .allowListCategory("Ordinary")
+ *             .allowList("192.168.0.0/24,192.168.0.1,192.168.0.2")
+ *             .userAllowList("192.168.0.0/24,192.168.0.1,192.168.0.2")
+ *             .associatedInstances(AllowListAssociatedInstanceArgs.builder()
+ *                 .instance_id("mssql-9b195******")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdsmssql/allowList:AllowList example &#34;allow_list_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdsmssql/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
-     * 
+     *
      */
     @Export(name="allowList", refs={String.class}, tree="[0]")
     private Output<String> allowList;
 
     /**
      * @return IP allowlist. Separate multiple IP addresses with commas (,). No duplicates allowed
-     * 
+     *
      */
     public Output<String> allowList() {
         return this.allowList;
     }
     /**
      * Allowlist category
-     * 
+     *
      */
     @Export(name="allowListCategory", refs={String.class}, tree="[0]")
     private Output<String> allowListCategory;
 
     /**
      * @return Allowlist category
-     * 
+     *
      */
     public Output<String> allowListCategory() {
         return this.allowListCategory;
     }
     /**
      * Allowlist description
-     * 
+     *
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
      * @return Allowlist description
-     * 
+     *
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
      * Allowlist ID
-     * 
+     *
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
      * @return Allowlist ID
-     * 
+     *
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
      * Allowlist IP count
-     * 
+     *
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
      * @return Allowlist IP count
-     * 
+     *
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
      * Allowlist name
-     * 
+     *
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
      * @return Allowlist name
-     * 
+     *
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
      * IP address type in the allowlist. Only IPv4 is supported
-     * 
+     *
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
      * @return IP address type in the allowlist. Only IPv4 is supported
-     * 
+     *
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
      * Number of bound instances. Required when unbinding an instance from the allowlist
-     * 
+     *
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
      * @return Number of bound instances. Required when unbinding an instance from the allowlist
-     * 
+     *
      */
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * Bound instance list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return Bound instance list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }
     /**
      * Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Project name
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
-     * 
+     *
      */
     @Export(name="userAllowList", refs={String.class}, tree="[0]")
     private Output<String> userAllowList;
 
     /**
      * @return IP addresses outside the security group that need to be added to the allowlist. Enter IP addresses or CIDR-formatted IP ranges. If both this field and AllowList are specified, AllowList takes precedence
-     * 
+     *
      */
     public Output<String> userAllowList() {
         return this.userAllowList;

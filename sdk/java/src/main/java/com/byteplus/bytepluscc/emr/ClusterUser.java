@@ -17,179 +17,179 @@ import javax.annotation.Nullable;
 
 /**
  * Users in an E-MapReduce (EMR) cluster are divided into regular users and system users. Regular users are added to the cluster manually through import or creation in the user management module. System users are built-in management users for each component created during cluster initialization and cannot be edited or deleted.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.emr.ClusterUser;
  * import com.byteplus.bytepluscc.emr.ClusterUserArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var eMRClusterUserDemo = new ClusterUser("eMRClusterUserDemo", ClusterUserArgs.builder()
  *             .clusterId("emr-xxxxxxxxxx")
  *             .userName("emrclusteruserdemo")
  *             .password("UserDemo1234")
- *             .userGroupNames(            
+ *             .userGroupNames(
  *                 "users",
  *                 "ccapi")
  *             .description("EMRClusterUserDemo")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:emr/clusterUser:ClusterUser example &#34;cluster_id|user_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:emr/clusterUser:ClusterUser")
 public class ClusterUser extends com.pulumi.resources.CustomResource {
     /**
      * Cluster ID.
-     * 
+     *
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID.
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Creation time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> createdTime;
 
     /**
      * @return Creation time.
-     * 
+     *
      */
     public Output<Integer> createdTime() {
         return this.createdTime;
     }
     /**
      * Creator username.
-     * 
+     *
      */
     @Export(name="creatorName", refs={String.class}, tree="[0]")
     private Output<String> creatorName;
 
     /**
      * @return Creator username.
-     * 
+     *
      */
     public Output<String> creatorName() {
         return this.creatorName;
     }
     /**
      * User group description.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return User group description.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Old user login password. Required when changing password.
-     * 
+     *
      */
     @Export(name="oldPassword", refs={String.class}, tree="[0]")
     private Output<String> oldPassword;
 
     /**
      * @return Old user login password. Required when changing password.
-     * 
+     *
      */
     public Output<String> oldPassword() {
         return this.oldPassword;
     }
     /**
      * New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
-     * 
+     *
      */
     @Export(name="password", refs={String.class}, tree="[0]")
     private Output<String> password;
 
     /**
      * @return New user login password. Password must be 8–20 characters long, support numbers, letters, -, _, and contain at least one number and one letter.
-     * 
+     *
      */
     public Output<String> password() {
         return this.password;
     }
     /**
      * Last updated time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> updatedTime;
 
     /**
      * @return Last updated time.
-     * 
+     *
      */
     public Output<Integer> updatedTime() {
         return this.updatedTime;
     }
     /**
      * User group name.
-     * 
+     *
      */
     @Export(name="userGroupNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> userGroupNames;
 
     /**
      * @return User group name.
-     * 
+     *
      */
     public Output<List<String>> userGroupNames() {
         return this.userGroupNames;
     }
     /**
      * Cluster username. Only lowercase letters are supported.
-     * 
+     *
      */
     @Export(name="userName", refs={String.class}, tree="[0]")
     private Output<String> userName;
 
     /**
      * @return Cluster username. Only lowercase letters are supported.
-     * 
+     *
      */
     public Output<String> userName() {
         return this.userName;

@@ -19,31 +19,31 @@ import javax.annotation.Nullable;
 
 /**
  * To enable communication between your private network and a local data center or another private network via a VPN connection, you must first create a VPN gateway.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vpn.VpnGateway;
  * import com.byteplus.bytepluscc.vpn.VpnGatewayArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vpnVpnGatewayDemo = new VpnGateway("vpnVpnGatewayDemo", VpnGatewayArgs.builder()
  *             .bandwidth(5)
@@ -60,458 +60,468 @@ import javax.annotation.Nullable;
  *             .vpcId("vpc-3nr6adxxxxu8931eb64y4z2")
  *             .subnetId("subnet-btepcsxxxxw5h0b2u6hppyd")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpn/vpnGateway:VpnGateway example &#34;vpn_gateway_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpn/vpnGateway:VpnGateway")
 public class VpnGateway extends com.pulumi.resources.CustomResource {
     /**
      * ASN of the VPN gateway.
-     * 
+     *
      */
     @Export(name="asn", refs={Integer.class}, tree="[0]")
     private Output<Integer> asn;
 
     /**
      * @return ASN of the VPN gateway.
-     * 
+     *
      */
     public Output<Integer> asn() {
         return this.asn;
     }
     /**
      * VPN gateway bandwidth specification.
-     * 
+     *
      */
     @Export(name="bandwidth", refs={Integer.class}, tree="[0]")
     private Output<Integer> bandwidth;
 
     /**
      * @return VPN gateway bandwidth specification.
-     * 
+     *
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
     }
     /**
      * VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
-     * 
+     *
      */
     @Export(name="billingType", refs={Integer.class}, tree="[0]")
     private Output<Integer> billingType;
 
     /**
      * @return VPN gateway billing type. 1: Subscription. 2: Pay-as-you-go (fixed specification)
-     * 
+     *
      */
     public Output<Integer> billingType() {
         return this.billingType;
     }
     /**
      * VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
-     * 
+     *
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return VPN gateway billing status. Normal: Normal. FinancialLocked: Locked.
-     * 
+     *
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Number of IPsec connections associated with the VPN gateway.
-     * 
+     *
      */
     @Export(name="connectionCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> connectionCount;
 
     /**
      * @return Number of IPsec connections associated with the VPN gateway.
-     * 
+     *
      */
     public Output<Integer> connectionCount() {
         return this.connectionCount;
     }
     /**
      * Time when the VPN gateway was created.
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Time when the VPN gateway was created.
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Expected resource forced reclaim time.
-     * 
+     *
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Expected resource forced reclaim time.
-     * 
+     *
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the VPN gateway.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the VPN gateway.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
-     * 
+     *
      */
     @Export(name="dualTunnelEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> dualTunnelEnabled;
 
     /**
      * @return Whether dual tunnel mode is enabled for the VPN gateway. true: Enabled false: Disabled
-     * 
+     *
      */
     public Output<Boolean> dualTunnelEnabled() {
         return this.dualTunnelEnabled;
     }
     /**
      * VPN gateway expiration time.
-     * 
+     *
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return VPN gateway expiration time.
-     * 
+     *
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * VPN gateway public IP address.
-     * 
+     *
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
      * @return VPN gateway public IP address.
-     * 
+     *
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
      * VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
-     * 
+     *
      */
     @Export(name="ipStackType", refs={String.class}, tree="[0]")
     private Output<String> ipStackType;
 
     /**
      * @return VPN gateway protocol type. ipv4*only: IPv4 protocol type. ipv6*only: IPv6 protocol type. ipv4_ipv6: Dual-stack protocol type.
-     * 
+     *
      */
     public Output<String> ipStackType() {
         return this.ipStackType;
     }
     /**
      * IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
-     * 
+     *
      */
     @Export(name="ipVersion", refs={String.class}, tree="[0]")
     private Output<String> ipVersion;
 
     /**
      * @return IP address type of the VPN gateway. ipv4: IPv4 address type. ipv6: IPv6 address type.
-     * 
+     *
      */
     public Output<String> ipVersion() {
         return this.ipVersion;
     }
     /**
      * Enable IPSec feature. true: enabled false: disabled
-     * 
+     *
      */
     @Export(name="ipsecEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> ipsecEnabled;
 
     /**
      * @return Enable IPSec feature. true: enabled false: disabled
-     * 
+     *
      */
     public Output<Boolean> ipsecEnabled() {
         return this.ipsecEnabled;
     }
     /**
      * Whether the current resource is banned. true: Banned false: Not banned.
-     * 
+     *
      */
     @Export(name="isBlocked", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isBlocked;
 
     /**
      * @return Whether the current resource is banned. true: Banned false: Not banned.
-     * 
+     *
      */
     public Output<Boolean> isBlocked() {
         return this.isBlocked;
     }
     /**
      * VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
-     * 
+     *
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return VPN gateway lock reasons. financial: Locked due to overdue payment. security: Locked for security reasons. unlock: Not locked.
-     * 
+     *
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
-     * 
+     *
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns an empty value.
-     * 
+     *
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
-     * 
+     *
      */
     @Export(name="period", refs={Integer.class}, tree="[0]")
     private Output<Integer> period;
 
     /**
      * @return Subscription VPN gateway purchase duration, default is &#39;1&#39;. If PeriodUnit is Month, Period value range: 1–9, 12, 24, 36. If PeriodUnit is Year, Period value range: 1–3.
-     * 
+     *
      */
     public Output<Integer> period() {
         return this.period;
     }
     /**
      * Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
-     * 
+     *
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
      * @return Unit for the purchase duration of subscription-based VPN gateways. Default is &#39;Month&#39;. Month: month Year: year
-     * 
+     *
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
      * Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the VPN gateway belongs. If not specified, defaults to &#39;default&#39;, meaning the created resource belongs to the default project. You can call ListProjects to query project information under the current account.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Number of route entries for the VPN gateway.
-     * 
+     *
      */
     @Export(name="routeCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> routeCount;
 
     /**
      * @return Number of route entries for the VPN gateway.
-     * 
+     *
      */
     public Output<Integer> routeCount() {
         return this.routeCount;
     }
     /**
      * Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
-     * 
+     *
      */
     @Export(name="secondaryIpAddress", refs={String.class}, tree="[0]")
     private Output<String> secondaryIpAddress;
 
     /**
      * @return Second public IP address of the VPN gateway. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
-     * 
+     *
      */
     public Output<String> secondaryIpAddress() {
         return this.secondaryIpAddress;
     }
     /**
      * ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
-     * 
+     *
      */
     @Export(name="secondarySubnetId", refs={String.class}, tree="[0]")
     private Output<String> secondarySubnetId;
 
     /**
      * @return ID of the second subnet associated with the VPN gateway instance. This parameter is returned only for VPN gateway instances in dual tunnel mode; it is not returned for instances in single tunnel mode.
-     * 
+     *
      */
     public Output<String> secondarySubnetId() {
         return this.secondarySubnetId;
     }
     /**
      * Enable SSL VPN feature. true: enabled false: disabled
-     * 
+     *
      */
     @Export(name="sslEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> sslEnabled;
 
     /**
      * @return Enable SSL VPN feature. true: enabled false: disabled
-     * 
+     *
      */
     public Output<Boolean> sslEnabled() {
         return this.sslEnabled;
     }
     /**
      * Maximum SSL connections for the VPN gateway.
-     * 
+     *
      */
     @Export(name="sslMaxConnections", refs={Integer.class}, tree="[0]")
     private Output<Integer> sslMaxConnections;
 
     /**
      * @return Maximum SSL connections for the VPN gateway.
-     * 
+     *
      */
     public Output<Integer> sslMaxConnections() {
         return this.sslMaxConnections;
     }
     /**
      * Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the VPN gateway. Creating: creating Deleting: deleting Pending: configuring Available: available
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * ID of the subnet to which the port used by the VPN gateway belongs.
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return ID of the subnet to which the port used by the VPN gateway belongs.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * All tag information added to the VPN gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,VpnGatewayTag.class}, tree="[0,1]")
     private Output<List<VpnGatewayTag>> tags;
 
+    /**
+     * @return All tag information added to the VPN gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<VpnGatewayTag>> tags() {
         return this.tags;
     }
     /**
      * VPN gateway update time.
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return VPN gateway update time.
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * VPC ID where the VPN gateway is located.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID where the VPN gateway is located.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * ID of the VPN gateway.
-     * 
+     *
      */
     @Export(name="vpnGatewayId", refs={String.class}, tree="[0]")
     private Output<String> vpnGatewayId;
 
     /**
      * @return ID of the VPN gateway.
-     * 
+     *
      */
     public Output<String> vpnGatewayId() {
         return this.vpnGatewayId;
     }
     /**
      * Name of the VPN gateway.
-     * 
+     *
      */
     @Export(name="vpnGatewayName", refs={String.class}, tree="[0]")
     private Output<String> vpnGatewayName;
 
     /**
      * @return Name of the VPN gateway.
-     * 
+     *
      */
     public Output<String> vpnGatewayName() {
         return this.vpnGatewayName;

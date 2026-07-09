@@ -19,14 +19,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of EIP IDs to bind when applying for a public address
-     * 
+     *
      */
     @Import(name="eipIds")
     private @Nullable Output<List<String>> eipIds;
 
     /**
      * @return List of EIP IDs to bind when applying for a public address
-     * 
+     *
      */
     public Optional<Output<List<String>>> eipIds() {
         return Optional.ofNullable(this.eipIds);
@@ -34,14 +34,14 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     * 
+     *
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
@@ -49,48 +49,56 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the Mongos node that requires a public connection address
-     * 
+     *
      */
     @Import(name="mongosNodeIds")
     private @Nullable Output<List<String>> mongosNodeIds;
 
     /**
      * @return ID of the Mongos node that requires a public connection address
-     * 
+     *
      */
     public Optional<Output<List<String>>> mongosNodeIds() {
         return Optional.ofNullable(this.mongosNodeIds);
     }
 
     /**
-     * Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
-     * 
+     * Network type of the connection address. Possible values:
+     *
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
+     *
      */
     @Import(name="networkType")
     private @Nullable Output<String> networkType;
 
     /**
-     * @return Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
-     * 
+     * @return Network type of the connection address. Possible values:
+     *
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
+     *
      */
     public Optional<Output<String>> networkType() {
         return Optional.ofNullable(this.networkType);
     }
 
     /**
-     * ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-     * 
+     * ID of the component associated with the current connection address
+     *
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     *
      */
     @Import(name="objectId")
     private @Nullable Output<String> objectId;
 
     /**
-     * @return ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-     * 
+     * @return ID of the component associated with the current connection address
+     *
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     *
      */
     public Optional<Output<String>> objectId() {
         return Optional.ofNullable(this.objectId);
@@ -126,9 +134,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipIds List of EIP IDs to bind when applying for a public address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipIds(@Nullable Output<List<String>> eipIds) {
             $.eipIds = eipIds;
@@ -137,9 +145,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipIds List of EIP IDs to bind when applying for a public address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipIds(List<String> eipIds) {
             return eipIds(Output.of(eipIds));
@@ -147,9 +155,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param eipIds List of EIP IDs to bind when applying for a public address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipIds(String... eipIds) {
             return eipIds(List.of(eipIds));
@@ -157,9 +165,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -168,9 +176,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -178,9 +186,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeIds ID of the Mongos node that requires a public connection address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mongosNodeIds(@Nullable Output<List<String>> mongosNodeIds) {
             $.mongosNodeIds = mongosNodeIds;
@@ -189,9 +197,9 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeIds ID of the Mongos node that requires a public connection address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mongosNodeIds(List<String> mongosNodeIds) {
             return mongosNodeIds(Output.of(mongosNodeIds));
@@ -199,20 +207,22 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mongosNodeIds ID of the Mongos node that requires a public connection address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mongosNodeIds(String... mongosNodeIds) {
             return mongosNodeIds(List.of(mongosNodeIds));
         }
 
         /**
-         * @param networkType Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-         * connection address
-         * 
+         * @param networkType Network type of the connection address. Possible values:
+         *
+         *     - `Private`: Private connection address
+         *     - `Public`: Public connection address
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkType(@Nullable Output<String> networkType) {
             $.networkType = networkType;
@@ -220,22 +230,26 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param networkType Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-         * connection address
-         * 
+         * @param networkType Network type of the connection address. Possible values:
+         *
+         *     - `Private`: Private connection address
+         *     - `Public`: Public connection address
+         *
          * @return builder
-         * 
+         *
          */
         public Builder networkType(String networkType) {
             return networkType(Output.of(networkType));
         }
 
         /**
-         * @param objectId ID of the component associated with the current connection address **Note:** This parameter is returned only when
-         * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-         * 
+         * @param objectId ID of the component associated with the current connection address
+         *
+         *   **Note:**
+         *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder objectId(@Nullable Output<String> objectId) {
             $.objectId = objectId;
@@ -243,11 +257,13 @@ public final class EndpointArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param objectId ID of the component associated with the current connection address **Note:** This parameter is returned only when
-         * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-         * 
+         * @param objectId ID of the component associated with the current connection address
+         *
+         *   **Note:**
+         *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+         *
          * @return builder
-         * 
+         *
          */
         public Builder objectId(String objectId) {
             return objectId(Output.of(objectId));

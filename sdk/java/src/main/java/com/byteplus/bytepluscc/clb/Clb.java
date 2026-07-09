@@ -26,651 +26,743 @@ import javax.annotation.Nullable;
 
 /**
  * Load balancer instance
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.clb.Clb;
+ * import com.byteplus.bytepluscc.clb.ClbArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ClbEipArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ClbTagArgs;
+ * import com.pulumi.bytepluscc.clb.inputs.ClbAccessLogArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var cLBDemo = new Clb("cLBDemo", ClbArgs.builder()
+ *             .loadBalancerName("CLBDemo")
+ *             .loadBalancerSpec("small_1")
+ *             .addressIpVersion("ipv4")
+ *             .bypassSecurityGroupEnabled("off")
+ *             .description("CLBDemo description")
+ *             .loadBalancerBillingType(2.0)
+ *             .masterZoneId("cn-beijing-a")
+ *             .slaveZoneId("cn-beijing-b")
+ *             .modificationProtectionReason("xx")
+ *             .modificationProtectionStatus("xx")
+ *             .period(1.0)
+ *             .periodUnit("Month")
+ *             .projectName("default")
+ *             .subnetId("subnet-rrwqhg3qzxfkv0x57g3xxxx")
+ *             .type("public")
+ *             .vpcId("vpc-rrco37ovjq4gv0x58zfxxxx")
+ *             .eip(ClbEipArgs.builder()
+ *                 .isp("BGP")
+ *                 .bandwidth(1.0)
+ *                 .eip_billing_type(3)
+ *                 .build())
+ *             .tags(ClbTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .accessLog(ClbAccessLogArgs.builder()
+ *                 .bucket_name("ccapi-test")
+ *                 .tls_project_id("5554e74f-0413-4375-ad99-e544xxxxx")
+ *                 .tls_topic_id("7f3bc374-5e1d-4984-83fc-0e5a5xxxxx")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:clb/clb:Clb example &#34;load_balancer_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:clb/clb:Clb")
 public class Clb extends com.pulumi.resources.CustomResource {
     /**
      * Access log information in the load balancer instance
-     * 
+     *
      */
     @Export(name="accessLog", refs={ClbAccessLog.class}, tree="[0]")
     private Output<ClbAccessLog> accessLog;
 
     /**
      * @return Access log information in the load balancer instance
-     * 
+     *
      */
     public Output<ClbAccessLog> accessLog() {
         return this.accessLog;
     }
     /**
      * Account ID to which the load balancer instance belongs
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID to which the load balancer instance belongs
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
-     * 
+     *
      */
     @Export(name="addressIpVersion", refs={String.class}, tree="[0]")
     private Output<String> addressIpVersion;
 
     /**
      * @return IP address type of the CLB instance. Values: ipv4 (default): Indicates the CLB is IPv4 type and only supports forwarding IPv4 requests. DualStack: Indicates the CLB is dual-stack type and supports forwarding both IPv4 and IPv6 requests. DualStack can only be specified when Type is set to private
-     * 
+     *
      */
     public Output<String> addressIpVersion() {
         return this.addressIpVersion;
     }
     /**
      * Allowed port ranges
-     * 
+     *
      */
     @Export(name="allowedPorts", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> allowedPorts;
 
     /**
      * @return Allowed port ranges
-     * 
+     *
      */
     public Output<List<String>> allowedPorts() {
         return this.allowedPorts;
     }
     /**
      * Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
-     * 
+     *
      */
     @Export(name="autoRenewal", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> autoRenewal;
 
     /**
      * @return Whether to enable auto-renewal. true: Yes, default auto-renewal is 1 month. false (default): No
-     * 
+     *
      */
     public Output<Boolean> autoRenewal() {
         return this.autoRenewal;
     }
     /**
      * Whether the load balancer instance is locked
-     * 
+     *
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Whether the load balancer instance is locked
-     * 
+     *
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Whether to enable bypass security group feature
-     * 
+     *
      */
     @Export(name="bypassSecurityGroupEnabled", refs={String.class}, tree="[0]")
     private Output<String> bypassSecurityGroupEnabled;
 
     /**
      * @return Whether to enable bypass security group feature
-     * 
+     *
      */
     public Output<String> bypassSecurityGroupEnabled() {
         return this.bypassSecurityGroupEnabled;
     }
     /**
      * Creation time of the load balancer instance
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the load balancer instance
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Expected recycling time of the load balancer instance
-     * 
+     *
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Expected recycling time of the load balancer instance
-     * 
+     *
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the load balancer instance
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the load balancer instance
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Public IP information of the load balancer instance
-     * 
+     *
      */
     @Export(name="eip", refs={ClbEip.class}, tree="[0]")
     private Output<ClbEip> eip;
 
     /**
      * @return Public IP information of the load balancer instance
-     * 
+     *
      */
     public Output<ClbEip> eip() {
         return this.eip;
     }
     /**
      * Public IP address
-     * 
+     *
      */
     @Export(name="eipAddress", refs={String.class}, tree="[0]")
     private Output<String> eipAddress;
 
     /**
      * @return Public IP address
-     * 
+     *
      */
     public Output<String> eipAddress() {
         return this.eipAddress;
     }
     /**
      * Public IP ID
-     * 
+     *
      */
     @Export(name="eipId", refs={String.class}, tree="[0]")
     private Output<String> eipId;
 
     /**
      * @return Public IP ID
-     * 
+     *
      */
     public Output<String> eipId() {
         return this.eipId;
     }
     /**
      * Enable status of the load balancer instance
-     * 
+     *
      */
     @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
      * @return Enable status of the load balancer instance
-     * 
+     *
      */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
     /**
      * Private IPv4 address information of the load balancer instance
-     * 
+     *
      */
     @Export(name="eni", refs={ClbEni.class}, tree="[0]")
     private Output<ClbEni> eni;
 
     /**
      * @return Private IPv4 address information of the load balancer instance
-     * 
+     *
      */
     public Output<ClbEni> eni() {
         return this.eni;
     }
     /**
      * Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
-     * 
+     *
      */
     @Export(name="eniAddressNum", refs={Double.class}, tree="[0]")
     private Output<Double> eniAddressNum;
 
     /**
      * @return Number of private IPv4 addresses for the load balancer instance. This parameter cannot be used together with EniAddress. If this parameter is provided, EniAddress is not required
-     * 
+     *
      */
     public Output<Double> eniAddressNum() {
         return this.eniAddressNum;
     }
     /**
      * Private IPv6 address of the load balancer instance
-     * 
+     *
      */
     @Export(name="eniIpv6Address", refs={String.class}, tree="[0]")
     private Output<String> eniIpv6Address;
 
     /**
      * @return Private IPv6 address of the load balancer instance
-     * 
+     *
      */
     public Output<String> eniIpv6Address() {
         return this.eniIpv6Address;
     }
     /**
      * List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
-     * 
+     *
      */
     @Export(name="enis", refs={ClbEnis.class}, tree="[0]")
     private Output<ClbEnis> enis;
 
     /**
      * @return List of private IPv4 addresses for the load balancer instance, specified by EniAddressNum during creation
-     * 
+     *
      */
     public Output<ClbEnis> enis() {
         return this.enis;
     }
     /**
      * Dedicated cluster ID
-     * 
+     *
      */
     @Export(name="exclusiveClusterId", refs={String.class}, tree="[0]")
     private Output<String> exclusiveClusterId;
 
     /**
      * @return Dedicated cluster ID
-     * 
+     *
      */
     public Output<String> exclusiveClusterId() {
         return this.exclusiveClusterId;
     }
     /**
      * Expiration time of the load balancer instance
-     * 
+     *
      */
     @Export(name="expiredTime", refs={String.class}, tree="[0]")
     private Output<String> expiredTime;
 
     /**
      * @return Expiration time of the load balancer instance
-     * 
+     *
      */
     public Output<String> expiredTime() {
         return this.expiredTime;
     }
     /**
      * IPv6 public bandwidth information for the load balancing instance
-     * 
+     *
      */
     @Export(name="ipv6AddressBandwidth", refs={ClbIpv6AddressBandwidth.class}, tree="[0]")
     private Output<ClbIpv6AddressBandwidth> ipv6AddressBandwidth;
 
     /**
      * @return IPv6 public bandwidth information for the load balancing instance
-     * 
+     *
      */
     public Output<ClbIpv6AddressBandwidth> ipv6AddressBandwidth() {
         return this.ipv6AddressBandwidth;
     }
+    /**
+     * Listener information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="listeners", refs={List.class,ClbListener.class}, tree="[0,1]")
     private Output<List<ClbListener>> listeners;
 
+    /**
+     * @return Listener information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClbListener>> listeners() {
         return this.listeners;
     }
     /**
      * CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
-     * 
+     *
      */
     @Export(name="loadBalancerBillingType", refs={Double.class}, tree="[0]")
     private Output<Double> loadBalancerBillingType;
 
     /**
      * @return CLB instance billing method. Available values: 1: Annual/monthly subscription. 2 (default): Pay-as-you-go (by specification). 3: Pay-as-you-go (by usage)
-     * 
+     *
      */
     public Output<Double> loadBalancerBillingType() {
         return this.loadBalancerBillingType;
     }
     /**
      * Load balancer instance ID
-     * 
+     *
      */
     @Export(name="loadBalancerId", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerId;
 
     /**
      * @return Load balancer instance ID
-     * 
+     *
      */
     public Output<String> loadBalancerId() {
         return this.loadBalancerId;
     }
     /**
      * Name of the load balancer instance
-     * 
+     *
      */
     @Export(name="loadBalancerName", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerName;
 
     /**
      * @return Name of the load balancer instance
-     * 
+     *
      */
     public Output<String> loadBalancerName() {
         return this.loadBalancerName;
     }
     /**
      * CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
-     * 
+     *
      */
     @Export(name="loadBalancerSpec", refs={String.class}, tree="[0]")
     private Output<String> loadBalancerSpec;
 
     /**
      * @return CLB instance specification. Different specifications provide different forwarding capabilities. small*1: Small I. small*2: Small II. medium*1: Medium I. medium*2: Medium II. large*1: Large I. large*2: Large II
-     * 
+     *
      */
     public Output<String> loadBalancerSpec() {
         return this.loadBalancerSpec;
     }
     /**
      * Reason why the load balancer instance is frozen
-     * 
+     *
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return Reason why the load balancer instance is frozen
-     * 
+     *
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * Main availability zone ID of the load balancer instance
-     * 
+     *
      */
     @Export(name="masterZoneId", refs={String.class}, tree="[0]")
     private Output<String> masterZoneId;
 
     /**
      * @return Main availability zone ID of the load balancer instance
-     * 
+     *
      */
     public Output<String> masterZoneId() {
         return this.masterZoneId;
     }
     /**
      * Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
-     * 
+     *
      */
     @Export(name="modificationProtectionReason", refs={String.class}, tree="[0]")
     private Output<String> modificationProtectionReason;
 
     /**
      * @return Reason for setting modification protection status. This parameter is valid only when ModificationProtectionStatus is set to ConsoleProtection. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: half-width period (.), underscore (_), and hyphen (-). Length must be 1–80 characters
-     * 
+     *
      */
     public Output<String> modificationProtectionReason() {
         return this.modificationProtectionReason;
     }
     /**
      * Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
-     * 
+     *
      */
     @Export(name="modificationProtectionStatus", refs={String.class}, tree="[0]")
     private Output<String> modificationProtectionStatus;
 
     /**
      * @return Whether CLB instance enables modification protection in the console. When enabled, modification or deletion via the console is prohibited. Available values: NonProtection: Disabled. ConsoleProtection: Enabled
-     * 
+     *
      */
     public Output<String> modificationProtectionStatus() {
         return this.modificationProtectionStatus;
     }
     /**
      * Whether it is a new architecture
-     * 
+     *
      */
     @Export(name="newArch", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> newArch;
 
     /**
      * @return Whether it is a new architecture
-     * 
+     *
      */
     public Output<Boolean> newArch() {
         return this.newArch;
     }
     /**
      * Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
-     * 
+     *
      */
     @Export(name="orderId", refs={String.class}, tree="[0]")
     private Output<String> orderId;
 
     /**
      * @return Order ID. This parameter is only available when LoadBalancerBillingType is set to 1 during creation
-     * 
+     *
      */
     public Output<String> orderId() {
         return this.orderId;
     }
     /**
      * Freeze time of the load balancer instance
-     * 
+     *
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Freeze time of the load balancer instance
-     * 
+     *
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
-     * 
+     *
      */
     @Export(name="period", refs={Double.class}, tree="[0]")
     private Output<Double> period;
 
     /**
      * @return Duration for purchasing a CLB instance by year or by month. Default is &#39;1&#39;. When PeriodUnit is set to Month, valid values are 1–9, 12, 24, and 36. When PeriodUnit is set to Year, valid values are 1–3
-     * 
+     *
      */
     public Output<Double> period() {
         return this.period;
     }
     /**
      * Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
-     * 
+     *
      */
     @Export(name="periodUnit", refs={String.class}, tree="[0]")
     private Output<String> periodUnit;
 
     /**
      * @return Duration unit for purchasing subscription CLB instances. This parameter is valid only when LoadBalancerBillingType is set to 1. Values: Month (default): month. Year: year
-     * 
+     *
      */
     public Output<String> periodUnit() {
         return this.periodUnit;
     }
     /**
      * Name of the project associated with the CLB instance
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project associated with the CLB instance
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
+    /**
+     * Backend server group information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="serverGroups", refs={List.class,ClbServerGroup.class}, tree="[0,1]")
     private Output<List<ClbServerGroup>> serverGroups;
 
+    /**
+     * @return Backend server group information in the load balancer instance
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClbServerGroup>> serverGroups() {
         return this.serverGroups;
     }
     /**
      * Whether the CLB instance is a managed resource
-     * 
+     *
      */
     @Export(name="serviceManaged", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> serviceManaged;
 
     /**
      * @return Whether the CLB instance is a managed resource
-     * 
+     *
      */
     public Output<Boolean> serviceManaged() {
         return this.serviceManaged;
     }
     /**
      * Secondary availability zone ID of the load balancer instance
-     * 
+     *
      */
     @Export(name="slaveZoneId", refs={String.class}, tree="[0]")
     private Output<String> slaveZoneId;
 
     /**
      * @return Secondary availability zone ID of the load balancer instance
-     * 
+     *
      */
     public Output<String> slaveZoneId() {
         return this.slaveZoneId;
     }
     /**
      * Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Load balancer instance status: Inactive: stopped. Active: running. Creating: creating. Provisioning: creating. Configuring: configuring. Deleting: deleting. CreateFailed: creation failed.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Subnet ID within the VPC of the load balancer instance
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID within the VPC of the load balancer instance
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * CLB instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,ClbTag.class}, tree="[0,1]")
     private Output<List<ClbTag>> tags;
 
+    /**
+     * @return CLB instance tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ClbTag>> tags() {
         return this.tags;
     }
     /**
      * Enable TCP timestamp removal
-     * 
+     *
      */
     @Export(name="timestampRemoveEnabled", refs={String.class}, tree="[0]")
     private Output<String> timestampRemoveEnabled;
 
     /**
      * @return Enable TCP timestamp removal
-     * 
+     *
      */
     public Output<String> timestampRemoveEnabled() {
         return this.timestampRemoveEnabled;
     }
     /**
      * CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return CLB instance type. Values: public: Public type. When you create a public CLB instance, the system assigns a public IP address for forwarding public requests. private: Private type. When you create a private CLB instance, the system does not assign a public IP address; you must bind a public IP manually before it can forward public requests
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;
     }
     /**
      * Most recent operation time of the load balancer instance
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Most recent operation time of the load balancer instance
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * VPC ID of the load balancer instance
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID of the load balancer instance
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone type of the load balancer instance
-     * 
+     *
      */
     @Export(name="zoneType", refs={String.class}, tree="[0]")
     private Output<String> zoneType;
 
     /**
      * @return Availability zone type of the load balancer instance
-     * 
+     *
      */
     public Output<String> zoneType() {
         return this.zoneType;

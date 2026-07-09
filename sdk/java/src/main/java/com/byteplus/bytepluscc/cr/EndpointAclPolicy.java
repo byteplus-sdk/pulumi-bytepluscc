@@ -15,31 +15,31 @@ import javax.annotation.Nullable;
 
 /**
  * Adding access addresses to the allowlist for public network access can effectively enhance information security
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.cr.EndpointAclPolicy;
  * import com.byteplus.bytepluscc.cr.EndpointAclPolicyArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var cREndpointAclPolicyDemo = new EndpointAclPolicy("cREndpointAclPolicyDemo", EndpointAclPolicyArgs.builder()
  *             .registry("xxxxx")
@@ -47,74 +47,74 @@ import javax.annotation.Nullable;
  *             .entry("0.0.0.0/0")
  *             .description("test acl policy")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cr/endpointAclPolicy:EndpointAclPolicy example &#34;registry|entry&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cr/endpointAclPolicy:EndpointAclPolicy")
 public class EndpointAclPolicy extends com.pulumi.resources.CustomResource {
     /**
      * Description of the allowlist IPs
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the allowlist IPs
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Allowlist IPs to be added
-     * 
+     *
      */
     @Export(name="entry", refs={String.class}, tree="[0]")
     private Output<String> entry;
 
     /**
      * @return Allowlist IPs to be added
-     * 
+     *
      */
     public Output<String> entry() {
         return this.entry;
     }
     /**
      * Name of the image repository instance. On the Instance List page in the Image Repository Console, obtain the instance name
-     * 
+     *
      */
     @Export(name="registry", refs={String.class}, tree="[0]")
     private Output<String> registry;
 
     /**
      * @return Name of the image repository instance. On the Instance List page in the Image Repository Console, obtain the instance name
-     * 
+     *
      */
     public Output<String> registry() {
         return this.registry;
     }
     /**
      * Network type of the allowlist; currently only Public is supported
-     * 
+     *
      */
     @Export(name="type", refs={String.class}, tree="[0]")
     private Output<String> type;
 
     /**
      * @return Network type of the allowlist; currently only Public is supported
-     * 
+     *
      */
     public Output<String> type() {
         return this.type;

@@ -13,20 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainRequestBlockRule {
+    /**
+     * @return Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DomainRequestBlockRuleBlockRule> blockRules;
     /**
      * @return Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-     * 
+     *
      */
     private @Nullable Boolean switch_;
 
     private DomainRequestBlockRule() {}
+    /**
+     * @return Represents a list of interception rules. The list can contain up to 10 rules. When Switch is true, this parameter is required.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DomainRequestBlockRuleBlockRule> blockRules() {
         return this.blockRules == null ? List.of() : this.blockRules;
     }
     /**
      * @return Indicates the configuration switch for this module. This parameter has the following values: true: enables the module. false: disables the module. The default value is false.
-     * 
+     *
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);

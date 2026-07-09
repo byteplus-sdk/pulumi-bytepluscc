@@ -21,14 +21,14 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
     /**
      * Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-     * 
+     *
      */
     @Import(name="bps")
     private @Nullable Output<Integer> bps;
 
     /**
      * @return Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-     * 
+     *
      */
     public Optional<Output<Integer>> bps() {
         return Optional.ofNullable(this.bps);
@@ -36,36 +36,46 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
     /**
      * Endpoint ID
-     * 
+     *
      */
     @Import(name="endpointId", required=true)
     private Output<String> endpointId;
 
     /**
      * @return Endpoint ID
-     * 
+     *
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
 
+    /**
+     * Specified service resource
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="resourcesAllocates")
     private @Nullable Output<List<VpcEndpointConnectionResourcesAllocateArgs>> resourcesAllocates;
 
+    /**
+     * @return Specified service resource
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpcEndpointConnectionResourcesAllocateArgs>>> resourcesAllocates() {
         return Optional.ofNullable(this.resourcesAllocates);
     }
 
     /**
      * Endpoint service ID
-     * 
+     *
      */
     @Import(name="serviceId", required=true)
     private Output<String> serviceId;
 
     /**
      * @return Endpoint service ID
-     * 
+     *
      */
     public Output<String> serviceId() {
         return this.serviceId;
@@ -73,14 +83,14 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
     /**
      * Endpoint zone ID
-     * 
+     *
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Endpoint zone ID
-     * 
+     *
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -116,9 +126,9 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
         /**
          * @param bps Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bps(@Nullable Output<Integer> bps) {
             $.bps = bps;
@@ -127,9 +137,9 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
         /**
          * @param bps Maximum bandwidth for the endpoint connection, range 100–20000 Mbps
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bps(Integer bps) {
             return bps(Output.of(bps));
@@ -137,9 +147,9 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
         /**
          * @param endpointId Endpoint ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(Output<String> endpointId) {
             $.endpointId = endpointId;
@@ -148,32 +158,53 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
         /**
          * @param endpointId Endpoint ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointId(String endpointId) {
             return endpointId(Output.of(endpointId));
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder resourcesAllocates(@Nullable Output<List<VpcEndpointConnectionResourcesAllocateArgs>> resourcesAllocates) {
             $.resourcesAllocates = resourcesAllocates;
             return this;
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder resourcesAllocates(List<VpcEndpointConnectionResourcesAllocateArgs> resourcesAllocates) {
             return resourcesAllocates(Output.of(resourcesAllocates));
         }
 
+        /**
+         * @param resourcesAllocates Specified service resource
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder resourcesAllocates(VpcEndpointConnectionResourcesAllocateArgs... resourcesAllocates) {
             return resourcesAllocates(List.of(resourcesAllocates));
         }
 
         /**
          * @param serviceId Endpoint service ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceId(Output<String> serviceId) {
             $.serviceId = serviceId;
@@ -182,9 +213,9 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
         /**
          * @param serviceId Endpoint service ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceId(String serviceId) {
             return serviceId(Output.of(serviceId));
@@ -192,9 +223,9 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
         /**
          * @param zoneId Endpoint zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -203,9 +234,9 @@ public final class VpcEndpointConnectionArgs extends com.pulumi.resources.Resour
 
         /**
          * @param zoneId Endpoint zone ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

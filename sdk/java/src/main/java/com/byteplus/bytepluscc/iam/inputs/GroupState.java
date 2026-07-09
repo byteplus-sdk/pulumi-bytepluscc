@@ -21,36 +21,46 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the primary account to which the user group belongs.
-     * 
+     *
      */
     @Import(name="accountId")
     private @Nullable Output<Integer> accountId;
 
     /**
      * @return ID of the primary account to which the user group belongs.
-     * 
+     *
      */
     public Optional<Output<Integer>> accountId() {
         return Optional.ofNullable(this.accountId);
     }
 
+    /**
+     * Policy information bound to the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="attachedPolicies")
     private @Nullable Output<List<GroupAttachedPolicyArgs>> attachedPolicies;
 
+    /**
+     * @return Policy information bound to the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GroupAttachedPolicyArgs>>> attachedPolicies() {
         return Optional.ofNullable(this.attachedPolicies);
     }
 
     /**
      * User group creation time.
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return User group creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -58,14 +68,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User group description. Maximum length: 128 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return User group description. Maximum length: 128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -73,14 +83,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User group display name. Maximum length: 64 characters.
-     * 
+     *
      */
     @Import(name="displayName")
     private @Nullable Output<String> displayName;
 
     /**
      * @return User group display name. Maximum length: 64 characters.
-     * 
+     *
      */
     public Optional<Output<String>> displayName() {
         return Optional.ofNullable(this.displayName);
@@ -88,14 +98,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User group update time.
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return User group update time.
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -103,14 +113,14 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User group ID.
-     * 
+     *
      */
     @Import(name="userGroupId")
     private @Nullable Output<Integer> userGroupId;
 
     /**
      * @return User group ID.
-     * 
+     *
      */
     public Optional<Output<Integer>> userGroupId() {
         return Optional.ofNullable(this.userGroupId);
@@ -118,22 +128,32 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-     * 
+     *
      */
     @Import(name="userGroupName")
     private @Nullable Output<String> userGroupName;
 
     /**
      * @return User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-     * 
+     *
      */
     public Optional<Output<String>> userGroupName() {
         return Optional.ofNullable(this.userGroupName);
     }
 
+    /**
+     * User information associated with the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="users")
     private @Nullable Output<List<GroupUserArgs>> users;
 
+    /**
+     * @return User information associated with the user group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GroupUserArgs>>> users() {
         return Optional.ofNullable(this.users);
     }
@@ -172,9 +192,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId ID of the primary account to which the user group belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(@Nullable Output<Integer> accountId) {
             $.accountId = accountId;
@@ -183,32 +203,53 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accountId ID of the primary account to which the user group belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(Integer accountId) {
             return accountId(Output.of(accountId));
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachedPolicies(@Nullable Output<List<GroupAttachedPolicyArgs>> attachedPolicies) {
             $.attachedPolicies = attachedPolicies;
             return this;
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachedPolicies(List<GroupAttachedPolicyArgs> attachedPolicies) {
             return attachedPolicies(Output.of(attachedPolicies));
         }
 
+        /**
+         * @param attachedPolicies Policy information bound to the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder attachedPolicies(GroupAttachedPolicyArgs... attachedPolicies) {
             return attachedPolicies(List.of(attachedPolicies));
         }
 
         /**
          * @param createdTime User group creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -217,9 +258,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdTime User group creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -227,9 +268,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description User group description. Maximum length: 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -238,9 +279,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description User group description. Maximum length: 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -248,9 +289,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName User group display name. Maximum length: 64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder displayName(@Nullable Output<String> displayName) {
             $.displayName = displayName;
@@ -259,9 +300,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param displayName User group display name. Maximum length: 64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder displayName(String displayName) {
             return displayName(Output.of(displayName));
@@ -269,9 +310,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime User group update time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -280,9 +321,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedTime User group update time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));
@@ -290,9 +331,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userGroupId User group ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userGroupId(@Nullable Output<Integer> userGroupId) {
             $.userGroupId = userGroupId;
@@ -301,9 +342,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userGroupId User group ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userGroupId(Integer userGroupId) {
             return userGroupId(Output.of(userGroupId));
@@ -311,9 +352,9 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userGroupName User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userGroupName(@Nullable Output<String> userGroupName) {
             $.userGroupName = userGroupName;
@@ -322,23 +363,44 @@ public final class GroupState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userGroupName User group name. Length: 1–64 characters. Supports English letters, numbers, and .-_ symbols.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userGroupName(String userGroupName) {
             return userGroupName(Output.of(userGroupName));
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder users(@Nullable Output<List<GroupUserArgs>> users) {
             $.users = users;
             return this;
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder users(List<GroupUserArgs> users) {
             return users(Output.of(users));
         }
 
+        /**
+         * @param users User information associated with the user group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder users(GroupUserArgs... users) {
             return users(List.of(users));
         }

@@ -20,32 +20,32 @@ import javax.annotation.Nullable;
 
 /**
  * Platform on which the transit router service runs. Receives traffic from network instances and forwards it according to the associated forwarding route table
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.transitrouter.TransitRouter;
  * import com.byteplus.bytepluscc.transitrouter.TransitRouterArgs;
  * import com.pulumi.bytepluscc.transitrouter.inputs.TransitRouterTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var transitRouterDemo = new TransitRouter("transitRouterDemo", TransitRouterArgs.builder()
  *             .transitRouterName("TransitRouterDemo")
@@ -57,226 +57,246 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:transitrouter/transitRouter:TransitRouter example &#34;transit_router_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:transitrouter/transitRouter:TransitRouter")
 public class TransitRouter extends com.pulumi.resources.CustomResource {
     /**
      * ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
-     * 
+     *
      */
     @Export(name="asn", refs={Integer.class}, tree="[0]")
     private Output<Integer> asn;
 
     /**
      * @return ASN of the transit router. Value range: 64512–65534 and 4200000000–4294967294. Default value: 64512
-     * 
+     *
      */
     public Output<Integer> asn() {
         return this.asn;
     }
+    /**
+     * Detailed information of the network instance connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="attachments", refs={List.class,TransitRouterAttachment.class}, tree="[0,1]")
     private Output<List<TransitRouterAttachment>> attachments;
 
+    /**
+     * @return Detailed information of the network instance connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<TransitRouterAttachment>> attachments() {
         return this.attachments;
     }
     /**
      * Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
-     * 
+     *
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Business status of the network instance connection. Values: Normal: Normal. FinancialLocked: Financially locked.
-     * 
+     *
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Creation time of the network instance connection.
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Creation time of the network instance connection.
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Deletion time of the network instance connection.
-     * 
+     *
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Deletion time of the network instance connection.
-     * 
+     *
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the transit router instance. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is entered, the default is an empty string
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
-     * 
+     *
      */
     @Export(name="grantSourceType", refs={String.class}, tree="[0]")
     private Output<String> grantSourceType;
 
     /**
      * @return Sharing method of the transit router instance. rs: Shared via platform resource sharing. tr: Shared via transit router instance sharing
-     * 
+     *
      */
     public Output<String> grantSourceType() {
         return this.grantSourceType;
     }
     /**
      * Instance sharing status. Accepted: Received. Initial: Pending acceptance.
-     * 
+     *
      */
     @Export(name="grantStatus", refs={String.class}, tree="[0]")
     private Output<String> grantStatus;
 
     /**
      * @return Instance sharing status. Accepted: Received. Initial: Pending acceptance.
-     * 
+     *
      */
     public Output<String> grantStatus() {
         return this.grantStatus;
     }
     /**
      * Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
-     * 
+     *
      */
     @Export(name="multicastEnabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> multicastEnabled;
 
     /**
      * @return Whether multicast is enabled for the transit router. true: enabled. false (default): not enabled
-     * 
+     *
      */
     public Output<Boolean> multicastEnabled() {
         return this.multicastEnabled;
     }
     /**
      * Shutdown time due to overdue payment for the transit router instance
-     * 
+     *
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Shutdown time due to overdue payment for the transit router instance
-     * 
+     *
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the transit router instance belongs. If this parameter is not provided or no value is entered, the default is &#39;default&#39;
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the transit router instance. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,TransitRouterTag.class}, tree="[0,1]")
     private Output<List<TransitRouterTag>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<TransitRouterTag>> tags() {
         return this.tags;
     }
     /**
      * Transit router instance ID.
-     * 
+     *
      */
     @Export(name="transitRouterId", refs={String.class}, tree="[0]")
     private Output<String> transitRouterId;
 
     /**
      * @return Transit router instance ID.
-     * 
+     *
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
     }
     /**
      * Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-     * 
+     *
      */
     @Export(name="transitRouterName", refs={String.class}, tree="[0]")
     private Output<String> transitRouterName;
 
     /**
      * @return Name of the transit router instance. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the transit router instance ID.
-     * 
+     *
      */
     public Output<String> transitRouterName() {
         return this.transitRouterName;
     }
     /**
      * Last operation time of the transit router instance
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last operation time of the transit router instance
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

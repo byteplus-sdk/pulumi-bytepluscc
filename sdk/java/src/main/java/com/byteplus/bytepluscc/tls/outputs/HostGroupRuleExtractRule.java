@@ -17,174 +17,184 @@ import javax.annotation.Nullable;
 public final class HostGroupRuleExtractRule {
     /**
      * @return The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
-     * 
+     *
      */
     private @Nullable String beginRegex;
     /**
      * @return Log delimiter. Valid only when LogType is delimiter_log.
-     * 
+     *
      */
     private @Nullable String delimiter;
     /**
      * @return Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-     * 
+     *
      */
     private @Nullable Boolean enableNanosecond;
+    /**
+     * @return Filter rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<HostGroupRuleExtractRuleFilterKeyRegex> filterKeyRegexes;
     /**
      * @return List of log field names (Keys).
-     * 
+     *
      */
     private @Nullable List<String> keys;
     /**
      * @return The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
-     * 
+     *
      */
     private @Nullable String logRegex;
     /**
      * @return Automatically extract log fields based on the specified log template.
-     * 
+     *
      */
     private @Nullable HostGroupRuleExtractRuleLogTemplate logTemplate;
     /**
      * @return Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
-     * 
+     *
      */
     private @Nullable String quote;
     /**
      * @return Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
-     * 
+     *
      */
     private @Nullable String timeExtractRegex;
     /**
      * @return Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-     * 
+     *
      */
     private @Nullable String timeFormat;
     /**
      * @return Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-     * 
+     *
      */
     private @Nullable String timeKey;
     /**
      * @return Sample time. Used to verify whether the specified time parsing format is correct.
-     * 
+     *
      */
     private @Nullable String timeSample;
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
-     * 
+     *
      */
     private @Nullable String timeZone;
     /**
      * @return Key name for logs that failed to parse when uploading
-     * 
+     *
      */
     private @Nullable String unMatchLogKey;
     /**
      * @return Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-     * 
+     *
      */
     private @Nullable Boolean unMatchUpLoadSwitch;
 
     private HostGroupRuleExtractRule() {}
     /**
      * @return The regex pattern required to match the first line of the log. This is valid only when LogType is multiline*log or fullregex*log. The pattern must be a valid regular expression.
-     * 
+     *
      */
     public Optional<String> beginRegex() {
         return Optional.ofNullable(this.beginRegex);
     }
     /**
      * @return Log delimiter. Valid only when LogType is delimiter_log.
-     * 
+     *
      */
     public Optional<String> delimiter() {
         return Optional.ofNullable(this.delimiter);
     }
     /**
      * @return Enable nanosecond precision time. When enabled, log time parsing will report time with nanosecond precision. true: Enable nanosecond precision time. false: Disable nanosecond precision time.
-     * 
+     *
      */
     public Optional<Boolean> enableNanosecond() {
         return Optional.ofNullable(this.enableNanosecond);
     }
+    /**
+     * @return Filter rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<HostGroupRuleExtractRuleFilterKeyRegex> filterKeyRegexes() {
         return this.filterKeyRegexes == null ? List.of() : this.filterKeyRegexes;
     }
     /**
      * @return List of log field names (Keys).
-     * 
+     *
      */
     public List<String> keys() {
         return this.keys == null ? List.of() : this.keys;
     }
     /**
      * @return The entire log entry must match the regular expression. This is only valid when the log type is fullregex_log. The regular expression must be valid.
-     * 
+     *
      */
     public Optional<String> logRegex() {
         return Optional.ofNullable(this.logRegex);
     }
     /**
      * @return Automatically extract log fields based on the specified log template.
-     * 
+     *
      */
     public Optional<HostGroupRuleExtractRuleLogTemplate> logTemplate() {
         return Optional.ofNullable(this.logTemplate);
     }
     /**
      * @return Quotation mark. Content enclosed by quotation marks is parsed as a complete field and not separated. Only valid when LogType is delimiter_log.
-     * 
+     *
      */
     public Optional<String> quote() {
         return Optional.ofNullable(this.quote);
     }
     /**
      * @return Regular expression for extracting time, used to extract the time value from the TimeKey field and parse it as the collection time.
-     * 
+     *
      */
     public Optional<String> timeExtractRegex() {
         return Optional.ofNullable(this.timeExtractRegex);
     }
     /**
      * @return Parsing format for the time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-     * 
+     *
      */
     public Optional<String> timeFormat() {
         return Optional.ofNullable(this.timeFormat);
     }
     /**
      * @return Field name for the log time field. If a specified time field in the log is used as the log timestamp, you must provide TimeKey and TimeFormat.
-     * 
+     *
      */
     public Optional<String> timeKey() {
         return Optional.ofNullable(this.timeKey);
     }
     /**
      * @return Sample time. Used to verify whether the specified time parsing format is correct.
-     * 
+     *
      */
     public Optional<String> timeSample() {
         return Optional.ofNullable(this.timeSample);
     }
     /**
      * @return Time zone. Supports machine time zone (default) and custom time zone. Custom time zone supports GMT and UTC.
-     * 
+     *
      */
     public Optional<String> timeZone() {
         return Optional.ofNullable(this.timeZone);
     }
     /**
      * @return Key name for logs that failed to parse when uploading
-     * 
+     *
      */
     public Optional<String> unMatchLogKey() {
         return Optional.ofNullable(this.unMatchLogKey);
     }
     /**
      * @return Upload logs that failed to parse. UnMatchUpLoadSwitch=true and UnMatchLogKey must be used together. true: Upload logs that failed to parse. false: Do not upload logs that failed to parse.
-     * 
+     *
      */
     public Optional<Boolean> unMatchUpLoadSwitch() {
         return Optional.ofNullable(this.unMatchUpLoadSwitch);

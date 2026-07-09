@@ -17,174 +17,174 @@ import javax.annotation.Nullable;
 
 /**
  * After you create an instance in the RabbitMQ console, plugins are disabled by default. You can manually enable or disable plugins for the instance. Enabling or disabling certain plugins will cause a rolling restart of the cluster. It is recommended to perform this operation outside of business hours. A rolling restart may result in the loss of non-persistent messages and temporary connection instability, such as connection drops. After a connection drop, whether the client automatically reconnects depends on its configuration
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.rabbitmq.InstancePlugin;
  * import com.byteplus.bytepluscc.rabbitmq.InstancePluginArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var instancepluginDemo = new InstancePlugin("instancepluginDemo", InstancePluginArgs.builder()
  *             .instanceId("rbtmq-db26b7****")
  *             .pluginName("ccapi-test")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rabbitmq/instancePlugin:InstancePlugin example &#34;instance_id|plugin_name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rabbitmq/instancePlugin:InstancePlugin")
 public class InstancePlugin extends com.pulumi.resources.CustomResource {
     /**
      * Plugin description
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Plugin description
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Notes for disabling this plugin
-     * 
+     *
      */
     @Export(name="disablePrompt", refs={String.class}, tree="[0]")
     private Output<String> disablePrompt;
 
     /**
      * @return Notes for disabling this plugin
-     * 
+     *
      */
     public Output<String> disablePrompt() {
         return this.disablePrompt;
     }
     /**
      * Notes for enabling this plugin
-     * 
+     *
      */
     @Export(name="enablePrompt", refs={String.class}, tree="[0]")
     private Output<String> enablePrompt;
 
     /**
      * @return Notes for enabling this plugin
-     * 
+     *
      */
     public Output<String> enablePrompt() {
         return this.enablePrompt;
     }
     /**
      * Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
-     * 
+     *
      */
     @Export(name="enabled", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enabled;
 
     /**
      * @return Whether the plugin is enabled. true: The plugin is enabled. false: The plugin is disabled
-     * 
+     *
      */
     public Output<Boolean> enabled() {
         return this.enabled;
     }
     /**
      * Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
-     * 
+     *
      */
     @Export(name="needRebootOnChange", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> needRebootOnChange;
 
     /**
      * @return Whether enabling or disabling the plugin will cause a RabbitMQ instance restart. true: The instance will restart. false: The instance will not restart
-     * 
+     *
      */
     public Output<Boolean> needRebootOnChange() {
         return this.needRebootOnChange;
     }
     /**
      * Plugin name
-     * 
+     *
      */
     @Export(name="pluginName", refs={String.class}, tree="[0]")
     private Output<String> pluginName;
 
     /**
      * @return Plugin name
-     * 
+     *
      */
     public Output<String> pluginName() {
         return this.pluginName;
     }
     /**
      * Plugin listening port
-     * 
+     *
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Plugin listening port
-     * 
+     *
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Plugin version
-     * 
+     *
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
      * @return Plugin version
-     * 
+     *
      */
     public Output<String> version() {
         return this.version;

@@ -23,14 +23,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Container collection rules
-     * 
+     *
      */
     @Import(name="containerRule")
     private @Nullable Output<HostGroupRuleContainerRuleArgs> containerRule;
 
     /**
      * @return Container collection rules
-     * 
+     *
      */
     public Optional<Output<HostGroupRuleContainerRuleArgs>> containerRule() {
         return Optional.ofNullable(this.containerRule);
@@ -38,36 +38,46 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time when the collection configuration was created.
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Time when the collection configuration was created.
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
     }
 
+    /**
+     * Extraction rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="excludePaths")
     private @Nullable Output<List<HostGroupRuleExcludePathArgs>> excludePaths;
 
+    /**
+     * @return Extraction rule list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<HostGroupRuleExcludePathArgs>>> excludePaths() {
         return Optional.ofNullable(this.excludePaths);
     }
 
     /**
      * Extraction rules
-     * 
+     *
      */
     @Import(name="extractRule")
     private @Nullable Output<HostGroupRuleExtractRuleArgs> extractRule;
 
     /**
      * @return Extraction rules
-     * 
+     *
      */
     public Optional<Output<HostGroupRuleExtractRuleArgs>> extractRule() {
         return Optional.ofNullable(this.extractRule);
@@ -75,14 +85,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
-     * 
+     *
      */
     @Import(name="inputType")
     private @Nullable Output<Integer> inputType;
 
     /**
      * @return Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
-     * 
+     *
      */
     public Optional<Output<Integer>> inputType() {
         return Optional.ofNullable(this.inputType);
@@ -90,14 +100,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log sample.
-     * 
+     *
      */
     @Import(name="logSample")
     private @Nullable Output<String> logSample;
 
     /**
      * @return Log sample.
-     * 
+     *
      */
     public Optional<Output<String>> logSample() {
         return Optional.ofNullable(this.logSample);
@@ -105,14 +115,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
-     * 
+     *
      */
     @Import(name="logType")
     private @Nullable Output<String> logType;
 
     /**
      * @return Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
-     * 
+     *
      */
     public Optional<Output<String>> logType() {
         return Optional.ofNullable(this.logType);
@@ -120,14 +130,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Time when the collection configuration was modified.
-     * 
+     *
      */
     @Import(name="modifyTime")
     private @Nullable Output<String> modifyTime;
 
     /**
      * @return Time when the collection configuration was modified.
-     * 
+     *
      */
     public Optional<Output<String>> modifyTime() {
         return Optional.ofNullable(this.modifyTime);
@@ -135,14 +145,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Data collection path list
-     * 
+     *
      */
     @Import(name="paths")
     private @Nullable Output<List<String>> paths;
 
     /**
      * @return Data collection path list
-     * 
+     *
      */
     public Optional<Output<List<String>>> paths() {
         return Optional.ofNullable(this.paths);
@@ -150,14 +160,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Running status of the collection configuration. 0: Running. 1: Paused.
-     * 
+     *
      */
     @Import(name="pause")
     private @Nullable Output<Integer> pause;
 
     /**
      * @return Running status of the collection configuration. 0: Running. 1: Paused.
-     * 
+     *
      */
     public Optional<Output<Integer>> pause() {
         return Optional.ofNullable(this.pause);
@@ -165,14 +175,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Collection configuration ID.
-     * 
+     *
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
      * @return Collection configuration ID.
-     * 
+     *
      */
     public Optional<Output<String>> ruleId() {
         return Optional.ofNullable(this.ruleId);
@@ -180,14 +190,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the collection configuration.
-     * 
+     *
      */
     @Import(name="ruleName")
     private @Nullable Output<String> ruleName;
 
     /**
      * @return Name of the collection configuration.
-     * 
+     *
      */
     public Optional<Output<String>> ruleName() {
         return Optional.ofNullable(this.ruleName);
@@ -195,14 +205,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the log topic to which the collection configuration belongs.
-     * 
+     *
      */
     @Import(name="topicId")
     private @Nullable Output<String> topicId;
 
     /**
      * @return ID of the log topic to which the collection configuration belongs.
-     * 
+     *
      */
     public Optional<Output<String>> topicId() {
         return Optional.ofNullable(this.topicId);
@@ -210,14 +220,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the log topic associated with the collection configuration
-     * 
+     *
      */
     @Import(name="topicName")
     private @Nullable Output<String> topicName;
 
     /**
      * @return Name of the log topic associated with the collection configuration
-     * 
+     *
      */
     public Optional<Output<String>> topicName() {
         return Optional.ofNullable(this.topicName);
@@ -225,14 +235,14 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * User-defined collection rules.
-     * 
+     *
      */
     @Import(name="userDefineRule")
     private @Nullable Output<HostGroupRuleUserDefineRuleArgs> userDefineRule;
 
     /**
      * @return User-defined collection rules.
-     * 
+     *
      */
     public Optional<Output<HostGroupRuleUserDefineRuleArgs>> userDefineRule() {
         return Optional.ofNullable(this.userDefineRule);
@@ -278,9 +288,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param containerRule Container collection rules
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder containerRule(@Nullable Output<HostGroupRuleContainerRuleArgs> containerRule) {
             $.containerRule = containerRule;
@@ -289,9 +299,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param containerRule Container collection rules
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder containerRule(HostGroupRuleContainerRuleArgs containerRule) {
             return containerRule(Output.of(containerRule));
@@ -299,9 +309,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Time when the collection configuration was created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -310,32 +320,53 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Time when the collection configuration was created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
         }
 
+        /**
+         * @param excludePaths Extraction rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder excludePaths(@Nullable Output<List<HostGroupRuleExcludePathArgs>> excludePaths) {
             $.excludePaths = excludePaths;
             return this;
         }
 
+        /**
+         * @param excludePaths Extraction rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder excludePaths(List<HostGroupRuleExcludePathArgs> excludePaths) {
             return excludePaths(Output.of(excludePaths));
         }
 
+        /**
+         * @param excludePaths Extraction rule list.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder excludePaths(HostGroupRuleExcludePathArgs... excludePaths) {
             return excludePaths(List.of(excludePaths));
         }
 
         /**
          * @param extractRule Extraction rules
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder extractRule(@Nullable Output<HostGroupRuleExtractRuleArgs> extractRule) {
             $.extractRule = extractRule;
@@ -344,9 +375,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param extractRule Extraction rules
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder extractRule(HostGroupRuleExtractRuleArgs extractRule) {
             return extractRule(Output.of(extractRule));
@@ -354,9 +385,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param inputType Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder inputType(@Nullable Output<Integer> inputType) {
             $.inputType = inputType;
@@ -365,9 +396,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param inputType Collection type. 0: Host log file. 1: K8s container standard output. 2: Log file inside K8s container.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder inputType(Integer inputType) {
             return inputType(Output.of(inputType));
@@ -375,9 +406,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logSample Log sample.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logSample(@Nullable Output<String> logSample) {
             $.logSample = logSample;
@@ -386,9 +417,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logSample Log sample.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logSample(String logSample) {
             return logSample(Output.of(logSample));
@@ -396,9 +427,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logType Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logType(@Nullable Output<String> logType) {
             $.logType = logType;
@@ -407,9 +438,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logType Collection modes. minimalist*log: single-line full mode. json*log: JSON mode. delimiter*log: delimiter mode. multiline*log: multi-line full mode. fullregex_log: full regex mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logType(String logType) {
             return logType(Output.of(logType));
@@ -417,9 +448,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Time when the collection configuration was modified.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modifyTime(@Nullable Output<String> modifyTime) {
             $.modifyTime = modifyTime;
@@ -428,9 +459,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Time when the collection configuration was modified.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modifyTime(String modifyTime) {
             return modifyTime(Output.of(modifyTime));
@@ -438,9 +469,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param paths Data collection path list
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder paths(@Nullable Output<List<String>> paths) {
             $.paths = paths;
@@ -449,9 +480,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param paths Data collection path list
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder paths(List<String> paths) {
             return paths(Output.of(paths));
@@ -459,9 +490,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param paths Data collection path list
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder paths(String... paths) {
             return paths(List.of(paths));
@@ -469,9 +500,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pause Running status of the collection configuration. 0: Running. 1: Paused.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder pause(@Nullable Output<Integer> pause) {
             $.pause = pause;
@@ -480,9 +511,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pause Running status of the collection configuration. 0: Running. 1: Paused.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder pause(Integer pause) {
             return pause(Output.of(pause));
@@ -490,9 +521,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId Collection configuration ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleId(@Nullable Output<String> ruleId) {
             $.ruleId = ruleId;
@@ -501,9 +532,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId Collection configuration ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleId(String ruleId) {
             return ruleId(Output.of(ruleId));
@@ -511,9 +542,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleName Name of the collection configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleName(@Nullable Output<String> ruleName) {
             $.ruleName = ruleName;
@@ -522,9 +553,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleName Name of the collection configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ruleName(String ruleName) {
             return ruleName(Output.of(ruleName));
@@ -532,9 +563,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicId ID of the log topic to which the collection configuration belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicId(@Nullable Output<String> topicId) {
             $.topicId = topicId;
@@ -543,9 +574,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicId ID of the log topic to which the collection configuration belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicId(String topicId) {
             return topicId(Output.of(topicId));
@@ -553,9 +584,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicName Name of the log topic associated with the collection configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicName(@Nullable Output<String> topicName) {
             $.topicName = topicName;
@@ -564,9 +595,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicName Name of the log topic associated with the collection configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicName(String topicName) {
             return topicName(Output.of(topicName));
@@ -574,9 +605,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userDefineRule User-defined collection rules.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userDefineRule(@Nullable Output<HostGroupRuleUserDefineRuleArgs> userDefineRule) {
             $.userDefineRule = userDefineRule;
@@ -585,9 +616,9 @@ public final class HostGroupRuleArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userDefineRule User-defined collection rules.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userDefineRule(HostGroupRuleUserDefineRuleArgs userDefineRule) {
             return userDefineRule(Output.of(userDefineRule));

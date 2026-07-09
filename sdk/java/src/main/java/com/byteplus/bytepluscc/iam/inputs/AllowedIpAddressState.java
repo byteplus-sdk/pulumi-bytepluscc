@@ -21,36 +21,46 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
 
     /**
      * Enable IP allowlist
-     * 
+     *
      */
     @Import(name="enableIpList")
     private @Nullable Output<Boolean> enableIpList;
 
     /**
      * @return Enable IP allowlist
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableIpList() {
         return Optional.ofNullable(this.enableIpList);
     }
 
+    /**
+     * IP allowlist list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="ipLists")
     private @Nullable Output<List<AllowedIpAddressIpListArgs>> ipLists;
 
+    /**
+     * @return IP allowlist list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<AllowedIpAddressIpListArgs>>> ipLists() {
         return Optional.ofNullable(this.ipLists);
     }
 
     /**
      * IP allowlist quota for current identity
-     * 
+     *
      */
     @Import(name="quota")
     private @Nullable Output<Integer> quota;
 
     /**
      * @return IP allowlist quota for current identity
-     * 
+     *
      */
     public Optional<Output<Integer>> quota() {
         return Optional.ofNullable(this.quota);
@@ -58,14 +68,14 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
 
     /**
      * Sub-user ID
-     * 
+     *
      */
     @Import(name="userId")
     private @Nullable Output<String> userId;
 
     /**
      * @return Sub-user ID
-     * 
+     *
      */
     public Optional<Output<String>> userId() {
         return Optional.ofNullable(this.userId);
@@ -100,9 +110,9 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableIpList Enable IP allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIpList(@Nullable Output<Boolean> enableIpList) {
             $.enableIpList = enableIpList;
@@ -111,32 +121,53 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param enableIpList Enable IP allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIpList(Boolean enableIpList) {
             return enableIpList(Output.of(enableIpList));
         }
 
+        /**
+         * @param ipLists IP allowlist list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ipLists(@Nullable Output<List<AllowedIpAddressIpListArgs>> ipLists) {
             $.ipLists = ipLists;
             return this;
         }
 
+        /**
+         * @param ipLists IP allowlist list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ipLists(List<AllowedIpAddressIpListArgs> ipLists) {
             return ipLists(Output.of(ipLists));
         }
 
+        /**
+         * @param ipLists IP allowlist list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ipLists(AllowedIpAddressIpListArgs... ipLists) {
             return ipLists(List.of(ipLists));
         }
 
         /**
          * @param quota IP allowlist quota for current identity
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder quota(@Nullable Output<Integer> quota) {
             $.quota = quota;
@@ -145,9 +176,9 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param quota IP allowlist quota for current identity
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder quota(Integer quota) {
             return quota(Output.of(quota));
@@ -155,9 +186,9 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param userId Sub-user ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userId(@Nullable Output<String> userId) {
             $.userId = userId;
@@ -166,9 +197,9 @@ public final class AllowedIpAddressState extends com.pulumi.resources.ResourceAr
 
         /**
          * @param userId Sub-user ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userId(String userId) {
             return userId(Output.of(userId));

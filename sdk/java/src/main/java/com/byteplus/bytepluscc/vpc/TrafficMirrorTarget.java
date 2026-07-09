@@ -17,32 +17,32 @@ import javax.annotation.Nullable;
 
 /**
  * The mirror target is the network interface or classic load balancer used to collect traffic. You can use traffic mirroring to replicate network interface traffic based on your filtering criteria and forward the replicated traffic over the private network to the target service for monitoring and analysis.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vpc.TrafficMirrorTarget;
  * import com.byteplus.bytepluscc.vpc.TrafficMirrorTargetArgs;
  * import com.pulumi.bytepluscc.vpc.inputs.TrafficMirrorTargetTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vPCTrafficMirrorTargetDemo = new TrafficMirrorTarget("vPCTrafficMirrorTargetDemo", TrafficMirrorTargetArgs.builder()
  *             .trafficMirrorTargetName("test-terraformtest")
@@ -55,150 +55,160 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpc/trafficMirrorTarget:TrafficMirrorTarget example &#34;traffic_mirror_target_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpc/trafficMirrorTarget:TrafficMirrorTarget")
 public class TrafficMirrorTarget extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the mirror session.
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Creation time of the mirror session.
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Listener description. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length must be between 0 and 255 characters. If not specified, the default value is an empty string.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Resource ID of the mirror target.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Resource ID of the mirror target.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
-     * 
+     *
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
      * @return Resource type of the mirror target. NetworkInterface: Elastic network interface. ClbInstance: Classic load balancer.
-     * 
+     *
      */
     public Output<String> instanceType() {
         return this.instanceType;
     }
     /**
      * Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the mirror target belongs. If not specified, it will be added to the default project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the mirror target. Available: Available. Creating: Creating.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the mirror target. Available: Available. Creating: Creating.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag information of the mirror target.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,TrafficMirrorTargetTag.class}, tree="[0,1]")
     private Output<List<TrafficMirrorTargetTag>> tags;
 
+    /**
+     * @return Tag information of the mirror target.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<TrafficMirrorTargetTag>> tags() {
         return this.tags;
     }
     /**
      * ID of the mirror target.
-     * 
+     *
      */
     @Export(name="trafficMirrorTargetId", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorTargetId;
 
     /**
      * @return ID of the mirror target.
-     * 
+     *
      */
     public Output<String> trafficMirrorTargetId() {
         return this.trafficMirrorTargetId;
     }
     /**
      * Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
-     * 
+     *
      */
     @Export(name="trafficMirrorTargetName", refs={String.class}, tree="[0]")
     private Output<String> trafficMirrorTargetName;
 
     /**
      * @return Listener name. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, the default is &#39;protocol-port&#39; as the listener name.
-     * 
+     *
      */
     public Output<String> trafficMirrorTargetName() {
         return this.trafficMirrorTargetName;
     }
     /**
      * Update time of the mirror session.
-     * 
+     *
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Update time of the mirror session.
-     * 
+     *
      */
     public Output<String> updatedAt() {
         return this.updatedAt;

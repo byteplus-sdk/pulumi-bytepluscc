@@ -20,14 +20,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Topic creation time
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Topic creation time
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -35,14 +35,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Topic description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Topic description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -50,36 +50,46 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Number of unconsumed messages in the Topic
-     * 
+     *
      */
     @Import(name="lag")
     private @Nullable Output<Integer> lag;
 
     /**
      * @return Number of unconsumed messages in the Topic
-     * 
+     *
      */
     public Optional<Output<Integer>> lag() {
         return Optional.ofNullable(this.lag);
     }
 
+    /**
+     * Partition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="partitionInfos")
     private @Nullable Output<List<GroupTopicInfoPartitionInfoArgs>> partitionInfos;
 
+    /**
+     * @return Partition list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GroupTopicInfoPartitionInfoArgs>>> partitionInfos() {
         return Optional.ofNullable(this.partitionInfos);
     }
 
     /**
      * Number of Topic partitions
-     * 
+     *
      */
     @Import(name="partitions")
     private @Nullable Output<Integer> partitions;
 
     /**
      * @return Number of Topic partitions
-     * 
+     *
      */
     public Optional<Output<Integer>> partitions() {
         return Optional.ofNullable(this.partitions);
@@ -87,14 +97,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Retention period of data in the Topic, in hours
-     * 
+     *
      */
     @Import(name="retention")
     private @Nullable Output<Integer> retention;
 
     /**
      * @return Retention period of data in the Topic, in hours
-     * 
+     *
      */
     public Optional<Output<Integer>> retention() {
         return Optional.ofNullable(this.retention);
@@ -102,14 +112,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Topic status
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Topic status
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -117,14 +127,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Topic ID。
-     * 
+     *
      */
     @Import(name="topicId")
     private @Nullable Output<String> topicId;
 
     /**
      * @return Topic ID。
-     * 
+     *
      */
     public Optional<Output<String>> topicId() {
         return Optional.ofNullable(this.topicId);
@@ -132,14 +142,14 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Topic name
-     * 
+     *
      */
     @Import(name="topicName")
     private @Nullable Output<String> topicName;
 
     /**
      * @return Topic name
-     * 
+     *
      */
     public Optional<Output<String>> topicName() {
         return Optional.ofNullable(this.topicName);
@@ -179,9 +189,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createTime Topic creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -190,9 +200,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createTime Topic creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -200,9 +210,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Topic description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -211,9 +221,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param description Topic description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -221,9 +231,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param lag Number of unconsumed messages in the Topic
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lag(@Nullable Output<Integer> lag) {
             $.lag = lag;
@@ -232,32 +242,53 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param lag Number of unconsumed messages in the Topic
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lag(Integer lag) {
             return lag(Output.of(lag));
         }
 
+        /**
+         * @param partitionInfos Partition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder partitionInfos(@Nullable Output<List<GroupTopicInfoPartitionInfoArgs>> partitionInfos) {
             $.partitionInfos = partitionInfos;
             return this;
         }
 
+        /**
+         * @param partitionInfos Partition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder partitionInfos(List<GroupTopicInfoPartitionInfoArgs> partitionInfos) {
             return partitionInfos(Output.of(partitionInfos));
         }
 
+        /**
+         * @param partitionInfos Partition list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder partitionInfos(GroupTopicInfoPartitionInfoArgs... partitionInfos) {
             return partitionInfos(List.of(partitionInfos));
         }
 
         /**
          * @param partitions Number of Topic partitions
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder partitions(@Nullable Output<Integer> partitions) {
             $.partitions = partitions;
@@ -266,9 +297,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param partitions Number of Topic partitions
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder partitions(Integer partitions) {
             return partitions(Output.of(partitions));
@@ -276,9 +307,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param retention Retention period of data in the Topic, in hours
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retention(@Nullable Output<Integer> retention) {
             $.retention = retention;
@@ -287,9 +318,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param retention Retention period of data in the Topic, in hours
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retention(Integer retention) {
             return retention(Output.of(retention));
@@ -297,9 +328,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Topic status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -308,9 +339,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param status Topic status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -318,9 +349,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param topicId Topic ID。
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicId(@Nullable Output<String> topicId) {
             $.topicId = topicId;
@@ -329,9 +360,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param topicId Topic ID。
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicId(String topicId) {
             return topicId(Output.of(topicId));
@@ -339,9 +370,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param topicName Topic name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicName(@Nullable Output<String> topicName) {
             $.topicName = topicName;
@@ -350,9 +381,9 @@ public final class GroupTopicInfoArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param topicName Topic name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicName(String topicName) {
             return topicName(Output.of(topicName));

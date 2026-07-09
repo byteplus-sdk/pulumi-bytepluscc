@@ -16,9 +16,19 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
 
     public static final DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgs Empty = new DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgs();
 
+    /**
+     * Indicates a variable list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="customVariableInstances")
     private @Nullable Output<List<DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs>> customVariableInstances;
 
+    /**
+     * @return Indicates a variable list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs>>> customVariableInstances() {
         return Optional.ofNullable(this.customVariableInstances);
     }
@@ -47,15 +57,36 @@ public final class DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustom
             $ = new DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customVariableInstances Indicates a variable list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customVariableInstances(@Nullable Output<List<DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs>> customVariableInstances) {
             $.customVariableInstances = customVariableInstances;
             return this;
         }
 
+        /**
+         * @param customVariableInstances Indicates a variable list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customVariableInstances(List<DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs> customVariableInstances) {
             return customVariableInstances(Output.of(customVariableInstances));
         }
 
+        /**
+         * @param customVariableInstances Indicates a variable list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customVariableInstances(DomainSignedUrlAuthSignedUrlAuthRuleSignedUrlAuthActionCustomVariableRulesCustomVariableInstanceArgs... customVariableInstances) {
             return customVariableInstances(List.of(customVariableInstances));
         }

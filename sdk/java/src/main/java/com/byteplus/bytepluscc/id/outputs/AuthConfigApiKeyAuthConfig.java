@@ -16,42 +16,52 @@ import javax.annotation.Nullable;
 public final class AuthConfigApiKeyAuthConfig {
     /**
      * @return ApiKey Value
-     * 
+     *
      */
     private @Nullable String apiKey;
+    /**
+     * @return ApiKey Metadata
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<AuthConfigApiKeyAuthConfigApiKeyMetadata> apiKeyMetadatas;
     /**
      * @return ApiKey Name
-     * 
+     *
      */
     private @Nullable String apiKeyName;
     /**
      * @return Expiration Timestamp
-     * 
+     *
      */
     private @Nullable Integer expiryTimestamp;
 
     private AuthConfigApiKeyAuthConfig() {}
     /**
      * @return ApiKey Value
-     * 
+     *
      */
     public Optional<String> apiKey() {
         return Optional.ofNullable(this.apiKey);
     }
+    /**
+     * @return ApiKey Metadata
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<AuthConfigApiKeyAuthConfigApiKeyMetadata> apiKeyMetadatas() {
         return this.apiKeyMetadatas == null ? List.of() : this.apiKeyMetadatas;
     }
     /**
      * @return ApiKey Name
-     * 
+     *
      */
     public Optional<String> apiKeyName() {
         return Optional.ofNullable(this.apiKeyName);
     }
     /**
      * @return Expiration Timestamp
-     * 
+     *
      */
     public Optional<Integer> expiryTimestamp() {
         return Optional.ofNullable(this.expiryTimestamp);

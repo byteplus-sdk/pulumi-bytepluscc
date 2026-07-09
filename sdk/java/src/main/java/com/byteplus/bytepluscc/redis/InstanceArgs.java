@@ -24,14 +24,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
-     * 
+     *
      */
     @Import(name="allowListIds")
     private @Nullable Output<List<String>> allowListIds;
 
     /**
      * @return Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
-     * 
+     *
      */
     public Optional<Output<List<String>>> allowListIds() {
         return Optional.ofNullable(this.allowListIds);
@@ -39,14 +39,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
-     * 
+     *
      */
     @Import(name="autoRenew")
     private @Nullable Output<Boolean> autoRenew;
 
     /**
      * @return Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
@@ -54,14 +54,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Set a backup name for the full backup created before changes.
-     * 
+     *
      */
     @Import(name="backupPointName")
     private @Nullable Output<String> backupPointName;
 
     /**
      * @return Set a backup name for the full backup created before changes.
-     * 
+     *
      */
     public Optional<Output<String>> backupPointName() {
         return Optional.ofNullable(this.backupPointName);
@@ -69,14 +69,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Restore data from the backup set to the original Redis instance.
-     * 
+     *
      */
     @Import(name="backupRestore")
     private @Nullable Output<InstanceBackupRestoreArgs> backupRestore;
 
     /**
      * @return Restore data from the backup set to the original Redis instance.
-     * 
+     *
      */
     public Optional<Output<InstanceBackupRestoreArgs>> backupRestore() {
         return Optional.ofNullable(this.backupRestore);
@@ -84,36 +84,46 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
-     * 
+     *
      */
     @Import(name="chargeType")
     private @Nullable Output<String> chargeType;
 
     /**
      * @return Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
-     * 
+     *
      */
     public Optional<Output<String>> chargeType() {
         return Optional.ofNullable(this.chargeType);
     }
 
+    /**
+     * Set the list of availability zones to which the node belongs.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="configureNodes", required=true)
     private Output<List<InstanceConfigureNodeArgs>> configureNodes;
 
+    /**
+     * @return Set the list of availability zones to which the node belongs.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceConfigureNodeArgs>> configureNodes() {
         return this.configureNodes;
     }
 
     /**
      * Enable data flashback
-     * 
+     *
      */
     @Import(name="continuousBackup")
     private @Nullable Output<Boolean> continuousBackup;
 
     /**
      * @return Enable data flashback
-     * 
+     *
      */
     public Optional<Output<Boolean>> continuousBackup() {
         return Optional.ofNullable(this.continuousBackup);
@@ -121,14 +131,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to create a backup before making changes.
-     * 
+     *
      */
     @Import(name="createBackup")
     private @Nullable Output<Boolean> createBackup;
 
     /**
      * @return Whether to create a backup before making changes.
-     * 
+     *
      */
     public Optional<Output<Boolean>> createBackup() {
         return Optional.ofNullable(this.createBackup);
@@ -136,14 +146,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable or disable instance deletion protection. disabled: Off. enabled: On.
-     * 
+     *
      */
     @Import(name="deletionProtection")
     private @Nullable Output<String> deletionProtection;
 
     /**
      * @return Enable or disable instance deletion protection. disabled: Off. enabled: On.
-     * 
+     *
      */
     public Optional<Output<String>> deletionProtection() {
         return Optional.ofNullable(this.deletionProtection);
@@ -151,14 +161,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
-     * 
+     *
      */
     @Import(name="engineVersion", required=true)
     private Output<String> engineVersion;
 
     /**
      * @return Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
-     * 
+     *
      */
     public Output<String> engineVersion() {
         return this.engineVersion;
@@ -166,14 +176,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
-     * 
+     *
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -181,14 +191,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
-     * 
+     *
      */
     @Import(name="multiAz", required=true)
     private Output<String> multiAz;
 
     /**
      * @return Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
-     * 
+     *
      */
     public Output<String> multiAz() {
         return this.multiAz;
@@ -196,14 +206,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
-     * 
+     *
      */
     @Import(name="noAuthMode")
     private @Nullable Output<String> noAuthMode;
 
     /**
      * @return Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
-     * 
+     *
      */
     public Optional<Output<String>> noAuthMode() {
         return Optional.ofNullable(this.noAuthMode);
@@ -211,14 +221,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
-     * 
+     *
      */
     @Import(name="nodeNumber", required=true)
     private Output<Integer> nodeNumber;
 
     /**
      * @return Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
-     * 
+     *
      */
     public Output<Integer> nodeNumber() {
         return this.nodeNumber;
@@ -226,14 +236,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
-     * 
+     *
      */
     @Import(name="parameterGroupId")
     private @Nullable Output<String> parameterGroupId;
 
     /**
      * @return The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
-     * 
+     *
      */
     public Optional<Output<String>> parameterGroupId() {
         return Optional.ofNullable(this.parameterGroupId);
@@ -241,14 +251,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Set the password for the default account of the default database.
-     * 
+     *
      */
     @Import(name="password")
     private @Nullable Output<String> password;
 
     /**
      * @return Set the password for the default account of the default database.
-     * 
+     *
      */
     public Optional<Output<String>> password() {
         return Optional.ofNullable(this.password);
@@ -256,14 +266,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
-     * 
+     *
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
      * @return Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
-     * 
+     *
      */
     public Optional<Output<Integer>> port() {
         return Optional.ofNullable(this.port);
@@ -271,14 +281,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the instance belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -286,14 +296,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
-     * 
+     *
      */
     @Import(name="purchaseMonths")
     private @Nullable Output<Integer> purchaseMonths;
 
     /**
      * @return Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
-     * 
+     *
      */
     public Optional<Output<Integer>> purchaseMonths() {
         return Optional.ofNullable(this.purchaseMonths);
@@ -301,14 +311,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Set whether to reserve additional bandwidth
-     * 
+     *
      */
     @Import(name="reserveAdditionalBandwidth")
     private @Nullable Output<Boolean> reserveAdditionalBandwidth;
 
     /**
      * @return Set whether to reserve additional bandwidth
-     * 
+     *
      */
     public Optional<Output<Boolean>> reserveAdditionalBandwidth() {
         return Optional.ofNullable(this.reserveAdditionalBandwidth);
@@ -316,14 +326,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
-     * 
+     *
      */
     @Import(name="restartInstance")
     private @Nullable Output<Boolean> restartInstance;
 
     /**
      * @return Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
-     * 
+     *
      */
     public Optional<Output<Boolean>> restartInstance() {
         return Optional.ofNullable(this.restartInstance);
@@ -331,14 +341,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Memory capacity of each shard in the instance. Unit: MiB.
-     * 
+     *
      */
     @Import(name="shardCapacity", required=true)
     private Output<Integer> shardCapacity;
 
     /**
      * @return Memory capacity of each shard in the instance. Unit: MiB.
-     * 
+     *
      */
     public Output<Integer> shardCapacity() {
         return this.shardCapacity;
@@ -346,14 +356,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
-     * 
+     *
      */
     @Import(name="shardNumber")
     private @Nullable Output<Integer> shardNumber;
 
     /**
      * @return Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
-     * 
+     *
      */
     public Optional<Output<Integer>> shardNumber() {
         return Optional.ofNullable(this.shardNumber);
@@ -361,14 +371,14 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
-     * 
+     *
      */
     @Import(name="shardedCluster", required=true)
     private Output<Integer> shardedCluster;
 
     /**
      * @return Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
-     * 
+     *
      */
     public Output<Integer> shardedCluster() {
         return this.shardedCluster;
@@ -376,36 +386,46 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
-     * 
+     *
      */
     @Import(name="subnetId", required=true)
     private Output<String> subnetId;
 
     /**
      * @return Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
 
+    /**
+     * Set the tag list for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<InstanceTagArgs>> tags;
 
+    /**
+     * @return Set the tag list for the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -463,9 +483,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(@Nullable Output<List<String>> allowListIds) {
             $.allowListIds = allowListIds;
@@ -474,9 +494,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(List<String> allowListIds) {
             return allowListIds(Output.of(allowListIds));
@@ -484,9 +504,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allowListIds Allowlist ID list. If left empty, the new instance will not be added to any allowlist by default. You can call the DescribeAllowLists API to query all IP allowlist information, including allowlist IDs, for the specified region under your account. Each instance supports binding up to 100 allowlists, and you can batch bind up to 100 allowlists at a time. Each instance supports binding up to 1000 IP addresses or CIDR-format IP address ranges.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allowListIds(String... allowListIds) {
             return allowListIds(List.of(allowListIds));
@@ -494,9 +514,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(@Nullable Output<Boolean> autoRenew) {
             $.autoRenew = autoRenew;
@@ -505,9 +525,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param autoRenew Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
@@ -515,9 +535,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupPointName Set a backup name for the full backup created before changes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupPointName(@Nullable Output<String> backupPointName) {
             $.backupPointName = backupPointName;
@@ -526,9 +546,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupPointName Set a backup name for the full backup created before changes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupPointName(String backupPointName) {
             return backupPointName(Output.of(backupPointName));
@@ -536,9 +556,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupRestore Restore data from the backup set to the original Redis instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupRestore(@Nullable Output<InstanceBackupRestoreArgs> backupRestore) {
             $.backupRestore = backupRestore;
@@ -547,9 +567,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param backupRestore Restore data from the backup set to the original Redis instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder backupRestore(InstanceBackupRestoreArgs backupRestore) {
             return backupRestore(Output.of(backupRestore));
@@ -557,9 +577,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeType(@Nullable Output<String> chargeType) {
             $.chargeType = chargeType;
@@ -568,32 +588,53 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeType Instance billing type. Value options: PrePaid: Subscription (also called prepaid). PostPaid: Pay-as-you-go (also called postpaid).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeType(String chargeType) {
             return chargeType(Output.of(chargeType));
         }
 
+        /**
+         * @param configureNodes Set the list of availability zones to which the node belongs.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder configureNodes(Output<List<InstanceConfigureNodeArgs>> configureNodes) {
             $.configureNodes = configureNodes;
             return this;
         }
 
+        /**
+         * @param configureNodes Set the list of availability zones to which the node belongs.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder configureNodes(List<InstanceConfigureNodeArgs> configureNodes) {
             return configureNodes(Output.of(configureNodes));
         }
 
+        /**
+         * @param configureNodes Set the list of availability zones to which the node belongs.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder configureNodes(InstanceConfigureNodeArgs... configureNodes) {
             return configureNodes(List.of(configureNodes));
         }
 
         /**
          * @param continuousBackup Enable data flashback
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder continuousBackup(@Nullable Output<Boolean> continuousBackup) {
             $.continuousBackup = continuousBackup;
@@ -602,9 +643,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param continuousBackup Enable data flashback
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder continuousBackup(Boolean continuousBackup) {
             return continuousBackup(Output.of(continuousBackup));
@@ -612,9 +653,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createBackup Whether to create a backup before making changes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createBackup(@Nullable Output<Boolean> createBackup) {
             $.createBackup = createBackup;
@@ -623,9 +664,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createBackup Whether to create a backup before making changes.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createBackup(Boolean createBackup) {
             return createBackup(Output.of(createBackup));
@@ -633,9 +674,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletionProtection Enable or disable instance deletion protection. disabled: Off. enabled: On.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletionProtection(@Nullable Output<String> deletionProtection) {
             $.deletionProtection = deletionProtection;
@@ -644,9 +685,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param deletionProtection Enable or disable instance deletion protection. disabled: Off. enabled: On.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletionProtection(String deletionProtection) {
             return deletionProtection(Output.of(deletionProtection));
@@ -654,9 +695,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param engineVersion Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineVersion(Output<String> engineVersion) {
             $.engineVersion = engineVersion;
@@ -665,9 +706,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param engineVersion Database version number. Valid values: 5.0: Version 5.0. 6.0: Version 6.0. 7.0: Version 7.0.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder engineVersion(String engineVersion) {
             return engineVersion(Output.of(engineVersion));
@@ -675,9 +716,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -686,9 +727,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceName Instance name. Naming rules: Cannot start with a digit or hyphen (-); can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-); length must be 1–128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -696,9 +737,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiAz Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiAz(Output<String> multiAz) {
             $.multiAz = multiAz;
@@ -707,9 +748,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiAz Set the instance&#39;s availability zone deployment scheme. Valid values: enabled: Multi-availability zone deployment. disabled: Single availability zone deployment.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiAz(String multiAz) {
             return multiAz(Output.of(multiAz));
@@ -717,9 +758,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param noAuthMode Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder noAuthMode(@Nullable Output<String> noAuthMode) {
             $.noAuthMode = noAuthMode;
@@ -728,9 +769,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param noAuthMode Enable or disable password-free access for new instances. Valid values: open: enable password-free access; close (default): disable password-free access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder noAuthMode(String noAuthMode) {
             return noAuthMode(Output.of(noAuthMode));
@@ -738,9 +779,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeNumber Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeNumber(Output<Integer> nodeNumber) {
             $.nodeNumber = nodeNumber;
@@ -749,9 +790,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodeNumber Number of nodes in each shard. Value range: 1–6. By default, each account can create up to 4 nodes of 256 MiB specification per region. To increase the quota limit to 10, see Account Quotas. A value of 1 creates a single-node instance; a value greater than 1 creates a primary-secondary instance. For details on the differences between these two types of instances, see Feature Differences.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeNumber(Integer nodeNumber) {
             return nodeNumber(Output.of(nodeNumber));
@@ -759,9 +800,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parameterGroupId The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder parameterGroupId(@Nullable Output<String> parameterGroupId) {
             $.parameterGroupId = parameterGroupId;
@@ -770,9 +811,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parameterGroupId The parameter template to be applied to the new instance. Redis for Cache Database creates a default system parameter template for each database version, which includes all parameters supported by that version and their default values. If this parameter is left blank, the system will select and apply the corresponding version&#39;s system parameter template for the new instance based on the database version you set (i.e., EngineVersion). You can call the DescribeParameterGroups API to query basic information about all parameter templates under your account and region, including the parameter template ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder parameterGroupId(String parameterGroupId) {
             return parameterGroupId(Output.of(parameterGroupId));
@@ -780,9 +821,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param password Set the password for the default account of the default database.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder password(@Nullable Output<String> password) {
             $.password = password;
@@ -791,9 +832,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param password Set the password for the default account of the default database.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder password(String password) {
             return password(Output.of(password));
@@ -801,9 +842,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(@Nullable Output<Integer> port) {
             $.port = port;
@@ -812,9 +853,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Custom port number for the private network connection address. Value range: 1024~65535. If this parameter is left blank, the private network connection address uses port 6379 by default. After the instance is created, you can also modify the port number of the private network address. For instructions, see Modify Port Number.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
@@ -822,9 +863,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -833,9 +874,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -843,9 +884,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param purchaseMonths Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder purchaseMonths(@Nullable Output<Integer> purchaseMonths) {
             $.purchaseMonths = purchaseMonths;
@@ -854,9 +895,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param purchaseMonths Purchase duration, unit: month. Value options: Monthly purchase: 1, 2, 3, 4, 5, 6, 7, 8, 9. Annual purchase: 12, 24, 36. When ChargeType is PrePaid, this parameter is required.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder purchaseMonths(Integer purchaseMonths) {
             return purchaseMonths(Output.of(purchaseMonths));
@@ -864,9 +905,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param reserveAdditionalBandwidth Set whether to reserve additional bandwidth
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder reserveAdditionalBandwidth(@Nullable Output<Boolean> reserveAdditionalBandwidth) {
             $.reserveAdditionalBandwidth = reserveAdditionalBandwidth;
@@ -875,9 +916,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param reserveAdditionalBandwidth Set whether to reserve additional bandwidth
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder reserveAdditionalBandwidth(Boolean reserveAdditionalBandwidth) {
             return reserveAdditionalBandwidth(Output.of(reserveAdditionalBandwidth));
@@ -885,9 +926,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param restartInstance Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder restartInstance(@Nullable Output<Boolean> restartInstance) {
             $.restartInstance = restartInstance;
@@ -896,9 +937,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param restartInstance Restart instance? Only instances with the status Running support restart operations. During the restart process, access to some services may be temporarily affected. Proceed with caution. It is recommended to restart during off-peak hours and ensure your application supports automatic reconnection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder restartInstance(Boolean restartInstance) {
             return restartInstance(Output.of(restartInstance));
@@ -906,9 +947,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardCapacity Memory capacity of each shard in the instance. Unit: MiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shardCapacity(Output<Integer> shardCapacity) {
             $.shardCapacity = shardCapacity;
@@ -917,9 +958,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardCapacity Memory capacity of each shard in the instance. Unit: MiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shardCapacity(Integer shardCapacity) {
             return shardCapacity(Output.of(shardCapacity));
@@ -927,9 +968,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardNumber Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shardNumber(@Nullable Output<Integer> shardNumber) {
             $.shardNumber = shardNumber;
@@ -938,9 +979,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardNumber Number of shards in the instance. Value range: 2–256. Specify this parameter only when ShardedCluster is set to 1 (enabled).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shardNumber(Integer shardNumber) {
             return shardNumber(Output.of(shardNumber));
@@ -948,9 +989,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardedCluster Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shardedCluster(Output<Integer> shardedCluster) {
             $.shardedCluster = shardedCluster;
@@ -959,9 +1000,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shardedCluster Whether to enable sharded cluster. Value options: 0: Disabled. 1: Enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shardedCluster(Integer shardedCluster) {
             return shardedCluster(Output.of(shardedCluster));
@@ -969,9 +1010,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -980,32 +1021,53 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetId Set the subnet ID for the instance. Subnets have availability zone attributes; you must select a subnet in the target private network that belongs to the same availability zone as the instance. A subnet is an IP address block within a private network. All cloud resources in the private network must be deployed in a subnet. The subnet assigns private IP addresses to cloud resources. You can call the CreateSubnet API to create a subnet. You can call the DescribeSubnets API to query the list of all subnets in a specified availability zone, including subnet IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Set the tag list for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<InstanceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Set the tag list for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<InstanceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Set the tag list for the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(InstanceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpcId Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -1014,9 +1076,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId Set the private network ID for the instance. It is recommended that the Redis instance and the ECS instance you want to connect to are in the same private network; otherwise, they cannot communicate optimally via the internal network. You can call the CreateVpc API to create a private network. You can call the DescribeVpcs API to query private network information that meets specified conditions, including the private network ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));

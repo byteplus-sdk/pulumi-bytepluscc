@@ -19,36 +19,46 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
-     * 
+     *
      */
     @Import(name="characterSetName")
     private @Nullable Output<String> characterSetName;
 
     /**
      * @return Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
-     * 
+     *
      */
     public Optional<Output<String>> characterSetName() {
         return Optional.ofNullable(this.characterSetName);
     }
 
+    /**
+     * Database privilege authorization information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="databasePrivileges")
     private @Nullable Output<List<DatabaseDatabasePrivilegeArgs>> databasePrivileges;
 
+    /**
+     * @return Database privilege authorization information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DatabaseDatabasePrivilegeArgs>>> databasePrivileges() {
         return Optional.ofNullable(this.databasePrivileges);
     }
 
     /**
      * Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -56,14 +66,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database instance ID.
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Database instance ID.
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -71,14 +81,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -86,14 +96,14 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Database status. Values: Unavailable (not available), Available (available).
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Database status. Values: Unavailable (not available), Available (available).
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -130,9 +140,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param characterSetName Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder characterSetName(@Nullable Output<String> characterSetName) {
             $.characterSetName = characterSetName;
@@ -141,32 +151,53 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param characterSetName Database character set. Supported character sets: utf8, utf8mb4 (default), latin1, ascii.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder characterSetName(String characterSetName) {
             return characterSetName(Output.of(characterSetName));
         }
 
+        /**
+         * @param databasePrivileges Database privilege authorization information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder databasePrivileges(@Nullable Output<List<DatabaseDatabasePrivilegeArgs>> databasePrivileges) {
             $.databasePrivileges = databasePrivileges;
             return this;
         }
 
+        /**
+         * @param databasePrivileges Database privilege authorization information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder databasePrivileges(List<DatabaseDatabasePrivilegeArgs> databasePrivileges) {
             return databasePrivileges(Output.of(databasePrivileges));
         }
 
+        /**
+         * @param databasePrivileges Database privilege authorization information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder databasePrivileges(DatabaseDatabasePrivilegeArgs... databasePrivileges) {
             return databasePrivileges(List.of(databasePrivileges));
         }
 
         /**
          * @param description Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -175,9 +206,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Database description, up to 256 characters. This field is optional. If not set, or if set with a description length of 0, the description will be empty.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -185,9 +216,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Database instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -196,9 +227,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Database instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -206,9 +237,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -217,9 +248,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Database name. Naming rules: must be unique; length must be 2–64 characters; must start with a letter and end with a letter or number; can contain letters, numbers, underscores (_), or hyphens (-); certain reserved words, such as root and admin, cannot be used.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -227,9 +258,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Database status. Values: Unavailable (not available), Available (available).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -238,9 +269,9 @@ public final class DatabaseState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Database status. Values: Unavailable (not available), Available (available).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));

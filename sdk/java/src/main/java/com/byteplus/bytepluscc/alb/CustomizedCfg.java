@@ -18,32 +18,32 @@ import javax.annotation.Nullable;
 
 /**
  * ALB provides personalized configuration functionality at the listener level. You can create and manage standard NGINX configuration policies in the console, associate configuration policies with listeners in one click on the listener details page, and complete personalized configurations to meet business requirements without submitting a ticket.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.alb.CustomizedCfg;
  * import com.byteplus.bytepluscc.alb.CustomizedCfgArgs;
  * import com.pulumi.bytepluscc.alb.inputs.CustomizedCfgTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var aLBCustomizedCfgDemo = new CustomizedCfg("aLBCustomizedCfgDemo", CustomizedCfgArgs.builder()
  *             .customizedCfgName("ccapi-test")
@@ -69,32 +69,32 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:alb/customizedCfg:CustomizedCfg example &#34;customized_cfg_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:alb/customizedCfg:CustomizedCfg")
 public class CustomizedCfg extends com.pulumi.resources.CustomResource {
     /**
      * Creation time of the personalized configuration.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time of the personalized configuration.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
@@ -102,7 +102,7 @@ public class CustomizedCfg extends com.pulumi.resources.CustomResource {
     /**
      * Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
      * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
-     * 
+     *
      */
     @Export(name="customizedCfgContent", refs={String.class}, tree="[0]")
     private Output<String> customizedCfgContent;
@@ -110,103 +110,123 @@ public class CustomizedCfg extends com.pulumi.resources.CustomResource {
     /**
      * @return Content of the personalized configuration item. Specific rules: Length must not exceed 4096 characters. Spaces and semicolons must be escaped. Different configuration items are separated by &#39;;
      * &#39;. Configuration items cannot be duplicated. Currently supported configuration items include ssl*protocols, ssl*ciphers, client*max*body*size, keepalive*timeout, proxy*request*buffering, proxy*connect*timeout, add*header, client*header*timeout, proxy*read*timeout, proxy*send*timeout, client*body*timeout, send*timeout, and ssl*verify*depth. For details, see the official documentation.
-     * 
+     *
      */
     public Output<String> customizedCfgContent() {
         return this.customizedCfgContent;
     }
     /**
      * Personalized configuration ID.
-     * 
+     *
      */
     @Export(name="customizedCfgId", refs={String.class}, tree="[0]")
     private Output<String> customizedCfgId;
 
     /**
      * @return Personalized configuration ID.
-     * 
+     *
      */
     public Output<String> customizedCfgId() {
         return this.customizedCfgId;
     }
     /**
      * Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Export(name="customizedCfgName", refs={String.class}, tree="[0]")
     private Output<String> customizedCfgName;
 
     /**
      * @return Name of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> customizedCfgName() {
         return this.customizedCfgName;
     }
     /**
      * Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the personalized configuration. Specific rules: Cannot start with http:// or https://. Must start with a letter or Chinese character. Can include numbers, English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Length must be between 1 and 255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
+    /**
+     * List of listeners associated with the personalized configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="listeners", refs={List.class,CustomizedCfgListener.class}, tree="[0,1]")
     private Output<List<CustomizedCfgListener>> listeners;
 
+    /**
+     * @return List of listeners associated with the personalized configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<CustomizedCfgListener>> listeners() {
         return this.listeners;
     }
     /**
      * Project name to which the personalized configuration belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the personalized configuration belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the personalized configuration. Includes Active, Configuring, Creating, or Deleting.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,CustomizedCfgTag.class}, tree="[0,1]")
     private Output<List<CustomizedCfgTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<CustomizedCfgTag>> tags() {
         return this.tags;
     }
     /**
      * Last operation time of the personalized configuration.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Last operation time of the personalized configuration.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

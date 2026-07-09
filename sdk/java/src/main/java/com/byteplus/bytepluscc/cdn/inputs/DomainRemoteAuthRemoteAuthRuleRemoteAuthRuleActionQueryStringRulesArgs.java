@@ -19,22 +19,32 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
 
     /**
      * Indicates the strategy for setting authentication request parameters.
-     * 
+     *
      */
     @Import(name="queryStringComponents")
     private @Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs> queryStringComponents;
 
     /**
      * @return Indicates the strategy for setting authentication request parameters.
-     * 
+     *
      */
     public Optional<Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs>> queryStringComponents() {
         return Optional.ofNullable(this.queryStringComponents);
     }
 
+    /**
+     * Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="queryStringInstances")
     private @Nullable Output<List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs>> queryStringInstances;
 
+    /**
+     * @return Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs>>> queryStringInstances() {
         return Optional.ofNullable(this.queryStringInstances);
     }
@@ -66,9 +76,9 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
 
         /**
          * @param queryStringComponents Indicates the strategy for setting authentication request parameters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder queryStringComponents(@Nullable Output<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs> queryStringComponents) {
             $.queryStringComponents = queryStringComponents;
@@ -77,23 +87,44 @@ public final class DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryString
 
         /**
          * @param queryStringComponents Indicates the strategy for setting authentication request parameters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder queryStringComponents(DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringComponentsArgs queryStringComponents) {
             return queryStringComponents(Output.of(queryStringComponents));
         }
 
+        /**
+         * @param queryStringInstances Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder queryStringInstances(@Nullable Output<List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs>> queryStringInstances) {
             $.queryStringInstances = queryStringInstances;
             return this;
         }
 
+        /**
+         * @param queryStringInstances Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder queryStringInstances(List<DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs> queryStringInstances) {
             return queryStringInstances(Output.of(queryStringInstances));
         }
 
+        /**
+         * @param queryStringInstances Indicates additional parameter settings in the authentication request. You can set up to 50 parameters.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder queryStringInstances(DomainRemoteAuthRemoteAuthRuleRemoteAuthRuleActionQueryStringRulesQueryStringInstanceArgs... queryStringInstances) {
             return queryStringInstances(List.of(queryStringInstances));
         }

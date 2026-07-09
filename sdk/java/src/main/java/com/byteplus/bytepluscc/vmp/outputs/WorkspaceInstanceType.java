@@ -16,126 +16,136 @@ import javax.annotation.Nullable;
 public final class WorkspaceInstanceType {
     /**
      * @return Maximum active time series count
-     * 
+     *
      */
     private @Nullable Integer activeSeries;
     /**
      * @return Number of availability zones (az)
-     * 
+     *
      */
     private @Nullable Integer availabilityZoneReplicas;
+    /**
+     * @return Billing parameter list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<WorkspaceInstanceTypeCalculatePriceParam> calculatePriceParams;
     /**
      * @return Downsampling policy
-     * 
+     *
      */
     private @Nullable List<String> downsamplingPeriods;
     /**
      * @return Maximum samples written per second
-     * 
+     *
      */
     private @Nullable Integer ingestSamplesPerSecond;
     /**
      * @return Maximum query concurrency
-     * 
+     *
      */
     private @Nullable Integer queryConcurrency;
     /**
      * @return Maximum query QPS
-     * 
+     *
      */
     private @Nullable Integer queryPerSecond;
     /**
      * @return Number of data replicas per availability zone (az)
-     * 
+     *
      */
     private @Nullable Integer replicasPerZone;
     /**
      * @return Maximum data retention period
-     * 
+     *
      */
     private @Nullable String retentionPeriod;
     /**
      * @return Maximum samples scanned per second
-     * 
+     *
      */
     private @Nullable Integer scanSamplesPerSecond;
     /**
      * @return Maximum time series scanned per second
-     * 
+     *
      */
     private @Nullable Integer scanSeriesPerSecond;
 
     private WorkspaceInstanceType() {}
     /**
      * @return Maximum active time series count
-     * 
+     *
      */
     public Optional<Integer> activeSeries() {
         return Optional.ofNullable(this.activeSeries);
     }
     /**
      * @return Number of availability zones (az)
-     * 
+     *
      */
     public Optional<Integer> availabilityZoneReplicas() {
         return Optional.ofNullable(this.availabilityZoneReplicas);
     }
+    /**
+     * @return Billing parameter list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<WorkspaceInstanceTypeCalculatePriceParam> calculatePriceParams() {
         return this.calculatePriceParams == null ? List.of() : this.calculatePriceParams;
     }
     /**
      * @return Downsampling policy
-     * 
+     *
      */
     public List<String> downsamplingPeriods() {
         return this.downsamplingPeriods == null ? List.of() : this.downsamplingPeriods;
     }
     /**
      * @return Maximum samples written per second
-     * 
+     *
      */
     public Optional<Integer> ingestSamplesPerSecond() {
         return Optional.ofNullable(this.ingestSamplesPerSecond);
     }
     /**
      * @return Maximum query concurrency
-     * 
+     *
      */
     public Optional<Integer> queryConcurrency() {
         return Optional.ofNullable(this.queryConcurrency);
     }
     /**
      * @return Maximum query QPS
-     * 
+     *
      */
     public Optional<Integer> queryPerSecond() {
         return Optional.ofNullable(this.queryPerSecond);
     }
     /**
      * @return Number of data replicas per availability zone (az)
-     * 
+     *
      */
     public Optional<Integer> replicasPerZone() {
         return Optional.ofNullable(this.replicasPerZone);
     }
     /**
      * @return Maximum data retention period
-     * 
+     *
      */
     public Optional<String> retentionPeriod() {
         return Optional.ofNullable(this.retentionPeriod);
     }
     /**
      * @return Maximum samples scanned per second
-     * 
+     *
      */
     public Optional<Integer> scanSamplesPerSecond() {
         return Optional.ofNullable(this.scanSamplesPerSecond);
     }
     /**
      * @return Maximum time series scanned per second
-     * 
+     *
      */
     public Optional<Integer> scanSeriesPerSecond() {
         return Optional.ofNullable(this.scanSeriesPerSecond);

@@ -17,256 +17,286 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceEndpoint {
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceEndpointAddress> addresses;
     /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
-     * 
+     *
      */
     private @Nullable String autoAddNewNodes;
     /**
      * @return Connection endpoint tag.
-     * 
+     *
      */
     private @Nullable List<String> connectionInfoTags;
     /**
      * @return Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
-     * 
+     *
      */
     private @Nullable String connectionMode;
     /**
      * @return Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
-     * 
+     *
      */
     private @Nullable String connectionPoolType;
+    /**
+     * @return Custom routing and forwarding rules for connected terminals.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceEndpointCustomRouteStrategy> customRouteStrategies;
     /**
      * @return Description of the connection endpoint
-     * 
+     *
      */
     private @Nullable String description;
     /**
      * @return Enable connection keep-alive. Options: true: yes. false: no
-     * 
+     *
      */
     private @Nullable Boolean enableConnectionPersistent;
     /**
      * @return Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
-     * 
+     *
      */
     private @Nullable String enableReadOnly;
     /**
      * @return Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
-     * 
+     *
      */
     private @Nullable String enableReadWriteSplitting;
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     private @Nullable String endpointId;
     /**
      * @return Instance connection endpoint name.
-     * 
+     *
      */
     private @Nullable String endpointName;
     /**
      * @return Endpoint type. Value: Custom, custom endpoint.
-     * 
+     *
      */
     private @Nullable String endpointType;
     /**
      * @return Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
-     * 
+     *
      */
     private @Nullable Boolean idleConnectionReclaim;
     /**
      * @return Whether to enable transaction separation. Values: true: Yes. false: No.
-     * 
+     *
      */
     private @Nullable Boolean implicitTransSplit;
     /**
      * @return Whether to enable primary node routing. Values: true: Yes. false: No.
-     * 
+     *
      */
     private @Nullable Boolean masterNodeRouting;
     /**
      * @return Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
-     * 
+     *
      */
     private @Nullable Integer masterProtectorTimeout;
     /**
      * @return Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
-     * 
+     *
      */
     private @Nullable String multiStatementsMode;
     /**
      * @return Overload protection enabled. Values: true: yes. false: no
-     * 
+     *
      */
     private @Nullable Boolean overloadProtection;
     /**
      * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
-     * 
+     *
      */
     private @Nullable String readOnlyNodeDistributionType;
     /**
      * @return Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
-     * 
+     *
      */
     private @Nullable Integer readOnlyNodeMaxDelayTime;
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights;
     /**
      * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only
-     * 
+     *
      */
     private @Nullable String readWriteMode;
 
     private InstanceEndpoint() {}
+    /**
+     * @return Address list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceEndpointAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }
     /**
      * @return When the endpoint type is read/write or read-only, you can set whether new nodes join automatically. Values: Enable: auto join. Disable: do not auto join (default)
-     * 
+     *
      */
     public Optional<String> autoAddNewNodes() {
         return Optional.ofNullable(this.autoAddNewNodes);
     }
     /**
      * @return Connection endpoint tag.
-     * 
+     *
      */
     public List<String> connectionInfoTags() {
         return this.connectionInfoTags == null ? List.of() : this.connectionInfoTags;
     }
     /**
      * @return Connection endpoint type. Values: Proxy: proxy endpoint. Direct: direct endpoint
-     * 
+     *
      */
     public Optional<String> connectionMode() {
         return Optional.ofNullable(this.connectionMode);
     }
     /**
      * @return Connection pool type for proxy terminal. Values: Transaction: Transaction-level connection pool. Default value. Direct: Direct mode.
-     * 
+     *
      */
     public Optional<String> connectionPoolType() {
         return Optional.ofNullable(this.connectionPoolType);
     }
+    /**
+     * @return Custom routing and forwarding rules for connected terminals.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceEndpointCustomRouteStrategy> customRouteStrategies() {
         return this.customRouteStrategies == null ? List.of() : this.customRouteStrategies;
     }
     /**
      * @return Description of the connection endpoint
-     * 
+     *
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Enable connection keep-alive. Options: true: yes. false: no
-     * 
+     *
      */
     public Optional<Boolean> enableConnectionPersistent() {
         return Optional.ofNullable(this.enableConnectionPersistent);
     }
     /**
      * @return Is global read-only enabled? Values: Enable: enabled. Disable: not enabled.
-     * 
+     *
      */
     public Optional<String> enableReadOnly() {
         return Optional.ofNullable(this.enableReadOnly);
     }
     /**
      * @return Whether to enable read/write separation. Values: Enable: Enabled. Disable: Not enabled.
-     * 
+     *
      */
     public Optional<String> enableReadWriteSplitting() {
         return Optional.ofNullable(this.enableReadWriteSplitting);
     }
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     public Optional<String> endpointId() {
         return Optional.ofNullable(this.endpointId);
     }
     /**
      * @return Instance connection endpoint name.
-     * 
+     *
      */
     public Optional<String> endpointName() {
         return Optional.ofNullable(this.endpointName);
     }
     /**
      * @return Endpoint type. Value: Custom, custom endpoint.
-     * 
+     *
      */
     public Optional<String> endpointType() {
         return Optional.ofNullable(this.endpointType);
     }
     /**
      * @return Whether the idle connection recycling feature is enabled. true: Enabled. false: Not enabled.
-     * 
+     *
      */
     public Optional<Boolean> idleConnectionReclaim() {
         return Optional.ofNullable(this.idleConnectionReclaim);
     }
     /**
      * @return Whether to enable transaction separation. Values: true: Yes. false: No.
-     * 
+     *
      */
     public Optional<Boolean> implicitTransSplit() {
         return Optional.ofNullable(this.implicitTransSplit);
     }
     /**
      * @return Whether to enable primary node routing. Values: true: Yes. false: No.
-     * 
+     *
      */
     public Optional<Boolean> masterNodeRouting() {
         return Optional.ofNullable(this.masterNodeRouting);
     }
     /**
      * @return Overload protection timeout. Value range: integer between 60 and 7200, in seconds.
-     * 
+     *
      */
     public Optional<Integer> masterProtectorTimeout() {
         return Optional.ofNullable(this.masterProtectorTimeout);
     }
     /**
      * @return Multi-Statements mode for proxy endpoints. Values: Strict: strict mode (default). Loose: loose mode
-     * 
+     *
      */
     public Optional<String> multiStatementsMode() {
         return Optional.ofNullable(this.multiStatementsMode);
     }
     /**
      * @return Overload protection enabled. Values: true: yes. false: no
-     * 
+     *
      */
     public Optional<Boolean> overloadProtection() {
         return Optional.ofNullable(this.overloadProtection);
     }
     /**
      * @return Read weight allocation mode. This parameter is required when read/write splitting is enabled (set to true). For request parameters in the CreateDBEndpoint and ModifyDBEndpoint APIs, valid values are: LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling. For response parameters in the DescribeDBInstanceDetail API, valid values are: Default: automatic allocation based on specification weights. Custom: custom weight allocation. RoundRobin: round-robin scheduling. LoadSchedule: load scheduling. RoundRobinCustom: custom weighted round-robin scheduling. RoundRobinAuto: automatic weighted round-robin scheduling.
-     * 
+     *
      */
     public Optional<String> readOnlyNodeDistributionType() {
         return Optional.ofNullable(this.readOnlyNodeDistributionType);
     }
     /**
      * @return Read-only node latency threshold. Value range: 1~3600, default is 30, unit: seconds.
-     * 
+     *
      */
     public Optional<Integer> readOnlyNodeMaxDelayTime() {
         return Optional.ofNullable(this.readOnlyNodeMaxDelayTime);
     }
+    /**
+     * @return List of nodes configured for the connection endpoint and their corresponding read-only weights.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceEndpointReadOnlyNodeWeight> readOnlyNodeWeights() {
         return this.readOnlyNodeWeights == null ? List.of() : this.readOnlyNodeWeights;
     }
     /**
      * @return Read/write mode: ReadWrite: read/write. ReadOnly: read-only
-     * 
+     *
      */
     public Optional<String> readWriteMode() {
         return Optional.ofNullable(this.readWriteMode);

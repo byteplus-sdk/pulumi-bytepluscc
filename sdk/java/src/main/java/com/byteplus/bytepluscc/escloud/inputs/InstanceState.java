@@ -24,14 +24,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
-     * 
+     *
      */
     @Import(name="cerebroEnabled")
     private @Nullable Output<Boolean> cerebroEnabled;
 
     /**
      * @return Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
-     * 
+     *
      */
     public Optional<Output<Boolean>> cerebroEnabled() {
         return Optional.ofNullable(this.cerebroEnabled);
@@ -39,14 +39,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     @Import(name="cerebroPrivateDomain")
     private @Nullable Output<String> cerebroPrivateDomain;
 
     /**
      * @return Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     public Optional<Output<String>> cerebroPrivateDomain() {
         return Optional.ofNullable(this.cerebroPrivateDomain);
@@ -54,14 +54,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     @Import(name="cerebroPublicDomain")
     private @Nullable Output<String> cerebroPublicDomain;
 
     /**
      * @return Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     public Optional<Output<String>> cerebroPublicDomain() {
         return Optional.ofNullable(this.cerebroPublicDomain);
@@ -69,14 +69,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
-     * 
+     *
      */
     @Import(name="chargeEnabled")
     private @Nullable Output<Boolean> chargeEnabled;
 
     /**
      * @return Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
-     * 
+     *
      */
     public Optional<Output<Boolean>> chargeEnabled() {
         return Optional.ofNullable(this.chargeEnabled);
@@ -84,14 +84,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the cluster to which the instance belongs.
-     * 
+     *
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
      * @return ID of the cluster to which the instance belongs.
-     * 
+     *
      */
     public Optional<Output<String>> clusterId() {
         return Optional.ofNullable(this.clusterId);
@@ -99,14 +99,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance creation time.
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Instance creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -114,14 +114,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-     * 
+     *
      */
     @Import(name="enableEsPrivateDomainPublic")
     private @Nullable Output<Boolean> enableEsPrivateDomainPublic;
 
     /**
      * @return Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableEsPrivateDomainPublic() {
         return Optional.ofNullable(this.enableEsPrivateDomainPublic);
@@ -129,14 +129,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
-     * 
+     *
      */
     @Import(name="enableEsPrivateNetwork")
     private @Nullable Output<Boolean> enableEsPrivateNetwork;
 
     /**
      * @return Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableEsPrivateNetwork() {
         return Optional.ofNullable(this.enableEsPrivateNetwork);
@@ -144,14 +144,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
-     * 
+     *
      */
     @Import(name="enableEsPublicNetwork")
     private @Nullable Output<Boolean> enableEsPublicNetwork;
 
     /**
      * @return Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableEsPublicNetwork() {
         return Optional.ofNullable(this.enableEsPublicNetwork);
@@ -159,14 +159,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-     * 
+     *
      */
     @Import(name="enableKibanaPrivateDomainPublic")
     private @Nullable Output<Boolean> enableKibanaPrivateDomainPublic;
 
     /**
      * @return Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableKibanaPrivateDomainPublic() {
         return Optional.ofNullable(this.enableKibanaPrivateDomainPublic);
@@ -174,14 +174,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
-     * 
+     *
      */
     @Import(name="enableKibanaPrivateNetwork")
     private @Nullable Output<Boolean> enableKibanaPrivateNetwork;
 
     /**
      * @return Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableKibanaPrivateNetwork() {
         return Optional.ofNullable(this.enableKibanaPrivateNetwork);
@@ -189,14 +189,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
-     * 
+     *
      */
     @Import(name="enableKibanaPublicNetwork")
     private @Nullable Output<Boolean> enableKibanaPublicNetwork;
 
     /**
      * @return Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableKibanaPublicNetwork() {
         return Optional.ofNullable(this.enableKibanaPublicNetwork);
@@ -204,14 +204,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * EIP bound to the instance.
-     * 
+     *
      */
     @Import(name="esEip")
     private @Nullable Output<String> esEip;
 
     /**
      * @return EIP bound to the instance.
-     * 
+     *
      */
     public Optional<Output<String>> esEip() {
         return Optional.ofNullable(this.esEip);
@@ -219,14 +219,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the EIP bound to the instance
-     * 
+     *
      */
     @Import(name="esEipId")
     private @Nullable Output<String> esEipId;
 
     /**
      * @return ID of the EIP bound to the instance
-     * 
+     *
      */
     public Optional<Output<String>> esEipId() {
         return Optional.ofNullable(this.esEipId);
@@ -234,14 +234,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance private network access address.
-     * 
+     *
      */
     @Import(name="esPrivateEndpoint")
     private @Nullable Output<String> esPrivateEndpoint;
 
     /**
      * @return Instance private network access address.
-     * 
+     *
      */
     public Optional<Output<String>> esPrivateEndpoint() {
         return Optional.ofNullable(this.esPrivateEndpoint);
@@ -249,14 +249,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance private network address access allowlist. Same as ESPrivateIpWhitelist
-     * 
+     *
      */
     @Import(name="esPrivateIpAllowList")
     private @Nullable Output<String> esPrivateIpAllowList;
 
     /**
      * @return Instance private network address access allowlist. Same as ESPrivateIpWhitelist
-     * 
+     *
      */
     public Optional<Output<String>> esPrivateIpAllowList() {
         return Optional.ofNullable(this.esPrivateIpAllowList);
@@ -264,14 +264,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance private network address access allowlist
-     * 
+     *
      */
     @Import(name="esPrivateIpWhitelist")
     private @Nullable Output<String> esPrivateIpWhitelist;
 
     /**
      * @return Instance private network address access allowlist
-     * 
+     *
      */
     public Optional<Output<String>> esPrivateIpWhitelist() {
         return Optional.ofNullable(this.esPrivateIpWhitelist);
@@ -279,14 +279,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ES public network bandwidth, unit: Mbps.
-     * 
+     *
      */
     @Import(name="esPubBandwidth")
     private @Nullable Output<Integer> esPubBandwidth;
 
     /**
      * @return ES public network bandwidth, unit: Mbps.
-     * 
+     *
      */
     public Optional<Output<Integer>> esPubBandwidth() {
         return Optional.ofNullable(this.esPubBandwidth);
@@ -294,14 +294,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance public access address
-     * 
+     *
      */
     @Import(name="esPublicEndpoint")
     private @Nullable Output<String> esPublicEndpoint;
 
     /**
      * @return Instance public access address
-     * 
+     *
      */
     public Optional<Output<String>> esPublicEndpoint() {
         return Optional.ofNullable(this.esPublicEndpoint);
@@ -309,14 +309,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance public IP address access allowlist. Same as ESPublicIpWhitelist
-     * 
+     *
      */
     @Import(name="esPublicIpAllowList")
     private @Nullable Output<String> esPublicIpAllowList;
 
     /**
      * @return Instance public IP address access allowlist. Same as ESPublicIpWhitelist
-     * 
+     *
      */
     public Optional<Output<String>> esPublicIpAllowList() {
         return Optional.ofNullable(this.esPublicIpAllowList);
@@ -324,14 +324,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Allowlist for instance public network address access.
-     * 
+     *
      */
     @Import(name="esPublicIpWhitelist")
     private @Nullable Output<String> esPublicIpWhitelist;
 
     /**
      * @return Allowlist for instance public network address access.
-     * 
+     *
      */
     public Optional<Output<String>> esPublicIpWhitelist() {
         return Optional.ofNullable(this.esPublicIpWhitelist);
@@ -339,14 +339,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Expiration time for subscription instance payment
-     * 
+     *
      */
     @Import(name="expireDate")
     private @Nullable Output<String> expireDate;
 
     /**
      * @return Expiration time for subscription instance payment
-     * 
+     *
      */
     public Optional<Output<String>> expireDate() {
         return Optional.ofNullable(this.expireDate);
@@ -354,14 +354,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance configuration details
-     * 
+     *
      */
     @Import(name="instanceConfiguration")
     private @Nullable Output<InstanceInstanceConfigurationArgs> instanceConfiguration;
 
     /**
      * @return Instance configuration details
-     * 
+     *
      */
     public Optional<Output<InstanceInstanceConfigurationArgs>> instanceConfiguration() {
         return Optional.ofNullable(this.instanceConfiguration);
@@ -369,14 +369,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -384,14 +384,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kibana parameter configuration
-     * 
+     *
      */
     @Import(name="kibanaConfig")
     private @Nullable Output<InstanceKibanaConfigArgs> kibanaConfig;
 
     /**
      * @return Kibana parameter configuration
-     * 
+     *
      */
     public Optional<Output<InstanceKibanaConfigArgs>> kibanaConfig() {
         return Optional.ofNullable(this.kibanaConfig);
@@ -399,14 +399,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * EIP bound to Kibana
-     * 
+     *
      */
     @Import(name="kibanaEip")
     private @Nullable Output<String> kibanaEip;
 
     /**
      * @return EIP bound to Kibana
-     * 
+     *
      */
     public Optional<Output<String>> kibanaEip() {
         return Optional.ofNullable(this.kibanaEip);
@@ -414,14 +414,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the EIP bound to Kibana.
-     * 
+     *
      */
     @Import(name="kibanaEipId")
     private @Nullable Output<String> kibanaEipId;
 
     /**
      * @return ID of the EIP bound to Kibana.
-     * 
+     *
      */
     public Optional<Output<String>> kibanaEipId() {
         return Optional.ofNullable(this.kibanaEipId);
@@ -429,14 +429,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
-     * 
+     *
      */
     @Import(name="kibanaPrivateDomain")
     private @Nullable Output<String> kibanaPrivateDomain;
 
     /**
      * @return Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
-     * 
+     *
      */
     public Optional<Output<String>> kibanaPrivateDomain() {
         return Optional.ofNullable(this.kibanaPrivateDomain);
@@ -444,14 +444,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
-     * 
+     *
      */
     @Import(name="kibanaPrivateIpAllowList")
     private @Nullable Output<String> kibanaPrivateIpAllowList;
 
     /**
      * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
-     * 
+     *
      */
     public Optional<Output<String>> kibanaPrivateIpAllowList() {
         return Optional.ofNullable(this.kibanaPrivateIpAllowList);
@@ -459,14 +459,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
-     * 
+     *
      */
     @Import(name="kibanaPrivateIpWhitelist")
     private @Nullable Output<String> kibanaPrivateIpWhitelist;
 
     /**
      * @return Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
-     * 
+     *
      */
     public Optional<Output<String>> kibanaPrivateIpWhitelist() {
         return Optional.ofNullable(this.kibanaPrivateIpWhitelist);
@@ -474,14 +474,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kibana public network bandwidth, unit: Mbps
-     * 
+     *
      */
     @Import(name="kibanaPubBandwidth")
     private @Nullable Output<Integer> kibanaPubBandwidth;
 
     /**
      * @return Kibana public network bandwidth, unit: Mbps
-     * 
+     *
      */
     public Optional<Output<Integer>> kibanaPubBandwidth() {
         return Optional.ofNullable(this.kibanaPubBandwidth);
@@ -489,14 +489,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     @Import(name="kibanaPublicDomain")
     private @Nullable Output<String> kibanaPublicDomain;
 
     /**
      * @return Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
-     * 
+     *
      */
     public Optional<Output<String>> kibanaPublicDomain() {
         return Optional.ofNullable(this.kibanaPublicDomain);
@@ -504,14 +504,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
-     * 
+     *
      */
     @Import(name="kibanaPublicIpAllowList")
     private @Nullable Output<String> kibanaPublicIpAllowList;
 
     /**
      * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
-     * 
+     *
      */
     public Optional<Output<String>> kibanaPublicIpAllowList() {
         return Optional.ofNullable(this.kibanaPublicIpAllowList);
@@ -519,14 +519,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
-     * 
+     *
      */
     @Import(name="kibanaPublicIpWhitelist")
     private @Nullable Output<String> kibanaPublicIpWhitelist;
 
     /**
      * @return Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
-     * 
+     *
      */
     public Optional<Output<String>> kibanaPublicIpWhitelist() {
         return Optional.ofNullable(this.kibanaPublicIpWhitelist);
@@ -534,14 +534,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Primary availability zone
-     * 
+     *
      */
     @Import(name="mainZoneId")
     private @Nullable Output<String> mainZoneId;
 
     /**
      * @return Primary availability zone
-     * 
+     *
      */
     public Optional<Output<String>> mainZoneId() {
         return Optional.ofNullable(this.mainZoneId);
@@ -549,14 +549,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance maintenance date.
-     * 
+     *
      */
     @Import(name="maintenanceDays")
     private @Nullable Output<List<String>> maintenanceDays;
 
     /**
      * @return Instance maintenance date.
-     * 
+     *
      */
     public Optional<Output<List<String>>> maintenanceDays() {
         return Optional.ofNullable(this.maintenanceDays);
@@ -564,14 +564,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance maintenance window.
-     * 
+     *
      */
     @Import(name="maintenanceTime")
     private @Nullable Output<String> maintenanceTime;
 
     /**
      * @return Instance maintenance window.
-     * 
+     *
      */
     public Optional<Output<String>> maintenanceTime() {
         return Optional.ofNullable(this.maintenanceTime);
@@ -579,14 +579,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Current instance status
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Current instance status
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
@@ -594,36 +594,46 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sub-instance activation status
-     * 
+     *
      */
     @Import(name="subInstanceEnable")
     private @Nullable Output<String> subInstanceEnable;
 
     /**
      * @return Sub-instance activation status
-     * 
+     *
      */
     public Optional<Output<String>> subInstanceEnable() {
         return Optional.ofNullable(this.subInstanceEnable);
     }
 
+    /**
+     * Enterprise SQL analytics instance configuration information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="subInstances")
     private @Nullable Output<List<InstanceSubInstanceArgs>> subInstances;
 
+    /**
+     * @return Enterprise SQL analytics instance configuration information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<InstanceSubInstanceArgs>>> subInstances() {
         return Optional.ofNullable(this.subInstances);
     }
 
     /**
      * Whether cold nodes are supported
-     * 
+     *
      */
     @Import(name="supportColdNode")
     private @Nullable Output<Boolean> supportColdNode;
 
     /**
      * @return Whether cold nodes are supported
-     * 
+     *
      */
     public Optional<Output<Boolean>> supportColdNode() {
         return Optional.ofNullable(this.supportColdNode);
@@ -631,14 +641,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Total number of nodes in the instance
-     * 
+     *
      */
     @Import(name="totalNodes")
     private @Nullable Output<Integer> totalNodes;
 
     /**
      * @return Total number of nodes in the instance
-     * 
+     *
      */
     public Optional<Output<Integer>> totalNodes() {
         return Optional.ofNullable(this.totalNodes);
@@ -646,14 +656,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Data migration task information
-     * 
+     *
      */
     @Import(name="transferInfo")
     private @Nullable Output<InstanceTransferInfoArgs> transferInfo;
 
     /**
      * @return Data migration task information
-     * 
+     *
      */
     public Optional<Output<InstanceTransferInfoArgs>> transferInfo() {
         return Optional.ofNullable(this.transferInfo);
@@ -661,14 +671,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance owner&#39;s user ID
-     * 
+     *
      */
     @Import(name="userId")
     private @Nullable Output<String> userId;
 
     /**
      * @return Instance owner&#39;s user ID
-     * 
+     *
      */
     public Optional<Output<String>> userId() {
         return Optional.ofNullable(this.userId);
@@ -743,9 +753,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cerebroEnabled Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cerebroEnabled(@Nullable Output<Boolean> cerebroEnabled) {
             $.cerebroEnabled = cerebroEnabled;
@@ -754,9 +764,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cerebroEnabled Whether to enable cerebro. true: enable cerebro; false: do not enable cerebro.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cerebroEnabled(Boolean cerebroEnabled) {
             return cerebroEnabled(Output.of(cerebroEnabled));
@@ -764,9 +774,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cerebroPrivateDomain Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cerebroPrivateDomain(@Nullable Output<String> cerebroPrivateDomain) {
             $.cerebroPrivateDomain = cerebroPrivateDomain;
@@ -775,9 +785,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cerebroPrivateDomain Cerebro private network access address. Note: Cerebro and Kibana share the domain name. For legacy instances, the access address may start with http(s)://kibana-***
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cerebroPrivateDomain(String cerebroPrivateDomain) {
             return cerebroPrivateDomain(Output.of(cerebroPrivateDomain));
@@ -785,9 +795,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cerebroPublicDomain Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cerebroPublicDomain(@Nullable Output<String> cerebroPublicDomain) {
             $.cerebroPublicDomain = cerebroPublicDomain;
@@ -796,9 +806,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cerebroPublicDomain Cerebro public access address. Note: Cerebro and Kibana share the same domain name. For legacy instances, the access address may start with http(s)://kibana-***
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cerebroPublicDomain(String cerebroPublicDomain) {
             return cerebroPublicDomain(Output.of(cerebroPublicDomain));
@@ -806,9 +816,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeEnabled Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeEnabled(@Nullable Output<Boolean> chargeEnabled) {
             $.chargeEnabled = chargeEnabled;
@@ -817,9 +827,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param chargeEnabled Whether billing is enabled for the instance. Value description: true: Billing enabled false: Billing not enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeEnabled(Boolean chargeEnabled) {
             return chargeEnabled(Output.of(chargeEnabled));
@@ -827,9 +837,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterId ID of the cluster to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(@Nullable Output<String> clusterId) {
             $.clusterId = clusterId;
@@ -838,9 +848,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param clusterId ID of the cluster to which the instance belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(String clusterId) {
             return clusterId(Output.of(clusterId));
@@ -848,9 +858,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Instance creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -859,9 +869,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Instance creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -869,9 +879,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableEsPrivateDomainPublic Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableEsPrivateDomainPublic(@Nullable Output<Boolean> enableEsPrivateDomainPublic) {
             $.enableEsPrivateDomainPublic = enableEsPrivateDomainPublic;
@@ -880,9 +890,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableEsPrivateDomainPublic Whether the instance has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableEsPrivateDomainPublic(Boolean enableEsPrivateDomainPublic) {
             return enableEsPrivateDomainPublic(Output.of(enableEsPrivateDomainPublic));
@@ -890,9 +900,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableEsPrivateNetwork Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableEsPrivateNetwork(@Nullable Output<Boolean> enableEsPrivateNetwork) {
             $.enableEsPrivateNetwork = enableEsPrivateNetwork;
@@ -901,9 +911,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableEsPrivateNetwork Whether private network access is enabled for the instance. true: Default, private network access enabled; false: private network access not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableEsPrivateNetwork(Boolean enableEsPrivateNetwork) {
             return enableEsPrivateNetwork(Output.of(enableEsPrivateNetwork));
@@ -911,9 +921,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableEsPublicNetwork Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableEsPublicNetwork(@Nullable Output<Boolean> enableEsPublicNetwork) {
             $.enableEsPublicNetwork = enableEsPublicNetwork;
@@ -922,9 +932,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableEsPublicNetwork Whether the instance has enabled public access. true: Public access enabled. false: Public access not enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableEsPublicNetwork(Boolean enableEsPublicNetwork) {
             return enableEsPublicNetwork(Output.of(enableEsPublicNetwork));
@@ -932,9 +942,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableKibanaPrivateDomainPublic Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableKibanaPrivateDomainPublic(@Nullable Output<Boolean> enableKibanaPrivateDomainPublic) {
             $.enableKibanaPrivateDomainPublic = enableKibanaPrivateDomainPublic;
@@ -943,9 +953,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableKibanaPrivateDomainPublic Whether Kibana has enabled public resolution for private network addresses. true: Public resolution enabled for private network addresses false: Public resolution not enabled for private network addresses
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableKibanaPrivateDomainPublic(Boolean enableKibanaPrivateDomainPublic) {
             return enableKibanaPrivateDomainPublic(Output.of(enableKibanaPrivateDomainPublic));
@@ -953,9 +963,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableKibanaPrivateNetwork Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableKibanaPrivateNetwork(@Nullable Output<Boolean> enableKibanaPrivateNetwork) {
             $.enableKibanaPrivateNetwork = enableKibanaPrivateNetwork;
@@ -964,9 +974,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableKibanaPrivateNetwork Whether Kibana private network access is enabled. true: Default value, private network access enabled false: Kibana private network access not enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableKibanaPrivateNetwork(Boolean enableKibanaPrivateNetwork) {
             return enableKibanaPrivateNetwork(Output.of(enableKibanaPrivateNetwork));
@@ -974,9 +984,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableKibanaPublicNetwork Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableKibanaPublicNetwork(@Nullable Output<Boolean> enableKibanaPublicNetwork) {
             $.enableKibanaPublicNetwork = enableKibanaPublicNetwork;
@@ -985,9 +995,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableKibanaPublicNetwork Whether Kibana has enabled public access. true: Public access enabled false: Public access not enabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableKibanaPublicNetwork(Boolean enableKibanaPublicNetwork) {
             return enableKibanaPublicNetwork(Output.of(enableKibanaPublicNetwork));
@@ -995,9 +1005,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esEip EIP bound to the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esEip(@Nullable Output<String> esEip) {
             $.esEip = esEip;
@@ -1006,9 +1016,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esEip EIP bound to the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esEip(String esEip) {
             return esEip(Output.of(esEip));
@@ -1016,9 +1026,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esEipId ID of the EIP bound to the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esEipId(@Nullable Output<String> esEipId) {
             $.esEipId = esEipId;
@@ -1027,9 +1037,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esEipId ID of the EIP bound to the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esEipId(String esEipId) {
             return esEipId(Output.of(esEipId));
@@ -1037,9 +1047,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPrivateEndpoint Instance private network access address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPrivateEndpoint(@Nullable Output<String> esPrivateEndpoint) {
             $.esPrivateEndpoint = esPrivateEndpoint;
@@ -1048,9 +1058,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPrivateEndpoint Instance private network access address.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPrivateEndpoint(String esPrivateEndpoint) {
             return esPrivateEndpoint(Output.of(esPrivateEndpoint));
@@ -1058,9 +1068,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPrivateIpAllowList Instance private network address access allowlist. Same as ESPrivateIpWhitelist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPrivateIpAllowList(@Nullable Output<String> esPrivateIpAllowList) {
             $.esPrivateIpAllowList = esPrivateIpAllowList;
@@ -1069,9 +1079,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPrivateIpAllowList Instance private network address access allowlist. Same as ESPrivateIpWhitelist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPrivateIpAllowList(String esPrivateIpAllowList) {
             return esPrivateIpAllowList(Output.of(esPrivateIpAllowList));
@@ -1079,9 +1089,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPrivateIpWhitelist Instance private network address access allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPrivateIpWhitelist(@Nullable Output<String> esPrivateIpWhitelist) {
             $.esPrivateIpWhitelist = esPrivateIpWhitelist;
@@ -1090,9 +1100,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPrivateIpWhitelist Instance private network address access allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPrivateIpWhitelist(String esPrivateIpWhitelist) {
             return esPrivateIpWhitelist(Output.of(esPrivateIpWhitelist));
@@ -1100,9 +1110,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPubBandwidth ES public network bandwidth, unit: Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPubBandwidth(@Nullable Output<Integer> esPubBandwidth) {
             $.esPubBandwidth = esPubBandwidth;
@@ -1111,9 +1121,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPubBandwidth ES public network bandwidth, unit: Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPubBandwidth(Integer esPubBandwidth) {
             return esPubBandwidth(Output.of(esPubBandwidth));
@@ -1121,9 +1131,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPublicEndpoint Instance public access address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPublicEndpoint(@Nullable Output<String> esPublicEndpoint) {
             $.esPublicEndpoint = esPublicEndpoint;
@@ -1132,9 +1142,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPublicEndpoint Instance public access address
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPublicEndpoint(String esPublicEndpoint) {
             return esPublicEndpoint(Output.of(esPublicEndpoint));
@@ -1142,9 +1152,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPublicIpAllowList Instance public IP address access allowlist. Same as ESPublicIpWhitelist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPublicIpAllowList(@Nullable Output<String> esPublicIpAllowList) {
             $.esPublicIpAllowList = esPublicIpAllowList;
@@ -1153,9 +1163,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPublicIpAllowList Instance public IP address access allowlist. Same as ESPublicIpWhitelist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPublicIpAllowList(String esPublicIpAllowList) {
             return esPublicIpAllowList(Output.of(esPublicIpAllowList));
@@ -1163,9 +1173,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPublicIpWhitelist Allowlist for instance public network address access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPublicIpWhitelist(@Nullable Output<String> esPublicIpWhitelist) {
             $.esPublicIpWhitelist = esPublicIpWhitelist;
@@ -1174,9 +1184,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param esPublicIpWhitelist Allowlist for instance public network address access.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder esPublicIpWhitelist(String esPublicIpWhitelist) {
             return esPublicIpWhitelist(Output.of(esPublicIpWhitelist));
@@ -1184,9 +1194,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expireDate Expiration time for subscription instance payment
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expireDate(@Nullable Output<String> expireDate) {
             $.expireDate = expireDate;
@@ -1195,9 +1205,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param expireDate Expiration time for subscription instance payment
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder expireDate(String expireDate) {
             return expireDate(Output.of(expireDate));
@@ -1205,9 +1215,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceConfiguration Instance configuration details
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceConfiguration(@Nullable Output<InstanceInstanceConfigurationArgs> instanceConfiguration) {
             $.instanceConfiguration = instanceConfiguration;
@@ -1216,9 +1226,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceConfiguration Instance configuration details
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceConfiguration(InstanceInstanceConfigurationArgs instanceConfiguration) {
             return instanceConfiguration(Output.of(instanceConfiguration));
@@ -1226,9 +1236,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -1237,9 +1247,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -1247,9 +1257,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaConfig Kibana parameter configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaConfig(@Nullable Output<InstanceKibanaConfigArgs> kibanaConfig) {
             $.kibanaConfig = kibanaConfig;
@@ -1258,9 +1268,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaConfig Kibana parameter configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaConfig(InstanceKibanaConfigArgs kibanaConfig) {
             return kibanaConfig(Output.of(kibanaConfig));
@@ -1268,9 +1278,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaEip EIP bound to Kibana
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaEip(@Nullable Output<String> kibanaEip) {
             $.kibanaEip = kibanaEip;
@@ -1279,9 +1289,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaEip EIP bound to Kibana
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaEip(String kibanaEip) {
             return kibanaEip(Output.of(kibanaEip));
@@ -1289,9 +1299,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaEipId ID of the EIP bound to Kibana.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaEipId(@Nullable Output<String> kibanaEipId) {
             $.kibanaEipId = kibanaEipId;
@@ -1300,9 +1310,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaEipId ID of the EIP bound to Kibana.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaEipId(String kibanaEipId) {
             return kibanaEipId(Output.of(kibanaEipId));
@@ -1310,9 +1320,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPrivateDomain Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPrivateDomain(@Nullable Output<String> kibanaPrivateDomain) {
             $.kibanaPrivateDomain = kibanaPrivateDomain;
@@ -1321,9 +1331,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPrivateDomain Kibana private network access address. Note: For historical instances, the access address may start with http(s)://kibana-***.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPrivateDomain(String kibanaPrivateDomain) {
             return kibanaPrivateDomain(Output.of(kibanaPrivateDomain));
@@ -1331,9 +1341,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPrivateIpAllowList Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPrivateIpAllowList(@Nullable Output<String> kibanaPrivateIpAllowList) {
             $.kibanaPrivateIpAllowList = kibanaPrivateIpAllowList;
@@ -1342,9 +1352,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPrivateIpAllowList Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPrivateIpWhitelist.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPrivateIpAllowList(String kibanaPrivateIpAllowList) {
             return kibanaPrivateIpAllowList(Output.of(kibanaPrivateIpAllowList));
@@ -1352,9 +1362,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPrivateIpWhitelist Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPrivateIpWhitelist(@Nullable Output<String> kibanaPrivateIpWhitelist) {
             $.kibanaPrivateIpWhitelist = kibanaPrivateIpWhitelist;
@@ -1363,9 +1373,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPrivateIpWhitelist Kibana private network allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPrivateIpWhitelist(String kibanaPrivateIpWhitelist) {
             return kibanaPrivateIpWhitelist(Output.of(kibanaPrivateIpWhitelist));
@@ -1373,9 +1383,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPubBandwidth Kibana public network bandwidth, unit: Mbps
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPubBandwidth(@Nullable Output<Integer> kibanaPubBandwidth) {
             $.kibanaPubBandwidth = kibanaPubBandwidth;
@@ -1384,9 +1394,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPubBandwidth Kibana public network bandwidth, unit: Mbps
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPubBandwidth(Integer kibanaPubBandwidth) {
             return kibanaPubBandwidth(Output.of(kibanaPubBandwidth));
@@ -1394,9 +1404,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPublicDomain Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPublicDomain(@Nullable Output<String> kibanaPublicDomain) {
             $.kibanaPublicDomain = kibanaPublicDomain;
@@ -1405,9 +1415,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPublicDomain Kibana public access address. Note: For legacy instances, the access address may start with http(s)://kibana-***
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPublicDomain(String kibanaPublicDomain) {
             return kibanaPublicDomain(Output.of(kibanaPublicDomain));
@@ -1415,9 +1425,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPublicIpAllowList Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPublicIpAllowList(@Nullable Output<String> kibanaPublicIpAllowList) {
             $.kibanaPublicIpAllowList = kibanaPublicIpAllowList;
@@ -1426,9 +1436,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPublicIpAllowList Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Same as KibanaPublicIpWhitelist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPublicIpAllowList(String kibanaPublicIpAllowList) {
             return kibanaPublicIpAllowList(Output.of(kibanaPublicIpAllowList));
@@ -1436,9 +1446,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPublicIpWhitelist Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPublicIpWhitelist(@Nullable Output<String> kibanaPublicIpWhitelist) {
             $.kibanaPublicIpWhitelist = kibanaPublicIpWhitelist;
@@ -1447,9 +1457,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param kibanaPublicIpWhitelist Kibana public allowlist. Only IP addresses added to the allowlist can access the visualization tool. Note: Cerebro and Kibana share the same allowlist
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kibanaPublicIpWhitelist(String kibanaPublicIpWhitelist) {
             return kibanaPublicIpWhitelist(Output.of(kibanaPublicIpWhitelist));
@@ -1457,9 +1467,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mainZoneId Primary availability zone
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mainZoneId(@Nullable Output<String> mainZoneId) {
             $.mainZoneId = mainZoneId;
@@ -1468,9 +1478,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param mainZoneId Primary availability zone
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder mainZoneId(String mainZoneId) {
             return mainZoneId(Output.of(mainZoneId));
@@ -1478,9 +1488,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceDays Instance maintenance date.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceDays(@Nullable Output<List<String>> maintenanceDays) {
             $.maintenanceDays = maintenanceDays;
@@ -1489,9 +1499,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceDays Instance maintenance date.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceDays(List<String> maintenanceDays) {
             return maintenanceDays(Output.of(maintenanceDays));
@@ -1499,9 +1509,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceDays Instance maintenance date.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceDays(String... maintenanceDays) {
             return maintenanceDays(List.of(maintenanceDays));
@@ -1509,9 +1519,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceTime Instance maintenance window.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceTime(@Nullable Output<String> maintenanceTime) {
             $.maintenanceTime = maintenanceTime;
@@ -1520,9 +1530,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maintenanceTime Instance maintenance window.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maintenanceTime(String maintenanceTime) {
             return maintenanceTime(Output.of(maintenanceTime));
@@ -1530,9 +1540,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Current instance status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -1541,9 +1551,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Current instance status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
@@ -1551,9 +1561,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subInstanceEnable Sub-instance activation status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subInstanceEnable(@Nullable Output<String> subInstanceEnable) {
             $.subInstanceEnable = subInstanceEnable;
@@ -1562,32 +1572,53 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subInstanceEnable Sub-instance activation status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subInstanceEnable(String subInstanceEnable) {
             return subInstanceEnable(Output.of(subInstanceEnable));
         }
 
+        /**
+         * @param subInstances Enterprise SQL analytics instance configuration information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder subInstances(@Nullable Output<List<InstanceSubInstanceArgs>> subInstances) {
             $.subInstances = subInstances;
             return this;
         }
 
+        /**
+         * @param subInstances Enterprise SQL analytics instance configuration information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder subInstances(List<InstanceSubInstanceArgs> subInstances) {
             return subInstances(Output.of(subInstances));
         }
 
+        /**
+         * @param subInstances Enterprise SQL analytics instance configuration information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder subInstances(InstanceSubInstanceArgs... subInstances) {
             return subInstances(List.of(subInstances));
         }
 
         /**
          * @param supportColdNode Whether cold nodes are supported
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder supportColdNode(@Nullable Output<Boolean> supportColdNode) {
             $.supportColdNode = supportColdNode;
@@ -1596,9 +1627,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param supportColdNode Whether cold nodes are supported
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder supportColdNode(Boolean supportColdNode) {
             return supportColdNode(Output.of(supportColdNode));
@@ -1606,9 +1637,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param totalNodes Total number of nodes in the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder totalNodes(@Nullable Output<Integer> totalNodes) {
             $.totalNodes = totalNodes;
@@ -1617,9 +1648,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param totalNodes Total number of nodes in the instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder totalNodes(Integer totalNodes) {
             return totalNodes(Output.of(totalNodes));
@@ -1627,9 +1658,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transferInfo Data migration task information
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transferInfo(@Nullable Output<InstanceTransferInfoArgs> transferInfo) {
             $.transferInfo = transferInfo;
@@ -1638,9 +1669,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param transferInfo Data migration task information
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transferInfo(InstanceTransferInfoArgs transferInfo) {
             return transferInfo(Output.of(transferInfo));
@@ -1648,9 +1679,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userId Instance owner&#39;s user ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userId(@Nullable Output<String> userId) {
             $.userId = userId;
@@ -1659,9 +1690,9 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param userId Instance owner&#39;s user ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userId(String userId) {
             return userId(Output.of(userId));

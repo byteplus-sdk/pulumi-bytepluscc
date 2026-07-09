@@ -20,14 +20,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
     /**
      * Permission group creation time.
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Permission group creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -35,14 +35,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
     /**
      * Permission group description information.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Permission group description information.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -50,14 +50,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
     /**
      * Number of file systems associated with this permission group.
-     * 
+     *
      */
     @Import(name="fileSystemCount")
     private @Nullable Output<Integer> fileSystemCount;
 
     /**
      * @return Number of file systems associated with this permission group.
-     * 
+     *
      */
     public Optional<Output<Integer>> fileSystemCount() {
         return Optional.ofNullable(this.fileSystemCount);
@@ -65,36 +65,46 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
     /**
      * File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
-     * 
+     *
      */
     @Import(name="fileSystemType")
     private @Nullable Output<String> fileSystemType;
 
     /**
      * @return File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
-     * 
+     *
      */
     public Optional<Output<String>> fileSystemType() {
         return Optional.ofNullable(this.fileSystemType);
     }
 
+    /**
+     * Information about mount points that use this permission group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="mountPoints")
     private @Nullable Output<List<MountPointPermissionGroupMountPointArgs>> mountPoints;
 
+    /**
+     * @return Information about mount points that use this permission group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<MountPointPermissionGroupMountPointArgs>>> mountPoints() {
         return Optional.ofNullable(this.mountPoints);
     }
 
     /**
      * Permission group name.
-     * 
+     *
      */
     @Import(name="permissionGroupName")
     private @Nullable Output<String> permissionGroupName;
 
     /**
      * @return Permission group name.
-     * 
+     *
      */
     public Optional<Output<String>> permissionGroupName() {
         return Optional.ofNullable(this.permissionGroupName);
@@ -102,14 +112,14 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
     /**
      * Number of permission rules.
-     * 
+     *
      */
     @Import(name="permissionRuleCount")
     private @Nullable Output<Integer> permissionRuleCount;
 
     /**
      * @return Number of permission rules.
-     * 
+     *
      */
     public Optional<Output<Integer>> permissionRuleCount() {
         return Optional.ofNullable(this.permissionRuleCount);
@@ -147,9 +157,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param createTime Permission group creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -158,9 +168,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param createTime Permission group creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -168,9 +178,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param description Permission group description information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -179,9 +189,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param description Permission group description information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -189,9 +199,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param fileSystemCount Number of file systems associated with this permission group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder fileSystemCount(@Nullable Output<Integer> fileSystemCount) {
             $.fileSystemCount = fileSystemCount;
@@ -200,9 +210,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param fileSystemCount Number of file systems associated with this permission group.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder fileSystemCount(Integer fileSystemCount) {
             return fileSystemCount(Output.of(fileSystemCount));
@@ -210,9 +220,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param fileSystemType File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder fileSystemType(@Nullable Output<String> fileSystemType) {
             $.fileSystemType = fileSystemType;
@@ -221,32 +231,53 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param fileSystemType File system type. Value explanation: Extreme: NAS extreme type. Capacity: NAS capacity type. Cache: NAS cache type.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder fileSystemType(String fileSystemType) {
             return fileSystemType(Output.of(fileSystemType));
         }
 
+        /**
+         * @param mountPoints Information about mount points that use this permission group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder mountPoints(@Nullable Output<List<MountPointPermissionGroupMountPointArgs>> mountPoints) {
             $.mountPoints = mountPoints;
             return this;
         }
 
+        /**
+         * @param mountPoints Information about mount points that use this permission group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder mountPoints(List<MountPointPermissionGroupMountPointArgs> mountPoints) {
             return mountPoints(Output.of(mountPoints));
         }
 
+        /**
+         * @param mountPoints Information about mount points that use this permission group.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder mountPoints(MountPointPermissionGroupMountPointArgs... mountPoints) {
             return mountPoints(List.of(mountPoints));
         }
 
         /**
          * @param permissionGroupName Permission group name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder permissionGroupName(@Nullable Output<String> permissionGroupName) {
             $.permissionGroupName = permissionGroupName;
@@ -255,9 +286,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param permissionGroupName Permission group name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder permissionGroupName(String permissionGroupName) {
             return permissionGroupName(Output.of(permissionGroupName));
@@ -265,9 +296,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param permissionRuleCount Number of permission rules.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder permissionRuleCount(@Nullable Output<Integer> permissionRuleCount) {
             $.permissionRuleCount = permissionRuleCount;
@@ -276,9 +307,9 @@ public final class MountPointPermissionGroupArgs extends com.pulumi.resources.Re
 
         /**
          * @param permissionRuleCount Number of permission rules.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder permissionRuleCount(Integer permissionRuleCount) {
             return permissionRuleCount(Output.of(permissionRuleCount));

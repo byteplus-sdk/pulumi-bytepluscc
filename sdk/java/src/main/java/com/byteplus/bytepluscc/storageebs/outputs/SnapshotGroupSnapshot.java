@@ -17,246 +17,256 @@ import javax.annotation.Nullable;
 public final class SnapshotGroupSnapshot {
     /**
      * @return Snapshot creation time
-     * 
+     *
      */
     private @Nullable String creationTime;
     /**
      * @return Snapshot description
-     * 
+     *
      */
     private @Nullable String description;
     /**
      * @return Image ID
-     * 
+     *
      */
     private @Nullable String imageId;
     /**
      * @return Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
-     * 
+     *
      */
     private @Nullable Boolean instantAccess;
     /**
      * @return Dump progress
-     * 
+     *
      */
     private @Nullable Integer progress;
     /**
      * @return Project of the snapshot
-     * 
+     *
      */
     private @Nullable String projectName;
     /**
      * @return Retention days for automatic snapshots
-     * 
+     *
      */
     private @Nullable Integer retentionDays;
     /**
      * @return Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
-     * 
+     *
      */
     private @Nullable Boolean shared;
     /**
      * @return Snapshot consistency group ID
-     * 
+     *
      */
     private @Nullable String snapshotGroupId;
     /**
      * @return Snapshot ID
-     * 
+     *
      */
     private @Nullable String snapshotId;
     /**
      * @return Snapshot name
-     * 
+     *
      */
     private @Nullable String snapshotName;
     /**
      * @return Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
-     * 
+     *
      */
     private @Nullable String snapshotType;
     /**
      * @return Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
-     * 
+     *
      */
     private @Nullable String status;
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<SnapshotGroupSnapshotTag> tags;
     /**
      * @return Cloud disk ID
-     * 
+     *
      */
     private @Nullable String volumeId;
     /**
      * @return Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
-     * 
+     *
      */
     private @Nullable String volumeKind;
     /**
      * @return Cloud disk name
-     * 
+     *
      */
     private @Nullable String volumeName;
     /**
      * @return Cloud disk size (GiB)
-     * 
+     *
      */
     private @Nullable Integer volumeSize;
     /**
      * @return Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
-     * 
+     *
      */
     private @Nullable String volumeStatus;
     /**
      * @return Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
-     * 
+     *
      */
     private @Nullable String volumeType;
     /**
      * @return Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
-     * 
+     *
      */
     private @Nullable String zoneId;
 
     private SnapshotGroupSnapshot() {}
     /**
      * @return Snapshot creation time
-     * 
+     *
      */
     public Optional<String> creationTime() {
         return Optional.ofNullable(this.creationTime);
     }
     /**
      * @return Snapshot description
-     * 
+     *
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Image ID
-     * 
+     *
      */
     public Optional<String> imageId() {
         return Optional.ofNullable(this.imageId);
     }
     /**
      * @return Whether the snapshot has enabled ultra-fast availability. Values are as follows:   - true: Ultra-fast availability enabled   - false: Ultra-fast availability not enabled
-     * 
+     *
      */
     public Optional<Boolean> instantAccess() {
         return Optional.ofNullable(this.instantAccess);
     }
     /**
      * @return Dump progress
-     * 
+     *
      */
     public Optional<Integer> progress() {
         return Optional.ofNullable(this.progress);
     }
     /**
      * @return Project of the snapshot
-     * 
+     *
      */
     public Optional<String> projectName() {
         return Optional.ofNullable(this.projectName);
     }
     /**
      * @return Retention days for automatic snapshots
-     * 
+     *
      */
     public Optional<Integer> retentionDays() {
         return Optional.ofNullable(this.retentionDays);
     }
     /**
      * @return Whether the snapshot is shared with others. Values are as follows:   - true: Snapshot is shared with others   - false: Snapshot is not shared with others
-     * 
+     *
      */
     public Optional<Boolean> shared() {
         return Optional.ofNullable(this.shared);
     }
     /**
      * @return Snapshot consistency group ID
-     * 
+     *
      */
     public Optional<String> snapshotGroupId() {
         return Optional.ofNullable(this.snapshotGroupId);
     }
     /**
      * @return Snapshot ID
-     * 
+     *
      */
     public Optional<String> snapshotId() {
         return Optional.ofNullable(this.snapshotId);
     }
     /**
      * @return Snapshot name
-     * 
+     *
      */
     public Optional<String> snapshotName() {
         return Optional.ofNullable(this.snapshotName);
     }
     /**
      * @return Snapshot type. Values are as follows:   - user: Manual snapshot   - auto: Automatic snapshot
-     * 
+     *
      */
     public Optional<String> snapshotType() {
         return Optional.ofNullable(this.snapshotType);
     }
     /**
      * @return Snapshot status. Values are as follows:   - available: Available   - creating: Creating   - rollbacking: Rolling back   - deleted: Deleted   - failed: Error
-     * 
+     *
      */
     public Optional<String> status() {
         return Optional.ofNullable(this.status);
     }
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<SnapshotGroupSnapshotTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }
     /**
      * @return Cloud disk ID
-     * 
+     *
      */
     public Optional<String> volumeId() {
         return Optional.ofNullable(this.volumeId);
     }
     /**
      * @return Cloud disk category. Values are as follows:   - system: System disk   - data: Data disk
-     * 
+     *
      */
     public Optional<String> volumeKind() {
         return Optional.ofNullable(this.volumeKind);
     }
     /**
      * @return Cloud disk name
-     * 
+     *
      */
     public Optional<String> volumeName() {
         return Optional.ofNullable(this.volumeName);
     }
     /**
      * @return Cloud disk size (GiB)
-     * 
+     *
      */
     public Optional<Integer> volumeSize() {
         return Optional.ofNullable(this.volumeSize);
     }
     /**
      * @return Cloud disk status. Values are as follows:   - available: Available   - attaching: Attaching   - attached: Attached   - detaching: Detaching   - creating: Creating   - deleting: Deleting   - error: Error   - extending: Expanding
-     * 
+     *
      */
     public Optional<String> volumeStatus() {
         return Optional.ofNullable(this.volumeStatus);
     }
     /**
      * @return Cloud disk type. Values are as follows:   - ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification   - ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification   - TSSD_TL0: Throughput SSD cloud disk
-     * 
+     *
      */
     public Optional<String> volumeType() {
         return Optional.ofNullable(this.volumeType);
     }
     /**
      * @return Zone ID. If ultra-fast availability is enabled for the snapshot, you can create a cloud disk in this zone using the ultra-fast available snapshot
-     * 
+     *
      */
     public Optional<String> zoneId() {
         return Optional.ofNullable(this.zoneId);

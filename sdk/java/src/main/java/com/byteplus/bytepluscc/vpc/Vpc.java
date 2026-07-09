@@ -19,337 +19,407 @@ import javax.annotation.Nullable;
 
 /**
  * A private network creates an isolated, self-configurable virtual network environment for cloud resources. You can customize IP address ranges, security groups, routing policies, and other network features within the private network to manage cloud resources simply, efficiently, and securely.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vpc.Vpc;
+ * import com.byteplus.bytepluscc.vpc.VpcArgs;
+ * import com.pulumi.bytepluscc.vpc.inputs.VpcTagArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var vPCDemo = new Vpc("vPCDemo", VpcArgs.builder()
+ *             .cidrBlock("192.168.0.0/24")
+ *             .supportIpv4Gateway(true)
+ *             .vpcName("vpc-demo")
+ *             .description("VpcDemo Example")
+ *             .enableIpv6(false)
+ *             .dnsServers("12.3.x.x")
+ *             .associateCens(Arrays.asList(Map.ofEntries(
+ *                 Map.entry("cen_id", "cen-3re8cx4vwdibk5zsk2xxxx"),
+ *                 Map.entry("cen_owner_id", "200000xxx"),
+ *                 Map.entry("cen_status", "Attaching")
+ *             )))
+ *             .natGatewayIds("ngw-2d6tp1y8zq41s58ozfdxxx")
+ *             .routeTableIds(Arrays.asList("vtb-29mkf8ft83l6o1e1hgixxx"))
+ *             .securityGroupIds(Arrays.asList("sg-29mkx39jb80741e1hgj2bxxx"))
+ *             .projectName("default")
+ *             .userCidrBlocks("10.0.0.0/8")
+ *             .tags(VpcTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpc/vpc:Vpc example &#34;vpc_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpc/vpc:Vpc")
 public class Vpc extends com.pulumi.resources.CustomResource {
     /**
      * ID of the account to which the VPC belongs.
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return ID of the account to which the VPC belongs.
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
+    /**
+     * CEN information associated with the VPC.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associateCens", refs={List.class,VpcAssociateCen.class}, tree="[0,1]")
     private Output<List<VpcAssociateCen>> associateCens;
 
+    /**
+     * @return CEN information associated with the VPC.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<VpcAssociateCen>> associateCens() {
         return this.associateCens;
     }
     /**
      * IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
-     * 
+     *
      */
     @Export(name="cidrBlock", refs={String.class}, tree="[0]")
     private Output<String> cidrBlock;
 
     /**
      * @return IPv4 CIDR block of the VPC. You can use the following CIDR blocks or their subsets as the VPC&#39;s IPv4 CIDR block: 192.168.0.0/16 ~ 24, 10.0.0.0/8 ~ 24, 172.16.0.0/12 ~ 24.
-     * 
+     *
      */
     public Output<String> cidrBlock() {
         return this.cidrBlock;
     }
     /**
      * Time when the VPC was created.
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Time when the VPC was created.
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the VPC. Length must be between 0 and 255 characters. If not specified, defaults to an empty string. Must start with a letter, Chinese character, or number. Can include English commas (,), periods (.), underscores (_), spaces ( ), equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。). Cannot start with http:// or https://.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
-     * 
+     *
      */
     @Export(name="dnsServers", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dnsServers;
 
     /**
      * @return DNS server addresses of the VPC. Maximum of 5 per request. Each DnsServer must be a valid IP address. Use &amp; to separate multiple IPs. If not specified, defaults to the system DNS server addresses.
-     * 
+     *
      */
     public Output<List<String>> dnsServers() {
         return this.dnsServers;
     }
     /**
      * Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
-     * 
+     *
      */
     @Export(name="enableIpv6", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableIpv6;
 
     /**
      * @return Whether to enable IPv6 CIDR block. false (default): not enabled. true: enabled.
-     * 
+     *
      */
     public Output<Boolean> enableIpv6() {
         return this.enableIpv6;
     }
     /**
      * ID of the IPv4 gateway bound to the VPC.
-     * 
+     *
      */
     @Export(name="ipv4GatewayId", refs={String.class}, tree="[0]")
     private Output<String> ipv4GatewayId;
 
     /**
      * @return ID of the IPv4 gateway bound to the VPC.
-     * 
+     *
      */
     public Output<String> ipv4GatewayId() {
         return this.ipv4GatewayId;
     }
     /**
      * IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
-     * 
+     *
      */
     @Export(name="ipv6CidrBlock", refs={String.class}, tree="[0]")
     private Output<String> ipv6CidrBlock;
 
     /**
      * @return IPv6 CIDR block of the VPC. If this parameter is provided, the Ipv6MaskLen parameter is ignored. If the Ipv6Isp parameter is set to a value other than BGP, either the Ipv6MaskLen or Ipv6CidrBlock parameter must be provided. If the Ipv6Isp parameter is not provided or set to BGP and this parameter is not provided, the system automatically assigns an IPv6 CIDR block.
-     * 
+     *
      */
     public Output<String> ipv6CidrBlock() {
         return this.ipv6CidrBlock;
     }
     /**
      * Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
-     * 
+     *
      */
     @Export(name="isDefault", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isDefault;
 
     /**
      * @return Whether this VPC is the default VPC. true: default VPC, meaning the VPC was automatically created by the system when creating an ECS instance. false: non-default VPC, meaning the VPC was manually created by the user.
-     * 
+     *
      */
     public Output<Boolean> isDefault() {
         return this.isDefault;
     }
     /**
      * ID of the NAT gateway created in the VPC.
-     * 
+     *
      */
     @Export(name="natGatewayIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> natGatewayIds;
 
     /**
      * @return ID of the NAT gateway created in the VPC.
-     * 
+     *
      */
     public Output<List<String>> natGatewayIds() {
         return this.natGatewayIds;
     }
     /**
      * Number of network ACLs in the VPC.
-     * 
+     *
      */
     @Export(name="networkAclNum", refs={String.class}, tree="[0]")
     private Output<String> networkAclNum;
 
     /**
      * @return Number of network ACLs in the VPC.
-     * 
+     *
      */
     public Output<String> networkAclNum() {
         return this.networkAclNum;
     }
     /**
      * Name of the project to which the VPC belongs. If not specified, it is added to the default project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Name of the project to which the VPC belongs. If not specified, it is added to the default project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * ID of the route table associated with the VPC.
-     * 
+     *
      */
     @Export(name="routeTableIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> routeTableIds;
 
     /**
      * @return ID of the route table associated with the VPC.
-     * 
+     *
      */
     public Output<List<String>> routeTableIds() {
         return this.routeTableIds;
     }
     /**
      * Secondary CIDR block of the VPC.
-     * 
+     *
      */
     @Export(name="secondaryCidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> secondaryCidrBlocks;
 
     /**
      * @return Secondary CIDR block of the VPC.
-     * 
+     *
      */
     public Output<List<String>> secondaryCidrBlocks() {
         return this.secondaryCidrBlocks;
     }
     /**
      * List of security groups in the VPC.
-     * 
+     *
      */
     @Export(name="securityGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> securityGroupIds;
 
     /**
      * @return List of security groups in the VPC.
-     * 
+     *
      */
     public Output<List<String>> securityGroupIds() {
         return this.securityGroupIds;
     }
     /**
      * Status of the VPC. Creating: being created. Created: created. Available: available.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the VPC. Creating: being created. Created: created. Available: available.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * List of subnets in the VPC.
-     * 
+     *
      */
     @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
      * @return List of subnets in the VPC.
-     * 
+     *
      */
     public Output<List<String>> subnetIds() {
         return this.subnetIds;
     }
     /**
      * Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
-     * 
+     *
      */
     @Export(name="supportIpv4Gateway", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> supportIpv4Gateway;
 
     /**
      * @return Whether the VPC enables the IPv4 gateway. false (default): not enabled. true: enabled.
-     * 
+     *
      */
     public Output<Boolean> supportIpv4Gateway() {
         return this.supportIpv4Gateway;
     }
+    /**
+     * Tags bound to the private network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,VpcTag.class}, tree="[0,1]")
     private Output<List<VpcTag>> tags;
 
+    /**
+     * @return Tags bound to the private network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<VpcTag>> tags() {
         return this.tags;
     }
     /**
      * Time when the VPC was updated.
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Time when the VPC was updated.
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * User CIDR block of the VPC.
-     * 
+     *
      */
     @Export(name="userCidrBlocks", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> userCidrBlocks;
 
     /**
      * @return User CIDR block of the VPC.
-     * 
+     *
      */
     public Output<List<String>> userCidrBlocks() {
         return this.userCidrBlocks;
     }
     /**
      * ID of the VPC.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
-     * 
+     *
      */
     @Export(name="vpcName", refs={String.class}, tree="[0]")
     private Output<String> vpcName;
 
     /**
      * @return Name of the VPC. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the VPC instance ID. Cannot start with http:// or https://.
-     * 
+     *
      */
     public Output<String> vpcName() {
         return this.vpcName;

@@ -19,14 +19,14 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
     /**
      * Associated Entities List
-     * 
+     *
      */
     @Import(name="associates")
     private @Nullable Output<List<String>> associates;
 
     /**
      * @return Associated Entities List
-     * 
+     *
      */
     public Optional<Output<List<String>>> associates() {
         return Optional.ofNullable(this.associates);
@@ -34,14 +34,14 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
     /**
      * Namespace Creation Time
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Namespace Creation Time
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -49,14 +49,14 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
     /**
      * Namespace Description
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Namespace Description
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -64,14 +64,14 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
     /**
      * Namespace Unique ID
-     * 
+     *
      */
     @Import(name="namespaceId")
     private @Nullable Output<String> namespaceId;
 
     /**
      * @return Namespace Unique ID
-     * 
+     *
      */
     public Optional<Output<String>> namespaceId() {
         return Optional.ofNullable(this.namespaceId);
@@ -79,14 +79,14 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
     /**
      * Namespace Name
-     * 
+     *
      */
     @Import(name="namespaceName")
     private @Nullable Output<String> namespaceName;
 
     /**
      * @return Namespace Name
-     * 
+     *
      */
     public Optional<Output<String>> namespaceName() {
         return Optional.ofNullable(this.namespaceName);
@@ -94,36 +94,46 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
     /**
      * Project Associated with Namespace
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project Associated with Namespace
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Namespace Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<PermissionNamespaceTagArgs>> tags;
 
+    /**
+     * @return Namespace Tag List
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PermissionNamespaceTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Namespace TRN
-     * 
+     *
      */
     @Import(name="trn")
     private @Nullable Output<String> trn;
 
     /**
      * @return Namespace TRN
-     * 
+     *
      */
     public Optional<Output<String>> trn() {
         return Optional.ofNullable(this.trn);
@@ -131,14 +141,14 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
     /**
      * Namespace Update Time
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Namespace Update Time
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -178,9 +188,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param associates Associated Entities List
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associates(@Nullable Output<List<String>> associates) {
             $.associates = associates;
@@ -189,9 +199,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param associates Associated Entities List
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associates(List<String> associates) {
             return associates(Output.of(associates));
@@ -199,9 +209,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param associates Associated Entities List
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associates(String... associates) {
             return associates(List.of(associates));
@@ -209,9 +219,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param createTime Namespace Creation Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -220,9 +230,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param createTime Namespace Creation Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -230,9 +240,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param description Namespace Description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -241,9 +251,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param description Namespace Description
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -251,9 +261,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param namespaceId Namespace Unique ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder namespaceId(@Nullable Output<String> namespaceId) {
             $.namespaceId = namespaceId;
@@ -262,9 +272,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param namespaceId Namespace Unique ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder namespaceId(String namespaceId) {
             return namespaceId(Output.of(namespaceId));
@@ -272,9 +282,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param namespaceName Namespace Name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder namespaceName(@Nullable Output<String> namespaceName) {
             $.namespaceName = namespaceName;
@@ -283,9 +293,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param namespaceName Namespace Name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder namespaceName(String namespaceName) {
             return namespaceName(Output.of(namespaceName));
@@ -293,9 +303,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Project Associated with Namespace
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -304,32 +314,53 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param projectName Project Associated with Namespace
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<PermissionNamespaceTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<PermissionNamespaceTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Namespace Tag List
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(PermissionNamespaceTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param trn Namespace TRN
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(@Nullable Output<String> trn) {
             $.trn = trn;
@@ -338,9 +369,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param trn Namespace TRN
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder trn(String trn) {
             return trn(Output.of(trn));
@@ -348,9 +379,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param updateTime Namespace Update Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -359,9 +390,9 @@ public final class PermissionNamespaceState extends com.pulumi.resources.Resourc
 
         /**
          * @param updateTime Namespace Update Time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

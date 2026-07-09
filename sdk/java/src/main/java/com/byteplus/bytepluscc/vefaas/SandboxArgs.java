@@ -24,36 +24,46 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
-     * 
+     *
      */
     @Import(name="cpuMilli")
     private @Nullable Output<Integer> cpuMilli;
 
     /**
      * @return Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
-     * 
+     *
      */
     public Optional<Output<Integer>> cpuMilli() {
         return Optional.ofNullable(this.cpuMilli);
     }
 
+    /**
+     * Sandbox instance environment variables
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="envs")
     private @Nullable Output<List<SandboxEnvArgs>> envs;
 
+    /**
+     * @return Sandbox instance environment variables
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<SandboxEnvArgs>>> envs() {
         return Optional.ofNullable(this.envs);
     }
 
     /**
      * Sandbox application ID to which the sandbox instance belongs
-     * 
+     *
      */
     @Import(name="functionId", required=true)
     private Output<String> functionId;
 
     /**
      * @return Sandbox application ID to which the sandbox instance belongs
-     * 
+     *
      */
     public Output<String> functionId() {
         return this.functionId;
@@ -61,14 +71,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sandbox instance image information, including image address, startup command, and listening port.
-     * 
+     *
      */
     @Import(name="instanceImageInfo")
     private @Nullable Output<SandboxInstanceImageInfoArgs> instanceImageInfo;
 
     /**
      * @return Sandbox instance image information, including image address, startup command, and listening port.
-     * 
+     *
      */
     public Optional<Output<SandboxInstanceImageInfoArgs>> instanceImageInfo() {
         return Optional.ofNullable(this.instanceImageInfo);
@@ -76,14 +86,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance-level object storage (TOS) mount configuration for the sandbox instance
-     * 
+     *
      */
     @Import(name="instanceTosMountConfig")
     private @Nullable Output<SandboxInstanceTosMountConfigArgs> instanceTosMountConfig;
 
     /**
      * @return Instance-level object storage (TOS) mount configuration for the sandbox instance
-     * 
+     *
      */
     public Optional<Output<SandboxInstanceTosMountConfigArgs>> instanceTosMountConfig() {
         return Optional.ofNullable(this.instanceTosMountConfig);
@@ -91,14 +101,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Maximum concurrent requests per instance: range: 10~1000, default: 100
-     * 
+     *
      */
     @Import(name="maxConcurrency")
     private @Nullable Output<Integer> maxConcurrency;
 
     /**
      * @return Maximum concurrent requests per instance: range: 10~1000, default: 100
-     * 
+     *
      */
     public Optional<Output<Integer>> maxConcurrency() {
         return Optional.ofNullable(this.maxConcurrency);
@@ -106,36 +116,46 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
-     * 
+     *
      */
     @Import(name="memoryMb")
     private @Nullable Output<Integer> memoryMb;
 
     /**
      * @return Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
-     * 
+     *
      */
     public Optional<Output<Integer>> memoryMb() {
         return Optional.ofNullable(this.memoryMb);
     }
 
+    /**
+     * Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="metadatas")
     private @Nullable Output<List<SandboxMetadataArgs>> metadatas;
 
+    /**
+     * @return Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<SandboxMetadataArgs>>> metadatas() {
         return Optional.ofNullable(this.metadatas);
     }
 
     /**
      * Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
-     * 
+     *
      */
     @Import(name="requestTimeout")
     private @Nullable Output<Integer> requestTimeout;
 
     /**
      * @return Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
-     * 
+     *
      */
     public Optional<Output<Integer>> requestTimeout() {
         return Optional.ofNullable(this.requestTimeout);
@@ -143,14 +163,14 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
-     * 
+     *
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
      * @return Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
-     * 
+     *
      */
     public Optional<Output<Integer>> timeout() {
         return Optional.ofNullable(this.timeout);
@@ -191,9 +211,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cpuMilli Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cpuMilli(@Nullable Output<Integer> cpuMilli) {
             $.cpuMilli = cpuMilli;
@@ -202,32 +222,53 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cpuMilli Sandbox instance CPU specification: Unit: milli CPU, range: 250~16000, default: 1000
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cpuMilli(Integer cpuMilli) {
             return cpuMilli(Output.of(cpuMilli));
         }
 
+        /**
+         * @param envs Sandbox instance environment variables
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder envs(@Nullable Output<List<SandboxEnvArgs>> envs) {
             $.envs = envs;
             return this;
         }
 
+        /**
+         * @param envs Sandbox instance environment variables
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder envs(List<SandboxEnvArgs> envs) {
             return envs(Output.of(envs));
         }
 
+        /**
+         * @param envs Sandbox instance environment variables
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder envs(SandboxEnvArgs... envs) {
             return envs(List.of(envs));
         }
 
         /**
          * @param functionId Sandbox application ID to which the sandbox instance belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder functionId(Output<String> functionId) {
             $.functionId = functionId;
@@ -236,9 +277,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param functionId Sandbox application ID to which the sandbox instance belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder functionId(String functionId) {
             return functionId(Output.of(functionId));
@@ -246,9 +287,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceImageInfo Sandbox instance image information, including image address, startup command, and listening port.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceImageInfo(@Nullable Output<SandboxInstanceImageInfoArgs> instanceImageInfo) {
             $.instanceImageInfo = instanceImageInfo;
@@ -257,9 +298,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceImageInfo Sandbox instance image information, including image address, startup command, and listening port.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceImageInfo(SandboxInstanceImageInfoArgs instanceImageInfo) {
             return instanceImageInfo(Output.of(instanceImageInfo));
@@ -267,9 +308,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceTosMountConfig Instance-level object storage (TOS) mount configuration for the sandbox instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceTosMountConfig(@Nullable Output<SandboxInstanceTosMountConfigArgs> instanceTosMountConfig) {
             $.instanceTosMountConfig = instanceTosMountConfig;
@@ -278,9 +319,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceTosMountConfig Instance-level object storage (TOS) mount configuration for the sandbox instance
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceTosMountConfig(SandboxInstanceTosMountConfigArgs instanceTosMountConfig) {
             return instanceTosMountConfig(Output.of(instanceTosMountConfig));
@@ -288,9 +329,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxConcurrency Maximum concurrent requests per instance: range: 10~1000, default: 100
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maxConcurrency(@Nullable Output<Integer> maxConcurrency) {
             $.maxConcurrency = maxConcurrency;
@@ -299,9 +340,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param maxConcurrency Maximum concurrent requests per instance: range: 10~1000, default: 100
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder maxConcurrency(Integer maxConcurrency) {
             return maxConcurrency(Output.of(maxConcurrency));
@@ -309,9 +350,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param memoryMb Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder memoryMb(@Nullable Output<Integer> memoryMb) {
             $.memoryMb = memoryMb;
@@ -320,32 +361,53 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param memoryMb Sandbox instance memory specification: Unit: MiB, range: 512~131072, default: 2048
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder memoryMb(Integer memoryMb) {
             return memoryMb(Output.of(memoryMb));
         }
 
+        /**
+         * @param metadatas Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder metadatas(@Nullable Output<List<SandboxMetadataArgs>> metadatas) {
             $.metadatas = metadatas;
             return this;
         }
 
+        /**
+         * @param metadatas Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder metadatas(List<SandboxMetadataArgs> metadatas) {
             return metadatas(Output.of(metadatas));
         }
 
+        /**
+         * @param metadatas Sandbox instance label metadata used to tag and filter instances. Format: &lt;&#34;key&#34;:&#34;value&#34;&gt;
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder metadatas(SandboxMetadataArgs... metadatas) {
             return metadatas(List.of(metadatas));
         }
 
         /**
          * @param requestTimeout Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder requestTimeout(@Nullable Output<Integer> requestTimeout) {
             $.requestTimeout = requestTimeout;
@@ -354,9 +416,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requestTimeout Request timeout: Unit: seconds, range: 1~900, positive integer. Default: 30
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder requestTimeout(Integer requestTimeout) {
             return requestTimeout(Output.of(requestTimeout));
@@ -364,9 +426,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeout Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeout(@Nullable Output<Integer> timeout) {
             $.timeout = timeout;
@@ -375,9 +437,9 @@ public final class SandboxArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeout Sandbox instance lifespan: Unit: minutes, range: 3~1440, default: 60
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeout(Integer timeout) {
             return timeout(Output.of(timeout));

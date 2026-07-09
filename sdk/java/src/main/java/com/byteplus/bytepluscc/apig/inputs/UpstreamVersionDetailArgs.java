@@ -17,23 +17,33 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
 
     public static final UpstreamVersionDetailArgs Empty = new UpstreamVersionDetailArgs();
 
+    /**
+     * Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="labels")
     private @Nullable Output<List<UpstreamVersionDetailLabelArgs>> labels;
 
+    /**
+     * @return Tag
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<UpstreamVersionDetailLabelArgs>>> labels() {
         return Optional.ofNullable(this.labels);
     }
 
     /**
      * Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -41,14 +51,14 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
 
     /**
      * Update time
-     * 
+     *
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -80,24 +90,45 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
             $ = new UpstreamVersionDetailArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param labels Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(@Nullable Output<List<UpstreamVersionDetailLabelArgs>> labels) {
             $.labels = labels;
             return this;
         }
 
+        /**
+         * @param labels Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(List<UpstreamVersionDetailLabelArgs> labels) {
             return labels(Output.of(labels));
         }
 
+        /**
+         * @param labels Tag
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder labels(UpstreamVersionDetailLabelArgs... labels) {
             return labels(List.of(labels));
         }
 
         /**
          * @param name Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -106,9 +137,9 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
 
         /**
          * @param name Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -116,9 +147,9 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
 
         /**
          * @param updateTime Update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -127,9 +158,9 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
 
         /**
          * @param updateTime Update time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));

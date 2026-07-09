@@ -4,8 +4,8 @@
 package com.byteplus.bytepluscc.cdn;
 
 import com.byteplus.bytepluscc.cdn.inputs.DomainAreaAccessRuleArgs;
-import com.byteplus.bytepluscc.cdn.inputs.DomainBrowserCachArgs;
-import com.byteplus.bytepluscc.cdn.inputs.DomainCachArgs;
+import com.byteplus.bytepluscc.cdn.inputs.DomainBrowserCacheArgs;
+import com.byteplus.bytepluscc.cdn.inputs.DomainCacheArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainCacheHostArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainCacheKeyArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainCompressionArgs;
@@ -19,7 +19,7 @@ import com.byteplus.bytepluscc.cdn.inputs.DomainIPv6Args;
 import com.byteplus.bytepluscc.cdn.inputs.DomainIpAccessRuleArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainMethodDeniedRuleArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainMultiRangeArgs;
-import com.byteplus.bytepluscc.cdn.inputs.DomainNegativeCachArgs;
+import com.byteplus.bytepluscc.cdn.inputs.DomainNegativeCacheArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainOfflineCacheArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainOriginAccessRuleArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainOriginArgArgs;
@@ -60,65 +60,95 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="areaAccessRule")
     private @Nullable Output<DomainAreaAccessRuleArgs> areaAccessRule;
 
     /**
      * @return Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainAreaAccessRuleArgs>> areaAccessRule() {
         return Optional.ofNullable(this.areaAccessRule);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="browserCaches")
-    private @Nullable Output<List<DomainBrowserCachArgs>> browserCaches;
+    private @Nullable Output<List<DomainBrowserCacheArgs>> browserCaches;
 
-    public Optional<Output<List<DomainBrowserCachArgs>>> browserCaches() {
+    /**
+     * @return Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
+    public Optional<Output<List<DomainBrowserCacheArgs>>> browserCaches() {
         return Optional.ofNullable(this.browserCaches);
     }
 
     /**
      * Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="cacheHost")
     private @Nullable Output<DomainCacheHostArgs> cacheHost;
 
     /**
      * @return Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainCacheHostArgs>> cacheHost() {
         return Optional.ofNullable(this.cacheHost);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="cacheKeys")
     private @Nullable Output<List<DomainCacheKeyArgs>> cacheKeys;
 
+    /**
+     * @return Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainCacheKeyArgs>>> cacheKeys() {
         return Optional.ofNullable(this.cacheKeys);
     }
 
+    /**
+     * Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="caches")
-    private @Nullable Output<List<DomainCachArgs>> caches;
+    private @Nullable Output<List<DomainCacheArgs>> caches;
 
-    public Optional<Output<List<DomainCachArgs>>> caches() {
+    /**
+     * @return Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
+    public Optional<Output<List<DomainCacheArgs>>> caches() {
         return Optional.ofNullable(this.caches);
     }
 
     /**
      * Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="compression")
     private @Nullable Output<DomainCompressionArgs> compression;
 
     /**
      * @return Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainCompressionArgs>> compression() {
         return Optional.ofNullable(this.compression);
@@ -126,14 +156,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
-     * 
+     *
      */
     @Import(name="conditionalOrigin")
     private @Nullable Output<DomainConditionalOriginArgs> conditionalOrigin;
 
     /**
      * @return Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
-     * 
+     *
      */
     public Optional<Output<DomainConditionalOriginArgs>> conditionalOrigin() {
         return Optional.ofNullable(this.conditionalOrigin);
@@ -141,14 +171,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="customErrorPage")
     private @Nullable Output<DomainCustomErrorPageArgs> customErrorPage;
 
     /**
      * @return Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainCustomErrorPageArgs>> customErrorPage() {
         return Optional.ofNullable(this.customErrorPage);
@@ -156,14 +186,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="customizeAccessRule")
     private @Nullable Output<DomainCustomizeAccessRuleArgs> customizeAccessRule;
 
     /**
      * @return Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainCustomizeAccessRuleArgs>> customizeAccessRule() {
         return Optional.ofNullable(this.customizeAccessRule);
@@ -171,14 +201,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the acceleration domain name.
-     * 
+     *
      */
     @Import(name="domain", required=true)
     private Output<String> domain;
 
     /**
      * @return Indicates the acceleration domain name.
-     * 
+     *
      */
     public Output<String> domain() {
         return this.domain;
@@ -186,14 +216,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="downloadSpeedLimit")
     private @Nullable Output<DomainDownloadSpeedLimitArgs> downloadSpeedLimit;
 
     /**
      * @return Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainDownloadSpeedLimitArgs>> downloadSpeedLimit() {
         return Optional.ofNullable(this.downloadSpeedLimit);
@@ -201,14 +231,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
-     * 
+     *
      */
     @Import(name="followRedirect")
     private @Nullable Output<Boolean> followRedirect;
 
     /**
      * @return Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> followRedirect() {
         return Optional.ofNullable(this.followRedirect);
@@ -216,14 +246,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="httpForcedRedirect")
     private @Nullable Output<DomainHttpForcedRedirectArgs> httpForcedRedirect;
 
     /**
      * @return Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainHttpForcedRedirectArgs>> httpForcedRedirect() {
         return Optional.ofNullable(this.httpForcedRedirect);
@@ -231,14 +261,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the HTTPS configuration module. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="https")
     private @Nullable Output<DomainHttpsArgs> https;
 
     /**
      * @return Indicates the HTTPS configuration module. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainHttpsArgs>> https() {
         return Optional.ofNullable(this.https);
@@ -246,14 +276,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the IPv6 feature.
-     * 
+     *
      */
     @Import(name="iPv6")
     private @Nullable Output<DomainIPv6Args> iPv6;
 
     /**
      * @return Indicates the configuration module for the IPv6 feature.
-     * 
+     *
      */
     public Optional<Output<DomainIPv6Args>> iPv6() {
         return Optional.ofNullable(this.iPv6);
@@ -261,14 +291,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
-     * 
+     *
      */
     @Import(name="ipAccessRule")
     private @Nullable Output<DomainIpAccessRuleArgs> ipAccessRule;
 
     /**
      * @return Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
-     * 
+     *
      */
     public Optional<Output<DomainIpAccessRuleArgs>> ipAccessRule() {
         return Optional.ofNullable(this.ipAccessRule);
@@ -276,14 +306,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="methodDeniedRule")
     private @Nullable Output<DomainMethodDeniedRuleArgs> methodDeniedRule;
 
     /**
      * @return Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainMethodDeniedRuleArgs>> methodDeniedRule() {
         return Optional.ofNullable(this.methodDeniedRule);
@@ -291,36 +321,46 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the multi-range feature. This feature is disabled by default
-     * 
+     *
      */
     @Import(name="multiRange")
     private @Nullable Output<DomainMultiRangeArgs> multiRange;
 
     /**
      * @return Indicates the configuration module for the multi-range feature. This feature is disabled by default
-     * 
+     *
      */
     public Optional<Output<DomainMultiRangeArgs>> multiRange() {
         return Optional.ofNullable(this.multiRange);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="negativeCaches")
-    private @Nullable Output<List<DomainNegativeCachArgs>> negativeCaches;
+    private @Nullable Output<List<DomainNegativeCacheArgs>> negativeCaches;
 
-    public Optional<Output<List<DomainNegativeCachArgs>>> negativeCaches() {
+    /**
+     * @return Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
+    public Optional<Output<List<DomainNegativeCacheArgs>>> negativeCaches() {
         return Optional.ofNullable(this.negativeCaches);
     }
 
     /**
      * Indicates the configuration module for the &#39;offline cache&#39; feature.
-     * 
+     *
      */
     @Import(name="offlineCache")
     private @Nullable Output<DomainOfflineCacheArgs> offlineCache;
 
     /**
      * @return Indicates the configuration module for the &#39;offline cache&#39; feature.
-     * 
+     *
      */
     public Optional<Output<DomainOfflineCacheArgs>> offlineCache() {
         return Optional.ofNullable(this.offlineCache);
@@ -328,36 +368,46 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="originAccessRule")
     private @Nullable Output<DomainOriginAccessRuleArgs> originAccessRule;
 
     /**
      * @return Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainOriginAccessRuleArgs>> originAccessRule() {
         return Optional.ofNullable(this.originAccessRule);
     }
 
+    /**
+     * Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="originArgs")
     private @Nullable Output<List<DomainOriginArgArgs>> originArgs;
 
+    /**
+     * @return Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainOriginArgArgs>>> originArgs() {
         return Optional.ofNullable(this.originArgs);
     }
 
     /**
      * Origin certificate validation
-     * 
+     *
      */
     @Import(name="originCertCheck")
     private @Nullable Output<DomainOriginCertCheckArgs> originCertCheck;
 
     /**
      * @return Origin certificate validation
-     * 
+     *
      */
     public Optional<Output<DomainOriginCertCheckArgs>> originCertCheck() {
         return Optional.ofNullable(this.originCertCheck);
@@ -365,14 +415,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
-     * 
+     *
      */
     @Import(name="originHost")
     private @Nullable Output<String> originHost;
 
     /**
      * @return If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
-     * 
+     *
      */
     public Optional<Output<String>> originHost() {
         return Optional.ofNullable(this.originHost);
@@ -380,14 +430,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
-     * 
+     *
      */
     @Import(name="originIPv6")
     private @Nullable Output<String> originIPv6;
 
     /**
      * @return Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
-     * 
+     *
      */
     public Optional<Output<String>> originIPv6() {
         return Optional.ofNullable(this.originIPv6);
@@ -395,14 +445,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
-     * 
+     *
      */
     @Import(name="originProtocol")
     private @Nullable Output<String> originProtocol;
 
     /**
      * @return Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
-     * 
+     *
      */
     public Optional<Output<String>> originProtocol() {
         return Optional.ofNullable(this.originProtocol);
@@ -410,14 +460,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     * 
+     *
      */
     @Import(name="originRange")
     private @Nullable Output<Boolean> originRange;
 
     /**
      * @return Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> originRange() {
         return Optional.ofNullable(this.originRange);
@@ -425,14 +475,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
-     * 
+     *
      */
     @Import(name="originRetry")
     private @Nullable Output<DomainOriginRetryArgs> originRetry;
 
     /**
      * @return Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
-     * 
+     *
      */
     public Optional<Output<DomainOriginRetryArgs>> originRetry() {
         return Optional.ofNullable(this.originRetry);
@@ -440,14 +490,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
-     * 
+     *
      */
     @Import(name="originRewrite")
     private @Nullable Output<DomainOriginRewriteArgs> originRewrite;
 
     /**
      * @return Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
-     * 
+     *
      */
     public Optional<Output<DomainOriginRewriteArgs>> originRewrite() {
         return Optional.ofNullable(this.originRewrite);
@@ -455,36 +505,46 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;origin SNI&#39; feature.
-     * 
+     *
      */
     @Import(name="originSni")
     private @Nullable Output<DomainOriginSniArgs> originSni;
 
     /**
      * @return Indicates the configuration module for the &#39;origin SNI&#39; feature.
-     * 
+     *
      */
     public Optional<Output<DomainOriginSniArgs>> originSni() {
         return Optional.ofNullable(this.originSni);
     }
 
+    /**
+     * Indicates the basic origin configuration module.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="origins", required=true)
     private Output<List<DomainOriginArgs>> origins;
 
+    /**
+     * @return Indicates the basic origin configuration module.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DomainOriginArgs>> origins() {
         return this.origins;
     }
 
     /**
      * Specifies the configuration module for the &#39;page optimization&#39; feature.
-     * 
+     *
      */
     @Import(name="pageOptimization")
     private @Nullable Output<DomainPageOptimizationArgs> pageOptimization;
 
     /**
      * @return Specifies the configuration module for the &#39;page optimization&#39; feature.
-     * 
+     *
      */
     public Optional<Output<DomainPageOptimizationArgs>> pageOptimization() {
         return Optional.ofNullable(this.pageOptimization);
@@ -492,14 +552,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the project to which the acceleration domain belongs
-     * 
+     *
      */
     @Import(name="project")
     private @Nullable Output<String> project;
 
     /**
      * @return Indicates the project to which the acceleration domain belongs
-     * 
+     *
      */
     public Optional<Output<String>> project() {
         return Optional.ofNullable(this.project);
@@ -507,14 +567,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the QUIC feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="quic")
     private @Nullable Output<DomainQuicArgs> quic;
 
     /**
      * @return Indicates the configuration module for the QUIC feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainQuicArgs>> quic() {
         return Optional.ofNullable(this.quic);
@@ -522,14 +582,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="redirectionRewrite")
     private @Nullable Output<DomainRedirectionRewriteArgs> redirectionRewrite;
 
     /**
      * @return Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainRedirectionRewriteArgs>> redirectionRewrite() {
         return Optional.ofNullable(this.redirectionRewrite);
@@ -537,14 +597,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="refererAccessRule")
     private @Nullable Output<DomainRefererAccessRuleArgs> refererAccessRule;
 
     /**
      * @return Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainRefererAccessRuleArgs>> refererAccessRule() {
         return Optional.ofNullable(this.refererAccessRule);
@@ -552,14 +612,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="remoteAuth")
     private @Nullable Output<DomainRemoteAuthArgs> remoteAuth;
 
     /**
      * @return Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainRemoteAuthArgs>> remoteAuth() {
         return Optional.ofNullable(this.remoteAuth);
@@ -567,43 +627,63 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
-     * 
+     *
      */
     @Import(name="requestBlockRule")
     private @Nullable Output<DomainRequestBlockRuleArgs> requestBlockRule;
 
     /**
      * @return Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
-     * 
+     *
      */
     public Optional<Output<DomainRequestBlockRuleArgs>> requestBlockRule() {
         return Optional.ofNullable(this.requestBlockRule);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="requestHeaders")
     private @Nullable Output<List<DomainRequestHeaderArgs>> requestHeaders;
 
+    /**
+     * @return Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainRequestHeaderArgs>>> requestHeaders() {
         return Optional.ofNullable(this.requestHeaders);
     }
 
+    /**
+     * Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="responseHeaders")
     private @Nullable Output<List<DomainResponseHeaderArgs>> responseHeaders;
 
+    /**
+     * @return Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainResponseHeaderArgs>>> responseHeaders() {
         return Optional.ofNullable(this.responseHeaders);
     }
 
     /**
      * Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="rewriteHls")
     private @Nullable Output<DomainRewriteHlsArgs> rewriteHls;
 
     /**
      * @return Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainRewriteHlsArgs>> rewriteHls() {
         return Optional.ofNullable(this.rewriteHls);
@@ -611,14 +691,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
-     * 
+     *
      */
     @Import(name="serviceRegion")
     private @Nullable Output<String> serviceRegion;
 
     /**
      * @return Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
-     * 
+     *
      */
     public Optional<Output<String>> serviceRegion() {
         return Optional.ofNullable(this.serviceRegion);
@@ -626,14 +706,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
-     * 
+     *
      */
     @Import(name="serviceType", required=true)
     private Output<String> serviceType;
 
     /**
      * @return Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
-     * 
+     *
      */
     public Output<String> serviceType() {
         return this.serviceType;
@@ -641,36 +721,46 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
-     * 
+     *
      */
     @Import(name="signedUrlAuth")
     private @Nullable Output<DomainSignedUrlAuthArgs> signedUrlAuth;
 
     /**
      * @return Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
-     * 
+     *
      */
     public Optional<Output<DomainSignedUrlAuthArgs>> signedUrlAuth() {
         return Optional.ofNullable(this.signedUrlAuth);
     }
 
+    /**
+     * Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<DomainTagArgs>> tags;
 
+    /**
+     * @return Tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="timeout")
     private @Nullable Output<DomainTimeoutArgs> timeout;
 
     /**
      * @return Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainTimeoutArgs>> timeout() {
         return Optional.ofNullable(this.timeout);
@@ -678,14 +768,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="uaAccessRule")
     private @Nullable Output<DomainUaAccessRuleArgs> uaAccessRule;
 
     /**
      * @return Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainUaAccessRuleArgs>> uaAccessRule() {
         return Optional.ofNullable(this.uaAccessRule);
@@ -693,14 +783,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="urlNormalize")
     private @Nullable Output<DomainUrlNormalizeArgs> urlNormalize;
 
     /**
      * @return Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainUrlNormalizeArgs>> urlNormalize() {
         return Optional.ofNullable(this.urlNormalize);
@@ -708,14 +798,14 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     @Import(name="videoDrag")
     private @Nullable Output<DomainVideoDragArgs> videoDrag;
 
     /**
      * @return Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
-     * 
+     *
      */
     public Optional<Output<DomainVideoDragArgs>> videoDrag() {
         return Optional.ofNullable(this.videoDrag);
@@ -795,9 +885,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param areaAccessRule Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder areaAccessRule(@Nullable Output<DomainAreaAccessRuleArgs> areaAccessRule) {
             $.areaAccessRule = areaAccessRule;
@@ -806,32 +896,53 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param areaAccessRule Indicates the configuration module for the &#39;regional access control&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder areaAccessRule(DomainAreaAccessRuleArgs areaAccessRule) {
             return areaAccessRule(Output.of(areaAccessRule));
         }
 
-        public Builder browserCaches(@Nullable Output<List<DomainBrowserCachArgs>> browserCaches) {
+        /**
+         * @param browserCaches Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder browserCaches(@Nullable Output<List<DomainBrowserCacheArgs>> browserCaches) {
             $.browserCaches = browserCaches;
             return this;
         }
 
-        public Builder browserCaches(List<DomainBrowserCachArgs> browserCaches) {
+        /**
+         * @param browserCaches Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder browserCaches(List<DomainBrowserCacheArgs> browserCaches) {
             return browserCaches(Output.of(browserCaches));
         }
 
-        public Builder browserCaches(DomainBrowserCachArgs... browserCaches) {
+        /**
+         * @param browserCaches Indicates the configuration module for the &#39;browser cache&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rule at the top of the list has the highest priority. If you create multiple rules, pay attention to whether there are containment relationships between rules. If containment exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder browserCaches(DomainBrowserCacheArgs... browserCaches) {
             return browserCaches(List.of(browserCaches));
         }
 
         /**
          * @param cacheHost Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cacheHost(@Nullable Output<DomainCacheHostArgs> cacheHost) {
             $.cacheHost = cacheHost;
@@ -840,45 +951,87 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cacheHost Specifies the configuration module for the &#39;shared cache&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cacheHost(DomainCacheHostArgs cacheHost) {
             return cacheHost(Output.of(cacheHost));
         }
 
+        /**
+         * @param cacheKeys Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cacheKeys(@Nullable Output<List<DomainCacheKeyArgs>> cacheKeys) {
             $.cacheKeys = cacheKeys;
             return this;
         }
 
+        /**
+         * @param cacheKeys Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cacheKeys(List<DomainCacheKeyArgs> cacheKeys) {
             return cacheKeys(Output.of(cacheKeys));
         }
 
+        /**
+         * @param cacheKeys Indicates the configuration module for the &#39;cache key&#39; feature. This feature is disabled by default. The parameter value is a list of rules, described as follows: Each list element is a cache key rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The rules in the list have the highest priority. If you create multiple rules, pay attention to whether there is any inclusion relationship between rules. If inclusion exists, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder cacheKeys(DomainCacheKeyArgs... cacheKeys) {
             return cacheKeys(List.of(cacheKeys));
         }
 
-        public Builder caches(@Nullable Output<List<DomainCachArgs>> caches) {
+        /**
+         * @param caches Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder caches(@Nullable Output<List<DomainCacheArgs>> caches) {
             $.caches = caches;
             return this;
         }
 
-        public Builder caches(List<DomainCachArgs> caches) {
+        /**
+         * @param caches Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder caches(List<DomainCacheArgs> caches) {
             return caches(Output.of(caches));
         }
 
-        public Builder caches(DomainCachArgs... caches) {
+        /**
+         * @param caches Represents the configuration module for the &#39;Cache Rule&#39; feature. This feature is disabled by default, meaning no custom rules are created. The list can contain up to 50 rules. The order of rules in the list defines their priority, with the first rule having the highest priority. The filter in each rule specifies the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder caches(DomainCacheArgs... caches) {
             return caches(List.of(caches));
         }
 
         /**
          * @param compression Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder compression(@Nullable Output<DomainCompressionArgs> compression) {
             $.compression = compression;
@@ -887,9 +1040,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param compression Represents the configuration module for the &#39;Smart Compression&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder compression(DomainCompressionArgs compression) {
             return compression(Output.of(compression));
@@ -897,9 +1050,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param conditionalOrigin Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder conditionalOrigin(@Nullable Output<DomainConditionalOriginArgs> conditionalOrigin) {
             $.conditionalOrigin = conditionalOrigin;
@@ -908,9 +1061,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param conditionalOrigin Specifies the configuration module for the &#39;Conditional Origin&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder conditionalOrigin(DomainConditionalOriginArgs conditionalOrigin) {
             return conditionalOrigin(Output.of(conditionalOrigin));
@@ -918,9 +1071,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customErrorPage Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customErrorPage(@Nullable Output<DomainCustomErrorPageArgs> customErrorPage) {
             $.customErrorPage = customErrorPage;
@@ -929,9 +1082,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customErrorPage Indicates the configuration module for the &#34;Custom Error Page&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customErrorPage(DomainCustomErrorPageArgs customErrorPage) {
             return customErrorPage(Output.of(customErrorPage));
@@ -939,9 +1092,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customizeAccessRule Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customizeAccessRule(@Nullable Output<DomainCustomizeAccessRuleArgs> customizeAccessRule) {
             $.customizeAccessRule = customizeAccessRule;
@@ -950,9 +1103,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customizeAccessRule Represents the configuration module for the &#39;Custom Header Allowlist and Blocklist&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customizeAccessRule(DomainCustomizeAccessRuleArgs customizeAccessRule) {
             return customizeAccessRule(Output.of(customizeAccessRule));
@@ -960,9 +1113,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Indicates the acceleration domain name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domain(Output<String> domain) {
             $.domain = domain;
@@ -971,9 +1124,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param domain Indicates the acceleration domain name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder domain(String domain) {
             return domain(Output.of(domain));
@@ -981,9 +1134,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadSpeedLimit Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder downloadSpeedLimit(@Nullable Output<DomainDownloadSpeedLimitArgs> downloadSpeedLimit) {
             $.downloadSpeedLimit = downloadSpeedLimit;
@@ -992,9 +1145,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param downloadSpeedLimit Represents the configuration module for the &#39;Download Speed Limit&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder downloadSpeedLimit(DomainDownloadSpeedLimitArgs downloadSpeedLimit) {
             return downloadSpeedLimit(Output.of(downloadSpeedLimit));
@@ -1002,9 +1155,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param followRedirect Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder followRedirect(@Nullable Output<Boolean> followRedirect) {
             $.followRedirect = followRedirect;
@@ -1013,9 +1166,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param followRedirect Specifies whether to enable the &#39;origin redirect follow&#39; feature. The parameter values are: true: enable the feature; false: disable the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder followRedirect(Boolean followRedirect) {
             return followRedirect(Output.of(followRedirect));
@@ -1023,9 +1176,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param httpForcedRedirect Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder httpForcedRedirect(@Nullable Output<DomainHttpForcedRedirectArgs> httpForcedRedirect) {
             $.httpForcedRedirect = httpForcedRedirect;
@@ -1034,9 +1187,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param httpForcedRedirect Represents the configuration module for the &#39;Force HTTPS Redirect to HTTP&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder httpForcedRedirect(DomainHttpForcedRedirectArgs httpForcedRedirect) {
             return httpForcedRedirect(Output.of(httpForcedRedirect));
@@ -1044,9 +1197,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param https Indicates the HTTPS configuration module. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder https(@Nullable Output<DomainHttpsArgs> https) {
             $.https = https;
@@ -1055,9 +1208,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param https Indicates the HTTPS configuration module. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder https(DomainHttpsArgs https) {
             return https(Output.of(https));
@@ -1065,9 +1218,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iPv6 Indicates the configuration module for the IPv6 feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder iPv6(@Nullable Output<DomainIPv6Args> iPv6) {
             $.iPv6 = iPv6;
@@ -1076,9 +1229,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param iPv6 Indicates the configuration module for the IPv6 feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder iPv6(DomainIPv6Args iPv6) {
             return iPv6(Output.of(iPv6));
@@ -1086,9 +1239,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAccessRule Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAccessRule(@Nullable Output<DomainIpAccessRuleArgs> ipAccessRule) {
             $.ipAccessRule = ipAccessRule;
@@ -1097,9 +1250,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipAccessRule Specifies the configuration module for the &#39;IP allowlist and blocklist&#39; feature. This feature is disabled by default. There are two configuration methods: Standard configuration: Specify RuleType and Ip to configure the current domain. Global configuration: Specify SharedConfig to use a global configuration. The global configuration is the allowlist feature. You can only choose one configuration method.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipAccessRule(DomainIpAccessRuleArgs ipAccessRule) {
             return ipAccessRule(Output.of(ipAccessRule));
@@ -1107,9 +1260,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param methodDeniedRule Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder methodDeniedRule(@Nullable Output<DomainMethodDeniedRuleArgs> methodDeniedRule) {
             $.methodDeniedRule = methodDeniedRule;
@@ -1118,9 +1271,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param methodDeniedRule Represents the configuration module for the &#39;Disable HTTP Method&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder methodDeniedRule(DomainMethodDeniedRuleArgs methodDeniedRule) {
             return methodDeniedRule(Output.of(methodDeniedRule));
@@ -1128,9 +1281,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiRange Indicates the configuration module for the multi-range feature. This feature is disabled by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiRange(@Nullable Output<DomainMultiRangeArgs> multiRange) {
             $.multiRange = multiRange;
@@ -1139,32 +1292,53 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param multiRange Indicates the configuration module for the multi-range feature. This feature is disabled by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder multiRange(DomainMultiRangeArgs multiRange) {
             return multiRange(Output.of(multiRange));
         }
 
-        public Builder negativeCaches(@Nullable Output<List<DomainNegativeCachArgs>> negativeCaches) {
+        /**
+         * @param negativeCaches Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder negativeCaches(@Nullable Output<List<DomainNegativeCacheArgs>> negativeCaches) {
             $.negativeCaches = negativeCaches;
             return this;
         }
 
-        public Builder negativeCaches(List<DomainNegativeCachArgs> negativeCaches) {
+        /**
+         * @param negativeCaches Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder negativeCaches(List<DomainNegativeCacheArgs> negativeCaches) {
             return negativeCaches(Output.of(negativeCaches));
         }
 
-        public Builder negativeCaches(DomainNegativeCachArgs... negativeCaches) {
+        /**
+         * @param negativeCaches Indicates the configuration module for the &#39;status code cache&#39; feature. This feature is disabled by default. The parameter value is a list, as explained below: Each list element is a cache rule configuration. You can create up to 50 rules. The order of elements in the list determines the priority of the corresponding rules. The first rule in the list has the highest priority. If you create multiple rules, pay attention to whether there is containment between rules. If containment exists, rules with a broader scope should appear after rules with a narrower scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
+        public Builder negativeCaches(DomainNegativeCacheArgs... negativeCaches) {
             return negativeCaches(List.of(negativeCaches));
         }
 
         /**
          * @param offlineCache Indicates the configuration module for the &#39;offline cache&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder offlineCache(@Nullable Output<DomainOfflineCacheArgs> offlineCache) {
             $.offlineCache = offlineCache;
@@ -1173,9 +1347,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param offlineCache Indicates the configuration module for the &#39;offline cache&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder offlineCache(DomainOfflineCacheArgs offlineCache) {
             return offlineCache(Output.of(offlineCache));
@@ -1183,9 +1357,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originAccessRule Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originAccessRule(@Nullable Output<DomainOriginAccessRuleArgs> originAccessRule) {
             $.originAccessRule = originAccessRule;
@@ -1194,32 +1368,53 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originAccessRule Indicates the configuration module for the &#39;Origin allowlist and blacklist&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originAccessRule(DomainOriginAccessRuleArgs originAccessRule) {
             return originAccessRule(Output.of(originAccessRule));
         }
 
+        /**
+         * @param originArgs Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originArgs(@Nullable Output<List<DomainOriginArgArgs>> originArgs) {
             $.originArgs = originArgs;
             return this;
         }
 
+        /**
+         * @param originArgs Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originArgs(List<DomainOriginArgArgs> originArgs) {
             return originArgs(Output.of(originArgs));
         }
 
+        /**
+         * @param originArgs Represents the rule list for the &#39;Origin Parameters&#39; configuration module. The list can contain up to 50 rules. Each rule includes a filter (Condition) and an action performed by the CDN (OriginArgAction). The order of rules in the list defines their priority. The first rule in the list has the highest priority. The filter in each rule defines the scope of the rule. If you create multiple rules, rules with a broader scope should appear after those with a narrower scope. When a user request is received, the CDN matches the request against the rules in order of priority, from highest to lowest. If the request matches a rule, the CDN stops processing the remaining rules. You must add the following preset rule at the end of the rule list. You cannot modify the Condition in this rule, but you can change the configuration in OriginArgAction.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originArgs(DomainOriginArgArgs... originArgs) {
             return originArgs(List.of(originArgs));
         }
 
         /**
          * @param originCertCheck Origin certificate validation
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originCertCheck(@Nullable Output<DomainOriginCertCheckArgs> originCertCheck) {
             $.originCertCheck = originCertCheck;
@@ -1228,9 +1423,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originCertCheck Origin certificate validation
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originCertCheck(DomainOriginCertCheckArgs originCertCheck) {
             return originCertCheck(Output.of(originCertCheck));
@@ -1238,9 +1433,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originHost If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originHost(@Nullable Output<String> originHost) {
             $.originHost = originHost;
@@ -1249,9 +1444,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originHost If there are multiple sites on the origin server, this parameter specifies the domain name accessed by the origin request. This parameter applies to all origin configurations, but has lower priority than the OriginHost parameter in the origin configuration. The default value of this parameter is the same as Domain. If the origin is an object storage bucket, you do not need to specify this parameter. Its default value is the same as the Address in the origin configuration.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originHost(String originHost) {
             return originHost(Output.of(originHost));
@@ -1259,9 +1454,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originIPv6 Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originIPv6(@Nullable Output<String> originIPv6) {
             $.originIPv6 = originIPv6;
@@ -1270,9 +1465,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originIPv6 Indicates the configuration for &#34;IPv6 origin fetch.&#34; This parameter has the following values: ipv6*first: The content delivery network always tries to obtain the IPv6 address of the origin domain. If it cannot obtain the IPv6 address, the content delivery network then tries to obtain the IPv4 address of the origin domain. ipv4*first: The content delivery network always tries to obtain the IPv4 address of the origin domain. If it cannot obtain the IPv4 address, the content delivery network then tries to obtain the IPv6 address of the origin domain. followclient: The content delivery network tries to obtain the same type of IP address as the user&#39;s request. The default value for this parameter is followclient. Since some overseas origin fetch nodes do not support sending origin fetch requests to IPv6 addresses, this feature is only available for origin fetch nodes located in mainland China.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originIPv6(String originIPv6) {
             return originIPv6(Output.of(originIPv6));
@@ -1280,9 +1475,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originProtocol Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originProtocol(@Nullable Output<String> originProtocol) {
             $.originProtocol = originProtocol;
@@ -1291,9 +1486,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originProtocol Indicates the protocol used for origin requests. The parameter has the following values: http: uses the HTTP protocol for origin requests. https: uses the HTTPS protocol for origin requests. followclient: uses the same protocol as the user&#39;s request.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originProtocol(String originProtocol) {
             return originProtocol(Output.of(originProtocol));
@@ -1301,9 +1496,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originRange Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originRange(@Nullable Output<Boolean> originRange) {
             $.originRange = originRange;
@@ -1312,9 +1507,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originRange Indicates whether the &#39;Range Origin&#39; feature is enabled. This parameter has the following values: true: enables the feature. false: disables the feature. The default value is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originRange(Boolean originRange) {
             return originRange(Output.of(originRange));
@@ -1322,9 +1517,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originRetry Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originRetry(@Nullable Output<DomainOriginRetryArgs> originRetry) {
             $.originRetry = originRetry;
@@ -1333,9 +1528,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originRetry Indicates the configuration module for the &#34;origin fetch retry settings&#34; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originRetry(DomainOriginRetryArgs originRetry) {
             return originRetry(Output.of(originRetry));
@@ -1343,9 +1538,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originRewrite Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originRewrite(@Nullable Output<DomainOriginRewriteArgs> originRewrite) {
             $.originRewrite = originRewrite;
@@ -1354,9 +1549,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originRewrite Indicates the configuration module for the &#39;Origin URL Rewrite&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originRewrite(DomainOriginRewriteArgs originRewrite) {
             return originRewrite(Output.of(originRewrite));
@@ -1364,9 +1559,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originSni Indicates the configuration module for the &#39;origin SNI&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originSni(@Nullable Output<DomainOriginSniArgs> originSni) {
             $.originSni = originSni;
@@ -1375,32 +1570,53 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param originSni Indicates the configuration module for the &#39;origin SNI&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder originSni(DomainOriginSniArgs originSni) {
             return originSni(Output.of(originSni));
         }
 
+        /**
+         * @param origins Indicates the basic origin configuration module.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder origins(Output<List<DomainOriginArgs>> origins) {
             $.origins = origins;
             return this;
         }
 
+        /**
+         * @param origins Indicates the basic origin configuration module.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder origins(List<DomainOriginArgs> origins) {
             return origins(Output.of(origins));
         }
 
+        /**
+         * @param origins Indicates the basic origin configuration module.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder origins(DomainOriginArgs... origins) {
             return origins(List.of(origins));
         }
 
         /**
          * @param pageOptimization Specifies the configuration module for the &#39;page optimization&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder pageOptimization(@Nullable Output<DomainPageOptimizationArgs> pageOptimization) {
             $.pageOptimization = pageOptimization;
@@ -1409,9 +1625,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pageOptimization Specifies the configuration module for the &#39;page optimization&#39; feature.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder pageOptimization(DomainPageOptimizationArgs pageOptimization) {
             return pageOptimization(Output.of(pageOptimization));
@@ -1419,9 +1635,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Indicates the project to which the acceleration domain belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder project(@Nullable Output<String> project) {
             $.project = project;
@@ -1430,9 +1646,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param project Indicates the project to which the acceleration domain belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder project(String project) {
             return project(Output.of(project));
@@ -1440,9 +1656,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param quic Indicates the configuration module for the QUIC feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder quic(@Nullable Output<DomainQuicArgs> quic) {
             $.quic = quic;
@@ -1451,9 +1667,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param quic Indicates the configuration module for the QUIC feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder quic(DomainQuicArgs quic) {
             return quic(Output.of(quic));
@@ -1461,9 +1677,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param redirectionRewrite Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder redirectionRewrite(@Nullable Output<DomainRedirectionRewriteArgs> redirectionRewrite) {
             $.redirectionRewrite = redirectionRewrite;
@@ -1472,9 +1688,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param redirectionRewrite Represents the configuration module for the &#39;URL Redirect Rewrite&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder redirectionRewrite(DomainRedirectionRewriteArgs redirectionRewrite) {
             return redirectionRewrite(Output.of(redirectionRewrite));
@@ -1482,9 +1698,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param refererAccessRule Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder refererAccessRule(@Nullable Output<DomainRefererAccessRuleArgs> refererAccessRule) {
             $.refererAccessRule = refererAccessRule;
@@ -1493,9 +1709,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param refererAccessRule Indicates the configuration module for the &#34;Referer Allowlist and Denylist&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder refererAccessRule(DomainRefererAccessRuleArgs refererAccessRule) {
             return refererAccessRule(Output.of(refererAccessRule));
@@ -1503,9 +1719,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remoteAuth Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remoteAuth(@Nullable Output<DomainRemoteAuthArgs> remoteAuth) {
             $.remoteAuth = remoteAuth;
@@ -1514,9 +1730,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remoteAuth Indicates the configuration module for the &#39;remote authentication&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remoteAuth(DomainRemoteAuthArgs remoteAuth) {
             return remoteAuth(Output.of(remoteAuth));
@@ -1524,9 +1740,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requestBlockRule Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder requestBlockRule(@Nullable Output<DomainRequestBlockRuleArgs> requestBlockRule) {
             $.requestBlockRule = requestBlockRule;
@@ -1535,45 +1751,87 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param requestBlockRule Indicates the configuration module for the &#39;Custom Interception&#39; feature. This feature is disabled by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder requestBlockRule(DomainRequestBlockRuleArgs requestBlockRule) {
             return requestBlockRule(Output.of(requestBlockRule));
         }
 
+        /**
+         * @param requestHeaders Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder requestHeaders(@Nullable Output<List<DomainRequestHeaderArgs>> requestHeaders) {
             $.requestHeaders = requestHeaders;
             return this;
         }
 
+        /**
+         * @param requestHeaders Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder requestHeaders(List<DomainRequestHeaderArgs> requestHeaders) {
             return requestHeaders(Output.of(requestHeaders));
         }
 
+        /**
+         * @param requestHeaders Indicates the configuration module for the &#39;origin HTTP request header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder requestHeaders(DomainRequestHeaderArgs... requestHeaders) {
             return requestHeaders(List.of(requestHeaders));
         }
 
+        /**
+         * @param responseHeaders Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder responseHeaders(@Nullable Output<List<DomainResponseHeaderArgs>> responseHeaders) {
             $.responseHeaders = responseHeaders;
             return this;
         }
 
+        /**
+         * @param responseHeaders Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder responseHeaders(List<DomainResponseHeaderArgs> responseHeaders) {
             return responseHeaders(Output.of(responseHeaders));
         }
 
+        /**
+         * @param responseHeaders Indicates the configuration module for the &#39;HTTP response header&#39; feature. This feature is disabled by default.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder responseHeaders(DomainResponseHeaderArgs... responseHeaders) {
             return responseHeaders(List.of(responseHeaders));
         }
 
         /**
          * @param rewriteHls Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rewriteHls(@Nullable Output<DomainRewriteHlsArgs> rewriteHls) {
             $.rewriteHls = rewriteHls;
@@ -1582,9 +1840,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rewriteHls Indicates the configuration module for the &#34;Standard HLS Encryption Rewrite&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder rewriteHls(DomainRewriteHlsArgs rewriteHls) {
             return rewriteHls(Output.of(rewriteHls));
@@ -1592,9 +1850,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceRegion Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceRegion(@Nullable Output<String> serviceRegion) {
             $.serviceRegion = serviceRegion;
@@ -1603,9 +1861,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceRegion Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceRegion(String serviceRegion) {
             return serviceRegion(Output.of(serviceRegion));
@@ -1613,9 +1871,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceType Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceType(Output<String> serviceType) {
             $.serviceType = serviceType;
@@ -1624,9 +1882,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param serviceType Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder serviceType(String serviceType) {
             return serviceType(Output.of(serviceType));
@@ -1634,9 +1892,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param signedUrlAuth Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder signedUrlAuth(@Nullable Output<DomainSignedUrlAuthArgs> signedUrlAuth) {
             $.signedUrlAuth = signedUrlAuth;
@@ -1645,32 +1903,53 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param signedUrlAuth Indicates the configuration module for the &#39;URL Authentication&#39; feature. This feature is disabled by default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder signedUrlAuth(DomainSignedUrlAuthArgs signedUrlAuth) {
             return signedUrlAuth(Output.of(signedUrlAuth));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<DomainTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<DomainTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(DomainTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param timeout Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeout(@Nullable Output<DomainTimeoutArgs> timeout) {
             $.timeout = timeout;
@@ -1679,9 +1958,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeout Indicates the configuration module for the &#39;origin timeout&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeout(DomainTimeoutArgs timeout) {
             return timeout(Output.of(timeout));
@@ -1689,9 +1968,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param uaAccessRule Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder uaAccessRule(@Nullable Output<DomainUaAccessRuleArgs> uaAccessRule) {
             $.uaAccessRule = uaAccessRule;
@@ -1700,9 +1979,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param uaAccessRule Indicates the configuration module for the &#34;UA allowlist and blocklist&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder uaAccessRule(DomainUaAccessRuleArgs uaAccessRule) {
             return uaAccessRule(Output.of(uaAccessRule));
@@ -1710,9 +1989,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param urlNormalize Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder urlNormalize(@Nullable Output<DomainUrlNormalizeArgs> urlNormalize) {
             $.urlNormalize = urlNormalize;
@@ -1721,9 +2000,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param urlNormalize Specifies the configuration module for the &#39;URL normalization&#39; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder urlNormalize(DomainUrlNormalizeArgs urlNormalize) {
             return urlNormalize(Output.of(urlNormalize));
@@ -1731,9 +2010,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param videoDrag Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder videoDrag(@Nullable Output<DomainVideoDragArgs> videoDrag) {
             $.videoDrag = videoDrag;
@@ -1742,9 +2021,9 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param videoDrag Indicates the configuration module for the &#34;Video Drag&#34; feature. This feature is disabled by default.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder videoDrag(DomainVideoDragArgs videoDrag) {
             return videoDrag(Output.of(videoDrag));

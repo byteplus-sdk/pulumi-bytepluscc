@@ -17,23 +17,33 @@ public final class DomainCompressionArgs extends com.pulumi.resources.ResourceAr
 
     public static final DomainCompressionArgs Empty = new DomainCompressionArgs();
 
+    /**
+     * Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="compressionRules")
     private @Nullable Output<List<DomainCompressionCompressionRuleArgs>> compressionRules;
 
+    /**
+     * @return Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainCompressionCompressionRuleArgs>>> compressionRules() {
         return Optional.ofNullable(this.compressionRules);
     }
 
     /**
      * Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
-     * 
+     *
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
-     * 
+     *
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -64,24 +74,45 @@ public final class DomainCompressionArgs extends com.pulumi.resources.ResourceAr
             $ = new DomainCompressionArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param compressionRules Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder compressionRules(@Nullable Output<List<DomainCompressionCompressionRuleArgs>> compressionRules) {
             $.compressionRules = compressionRules;
             return this;
         }
 
+        /**
+         * @param compressionRules Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder compressionRules(List<DomainCompressionCompressionRuleArgs> compressionRules) {
             return compressionRules(Output.of(compressionRules));
         }
 
+        /**
+         * @param compressionRules Indicates a set of smart compression configuration rules. This parameter is required when Switch is true.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder compressionRules(DomainCompressionCompressionRuleArgs... compressionRules) {
             return compressionRules(List.of(compressionRules));
         }
 
         /**
          * @param switch_ Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -90,9 +121,9 @@ public final class DomainCompressionArgs extends com.pulumi.resources.ResourceAr
 
         /**
          * @param switch_ Smart compression configuration switch. This parameter has the following values: true: enables smart compression. false: disables smart compression.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

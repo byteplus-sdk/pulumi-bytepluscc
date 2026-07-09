@@ -15,43 +15,53 @@ import javax.annotation.Nullable;
 public final class KeyReplicateKey {
     /**
      * @return Replica key description.
-     * 
+     *
      */
     private @Nullable String description;
     /**
      * @return Replica key ID.
-     * 
+     *
      */
     private @Nullable String replicaKeyId;
     /**
      * @return Target region of the replica key.
-     * 
+     *
      */
     private @Nullable String replicaRegion;
+    /**
+     * @return Replica key label.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<KeyReplicateKeyTag> tags;
 
     private KeyReplicateKey() {}
     /**
      * @return Replica key description.
-     * 
+     *
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Replica key ID.
-     * 
+     *
      */
     public Optional<String> replicaKeyId() {
         return Optional.ofNullable(this.replicaKeyId);
     }
     /**
      * @return Target region of the replica key.
-     * 
+     *
      */
     public Optional<String> replicaRegion() {
         return Optional.ofNullable(this.replicaRegion);
     }
+    /**
+     * @return Replica key label.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<KeyReplicateKeyTag> tags() {
         return this.tags == null ? List.of() : this.tags;
     }

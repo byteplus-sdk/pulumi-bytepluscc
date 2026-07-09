@@ -21,14 +21,14 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-     * 
+     *
      */
     @Import(name="direction")
     private @Nullable Output<String> direction;
 
     /**
      * @return DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-     * 
+     *
      */
     public Optional<Output<String>> direction() {
         return Optional.ofNullable(this.direction);
@@ -36,36 +36,46 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-     * 
+     *
      */
     @Import(name="endpointType")
     private @Nullable Output<String> endpointType;
 
     /**
      * @return Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-     * 
+     *
      */
     public Optional<Output<String>> endpointType() {
         return Optional.ofNullable(this.endpointType);
     }
 
+    /**
+     * Availability zone, subnet, and IP configuration for the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="ipConfigs")
     private @Nullable Output<List<ResolverEndpointIpConfigArgs>> ipConfigs;
 
+    /**
+     * @return Availability zone, subnet, and IP configuration for the endpoint
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ResolverEndpointIpConfigArgs>>> ipConfigs() {
         return Optional.ofNullable(this.ipConfigs);
     }
 
     /**
      * Endpoint name. Supports UTF-8 format
-     * 
+     *
      */
     @Import(name="name", required=true)
     private Output<String> name;
 
     /**
      * @return Endpoint name. Supports UTF-8 format
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
@@ -73,36 +83,46 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Project name to which the endpoint belongs. Default is default
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name to which the endpoint belongs. Default is default
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<ResolverEndpointTagArgs>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ResolverEndpointTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * VPC ID where the endpoint is located
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return VPC ID where the endpoint is located
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -110,14 +130,14 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Region of the VPC where the endpoint is located
-     * 
+     *
      */
     @Import(name="vpcRegion", required=true)
     private Output<String> vpcRegion;
 
     /**
      * @return Region of the VPC where the endpoint is located
-     * 
+     *
      */
     public Output<String> vpcRegion() {
         return this.vpcRegion;
@@ -156,9 +176,9 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param direction DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder direction(@Nullable Output<String> direction) {
             $.direction = direction;
@@ -167,9 +187,9 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param direction DNS request forwarding direction for the endpoint. OUTBOUND (default): outbound endpoint forwards DNS queries from within the VPC to external DNS servers. INBOUND: inbound endpoint forwards DNS queries from external sources to the resolver
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder direction(String direction) {
             return direction(Output.of(direction));
@@ -177,9 +197,9 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointType Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointType(@Nullable Output<String> endpointType) {
             $.endpointType = endpointType;
@@ -188,32 +208,53 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param endpointType Endpoint type. IPv4: IPv4 endpoint. DualStack: dual-stack endpoint
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder endpointType(String endpointType) {
             return endpointType(Output.of(endpointType));
         }
 
+        /**
+         * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ipConfigs(@Nullable Output<List<ResolverEndpointIpConfigArgs>> ipConfigs) {
             $.ipConfigs = ipConfigs;
             return this;
         }
 
+        /**
+         * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ipConfigs(List<ResolverEndpointIpConfigArgs> ipConfigs) {
             return ipConfigs(Output.of(ipConfigs));
         }
 
+        /**
+         * @param ipConfigs Availability zone, subnet, and IP configuration for the endpoint
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder ipConfigs(ResolverEndpointIpConfigArgs... ipConfigs) {
             return ipConfigs(List.of(ipConfigs));
         }
 
         /**
          * @param name Endpoint name. Supports UTF-8 format
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(Output<String> name) {
             $.name = name;
@@ -222,9 +263,9 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param name Endpoint name. Supports UTF-8 format
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -232,9 +273,9 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param projectName Project name to which the endpoint belongs. Default is default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -243,32 +284,53 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param projectName Project name to which the endpoint belongs. Default is default
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<ResolverEndpointTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<ResolverEndpointTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(ResolverEndpointTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpcId VPC ID where the endpoint is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -277,9 +339,9 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpcId VPC ID where the endpoint is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -287,9 +349,9 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpcRegion Region of the VPC where the endpoint is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcRegion(Output<String> vpcRegion) {
             $.vpcRegion = vpcRegion;
@@ -298,9 +360,9 @@ public final class ResolverEndpointArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param vpcRegion Region of the VPC where the endpoint is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcRegion(String vpcRegion) {
             return vpcRegion(Output.of(vpcRegion));

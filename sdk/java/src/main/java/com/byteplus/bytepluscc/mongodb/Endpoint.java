@@ -17,205 +17,225 @@ import javax.annotation.Nullable;
 
 /**
  * List of connection address information
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.mongodb.Endpoint;
  * import com.byteplus.bytepluscc.mongodb.EndpointArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var mongoDBEndpointDemo = new Endpoint("mongoDBEndpointDemo", EndpointArgs.builder()
- *             .eipIds(            
+ *             .eipIds(
  *                 "eip-****",
  *                 "eip-****")
  *             .instanceId("mongo-replica-****")
  *             .networkType("Public")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:mongodb/endpoint:Endpoint example &#34;instance_id|endpoint_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:mongodb/endpoint:Endpoint")
 public class Endpoint extends com.pulumi.resources.CustomResource {
+    /**
+     * List of connection address strings
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="dbAddresses", refs={List.class,EndpointDbAddress.class}, tree="[0,1]")
     private Output<List<EndpointDbAddress>> dbAddresses;
 
+    /**
+     * @return List of connection address strings
+     *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<EndpointDbAddress>> dbAddresses() {
         return this.dbAddresses;
     }
     /**
      * List of EIP IDs to bind when applying for a public address
-     * 
+     *
      */
     @Export(name="eipIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> eipIds;
 
     /**
      * @return List of EIP IDs to bind when applying for a public address
-     * 
+     *
      */
     public Output<List<String>> eipIds() {
         return this.eipIds;
     }
     /**
      * Connection address ID
-     * 
+     *
      */
     @Export(name="endpointId", refs={String.class}, tree="[0]")
     private Output<String> endpointId;
 
     /**
      * @return Connection address ID
-     * 
+     *
      */
     public Output<String> endpointId() {
         return this.endpointId;
     }
     /**
      * String information of the connection address.
-     * 
+     *
      */
     @Export(name="endpointStr", refs={String.class}, tree="[0]")
     private Output<String> endpointStr;
 
     /**
      * @return String information of the connection address.
-     * 
+     *
      */
     public Output<String> endpointStr() {
         return this.endpointStr;
     }
     /**
-     * Node type corresponding to the connection address. Possible values: - Replica set instances only support the
-     * `ReplicaSet` (replica set) connection address type - Sharded cluster instances support three connection address types:
-     * `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
-     * 
+     * Node type corresponding to the connection address. Possible values:
+     *
+     *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
+     *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
+     *
      */
     @Export(name="endpointType", refs={String.class}, tree="[0]")
     private Output<String> endpointType;
 
     /**
-     * @return Node type corresponding to the connection address. Possible values: - Replica set instances only support the
-     * `ReplicaSet` (replica set) connection address type - Sharded cluster instances support three connection address types:
-     * `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
-     * 
+     * @return Node type corresponding to the connection address. Possible values:
+     *
+     *     - Replica set instances only support the `ReplicaSet` (replica set) connection address type
+     *     - Sharded cluster instances support three connection address types: `Mongos` (Mongos node), `ConfigServer` (ConfigServer node), and `Shard` (Shard node)
+     *
      */
     public Output<String> endpointType() {
         return this.endpointType;
     }
     /**
      * Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * ID of the Mongos node that requires a public connection address
-     * 
+     *
      */
     @Export(name="mongosNodeIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> mongosNodeIds;
 
     /**
      * @return ID of the Mongos node that requires a public connection address
-     * 
+     *
      */
     public Output<List<String>> mongosNodeIds() {
         return this.mongosNodeIds;
     }
     /**
-     * Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
-     * 
+     * Network type of the connection address. Possible values:
+     *
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
+     *
      */
     @Export(name="networkType", refs={String.class}, tree="[0]")
     private Output<String> networkType;
 
     /**
-     * @return Network type of the connection address. Possible values: - `Private`: Private connection address - `Public`: Public
-     * connection address
-     * 
+     * @return Network type of the connection address. Possible values:
+     *
+     *     - `Private`: Private connection address
+     *     - `Public`: Public connection address
+     *
      */
     public Output<String> networkType() {
         return this.networkType;
     }
     /**
-     * ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-     * 
+     * ID of the component associated with the current connection address
+     *
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     *
      */
     @Export(name="objectId", refs={String.class}, tree="[0]")
     private Output<String> objectId;
 
     /**
-     * @return ID of the component associated with the current connection address **Note:** This parameter is returned only when
-     * `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
-     * 
+     * @return ID of the component associated with the current connection address
+     *
+     *   **Note:**
+     *   This parameter is returned only when `EndpointType` is set to `Mongos`, `ConfigServer`, or `Shard`.
+     *
      */
     public Output<String> objectId() {
         return this.objectId;
     }
     /**
      * Subnet ID of the current instance
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID of the current instance
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
      * VPC ID of the current instance
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID of the current instance
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;

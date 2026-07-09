@@ -21,14 +21,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot creation time.
-     * 
+     *
      */
     @Import(name="creationTime")
     private @Nullable Output<String> creationTime;
 
     /**
      * @return Snapshot creation time.
-     * 
+     *
      */
     public Optional<Output<String>> creationTime() {
         return Optional.ofNullable(this.creationTime);
@@ -36,14 +36,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -51,14 +51,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Image ID
-     * 
+     *
      */
     @Import(name="imageId")
     private @Nullable Output<String> imageId;
 
     /**
      * @return Image ID
-     * 
+     *
      */
     public Optional<Output<String>> imageId() {
         return Optional.ofNullable(this.imageId);
@@ -66,14 +66,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
-     * 
+     *
      */
     @Import(name="instantAccess")
     private @Nullable Output<Boolean> instantAccess;
 
     /**
      * @return Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> instantAccess() {
         return Optional.ofNullable(this.instantAccess);
@@ -81,14 +81,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot dump progress.
-     * 
+     *
      */
     @Import(name="progress")
     private @Nullable Output<Integer> progress;
 
     /**
      * @return Snapshot dump progress.
-     * 
+     *
      */
     public Optional<Output<Integer>> progress() {
         return Optional.ofNullable(this.progress);
@@ -96,14 +96,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -111,14 +111,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-     * 
+     *
      */
     @Import(name="retentionDays")
     private @Nullable Output<Integer> retentionDays;
 
     /**
      * @return Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-     * 
+     *
      */
     public Optional<Output<Integer>> retentionDays() {
         return Optional.ofNullable(this.retentionDays);
@@ -126,14 +126,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the snapshot is shared.
-     * 
+     *
      */
     @Import(name="shared")
     private @Nullable Output<Boolean> shared;
 
     /**
      * @return Whether the snapshot is shared.
-     * 
+     *
      */
     public Optional<Output<Boolean>> shared() {
         return Optional.ofNullable(this.shared);
@@ -141,14 +141,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot consistency group ID.
-     * 
+     *
      */
     @Import(name="snapshotGroupId")
     private @Nullable Output<String> snapshotGroupId;
 
     /**
      * @return Snapshot consistency group ID.
-     * 
+     *
      */
     public Optional<Output<String>> snapshotGroupId() {
         return Optional.ofNullable(this.snapshotGroupId);
@@ -156,14 +156,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot ID.
-     * 
+     *
      */
     @Import(name="snapshotId")
     private @Nullable Output<String> snapshotId;
 
     /**
      * @return Snapshot ID.
-     * 
+     *
      */
     public Optional<Output<String>> snapshotId() {
         return Optional.ofNullable(this.snapshotId);
@@ -171,14 +171,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-     * 
+     *
      */
     @Import(name="snapshotName")
     private @Nullable Output<String> snapshotName;
 
     /**
      * @return Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-     * 
+     *
      */
     public Optional<Output<String>> snapshotName() {
         return Optional.ofNullable(this.snapshotName);
@@ -186,14 +186,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
-     * 
+     *
      */
     @Import(name="snapshotType")
     private @Nullable Output<String> snapshotType;
 
     /**
      * @return Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
-     * 
+     *
      */
     public Optional<Output<String>> snapshotType() {
         return Optional.ofNullable(this.snapshotType);
@@ -201,36 +201,46 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Snapshot tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<SnapshotTagArgs>> tags;
 
+    /**
+     * @return Snapshot tag information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<SnapshotTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Cloud disk ID associated with the snapshot.
-     * 
+     *
      */
     @Import(name="volumeId")
     private @Nullable Output<String> volumeId;
 
     /**
      * @return Cloud disk ID associated with the snapshot.
-     * 
+     *
      */
     public Optional<Output<String>> volumeId() {
         return Optional.ofNullable(this.volumeId);
@@ -238,14 +248,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud disk category. Value options: system: system disk. data: data disk.
-     * 
+     *
      */
     @Import(name="volumeKind")
     private @Nullable Output<String> volumeKind;
 
     /**
      * @return Cloud disk category. Value options: system: system disk. data: data disk.
-     * 
+     *
      */
     public Optional<Output<String>> volumeKind() {
         return Optional.ofNullable(this.volumeKind);
@@ -253,14 +263,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud disk name.
-     * 
+     *
      */
     @Import(name="volumeName")
     private @Nullable Output<String> volumeName;
 
     /**
      * @return Cloud disk name.
-     * 
+     *
      */
     public Optional<Output<String>> volumeName() {
         return Optional.ofNullable(this.volumeName);
@@ -268,14 +278,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud disk size, in GiB.
-     * 
+     *
      */
     @Import(name="volumeSize")
     private @Nullable Output<Integer> volumeSize;
 
     /**
      * @return Cloud disk size, in GiB.
-     * 
+     *
      */
     public Optional<Output<Integer>> volumeSize() {
         return Optional.ofNullable(this.volumeSize);
@@ -283,14 +293,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
-     * 
+     *
      */
     @Import(name="volumeStatus")
     private @Nullable Output<String> volumeStatus;
 
     /**
      * @return Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
-     * 
+     *
      */
     public Optional<Output<String>> volumeStatus() {
         return Optional.ofNullable(this.volumeStatus);
@@ -298,14 +308,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
-     * 
+     *
      */
     @Import(name="volumeType")
     private @Nullable Output<String> volumeType;
 
     /**
      * @return Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
-     * 
+     *
      */
     public Optional<Output<String>> volumeType() {
         return Optional.ofNullable(this.volumeType);
@@ -313,14 +323,14 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID where the snapshot is located.
-     * 
+     *
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability zone ID where the snapshot is located.
-     * 
+     *
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -372,9 +382,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param creationTime Snapshot creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(@Nullable Output<String> creationTime) {
             $.creationTime = creationTime;
@@ -383,9 +393,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param creationTime Snapshot creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder creationTime(String creationTime) {
             return creationTime(Output.of(creationTime));
@@ -393,9 +403,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -404,9 +414,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Snapshot description. Default is empty. Length must be between 0 and 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -414,9 +424,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param imageId Image ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder imageId(@Nullable Output<String> imageId) {
             $.imageId = imageId;
@@ -425,9 +435,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param imageId Image ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder imageId(String imageId) {
             return imageId(Output.of(imageId));
@@ -435,9 +445,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instantAccess Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instantAccess(@Nullable Output<Boolean> instantAccess) {
             $.instantAccess = instantAccess;
@@ -446,9 +456,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instantAccess Whether the snapshot has enabled ultra-fast availability. Value options: true: ultra-fast availability enabled. false: ultra-fast availability not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instantAccess(Boolean instantAccess) {
             return instantAccess(Output.of(instantAccess));
@@ -456,9 +466,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param progress Snapshot dump progress.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder progress(@Nullable Output<Integer> progress) {
             $.progress = progress;
@@ -467,9 +477,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param progress Snapshot dump progress.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder progress(Integer progress) {
             return progress(Output.of(progress));
@@ -477,9 +487,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -488,9 +498,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Name of the Project to which the snapshot will be added. Note: snapshots do not inherit the project of the cloud disk, so snapshots and cloud disks can belong to different projects. If you do not set ProjectName when creating the snapshot, it will be added to the default project.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -498,9 +508,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retentionDays Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retentionDays(@Nullable Output<Integer> retentionDays) {
             $.retentionDays = retentionDays;
@@ -509,9 +519,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param retentionDays Snapshot retention period, in days. Value options: empty: retain snapshot permanently. 1~65536: specify retention days. Default is empty, which means retain snapshot permanently. Snapshot retention period is calculated from the snapshot creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder retentionDays(Integer retentionDays) {
             return retentionDays(Output.of(retentionDays));
@@ -519,9 +529,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shared Whether the snapshot is shared.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shared(@Nullable Output<Boolean> shared) {
             $.shared = shared;
@@ -530,9 +540,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param shared Whether the snapshot is shared.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder shared(Boolean shared) {
             return shared(Output.of(shared));
@@ -540,9 +550,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotGroupId Snapshot consistency group ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder snapshotGroupId(@Nullable Output<String> snapshotGroupId) {
             $.snapshotGroupId = snapshotGroupId;
@@ -551,9 +561,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotGroupId Snapshot consistency group ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder snapshotGroupId(String snapshotGroupId) {
             return snapshotGroupId(Output.of(snapshotGroupId));
@@ -561,9 +571,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotId Snapshot ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder snapshotId(@Nullable Output<String> snapshotId) {
             $.snapshotId = snapshotId;
@@ -572,9 +582,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotId Snapshot ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder snapshotId(String snapshotId) {
             return snapshotId(Output.of(snapshotId));
@@ -582,9 +592,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotName Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder snapshotName(@Nullable Output<String> snapshotName) {
             $.snapshotName = snapshotName;
@@ -593,9 +603,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotName Name of the created snapshot. Naming rules: length must be between 1 and 128 characters. Only Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.) are allowed. To avoid conflicts with automatic snapshot names, the name cannot start with &#39;auto&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder snapshotName(String snapshotName) {
             return snapshotName(Output.of(snapshotName));
@@ -603,9 +613,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotType Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder snapshotType(@Nullable Output<String> snapshotType) {
             $.snapshotType = snapshotType;
@@ -614,9 +624,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param snapshotType Snapshot type. The available values are: user: query manual snapshots. auto: query automatic snapshots. share: query shared snapshots. By default, all snapshots are queried.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder snapshotType(String snapshotType) {
             return snapshotType(Output.of(snapshotType));
@@ -624,9 +634,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -635,32 +645,53 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param status Snapshot status. Value options: available: available. creating: creating. rollbacking: rolling back. deleted: deleted. failed: error.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Snapshot tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<SnapshotTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Snapshot tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<SnapshotTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Snapshot tag information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(SnapshotTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param volumeId Cloud disk ID associated with the snapshot.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeId(@Nullable Output<String> volumeId) {
             $.volumeId = volumeId;
@@ -669,9 +700,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeId Cloud disk ID associated with the snapshot.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeId(String volumeId) {
             return volumeId(Output.of(volumeId));
@@ -679,9 +710,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeKind Cloud disk category. Value options: system: system disk. data: data disk.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeKind(@Nullable Output<String> volumeKind) {
             $.volumeKind = volumeKind;
@@ -690,9 +721,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeKind Cloud disk category. Value options: system: system disk. data: data disk.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeKind(String volumeKind) {
             return volumeKind(Output.of(volumeKind));
@@ -700,9 +731,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeName Cloud disk name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeName(@Nullable Output<String> volumeName) {
             $.volumeName = volumeName;
@@ -711,9 +742,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeName Cloud disk name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeName(String volumeName) {
             return volumeName(Output.of(volumeName));
@@ -721,9 +752,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeSize Cloud disk size, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeSize(@Nullable Output<Integer> volumeSize) {
             $.volumeSize = volumeSize;
@@ -732,9 +763,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeSize Cloud disk size, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeSize(Integer volumeSize) {
             return volumeSize(Output.of(volumeSize));
@@ -742,9 +773,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeStatus Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeStatus(@Nullable Output<String> volumeStatus) {
             $.volumeStatus = volumeStatus;
@@ -753,9 +784,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeStatus Cloud disk status. Value options: available: available, attaching: attaching, attached: attached, detaching: detaching, creating: creating, deleting: deleting, error: error, extending: expanding, &#34;&#34;: cloud disk deleted.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeStatus(String volumeStatus) {
             return volumeStatus(Output.of(volumeStatus));
@@ -763,9 +794,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeType Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeType(@Nullable Output<String> volumeType) {
             $.volumeType = volumeType;
@@ -774,9 +805,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param volumeType Cloud disk type. Value options: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. TSSD_TL0: Throughput SSD cloud disk
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder volumeType(String volumeType) {
             return volumeType(Output.of(volumeType));
@@ -784,9 +815,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID where the snapshot is located.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -795,9 +826,9 @@ public final class SnapshotState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID where the snapshot is located.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

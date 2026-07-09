@@ -21,14 +21,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Recommended number of health check probe points.
-     * 
+     *
      */
     @Import(name="advisedNodeCount")
     private @Nullable Output<Integer> advisedNodeCount;
 
     /**
      * @return Recommended number of health check probe points.
-     * 
+     *
      */
     public Optional<Output<Integer>> advisedNodeCount() {
         return Optional.ofNullable(this.advisedNodeCount);
@@ -36,14 +36,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether health check is disabled. true: disabled. false: enabled.
-     * 
+     *
      */
     @Import(name="disable")
     private @Nullable Output<Boolean> disable;
 
     /**
      * @return Whether health check is disabled. true: disabled. false: enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> disable() {
         return Optional.ofNullable(this.disable);
@@ -51,14 +51,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DNS record type for the health check.
-     * 
+     *
      */
     @Import(name="dnsRecordType")
     private @Nullable Output<String> dnsRecordType;
 
     /**
      * @return DNS record type for the health check.
-     * 
+     *
      */
     public Optional<Output<String>> dnsRecordType() {
         return Optional.ofNullable(this.dnsRecordType);
@@ -66,14 +66,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
-     * 
+     *
      */
     @Import(name="failedCount")
     private @Nullable Output<Integer> failedCount;
 
     /**
      * @return Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
-     * 
+     *
      */
     public Optional<Output<Integer>> failedCount() {
         return Optional.ofNullable(this.failedCount);
@@ -81,14 +81,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     * 
+     *
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
      * @return Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     * 
+     *
      */
     public Optional<Output<String>> host() {
         return Optional.ofNullable(this.host);
@@ -96,36 +96,46 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     * 
+     *
      */
     @Import(name="httpMethod")
     private @Nullable Output<String> httpMethod;
 
     /**
      * @return HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     * 
+     *
      */
     public Optional<Output<String>> httpMethod() {
         return Optional.ofNullable(this.httpMethod);
     }
 
+    /**
+     * Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="httpUsabilityCodes")
     private @Nullable Output<List<GtmProbeHttpUsabilityCodeArgs>> httpUsabilityCodes;
 
+    /**
+     * @return Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GtmProbeHttpUsabilityCodeArgs>>> httpUsabilityCodes() {
         return Optional.ofNullable(this.httpUsabilityCodes);
     }
 
     /**
      * Interval between each health check, in seconds.
-     * 
+     *
      */
     @Import(name="interval")
     private @Nullable Output<Integer> interval;
 
     /**
      * @return Interval between each health check, in seconds.
-     * 
+     *
      */
     public Optional<Output<Integer>> interval() {
         return Optional.ofNullable(this.interval);
@@ -133,14 +143,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
-     * 
+     *
      */
     @Import(name="isManualNodes")
     private @Nullable Output<Boolean> isManualNodes;
 
     /**
      * @return Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
-     * 
+     *
      */
     public Optional<Output<Boolean>> isManualNodes() {
         return Optional.ofNullable(this.isManualNodes);
@@ -148,14 +158,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of probe nodes used for health checks.
-     * 
+     *
      */
     @Import(name="nodes")
     private @Nullable Output<List<String>> nodes;
 
     /**
      * @return List of probe nodes used for health checks.
-     * 
+     *
      */
     public Optional<Output<List<String>>> nodes() {
         return Optional.ofNullable(this.nodes);
@@ -163,14 +173,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
-     * 
+     *
      */
     @Import(name="pingCount")
     private @Nullable Output<Integer> pingCount;
 
     /**
      * @return Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
-     * 
+     *
      */
     public Optional<Output<Integer>> pingCount() {
         return Optional.ofNullable(this.pingCount);
@@ -178,14 +188,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
-     * 
+     *
      */
     @Import(name="pingLossPercent")
     private @Nullable Output<Integer> pingLossPercent;
 
     /**
      * @return Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
-     * 
+     *
      */
     public Optional<Output<Integer>> pingLossPercent() {
         return Optional.ofNullable(this.pingLossPercent);
@@ -193,14 +203,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     * 
+     *
      */
     @Import(name="port")
     private @Nullable Output<Integer> port;
 
     /**
      * @return Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     * 
+     *
      */
     public Optional<Output<Integer>> port() {
         return Optional.ofNullable(this.port);
@@ -208,14 +218,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
-     * 
+     *
      */
     @Import(name="protocol")
     private @Nullable Output<String> protocol;
 
     /**
      * @return Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
-     * 
+     *
      */
     public Optional<Output<String>> protocol() {
         return Optional.ofNullable(this.protocol);
@@ -223,14 +233,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
-     * 
+     *
      */
     @Import(name="tcpConnTimeout")
     private @Nullable Output<Integer> tcpConnTimeout;
 
     /**
      * @return Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
-     * 
+     *
      */
     public Optional<Output<Integer>> tcpConnTimeout() {
         return Optional.ofNullable(this.tcpConnTimeout);
@@ -238,14 +248,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Timeout for the health check task. Unit: seconds.
-     * 
+     *
      */
     @Import(name="timeout")
     private @Nullable Output<Integer> timeout;
 
     /**
      * @return Timeout for the health check task. Unit: seconds.
-     * 
+     *
      */
     public Optional<Output<Integer>> timeout() {
         return Optional.ofNullable(this.timeout);
@@ -253,14 +263,14 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     * 
+     *
      */
     @Import(name="url")
     private @Nullable Output<String> url;
 
     /**
      * @return Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-     * 
+     *
      */
     public Optional<Output<String>> url() {
         return Optional.ofNullable(this.url);
@@ -308,9 +318,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param advisedNodeCount Recommended number of health check probe points.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder advisedNodeCount(@Nullable Output<Integer> advisedNodeCount) {
             $.advisedNodeCount = advisedNodeCount;
@@ -319,9 +329,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param advisedNodeCount Recommended number of health check probe points.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder advisedNodeCount(Integer advisedNodeCount) {
             return advisedNodeCount(Output.of(advisedNodeCount));
@@ -329,9 +339,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param disable Whether health check is disabled. true: disabled. false: enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder disable(@Nullable Output<Boolean> disable) {
             $.disable = disable;
@@ -340,9 +350,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param disable Whether health check is disabled. true: disabled. false: enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder disable(Boolean disable) {
             return disable(Output.of(disable));
@@ -350,9 +360,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnsRecordType DNS record type for the health check.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dnsRecordType(@Nullable Output<String> dnsRecordType) {
             $.dnsRecordType = dnsRecordType;
@@ -361,9 +371,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dnsRecordType DNS record type for the health check.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dnsRecordType(String dnsRecordType) {
             return dnsRecordType(Output.of(dnsRecordType));
@@ -371,9 +381,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param failedCount Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder failedCount(@Nullable Output<Integer> failedCount) {
             $.failedCount = failedCount;
@@ -382,9 +392,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param failedCount Threshold for the number of health check failures before a single target address is considered faulty. For example, if you set this parameter to 3, a target address will be marked as faulty after 3 consecutive health check failures. Default value: 3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder failedCount(Integer failedCount) {
             return failedCount(Output.of(failedCount));
@@ -392,9 +402,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder host(@Nullable Output<String> host) {
             $.host = host;
@@ -403,9 +413,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Full domain name of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder host(String host) {
             return host(Output.of(host));
@@ -413,9 +423,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param httpMethod HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder httpMethod(@Nullable Output<String> httpMethod) {
             $.httpMethod = httpMethod;
@@ -424,32 +434,53 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param httpMethod HTTP request method. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder httpMethod(String httpMethod) {
             return httpMethod(Output.of(httpMethod));
         }
 
+        /**
+         * @param httpUsabilityCodes Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder httpUsabilityCodes(@Nullable Output<List<GtmProbeHttpUsabilityCodeArgs>> httpUsabilityCodes) {
             $.httpUsabilityCodes = httpUsabilityCodes;
             return this;
         }
 
+        /**
+         * @param httpUsabilityCodes Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder httpUsabilityCodes(List<GtmProbeHttpUsabilityCodeArgs> httpUsabilityCodes) {
             return httpUsabilityCodes(Output.of(httpUsabilityCodes));
         }
 
+        /**
+         * @param httpUsabilityCodes Customize a range of HTTP status codes. After a probe initiates a health check, if the target address returns an HTTP status code outside the specified range, the health check at that probe is considered failed. If you do not set the HttpUsabilityCodes parameter for the policy, this parameter will not be returned.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder httpUsabilityCodes(GtmProbeHttpUsabilityCodeArgs... httpUsabilityCodes) {
             return httpUsabilityCodes(List.of(httpUsabilityCodes));
         }
 
         /**
          * @param interval Interval between each health check, in seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder interval(@Nullable Output<Integer> interval) {
             $.interval = interval;
@@ -458,9 +489,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param interval Interval between each health check, in seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder interval(Integer interval) {
             return interval(Output.of(interval));
@@ -468,9 +499,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isManualNodes Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isManualNodes(@Nullable Output<Boolean> isManualNodes) {
             $.isManualNodes = isManualNodes;
@@ -479,9 +510,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param isManualNodes Whether to manually configure health check probe points. true: Manually configure health check probe points. false: Use recommended health check probe points.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isManualNodes(Boolean isManualNodes) {
             return isManualNodes(Output.of(isManualNodes));
@@ -489,9 +520,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodes List of probe nodes used for health checks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodes(@Nullable Output<List<String>> nodes) {
             $.nodes = nodes;
@@ -500,9 +531,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodes List of probe nodes used for health checks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodes(List<String> nodes) {
             return nodes(Output.of(nodes));
@@ -510,9 +541,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param nodes List of probe nodes used for health checks.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodes(String... nodes) {
             return nodes(List.of(nodes));
@@ -520,9 +551,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pingCount Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder pingCount(@Nullable Output<Integer> pingCount) {
             $.pingCount = pingCount;
@@ -531,9 +562,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pingCount Number of packets sent. If you set this parameter to 10, each ping check sends 10 packets simultaneously. This parameter is only valid when the health check protocol is set to ping.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder pingCount(Integer pingCount) {
             return pingCount(Output.of(pingCount));
@@ -541,9 +572,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pingLossPercent Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder pingLossPercent(@Nullable Output<Integer> pingLossPercent) {
             $.pingLossPercent = pingLossPercent;
@@ -552,9 +583,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pingLossPercent Packet loss rate. Unit: percent. If the packet loss rate exceeds this parameter value, the result is considered abnormal. For example, if this parameter is set to 10 and the packet loss rate during a health check is greater than 10, the result is considered abnormal. This parameter is only valid when the health check protocol is set to ping.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder pingLossPercent(Integer pingLossPercent) {
             return pingLossPercent(Output.of(pingLossPercent));
@@ -562,9 +593,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(@Nullable Output<Integer> port) {
             $.port = port;
@@ -573,9 +604,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param port Port of the health check target address. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder port(Integer port) {
             return port(Output.of(port));
@@ -583,9 +614,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocol(@Nullable Output<String> protocol) {
             $.protocol = protocol;
@@ -594,9 +625,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param protocol Protocol used for health checks. ping: ICMP protocol. tcp: TCP protocol. http: HTTP protocol. https: HTTPS protocol.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder protocol(String protocol) {
             return protocol(Output.of(protocol));
@@ -604,9 +635,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tcpConnTimeout Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tcpConnTimeout(@Nullable Output<Integer> tcpConnTimeout) {
             $.tcpConnTimeout = tcpConnTimeout;
@@ -615,9 +646,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param tcpConnTimeout Timeout for establishing a single TCP connection. For example, if you set this parameter to 2 seconds, a TCP connection will be considered failed if it is not established within 2 seconds during a health check. This parameter is only valid when the health check protocol is set to tcp.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder tcpConnTimeout(Integer tcpConnTimeout) {
             return tcpConnTimeout(Output.of(tcpConnTimeout));
@@ -625,9 +656,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeout Timeout for the health check task. Unit: seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeout(@Nullable Output<Integer> timeout) {
             $.timeout = timeout;
@@ -636,9 +667,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param timeout Timeout for the health check task. Unit: seconds.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder timeout(Integer timeout) {
             return timeout(Output.of(timeout));
@@ -646,9 +677,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param url Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder url(@Nullable Output<String> url) {
             $.url = url;
@@ -657,9 +688,9 @@ public final class GtmProbeArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param url Path part of the health check target address, starting with /. This parameter is only valid when the health check protocol is set to HTTP or HTTPS.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder url(String url) {
             return url(Output.of(url));

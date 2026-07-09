@@ -21,14 +21,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-     * 
+     *
      */
     @Import(name="bandwidth", required=true)
     private Output<Integer> bandwidth;
 
     /**
      * @return Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-     * 
+     *
      */
     public Output<Integer> bandwidth() {
         return this.bandwidth;
@@ -36,14 +36,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Email address of the dedicated connection contact
-     * 
+     *
      */
     @Import(name="customerContactEmail", required=true)
     private Output<String> customerContactEmail;
 
     /**
      * @return Email address of the dedicated connection contact
-     * 
+     *
      */
     public Output<String> customerContactEmail() {
         return this.customerContactEmail;
@@ -51,14 +51,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Phone number of the dedicated connection contact
-     * 
+     *
      */
     @Import(name="customerContactPhone", required=true)
     private Output<String> customerContactPhone;
 
     /**
      * @return Phone number of the dedicated connection contact
-     * 
+     *
      */
     public Output<String> customerContactPhone() {
         return this.customerContactPhone;
@@ -66,14 +66,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the dedicated connection contact
-     * 
+     *
      */
     @Import(name="customerName", required=true)
     private Output<String> customerName;
 
     /**
      * @return Name of the dedicated connection contact
-     * 
+     *
      */
     public Output<String> customerName() {
         return this.customerName;
@@ -81,14 +81,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the physical connection. Length limit: 0 ~ 255 characters
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the physical connection. Length limit: 0 ~ 255 characters
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -96,14 +96,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-     * 
+     *
      */
     @Import(name="directConnectAccessPointId", required=true)
     private Output<String> directConnectAccessPointId;
 
     /**
      * @return ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-     * 
+     *
      */
     public Output<String> directConnectAccessPointId() {
         return this.directConnectAccessPointId;
@@ -111,14 +111,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-     * 
+     *
      */
     @Import(name="directConnectConnectionName")
     private @Nullable Output<String> directConnectConnectionName;
 
     /**
      * @return Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-     * 
+     *
      */
     public Optional<Output<String>> directConnectConnectionName() {
         return Optional.ofNullable(this.directConnectConnectionName);
@@ -126,14 +126,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-     * 
+     *
      */
     @Import(name="lineOperator", required=true)
     private Output<String> lineOperator;
 
     /**
      * @return Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-     * 
+     *
      */
     public Output<String> lineOperator() {
         return this.lineOperator;
@@ -141,14 +141,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Local IDC address or the remote access point of the physical dedicated line.
-     * 
+     *
      */
     @Import(name="peerLocation", required=true)
     private Output<String> peerLocation;
 
     /**
      * @return Local IDC address or the remote access point of the physical dedicated line.
-     * 
+     *
      */
     public Output<String> peerLocation() {
         return this.peerLocation;
@@ -156,14 +156,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-     * 
+     *
      */
     @Import(name="portSpec", required=true)
     private Output<String> portSpec;
 
     /**
      * @return Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-     * 
+     *
      */
     public Output<String> portSpec() {
         return this.portSpec;
@@ -171,14 +171,14 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-     * 
+     *
      */
     @Import(name="portType", required=true)
     private Output<String> portType;
 
     /**
      * @return Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-     * 
+     *
      */
     public Output<String> portType() {
         return this.portType;
@@ -186,22 +186,32 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the physical dedicated line belongs. If left blank, the default project is used.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the physical dedicated line belongs. If left blank, the default project is used.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
     }
 
+    /**
+     * All tag information added to the physical connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<ConnectionTagArgs>> tags;
 
+    /**
+     * @return All tag information added to the physical connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<ConnectionTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -244,9 +254,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -255,9 +265,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bandwidth Line bandwidth in Mbps. If not specified, defaults to the port specification bandwidth. 1000Base specification range: 1 ~ 1000; 10GBase specification range: 1 ~ 10000; 40GBase specification range: 1 ~ 40000; 100GBase specification range: 1 ~ 100000
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -265,9 +275,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerContactEmail Email address of the dedicated connection contact
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerContactEmail(Output<String> customerContactEmail) {
             $.customerContactEmail = customerContactEmail;
@@ -276,9 +286,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerContactEmail Email address of the dedicated connection contact
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerContactEmail(String customerContactEmail) {
             return customerContactEmail(Output.of(customerContactEmail));
@@ -286,9 +296,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerContactPhone Phone number of the dedicated connection contact
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerContactPhone(Output<String> customerContactPhone) {
             $.customerContactPhone = customerContactPhone;
@@ -297,9 +307,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerContactPhone Phone number of the dedicated connection contact
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerContactPhone(String customerContactPhone) {
             return customerContactPhone(Output.of(customerContactPhone));
@@ -307,9 +317,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerName Name of the dedicated connection contact
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerName(Output<String> customerName) {
             $.customerName = customerName;
@@ -318,9 +328,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerName Name of the dedicated connection contact
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerName(String customerName) {
             return customerName(Output.of(customerName));
@@ -328,9 +338,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the physical connection. Length limit: 0 ~ 255 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -339,9 +349,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the physical connection. Length limit: 0 ~ 255 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -349,9 +359,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectAccessPointId ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectAccessPointId(Output<String> directConnectAccessPointId) {
             $.directConnectAccessPointId = directConnectAccessPointId;
@@ -360,9 +370,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectAccessPointId ID of the physical connection access point. You can call DescribeDirectConnectAccessPoints to query access point information
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectAccessPointId(String directConnectAccessPointId) {
             return directConnectAccessPointId(Output.of(directConnectAccessPointId));
@@ -370,9 +380,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectConnectionName Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectConnectionName(@Nullable Output<String> directConnectConnectionName) {
             $.directConnectConnectionName = directConnectConnectionName;
@@ -381,9 +391,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param directConnectConnectionName Name of the physical connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space, underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), Chinese period (。). Length limit: 1 ~ 128 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectConnectionName(String directConnectConnectionName) {
             return directConnectConnectionName(Output.of(directConnectConnectionName));
@@ -391,9 +401,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lineOperator Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineOperator(Output<String> lineOperator) {
             $.lineOperator = lineOperator;
@@ -402,9 +412,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lineOperator Operator of the physical dedicated line. ChinaTelecom refers to China Telecom, ChinaMobile refers to China Mobile, ChinaUnicom refers to China Unicom, ChinaOther refers to other operators in China with the required telecom business qualifications. Only international operators are allowed in bp environments.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineOperator(String lineOperator) {
             return lineOperator(Output.of(lineOperator));
@@ -412,9 +422,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param peerLocation Local IDC address or the remote access point of the physical dedicated line.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerLocation(Output<String> peerLocation) {
             $.peerLocation = peerLocation;
@@ -423,9 +433,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param peerLocation Local IDC address or the remote access point of the physical dedicated line.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerLocation(String peerLocation) {
             return peerLocation(Output.of(peerLocation));
@@ -433,9 +443,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portSpec Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder portSpec(Output<String> portSpec) {
             $.portSpec = portSpec;
@@ -444,9 +454,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portSpec Port specification of the physical dedicated line. Dedicated lines support 1G, 10G, 40G, and 100G. 40G and 100G are not enabled by default; contact your account manager to request a trial.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder portSpec(String portSpec) {
             return portSpec(Output.of(portSpec));
@@ -454,9 +464,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portType Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder portType(Output<String> portType) {
             $.portType = portType;
@@ -465,9 +475,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param portType Port type of the physical connection. 1000Base: 1G optical port; 10GBase: 10G optical port; 40GBase: 40G optical port; 100GBase: 100G optical port. 40GBase and 100GBase are not open by default; contact your account manager to request a trial
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder portType(String portType) {
             return portType(Output.of(portType));
@@ -475,9 +485,9 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the physical dedicated line belongs. If left blank, the default project is used.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -486,23 +496,44 @@ public final class ConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the physical dedicated line belongs. If left blank, the default project is used.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
         }
 
+        /**
+         * @param tags All tag information added to the physical connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<ConnectionTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags All tag information added to the physical connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<ConnectionTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags All tag information added to the physical connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(ConnectionTagArgs... tags) {
             return tags(List.of(tags));
         }

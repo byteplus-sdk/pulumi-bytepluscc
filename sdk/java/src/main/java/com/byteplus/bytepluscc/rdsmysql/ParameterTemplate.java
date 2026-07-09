@@ -19,219 +19,274 @@ import javax.annotation.Nullable;
 
 /**
  * Volcano Engine Cloud Database MySQL version parameter template for managing and applying MySQL instance parameter configurations in bulk
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.ParameterTemplate;
+ * import com.byteplus.bytepluscc.rdsmysql.ParameterTemplateArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.ParameterTemplateTemplateParamArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rDSMySQLParameterTemplateDemo = new ParameterTemplate("rDSMySQLParameterTemplateDemo", ParameterTemplateArgs.builder()
+ *             .templateName("test-parametertemplate")
+ *             .templateType("Mysql")
+ *             .templateTypeVersion("MySQL_5_7")
+ *             .templateParams(
+ *                 ParameterTemplateTemplateParamArgs.builder()
+ *                     .name("auto_increment_increment")
+ *                     .running_value("33")
+ *                     .build(),
+ *                 ParameterTemplateTemplateParamArgs.builder()
+ *                     .name("automatic_sp_privileges")
+ *                     .running_value("on")
+ *                     .build())
+ *             .templateDesc("测试参数模板")
+ *             .engineType("InnoDB")
+ *             .projectName("default")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate example &#34;template_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate")
 public class ParameterTemplate extends com.pulumi.resources.CustomResource {
     /**
      * Account ID
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return Account ID
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
     /**
      * Creation time (UTC+8), format: yyyy-MM-dd HH:mm:ss
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time (UTC+8), format: yyyy-MM-dd HH:mm:ss
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Database engine type. Values: InnoDB (InnoDB engine), RocksDB (RocksDB engine). Default: InnoDB
-     * 
+     *
      */
     @Export(name="engineType", refs={String.class}, tree="[0]")
     private Output<String> engineType;
 
     /**
      * @return Database engine type. Values: InnoDB (InnoDB engine), RocksDB (RocksDB engine). Default: InnoDB
-     * 
+     *
      */
     public Output<String> engineType() {
         return this.engineType;
     }
     /**
      * Whether the template contains parameters that require a restart
-     * 
+     *
      */
     @Export(name="needRestart", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> needRestart;
 
     /**
      * @return Whether the template contains parameters that require a restart
-     * 
+     *
      */
     public Output<Boolean> needRestart() {
         return this.needRestart;
     }
     /**
      * Number of parameters included in the template
-     * 
+     *
      */
     @Export(name="parameterNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> parameterNum;
 
     /**
      * @return Number of parameters included in the template
-     * 
+     *
      */
     public Output<Integer> parameterNum() {
         return this.parameterNum;
     }
     /**
      * Associated project
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Associated project
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Template category. Value: DBEngine (database engine parameter)
-     * 
+     *
      */
     @Export(name="templateCategory", refs={String.class}, tree="[0]")
     private Output<String> templateCategory;
 
     /**
      * @return Template category. Value: DBEngine (database engine parameter)
-     * 
+     *
      */
     public Output<String> templateCategory() {
         return this.templateCategory;
     }
     /**
      * Parameter template description
-     * 
+     *
      */
     @Export(name="templateDesc", refs={String.class}, tree="[0]")
     private Output<String> templateDesc;
 
     /**
      * @return Parameter template description
-     * 
+     *
      */
     public Output<String> templateDesc() {
         return this.templateDesc;
     }
     /**
      * Parameter template ID, automatically generated by the system
-     * 
+     *
      */
     @Export(name="templateId", refs={String.class}, tree="[0]")
     private Output<String> templateId;
 
     /**
      * @return Parameter template ID, automatically generated by the system
-     * 
+     *
      */
     public Output<String> templateId() {
         return this.templateId;
     }
     /**
      * Parameter template name
-     * 
+     *
      */
     @Export(name="templateName", refs={String.class}, tree="[0]")
     private Output<String> templateName;
 
     /**
      * @return Parameter template name
-     * 
+     *
      */
     public Output<String> templateName() {
         return this.templateName;
     }
+    /**
+     * Parameters included in the parameter template
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="templateParams", refs={List.class,ParameterTemplateTemplateParam.class}, tree="[0,1]")
     private Output<List<ParameterTemplateTemplateParam>> templateParams;
 
+    /**
+     * @return Parameters included in the parameter template
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ParameterTemplateTemplateParam>> templateParams() {
         return this.templateParams;
     }
     /**
      * Parameter template type. Values: System (system template), User (user template)
-     * 
+     *
      */
     @Export(name="templateSource", refs={String.class}, tree="[0]")
     private Output<String> templateSource;
 
     /**
      * @return Parameter template type. Values: System (system template), User (user template)
-     * 
+     *
      */
     public Output<String> templateSource() {
         return this.templateSource;
     }
     /**
      * Database type of the parameter template. Default: Mysql
-     * 
+     *
      */
     @Export(name="templateType", refs={String.class}, tree="[0]")
     private Output<String> templateType;
 
     /**
      * @return Database type of the parameter template. Default: Mysql
-     * 
+     *
      */
     public Output<String> templateType() {
         return this.templateType;
     }
     /**
      * Database version of the parameter template. Value range: MySQL*5*7 (MySQL 5.7 version), MySQL*8*0 (MySQL 8.0 version)
-     * 
+     *
      */
     @Export(name="templateTypeVersion", refs={String.class}, tree="[0]")
     private Output<String> templateTypeVersion;
 
     /**
      * @return Database version of the parameter template. Value range: MySQL*5*7 (MySQL 5.7 version), MySQL*8*0 (MySQL 8.0 version)
-     * 
+     *
      */
     public Output<String> templateTypeVersion() {
         return this.templateTypeVersion;
     }
     /**
      * Template modification time
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Template modification time
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

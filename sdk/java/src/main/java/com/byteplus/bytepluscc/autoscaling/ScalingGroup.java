@@ -24,411 +24,534 @@ import javax.annotation.Nullable;
 
 /**
  * Scaling groups are used to manage a set of cloud resource instances. You can use scaling groups to define the number/capacity of instances in the resource pool, cooldown time, load balancing, and other information.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingGroup;
+ * import com.byteplus.bytepluscc.autoscaling.ScalingGroupArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingGroupInstancesDistributionArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingGroupTagArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingGroupLaunchTemplateOverrideArgs;
+ * import com.pulumi.bytepluscc.autoscaling.inputs.ScalingGroupServerGroupAttributeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var autoScalingScalingGroupDemo = new ScalingGroup("autoScalingScalingGroupDemo", ScalingGroupArgs.builder()
+ *             .healthCheckType("ECS")
+ *             .scalingMode("release")
+ *             .instancesDistribution(ScalingGroupInstancesDistributionArgs.builder()
+ *                 .compensate_with_on_demand(true)
+ *                 .on_demand_base_capacity(0)
+ *                 .on_demand_percentage_above_base_capacity(50)
+ *                 .spot_instance_remedy(true)
+ *                 .build())
+ *             .tags(ScalingGroupTagArgs.builder()
+ *                 .key("env")
+ *                 .value("test")
+ *                 .build())
+ *             .launchTemplateOverrides(ScalingGroupLaunchTemplateOverrideArgs.builder()
+ *                 .instance_type("ecs.g4il.large")
+ *                 .price_limit(0)
+ *                 .build())
+ *             .launchTemplateId("lt-ye9dsl3ucffig992xxxxfncd")
+ *             .projectName("default")
+ *             .serverGroupAttributes(
+ *                 ScalingGroupServerGroupAttributeArgs.builder()
+ *                     .port(8080)
+ *                     .server_group_id("rsp-13g2ktevofhfk3n6nxxxu4mqjq0o")
+ *                     .type("CLB")
+ *                     .weight(50)
+ *                     .build(),
+ *                 ScalingGroupServerGroupAttributeArgs.builder()
+ *                     .port(8080)
+ *                     .server_group_id("rsp-bde4j3yuu8008dv4xxxx0nkn203g")
+ *                     .type("ALB")
+ *                     .weight(50)
+ *                     .build())
+ *             .launchTemplateVersion("Default")
+ *             .subnetIds("subnet-3nrd6qaq3log0931ecxxxh3re2r")
+ *             .defaultCooldown(300)
+ *             .desireInstanceNumber(-1)
+ *             .instanceTerminatePolicy("OldestScalingConfigurationWithOldestInstance")
+ *             .maxInstanceNumber(6)
+ *             .minInstanceNumber(1)
+ *             .multiAzPolicy("PRIORITY")
+ *             .scalingGroupName("AutoScalingScalingGroupDemo")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:autoscaling/scalingGroup:ScalingGroup example &#34;scaling_group_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:autoscaling/scalingGroup:ScalingGroup")
 public class ScalingGroup extends com.pulumi.resources.CustomResource {
     /**
      * ID of the scaling configuration bound to the scaling group
-     * 
+     *
      */
     @Export(name="activeScalingConfigurationId", refs={String.class}, tree="[0]")
     private Output<String> activeScalingConfigurationId;
 
     /**
      * @return ID of the scaling configuration bound to the scaling group
-     * 
+     *
      */
     public Output<String> activeScalingConfigurationId() {
         return this.activeScalingConfigurationId;
     }
     /**
      * Scaling group creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Scaling group creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * ID of the RDS database instance.
-     * 
+     *
      */
     @Export(name="dbInstanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> dbInstanceIds;
 
     /**
      * @return ID of the RDS database instance.
-     * 
+     *
      */
     public Output<List<String>> dbInstanceIds() {
         return this.dbInstanceIds;
     }
     /**
      * Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
-     * 
+     *
      */
     @Export(name="defaultCooldown", refs={Integer.class}, tree="[0]")
     private Output<Integer> defaultCooldown;
 
     /**
      * @return Cooldown period after a scaling activity (adding or removing ECS instances) completes. During the cooldown period, the scaling group does not perform other scaling activities; only scaling activities triggered by Cloud Monitoring alarms and scaling rules are effective. Value range: 5 ~ 86400 seconds. Default value: 300.
-     * 
+     *
      */
     public Output<Integer> defaultCooldown() {
         return this.defaultCooldown;
     }
     /**
      * Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
-     * 
+     *
      */
     @Export(name="desireInstanceNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> desireInstanceNumber;
 
     /**
      * @return Expected number of running instances in the scaling group. 1. Must be no less than MinInstanceNumber and no greater than MaxInstanceNumber. 2. Default value: -1, which means the expected instance count feature is disabled. In this case, after the scaling group is created, scaling activities will automatically add the corresponding number of instances.
-     * 
+     *
      */
     public Output<Integer> desireInstanceNumber() {
         return this.desireInstanceNumber;
     }
     /**
      * Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
-     * 
+     *
      */
     @Export(name="healthCheckType", refs={String.class}, tree="[0]")
     private Output<String> healthCheckType;
 
     /**
      * @return Health check mode for the scaling group. 1. NONE: No instance health check. 2. ECS (default): Performs health checks on ECS instances in the scaling group.
-     * 
+     *
      */
     public Output<String> healthCheckType() {
         return this.healthCheckType;
     }
+    /**
+     * Instance removal policy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="instanceRemovePolicies", refs={List.class,ScalingGroupInstanceRemovePolicy.class}, tree="[0,1]")
     private Output<List<ScalingGroupInstanceRemovePolicy>> instanceRemovePolicies;
 
+    /**
+     * @return Instance removal policy
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ScalingGroupInstanceRemovePolicy>> instanceRemovePolicies() {
         return this.instanceRemovePolicies;
     }
     /**
      * Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
-     * 
+     *
      */
     @Export(name="instanceTerminatePolicy", refs={String.class}, tree="[0]")
     private Output<String> instanceTerminatePolicy;
 
     /**
      * @return Instance removal policies: 1. OldestInstance: Removes the earliest instance added to the scaling group (including both automatically created and manually added instances). 2. NewestInstance: Removes the latest instance added to the scaling group (including both automatically created and manually added instances). 3. OldestScalingConfigurationWithOldestInstance (default): Removes the earliest automatically created instance in the scaling configuration that was first associated with the scaling group. 4. OldestScalingConfigurationWithNewestInstance: Removes the latest automatically created instance in the scaling configuration that was first associated with the scaling group.
-     * 
+     *
      */
     public Output<String> instanceTerminatePolicy() {
         return this.instanceTerminatePolicy;
     }
+    /**
+     * Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="instances", refs={List.class,ScalingGroupInstance.class}, tree="[0,1]")
     private Output<List<ScalingGroupInstance>> instances;
 
+    /**
+     * @return Collection of instance subresources managed manually within the scaling group (Attach / Detach / Remove)
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ScalingGroupInstance>> instances() {
         return this.instances;
     }
     /**
      * Instance distribution policy.
-     * 
+     *
      */
     @Export(name="instancesDistribution", refs={ScalingGroupInstancesDistribution.class}, tree="[0]")
     private Output<ScalingGroupInstancesDistribution> instancesDistribution;
 
     /**
      * @return Instance distribution policy.
-     * 
+     *
      */
     public Output<ScalingGroupInstancesDistribution> instancesDistribution() {
         return this.instancesDistribution;
     }
     /**
      * Whether to enable the scaling group. true: enabled. false: stopped
-     * 
+     *
      */
     @Export(name="isEnableScalingGroup", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> isEnableScalingGroup;
 
     /**
      * @return Whether to enable the scaling group. true: enabled. false: stopped
-     * 
+     *
      */
     public Output<Boolean> isEnableScalingGroup() {
         return this.isEnableScalingGroup;
     }
     /**
      * Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
-     * 
+     *
      */
     @Export(name="launchTemplateId", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateId;
 
     /**
      * @return Instance launch template ID. When configured, it indicates that the launch template is used as the source for the scaling configuration.
-     * 
+     *
      */
     public Output<String> launchTemplateId() {
         return this.launchTemplateId;
     }
+    /**
+     * Instance launch template information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="launchTemplateOverrides", refs={List.class,ScalingGroupLaunchTemplateOverride.class}, tree="[0,1]")
     private Output<List<ScalingGroupLaunchTemplateOverride>> launchTemplateOverrides;
 
+    /**
+     * @return Instance launch template information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ScalingGroupLaunchTemplateOverride>> launchTemplateOverrides() {
         return this.launchTemplateOverrides;
     }
     /**
      * Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
-     * 
+     *
      */
     @Export(name="launchTemplateVersion", refs={String.class}, tree="[0]")
     private Output<String> launchTemplateVersion;
 
     /**
      * @return Instance launch template version. 1. A specific template version number. 2. Default: always use the default template version. 3. Latest: always use the latest template version.
-     * 
+     *
      */
     public Output<String> launchTemplateVersion() {
         return this.launchTemplateVersion;
     }
     /**
      * Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
-     * 
+     *
      */
     @Export(name="lifecycleState", refs={String.class}, tree="[0]")
     private Output<String> lifecycleState;
 
     /**
      * @return Status of the scaling group. Active: enabled. InActive: not activated. Deleting: deleting. Locked: locked. CoolingDown: cooling down. Unknown: unknown status.
-     * 
+     *
      */
     public Output<String> lifecycleState() {
         return this.lifecycleState;
     }
     /**
      * Grace period for CLB health checks on scaling group instances
-     * 
+     *
      */
     @Export(name="loadBalancerHealthCheckGracePeriod", refs={Integer.class}, tree="[0]")
     private Output<Integer> loadBalancerHealthCheckGracePeriod;
 
     /**
      * @return Grace period for CLB health checks on scaling group instances
-     * 
+     *
      */
     public Output<Integer> loadBalancerHealthCheckGracePeriod() {
         return this.loadBalancerHealthCheckGracePeriod;
     }
     /**
      * Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
-     * 
+     *
      */
     @Export(name="maxInstanceNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> maxInstanceNumber;
 
     /**
      * @return Maximum number of instances in the scaling group. Default value: 0 ~ 100. You can adjust this in the Quota Center.
-     * 
+     *
      */
     public Output<Integer> maxInstanceNumber() {
         return this.maxInstanceNumber;
     }
     /**
      * Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
-     * 
+     *
      */
     @Export(name="minInstanceNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> minInstanceNumber;
 
     /**
      * @return Minimum number of instances in the scaling group. Default value: 0–100. You can adjust this in the quota center.
-     * 
+     *
      */
     public Output<Integer> minInstanceNumber() {
         return this.minInstanceNumber;
     }
     /**
      * Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
-     * 
+     *
      */
     @Export(name="multiAzPolicy", refs={String.class}, tree="[0]")
     private Output<String> multiAzPolicy;
 
     /**
      * @return Scaling strategy. If you select multiple subnets, you must configure this parameter. 1. PRIORITY (default): priority strategy. 2. BALANCE: balanced distribution strategy.
-     * 
+     *
      */
     public Output<String> multiAzPolicy() {
         return this.multiAzPolicy;
     }
     /**
      * Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the scaling group belongs. Default is &#39;default&#39;. A resource can belong to only one project. Only letters, numbers, underscores &#39;_&#39;, dots &#39;.&#39;, and hyphens &#39;-&#39; are allowed. Maximum length: 64 characters.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Scaling group ID.
-     * 
+     *
      */
     @Export(name="scalingGroupId", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupId;
 
     /**
      * @return Scaling group ID.
-     * 
+     *
      */
     public Output<String> scalingGroupId() {
         return this.scalingGroupId;
     }
     /**
      * Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
-     * 
+     *
      */
     @Export(name="scalingGroupName", refs={String.class}, tree="[0]")
     private Output<String> scalingGroupName;
 
     /**
      * @return Scaling group name, unique within the same region. Must start with a Chinese character or letter, and can only contain Chinese characters, letters, numbers, underscores, and hyphens. Length limit: 1 ~ 128 characters. Special characters are not supported.
-     * 
+     *
      */
     public Output<String> scalingGroupName() {
         return this.scalingGroupName;
     }
     /**
      * Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
-     * 
+     *
      */
     @Export(name="scalingMode", refs={String.class}, tree="[0]")
     private Output<String> scalingMode;
 
     /**
      * @return Instance recycling mode for the scaling group. 1. release (default): Release mode. 2. recycle: Stop-and-recycle mode.
-     * 
+     *
      */
     public Output<String> scalingMode() {
         return this.scalingMode;
     }
+    /**
+     * Load balancer information associated with the scaling group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="serverGroupAttributes", refs={List.class,ScalingGroupServerGroupAttribute.class}, tree="[0,1]")
     private Output<List<ScalingGroupServerGroupAttribute>> serverGroupAttributes;
 
+    /**
+     * @return Load balancer information associated with the scaling group.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ScalingGroupServerGroupAttribute>> serverGroupAttributes() {
         return this.serverGroupAttributes;
     }
     /**
      * Number of instances in the scaling group that are in the disabled state.
-     * 
+     *
      */
     @Export(name="stoppedInstanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> stoppedInstanceCount;
 
     /**
      * @return Number of instances in the scaling group that are in the disabled state.
-     * 
+     *
      */
     public Output<Integer> stoppedInstanceCount() {
         return this.stoppedInstanceCount;
     }
     /**
      * List of subnet IDs for the primary network interface of instances in the scaling group
-     * 
+     *
      */
     @Export(name="subnetIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> subnetIds;
 
     /**
      * @return List of subnet IDs for the primary network interface of instances in the scaling group
-     * 
+     *
      */
     public Output<List<String>> subnetIds() {
         return this.subnetIds;
     }
     /**
      * Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
-     * 
+     *
      */
     @Export(name="suspendedProcesses", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> suspendedProcesses;
 
     /**
      * @return Paused processes. If there are no paused processes, returns an empty value. ScaleIn: scale-in process. ScaleOut: scale-out process. HealthCheck: health check. AlarmNotification: alarm task. ScheduledAction: scheduled task.
-     * 
+     *
      */
     public Output<List<String>> suspendedProcesses() {
         return this.suspendedProcesses;
     }
+    /**
+     * Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,ScalingGroupTag.class}, tree="[0,1]")
     private Output<List<ScalingGroupTag>> tags;
 
+    /**
+     * @return Tag list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ScalingGroupTag>> tags() {
         return this.tags;
     }
     /**
      * Number of instances currently in the scaling group
-     * 
+     *
      */
     @Export(name="totalInstanceCount", refs={Integer.class}, tree="[0]")
     private Output<Integer> totalInstanceCount;
 
     /**
      * @return Number of instances currently in the scaling group
-     * 
+     *
      */
     public Output<Integer> totalInstanceCount() {
         return this.totalInstanceCount;
     }
     /**
      * Scaling group update time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Scaling group update time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * VPC ID to which the scaling group belongs
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID to which the scaling group belongs
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;

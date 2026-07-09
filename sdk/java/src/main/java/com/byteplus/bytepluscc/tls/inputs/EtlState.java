@@ -21,14 +21,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the data processing task
-     * 
+     *
      */
     @Import(name="createTime")
     private @Nullable Output<String> createTime;
 
     /**
      * @return Creation time of the data processing task
-     * 
+     *
      */
     public Optional<Output<String>> createTime() {
         return Optional.ofNullable(this.createTime);
@@ -36,14 +36,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Brief description of the data processing task. Does not support &lt;&gt;, &#39;, \, or \. Length: 0–64 characters
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Brief description of the data processing task. Does not support &lt;&gt;, &#39;, \, or \. Length: 0–64 characters
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -51,14 +51,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Syntax type of the processing rule. Fixed as NORMAL
-     * 
+     *
      */
     @Import(name="dslType")
     private @Nullable Output<String> dslType;
 
     /**
      * @return Syntax type of the processing rule. Fixed as NORMAL
-     * 
+     *
      */
     public Optional<Output<String>> dslType() {
         return Optional.ofNullable(this.dslType);
@@ -66,14 +66,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether the data processing task is enabled. true: Enabled. false: Disabled
-     * 
+     *
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
      * @return Whether the data processing task is enabled. true: Enabled. false: Disabled
-     * 
+     *
      */
     public Optional<Output<Boolean>> enable() {
         return Optional.ofNullable(this.enable);
@@ -81,14 +81,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Task scheduling status. WAITING: Preparing. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. RESTARTING: Restarting
-     * 
+     *
      */
     @Import(name="etlStatus")
     private @Nullable Output<String> etlStatus;
 
     /**
      * @return Task scheduling status. WAITING: Preparing. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. RESTARTING: Restarting
-     * 
+     *
      */
     public Optional<Output<String>> etlStatus() {
         return Optional.ofNullable(this.etlStatus);
@@ -96,14 +96,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The processing start time of the data processing task, in seconds as a Unix timestamp
-     * 
+     *
      */
     @Import(name="fromTime")
     private @Nullable Output<Integer> fromTime;
 
     /**
      * @return The processing start time of the data processing task, in seconds as a Unix timestamp
-     * 
+     *
      */
     public Optional<Output<Integer>> fromTime() {
         return Optional.ofNullable(this.fromTime);
@@ -111,14 +111,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The most recent activation time of the data processing task
-     * 
+     *
      */
     @Import(name="lastEnableTime")
     private @Nullable Output<String> lastEnableTime;
 
     /**
      * @return The most recent activation time of the data processing task
-     * 
+     *
      */
     public Optional<Output<String>> lastEnableTime() {
         return Optional.ofNullable(this.lastEnableTime);
@@ -126,14 +126,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Modification time of the data processing task
-     * 
+     *
      */
     @Import(name="modifyTime")
     private @Nullable Output<String> modifyTime;
 
     /**
      * @return Modification time of the data processing task
-     * 
+     *
      */
     public Optional<Output<String>> modifyTime() {
         return Optional.ofNullable(this.modifyTime);
@@ -141,14 +141,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Data processing task name
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Data processing task name
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -156,14 +156,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log project ID to which the data processing task belongs
-     * 
+     *
      */
     @Import(name="projectId")
     private @Nullable Output<String> projectId;
 
     /**
      * @return Log project ID to which the data processing task belongs
-     * 
+     *
      */
     public Optional<Output<String>> projectId() {
         return Optional.ofNullable(this.projectId);
@@ -171,14 +171,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Log project name to which the data processing task belongs
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Log project name to which the data processing task belongs
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -186,14 +186,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Processing rule script used by the data processing task
-     * 
+     *
      */
     @Import(name="script")
     private @Nullable Output<String> script;
 
     /**
      * @return Processing rule script used by the data processing task
-     * 
+     *
      */
     public Optional<Output<String>> script() {
         return Optional.ofNullable(this.script);
@@ -201,14 +201,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Source log topic ID of the data processing task
-     * 
+     *
      */
     @Import(name="sourceTopicId")
     private @Nullable Output<String> sourceTopicId;
 
     /**
      * @return Source log topic ID of the data processing task
-     * 
+     *
      */
     public Optional<Output<String>> sourceTopicId() {
         return Optional.ofNullable(this.sourceTopicId);
@@ -216,36 +216,46 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Source log topic name of the data processing task
-     * 
+     *
      */
     @Import(name="sourceTopicName")
     private @Nullable Output<String> sourceTopicName;
 
     /**
      * @return Source log topic name of the data processing task
-     * 
+     *
      */
     public Optional<Output<String>> sourceTopicName() {
         return Optional.ofNullable(this.sourceTopicName);
     }
 
+    /**
+     * Information about the output target
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="targetResources")
     private @Nullable Output<List<EtlTargetResourceArgs>> targetResources;
 
+    /**
+     * @return Information about the output target
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<EtlTargetResourceArgs>>> targetResources() {
         return Optional.ofNullable(this.targetResources);
     }
 
     /**
      * Data processing task ID
-     * 
+     *
      */
     @Import(name="taskId")
     private @Nullable Output<String> taskId;
 
     /**
      * @return Data processing task ID
-     * 
+     *
      */
     public Optional<Output<String>> taskId() {
         return Optional.ofNullable(this.taskId);
@@ -253,14 +263,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Type of the data processing task. Fixed as Resident
-     * 
+     *
      */
     @Import(name="taskType")
     private @Nullable Output<String> taskType;
 
     /**
      * @return Type of the data processing task. Fixed as Resident
-     * 
+     *
      */
     public Optional<Output<String>> taskType() {
         return Optional.ofNullable(this.taskType);
@@ -268,14 +278,14 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The processing end time of the data processing task, in seconds as a Unix timestamp
-     * 
+     *
      */
     @Import(name="toTime")
     private @Nullable Output<Integer> toTime;
 
     /**
      * @return The processing end time of the data processing task, in seconds as a Unix timestamp
-     * 
+     *
      */
     public Optional<Output<Integer>> toTime() {
         return Optional.ofNullable(this.toTime);
@@ -324,9 +334,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(@Nullable Output<String> createTime) {
             $.createTime = createTime;
@@ -335,9 +345,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createTime Creation time of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createTime(String createTime) {
             return createTime(Output.of(createTime));
@@ -345,9 +355,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Brief description of the data processing task. Does not support &lt;&gt;, &#39;, \, or \. Length: 0–64 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -356,9 +366,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Brief description of the data processing task. Does not support &lt;&gt;, &#39;, \, or \. Length: 0–64 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -366,9 +376,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dslType Syntax type of the processing rule. Fixed as NORMAL
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dslType(@Nullable Output<String> dslType) {
             $.dslType = dslType;
@@ -377,9 +387,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dslType Syntax type of the processing rule. Fixed as NORMAL
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dslType(String dslType) {
             return dslType(Output.of(dslType));
@@ -387,9 +397,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Whether the data processing task is enabled. true: Enabled. false: Disabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enable(@Nullable Output<Boolean> enable) {
             $.enable = enable;
@@ -398,9 +408,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Whether the data processing task is enabled. true: Enabled. false: Disabled
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enable(Boolean enable) {
             return enable(Output.of(enable));
@@ -408,9 +418,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param etlStatus Task scheduling status. WAITING: Preparing. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. RESTARTING: Restarting
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder etlStatus(@Nullable Output<String> etlStatus) {
             $.etlStatus = etlStatus;
@@ -419,9 +429,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param etlStatus Task scheduling status. WAITING: Preparing. RUNNING: Running. STOPPING: Stopping. STOPPED: Stopped. RESTARTING: Restarting
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder etlStatus(String etlStatus) {
             return etlStatus(Output.of(etlStatus));
@@ -429,9 +439,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fromTime The processing start time of the data processing task, in seconds as a Unix timestamp
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder fromTime(@Nullable Output<Integer> fromTime) {
             $.fromTime = fromTime;
@@ -440,9 +450,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param fromTime The processing start time of the data processing task, in seconds as a Unix timestamp
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder fromTime(Integer fromTime) {
             return fromTime(Output.of(fromTime));
@@ -450,9 +460,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastEnableTime The most recent activation time of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastEnableTime(@Nullable Output<String> lastEnableTime) {
             $.lastEnableTime = lastEnableTime;
@@ -461,9 +471,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastEnableTime The most recent activation time of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastEnableTime(String lastEnableTime) {
             return lastEnableTime(Output.of(lastEnableTime));
@@ -471,9 +481,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Modification time of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modifyTime(@Nullable Output<String> modifyTime) {
             $.modifyTime = modifyTime;
@@ -482,9 +492,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param modifyTime Modification time of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder modifyTime(String modifyTime) {
             return modifyTime(Output.of(modifyTime));
@@ -492,9 +502,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Data processing task name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -503,9 +513,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Data processing task name
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -513,9 +523,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectId Log project ID to which the data processing task belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectId(@Nullable Output<String> projectId) {
             $.projectId = projectId;
@@ -524,9 +534,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectId Log project ID to which the data processing task belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectId(String projectId) {
             return projectId(Output.of(projectId));
@@ -534,9 +544,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Log project name to which the data processing task belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -545,9 +555,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Log project name to which the data processing task belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -555,9 +565,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param script Processing rule script used by the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder script(@Nullable Output<String> script) {
             $.script = script;
@@ -566,9 +576,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param script Processing rule script used by the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder script(String script) {
             return script(Output.of(script));
@@ -576,9 +586,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceTopicId Source log topic ID of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceTopicId(@Nullable Output<String> sourceTopicId) {
             $.sourceTopicId = sourceTopicId;
@@ -587,9 +597,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceTopicId Source log topic ID of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceTopicId(String sourceTopicId) {
             return sourceTopicId(Output.of(sourceTopicId));
@@ -597,9 +607,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceTopicName Source log topic name of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceTopicName(@Nullable Output<String> sourceTopicName) {
             $.sourceTopicName = sourceTopicName;
@@ -608,32 +618,53 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param sourceTopicName Source log topic name of the data processing task
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder sourceTopicName(String sourceTopicName) {
             return sourceTopicName(Output.of(sourceTopicName));
         }
 
+        /**
+         * @param targetResources Information about the output target
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder targetResources(@Nullable Output<List<EtlTargetResourceArgs>> targetResources) {
             $.targetResources = targetResources;
             return this;
         }
 
+        /**
+         * @param targetResources Information about the output target
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder targetResources(List<EtlTargetResourceArgs> targetResources) {
             return targetResources(Output.of(targetResources));
         }
 
+        /**
+         * @param targetResources Information about the output target
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder targetResources(EtlTargetResourceArgs... targetResources) {
             return targetResources(List.of(targetResources));
         }
 
         /**
          * @param taskId Data processing task ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder taskId(@Nullable Output<String> taskId) {
             $.taskId = taskId;
@@ -642,9 +673,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param taskId Data processing task ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder taskId(String taskId) {
             return taskId(Output.of(taskId));
@@ -652,9 +683,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param taskType Type of the data processing task. Fixed as Resident
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder taskType(@Nullable Output<String> taskType) {
             $.taskType = taskType;
@@ -663,9 +694,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param taskType Type of the data processing task. Fixed as Resident
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder taskType(String taskType) {
             return taskType(Output.of(taskType));
@@ -673,9 +704,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param toTime The processing end time of the data processing task, in seconds as a Unix timestamp
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder toTime(@Nullable Output<Integer> toTime) {
             $.toTime = toTime;
@@ -684,9 +715,9 @@ public final class EtlState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param toTime The processing end time of the data processing task, in seconds as a Unix timestamp
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder toTime(Integer toTime) {
             return toTime(Output.of(toTime));

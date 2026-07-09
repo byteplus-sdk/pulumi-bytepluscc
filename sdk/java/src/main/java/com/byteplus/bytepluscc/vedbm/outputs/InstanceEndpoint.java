@@ -15,152 +15,162 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class InstanceEndpoint {
+    /**
+     * @return Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<InstanceEndpointAddress> addresses;
     /**
      * @return Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
-     * 
+     *
      */
     private @Nullable Boolean autoAddNewNodes;
     /**
      * @return Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
-     * 
+     *
      */
     private @Nullable String consistLevel;
     /**
      * @return When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
-     * 
+     *
      */
     private @Nullable Integer consistTimeout;
     /**
      * @return Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
-     * 
+     *
      */
     private @Nullable String consistTimeoutAction;
     /**
      * @return Address description
-     * 
+     *
      */
     private @Nullable String description;
     /**
      * @return Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
-     * 
+     *
      */
     private @Nullable Boolean distributedTransaction;
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     private @Nullable String endpointId;
     /**
      * @return Instance connection endpoint name.
-     * 
+     *
      */
     private @Nullable String endpointName;
     /**
      * @return Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
-     * 
+     *
      */
     private @Nullable String endpointType;
     /**
      * @return Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
-     * 
+     *
      */
     private @Nullable Boolean masterAcceptReadRequests;
     /**
      * @return Node list configured for the connection endpoint.
-     * 
+     *
      */
     private @Nullable List<String> nodeIds;
     /**
      * @return Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
-     * 
+     *
      */
     private @Nullable String readWriteMode;
 
     private InstanceEndpoint() {}
+    /**
+     * @return Connection address information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<InstanceEndpointAddress> addresses() {
         return this.addresses == null ? List.of() : this.addresses;
     }
     /**
      * @return Whether to allow automatic addition of new nodes. Values: true: yes. false: no.
-     * 
+     *
      */
     public Optional<Boolean> autoAddNewNodes() {
         return Optional.ofNullable(this.autoAddNewNodes);
     }
     /**
      * @return Consistency level, applicable only to read-write mode connection endpoints. Values: Eventual: eventual consistency. Session: session consistency. Global: global consistency.
-     * 
+     *
      */
     public Optional<String> consistLevel() {
         return Optional.ofNullable(this.consistLevel);
     }
     /**
      * @return When latency is high, the timeout for read-only nodes to synchronize the latest data, in microseconds (us). Range: 1us~100000000us
-     * 
+     *
      */
     public Optional<Integer> consistTimeout() {
         return Optional.ofNullable(this.consistTimeout);
     }
     /**
      * @return Timeout policy for read-only node data synchronization. Supports the following two policies: ReturnError: Returns SQL error (wait replication complete timeout, please retry). ReadMaster: Sends request to the primary node.
-     * 
+     *
      */
     public Optional<String> consistTimeoutAction() {
         return Optional.ofNullable(this.consistTimeoutAction);
     }
     /**
      * @return Address description
-     * 
+     *
      */
     public Optional<String> description() {
         return Optional.ofNullable(this.description);
     }
     /**
      * @return Whether to enable transaction splitting. Only effective for read-write mode endpoints. Values: true: yes. false: no.
-     * 
+     *
      */
     public Optional<Boolean> distributedTransaction() {
         return Optional.ofNullable(this.distributedTransaction);
     }
     /**
      * @return Instance connection endpoint ID.
-     * 
+     *
      */
     public Optional<String> endpointId() {
         return Optional.ofNullable(this.endpointId);
     }
     /**
      * @return Instance connection endpoint name.
-     * 
+     *
      */
     public Optional<String> endpointName() {
         return Optional.ofNullable(this.endpointName);
     }
     /**
      * @return Connection endpoint type. Values: Cluster: default endpoint. Primary: primary node endpoint. Custom: custom endpoint.
-     * 
+     *
      */
     public Optional<String> endpointType() {
         return Optional.ofNullable(this.endpointType);
     }
     /**
      * @return Whether the primary node accepts read requests. Applies only to read/write mode endpoints. true: Yes. false: No
-     * 
+     *
      */
     public Optional<Boolean> masterAcceptReadRequests() {
         return Optional.ofNullable(this.masterAcceptReadRequests);
     }
     /**
      * @return Node list configured for the connection endpoint.
-     * 
+     *
      */
     public List<String> nodeIds() {
         return this.nodeIds == null ? List.of() : this.nodeIds;
     }
     /**
      * @return Endpoint read/write mode. Options: ReadWrite: Read/write. ReadOnly: Read-only
-     * 
+     *
      */
     public Optional<String> readWriteMode() {
         return Optional.ofNullable(this.readWriteMode);

@@ -19,163 +19,224 @@ import javax.annotation.Nullable;
 
 /**
  * GTM address pool resource, belongs to a GTM instance and is used to carry the target address set and routing capacity configuration
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.gtm.Pool;
+ * import com.byteplus.bytepluscc.gtm.PoolArgs;
+ * import com.pulumi.bytepluscc.gtm.inputs.PoolAddressArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var gTMPoolDemo = new Pool("gTMPoolDemo", PoolArgs.builder()
+ *             .addresses(
+ *                 PoolAddressArgs.builder()
+ *                     .rectified_geos(Arrays.asList("cn_telecom_shanghai"))
+ *                     .capacity(20)
+ *                     .mode("auto")
+ *                     .value("2001:db8::2")
+ *                     .weight(20)
+ *                     .build(),
+ *                 PoolAddressArgs.builder()
+ *                     .rectified_geos(Arrays.asList("cn_telecom_beijing"))
+ *                     .capacity(40)
+ *                     .mode("auto")
+ *                     .value("2001:db8::3")
+ *                     .weight(21)
+ *                     .build())
+ *             .gtmId("162ca39d-*******")
+ *             .addrType("ipv6")
+ *             .capacityMode("pool")
+ *             .capacity(90)
+ *             .name("testpool")
+ *             .remark("testdes")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:gtm/pool:Pool example &#34;gtm_id|pool_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:gtm/pool:Pool")
 public class Pool extends com.pulumi.resources.CustomResource {
     /**
      * Target address type of the address pool. If you do not set this parameter, Cloud Scheduling GTM will automatically determine the target address type. ipv4: IPv4 address. ipv6: IPv6 address. cname: Domain name
-     * 
+     *
      */
     @Export(name="addrType", refs={String.class}, tree="[0]")
     private Output<String> addrType;
 
     /**
      * @return Target address type of the address pool. If you do not set this parameter, Cloud Scheduling GTM will automatically determine the target address type. ipv4: IPv4 address. ipv6: IPv6 address. cname: Domain name
-     * 
+     *
      */
     public Output<String> addrType() {
         return this.addrType;
     }
+    /**
+     * List of target addresses in the address pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="addresses", refs={List.class,PoolAddress.class}, tree="[0,1]")
     private Output<List<PoolAddress>> addresses;
 
+    /**
+     * @return List of target addresses in the address pool
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<PoolAddress>> addresses() {
         return this.addresses;
     }
     /**
      * Address pool capacity
-     * 
+     *
      */
     @Export(name="capacity", refs={Integer.class}, tree="[0]")
     private Output<Integer> capacity;
 
     /**
      * @return Address pool capacity
-     * 
+     *
      */
     public Output<Integer> capacity() {
         return this.capacity;
     }
     /**
      * Capacity mode, indicates whether to configure address pool capacity or address capacity
-     * 
+     *
      */
     @Export(name="capacityMode", refs={String.class}, tree="[0]")
     private Output<String> capacityMode;
 
     /**
      * @return Capacity mode, indicates whether to configure address pool capacity or address capacity
-     * 
+     *
      */
     public Output<String> capacityMode() {
         return this.capacityMode;
     }
     /**
      * Creation time
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Whether the address pool can be deleted. true: The address pool is not referenced by any routing rule and can be deleted. false: The address pool is referenced by one or more routing rules and cannot be deleted
-     * 
+     *
      */
     @Export(name="deletable", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> deletable;
 
     /**
      * @return Whether the address pool can be deleted. true: The address pool is not referenced by any routing rule and can be deleted. false: The address pool is referenced by one or more routing rules and cannot be deleted
-     * 
+     *
      */
     public Output<Boolean> deletable() {
         return this.deletable;
     }
     /**
      * UUID of the associated GTM instance
-     * 
+     *
      */
     @Export(name="gtmId", refs={String.class}, tree="[0]")
     private Output<String> gtmId;
 
     /**
      * @return UUID of the associated GTM instance
-     * 
+     *
      */
     public Output<String> gtmId() {
         return this.gtmId;
     }
     /**
      * Address pool name. UTF-8 format. Maximum length is 64 UTF-8 characters
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Address pool name. UTF-8 format. Maximum length is 64 UTF-8 characters
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Address pool ID
-     * 
+     *
      */
     @Export(name="poolId", refs={String.class}, tree="[0]")
     private Output<String> poolId;
 
     /**
      * @return Address pool ID
-     * 
+     *
      */
     public Output<String> poolId() {
         return this.poolId;
     }
     /**
      * Address pool remarks. Default is an empty string. UTF-8 format. Maximum length is 128 UTF-8 characters
-     * 
+     *
      */
     @Export(name="remark", refs={String.class}, tree="[0]")
     private Output<String> remark;
 
     /**
      * @return Address pool remarks. Default is an empty string. UTF-8 format. Maximum length is 128 UTF-8 characters
-     * 
+     *
      */
     public Output<String> remark() {
         return this.remark;
     }
     /**
      * Update time
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

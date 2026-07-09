@@ -17,23 +17,33 @@ public final class DomainRedirectionRewriteArgs extends com.pulumi.resources.Res
 
     public static final DomainRedirectionRewriteArgs Empty = new DomainRedirectionRewriteArgs();
 
+    /**
+     * Indicates a list of URL redirect rewrite rules. When Switch is true, this parameter is required. The list can contain up to 50 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="redirectionRules")
     private @Nullable Output<List<DomainRedirectionRewriteRedirectionRuleArgs>> redirectionRules;
 
+    /**
+     * @return Indicates a list of URL redirect rewrite rules. When Switch is true, this parameter is required. The list can contain up to 50 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainRedirectionRewriteRedirectionRuleArgs>>> redirectionRules() {
         return Optional.ofNullable(this.redirectionRules);
     }
 
     /**
      * Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
-     * 
+     *
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
-     * 
+     *
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -64,24 +74,45 @@ public final class DomainRedirectionRewriteArgs extends com.pulumi.resources.Res
             $ = new DomainRedirectionRewriteArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param redirectionRules Indicates a list of URL redirect rewrite rules. When Switch is true, this parameter is required. The list can contain up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder redirectionRules(@Nullable Output<List<DomainRedirectionRewriteRedirectionRuleArgs>> redirectionRules) {
             $.redirectionRules = redirectionRules;
             return this;
         }
 
+        /**
+         * @param redirectionRules Indicates a list of URL redirect rewrite rules. When Switch is true, this parameter is required. The list can contain up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder redirectionRules(List<DomainRedirectionRewriteRedirectionRuleArgs> redirectionRules) {
             return redirectionRules(Output.of(redirectionRules));
         }
 
+        /**
+         * @param redirectionRules Indicates a list of URL redirect rewrite rules. When Switch is true, this parameter is required. The list can contain up to 50 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder redirectionRules(DomainRedirectionRewriteRedirectionRuleArgs... redirectionRules) {
             return redirectionRules(List.of(redirectionRules));
         }
 
         /**
          * @param switch_ Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -90,9 +121,9 @@ public final class DomainRedirectionRewriteArgs extends com.pulumi.resources.Res
 
         /**
          * @param switch_ Indicates whether this configuration is enabled. This parameter has the following values: true: enables URL redirect rewrite. false: disables URL redirect rewrite.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

@@ -19,14 +19,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * Creation time of the TR routing table
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Creation time of the TR routing table
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -34,14 +34,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -49,14 +49,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * ID of the inbound routing policy associated with the TR routing table
-     * 
+     *
      */
     @Import(name="inRoutePolicyTableId")
     private @Nullable Output<String> inRoutePolicyTableId;
 
     /**
      * @return ID of the inbound routing policy associated with the TR routing table
-     * 
+     *
      */
     public Optional<Output<String>> inRoutePolicyTableId() {
         return Optional.ofNullable(this.inRoutePolicyTableId);
@@ -64,14 +64,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * ID of the outbound routing policy associated with the TR routing table
-     * 
+     *
      */
     @Import(name="outRoutePolicyTableId")
     private @Nullable Output<String> outRoutePolicyTableId;
 
     /**
      * @return ID of the outbound routing policy associated with the TR routing table
-     * 
+     *
      */
     public Optional<Output<String>> outRoutePolicyTableId() {
         return Optional.ofNullable(this.outRoutePolicyTableId);
@@ -79,36 +79,46 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Tag information for the TR routing table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<TransitRouterRouteTableTagArgs>> tags;
 
+    /**
+     * @return Tag information for the TR routing table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TransitRouterRouteTableTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Transit Router instance ID
-     * 
+     *
      */
     @Import(name="transitRouterId")
     private @Nullable Output<String> transitRouterId;
 
     /**
      * @return Transit Router instance ID
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterId() {
         return Optional.ofNullable(this.transitRouterId);
@@ -116,14 +126,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * TR routing table ID
-     * 
+     *
      */
     @Import(name="transitRouterRouteTableId")
     private @Nullable Output<String> transitRouterRouteTableId;
 
     /**
      * @return TR routing table ID
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterRouteTableId() {
         return Optional.ofNullable(this.transitRouterRouteTableId);
@@ -131,14 +141,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-     * 
+     *
      */
     @Import(name="transitRouterRouteTableName")
     private @Nullable Output<String> transitRouterRouteTableName;
 
     /**
      * @return Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterRouteTableName() {
         return Optional.ofNullable(this.transitRouterRouteTableName);
@@ -146,14 +156,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * Type of TR routing table. System: system routing table. Custom: custom routing table.
-     * 
+     *
      */
     @Import(name="transitRouterRouteTableType")
     private @Nullable Output<String> transitRouterRouteTableType;
 
     /**
      * @return Type of TR routing table. System: system routing table. Custom: custom routing table.
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterRouteTableType() {
         return Optional.ofNullable(this.transitRouterRouteTableType);
@@ -161,14 +171,14 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
     /**
      * Last operation time of the TR routing table
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Last operation time of the TR routing table
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -210,9 +220,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param createdTime Creation time of the TR routing table
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -221,9 +231,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param createdTime Creation time of the TR routing table
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -231,9 +241,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param description Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -242,9 +252,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param description Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -252,9 +262,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param inRoutePolicyTableId ID of the inbound routing policy associated with the TR routing table
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder inRoutePolicyTableId(@Nullable Output<String> inRoutePolicyTableId) {
             $.inRoutePolicyTableId = inRoutePolicyTableId;
@@ -263,9 +273,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param inRoutePolicyTableId ID of the inbound routing policy associated with the TR routing table
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder inRoutePolicyTableId(String inRoutePolicyTableId) {
             return inRoutePolicyTableId(Output.of(inRoutePolicyTableId));
@@ -273,9 +283,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param outRoutePolicyTableId ID of the outbound routing policy associated with the TR routing table
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder outRoutePolicyTableId(@Nullable Output<String> outRoutePolicyTableId) {
             $.outRoutePolicyTableId = outRoutePolicyTableId;
@@ -284,9 +294,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param outRoutePolicyTableId ID of the outbound routing policy associated with the TR routing table
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder outRoutePolicyTableId(String outRoutePolicyTableId) {
             return outRoutePolicyTableId(Output.of(outRoutePolicyTableId));
@@ -294,9 +304,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param status Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -305,32 +315,53 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param status Status of the TR routing table. Creating: creating. Deleting: deleting. Pending: configuring. Available: available
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Tag information for the TR routing table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<TransitRouterRouteTableTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information for the TR routing table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<TransitRouterRouteTableTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information for the TR routing table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(TransitRouterRouteTableTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param transitRouterId Transit Router instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(@Nullable Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -339,9 +370,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param transitRouterId Transit Router instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));
@@ -349,9 +380,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param transitRouterRouteTableId TR routing table ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableId(@Nullable Output<String> transitRouterRouteTableId) {
             $.transitRouterRouteTableId = transitRouterRouteTableId;
@@ -360,9 +391,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param transitRouterRouteTableId TR routing table ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableId(String transitRouterRouteTableId) {
             return transitRouterRouteTableId(Output.of(transitRouterRouteTableId));
@@ -370,9 +401,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param transitRouterRouteTableName Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableName(@Nullable Output<String> transitRouterRouteTableName) {
             $.transitRouterRouteTableName = transitRouterRouteTableName;
@@ -381,9 +412,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param transitRouterRouteTableName Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableName(String transitRouterRouteTableName) {
             return transitRouterRouteTableName(Output.of(transitRouterRouteTableName));
@@ -391,9 +422,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param transitRouterRouteTableType Type of TR routing table. System: system routing table. Custom: custom routing table.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableType(@Nullable Output<String> transitRouterRouteTableType) {
             $.transitRouterRouteTableType = transitRouterRouteTableType;
@@ -402,9 +433,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param transitRouterRouteTableType Type of TR routing table. System: system routing table. Custom: custom routing table.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableType(String transitRouterRouteTableType) {
             return transitRouterRouteTableType(Output.of(transitRouterRouteTableType));
@@ -412,9 +443,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param updatedTime Last operation time of the TR routing table
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -423,9 +454,9 @@ public final class TransitRouterRouteTableState extends com.pulumi.resources.Res
 
         /**
          * @param updatedTime Last operation time of the TR routing table
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

@@ -21,14 +21,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Creation time of the DNS record.
-     * 
+     *
      */
     @Import(name="createdAt")
     private @Nullable Output<String> createdAt;
 
     /**
      * @return Creation time of the DNS record.
-     * 
+     *
      */
     public Optional<Output<String>> createdAt() {
         return Optional.ofNullable(this.createdAt);
@@ -36,14 +36,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether the DNS record is enabled.
-     * 
+     *
      */
     @Import(name="enable")
     private @Nullable Output<Boolean> enable;
 
     /**
      * @return Indicates whether the DNS record is enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enable() {
         return Optional.ofNullable(this.enable);
@@ -51,14 +51,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain prefix for the subdomain.
-     * 
+     *
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
      * @return Domain prefix for the subdomain.
-     * 
+     *
      */
     public Optional<Output<String>> host() {
         return Optional.ofNullable(this.host);
@@ -66,14 +66,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Account ID of the most recent update to the DNS record.
-     * 
+     *
      */
     @Import(name="lastOperator")
     private @Nullable Output<String> lastOperator;
 
     /**
      * @return Account ID of the most recent update to the DNS record.
-     * 
+     *
      */
     public Optional<Output<String>> lastOperator() {
         return Optional.ofNullable(this.lastOperator);
@@ -81,14 +81,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DNS record route, only the default route &#39;default&#39; is supported.
-     * 
+     *
      */
     @Import(name="line")
     private @Nullable Output<String> line;
 
     /**
      * @return DNS record route, only the default route &#39;default&#39; is supported.
-     * 
+     *
      */
     public Optional<Output<String>> line() {
         return Optional.ofNullable(this.line);
@@ -96,36 +96,46 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DNS record ID.
-     * 
+     *
      */
     @Import(name="recordId")
     private @Nullable Output<String> recordId;
 
     /**
      * @return DNS record ID.
-     * 
+     *
      */
     public Optional<Output<String>> recordId() {
         return Optional.ofNullable(this.recordId);
     }
 
+    /**
+     * Record set list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="recordSets")
     private @Nullable Output<List<RecordRecordSetArgs>> recordSets;
 
+    /**
+     * @return Record set list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<RecordRecordSetArgs>>> recordSets() {
         return Optional.ofNullable(this.recordSets);
     }
 
     /**
      * Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
-     * 
+     *
      */
     @Import(name="remark")
     private @Nullable Output<String> remark;
 
     /**
      * @return Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> remark() {
         return Optional.ofNullable(this.remark);
@@ -133,14 +143,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DNS record TTL (time to live), in seconds. Default is 600.
-     * 
+     *
      */
     @Import(name="ttl")
     private @Nullable Output<Integer> ttl;
 
     /**
      * @return DNS record TTL (time to live), in seconds. Default is 600.
-     * 
+     *
      */
     public Optional<Output<Integer>> ttl() {
         return Optional.ofNullable(this.ttl);
@@ -148,14 +158,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
-     * 
+     *
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
      * @return DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
-     * 
+     *
      */
     public Optional<Output<String>> type() {
         return Optional.ofNullable(this.type);
@@ -163,14 +173,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last update time of the DNS record.
-     * 
+     *
      */
     @Import(name="updatedAt")
     private @Nullable Output<String> updatedAt;
 
     /**
      * @return Last update time of the DNS record.
-     * 
+     *
      */
     public Optional<Output<String>> updatedAt() {
         return Optional.ofNullable(this.updatedAt);
@@ -178,14 +188,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Record value.
-     * 
+     *
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
      * @return Record value.
-     * 
+     *
      */
     public Optional<Output<String>> value() {
         return Optional.ofNullable(this.value);
@@ -193,14 +203,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Record weight. The weight takes effect only when load balancing is enabled for the domain name.
-     * 
+     *
      */
     @Import(name="weight")
     private @Nullable Output<Integer> weight;
 
     /**
      * @return Record weight. The weight takes effect only when load balancing is enabled for the domain name.
-     * 
+     *
      */
     public Optional<Output<Integer>> weight() {
         return Optional.ofNullable(this.weight);
@@ -208,14 +218,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Indicates whether load balancing is enabled for this record set.
-     * 
+     *
      */
     @Import(name="weightEnabled")
     private @Nullable Output<Boolean> weightEnabled;
 
     /**
      * @return Indicates whether load balancing is enabled for this record set.
-     * 
+     *
      */
     public Optional<Output<Boolean>> weightEnabled() {
         return Optional.ofNullable(this.weightEnabled);
@@ -223,14 +233,14 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name ID.
-     * 
+     *
      */
     @Import(name="zid")
     private @Nullable Output<Integer> zid;
 
     /**
      * @return Domain name ID.
-     * 
+     *
      */
     public Optional<Output<Integer>> zid() {
         return Optional.ofNullable(this.zid);
@@ -276,9 +286,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Creation time of the DNS record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(@Nullable Output<String> createdAt) {
             $.createdAt = createdAt;
@@ -287,9 +297,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param createdAt Creation time of the DNS record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdAt(String createdAt) {
             return createdAt(Output.of(createdAt));
@@ -297,9 +307,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Indicates whether the DNS record is enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enable(@Nullable Output<Boolean> enable) {
             $.enable = enable;
@@ -308,9 +318,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Indicates whether the DNS record is enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enable(Boolean enable) {
             return enable(Output.of(enable));
@@ -318,9 +328,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Domain prefix for the subdomain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder host(@Nullable Output<String> host) {
             $.host = host;
@@ -329,9 +339,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Domain prefix for the subdomain.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder host(String host) {
             return host(Output.of(host));
@@ -339,9 +349,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastOperator Account ID of the most recent update to the DNS record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastOperator(@Nullable Output<String> lastOperator) {
             $.lastOperator = lastOperator;
@@ -350,9 +360,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param lastOperator Account ID of the most recent update to the DNS record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lastOperator(String lastOperator) {
             return lastOperator(Output.of(lastOperator));
@@ -360,9 +370,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line DNS record route, only the default route &#39;default&#39; is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder line(@Nullable Output<String> line) {
             $.line = line;
@@ -371,9 +381,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param line DNS record route, only the default route &#39;default&#39; is supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder line(String line) {
             return line(Output.of(line));
@@ -381,9 +391,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recordId DNS record ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recordId(@Nullable Output<String> recordId) {
             $.recordId = recordId;
@@ -392,32 +402,53 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param recordId DNS record ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder recordId(String recordId) {
             return recordId(Output.of(recordId));
         }
 
+        /**
+         * @param recordSets Record set list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder recordSets(@Nullable Output<List<RecordRecordSetArgs>> recordSets) {
             $.recordSets = recordSets;
             return this;
         }
 
+        /**
+         * @param recordSets Record set list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder recordSets(List<RecordRecordSetArgs> recordSets) {
             return recordSets(Output.of(recordSets));
         }
 
+        /**
+         * @param recordSets Record set list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder recordSets(RecordRecordSetArgs... recordSets) {
             return recordSets(List.of(recordSets));
         }
 
         /**
          * @param remark Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(@Nullable Output<String> remark) {
             $.remark = remark;
@@ -426,9 +457,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remark Remarks. Supports UTF-8 characters. Maximum 16 characters. Default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remark(String remark) {
             return remark(Output.of(remark));
@@ -436,9 +467,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl DNS record TTL (time to live), in seconds. Default is 600.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ttl(@Nullable Output<Integer> ttl) {
             $.ttl = ttl;
@@ -447,9 +478,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ttl DNS record TTL (time to live), in seconds. Default is 600.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ttl(Integer ttl) {
             return ttl(Output.of(ttl));
@@ -457,9 +488,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(@Nullable Output<String> type) {
             $.type = type;
@@ -468,9 +499,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param type DNS record type. Valid values are: A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record. A: A record. AAAA: AAAA record. CNAME: CNAME record. TXT: TXT record. MX: MX record. PTR: PTR record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder type(String type) {
             return type(Output.of(type));
@@ -478,9 +509,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Last update time of the DNS record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedAt(@Nullable Output<String> updatedAt) {
             $.updatedAt = updatedAt;
@@ -489,9 +520,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updatedAt Last update time of the DNS record.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedAt(String updatedAt) {
             return updatedAt(Output.of(updatedAt));
@@ -499,9 +530,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param value Record value.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder value(@Nullable Output<String> value) {
             $.value = value;
@@ -510,9 +541,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param value Record value.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder value(String value) {
             return value(Output.of(value));
@@ -520,9 +551,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight Record weight. The weight takes effect only when load balancing is enabled for the domain name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder weight(@Nullable Output<Integer> weight) {
             $.weight = weight;
@@ -531,9 +562,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weight Record weight. The weight takes effect only when load balancing is enabled for the domain name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder weight(Integer weight) {
             return weight(Output.of(weight));
@@ -541,9 +572,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weightEnabled Indicates whether load balancing is enabled for this record set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder weightEnabled(@Nullable Output<Boolean> weightEnabled) {
             $.weightEnabled = weightEnabled;
@@ -552,9 +583,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param weightEnabled Indicates whether load balancing is enabled for this record set.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder weightEnabled(Boolean weightEnabled) {
             return weightEnabled(Output.of(weightEnabled));
@@ -562,9 +593,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zid Domain name ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zid(@Nullable Output<Integer> zid) {
             $.zid = zid;
@@ -573,9 +604,9 @@ public final class RecordState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zid Domain name ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zid(Integer zid) {
             return zid(Output.of(zid));

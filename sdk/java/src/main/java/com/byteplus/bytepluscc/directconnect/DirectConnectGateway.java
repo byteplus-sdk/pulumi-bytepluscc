@@ -21,32 +21,32 @@ import javax.annotation.Nullable;
 
 /**
  * The Direct Connect Gateway is the entry point for local data centers to access the cloud. It connects private networks (VPC) and physical dedicated connections, enabling mutual access between on-premises data centers (IDC) and cloud private networks (VPC).
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.directconnect.DirectConnectGateway;
  * import com.byteplus.bytepluscc.directconnect.DirectConnectGatewayArgs;
  * import com.pulumi.bytepluscc.directconnect.inputs.DirectConnectGatewayTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var directConnectDirectConnectGatewayDemo = new DirectConnectGateway("directConnectDirectConnectGatewayDemo", DirectConnectGatewayArgs.builder()
  *             .description("DirectConnectDirectConnectGatewayDemo-Description")
@@ -58,240 +58,260 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:directconnect/directConnectGateway:DirectConnectGateway example &#34;direct_connect_gateway_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:directconnect/directConnectGateway:DirectConnectGateway")
 public class DirectConnectGateway extends com.pulumi.resources.CustomResource {
     /**
      * ID of the account to which the Direct Connect Gateway belongs.
-     * 
+     *
      */
     @Export(name="accountId", refs={String.class}, tree="[0]")
     private Output<String> accountId;
 
     /**
      * @return ID of the account to which the Direct Connect Gateway belongs.
-     * 
+     *
      */
     public Output<String> accountId() {
         return this.accountId;
     }
+    /**
+     * Associated CEN information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associateCens", refs={List.class,DirectConnectGatewayAssociateCen.class}, tree="[0,1]")
     private Output<List<DirectConnectGatewayAssociateCen>> associateCens;
 
+    /**
+     * @return Associated CEN information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DirectConnectGatewayAssociateCen>> associateCens() {
         return this.associateCens;
     }
     /**
      * Associated EIC information.
-     * 
+     *
      */
     @Export(name="associateEic", refs={DirectConnectGatewayAssociateEic.class}, tree="[0]")
     private Output<DirectConnectGatewayAssociateEic> associateEic;
 
     /**
      * @return Associated EIC information.
-     * 
+     *
      */
     public Output<DirectConnectGatewayAssociateEic> associateEic() {
         return this.associateEic;
     }
     /**
      * ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-     * 
+     *
      */
     @Export(name="bgpAsn", refs={Integer.class}, tree="[0]")
     private Output<Integer> bgpAsn;
 
     /**
      * @return ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-     * 
+     *
      */
     public Output<Integer> bgpAsn() {
         return this.bgpAsn;
     }
     /**
      * Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
-     * 
+     *
      */
     @Export(name="businessStatus", refs={String.class}, tree="[0]")
     private Output<String> businessStatus;
 
     /**
      * @return Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
-     * 
+     *
      */
     public Output<String> businessStatus() {
         return this.businessStatus;
     }
     /**
      * Time when the Direct Connect Gateway was created.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Time when the Direct Connect Gateway was created.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-     * 
+     *
      */
     @Export(name="deletedTime", refs={String.class}, tree="[0]")
     private Output<String> deletedTime;
 
     /**
      * @return Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-     * 
+     *
      */
     public Output<String> deletedTime() {
         return this.deletedTime;
     }
     /**
      * Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * ID of the Direct Connect Gateway.
-     * 
+     *
      */
     @Export(name="directConnectGatewayId", refs={String.class}, tree="[0]")
     private Output<String> directConnectGatewayId;
 
     /**
      * @return ID of the Direct Connect Gateway.
-     * 
+     *
      */
     public Output<String> directConnectGatewayId() {
         return this.directConnectGatewayId;
     }
     /**
      * Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-     * 
+     *
      */
     @Export(name="directConnectGatewayName", refs={String.class}, tree="[0]")
     private Output<String> directConnectGatewayName;
 
     /**
      * @return Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-     * 
+     *
      */
     public Output<String> directConnectGatewayName() {
         return this.directConnectGatewayName;
     }
     /**
      * Whether IPv6 is supported. true: supported. false: not supported.
-     * 
+     *
      */
     @Export(name="enableIpv6", refs={Boolean.class}, tree="[0]")
     private Output<Boolean> enableIpv6;
 
     /**
      * @return Whether IPv6 is supported. true: supported. false: not supported.
-     * 
+     *
      */
     public Output<Boolean> enableIpv6() {
         return this.enableIpv6;
     }
     /**
      * Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
-     * 
+     *
      */
     @Export(name="lockReason", refs={String.class}, tree="[0]")
     private Output<String> lockReason;
 
     /**
      * @return Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
-     * 
+     *
      */
     public Output<String> lockReason() {
         return this.lockReason;
     }
     /**
      * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-     * 
+     *
      */
     @Export(name="overdueTime", refs={String.class}, tree="[0]")
     private Output<String> overdueTime;
 
     /**
      * @return Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-     * 
+     *
      */
     public Output<String> overdueTime() {
         return this.overdueTime;
     }
     /**
      * Project to which the Direct Connect Gateway belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project to which the Direct Connect Gateway belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
+    /**
+     * All tag information added to the Direct Connect Gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,DirectConnectGatewayTag.class}, tree="[0,1]")
     private Output<List<DirectConnectGatewayTag>> tags;
 
+    /**
+     * @return All tag information added to the Direct Connect Gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DirectConnectGatewayTag>> tags() {
         return this.tags;
     }
     /**
      * Time when the Direct Connect Gateway was updated.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Time when the Direct Connect Gateway was updated.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;

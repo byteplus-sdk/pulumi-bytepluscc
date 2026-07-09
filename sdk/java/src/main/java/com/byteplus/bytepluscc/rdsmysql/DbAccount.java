@@ -18,156 +18,233 @@ import javax.annotation.Nullable;
 
 /**
  * Database account.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.rdsmysql.DbAccount;
+ * import com.byteplus.bytepluscc.rdsmysql.DbAccountArgs;
+ * import com.pulumi.bytepluscc.rdsmysql.inputs.DbAccountAccountPrivilegeArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var rDSMySQLDBAccountDemo = new DbAccount("rDSMySQLDBAccountDemo", DbAccountArgs.builder()
+ *             .accountDesc("RDSMySQLDBAccountDemo desc")
+ *             .instanceId("mysql-a5b5caexxxxx")
+ *             .accountName("RDSMySQLDBAccountDemo")
+ *             .accountPassword("********")
+ *             .accountType("Normal")
+ *             .accountPrivileges(
+ *                 DbAccountAccountPrivilegeArgs.builder()
+ *                     .account_privilege("Custom")
+ *                     .account_privilege_detail(Arrays.asList(
+ *                         "CREATE",
+ *                         "DROP",
+ *                         "REFERENCES",
+ *                         "INDEX"))
+ *                     .db_name("test")
+ *                     .build(),
+ *                 DbAccountAccountPrivilegeArgs.builder()
+ *                     .account_privilege("Global")
+ *                     .account_privilege_detail(Arrays.asList(
+ *                         "PROCESS",
+ *                         "REPLICATION SLAVE",
+ *                         "REPLICATION CLIENT",
+ *                         "DROP",
+ *                         "ALTER"))
+ *                     .db_name("")
+ *                     .build())
+ *             .host("%")
+ *             .tableColumnPrivileges()
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:rdsmysql/dbAccount:DbAccount example &#34;instance_id|account_name|host&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:rdsmysql/dbAccount:DbAccount")
 public class DbAccount extends com.pulumi.resources.CustomResource {
     /**
      * Account information description, maximum length 256 characters.
-     * 
+     *
      */
     @Export(name="accountDesc", refs={String.class}, tree="[0]")
     private Output<String> accountDesc;
 
     /**
      * @return Account information description, maximum length 256 characters.
-     * 
+     *
      */
     public Output<String> accountDesc() {
         return this.accountDesc;
     }
     /**
      * Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
-     * 
+     *
      */
     @Export(name="accountName", refs={String.class}, tree="[0]")
     private Output<String> accountName;
 
     /**
      * @return Database account name. Naming rules: Must be 2–32 characters long. Must start with a letter and end with a letter or number. Can contain letters, numbers, underscores (_), and hyphens (-). The account name must be unique within the instance. Certain reserved words cannot be used; for disabled reserved words, see the disabled word list. Note: The keywords root and admin can be used in high-privilege account names.
-     * 
+     *
      */
     public Output<String> accountName() {
         return this.accountName;
     }
     /**
      * Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
-     * 
+     *
      */
     @Export(name="accountPassword", refs={String.class}, tree="[0]")
     private Output<String> accountPassword;
 
     /**
      * @return Database account password. Rules: Length must be 8–32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, special characters. Allowed special characters: !{@literal @}#$%^&amp;*()_+-=,.&amp;?|/.
-     * 
+     *
      */
     public Output<String> accountPassword() {
         return this.accountPassword;
     }
+    /**
+     * Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="accountPrivileges", refs={List.class,DbAccountAccountPrivilege.class}, tree="[0,1]")
     private Output<List<DbAccountAccountPrivilege>> accountPrivileges;
 
+    /**
+     * @return Specified database privilege information for the account. Note: When AccountType is set to Super, AccountPrivileges does not need to be specified.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DbAccountAccountPrivilege>> accountPrivileges() {
         return this.accountPrivileges;
     }
     /**
      * SQL statement for the account&#39;s specified database permission information.
-     * 
+     *
      */
     @Export(name="accountPrivilegesSqls", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> accountPrivilegesSqls;
 
     /**
      * @return SQL statement for the account&#39;s specified database permission information.
-     * 
+     *
      */
     public Output<List<String>> accountPrivilegesSqls() {
         return this.accountPrivilegesSqls;
     }
     /**
      * Account status. Values: Unavailable: unavailable. Available: available.
-     * 
+     *
      */
     @Export(name="accountStatus", refs={String.class}, tree="[0]")
     private Output<String> accountStatus;
 
     /**
      * @return Account status. Values: Unavailable: unavailable. Available: available.
-     * 
+     *
      */
     public Output<String> accountStatus() {
         return this.accountStatus;
     }
     /**
      * Account type. Value options: Super: high-privilege account. Normal: regular account.
-     * 
+     *
      */
     @Export(name="accountType", refs={String.class}, tree="[0]")
     private Output<String> accountType;
 
     /**
      * @return Account type. Value options: Super: high-privilege account. Normal: regular account.
-     * 
+     *
      */
     public Output<String> accountType() {
         return this.accountType;
     }
     /**
      * The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
-     * 
+     *
      */
     @Export(name="hasTableColumnPrivilegeDbNames", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> hasTableColumnPrivilegeDbNames;
 
     /**
      * @return The database to which the account&#39;s table/column privileges belong. Note: If the account does not have table/column privileges, this field will not be returned.
-     * 
+     *
      */
     public Output<List<String>> hasTableColumnPrivilegeDbNames() {
         return this.hasTableColumnPrivilegeDbNames;
     }
     /**
      * IP address from which the specified database account can access the database.
-     * 
+     *
      */
     @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
      * @return IP address from which the specified database account can access the database.
-     * 
+     *
      */
     public Output<String> host() {
         return this.host;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
+    /**
+     * Account table column permission settings.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tableColumnPrivileges", refs={List.class,DbAccountTableColumnPrivilege.class}, tree="[0,1]")
     private Output<List<DbAccountTableColumnPrivilege>> tableColumnPrivileges;
 
+    /**
+     * @return Account table column permission settings.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<DbAccountTableColumnPrivilege>> tableColumnPrivileges() {
         return this.tableColumnPrivileges;
     }

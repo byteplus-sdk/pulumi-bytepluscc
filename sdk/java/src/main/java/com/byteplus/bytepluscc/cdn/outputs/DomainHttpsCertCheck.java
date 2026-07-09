@@ -13,20 +13,30 @@ import javax.annotation.Nullable;
 
 @CustomType
 public final class DomainHttpsCertCheck {
+    /**
+     * @return Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<DomainHttpsCertCheckCertInfoList> certInfoLists;
     /**
      * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-     * 
+     *
      */
     private @Nullable Boolean switch_;
 
     private DomainHttpsCertCheck() {}
+    /**
+     * @return Specifies a list of CA certificates to associate with the accelerated domain name. The list can contain up to two CA certificates. These CA certificates can be already hosted on the content delivery network or pending upload. The encryption algorithm for CA certificates can be RSA, ECC, or SM2. If a CA certificate is hosted on the content delivery network, you need to specify its ID in CertId. If the certificate is pending upload, you need to specify the Certificate structure and define the certificate within it. After you upload the certificate, it will be hosted on the content delivery network.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<DomainHttpsCertCheckCertInfoList> certInfoLists() {
         return this.certInfoLists == null ? List.of() : this.certInfoLists;
     }
     /**
      * @return Indicates whether to enable this feature. This parameter has the following values: true: enables the feature; false: disables the feature. The default value is false.
-     * 
+     *
      */
     public Optional<Boolean> switch_() {
         return Optional.ofNullable(this.switch_);

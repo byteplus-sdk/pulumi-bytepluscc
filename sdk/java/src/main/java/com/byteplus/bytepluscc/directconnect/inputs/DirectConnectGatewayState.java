@@ -23,36 +23,46 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * ID of the account to which the Direct Connect Gateway belongs.
-     * 
+     *
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return ID of the account to which the Direct Connect Gateway belongs.
-     * 
+     *
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
     }
 
+    /**
+     * Associated CEN information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="associateCens")
     private @Nullable Output<List<DirectConnectGatewayAssociateCenArgs>> associateCens;
 
+    /**
+     * @return Associated CEN information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DirectConnectGatewayAssociateCenArgs>>> associateCens() {
         return Optional.ofNullable(this.associateCens);
     }
 
     /**
      * Associated EIC information.
-     * 
+     *
      */
     @Import(name="associateEic")
     private @Nullable Output<DirectConnectGatewayAssociateEicArgs> associateEic;
 
     /**
      * @return Associated EIC information.
-     * 
+     *
      */
     public Optional<Output<DirectConnectGatewayAssociateEicArgs>> associateEic() {
         return Optional.ofNullable(this.associateEic);
@@ -60,14 +70,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-     * 
+     *
      */
     @Import(name="bgpAsn")
     private @Nullable Output<Integer> bgpAsn;
 
     /**
      * @return ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-     * 
+     *
      */
     public Optional<Output<Integer>> bgpAsn() {
         return Optional.ofNullable(this.bgpAsn);
@@ -75,14 +85,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
-     * 
+     *
      */
     @Import(name="businessStatus")
     private @Nullable Output<String> businessStatus;
 
     /**
      * @return Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
-     * 
+     *
      */
     public Optional<Output<String>> businessStatus() {
         return Optional.ofNullable(this.businessStatus);
@@ -90,14 +100,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Time when the Direct Connect Gateway was created.
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Time when the Direct Connect Gateway was created.
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -105,14 +115,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-     * 
+     *
      */
     @Import(name="deletedTime")
     private @Nullable Output<String> deletedTime;
 
     /**
      * @return Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-     * 
+     *
      */
     public Optional<Output<String>> deletedTime() {
         return Optional.ofNullable(this.deletedTime);
@@ -120,14 +130,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -135,14 +145,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * ID of the Direct Connect Gateway.
-     * 
+     *
      */
     @Import(name="directConnectGatewayId")
     private @Nullable Output<String> directConnectGatewayId;
 
     /**
      * @return ID of the Direct Connect Gateway.
-     * 
+     *
      */
     public Optional<Output<String>> directConnectGatewayId() {
         return Optional.ofNullable(this.directConnectGatewayId);
@@ -150,14 +160,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-     * 
+     *
      */
     @Import(name="directConnectGatewayName")
     private @Nullable Output<String> directConnectGatewayName;
 
     /**
      * @return Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-     * 
+     *
      */
     public Optional<Output<String>> directConnectGatewayName() {
         return Optional.ofNullable(this.directConnectGatewayName);
@@ -165,14 +175,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Whether IPv6 is supported. true: supported. false: not supported.
-     * 
+     *
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Boolean> enableIpv6;
 
     /**
      * @return Whether IPv6 is supported. true: supported. false: not supported.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableIpv6() {
         return Optional.ofNullable(this.enableIpv6);
@@ -180,14 +190,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
-     * 
+     *
      */
     @Import(name="lockReason")
     private @Nullable Output<String> lockReason;
 
     /**
      * @return Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
-     * 
+     *
      */
     public Optional<Output<String>> lockReason() {
         return Optional.ofNullable(this.lockReason);
@@ -195,14 +205,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-     * 
+     *
      */
     @Import(name="overdueTime")
     private @Nullable Output<String> overdueTime;
 
     /**
      * @return Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-     * 
+     *
      */
     public Optional<Output<String>> overdueTime() {
         return Optional.ofNullable(this.overdueTime);
@@ -210,14 +220,14 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Project to which the Direct Connect Gateway belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the Direct Connect Gateway belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -225,36 +235,46 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
     /**
      * Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<String> status;
 
     /**
      * @return Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
-     * 
+     *
      */
     public Optional<Output<String>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * All tag information added to the Direct Connect Gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<DirectConnectGatewayTagArgs>> tags;
 
+    /**
+     * @return All tag information added to the Direct Connect Gateway.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DirectConnectGatewayTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Time when the Direct Connect Gateway was updated.
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Time when the Direct Connect Gateway was updated.
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -302,9 +322,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param accountId ID of the account to which the Direct Connect Gateway belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -313,32 +333,53 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param accountId ID of the account to which the Direct Connect Gateway belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
         }
 
+        /**
+         * @param associateCens Associated CEN information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associateCens(@Nullable Output<List<DirectConnectGatewayAssociateCenArgs>> associateCens) {
             $.associateCens = associateCens;
             return this;
         }
 
+        /**
+         * @param associateCens Associated CEN information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associateCens(List<DirectConnectGatewayAssociateCenArgs> associateCens) {
             return associateCens(Output.of(associateCens));
         }
 
+        /**
+         * @param associateCens Associated CEN information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder associateCens(DirectConnectGatewayAssociateCenArgs... associateCens) {
             return associateCens(List.of(associateCens));
         }
 
         /**
          * @param associateEic Associated EIC information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associateEic(@Nullable Output<DirectConnectGatewayAssociateEicArgs> associateEic) {
             $.associateEic = associateEic;
@@ -347,9 +388,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param associateEic Associated EIC information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder associateEic(DirectConnectGatewayAssociateEicArgs associateEic) {
             return associateEic(Output.of(associateEic));
@@ -357,9 +398,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param bgpAsn ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bgpAsn(@Nullable Output<Integer> bgpAsn) {
             $.bgpAsn = bgpAsn;
@@ -368,9 +409,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param bgpAsn ASN (Autonomous System Number) of the Direct Connect Gateway. Valid ASN range: 137718, 64512–65534, 4200000000–4294967294, where 137718 is the ASN for Volcengine. If the Direct Connect Gateway is used in standard scenarios (such as a local IDC connecting to a single cloud VPC resource via dedicated connection), use the Volcengine ASN (137718). If used in special scenarios (such as a single IDC connecting to multiple Cloud Enterprise Networks via dedicated connection), each Direct Connect Gateway must use a custom ASN and avoid using the Volcengine ASN (137718), ensuring that ASNs are not duplicated across Direct Connect Gateways.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bgpAsn(Integer bgpAsn) {
             return bgpAsn(Output.of(bgpAsn));
@@ -378,9 +419,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param businessStatus Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(@Nullable Output<String> businessStatus) {
             $.businessStatus = businessStatus;
@@ -389,9 +430,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param businessStatus Indicates whether the dedicated gateway is locked. Normal: normal. FinancialLocked: locked.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder businessStatus(String businessStatus) {
             return businessStatus(Output.of(businessStatus));
@@ -399,9 +440,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param createdTime Time when the Direct Connect Gateway was created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -410,9 +451,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param createdTime Time when the Direct Connect Gateway was created.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -420,9 +461,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param deletedTime Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletedTime(@Nullable Output<String> deletedTime) {
             $.deletedTime = deletedTime;
@@ -431,9 +472,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param deletedTime Expected forced resource reclamation time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder deletedTime(String deletedTime) {
             return deletedTime(Output.of(deletedTime));
@@ -441,9 +482,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param description Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -452,9 +493,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param description Description for the dedicated gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length is limited to 0 to 255 characters. If this parameter is not provided or no value is entered, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -462,9 +503,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param directConnectGatewayId ID of the Direct Connect Gateway.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectGatewayId(@Nullable Output<String> directConnectGatewayId) {
             $.directConnectGatewayId = directConnectGatewayId;
@@ -473,9 +514,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param directConnectGatewayId ID of the Direct Connect Gateway.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectGatewayId(String directConnectGatewayId) {
             return directConnectGatewayId(Output.of(directConnectGatewayId));
@@ -483,9 +524,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param directConnectGatewayName Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectGatewayName(@Nullable Output<String> directConnectGatewayName) {
             $.directConnectGatewayName = directConnectGatewayName;
@@ -494,9 +535,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param directConnectGatewayName Name of the Direct Connect Gateway. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length must be between 1 and 128 characters. If this parameter is not provided or no value is specified, the default is the Direct Connect Gateway ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder directConnectGatewayName(String directConnectGatewayName) {
             return directConnectGatewayName(Output.of(directConnectGatewayName));
@@ -504,9 +545,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param enableIpv6 Whether IPv6 is supported. true: supported. false: not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIpv6(@Nullable Output<Boolean> enableIpv6) {
             $.enableIpv6 = enableIpv6;
@@ -515,9 +556,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param enableIpv6 Whether IPv6 is supported. true: supported. false: not supported.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIpv6(Boolean enableIpv6) {
             return enableIpv6(Output.of(enableIpv6));
@@ -525,9 +566,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param lockReason Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lockReason(@Nullable Output<String> lockReason) {
             $.lockReason = lockReason;
@@ -536,9 +577,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param lockReason Reason for Direct Connect Gateway lock. unlock: not locked; financial: locked due to overdue payment; security: locked due to security reasons.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lockReason(String lockReason) {
             return lockReason(Output.of(lockReason));
@@ -546,9 +587,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param overdueTime Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overdueTime(@Nullable Output<String> overdueTime) {
             $.overdueTime = overdueTime;
@@ -557,9 +598,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param overdueTime Resource freeze time. This parameter returns a value only if the resource is frozen due to overdue payment; otherwise, it returns null.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder overdueTime(String overdueTime) {
             return overdueTime(Output.of(overdueTime));
@@ -567,9 +608,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param projectName Project to which the Direct Connect Gateway belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -578,9 +619,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param projectName Project to which the Direct Connect Gateway belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -588,9 +629,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param status Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<String> status) {
             $.status = status;
@@ -599,32 +640,53 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param status Status of the Direct Connect Gateway. Creating: creating. Deleting: deleting. Pending: configuring. Available: available.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(String status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<DirectConnectGatewayTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<DirectConnectGatewayTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags All tag information added to the Direct Connect Gateway.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(DirectConnectGatewayTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updatedTime Time when the Direct Connect Gateway was updated.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -633,9 +695,9 @@ public final class DirectConnectGatewayState extends com.pulumi.resources.Resour
 
         /**
          * @param updatedTime Time when the Direct Connect Gateway was updated.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

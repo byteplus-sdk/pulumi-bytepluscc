@@ -17,23 +17,33 @@ public final class DomainCustomizeAccessRuleArgs extends com.pulumi.resources.Re
 
     public static final DomainCustomizeAccessRuleArgs Empty = new DomainCustomizeAccessRuleArgs();
 
+    /**
+     * Describes a rule list. Each rule in the list defines a Denylist or Allowlist configuration. The list can contain up to 10 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="customizeInstances")
     private @Nullable Output<List<DomainCustomizeAccessRuleCustomizeInstanceArgs>> customizeInstances;
 
+    /**
+     * @return Describes a rule list. Each rule in the list defines a Denylist or Allowlist configuration. The list can contain up to 10 rules.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainCustomizeAccessRuleCustomizeInstanceArgs>>> customizeInstances() {
         return Optional.ofNullable(this.customizeInstances);
     }
 
     /**
      * Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
-     * 
+     *
      */
     @Import(name="switch")
     private @Nullable Output<Boolean> switch_;
 
     /**
      * @return Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
-     * 
+     *
      */
     public Optional<Output<Boolean>> switch_() {
         return Optional.ofNullable(this.switch_);
@@ -64,24 +74,45 @@ public final class DomainCustomizeAccessRuleArgs extends com.pulumi.resources.Re
             $ = new DomainCustomizeAccessRuleArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param customizeInstances Describes a rule list. Each rule in the list defines a Denylist or Allowlist configuration. The list can contain up to 10 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customizeInstances(@Nullable Output<List<DomainCustomizeAccessRuleCustomizeInstanceArgs>> customizeInstances) {
             $.customizeInstances = customizeInstances;
             return this;
         }
 
+        /**
+         * @param customizeInstances Describes a rule list. Each rule in the list defines a Denylist or Allowlist configuration. The list can contain up to 10 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customizeInstances(List<DomainCustomizeAccessRuleCustomizeInstanceArgs> customizeInstances) {
             return customizeInstances(Output.of(customizeInstances));
         }
 
+        /**
+         * @param customizeInstances Describes a rule list. Each rule in the list defines a Denylist or Allowlist configuration. The list can contain up to 10 rules.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder customizeInstances(DomainCustomizeAccessRuleCustomizeInstanceArgs... customizeInstances) {
             return customizeInstances(List.of(customizeInstances));
         }
 
         /**
          * @param switch_ Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(@Nullable Output<Boolean> switch_) {
             $.switch_ = switch_;
@@ -90,9 +121,9 @@ public final class DomainCustomizeAccessRuleArgs extends com.pulumi.resources.Re
 
         /**
          * @param switch_ Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder switch_(Boolean switch_) {
             return switch_(Output.of(switch_));

@@ -18,171 +18,213 @@ import javax.annotation.Nullable;
 
 /**
  * The API Gateway supports cluster registration based on container services (VKE) and container service clusters. Import clusters into the API Gateway instance to use them as Upstream sources, allowing the gateway to retrieve the Service list from the cluster
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.apig.UpstreamSource;
+ * import com.byteplus.bytepluscc.apig.UpstreamSourceArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamSourceSourceSpecArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var upstreamSourceNacosDemo = new UpstreamSource("upstreamSourceNacosDemo", UpstreamSourceArgs.builder()
+ *             .gatewayId("gd3s9vbk7npja181xxxxx")
+ *             .comments("upstreamSourceNacosDemo")
+ *             .sourceType("Nacos")
+ *             .sourceSpec(UpstreamSourceSourceSpecArgs.builder()
+ *                 .nacos_source(Map.ofEntries(
+ *                     Map.entry("nacosId", "nd3thmnjdl46p917xxxxx"),
+ *                     Map.entry("authConfig", Map.of("basic", Map.ofEntries(
+ *                         Map.entry("username", "nacos"),
+ *                         Map.entry("password", "******")
+ *                     )))
+ *                 ))
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:apig/upstreamSource:UpstreamSource example &#34;upstream_source_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:apig/upstreamSource:UpstreamSource")
 public class UpstreamSource extends com.pulumi.resources.CustomResource {
     /**
      * Remarks, length limit: 0–253 characters
-     * 
+     *
      */
     @Export(name="comments", refs={String.class}, tree="[0]")
     private Output<String> comments;
 
     /**
      * @return Remarks, length limit: 0–253 characters
-     * 
+     *
      */
     public Output<String> comments() {
         return this.comments;
     }
     /**
      * Creation time
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Creation time
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Gateway instance ID
-     * 
+     *
      */
     @Export(name="gatewayId", refs={String.class}, tree="[0]")
     private Output<String> gatewayId;
 
     /**
      * @return Gateway instance ID
-     * 
+     *
      */
     public Output<String> gatewayId() {
         return this.gatewayId;
     }
     /**
      * Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
-     * 
+     *
      */
     @Export(name="ingressSettings", refs={UpstreamSourceIngressSettings.class}, tree="[0]")
     private Output<UpstreamSourceIngressSettings> ingressSettings;
 
     /**
      * @return Route synchronization. When enabled, the API Gateway automatically monitors changes to Ingress resources and converts them into services, domains, Upstream, and other resources, merging them into the current gateway. Resources converted from Ingress cannot be managed in the console. Only supported for container cluster source type
-     * 
+     *
      */
     public Output<UpstreamSourceIngressSettings> ingressSettings() {
         return this.ingressSettings;
     }
     /**
      * Upstream source configuration
-     * 
+     *
      */
     @Export(name="sourceSpec", refs={UpstreamSourceSourceSpec.class}, tree="[0]")
     private Output<UpstreamSourceSourceSpec> sourceSpec;
 
     /**
      * @return Upstream source configuration
-     * 
+     *
      */
     public Output<UpstreamSourceSourceSpec> sourceSpec() {
         return this.sourceSpec;
     }
     /**
      * Upstream source type. Options: K8S: Container cluster. Nacos: Registry
-     * 
+     *
      */
     @Export(name="sourceType", refs={String.class}, tree="[0]")
     private Output<String> sourceType;
 
     /**
      * @return Upstream source type. Options: K8S: Container cluster. Nacos: Registry
-     * 
+     *
      */
     public Output<String> sourceType() {
         return this.sourceType;
     }
     /**
      * Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Import status. Options: Syncing: Importing. SyncedSucceed: Import successful. SyncedFailed: Import failed
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
-     * 
+     *
      */
     @Export(name="statusMessage", refs={String.class}, tree="[0]")
     private Output<String> statusMessage;
 
     /**
      * @return Import status information. Options: ConnectionFailed: Unable to connect to Nacos cluster. AuthenticationFailed: Authentication failed. PermissionFailed: Unable to connect to Nacos cluster
-     * 
+     *
      */
     public Output<String> statusMessage() {
         return this.statusMessage;
     }
     /**
      * Update time
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Update time
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Upstream source ID
-     * 
+     *
      */
     @Export(name="upstreamSourceId", refs={String.class}, tree="[0]")
     private Output<String> upstreamSourceId;
 
     /**
      * @return Upstream source ID
-     * 
+     *
      */
     public Output<String> upstreamSourceId() {
         return this.upstreamSourceId;
     }
     /**
      * Specify namespace
-     * 
+     *
      */
     @Export(name="watchNamespaces", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> watchNamespaces;
 
     /**
      * @return Specify namespace
-     * 
+     *
      */
     public Output<List<String>> watchNamespaces() {
         return this.watchNamespaces;

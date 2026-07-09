@@ -19,36 +19,46 @@ public final class GroupAttachedPolicyArgs extends com.pulumi.resources.Resource
 
     /**
      * Policy name.
-     * 
+     *
      */
     @Import(name="policyName")
     private @Nullable Output<String> policyName;
 
     /**
      * @return Policy name.
-     * 
+     *
      */
     public Optional<Output<String>> policyName() {
         return Optional.ofNullable(this.policyName);
     }
 
+    /**
+     * Scope of policy authorization, specifically the project scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="policyScopes")
     private @Nullable Output<List<GroupAttachedPolicyPolicyScopeArgs>> policyScopes;
 
+    /**
+     * @return Scope of policy authorization, specifically the project scope.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<GroupAttachedPolicyPolicyScopeArgs>>> policyScopes() {
         return Optional.ofNullable(this.policyScopes);
     }
 
     /**
      * Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
-     * 
+     *
      */
     @Import(name="policyType")
     private @Nullable Output<String> policyType;
 
     /**
      * @return Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
-     * 
+     *
      */
     public Optional<Output<String>> policyType() {
         return Optional.ofNullable(this.policyType);
@@ -82,9 +92,9 @@ public final class GroupAttachedPolicyArgs extends com.pulumi.resources.Resource
 
         /**
          * @param policyName Policy name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyName(@Nullable Output<String> policyName) {
             $.policyName = policyName;
@@ -93,32 +103,53 @@ public final class GroupAttachedPolicyArgs extends com.pulumi.resources.Resource
 
         /**
          * @param policyName Policy name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyName(String policyName) {
             return policyName(Output.of(policyName));
         }
 
+        /**
+         * @param policyScopes Scope of policy authorization, specifically the project scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder policyScopes(@Nullable Output<List<GroupAttachedPolicyPolicyScopeArgs>> policyScopes) {
             $.policyScopes = policyScopes;
             return this;
         }
 
+        /**
+         * @param policyScopes Scope of policy authorization, specifically the project scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder policyScopes(List<GroupAttachedPolicyPolicyScopeArgs> policyScopes) {
             return policyScopes(Output.of(policyScopes));
         }
 
+        /**
+         * @param policyScopes Scope of policy authorization, specifically the project scope.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder policyScopes(GroupAttachedPolicyPolicyScopeArgs... policyScopes) {
             return policyScopes(List.of(policyScopes));
         }
 
         /**
          * @param policyType Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyType(@Nullable Output<String> policyType) {
             $.policyType = policyType;
@@ -127,9 +158,9 @@ public final class GroupAttachedPolicyArgs extends com.pulumi.resources.Resource
 
         /**
          * @param policyType Policy type. System indicates a system predefined policy; Custom indicates a custom policy.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder policyType(String policyType) {
             return policyType(Output.of(policyType));

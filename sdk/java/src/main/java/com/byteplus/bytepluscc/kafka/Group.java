@@ -17,32 +17,32 @@ import javax.annotation.Nullable;
 
 /**
  * Group basic information
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.kafka.Group;
  * import com.byteplus.bytepluscc.kafka.GroupArgs;
  * import com.pulumi.bytepluscc.kafka.inputs.GroupTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var kafkaGroupDemo = new Group("kafkaGroupDemo", GroupArgs.builder()
  *             .instanceId("instance_id_xxxxxx")
@@ -53,109 +53,119 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:kafka/group:Group example &#34;instance_id|group_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:kafka/group:Group")
 public class Group extends com.pulumi.resources.CustomResource {
     /**
      * Algorithm for assigning partitions to consumers, specified by the consumer client. If using custom partition consumption, this field may be empty
-     * 
+     *
      */
     @Export(name="balanceAlgorithm", refs={String.class}, tree="[0]")
     private Output<String> balanceAlgorithm;
 
     /**
      * @return Algorithm for assigning partitions to consumers, specified by the consumer client. If using custom partition consumption, this field may be empty
-     * 
+     *
      */
     public Output<String> balanceAlgorithm() {
         return this.balanceAlgorithm;
     }
     /**
      * Consumer group description, up to 128 characters
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Consumer group description, up to 128 characters
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-     * 
+     *
      */
     @Export(name="groupId", refs={String.class}, tree="[0]")
     private Output<String> groupId;
 
     /**
      * @return Consumer group ID to be created   - Length: 3–128 characters   - Can contain uppercase and lowercase letters, numbers, hyphens (-), special character ({@literal @}), and underscores (_)   - Must include at least one letter or number
-     * 
+     *
      */
     public Output<String> groupId() {
         return this.groupId;
     }
     /**
      * Instance ID
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Consumer group protocol type   - If using the standard Kafka consumer protocol, displays as consumer   - If using another protocol type, displays the corresponding protocol name, for example, connect when using Kafka-Connector   - If using custom partition consumption, this field may be empty
-     * 
+     *
      */
     @Export(name="protocolType", refs={String.class}, tree="[0]")
     private Output<String> protocolType;
 
     /**
      * @return Consumer group protocol type   - If using the standard Kafka consumer protocol, displays as consumer   - If using another protocol type, displays the corresponding protocol name, for example, connect when using Kafka-Connector   - If using custom partition consumption, this field may be empty
-     * 
+     *
      */
     public Output<String> protocolType() {
         return this.protocolType;
     }
     /**
      * Consumer group status   - PreparingRebalance: preparing for consumption   - CompletingRebalance: assigning partitions   - Stable: consuming   - Empty: not consuming   - Dead: expired
-     * 
+     *
      */
     @Export(name="state", refs={String.class}, tree="[0]")
     private Output<String> state;
 
     /**
      * @return Consumer group status   - PreparingRebalance: preparing for consumption   - CompletingRebalance: assigning partitions   - Stable: consuming   - Empty: not consuming   - Dead: expired
-     * 
+     *
      */
     public Output<String> state() {
         return this.state;
     }
+    /**
+     * Group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,GroupTag.class}, tree="[0,1]")
     private Output<List<GroupTag>> tags;
 
+    /**
+     * @return Group tags
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<GroupTag>> tags() {
         return this.tags;
     }

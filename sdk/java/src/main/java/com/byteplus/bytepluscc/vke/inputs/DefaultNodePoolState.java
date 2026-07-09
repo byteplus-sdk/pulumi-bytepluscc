@@ -25,14 +25,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Node pool scaling policy configuration
-     * 
+     *
      */
     @Import(name="autoScaling")
     private @Nullable Output<DefaultNodePoolAutoScalingArgs> autoScaling;
 
     /**
      * @return Node pool scaling policy configuration
-     * 
+     *
      */
     public Optional<Output<DefaultNodePoolAutoScalingArgs>> autoScaling() {
         return Optional.ofNullable(this.autoScaling);
@@ -40,14 +40,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Cluster ID where the node pool is located
-     * 
+     *
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
      * @return Cluster ID where the node pool is located
-     * 
+     *
      */
     public Optional<Output<String>> clusterId() {
         return Optional.ofNullable(this.clusterId);
@@ -55,14 +55,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Node pool creation time
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Node pool creation time
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -70,14 +70,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Kubernetes-related configuration for the node pool
-     * 
+     *
      */
     @Import(name="kubernetesConfig")
     private @Nullable Output<DefaultNodePoolKubernetesConfigArgs> kubernetesConfig;
 
     /**
      * @return Kubernetes-related configuration for the node pool
-     * 
+     *
      */
     public Optional<Output<DefaultNodePoolKubernetesConfigArgs>> kubernetesConfig() {
         return Optional.ofNullable(this.kubernetesConfig);
@@ -85,14 +85,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Managed node pool configuration
-     * 
+     *
      */
     @Import(name="management")
     private @Nullable Output<DefaultNodePoolManagementArgs> management;
 
     /**
      * @return Managed node pool configuration
-     * 
+     *
      */
     public Optional<Output<DefaultNodePoolManagementArgs>> management() {
         return Optional.ofNullable(this.management);
@@ -100,14 +100,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -115,14 +115,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Cloud server (ECS) instance configuration in the node pool
-     * 
+     *
      */
     @Import(name="nodeConfig")
     private @Nullable Output<DefaultNodePoolNodeConfigArgs> nodeConfig;
 
     /**
      * @return Cloud server (ECS) instance configuration in the node pool
-     * 
+     *
      */
     public Optional<Output<DefaultNodePoolNodeConfigArgs>> nodeConfig() {
         return Optional.ofNullable(this.nodeConfig);
@@ -130,14 +130,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Node pool ID
-     * 
+     *
      */
     @Import(name="nodePoolId")
     private @Nullable Output<String> nodePoolId;
 
     /**
      * @return Node pool ID
-     * 
+     *
      */
     public Optional<Output<String>> nodePoolId() {
         return Optional.ofNullable(this.nodePoolId);
@@ -145,14 +145,14 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Node statistics in the node pool.
-     * 
+     *
      */
     @Import(name="nodeStatistics")
     private @Nullable Output<DefaultNodePoolNodeStatisticsArgs> nodeStatistics;
 
     /**
      * @return Node statistics in the node pool.
-     * 
+     *
      */
     public Optional<Output<DefaultNodePoolNodeStatisticsArgs>> nodeStatistics() {
         return Optional.ofNullable(this.nodeStatistics);
@@ -160,36 +160,46 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
     /**
      * Node pool status
-     * 
+     *
      */
     @Import(name="status")
     private @Nullable Output<DefaultNodePoolStatusArgs> status;
 
     /**
      * @return Node pool status
-     * 
+     *
      */
     public Optional<Output<DefaultNodePoolStatusArgs>> status() {
         return Optional.ofNullable(this.status);
     }
 
+    /**
+     * Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<DefaultNodePoolTagArgs>> tags;
 
+    /**
+     * @return Node pool tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DefaultNodePoolTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Time when the node pool was updated
-     * 
+     *
      */
     @Import(name="updatedTime")
     private @Nullable Output<String> updatedTime;
 
     /**
      * @return Time when the node pool was updated
-     * 
+     *
      */
     public Optional<Output<String>> updatedTime() {
         return Optional.ofNullable(this.updatedTime);
@@ -232,9 +242,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoScaling Node pool scaling policy configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoScaling(@Nullable Output<DefaultNodePoolAutoScalingArgs> autoScaling) {
             $.autoScaling = autoScaling;
@@ -243,9 +253,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param autoScaling Node pool scaling policy configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder autoScaling(DefaultNodePoolAutoScalingArgs autoScaling) {
             return autoScaling(Output.of(autoScaling));
@@ -253,9 +263,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param clusterId Cluster ID where the node pool is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(@Nullable Output<String> clusterId) {
             $.clusterId = clusterId;
@@ -264,9 +274,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param clusterId Cluster ID where the node pool is located
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder clusterId(String clusterId) {
             return clusterId(Output.of(clusterId));
@@ -274,9 +284,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param createdTime Node pool creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -285,9 +295,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param createdTime Node pool creation time
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -295,9 +305,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param kubernetesConfig Kubernetes-related configuration for the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesConfig(@Nullable Output<DefaultNodePoolKubernetesConfigArgs> kubernetesConfig) {
             $.kubernetesConfig = kubernetesConfig;
@@ -306,9 +316,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param kubernetesConfig Kubernetes-related configuration for the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder kubernetesConfig(DefaultNodePoolKubernetesConfigArgs kubernetesConfig) {
             return kubernetesConfig(Output.of(kubernetesConfig));
@@ -316,9 +326,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param management Managed node pool configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder management(@Nullable Output<DefaultNodePoolManagementArgs> management) {
             $.management = management;
@@ -327,9 +337,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param management Managed node pool configuration
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder management(DefaultNodePoolManagementArgs management) {
             return management(Output.of(management));
@@ -337,9 +347,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param name Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -348,9 +358,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param name Node pool name. Must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length: 2–64 characters
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -358,9 +368,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeConfig(@Nullable Output<DefaultNodePoolNodeConfigArgs> nodeConfig) {
             $.nodeConfig = nodeConfig;
@@ -369,9 +379,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodeConfig Cloud server (ECS) instance configuration in the node pool
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeConfig(DefaultNodePoolNodeConfigArgs nodeConfig) {
             return nodeConfig(Output.of(nodeConfig));
@@ -379,9 +389,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodePoolId Node pool ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodePoolId(@Nullable Output<String> nodePoolId) {
             $.nodePoolId = nodePoolId;
@@ -390,9 +400,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodePoolId Node pool ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodePoolId(String nodePoolId) {
             return nodePoolId(Output.of(nodePoolId));
@@ -400,9 +410,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodeStatistics Node statistics in the node pool.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeStatistics(@Nullable Output<DefaultNodePoolNodeStatisticsArgs> nodeStatistics) {
             $.nodeStatistics = nodeStatistics;
@@ -411,9 +421,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param nodeStatistics Node statistics in the node pool.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder nodeStatistics(DefaultNodePoolNodeStatisticsArgs nodeStatistics) {
             return nodeStatistics(Output.of(nodeStatistics));
@@ -421,9 +431,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Node pool status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(@Nullable Output<DefaultNodePoolStatusArgs> status) {
             $.status = status;
@@ -432,32 +442,53 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param status Node pool status
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder status(DefaultNodePoolStatusArgs status) {
             return status(Output.of(status));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<DefaultNodePoolTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<DefaultNodePoolTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Node pool tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(DefaultNodePoolTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param updatedTime Time when the node pool was updated
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(@Nullable Output<String> updatedTime) {
             $.updatedTime = updatedTime;
@@ -466,9 +497,9 @@ public final class DefaultNodePoolState extends com.pulumi.resources.ResourceArg
 
         /**
          * @param updatedTime Time when the node pool was updated
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder updatedTime(String updatedTime) {
             return updatedTime(Output.of(updatedTime));

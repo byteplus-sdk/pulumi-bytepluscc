@@ -17,36 +17,36 @@ import javax.annotation.Nullable;
 
 /**
  * A high availability virtual IP (HAVIP) is a private IP resource that can be independently owned, created, or deleted at any time based on business needs. In primary/secondary cluster scenarios, HAVIP is typically used with high availability software (such as Keepalived or Windows Server Failover Cluster) to build high availability primary/secondary services
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vpc.HaVip;
  * import com.byteplus.bytepluscc.vpc.HaVipArgs;
  * import com.pulumi.bytepluscc.vpc.inputs.HaVipTagArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vPCHAVIPDemo = new HaVip("vPCHAVIPDemo", HaVipArgs.builder()
  *             .associatedEipId("eip-1a1tzpbhmsphc8nvexxxxx")
- *             .associatedInstanceIds(            
+ *             .associatedInstanceIds(
  *                 "eni-btw4pmtcabr45h0b2xxxxx",
  *                 "eni-iiotcbjp7r4074o8xxxxx",
  *                 "eni-3nrjyim6prm68931ebbxxxxx")
@@ -60,234 +60,244 @@ import javax.annotation.Nullable;
  *                 .value("test")
  *                 .build())
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vpc/haVip:HaVip example &#34;ha_vip_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vpc/haVip:HaVip")
 public class HaVip extends com.pulumi.resources.CustomResource {
     /**
      * IP address of the public IP bound to the HAVIP
-     * 
+     *
      */
     @Export(name="associatedEipAddress", refs={String.class}, tree="[0]")
     private Output<String> associatedEipAddress;
 
     /**
      * @return IP address of the public IP bound to the HAVIP
-     * 
+     *
      */
     public Output<String> associatedEipAddress() {
         return this.associatedEipAddress;
     }
     /**
      * ID of the public IP bound to the HAVIP
-     * 
+     *
      */
     @Export(name="associatedEipId", refs={String.class}, tree="[0]")
     private Output<String> associatedEipId;
 
     /**
      * @return ID of the public IP bound to the HAVIP
-     * 
+     *
      */
     public Output<String> associatedEipId() {
         return this.associatedEipId;
     }
     /**
      * List of instance IDs bound to the HAVIP
-     * 
+     *
      */
     @Export(name="associatedInstanceIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> associatedInstanceIds;
 
     /**
      * @return List of instance IDs bound to the HAVIP
-     * 
+     *
      */
     public Output<List<String>> associatedInstanceIds() {
         return this.associatedInstanceIds;
     }
     /**
      * Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-     * 
+     *
      */
     @Export(name="associatedInstanceType", refs={String.class}, tree="[0]")
     private Output<String> associatedInstanceType;
 
     /**
      * @return Instance type bound to the HAVIP. EcsInstance: cloud server instance. NetworkInterface: elastic network interface
-     * 
+     *
      */
     public Output<String> associatedInstanceType() {
         return this.associatedInstanceType;
     }
     /**
      * Creation time of the HAVIP
-     * 
+     *
      */
     @Export(name="createdAt", refs={String.class}, tree="[0]")
     private Output<String> createdAt;
 
     /**
      * @return Creation time of the HAVIP
-     * 
+     *
      */
     public Output<String> createdAt() {
         return this.createdAt;
     }
     /**
      * Description of the HAVIP. Length limit: 0–255 characters
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Description of the HAVIP. Length limit: 0–255 characters
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * ID of the HAVIP
-     * 
+     *
      */
     @Export(name="haVipId", refs={String.class}, tree="[0]")
     private Output<String> haVipId;
 
     /**
      * @return ID of the HAVIP
-     * 
+     *
      */
     public Output<String> haVipId() {
         return this.haVipId;
     }
     /**
      * Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-     * 
+     *
      */
     @Export(name="haVipName", refs={String.class}, tree="[0]")
     private Output<String> haVipName;
 
     /**
      * @return Name of the HAVIP. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 0–128 characters
-     * 
+     *
      */
     public Output<String> haVipName() {
         return this.haVipName;
     }
     /**
      * IP address of the HAVIP
-     * 
+     *
      */
     @Export(name="ipAddress", refs={String.class}, tree="[0]")
     private Output<String> ipAddress;
 
     /**
      * @return IP address of the HAVIP
-     * 
+     *
      */
     public Output<String> ipAddress() {
         return this.ipAddress;
     }
     /**
      * ID of the primary instance bound to the HAVIP
-     * 
+     *
      */
     @Export(name="masterInstanceId", refs={String.class}, tree="[0]")
     private Output<String> masterInstanceId;
 
     /**
      * @return ID of the primary instance bound to the HAVIP
-     * 
+     *
      */
     public Output<String> masterInstanceId() {
         return this.masterInstanceId;
     }
     /**
      * Project name of the HAVIP
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name of the HAVIP
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Status of the HAVIP. Available: available. Creating: creating. InUse: in use. Deleting: deleting
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;
     }
     /**
      * Subnet ID to which the HAVIP belongs
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID to which the HAVIP belongs
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
+    /**
+     * Tags associated with the HAVIP
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,HaVipTag.class}, tree="[0,1]")
     private Output<List<HaVipTag>> tags;
 
+    /**
+     * @return Tags associated with the HAVIP
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<HaVipTag>> tags() {
         return this.tags;
     }
     /**
      * Last modification time of the HAVIP
-     * 
+     *
      */
     @Export(name="updatedAt", refs={String.class}, tree="[0]")
     private Output<String> updatedAt;
 
     /**
      * @return Last modification time of the HAVIP
-     * 
+     *
      */
     public Output<String> updatedAt() {
         return this.updatedAt;
     }
     /**
      * VPC ID to which the HAVIP belongs
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return VPC ID to which the HAVIP belongs
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;

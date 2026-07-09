@@ -17,135 +17,191 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud service access.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.cen.ServiceRouteEntry;
+ * import com.byteplus.bytepluscc.cen.ServiceRouteEntryArgs;
+ * import com.pulumi.bytepluscc.cen.inputs.ServiceRouteEntryPublishToInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var cENServiceRouteEntryDemo = new ServiceRouteEntry("cENServiceRouteEntryDemo", ServiceRouteEntryArgs.builder()
+ *             .cenId("cen-2v73nw1h8a03k6x7exxxxxx")
+ *             .destinationCidrBlock("100.x.0.0/11")
+ *             .serviceVpcId("vpc-iirjlwem73eo74o8cxxxxx")
+ *             .description("ccapi-test")
+ *             .publishMode("Custom")
+ *             .publishToInstances(
+ *                 ServiceRouteEntryPublishToInstanceArgs.builder()
+ *                     .instance_region_id("cn-hongkong")
+ *                     .instance_type("VPC")
+ *                     .instance_id("vpc-2uzvkdpoof7cw17q7y2xxxxx")
+ *                     .build(),
+ *                 ServiceRouteEntryPublishToInstanceArgs.builder()
+ *                     .instance_region_id("cn-shanghai")
+ *                     .instance_type("VPC")
+ *                     .instance_id("vpc-33glll2z1gem86k70bxxxxx")
+ *                     .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cen/serviceRouteEntry:ServiceRouteEntry example &#34;cen_id|destination_cidr_block&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cen/serviceRouteEntry:ServiceRouteEntry")
 public class ServiceRouteEntry extends com.pulumi.resources.CustomResource {
     /**
      * Cloud Enterprise Network instance ID.
-     * 
+     *
      */
     @Export(name="cenId", refs={String.class}, tree="[0]")
     private Output<String> cenId;
 
     /**
      * @return Cloud Enterprise Network instance ID.
-     * 
+     *
      */
     public Output<String> cenId() {
         return this.cenId;
     }
     /**
      * Resource creation time.
-     * 
+     *
      */
     @Export(name="creationTime", refs={String.class}, tree="[0]")
     private Output<String> creationTime;
 
     /**
      * @return Resource creation time.
-     * 
+     *
      */
     public Output<String> creationTime() {
         return this.creationTime;
     }
     /**
      * Custom remarks for the route.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Custom remarks for the route.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * Address range where the cloud service is deployed.
-     * 
+     *
      */
     @Export(name="destinationCidrBlock", refs={String.class}, tree="[0]")
     private Output<String> destinationCidrBlock;
 
     /**
      * @return Address range where the cloud service is deployed.
-     * 
+     *
      */
     public Output<String> destinationCidrBlock() {
         return this.destinationCidrBlock;
     }
     /**
      * Route publishing scope mode.
-     * 
+     *
      */
     @Export(name="publishMode", refs={String.class}, tree="[0]")
     private Output<String> publishMode;
 
     /**
      * @return Route publishing scope mode.
-     * 
+     *
      */
     public Output<String> publishMode() {
         return this.publishMode;
     }
+    /**
+     * List of network instances associated with batch route publishing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="publishToInstances", refs={List.class,ServiceRouteEntryPublishToInstance.class}, tree="[0,1]")
     private Output<List<ServiceRouteEntryPublishToInstance>> publishToInstances;
 
+    /**
+     * @return List of network instances associated with batch route publishing.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<ServiceRouteEntryPublishToInstance>> publishToInstances() {
         return this.publishToInstances;
     }
     /**
      * Region where the cloud service is located.
-     * 
+     *
      */
     @Export(name="serviceRegionId", refs={String.class}, tree="[0]")
     private Output<String> serviceRegionId;
 
     /**
      * @return Region where the cloud service is located.
-     * 
+     *
      */
     public Output<String> serviceRegionId() {
         return this.serviceRegionId;
     }
     /**
      * Private network ID bound to the backend cloud service.
-     * 
+     *
      */
     @Export(name="serviceVpcId", refs={String.class}, tree="[0]")
     private Output<String> serviceVpcId;
 
     /**
      * @return Private network ID bound to the backend cloud service.
-     * 
+     *
      */
     public Output<String> serviceVpcId() {
         return this.serviceVpcId;
     }
     /**
      * Cloud service access route status.
-     * 
+     *
      */
     @Export(name="status", refs={String.class}, tree="[0]")
     private Output<String> status;
 
     /**
      * @return Cloud service access route status.
-     * 
+     *
      */
     public Output<String> status() {
         return this.status;

@@ -16,31 +16,31 @@ import javax.annotation.Nullable;
 
 /**
  * The cluster supports installation of various types of components, including network, storage, monitoring, DNS, security, image, GPU, and more, to meet your diverse business needs. You can deploy, upgrade, or uninstall components as needed.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.vke.Addon;
  * import com.byteplus.bytepluscc.vke.AddonArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var vKEAddonDemo = new Addon("vKEAddonDemo", AddonArgs.builder()
  *             .clusterId("cd35mtki***")
@@ -50,144 +50,144 @@ import javax.annotation.Nullable;
  *             .version("v1.2.7")
  *             .config("{\"CsiNasDriver\":{\"Resources\":{\"Requests\":{\"Cpu\":\"0.01\",\"Memory\":\"20Mi\"},\"Limits\":{\"Cpu\":\"0.9\",\"Memory\":\"1900Mi\"}}},\"CsiProvisioner\":{\"Resources\":{\"Requests\":{\"Cpu\":\"0.01\",\"Memory\":\"20Mi\"},\"Limits\":{\"Cpu\":\"0.5\",\"Memory\":\"4Gi\"}}},\"LivenessProbe\":{\"Resources\":{\"Requests\":{\"Cpu\":\"0.01\",\"Memory\":\"20Mi\"},\"Limits\":{\"Cpu\":\"0.1\",\"Memory\":\"100Mi\"}}}}")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vke/addon:Addon example &#34;cluster_id|name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vke/addon:Addon")
 public class Addon extends com.pulumi.resources.CustomResource {
     /**
      * Cluster ID where the component is located.
-     * 
+     *
      */
     @Export(name="clusterId", refs={String.class}, tree="[0]")
     private Output<String> clusterId;
 
     /**
      * @return Cluster ID where the component is located.
-     * 
+     *
      */
     public Output<String> clusterId() {
         return this.clusterId;
     }
     /**
      * Component configuration.
-     * 
+     *
      */
     @Export(name="config", refs={String.class}, tree="[0]")
     private Output<String> config;
 
     /**
      * @return Component configuration.
-     * 
+     *
      */
     public Output<String> config() {
         return this.config;
     }
     /**
      * Component installation time. Standard RFC3339 format, UTC+0 time.
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Component installation time. Standard RFC3339 format, UTC+0 time.
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
-     * 
+     *
      */
     @Export(name="deployMode", refs={String.class}, tree="[0]")
     private Output<String> deployMode;
 
     /**
      * @return Component deployment mode. Values: Unmanaged: deployed in unmanaged mode. Managed: deployed in managed mode.
-     * 
+     *
      */
     public Output<String> deployMode() {
         return this.deployMode;
     }
     /**
      * Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
-     * 
+     *
      */
     @Export(name="deployNodeType", refs={String.class}, tree="[0]")
     private Output<String> deployNodeType;
 
     /**
      * @return Type of deployment node. This parameter needs to be specified only when DeployModes=Unmanaged. Values: Node: deployed as a node. VirtualNode: deployed as a virtual node.
-     * 
+     *
      */
     public Output<String> deployNodeType() {
         return this.deployNodeType;
     }
     /**
      * Component name.
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Component name.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Component status.
-     * 
+     *
      */
     @Export(name="status", refs={AddonStatus.class}, tree="[0]")
     private Output<AddonStatus> status;
 
     /**
      * @return Component status.
-     * 
+     *
      */
     public Output<AddonStatus> status() {
         return this.status;
     }
     /**
      * Component update time. Standard RFC3339 format, UTC+0 time.
-     * 
+     *
      */
     @Export(name="updatedTime", refs={String.class}, tree="[0]")
     private Output<String> updatedTime;
 
     /**
      * @return Component update time. Standard RFC3339 format, UTC+0 time.
-     * 
+     *
      */
     public Output<String> updatedTime() {
         return this.updatedTime;
     }
     /**
      * Component version.
-     * 
+     *
      */
     @Export(name="version", refs={String.class}, tree="[0]")
     private Output<String> version;
 
     /**
      * @return Component version.
-     * 
+     *
      */
     public Output<String> version() {
         return this.version;

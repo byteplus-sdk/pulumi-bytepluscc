@@ -16,9 +16,19 @@ public final class DomainConditionalOriginOriginRuleActionsArgs extends com.pulu
 
     public static final DomainConditionalOriginOriginRuleActionsArgs Empty = new DomainConditionalOriginOriginRuleActionsArgs();
 
+    /**
+     * Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="originLines")
     private @Nullable Output<List<DomainConditionalOriginOriginRuleActionsOriginLineArgs>> originLines;
 
+    /**
+     * @return Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainConditionalOriginOriginRuleActionsOriginLineArgs>>> originLines() {
         return Optional.ofNullable(this.originLines);
     }
@@ -47,15 +57,36 @@ public final class DomainConditionalOriginOriginRuleActionsArgs extends com.pulu
             $ = new DomainConditionalOriginOriginRuleActionsArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param originLines Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originLines(@Nullable Output<List<DomainConditionalOriginOriginRuleActionsOriginLineArgs>> originLines) {
             $.originLines = originLines;
             return this;
         }
 
+        /**
+         * @param originLines Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originLines(List<DomainConditionalOriginOriginRuleActionsOriginLineArgs> originLines) {
             return originLines(Output.of(originLines));
         }
 
+        /**
+         * @param originLines Indicates a list of origin configurations. Currently, the list can contain only one origin configuration.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder originLines(DomainConditionalOriginOriginRuleActionsOriginLineArgs... originLines) {
             return originLines(List.of(originLines));
         }

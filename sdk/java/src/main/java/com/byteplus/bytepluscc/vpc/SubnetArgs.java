@@ -21,14 +21,14 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet IPv4 CIDR block
-     * 
+     *
      */
     @Import(name="cidrBlock", required=true)
     private Output<String> cidrBlock;
 
     /**
      * @return Subnet IPv4 CIDR block
-     * 
+     *
      */
     public Output<String> cidrBlock() {
         return this.cidrBlock;
@@ -36,14 +36,14 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -51,14 +51,14 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-     * 
+     *
      */
     @Import(name="enableIpv6")
     private @Nullable Output<Boolean> enableIpv6;
 
     /**
      * @return Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableIpv6() {
         return Optional.ofNullable(this.enableIpv6);
@@ -66,14 +66,14 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-     * 
+     *
      */
     @Import(name="ipv6CidrBlock")
     private @Nullable Output<String> ipv6CidrBlock;
 
     /**
      * @return Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-     * 
+     *
      */
     public Optional<Output<String>> ipv6CidrBlock() {
         return Optional.ofNullable(this.ipv6CidrBlock);
@@ -81,36 +81,46 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-     * 
+     *
      */
     @Import(name="subnetName")
     private @Nullable Output<String> subnetName;
 
     /**
      * @return Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-     * 
+     *
      */
     public Optional<Output<String>> subnetName() {
         return Optional.ofNullable(this.subnetName);
     }
 
+    /**
+     * Subnet tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<SubnetTagArgs>> tags;
 
+    /**
+     * @return Subnet tag information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<SubnetTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * ID of the VPC to which the subnet belongs
-     * 
+     *
      */
     @Import(name="vpcId", required=true)
     private Output<String> vpcId;
 
     /**
      * @return ID of the VPC to which the subnet belongs
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
@@ -118,14 +128,14 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-     * 
+     *
      */
     @Import(name="zoneId", required=true)
     private Output<String> zoneId;
 
     /**
      * @return Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-     * 
+     *
      */
     public Output<String> zoneId() {
         return this.zoneId;
@@ -164,9 +174,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cidrBlock Subnet IPv4 CIDR block
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cidrBlock(Output<String> cidrBlock) {
             $.cidrBlock = cidrBlock;
@@ -175,9 +185,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cidrBlock Subnet IPv4 CIDR block
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cidrBlock(String cidrBlock) {
             return cidrBlock(Output.of(cidrBlock));
@@ -185,9 +195,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -196,9 +206,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Subnet description. Limited to 0–255 characters. Must start with a letter, Chinese character, or number. Can include English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Cannot start with http:// or https://
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -206,9 +216,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIpv6 Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIpv6(@Nullable Output<Boolean> enableIpv6) {
             $.enableIpv6 = enableIpv6;
@@ -217,9 +227,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableIpv6 Enable or disable IPv6. This parameter can be configured only if the VPC to which the subnet belongs has IPv6 enabled. 1. true: Enable. 2. false: Disable. This value can be configured only if no cloud resources in the subnet have assigned IPv6 addresses
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableIpv6(Boolean enableIpv6) {
             return enableIpv6(Output.of(enableIpv6));
@@ -227,9 +237,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6CidrBlock Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6CidrBlock(@Nullable Output<String> ipv6CidrBlock) {
             $.ipv6CidrBlock = ipv6CidrBlock;
@@ -238,9 +248,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipv6CidrBlock Subnet IPv6 CIDR block. 1. When creating or modifying, enter the last 8 bits of the subnet IPv6 CIDR block (subnet mask is fixed at /64). 2. This parameter is supported only when EnableIpv6 is set to true. 3. Value range: 0–255. Mask is fixed at /64
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipv6CidrBlock(String ipv6CidrBlock) {
             return ipv6CidrBlock(Output.of(ipv6CidrBlock));
@@ -248,9 +258,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetName Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetName(@Nullable Output<String> subnetName) {
             $.subnetName = subnetName;
@@ -259,32 +269,53 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param subnetName Subnet name, limited to 1–128 characters. Must start with a letter, Chinese character, or number. Can include period (.), underscore (_), and hyphen (-). Cannot start with http:// or https://. If not specified, defaults to the subnet ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetName(String subnetName) {
             return subnetName(Output.of(subnetName));
         }
 
+        /**
+         * @param tags Subnet tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<SubnetTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Subnet tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<SubnetTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Subnet tag information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(SubnetTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param vpcId ID of the VPC to which the subnet belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -293,9 +324,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpcId ID of the VPC to which the subnet belongs
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -303,9 +334,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -314,9 +345,9 @@ public final class SubnetArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param zoneId Availability zone ID for the subnet to be created. For more information, see Regions and Availability Zones
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

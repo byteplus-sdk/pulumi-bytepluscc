@@ -16,31 +16,41 @@ import javax.annotation.Nullable;
 public final class RulePoolSet {
     /**
      * @return Minimum number of available addresses required for the address pool collection to be considered available.
-     * 
+     *
      */
     private @Nullable Integer activeAddrThr;
     /**
      * @return Address pool name.
-     * 
+     *
      */
     private @Nullable String name;
+    /**
+     * @return Address pool list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     private @Nullable List<RulePoolSetPool> pools;
 
     private RulePoolSet() {}
     /**
      * @return Minimum number of available addresses required for the address pool collection to be considered available.
-     * 
+     *
      */
     public Optional<Integer> activeAddrThr() {
         return Optional.ofNullable(this.activeAddrThr);
     }
     /**
      * @return Address pool name.
-     * 
+     *
      */
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
+    /**
+     * @return Address pool list.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public List<RulePoolSetPool> pools() {
         return this.pools == null ? List.of() : this.pools;
     }

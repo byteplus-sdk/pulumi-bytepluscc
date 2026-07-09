@@ -21,23 +21,33 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final TopicArgs Empty = new TopicArgs();
 
+    /**
+     * Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="accessPolicies")
     private @Nullable Output<List<TopicAccessPolicyArgs>> accessPolicies;
 
+    /**
+     * @return Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TopicAccessPolicyArgs>>> accessPolicies() {
         return Optional.ofNullable(this.accessPolicies);
     }
 
     /**
      * Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
-     * 
+     *
      */
     @Import(name="allAuthority")
     private @Nullable Output<Boolean> allAuthority;
 
     /**
      * @return Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
-     * 
+     *
      */
     public Optional<Output<Boolean>> allAuthority() {
         return Optional.ofNullable(this.allAuthority);
@@ -45,14 +55,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
-     * 
+     *
      */
     @Import(name="cleanupPolicies")
     private @Nullable Output<List<String>> cleanupPolicies;
 
     /**
      * @return Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
-     * 
+     *
      */
     public Optional<Output<List<String>>> cleanupPolicies() {
         return Optional.ofNullable(this.cleanupPolicies);
@@ -60,14 +70,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Topic description. Maximum length: 128 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Topic description. Maximum length: 128 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -75,14 +85,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID.
-     * 
+     *
      */
     @Import(name="instanceId", required=true)
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
@@ -90,14 +100,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
-     * 
+     *
      */
     @Import(name="parameters")
     private @Nullable Output<String> parameters;
 
     /**
      * @return Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
-     * 
+     *
      */
     public Optional<Output<String>> parameters() {
         return Optional.ofNullable(this.parameters);
@@ -105,14 +115,14 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
-     * 
+     *
      */
     @Import(name="partitionNumber", required=true)
     private Output<Integer> partitionNumber;
 
     /**
      * @return Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
-     * 
+     *
      */
     public Output<Integer> partitionNumber() {
         return this.partitionNumber;
@@ -120,36 +130,46 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Number of Topic replicas. Can be set to 2 or 3; the default is 3.
-     * 
+     *
      */
     @Import(name="replicaNumber")
     private @Nullable Output<Integer> replicaNumber;
 
     /**
      * @return Number of Topic replicas. Can be set to 2 or 3; the default is 3.
-     * 
+     *
      */
     public Optional<Output<Integer>> replicaNumber() {
         return Optional.ofNullable(this.replicaNumber);
     }
 
+    /**
+     * Topic label information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<TopicTagArgs>> tags;
 
+    /**
+     * @return Topic label information
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TopicTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
-     * 
+     *
      */
     @Import(name="topicName", required=true)
     private Output<String> topicName;
 
     /**
      * @return Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
-     * 
+     *
      */
     public Output<String> topicName() {
         return this.topicName;
@@ -188,24 +208,45 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
             $ = new TopicArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param accessPolicies Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accessPolicies(@Nullable Output<List<TopicAccessPolicyArgs>> accessPolicies) {
             $.accessPolicies = accessPolicies;
             return this;
         }
 
+        /**
+         * @param accessPolicies Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accessPolicies(List<TopicAccessPolicyArgs> accessPolicies) {
             return accessPolicies(Output.of(accessPolicies));
         }
 
+        /**
+         * @param accessPolicies Custom permission configuration, which sets custom permissions for certain users on this Topic. Only required when AllAuthority is False.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder accessPolicies(TopicAccessPolicyArgs... accessPolicies) {
             return accessPolicies(List.of(accessPolicies));
         }
 
         /**
          * @param allAuthority Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allAuthority(@Nullable Output<Boolean> allAuthority) {
             $.allAuthority = allAuthority;
@@ -214,9 +255,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param allAuthority Whether read/write permissions are enabled by default for all users on the Topic to be created. true: (default) All users have read/write permissions for this Topic. false: Not all users have read/write permissions for this Topic. By default, users inherit their default permissions for this Topic. If the default permissions do not meet your requirements, you can specify custom permissions for a user on this Topic through AccessPolicies.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder allAuthority(Boolean allAuthority) {
             return allAuthority(Output.of(allAuthority));
@@ -224,9 +265,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cleanupPolicies Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cleanupPolicies(@Nullable Output<List<String>> cleanupPolicies) {
             $.cleanupPolicies = cleanupPolicies;
@@ -235,9 +276,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cleanupPolicies Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cleanupPolicies(List<String> cleanupPolicies) {
             return cleanupPolicies(Output.of(cleanupPolicies));
@@ -245,9 +286,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cleanupPolicies Topic message cleanup policy supports the following three options: [delete]: The default message cleanup policy. When disk space is sufficient, messages are retained within the maximum retention period; when disk space is insufficient, old messages are deleted early to ensure service availability. [compact]: The COMPACT message cleanup policy consolidates messages by Key, retaining only the latest value for messages with the same Key, and removing older records. [delete,compact]: Configures both DELETE and COMPACT message cleanup policies. Messages will be deleted as soon as they meet any of the cleanup criteria.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cleanupPolicies(String... cleanupPolicies) {
             return cleanupPolicies(List.of(cleanupPolicies));
@@ -255,9 +296,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Topic description. Maximum length: 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -266,9 +307,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Topic description. Maximum length: 128 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -276,9 +317,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -287,9 +328,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceId Instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -297,9 +338,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parameters Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder parameters(@Nullable Output<String> parameters) {
             $.parameters = parameters;
@@ -308,9 +349,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param parameters Topic-level parameter configuration. Parameters description MinInsyncReplicaNumber:2: Minimum number of in-sync replicas. If the number of in-sync replicas is less than the configured value, messages cannot be written to the Topic. Higher values increase data reliability but reduce availability. The default is replica count minus 1. For Topic availability, it is recommended to set this to replica count minus 1. MessageMaxByte:12: Maximum message size, in MB, range 1–12. By default, inherits the instance&#39;s maximum message size setting. LogRetentionHours:72: Message retention period, in hours, range 0–2160 (up to 90 days). By default, inherits the instance&#39;s message retention period setting.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder parameters(String parameters) {
             return parameters(Output.of(parameters));
@@ -318,9 +359,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param partitionNumber Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder partitionNumber(Output<Integer> partitionNumber) {
             $.partitionNumber = partitionNumber;
@@ -329,9 +370,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param partitionNumber Number of Topic partitions. The range is 1–300. If other Topics have already been created in the instance, the total number of partitions across all Topics must not exceed the partition limit of the instance. If the number of partitions does not meet your business needs, you can purchase more partitions to increase the partition limit of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder partitionNumber(Integer partitionNumber) {
             return partitionNumber(Output.of(partitionNumber));
@@ -339,9 +380,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param replicaNumber Number of Topic replicas. Can be set to 2 or 3; the default is 3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replicaNumber(@Nullable Output<Integer> replicaNumber) {
             $.replicaNumber = replicaNumber;
@@ -350,32 +391,53 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param replicaNumber Number of Topic replicas. Can be set to 2 or 3; the default is 3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder replicaNumber(Integer replicaNumber) {
             return replicaNumber(Output.of(replicaNumber));
         }
 
+        /**
+         * @param tags Topic label information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<TopicTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Topic label information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<TopicTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Topic label information
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(TopicTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param topicName Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicName(Output<String> topicName) {
             $.topicName = topicName;
@@ -384,9 +446,9 @@ public final class TopicArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param topicName Name of the Topic to be created. 3–64 characters. Must start with a letter or number. Supported characters include letters, numbers, hyphens (-), underscores (_), and periods (.).
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder topicName(String topicName) {
             return topicName(Output.of(topicName));

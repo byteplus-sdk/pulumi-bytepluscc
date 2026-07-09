@@ -20,14 +20,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -35,14 +35,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Instance ID for the operation.
-     * 
+     *
      */
     @Import(name="instanceIds")
     private @Nullable Output<List<String>> instanceIds;
 
     /**
      * @return Instance ID for the operation.
-     * 
+     *
      */
     public Optional<Output<List<String>>> instanceIds() {
         return Optional.ofNullable(this.instanceIds);
@@ -50,14 +50,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
-     * 
+     *
      */
     @Import(name="keyPairName", required=true)
     private Output<String> keyPairName;
 
     /**
      * @return Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
-     * 
+     *
      */
     public Output<String> keyPairName() {
         return this.keyPairName;
@@ -65,14 +65,14 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -80,22 +80,32 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Public key information of the key pair.
-     * 
+     *
      */
     @Import(name="publicKey")
     private @Nullable Output<String> publicKey;
 
     /**
      * @return Public key information of the key pair.
-     * 
+     *
      */
     public Optional<Output<String>> publicKey() {
         return Optional.ofNullable(this.publicKey);
     }
 
+    /**
+     * Tags of the key pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<KeypairTagArgs>> tags;
 
+    /**
+     * @return Tags of the key pair.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<KeypairTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -131,9 +141,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -142,9 +152,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the key pair. The default value is an empty string. Must start with a letter or Chinese character. Can only contain Chinese characters, letters, numbers, period (&#39;.&#39;), space, underscore (&#39;_&#39;), hyphen (&#39;-&#39;), equals sign (&#39;=&#39;), English comma (&#39;,&#39;), Chinese comma (&#39;，&#39;), and Chinese period (&#39;。&#39;). Length must not exceed 255 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -152,9 +162,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds Instance ID for the operation.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(@Nullable Output<List<String>> instanceIds) {
             $.instanceIds = instanceIds;
@@ -163,9 +173,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds Instance ID for the operation.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(List<String> instanceIds) {
             return instanceIds(Output.of(instanceIds));
@@ -173,9 +183,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param instanceIds Instance ID for the operation.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceIds(String... instanceIds) {
             return instanceIds(List.of(instanceIds));
@@ -183,9 +193,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyPairName Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyPairName(Output<String> keyPairName) {
             $.keyPairName = keyPairName;
@@ -194,9 +204,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param keyPairName Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods (&#39;.&#39;) can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens (&#39;-&#39;). The name cannot start or end with &#39;-&#39; or &#39;.&#39;, and cannot contain consecutive &#39;-&#39; or &#39;.&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder keyPairName(String keyPairName) {
             return keyPairName(Output.of(keyPairName));
@@ -204,9 +214,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -215,9 +225,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -225,9 +235,9 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicKey Public key information of the key pair.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicKey(@Nullable Output<String> publicKey) {
             $.publicKey = publicKey;
@@ -236,23 +246,44 @@ public final class KeypairArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param publicKey Public key information of the key pair.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder publicKey(String publicKey) {
             return publicKey(Output.of(publicKey));
         }
 
+        /**
+         * @param tags Tags of the key pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<KeypairTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags of the key pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<KeypairTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags of the key pair.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(KeypairTagArgs... tags) {
             return tags(List.of(tags));
         }

@@ -21,14 +21,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-     * 
+     *
      */
     @Import(name="bandwidth")
     private @Nullable Output<Integer> bandwidth;
 
     /**
      * @return Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-     * 
+     *
      */
     public Optional<Output<Integer>> bandwidth() {
         return Optional.ofNullable(this.bandwidth);
@@ -36,14 +36,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-     * 
+     *
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
      * @return Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-     * 
+     *
      */
     public Optional<Output<Integer>> billingType() {
         return Optional.ofNullable(this.billingType);
@@ -51,14 +51,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-     * 
+     *
      */
     @Import(name="cenBandwidthPackageName")
     private @Nullable Output<String> cenBandwidthPackageName;
 
     /**
      * @return Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-     * 
+     *
      */
     public Optional<Output<String>> cenBandwidthPackageName() {
         return Optional.ofNullable(this.cenBandwidthPackageName);
@@ -66,14 +66,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * List of associated CEN instance IDs.
-     * 
+     *
      */
     @Import(name="cenIds")
     private @Nullable Output<List<String>> cenIds;
 
     /**
      * @return List of associated CEN instance IDs.
-     * 
+     *
      */
     public Optional<Output<List<String>>> cenIds() {
         return Optional.ofNullable(this.cenIds);
@@ -81,14 +81,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -96,14 +96,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-     * 
+     *
      */
     @Import(name="lineOperator")
     private @Nullable Output<String> lineOperator;
 
     /**
      * @return Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-     * 
+     *
      */
     public Optional<Output<String>> lineOperator() {
         return Optional.ofNullable(this.lineOperator);
@@ -111,14 +111,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     @Import(name="localGeographicRegionSetId", required=true)
     private Output<String> localGeographicRegionSetId;
 
     /**
      * @return Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     public Output<String> localGeographicRegionSetId() {
         return this.localGeographicRegionSetId;
@@ -126,14 +126,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     @Import(name="peerGeographicRegionSetId", required=true)
     private Output<String> peerGeographicRegionSetId;
 
     /**
      * @return Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-     * 
+     *
      */
     public Output<String> peerGeographicRegionSetId() {
         return this.peerGeographicRegionSetId;
@@ -141,14 +141,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-     * 
+     *
      */
     @Import(name="period")
     private @Nullable Output<Integer> period;
 
     /**
      * @return Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-     * 
+     *
      */
     public Optional<Output<Integer>> period() {
         return Optional.ofNullable(this.period);
@@ -156,14 +156,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-     * 
+     *
      */
     @Import(name="periodUnit")
     private @Nullable Output<String> periodUnit;
 
     /**
      * @return Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-     * 
+     *
      */
     public Optional<Output<String>> periodUnit() {
         return Optional.ofNullable(this.periodUnit);
@@ -171,14 +171,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -186,14 +186,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-     * 
+     *
      */
     @Import(name="remainRenewTimes")
     private @Nullable Output<Integer> remainRenewTimes;
 
     /**
      * @return Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-     * 
+     *
      */
     public Optional<Output<Integer>> remainRenewTimes() {
         return Optional.ofNullable(this.remainRenewTimes);
@@ -201,14 +201,14 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-     * 
+     *
      */
     @Import(name="renewPeriod")
     private @Nullable Output<Integer> renewPeriod;
 
     /**
      * @return Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-     * 
+     *
      */
     public Optional<Output<Integer>> renewPeriod() {
         return Optional.ofNullable(this.renewPeriod);
@@ -216,22 +216,32 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
     /**
      * Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-     * 
+     *
      */
     @Import(name="renewType")
     private @Nullable Output<String> renewType;
 
     /**
      * @return Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-     * 
+     *
      */
     public Optional<Output<String>> renewType() {
         return Optional.ofNullable(this.renewType);
     }
 
+    /**
+     * Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<BandwidthPackageTagArgs>> tags;
 
+    /**
+     * @return Tag list
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<BandwidthPackageTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
@@ -276,9 +286,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param bandwidth Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(@Nullable Output<Integer> bandwidth) {
             $.bandwidth = bandwidth;
@@ -287,9 +297,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param bandwidth Bandwidth peak of the bandwidth package. Value range: 2–10000 Mbps. Default: 2 Mbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bandwidth(Integer bandwidth) {
             return bandwidth(Output.of(bandwidth));
@@ -297,9 +307,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param billingType Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(@Nullable Output<Integer> billingType) {
             $.billingType = billingType;
@@ -308,9 +318,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param billingType Billing method of the bandwidth package. Valid values: 1 (default): yearly/monthly subscription. 4: pay-as-you-go—95th percentile billing.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder billingType(Integer billingType) {
             return billingType(Output.of(billingType));
@@ -318,9 +328,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param cenBandwidthPackageName Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageName(@Nullable Output<String> cenBandwidthPackageName) {
             $.cenBandwidthPackageName = cenBandwidthPackageName;
@@ -329,9 +339,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param cenBandwidthPackageName Name of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the bandwidth package ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenBandwidthPackageName(String cenBandwidthPackageName) {
             return cenBandwidthPackageName(Output.of(cenBandwidthPackageName));
@@ -339,9 +349,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param cenIds List of associated CEN instance IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenIds(@Nullable Output<List<String>> cenIds) {
             $.cenIds = cenIds;
@@ -350,9 +360,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param cenIds List of associated CEN instance IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenIds(List<String> cenIds) {
             return cenIds(Output.of(cenIds));
@@ -360,9 +370,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param cenIds List of associated CEN instance IDs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder cenIds(String... cenIds) {
             return cenIds(List.of(cenIds));
@@ -370,9 +380,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -381,9 +391,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param description Description of the bandwidth package. Must start with a letter, number, or Chinese character. Can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -391,9 +401,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param lineOperator Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineOperator(@Nullable Output<String> lineOperator) {
             $.lineOperator = lineOperator;
@@ -402,9 +412,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param lineOperator Carrier for cross-border bandwidth package lines. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are the same, this parameter is not supported. If LocalGeographicRegionSetId and PeerGeographicRegionSetId are different, available values are: ChinaUnicom (default): China Unicom.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder lineOperator(String lineOperator) {
             return lineOperator(Output.of(lineOperator));
@@ -412,9 +422,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param localGeographicRegionSetId Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localGeographicRegionSetId(Output<String> localGeographicRegionSetId) {
             $.localGeographicRegionSetId = localGeographicRegionSetId;
@@ -423,9 +433,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param localGeographicRegionSetId Local geographic region ID for Cloud Enterprise Network communication. Available values: China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localGeographicRegionSetId(String localGeographicRegionSetId) {
             return localGeographicRegionSetId(Output.of(localGeographicRegionSetId));
@@ -433,9 +443,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param peerGeographicRegionSetId Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerGeographicRegionSetId(Output<String> peerGeographicRegionSetId) {
             $.peerGeographicRegionSetId = peerGeographicRegionSetId;
@@ -444,9 +454,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param peerGeographicRegionSetId Peer geographic region ID for Cloud Enterprise Network interconnection. Valid values: China: Chinese mainland. Asia: Asia-Pacific.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder peerGeographicRegionSetId(String peerGeographicRegionSetId) {
             return peerGeographicRegionSetId(Output.of(peerGeographicRegionSetId));
@@ -454,9 +464,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param period Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(@Nullable Output<Integer> period) {
             $.period = period;
@@ -465,9 +475,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param period Purchase duration of the bandwidth package. Default is 1. Valid values: If PeriodUnit is Month, range is 1–9, 12, 24, and 36. If PeriodUnit is Year, range is 1–3.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder period(Integer period) {
             return period(Output.of(period));
@@ -475,9 +485,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param periodUnit Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(@Nullable Output<String> periodUnit) {
             $.periodUnit = periodUnit;
@@ -486,9 +496,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param periodUnit Billing cycle of the bandwidth package. Valid values: Month (default): month. Year: year.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder periodUnit(String periodUnit) {
             return periodUnit(Output.of(periodUnit));
@@ -496,9 +506,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param projectName Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -507,9 +517,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param projectName Name of the project to which the bandwidth package belongs. If not specified, defaults to &#39;default&#39;.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -517,9 +527,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param remainRenewTimes Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remainRenewTimes(@Nullable Output<Integer> remainRenewTimes) {
             $.remainRenewTimes = remainRenewTimes;
@@ -528,9 +538,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param remainRenewTimes Number of automatic renewals. Values include -1 and 1–100. Default is -1, which means unlimited automatic renewals.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remainRenewTimes(Integer remainRenewTimes) {
             return remainRenewTimes(Output.of(remainRenewTimes));
@@ -538,9 +548,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param renewPeriod Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewPeriod(@Nullable Output<Integer> renewPeriod) {
             $.renewPeriod = renewPeriod;
@@ -549,9 +559,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param renewPeriod Duration of each automatic renewal, in months. Valid values: 1–3, 6, and 12. Default is 1.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewPeriod(Integer renewPeriod) {
             return renewPeriod(Output.of(renewPeriod));
@@ -559,9 +569,9 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param renewType Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewType(@Nullable Output<String> renewType) {
             $.renewType = renewType;
@@ -570,23 +580,44 @@ public final class BandwidthPackageArgs extends com.pulumi.resources.ResourceArg
 
         /**
          * @param renewType Renewal type of the bandwidth package instance. Manual: Manual renewal. Auto: Automatic renewal. NoRenew: No renewal.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder renewType(String renewType) {
             return renewType(Output.of(renewType));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<BandwidthPackageTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<BandwidthPackageTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(BandwidthPackageTagArgs... tags) {
             return tags(List.of(tags));
         }

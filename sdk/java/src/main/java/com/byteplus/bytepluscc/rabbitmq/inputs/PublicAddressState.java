@@ -23,14 +23,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Main account ID that created the instance.
-     * 
+     *
      */
     @Import(name="accountId")
     private @Nullable Output<String> accountId;
 
     /**
      * @return Main account ID that created the instance.
-     * 
+     *
      */
     public Optional<Output<String>> accountId() {
         return Optional.ofNullable(this.accountId);
@@ -38,14 +38,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Whether public DNS resolution is enabled. true: enabled, false: disabled.
-     * 
+     *
      */
     @Import(name="applyPrivateDnsToPublic")
     private @Nullable Output<Boolean> applyPrivateDnsToPublic;
 
     /**
      * @return Whether public DNS resolution is enabled. true: enabled, false: disabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> applyPrivateDnsToPublic() {
         return Optional.ofNullable(this.applyPrivateDnsToPublic);
@@ -53,14 +53,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Instance type: cluster or standalone.
-     * 
+     *
      */
     @Import(name="archType")
     private @Nullable Output<String> archType;
 
     /**
      * @return Instance type: cluster or standalone.
-     * 
+     *
      */
     public Optional<Output<String>> archType() {
         return Optional.ofNullable(this.archType);
@@ -68,14 +68,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Instance billing method and related billing information.
-     * 
+     *
      */
     @Import(name="chargeDetail")
     private @Nullable Output<PublicAddressChargeDetailArgs> chargeDetail;
 
     /**
      * @return Instance billing method and related billing information.
-     * 
+     *
      */
     public Optional<Output<PublicAddressChargeDetailArgs>> chargeDetail() {
         return Optional.ofNullable(this.chargeDetail);
@@ -83,14 +83,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * RabbitMQ instance compute specification.
-     * 
+     *
      */
     @Import(name="computeSpec")
     private @Nullable Output<String> computeSpec;
 
     /**
      * @return RabbitMQ instance compute specification.
-     * 
+     *
      */
     public Optional<Output<String>> computeSpec() {
         return Optional.ofNullable(this.computeSpec);
@@ -98,14 +98,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Instance creation time.
-     * 
+     *
      */
     @Import(name="createdTime")
     private @Nullable Output<String> createdTime;
 
     /**
      * @return Instance creation time.
-     * 
+     *
      */
     public Optional<Output<String>> createdTime() {
         return Optional.ofNullable(this.createdTime);
@@ -113,36 +113,46 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * EIP ID.
-     * 
+     *
      */
     @Import(name="eipId")
     private @Nullable Output<String> eipId;
 
     /**
      * @return EIP ID.
-     * 
+     *
      */
     public Optional<Output<String>> eipId() {
         return Optional.ofNullable(this.eipId);
     }
 
+    /**
+     * Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="endpoints")
     private @Nullable Output<List<PublicAddressEndpointArgs>> endpoints;
 
+    /**
+     * @return Instance connection information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PublicAddressEndpointArgs>>> endpoints() {
         return Optional.ofNullable(this.endpoints);
     }
 
     /**
      * Brief description of the instance.
-     * 
+     *
      */
     @Import(name="instanceDescription")
     private @Nullable Output<String> instanceDescription;
 
     /**
      * @return Brief description of the instance.
-     * 
+     *
      */
     public Optional<Output<String>> instanceDescription() {
         return Optional.ofNullable(this.instanceDescription);
@@ -150,14 +160,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * RabbitMQ instance ID.
-     * 
+     *
      */
     @Import(name="instanceId")
     private @Nullable Output<String> instanceId;
 
     /**
      * @return RabbitMQ instance ID.
-     * 
+     *
      */
     public Optional<Output<String>> instanceId() {
         return Optional.ofNullable(this.instanceId);
@@ -165,14 +175,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * RabbitMQ instance name.
-     * 
+     *
      */
     @Import(name="instanceName")
     private @Nullable Output<String> instanceName;
 
     /**
      * @return RabbitMQ instance name.
-     * 
+     *
      */
     public Optional<Output<String>> instanceName() {
         return Optional.ofNullable(this.instanceName);
@@ -180,14 +190,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Instance status.
-     * 
+     *
      */
     @Import(name="instanceStatus")
     private @Nullable Output<String> instanceStatus;
 
     /**
      * @return Instance status.
-     * 
+     *
      */
     public Optional<Output<String>> instanceStatus() {
         return Optional.ofNullable(this.instanceStatus);
@@ -195,14 +205,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Whether cloud disk encryption is enabled.
-     * 
+     *
      */
     @Import(name="isEncrypted")
     private @Nullable Output<Boolean> isEncrypted;
 
     /**
      * @return Whether cloud disk encryption is enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> isEncrypted() {
         return Optional.ofNullable(this.isEncrypted);
@@ -210,14 +220,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * IAM project the instance belongs to.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return IAM project the instance belongs to.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -225,14 +235,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Total storage space of the instance, in GiB.
-     * 
+     *
      */
     @Import(name="storageSpace")
     private @Nullable Output<Integer> storageSpace;
 
     /**
      * @return Total storage space of the instance, in GiB.
-     * 
+     *
      */
     public Optional<Output<Integer>> storageSpace() {
         return Optional.ofNullable(this.storageSpace);
@@ -240,36 +250,46 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * VPC subnet ID.
-     * 
+     *
      */
     @Import(name="subnetId")
     private @Nullable Output<String> subnetId;
 
     /**
      * @return VPC subnet ID.
-     * 
+     *
      */
     public Optional<Output<String>> subnetId() {
         return Optional.ofNullable(this.subnetId);
     }
 
+    /**
+     * Tags bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<PublicAddressTagArgs>> tags;
 
+    /**
+     * @return Tags bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<PublicAddressTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Used storage space of the instance, in GiB.
-     * 
+     *
      */
     @Import(name="usedStorageSpace")
     private @Nullable Output<Integer> usedStorageSpace;
 
     /**
      * @return Used storage space of the instance, in GiB.
-     * 
+     *
      */
     public Optional<Output<Integer>> usedStorageSpace() {
         return Optional.ofNullable(this.usedStorageSpace);
@@ -277,14 +297,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * RabbitMQ WebUI administrator account name.
-     * 
+     *
      */
     @Import(name="userName")
     private @Nullable Output<String> userName;
 
     /**
      * @return RabbitMQ WebUI administrator account name.
-     * 
+     *
      */
     public Optional<Output<String>> userName() {
         return Optional.ofNullable(this.userName);
@@ -292,14 +312,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
-     * 
+     *
      */
     @Import(name="version")
     private @Nullable Output<String> version;
 
     /**
      * @return Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
-     * 
+     *
      */
     public Optional<Output<String>> version() {
         return Optional.ofNullable(this.version);
@@ -307,14 +327,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Private network (VPC) ID.
-     * 
+     *
      */
     @Import(name="vpcId")
     private @Nullable Output<String> vpcId;
 
     /**
      * @return Private network (VPC) ID.
-     * 
+     *
      */
     public Optional<Output<String>> vpcId() {
         return Optional.ofNullable(this.vpcId);
@@ -322,14 +342,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Description of the availability zone.
-     * 
+     *
      */
     @Import(name="zoneDescription")
     private @Nullable Output<String> zoneDescription;
 
     /**
      * @return Description of the availability zone.
-     * 
+     *
      */
     public Optional<Output<String>> zoneDescription() {
         return Optional.ofNullable(this.zoneDescription);
@@ -337,14 +357,14 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
-     * 
+     *
      */
     @Import(name="zoneId")
     private @Nullable Output<String> zoneId;
 
     /**
      * @return Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
-     * 
+     *
      */
     public Optional<Output<String>> zoneId() {
         return Optional.ofNullable(this.zoneId);
@@ -398,9 +418,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param accountId Main account ID that created the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(@Nullable Output<String> accountId) {
             $.accountId = accountId;
@@ -409,9 +429,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param accountId Main account ID that created the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accountId(String accountId) {
             return accountId(Output.of(accountId));
@@ -419,9 +439,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param applyPrivateDnsToPublic Whether public DNS resolution is enabled. true: enabled, false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder applyPrivateDnsToPublic(@Nullable Output<Boolean> applyPrivateDnsToPublic) {
             $.applyPrivateDnsToPublic = applyPrivateDnsToPublic;
@@ -430,9 +450,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param applyPrivateDnsToPublic Whether public DNS resolution is enabled. true: enabled, false: disabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder applyPrivateDnsToPublic(Boolean applyPrivateDnsToPublic) {
             return applyPrivateDnsToPublic(Output.of(applyPrivateDnsToPublic));
@@ -440,9 +460,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param archType Instance type: cluster or standalone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder archType(@Nullable Output<String> archType) {
             $.archType = archType;
@@ -451,9 +471,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param archType Instance type: cluster or standalone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder archType(String archType) {
             return archType(Output.of(archType));
@@ -461,9 +481,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param chargeDetail Instance billing method and related billing information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeDetail(@Nullable Output<PublicAddressChargeDetailArgs> chargeDetail) {
             $.chargeDetail = chargeDetail;
@@ -472,9 +492,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param chargeDetail Instance billing method and related billing information.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder chargeDetail(PublicAddressChargeDetailArgs chargeDetail) {
             return chargeDetail(Output.of(chargeDetail));
@@ -482,9 +502,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param computeSpec RabbitMQ instance compute specification.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder computeSpec(@Nullable Output<String> computeSpec) {
             $.computeSpec = computeSpec;
@@ -493,9 +513,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param computeSpec RabbitMQ instance compute specification.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder computeSpec(String computeSpec) {
             return computeSpec(Output.of(computeSpec));
@@ -503,9 +523,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdTime Instance creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(@Nullable Output<String> createdTime) {
             $.createdTime = createdTime;
@@ -514,9 +534,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param createdTime Instance creation time.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder createdTime(String createdTime) {
             return createdTime(Output.of(createdTime));
@@ -524,9 +544,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param eipId EIP ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(@Nullable Output<String> eipId) {
             $.eipId = eipId;
@@ -535,32 +555,53 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param eipId EIP ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder eipId(String eipId) {
             return eipId(Output.of(eipId));
         }
 
+        /**
+         * @param endpoints Instance connection information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(@Nullable Output<List<PublicAddressEndpointArgs>> endpoints) {
             $.endpoints = endpoints;
             return this;
         }
 
+        /**
+         * @param endpoints Instance connection information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(List<PublicAddressEndpointArgs> endpoints) {
             return endpoints(Output.of(endpoints));
         }
 
+        /**
+         * @param endpoints Instance connection information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder endpoints(PublicAddressEndpointArgs... endpoints) {
             return endpoints(List.of(endpoints));
         }
 
         /**
          * @param instanceDescription Brief description of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceDescription(@Nullable Output<String> instanceDescription) {
             $.instanceDescription = instanceDescription;
@@ -569,9 +610,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceDescription Brief description of the instance.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceDescription(String instanceDescription) {
             return instanceDescription(Output.of(instanceDescription));
@@ -579,9 +620,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceId RabbitMQ instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(@Nullable Output<String> instanceId) {
             $.instanceId = instanceId;
@@ -590,9 +631,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceId RabbitMQ instance ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceId(String instanceId) {
             return instanceId(Output.of(instanceId));
@@ -600,9 +641,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceName RabbitMQ instance name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(@Nullable Output<String> instanceName) {
             $.instanceName = instanceName;
@@ -611,9 +652,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceName RabbitMQ instance name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceName(String instanceName) {
             return instanceName(Output.of(instanceName));
@@ -621,9 +662,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceStatus Instance status.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceStatus(@Nullable Output<String> instanceStatus) {
             $.instanceStatus = instanceStatus;
@@ -632,9 +673,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param instanceStatus Instance status.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder instanceStatus(String instanceStatus) {
             return instanceStatus(Output.of(instanceStatus));
@@ -642,9 +683,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param isEncrypted Whether cloud disk encryption is enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isEncrypted(@Nullable Output<Boolean> isEncrypted) {
             $.isEncrypted = isEncrypted;
@@ -653,9 +694,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param isEncrypted Whether cloud disk encryption is enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder isEncrypted(Boolean isEncrypted) {
             return isEncrypted(Output.of(isEncrypted));
@@ -663,9 +704,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectName IAM project the instance belongs to.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -674,9 +715,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param projectName IAM project the instance belongs to.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -684,9 +725,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param storageSpace Total storage space of the instance, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageSpace(@Nullable Output<Integer> storageSpace) {
             $.storageSpace = storageSpace;
@@ -695,9 +736,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param storageSpace Total storage space of the instance, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder storageSpace(Integer storageSpace) {
             return storageSpace(Output.of(storageSpace));
@@ -705,9 +746,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param subnetId VPC subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(@Nullable Output<String> subnetId) {
             $.subnetId = subnetId;
@@ -716,32 +757,53 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param subnetId VPC subnet ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder subnetId(String subnetId) {
             return subnetId(Output.of(subnetId));
         }
 
+        /**
+         * @param tags Tags bound to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<PublicAddressTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tags bound to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<PublicAddressTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tags bound to the instance.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(PublicAddressTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param usedStorageSpace Used storage space of the instance, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usedStorageSpace(@Nullable Output<Integer> usedStorageSpace) {
             $.usedStorageSpace = usedStorageSpace;
@@ -750,9 +812,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param usedStorageSpace Used storage space of the instance, in GiB.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder usedStorageSpace(Integer usedStorageSpace) {
             return usedStorageSpace(Output.of(usedStorageSpace));
@@ -760,9 +822,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param userName RabbitMQ WebUI administrator account name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userName(@Nullable Output<String> userName) {
             $.userName = userName;
@@ -771,9 +833,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param userName RabbitMQ WebUI administrator account name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder userName(String userName) {
             return userName(Output.of(userName));
@@ -781,9 +843,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param version Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder version(@Nullable Output<String> version) {
             $.version = version;
@@ -792,9 +854,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param version Supported RabbitMQ versions. Currently supported versions include: 3.8.18: RabbitMQ version 3.8.18.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder version(String version) {
             return version(Output.of(version));
@@ -802,9 +864,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param vpcId Private network (VPC) ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(@Nullable Output<String> vpcId) {
             $.vpcId = vpcId;
@@ -813,9 +875,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param vpcId Private network (VPC) ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpcId(String vpcId) {
             return vpcId(Output.of(vpcId));
@@ -823,9 +885,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param zoneDescription Description of the availability zone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneDescription(@Nullable Output<String> zoneDescription) {
             $.zoneDescription = zoneDescription;
@@ -834,9 +896,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param zoneDescription Description of the availability zone.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneDescription(String zoneDescription) {
             return zoneDescription(Output.of(zoneDescription));
@@ -844,9 +906,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param zoneId Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(@Nullable Output<String> zoneId) {
             $.zoneId = zoneId;
@@ -855,9 +917,9 @@ public final class PublicAddressState extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param zoneId Availability zone ID where the instance is located. For high availability instances across AZs, multiple availability zone IDs are returned.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder zoneId(String zoneId) {
             return zoneId(Output.of(zoneId));

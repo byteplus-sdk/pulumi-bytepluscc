@@ -18,149 +18,202 @@ import javax.annotation.Nullable;
 
 /**
  * vedbm access allowlist.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vedbm.AllowList;
+ * import com.byteplus.bytepluscc.vedbm.AllowListArgs;
+ * import com.pulumi.bytepluscc.vedbm.inputs.AllowListAssociatedInstanceArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var vEDBMAllowListDemo = new AllowList("vEDBMAllowListDemo", AllowListArgs.builder()
+ *             .allowListType("IPv4")
+ *             .allowList("192.168.0.0/27,192.168.1.0/26")
+ *             .allowListName("test")
+ *             .allowListDesc("test")
+ *             .projectName("default")
+ *             .associatedInstances(
+ *                 AllowListAssociatedInstanceArgs.builder()
+ *                     .instance_id("vedbm-7chs5mtj2***")
+ *                     .build(),
+ *                 AllowListAssociatedInstanceArgs.builder()
+ *                     .instance_id("vedbm-a5nwhmtj***")
+ *                     .build())
+ *             .modifyMode("Cover")
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vedbm/allowList:AllowList example &#34;allow_list_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vedbm/allowList:AllowList")
 public class AllowList extends com.pulumi.resources.CustomResource {
     /**
      * IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
-     * 
+     *
      */
     @Export(name="allowList", refs={String.class}, tree="[0]")
     private Output<String> allowList;
 
     /**
      * @return IP allowlist. Separate multiple IP addresses with commas (,). Duplicate entries are not allowed.
-     * 
+     *
      */
     public Output<String> allowList() {
         return this.allowList;
     }
     /**
      * Allowlist description.
-     * 
+     *
      */
     @Export(name="allowListDesc", refs={String.class}, tree="[0]")
     private Output<String> allowListDesc;
 
     /**
      * @return Allowlist description.
-     * 
+     *
      */
     public Output<String> allowListDesc() {
         return this.allowListDesc;
     }
     /**
      * Allowlist ID.
-     * 
+     *
      */
     @Export(name="allowListId", refs={String.class}, tree="[0]")
     private Output<String> allowListId;
 
     /**
      * @return Allowlist ID.
-     * 
+     *
      */
     public Output<String> allowListId() {
         return this.allowListId;
     }
     /**
      * Total number of IP addresses (or address ranges) in the allowlist.
-     * 
+     *
      */
     @Export(name="allowListIpNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> allowListIpNum;
 
     /**
      * @return Total number of IP addresses (or address ranges) in the allowlist.
-     * 
+     *
      */
     public Output<Integer> allowListIpNum() {
         return this.allowListIpNum;
     }
     /**
      * Allowlist name.
-     * 
+     *
      */
     @Export(name="allowListName", refs={String.class}, tree="[0]")
     private Output<String> allowListName;
 
     /**
      * @return Allowlist name.
-     * 
+     *
      */
     public Output<String> allowListName() {
         return this.allowListName;
     }
     /**
      * IP address type in the allowlist. Only IPv4 is currently supported.
-     * 
+     *
      */
     @Export(name="allowListType", refs={String.class}, tree="[0]")
     private Output<String> allowListType;
 
     /**
      * @return IP address type in the allowlist. Only IPv4 is currently supported.
-     * 
+     *
      */
     public Output<String> allowListType() {
         return this.allowListType;
     }
     /**
      * Total number of instances bound to the allowlist.
-     * 
+     *
      */
     @Export(name="associatedInstanceNum", refs={Integer.class}, tree="[0]")
     private Output<Integer> associatedInstanceNum;
 
     /**
      * @return Total number of instances bound to the allowlist.
-     * 
+     *
      */
     public Output<Integer> associatedInstanceNum() {
         return this.associatedInstanceNum;
     }
+    /**
+     * List of bound instances.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="associatedInstances", refs={List.class,AllowListAssociatedInstance.class}, tree="[0,1]")
     private Output<List<AllowListAssociatedInstance>> associatedInstances;
 
+    /**
+     * @return List of bound instances.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<AllowListAssociatedInstance>> associatedInstances() {
         return this.associatedInstances;
     }
     /**
      * How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
-     * 
+     *
      */
     @Export(name="modifyMode", refs={String.class}, tree="[0]")
     private Output<String> modifyMode;
 
     /**
      * @return How to modify the allowlist. Supported settings: Cover (default): Overwrite the original allowlist with the values in the AllowList parameter. Append: Add IP addresses entered in the AllowList parameter to the original allowlist. Delete: Remove IP addresses entered in the AllowList parameter from the original allowlist. At least one IP address must remain.
-     * 
+     *
      */
     public Output<String> modifyMode() {
         return this.modifyMode;
     }
     /**
      * Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name associated with the allowlist. If left blank, the new allowlist will be added to the default project.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;

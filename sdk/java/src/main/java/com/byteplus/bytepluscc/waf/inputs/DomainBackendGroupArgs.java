@@ -20,36 +20,46 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
 
     /**
      * Access port number.
-     * 
+     *
      */
     @Import(name="accessPorts")
     private @Nullable Output<List<Integer>> accessPorts;
 
     /**
      * @return Access port number.
-     * 
+     *
      */
     public Optional<Output<List<Integer>>> accessPorts() {
         return Optional.ofNullable(this.accessPorts);
     }
 
+    /**
+     * Origin group details.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="backends")
     private @Nullable Output<List<DomainBackendGroupBackendArgs>> backends;
 
+    /**
+     * @return Origin group details.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DomainBackendGroupBackendArgs>>> backends() {
         return Optional.ofNullable(this.backends);
     }
 
     /**
      * Origin group name.
-     * 
+     *
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Origin group name.
-     * 
+     *
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -83,9 +93,9 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param accessPorts Access port number.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accessPorts(@Nullable Output<List<Integer>> accessPorts) {
             $.accessPorts = accessPorts;
@@ -94,9 +104,9 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param accessPorts Access port number.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accessPorts(List<Integer> accessPorts) {
             return accessPorts(Output.of(accessPorts));
@@ -104,32 +114,53 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param accessPorts Access port number.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder accessPorts(Integer... accessPorts) {
             return accessPorts(List.of(accessPorts));
         }
 
+        /**
+         * @param backends Origin group details.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backends(@Nullable Output<List<DomainBackendGroupBackendArgs>> backends) {
             $.backends = backends;
             return this;
         }
 
+        /**
+         * @param backends Origin group details.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backends(List<DomainBackendGroupBackendArgs> backends) {
             return backends(Output.of(backends));
         }
 
+        /**
+         * @param backends Origin group details.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder backends(DomainBackendGroupBackendArgs... backends) {
             return backends(List.of(backends));
         }
 
         /**
          * @param name Origin group name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -138,9 +169,9 @@ public final class DomainBackendGroupArgs extends com.pulumi.resources.ResourceA
 
         /**
          * @param name Origin group name.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder name(String name) {
             return name(Output.of(name));

@@ -25,14 +25,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Type of gateway associated with the IPsec connection. VpnGateway: VPN gateway; TransitRouter: transit router.
-     * 
+     *
      */
     @Import(name="attachType")
     private @Nullable Output<String> attachType;
 
     /**
      * @return Type of gateway associated with the IPsec connection. VpnGateway: VPN gateway; TransitRouter: transit router.
-     * 
+     *
      */
     public Optional<Output<String>> attachType() {
         return Optional.ofNullable(this.attachType);
@@ -40,14 +40,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * BGP information for the IPsec connection.
-     * 
+     *
      */
     @Import(name="bgpInfo")
     private @Nullable Output<VpnConnectionBgpInfoArgs> bgpInfo;
 
     /**
      * @return BGP information for the IPsec connection.
-     * 
+     *
      */
     public Optional<Output<VpnConnectionBgpInfoArgs>> bgpInfo() {
         return Optional.ofNullable(this.bgpInfo);
@@ -55,14 +55,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * ID of the customer gateway associated with the IPsec connection. This parameter is required when creating a single-tunnel IPsec connection. If the customer gateway IP address is 0.0.0.0, NegotiateInstantly can only be set to false, IkeConfig.Version can only be set to ikev1, and IkeConfig.Mode can only be set to aggressive in IkeConfig.
-     * 
+     *
      */
     @Import(name="customerGatewayId")
     private @Nullable Output<String> customerGatewayId;
 
     /**
      * @return ID of the customer gateway associated with the IPsec connection. This parameter is required when creating a single-tunnel IPsec connection. If the customer gateway IP address is 0.0.0.0, NegotiateInstantly can only be set to false, IkeConfig.Version can only be set to ikev1, and IkeConfig.Mode can only be set to aggressive in IkeConfig.
-     * 
+     *
      */
     public Optional<Output<String>> customerGatewayId() {
         return Optional.ofNullable(this.customerGatewayId);
@@ -70,14 +70,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Description of the IPsec connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the IPsec connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
@@ -85,14 +85,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Status of the DPD feature. none: DPD feature disabled. clear (default): DPD feature enabled; IKE SA is cleared after DPD timeout. hold: DPD feature enabled; current state is maintained after DPD timeout; the connection is re-established when new traffic is detected. restart: DPD feature enabled; reconnect immediately after DPD timeout.
-     * 
+     *
      */
     @Import(name="dpdAction")
     private @Nullable Output<String> dpdAction;
 
     /**
      * @return Status of the DPD feature. none: DPD feature disabled. clear (default): DPD feature enabled; IKE SA is cleared after DPD timeout. hold: DPD feature enabled; current state is maintained after DPD timeout; the connection is re-established when new traffic is detected. restart: DPD feature enabled; reconnect immediately after DPD timeout.
-     * 
+     *
      */
     public Optional<Output<String>> dpdAction() {
         return Optional.ofNullable(this.dpdAction);
@@ -100,36 +100,46 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to enable BGP. Valid values: false (default): No, use static routing mode. true: Yes, use BGP routing mode.
-     * 
+     *
      */
     @Import(name="enableTunnelsBgp")
     private @Nullable Output<Boolean> enableTunnelsBgp;
 
     /**
      * @return Whether to enable BGP. Valid values: false (default): No, use static routing mode. true: Yes, use BGP routing mode.
-     * 
+     *
      */
     public Optional<Output<Boolean>> enableTunnelsBgp() {
         return Optional.ofNullable(this.enableTunnelsBgp);
     }
 
+    /**
+     * Health check information for the IPsec connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="healthCheckers")
     private @Nullable Output<List<VpnConnectionHealthCheckerArgs>> healthCheckers;
 
+    /**
+     * @return Health check information for the IPsec connection
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpnConnectionHealthCheckerArgs>>> healthCheckers() {
         return Optional.ofNullable(this.healthCheckers);
     }
 
     /**
      * IKE configuration information for the IPsec connection
-     * 
+     *
      */
     @Import(name="ikeConfig")
     private @Nullable Output<VpnConnectionIkeConfigArgs> ikeConfig;
 
     /**
      * @return IKE configuration information for the IPsec connection
-     * 
+     *
      */
     public Optional<Output<VpnConnectionIkeConfigArgs>> ikeConfig() {
         return Optional.ofNullable(this.ikeConfig);
@@ -137,14 +147,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPsec configuration information for the IPsec connection.
-     * 
+     *
      */
     @Import(name="ipsecConfig")
     private @Nullable Output<VpnConnectionIpsecConfigArgs> ipsecConfig;
 
     /**
      * @return IPsec configuration information for the IPsec connection.
-     * 
+     *
      */
     public Optional<Output<VpnConnectionIpsecConfigArgs>> ipsecConfig() {
         return Optional.ofNullable(this.ipsecConfig);
@@ -152,14 +162,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Local network segment of the IPsec connection.
-     * 
+     *
      */
     @Import(name="localSubnets", required=true)
     private Output<List<String>> localSubnets;
 
     /**
      * @return Local network segment of the IPsec connection.
-     * 
+     *
      */
     public Output<List<String>> localSubnets() {
         return this.localSubnets;
@@ -167,14 +177,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable connection logs. After connection logs are enabled, you can view and download IPsec connection logs and troubleshoot IPsec connection issues using the log information. true: Enabled. false: Not enabled.
-     * 
+     *
      */
     @Import(name="logEnabled")
     private @Nullable Output<Boolean> logEnabled;
 
     /**
      * @return Enable connection logs. After connection logs are enabled, you can view and download IPsec connection logs and troubleshoot IPsec connection issues using the log information. true: Enabled. false: Not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> logEnabled() {
         return Optional.ofNullable(this.logEnabled);
@@ -182,14 +192,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Enable NAT traversal. true: Enabled. When NAT traversal is enabled, IKE negotiation does not verify UDP port numbers and can detect NAT gateway devices in the VPN connection tunnel. false (default): Not enabled.
-     * 
+     *
      */
     @Import(name="natTraversal")
     private @Nullable Output<Boolean> natTraversal;
 
     /**
      * @return Enable NAT traversal. true: Enabled. When NAT traversal is enabled, IKE negotiation does not verify UDP port numbers and can detect NAT gateway devices in the VPN connection tunnel. false (default): Not enabled.
-     * 
+     *
      */
     public Optional<Output<Boolean>> natTraversal() {
         return Optional.ofNullable(this.natTraversal);
@@ -197,14 +207,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Whether to initiate negotiation mode immediately. true: The system actively initiates negotiation after the IPsec connection is configured. false (default): The system does not actively initiate negotiation after configuration; negotiation is initiated passively when traffic passes through.
-     * 
+     *
      */
     @Import(name="negotiateInstantly")
     private @Nullable Output<Boolean> negotiateInstantly;
 
     /**
      * @return Whether to initiate negotiation mode immediately. true: The system actively initiates negotiation after the IPsec connection is configured. false (default): The system does not actively initiate negotiation after configuration; negotiation is initiated passively when traffic passes through.
-     * 
+     *
      */
     public Optional<Output<Boolean>> negotiateInstantly() {
         return Optional.ofNullable(this.negotiateInstantly);
@@ -212,14 +222,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project to which the IPsec connection belongs.
-     * 
+     *
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project to which the IPsec connection belongs.
-     * 
+     *
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -227,14 +237,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Peer CIDR block of the IPsec connection
-     * 
+     *
      */
     @Import(name="remoteSubnets", required=true)
     private Output<List<String>> remoteSubnets;
 
     /**
      * @return Peer CIDR block of the IPsec connection
-     * 
+     *
      */
     public Output<List<String>> remoteSubnets() {
         return this.remoteSubnets;
@@ -242,36 +252,46 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * IPsec connection instance specification. Only effective for IPsec associated with TR instances; ineffective for IPsec associated with VPN gateway instances. This parameter takes effect only when AttachType is set to TransitRouter. default (default): Default specification, bandwidth limit is 200 Mbps. large: Large specification, bandwidth limit is 1 Gbps. xlarge: Extra large specification, bandwidth limit is 3 Gbps.
-     * 
+     *
      */
     @Import(name="spec")
     private @Nullable Output<String> spec;
 
     /**
      * @return IPsec connection instance specification. Only effective for IPsec associated with TR instances; ineffective for IPsec associated with VPN gateway instances. This parameter takes effect only when AttachType is set to TransitRouter. default (default): Default specification, bandwidth limit is 200 Mbps. large: Large specification, bandwidth limit is 1 Gbps. xlarge: Extra large specification, bandwidth limit is 3 Gbps.
-     * 
+     *
      */
     public Optional<Output<String>> spec() {
         return Optional.ofNullable(this.spec);
     }
 
+    /**
+     * Tunnel configuration information for the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tunnelOptions")
     private @Nullable Output<List<VpnConnectionTunnelOptionArgs>> tunnelOptions;
 
+    /**
+     * @return Tunnel configuration information for the IPsec connection.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<VpnConnectionTunnelOptionArgs>>> tunnelOptions() {
         return Optional.ofNullable(this.tunnelOptions);
     }
 
     /**
      * Name of the IPsec connection. Must start with a Chinese character, English letter, or number, and can only contain Chinese characters, English letters, numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the IPsec connection ID.
-     * 
+     *
      */
     @Import(name="vpnConnectionName")
     private @Nullable Output<String> vpnConnectionName;
 
     /**
      * @return Name of the IPsec connection. Must start with a Chinese character, English letter, or number, and can only contain Chinese characters, English letters, numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the IPsec connection ID.
-     * 
+     *
      */
     public Optional<Output<String>> vpnConnectionName() {
         return Optional.ofNullable(this.vpnConnectionName);
@@ -279,14 +299,14 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
     /**
      * The ID of the VPN gateway associated with the IPsec connection. If AttachType is not specified or set to VpnGateway, this parameter must be provided. If AttachType is set to TransitRouter, this parameter is not required.
-     * 
+     *
      */
     @Import(name="vpnGatewayId")
     private @Nullable Output<String> vpnGatewayId;
 
     /**
      * @return The ID of the VPN gateway associated with the IPsec connection. If AttachType is not specified or set to VpnGateway, this parameter must be provided. If AttachType is set to TransitRouter, this parameter is not required.
-     * 
+     *
      */
     public Optional<Output<String>> vpnGatewayId() {
         return Optional.ofNullable(this.vpnGatewayId);
@@ -336,9 +356,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param attachType Type of gateway associated with the IPsec connection. VpnGateway: VPN gateway; TransitRouter: transit router.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder attachType(@Nullable Output<String> attachType) {
             $.attachType = attachType;
@@ -347,9 +367,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param attachType Type of gateway associated with the IPsec connection. VpnGateway: VPN gateway; TransitRouter: transit router.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder attachType(String attachType) {
             return attachType(Output.of(attachType));
@@ -357,9 +377,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bgpInfo BGP information for the IPsec connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bgpInfo(@Nullable Output<VpnConnectionBgpInfoArgs> bgpInfo) {
             $.bgpInfo = bgpInfo;
@@ -368,9 +388,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param bgpInfo BGP information for the IPsec connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder bgpInfo(VpnConnectionBgpInfoArgs bgpInfo) {
             return bgpInfo(Output.of(bgpInfo));
@@ -378,9 +398,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerGatewayId ID of the customer gateway associated with the IPsec connection. This parameter is required when creating a single-tunnel IPsec connection. If the customer gateway IP address is 0.0.0.0, NegotiateInstantly can only be set to false, IkeConfig.Version can only be set to ikev1, and IkeConfig.Mode can only be set to aggressive in IkeConfig.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerGatewayId(@Nullable Output<String> customerGatewayId) {
             $.customerGatewayId = customerGatewayId;
@@ -389,9 +409,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customerGatewayId ID of the customer gateway associated with the IPsec connection. This parameter is required when creating a single-tunnel IPsec connection. If the customer gateway IP address is 0.0.0.0, NegotiateInstantly can only be set to false, IkeConfig.Version can only be set to ikev1, and IkeConfig.Mode can only be set to aggressive in IkeConfig.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder customerGatewayId(String customerGatewayId) {
             return customerGatewayId(Output.of(customerGatewayId));
@@ -399,9 +419,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the IPsec connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -410,9 +430,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param description Description of the IPsec connection. Must start with a Chinese character, letter, or number, and can only contain Chinese characters, letters, numbers, period (.), space ( ), underscore (_), hyphen (-), equals sign (=), English comma (,), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If not specified, defaults to an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
@@ -420,9 +440,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dpdAction Status of the DPD feature. none: DPD feature disabled. clear (default): DPD feature enabled; IKE SA is cleared after DPD timeout. hold: DPD feature enabled; current state is maintained after DPD timeout; the connection is re-established when new traffic is detected. restart: DPD feature enabled; reconnect immediately after DPD timeout.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dpdAction(@Nullable Output<String> dpdAction) {
             $.dpdAction = dpdAction;
@@ -431,9 +451,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param dpdAction Status of the DPD feature. none: DPD feature disabled. clear (default): DPD feature enabled; IKE SA is cleared after DPD timeout. hold: DPD feature enabled; current state is maintained after DPD timeout; the connection is re-established when new traffic is detected. restart: DPD feature enabled; reconnect immediately after DPD timeout.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder dpdAction(String dpdAction) {
             return dpdAction(Output.of(dpdAction));
@@ -441,9 +461,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableTunnelsBgp Whether to enable BGP. Valid values: false (default): No, use static routing mode. true: Yes, use BGP routing mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableTunnelsBgp(@Nullable Output<Boolean> enableTunnelsBgp) {
             $.enableTunnelsBgp = enableTunnelsBgp;
@@ -452,32 +472,53 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enableTunnelsBgp Whether to enable BGP. Valid values: false (default): No, use static routing mode. true: Yes, use BGP routing mode.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder enableTunnelsBgp(Boolean enableTunnelsBgp) {
             return enableTunnelsBgp(Output.of(enableTunnelsBgp));
         }
 
+        /**
+         * @param healthCheckers Health check information for the IPsec connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder healthCheckers(@Nullable Output<List<VpnConnectionHealthCheckerArgs>> healthCheckers) {
             $.healthCheckers = healthCheckers;
             return this;
         }
 
+        /**
+         * @param healthCheckers Health check information for the IPsec connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder healthCheckers(List<VpnConnectionHealthCheckerArgs> healthCheckers) {
             return healthCheckers(Output.of(healthCheckers));
         }
 
+        /**
+         * @param healthCheckers Health check information for the IPsec connection
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder healthCheckers(VpnConnectionHealthCheckerArgs... healthCheckers) {
             return healthCheckers(List.of(healthCheckers));
         }
 
         /**
          * @param ikeConfig IKE configuration information for the IPsec connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ikeConfig(@Nullable Output<VpnConnectionIkeConfigArgs> ikeConfig) {
             $.ikeConfig = ikeConfig;
@@ -486,9 +527,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ikeConfig IKE configuration information for the IPsec connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ikeConfig(VpnConnectionIkeConfigArgs ikeConfig) {
             return ikeConfig(Output.of(ikeConfig));
@@ -496,9 +537,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipsecConfig IPsec configuration information for the IPsec connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipsecConfig(@Nullable Output<VpnConnectionIpsecConfigArgs> ipsecConfig) {
             $.ipsecConfig = ipsecConfig;
@@ -507,9 +548,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ipsecConfig IPsec configuration information for the IPsec connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder ipsecConfig(VpnConnectionIpsecConfigArgs ipsecConfig) {
             return ipsecConfig(Output.of(ipsecConfig));
@@ -517,9 +558,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param localSubnets Local network segment of the IPsec connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localSubnets(Output<List<String>> localSubnets) {
             $.localSubnets = localSubnets;
@@ -528,9 +569,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param localSubnets Local network segment of the IPsec connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localSubnets(List<String> localSubnets) {
             return localSubnets(Output.of(localSubnets));
@@ -538,9 +579,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param localSubnets Local network segment of the IPsec connection.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder localSubnets(String... localSubnets) {
             return localSubnets(List.of(localSubnets));
@@ -548,9 +589,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logEnabled Enable connection logs. After connection logs are enabled, you can view and download IPsec connection logs and troubleshoot IPsec connection issues using the log information. true: Enabled. false: Not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logEnabled(@Nullable Output<Boolean> logEnabled) {
             $.logEnabled = logEnabled;
@@ -559,9 +600,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param logEnabled Enable connection logs. After connection logs are enabled, you can view and download IPsec connection logs and troubleshoot IPsec connection issues using the log information. true: Enabled. false: Not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder logEnabled(Boolean logEnabled) {
             return logEnabled(Output.of(logEnabled));
@@ -569,9 +610,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natTraversal Enable NAT traversal. true: Enabled. When NAT traversal is enabled, IKE negotiation does not verify UDP port numbers and can detect NAT gateway devices in the VPN connection tunnel. false (default): Not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder natTraversal(@Nullable Output<Boolean> natTraversal) {
             $.natTraversal = natTraversal;
@@ -580,9 +621,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param natTraversal Enable NAT traversal. true: Enabled. When NAT traversal is enabled, IKE negotiation does not verify UDP port numbers and can detect NAT gateway devices in the VPN connection tunnel. false (default): Not enabled.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder natTraversal(Boolean natTraversal) {
             return natTraversal(Output.of(natTraversal));
@@ -590,9 +631,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param negotiateInstantly Whether to initiate negotiation mode immediately. true: The system actively initiates negotiation after the IPsec connection is configured. false (default): The system does not actively initiate negotiation after configuration; negotiation is initiated passively when traffic passes through.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder negotiateInstantly(@Nullable Output<Boolean> negotiateInstantly) {
             $.negotiateInstantly = negotiateInstantly;
@@ -601,9 +642,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param negotiateInstantly Whether to initiate negotiation mode immediately. true: The system actively initiates negotiation after the IPsec connection is configured. false (default): The system does not actively initiate negotiation after configuration; negotiation is initiated passively when traffic passes through.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder negotiateInstantly(Boolean negotiateInstantly) {
             return negotiateInstantly(Output.of(negotiateInstantly));
@@ -611,9 +652,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the IPsec connection belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -622,9 +663,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project to which the IPsec connection belongs.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -632,9 +673,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remoteSubnets Peer CIDR block of the IPsec connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remoteSubnets(Output<List<String>> remoteSubnets) {
             $.remoteSubnets = remoteSubnets;
@@ -643,9 +684,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remoteSubnets Peer CIDR block of the IPsec connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remoteSubnets(List<String> remoteSubnets) {
             return remoteSubnets(Output.of(remoteSubnets));
@@ -653,9 +694,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param remoteSubnets Peer CIDR block of the IPsec connection
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder remoteSubnets(String... remoteSubnets) {
             return remoteSubnets(List.of(remoteSubnets));
@@ -663,9 +704,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param spec IPsec connection instance specification. Only effective for IPsec associated with TR instances; ineffective for IPsec associated with VPN gateway instances. This parameter takes effect only when AttachType is set to TransitRouter. default (default): Default specification, bandwidth limit is 200 Mbps. large: Large specification, bandwidth limit is 1 Gbps. xlarge: Extra large specification, bandwidth limit is 3 Gbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spec(@Nullable Output<String> spec) {
             $.spec = spec;
@@ -674,32 +715,53 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param spec IPsec connection instance specification. Only effective for IPsec associated with TR instances; ineffective for IPsec associated with VPN gateway instances. This parameter takes effect only when AttachType is set to TransitRouter. default (default): Default specification, bandwidth limit is 200 Mbps. large: Large specification, bandwidth limit is 1 Gbps. xlarge: Extra large specification, bandwidth limit is 3 Gbps.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder spec(String spec) {
             return spec(Output.of(spec));
         }
 
+        /**
+         * @param tunnelOptions Tunnel configuration information for the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tunnelOptions(@Nullable Output<List<VpnConnectionTunnelOptionArgs>> tunnelOptions) {
             $.tunnelOptions = tunnelOptions;
             return this;
         }
 
+        /**
+         * @param tunnelOptions Tunnel configuration information for the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tunnelOptions(List<VpnConnectionTunnelOptionArgs> tunnelOptions) {
             return tunnelOptions(Output.of(tunnelOptions));
         }
 
+        /**
+         * @param tunnelOptions Tunnel configuration information for the IPsec connection.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tunnelOptions(VpnConnectionTunnelOptionArgs... tunnelOptions) {
             return tunnelOptions(List.of(tunnelOptions));
         }
 
         /**
          * @param vpnConnectionName Name of the IPsec connection. Must start with a Chinese character, English letter, or number, and can only contain Chinese characters, English letters, numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the IPsec connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpnConnectionName(@Nullable Output<String> vpnConnectionName) {
             $.vpnConnectionName = vpnConnectionName;
@@ -708,9 +770,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpnConnectionName Name of the IPsec connection. Must start with a Chinese character, English letter, or number, and can only contain Chinese characters, English letters, numbers, dot (.), underscore (_), and hyphen (-). Length must be between 1 and 128 characters. If not specified, defaults to the IPsec connection ID.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpnConnectionName(String vpnConnectionName) {
             return vpnConnectionName(Output.of(vpnConnectionName));
@@ -718,9 +780,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpnGatewayId The ID of the VPN gateway associated with the IPsec connection. If AttachType is not specified or set to VpnGateway, this parameter must be provided. If AttachType is set to TransitRouter, this parameter is not required.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpnGatewayId(@Nullable Output<String> vpnGatewayId) {
             $.vpnGatewayId = vpnGatewayId;
@@ -729,9 +791,9 @@ public final class VpnConnectionArgs extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param vpnGatewayId The ID of the VPN gateway associated with the IPsec connection. If AttachType is not specified or set to VpnGateway, this parameter must be provided. If AttachType is set to TransitRouter, this parameter is not required.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder vpnGatewayId(String vpnGatewayId) {
             return vpnGatewayId(Output.of(vpnGatewayId));

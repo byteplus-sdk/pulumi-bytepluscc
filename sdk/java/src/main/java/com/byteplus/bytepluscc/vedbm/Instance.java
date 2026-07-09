@@ -23,413 +23,497 @@ import javax.annotation.Nullable;
 
 /**
  * veDB MySQL Edition is Volcano Engine&#39;s self-developed next-generation cloud-native relational database. veDB MySQL Edition is fully compatible with MySQL and supports diverse enterprise database application scenarios.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
+ * <pre>
+ * {@code
+ * package generated_program;
+ *
+ * import com.pulumi.Context;
+ * import com.pulumi.Pulumi;
+ * import com.pulumi.core.Output;
+ * import com.byteplus.bytepluscc.vedbm.Instance;
+ * import com.byteplus.bytepluscc.vedbm.InstanceArgs;
+ * import com.pulumi.bytepluscc.vedbm.inputs.InstanceTagArgs;
+ * import com.pulumi.bytepluscc.vedbm.inputs.InstanceChargeDetailArgs;
+ * import java.util.ArrayList;
+ * import java.util.Arrays;
+ * import java.util.Map;
+ * import java.io.File;
+ * import java.nio.file.Files;
+ * import java.nio.file.Paths;
+ *
+ * public class App {
+ *     public static void main(String[] args) {
+ *         Pulumi.run(App::stack);
+ *     }
+ *
+ *     public static void stack(Context ctx) {
+ *         var vEDBMInstanceDemo = new Instance("vEDBMInstanceDemo", InstanceArgs.builder()
+ *             .instanceName("VEDBMInstanceDemo")
+ *             .dbEngineVersion("MySQL_8_0")
+ *             .dbMinorVersion("3.0")
+ *             .nodeSpec("vedb.mysql.x4.medium")
+ *             .zoneIds("cn-beijing-a")
+ *             .nodeNumber(2)
+ *             .vpcId("vpc-1a1vgeoxxxccg8nvepjykjnuw")
+ *             .subnetId("subnet-3nrd6xxx3log0931ech3re2r")
+ *             .port(3306)
+ *             .superAccountName("username")
+ *             .superAccountPassword("*******")
+ *             .timeZone("UTC +08:00")
+ *             .lowerCaseTableNames("1")
+ *             .projectName("default")
+ *             .tags(InstanceTagArgs.builder()
+ *                 .key("dev")
+ *                 .value("test")
+ *                 .build())
+ *             .deletionProtection("enabled")
+ *             .number(1)
+ *             .chargeDetail(InstanceChargeDetailArgs.builder()
+ *                 .charge_type("PostPaid")
+ *                 .build())
+ *             .build());
+ *
+ *     }
+ * }
+ * }
+ * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:vedbm/instance:Instance example &#34;instance_id&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:vedbm/instance:Instance")
 public class Instance extends com.pulumi.resources.CustomResource {
     /**
      * Billing details.
-     * 
+     *
      */
     @Export(name="chargeDetail", refs={InstanceChargeDetail.class}, tree="[0]")
     private Output<InstanceChargeDetail> chargeDetail;
 
     /**
      * @return Billing details.
-     * 
+     *
      */
     public Output<InstanceChargeDetail> chargeDetail() {
         return this.chargeDetail;
     }
     /**
      * Instance creation time, format: YYYY-MM-DDTHH:MM:SSZ (UTC time)
-     * 
+     *
      */
     @Export(name="createdTime", refs={String.class}, tree="[0]")
     private Output<String> createdTime;
 
     /**
      * @return Instance creation time, format: YYYY-MM-DDTHH:MM:SSZ (UTC time)
-     * 
+     *
      */
     public Output<String> createdTime() {
         return this.createdTime;
     }
     /**
      * Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
-     * 
+     *
      */
     @Export(name="dbEngineVersion", refs={String.class}, tree="[0]")
     private Output<String> dbEngineVersion;
 
     /**
      * @return Instance compatible version. Options: MySQL*8*0: Compatible with community MySQL 8.0. MySQL*5*7: Compatible with community MySQL 5.7
-     * 
+     *
      */
     public Output<String> dbEngineVersion() {
         return this.dbEngineVersion;
     }
     /**
      * Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
-     * 
+     *
      */
     @Export(name="dbMinorVersion", refs={String.class}, tree="[0]")
     private Output<String> dbMinorVersion;
 
     /**
      * @return Select the veDB MySQL minor version based on compatibility. When DBEngineVersion is set to MySQL*5*7, the default value for this parameter is 2.0. When DBEngineVersion is set to MySQL*8*0, the parameter value options are as follows: 3.0 (default): veDB MySQL stable version, 100% compatible with MySQL 8.0. 3.1: Native support for HTAP scenarios, accelerates complex queries. 3.2: Native support for HTAP scenarios, accelerates complex queries.
-     * 
+     *
      */
     public Output<String> dbMinorVersion() {
         return this.dbMinorVersion;
     }
     /**
      * Instance kernel version.
-     * 
+     *
      */
     @Export(name="dbRevisionVersion", refs={String.class}, tree="[0]")
     private Output<String> dbRevisionVersion;
 
     /**
      * @return Instance kernel version.
-     * 
+     *
      */
     public Output<String> dbRevisionVersion() {
         return this.dbRevisionVersion;
     }
     /**
      * Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
-     * 
+     *
      */
     @Export(name="deletionProtection", refs={String.class}, tree="[0]")
     private Output<String> deletionProtection;
 
     /**
      * @return Whether deletion protection is enabled for the instance. Value range: enabled: enabled. disabled: disabled.
-     * 
+     *
      */
     public Output<String> deletionProtection() {
         return this.deletionProtection;
     }
+    /**
+     * Endpoint details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="endpoints", refs={List.class,InstanceEndpoint.class}, tree="[0,1]")
     private Output<List<InstanceEndpoint>> endpoints;
 
+    /**
+     * @return Endpoint details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceEndpoint>> endpoints() {
         return this.endpoints;
     }
     /**
      * Instance ID.
-     * 
+     *
      */
     @Export(name="instanceId", refs={String.class}, tree="[0]")
     private Output<String> instanceId;
 
     /**
      * @return Instance ID.
-     * 
+     *
      */
     public Output<String> instanceId() {
         return this.instanceId;
     }
     /**
      * Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Export(name="instanceName", refs={String.class}, tree="[0]")
     private Output<String> instanceName;
 
     /**
      * @return Instance name. Naming rules: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> instanceName() {
         return this.instanceName;
     }
     /**
      * Instance status.
-     * 
+     *
      */
     @Export(name="instanceStatus", refs={String.class}, tree="[0]")
     private Output<String> instanceStatus;
 
     /**
      * @return Instance status.
-     * 
+     *
      */
     public Output<String> instanceStatus() {
         return this.instanceStatus;
     }
     /**
      * Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
-     * 
+     *
      */
     @Export(name="lowerCaseTableNames", refs={String.class}, tree="[0]")
     private Output<String> lowerCaseTableNames;
 
     /**
      * @return Whether table names are case-sensitive. Value range: 0: table names are case-sensitive; backend stores according to actual table name. 1: table names are not case-sensitive; backend stores table names in lowercase.
-     * 
+     *
      */
     public Output<String> lowerCaseTableNames() {
         return this.lowerCaseTableNames;
     }
     /**
      * Instance maintenance window information
-     * 
+     *
      */
     @Export(name="maintenanceWindow", refs={InstanceMaintenanceWindow.class}, tree="[0]")
     private Output<InstanceMaintenanceWindow> maintenanceWindow;
 
     /**
      * @return Instance maintenance window information
-     * 
+     *
      */
     public Output<InstanceMaintenanceWindow> maintenanceWindow() {
         return this.maintenanceWindow;
     }
     /**
      * Number of instance nodes. Value range: 2–16.
-     * 
+     *
      */
     @Export(name="nodeNumber", refs={Integer.class}, tree="[0]")
     private Output<Integer> nodeNumber;
 
     /**
      * @return Number of instance nodes. Value range: 2–16.
-     * 
+     *
      */
     public Output<Integer> nodeNumber() {
         return this.nodeNumber;
     }
     /**
      * Instance node specification code.
-     * 
+     *
      */
     @Export(name="nodeSpec", refs={String.class}, tree="[0]")
     private Output<String> nodeSpec;
 
     /**
      * @return Instance node specification code.
-     * 
+     *
      */
     public Output<String> nodeSpec() {
         return this.nodeSpec;
     }
+    /**
+     * Instance node details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="nodes", refs={List.class,InstanceNode.class}, tree="[0,1]")
     private Output<List<InstanceNode>> nodes;
 
+    /**
+     * @return Instance node details
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceNode>> nodes() {
         return this.nodes;
     }
     /**
      * Number of instances to create. Range: 1~50. Default: 1
-     * 
+     *
      */
     @Export(name="number", refs={Integer.class}, tree="[0]")
     private Output<Integer> number;
 
     /**
      * @return Number of instances to create. Range: 1~50. Default: 1
-     * 
+     *
      */
     public Output<Integer> number() {
         return this.number;
     }
     /**
      * Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
-     * 
+     *
      */
     @Export(name="port", refs={Integer.class}, tree="[0]")
     private Output<Integer> port;
 
     /**
      * @return Specify the private network port number for the default connection endpoint created for the instance. Default value is 3306. Value range: 1000–65534.
-     * 
+     *
      */
     public Output<Integer> port() {
         return this.port;
     }
     /**
      * Total prepaid storage capacity, in GiB
-     * 
+     *
      */
     @Export(name="prePaidStorageInGb", refs={Integer.class}, tree="[0]")
     private Output<Integer> prePaidStorageInGb;
 
     /**
      * @return Total prepaid storage capacity, in GiB
-     * 
+     *
      */
     public Output<Integer> prePaidStorageInGb() {
         return this.prePaidStorageInGb;
     }
     /**
      * Project name to which the instance belongs.
-     * 
+     *
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name to which the instance belongs.
-     * 
+     *
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * Instance specification type. Values: General: general purpose. Exclusive: dedicated.
-     * 
+     *
      */
     @Export(name="specFamily", refs={String.class}, tree="[0]")
     private Output<String> specFamily;
 
     /**
      * @return Instance specification type. Values: General: general purpose. Exclusive: dedicated.
-     * 
+     *
      */
     public Output<String> specFamily() {
         return this.specFamily;
     }
     /**
      * Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
-     * 
+     *
      */
     @Export(name="storageChargeType", refs={String.class}, tree="[0]")
     private Output<String> storageChargeType;
 
     /**
      * @return Storage billing type. If this parameter is not specified, the storage billing type defaults to the same value as the compute billing type. Values: PostPaid: pay-as-you-go. PrePaid: annual/monthly subscription (prepaid).
-     * 
+     *
      */
     public Output<String> storageChargeType() {
         return this.storageChargeType;
     }
     /**
      * Used storage space, in GiB
-     * 
+     *
      */
     @Export(name="storageUsedGiB", refs={Double.class}, tree="[0]")
     private Output<Double> storageUsedGiB;
 
     /**
      * @return Used storage space, in GiB
-     * 
+     *
      */
     public Output<Double> storageUsedGiB() {
         return this.storageUsedGiB;
     }
     /**
      * Subnet ID. The subnet must belong to the selected availability zone.
-     * 
+     *
      */
     @Export(name="subnetId", refs={String.class}, tree="[0]")
     private Output<String> subnetId;
 
     /**
      * @return Subnet ID. The subnet must belong to the selected availability zone.
-     * 
+     *
      */
     public Output<String> subnetId() {
         return this.subnetId;
     }
     /**
      * Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
-     * 
+     *
      */
     @Export(name="superAccountName", refs={String.class}, tree="[0]")
     private Output<String> superAccountName;
 
     /**
      * @return Account name for privileged user. Requirements: Must be unique, 2–32 characters. Letters, numbers, hyphens (-), and underscores (_) only. Must start with a letter and end with a letter or number. Cannot contain prohibited keywords
-     * 
+     *
      */
     public Output<String> superAccountName() {
         return this.superAccountName;
     }
     /**
      * Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
-     * 
+     *
      */
     @Export(name="superAccountPassword", refs={String.class}, tree="[0]")
     private Output<String> superAccountPassword;
 
     /**
      * @return Password for high-privilege account. The password must meet the following requirements: can only contain uppercase and lowercase letters, numbers, and special characters (such as ~!{@literal @}#$%^&amp;*_-+=`|(){}[]:;&#39;&lt;&gt;,.?/). Length must be between 8 and 32 characters. Must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters.
-     * 
+     *
      */
     public Output<String> superAccountPassword() {
         return this.superAccountPassword;
     }
+    /**
+     * Array object of tag keys and tag values bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Export(name="tags", refs={List.class,InstanceTag.class}, tree="[0,1]")
     private Output<List<InstanceTag>> tags;
 
+    /**
+     * @return Array object of tag keys and tag values bound to the instance.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
     }
     /**
      * Parameter template ID
-     * 
+     *
      */
     @Export(name="templateId", refs={String.class}, tree="[0]")
     private Output<String> templateId;
 
     /**
      * @return Parameter template ID
-     * 
+     *
      */
     public Output<String> templateId() {
         return this.templateId;
     }
     /**
      * Instance time zone. The default time zone for all regions in China is UTC +08:00.
-     * 
+     *
      */
     @Export(name="timeZone", refs={String.class}, tree="[0]")
     private Output<String> timeZone;
 
     /**
      * @return Instance time zone. The default time zone for all regions in China is UTC +08:00.
-     * 
+     *
      */
     public Output<String> timeZone() {
         return this.timeZone;
     }
     /**
      * Private network (VPC) ID.
-     * 
+     *
      */
     @Export(name="vpcId", refs={String.class}, tree="[0]")
     private Output<String> vpcId;
 
     /**
      * @return Private network (VPC) ID.
-     * 
+     *
      */
     public Output<String> vpcId() {
         return this.vpcId;
     }
     /**
      * Availability zone ID
-     * 
+     *
      */
     @Export(name="zoneIds", refs={String.class}, tree="[0]")
     private Output<String> zoneIds;
 
     /**
      * @return Availability zone ID
-     * 
+     *
      */
     public Output<String> zoneIds() {
         return this.zoneIds;

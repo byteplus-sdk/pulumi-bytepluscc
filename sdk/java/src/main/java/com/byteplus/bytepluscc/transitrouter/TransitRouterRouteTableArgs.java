@@ -20,36 +20,46 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
 
     /**
      * Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     @Import(name="description")
     private @Nullable Output<String> description;
 
     /**
      * @return Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-     * 
+     *
      */
     public Optional<Output<String>> description() {
         return Optional.ofNullable(this.description);
     }
 
+    /**
+     * Tag information for the TR routing table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="tags")
     private @Nullable Output<List<TransitRouterRouteTableTagArgs>> tags;
 
+    /**
+     * @return Tag information for the TR routing table
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<TransitRouterRouteTableTagArgs>>> tags() {
         return Optional.ofNullable(this.tags);
     }
 
     /**
      * Transit Router instance ID
-     * 
+     *
      */
     @Import(name="transitRouterId", required=true)
     private Output<String> transitRouterId;
 
     /**
      * @return Transit Router instance ID
-     * 
+     *
      */
     public Output<String> transitRouterId() {
         return this.transitRouterId;
@@ -57,14 +67,14 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
 
     /**
      * Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-     * 
+     *
      */
     @Import(name="transitRouterRouteTableName")
     private @Nullable Output<String> transitRouterRouteTableName;
 
     /**
      * @return Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-     * 
+     *
      */
     public Optional<Output<String>> transitRouterRouteTableName() {
         return Optional.ofNullable(this.transitRouterRouteTableName);
@@ -99,9 +109,9 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
 
         /**
          * @param description Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(@Nullable Output<String> description) {
             $.description = description;
@@ -110,32 +120,53 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
 
         /**
          * @param description Description of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters. If this parameter is not provided or no value is specified, the default is an empty string.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder description(String description) {
             return description(Output.of(description));
         }
 
+        /**
+         * @param tags Tag information for the TR routing table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(@Nullable Output<List<TransitRouterRouteTableTagArgs>> tags) {
             $.tags = tags;
             return this;
         }
 
+        /**
+         * @param tags Tag information for the TR routing table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(List<TransitRouterRouteTableTagArgs> tags) {
             return tags(Output.of(tags));
         }
 
+        /**
+         * @param tags Tag information for the TR routing table
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder tags(TransitRouterRouteTableTagArgs... tags) {
             return tags(List.of(tags));
         }
 
         /**
          * @param transitRouterId Transit Router instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(Output<String> transitRouterId) {
             $.transitRouterId = transitRouterId;
@@ -144,9 +175,9 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterId Transit Router instance ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterId(String transitRouterId) {
             return transitRouterId(Output.of(transitRouterId));
@@ -154,9 +185,9 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterRouteTableName Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableName(@Nullable Output<String> transitRouterRouteTableName) {
             $.transitRouterRouteTableName = transitRouterRouteTableName;
@@ -165,9 +196,9 @@ public final class TransitRouterRouteTableArgs extends com.pulumi.resources.Reso
 
         /**
          * @param transitRouterRouteTableName Name of the TR routing table. Must start with a letter, number, or Chinese character, and can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is specified, the default is the TR routing table ID
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder transitRouterRouteTableName(String transitRouterRouteTableName) {
             return transitRouterRouteTableName(Output.of(transitRouterRouteTableName));

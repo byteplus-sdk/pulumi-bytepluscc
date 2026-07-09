@@ -15,31 +15,31 @@ import javax.annotation.Nullable;
 
 /**
  * The OCI artifact repository is used to store container images, Helm Charts, and other OCI (Open Container Initiative) artifacts that comply with open container standards.
- * 
+ *
  * ## Example Usage
- * 
+ *
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- * 
+ *
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
  * import com.byteplus.bytepluscc.cr.Repository;
  * import com.byteplus.bytepluscc.cr.RepositoryArgs;
- * import java.util.List;
  * import java.util.ArrayList;
+ * import java.util.Arrays;
  * import java.util.Map;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- * 
+ *
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- * 
+ *
  *     public static void stack(Context ctx) {
  *         var repositoryDemo = new Repository("repositoryDemo", RepositoryArgs.builder()
  *             .registry("test")
@@ -48,116 +48,116 @@ import javax.annotation.Nullable;
  *             .description("RepositoryDemo description")
  *             .accessLevel("Public")
  *             .build());
- * 
+ *
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- * 
+ *
  * ## Import
- * 
+ *
  * ```sh
  * $ pulumi import bytepluscc:cr/repository:Repository example &#34;registry|namespace|name&#34;
  * ```
- * 
+ *
  */
 @ResourceType(type="bytepluscc:cr/repository:Repository")
 public class Repository extends com.pulumi.resources.CustomResource {
     /**
      * Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
-     * 
+     *
      */
     @Export(name="accessLevel", refs={String.class}, tree="[0]")
     private Output<String> accessLevel;
 
     /**
      * @return Access level. Values include: Private: Private OCI artifact repository, accessible only to authorized users. Public: Public OCI artifact repository, accessible to all users. You can specify one or more access levels in a single entry.
-     * 
+     *
      */
     public Output<String> accessLevel() {
         return this.accessLevel;
     }
     /**
      * Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
-     * 
+     *
      */
     @Export(name="createTime", refs={String.class}, tree="[0]")
     private Output<String> createTime;
 
     /**
      * @return Creation time of the OCI artifact repository. RFC3339 format, UTC+0 time.
-     * 
+     *
      */
     public Output<String> createTime() {
         return this.createTime;
     }
     /**
      * Image repository description, with a length of 0–300 UTF-8 characters.
-     * 
+     *
      */
     @Export(name="description", refs={String.class}, tree="[0]")
     private Output<String> description;
 
     /**
      * @return Image repository description, with a length of 0–300 UTF-8 characters.
-     * 
+     *
      */
     public Output<String> description() {
         return this.description;
     }
     /**
      * OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single &#39;.&#39; or &#39;/&#39;, one or more &#39;-&#39;, or one or two &#39;_&#39;. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return OCI artifact repository name. The name must be unique within the same namespace. Supports lowercase English letters, numbers, and delimiters (delimiters can be a single &#39;.&#39; or &#39;/&#39;, one or more &#39;-&#39;, or one or two &#39;_&#39;. Delimiters cannot appear at the beginning or end of the name, nor can they appear consecutively). Length must be between 1 and 128 characters.
-     * 
+     *
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
-     * 
+     *
      */
     @Export(name="namespace", refs={String.class}, tree="[0]")
     private Output<String> namespace;
 
     /**
      * @return Target namespace name. Obtain the namespace name from the Namespace page of the target instance in the Image Repository Console.
-     * 
+     *
      */
     public Output<String> namespace() {
         return this.namespace;
     }
     /**
      * Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
-     * 
+     *
      */
     @Export(name="registry", refs={String.class}, tree="[0]")
     private Output<String> registry;
 
     /**
      * @return Specify the name of the image repository instance to which the namespace belongs. Obtain the instance name from the Instance List page in the Image Repository Console.
-     * 
+     *
      */
     public Output<String> registry() {
         return this.registry;
     }
     /**
      * Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
-     * 
+     *
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last updated time for the OCI artifact repository. RFC3339 format, UTC+0 time.
-     * 
+     *
      */
     public Output<String> updateTime() {
         return this.updateTime;

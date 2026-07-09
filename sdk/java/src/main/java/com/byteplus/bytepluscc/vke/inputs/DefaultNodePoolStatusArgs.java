@@ -17,23 +17,33 @@ public final class DefaultNodePoolStatusArgs extends com.pulumi.resources.Resour
 
     public static final DefaultNodePoolStatusArgs Empty = new DefaultNodePoolStatusArgs();
 
+    /**
+     * Status conditions of the node pool in its current primary state, indicating the reason for entering this state
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     @Import(name="conditions")
     private @Nullable Output<List<DefaultNodePoolStatusConditionArgs>> conditions;
 
+    /**
+     * @return Status conditions of the node pool in its current primary state, indicating the reason for entering this state
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     *
+     */
     public Optional<Output<List<DefaultNodePoolStatusConditionArgs>>> conditions() {
         return Optional.ofNullable(this.conditions);
     }
 
     /**
      * Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
-     * 
+     *
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
      * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
-     * 
+     *
      */
     public Optional<Output<String>> phase() {
         return Optional.ofNullable(this.phase);
@@ -64,24 +74,45 @@ public final class DefaultNodePoolStatusArgs extends com.pulumi.resources.Resour
             $ = new DefaultNodePoolStatusArgs(Objects.requireNonNull(defaults));
         }
 
+        /**
+         * @param conditions Status conditions of the node pool in its current primary state, indicating the reason for entering this state
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditions(@Nullable Output<List<DefaultNodePoolStatusConditionArgs>> conditions) {
             $.conditions = conditions;
             return this;
         }
 
+        /**
+         * @param conditions Status conditions of the node pool in its current primary state, indicating the reason for entering this state
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditions(List<DefaultNodePoolStatusConditionArgs> conditions) {
             return conditions(Output.of(conditions));
         }
 
+        /**
+         * @param conditions Status conditions of the node pool in its current primary state, indicating the reason for entering this state
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         *
+         * @return builder
+         *
+         */
         public Builder conditions(DefaultNodePoolStatusConditionArgs... conditions) {
             return conditions(List.of(conditions));
         }
 
         /**
          * @param phase Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder phase(@Nullable Output<String> phase) {
             $.phase = phase;
@@ -90,9 +121,9 @@ public final class DefaultNodePoolStatusArgs extends com.pulumi.resources.Resour
 
         /**
          * @param phase Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling.
-         * 
+         *
          * @return builder
-         * 
+         *
          */
         public Builder phase(String phase) {
             return phase(Output.of(phase));
