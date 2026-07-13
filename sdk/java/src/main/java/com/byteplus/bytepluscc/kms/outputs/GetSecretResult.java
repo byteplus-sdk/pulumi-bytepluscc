@@ -3,11 +3,15 @@
 
 package com.byteplus.bytepluscc.kms.outputs;
 
+import com.byteplus.bytepluscc.kms.outputs.GetSecretSecretRestore;
+import com.byteplus.bytepluscc.kms.outputs.GetSecretSecretRestoreRead;
+import com.byteplus.bytepluscc.kms.outputs.GetSecretSecretVersion;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
@@ -17,6 +21,11 @@ public final class GetSecretResult {
      * 
      */
     private Boolean automaticRotation;
+    /**
+     * @return Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     * 
+     */
+    private Boolean cancelSecretDeletion;
     /**
      * @return Credential creation time
      * 
@@ -58,6 +67,11 @@ public final class GetSecretResult {
      */
     private String owningService;
     /**
+     * @return Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     * 
+     */
+    private Integer pendingWindowInDays;
+    /**
      * @return Credential project name. Default value: default
      * 
      */
@@ -88,6 +102,11 @@ public final class GetSecretResult {
      */
     private String scheduleRotationTime;
     /**
+     * @return Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     * 
+     */
+    private Boolean secretBackup;
+    /**
      * @return Credential unique identifier, UUID format
      * 
      */
@@ -97,6 +116,21 @@ public final class GetSecretResult {
      * 
      */
     private String secretName;
+    /**
+     * @return Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     * 
+     */
+    private GetSecretSecretRestore secretRestore;
+    /**
+     * @return Credential restore parameters. Returned only during backup.
+     * 
+     */
+    private GetSecretSecretRestoreRead secretRestoreRead;
+    /**
+     * @return Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     * 
+     */
+    private Boolean secretRotate;
     /**
      * @return Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
      * 
@@ -112,6 +146,11 @@ public final class GetSecretResult {
      * 
      */
     private String secretValue;
+    /**
+     * @return Credential version information.
+     * 
+     */
+    private List<GetSecretSecretVersion> secretVersions;
     /**
      * @return Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
      * 
@@ -140,6 +179,13 @@ public final class GetSecretResult {
      */
     public Boolean automaticRotation() {
         return this.automaticRotation;
+    }
+    /**
+     * @return Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     * 
+     */
+    public Boolean cancelSecretDeletion() {
+        return this.cancelSecretDeletion;
     }
     /**
      * @return Credential creation time
@@ -198,6 +244,13 @@ public final class GetSecretResult {
         return this.owningService;
     }
     /**
+     * @return Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     * 
+     */
+    public Integer pendingWindowInDays() {
+        return this.pendingWindowInDays;
+    }
+    /**
      * @return Credential project name. Default value: default
      * 
      */
@@ -240,6 +293,13 @@ public final class GetSecretResult {
         return this.scheduleRotationTime;
     }
     /**
+     * @return Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     * 
+     */
+    public Boolean secretBackup() {
+        return this.secretBackup;
+    }
+    /**
      * @return Credential unique identifier, UUID format
      * 
      */
@@ -252,6 +312,27 @@ public final class GetSecretResult {
      */
     public String secretName() {
         return this.secretName;
+    }
+    /**
+     * @return Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     * 
+     */
+    public GetSecretSecretRestore secretRestore() {
+        return this.secretRestore;
+    }
+    /**
+     * @return Credential restore parameters. Returned only during backup.
+     * 
+     */
+    public GetSecretSecretRestoreRead secretRestoreRead() {
+        return this.secretRestoreRead;
+    }
+    /**
+     * @return Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     * 
+     */
+    public Boolean secretRotate() {
+        return this.secretRotate;
     }
     /**
      * @return Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
@@ -273,6 +354,13 @@ public final class GetSecretResult {
      */
     public String secretValue() {
         return this.secretValue;
+    }
+    /**
+     * @return Credential version information.
+     * 
+     */
+    public List<GetSecretSecretVersion> secretVersions() {
+        return this.secretVersions;
     }
     /**
      * @return Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
@@ -313,6 +401,7 @@ public final class GetSecretResult {
     @CustomType.Builder
     public static final class Builder {
         private Boolean automaticRotation;
+        private Boolean cancelSecretDeletion;
         private Integer createdTime;
         private String description;
         private String encryptionKey;
@@ -321,17 +410,23 @@ public final class GetSecretResult {
         private String lastRotationTime;
         private Boolean managed;
         private String owningService;
+        private Integer pendingWindowInDays;
         private String projectName;
         private String rotationInterval;
         private Integer rotationIntervalRead;
         private String rotationState;
         private String scheduleDeleteTime;
         private String scheduleRotationTime;
+        private Boolean secretBackup;
         private String secretId;
         private String secretName;
+        private GetSecretSecretRestore secretRestore;
+        private GetSecretSecretRestoreRead secretRestoreRead;
+        private Boolean secretRotate;
         private String secretState;
         private String secretType;
         private String secretValue;
+        private List<GetSecretSecretVersion> secretVersions;
         private String trn;
         private String uid;
         private Integer updatedTime;
@@ -340,6 +435,7 @@ public final class GetSecretResult {
         public Builder(GetSecretResult defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.automaticRotation = defaults.automaticRotation;
+    	      this.cancelSecretDeletion = defaults.cancelSecretDeletion;
     	      this.createdTime = defaults.createdTime;
     	      this.description = defaults.description;
     	      this.encryptionKey = defaults.encryptionKey;
@@ -348,17 +444,23 @@ public final class GetSecretResult {
     	      this.lastRotationTime = defaults.lastRotationTime;
     	      this.managed = defaults.managed;
     	      this.owningService = defaults.owningService;
+    	      this.pendingWindowInDays = defaults.pendingWindowInDays;
     	      this.projectName = defaults.projectName;
     	      this.rotationInterval = defaults.rotationInterval;
     	      this.rotationIntervalRead = defaults.rotationIntervalRead;
     	      this.rotationState = defaults.rotationState;
     	      this.scheduleDeleteTime = defaults.scheduleDeleteTime;
     	      this.scheduleRotationTime = defaults.scheduleRotationTime;
+    	      this.secretBackup = defaults.secretBackup;
     	      this.secretId = defaults.secretId;
     	      this.secretName = defaults.secretName;
+    	      this.secretRestore = defaults.secretRestore;
+    	      this.secretRestoreRead = defaults.secretRestoreRead;
+    	      this.secretRotate = defaults.secretRotate;
     	      this.secretState = defaults.secretState;
     	      this.secretType = defaults.secretType;
     	      this.secretValue = defaults.secretValue;
+    	      this.secretVersions = defaults.secretVersions;
     	      this.trn = defaults.trn;
     	      this.uid = defaults.uid;
     	      this.updatedTime = defaults.updatedTime;
@@ -371,6 +473,14 @@ public final class GetSecretResult {
               throw new MissingRequiredPropertyException("GetSecretResult", "automaticRotation");
             }
             this.automaticRotation = automaticRotation;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder cancelSecretDeletion(Boolean cancelSecretDeletion) {
+            if (cancelSecretDeletion == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "cancelSecretDeletion");
+            }
+            this.cancelSecretDeletion = cancelSecretDeletion;
             return this;
         }
         @CustomType.Setter
@@ -438,6 +548,14 @@ public final class GetSecretResult {
             return this;
         }
         @CustomType.Setter
+        public Builder pendingWindowInDays(Integer pendingWindowInDays) {
+            if (pendingWindowInDays == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "pendingWindowInDays");
+            }
+            this.pendingWindowInDays = pendingWindowInDays;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectName(String projectName) {
             if (projectName == null) {
               throw new MissingRequiredPropertyException("GetSecretResult", "projectName");
@@ -486,6 +604,14 @@ public final class GetSecretResult {
             return this;
         }
         @CustomType.Setter
+        public Builder secretBackup(Boolean secretBackup) {
+            if (secretBackup == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "secretBackup");
+            }
+            this.secretBackup = secretBackup;
+            return this;
+        }
+        @CustomType.Setter
         public Builder secretId(String secretId) {
             if (secretId == null) {
               throw new MissingRequiredPropertyException("GetSecretResult", "secretId");
@@ -499,6 +625,30 @@ public final class GetSecretResult {
               throw new MissingRequiredPropertyException("GetSecretResult", "secretName");
             }
             this.secretName = secretName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secretRestore(GetSecretSecretRestore secretRestore) {
+            if (secretRestore == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "secretRestore");
+            }
+            this.secretRestore = secretRestore;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secretRestoreRead(GetSecretSecretRestoreRead secretRestoreRead) {
+            if (secretRestoreRead == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "secretRestoreRead");
+            }
+            this.secretRestoreRead = secretRestoreRead;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder secretRotate(Boolean secretRotate) {
+            if (secretRotate == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "secretRotate");
+            }
+            this.secretRotate = secretRotate;
             return this;
         }
         @CustomType.Setter
@@ -524,6 +674,17 @@ public final class GetSecretResult {
             }
             this.secretValue = secretValue;
             return this;
+        }
+        @CustomType.Setter
+        public Builder secretVersions(List<GetSecretSecretVersion> secretVersions) {
+            if (secretVersions == null) {
+              throw new MissingRequiredPropertyException("GetSecretResult", "secretVersions");
+            }
+            this.secretVersions = secretVersions;
+            return this;
+        }
+        public Builder secretVersions(GetSecretSecretVersion... secretVersions) {
+            return secretVersions(List.of(secretVersions));
         }
         @CustomType.Setter
         public Builder trn(String trn) {
@@ -560,6 +721,7 @@ public final class GetSecretResult {
         public GetSecretResult build() {
             final var _resultValue = new GetSecretResult();
             _resultValue.automaticRotation = automaticRotation;
+            _resultValue.cancelSecretDeletion = cancelSecretDeletion;
             _resultValue.createdTime = createdTime;
             _resultValue.description = description;
             _resultValue.encryptionKey = encryptionKey;
@@ -568,17 +730,23 @@ public final class GetSecretResult {
             _resultValue.lastRotationTime = lastRotationTime;
             _resultValue.managed = managed;
             _resultValue.owningService = owningService;
+            _resultValue.pendingWindowInDays = pendingWindowInDays;
             _resultValue.projectName = projectName;
             _resultValue.rotationInterval = rotationInterval;
             _resultValue.rotationIntervalRead = rotationIntervalRead;
             _resultValue.rotationState = rotationState;
             _resultValue.scheduleDeleteTime = scheduleDeleteTime;
             _resultValue.scheduleRotationTime = scheduleRotationTime;
+            _resultValue.secretBackup = secretBackup;
             _resultValue.secretId = secretId;
             _resultValue.secretName = secretName;
+            _resultValue.secretRestore = secretRestore;
+            _resultValue.secretRestoreRead = secretRestoreRead;
+            _resultValue.secretRotate = secretRotate;
             _resultValue.secretState = secretState;
             _resultValue.secretType = secretType;
             _resultValue.secretValue = secretValue;
+            _resultValue.secretVersions = secretVersions;
             _resultValue.trn = trn;
             _resultValue.uid = uid;
             _resultValue.updatedTime = updatedTime;

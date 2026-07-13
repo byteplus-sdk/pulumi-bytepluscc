@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:id/authConfig:AuthConfig":
 		r = &AuthConfig{}
+	case "bytepluscc:id/oauth2CredentialProvider:Oauth2CredentialProvider":
+		r = &Oauth2CredentialProvider{}
 	case "bytepluscc:id/permissionNamespace:PermissionNamespace":
 		r = &PermissionNamespace{}
 	case "bytepluscc:id/service:Service":
@@ -47,6 +49,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"id/authConfig",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"id/oauth2CredentialProvider",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

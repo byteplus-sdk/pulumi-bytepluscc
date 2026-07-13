@@ -2212,6 +2212,39 @@
                     }
                 }
             },
+            "bytepluscc_id_oauth2_credential_provider": {
+                "current": "bytepluscc:id/oauth2CredentialProvider:Oauth2CredentialProvider",
+                "fields": {
+                    "config": {
+                        "fields": {
+                            "custom_parameters": {
+                                "fields": {
+                                    "entries": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            },
+                            "oauth_2_discovery": {
+                                "fields": {
+                                    "authorization_server_metadata": {
+                                        "fields": {
+                                            "code_challenge_methods_supported": {
+                                                "maxItemsOne": false
+                                            },
+                                            "response_types": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "scopes": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_id_permission_namespace": {
                 "current": "bytepluscc:id/permissionNamespace:PermissionNamespace",
                 "fields": {
@@ -2356,7 +2389,12 @@
                 "current": "bytepluscc:kms/keyRing:KeyRing"
             },
             "bytepluscc_kms_secret": {
-                "current": "bytepluscc:kms/secret:Secret"
+                "current": "bytepluscc:kms/secret:Secret",
+                "fields": {
+                    "secret_versions": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_mongodb_account": {
                 "current": "bytepluscc:mongodb/account:Account",
@@ -3137,6 +3175,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_tls_alarm_content_template_type": {
+                "current": "bytepluscc:tls/alarmContentTemplateType:AlarmContentTemplateType"
             },
             "bytepluscc_tls_alarm_notify_group": {
                 "current": "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup",
@@ -7455,6 +7496,47 @@
                     }
                 }
             },
+            "bytepluscc_id_oauth2_credential_provider": {
+                "current": "bytepluscc:id/getOauth2CredentialProvider:getOauth2CredentialProvider",
+                "fields": {
+                    "config": {
+                        "fields": {
+                            "custom_parameters": {
+                                "fields": {
+                                    "entries": {
+                                        "maxItemsOne": false
+                                    }
+                                }
+                            },
+                            "oauth_2_discovery": {
+                                "fields": {
+                                    "authorization_server_metadata": {
+                                        "fields": {
+                                            "code_challenge_methods_supported": {
+                                                "maxItemsOne": false
+                                            },
+                                            "response_types": {
+                                                "maxItemsOne": false
+                                            }
+                                        }
+                                    }
+                                }
+                            },
+                            "scopes": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_id_oauth2_credential_providers": {
+                "current": "bytepluscc:id/getOauth2CredentialProviders:getOauth2CredentialProviders",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_id_permission_namespace": {
                 "current": "bytepluscc:id/getPermissionNamespace:getPermissionNamespace",
                 "fields": {
@@ -7695,7 +7777,12 @@
                 }
             },
             "bytepluscc_kms_secret": {
-                "current": "bytepluscc:kms/getSecret:getSecret"
+                "current": "bytepluscc:kms/getSecret:getSecret",
+                "fields": {
+                    "secret_versions": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_kms_secrets": {
                 "current": "bytepluscc:kms/getSecrets:getSecrets",
@@ -9009,6 +9096,17 @@
                         "maxItemsOne": false
                     },
                     "trigger_conditions": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_tls_alarm_content_template_type": {
+                "current": "bytepluscc:tls/getAlarmContentTemplateType:getAlarmContentTemplateType"
+            },
+            "bytepluscc_tls_alarm_content_template_types": {
+                "current": "bytepluscc:tls/getAlarmContentTemplateTypes:getAlarmContentTemplateTypes",
+                "fields": {
+                    "ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -10992,6 +11090,7 @@
             "bytepluscc_iam_saml_provider": {},
             "bytepluscc_iam_user": {},
             "bytepluscc_id_auth_config": {},
+            "bytepluscc_id_oauth2_credential_provider": {},
             "bytepluscc_id_permission_namespace": {},
             "bytepluscc_id_service": {},
             "bytepluscc_id_user_pool": {},
@@ -11063,6 +11162,7 @@
             "bytepluscc_storageebs_snapshot_policy": {},
             "bytepluscc_storageebs_volume": {},
             "bytepluscc_tls_alarm": {},
+            "bytepluscc_tls_alarm_content_template_type": {},
             "bytepluscc_tls_alarm_notify_group": {},
             "bytepluscc_tls_alarm_webhook_integration_type": {},
             "bytepluscc_tls_consumer_group": {},

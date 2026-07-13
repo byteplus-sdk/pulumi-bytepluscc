@@ -13,6 +13,8 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
+from ._inputs import *
 
 __all__ = ['SecretArgs', 'Secret']
 
@@ -23,11 +25,16 @@ class SecretArgs:
                  secret_type: pulumi.Input[_builtins.str],
                  secret_value: pulumi.Input[_builtins.str],
                  automatic_rotation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cancel_secret_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
                  extended_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_window_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  rotation_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_backup: pulumi.Input[Optional[_builtins.bool]] = None,
+                 secret_restore: pulumi.Input[Optional['SecretSecretRestoreArgs']] = None,
+                 secret_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
                  version_name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         The set of arguments for constructing a Secret resource.
@@ -36,11 +43,16 @@ class SecretArgs:
         :param pulumi.Input[_builtins.str] secret_type: Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
         :param pulumi.Input[_builtins.str] secret_value: Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
         :param pulumi.Input[_builtins.bool] automatic_rotation: Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
+        :param pulumi.Input[_builtins.bool] cancel_secret_deletion: Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
         :param pulumi.Input[_builtins.str] description: Credential description, length: 0 ~ 8192 characters
         :param pulumi.Input[_builtins.str] encryption_key: KMS key TRN for encrypting credential value. If not specified, the default key of Credential Manager is used
         :param pulumi.Input[_builtins.str] extended_config: Credential extension configuration, used to specify properties for non-Generic credentials
+        :param pulumi.Input[_builtins.int] pending_window_in_days: Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
         :param pulumi.Input[_builtins.str] project_name: Credential project name. Default value: default
         :param pulumi.Input[_builtins.str] rotation_interval: Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
+        :param pulumi.Input[_builtins.bool] secret_backup: Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        :param pulumi.Input['SecretSecretRestoreArgs'] secret_restore: Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        :param pulumi.Input[_builtins.bool] secret_rotate: Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
         :param pulumi.Input[_builtins.str] version_name: Version alias. Valid characters: [a-zA-Z0-9/_+=.@-]
         """
         pulumi.set(__self__, "secret_name", secret_name)
@@ -48,16 +60,26 @@ class SecretArgs:
         pulumi.set(__self__, "secret_value", secret_value)
         if automatic_rotation is not None:
             pulumi.set(__self__, "automatic_rotation", automatic_rotation)
+        if cancel_secret_deletion is not None:
+            pulumi.set(__self__, "cancel_secret_deletion", cancel_secret_deletion)
         if description is not None:
             pulumi.set(__self__, "description", description)
         if encryption_key is not None:
             pulumi.set(__self__, "encryption_key", encryption_key)
         if extended_config is not None:
             pulumi.set(__self__, "extended_config", extended_config)
+        if pending_window_in_days is not None:
+            pulumi.set(__self__, "pending_window_in_days", pending_window_in_days)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if rotation_interval is not None:
             pulumi.set(__self__, "rotation_interval", rotation_interval)
+        if secret_backup is not None:
+            pulumi.set(__self__, "secret_backup", secret_backup)
+        if secret_restore is not None:
+            pulumi.set(__self__, "secret_restore", secret_restore)
+        if secret_rotate is not None:
+            pulumi.set(__self__, "secret_rotate", secret_rotate)
         if version_name is not None:
             pulumi.set(__self__, "version_name", version_name)
 
@@ -110,6 +132,18 @@ class SecretArgs:
         pulumi.set(self, "automatic_rotation", value)
 
     @_builtins.property
+    @pulumi.getter(name="cancelSecretDeletion")
+    def cancel_secret_deletion(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+        """
+        return pulumi.get(self, "cancel_secret_deletion")
+
+    @cancel_secret_deletion.setter
+    def cancel_secret_deletion(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "cancel_secret_deletion", value)
+
+    @_builtins.property
     @pulumi.getter
     def description(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -146,6 +180,18 @@ class SecretArgs:
         pulumi.set(self, "extended_config", value)
 
     @_builtins.property
+    @pulumi.getter(name="pendingWindowInDays")
+    def pending_window_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+        """
+        return pulumi.get(self, "pending_window_in_days")
+
+    @pending_window_in_days.setter
+    def pending_window_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "pending_window_in_days", value)
+
+    @_builtins.property
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -170,6 +216,42 @@ class SecretArgs:
         pulumi.set(self, "rotation_interval", value)
 
     @_builtins.property
+    @pulumi.getter(name="secretBackup")
+    def secret_backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        """
+        return pulumi.get(self, "secret_backup")
+
+    @secret_backup.setter
+    def secret_backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "secret_backup", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretRestore")
+    def secret_restore(self) -> pulumi.Input[Optional['SecretSecretRestoreArgs']]:
+        """
+        Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        """
+        return pulumi.get(self, "secret_restore")
+
+    @secret_restore.setter
+    def secret_restore(self, value: pulumi.Input[Optional['SecretSecretRestoreArgs']]):
+        pulumi.set(self, "secret_restore", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretRotate")
+    def secret_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+        """
+        return pulumi.get(self, "secret_rotate")
+
+    @secret_rotate.setter
+    def secret_rotate(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "secret_rotate", value)
+
+    @_builtins.property
     @pulumi.getter(name="versionName")
     def version_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -186,6 +268,7 @@ class SecretArgs:
 class _SecretState:
     def __init__(__self__, *,
                  automatic_rotation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cancel_secret_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  created_time: pulumi.Input[Optional[_builtins.int]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -193,17 +276,23 @@ class _SecretState:
                  last_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
                  managed: pulumi.Input[Optional[_builtins.bool]] = None,
                  owning_service: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_window_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  rotation_interval: pulumi.Input[Optional[_builtins.str]] = None,
                  rotation_interval_read: pulumi.Input[Optional[_builtins.int]] = None,
                  rotation_state: pulumi.Input[Optional[_builtins.str]] = None,
                  schedule_delete_time: pulumi.Input[Optional[_builtins.str]] = None,
                  schedule_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_backup: pulumi.Input[Optional[_builtins.bool]] = None,
                  secret_id: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_restore: pulumi.Input[Optional['SecretSecretRestoreArgs']] = None,
+                 secret_restore_read: pulumi.Input[Optional['SecretSecretRestoreReadArgs']] = None,
+                 secret_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
                  secret_state: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_type: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_value: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_versions: pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretVersionArgs']]]] = None,
                  trn: pulumi.Input[Optional[_builtins.str]] = None,
                  uid: pulumi.Input[Optional[_builtins.str]] = None,
                  updated_time: pulumi.Input[Optional[_builtins.int]] = None,
@@ -212,6 +301,7 @@ class _SecretState:
         Input properties used for looking up and filtering Secret resources.
 
         :param pulumi.Input[_builtins.bool] automatic_rotation: Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
+        :param pulumi.Input[_builtins.bool] cancel_secret_deletion: Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
         :param pulumi.Input[_builtins.int] created_time: Credential creation time
         :param pulumi.Input[_builtins.str] description: Credential description, length: 0 ~ 8192 characters
         :param pulumi.Input[_builtins.str] encryption_key: KMS key TRN for encrypting credential value. If not specified, the default key of Credential Manager is used
@@ -219,17 +309,24 @@ class _SecretState:
         :param pulumi.Input[_builtins.str] last_rotation_time: Credential last rotation time
         :param pulumi.Input[_builtins.bool] managed: Is managed credential
         :param pulumi.Input[_builtins.str] owning_service: Managed Cloud Service
+        :param pulumi.Input[_builtins.int] pending_window_in_days: Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
         :param pulumi.Input[_builtins.str] project_name: Credential project name. Default value: default
         :param pulumi.Input[_builtins.str] rotation_interval: Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
         :param pulumi.Input[_builtins.int] rotation_interval_read: Automatic rotation interval, unit: seconds
         :param pulumi.Input[_builtins.str] rotation_state: Rotation status: Enable: automatic rotation enabled, Disable: automatic rotation disabled, Rotating: automatic rotation in progress, None: automatic rotation not supported
         :param pulumi.Input[_builtins.str] schedule_delete_time: Credential Scheduled Deletion Time
         :param pulumi.Input[_builtins.str] schedule_rotation_time: Credential next rotation time
+        :param pulumi.Input[_builtins.bool] secret_backup: Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
         :param pulumi.Input[_builtins.str] secret_id: Credential unique identifier, UUID format
         :param pulumi.Input[_builtins.str] secret_name: Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
+        :param pulumi.Input['SecretSecretRestoreArgs'] secret_restore: Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        :param pulumi.Input['SecretSecretRestoreReadArgs'] secret_restore_read: Credential restore parameters. Returned only during backup.
+        :param pulumi.Input[_builtins.bool] secret_rotate: Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
         :param pulumi.Input[_builtins.str] secret_state: Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
         :param pulumi.Input[_builtins.str] secret_type: Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
         :param pulumi.Input[_builtins.str] secret_value: Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
+        :param pulumi.Input[Sequence[pulumi.Input['SecretSecretVersionArgs']]] secret_versions: Credential version information.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] trn: Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
         :param pulumi.Input[_builtins.str] uid: Credential tenant ID
         :param pulumi.Input[_builtins.int] updated_time: Credential update date
@@ -237,6 +334,8 @@ class _SecretState:
         """
         if automatic_rotation is not None:
             pulumi.set(__self__, "automatic_rotation", automatic_rotation)
+        if cancel_secret_deletion is not None:
+            pulumi.set(__self__, "cancel_secret_deletion", cancel_secret_deletion)
         if created_time is not None:
             pulumi.set(__self__, "created_time", created_time)
         if description is not None:
@@ -251,6 +350,8 @@ class _SecretState:
             pulumi.set(__self__, "managed", managed)
         if owning_service is not None:
             pulumi.set(__self__, "owning_service", owning_service)
+        if pending_window_in_days is not None:
+            pulumi.set(__self__, "pending_window_in_days", pending_window_in_days)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if rotation_interval is not None:
@@ -263,16 +364,26 @@ class _SecretState:
             pulumi.set(__self__, "schedule_delete_time", schedule_delete_time)
         if schedule_rotation_time is not None:
             pulumi.set(__self__, "schedule_rotation_time", schedule_rotation_time)
+        if secret_backup is not None:
+            pulumi.set(__self__, "secret_backup", secret_backup)
         if secret_id is not None:
             pulumi.set(__self__, "secret_id", secret_id)
         if secret_name is not None:
             pulumi.set(__self__, "secret_name", secret_name)
+        if secret_restore is not None:
+            pulumi.set(__self__, "secret_restore", secret_restore)
+        if secret_restore_read is not None:
+            pulumi.set(__self__, "secret_restore_read", secret_restore_read)
+        if secret_rotate is not None:
+            pulumi.set(__self__, "secret_rotate", secret_rotate)
         if secret_state is not None:
             pulumi.set(__self__, "secret_state", secret_state)
         if secret_type is not None:
             pulumi.set(__self__, "secret_type", secret_type)
         if secret_value is not None:
             pulumi.set(__self__, "secret_value", secret_value)
+        if secret_versions is not None:
+            pulumi.set(__self__, "secret_versions", secret_versions)
         if trn is not None:
             pulumi.set(__self__, "trn", trn)
         if uid is not None:
@@ -293,6 +404,18 @@ class _SecretState:
     @automatic_rotation.setter
     def automatic_rotation(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "automatic_rotation", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cancelSecretDeletion")
+    def cancel_secret_deletion(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+        """
+        return pulumi.get(self, "cancel_secret_deletion")
+
+    @cancel_secret_deletion.setter
+    def cancel_secret_deletion(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "cancel_secret_deletion", value)
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
@@ -379,6 +502,18 @@ class _SecretState:
         pulumi.set(self, "owning_service", value)
 
     @_builtins.property
+    @pulumi.getter(name="pendingWindowInDays")
+    def pending_window_in_days(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+        """
+        return pulumi.get(self, "pending_window_in_days")
+
+    @pending_window_in_days.setter
+    def pending_window_in_days(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "pending_window_in_days", value)
+
+    @_builtins.property
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -451,6 +586,18 @@ class _SecretState:
         pulumi.set(self, "schedule_rotation_time", value)
 
     @_builtins.property
+    @pulumi.getter(name="secretBackup")
+    def secret_backup(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        """
+        return pulumi.get(self, "secret_backup")
+
+    @secret_backup.setter
+    def secret_backup(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "secret_backup", value)
+
+    @_builtins.property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -473,6 +620,42 @@ class _SecretState:
     @secret_name.setter
     def secret_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretRestore")
+    def secret_restore(self) -> pulumi.Input[Optional['SecretSecretRestoreArgs']]:
+        """
+        Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        """
+        return pulumi.get(self, "secret_restore")
+
+    @secret_restore.setter
+    def secret_restore(self, value: pulumi.Input[Optional['SecretSecretRestoreArgs']]):
+        pulumi.set(self, "secret_restore", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretRestoreRead")
+    def secret_restore_read(self) -> pulumi.Input[Optional['SecretSecretRestoreReadArgs']]:
+        """
+        Credential restore parameters. Returned only during backup.
+        """
+        return pulumi.get(self, "secret_restore_read")
+
+    @secret_restore_read.setter
+    def secret_restore_read(self, value: pulumi.Input[Optional['SecretSecretRestoreReadArgs']]):
+        pulumi.set(self, "secret_restore_read", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretRotate")
+    def secret_rotate(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+        """
+        return pulumi.get(self, "secret_rotate")
+
+    @secret_rotate.setter
+    def secret_rotate(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "secret_rotate", value)
 
     @_builtins.property
     @pulumi.getter(name="secretState")
@@ -509,6 +692,19 @@ class _SecretState:
     @secret_value.setter
     def secret_value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "secret_value", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretVersions")
+    def secret_versions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretVersionArgs']]]]:
+        """
+        Credential version information.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "secret_versions")
+
+    @secret_versions.setter
+    def secret_versions(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['SecretSecretVersionArgs']]]]):
+        pulumi.set(self, "secret_versions", value)
 
     @_builtins.property
     @pulumi.getter
@@ -566,12 +762,17 @@ class Secret(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  automatic_rotation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cancel_secret_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
                  extended_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_window_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  rotation_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_backup: pulumi.Input[Optional[_builtins.bool]] = None,
                  secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_restore: pulumi.Input[Optional[Union['SecretSecretRestoreArgs', 'SecretSecretRestoreArgsDict']]] = None,
+                 secret_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
                  secret_type: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_value: pulumi.Input[Optional[_builtins.str]] = None,
                  version_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -609,12 +810,17 @@ class Secret(pulumi.CustomResource):
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] automatic_rotation: Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
+        :param pulumi.Input[_builtins.bool] cancel_secret_deletion: Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
         :param pulumi.Input[_builtins.str] description: Credential description, length: 0 ~ 8192 characters
         :param pulumi.Input[_builtins.str] encryption_key: KMS key TRN for encrypting credential value. If not specified, the default key of Credential Manager is used
         :param pulumi.Input[_builtins.str] extended_config: Credential extension configuration, used to specify properties for non-Generic credentials
+        :param pulumi.Input[_builtins.int] pending_window_in_days: Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
         :param pulumi.Input[_builtins.str] project_name: Credential project name. Default value: default
         :param pulumi.Input[_builtins.str] rotation_interval: Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
+        :param pulumi.Input[_builtins.bool] secret_backup: Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
         :param pulumi.Input[_builtins.str] secret_name: Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
+        :param pulumi.Input[Union['SecretSecretRestoreArgs', 'SecretSecretRestoreArgsDict']] secret_restore: Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        :param pulumi.Input[_builtins.bool] secret_rotate: Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
         :param pulumi.Input[_builtins.str] secret_type: Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
         :param pulumi.Input[_builtins.str] secret_value: Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
         :param pulumi.Input[_builtins.str] version_name: Version alias. Valid characters: [a-zA-Z0-9/_+=.@-]
@@ -671,12 +877,17 @@ class Secret(pulumi.CustomResource):
                  resource_name: str,
                  opts: Optional[pulumi.ResourceOptions] = None,
                  automatic_rotation: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cancel_secret_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
                  extended_config: pulumi.Input[Optional[_builtins.str]] = None,
+                 pending_window_in_days: pulumi.Input[Optional[_builtins.int]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  rotation_interval: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_backup: pulumi.Input[Optional[_builtins.bool]] = None,
                  secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_restore: pulumi.Input[Optional[Union['SecretSecretRestoreArgs', 'SecretSecretRestoreArgsDict']]] = None,
+                 secret_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
                  secret_type: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_value: pulumi.Input[Optional[_builtins.str]] = None,
                  version_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -690,14 +901,19 @@ class Secret(pulumi.CustomResource):
             __props__ = SecretArgs.__new__(SecretArgs)
 
             __props__.__dict__["automatic_rotation"] = automatic_rotation
+            __props__.__dict__["cancel_secret_deletion"] = cancel_secret_deletion
             __props__.__dict__["description"] = description
             __props__.__dict__["encryption_key"] = encryption_key
             __props__.__dict__["extended_config"] = extended_config
+            __props__.__dict__["pending_window_in_days"] = pending_window_in_days
             __props__.__dict__["project_name"] = project_name
             __props__.__dict__["rotation_interval"] = rotation_interval
+            __props__.__dict__["secret_backup"] = secret_backup
             if secret_name is None and not opts.urn:
                 raise TypeError("Missing required property 'secret_name'")
             __props__.__dict__["secret_name"] = secret_name
+            __props__.__dict__["secret_restore"] = secret_restore
+            __props__.__dict__["secret_rotate"] = secret_rotate
             if secret_type is None and not opts.urn:
                 raise TypeError("Missing required property 'secret_type'")
             __props__.__dict__["secret_type"] = secret_type
@@ -714,7 +930,9 @@ class Secret(pulumi.CustomResource):
             __props__.__dict__["schedule_delete_time"] = None
             __props__.__dict__["schedule_rotation_time"] = None
             __props__.__dict__["secret_id"] = None
+            __props__.__dict__["secret_restore_read"] = None
             __props__.__dict__["secret_state"] = None
+            __props__.__dict__["secret_versions"] = None
             __props__.__dict__["trn"] = None
             __props__.__dict__["uid"] = None
             __props__.__dict__["updated_time"] = None
@@ -729,6 +947,7 @@ class Secret(pulumi.CustomResource):
             id: pulumi.Input[str],
             opts: Optional[pulumi.ResourceOptions] = None,
             automatic_rotation: pulumi.Input[Optional[_builtins.bool]] = None,
+            cancel_secret_deletion: pulumi.Input[Optional[_builtins.bool]] = None,
             created_time: pulumi.Input[Optional[_builtins.int]] = None,
             description: pulumi.Input[Optional[_builtins.str]] = None,
             encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -736,17 +955,23 @@ class Secret(pulumi.CustomResource):
             last_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
             managed: pulumi.Input[Optional[_builtins.bool]] = None,
             owning_service: pulumi.Input[Optional[_builtins.str]] = None,
+            pending_window_in_days: pulumi.Input[Optional[_builtins.int]] = None,
             project_name: pulumi.Input[Optional[_builtins.str]] = None,
             rotation_interval: pulumi.Input[Optional[_builtins.str]] = None,
             rotation_interval_read: pulumi.Input[Optional[_builtins.int]] = None,
             rotation_state: pulumi.Input[Optional[_builtins.str]] = None,
             schedule_delete_time: pulumi.Input[Optional[_builtins.str]] = None,
             schedule_rotation_time: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_backup: pulumi.Input[Optional[_builtins.bool]] = None,
             secret_id: pulumi.Input[Optional[_builtins.str]] = None,
             secret_name: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_restore: pulumi.Input[Optional[Union['SecretSecretRestoreArgs', 'SecretSecretRestoreArgsDict']]] = None,
+            secret_restore_read: pulumi.Input[Optional[Union['SecretSecretRestoreReadArgs', 'SecretSecretRestoreReadArgsDict']]] = None,
+            secret_rotate: pulumi.Input[Optional[_builtins.bool]] = None,
             secret_state: pulumi.Input[Optional[_builtins.str]] = None,
             secret_type: pulumi.Input[Optional[_builtins.str]] = None,
             secret_value: pulumi.Input[Optional[_builtins.str]] = None,
+            secret_versions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['SecretSecretVersionArgs', 'SecretSecretVersionArgsDict']]]]] = None,
             trn: pulumi.Input[Optional[_builtins.str]] = None,
             uid: pulumi.Input[Optional[_builtins.str]] = None,
             updated_time: pulumi.Input[Optional[_builtins.int]] = None,
@@ -759,6 +984,7 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[str] id: The unique provider ID of the resource to lookup.
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[_builtins.bool] automatic_rotation: Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
+        :param pulumi.Input[_builtins.bool] cancel_secret_deletion: Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
         :param pulumi.Input[_builtins.int] created_time: Credential creation time
         :param pulumi.Input[_builtins.str] description: Credential description, length: 0 ~ 8192 characters
         :param pulumi.Input[_builtins.str] encryption_key: KMS key TRN for encrypting credential value. If not specified, the default key of Credential Manager is used
@@ -766,17 +992,24 @@ class Secret(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] last_rotation_time: Credential last rotation time
         :param pulumi.Input[_builtins.bool] managed: Is managed credential
         :param pulumi.Input[_builtins.str] owning_service: Managed Cloud Service
+        :param pulumi.Input[_builtins.int] pending_window_in_days: Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
         :param pulumi.Input[_builtins.str] project_name: Credential project name. Default value: default
         :param pulumi.Input[_builtins.str] rotation_interval: Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
         :param pulumi.Input[_builtins.int] rotation_interval_read: Automatic rotation interval, unit: seconds
         :param pulumi.Input[_builtins.str] rotation_state: Rotation status: Enable: automatic rotation enabled, Disable: automatic rotation disabled, Rotating: automatic rotation in progress, None: automatic rotation not supported
         :param pulumi.Input[_builtins.str] schedule_delete_time: Credential Scheduled Deletion Time
         :param pulumi.Input[_builtins.str] schedule_rotation_time: Credential next rotation time
+        :param pulumi.Input[_builtins.bool] secret_backup: Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
         :param pulumi.Input[_builtins.str] secret_id: Credential unique identifier, UUID format
         :param pulumi.Input[_builtins.str] secret_name: Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
+        :param pulumi.Input[Union['SecretSecretRestoreArgs', 'SecretSecretRestoreArgsDict']] secret_restore: Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        :param pulumi.Input[Union['SecretSecretRestoreReadArgs', 'SecretSecretRestoreReadArgsDict']] secret_restore_read: Credential restore parameters. Returned only during backup.
+        :param pulumi.Input[_builtins.bool] secret_rotate: Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
         :param pulumi.Input[_builtins.str] secret_state: Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
         :param pulumi.Input[_builtins.str] secret_type: Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
         :param pulumi.Input[_builtins.str] secret_value: Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
+        :param pulumi.Input[Sequence[pulumi.Input[Union['SecretSecretVersionArgs', 'SecretSecretVersionArgsDict']]]] secret_versions: Credential version information.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] trn: Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
         :param pulumi.Input[_builtins.str] uid: Credential tenant ID
         :param pulumi.Input[_builtins.int] updated_time: Credential update date
@@ -787,6 +1020,7 @@ class Secret(pulumi.CustomResource):
         __props__ = _SecretState.__new__(_SecretState)
 
         __props__.__dict__["automatic_rotation"] = automatic_rotation
+        __props__.__dict__["cancel_secret_deletion"] = cancel_secret_deletion
         __props__.__dict__["created_time"] = created_time
         __props__.__dict__["description"] = description
         __props__.__dict__["encryption_key"] = encryption_key
@@ -794,17 +1028,23 @@ class Secret(pulumi.CustomResource):
         __props__.__dict__["last_rotation_time"] = last_rotation_time
         __props__.__dict__["managed"] = managed
         __props__.__dict__["owning_service"] = owning_service
+        __props__.__dict__["pending_window_in_days"] = pending_window_in_days
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["rotation_interval"] = rotation_interval
         __props__.__dict__["rotation_interval_read"] = rotation_interval_read
         __props__.__dict__["rotation_state"] = rotation_state
         __props__.__dict__["schedule_delete_time"] = schedule_delete_time
         __props__.__dict__["schedule_rotation_time"] = schedule_rotation_time
+        __props__.__dict__["secret_backup"] = secret_backup
         __props__.__dict__["secret_id"] = secret_id
         __props__.__dict__["secret_name"] = secret_name
+        __props__.__dict__["secret_restore"] = secret_restore
+        __props__.__dict__["secret_restore_read"] = secret_restore_read
+        __props__.__dict__["secret_rotate"] = secret_rotate
         __props__.__dict__["secret_state"] = secret_state
         __props__.__dict__["secret_type"] = secret_type
         __props__.__dict__["secret_value"] = secret_value
+        __props__.__dict__["secret_versions"] = secret_versions
         __props__.__dict__["trn"] = trn
         __props__.__dict__["uid"] = uid
         __props__.__dict__["updated_time"] = updated_time
@@ -818,6 +1058,14 @@ class Secret(pulumi.CustomResource):
         Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
         """
         return pulumi.get(self, "automatic_rotation")
+
+    @_builtins.property
+    @pulumi.getter(name="cancelSecretDeletion")
+    def cancel_secret_deletion(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+        """
+        return pulumi.get(self, "cancel_secret_deletion")
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
@@ -876,6 +1124,14 @@ class Secret(pulumi.CustomResource):
         return pulumi.get(self, "owning_service")
 
     @_builtins.property
+    @pulumi.getter(name="pendingWindowInDays")
+    def pending_window_in_days(self) -> pulumi.Output[_builtins.int]:
+        """
+        Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+        """
+        return pulumi.get(self, "pending_window_in_days")
+
+    @_builtins.property
     @pulumi.getter(name="projectName")
     def project_name(self) -> pulumi.Output[_builtins.str]:
         """
@@ -924,6 +1180,14 @@ class Secret(pulumi.CustomResource):
         return pulumi.get(self, "schedule_rotation_time")
 
     @_builtins.property
+    @pulumi.getter(name="secretBackup")
+    def secret_backup(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        """
+        return pulumi.get(self, "secret_backup")
+
+    @_builtins.property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> pulumi.Output[_builtins.str]:
         """
@@ -938,6 +1202,30 @@ class Secret(pulumi.CustomResource):
         Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
         """
         return pulumi.get(self, "secret_name")
+
+    @_builtins.property
+    @pulumi.getter(name="secretRestore")
+    def secret_restore(self) -> pulumi.Output['outputs.SecretSecretRestore']:
+        """
+        Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        """
+        return pulumi.get(self, "secret_restore")
+
+    @_builtins.property
+    @pulumi.getter(name="secretRestoreRead")
+    def secret_restore_read(self) -> pulumi.Output['outputs.SecretSecretRestoreRead']:
+        """
+        Credential restore parameters. Returned only during backup.
+        """
+        return pulumi.get(self, "secret_restore_read")
+
+    @_builtins.property
+    @pulumi.getter(name="secretRotate")
+    def secret_rotate(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+        """
+        return pulumi.get(self, "secret_rotate")
 
     @_builtins.property
     @pulumi.getter(name="secretState")
@@ -962,6 +1250,15 @@ class Secret(pulumi.CustomResource):
         Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
         """
         return pulumi.get(self, "secret_value")
+
+    @_builtins.property
+    @pulumi.getter(name="secretVersions")
+    def secret_versions(self) -> pulumi.Output[Sequence['outputs.SecretSecretVersion']]:
+        """
+        Credential version information.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "secret_versions")
 
     @_builtins.property
     @pulumi.getter

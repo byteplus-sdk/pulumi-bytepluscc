@@ -964,6 +964,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "id/oauth2CredentialProvider",
+  "fqn": "pulumi_bytepluscc.id",
+  "classes": {
+   "bytepluscc:id/oauth2CredentialProvider:Oauth2CredentialProvider": "Oauth2CredentialProvider"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "id/permissionNamespace",
   "fqn": "pulumi_bytepluscc.id",
   "classes": {
@@ -1528,6 +1536,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
    "bytepluscc:tls/alarm:Alarm": "Alarm"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/alarmContentTemplateType",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/alarmContentTemplateType:AlarmContentTemplateType": "AlarmContentTemplateType"
   }
  },
  {

@@ -69,6 +69,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         public readonly bool AutomaticRotation;
         /// <summary>
+        /// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+        /// </summary>
+        public readonly bool CancelSecretDeletion;
+        /// <summary>
         /// Credential creation time
         /// </summary>
         public readonly int CreatedTime;
@@ -101,6 +105,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         public readonly string OwningService;
         /// <summary>
+        /// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+        /// </summary>
+        public readonly int PendingWindowInDays;
+        /// <summary>
         /// Credential project name. Default value: default
         /// </summary>
         public readonly string ProjectName;
@@ -125,6 +133,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         public readonly string ScheduleRotationTime;
         /// <summary>
+        /// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        /// </summary>
+        public readonly bool SecretBackup;
+        /// <summary>
         /// Credential unique identifier, UUID format
         /// </summary>
         public readonly string SecretId;
@@ -132,6 +144,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
         /// </summary>
         public readonly string SecretName;
+        /// <summary>
+        /// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        /// </summary>
+        public readonly Outputs.GetSecretSecretRestoreResult SecretRestore;
+        /// <summary>
+        /// Credential restore parameters. Returned only during backup.
+        /// </summary>
+        public readonly Outputs.GetSecretSecretRestoreReadResult SecretRestoreRead;
+        /// <summary>
+        /// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+        /// </summary>
+        public readonly bool SecretRotate;
         /// <summary>
         /// Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
         /// </summary>
@@ -144,6 +168,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
         /// </summary>
         public readonly string SecretValue;
+        /// <summary>
+        /// Credential version information.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetSecretSecretVersionResult> SecretVersions;
         /// <summary>
         /// Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
         /// </summary>
@@ -165,6 +193,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         private GetSecretResult(
             bool automaticRotation,
 
+            bool cancelSecretDeletion,
+
             int createdTime,
 
             string description,
@@ -181,6 +211,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
 
             string owningService,
 
+            int pendingWindowInDays,
+
             string projectName,
 
             string rotationInterval,
@@ -193,15 +225,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
 
             string scheduleRotationTime,
 
+            bool secretBackup,
+
             string secretId,
 
             string secretName,
+
+            Outputs.GetSecretSecretRestoreResult secretRestore,
+
+            Outputs.GetSecretSecretRestoreReadResult secretRestoreRead,
+
+            bool secretRotate,
 
             string secretState,
 
             string secretType,
 
             string secretValue,
+
+            ImmutableArray<Outputs.GetSecretSecretVersionResult> secretVersions,
 
             string trn,
 
@@ -212,6 +254,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
             string versionName)
         {
             AutomaticRotation = automaticRotation;
+            CancelSecretDeletion = cancelSecretDeletion;
             CreatedTime = createdTime;
             Description = description;
             EncryptionKey = encryptionKey;
@@ -220,17 +263,23 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
             LastRotationTime = lastRotationTime;
             Managed = managed;
             OwningService = owningService;
+            PendingWindowInDays = pendingWindowInDays;
             ProjectName = projectName;
             RotationInterval = rotationInterval;
             RotationIntervalRead = rotationIntervalRead;
             RotationState = rotationState;
             ScheduleDeleteTime = scheduleDeleteTime;
             ScheduleRotationTime = scheduleRotationTime;
+            SecretBackup = secretBackup;
             SecretId = secretId;
             SecretName = secretName;
+            SecretRestore = secretRestore;
+            SecretRestoreRead = secretRestoreRead;
+            SecretRotate = secretRotate;
             SecretState = secretState;
             SecretType = secretType;
             SecretValue = secretValue;
+            SecretVersions = secretVersions;
             Trn = trn;
             Uid = uid;
             UpdatedTime = updatedTime;

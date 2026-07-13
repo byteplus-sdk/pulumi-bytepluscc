@@ -7,11 +7,14 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .alarm import *
+from .alarm_content_template_type import *
 from .alarm_notify_group import *
 from .alarm_webhook_integration_type import *
 from .consumer_group import *
 from .etl import *
 from .get_alarm import *
+from .get_alarm_content_template_type import *
+from .get_alarm_content_template_types import *
 from .get_alarm_notify_group import *
 from .get_alarm_notify_groups import *
 from .get_alarm_webhook_integration_type import *

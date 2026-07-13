@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.id;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.id.inputs.GetAuthConfigArgs;
 import com.byteplus.bytepluscc.id.inputs.GetAuthConfigPlainArgs;
+import com.byteplus.bytepluscc.id.inputs.GetOauth2CredentialProviderArgs;
+import com.byteplus.bytepluscc.id.inputs.GetOauth2CredentialProviderPlainArgs;
 import com.byteplus.bytepluscc.id.inputs.GetPermissionNamespaceArgs;
 import com.byteplus.bytepluscc.id.inputs.GetPermissionNamespacePlainArgs;
 import com.byteplus.bytepluscc.id.inputs.GetServiceArgs;
@@ -16,6 +18,8 @@ import com.byteplus.bytepluscc.id.inputs.GetWorkloadPoolArgs;
 import com.byteplus.bytepluscc.id.inputs.GetWorkloadPoolPlainArgs;
 import com.byteplus.bytepluscc.id.outputs.GetAuthConfigResult;
 import com.byteplus.bytepluscc.id.outputs.GetAuthConfigsResult;
+import com.byteplus.bytepluscc.id.outputs.GetOauth2CredentialProviderResult;
+import com.byteplus.bytepluscc.id.outputs.GetOauth2CredentialProvidersResult;
 import com.byteplus.bytepluscc.id.outputs.GetPermissionNamespaceResult;
 import com.byteplus.bytepluscc.id.outputs.GetPermissionNamespacesResult;
 import com.byteplus.bytepluscc.id.outputs.GetServiceResult;
@@ -116,6 +120,90 @@ public final class IdFunctions {
      */
     public static CompletableFuture<GetAuthConfigsResult> getAuthConfigsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:id/getAuthConfigs:getAuthConfigs", TypeShape.of(GetAuthConfigsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static Output<GetOauth2CredentialProviderResult> getOauth2CredentialProvider(GetOauth2CredentialProviderArgs args) {
+        return getOauth2CredentialProvider(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static CompletableFuture<GetOauth2CredentialProviderResult> getOauth2CredentialProviderPlain(GetOauth2CredentialProviderPlainArgs args) {
+        return getOauth2CredentialProviderPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static Output<GetOauth2CredentialProviderResult> getOauth2CredentialProvider(GetOauth2CredentialProviderArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getOauth2CredentialProvider:getOauth2CredentialProvider", TypeShape.of(GetOauth2CredentialProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static Output<GetOauth2CredentialProviderResult> getOauth2CredentialProvider(GetOauth2CredentialProviderArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getOauth2CredentialProvider:getOauth2CredentialProvider", TypeShape.of(GetOauth2CredentialProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static CompletableFuture<GetOauth2CredentialProviderResult> getOauth2CredentialProviderPlain(GetOauth2CredentialProviderPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getOauth2CredentialProvider:getOauth2CredentialProvider", TypeShape.of(GetOauth2CredentialProviderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static Output<GetOauth2CredentialProvidersResult> getOauth2CredentialProviders() {
+        return getOauth2CredentialProviders(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static CompletableFuture<GetOauth2CredentialProvidersResult> getOauth2CredentialProvidersPlain() {
+        return getOauth2CredentialProvidersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static Output<GetOauth2CredentialProvidersResult> getOauth2CredentialProviders(InvokeArgs args) {
+        return getOauth2CredentialProviders(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static CompletableFuture<GetOauth2CredentialProvidersResult> getOauth2CredentialProvidersPlain(InvokeArgs args) {
+        return getOauth2CredentialProvidersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static Output<GetOauth2CredentialProvidersResult> getOauth2CredentialProviders(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getOauth2CredentialProviders:getOauth2CredentialProviders", TypeShape.of(GetOauth2CredentialProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static Output<GetOauth2CredentialProvidersResult> getOauth2CredentialProviders(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:id/getOauth2CredentialProviders:getOauth2CredentialProviders", TypeShape.of(GetOauth2CredentialProvidersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ID::Oauth2CredentialProvider
+     * 
+     */
+    public static CompletableFuture<GetOauth2CredentialProvidersResult> getOauth2CredentialProvidersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:id/getOauth2CredentialProviders:getOauth2CredentialProviders", TypeShape.of(GetOauth2CredentialProvidersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::ID::PermissionNamespace

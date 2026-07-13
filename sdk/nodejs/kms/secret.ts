@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -66,6 +68,10 @@ export class Secret extends pulumi.CustomResource {
      */
     declare public readonly automaticRotation: pulumi.Output<boolean>;
     /**
+     * Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     */
+    declare public readonly cancelSecretDeletion: pulumi.Output<boolean>;
+    /**
      * Credential creation time
      */
     declare public /*out*/ readonly createdTime: pulumi.Output<number>;
@@ -94,6 +100,10 @@ export class Secret extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly owningService: pulumi.Output<string>;
     /**
+     * Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     */
+    declare public readonly pendingWindowInDays: pulumi.Output<number>;
+    /**
      * Credential project name. Default value: default
      */
     declare public readonly projectName: pulumi.Output<string>;
@@ -118,6 +128,10 @@ export class Secret extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly scheduleRotationTime: pulumi.Output<string>;
     /**
+     * Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     */
+    declare public readonly secretBackup: pulumi.Output<boolean>;
+    /**
      * Credential unique identifier, UUID format
      */
     declare public /*out*/ readonly secretId: pulumi.Output<string>;
@@ -125,6 +139,18 @@ export class Secret extends pulumi.CustomResource {
      * Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
      */
     declare public readonly secretName: pulumi.Output<string>;
+    /**
+     * Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     */
+    declare public readonly secretRestore: pulumi.Output<outputs.kms.SecretSecretRestore>;
+    /**
+     * Credential restore parameters. Returned only during backup.
+     */
+    declare public /*out*/ readonly secretRestoreRead: pulumi.Output<outputs.kms.SecretSecretRestoreRead>;
+    /**
+     * Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     */
+    declare public readonly secretRotate: pulumi.Output<boolean>;
     /**
      * Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
      */
@@ -137,6 +163,11 @@ export class Secret extends pulumi.CustomResource {
      * Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
      */
     declare public readonly secretValue: pulumi.Output<string>;
+    /**
+     * Credential version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    declare public /*out*/ readonly secretVersions: pulumi.Output<outputs.kms.SecretSecretVersion[]>;
     /**
      * Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
      */
@@ -168,6 +199,7 @@ export class Secret extends pulumi.CustomResource {
         if (opts.id) {
             const state = argsOrState as SecretState | undefined;
             resourceInputs["automaticRotation"] = state?.automaticRotation;
+            resourceInputs["cancelSecretDeletion"] = state?.cancelSecretDeletion;
             resourceInputs["createdTime"] = state?.createdTime;
             resourceInputs["description"] = state?.description;
             resourceInputs["encryptionKey"] = state?.encryptionKey;
@@ -175,17 +207,23 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["lastRotationTime"] = state?.lastRotationTime;
             resourceInputs["managed"] = state?.managed;
             resourceInputs["owningService"] = state?.owningService;
+            resourceInputs["pendingWindowInDays"] = state?.pendingWindowInDays;
             resourceInputs["projectName"] = state?.projectName;
             resourceInputs["rotationInterval"] = state?.rotationInterval;
             resourceInputs["rotationIntervalRead"] = state?.rotationIntervalRead;
             resourceInputs["rotationState"] = state?.rotationState;
             resourceInputs["scheduleDeleteTime"] = state?.scheduleDeleteTime;
             resourceInputs["scheduleRotationTime"] = state?.scheduleRotationTime;
+            resourceInputs["secretBackup"] = state?.secretBackup;
             resourceInputs["secretId"] = state?.secretId;
             resourceInputs["secretName"] = state?.secretName;
+            resourceInputs["secretRestore"] = state?.secretRestore;
+            resourceInputs["secretRestoreRead"] = state?.secretRestoreRead;
+            resourceInputs["secretRotate"] = state?.secretRotate;
             resourceInputs["secretState"] = state?.secretState;
             resourceInputs["secretType"] = state?.secretType;
             resourceInputs["secretValue"] = state?.secretValue;
+            resourceInputs["secretVersions"] = state?.secretVersions;
             resourceInputs["trn"] = state?.trn;
             resourceInputs["uid"] = state?.uid;
             resourceInputs["updatedTime"] = state?.updatedTime;
@@ -202,12 +240,17 @@ export class Secret extends pulumi.CustomResource {
                 throw new Error("Missing required property 'secretValue'");
             }
             resourceInputs["automaticRotation"] = args?.automaticRotation;
+            resourceInputs["cancelSecretDeletion"] = args?.cancelSecretDeletion;
             resourceInputs["description"] = args?.description;
             resourceInputs["encryptionKey"] = args?.encryptionKey;
             resourceInputs["extendedConfig"] = args?.extendedConfig;
+            resourceInputs["pendingWindowInDays"] = args?.pendingWindowInDays;
             resourceInputs["projectName"] = args?.projectName;
             resourceInputs["rotationInterval"] = args?.rotationInterval;
+            resourceInputs["secretBackup"] = args?.secretBackup;
             resourceInputs["secretName"] = args?.secretName;
+            resourceInputs["secretRestore"] = args?.secretRestore;
+            resourceInputs["secretRotate"] = args?.secretRotate;
             resourceInputs["secretType"] = args?.secretType;
             resourceInputs["secretValue"] = args?.secretValue;
             resourceInputs["versionName"] = args?.versionName;
@@ -220,7 +263,9 @@ export class Secret extends pulumi.CustomResource {
             resourceInputs["scheduleDeleteTime"] = undefined /*out*/;
             resourceInputs["scheduleRotationTime"] = undefined /*out*/;
             resourceInputs["secretId"] = undefined /*out*/;
+            resourceInputs["secretRestoreRead"] = undefined /*out*/;
             resourceInputs["secretState"] = undefined /*out*/;
+            resourceInputs["secretVersions"] = undefined /*out*/;
             resourceInputs["trn"] = undefined /*out*/;
             resourceInputs["uid"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
@@ -238,6 +283,10 @@ export interface SecretState {
      * Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
      */
     automaticRotation?: pulumi.Input<boolean | undefined>;
+    /**
+     * Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     */
+    cancelSecretDeletion?: pulumi.Input<boolean | undefined>;
     /**
      * Credential creation time
      */
@@ -267,6 +316,10 @@ export interface SecretState {
      */
     owningService?: pulumi.Input<string | undefined>;
     /**
+     * Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     */
+    pendingWindowInDays?: pulumi.Input<number | undefined>;
+    /**
      * Credential project name. Default value: default
      */
     projectName?: pulumi.Input<string | undefined>;
@@ -291,6 +344,10 @@ export interface SecretState {
      */
     scheduleRotationTime?: pulumi.Input<string | undefined>;
     /**
+     * Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     */
+    secretBackup?: pulumi.Input<boolean | undefined>;
+    /**
      * Credential unique identifier, UUID format
      */
     secretId?: pulumi.Input<string | undefined>;
@@ -298,6 +355,18 @@ export interface SecretState {
      * Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
      */
     secretName?: pulumi.Input<string | undefined>;
+    /**
+     * Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     */
+    secretRestore?: pulumi.Input<inputs.kms.SecretSecretRestore | undefined>;
+    /**
+     * Credential restore parameters. Returned only during backup.
+     */
+    secretRestoreRead?: pulumi.Input<inputs.kms.SecretSecretRestoreRead | undefined>;
+    /**
+     * Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     */
+    secretRotate?: pulumi.Input<boolean | undefined>;
     /**
      * Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
      */
@@ -310,6 +379,11 @@ export interface SecretState {
      * Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
      */
     secretValue?: pulumi.Input<string | undefined>;
+    /**
+     * Credential version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    secretVersions?: pulumi.Input<pulumi.Input<inputs.kms.SecretSecretVersion>[] | undefined>;
     /**
      * Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
      */
@@ -337,6 +411,10 @@ export interface SecretArgs {
      */
     automaticRotation?: pulumi.Input<boolean | undefined>;
     /**
+     * Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     */
+    cancelSecretDeletion?: pulumi.Input<boolean | undefined>;
+    /**
      * Credential description, length: 0 ~ 8192 characters
      */
     description?: pulumi.Input<string | undefined>;
@@ -349,6 +427,10 @@ export interface SecretArgs {
      */
     extendedConfig?: pulumi.Input<string | undefined>;
     /**
+     * Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     */
+    pendingWindowInDays?: pulumi.Input<number | undefined>;
+    /**
      * Credential project name. Default value: default
      */
     projectName?: pulumi.Input<string | undefined>;
@@ -357,9 +439,21 @@ export interface SecretArgs {
      */
     rotationInterval?: pulumi.Input<string | undefined>;
     /**
+     * Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     */
+    secretBackup?: pulumi.Input<boolean | undefined>;
+    /**
      * Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
      */
     secretName: pulumi.Input<string>;
+    /**
+     * Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     */
+    secretRestore?: pulumi.Input<inputs.kms.SecretSecretRestore | undefined>;
+    /**
+     * Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     */
+    secretRotate?: pulumi.Input<boolean | undefined>;
     /**
      * Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
      */

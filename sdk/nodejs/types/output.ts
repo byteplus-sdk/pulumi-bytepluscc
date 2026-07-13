@@ -16957,6 +16957,124 @@ export namespace id {
         discoveryUrl: string;
     }
 
+    export interface GetOauth2CredentialProviderConfig {
+        /**
+         * OAuth2 Client ID。
+         */
+        clientId: string;
+        /**
+         * OAuth2 Client Secret。
+         */
+        clientSecret: string;
+        /**
+         * Default custom parameters in GetResourceOauth2Token request
+         */
+        customParameters: outputs.id.GetOauth2CredentialProviderConfigCustomParameters;
+        /**
+         * Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M
+         */
+        flow: string;
+        /**
+         * Default ForceAuthentication in GetResourceOauth2Token request
+         */
+        forceAuthentication: boolean;
+        /**
+         * Maximum token validity (seconds)
+         */
+        maxExpires: number;
+        /**
+         * Custom metadata
+         */
+        metadata: string;
+        /**
+         * OAuth2 discovery information
+         */
+        oauth2Discovery: outputs.id.GetOauth2CredentialProviderConfigOauth2Discovery;
+        /**
+         * Default RedirectUrl in GetResourceOauth2Token request
+         */
+        redirectUrl: string;
+        /**
+         * Default Scopes in GetResourceOauth2Token request
+         */
+        scopes: string[];
+        /**
+         * Encrypted storage configuration
+         */
+        secretStorage: outputs.id.GetOauth2CredentialProviderConfigSecretStorage;
+    }
+
+    export interface GetOauth2CredentialProviderConfigCustomParameters {
+        /**
+         * Custom parameter entry list
+         */
+        entries: outputs.id.GetOauth2CredentialProviderConfigCustomParametersEntry[];
+    }
+
+    export interface GetOauth2CredentialProviderConfigCustomParametersEntry {
+        /**
+         * Parameter key
+         */
+        key: string;
+        /**
+         * Parameter value
+         */
+        value: string;
+    }
+
+    export interface GetOauth2CredentialProviderConfigOauth2Discovery {
+        /**
+         * Authorization server metadata
+         */
+        authorizationServerMetadata: outputs.id.GetOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata;
+        /**
+         * DiscoveryUrl field
+         */
+        discoveryUrl: string;
+    }
+
+    export interface GetOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata {
+        /**
+         * AuthorizationEndpoint field
+         */
+        authorizationEndpoint: string;
+        /**
+         * CodeChallengeMethodsSupported field
+         */
+        codeChallengeMethodsSupporteds: string[];
+        /**
+         * Issuer field
+         */
+        issuer: string;
+        /**
+         * RegistrationEndpoint field
+         */
+        registrationEndpoint: string;
+        /**
+         * ResponseTypes field
+         */
+        responseTypes: string[];
+        /**
+         * RevocationEndpoint field
+         */
+        revocationEndpoint: string;
+        /**
+         * TokenEndpoint field
+         */
+        tokenEndpoint: string;
+    }
+
+    export interface GetOauth2CredentialProviderConfigSecretStorage {
+        /**
+         * KMS key TRN for encrypted credential value. If not specified, the default key is used
+         */
+        encryptionKey: string;
+        /**
+         * Encrypted storage type. 0: SecretManager, 1: KMS
+         */
+        storageType: number;
+    }
+
     export interface GetPermissionNamespaceTag {
         /**
          * Tag Key
@@ -17164,6 +17282,125 @@ export namespace id {
          * Tag value
          */
         value: string;
+    }
+
+    export interface Oauth2CredentialProviderConfig {
+        /**
+         * OAuth2 Client ID。
+         */
+        clientId: string;
+        /**
+         * OAuth2 Client Secret。
+         */
+        clientSecret: string;
+        /**
+         * Default custom parameters in GetResourceOauth2Token request
+         */
+        customParameters: outputs.id.Oauth2CredentialProviderConfigCustomParameters;
+        /**
+         * Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M
+         */
+        flow: string;
+        /**
+         * Default ForceAuthentication in GetResourceOauth2Token request
+         */
+        forceAuthentication: boolean;
+        /**
+         * Maximum token validity (seconds)
+         */
+        maxExpires: number;
+        /**
+         * Custom metadata
+         */
+        metadata: string;
+        /**
+         * OAuth2 discovery information
+         */
+        oauth2Discovery: outputs.id.Oauth2CredentialProviderConfigOauth2Discovery;
+        /**
+         * Default RedirectUrl in GetResourceOauth2Token request
+         */
+        redirectUrl: string;
+        /**
+         * Default Scopes in GetResourceOauth2Token request
+         */
+        scopes: string[];
+        /**
+         * Encrypted storage configuration
+         */
+        secretStorage: outputs.id.Oauth2CredentialProviderConfigSecretStorage;
+    }
+
+    export interface Oauth2CredentialProviderConfigCustomParameters {
+        /**
+         * Custom parameter entry list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        entries: outputs.id.Oauth2CredentialProviderConfigCustomParametersEntry[];
+    }
+
+    export interface Oauth2CredentialProviderConfigCustomParametersEntry {
+        /**
+         * Parameter key
+         */
+        key: string;
+        /**
+         * Parameter value
+         */
+        value: string;
+    }
+
+    export interface Oauth2CredentialProviderConfigOauth2Discovery {
+        /**
+         * Authorization server metadata
+         */
+        authorizationServerMetadata: outputs.id.Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata;
+        /**
+         * DiscoveryUrl field
+         */
+        discoveryUrl: string;
+    }
+
+    export interface Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata {
+        /**
+         * AuthorizationEndpoint field
+         */
+        authorizationEndpoint: string;
+        /**
+         * CodeChallengeMethodsSupported field
+         */
+        codeChallengeMethodsSupporteds: string[];
+        /**
+         * Issuer field
+         */
+        issuer: string;
+        /**
+         * RegistrationEndpoint field
+         */
+        registrationEndpoint: string;
+        /**
+         * ResponseTypes field
+         */
+        responseTypes: string[];
+        /**
+         * RevocationEndpoint field
+         */
+        revocationEndpoint: string;
+        /**
+         * TokenEndpoint field
+         */
+        tokenEndpoint: string;
+    }
+
+    export interface Oauth2CredentialProviderConfigSecretStorage {
+        /**
+         * KMS key TRN for encrypted credential value. If not specified, the default key is used
+         */
+        encryptionKey: string;
+        /**
+         * Encrypted storage type. 0: SecretManager, 1: KMS
+         */
+        storageType: number;
     }
 
     export interface PermissionNamespaceTag {
@@ -17764,6 +18001,51 @@ export namespace kms {
         value: string;
     }
 
+    export interface GetSecretSecretRestore {
+        /**
+         * Complete credential data returned by backup, in JSON format.
+         */
+        backupData: string;
+        /**
+         * Encrypted data key returned by backup, Base64 encoded.
+         */
+        secretDataKey: string;
+        /**
+         * Signature of the backup data, Base64 encoded.
+         */
+        signature: string;
+    }
+
+    export interface GetSecretSecretRestoreRead {
+        /**
+         * Complete credential data returned by backup, in JSON format.
+         */
+        backupData: string;
+        /**
+         * Encrypted data key returned by backup, Base64 encoded.
+         */
+        secretDataKey: string;
+        /**
+         * Signature of the backup data, Base64 encoded.
+         */
+        signature: string;
+    }
+
+    export interface GetSecretSecretVersion {
+        /**
+         * Credential version creation time.
+         */
+        creationDate: number;
+        /**
+         * Unique identifier for the credential version, in UUID format.
+         */
+        versionId: string;
+        /**
+         * Credential version tags.
+         */
+        versionStage: string;
+    }
+
     export interface KeyAsymmetricCiphertext {
         /**
          * Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
@@ -17922,6 +18204,51 @@ export namespace kms {
          * KMS key label value.
          */
         value: string;
+    }
+
+    export interface SecretSecretRestore {
+        /**
+         * Complete credential data returned by backup, in JSON format.
+         */
+        backupData: string;
+        /**
+         * Encrypted data key returned by backup, Base64 encoded.
+         */
+        secretDataKey: string;
+        /**
+         * Signature of the backup data, Base64 encoded.
+         */
+        signature: string;
+    }
+
+    export interface SecretSecretRestoreRead {
+        /**
+         * Complete credential data returned by backup, in JSON format.
+         */
+        backupData: string;
+        /**
+         * Encrypted data key returned by backup, Base64 encoded.
+         */
+        secretDataKey: string;
+        /**
+         * Signature of the backup data, Base64 encoded.
+         */
+        signature: string;
+    }
+
+    export interface SecretSecretVersion {
+        /**
+         * Credential version creation time.
+         */
+        creationDate: number;
+        /**
+         * Unique identifier for the credential version, in UUID format.
+         */
+        versionId: string;
+        /**
+         * Credential version tags.
+         */
+        versionStage: string;
     }
 
 }
@@ -23566,6 +23893,95 @@ export namespace tls {
         sms: number;
     }
 
+    export interface AlarmContentTemplateTypeDingTalk {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+        /**
+         * Alert notification subject
+         */
+        title: string;
+    }
+
+    export interface AlarmContentTemplateTypeEmail {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+        /**
+         * Email notification subject
+         */
+        subject: string;
+    }
+
+    export interface AlarmContentTemplateTypeLark {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+        /**
+         * Alert notification subject
+         */
+        title: string;
+    }
+
+    export interface AlarmContentTemplateTypeSms {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+    }
+
+    export interface AlarmContentTemplateTypeVms {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+    }
+
+    export interface AlarmContentTemplateTypeWeChat {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+        /**
+         * Alert notification subject
+         */
+        title: string;
+    }
+
+    export interface AlarmContentTemplateTypeWebhook {
+        /**
+         * Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+    }
+
     export interface AlarmJoinConfiguration {
         /**
          * Expression used for left join or right join.
@@ -24073,6 +24489,95 @@ export namespace tls {
          * SMS alert interval, in minutes. Value range: 10–1440
          */
         sms: number;
+    }
+
+    export interface GetAlarmContentTemplateTypeDingTalk {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+        /**
+         * Alert notification subject
+         */
+        title: string;
+    }
+
+    export interface GetAlarmContentTemplateTypeEmail {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+        /**
+         * Email notification subject
+         */
+        subject: string;
+    }
+
+    export interface GetAlarmContentTemplateTypeLark {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+        /**
+         * Alert notification subject
+         */
+        title: string;
+    }
+
+    export interface GetAlarmContentTemplateTypeSms {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+    }
+
+    export interface GetAlarmContentTemplateTypeVms {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+    }
+
+    export interface GetAlarmContentTemplateTypeWeChat {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale: string;
+        /**
+         * Alert notification subject
+         */
+        title: string;
+    }
+
+    export interface GetAlarmContentTemplateTypeWebhook {
+        /**
+         * Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content: string;
     }
 
     export interface GetAlarmJoinConfiguration {

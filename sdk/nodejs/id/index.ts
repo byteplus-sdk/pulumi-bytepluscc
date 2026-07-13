@@ -20,6 +20,16 @@ export const getAuthConfigs: typeof import("./getAuthConfigs").getAuthConfigs = 
 export const getAuthConfigsOutput: typeof import("./getAuthConfigs").getAuthConfigsOutput = null as any;
 utilities.lazyLoad(exports, ["getAuthConfigs","getAuthConfigsOutput"], () => require("./getAuthConfigs"));
 
+export { GetOauth2CredentialProviderArgs, GetOauth2CredentialProviderResult, GetOauth2CredentialProviderOutputArgs } from "./getOauth2CredentialProvider";
+export const getOauth2CredentialProvider: typeof import("./getOauth2CredentialProvider").getOauth2CredentialProvider = null as any;
+export const getOauth2CredentialProviderOutput: typeof import("./getOauth2CredentialProvider").getOauth2CredentialProviderOutput = null as any;
+utilities.lazyLoad(exports, ["getOauth2CredentialProvider","getOauth2CredentialProviderOutput"], () => require("./getOauth2CredentialProvider"));
+
+export { GetOauth2CredentialProvidersResult } from "./getOauth2CredentialProviders";
+export const getOauth2CredentialProviders: typeof import("./getOauth2CredentialProviders").getOauth2CredentialProviders = null as any;
+export const getOauth2CredentialProvidersOutput: typeof import("./getOauth2CredentialProviders").getOauth2CredentialProvidersOutput = null as any;
+utilities.lazyLoad(exports, ["getOauth2CredentialProviders","getOauth2CredentialProvidersOutput"], () => require("./getOauth2CredentialProviders"));
+
 export { GetPermissionNamespaceArgs, GetPermissionNamespaceResult, GetPermissionNamespaceOutputArgs } from "./getPermissionNamespace";
 export const getPermissionNamespace: typeof import("./getPermissionNamespace").getPermissionNamespace = null as any;
 export const getPermissionNamespaceOutput: typeof import("./getPermissionNamespace").getPermissionNamespaceOutput = null as any;
@@ -60,6 +70,11 @@ export const getWorkloadPools: typeof import("./getWorkloadPools").getWorkloadPo
 export const getWorkloadPoolsOutput: typeof import("./getWorkloadPools").getWorkloadPoolsOutput = null as any;
 utilities.lazyLoad(exports, ["getWorkloadPools","getWorkloadPoolsOutput"], () => require("./getWorkloadPools"));
 
+export { Oauth2CredentialProviderArgs, Oauth2CredentialProviderState } from "./oauth2CredentialProvider";
+export type Oauth2CredentialProvider = import("./oauth2CredentialProvider").Oauth2CredentialProvider;
+export const Oauth2CredentialProvider: typeof import("./oauth2CredentialProvider").Oauth2CredentialProvider = null as any;
+utilities.lazyLoad(exports, ["Oauth2CredentialProvider"], () => require("./oauth2CredentialProvider"));
+
 export { PermissionNamespaceArgs, PermissionNamespaceState } from "./permissionNamespace";
 export type PermissionNamespace = import("./permissionNamespace").PermissionNamespace;
 export const PermissionNamespace: typeof import("./permissionNamespace").PermissionNamespace = null as any;
@@ -87,6 +102,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:id/authConfig:AuthConfig":
                 return new AuthConfig(name, <any>undefined, { urn })
+            case "bytepluscc:id/oauth2CredentialProvider:Oauth2CredentialProvider":
+                return new Oauth2CredentialProvider(name, <any>undefined, { urn })
             case "bytepluscc:id/permissionNamespace:PermissionNamespace":
                 return new PermissionNamespace(name, <any>undefined, { urn })
             case "bytepluscc:id/service:Service":
@@ -101,6 +118,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "id/authConfig", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "id/oauth2CredentialProvider", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "id/permissionNamespace", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "id/service", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "id/userPool", _module)

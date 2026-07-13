@@ -3,10 +3,12 @@
 
 package com.byteplus.bytepluscc.kms;
 
+import com.byteplus.bytepluscc.kms.inputs.SecretSecretRestoreArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -30,6 +32,21 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> automaticRotation() {
         return Optional.ofNullable(this.automaticRotation);
+    }
+
+    /**
+     * Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     * 
+     */
+    @Import(name="cancelSecretDeletion")
+    private @Nullable Output<Boolean> cancelSecretDeletion;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     * 
+     */
+    public Optional<Output<Boolean>> cancelSecretDeletion() {
+        return Optional.ofNullable(this.cancelSecretDeletion);
     }
 
     /**
@@ -78,6 +95,21 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     * 
+     */
+    @Import(name="pendingWindowInDays")
+    private @Nullable Output<Integer> pendingWindowInDays;
+
+    /**
+     * @return Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     * 
+     */
+    public Optional<Output<Integer>> pendingWindowInDays() {
+        return Optional.ofNullable(this.pendingWindowInDays);
+    }
+
+    /**
      * Credential project name. Default value: default
      * 
      */
@@ -108,6 +140,21 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     * 
+     */
+    @Import(name="secretBackup")
+    private @Nullable Output<Boolean> secretBackup;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     * 
+     */
+    public Optional<Output<Boolean>> secretBackup() {
+        return Optional.ofNullable(this.secretBackup);
+    }
+
+    /**
      * Credential name. Valid characters: [a-zA-Z0-9/_+=.{@literal @}-]
      * 
      */
@@ -120,6 +167,36 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Output<String> secretName() {
         return this.secretName;
+    }
+
+    /**
+     * Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     * 
+     */
+    @Import(name="secretRestore")
+    private @Nullable Output<SecretSecretRestoreArgs> secretRestore;
+
+    /**
+     * @return Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     * 
+     */
+    public Optional<Output<SecretSecretRestoreArgs>> secretRestore() {
+        return Optional.ofNullable(this.secretRestore);
+    }
+
+    /**
+     * Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     * 
+     */
+    @Import(name="secretRotate")
+    private @Nullable Output<Boolean> secretRotate;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     * 
+     */
+    public Optional<Output<Boolean>> secretRotate() {
+        return Optional.ofNullable(this.secretRotate);
     }
 
     /**
@@ -171,12 +248,17 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
 
     private SecretArgs(SecretArgs $) {
         this.automaticRotation = $.automaticRotation;
+        this.cancelSecretDeletion = $.cancelSecretDeletion;
         this.description = $.description;
         this.encryptionKey = $.encryptionKey;
         this.extendedConfig = $.extendedConfig;
+        this.pendingWindowInDays = $.pendingWindowInDays;
         this.projectName = $.projectName;
         this.rotationInterval = $.rotationInterval;
+        this.secretBackup = $.secretBackup;
         this.secretName = $.secretName;
+        this.secretRestore = $.secretRestore;
+        this.secretRotate = $.secretRotate;
         this.secretType = $.secretType;
         this.secretValue = $.secretValue;
         this.versionName = $.versionName;
@@ -219,6 +301,27 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder automaticRotation(Boolean automaticRotation) {
             return automaticRotation(Output.of(automaticRotation));
+        }
+
+        /**
+         * @param cancelSecretDeletion Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cancelSecretDeletion(@Nullable Output<Boolean> cancelSecretDeletion) {
+            $.cancelSecretDeletion = cancelSecretDeletion;
+            return this;
+        }
+
+        /**
+         * @param cancelSecretDeletion Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cancelSecretDeletion(Boolean cancelSecretDeletion) {
+            return cancelSecretDeletion(Output.of(cancelSecretDeletion));
         }
 
         /**
@@ -285,6 +388,27 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param pendingWindowInDays Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pendingWindowInDays(@Nullable Output<Integer> pendingWindowInDays) {
+            $.pendingWindowInDays = pendingWindowInDays;
+            return this;
+        }
+
+        /**
+         * @param pendingWindowInDays Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pendingWindowInDays(Integer pendingWindowInDays) {
+            return pendingWindowInDays(Output.of(pendingWindowInDays));
+        }
+
+        /**
          * @param projectName Credential project name. Default value: default
          * 
          * @return builder
@@ -327,6 +451,27 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param secretBackup Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretBackup(@Nullable Output<Boolean> secretBackup) {
+            $.secretBackup = secretBackup;
+            return this;
+        }
+
+        /**
+         * @param secretBackup Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretBackup(Boolean secretBackup) {
+            return secretBackup(Output.of(secretBackup));
+        }
+
+        /**
          * @param secretName Credential name. Valid characters: [a-zA-Z0-9/_+=.{@literal @}-]
          * 
          * @return builder
@@ -345,6 +490,48 @@ public final class SecretArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secretName(String secretName) {
             return secretName(Output.of(secretName));
+        }
+
+        /**
+         * @param secretRestore Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRestore(@Nullable Output<SecretSecretRestoreArgs> secretRestore) {
+            $.secretRestore = secretRestore;
+            return this;
+        }
+
+        /**
+         * @param secretRestore Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRestore(SecretSecretRestoreArgs secretRestore) {
+            return secretRestore(Output.of(secretRestore));
+        }
+
+        /**
+         * @param secretRotate Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRotate(@Nullable Output<Boolean> secretRotate) {
+            $.secretRotate = secretRotate;
+            return this;
+        }
+
+        /**
+         * @param secretRotate Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRotate(Boolean secretRotate) {
+            return secretRotate(Output.of(secretRotate));
         }
 
         /**

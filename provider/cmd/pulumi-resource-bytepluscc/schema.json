@@ -29254,6 +29254,209 @@
                 }
             }
         },
+        "bytepluscc:id/Oauth2CredentialProviderConfig:Oauth2CredentialProviderConfig": {
+            "properties": {
+                "clientId": {
+                    "type": "string",
+                    "description": "OAuth2 Client ID。\n"
+                },
+                "clientSecret": {
+                    "type": "string",
+                    "description": "OAuth2 Client Secret。\n"
+                },
+                "customParameters": {
+                    "$ref": "#/types/bytepluscc:id/Oauth2CredentialProviderConfigCustomParameters:Oauth2CredentialProviderConfigCustomParameters",
+                    "description": "Default custom parameters in GetResourceOauth2Token request\n"
+                },
+                "flow": {
+                    "type": "string",
+                    "description": "Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M\n"
+                },
+                "forceAuthentication": {
+                    "type": "boolean",
+                    "description": "Default ForceAuthentication in GetResourceOauth2Token request\n"
+                },
+                "maxExpires": {
+                    "type": "integer",
+                    "description": "Maximum token validity (seconds)\n"
+                },
+                "metadata": {
+                    "type": "string",
+                    "description": "Custom metadata\n"
+                },
+                "oauth2Discovery": {
+                    "$ref": "#/types/bytepluscc:id/Oauth2CredentialProviderConfigOauth2Discovery:Oauth2CredentialProviderConfigOauth2Discovery",
+                    "description": "OAuth2 discovery information\n"
+                },
+                "redirectUrl": {
+                    "type": "string",
+                    "description": "Default RedirectUrl in GetResourceOauth2Token request\n"
+                },
+                "scopes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Default Scopes in GetResourceOauth2Token request\n"
+                },
+                "secretStorage": {
+                    "$ref": "#/types/bytepluscc:id/Oauth2CredentialProviderConfigSecretStorage:Oauth2CredentialProviderConfigSecretStorage",
+                    "description": "Encrypted storage configuration\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "clientId",
+                        "clientSecret",
+                        "customParameters",
+                        "flow",
+                        "forceAuthentication",
+                        "maxExpires",
+                        "metadata",
+                        "oauth2Discovery",
+                        "redirectUrl",
+                        "scopes",
+                        "secretStorage"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/Oauth2CredentialProviderConfigCustomParameters:Oauth2CredentialProviderConfigCustomParameters": {
+            "properties": {
+                "entries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/Oauth2CredentialProviderConfigCustomParametersEntry:Oauth2CredentialProviderConfigCustomParametersEntry"
+                    },
+                    "description": "Custom parameter entry list\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "entries"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/Oauth2CredentialProviderConfigCustomParametersEntry:Oauth2CredentialProviderConfigCustomParametersEntry": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Parameter key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Parameter value\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/Oauth2CredentialProviderConfigOauth2Discovery:Oauth2CredentialProviderConfigOauth2Discovery": {
+            "properties": {
+                "authorizationServerMetadata": {
+                    "$ref": "#/types/bytepluscc:id/Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata:Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata",
+                    "description": "Authorization server metadata\n"
+                },
+                "discoveryUrl": {
+                    "type": "string",
+                    "description": "DiscoveryUrl field\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "authorizationServerMetadata",
+                        "discoveryUrl"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata:Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata": {
+            "properties": {
+                "authorizationEndpoint": {
+                    "type": "string",
+                    "description": "AuthorizationEndpoint field\n"
+                },
+                "codeChallengeMethodsSupporteds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "CodeChallengeMethodsSupported field\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "Issuer field\n"
+                },
+                "registrationEndpoint": {
+                    "type": "string",
+                    "description": "RegistrationEndpoint field\n"
+                },
+                "responseTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "ResponseTypes field\n"
+                },
+                "revocationEndpoint": {
+                    "type": "string",
+                    "description": "RevocationEndpoint field\n"
+                },
+                "tokenEndpoint": {
+                    "type": "string",
+                    "description": "TokenEndpoint field\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "authorizationEndpoint",
+                        "codeChallengeMethodsSupporteds",
+                        "issuer",
+                        "registrationEndpoint",
+                        "responseTypes",
+                        "revocationEndpoint",
+                        "tokenEndpoint"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:id/Oauth2CredentialProviderConfigSecretStorage:Oauth2CredentialProviderConfigSecretStorage": {
+            "properties": {
+                "encryptionKey": {
+                    "type": "string",
+                    "description": "KMS key TRN for encrypted credential value. If not specified, the default key is used\n"
+                },
+                "storageType": {
+                    "type": "integer",
+                    "description": "Encrypted storage type. 0: SecretManager, 1: KMS\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "encryptionKey",
+                        "storageType"
+                    ]
+                }
+            }
+        },
         "bytepluscc:id/PermissionNamespaceTag:PermissionNamespaceTag": {
             "properties": {
                 "key": {
@@ -29691,6 +29894,215 @@
                 "allowedAudiences",
                 "allowedClients",
                 "discoveryUrl"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getOauth2CredentialProviderConfig:getOauth2CredentialProviderConfig": {
+            "properties": {
+                "clientId": {
+                    "type": "string",
+                    "description": "OAuth2 Client ID。\n"
+                },
+                "clientSecret": {
+                    "type": "string",
+                    "description": "OAuth2 Client Secret。\n"
+                },
+                "customParameters": {
+                    "$ref": "#/types/bytepluscc:id/getOauth2CredentialProviderConfigCustomParameters:getOauth2CredentialProviderConfigCustomParameters",
+                    "description": "Default custom parameters in GetResourceOauth2Token request\n"
+                },
+                "flow": {
+                    "type": "string",
+                    "description": "Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M\n"
+                },
+                "forceAuthentication": {
+                    "type": "boolean",
+                    "description": "Default ForceAuthentication in GetResourceOauth2Token request\n"
+                },
+                "maxExpires": {
+                    "type": "integer",
+                    "description": "Maximum token validity (seconds)\n"
+                },
+                "metadata": {
+                    "type": "string",
+                    "description": "Custom metadata\n"
+                },
+                "oauth2Discovery": {
+                    "$ref": "#/types/bytepluscc:id/getOauth2CredentialProviderConfigOauth2Discovery:getOauth2CredentialProviderConfigOauth2Discovery",
+                    "description": "OAuth2 discovery information\n"
+                },
+                "redirectUrl": {
+                    "type": "string",
+                    "description": "Default RedirectUrl in GetResourceOauth2Token request\n"
+                },
+                "scopes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Default Scopes in GetResourceOauth2Token request\n"
+                },
+                "secretStorage": {
+                    "$ref": "#/types/bytepluscc:id/getOauth2CredentialProviderConfigSecretStorage:getOauth2CredentialProviderConfigSecretStorage",
+                    "description": "Encrypted storage configuration\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "clientId",
+                "clientSecret",
+                "customParameters",
+                "flow",
+                "forceAuthentication",
+                "maxExpires",
+                "metadata",
+                "oauth2Discovery",
+                "redirectUrl",
+                "scopes",
+                "secretStorage"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getOauth2CredentialProviderConfigCustomParameters:getOauth2CredentialProviderConfigCustomParameters": {
+            "properties": {
+                "entries": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:id/getOauth2CredentialProviderConfigCustomParametersEntry:getOauth2CredentialProviderConfigCustomParametersEntry"
+                    },
+                    "description": "Custom parameter entry list\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "entries"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getOauth2CredentialProviderConfigCustomParametersEntry:getOauth2CredentialProviderConfigCustomParametersEntry": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Parameter key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Parameter value\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getOauth2CredentialProviderConfigOauth2Discovery:getOauth2CredentialProviderConfigOauth2Discovery": {
+            "properties": {
+                "authorizationServerMetadata": {
+                    "$ref": "#/types/bytepluscc:id/getOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata:getOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata",
+                    "description": "Authorization server metadata\n"
+                },
+                "discoveryUrl": {
+                    "type": "string",
+                    "description": "DiscoveryUrl field\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "authorizationServerMetadata",
+                "discoveryUrl"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata:getOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata": {
+            "properties": {
+                "authorizationEndpoint": {
+                    "type": "string",
+                    "description": "AuthorizationEndpoint field\n"
+                },
+                "codeChallengeMethodsSupporteds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "CodeChallengeMethodsSupported field\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "Issuer field\n"
+                },
+                "registrationEndpoint": {
+                    "type": "string",
+                    "description": "RegistrationEndpoint field\n"
+                },
+                "responseTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "ResponseTypes field\n"
+                },
+                "revocationEndpoint": {
+                    "type": "string",
+                    "description": "RevocationEndpoint field\n"
+                },
+                "tokenEndpoint": {
+                    "type": "string",
+                    "description": "TokenEndpoint field\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "authorizationEndpoint",
+                "codeChallengeMethodsSupporteds",
+                "issuer",
+                "registrationEndpoint",
+                "responseTypes",
+                "revocationEndpoint",
+                "tokenEndpoint"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:id/getOauth2CredentialProviderConfigSecretStorage:getOauth2CredentialProviderConfigSecretStorage": {
+            "properties": {
+                "encryptionKey": {
+                    "type": "string",
+                    "description": "KMS key TRN for encrypted credential value. If not specified, the default key is used\n"
+                },
+                "storageType": {
+                    "type": "integer",
+                    "description": "Encrypted storage type. 0: SecretManager, 1: KMS\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "encryptionKey",
+                "storageType"
             ],
             "language": {
                 "nodejs": {
@@ -30759,6 +31171,84 @@
                 }
             }
         },
+        "bytepluscc:kms/SecretSecretRestore:SecretSecretRestore": {
+            "properties": {
+                "backupData": {
+                    "type": "string",
+                    "description": "Complete credential data returned by backup, in JSON format.\n"
+                },
+                "secretDataKey": {
+                    "type": "string",
+                    "description": "Encrypted data key returned by backup, Base64 encoded.\n"
+                },
+                "signature": {
+                    "type": "string",
+                    "description": "Signature of the backup data, Base64 encoded.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "backupData",
+                        "secretDataKey",
+                        "signature"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:kms/SecretSecretRestoreRead:SecretSecretRestoreRead": {
+            "properties": {
+                "backupData": {
+                    "type": "string",
+                    "description": "Complete credential data returned by backup, in JSON format.\n"
+                },
+                "secretDataKey": {
+                    "type": "string",
+                    "description": "Encrypted data key returned by backup, Base64 encoded.\n"
+                },
+                "signature": {
+                    "type": "string",
+                    "description": "Signature of the backup data, Base64 encoded.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "backupData",
+                        "secretDataKey",
+                        "signature"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:kms/SecretSecretVersion:SecretSecretVersion": {
+            "properties": {
+                "creationDate": {
+                    "type": "integer",
+                    "description": "Credential version creation time.\n"
+                },
+                "versionId": {
+                    "type": "string",
+                    "description": "Unique identifier for the credential version, in UUID format.\n"
+                },
+                "versionStage": {
+                    "type": "string",
+                    "description": "Credential version tags.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "creationDate",
+                        "versionId",
+                        "versionStage"
+                    ]
+                }
+            }
+        },
         "bytepluscc:kms/getKeyAsymmetricCiphertext:getKeyAsymmetricCiphertext": {
             "properties": {
                 "algorithm": {
@@ -31038,6 +31528,87 @@
             "required": [
                 "key",
                 "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:kms/getSecretSecretRestore:getSecretSecretRestore": {
+            "properties": {
+                "backupData": {
+                    "type": "string",
+                    "description": "Complete credential data returned by backup, in JSON format.\n"
+                },
+                "secretDataKey": {
+                    "type": "string",
+                    "description": "Encrypted data key returned by backup, Base64 encoded.\n"
+                },
+                "signature": {
+                    "type": "string",
+                    "description": "Signature of the backup data, Base64 encoded.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "backupData",
+                "secretDataKey",
+                "signature"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:kms/getSecretSecretRestoreRead:getSecretSecretRestoreRead": {
+            "properties": {
+                "backupData": {
+                    "type": "string",
+                    "description": "Complete credential data returned by backup, in JSON format.\n"
+                },
+                "secretDataKey": {
+                    "type": "string",
+                    "description": "Encrypted data key returned by backup, Base64 encoded.\n"
+                },
+                "signature": {
+                    "type": "string",
+                    "description": "Signature of the backup data, Base64 encoded.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "backupData",
+                "secretDataKey",
+                "signature"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:kms/getSecretSecretVersion:getSecretSecretVersion": {
+            "properties": {
+                "creationDate": {
+                    "type": "integer",
+                    "description": "Credential version creation time.\n"
+                },
+                "versionId": {
+                    "type": "string",
+                    "description": "Unique identifier for the credential version, in UUID format.\n"
+                },
+                "versionStage": {
+                    "type": "string",
+                    "description": "Credential version tags.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "creationDate",
+                "versionId",
+                "versionStage"
             ],
             "language": {
                 "nodejs": {
@@ -40042,6 +40613,168 @@
                 }
             }
         },
+        "bytepluscc:tls/AlarmContentTemplateTypeDingTalk:AlarmContentTemplateTypeDingTalk": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Alert notification subject\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "content",
+                        "locale",
+                        "title"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:tls/AlarmContentTemplateTypeEmail:AlarmContentTemplateTypeEmail": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "Email notification subject\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "content",
+                        "locale",
+                        "subject"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:tls/AlarmContentTemplateTypeLark:AlarmContentTemplateTypeLark": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Alert notification subject\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "content",
+                        "locale",
+                        "title"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:tls/AlarmContentTemplateTypeSms:AlarmContentTemplateTypeSms": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "content",
+                        "locale"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:tls/AlarmContentTemplateTypeVms:AlarmContentTemplateTypeVms": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "content",
+                        "locale"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:tls/AlarmContentTemplateTypeWeChat:AlarmContentTemplateTypeWeChat": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Alert notification subject\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "content",
+                        "locale",
+                        "title"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:tls/AlarmContentTemplateTypeWebhook:AlarmContentTemplateTypeWebhook": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "content"
+                    ]
+                }
+            }
+        },
         "bytepluscc:tls/AlarmJoinConfiguration:AlarmJoinConfiguration": {
             "properties": {
                 "condition": {
@@ -43431,6 +44164,175 @@
                 "generalWebhook",
                 "phone",
                 "sms"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateTypeDingTalk:getAlarmContentTemplateTypeDingTalk": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Alert notification subject\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "locale",
+                "title"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateTypeEmail:getAlarmContentTemplateTypeEmail": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                },
+                "subject": {
+                    "type": "string",
+                    "description": "Email notification subject\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "locale",
+                "subject"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateTypeLark:getAlarmContentTemplateTypeLark": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Alert notification subject\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "locale",
+                "title"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateTypeSms:getAlarmContentTemplateTypeSms": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "locale"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateTypeVms:getAlarmContentTemplateTypeVms": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "locale"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateTypeWeChat:getAlarmContentTemplateTypeWeChat": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                },
+                "locale": {
+                    "type": "string",
+                    "description": "The language for fixed content in alert notifications. Available values: zh-CN, en-US.\n"
+                },
+                "title": {
+                    "type": "string",
+                    "description": "Alert notification subject\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content",
+                "locale",
+                "title"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateTypeWebhook:getAlarmContentTemplateTypeWebhook": {
+            "properties": {
+                "content": {
+                    "type": "string",
+                    "description": "Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "content"
             ],
             "language": {
                 "nodejs": {
@@ -82083,6 +82985,127 @@
                 "type": "object"
             }
         },
+        "bytepluscc:id/oauth2CredentialProvider:Oauth2CredentialProvider": {
+            "description": "OAuth2 credential provider stores OAuth2 client information, discovery information, and default token request parameters for ID service workload pools to obtain external OAuth2 credentials\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.id.Oauth2CredentialProvider(\"Example\", {\n    config: {\n        client_id: \"ClientId\",\n        client_secret: \"ClientSecret\",\n        custom_parameters: {\n            entries: [\n                {\n                    key: \"k1\",\n                    value: \"v1\",\n                },\n                {\n                    key: \"k2\",\n                    value: \"v2\",\n                },\n            ],\n        },\n        flow: \"USER_FEDERATION\",\n        force_authentication: false,\n        max_expires: 3600,\n        metadata: \"test for metadata\",\n        oauth_2_discovery: {\n            authorizationServerMetadata: {\n                authorizationEndpoint: \"http://abc.login.com\",\n                codeChallengeMethodsSupported: [\"S256\"],\n                issuer: \"http://abc.user.com\",\n                registrationEndpoint: \"http://abc.com/register\",\n                responseTypes: [\n                    \"code\",\n                    \"token\",\n                    \"id_token\",\n                    \"code id_token\",\n                ],\n                tokenEndpoint: \"http://abc.token.com\",\n            },\n        },\n        redirect_url: \"http://abc.callback.com\",\n        scopes: [\"openid\"],\n    },\n    name: \"ccapi-dx-1\",\n    poolName: \"default\",\n    projectName: \"default\",\n    vendor: 0,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.id.Oauth2CredentialProvider(\"Example\",\n    config={\n        \"client_id\": \"ClientId\",\n        \"client_secret\": \"ClientSecret\",\n        \"custom_parameters\": {\n            \"entries\": [\n                {\n                    \"key\": \"k1\",\n                    \"value\": \"v1\",\n                },\n                {\n                    \"key\": \"k2\",\n                    \"value\": \"v2\",\n                },\n            ],\n        },\n        \"flow\": \"USER_FEDERATION\",\n        \"force_authentication\": False,\n        \"max_expires\": 3600,\n        \"metadata\": \"test for metadata\",\n        \"oauth_2_discovery\": {\n            \"authorizationServerMetadata\": {\n                \"authorizationEndpoint\": \"http://abc.login.com\",\n                \"codeChallengeMethodsSupported\": [\"S256\"],\n                \"issuer\": \"http://abc.user.com\",\n                \"registrationEndpoint\": \"http://abc.com/register\",\n                \"responseTypes\": [\n                    \"code\",\n                    \"token\",\n                    \"id_token\",\n                    \"code id_token\",\n                ],\n                \"tokenEndpoint\": \"http://abc.token.com\",\n            },\n        },\n        \"redirect_url\": \"http://abc.callback.com\",\n        \"scopes\": [\"openid\"],\n    },\n    name=\"ccapi-dx-1\",\n    pool_name=\"default\",\n    project_name=\"default\",\n    vendor=0)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Id.Oauth2CredentialProvider(\"Example\", new()\n    {\n        Config = new Bytepluscc.Id.Inputs.Oauth2CredentialProviderConfigArgs\n        {\n            Client_id = \"ClientId\",\n            Client_secret = \"ClientSecret\",\n            Custom_parameters = \n            {\n                { \"entries\", new[]\n                {\n                    \n                    {\n                        { \"key\", \"k1\" },\n                        { \"value\", \"v1\" },\n                    },\n                    \n                    {\n                        { \"key\", \"k2\" },\n                        { \"value\", \"v2\" },\n                    },\n                } },\n            },\n            Flow = \"USER_FEDERATION\",\n            Force_authentication = false,\n            Max_expires = 3600,\n            Metadata = \"test for metadata\",\n            Oauth_2_discovery = \n            {\n                { \"authorizationServerMetadata\", \n                {\n                    { \"authorizationEndpoint\", \"http://abc.login.com\" },\n                    { \"codeChallengeMethodsSupported\", new[]\n                    {\n                        \"S256\",\n                    } },\n                    { \"issuer\", \"http://abc.user.com\" },\n                    { \"registrationEndpoint\", \"http://abc.com/register\" },\n                    { \"responseTypes\", new[]\n                    {\n                        \"code\",\n                        \"token\",\n                        \"id_token\",\n                        \"code id_token\",\n                    } },\n                    { \"tokenEndpoint\", \"http://abc.token.com\" },\n                } },\n            },\n            Redirect_url = \"http://abc.callback.com\",\n            Scopes = new[]\n            {\n                \"openid\",\n            },\n        },\n        Name = \"ccapi-dx-1\",\n        PoolName = \"default\",\n        ProjectName = \"default\",\n        Vendor = 0,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/id\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := id.NewOauth2CredentialProvider(ctx, \"Example\", \u0026id.Oauth2CredentialProviderArgs{\n\t\t\tConfig: \u0026id.Oauth2CredentialProviderConfigArgs{\n\t\t\t\tClient_id:     \"ClientId\",\n\t\t\t\tClient_secret: \"ClientSecret\",\n\t\t\t\tCustom_parameters: map[string]interface{}{\n\t\t\t\t\t\"entries\": []map[string]interface{}{\n\t\t\t\t\t\tmap[string]interface{}{\n\t\t\t\t\t\t\t\"key\":   \"k1\",\n\t\t\t\t\t\t\t\"value\": \"v1\",\n\t\t\t\t\t\t},\n\t\t\t\t\t\tmap[string]interface{}{\n\t\t\t\t\t\t\t\"key\":   \"k2\",\n\t\t\t\t\t\t\t\"value\": \"v2\",\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\tFlow:                 pulumi.String(\"USER_FEDERATION\"),\n\t\t\t\tForce_authentication: false,\n\t\t\t\tMax_expires:          3600,\n\t\t\t\tMetadata:             pulumi.String(\"test for metadata\"),\n\t\t\t\tOauth_2_discovery: map[string]interface{}{\n\t\t\t\t\t\"authorizationServerMetadata\": map[string]interface{}{\n\t\t\t\t\t\t\"authorizationEndpoint\": \"http://abc.login.com\",\n\t\t\t\t\t\t\"codeChallengeMethodsSupported\": []string{\n\t\t\t\t\t\t\t\"S256\",\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"issuer\":               \"http://abc.user.com\",\n\t\t\t\t\t\t\"registrationEndpoint\": \"http://abc.com/register\",\n\t\t\t\t\t\t\"responseTypes\": []string{\n\t\t\t\t\t\t\t\"code\",\n\t\t\t\t\t\t\t\"token\",\n\t\t\t\t\t\t\t\"id_token\",\n\t\t\t\t\t\t\t\"code id_token\",\n\t\t\t\t\t\t},\n\t\t\t\t\t\t\"tokenEndpoint\": \"http://abc.token.com\",\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\tRedirect_url: \"http://abc.callback.com\",\n\t\t\t\tScopes: pulumi.StringArray{\n\t\t\t\t\tpulumi.String(\"openid\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tName:        pulumi.String(\"ccapi-dx-1\"),\n\t\t\tPoolName:    pulumi.String(\"default\"),\n\t\t\tProjectName: pulumi.String(\"default\"),\n\t\t\tVendor:      pulumi.Int(0),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_id_oauth2credentialprovider\" \"Example\" {\n  config = {\n    client_id     = \"ClientId\"\n    client_secret = \"ClientSecret\"\n    custom_parameters = {\n      \"entries\" = [{\n        \"key\"   = \"k1\"\n        \"value\" = \"v1\"\n        }, {\n        \"key\"   = \"k2\"\n        \"value\" = \"v2\"\n      }]\n    }\n    flow                 = \"USER_FEDERATION\"\n    force_authentication = false\n    max_expires          = 3600\n    metadata             = \"test for metadata\"\n    oauth_2_discovery = {\n      \"authorizationServerMetadata\" = {\n        \"authorizationEndpoint\"         = \"http://abc.login.com\"\n        \"codeChallengeMethodsSupported\" = [\"S256\"]\n        \"issuer\"                        = \"http://abc.user.com\"\n        \"registrationEndpoint\"          = \"http://abc.com/register\"\n        \"responseTypes\"                 = [\"code\", \"token\", \"id_token\", \"code id_token\"]\n        \"tokenEndpoint\"                 = \"http://abc.token.com\"\n      }\n    }\n    redirect_url = \"http://abc.callback.com\"\n    scopes       = [\"openid\"]\n  }\n  name         = \"ccapi-dx-1\"\n  pool_name    = \"default\"\n  project_name = \"default\"\n  vendor       = 0\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.id.Oauth2CredentialProvider;\nimport com.byteplus.bytepluscc.id.Oauth2CredentialProviderArgs;\nimport com.pulumi.bytepluscc.id.inputs.Oauth2CredentialProviderConfigArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new Oauth2CredentialProvider(\"example\", Oauth2CredentialProviderArgs.builder()\n            .config(Oauth2CredentialProviderConfigArgs.builder()\n                .client_id(\"ClientId\")\n                .client_secret(\"ClientSecret\")\n                .custom_parameters(Map.of(\"entries\", Arrays.asList(                \n                    Map.ofEntries(\n                        Map.entry(\"key\", \"k1\"),\n                        Map.entry(\"value\", \"v1\")\n                    ),\n                    Map.ofEntries(\n                        Map.entry(\"key\", \"k2\"),\n                        Map.entry(\"value\", \"v2\")\n                    ))))\n                .flow(\"USER_FEDERATION\")\n                .force_authentication(false)\n                .max_expires(3600)\n                .metadata(\"test for metadata\")\n                .oauth_2_discovery(Map.of(\"authorizationServerMetadata\", Map.ofEntries(\n                    Map.entry(\"authorizationEndpoint\", \"http://abc.login.com\"),\n                    Map.entry(\"codeChallengeMethodsSupported\", Arrays.asList(\"S256\")),\n                    Map.entry(\"issuer\", \"http://abc.user.com\"),\n                    Map.entry(\"registrationEndpoint\", \"http://abc.com/register\"),\n                    Map.entry(\"responseTypes\", Arrays.asList(                    \n                        \"code\",\n                        \"token\",\n                        \"id_token\",\n                        \"code id_token\")),\n                    Map.entry(\"tokenEndpoint\", \"http://abc.token.com\")\n                )))\n                .redirect_url(\"http://abc.callback.com\")\n                .scopes(\"openid\")\n                .build())\n            .name(\"ccapi-dx-1\")\n            .poolName(\"default\")\n            .projectName(\"default\")\n            .vendor(0)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:id:Oauth2CredentialProvider\n    name: Example\n    properties:\n      config:\n        client_id: ClientId\n        client_secret: ClientSecret\n        custom_parameters:\n          entries:\n            - key: k1\n              value: v1\n            - key: k2\n              value: v2\n        flow: USER_FEDERATION\n        force_authentication: false\n        max_expires: 3600\n        metadata: test for metadata\n        oauth_2_discovery:\n          authorizationServerMetadata:\n            authorizationEndpoint: http://abc.login.com\n            codeChallengeMethodsSupported:\n              - S256\n            issuer: http://abc.user.com\n            registrationEndpoint: http://abc.com/register\n            responseTypes:\n              - code\n              - token\n              - id_token\n              - code id_token\n            tokenEndpoint: http://abc.token.com\n        redirect_url: http://abc.callback.com\n        scopes:\n          - openid\n      name: ccapi-dx-1\n      poolName: default\n      projectName: default\n      vendor: 0\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:id/oauth2CredentialProvider:Oauth2CredentialProvider example \"name|pool_name\"\n```\n\n",
+            "properties": {
+                "config": {
+                    "$ref": "#/types/bytepluscc:id/Oauth2CredentialProviderConfig:Oauth2CredentialProviderConfig",
+                    "description": "OAuth2 configuration\n"
+                },
+                "createdAt": {
+                    "type": "string",
+                    "description": "Creation time\n"
+                },
+                "credentialProviderTrn": {
+                    "type": "string",
+                    "description": "Credential provider TRN\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name\n"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "Workload pool name\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name\n"
+                },
+                "secretTrn": {
+                    "type": "string",
+                    "description": "Secret TRN corresponding to credential ciphertext\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "Update time\n"
+                },
+                "vendor": {
+                    "type": "integer",
+                    "description": "OAuth2 provider type. 0: Custom, 1: Google, 2: Github, 3: Coze, 4: Feishu, 5: WeChat, 6: User pool\n"
+                }
+            },
+            "required": [
+                "config",
+                "createdAt",
+                "credentialProviderTrn",
+                "name",
+                "poolName",
+                "projectName",
+                "secretTrn",
+                "updatedAt",
+                "vendor"
+            ],
+            "inputProperties": {
+                "config": {
+                    "$ref": "#/types/bytepluscc:id/Oauth2CredentialProviderConfig:Oauth2CredentialProviderConfig",
+                    "description": "OAuth2 configuration\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Name\n"
+                },
+                "poolName": {
+                    "type": "string",
+                    "description": "Workload pool name\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name\n"
+                },
+                "vendor": {
+                    "type": "integer",
+                    "description": "OAuth2 provider type. 0: Custom, 1: Google, 2: Github, 3: Coze, 4: Feishu, 5: WeChat, 6: User pool\n"
+                }
+            },
+            "requiredInputs": [
+                "config",
+                "name",
+                "vendor"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Oauth2CredentialProvider resources.\n",
+                "properties": {
+                    "config": {
+                        "$ref": "#/types/bytepluscc:id/Oauth2CredentialProviderConfig:Oauth2CredentialProviderConfig",
+                        "description": "OAuth2 configuration\n"
+                    },
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Creation time\n"
+                    },
+                    "credentialProviderTrn": {
+                        "type": "string",
+                        "description": "Credential provider TRN\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Name\n"
+                    },
+                    "poolName": {
+                        "type": "string",
+                        "description": "Workload pool name\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Project name\n"
+                    },
+                    "secretTrn": {
+                        "type": "string",
+                        "description": "Secret TRN corresponding to credential ciphertext\n"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Update time\n"
+                    },
+                    "vendor": {
+                        "type": "integer",
+                        "description": "OAuth2 provider type. 0: Custom, 1: Google, 2: Github, 3: Coze, 4: Feishu, 5: WeChat, 6: User pool\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:id/permissionNamespace:PermissionNamespace": {
             "description": "ID namespace is a resource isolation unit in permissions management. It can be used to organize associated entities, projects, and tags.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.id.PermissionNamespace(\"Example\", {\n    namespaceName: \"test-namespace-full\",\n    description: \"test description\",\n    projectName: \"default\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.id.PermissionNamespace(\"Example\",\n    namespace_name=\"test-namespace-full\",\n    description=\"test description\",\n    project_name=\"default\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Id.PermissionNamespace(\"Example\", new()\n    {\n        NamespaceName = \"test-namespace-full\",\n        Description = \"test description\",\n        ProjectName = \"default\",\n        Tags = new[]\n        {\n            new Bytepluscc.Id.Inputs.PermissionNamespaceTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/id\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := id.NewPermissionNamespace(ctx, \"Example\", \u0026id.PermissionNamespaceArgs{\n\t\t\tNamespaceName: pulumi.String(\"test-namespace-full\"),\n\t\t\tDescription:   pulumi.String(\"test description\"),\n\t\t\tProjectName:   pulumi.String(\"default\"),\n\t\t\tTags: id.PermissionNamespaceTagArray{\n\t\t\t\t\u0026id.PermissionNamespaceTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_id_permissionnamespace\" \"Example\" {\n  namespace_name = \"test-namespace-full\"\n  description    = \"test description\"\n  project_name   = \"default\"\n  tags {\n    key   = \"env\"\n    value = \"test\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.id.PermissionNamespace;\nimport com.byteplus.bytepluscc.id.PermissionNamespaceArgs;\nimport com.pulumi.bytepluscc.id.inputs.PermissionNamespaceTagArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new PermissionNamespace(\"example\", PermissionNamespaceArgs.builder()\n            .namespaceName(\"test-namespace-full\")\n            .description(\"test description\")\n            .projectName(\"default\")\n            .tags(PermissionNamespaceTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:id:PermissionNamespace\n    name: Example\n    properties:\n      namespaceName: test-namespace-full\n      description: test description\n      projectName: default\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:id/permissionNamespace:PermissionNamespace example \"namespace_name\"\n```\n\n",
             "properties": {
@@ -84608,6 +85631,10 @@
                     "type": "boolean",
                     "description": "Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS\n"
                 },
+                "cancelSecretDeletion": {
+                    "type": "boolean",
+                    "description": "Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.\n"
+                },
                 "createdTime": {
                     "type": "integer",
                     "description": "Credential creation time\n"
@@ -84636,6 +85663,10 @@
                     "type": "string",
                     "description": "Managed Cloud Service\n"
                 },
+                "pendingWindowInDays": {
+                    "type": "integer",
+                    "description": "Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.\n"
+                },
                 "projectName": {
                     "type": "string",
                     "description": "Credential project name. Default value: default\n"
@@ -84660,6 +85691,10 @@
                     "type": "string",
                     "description": "Credential next rotation time\n"
                 },
+                "secretBackup": {
+                    "type": "boolean",
+                    "description": "Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.\n"
+                },
                 "secretId": {
                     "type": "string",
                     "description": "Credential unique identifier, UUID format\n"
@@ -84667,6 +85702,18 @@
                 "secretName": {
                     "type": "string",
                     "description": "Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]\n"
+                },
+                "secretRestore": {
+                    "$ref": "#/types/bytepluscc:kms/SecretSecretRestore:SecretSecretRestore",
+                    "description": "Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.\n"
+                },
+                "secretRestoreRead": {
+                    "$ref": "#/types/bytepluscc:kms/SecretSecretRestoreRead:SecretSecretRestoreRead",
+                    "description": "Credential restore parameters. Returned only during backup.\n"
+                },
+                "secretRotate": {
+                    "type": "boolean",
+                    "description": "Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.\n"
                 },
                 "secretState": {
                     "type": "string",
@@ -84684,6 +85731,13 @@
                 "secretValue": {
                     "type": "string",
                     "description": "Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs\n"
+                },
+                "secretVersions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:kms/SecretSecretVersion:SecretSecretVersion"
+                    },
+                    "description": "Credential version information.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
                 },
                 "trn": {
                     "type": "string",
@@ -84704,6 +85758,7 @@
             },
             "required": [
                 "automaticRotation",
+                "cancelSecretDeletion",
                 "createdTime",
                 "description",
                 "encryptionKey",
@@ -84711,17 +85766,23 @@
                 "lastRotationTime",
                 "managed",
                 "owningService",
+                "pendingWindowInDays",
                 "projectName",
                 "rotationInterval",
                 "rotationIntervalRead",
                 "rotationState",
                 "scheduleDeleteTime",
                 "scheduleRotationTime",
+                "secretBackup",
                 "secretId",
                 "secretName",
+                "secretRestore",
+                "secretRestoreRead",
+                "secretRotate",
                 "secretState",
                 "secretType",
                 "secretValue",
+                "secretVersions",
                 "trn",
                 "uid",
                 "updatedTime",
@@ -84731,6 +85792,10 @@
                 "automaticRotation": {
                     "type": "boolean",
                     "description": "Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS\n"
+                },
+                "cancelSecretDeletion": {
+                    "type": "boolean",
+                    "description": "Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.\n"
                 },
                 "description": {
                     "type": "string",
@@ -84744,6 +85809,10 @@
                     "type": "string",
                     "description": "Credential extension configuration, used to specify properties for non-Generic credentials\n"
                 },
+                "pendingWindowInDays": {
+                    "type": "integer",
+                    "description": "Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.\n"
+                },
                 "projectName": {
                     "type": "string",
                     "description": "Credential project name. Default value: default\n"
@@ -84752,9 +85821,21 @@
                     "type": "string",
                     "description": "Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval\n"
                 },
+                "secretBackup": {
+                    "type": "boolean",
+                    "description": "Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.\n"
+                },
                 "secretName": {
                     "type": "string",
                     "description": "Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]\n"
+                },
+                "secretRestore": {
+                    "$ref": "#/types/bytepluscc:kms/SecretSecretRestore:SecretSecretRestore",
+                    "description": "Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.\n"
+                },
+                "secretRotate": {
+                    "type": "boolean",
+                    "description": "Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.\n"
                 },
                 "secretType": {
                     "type": "string",
@@ -84780,6 +85861,10 @@
                     "automaticRotation": {
                         "type": "boolean",
                         "description": "Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS\n"
+                    },
+                    "cancelSecretDeletion": {
+                        "type": "boolean",
+                        "description": "Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.\n"
                     },
                     "createdTime": {
                         "type": "integer",
@@ -84809,6 +85894,10 @@
                         "type": "string",
                         "description": "Managed Cloud Service\n"
                     },
+                    "pendingWindowInDays": {
+                        "type": "integer",
+                        "description": "Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.\n"
+                    },
                     "projectName": {
                         "type": "string",
                         "description": "Credential project name. Default value: default\n"
@@ -84833,6 +85922,10 @@
                         "type": "string",
                         "description": "Credential next rotation time\n"
                     },
+                    "secretBackup": {
+                        "type": "boolean",
+                        "description": "Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.\n"
+                    },
                     "secretId": {
                         "type": "string",
                         "description": "Credential unique identifier, UUID format\n"
@@ -84840,6 +85933,18 @@
                     "secretName": {
                         "type": "string",
                         "description": "Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]\n"
+                    },
+                    "secretRestore": {
+                        "$ref": "#/types/bytepluscc:kms/SecretSecretRestore:SecretSecretRestore",
+                        "description": "Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.\n"
+                    },
+                    "secretRestoreRead": {
+                        "$ref": "#/types/bytepluscc:kms/SecretSecretRestoreRead:SecretSecretRestoreRead",
+                        "description": "Credential restore parameters. Returned only during backup.\n"
+                    },
+                    "secretRotate": {
+                        "type": "boolean",
+                        "description": "Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.\n"
                     },
                     "secretState": {
                         "type": "string",
@@ -84857,6 +85962,13 @@
                     "secretValue": {
                         "type": "string",
                         "description": "Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs\n"
+                    },
+                    "secretVersions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:kms/SecretSecretVersion:SecretSecretVersion"
+                        },
+                        "description": "Credential version information.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
                     },
                     "trn": {
                         "type": "string",
@@ -97644,6 +98756,177 @@
                     "userDefineMsg": {
                         "type": "string",
                         "description": "Customize alert notification content. You can insert content variables and functions. For details, see the documentation for content variables and content functions. To display this content in the actual alert notification, reference it in the content template using the NotifyMsg variable.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:tls/alarmContentTemplateType:AlarmContentTemplateType": {
+            "description": "TLS alert content template\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.tls.AlarmContentTemplateType(\"Example\", {\n    alarmContentTemplateName: \"cc-test-1001\",\n    needValidContent: true,\n    dingTalk: {\n        content: \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n        locale: \"en-US\",\n        title: \"TLS告警\",\n    },\n    email: {\n        content: `告警策略：{{Alarm}}\u003cbr\u003e \n告警日志项目：{{ProjectName}}\u003cbr\u003e \n告警日志主题：{{AlarmTopicName}}\u003cbr\u003e \n告警级别：{{Severity}}\u003cbr\u003e \n首次触发时间：{{StartTime}}\u003cbr\u003e \n触发条件：{{Condition}}\u003cbr\u003e \n通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\u003cbr\u003e \n告警持续时间：{{Duration}}\u003cbr\u003e \n附加通知内容：{{NotifyMsg}}\u003cbr\u003e\n日志检索详情：[查看详情]({{QueryUrl|safe}})\u003cbr\u003e\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\u003cbr\u003e\n\n感谢对火山引擎的支持`,\n        locale: \"en-US\",\n        subject: \"TLS告警\",\n    },\n    lark: {\n        content: \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n        locale: \"en-US\",\n        title: \"告警通知\",\n    },\n    sms: {\n        content: \"告警策略{{Alarm}}， 告警日志项目：{{ProjectName}}， 告警日志主题：{{AlarmTopicName}}， 告警级别：{{Severity}}， 通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}，首次触发时间：{{StartTime}}， 触发条件：{{Condition}}， 当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]， n附加通知内容：{{NotifyMsg}}\",\n        locale: \"zh-CN\",\n    },\n    vms: {\n        content: \"通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\",\n        locale: \"zh-CN\",\n    },\n    weChat: {\n        content: \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n        locale: \"zh-CN\",\n        title: \"告警通知\",\n    },\n    webhook: {\n        content: `{\n  \"msg_type\": \"interactive\",\n  \"card\": {\n    \"config\": {\n      \"wide_screen_mode\": True\n    },\n    \"elements\": [\n      {\n        \"content\": \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}];\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n\\\\n感谢对火山引擎的支持\",\n        \"tag\": \"markdown\"\n      }\n    ],\n    \"header\": {\n      \"template\": \"{%if NotifyType==1%}red{%else%}green{%endif%}\",\n      \"title\": {\n        \"content\": \"【火山引擎】【日志服务】{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\",\n        \"tag\": \"plain_text\"\n      }\n    }\n  }\n}`,\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.tls.AlarmContentTemplateType(\"Example\",\n    alarm_content_template_name=\"cc-test-1001\",\n    need_valid_content=True,\n    ding_talk={\n        \"content\": \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n        \"locale\": \"en-US\",\n        \"title\": \"TLS告警\",\n    },\n    email={\n        \"content\": \"\"\"告警策略：{{Alarm}}\u003cbr\u003e \n告警日志项目：{{ProjectName}}\u003cbr\u003e \n告警日志主题：{{AlarmTopicName}}\u003cbr\u003e \n告警级别：{{Severity}}\u003cbr\u003e \n首次触发时间：{{StartTime}}\u003cbr\u003e \n触发条件：{{Condition}}\u003cbr\u003e \n通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\u003cbr\u003e \n告警持续时间：{{Duration}}\u003cbr\u003e \n附加通知内容：{{NotifyMsg}}\u003cbr\u003e\n日志检索详情：[查看详情]({{QueryUrl|safe}})\u003cbr\u003e\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\u003cbr\u003e\n\n感谢对火山引擎的支持\"\"\",\n        \"locale\": \"en-US\",\n        \"subject\": \"TLS告警\",\n    },\n    lark={\n        \"content\": \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n        \"locale\": \"en-US\",\n        \"title\": \"告警通知\",\n    },\n    sms={\n        \"content\": \"告警策略{{Alarm}}， 告警日志项目：{{ProjectName}}， 告警日志主题：{{AlarmTopicName}}， 告警级别：{{Severity}}， 通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}，首次触发时间：{{StartTime}}， 触发条件：{{Condition}}， 当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]， n附加通知内容：{{NotifyMsg}}\",\n        \"locale\": \"zh-CN\",\n    },\n    vms={\n        \"content\": \"通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\",\n        \"locale\": \"zh-CN\",\n    },\n    we_chat={\n        \"content\": \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n        \"locale\": \"zh-CN\",\n        \"title\": \"告警通知\",\n    },\n    webhook={\n        \"content\": \"\"\"{\n  \"msg_type\": \"interactive\",\n  \"card\": {\n    \"config\": {\n      \"wide_screen_mode\": True\n    },\n    \"elements\": [\n      {\n        \"content\": \"尊敬的用户，您好！\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\n告警策略：{{Alarm}}\\n告警日志主题：{{AlarmTopicName}}\\n告警级别：{{Severity}}\\n首次触发时间：{{StartTime}}\\n触发条件：{{Condition}}\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}];\\n附加通知内容：{{NotifyMsg|escapejs}}\\n\\n感谢对火山引擎的支持\",\n        \"tag\": \"markdown\"\n      }\n    ],\n    \"header\": {\n      \"template\": \"{%if NotifyType==1%}red{%else%}green{%endif%}\",\n      \"title\": {\n        \"content\": \"【火山引擎】【日志服务】{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\",\n        \"tag\": \"plain_text\"\n      }\n    }\n  }\n}\"\"\",\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Tls.AlarmContentTemplateType(\"Example\", new()\n    {\n        AlarmContentTemplateName = \"cc-test-1001\",\n        NeedValidContent = true,\n        DingTalk = new Bytepluscc.Tls.Inputs.AlarmContentTemplateTypeDingTalkArgs\n        {\n            Content = \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n            Locale = \"en-US\",\n            Title = \"TLS告警\",\n        },\n        Email = new Bytepluscc.Tls.Inputs.AlarmContentTemplateTypeEmailArgs\n        {\n            Content = @\"告警策略：{{Alarm}}\u003cbr\u003e \n告警日志项目：{{ProjectName}}\u003cbr\u003e \n告警日志主题：{{AlarmTopicName}}\u003cbr\u003e \n告警级别：{{Severity}}\u003cbr\u003e \n首次触发时间：{{StartTime}}\u003cbr\u003e \n触发条件：{{Condition}}\u003cbr\u003e \n通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\u003cbr\u003e \n告警持续时间：{{Duration}}\u003cbr\u003e \n附加通知内容：{{NotifyMsg}}\u003cbr\u003e\n日志检索详情：[查看详情]({{QueryUrl|safe}})\u003cbr\u003e\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\u003cbr\u003e\n\n感谢对火山引擎的支持\",\n            Locale = \"en-US\",\n            Subject = \"TLS告警\",\n        },\n        Lark = new Bytepluscc.Tls.Inputs.AlarmContentTemplateTypeLarkArgs\n        {\n            Content = \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n            Locale = \"en-US\",\n            Title = \"告警通知\",\n        },\n        Sms = new Bytepluscc.Tls.Inputs.AlarmContentTemplateTypeSmsArgs\n        {\n            Content = \"告警策略{{Alarm}}， 告警日志项目：{{ProjectName}}， 告警日志主题：{{AlarmTopicName}}， 告警级别：{{Severity}}， 通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}，首次触发时间：{{StartTime}}， 触发条件：{{Condition}}， 当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]， n附加通知内容：{{NotifyMsg}}\",\n            Locale = \"zh-CN\",\n        },\n        Vms = new Bytepluscc.Tls.Inputs.AlarmContentTemplateTypeVmsArgs\n        {\n            Content = \"通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\",\n            Locale = \"zh-CN\",\n        },\n        WeChat = new Bytepluscc.Tls.Inputs.AlarmContentTemplateTypeWeChatArgs\n        {\n            Content = \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\",\n            Locale = \"zh-CN\",\n            Title = \"告警通知\",\n        },\n        Webhook = new Bytepluscc.Tls.Inputs.AlarmContentTemplateTypeWebhookArgs\n        {\n            Content = @\"{\n  \"\"msg_type\"\": \"\"interactive\"\",\n  \"\"card\"\": {\n    \"\"config\"\": {\n      \"\"wide_screen_mode\"\": True\n    },\n    \"\"elements\"\": [\n      {\n        \"\"content\"\": \"\"尊敬的用户，您好！\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\n告警策略：{{Alarm}}\\n告警日志主题：{{AlarmTopicName}}\\n告警级别：{{Severity}}\\n首次触发时间：{{StartTime}}\\n触发条件：{{Condition}}\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}];\\n附加通知内容：{{NotifyMsg|escapejs}}\\n\\n感谢对火山引擎的支持\"\",\n        \"\"tag\"\": \"\"markdown\"\"\n      }\n    ],\n    \"\"header\"\": {\n      \"\"template\"\": \"\"{%if NotifyType==1%}red{%else%}green{%endif%}\"\",\n      \"\"title\"\": {\n        \"\"content\"\": \"\"【火山引擎】【日志服务】{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\"\",\n        \"\"tag\"\": \"\"plain_text\"\"\n      }\n    }\n  }\n}\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/tls\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := tls.NewAlarmContentTemplateType(ctx, \"Example\", \u0026tls.AlarmContentTemplateTypeArgs{\n\t\t\tAlarmContentTemplateName: pulumi.String(\"cc-test-1001\"),\n\t\t\tNeedValidContent:         pulumi.Bool(true),\n\t\t\tDingTalk: \u0026tls.AlarmContentTemplateTypeDingTalkArgs{\n\t\t\t\tContent: pulumi.String(\"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\"),\n\t\t\t\tLocale:  pulumi.String(\"en-US\"),\n\t\t\t\tTitle:   pulumi.String(\"TLS告警\"),\n\t\t\t},\n\t\t\tEmail: \u0026tls.AlarmContentTemplateTypeEmailArgs{\n\t\t\t\tContent: pulumi.String(`告警策略：{{Alarm}}\u003cbr\u003e \n告警日志项目：{{ProjectName}}\u003cbr\u003e \n告警日志主题：{{AlarmTopicName}}\u003cbr\u003e \n告警级别：{{Severity}}\u003cbr\u003e \n首次触发时间：{{StartTime}}\u003cbr\u003e \n触发条件：{{Condition}}\u003cbr\u003e \n通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\u003cbr\u003e \n告警持续时间：{{Duration}}\u003cbr\u003e \n附加通知内容：{{NotifyMsg}}\u003cbr\u003e\n日志检索详情：[查看详情]({{QueryUrl|safe}})\u003cbr\u003e\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\u003cbr\u003e\n\n感谢对火山引擎的支持`),\n\t\t\t\tLocale:  pulumi.String(\"en-US\"),\n\t\t\t\tSubject: pulumi.String(\"TLS告警\"),\n\t\t\t},\n\t\t\tLark: \u0026tls.AlarmContentTemplateTypeLarkArgs{\n\t\t\t\tContent: pulumi.String(\"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\"),\n\t\t\t\tLocale:  pulumi.String(\"en-US\"),\n\t\t\t\tTitle:   pulumi.String(\"告警通知\"),\n\t\t\t},\n\t\t\tSms: \u0026tls.AlarmContentTemplateTypeSmsArgs{\n\t\t\t\tContent: pulumi.String(\"告警策略{{Alarm}}， 告警日志项目：{{ProjectName}}， 告警日志主题：{{AlarmTopicName}}， 告警级别：{{Severity}}， 通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}，首次触发时间：{{StartTime}}， 触发条件：{{Condition}}， 当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]， n附加通知内容：{{NotifyMsg}}\"),\n\t\t\t\tLocale:  pulumi.String(\"zh-CN\"),\n\t\t\t},\n\t\t\tVms: \u0026tls.AlarmContentTemplateTypeVmsArgs{\n\t\t\t\tContent: pulumi.String(\"通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\"),\n\t\t\t\tLocale:  pulumi.String(\"zh-CN\"),\n\t\t\t},\n\t\t\tWeChat: \u0026tls.AlarmContentTemplateTypeWeChatArgs{\n\t\t\t\tContent: pulumi.String(\"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\"),\n\t\t\t\tLocale:  pulumi.String(\"zh-CN\"),\n\t\t\t\tTitle:   pulumi.String(\"告警通知\"),\n\t\t\t},\n\t\t\tWebhook: \u0026tls.AlarmContentTemplateTypeWebhookArgs{\n\t\t\t\tContent: pulumi.String(`{\n  \"msg_type\": \"interactive\",\n  \"card\": {\n    \"config\": {\n      \"wide_screen_mode\": True\n    },\n    \"elements\": [\n      {\n        \"content\": \"尊敬的用户，您好！\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\n告警策略：{{Alarm}}\\n告警日志主题：{{AlarmTopicName}}\\n告警级别：{{Severity}}\\n首次触发时间：{{StartTime}}\\n触发条件：{{Condition}}\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}];\\n附加通知内容：{{NotifyMsg|escapejs}}\\n\\n感谢对火山引擎的支持\",\n        \"tag\": \"markdown\"\n      }\n    ],\n    \"header\": {\n      \"template\": \"{%if NotifyType==1%}red{%else%}green{%endif%}\",\n      \"title\": {\n        \"content\": \"【火山引擎】【日志服务】{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\",\n        \"tag\": \"plain_text\"\n      }\n    }\n  }\n}`),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_tls_alarmcontenttemplatetype\" \"Example\" {\n  alarm_content_template_name = \"cc-test-1001\"\n  need_valid_content          = true\n  ding_talk = {\n    content = \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\"\n    locale  = \"en-US\"\n    title   = \"TLS告警\"\n  }\n  email = {\n    content = \"告警策略：{{Alarm}}\u003cbr\u003e \\n告警日志项目：{{ProjectName}}\u003cbr\u003e \\n告警日志主题：{{AlarmTopicName}}\u003cbr\u003e \\n告警级别：{{Severity}}\u003cbr\u003e \\n首次触发时间：{{StartTime}}\u003cbr\u003e \\n触发条件：{{Condition}}\u003cbr\u003e \\n通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\u003cbr\u003e \\n告警持续时间：{{Duration}}\u003cbr\u003e \\n附加通知内容：{{NotifyMsg}}\u003cbr\u003e\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\u003cbr\u003e\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\u003cbr\u003e\\n\\n感谢对火山引擎的支持\"\n    locale  = \"en-US\"\n    subject = \"TLS告警\"\n  }\n  lark = {\n    content = \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\"\n    locale  = \"en-US\"\n    title   = \"告警通知\"\n  }\n  sms = {\n    content = \"告警策略{{Alarm}}， 告警日志项目：{{ProjectName}}， 告警日志主题：{{AlarmTopicName}}， 告警级别：{{Severity}}， 通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}，首次触发时间：{{StartTime}}， 触发条件：{{Condition}}， 当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]， n附加通知内容：{{NotifyMsg}}\"\n    locale  = \"zh-CN\"\n  }\n  vms = {\n    content = \"通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\"\n    locale  = \"zh-CN\"\n  }\n  we_chat = {\n    content = \"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\"\n    locale  = \"zh-CN\"\n    title   = \"告警通知\"\n  }\n  webhook = {\n    content = \"{\\n  \\\"msg_type\\\": \\\"interactive\\\",\\n  \\\"card\\\": {\\n    \\\"config\\\": {\\n      \\\"wide_screen_mode\\\": True\\n    },\\n    \\\"elements\\\": [\\n      {\\n        \\\"content\\\": \\\"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}];\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n\\\\n感谢对火山引擎的支持\\\",\\n        \\\"tag\\\": \\\"markdown\\\"\\n      }\\n    ],\\n    \\\"header\\\": {\\n      \\\"template\\\": \\\"{%if NotifyType==1%}red{%else%}green{%endif%}\\\",\\n      \\\"title\\\": {\\n        \\\"content\\\": \\\"【火山引擎】【日志服务】{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\",\\n        \\\"tag\\\": \\\"plain_text\\\"\\n      }\\n    }\\n  }\\n}\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.tls.AlarmContentTemplateType;\nimport com.byteplus.bytepluscc.tls.AlarmContentTemplateTypeArgs;\nimport com.pulumi.bytepluscc.tls.inputs.AlarmContentTemplateTypeDingTalkArgs;\nimport com.pulumi.bytepluscc.tls.inputs.AlarmContentTemplateTypeEmailArgs;\nimport com.pulumi.bytepluscc.tls.inputs.AlarmContentTemplateTypeLarkArgs;\nimport com.pulumi.bytepluscc.tls.inputs.AlarmContentTemplateTypeSmsArgs;\nimport com.pulumi.bytepluscc.tls.inputs.AlarmContentTemplateTypeVmsArgs;\nimport com.pulumi.bytepluscc.tls.inputs.AlarmContentTemplateTypeWeChatArgs;\nimport com.pulumi.bytepluscc.tls.inputs.AlarmContentTemplateTypeWebhookArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new AlarmContentTemplateType(\"example\", AlarmContentTemplateTypeArgs.builder()\n            .alarmContentTemplateName(\"cc-test-1001\")\n            .needValidContent(true)\n            .dingTalk(AlarmContentTemplateTypeDingTalkArgs.builder()\n                .content(\"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\")\n                .locale(\"en-US\")\n                .title(\"TLS告警\")\n                .build())\n            .email(AlarmContentTemplateTypeEmailArgs.builder()\n                .content(\"\"\"\n告警策略：{{Alarm}}\u003cbr\u003e \n告警日志项目：{{ProjectName}}\u003cbr\u003e \n告警日志主题：{{AlarmTopicName}}\u003cbr\u003e \n告警级别：{{Severity}}\u003cbr\u003e \n首次触发时间：{{StartTime}}\u003cbr\u003e \n触发条件：{{Condition}}\u003cbr\u003e \n通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\u003cbr\u003e \n告警持续时间：{{Duration}}\u003cbr\u003e \n附加通知内容：{{NotifyMsg}}\u003cbr\u003e\n日志检索详情：[查看详情]({{QueryUrl|safe}})\u003cbr\u003e\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\u003cbr\u003e\n\n感谢对火山引擎的支持                \"\"\")\n                .locale(\"en-US\")\n                .subject(\"TLS告警\")\n                .build())\n            .lark(AlarmContentTemplateTypeLarkArgs.builder()\n                .content(\"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\")\n                .locale(\"en-US\")\n                .title(\"告警通知\")\n                .build())\n            .sms(AlarmContentTemplateTypeSmsArgs.builder()\n                .content(\"告警策略{{Alarm}}， 告警日志项目：{{ProjectName}}， 告警日志主题：{{AlarmTopicName}}， 告警级别：{{Severity}}， 通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}，首次触发时间：{{StartTime}}， 触发条件：{{Condition}}， 当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]， n附加通知内容：{{NotifyMsg}}\")\n                .locale(\"zh-CN\")\n                .build())\n            .vms(AlarmContentTemplateTypeVmsArgs.builder()\n                .content(\"通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\")\n                .locale(\"zh-CN\")\n                .build())\n            .weChat(AlarmContentTemplateTypeWeChatArgs.builder()\n                .content(\"尊敬的用户，您好！\\\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\\\n告警策略：{{Alarm}}\\\\n告警日志主题：{{AlarmTopicName}}\\\\n告警级别：{{Severity}}\\\\n首次触发时间：{{StartTime}}\\\\n触发条件：{{Condition}}\\\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\\\n附加通知内容：{{NotifyMsg|escapejs}}\\\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\\\n\\\\n感谢对火山引擎的支持\")\n                .locale(\"zh-CN\")\n                .title(\"告警通知\")\n                .build())\n            .webhook(AlarmContentTemplateTypeWebhookArgs.builder()\n                .content(\"\"\"\n{\n  \"msg_type\": \"interactive\",\n  \"card\": {\n    \"config\": {\n      \"wide_screen_mode\": True\n    },\n    \"elements\": [\n      {\n        \"content\": \"尊敬的用户，您好！\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\n告警策略：{{Alarm}}\\n告警日志主题：{{AlarmTopicName}}\\n告警级别：{{Severity}}\\n首次触发时间：{{StartTime}}\\n触发条件：{{Condition}}\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}];\\n附加通知内容：{{NotifyMsg|escapejs}}\\n\\n感谢对火山引擎的支持\",\n        \"tag\": \"markdown\"\n      }\n    ],\n    \"header\": {\n      \"template\": \"{%if NotifyType==1%}red{%else%}green{%endif%}\",\n      \"title\": {\n        \"content\": \"【火山引擎】【日志服务】{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\",\n        \"tag\": \"plain_text\"\n      }\n    }\n  }\n}                \"\"\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:tls:AlarmContentTemplateType\n    name: Example\n    properties:\n      alarmContentTemplateName: cc-test-1001\n      needValidContent: true\n      dingTalk:\n        content: 尊敬的用户，您好！\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\n告警策略：{{Alarm}}\\n告警日志主题：{{AlarmTopicName}}\\n告警级别：{{Severity}}\\n首次触发时间：{{StartTime}}\\n触发条件：{{Condition}}\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\n附加通知内容：{{NotifyMsg|escapejs}}\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\n\\n感谢对火山引擎的支持\n        locale: en-US\n        title: TLS告警\n      email:\n        content: \"告警策略：{{Alarm}}\u003cbr\u003e \\n告警日志项目：{{ProjectName}}\u003cbr\u003e \\n告警日志主题：{{AlarmTopicName}}\u003cbr\u003e \\n告警级别：{{Severity}}\u003cbr\u003e \\n首次触发时间：{{StartTime}}\u003cbr\u003e \\n触发条件：{{Condition}}\u003cbr\u003e \\n通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\u003cbr\u003e \\n告警持续时间：{{Duration}}\u003cbr\u003e \\n附加通知内容：{{NotifyMsg}}\u003cbr\u003e\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\u003cbr\u003e\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\u003cbr\u003e\\n\\n感谢对火山引擎的支持\"\n        locale: en-US\n        subject: TLS告警\n      lark:\n        content: 尊敬的用户，您好！\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\n告警策略：{{Alarm}}\\n告警日志主题：{{AlarmTopicName}}\\n告警级别：{{Severity}}\\n首次触发时间：{{StartTime}}\\n触发条件：{{Condition}}\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\n附加通知内容：{{NotifyMsg|escapejs}}\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\n\\n感谢对火山引擎的支持\n        locale: en-US\n        title: 告警通知\n      sms:\n        content: 告警策略{{Alarm}}， 告警日志项目：{{ProjectName}}， 告警日志主题：{{AlarmTopicName}}， 告警级别：{{Severity}}， 通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}，首次触发时间：{{StartTime}}， 触发条件：{{Condition}}， 当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]， n附加通知内容：{{NotifyMsg}}\n        locale: zh-CN\n      vms:\n        content: 通知类型：{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\n        locale: zh-CN\n      weChat:\n        content: 尊敬的用户，您好！\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\n告警策略：{{Alarm}}\\n告警日志主题：{{AlarmTopicName}}\\n告警级别：{{Severity}}\\n首次触发时间：{{StartTime}}\\n触发条件：{{Condition}}\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}]\\n附加通知内容：{{NotifyMsg|escapejs}}\\n日志检索详情：[查看详情]({{QueryUrl|safe}})\\n告警详情：[查看详情(链接12小时后失效)]({{SignInUrl|safe}})\\n\\n感谢对火山引擎的支持\n        locale: zh-CN\n        title: 告警通知\n      webhook:\n        content: |-\n          {\n            \"msg_type\": \"interactive\",\n            \"card\": {\n              \"config\": {\n                \"wide_screen_mode\": True\n              },\n              \"elements\": [\n                {\n                  \"content\": \"尊敬的用户，您好！\\n您的账号（主账户ID：{{AccountID}} ）的日志服务{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\\n告警策略：{{Alarm}}\\n告警日志主题：{{AlarmTopicName}}\\n告警级别：{{Severity}}\\n首次触发时间：{{StartTime}}\\n触发条件：{{Condition}}\\n当前查询结果：[{%-for x in TriggerParams-%}{{-x-}} {%-endfor-%}];\\n附加通知内容：{{NotifyMsg|escapejs}}\\n\\n感谢对火山引擎的支持\",\n                  \"tag\": \"markdown\"\n                }\n              ],\n              \"header\": {\n                \"template\": \"{%if NotifyType==1%}red{%else%}green{%endif%}\",\n                \"title\": {\n                  \"content\": \"【火山引擎】【日志服务】{%if NotifyType==1%}触发告警{%else%}告警恢复{%endif%}\",\n                  \"tag\": \"plain_text\"\n                }\n              }\n            }\n          }\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:tls/alarmContentTemplateType:AlarmContentTemplateType example \"alarm_content_template_id\"\n```\n\n",
+            "properties": {
+                "alarmContentTemplateId": {
+                    "type": "string",
+                    "description": "Alert notification template ID\n"
+                },
+                "alarmContentTemplateName": {
+                    "type": "string",
+                    "description": "Name of the alert notification content template\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "Creation time of the alert notification content template\n"
+                },
+                "dingTalk": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeDingTalk:AlarmContentTemplateTypeDingTalk",
+                    "description": "DingTalk notification content template\n"
+                },
+                "email": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeEmail:AlarmContentTemplateTypeEmail",
+                    "description": "Email notification content template\n"
+                },
+                "isDefault": {
+                    "type": "boolean",
+                    "description": "Is default template\n"
+                },
+                "lark": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeLark:AlarmContentTemplateTypeLark",
+                    "description": "Feishu notification content template\n"
+                },
+                "modifyTime": {
+                    "type": "string",
+                    "description": "Last modified time of the alert notification content template\n"
+                },
+                "needValidContent": {
+                    "type": "boolean",
+                    "description": "Whether to validate the content template\n"
+                },
+                "sms": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeSms:AlarmContentTemplateTypeSms",
+                    "description": "SMS notification content template\n"
+                },
+                "vms": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeVms:AlarmContentTemplateTypeVms",
+                    "description": "Voice notification content template\n"
+                },
+                "weChat": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeWeChat:AlarmContentTemplateTypeWeChat",
+                    "description": "WeCom notification content template\n"
+                },
+                "webhook": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeWebhook:AlarmContentTemplateTypeWebhook",
+                    "description": "Custom Webhook alert notification content template\n"
+                }
+            },
+            "required": [
+                "alarmContentTemplateId",
+                "alarmContentTemplateName",
+                "createTime",
+                "dingTalk",
+                "email",
+                "isDefault",
+                "lark",
+                "modifyTime",
+                "needValidContent",
+                "sms",
+                "vms",
+                "weChat",
+                "webhook"
+            ],
+            "inputProperties": {
+                "alarmContentTemplateName": {
+                    "type": "string",
+                    "description": "Name of the alert notification content template\n"
+                },
+                "dingTalk": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeDingTalk:AlarmContentTemplateTypeDingTalk",
+                    "description": "DingTalk notification content template\n"
+                },
+                "email": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeEmail:AlarmContentTemplateTypeEmail",
+                    "description": "Email notification content template\n"
+                },
+                "lark": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeLark:AlarmContentTemplateTypeLark",
+                    "description": "Feishu notification content template\n"
+                },
+                "needValidContent": {
+                    "type": "boolean",
+                    "description": "Whether to validate the content template\n"
+                },
+                "sms": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeSms:AlarmContentTemplateTypeSms",
+                    "description": "SMS notification content template\n"
+                },
+                "vms": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeVms:AlarmContentTemplateTypeVms",
+                    "description": "Voice notification content template\n"
+                },
+                "weChat": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeWeChat:AlarmContentTemplateTypeWeChat",
+                    "description": "WeCom notification content template\n"
+                },
+                "webhook": {
+                    "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeWebhook:AlarmContentTemplateTypeWebhook",
+                    "description": "Custom Webhook alert notification content template\n"
+                }
+            },
+            "requiredInputs": [
+                "alarmContentTemplateName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering AlarmContentTemplateType resources.\n",
+                "properties": {
+                    "alarmContentTemplateId": {
+                        "type": "string",
+                        "description": "Alert notification template ID\n"
+                    },
+                    "alarmContentTemplateName": {
+                        "type": "string",
+                        "description": "Name of the alert notification content template\n"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "Creation time of the alert notification content template\n"
+                    },
+                    "dingTalk": {
+                        "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeDingTalk:AlarmContentTemplateTypeDingTalk",
+                        "description": "DingTalk notification content template\n"
+                    },
+                    "email": {
+                        "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeEmail:AlarmContentTemplateTypeEmail",
+                        "description": "Email notification content template\n"
+                    },
+                    "isDefault": {
+                        "type": "boolean",
+                        "description": "Is default template\n"
+                    },
+                    "lark": {
+                        "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeLark:AlarmContentTemplateTypeLark",
+                        "description": "Feishu notification content template\n"
+                    },
+                    "modifyTime": {
+                        "type": "string",
+                        "description": "Last modified time of the alert notification content template\n"
+                    },
+                    "needValidContent": {
+                        "type": "boolean",
+                        "description": "Whether to validate the content template\n"
+                    },
+                    "sms": {
+                        "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeSms:AlarmContentTemplateTypeSms",
+                        "description": "SMS notification content template\n"
+                    },
+                    "vms": {
+                        "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeVms:AlarmContentTemplateTypeVms",
+                        "description": "Voice notification content template\n"
+                    },
+                    "weChat": {
+                        "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeWeChat:AlarmContentTemplateTypeWeChat",
+                        "description": "WeCom notification content template\n"
+                    },
+                    "webhook": {
+                        "$ref": "#/types/bytepluscc:tls/AlarmContentTemplateTypeWebhook:AlarmContentTemplateTypeWebhook",
+                        "description": "Custom Webhook alert notification content template\n"
                     }
                 },
                 "type": "object"
@@ -127866,6 +129149,104 @@
                 "type": "object"
             }
         },
+        "bytepluscc:id/getOauth2CredentialProvider:getOauth2CredentialProvider": {
+            "description": "Data Source schema for Byteplus::ID::Oauth2CredentialProvider\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getOauth2CredentialProvider.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getOauth2CredentialProvider.\n",
+                "properties": {
+                    "config": {
+                        "$ref": "#/types/bytepluscc:id/getOauth2CredentialProviderConfig:getOauth2CredentialProviderConfig",
+                        "description": "OAuth2 configuration\n"
+                    },
+                    "createdAt": {
+                        "description": "Creation time\n",
+                        "type": "string"
+                    },
+                    "credentialProviderTrn": {
+                        "description": "Credential provider TRN\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Name\n",
+                        "type": "string"
+                    },
+                    "poolName": {
+                        "description": "Workload pool name\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "Project name\n",
+                        "type": "string"
+                    },
+                    "secretTrn": {
+                        "description": "Secret TRN corresponding to credential ciphertext\n",
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "description": "Update time\n",
+                        "type": "string"
+                    },
+                    "vendor": {
+                        "description": "OAuth2 provider type. 0: Custom, 1: Google, 2: Github, 3: Coze, 4: Feishu, 5: WeChat, 6: User pool\n",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "config",
+                    "createdAt",
+                    "credentialProviderTrn",
+                    "id",
+                    "name",
+                    "poolName",
+                    "projectName",
+                    "secretTrn",
+                    "updatedAt",
+                    "vendor"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:id/getOauth2CredentialProviders:getOauth2CredentialProviders": {
+            "description": "Plural Data Source schema for Byteplus::ID::Oauth2CredentialProvider\n",
+            "outputs": {
+                "description": "A collection of values returned by getOauth2CredentialProviders.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:id/getPermissionNamespace:getPermissionNamespace": {
             "description": "Data Source schema for Byteplus::ID::PermissionNamespace\n",
             "inputs": {
@@ -129509,6 +130890,10 @@
                         "description": "Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS\n",
                         "type": "boolean"
                     },
+                    "cancelSecretDeletion": {
+                        "description": "Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.\n",
+                        "type": "boolean"
+                    },
                     "createdTime": {
                         "description": "Credential creation time\n",
                         "type": "integer"
@@ -129541,6 +130926,10 @@
                         "description": "Managed Cloud Service\n",
                         "type": "string"
                     },
+                    "pendingWindowInDays": {
+                        "description": "Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.\n",
+                        "type": "integer"
+                    },
                     "projectName": {
                         "description": "Credential project name. Default value: default\n",
                         "type": "string"
@@ -129565,6 +130954,10 @@
                         "description": "Credential next rotation time\n",
                         "type": "string"
                     },
+                    "secretBackup": {
+                        "description": "Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.\n",
+                        "type": "boolean"
+                    },
                     "secretId": {
                         "description": "Credential unique identifier, UUID format\n",
                         "type": "string"
@@ -129572,6 +130965,18 @@
                     "secretName": {
                         "description": "Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]\n",
                         "type": "string"
+                    },
+                    "secretRestore": {
+                        "$ref": "#/types/bytepluscc:kms/getSecretSecretRestore:getSecretSecretRestore",
+                        "description": "Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.\n"
+                    },
+                    "secretRestoreRead": {
+                        "$ref": "#/types/bytepluscc:kms/getSecretSecretRestoreRead:getSecretSecretRestoreRead",
+                        "description": "Credential restore parameters. Returned only during backup.\n"
+                    },
+                    "secretRotate": {
+                        "description": "Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.\n",
+                        "type": "boolean"
                     },
                     "secretState": {
                         "description": "Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion\n",
@@ -129584,6 +130989,13 @@
                     "secretValue": {
                         "description": "Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs\n",
                         "type": "string"
+                    },
+                    "secretVersions": {
+                        "description": "Credential version information.\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:kms/getSecretSecretVersion:getSecretSecretVersion"
+                        },
+                        "type": "array"
                     },
                     "trn": {
                         "description": "Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}\n",
@@ -129604,6 +131016,7 @@
                 },
                 "required": [
                     "automaticRotation",
+                    "cancelSecretDeletion",
                     "createdTime",
                     "description",
                     "encryptionKey",
@@ -129612,17 +131025,23 @@
                     "lastRotationTime",
                     "managed",
                     "owningService",
+                    "pendingWindowInDays",
                     "projectName",
                     "rotationInterval",
                     "rotationIntervalRead",
                     "rotationState",
                     "scheduleDeleteTime",
                     "scheduleRotationTime",
+                    "secretBackup",
                     "secretId",
                     "secretName",
+                    "secretRestore",
+                    "secretRestoreRead",
+                    "secretRotate",
                     "secretState",
                     "secretType",
                     "secretValue",
+                    "secretVersions",
                     "trn",
                     "uid",
                     "updatedTime",
@@ -137784,6 +139203,124 @@
                     "triggerConditions",
                     "triggerPeriod",
                     "userDefineMsg"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateType:getAlarmContentTemplateType": {
+            "description": "Data Source schema for Byteplus::TLS::AlarmContentTemplateType\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getAlarmContentTemplateType.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getAlarmContentTemplateType.\n",
+                "properties": {
+                    "alarmContentTemplateId": {
+                        "description": "Alert notification template ID\n",
+                        "type": "string"
+                    },
+                    "alarmContentTemplateName": {
+                        "description": "Name of the alert notification content template\n",
+                        "type": "string"
+                    },
+                    "createTime": {
+                        "description": "Creation time of the alert notification content template\n",
+                        "type": "string"
+                    },
+                    "dingTalk": {
+                        "$ref": "#/types/bytepluscc:tls/getAlarmContentTemplateTypeDingTalk:getAlarmContentTemplateTypeDingTalk",
+                        "description": "DingTalk notification content template\n"
+                    },
+                    "email": {
+                        "$ref": "#/types/bytepluscc:tls/getAlarmContentTemplateTypeEmail:getAlarmContentTemplateTypeEmail",
+                        "description": "Email notification content template\n"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "isDefault": {
+                        "description": "Is default template\n",
+                        "type": "boolean"
+                    },
+                    "lark": {
+                        "$ref": "#/types/bytepluscc:tls/getAlarmContentTemplateTypeLark:getAlarmContentTemplateTypeLark",
+                        "description": "Feishu notification content template\n"
+                    },
+                    "modifyTime": {
+                        "description": "Last modified time of the alert notification content template\n",
+                        "type": "string"
+                    },
+                    "needValidContent": {
+                        "description": "Whether to validate the content template\n",
+                        "type": "boolean"
+                    },
+                    "sms": {
+                        "$ref": "#/types/bytepluscc:tls/getAlarmContentTemplateTypeSms:getAlarmContentTemplateTypeSms",
+                        "description": "SMS notification content template\n"
+                    },
+                    "vms": {
+                        "$ref": "#/types/bytepluscc:tls/getAlarmContentTemplateTypeVms:getAlarmContentTemplateTypeVms",
+                        "description": "Voice notification content template\n"
+                    },
+                    "weChat": {
+                        "$ref": "#/types/bytepluscc:tls/getAlarmContentTemplateTypeWeChat:getAlarmContentTemplateTypeWeChat",
+                        "description": "WeCom notification content template\n"
+                    },
+                    "webhook": {
+                        "$ref": "#/types/bytepluscc:tls/getAlarmContentTemplateTypeWebhook:getAlarmContentTemplateTypeWebhook",
+                        "description": "Custom Webhook alert notification content template\n"
+                    }
+                },
+                "required": [
+                    "alarmContentTemplateId",
+                    "alarmContentTemplateName",
+                    "createTime",
+                    "dingTalk",
+                    "email",
+                    "id",
+                    "isDefault",
+                    "lark",
+                    "modifyTime",
+                    "needValidContent",
+                    "sms",
+                    "vms",
+                    "weChat",
+                    "webhook"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:tls/getAlarmContentTemplateTypes:getAlarmContentTemplateTypes": {
+            "description": "Plural Data Source schema for Byteplus::TLS::AlarmContentTemplateType\n",
+            "outputs": {
+                "description": "A collection of values returned by getAlarmContentTemplateTypes.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
                 ],
                 "type": "object"
             }

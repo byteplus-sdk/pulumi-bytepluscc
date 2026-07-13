@@ -10,6 +10,11 @@ export type Alarm = import("./alarm").Alarm;
 export const Alarm: typeof import("./alarm").Alarm = null as any;
 utilities.lazyLoad(exports, ["Alarm"], () => require("./alarm"));
 
+export { AlarmContentTemplateTypeArgs, AlarmContentTemplateTypeState } from "./alarmContentTemplateType";
+export type AlarmContentTemplateType = import("./alarmContentTemplateType").AlarmContentTemplateType;
+export const AlarmContentTemplateType: typeof import("./alarmContentTemplateType").AlarmContentTemplateType = null as any;
+utilities.lazyLoad(exports, ["AlarmContentTemplateType"], () => require("./alarmContentTemplateType"));
+
 export { AlarmNotifyGroupArgs, AlarmNotifyGroupState } from "./alarmNotifyGroup";
 export type AlarmNotifyGroup = import("./alarmNotifyGroup").AlarmNotifyGroup;
 export const AlarmNotifyGroup: typeof import("./alarmNotifyGroup").AlarmNotifyGroup = null as any;
@@ -34,6 +39,16 @@ export { GetAlarmArgs, GetAlarmResult, GetAlarmOutputArgs } from "./getAlarm";
 export const getAlarm: typeof import("./getAlarm").getAlarm = null as any;
 export const getAlarmOutput: typeof import("./getAlarm").getAlarmOutput = null as any;
 utilities.lazyLoad(exports, ["getAlarm","getAlarmOutput"], () => require("./getAlarm"));
+
+export { GetAlarmContentTemplateTypeArgs, GetAlarmContentTemplateTypeResult, GetAlarmContentTemplateTypeOutputArgs } from "./getAlarmContentTemplateType";
+export const getAlarmContentTemplateType: typeof import("./getAlarmContentTemplateType").getAlarmContentTemplateType = null as any;
+export const getAlarmContentTemplateTypeOutput: typeof import("./getAlarmContentTemplateType").getAlarmContentTemplateTypeOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmContentTemplateType","getAlarmContentTemplateTypeOutput"], () => require("./getAlarmContentTemplateType"));
+
+export { GetAlarmContentTemplateTypesResult } from "./getAlarmContentTemplateTypes";
+export const getAlarmContentTemplateTypes: typeof import("./getAlarmContentTemplateTypes").getAlarmContentTemplateTypes = null as any;
+export const getAlarmContentTemplateTypesOutput: typeof import("./getAlarmContentTemplateTypes").getAlarmContentTemplateTypesOutput = null as any;
+utilities.lazyLoad(exports, ["getAlarmContentTemplateTypes","getAlarmContentTemplateTypesOutput"], () => require("./getAlarmContentTemplateTypes"));
 
 export { GetAlarmNotifyGroupArgs, GetAlarmNotifyGroupResult, GetAlarmNotifyGroupOutputArgs } from "./getAlarmNotifyGroup";
 export const getAlarmNotifyGroup: typeof import("./getAlarmNotifyGroup").getAlarmNotifyGroup = null as any;
@@ -222,6 +237,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:tls/alarm:Alarm":
                 return new Alarm(name, <any>undefined, { urn })
+            case "bytepluscc:tls/alarmContentTemplateType:AlarmContentTemplateType":
+                return new AlarmContentTemplateType(name, <any>undefined, { urn })
             case "bytepluscc:tls/alarmNotifyGroup:AlarmNotifyGroup":
                 return new AlarmNotifyGroup(name, <any>undefined, { urn })
             case "bytepluscc:tls/alarmWebhookIntegrationType:AlarmWebhookIntegrationType":
@@ -254,6 +271,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarm", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmContentTemplateType", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmNotifyGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmWebhookIntegrationType", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/consumerGroup", _module)

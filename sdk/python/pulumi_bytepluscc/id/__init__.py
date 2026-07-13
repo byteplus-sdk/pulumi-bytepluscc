@@ -9,6 +9,8 @@ import typing
 from .auth_config import *
 from .get_auth_config import *
 from .get_auth_configs import *
+from .get_oauth2_credential_provider import *
+from .get_oauth2_credential_providers import *
 from .get_permission_namespace import *
 from .get_permission_namespaces import *
 from .get_service import *
@@ -17,6 +19,7 @@ from .get_user_pool import *
 from .get_user_pools import *
 from .get_workload_pool import *
 from .get_workload_pools import *
+from .oauth2_credential_provider import *
 from .permission_namespace import *
 from .service import *
 from .user_pool import *

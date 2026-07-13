@@ -13,6 +13,7 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
     'GetSecretResult',
@@ -26,10 +27,13 @@ class GetSecretResult:
     """
     A collection of values returned by getSecret.
     """
-    def __init__(__self__, automatic_rotation=None, created_time=None, description=None, encryption_key=None, extended_config=None, id=None, last_rotation_time=None, managed=None, owning_service=None, project_name=None, rotation_interval=None, rotation_interval_read=None, rotation_state=None, schedule_delete_time=None, schedule_rotation_time=None, secret_id=None, secret_name=None, secret_state=None, secret_type=None, secret_value=None, trn=None, uid=None, updated_time=None, version_name=None):
+    def __init__(__self__, automatic_rotation=None, cancel_secret_deletion=None, created_time=None, description=None, encryption_key=None, extended_config=None, id=None, last_rotation_time=None, managed=None, owning_service=None, pending_window_in_days=None, project_name=None, rotation_interval=None, rotation_interval_read=None, rotation_state=None, schedule_delete_time=None, schedule_rotation_time=None, secret_backup=None, secret_id=None, secret_name=None, secret_restore=None, secret_restore_read=None, secret_rotate=None, secret_state=None, secret_type=None, secret_value=None, secret_versions=None, trn=None, uid=None, updated_time=None, version_name=None):
         if automatic_rotation and not isinstance(automatic_rotation, bool):
             raise TypeError("Expected argument 'automatic_rotation' to be a bool")
         pulumi.set(__self__, "automatic_rotation", automatic_rotation)
+        if cancel_secret_deletion and not isinstance(cancel_secret_deletion, bool):
+            raise TypeError("Expected argument 'cancel_secret_deletion' to be a bool")
+        pulumi.set(__self__, "cancel_secret_deletion", cancel_secret_deletion)
         if created_time and not isinstance(created_time, int):
             raise TypeError("Expected argument 'created_time' to be a int")
         pulumi.set(__self__, "created_time", created_time)
@@ -54,6 +58,9 @@ class GetSecretResult:
         if owning_service and not isinstance(owning_service, str):
             raise TypeError("Expected argument 'owning_service' to be a str")
         pulumi.set(__self__, "owning_service", owning_service)
+        if pending_window_in_days and not isinstance(pending_window_in_days, int):
+            raise TypeError("Expected argument 'pending_window_in_days' to be a int")
+        pulumi.set(__self__, "pending_window_in_days", pending_window_in_days)
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
@@ -72,12 +79,24 @@ class GetSecretResult:
         if schedule_rotation_time and not isinstance(schedule_rotation_time, str):
             raise TypeError("Expected argument 'schedule_rotation_time' to be a str")
         pulumi.set(__self__, "schedule_rotation_time", schedule_rotation_time)
+        if secret_backup and not isinstance(secret_backup, bool):
+            raise TypeError("Expected argument 'secret_backup' to be a bool")
+        pulumi.set(__self__, "secret_backup", secret_backup)
         if secret_id and not isinstance(secret_id, str):
             raise TypeError("Expected argument 'secret_id' to be a str")
         pulumi.set(__self__, "secret_id", secret_id)
         if secret_name and not isinstance(secret_name, str):
             raise TypeError("Expected argument 'secret_name' to be a str")
         pulumi.set(__self__, "secret_name", secret_name)
+        if secret_restore and not isinstance(secret_restore, dict):
+            raise TypeError("Expected argument 'secret_restore' to be a dict")
+        pulumi.set(__self__, "secret_restore", secret_restore)
+        if secret_restore_read and not isinstance(secret_restore_read, dict):
+            raise TypeError("Expected argument 'secret_restore_read' to be a dict")
+        pulumi.set(__self__, "secret_restore_read", secret_restore_read)
+        if secret_rotate and not isinstance(secret_rotate, bool):
+            raise TypeError("Expected argument 'secret_rotate' to be a bool")
+        pulumi.set(__self__, "secret_rotate", secret_rotate)
         if secret_state and not isinstance(secret_state, str):
             raise TypeError("Expected argument 'secret_state' to be a str")
         pulumi.set(__self__, "secret_state", secret_state)
@@ -87,6 +106,9 @@ class GetSecretResult:
         if secret_value and not isinstance(secret_value, str):
             raise TypeError("Expected argument 'secret_value' to be a str")
         pulumi.set(__self__, "secret_value", secret_value)
+        if secret_versions and not isinstance(secret_versions, list):
+            raise TypeError("Expected argument 'secret_versions' to be a list")
+        pulumi.set(__self__, "secret_versions", secret_versions)
         if trn and not isinstance(trn, str):
             raise TypeError("Expected argument 'trn' to be a str")
         pulumi.set(__self__, "trn", trn)
@@ -107,6 +129,14 @@ class GetSecretResult:
         Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
         """
         return pulumi.get(self, "automatic_rotation")
+
+    @_builtins.property
+    @pulumi.getter(name="cancelSecretDeletion")
+    def cancel_secret_deletion(self) -> _builtins.bool:
+        """
+        Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+        """
+        return pulumi.get(self, "cancel_secret_deletion")
 
     @_builtins.property
     @pulumi.getter(name="createdTime")
@@ -173,6 +203,14 @@ class GetSecretResult:
         return pulumi.get(self, "owning_service")
 
     @_builtins.property
+    @pulumi.getter(name="pendingWindowInDays")
+    def pending_window_in_days(self) -> _builtins.int:
+        """
+        Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+        """
+        return pulumi.get(self, "pending_window_in_days")
+
+    @_builtins.property
     @pulumi.getter(name="projectName")
     def project_name(self) -> _builtins.str:
         """
@@ -221,6 +259,14 @@ class GetSecretResult:
         return pulumi.get(self, "schedule_rotation_time")
 
     @_builtins.property
+    @pulumi.getter(name="secretBackup")
+    def secret_backup(self) -> _builtins.bool:
+        """
+        Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        """
+        return pulumi.get(self, "secret_backup")
+
+    @_builtins.property
     @pulumi.getter(name="secretId")
     def secret_id(self) -> _builtins.str:
         """
@@ -235,6 +281,30 @@ class GetSecretResult:
         Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
         """
         return pulumi.get(self, "secret_name")
+
+    @_builtins.property
+    @pulumi.getter(name="secretRestore")
+    def secret_restore(self) -> 'outputs.GetSecretSecretRestoreResult':
+        """
+        Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        """
+        return pulumi.get(self, "secret_restore")
+
+    @_builtins.property
+    @pulumi.getter(name="secretRestoreRead")
+    def secret_restore_read(self) -> 'outputs.GetSecretSecretRestoreReadResult':
+        """
+        Credential restore parameters. Returned only during backup.
+        """
+        return pulumi.get(self, "secret_restore_read")
+
+    @_builtins.property
+    @pulumi.getter(name="secretRotate")
+    def secret_rotate(self) -> _builtins.bool:
+        """
+        Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+        """
+        return pulumi.get(self, "secret_rotate")
 
     @_builtins.property
     @pulumi.getter(name="secretState")
@@ -259,6 +329,14 @@ class GetSecretResult:
         Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
         """
         return pulumi.get(self, "secret_value")
+
+    @_builtins.property
+    @pulumi.getter(name="secretVersions")
+    def secret_versions(self) -> Sequence['outputs.GetSecretSecretVersionResult']:
+        """
+        Credential version information.
+        """
+        return pulumi.get(self, "secret_versions")
 
     @_builtins.property
     @pulumi.getter
@@ -300,6 +378,7 @@ class AwaitableGetSecretResult(GetSecretResult):
             yield self
         return GetSecretResult(
             automatic_rotation=self.automatic_rotation,
+            cancel_secret_deletion=self.cancel_secret_deletion,
             created_time=self.created_time,
             description=self.description,
             encryption_key=self.encryption_key,
@@ -308,17 +387,23 @@ class AwaitableGetSecretResult(GetSecretResult):
             last_rotation_time=self.last_rotation_time,
             managed=self.managed,
             owning_service=self.owning_service,
+            pending_window_in_days=self.pending_window_in_days,
             project_name=self.project_name,
             rotation_interval=self.rotation_interval,
             rotation_interval_read=self.rotation_interval_read,
             rotation_state=self.rotation_state,
             schedule_delete_time=self.schedule_delete_time,
             schedule_rotation_time=self.schedule_rotation_time,
+            secret_backup=self.secret_backup,
             secret_id=self.secret_id,
             secret_name=self.secret_name,
+            secret_restore=self.secret_restore,
+            secret_restore_read=self.secret_restore_read,
+            secret_rotate=self.secret_rotate,
             secret_state=self.secret_state,
             secret_type=self.secret_type,
             secret_value=self.secret_value,
+            secret_versions=self.secret_versions,
             trn=self.trn,
             uid=self.uid,
             updated_time=self.updated_time,
@@ -340,6 +425,7 @@ def get_secret(id: Optional[_builtins.str] = None,
 
     return AwaitableGetSecretResult(
         automatic_rotation=pulumi.get(__ret__, 'automatic_rotation'),
+        cancel_secret_deletion=pulumi.get(__ret__, 'cancel_secret_deletion'),
         created_time=pulumi.get(__ret__, 'created_time'),
         description=pulumi.get(__ret__, 'description'),
         encryption_key=pulumi.get(__ret__, 'encryption_key'),
@@ -348,17 +434,23 @@ def get_secret(id: Optional[_builtins.str] = None,
         last_rotation_time=pulumi.get(__ret__, 'last_rotation_time'),
         managed=pulumi.get(__ret__, 'managed'),
         owning_service=pulumi.get(__ret__, 'owning_service'),
+        pending_window_in_days=pulumi.get(__ret__, 'pending_window_in_days'),
         project_name=pulumi.get(__ret__, 'project_name'),
         rotation_interval=pulumi.get(__ret__, 'rotation_interval'),
         rotation_interval_read=pulumi.get(__ret__, 'rotation_interval_read'),
         rotation_state=pulumi.get(__ret__, 'rotation_state'),
         schedule_delete_time=pulumi.get(__ret__, 'schedule_delete_time'),
         schedule_rotation_time=pulumi.get(__ret__, 'schedule_rotation_time'),
+        secret_backup=pulumi.get(__ret__, 'secret_backup'),
         secret_id=pulumi.get(__ret__, 'secret_id'),
         secret_name=pulumi.get(__ret__, 'secret_name'),
+        secret_restore=pulumi.get(__ret__, 'secret_restore'),
+        secret_restore_read=pulumi.get(__ret__, 'secret_restore_read'),
+        secret_rotate=pulumi.get(__ret__, 'secret_rotate'),
         secret_state=pulumi.get(__ret__, 'secret_state'),
         secret_type=pulumi.get(__ret__, 'secret_type'),
         secret_value=pulumi.get(__ret__, 'secret_value'),
+        secret_versions=pulumi.get(__ret__, 'secret_versions'),
         trn=pulumi.get(__ret__, 'trn'),
         uid=pulumi.get(__ret__, 'uid'),
         updated_time=pulumi.get(__ret__, 'updated_time'),
@@ -377,6 +469,7 @@ def get_secret_output(id: pulumi.Input[Optional[_builtins.str]] = None,
     __ret__ = pulumi.runtime.invoke_output('bytepluscc:kms/getSecret:getSecret', __args__, opts=opts, typ=GetSecretResult)
     return __ret__.apply(lambda __response__: GetSecretResult(
         automatic_rotation=pulumi.get(__response__, 'automatic_rotation'),
+        cancel_secret_deletion=pulumi.get(__response__, 'cancel_secret_deletion'),
         created_time=pulumi.get(__response__, 'created_time'),
         description=pulumi.get(__response__, 'description'),
         encryption_key=pulumi.get(__response__, 'encryption_key'),
@@ -385,17 +478,23 @@ def get_secret_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         last_rotation_time=pulumi.get(__response__, 'last_rotation_time'),
         managed=pulumi.get(__response__, 'managed'),
         owning_service=pulumi.get(__response__, 'owning_service'),
+        pending_window_in_days=pulumi.get(__response__, 'pending_window_in_days'),
         project_name=pulumi.get(__response__, 'project_name'),
         rotation_interval=pulumi.get(__response__, 'rotation_interval'),
         rotation_interval_read=pulumi.get(__response__, 'rotation_interval_read'),
         rotation_state=pulumi.get(__response__, 'rotation_state'),
         schedule_delete_time=pulumi.get(__response__, 'schedule_delete_time'),
         schedule_rotation_time=pulumi.get(__response__, 'schedule_rotation_time'),
+        secret_backup=pulumi.get(__response__, 'secret_backup'),
         secret_id=pulumi.get(__response__, 'secret_id'),
         secret_name=pulumi.get(__response__, 'secret_name'),
+        secret_restore=pulumi.get(__response__, 'secret_restore'),
+        secret_restore_read=pulumi.get(__response__, 'secret_restore_read'),
+        secret_rotate=pulumi.get(__response__, 'secret_rotate'),
         secret_state=pulumi.get(__response__, 'secret_state'),
         secret_type=pulumi.get(__response__, 'secret_type'),
         secret_value=pulumi.get(__response__, 'secret_value'),
+        secret_versions=pulumi.get(__response__, 'secret_versions'),
         trn=pulumi.get(__response__, 'trn'),
         uid=pulumi.get(__response__, 'uid'),
         updated_time=pulumi.get(__response__, 'updated_time'),
