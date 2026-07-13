@@ -19,6 +19,20 @@ __all__ = [
     'AlarmAlarmNotifyGroupArgsDict',
     'AlarmAlarmPeriodDetailArgs',
     'AlarmAlarmPeriodDetailArgsDict',
+    'AlarmContentTemplateTypeDingTalkArgs',
+    'AlarmContentTemplateTypeDingTalkArgsDict',
+    'AlarmContentTemplateTypeEmailArgs',
+    'AlarmContentTemplateTypeEmailArgsDict',
+    'AlarmContentTemplateTypeLarkArgs',
+    'AlarmContentTemplateTypeLarkArgsDict',
+    'AlarmContentTemplateTypeSmsArgs',
+    'AlarmContentTemplateTypeSmsArgsDict',
+    'AlarmContentTemplateTypeVmsArgs',
+    'AlarmContentTemplateTypeVmsArgsDict',
+    'AlarmContentTemplateTypeWeChatArgs',
+    'AlarmContentTemplateTypeWeChatArgsDict',
+    'AlarmContentTemplateTypeWebhookArgs',
+    'AlarmContentTemplateTypeWebhookArgsDict',
     'AlarmJoinConfigurationArgs',
     'AlarmJoinConfigurationArgsDict',
     'AlarmNotifyGroupNoticeRuleArgs',
@@ -307,6 +321,409 @@ class AlarmAlarmPeriodDetailArgs:
     @sms.setter
     def sms(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "sms", value)
+
+
+class AlarmContentTemplateTypeDingTalkArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+    """
+    locale: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification subject
+    """
+
+@pulumi.input_type
+class AlarmContentTemplateTypeDingTalkArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        :param pulumi.Input[_builtins.str] locale: The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        :param pulumi.Input[_builtins.str] title: Alert notification subject
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if locale is not None:
+            pulumi.set(__self__, "locale", locale)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        """
+        return pulumi.get(self, "locale")
+
+    @locale.setter
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "locale", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification subject
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+
+class AlarmContentTemplateTypeEmailArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+    """
+    locale: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+    """
+    subject: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Email notification subject
+    """
+
+@pulumi.input_type
+class AlarmContentTemplateTypeEmailArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 subject: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        :param pulumi.Input[_builtins.str] locale: The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        :param pulumi.Input[_builtins.str] subject: Email notification subject
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if locale is not None:
+            pulumi.set(__self__, "locale", locale)
+        if subject is not None:
+            pulumi.set(__self__, "subject", subject)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        """
+        return pulumi.get(self, "locale")
+
+    @locale.setter
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "locale", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def subject(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Email notification subject
+        """
+        return pulumi.get(self, "subject")
+
+    @subject.setter
+    def subject(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "subject", value)
+
+
+class AlarmContentTemplateTypeLarkArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+    """
+    locale: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification subject
+    """
+
+@pulumi.input_type
+class AlarmContentTemplateTypeLarkArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        :param pulumi.Input[_builtins.str] locale: The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        :param pulumi.Input[_builtins.str] title: Alert notification subject
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if locale is not None:
+            pulumi.set(__self__, "locale", locale)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        """
+        return pulumi.get(self, "locale")
+
+    @locale.setter
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "locale", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification subject
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+
+class AlarmContentTemplateTypeSmsArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+    """
+    locale: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+    """
+
+@pulumi.input_type
+class AlarmContentTemplateTypeSmsArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        :param pulumi.Input[_builtins.str] locale: The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if locale is not None:
+            pulumi.set(__self__, "locale", locale)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        """
+        return pulumi.get(self, "locale")
+
+    @locale.setter
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "locale", value)
+
+
+class AlarmContentTemplateTypeVmsArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+    """
+    locale: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+    """
+
+@pulumi.input_type
+class AlarmContentTemplateTypeVmsArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        :param pulumi.Input[_builtins.str] locale: The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if locale is not None:
+            pulumi.set(__self__, "locale", locale)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        """
+        return pulumi.get(self, "locale")
+
+    @locale.setter
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "locale", value)
+
+
+class AlarmContentTemplateTypeWeChatArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+    """
+    locale: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+    """
+    title: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification subject
+    """
+
+@pulumi.input_type
+class AlarmContentTemplateTypeWeChatArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[Optional[_builtins.str]] = None,
+                 locale: pulumi.Input[Optional[_builtins.str]] = None,
+                 title: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        :param pulumi.Input[_builtins.str] locale: The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        :param pulumi.Input[_builtins.str] title: Alert notification subject
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+        if locale is not None:
+            pulumi.set(__self__, "locale", locale)
+        if title is not None:
+            pulumi.set(__self__, "title", title)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locale(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+        """
+        return pulumi.get(self, "locale")
+
+    @locale.setter
+    def locale(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "locale", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def title(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification subject
+        """
+        return pulumi.get(self, "title")
+
+    @title.setter
+    def title(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "title", value)
+
+
+class AlarmContentTemplateTypeWebhookArgsDict(TypedDict):
+    content: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+    """
+
+@pulumi.input_type
+class AlarmContentTemplateTypeWebhookArgs:
+    def __init__(__self__, *,
+                 content: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] content: Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        """
+        if content is not None:
+            pulumi.set(__self__, "content", content)
+
+    @_builtins.property
+    @pulumi.getter
+    def content(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+        """
+        return pulumi.get(self, "content")
+
+    @content.setter
+    def content(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "content", value)
 
 
 class AlarmJoinConfigurationArgsDict(TypedDict):

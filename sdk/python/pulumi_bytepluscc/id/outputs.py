@@ -19,6 +19,12 @@ __all__ = [
     'AuthConfigApiKeyAuthConfig',
     'AuthConfigApiKeyAuthConfigApiKeyMetadata',
     'AuthConfigJwtAuthConfig',
+    'Oauth2CredentialProviderConfig',
+    'Oauth2CredentialProviderConfigCustomParameters',
+    'Oauth2CredentialProviderConfigCustomParametersEntry',
+    'Oauth2CredentialProviderConfigOauth2Discovery',
+    'Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata',
+    'Oauth2CredentialProviderConfigSecretStorage',
     'PermissionNamespaceTag',
     'ServiceBackend',
     'ServiceRoute',
@@ -33,6 +39,12 @@ __all__ = [
     'GetAuthConfigApiKeyAuthConfigResult',
     'GetAuthConfigApiKeyAuthConfigApiKeyMetadataResult',
     'GetAuthConfigJwtAuthConfigResult',
+    'GetOauth2CredentialProviderConfigResult',
+    'GetOauth2CredentialProviderConfigCustomParametersResult',
+    'GetOauth2CredentialProviderConfigCustomParametersEntryResult',
+    'GetOauth2CredentialProviderConfigOauth2DiscoveryResult',
+    'GetOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadataResult',
+    'GetOauth2CredentialProviderConfigSecretStorageResult',
     'GetPermissionNamespaceTagResult',
     'GetServiceBackendResult',
     'GetServiceRouteResult',
@@ -236,6 +248,446 @@ class AuthConfigJwtAuthConfig(dict):
         JWT Discovery URL。
         """
         return pulumi.get(self, "discovery_url")
+
+
+@pulumi.output_type
+class Oauth2CredentialProviderConfig(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "clientId":
+            suggest = "client_id"
+        elif key == "clientSecret":
+            suggest = "client_secret"
+        elif key == "customParameters":
+            suggest = "custom_parameters"
+        elif key == "forceAuthentication":
+            suggest = "force_authentication"
+        elif key == "maxExpires":
+            suggest = "max_expires"
+        elif key == "oauth2Discovery":
+            suggest = "oauth2_discovery"
+        elif key == "redirectUrl":
+            suggest = "redirect_url"
+        elif key == "secretStorage":
+            suggest = "secret_storage"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Oauth2CredentialProviderConfig. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Oauth2CredentialProviderConfig.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Oauth2CredentialProviderConfig.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 client_id: Optional[_builtins.str] = None,
+                 client_secret: Optional[_builtins.str] = None,
+                 custom_parameters: Optional['outputs.Oauth2CredentialProviderConfigCustomParameters'] = None,
+                 flow: Optional[_builtins.str] = None,
+                 force_authentication: Optional[_builtins.bool] = None,
+                 max_expires: Optional[_builtins.int] = None,
+                 metadata: Optional[_builtins.str] = None,
+                 oauth2_discovery: Optional['outputs.Oauth2CredentialProviderConfigOauth2Discovery'] = None,
+                 redirect_url: Optional[_builtins.str] = None,
+                 scopes: Optional[Sequence[_builtins.str]] = None,
+                 secret_storage: Optional['outputs.Oauth2CredentialProviderConfigSecretStorage'] = None):
+        """
+        :param _builtins.str client_id: OAuth2 Client ID。
+        :param _builtins.str client_secret: OAuth2 Client Secret。
+        :param 'Oauth2CredentialProviderConfigCustomParametersArgs' custom_parameters: Default custom parameters in GetResourceOauth2Token request
+        :param _builtins.str flow: Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M
+        :param _builtins.bool force_authentication: Default ForceAuthentication in GetResourceOauth2Token request
+        :param _builtins.int max_expires: Maximum token validity (seconds)
+        :param _builtins.str metadata: Custom metadata
+        :param 'Oauth2CredentialProviderConfigOauth2DiscoveryArgs' oauth2_discovery: OAuth2 discovery information
+        :param _builtins.str redirect_url: Default RedirectUrl in GetResourceOauth2Token request
+        :param Sequence[_builtins.str] scopes: Default Scopes in GetResourceOauth2Token request
+        :param 'Oauth2CredentialProviderConfigSecretStorageArgs' secret_storage: Encrypted storage configuration
+        """
+        if client_id is not None:
+            pulumi.set(__self__, "client_id", client_id)
+        if client_secret is not None:
+            pulumi.set(__self__, "client_secret", client_secret)
+        if custom_parameters is not None:
+            pulumi.set(__self__, "custom_parameters", custom_parameters)
+        if flow is not None:
+            pulumi.set(__self__, "flow", flow)
+        if force_authentication is not None:
+            pulumi.set(__self__, "force_authentication", force_authentication)
+        if max_expires is not None:
+            pulumi.set(__self__, "max_expires", max_expires)
+        if metadata is not None:
+            pulumi.set(__self__, "metadata", metadata)
+        if oauth2_discovery is not None:
+            pulumi.set(__self__, "oauth2_discovery", oauth2_discovery)
+        if redirect_url is not None:
+            pulumi.set(__self__, "redirect_url", redirect_url)
+        if scopes is not None:
+            pulumi.set(__self__, "scopes", scopes)
+        if secret_storage is not None:
+            pulumi.set(__self__, "secret_storage", secret_storage)
+
+    @_builtins.property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> Optional[_builtins.str]:
+        """
+        OAuth2 Client ID。
+        """
+        return pulumi.get(self, "client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> Optional[_builtins.str]:
+        """
+        OAuth2 Client Secret。
+        """
+        return pulumi.get(self, "client_secret")
+
+    @_builtins.property
+    @pulumi.getter(name="customParameters")
+    def custom_parameters(self) -> Optional['outputs.Oauth2CredentialProviderConfigCustomParameters']:
+        """
+        Default custom parameters in GetResourceOauth2Token request
+        """
+        return pulumi.get(self, "custom_parameters")
+
+    @_builtins.property
+    @pulumi.getter
+    def flow(self) -> Optional[_builtins.str]:
+        """
+        Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M
+        """
+        return pulumi.get(self, "flow")
+
+    @_builtins.property
+    @pulumi.getter(name="forceAuthentication")
+    def force_authentication(self) -> Optional[_builtins.bool]:
+        """
+        Default ForceAuthentication in GetResourceOauth2Token request
+        """
+        return pulumi.get(self, "force_authentication")
+
+    @_builtins.property
+    @pulumi.getter(name="maxExpires")
+    def max_expires(self) -> Optional[_builtins.int]:
+        """
+        Maximum token validity (seconds)
+        """
+        return pulumi.get(self, "max_expires")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> Optional[_builtins.str]:
+        """
+        Custom metadata
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="oauth2Discovery")
+    def oauth2_discovery(self) -> Optional['outputs.Oauth2CredentialProviderConfigOauth2Discovery']:
+        """
+        OAuth2 discovery information
+        """
+        return pulumi.get(self, "oauth2_discovery")
+
+    @_builtins.property
+    @pulumi.getter(name="redirectUrl")
+    def redirect_url(self) -> Optional[_builtins.str]:
+        """
+        Default RedirectUrl in GetResourceOauth2Token request
+        """
+        return pulumi.get(self, "redirect_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def scopes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Default Scopes in GetResourceOauth2Token request
+        """
+        return pulumi.get(self, "scopes")
+
+    @_builtins.property
+    @pulumi.getter(name="secretStorage")
+    def secret_storage(self) -> Optional['outputs.Oauth2CredentialProviderConfigSecretStorage']:
+        """
+        Encrypted storage configuration
+        """
+        return pulumi.get(self, "secret_storage")
+
+
+@pulumi.output_type
+class Oauth2CredentialProviderConfigCustomParameters(dict):
+    def __init__(__self__, *,
+                 entries: Optional[Sequence['outputs.Oauth2CredentialProviderConfigCustomParametersEntry']] = None):
+        """
+        :param Sequence['Oauth2CredentialProviderConfigCustomParametersEntryArgs'] entries: Custom parameter entry list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        if entries is not None:
+            pulumi.set(__self__, "entries", entries)
+
+    @_builtins.property
+    @pulumi.getter
+    def entries(self) -> Optional[Sequence['outputs.Oauth2CredentialProviderConfigCustomParametersEntry']]:
+        """
+        Custom parameter entry list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "entries")
+
+
+@pulumi.output_type
+class Oauth2CredentialProviderConfigCustomParametersEntry(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Parameter key
+        :param _builtins.str value: Parameter value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Parameter key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class Oauth2CredentialProviderConfigOauth2Discovery(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authorizationServerMetadata":
+            suggest = "authorization_server_metadata"
+        elif key == "discoveryUrl":
+            suggest = "discovery_url"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Oauth2CredentialProviderConfigOauth2Discovery. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Oauth2CredentialProviderConfigOauth2Discovery.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Oauth2CredentialProviderConfigOauth2Discovery.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 authorization_server_metadata: Optional['outputs.Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata'] = None,
+                 discovery_url: Optional[_builtins.str] = None):
+        """
+        :param 'Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadataArgs' authorization_server_metadata: Authorization server metadata
+        :param _builtins.str discovery_url: DiscoveryUrl field
+        """
+        if authorization_server_metadata is not None:
+            pulumi.set(__self__, "authorization_server_metadata", authorization_server_metadata)
+        if discovery_url is not None:
+            pulumi.set(__self__, "discovery_url", discovery_url)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizationServerMetadata")
+    def authorization_server_metadata(self) -> Optional['outputs.Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata']:
+        """
+        Authorization server metadata
+        """
+        return pulumi.get(self, "authorization_server_metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> Optional[_builtins.str]:
+        """
+        DiscoveryUrl field
+        """
+        return pulumi.get(self, "discovery_url")
+
+
+@pulumi.output_type
+class Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "authorizationEndpoint":
+            suggest = "authorization_endpoint"
+        elif key == "codeChallengeMethodsSupporteds":
+            suggest = "code_challenge_methods_supporteds"
+        elif key == "registrationEndpoint":
+            suggest = "registration_endpoint"
+        elif key == "responseTypes":
+            suggest = "response_types"
+        elif key == "revocationEndpoint":
+            suggest = "revocation_endpoint"
+        elif key == "tokenEndpoint":
+            suggest = "token_endpoint"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 authorization_endpoint: Optional[_builtins.str] = None,
+                 code_challenge_methods_supporteds: Optional[Sequence[_builtins.str]] = None,
+                 issuer: Optional[_builtins.str] = None,
+                 registration_endpoint: Optional[_builtins.str] = None,
+                 response_types: Optional[Sequence[_builtins.str]] = None,
+                 revocation_endpoint: Optional[_builtins.str] = None,
+                 token_endpoint: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str authorization_endpoint: AuthorizationEndpoint field
+        :param Sequence[_builtins.str] code_challenge_methods_supporteds: CodeChallengeMethodsSupported field
+        :param _builtins.str issuer: Issuer field
+        :param _builtins.str registration_endpoint: RegistrationEndpoint field
+        :param Sequence[_builtins.str] response_types: ResponseTypes field
+        :param _builtins.str revocation_endpoint: RevocationEndpoint field
+        :param _builtins.str token_endpoint: TokenEndpoint field
+        """
+        if authorization_endpoint is not None:
+            pulumi.set(__self__, "authorization_endpoint", authorization_endpoint)
+        if code_challenge_methods_supporteds is not None:
+            pulumi.set(__self__, "code_challenge_methods_supporteds", code_challenge_methods_supporteds)
+        if issuer is not None:
+            pulumi.set(__self__, "issuer", issuer)
+        if registration_endpoint is not None:
+            pulumi.set(__self__, "registration_endpoint", registration_endpoint)
+        if response_types is not None:
+            pulumi.set(__self__, "response_types", response_types)
+        if revocation_endpoint is not None:
+            pulumi.set(__self__, "revocation_endpoint", revocation_endpoint)
+        if token_endpoint is not None:
+            pulumi.set(__self__, "token_endpoint", token_endpoint)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizationEndpoint")
+    def authorization_endpoint(self) -> Optional[_builtins.str]:
+        """
+        AuthorizationEndpoint field
+        """
+        return pulumi.get(self, "authorization_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="codeChallengeMethodsSupporteds")
+    def code_challenge_methods_supporteds(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        CodeChallengeMethodsSupported field
+        """
+        return pulumi.get(self, "code_challenge_methods_supporteds")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> Optional[_builtins.str]:
+        """
+        Issuer field
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="registrationEndpoint")
+    def registration_endpoint(self) -> Optional[_builtins.str]:
+        """
+        RegistrationEndpoint field
+        """
+        return pulumi.get(self, "registration_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="responseTypes")
+    def response_types(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        ResponseTypes field
+        """
+        return pulumi.get(self, "response_types")
+
+    @_builtins.property
+    @pulumi.getter(name="revocationEndpoint")
+    def revocation_endpoint(self) -> Optional[_builtins.str]:
+        """
+        RevocationEndpoint field
+        """
+        return pulumi.get(self, "revocation_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenEndpoint")
+    def token_endpoint(self) -> Optional[_builtins.str]:
+        """
+        TokenEndpoint field
+        """
+        return pulumi.get(self, "token_endpoint")
+
+
+@pulumi.output_type
+class Oauth2CredentialProviderConfigSecretStorage(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "encryptionKey":
+            suggest = "encryption_key"
+        elif key == "storageType":
+            suggest = "storage_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in Oauth2CredentialProviderConfigSecretStorage. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        Oauth2CredentialProviderConfigSecretStorage.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        Oauth2CredentialProviderConfigSecretStorage.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 encryption_key: Optional[_builtins.str] = None,
+                 storage_type: Optional[_builtins.int] = None):
+        """
+        :param _builtins.str encryption_key: KMS key TRN for encrypted credential value. If not specified, the default key is used
+        :param _builtins.int storage_type: Encrypted storage type. 0: SecretManager, 1: KMS
+        """
+        if encryption_key is not None:
+            pulumi.set(__self__, "encryption_key", encryption_key)
+        if storage_type is not None:
+            pulumi.set(__self__, "storage_type", storage_type)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> Optional[_builtins.str]:
+        """
+        KMS key TRN for encrypted credential value. If not specified, the default key is used
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> Optional[_builtins.int]:
+        """
+        Encrypted storage type. 0: SecretManager, 1: KMS
+        """
+        return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type
@@ -1101,6 +1553,323 @@ class GetAuthConfigJwtAuthConfigResult(dict):
         JWT Discovery URL。
         """
         return pulumi.get(self, "discovery_url")
+
+
+@pulumi.output_type
+class GetOauth2CredentialProviderConfigResult(dict):
+    def __init__(__self__, *,
+                 client_id: _builtins.str,
+                 client_secret: _builtins.str,
+                 custom_parameters: 'outputs.GetOauth2CredentialProviderConfigCustomParametersResult',
+                 flow: _builtins.str,
+                 force_authentication: _builtins.bool,
+                 max_expires: _builtins.int,
+                 metadata: _builtins.str,
+                 oauth2_discovery: 'outputs.GetOauth2CredentialProviderConfigOauth2DiscoveryResult',
+                 redirect_url: _builtins.str,
+                 scopes: Sequence[_builtins.str],
+                 secret_storage: 'outputs.GetOauth2CredentialProviderConfigSecretStorageResult'):
+        """
+        :param _builtins.str client_id: OAuth2 Client ID。
+        :param _builtins.str client_secret: OAuth2 Client Secret。
+        :param 'GetOauth2CredentialProviderConfigCustomParametersArgs' custom_parameters: Default custom parameters in GetResourceOauth2Token request
+        :param _builtins.str flow: Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M
+        :param _builtins.bool force_authentication: Default ForceAuthentication in GetResourceOauth2Token request
+        :param _builtins.int max_expires: Maximum token validity (seconds)
+        :param _builtins.str metadata: Custom metadata
+        :param 'GetOauth2CredentialProviderConfigOauth2DiscoveryArgs' oauth2_discovery: OAuth2 discovery information
+        :param _builtins.str redirect_url: Default RedirectUrl in GetResourceOauth2Token request
+        :param Sequence[_builtins.str] scopes: Default Scopes in GetResourceOauth2Token request
+        :param 'GetOauth2CredentialProviderConfigSecretStorageArgs' secret_storage: Encrypted storage configuration
+        """
+        pulumi.set(__self__, "client_id", client_id)
+        pulumi.set(__self__, "client_secret", client_secret)
+        pulumi.set(__self__, "custom_parameters", custom_parameters)
+        pulumi.set(__self__, "flow", flow)
+        pulumi.set(__self__, "force_authentication", force_authentication)
+        pulumi.set(__self__, "max_expires", max_expires)
+        pulumi.set(__self__, "metadata", metadata)
+        pulumi.set(__self__, "oauth2_discovery", oauth2_discovery)
+        pulumi.set(__self__, "redirect_url", redirect_url)
+        pulumi.set(__self__, "scopes", scopes)
+        pulumi.set(__self__, "secret_storage", secret_storage)
+
+    @_builtins.property
+    @pulumi.getter(name="clientId")
+    def client_id(self) -> _builtins.str:
+        """
+        OAuth2 Client ID。
+        """
+        return pulumi.get(self, "client_id")
+
+    @_builtins.property
+    @pulumi.getter(name="clientSecret")
+    def client_secret(self) -> _builtins.str:
+        """
+        OAuth2 Client Secret。
+        """
+        return pulumi.get(self, "client_secret")
+
+    @_builtins.property
+    @pulumi.getter(name="customParameters")
+    def custom_parameters(self) -> 'outputs.GetOauth2CredentialProviderConfigCustomParametersResult':
+        """
+        Default custom parameters in GetResourceOauth2Token request
+        """
+        return pulumi.get(self, "custom_parameters")
+
+    @_builtins.property
+    @pulumi.getter
+    def flow(self) -> _builtins.str:
+        """
+        Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M
+        """
+        return pulumi.get(self, "flow")
+
+    @_builtins.property
+    @pulumi.getter(name="forceAuthentication")
+    def force_authentication(self) -> _builtins.bool:
+        """
+        Default ForceAuthentication in GetResourceOauth2Token request
+        """
+        return pulumi.get(self, "force_authentication")
+
+    @_builtins.property
+    @pulumi.getter(name="maxExpires")
+    def max_expires(self) -> _builtins.int:
+        """
+        Maximum token validity (seconds)
+        """
+        return pulumi.get(self, "max_expires")
+
+    @_builtins.property
+    @pulumi.getter
+    def metadata(self) -> _builtins.str:
+        """
+        Custom metadata
+        """
+        return pulumi.get(self, "metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="oauth2Discovery")
+    def oauth2_discovery(self) -> 'outputs.GetOauth2CredentialProviderConfigOauth2DiscoveryResult':
+        """
+        OAuth2 discovery information
+        """
+        return pulumi.get(self, "oauth2_discovery")
+
+    @_builtins.property
+    @pulumi.getter(name="redirectUrl")
+    def redirect_url(self) -> _builtins.str:
+        """
+        Default RedirectUrl in GetResourceOauth2Token request
+        """
+        return pulumi.get(self, "redirect_url")
+
+    @_builtins.property
+    @pulumi.getter
+    def scopes(self) -> Sequence[_builtins.str]:
+        """
+        Default Scopes in GetResourceOauth2Token request
+        """
+        return pulumi.get(self, "scopes")
+
+    @_builtins.property
+    @pulumi.getter(name="secretStorage")
+    def secret_storage(self) -> 'outputs.GetOauth2CredentialProviderConfigSecretStorageResult':
+        """
+        Encrypted storage configuration
+        """
+        return pulumi.get(self, "secret_storage")
+
+
+@pulumi.output_type
+class GetOauth2CredentialProviderConfigCustomParametersResult(dict):
+    def __init__(__self__, *,
+                 entries: Sequence['outputs.GetOauth2CredentialProviderConfigCustomParametersEntryResult']):
+        """
+        :param Sequence['GetOauth2CredentialProviderConfigCustomParametersEntryArgs'] entries: Custom parameter entry list
+        """
+        pulumi.set(__self__, "entries", entries)
+
+    @_builtins.property
+    @pulumi.getter
+    def entries(self) -> Sequence['outputs.GetOauth2CredentialProviderConfigCustomParametersEntryResult']:
+        """
+        Custom parameter entry list
+        """
+        return pulumi.get(self, "entries")
+
+
+@pulumi.output_type
+class GetOauth2CredentialProviderConfigCustomParametersEntryResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Parameter key
+        :param _builtins.str value: Parameter value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Parameter key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Parameter value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetOauth2CredentialProviderConfigOauth2DiscoveryResult(dict):
+    def __init__(__self__, *,
+                 authorization_server_metadata: 'outputs.GetOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadataResult',
+                 discovery_url: _builtins.str):
+        """
+        :param 'GetOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadataArgs' authorization_server_metadata: Authorization server metadata
+        :param _builtins.str discovery_url: DiscoveryUrl field
+        """
+        pulumi.set(__self__, "authorization_server_metadata", authorization_server_metadata)
+        pulumi.set(__self__, "discovery_url", discovery_url)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizationServerMetadata")
+    def authorization_server_metadata(self) -> 'outputs.GetOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadataResult':
+        """
+        Authorization server metadata
+        """
+        return pulumi.get(self, "authorization_server_metadata")
+
+    @_builtins.property
+    @pulumi.getter(name="discoveryUrl")
+    def discovery_url(self) -> _builtins.str:
+        """
+        DiscoveryUrl field
+        """
+        return pulumi.get(self, "discovery_url")
+
+
+@pulumi.output_type
+class GetOauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadataResult(dict):
+    def __init__(__self__, *,
+                 authorization_endpoint: _builtins.str,
+                 code_challenge_methods_supporteds: Sequence[_builtins.str],
+                 issuer: _builtins.str,
+                 registration_endpoint: _builtins.str,
+                 response_types: Sequence[_builtins.str],
+                 revocation_endpoint: _builtins.str,
+                 token_endpoint: _builtins.str):
+        """
+        :param _builtins.str authorization_endpoint: AuthorizationEndpoint field
+        :param Sequence[_builtins.str] code_challenge_methods_supporteds: CodeChallengeMethodsSupported field
+        :param _builtins.str issuer: Issuer field
+        :param _builtins.str registration_endpoint: RegistrationEndpoint field
+        :param Sequence[_builtins.str] response_types: ResponseTypes field
+        :param _builtins.str revocation_endpoint: RevocationEndpoint field
+        :param _builtins.str token_endpoint: TokenEndpoint field
+        """
+        pulumi.set(__self__, "authorization_endpoint", authorization_endpoint)
+        pulumi.set(__self__, "code_challenge_methods_supporteds", code_challenge_methods_supporteds)
+        pulumi.set(__self__, "issuer", issuer)
+        pulumi.set(__self__, "registration_endpoint", registration_endpoint)
+        pulumi.set(__self__, "response_types", response_types)
+        pulumi.set(__self__, "revocation_endpoint", revocation_endpoint)
+        pulumi.set(__self__, "token_endpoint", token_endpoint)
+
+    @_builtins.property
+    @pulumi.getter(name="authorizationEndpoint")
+    def authorization_endpoint(self) -> _builtins.str:
+        """
+        AuthorizationEndpoint field
+        """
+        return pulumi.get(self, "authorization_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="codeChallengeMethodsSupporteds")
+    def code_challenge_methods_supporteds(self) -> Sequence[_builtins.str]:
+        """
+        CodeChallengeMethodsSupported field
+        """
+        return pulumi.get(self, "code_challenge_methods_supporteds")
+
+    @_builtins.property
+    @pulumi.getter
+    def issuer(self) -> _builtins.str:
+        """
+        Issuer field
+        """
+        return pulumi.get(self, "issuer")
+
+    @_builtins.property
+    @pulumi.getter(name="registrationEndpoint")
+    def registration_endpoint(self) -> _builtins.str:
+        """
+        RegistrationEndpoint field
+        """
+        return pulumi.get(self, "registration_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="responseTypes")
+    def response_types(self) -> Sequence[_builtins.str]:
+        """
+        ResponseTypes field
+        """
+        return pulumi.get(self, "response_types")
+
+    @_builtins.property
+    @pulumi.getter(name="revocationEndpoint")
+    def revocation_endpoint(self) -> _builtins.str:
+        """
+        RevocationEndpoint field
+        """
+        return pulumi.get(self, "revocation_endpoint")
+
+    @_builtins.property
+    @pulumi.getter(name="tokenEndpoint")
+    def token_endpoint(self) -> _builtins.str:
+        """
+        TokenEndpoint field
+        """
+        return pulumi.get(self, "token_endpoint")
+
+
+@pulumi.output_type
+class GetOauth2CredentialProviderConfigSecretStorageResult(dict):
+    def __init__(__self__, *,
+                 encryption_key: _builtins.str,
+                 storage_type: _builtins.int):
+        """
+        :param _builtins.str encryption_key: KMS key TRN for encrypted credential value. If not specified, the default key is used
+        :param _builtins.int storage_type: Encrypted storage type. 0: SecretManager, 1: KMS
+        """
+        pulumi.set(__self__, "encryption_key", encryption_key)
+        pulumi.set(__self__, "storage_type", storage_type)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> _builtins.str:
+        """
+        KMS key TRN for encrypted credential value. If not specified, the default key is used
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @_builtins.property
+    @pulumi.getter(name="storageType")
+    def storage_type(self) -> _builtins.int:
+        """
+        Encrypted storage type. 0: SecretManager, 1: KMS
+        """
+        return pulumi.get(self, "storage_type")
 
 
 @pulumi.output_type

@@ -8350,6 +8350,125 @@ export namespace id {
         discoveryUrl?: pulumi.Input<string | undefined>;
     }
 
+    export interface Oauth2CredentialProviderConfig {
+        /**
+         * OAuth2 Client ID。
+         */
+        clientId?: pulumi.Input<string | undefined>;
+        /**
+         * OAuth2 Client Secret。
+         */
+        clientSecret?: pulumi.Input<string | undefined>;
+        /**
+         * Default custom parameters in GetResourceOauth2Token request
+         */
+        customParameters?: pulumi.Input<inputs.id.Oauth2CredentialProviderConfigCustomParameters | undefined>;
+        /**
+         * Default Flow in GetResourceOauth2Token request. Optional values: USER_FEDERATION, M2M
+         */
+        flow?: pulumi.Input<string | undefined>;
+        /**
+         * Default ForceAuthentication in GetResourceOauth2Token request
+         */
+        forceAuthentication?: pulumi.Input<boolean | undefined>;
+        /**
+         * Maximum token validity (seconds)
+         */
+        maxExpires?: pulumi.Input<number | undefined>;
+        /**
+         * Custom metadata
+         */
+        metadata?: pulumi.Input<string | undefined>;
+        /**
+         * OAuth2 discovery information
+         */
+        oauth2Discovery?: pulumi.Input<inputs.id.Oauth2CredentialProviderConfigOauth2Discovery | undefined>;
+        /**
+         * Default RedirectUrl in GetResourceOauth2Token request
+         */
+        redirectUrl?: pulumi.Input<string | undefined>;
+        /**
+         * Default Scopes in GetResourceOauth2Token request
+         */
+        scopes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Encrypted storage configuration
+         */
+        secretStorage?: pulumi.Input<inputs.id.Oauth2CredentialProviderConfigSecretStorage | undefined>;
+    }
+
+    export interface Oauth2CredentialProviderConfigCustomParameters {
+        /**
+         * Custom parameter entry list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        entries?: pulumi.Input<pulumi.Input<inputs.id.Oauth2CredentialProviderConfigCustomParametersEntry>[] | undefined>;
+    }
+
+    export interface Oauth2CredentialProviderConfigCustomParametersEntry {
+        /**
+         * Parameter key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Parameter value
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface Oauth2CredentialProviderConfigOauth2Discovery {
+        /**
+         * Authorization server metadata
+         */
+        authorizationServerMetadata?: pulumi.Input<inputs.id.Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata | undefined>;
+        /**
+         * DiscoveryUrl field
+         */
+        discoveryUrl?: pulumi.Input<string | undefined>;
+    }
+
+    export interface Oauth2CredentialProviderConfigOauth2DiscoveryAuthorizationServerMetadata {
+        /**
+         * AuthorizationEndpoint field
+         */
+        authorizationEndpoint?: pulumi.Input<string | undefined>;
+        /**
+         * CodeChallengeMethodsSupported field
+         */
+        codeChallengeMethodsSupporteds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Issuer field
+         */
+        issuer?: pulumi.Input<string | undefined>;
+        /**
+         * RegistrationEndpoint field
+         */
+        registrationEndpoint?: pulumi.Input<string | undefined>;
+        /**
+         * ResponseTypes field
+         */
+        responseTypes?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * RevocationEndpoint field
+         */
+        revocationEndpoint?: pulumi.Input<string | undefined>;
+        /**
+         * TokenEndpoint field
+         */
+        tokenEndpoint?: pulumi.Input<string | undefined>;
+    }
+
+    export interface Oauth2CredentialProviderConfigSecretStorage {
+        /**
+         * KMS key TRN for encrypted credential value. If not specified, the default key is used
+         */
+        encryptionKey?: pulumi.Input<string | undefined>;
+        /**
+         * Encrypted storage type. 0: SecretManager, 1: KMS
+         */
+        storageType?: pulumi.Input<number | undefined>;
+    }
+
     export interface PermissionNamespaceTag {
         /**
          * Tag Key
@@ -8833,6 +8952,51 @@ export namespace kms {
          * KMS key label value.
          */
         value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface SecretSecretRestore {
+        /**
+         * Complete credential data returned by backup, in JSON format.
+         */
+        backupData?: pulumi.Input<string | undefined>;
+        /**
+         * Encrypted data key returned by backup, Base64 encoded.
+         */
+        secretDataKey?: pulumi.Input<string | undefined>;
+        /**
+         * Signature of the backup data, Base64 encoded.
+         */
+        signature?: pulumi.Input<string | undefined>;
+    }
+
+    export interface SecretSecretRestoreRead {
+        /**
+         * Complete credential data returned by backup, in JSON format.
+         */
+        backupData?: pulumi.Input<string | undefined>;
+        /**
+         * Encrypted data key returned by backup, Base64 encoded.
+         */
+        secretDataKey?: pulumi.Input<string | undefined>;
+        /**
+         * Signature of the backup data, Base64 encoded.
+         */
+        signature?: pulumi.Input<string | undefined>;
+    }
+
+    export interface SecretSecretVersion {
+        /**
+         * Credential version creation time.
+         */
+        creationDate?: pulumi.Input<number | undefined>;
+        /**
+         * Unique identifier for the credential version, in UUID format.
+         */
+        versionId?: pulumi.Input<string | undefined>;
+        /**
+         * Credential version tags.
+         */
+        versionStage?: pulumi.Input<string | undefined>;
     }
 }
 
@@ -11566,6 +11730,95 @@ export namespace tls {
          * SMS alert interval, in minutes. Value range: 10–1440
          */
         sms?: pulumi.Input<number | undefined>;
+    }
+
+    export interface AlarmContentTemplateTypeDingTalk {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content?: pulumi.Input<string | undefined>;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale?: pulumi.Input<string | undefined>;
+        /**
+         * Alert notification subject
+         */
+        title?: pulumi.Input<string | undefined>;
+    }
+
+    export interface AlarmContentTemplateTypeEmail {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content?: pulumi.Input<string | undefined>;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale?: pulumi.Input<string | undefined>;
+        /**
+         * Email notification subject
+         */
+        subject?: pulumi.Input<string | undefined>;
+    }
+
+    export interface AlarmContentTemplateTypeLark {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content?: pulumi.Input<string | undefined>;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale?: pulumi.Input<string | undefined>;
+        /**
+         * Alert notification subject
+         */
+        title?: pulumi.Input<string | undefined>;
+    }
+
+    export interface AlarmContentTemplateTypeSms {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content?: pulumi.Input<string | undefined>;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale?: pulumi.Input<string | undefined>;
+    }
+
+    export interface AlarmContentTemplateTypeVms {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content?: pulumi.Input<string | undefined>;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale?: pulumi.Input<string | undefined>;
+    }
+
+    export interface AlarmContentTemplateTypeWeChat {
+        /**
+         * Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content?: pulumi.Input<string | undefined>;
+        /**
+         * The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+         */
+        locale?: pulumi.Input<string | undefined>;
+        /**
+         * Alert notification subject
+         */
+        title?: pulumi.Input<string | undefined>;
+    }
+
+    export interface AlarmContentTemplateTypeWebhook {
+        /**
+         * Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+         */
+        content?: pulumi.Input<string | undefined>;
     }
 
     export interface AlarmJoinConfiguration {

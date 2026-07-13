@@ -35,6 +35,12 @@ __all__ = [
     'KeyReplicateKeyTagArgsDict',
     'KeyTagArgs',
     'KeyTagArgsDict',
+    'SecretSecretRestoreArgs',
+    'SecretSecretRestoreArgsDict',
+    'SecretSecretRestoreReadArgs',
+    'SecretSecretRestoreReadArgsDict',
+    'SecretSecretVersionArgs',
+    'SecretSecretVersionArgsDict',
 ]
 
 class KeyAsymmetricCiphertextArgsDict(TypedDict):
@@ -771,5 +777,212 @@ class KeyTagArgs:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class SecretSecretRestoreArgsDict(TypedDict):
+    backup_data: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Complete credential data returned by backup, in JSON format.
+    """
+    secret_data_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Encrypted data key returned by backup, Base64 encoded.
+    """
+    signature: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Signature of the backup data, Base64 encoded.
+    """
+
+@pulumi.input_type
+class SecretSecretRestoreArgs:
+    def __init__(__self__, *,
+                 backup_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_data_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] backup_data: Complete credential data returned by backup, in JSON format.
+        :param pulumi.Input[_builtins.str] secret_data_key: Encrypted data key returned by backup, Base64 encoded.
+        :param pulumi.Input[_builtins.str] signature: Signature of the backup data, Base64 encoded.
+        """
+        if backup_data is not None:
+            pulumi.set(__self__, "backup_data", backup_data)
+        if secret_data_key is not None:
+            pulumi.set(__self__, "secret_data_key", secret_data_key)
+        if signature is not None:
+            pulumi.set(__self__, "signature", signature)
+
+    @_builtins.property
+    @pulumi.getter(name="backupData")
+    def backup_data(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Complete credential data returned by backup, in JSON format.
+        """
+        return pulumi.get(self, "backup_data")
+
+    @backup_data.setter
+    def backup_data(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretDataKey")
+    def secret_data_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Encrypted data key returned by backup, Base64 encoded.
+        """
+        return pulumi.get(self, "secret_data_key")
+
+    @secret_data_key.setter
+    def secret_data_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_data_key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def signature(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Signature of the backup data, Base64 encoded.
+        """
+        return pulumi.get(self, "signature")
+
+    @signature.setter
+    def signature(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "signature", value)
+
+
+class SecretSecretRestoreReadArgsDict(TypedDict):
+    backup_data: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Complete credential data returned by backup, in JSON format.
+    """
+    secret_data_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Encrypted data key returned by backup, Base64 encoded.
+    """
+    signature: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Signature of the backup data, Base64 encoded.
+    """
+
+@pulumi.input_type
+class SecretSecretRestoreReadArgs:
+    def __init__(__self__, *,
+                 backup_data: pulumi.Input[Optional[_builtins.str]] = None,
+                 secret_data_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 signature: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] backup_data: Complete credential data returned by backup, in JSON format.
+        :param pulumi.Input[_builtins.str] secret_data_key: Encrypted data key returned by backup, Base64 encoded.
+        :param pulumi.Input[_builtins.str] signature: Signature of the backup data, Base64 encoded.
+        """
+        if backup_data is not None:
+            pulumi.set(__self__, "backup_data", backup_data)
+        if secret_data_key is not None:
+            pulumi.set(__self__, "secret_data_key", secret_data_key)
+        if signature is not None:
+            pulumi.set(__self__, "signature", signature)
+
+    @_builtins.property
+    @pulumi.getter(name="backupData")
+    def backup_data(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Complete credential data returned by backup, in JSON format.
+        """
+        return pulumi.get(self, "backup_data")
+
+    @backup_data.setter
+    def backup_data(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_data", value)
+
+    @_builtins.property
+    @pulumi.getter(name="secretDataKey")
+    def secret_data_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Encrypted data key returned by backup, Base64 encoded.
+        """
+        return pulumi.get(self, "secret_data_key")
+
+    @secret_data_key.setter
+    def secret_data_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "secret_data_key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def signature(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Signature of the backup data, Base64 encoded.
+        """
+        return pulumi.get(self, "signature")
+
+    @signature.setter
+    def signature(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "signature", value)
+
+
+class SecretSecretVersionArgsDict(TypedDict):
+    creation_date: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Credential version creation time.
+    """
+    version_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Unique identifier for the credential version, in UUID format.
+    """
+    version_stage: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Credential version tags.
+    """
+
+@pulumi.input_type
+class SecretSecretVersionArgs:
+    def __init__(__self__, *,
+                 creation_date: pulumi.Input[Optional[_builtins.int]] = None,
+                 version_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 version_stage: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] creation_date: Credential version creation time.
+        :param pulumi.Input[_builtins.str] version_id: Unique identifier for the credential version, in UUID format.
+        :param pulumi.Input[_builtins.str] version_stage: Credential version tags.
+        """
+        if creation_date is not None:
+            pulumi.set(__self__, "creation_date", creation_date)
+        if version_id is not None:
+            pulumi.set(__self__, "version_id", version_id)
+        if version_stage is not None:
+            pulumi.set(__self__, "version_stage", version_stage)
+
+    @_builtins.property
+    @pulumi.getter(name="creationDate")
+    def creation_date(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Credential version creation time.
+        """
+        return pulumi.get(self, "creation_date")
+
+    @creation_date.setter
+    def creation_date(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "creation_date", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionId")
+    def version_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Unique identifier for the credential version, in UUID format.
+        """
+        return pulumi.get(self, "version_id")
+
+    @version_id.setter
+    def version_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionStage")
+    def version_stage(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Credential version tags.
+        """
+        return pulumi.get(self, "version_stage")
+
+    @version_stage.setter
+    def version_stage(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "version_stage", value)
 
 

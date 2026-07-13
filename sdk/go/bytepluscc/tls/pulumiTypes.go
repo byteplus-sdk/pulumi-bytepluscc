@@ -304,6 +304,1155 @@ func (o AlarmAlarmPeriodDetailPtrOutput) Sms() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type AlarmContentTemplateTypeDingTalk struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content *string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale *string `pulumi:"locale"`
+	// Alert notification subject
+	Title *string `pulumi:"title"`
+}
+
+// AlarmContentTemplateTypeDingTalkInput is an input type that accepts AlarmContentTemplateTypeDingTalkArgs and AlarmContentTemplateTypeDingTalkOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeDingTalkInput` via:
+//
+//	AlarmContentTemplateTypeDingTalkArgs{...}
+type AlarmContentTemplateTypeDingTalkInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeDingTalkOutput() AlarmContentTemplateTypeDingTalkOutput
+	ToAlarmContentTemplateTypeDingTalkOutputWithContext(context.Context) AlarmContentTemplateTypeDingTalkOutput
+}
+
+type AlarmContentTemplateTypeDingTalkArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringPtrInput `pulumi:"locale"`
+	// Alert notification subject
+	Title pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (AlarmContentTemplateTypeDingTalkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeDingTalk)(nil)).Elem()
+}
+
+func (i AlarmContentTemplateTypeDingTalkArgs) ToAlarmContentTemplateTypeDingTalkOutput() AlarmContentTemplateTypeDingTalkOutput {
+	return i.ToAlarmContentTemplateTypeDingTalkOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeDingTalkArgs) ToAlarmContentTemplateTypeDingTalkOutputWithContext(ctx context.Context) AlarmContentTemplateTypeDingTalkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeDingTalkOutput)
+}
+
+func (i AlarmContentTemplateTypeDingTalkArgs) ToAlarmContentTemplateTypeDingTalkPtrOutput() AlarmContentTemplateTypeDingTalkPtrOutput {
+	return i.ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeDingTalkArgs) ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeDingTalkPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeDingTalkOutput).ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(ctx)
+}
+
+// AlarmContentTemplateTypeDingTalkPtrInput is an input type that accepts AlarmContentTemplateTypeDingTalkArgs, AlarmContentTemplateTypeDingTalkPtr and AlarmContentTemplateTypeDingTalkPtrOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeDingTalkPtrInput` via:
+//
+//	        AlarmContentTemplateTypeDingTalkArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmContentTemplateTypeDingTalkPtrInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeDingTalkPtrOutput() AlarmContentTemplateTypeDingTalkPtrOutput
+	ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(context.Context) AlarmContentTemplateTypeDingTalkPtrOutput
+}
+
+type alarmContentTemplateTypeDingTalkPtrType AlarmContentTemplateTypeDingTalkArgs
+
+func AlarmContentTemplateTypeDingTalkPtr(v *AlarmContentTemplateTypeDingTalkArgs) AlarmContentTemplateTypeDingTalkPtrInput {
+	return (*alarmContentTemplateTypeDingTalkPtrType)(v)
+}
+
+func (*alarmContentTemplateTypeDingTalkPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeDingTalk)(nil)).Elem()
+}
+
+func (i *alarmContentTemplateTypeDingTalkPtrType) ToAlarmContentTemplateTypeDingTalkPtrOutput() AlarmContentTemplateTypeDingTalkPtrOutput {
+	return i.ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(context.Background())
+}
+
+func (i *alarmContentTemplateTypeDingTalkPtrType) ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeDingTalkPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeDingTalkPtrOutput)
+}
+
+type AlarmContentTemplateTypeDingTalkOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeDingTalkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeDingTalk)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeDingTalkOutput) ToAlarmContentTemplateTypeDingTalkOutput() AlarmContentTemplateTypeDingTalkOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeDingTalkOutput) ToAlarmContentTemplateTypeDingTalkOutputWithContext(ctx context.Context) AlarmContentTemplateTypeDingTalkOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeDingTalkOutput) ToAlarmContentTemplateTypeDingTalkPtrOutput() AlarmContentTemplateTypeDingTalkPtrOutput {
+	return o.ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(context.Background())
+}
+
+func (o AlarmContentTemplateTypeDingTalkOutput) ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeDingTalkPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmContentTemplateTypeDingTalk) *AlarmContentTemplateTypeDingTalk {
+		return &v
+	}).(AlarmContentTemplateTypeDingTalkPtrOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeDingTalkOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeDingTalk) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeDingTalkOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeDingTalk) *string { return v.Locale }).(pulumi.StringPtrOutput)
+}
+
+// Alert notification subject
+func (o AlarmContentTemplateTypeDingTalkOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeDingTalk) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeDingTalkPtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeDingTalkPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeDingTalk)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeDingTalkPtrOutput) ToAlarmContentTemplateTypeDingTalkPtrOutput() AlarmContentTemplateTypeDingTalkPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeDingTalkPtrOutput) ToAlarmContentTemplateTypeDingTalkPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeDingTalkPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeDingTalkPtrOutput) Elem() AlarmContentTemplateTypeDingTalkOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeDingTalk) AlarmContentTemplateTypeDingTalk {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmContentTemplateTypeDingTalk
+		return ret
+	}).(AlarmContentTemplateTypeDingTalkOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeDingTalkPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeDingTalk) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeDingTalkPtrOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeDingTalk) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Locale
+	}).(pulumi.StringPtrOutput)
+}
+
+// Alert notification subject
+func (o AlarmContentTemplateTypeDingTalkPtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeDingTalk) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeEmail struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content *string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale *string `pulumi:"locale"`
+	// Email notification subject
+	Subject *string `pulumi:"subject"`
+}
+
+// AlarmContentTemplateTypeEmailInput is an input type that accepts AlarmContentTemplateTypeEmailArgs and AlarmContentTemplateTypeEmailOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeEmailInput` via:
+//
+//	AlarmContentTemplateTypeEmailArgs{...}
+type AlarmContentTemplateTypeEmailInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeEmailOutput() AlarmContentTemplateTypeEmailOutput
+	ToAlarmContentTemplateTypeEmailOutputWithContext(context.Context) AlarmContentTemplateTypeEmailOutput
+}
+
+type AlarmContentTemplateTypeEmailArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringPtrInput `pulumi:"locale"`
+	// Email notification subject
+	Subject pulumi.StringPtrInput `pulumi:"subject"`
+}
+
+func (AlarmContentTemplateTypeEmailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeEmail)(nil)).Elem()
+}
+
+func (i AlarmContentTemplateTypeEmailArgs) ToAlarmContentTemplateTypeEmailOutput() AlarmContentTemplateTypeEmailOutput {
+	return i.ToAlarmContentTemplateTypeEmailOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeEmailArgs) ToAlarmContentTemplateTypeEmailOutputWithContext(ctx context.Context) AlarmContentTemplateTypeEmailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeEmailOutput)
+}
+
+func (i AlarmContentTemplateTypeEmailArgs) ToAlarmContentTemplateTypeEmailPtrOutput() AlarmContentTemplateTypeEmailPtrOutput {
+	return i.ToAlarmContentTemplateTypeEmailPtrOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeEmailArgs) ToAlarmContentTemplateTypeEmailPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeEmailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeEmailOutput).ToAlarmContentTemplateTypeEmailPtrOutputWithContext(ctx)
+}
+
+// AlarmContentTemplateTypeEmailPtrInput is an input type that accepts AlarmContentTemplateTypeEmailArgs, AlarmContentTemplateTypeEmailPtr and AlarmContentTemplateTypeEmailPtrOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeEmailPtrInput` via:
+//
+//	        AlarmContentTemplateTypeEmailArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmContentTemplateTypeEmailPtrInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeEmailPtrOutput() AlarmContentTemplateTypeEmailPtrOutput
+	ToAlarmContentTemplateTypeEmailPtrOutputWithContext(context.Context) AlarmContentTemplateTypeEmailPtrOutput
+}
+
+type alarmContentTemplateTypeEmailPtrType AlarmContentTemplateTypeEmailArgs
+
+func AlarmContentTemplateTypeEmailPtr(v *AlarmContentTemplateTypeEmailArgs) AlarmContentTemplateTypeEmailPtrInput {
+	return (*alarmContentTemplateTypeEmailPtrType)(v)
+}
+
+func (*alarmContentTemplateTypeEmailPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeEmail)(nil)).Elem()
+}
+
+func (i *alarmContentTemplateTypeEmailPtrType) ToAlarmContentTemplateTypeEmailPtrOutput() AlarmContentTemplateTypeEmailPtrOutput {
+	return i.ToAlarmContentTemplateTypeEmailPtrOutputWithContext(context.Background())
+}
+
+func (i *alarmContentTemplateTypeEmailPtrType) ToAlarmContentTemplateTypeEmailPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeEmailPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeEmailPtrOutput)
+}
+
+type AlarmContentTemplateTypeEmailOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeEmailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeEmail)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeEmailOutput) ToAlarmContentTemplateTypeEmailOutput() AlarmContentTemplateTypeEmailOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeEmailOutput) ToAlarmContentTemplateTypeEmailOutputWithContext(ctx context.Context) AlarmContentTemplateTypeEmailOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeEmailOutput) ToAlarmContentTemplateTypeEmailPtrOutput() AlarmContentTemplateTypeEmailPtrOutput {
+	return o.ToAlarmContentTemplateTypeEmailPtrOutputWithContext(context.Background())
+}
+
+func (o AlarmContentTemplateTypeEmailOutput) ToAlarmContentTemplateTypeEmailPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeEmailPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmContentTemplateTypeEmail) *AlarmContentTemplateTypeEmail {
+		return &v
+	}).(AlarmContentTemplateTypeEmailPtrOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeEmailOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeEmail) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeEmailOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeEmail) *string { return v.Locale }).(pulumi.StringPtrOutput)
+}
+
+// Email notification subject
+func (o AlarmContentTemplateTypeEmailOutput) Subject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeEmail) *string { return v.Subject }).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeEmailPtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeEmailPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeEmail)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeEmailPtrOutput) ToAlarmContentTemplateTypeEmailPtrOutput() AlarmContentTemplateTypeEmailPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeEmailPtrOutput) ToAlarmContentTemplateTypeEmailPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeEmailPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeEmailPtrOutput) Elem() AlarmContentTemplateTypeEmailOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeEmail) AlarmContentTemplateTypeEmail {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmContentTemplateTypeEmail
+		return ret
+	}).(AlarmContentTemplateTypeEmailOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeEmailPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeEmail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeEmailPtrOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeEmail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Locale
+	}).(pulumi.StringPtrOutput)
+}
+
+// Email notification subject
+func (o AlarmContentTemplateTypeEmailPtrOutput) Subject() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeEmail) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Subject
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeLark struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content *string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale *string `pulumi:"locale"`
+	// Alert notification subject
+	Title *string `pulumi:"title"`
+}
+
+// AlarmContentTemplateTypeLarkInput is an input type that accepts AlarmContentTemplateTypeLarkArgs and AlarmContentTemplateTypeLarkOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeLarkInput` via:
+//
+//	AlarmContentTemplateTypeLarkArgs{...}
+type AlarmContentTemplateTypeLarkInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeLarkOutput() AlarmContentTemplateTypeLarkOutput
+	ToAlarmContentTemplateTypeLarkOutputWithContext(context.Context) AlarmContentTemplateTypeLarkOutput
+}
+
+type AlarmContentTemplateTypeLarkArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringPtrInput `pulumi:"locale"`
+	// Alert notification subject
+	Title pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (AlarmContentTemplateTypeLarkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeLark)(nil)).Elem()
+}
+
+func (i AlarmContentTemplateTypeLarkArgs) ToAlarmContentTemplateTypeLarkOutput() AlarmContentTemplateTypeLarkOutput {
+	return i.ToAlarmContentTemplateTypeLarkOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeLarkArgs) ToAlarmContentTemplateTypeLarkOutputWithContext(ctx context.Context) AlarmContentTemplateTypeLarkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeLarkOutput)
+}
+
+func (i AlarmContentTemplateTypeLarkArgs) ToAlarmContentTemplateTypeLarkPtrOutput() AlarmContentTemplateTypeLarkPtrOutput {
+	return i.ToAlarmContentTemplateTypeLarkPtrOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeLarkArgs) ToAlarmContentTemplateTypeLarkPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeLarkPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeLarkOutput).ToAlarmContentTemplateTypeLarkPtrOutputWithContext(ctx)
+}
+
+// AlarmContentTemplateTypeLarkPtrInput is an input type that accepts AlarmContentTemplateTypeLarkArgs, AlarmContentTemplateTypeLarkPtr and AlarmContentTemplateTypeLarkPtrOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeLarkPtrInput` via:
+//
+//	        AlarmContentTemplateTypeLarkArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmContentTemplateTypeLarkPtrInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeLarkPtrOutput() AlarmContentTemplateTypeLarkPtrOutput
+	ToAlarmContentTemplateTypeLarkPtrOutputWithContext(context.Context) AlarmContentTemplateTypeLarkPtrOutput
+}
+
+type alarmContentTemplateTypeLarkPtrType AlarmContentTemplateTypeLarkArgs
+
+func AlarmContentTemplateTypeLarkPtr(v *AlarmContentTemplateTypeLarkArgs) AlarmContentTemplateTypeLarkPtrInput {
+	return (*alarmContentTemplateTypeLarkPtrType)(v)
+}
+
+func (*alarmContentTemplateTypeLarkPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeLark)(nil)).Elem()
+}
+
+func (i *alarmContentTemplateTypeLarkPtrType) ToAlarmContentTemplateTypeLarkPtrOutput() AlarmContentTemplateTypeLarkPtrOutput {
+	return i.ToAlarmContentTemplateTypeLarkPtrOutputWithContext(context.Background())
+}
+
+func (i *alarmContentTemplateTypeLarkPtrType) ToAlarmContentTemplateTypeLarkPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeLarkPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeLarkPtrOutput)
+}
+
+type AlarmContentTemplateTypeLarkOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeLarkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeLark)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeLarkOutput) ToAlarmContentTemplateTypeLarkOutput() AlarmContentTemplateTypeLarkOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeLarkOutput) ToAlarmContentTemplateTypeLarkOutputWithContext(ctx context.Context) AlarmContentTemplateTypeLarkOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeLarkOutput) ToAlarmContentTemplateTypeLarkPtrOutput() AlarmContentTemplateTypeLarkPtrOutput {
+	return o.ToAlarmContentTemplateTypeLarkPtrOutputWithContext(context.Background())
+}
+
+func (o AlarmContentTemplateTypeLarkOutput) ToAlarmContentTemplateTypeLarkPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeLarkPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmContentTemplateTypeLark) *AlarmContentTemplateTypeLark {
+		return &v
+	}).(AlarmContentTemplateTypeLarkPtrOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeLarkOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeLark) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeLarkOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeLark) *string { return v.Locale }).(pulumi.StringPtrOutput)
+}
+
+// Alert notification subject
+func (o AlarmContentTemplateTypeLarkOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeLark) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeLarkPtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeLarkPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeLark)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeLarkPtrOutput) ToAlarmContentTemplateTypeLarkPtrOutput() AlarmContentTemplateTypeLarkPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeLarkPtrOutput) ToAlarmContentTemplateTypeLarkPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeLarkPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeLarkPtrOutput) Elem() AlarmContentTemplateTypeLarkOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeLark) AlarmContentTemplateTypeLark {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmContentTemplateTypeLark
+		return ret
+	}).(AlarmContentTemplateTypeLarkOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeLarkPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeLark) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeLarkPtrOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeLark) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Locale
+	}).(pulumi.StringPtrOutput)
+}
+
+// Alert notification subject
+func (o AlarmContentTemplateTypeLarkPtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeLark) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeSms struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content *string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale *string `pulumi:"locale"`
+}
+
+// AlarmContentTemplateTypeSmsInput is an input type that accepts AlarmContentTemplateTypeSmsArgs and AlarmContentTemplateTypeSmsOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeSmsInput` via:
+//
+//	AlarmContentTemplateTypeSmsArgs{...}
+type AlarmContentTemplateTypeSmsInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeSmsOutput() AlarmContentTemplateTypeSmsOutput
+	ToAlarmContentTemplateTypeSmsOutputWithContext(context.Context) AlarmContentTemplateTypeSmsOutput
+}
+
+type AlarmContentTemplateTypeSmsArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringPtrInput `pulumi:"locale"`
+}
+
+func (AlarmContentTemplateTypeSmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeSms)(nil)).Elem()
+}
+
+func (i AlarmContentTemplateTypeSmsArgs) ToAlarmContentTemplateTypeSmsOutput() AlarmContentTemplateTypeSmsOutput {
+	return i.ToAlarmContentTemplateTypeSmsOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeSmsArgs) ToAlarmContentTemplateTypeSmsOutputWithContext(ctx context.Context) AlarmContentTemplateTypeSmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeSmsOutput)
+}
+
+func (i AlarmContentTemplateTypeSmsArgs) ToAlarmContentTemplateTypeSmsPtrOutput() AlarmContentTemplateTypeSmsPtrOutput {
+	return i.ToAlarmContentTemplateTypeSmsPtrOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeSmsArgs) ToAlarmContentTemplateTypeSmsPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeSmsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeSmsOutput).ToAlarmContentTemplateTypeSmsPtrOutputWithContext(ctx)
+}
+
+// AlarmContentTemplateTypeSmsPtrInput is an input type that accepts AlarmContentTemplateTypeSmsArgs, AlarmContentTemplateTypeSmsPtr and AlarmContentTemplateTypeSmsPtrOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeSmsPtrInput` via:
+//
+//	        AlarmContentTemplateTypeSmsArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmContentTemplateTypeSmsPtrInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeSmsPtrOutput() AlarmContentTemplateTypeSmsPtrOutput
+	ToAlarmContentTemplateTypeSmsPtrOutputWithContext(context.Context) AlarmContentTemplateTypeSmsPtrOutput
+}
+
+type alarmContentTemplateTypeSmsPtrType AlarmContentTemplateTypeSmsArgs
+
+func AlarmContentTemplateTypeSmsPtr(v *AlarmContentTemplateTypeSmsArgs) AlarmContentTemplateTypeSmsPtrInput {
+	return (*alarmContentTemplateTypeSmsPtrType)(v)
+}
+
+func (*alarmContentTemplateTypeSmsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeSms)(nil)).Elem()
+}
+
+func (i *alarmContentTemplateTypeSmsPtrType) ToAlarmContentTemplateTypeSmsPtrOutput() AlarmContentTemplateTypeSmsPtrOutput {
+	return i.ToAlarmContentTemplateTypeSmsPtrOutputWithContext(context.Background())
+}
+
+func (i *alarmContentTemplateTypeSmsPtrType) ToAlarmContentTemplateTypeSmsPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeSmsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeSmsPtrOutput)
+}
+
+type AlarmContentTemplateTypeSmsOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeSmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeSms)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeSmsOutput) ToAlarmContentTemplateTypeSmsOutput() AlarmContentTemplateTypeSmsOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeSmsOutput) ToAlarmContentTemplateTypeSmsOutputWithContext(ctx context.Context) AlarmContentTemplateTypeSmsOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeSmsOutput) ToAlarmContentTemplateTypeSmsPtrOutput() AlarmContentTemplateTypeSmsPtrOutput {
+	return o.ToAlarmContentTemplateTypeSmsPtrOutputWithContext(context.Background())
+}
+
+func (o AlarmContentTemplateTypeSmsOutput) ToAlarmContentTemplateTypeSmsPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeSmsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmContentTemplateTypeSms) *AlarmContentTemplateTypeSms {
+		return &v
+	}).(AlarmContentTemplateTypeSmsPtrOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeSmsOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeSms) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeSmsOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeSms) *string { return v.Locale }).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeSmsPtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeSmsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeSms)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeSmsPtrOutput) ToAlarmContentTemplateTypeSmsPtrOutput() AlarmContentTemplateTypeSmsPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeSmsPtrOutput) ToAlarmContentTemplateTypeSmsPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeSmsPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeSmsPtrOutput) Elem() AlarmContentTemplateTypeSmsOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeSms) AlarmContentTemplateTypeSms {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmContentTemplateTypeSms
+		return ret
+	}).(AlarmContentTemplateTypeSmsOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeSmsPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeSms) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeSmsPtrOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeSms) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Locale
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeVms struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content *string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale *string `pulumi:"locale"`
+}
+
+// AlarmContentTemplateTypeVmsInput is an input type that accepts AlarmContentTemplateTypeVmsArgs and AlarmContentTemplateTypeVmsOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeVmsInput` via:
+//
+//	AlarmContentTemplateTypeVmsArgs{...}
+type AlarmContentTemplateTypeVmsInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeVmsOutput() AlarmContentTemplateTypeVmsOutput
+	ToAlarmContentTemplateTypeVmsOutputWithContext(context.Context) AlarmContentTemplateTypeVmsOutput
+}
+
+type AlarmContentTemplateTypeVmsArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringPtrInput `pulumi:"locale"`
+}
+
+func (AlarmContentTemplateTypeVmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeVms)(nil)).Elem()
+}
+
+func (i AlarmContentTemplateTypeVmsArgs) ToAlarmContentTemplateTypeVmsOutput() AlarmContentTemplateTypeVmsOutput {
+	return i.ToAlarmContentTemplateTypeVmsOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeVmsArgs) ToAlarmContentTemplateTypeVmsOutputWithContext(ctx context.Context) AlarmContentTemplateTypeVmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeVmsOutput)
+}
+
+func (i AlarmContentTemplateTypeVmsArgs) ToAlarmContentTemplateTypeVmsPtrOutput() AlarmContentTemplateTypeVmsPtrOutput {
+	return i.ToAlarmContentTemplateTypeVmsPtrOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeVmsArgs) ToAlarmContentTemplateTypeVmsPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeVmsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeVmsOutput).ToAlarmContentTemplateTypeVmsPtrOutputWithContext(ctx)
+}
+
+// AlarmContentTemplateTypeVmsPtrInput is an input type that accepts AlarmContentTemplateTypeVmsArgs, AlarmContentTemplateTypeVmsPtr and AlarmContentTemplateTypeVmsPtrOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeVmsPtrInput` via:
+//
+//	        AlarmContentTemplateTypeVmsArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmContentTemplateTypeVmsPtrInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeVmsPtrOutput() AlarmContentTemplateTypeVmsPtrOutput
+	ToAlarmContentTemplateTypeVmsPtrOutputWithContext(context.Context) AlarmContentTemplateTypeVmsPtrOutput
+}
+
+type alarmContentTemplateTypeVmsPtrType AlarmContentTemplateTypeVmsArgs
+
+func AlarmContentTemplateTypeVmsPtr(v *AlarmContentTemplateTypeVmsArgs) AlarmContentTemplateTypeVmsPtrInput {
+	return (*alarmContentTemplateTypeVmsPtrType)(v)
+}
+
+func (*alarmContentTemplateTypeVmsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeVms)(nil)).Elem()
+}
+
+func (i *alarmContentTemplateTypeVmsPtrType) ToAlarmContentTemplateTypeVmsPtrOutput() AlarmContentTemplateTypeVmsPtrOutput {
+	return i.ToAlarmContentTemplateTypeVmsPtrOutputWithContext(context.Background())
+}
+
+func (i *alarmContentTemplateTypeVmsPtrType) ToAlarmContentTemplateTypeVmsPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeVmsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeVmsPtrOutput)
+}
+
+type AlarmContentTemplateTypeVmsOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeVmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeVms)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeVmsOutput) ToAlarmContentTemplateTypeVmsOutput() AlarmContentTemplateTypeVmsOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeVmsOutput) ToAlarmContentTemplateTypeVmsOutputWithContext(ctx context.Context) AlarmContentTemplateTypeVmsOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeVmsOutput) ToAlarmContentTemplateTypeVmsPtrOutput() AlarmContentTemplateTypeVmsPtrOutput {
+	return o.ToAlarmContentTemplateTypeVmsPtrOutputWithContext(context.Background())
+}
+
+func (o AlarmContentTemplateTypeVmsOutput) ToAlarmContentTemplateTypeVmsPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeVmsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmContentTemplateTypeVms) *AlarmContentTemplateTypeVms {
+		return &v
+	}).(AlarmContentTemplateTypeVmsPtrOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeVmsOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeVms) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeVmsOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeVms) *string { return v.Locale }).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeVmsPtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeVmsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeVms)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeVmsPtrOutput) ToAlarmContentTemplateTypeVmsPtrOutput() AlarmContentTemplateTypeVmsPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeVmsPtrOutput) ToAlarmContentTemplateTypeVmsPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeVmsPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeVmsPtrOutput) Elem() AlarmContentTemplateTypeVmsOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeVms) AlarmContentTemplateTypeVms {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmContentTemplateTypeVms
+		return ret
+	}).(AlarmContentTemplateTypeVmsOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeVmsPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeVms) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeVmsPtrOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeVms) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Locale
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeWeChat struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content *string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale *string `pulumi:"locale"`
+	// Alert notification subject
+	Title *string `pulumi:"title"`
+}
+
+// AlarmContentTemplateTypeWeChatInput is an input type that accepts AlarmContentTemplateTypeWeChatArgs and AlarmContentTemplateTypeWeChatOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeWeChatInput` via:
+//
+//	AlarmContentTemplateTypeWeChatArgs{...}
+type AlarmContentTemplateTypeWeChatInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeWeChatOutput() AlarmContentTemplateTypeWeChatOutput
+	ToAlarmContentTemplateTypeWeChatOutputWithContext(context.Context) AlarmContentTemplateTypeWeChatOutput
+}
+
+type AlarmContentTemplateTypeWeChatArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringPtrInput `pulumi:"locale"`
+	// Alert notification subject
+	Title pulumi.StringPtrInput `pulumi:"title"`
+}
+
+func (AlarmContentTemplateTypeWeChatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeWeChat)(nil)).Elem()
+}
+
+func (i AlarmContentTemplateTypeWeChatArgs) ToAlarmContentTemplateTypeWeChatOutput() AlarmContentTemplateTypeWeChatOutput {
+	return i.ToAlarmContentTemplateTypeWeChatOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeWeChatArgs) ToAlarmContentTemplateTypeWeChatOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWeChatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeWeChatOutput)
+}
+
+func (i AlarmContentTemplateTypeWeChatArgs) ToAlarmContentTemplateTypeWeChatPtrOutput() AlarmContentTemplateTypeWeChatPtrOutput {
+	return i.ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeWeChatArgs) ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWeChatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeWeChatOutput).ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(ctx)
+}
+
+// AlarmContentTemplateTypeWeChatPtrInput is an input type that accepts AlarmContentTemplateTypeWeChatArgs, AlarmContentTemplateTypeWeChatPtr and AlarmContentTemplateTypeWeChatPtrOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeWeChatPtrInput` via:
+//
+//	        AlarmContentTemplateTypeWeChatArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmContentTemplateTypeWeChatPtrInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeWeChatPtrOutput() AlarmContentTemplateTypeWeChatPtrOutput
+	ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(context.Context) AlarmContentTemplateTypeWeChatPtrOutput
+}
+
+type alarmContentTemplateTypeWeChatPtrType AlarmContentTemplateTypeWeChatArgs
+
+func AlarmContentTemplateTypeWeChatPtr(v *AlarmContentTemplateTypeWeChatArgs) AlarmContentTemplateTypeWeChatPtrInput {
+	return (*alarmContentTemplateTypeWeChatPtrType)(v)
+}
+
+func (*alarmContentTemplateTypeWeChatPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeWeChat)(nil)).Elem()
+}
+
+func (i *alarmContentTemplateTypeWeChatPtrType) ToAlarmContentTemplateTypeWeChatPtrOutput() AlarmContentTemplateTypeWeChatPtrOutput {
+	return i.ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(context.Background())
+}
+
+func (i *alarmContentTemplateTypeWeChatPtrType) ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWeChatPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeWeChatPtrOutput)
+}
+
+type AlarmContentTemplateTypeWeChatOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeWeChatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeWeChat)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeWeChatOutput) ToAlarmContentTemplateTypeWeChatOutput() AlarmContentTemplateTypeWeChatOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeWeChatOutput) ToAlarmContentTemplateTypeWeChatOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWeChatOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeWeChatOutput) ToAlarmContentTemplateTypeWeChatPtrOutput() AlarmContentTemplateTypeWeChatPtrOutput {
+	return o.ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(context.Background())
+}
+
+func (o AlarmContentTemplateTypeWeChatOutput) ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWeChatPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmContentTemplateTypeWeChat) *AlarmContentTemplateTypeWeChat {
+		return &v
+	}).(AlarmContentTemplateTypeWeChatPtrOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeWeChatOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeWeChat) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeWeChatOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeWeChat) *string { return v.Locale }).(pulumi.StringPtrOutput)
+}
+
+// Alert notification subject
+func (o AlarmContentTemplateTypeWeChatOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeWeChat) *string { return v.Title }).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeWeChatPtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeWeChatPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeWeChat)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeWeChatPtrOutput) ToAlarmContentTemplateTypeWeChatPtrOutput() AlarmContentTemplateTypeWeChatPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeWeChatPtrOutput) ToAlarmContentTemplateTypeWeChatPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWeChatPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeWeChatPtrOutput) Elem() AlarmContentTemplateTypeWeChatOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeWeChat) AlarmContentTemplateTypeWeChat {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmContentTemplateTypeWeChat
+		return ret
+	}).(AlarmContentTemplateTypeWeChatOutput)
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeWeChatPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeWeChat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o AlarmContentTemplateTypeWeChatPtrOutput) Locale() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeWeChat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Locale
+	}).(pulumi.StringPtrOutput)
+}
+
+// Alert notification subject
+func (o AlarmContentTemplateTypeWeChatPtrOutput) Title() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeWeChat) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Title
+	}).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeWebhook struct {
+	// Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content *string `pulumi:"content"`
+}
+
+// AlarmContentTemplateTypeWebhookInput is an input type that accepts AlarmContentTemplateTypeWebhookArgs and AlarmContentTemplateTypeWebhookOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeWebhookInput` via:
+//
+//	AlarmContentTemplateTypeWebhookArgs{...}
+type AlarmContentTemplateTypeWebhookInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeWebhookOutput() AlarmContentTemplateTypeWebhookOutput
+	ToAlarmContentTemplateTypeWebhookOutputWithContext(context.Context) AlarmContentTemplateTypeWebhookOutput
+}
+
+type AlarmContentTemplateTypeWebhookArgs struct {
+	// Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringPtrInput `pulumi:"content"`
+}
+
+func (AlarmContentTemplateTypeWebhookArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeWebhook)(nil)).Elem()
+}
+
+func (i AlarmContentTemplateTypeWebhookArgs) ToAlarmContentTemplateTypeWebhookOutput() AlarmContentTemplateTypeWebhookOutput {
+	return i.ToAlarmContentTemplateTypeWebhookOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeWebhookArgs) ToAlarmContentTemplateTypeWebhookOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWebhookOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeWebhookOutput)
+}
+
+func (i AlarmContentTemplateTypeWebhookArgs) ToAlarmContentTemplateTypeWebhookPtrOutput() AlarmContentTemplateTypeWebhookPtrOutput {
+	return i.ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(context.Background())
+}
+
+func (i AlarmContentTemplateTypeWebhookArgs) ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWebhookPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeWebhookOutput).ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(ctx)
+}
+
+// AlarmContentTemplateTypeWebhookPtrInput is an input type that accepts AlarmContentTemplateTypeWebhookArgs, AlarmContentTemplateTypeWebhookPtr and AlarmContentTemplateTypeWebhookPtrOutput values.
+// You can construct a concrete instance of `AlarmContentTemplateTypeWebhookPtrInput` via:
+//
+//	        AlarmContentTemplateTypeWebhookArgs{...}
+//
+//	or:
+//
+//	        nil
+type AlarmContentTemplateTypeWebhookPtrInput interface {
+	pulumi.Input
+
+	ToAlarmContentTemplateTypeWebhookPtrOutput() AlarmContentTemplateTypeWebhookPtrOutput
+	ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(context.Context) AlarmContentTemplateTypeWebhookPtrOutput
+}
+
+type alarmContentTemplateTypeWebhookPtrType AlarmContentTemplateTypeWebhookArgs
+
+func AlarmContentTemplateTypeWebhookPtr(v *AlarmContentTemplateTypeWebhookArgs) AlarmContentTemplateTypeWebhookPtrInput {
+	return (*alarmContentTemplateTypeWebhookPtrType)(v)
+}
+
+func (*alarmContentTemplateTypeWebhookPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeWebhook)(nil)).Elem()
+}
+
+func (i *alarmContentTemplateTypeWebhookPtrType) ToAlarmContentTemplateTypeWebhookPtrOutput() AlarmContentTemplateTypeWebhookPtrOutput {
+	return i.ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(context.Background())
+}
+
+func (i *alarmContentTemplateTypeWebhookPtrType) ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWebhookPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(AlarmContentTemplateTypeWebhookPtrOutput)
+}
+
+type AlarmContentTemplateTypeWebhookOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeWebhookOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*AlarmContentTemplateTypeWebhook)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeWebhookOutput) ToAlarmContentTemplateTypeWebhookOutput() AlarmContentTemplateTypeWebhookOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeWebhookOutput) ToAlarmContentTemplateTypeWebhookOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWebhookOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeWebhookOutput) ToAlarmContentTemplateTypeWebhookPtrOutput() AlarmContentTemplateTypeWebhookPtrOutput {
+	return o.ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(context.Background())
+}
+
+func (o AlarmContentTemplateTypeWebhookOutput) ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWebhookPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v AlarmContentTemplateTypeWebhook) *AlarmContentTemplateTypeWebhook {
+		return &v
+	}).(AlarmContentTemplateTypeWebhookPtrOutput)
+}
+
+// Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeWebhookOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v AlarmContentTemplateTypeWebhook) *string { return v.Content }).(pulumi.StringPtrOutput)
+}
+
+type AlarmContentTemplateTypeWebhookPtrOutput struct{ *pulumi.OutputState }
+
+func (AlarmContentTemplateTypeWebhookPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**AlarmContentTemplateTypeWebhook)(nil)).Elem()
+}
+
+func (o AlarmContentTemplateTypeWebhookPtrOutput) ToAlarmContentTemplateTypeWebhookPtrOutput() AlarmContentTemplateTypeWebhookPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeWebhookPtrOutput) ToAlarmContentTemplateTypeWebhookPtrOutputWithContext(ctx context.Context) AlarmContentTemplateTypeWebhookPtrOutput {
+	return o
+}
+
+func (o AlarmContentTemplateTypeWebhookPtrOutput) Elem() AlarmContentTemplateTypeWebhookOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeWebhook) AlarmContentTemplateTypeWebhook {
+		if v != nil {
+			return *v
+		}
+		var ret AlarmContentTemplateTypeWebhook
+		return ret
+	}).(AlarmContentTemplateTypeWebhookOutput)
+}
+
+// Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o AlarmContentTemplateTypeWebhookPtrOutput) Content() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *AlarmContentTemplateTypeWebhook) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Content
+	}).(pulumi.StringPtrOutput)
+}
+
 type AlarmJoinConfiguration struct {
 	// Expression used for left join or right join.
 	Condition *string `pulumi:"condition"`
@@ -15994,6 +17143,460 @@ func (o GetAlarmAlarmPeriodDetailOutput) Sms() pulumi.IntOutput {
 	return o.ApplyT(func(v GetAlarmAlarmPeriodDetail) int { return v.Sms }).(pulumi.IntOutput)
 }
 
+type GetAlarmContentTemplateTypeDingTalk struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale string `pulumi:"locale"`
+	// Alert notification subject
+	Title string `pulumi:"title"`
+}
+
+// GetAlarmContentTemplateTypeDingTalkInput is an input type that accepts GetAlarmContentTemplateTypeDingTalkArgs and GetAlarmContentTemplateTypeDingTalkOutput values.
+// You can construct a concrete instance of `GetAlarmContentTemplateTypeDingTalkInput` via:
+//
+//	GetAlarmContentTemplateTypeDingTalkArgs{...}
+type GetAlarmContentTemplateTypeDingTalkInput interface {
+	pulumi.Input
+
+	ToGetAlarmContentTemplateTypeDingTalkOutput() GetAlarmContentTemplateTypeDingTalkOutput
+	ToGetAlarmContentTemplateTypeDingTalkOutputWithContext(context.Context) GetAlarmContentTemplateTypeDingTalkOutput
+}
+
+type GetAlarmContentTemplateTypeDingTalkArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringInput `pulumi:"locale"`
+	// Alert notification subject
+	Title pulumi.StringInput `pulumi:"title"`
+}
+
+func (GetAlarmContentTemplateTypeDingTalkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeDingTalk)(nil)).Elem()
+}
+
+func (i GetAlarmContentTemplateTypeDingTalkArgs) ToGetAlarmContentTemplateTypeDingTalkOutput() GetAlarmContentTemplateTypeDingTalkOutput {
+	return i.ToGetAlarmContentTemplateTypeDingTalkOutputWithContext(context.Background())
+}
+
+func (i GetAlarmContentTemplateTypeDingTalkArgs) ToGetAlarmContentTemplateTypeDingTalkOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeDingTalkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmContentTemplateTypeDingTalkOutput)
+}
+
+type GetAlarmContentTemplateTypeDingTalkOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmContentTemplateTypeDingTalkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeDingTalk)(nil)).Elem()
+}
+
+func (o GetAlarmContentTemplateTypeDingTalkOutput) ToGetAlarmContentTemplateTypeDingTalkOutput() GetAlarmContentTemplateTypeDingTalkOutput {
+	return o
+}
+
+func (o GetAlarmContentTemplateTypeDingTalkOutput) ToGetAlarmContentTemplateTypeDingTalkOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeDingTalkOutput {
+	return o
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o GetAlarmContentTemplateTypeDingTalkOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeDingTalk) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o GetAlarmContentTemplateTypeDingTalkOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeDingTalk) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+// Alert notification subject
+func (o GetAlarmContentTemplateTypeDingTalkOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeDingTalk) string { return v.Title }).(pulumi.StringOutput)
+}
+
+type GetAlarmContentTemplateTypeEmail struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale string `pulumi:"locale"`
+	// Email notification subject
+	Subject string `pulumi:"subject"`
+}
+
+// GetAlarmContentTemplateTypeEmailInput is an input type that accepts GetAlarmContentTemplateTypeEmailArgs and GetAlarmContentTemplateTypeEmailOutput values.
+// You can construct a concrete instance of `GetAlarmContentTemplateTypeEmailInput` via:
+//
+//	GetAlarmContentTemplateTypeEmailArgs{...}
+type GetAlarmContentTemplateTypeEmailInput interface {
+	pulumi.Input
+
+	ToGetAlarmContentTemplateTypeEmailOutput() GetAlarmContentTemplateTypeEmailOutput
+	ToGetAlarmContentTemplateTypeEmailOutputWithContext(context.Context) GetAlarmContentTemplateTypeEmailOutput
+}
+
+type GetAlarmContentTemplateTypeEmailArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringInput `pulumi:"locale"`
+	// Email notification subject
+	Subject pulumi.StringInput `pulumi:"subject"`
+}
+
+func (GetAlarmContentTemplateTypeEmailArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeEmail)(nil)).Elem()
+}
+
+func (i GetAlarmContentTemplateTypeEmailArgs) ToGetAlarmContentTemplateTypeEmailOutput() GetAlarmContentTemplateTypeEmailOutput {
+	return i.ToGetAlarmContentTemplateTypeEmailOutputWithContext(context.Background())
+}
+
+func (i GetAlarmContentTemplateTypeEmailArgs) ToGetAlarmContentTemplateTypeEmailOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeEmailOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmContentTemplateTypeEmailOutput)
+}
+
+type GetAlarmContentTemplateTypeEmailOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmContentTemplateTypeEmailOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeEmail)(nil)).Elem()
+}
+
+func (o GetAlarmContentTemplateTypeEmailOutput) ToGetAlarmContentTemplateTypeEmailOutput() GetAlarmContentTemplateTypeEmailOutput {
+	return o
+}
+
+func (o GetAlarmContentTemplateTypeEmailOutput) ToGetAlarmContentTemplateTypeEmailOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeEmailOutput {
+	return o
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o GetAlarmContentTemplateTypeEmailOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeEmail) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o GetAlarmContentTemplateTypeEmailOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeEmail) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+// Email notification subject
+func (o GetAlarmContentTemplateTypeEmailOutput) Subject() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeEmail) string { return v.Subject }).(pulumi.StringOutput)
+}
+
+type GetAlarmContentTemplateTypeLark struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale string `pulumi:"locale"`
+	// Alert notification subject
+	Title string `pulumi:"title"`
+}
+
+// GetAlarmContentTemplateTypeLarkInput is an input type that accepts GetAlarmContentTemplateTypeLarkArgs and GetAlarmContentTemplateTypeLarkOutput values.
+// You can construct a concrete instance of `GetAlarmContentTemplateTypeLarkInput` via:
+//
+//	GetAlarmContentTemplateTypeLarkArgs{...}
+type GetAlarmContentTemplateTypeLarkInput interface {
+	pulumi.Input
+
+	ToGetAlarmContentTemplateTypeLarkOutput() GetAlarmContentTemplateTypeLarkOutput
+	ToGetAlarmContentTemplateTypeLarkOutputWithContext(context.Context) GetAlarmContentTemplateTypeLarkOutput
+}
+
+type GetAlarmContentTemplateTypeLarkArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringInput `pulumi:"locale"`
+	// Alert notification subject
+	Title pulumi.StringInput `pulumi:"title"`
+}
+
+func (GetAlarmContentTemplateTypeLarkArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeLark)(nil)).Elem()
+}
+
+func (i GetAlarmContentTemplateTypeLarkArgs) ToGetAlarmContentTemplateTypeLarkOutput() GetAlarmContentTemplateTypeLarkOutput {
+	return i.ToGetAlarmContentTemplateTypeLarkOutputWithContext(context.Background())
+}
+
+func (i GetAlarmContentTemplateTypeLarkArgs) ToGetAlarmContentTemplateTypeLarkOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeLarkOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmContentTemplateTypeLarkOutput)
+}
+
+type GetAlarmContentTemplateTypeLarkOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmContentTemplateTypeLarkOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeLark)(nil)).Elem()
+}
+
+func (o GetAlarmContentTemplateTypeLarkOutput) ToGetAlarmContentTemplateTypeLarkOutput() GetAlarmContentTemplateTypeLarkOutput {
+	return o
+}
+
+func (o GetAlarmContentTemplateTypeLarkOutput) ToGetAlarmContentTemplateTypeLarkOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeLarkOutput {
+	return o
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o GetAlarmContentTemplateTypeLarkOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeLark) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o GetAlarmContentTemplateTypeLarkOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeLark) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+// Alert notification subject
+func (o GetAlarmContentTemplateTypeLarkOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeLark) string { return v.Title }).(pulumi.StringOutput)
+}
+
+type GetAlarmContentTemplateTypeSms struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale string `pulumi:"locale"`
+}
+
+// GetAlarmContentTemplateTypeSmsInput is an input type that accepts GetAlarmContentTemplateTypeSmsArgs and GetAlarmContentTemplateTypeSmsOutput values.
+// You can construct a concrete instance of `GetAlarmContentTemplateTypeSmsInput` via:
+//
+//	GetAlarmContentTemplateTypeSmsArgs{...}
+type GetAlarmContentTemplateTypeSmsInput interface {
+	pulumi.Input
+
+	ToGetAlarmContentTemplateTypeSmsOutput() GetAlarmContentTemplateTypeSmsOutput
+	ToGetAlarmContentTemplateTypeSmsOutputWithContext(context.Context) GetAlarmContentTemplateTypeSmsOutput
+}
+
+type GetAlarmContentTemplateTypeSmsArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringInput `pulumi:"locale"`
+}
+
+func (GetAlarmContentTemplateTypeSmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeSms)(nil)).Elem()
+}
+
+func (i GetAlarmContentTemplateTypeSmsArgs) ToGetAlarmContentTemplateTypeSmsOutput() GetAlarmContentTemplateTypeSmsOutput {
+	return i.ToGetAlarmContentTemplateTypeSmsOutputWithContext(context.Background())
+}
+
+func (i GetAlarmContentTemplateTypeSmsArgs) ToGetAlarmContentTemplateTypeSmsOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeSmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmContentTemplateTypeSmsOutput)
+}
+
+type GetAlarmContentTemplateTypeSmsOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmContentTemplateTypeSmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeSms)(nil)).Elem()
+}
+
+func (o GetAlarmContentTemplateTypeSmsOutput) ToGetAlarmContentTemplateTypeSmsOutput() GetAlarmContentTemplateTypeSmsOutput {
+	return o
+}
+
+func (o GetAlarmContentTemplateTypeSmsOutput) ToGetAlarmContentTemplateTypeSmsOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeSmsOutput {
+	return o
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o GetAlarmContentTemplateTypeSmsOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeSms) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o GetAlarmContentTemplateTypeSmsOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeSms) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+type GetAlarmContentTemplateTypeVms struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale string `pulumi:"locale"`
+}
+
+// GetAlarmContentTemplateTypeVmsInput is an input type that accepts GetAlarmContentTemplateTypeVmsArgs and GetAlarmContentTemplateTypeVmsOutput values.
+// You can construct a concrete instance of `GetAlarmContentTemplateTypeVmsInput` via:
+//
+//	GetAlarmContentTemplateTypeVmsArgs{...}
+type GetAlarmContentTemplateTypeVmsInput interface {
+	pulumi.Input
+
+	ToGetAlarmContentTemplateTypeVmsOutput() GetAlarmContentTemplateTypeVmsOutput
+	ToGetAlarmContentTemplateTypeVmsOutputWithContext(context.Context) GetAlarmContentTemplateTypeVmsOutput
+}
+
+type GetAlarmContentTemplateTypeVmsArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringInput `pulumi:"locale"`
+}
+
+func (GetAlarmContentTemplateTypeVmsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeVms)(nil)).Elem()
+}
+
+func (i GetAlarmContentTemplateTypeVmsArgs) ToGetAlarmContentTemplateTypeVmsOutput() GetAlarmContentTemplateTypeVmsOutput {
+	return i.ToGetAlarmContentTemplateTypeVmsOutputWithContext(context.Background())
+}
+
+func (i GetAlarmContentTemplateTypeVmsArgs) ToGetAlarmContentTemplateTypeVmsOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeVmsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmContentTemplateTypeVmsOutput)
+}
+
+type GetAlarmContentTemplateTypeVmsOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmContentTemplateTypeVmsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeVms)(nil)).Elem()
+}
+
+func (o GetAlarmContentTemplateTypeVmsOutput) ToGetAlarmContentTemplateTypeVmsOutput() GetAlarmContentTemplateTypeVmsOutput {
+	return o
+}
+
+func (o GetAlarmContentTemplateTypeVmsOutput) ToGetAlarmContentTemplateTypeVmsOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeVmsOutput {
+	return o
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o GetAlarmContentTemplateTypeVmsOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeVms) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o GetAlarmContentTemplateTypeVmsOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeVms) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+type GetAlarmContentTemplateTypeWeChat struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content string `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale string `pulumi:"locale"`
+	// Alert notification subject
+	Title string `pulumi:"title"`
+}
+
+// GetAlarmContentTemplateTypeWeChatInput is an input type that accepts GetAlarmContentTemplateTypeWeChatArgs and GetAlarmContentTemplateTypeWeChatOutput values.
+// You can construct a concrete instance of `GetAlarmContentTemplateTypeWeChatInput` via:
+//
+//	GetAlarmContentTemplateTypeWeChatArgs{...}
+type GetAlarmContentTemplateTypeWeChatInput interface {
+	pulumi.Input
+
+	ToGetAlarmContentTemplateTypeWeChatOutput() GetAlarmContentTemplateTypeWeChatOutput
+	ToGetAlarmContentTemplateTypeWeChatOutputWithContext(context.Context) GetAlarmContentTemplateTypeWeChatOutput
+}
+
+type GetAlarmContentTemplateTypeWeChatArgs struct {
+	// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringInput `pulumi:"content"`
+	// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+	Locale pulumi.StringInput `pulumi:"locale"`
+	// Alert notification subject
+	Title pulumi.StringInput `pulumi:"title"`
+}
+
+func (GetAlarmContentTemplateTypeWeChatArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeWeChat)(nil)).Elem()
+}
+
+func (i GetAlarmContentTemplateTypeWeChatArgs) ToGetAlarmContentTemplateTypeWeChatOutput() GetAlarmContentTemplateTypeWeChatOutput {
+	return i.ToGetAlarmContentTemplateTypeWeChatOutputWithContext(context.Background())
+}
+
+func (i GetAlarmContentTemplateTypeWeChatArgs) ToGetAlarmContentTemplateTypeWeChatOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeWeChatOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmContentTemplateTypeWeChatOutput)
+}
+
+type GetAlarmContentTemplateTypeWeChatOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmContentTemplateTypeWeChatOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeWeChat)(nil)).Elem()
+}
+
+func (o GetAlarmContentTemplateTypeWeChatOutput) ToGetAlarmContentTemplateTypeWeChatOutput() GetAlarmContentTemplateTypeWeChatOutput {
+	return o
+}
+
+func (o GetAlarmContentTemplateTypeWeChatOutput) ToGetAlarmContentTemplateTypeWeChatOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeWeChatOutput {
+	return o
+}
+
+// Alert notification content. Supports plain text format, content variables, and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o GetAlarmContentTemplateTypeWeChatOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeWeChat) string { return v.Content }).(pulumi.StringOutput)
+}
+
+// The language for fixed content in alert notifications. Available values: zh-CN, en-US.
+func (o GetAlarmContentTemplateTypeWeChatOutput) Locale() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeWeChat) string { return v.Locale }).(pulumi.StringOutput)
+}
+
+// Alert notification subject
+func (o GetAlarmContentTemplateTypeWeChatOutput) Title() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeWeChat) string { return v.Title }).(pulumi.StringOutput)
+}
+
+type GetAlarmContentTemplateTypeWebhook struct {
+	// Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content string `pulumi:"content"`
+}
+
+// GetAlarmContentTemplateTypeWebhookInput is an input type that accepts GetAlarmContentTemplateTypeWebhookArgs and GetAlarmContentTemplateTypeWebhookOutput values.
+// You can construct a concrete instance of `GetAlarmContentTemplateTypeWebhookInput` via:
+//
+//	GetAlarmContentTemplateTypeWebhookArgs{...}
+type GetAlarmContentTemplateTypeWebhookInput interface {
+	pulumi.Input
+
+	ToGetAlarmContentTemplateTypeWebhookOutput() GetAlarmContentTemplateTypeWebhookOutput
+	ToGetAlarmContentTemplateTypeWebhookOutputWithContext(context.Context) GetAlarmContentTemplateTypeWebhookOutput
+}
+
+type GetAlarmContentTemplateTypeWebhookArgs struct {
+	// Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+	Content pulumi.StringInput `pulumi:"content"`
+}
+
+func (GetAlarmContentTemplateTypeWebhookArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeWebhook)(nil)).Elem()
+}
+
+func (i GetAlarmContentTemplateTypeWebhookArgs) ToGetAlarmContentTemplateTypeWebhookOutput() GetAlarmContentTemplateTypeWebhookOutput {
+	return i.ToGetAlarmContentTemplateTypeWebhookOutputWithContext(context.Background())
+}
+
+func (i GetAlarmContentTemplateTypeWebhookArgs) ToGetAlarmContentTemplateTypeWebhookOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeWebhookOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetAlarmContentTemplateTypeWebhookOutput)
+}
+
+type GetAlarmContentTemplateTypeWebhookOutput struct{ *pulumi.OutputState }
+
+func (GetAlarmContentTemplateTypeWebhookOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetAlarmContentTemplateTypeWebhook)(nil)).Elem()
+}
+
+func (o GetAlarmContentTemplateTypeWebhookOutput) ToGetAlarmContentTemplateTypeWebhookOutput() GetAlarmContentTemplateTypeWebhookOutput {
+	return o
+}
+
+func (o GetAlarmContentTemplateTypeWebhookOutput) ToGetAlarmContentTemplateTypeWebhookOutputWithContext(ctx context.Context) GetAlarmContentTemplateTypeWebhookOutput {
+	return o
+}
+
+// Alert notification content, usually in JSON format. Supports content variables and content functions. Note: The maximum length of the notification content after variable rendering is 8 KB. Content exceeding this limit will be truncated. If the body is left blank, the default content will be used.
+func (o GetAlarmContentTemplateTypeWebhookOutput) Content() pulumi.StringOutput {
+	return o.ApplyT(func(v GetAlarmContentTemplateTypeWebhook) string { return v.Content }).(pulumi.StringOutput)
+}
+
 type GetAlarmJoinConfiguration struct {
 	// Expression used for left join or right join.
 	Condition string `pulumi:"condition"`
@@ -25471,6 +27074,20 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmAlarmNotifyGroupArrayInput)(nil)).Elem(), AlarmAlarmNotifyGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmAlarmPeriodDetailInput)(nil)).Elem(), AlarmAlarmPeriodDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmAlarmPeriodDetailPtrInput)(nil)).Elem(), AlarmAlarmPeriodDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeDingTalkInput)(nil)).Elem(), AlarmContentTemplateTypeDingTalkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeDingTalkPtrInput)(nil)).Elem(), AlarmContentTemplateTypeDingTalkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeEmailInput)(nil)).Elem(), AlarmContentTemplateTypeEmailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeEmailPtrInput)(nil)).Elem(), AlarmContentTemplateTypeEmailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeLarkInput)(nil)).Elem(), AlarmContentTemplateTypeLarkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeLarkPtrInput)(nil)).Elem(), AlarmContentTemplateTypeLarkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeSmsInput)(nil)).Elem(), AlarmContentTemplateTypeSmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeSmsPtrInput)(nil)).Elem(), AlarmContentTemplateTypeSmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeVmsInput)(nil)).Elem(), AlarmContentTemplateTypeVmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeVmsPtrInput)(nil)).Elem(), AlarmContentTemplateTypeVmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeWeChatInput)(nil)).Elem(), AlarmContentTemplateTypeWeChatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeWeChatPtrInput)(nil)).Elem(), AlarmContentTemplateTypeWeChatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeWebhookInput)(nil)).Elem(), AlarmContentTemplateTypeWebhookArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*AlarmContentTemplateTypeWebhookPtrInput)(nil)).Elem(), AlarmContentTemplateTypeWebhookArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmJoinConfigurationInput)(nil)).Elem(), AlarmJoinConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmJoinConfigurationArrayInput)(nil)).Elem(), AlarmJoinConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmNotifyGroupNoticeRuleInput)(nil)).Elem(), AlarmNotifyGroupNoticeRuleArgs{})
@@ -25654,6 +27271,13 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmPeriodDetailInput)(nil)).Elem(), GetAlarmAlarmPeriodDetailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmContentTemplateTypeDingTalkInput)(nil)).Elem(), GetAlarmContentTemplateTypeDingTalkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmContentTemplateTypeEmailInput)(nil)).Elem(), GetAlarmContentTemplateTypeEmailArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmContentTemplateTypeLarkInput)(nil)).Elem(), GetAlarmContentTemplateTypeLarkArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmContentTemplateTypeSmsInput)(nil)).Elem(), GetAlarmContentTemplateTypeSmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmContentTemplateTypeVmsInput)(nil)).Elem(), GetAlarmContentTemplateTypeVmsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmContentTemplateTypeWeChatInput)(nil)).Elem(), GetAlarmContentTemplateTypeWeChatArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmContentTemplateTypeWebhookInput)(nil)).Elem(), GetAlarmContentTemplateTypeWebhookArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmJoinConfigurationInput)(nil)).Elem(), GetAlarmJoinConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmJoinConfigurationArrayInput)(nil)).Elem(), GetAlarmJoinConfigurationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmNotifyGroupNoticeRuleInput)(nil)).Elem(), GetAlarmNotifyGroupNoticeRuleArgs{})
@@ -25790,6 +27414,20 @@ func init() {
 	pulumi.RegisterOutputType(AlarmAlarmNotifyGroupArrayOutput{})
 	pulumi.RegisterOutputType(AlarmAlarmPeriodDetailOutput{})
 	pulumi.RegisterOutputType(AlarmAlarmPeriodDetailPtrOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeDingTalkOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeDingTalkPtrOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeEmailOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeEmailPtrOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeLarkOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeLarkPtrOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeSmsOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeSmsPtrOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeVmsOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeVmsPtrOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeWeChatOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeWeChatPtrOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeWebhookOutput{})
+	pulumi.RegisterOutputType(AlarmContentTemplateTypeWebhookPtrOutput{})
 	pulumi.RegisterOutputType(AlarmJoinConfigurationOutput{})
 	pulumi.RegisterOutputType(AlarmJoinConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(AlarmNotifyGroupNoticeRuleOutput{})
@@ -25973,6 +27611,13 @@ func init() {
 	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderOutput{})
 	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupReceiverGeneralWebhookHeaderArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmAlarmPeriodDetailOutput{})
+	pulumi.RegisterOutputType(GetAlarmContentTemplateTypeDingTalkOutput{})
+	pulumi.RegisterOutputType(GetAlarmContentTemplateTypeEmailOutput{})
+	pulumi.RegisterOutputType(GetAlarmContentTemplateTypeLarkOutput{})
+	pulumi.RegisterOutputType(GetAlarmContentTemplateTypeSmsOutput{})
+	pulumi.RegisterOutputType(GetAlarmContentTemplateTypeVmsOutput{})
+	pulumi.RegisterOutputType(GetAlarmContentTemplateTypeWeChatOutput{})
+	pulumi.RegisterOutputType(GetAlarmContentTemplateTypeWebhookOutput{})
 	pulumi.RegisterOutputType(GetAlarmJoinConfigurationOutput{})
 	pulumi.RegisterOutputType(GetAlarmJoinConfigurationArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmNotifyGroupNoticeRuleOutput{})

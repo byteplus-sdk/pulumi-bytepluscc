@@ -3,11 +3,15 @@
 
 package com.byteplus.bytepluscc.kms.inputs;
 
+import com.byteplus.bytepluscc.kms.inputs.SecretSecretRestoreArgs;
+import com.byteplus.bytepluscc.kms.inputs.SecretSecretRestoreReadArgs;
+import com.byteplus.bytepluscc.kms.inputs.SecretSecretVersionArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -30,6 +34,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> automaticRotation() {
         return Optional.ofNullable(this.automaticRotation);
+    }
+
+    /**
+     * Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     * 
+     */
+    @Import(name="cancelSecretDeletion")
+    private @Nullable Output<Boolean> cancelSecretDeletion;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     * 
+     */
+    public Optional<Output<Boolean>> cancelSecretDeletion() {
+        return Optional.ofNullable(this.cancelSecretDeletion);
     }
 
     /**
@@ -138,6 +157,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     * 
+     */
+    @Import(name="pendingWindowInDays")
+    private @Nullable Output<Integer> pendingWindowInDays;
+
+    /**
+     * @return Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     * 
+     */
+    public Optional<Output<Integer>> pendingWindowInDays() {
+        return Optional.ofNullable(this.pendingWindowInDays);
+    }
+
+    /**
      * Credential project name. Default value: default
      * 
      */
@@ -228,6 +262,21 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     * 
+     */
+    @Import(name="secretBackup")
+    private @Nullable Output<Boolean> secretBackup;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     * 
+     */
+    public Optional<Output<Boolean>> secretBackup() {
+        return Optional.ofNullable(this.secretBackup);
+    }
+
+    /**
      * Credential unique identifier, UUID format
      * 
      */
@@ -255,6 +304,51 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> secretName() {
         return Optional.ofNullable(this.secretName);
+    }
+
+    /**
+     * Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     * 
+     */
+    @Import(name="secretRestore")
+    private @Nullable Output<SecretSecretRestoreArgs> secretRestore;
+
+    /**
+     * @return Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     * 
+     */
+    public Optional<Output<SecretSecretRestoreArgs>> secretRestore() {
+        return Optional.ofNullable(this.secretRestore);
+    }
+
+    /**
+     * Credential restore parameters. Returned only during backup.
+     * 
+     */
+    @Import(name="secretRestoreRead")
+    private @Nullable Output<SecretSecretRestoreReadArgs> secretRestoreRead;
+
+    /**
+     * @return Credential restore parameters. Returned only during backup.
+     * 
+     */
+    public Optional<Output<SecretSecretRestoreReadArgs>> secretRestoreRead() {
+        return Optional.ofNullable(this.secretRestoreRead);
+    }
+
+    /**
+     * Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     * 
+     */
+    @Import(name="secretRotate")
+    private @Nullable Output<Boolean> secretRotate;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     * 
+     */
+    public Optional<Output<Boolean>> secretRotate() {
+        return Optional.ofNullable(this.secretRotate);
     }
 
     /**
@@ -300,6 +394,23 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<String>> secretValue() {
         return Optional.ofNullable(this.secretValue);
+    }
+
+    /**
+     * Credential version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Import(name="secretVersions")
+    private @Nullable Output<List<SecretSecretVersionArgs>> secretVersions;
+
+    /**
+     * @return Credential version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Optional<Output<List<SecretSecretVersionArgs>>> secretVersions() {
+        return Optional.ofNullable(this.secretVersions);
     }
 
     /**
@@ -366,6 +477,7 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
 
     private SecretState(SecretState $) {
         this.automaticRotation = $.automaticRotation;
+        this.cancelSecretDeletion = $.cancelSecretDeletion;
         this.createdTime = $.createdTime;
         this.description = $.description;
         this.encryptionKey = $.encryptionKey;
@@ -373,17 +485,23 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         this.lastRotationTime = $.lastRotationTime;
         this.managed = $.managed;
         this.owningService = $.owningService;
+        this.pendingWindowInDays = $.pendingWindowInDays;
         this.projectName = $.projectName;
         this.rotationInterval = $.rotationInterval;
         this.rotationIntervalRead = $.rotationIntervalRead;
         this.rotationState = $.rotationState;
         this.scheduleDeleteTime = $.scheduleDeleteTime;
         this.scheduleRotationTime = $.scheduleRotationTime;
+        this.secretBackup = $.secretBackup;
         this.secretId = $.secretId;
         this.secretName = $.secretName;
+        this.secretRestore = $.secretRestore;
+        this.secretRestoreRead = $.secretRestoreRead;
+        this.secretRotate = $.secretRotate;
         this.secretState = $.secretState;
         this.secretType = $.secretType;
         this.secretValue = $.secretValue;
+        this.secretVersions = $.secretVersions;
         this.trn = $.trn;
         this.uid = $.uid;
         this.updatedTime = $.updatedTime;
@@ -427,6 +545,27 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder automaticRotation(Boolean automaticRotation) {
             return automaticRotation(Output.of(automaticRotation));
+        }
+
+        /**
+         * @param cancelSecretDeletion Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cancelSecretDeletion(@Nullable Output<Boolean> cancelSecretDeletion) {
+            $.cancelSecretDeletion = cancelSecretDeletion;
+            return this;
+        }
+
+        /**
+         * @param cancelSecretDeletion Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cancelSecretDeletion(Boolean cancelSecretDeletion) {
+            return cancelSecretDeletion(Output.of(cancelSecretDeletion));
         }
 
         /**
@@ -577,6 +716,27 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param pendingWindowInDays Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pendingWindowInDays(@Nullable Output<Integer> pendingWindowInDays) {
+            $.pendingWindowInDays = pendingWindowInDays;
+            return this;
+        }
+
+        /**
+         * @param pendingWindowInDays Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder pendingWindowInDays(Integer pendingWindowInDays) {
+            return pendingWindowInDays(Output.of(pendingWindowInDays));
+        }
+
+        /**
          * @param projectName Credential project name. Default value: default
          * 
          * @return builder
@@ -703,6 +863,27 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param secretBackup Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretBackup(@Nullable Output<Boolean> secretBackup) {
+            $.secretBackup = secretBackup;
+            return this;
+        }
+
+        /**
+         * @param secretBackup Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretBackup(Boolean secretBackup) {
+            return secretBackup(Output.of(secretBackup));
+        }
+
+        /**
          * @param secretId Credential unique identifier, UUID format
          * 
          * @return builder
@@ -742,6 +923,69 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secretName(String secretName) {
             return secretName(Output.of(secretName));
+        }
+
+        /**
+         * @param secretRestore Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRestore(@Nullable Output<SecretSecretRestoreArgs> secretRestore) {
+            $.secretRestore = secretRestore;
+            return this;
+        }
+
+        /**
+         * @param secretRestore Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRestore(SecretSecretRestoreArgs secretRestore) {
+            return secretRestore(Output.of(secretRestore));
+        }
+
+        /**
+         * @param secretRestoreRead Credential restore parameters. Returned only during backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRestoreRead(@Nullable Output<SecretSecretRestoreReadArgs> secretRestoreRead) {
+            $.secretRestoreRead = secretRestoreRead;
+            return this;
+        }
+
+        /**
+         * @param secretRestoreRead Credential restore parameters. Returned only during backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRestoreRead(SecretSecretRestoreReadArgs secretRestoreRead) {
+            return secretRestoreRead(Output.of(secretRestoreRead));
+        }
+
+        /**
+         * @param secretRotate Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRotate(@Nullable Output<Boolean> secretRotate) {
+            $.secretRotate = secretRotate;
+            return this;
+        }
+
+        /**
+         * @param secretRotate Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretRotate(Boolean secretRotate) {
+            return secretRotate(Output.of(secretRotate));
         }
 
         /**
@@ -805,6 +1049,40 @@ public final class SecretState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder secretValue(String secretValue) {
             return secretValue(Output.of(secretValue));
+        }
+
+        /**
+         * @param secretVersions Credential version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretVersions(@Nullable Output<List<SecretSecretVersionArgs>> secretVersions) {
+            $.secretVersions = secretVersions;
+            return this;
+        }
+
+        /**
+         * @param secretVersions Credential version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretVersions(List<SecretSecretVersionArgs> secretVersions) {
+            return secretVersions(Output.of(secretVersions));
+        }
+
+        /**
+         * @param secretVersions Credential version information.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder secretVersions(SecretSecretVersionArgs... secretVersions) {
+            return secretVersions(List.of(secretVersions));
         }
 
         /**

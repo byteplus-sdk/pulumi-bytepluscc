@@ -2,6 +2,8 @@
 // *** Do not edit by hand unless you're certain you know what you are doing! ***
 
 import * as pulumi from "@pulumi/pulumi";
+import * as inputs from "../types/input";
+import * as outputs from "../types/output";
 import * as utilities from "../utilities";
 
 /**
@@ -32,6 +34,10 @@ export interface GetSecretResult {
      * Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
      */
     readonly automaticRotation: boolean;
+    /**
+     * Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     */
+    readonly cancelSecretDeletion: boolean;
     /**
      * Credential creation time
      */
@@ -65,6 +71,10 @@ export interface GetSecretResult {
      */
     readonly owningService: string;
     /**
+     * Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     */
+    readonly pendingWindowInDays: number;
+    /**
      * Credential project name. Default value: default
      */
     readonly projectName: string;
@@ -89,6 +99,10 @@ export interface GetSecretResult {
      */
     readonly scheduleRotationTime: string;
     /**
+     * Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     */
+    readonly secretBackup: boolean;
+    /**
      * Credential unique identifier, UUID format
      */
     readonly secretId: string;
@@ -96,6 +110,18 @@ export interface GetSecretResult {
      * Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
      */
     readonly secretName: string;
+    /**
+     * Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     */
+    readonly secretRestore: outputs.kms.GetSecretSecretRestore;
+    /**
+     * Credential restore parameters. Returned only during backup.
+     */
+    readonly secretRestoreRead: outputs.kms.GetSecretSecretRestoreRead;
+    /**
+     * Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     */
+    readonly secretRotate: boolean;
     /**
      * Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
      */
@@ -108,6 +134,10 @@ export interface GetSecretResult {
      * Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
      */
     readonly secretValue: string;
+    /**
+     * Credential version information.
+     */
+    readonly secretVersions: outputs.kms.GetSecretSecretVersion[];
     /**
      * Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
      */

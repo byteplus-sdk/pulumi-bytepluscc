@@ -1659,6 +1659,471 @@ func (o KeyTagArrayOutput) Index(i pulumi.IntInput) KeyTagOutput {
 	}).(KeyTagOutput)
 }
 
+type SecretSecretRestore struct {
+	// Complete credential data returned by backup, in JSON format.
+	BackupData *string `pulumi:"backupData"`
+	// Encrypted data key returned by backup, Base64 encoded.
+	SecretDataKey *string `pulumi:"secretDataKey"`
+	// Signature of the backup data, Base64 encoded.
+	Signature *string `pulumi:"signature"`
+}
+
+// SecretSecretRestoreInput is an input type that accepts SecretSecretRestoreArgs and SecretSecretRestoreOutput values.
+// You can construct a concrete instance of `SecretSecretRestoreInput` via:
+//
+//	SecretSecretRestoreArgs{...}
+type SecretSecretRestoreInput interface {
+	pulumi.Input
+
+	ToSecretSecretRestoreOutput() SecretSecretRestoreOutput
+	ToSecretSecretRestoreOutputWithContext(context.Context) SecretSecretRestoreOutput
+}
+
+type SecretSecretRestoreArgs struct {
+	// Complete credential data returned by backup, in JSON format.
+	BackupData pulumi.StringPtrInput `pulumi:"backupData"`
+	// Encrypted data key returned by backup, Base64 encoded.
+	SecretDataKey pulumi.StringPtrInput `pulumi:"secretDataKey"`
+	// Signature of the backup data, Base64 encoded.
+	Signature pulumi.StringPtrInput `pulumi:"signature"`
+}
+
+func (SecretSecretRestoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSecretRestore)(nil)).Elem()
+}
+
+func (i SecretSecretRestoreArgs) ToSecretSecretRestoreOutput() SecretSecretRestoreOutput {
+	return i.ToSecretSecretRestoreOutputWithContext(context.Background())
+}
+
+func (i SecretSecretRestoreArgs) ToSecretSecretRestoreOutputWithContext(ctx context.Context) SecretSecretRestoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRestoreOutput)
+}
+
+func (i SecretSecretRestoreArgs) ToSecretSecretRestorePtrOutput() SecretSecretRestorePtrOutput {
+	return i.ToSecretSecretRestorePtrOutputWithContext(context.Background())
+}
+
+func (i SecretSecretRestoreArgs) ToSecretSecretRestorePtrOutputWithContext(ctx context.Context) SecretSecretRestorePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRestoreOutput).ToSecretSecretRestorePtrOutputWithContext(ctx)
+}
+
+// SecretSecretRestorePtrInput is an input type that accepts SecretSecretRestoreArgs, SecretSecretRestorePtr and SecretSecretRestorePtrOutput values.
+// You can construct a concrete instance of `SecretSecretRestorePtrInput` via:
+//
+//	        SecretSecretRestoreArgs{...}
+//
+//	or:
+//
+//	        nil
+type SecretSecretRestorePtrInput interface {
+	pulumi.Input
+
+	ToSecretSecretRestorePtrOutput() SecretSecretRestorePtrOutput
+	ToSecretSecretRestorePtrOutputWithContext(context.Context) SecretSecretRestorePtrOutput
+}
+
+type secretSecretRestorePtrType SecretSecretRestoreArgs
+
+func SecretSecretRestorePtr(v *SecretSecretRestoreArgs) SecretSecretRestorePtrInput {
+	return (*secretSecretRestorePtrType)(v)
+}
+
+func (*secretSecretRestorePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretSecretRestore)(nil)).Elem()
+}
+
+func (i *secretSecretRestorePtrType) ToSecretSecretRestorePtrOutput() SecretSecretRestorePtrOutput {
+	return i.ToSecretSecretRestorePtrOutputWithContext(context.Background())
+}
+
+func (i *secretSecretRestorePtrType) ToSecretSecretRestorePtrOutputWithContext(ctx context.Context) SecretSecretRestorePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRestorePtrOutput)
+}
+
+type SecretSecretRestoreOutput struct{ *pulumi.OutputState }
+
+func (SecretSecretRestoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSecretRestore)(nil)).Elem()
+}
+
+func (o SecretSecretRestoreOutput) ToSecretSecretRestoreOutput() SecretSecretRestoreOutput {
+	return o
+}
+
+func (o SecretSecretRestoreOutput) ToSecretSecretRestoreOutputWithContext(ctx context.Context) SecretSecretRestoreOutput {
+	return o
+}
+
+func (o SecretSecretRestoreOutput) ToSecretSecretRestorePtrOutput() SecretSecretRestorePtrOutput {
+	return o.ToSecretSecretRestorePtrOutputWithContext(context.Background())
+}
+
+func (o SecretSecretRestoreOutput) ToSecretSecretRestorePtrOutputWithContext(ctx context.Context) SecretSecretRestorePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SecretSecretRestore) *SecretSecretRestore {
+		return &v
+	}).(SecretSecretRestorePtrOutput)
+}
+
+// Complete credential data returned by backup, in JSON format.
+func (o SecretSecretRestoreOutput) BackupData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretRestore) *string { return v.BackupData }).(pulumi.StringPtrOutput)
+}
+
+// Encrypted data key returned by backup, Base64 encoded.
+func (o SecretSecretRestoreOutput) SecretDataKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretRestore) *string { return v.SecretDataKey }).(pulumi.StringPtrOutput)
+}
+
+// Signature of the backup data, Base64 encoded.
+func (o SecretSecretRestoreOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretRestore) *string { return v.Signature }).(pulumi.StringPtrOutput)
+}
+
+type SecretSecretRestorePtrOutput struct{ *pulumi.OutputState }
+
+func (SecretSecretRestorePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretSecretRestore)(nil)).Elem()
+}
+
+func (o SecretSecretRestorePtrOutput) ToSecretSecretRestorePtrOutput() SecretSecretRestorePtrOutput {
+	return o
+}
+
+func (o SecretSecretRestorePtrOutput) ToSecretSecretRestorePtrOutputWithContext(ctx context.Context) SecretSecretRestorePtrOutput {
+	return o
+}
+
+func (o SecretSecretRestorePtrOutput) Elem() SecretSecretRestoreOutput {
+	return o.ApplyT(func(v *SecretSecretRestore) SecretSecretRestore {
+		if v != nil {
+			return *v
+		}
+		var ret SecretSecretRestore
+		return ret
+	}).(SecretSecretRestoreOutput)
+}
+
+// Complete credential data returned by backup, in JSON format.
+func (o SecretSecretRestorePtrOutput) BackupData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretRestore) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BackupData
+	}).(pulumi.StringPtrOutput)
+}
+
+// Encrypted data key returned by backup, Base64 encoded.
+func (o SecretSecretRestorePtrOutput) SecretDataKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretRestore) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecretDataKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Signature of the backup data, Base64 encoded.
+func (o SecretSecretRestorePtrOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretRestore) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Signature
+	}).(pulumi.StringPtrOutput)
+}
+
+type SecretSecretRestoreRead struct {
+	// Complete credential data returned by backup, in JSON format.
+	BackupData *string `pulumi:"backupData"`
+	// Encrypted data key returned by backup, Base64 encoded.
+	SecretDataKey *string `pulumi:"secretDataKey"`
+	// Signature of the backup data, Base64 encoded.
+	Signature *string `pulumi:"signature"`
+}
+
+// SecretSecretRestoreReadInput is an input type that accepts SecretSecretRestoreReadArgs and SecretSecretRestoreReadOutput values.
+// You can construct a concrete instance of `SecretSecretRestoreReadInput` via:
+//
+//	SecretSecretRestoreReadArgs{...}
+type SecretSecretRestoreReadInput interface {
+	pulumi.Input
+
+	ToSecretSecretRestoreReadOutput() SecretSecretRestoreReadOutput
+	ToSecretSecretRestoreReadOutputWithContext(context.Context) SecretSecretRestoreReadOutput
+}
+
+type SecretSecretRestoreReadArgs struct {
+	// Complete credential data returned by backup, in JSON format.
+	BackupData pulumi.StringPtrInput `pulumi:"backupData"`
+	// Encrypted data key returned by backup, Base64 encoded.
+	SecretDataKey pulumi.StringPtrInput `pulumi:"secretDataKey"`
+	// Signature of the backup data, Base64 encoded.
+	Signature pulumi.StringPtrInput `pulumi:"signature"`
+}
+
+func (SecretSecretRestoreReadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSecretRestoreRead)(nil)).Elem()
+}
+
+func (i SecretSecretRestoreReadArgs) ToSecretSecretRestoreReadOutput() SecretSecretRestoreReadOutput {
+	return i.ToSecretSecretRestoreReadOutputWithContext(context.Background())
+}
+
+func (i SecretSecretRestoreReadArgs) ToSecretSecretRestoreReadOutputWithContext(ctx context.Context) SecretSecretRestoreReadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRestoreReadOutput)
+}
+
+func (i SecretSecretRestoreReadArgs) ToSecretSecretRestoreReadPtrOutput() SecretSecretRestoreReadPtrOutput {
+	return i.ToSecretSecretRestoreReadPtrOutputWithContext(context.Background())
+}
+
+func (i SecretSecretRestoreReadArgs) ToSecretSecretRestoreReadPtrOutputWithContext(ctx context.Context) SecretSecretRestoreReadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRestoreReadOutput).ToSecretSecretRestoreReadPtrOutputWithContext(ctx)
+}
+
+// SecretSecretRestoreReadPtrInput is an input type that accepts SecretSecretRestoreReadArgs, SecretSecretRestoreReadPtr and SecretSecretRestoreReadPtrOutput values.
+// You can construct a concrete instance of `SecretSecretRestoreReadPtrInput` via:
+//
+//	        SecretSecretRestoreReadArgs{...}
+//
+//	or:
+//
+//	        nil
+type SecretSecretRestoreReadPtrInput interface {
+	pulumi.Input
+
+	ToSecretSecretRestoreReadPtrOutput() SecretSecretRestoreReadPtrOutput
+	ToSecretSecretRestoreReadPtrOutputWithContext(context.Context) SecretSecretRestoreReadPtrOutput
+}
+
+type secretSecretRestoreReadPtrType SecretSecretRestoreReadArgs
+
+func SecretSecretRestoreReadPtr(v *SecretSecretRestoreReadArgs) SecretSecretRestoreReadPtrInput {
+	return (*secretSecretRestoreReadPtrType)(v)
+}
+
+func (*secretSecretRestoreReadPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretSecretRestoreRead)(nil)).Elem()
+}
+
+func (i *secretSecretRestoreReadPtrType) ToSecretSecretRestoreReadPtrOutput() SecretSecretRestoreReadPtrOutput {
+	return i.ToSecretSecretRestoreReadPtrOutputWithContext(context.Background())
+}
+
+func (i *secretSecretRestoreReadPtrType) ToSecretSecretRestoreReadPtrOutputWithContext(ctx context.Context) SecretSecretRestoreReadPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretRestoreReadPtrOutput)
+}
+
+type SecretSecretRestoreReadOutput struct{ *pulumi.OutputState }
+
+func (SecretSecretRestoreReadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSecretRestoreRead)(nil)).Elem()
+}
+
+func (o SecretSecretRestoreReadOutput) ToSecretSecretRestoreReadOutput() SecretSecretRestoreReadOutput {
+	return o
+}
+
+func (o SecretSecretRestoreReadOutput) ToSecretSecretRestoreReadOutputWithContext(ctx context.Context) SecretSecretRestoreReadOutput {
+	return o
+}
+
+func (o SecretSecretRestoreReadOutput) ToSecretSecretRestoreReadPtrOutput() SecretSecretRestoreReadPtrOutput {
+	return o.ToSecretSecretRestoreReadPtrOutputWithContext(context.Background())
+}
+
+func (o SecretSecretRestoreReadOutput) ToSecretSecretRestoreReadPtrOutputWithContext(ctx context.Context) SecretSecretRestoreReadPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v SecretSecretRestoreRead) *SecretSecretRestoreRead {
+		return &v
+	}).(SecretSecretRestoreReadPtrOutput)
+}
+
+// Complete credential data returned by backup, in JSON format.
+func (o SecretSecretRestoreReadOutput) BackupData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretRestoreRead) *string { return v.BackupData }).(pulumi.StringPtrOutput)
+}
+
+// Encrypted data key returned by backup, Base64 encoded.
+func (o SecretSecretRestoreReadOutput) SecretDataKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretRestoreRead) *string { return v.SecretDataKey }).(pulumi.StringPtrOutput)
+}
+
+// Signature of the backup data, Base64 encoded.
+func (o SecretSecretRestoreReadOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretRestoreRead) *string { return v.Signature }).(pulumi.StringPtrOutput)
+}
+
+type SecretSecretRestoreReadPtrOutput struct{ *pulumi.OutputState }
+
+func (SecretSecretRestoreReadPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**SecretSecretRestoreRead)(nil)).Elem()
+}
+
+func (o SecretSecretRestoreReadPtrOutput) ToSecretSecretRestoreReadPtrOutput() SecretSecretRestoreReadPtrOutput {
+	return o
+}
+
+func (o SecretSecretRestoreReadPtrOutput) ToSecretSecretRestoreReadPtrOutputWithContext(ctx context.Context) SecretSecretRestoreReadPtrOutput {
+	return o
+}
+
+func (o SecretSecretRestoreReadPtrOutput) Elem() SecretSecretRestoreReadOutput {
+	return o.ApplyT(func(v *SecretSecretRestoreRead) SecretSecretRestoreRead {
+		if v != nil {
+			return *v
+		}
+		var ret SecretSecretRestoreRead
+		return ret
+	}).(SecretSecretRestoreReadOutput)
+}
+
+// Complete credential data returned by backup, in JSON format.
+func (o SecretSecretRestoreReadPtrOutput) BackupData() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretRestoreRead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BackupData
+	}).(pulumi.StringPtrOutput)
+}
+
+// Encrypted data key returned by backup, Base64 encoded.
+func (o SecretSecretRestoreReadPtrOutput) SecretDataKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretRestoreRead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecretDataKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Signature of the backup data, Base64 encoded.
+func (o SecretSecretRestoreReadPtrOutput) Signature() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *SecretSecretRestoreRead) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Signature
+	}).(pulumi.StringPtrOutput)
+}
+
+type SecretSecretVersion struct {
+	// Credential version creation time.
+	CreationDate *int `pulumi:"creationDate"`
+	// Unique identifier for the credential version, in UUID format.
+	VersionId *string `pulumi:"versionId"`
+	// Credential version tags.
+	VersionStage *string `pulumi:"versionStage"`
+}
+
+// SecretSecretVersionInput is an input type that accepts SecretSecretVersionArgs and SecretSecretVersionOutput values.
+// You can construct a concrete instance of `SecretSecretVersionInput` via:
+//
+//	SecretSecretVersionArgs{...}
+type SecretSecretVersionInput interface {
+	pulumi.Input
+
+	ToSecretSecretVersionOutput() SecretSecretVersionOutput
+	ToSecretSecretVersionOutputWithContext(context.Context) SecretSecretVersionOutput
+}
+
+type SecretSecretVersionArgs struct {
+	// Credential version creation time.
+	CreationDate pulumi.IntPtrInput `pulumi:"creationDate"`
+	// Unique identifier for the credential version, in UUID format.
+	VersionId pulumi.StringPtrInput `pulumi:"versionId"`
+	// Credential version tags.
+	VersionStage pulumi.StringPtrInput `pulumi:"versionStage"`
+}
+
+func (SecretSecretVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSecretVersion)(nil)).Elem()
+}
+
+func (i SecretSecretVersionArgs) ToSecretSecretVersionOutput() SecretSecretVersionOutput {
+	return i.ToSecretSecretVersionOutputWithContext(context.Background())
+}
+
+func (i SecretSecretVersionArgs) ToSecretSecretVersionOutputWithContext(ctx context.Context) SecretSecretVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretVersionOutput)
+}
+
+// SecretSecretVersionArrayInput is an input type that accepts SecretSecretVersionArray and SecretSecretVersionArrayOutput values.
+// You can construct a concrete instance of `SecretSecretVersionArrayInput` via:
+//
+//	SecretSecretVersionArray{ SecretSecretVersionArgs{...} }
+type SecretSecretVersionArrayInput interface {
+	pulumi.Input
+
+	ToSecretSecretVersionArrayOutput() SecretSecretVersionArrayOutput
+	ToSecretSecretVersionArrayOutputWithContext(context.Context) SecretSecretVersionArrayOutput
+}
+
+type SecretSecretVersionArray []SecretSecretVersionInput
+
+func (SecretSecretVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SecretSecretVersion)(nil)).Elem()
+}
+
+func (i SecretSecretVersionArray) ToSecretSecretVersionArrayOutput() SecretSecretVersionArrayOutput {
+	return i.ToSecretSecretVersionArrayOutputWithContext(context.Background())
+}
+
+func (i SecretSecretVersionArray) ToSecretSecretVersionArrayOutputWithContext(ctx context.Context) SecretSecretVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(SecretSecretVersionArrayOutput)
+}
+
+type SecretSecretVersionOutput struct{ *pulumi.OutputState }
+
+func (SecretSecretVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*SecretSecretVersion)(nil)).Elem()
+}
+
+func (o SecretSecretVersionOutput) ToSecretSecretVersionOutput() SecretSecretVersionOutput {
+	return o
+}
+
+func (o SecretSecretVersionOutput) ToSecretSecretVersionOutputWithContext(ctx context.Context) SecretSecretVersionOutput {
+	return o
+}
+
+// Credential version creation time.
+func (o SecretSecretVersionOutput) CreationDate() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v SecretSecretVersion) *int { return v.CreationDate }).(pulumi.IntPtrOutput)
+}
+
+// Unique identifier for the credential version, in UUID format.
+func (o SecretSecretVersionOutput) VersionId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretVersion) *string { return v.VersionId }).(pulumi.StringPtrOutput)
+}
+
+// Credential version tags.
+func (o SecretSecretVersionOutput) VersionStage() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v SecretSecretVersion) *string { return v.VersionStage }).(pulumi.StringPtrOutput)
+}
+
+type SecretSecretVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (SecretSecretVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]SecretSecretVersion)(nil)).Elem()
+}
+
+func (o SecretSecretVersionArrayOutput) ToSecretSecretVersionArrayOutput() SecretSecretVersionArrayOutput {
+	return o
+}
+
+func (o SecretSecretVersionArrayOutput) ToSecretSecretVersionArrayOutputWithContext(ctx context.Context) SecretSecretVersionArrayOutput {
+	return o
+}
+
+func (o SecretSecretVersionArrayOutput) Index(i pulumi.IntInput) SecretSecretVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) SecretSecretVersion {
+		return vs[0].([]SecretSecretVersion)[vs[1].(int)]
+	}).(SecretSecretVersionOutput)
+}
+
 type GetKeyAsymmetricCiphertext struct {
 	// Encryption algorithm. Optional values: RSAES*OAEP*SHA_256, SM2PKE.
 	Algorithm string `pulumi:"algorithm"`
@@ -2514,6 +2979,261 @@ func (o GetKeyTagArrayOutput) Index(i pulumi.IntInput) GetKeyTagOutput {
 	}).(GetKeyTagOutput)
 }
 
+type GetSecretSecretRestore struct {
+	// Complete credential data returned by backup, in JSON format.
+	BackupData string `pulumi:"backupData"`
+	// Encrypted data key returned by backup, Base64 encoded.
+	SecretDataKey string `pulumi:"secretDataKey"`
+	// Signature of the backup data, Base64 encoded.
+	Signature string `pulumi:"signature"`
+}
+
+// GetSecretSecretRestoreInput is an input type that accepts GetSecretSecretRestoreArgs and GetSecretSecretRestoreOutput values.
+// You can construct a concrete instance of `GetSecretSecretRestoreInput` via:
+//
+//	GetSecretSecretRestoreArgs{...}
+type GetSecretSecretRestoreInput interface {
+	pulumi.Input
+
+	ToGetSecretSecretRestoreOutput() GetSecretSecretRestoreOutput
+	ToGetSecretSecretRestoreOutputWithContext(context.Context) GetSecretSecretRestoreOutput
+}
+
+type GetSecretSecretRestoreArgs struct {
+	// Complete credential data returned by backup, in JSON format.
+	BackupData pulumi.StringInput `pulumi:"backupData"`
+	// Encrypted data key returned by backup, Base64 encoded.
+	SecretDataKey pulumi.StringInput `pulumi:"secretDataKey"`
+	// Signature of the backup data, Base64 encoded.
+	Signature pulumi.StringInput `pulumi:"signature"`
+}
+
+func (GetSecretSecretRestoreArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSecretRestore)(nil)).Elem()
+}
+
+func (i GetSecretSecretRestoreArgs) ToGetSecretSecretRestoreOutput() GetSecretSecretRestoreOutput {
+	return i.ToGetSecretSecretRestoreOutputWithContext(context.Background())
+}
+
+func (i GetSecretSecretRestoreArgs) ToGetSecretSecretRestoreOutputWithContext(ctx context.Context) GetSecretSecretRestoreOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretRestoreOutput)
+}
+
+type GetSecretSecretRestoreOutput struct{ *pulumi.OutputState }
+
+func (GetSecretSecretRestoreOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSecretRestore)(nil)).Elem()
+}
+
+func (o GetSecretSecretRestoreOutput) ToGetSecretSecretRestoreOutput() GetSecretSecretRestoreOutput {
+	return o
+}
+
+func (o GetSecretSecretRestoreOutput) ToGetSecretSecretRestoreOutputWithContext(ctx context.Context) GetSecretSecretRestoreOutput {
+	return o
+}
+
+// Complete credential data returned by backup, in JSON format.
+func (o GetSecretSecretRestoreOutput) BackupData() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretRestore) string { return v.BackupData }).(pulumi.StringOutput)
+}
+
+// Encrypted data key returned by backup, Base64 encoded.
+func (o GetSecretSecretRestoreOutput) SecretDataKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretRestore) string { return v.SecretDataKey }).(pulumi.StringOutput)
+}
+
+// Signature of the backup data, Base64 encoded.
+func (o GetSecretSecretRestoreOutput) Signature() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretRestore) string { return v.Signature }).(pulumi.StringOutput)
+}
+
+type GetSecretSecretRestoreRead struct {
+	// Complete credential data returned by backup, in JSON format.
+	BackupData string `pulumi:"backupData"`
+	// Encrypted data key returned by backup, Base64 encoded.
+	SecretDataKey string `pulumi:"secretDataKey"`
+	// Signature of the backup data, Base64 encoded.
+	Signature string `pulumi:"signature"`
+}
+
+// GetSecretSecretRestoreReadInput is an input type that accepts GetSecretSecretRestoreReadArgs and GetSecretSecretRestoreReadOutput values.
+// You can construct a concrete instance of `GetSecretSecretRestoreReadInput` via:
+//
+//	GetSecretSecretRestoreReadArgs{...}
+type GetSecretSecretRestoreReadInput interface {
+	pulumi.Input
+
+	ToGetSecretSecretRestoreReadOutput() GetSecretSecretRestoreReadOutput
+	ToGetSecretSecretRestoreReadOutputWithContext(context.Context) GetSecretSecretRestoreReadOutput
+}
+
+type GetSecretSecretRestoreReadArgs struct {
+	// Complete credential data returned by backup, in JSON format.
+	BackupData pulumi.StringInput `pulumi:"backupData"`
+	// Encrypted data key returned by backup, Base64 encoded.
+	SecretDataKey pulumi.StringInput `pulumi:"secretDataKey"`
+	// Signature of the backup data, Base64 encoded.
+	Signature pulumi.StringInput `pulumi:"signature"`
+}
+
+func (GetSecretSecretRestoreReadArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSecretRestoreRead)(nil)).Elem()
+}
+
+func (i GetSecretSecretRestoreReadArgs) ToGetSecretSecretRestoreReadOutput() GetSecretSecretRestoreReadOutput {
+	return i.ToGetSecretSecretRestoreReadOutputWithContext(context.Background())
+}
+
+func (i GetSecretSecretRestoreReadArgs) ToGetSecretSecretRestoreReadOutputWithContext(ctx context.Context) GetSecretSecretRestoreReadOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretRestoreReadOutput)
+}
+
+type GetSecretSecretRestoreReadOutput struct{ *pulumi.OutputState }
+
+func (GetSecretSecretRestoreReadOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSecretRestoreRead)(nil)).Elem()
+}
+
+func (o GetSecretSecretRestoreReadOutput) ToGetSecretSecretRestoreReadOutput() GetSecretSecretRestoreReadOutput {
+	return o
+}
+
+func (o GetSecretSecretRestoreReadOutput) ToGetSecretSecretRestoreReadOutputWithContext(ctx context.Context) GetSecretSecretRestoreReadOutput {
+	return o
+}
+
+// Complete credential data returned by backup, in JSON format.
+func (o GetSecretSecretRestoreReadOutput) BackupData() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretRestoreRead) string { return v.BackupData }).(pulumi.StringOutput)
+}
+
+// Encrypted data key returned by backup, Base64 encoded.
+func (o GetSecretSecretRestoreReadOutput) SecretDataKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretRestoreRead) string { return v.SecretDataKey }).(pulumi.StringOutput)
+}
+
+// Signature of the backup data, Base64 encoded.
+func (o GetSecretSecretRestoreReadOutput) Signature() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretRestoreRead) string { return v.Signature }).(pulumi.StringOutput)
+}
+
+type GetSecretSecretVersion struct {
+	// Credential version creation time.
+	CreationDate int `pulumi:"creationDate"`
+	// Unique identifier for the credential version, in UUID format.
+	VersionId string `pulumi:"versionId"`
+	// Credential version tags.
+	VersionStage string `pulumi:"versionStage"`
+}
+
+// GetSecretSecretVersionInput is an input type that accepts GetSecretSecretVersionArgs and GetSecretSecretVersionOutput values.
+// You can construct a concrete instance of `GetSecretSecretVersionInput` via:
+//
+//	GetSecretSecretVersionArgs{...}
+type GetSecretSecretVersionInput interface {
+	pulumi.Input
+
+	ToGetSecretSecretVersionOutput() GetSecretSecretVersionOutput
+	ToGetSecretSecretVersionOutputWithContext(context.Context) GetSecretSecretVersionOutput
+}
+
+type GetSecretSecretVersionArgs struct {
+	// Credential version creation time.
+	CreationDate pulumi.IntInput `pulumi:"creationDate"`
+	// Unique identifier for the credential version, in UUID format.
+	VersionId pulumi.StringInput `pulumi:"versionId"`
+	// Credential version tags.
+	VersionStage pulumi.StringInput `pulumi:"versionStage"`
+}
+
+func (GetSecretSecretVersionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSecretVersion)(nil)).Elem()
+}
+
+func (i GetSecretSecretVersionArgs) ToGetSecretSecretVersionOutput() GetSecretSecretVersionOutput {
+	return i.ToGetSecretSecretVersionOutputWithContext(context.Background())
+}
+
+func (i GetSecretSecretVersionArgs) ToGetSecretSecretVersionOutputWithContext(ctx context.Context) GetSecretSecretVersionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretVersionOutput)
+}
+
+// GetSecretSecretVersionArrayInput is an input type that accepts GetSecretSecretVersionArray and GetSecretSecretVersionArrayOutput values.
+// You can construct a concrete instance of `GetSecretSecretVersionArrayInput` via:
+//
+//	GetSecretSecretVersionArray{ GetSecretSecretVersionArgs{...} }
+type GetSecretSecretVersionArrayInput interface {
+	pulumi.Input
+
+	ToGetSecretSecretVersionArrayOutput() GetSecretSecretVersionArrayOutput
+	ToGetSecretSecretVersionArrayOutputWithContext(context.Context) GetSecretSecretVersionArrayOutput
+}
+
+type GetSecretSecretVersionArray []GetSecretSecretVersionInput
+
+func (GetSecretSecretVersionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretSecretVersion)(nil)).Elem()
+}
+
+func (i GetSecretSecretVersionArray) ToGetSecretSecretVersionArrayOutput() GetSecretSecretVersionArrayOutput {
+	return i.ToGetSecretSecretVersionArrayOutputWithContext(context.Background())
+}
+
+func (i GetSecretSecretVersionArray) ToGetSecretSecretVersionArrayOutputWithContext(ctx context.Context) GetSecretSecretVersionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetSecretSecretVersionArrayOutput)
+}
+
+type GetSecretSecretVersionOutput struct{ *pulumi.OutputState }
+
+func (GetSecretSecretVersionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetSecretSecretVersion)(nil)).Elem()
+}
+
+func (o GetSecretSecretVersionOutput) ToGetSecretSecretVersionOutput() GetSecretSecretVersionOutput {
+	return o
+}
+
+func (o GetSecretSecretVersionOutput) ToGetSecretSecretVersionOutputWithContext(ctx context.Context) GetSecretSecretVersionOutput {
+	return o
+}
+
+// Credential version creation time.
+func (o GetSecretSecretVersionOutput) CreationDate() pulumi.IntOutput {
+	return o.ApplyT(func(v GetSecretSecretVersion) int { return v.CreationDate }).(pulumi.IntOutput)
+}
+
+// Unique identifier for the credential version, in UUID format.
+func (o GetSecretSecretVersionOutput) VersionId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretVersion) string { return v.VersionId }).(pulumi.StringOutput)
+}
+
+// Credential version tags.
+func (o GetSecretSecretVersionOutput) VersionStage() pulumi.StringOutput {
+	return o.ApplyT(func(v GetSecretSecretVersion) string { return v.VersionStage }).(pulumi.StringOutput)
+}
+
+type GetSecretSecretVersionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetSecretSecretVersionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetSecretSecretVersion)(nil)).Elem()
+}
+
+func (o GetSecretSecretVersionArrayOutput) ToGetSecretSecretVersionArrayOutput() GetSecretSecretVersionArrayOutput {
+	return o
+}
+
+func (o GetSecretSecretVersionArrayOutput) ToGetSecretSecretVersionArrayOutputWithContext(ctx context.Context) GetSecretSecretVersionArrayOutput {
+	return o
+}
+
+func (o GetSecretSecretVersionArrayOutput) Index(i pulumi.IntInput) GetSecretSecretVersionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetSecretSecretVersion {
+		return vs[0].([]GetSecretSecretVersion)[vs[1].(int)]
+	}).(GetSecretSecretVersionOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyAsymmetricCiphertextInput)(nil)).Elem(), KeyAsymmetricCiphertextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyAsymmetricCiphertextPtrInput)(nil)).Elem(), KeyAsymmetricCiphertextArgs{})
@@ -2535,6 +3255,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyReplicateKeyTagArrayInput)(nil)).Elem(), KeyReplicateKeyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyTagInput)(nil)).Elem(), KeyTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*KeyTagArrayInput)(nil)).Elem(), KeyTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRestoreInput)(nil)).Elem(), SecretSecretRestoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRestorePtrInput)(nil)).Elem(), SecretSecretRestoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRestoreReadInput)(nil)).Elem(), SecretSecretRestoreReadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretRestoreReadPtrInput)(nil)).Elem(), SecretSecretRestoreReadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretVersionInput)(nil)).Elem(), SecretSecretVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*SecretSecretVersionArrayInput)(nil)).Elem(), SecretSecretVersionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyAsymmetricCiphertextInput)(nil)).Elem(), GetKeyAsymmetricCiphertextArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyAsymmetricSignatureInput)(nil)).Elem(), GetKeyAsymmetricSignatureArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyCiphertextInput)(nil)).Elem(), GetKeyCiphertextArgs{})
@@ -2548,6 +3274,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyReplicateKeyTagArrayInput)(nil)).Elem(), GetKeyReplicateKeyTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyTagInput)(nil)).Elem(), GetKeyTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetKeyTagArrayInput)(nil)).Elem(), GetKeyTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretRestoreInput)(nil)).Elem(), GetSecretSecretRestoreArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretRestoreReadInput)(nil)).Elem(), GetSecretSecretRestoreReadArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretVersionInput)(nil)).Elem(), GetSecretSecretVersionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetSecretSecretVersionArrayInput)(nil)).Elem(), GetSecretSecretVersionArray{})
 	pulumi.RegisterOutputType(KeyAsymmetricCiphertextOutput{})
 	pulumi.RegisterOutputType(KeyAsymmetricCiphertextPtrOutput{})
 	pulumi.RegisterOutputType(KeyAsymmetricSignatureOutput{})
@@ -2568,6 +3298,12 @@ func init() {
 	pulumi.RegisterOutputType(KeyReplicateKeyTagArrayOutput{})
 	pulumi.RegisterOutputType(KeyTagOutput{})
 	pulumi.RegisterOutputType(KeyTagArrayOutput{})
+	pulumi.RegisterOutputType(SecretSecretRestoreOutput{})
+	pulumi.RegisterOutputType(SecretSecretRestorePtrOutput{})
+	pulumi.RegisterOutputType(SecretSecretRestoreReadOutput{})
+	pulumi.RegisterOutputType(SecretSecretRestoreReadPtrOutput{})
+	pulumi.RegisterOutputType(SecretSecretVersionOutput{})
+	pulumi.RegisterOutputType(SecretSecretVersionArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyAsymmetricCiphertextOutput{})
 	pulumi.RegisterOutputType(GetKeyAsymmetricSignatureOutput{})
 	pulumi.RegisterOutputType(GetKeyCiphertextOutput{})
@@ -2581,4 +3317,8 @@ func init() {
 	pulumi.RegisterOutputType(GetKeyReplicateKeyTagArrayOutput{})
 	pulumi.RegisterOutputType(GetKeyTagOutput{})
 	pulumi.RegisterOutputType(GetKeyTagArrayOutput{})
+	pulumi.RegisterOutputType(GetSecretSecretRestoreOutput{})
+	pulumi.RegisterOutputType(GetSecretSecretRestoreReadOutput{})
+	pulumi.RegisterOutputType(GetSecretSecretVersionOutput{})
+	pulumi.RegisterOutputType(GetSecretSecretVersionArrayOutput{})
 }

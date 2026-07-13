@@ -66,6 +66,8 @@ type Secret struct {
 
 	// Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
 	AutomaticRotation pulumi.BoolOutput `pulumi:"automaticRotation"`
+	// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+	CancelSecretDeletion pulumi.BoolOutput `pulumi:"cancelSecretDeletion"`
 	// Credential creation time
 	CreatedTime pulumi.IntOutput `pulumi:"createdTime"`
 	// Credential description, length: 0 ~ 8192 characters
@@ -80,6 +82,8 @@ type Secret struct {
 	Managed pulumi.BoolOutput `pulumi:"managed"`
 	// Managed Cloud Service
 	OwningService pulumi.StringOutput `pulumi:"owningService"`
+	// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+	PendingWindowInDays pulumi.IntOutput `pulumi:"pendingWindowInDays"`
 	// Credential project name. Default value: default
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 	// Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
@@ -92,16 +96,27 @@ type Secret struct {
 	ScheduleDeleteTime pulumi.StringOutput `pulumi:"scheduleDeleteTime"`
 	// Credential next rotation time
 	ScheduleRotationTime pulumi.StringOutput `pulumi:"scheduleRotationTime"`
+	// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+	SecretBackup pulumi.BoolOutput `pulumi:"secretBackup"`
 	// Credential unique identifier, UUID format
 	SecretId pulumi.StringOutput `pulumi:"secretId"`
 	// Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
 	SecretName pulumi.StringOutput `pulumi:"secretName"`
+	// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+	SecretRestore SecretSecretRestoreOutput `pulumi:"secretRestore"`
+	// Credential restore parameters. Returned only during backup.
+	SecretRestoreRead SecretSecretRestoreReadOutput `pulumi:"secretRestoreRead"`
+	// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+	SecretRotate pulumi.BoolOutput `pulumi:"secretRotate"`
 	// Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
 	SecretState pulumi.StringOutput `pulumi:"secretState"`
 	// Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
 	SecretType pulumi.StringOutput `pulumi:"secretType"`
 	// Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
 	SecretValue pulumi.StringOutput `pulumi:"secretValue"`
+	// Credential version information.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	SecretVersions SecretSecretVersionArrayOutput `pulumi:"secretVersions"`
 	// Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
 	Trn pulumi.StringOutput `pulumi:"trn"`
 	// Credential tenant ID
@@ -153,6 +168,8 @@ func GetSecret(ctx *pulumi.Context,
 type secretState struct {
 	// Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
 	AutomaticRotation *bool `pulumi:"automaticRotation"`
+	// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+	CancelSecretDeletion *bool `pulumi:"cancelSecretDeletion"`
 	// Credential creation time
 	CreatedTime *int `pulumi:"createdTime"`
 	// Credential description, length: 0 ~ 8192 characters
@@ -167,6 +184,8 @@ type secretState struct {
 	Managed *bool `pulumi:"managed"`
 	// Managed Cloud Service
 	OwningService *string `pulumi:"owningService"`
+	// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+	PendingWindowInDays *int `pulumi:"pendingWindowInDays"`
 	// Credential project name. Default value: default
 	ProjectName *string `pulumi:"projectName"`
 	// Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
@@ -179,16 +198,27 @@ type secretState struct {
 	ScheduleDeleteTime *string `pulumi:"scheduleDeleteTime"`
 	// Credential next rotation time
 	ScheduleRotationTime *string `pulumi:"scheduleRotationTime"`
+	// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+	SecretBackup *bool `pulumi:"secretBackup"`
 	// Credential unique identifier, UUID format
 	SecretId *string `pulumi:"secretId"`
 	// Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
 	SecretName *string `pulumi:"secretName"`
+	// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+	SecretRestore *SecretSecretRestore `pulumi:"secretRestore"`
+	// Credential restore parameters. Returned only during backup.
+	SecretRestoreRead *SecretSecretRestoreRead `pulumi:"secretRestoreRead"`
+	// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+	SecretRotate *bool `pulumi:"secretRotate"`
 	// Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
 	SecretState *string `pulumi:"secretState"`
 	// Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
 	SecretType *string `pulumi:"secretType"`
 	// Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
 	SecretValue *string `pulumi:"secretValue"`
+	// Credential version information.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	SecretVersions []SecretSecretVersion `pulumi:"secretVersions"`
 	// Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
 	Trn *string `pulumi:"trn"`
 	// Credential tenant ID
@@ -202,6 +232,8 @@ type secretState struct {
 type SecretState struct {
 	// Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
 	AutomaticRotation pulumi.BoolPtrInput
+	// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+	CancelSecretDeletion pulumi.BoolPtrInput
 	// Credential creation time
 	CreatedTime pulumi.IntPtrInput
 	// Credential description, length: 0 ~ 8192 characters
@@ -216,6 +248,8 @@ type SecretState struct {
 	Managed pulumi.BoolPtrInput
 	// Managed Cloud Service
 	OwningService pulumi.StringPtrInput
+	// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+	PendingWindowInDays pulumi.IntPtrInput
 	// Credential project name. Default value: default
 	ProjectName pulumi.StringPtrInput
 	// Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
@@ -228,16 +262,27 @@ type SecretState struct {
 	ScheduleDeleteTime pulumi.StringPtrInput
 	// Credential next rotation time
 	ScheduleRotationTime pulumi.StringPtrInput
+	// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+	SecretBackup pulumi.BoolPtrInput
 	// Credential unique identifier, UUID format
 	SecretId pulumi.StringPtrInput
 	// Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
 	SecretName pulumi.StringPtrInput
+	// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+	SecretRestore SecretSecretRestorePtrInput
+	// Credential restore parameters. Returned only during backup.
+	SecretRestoreRead SecretSecretRestoreReadPtrInput
+	// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+	SecretRotate pulumi.BoolPtrInput
 	// Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
 	SecretState pulumi.StringPtrInput
 	// Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
 	SecretType pulumi.StringPtrInput
 	// Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
 	SecretValue pulumi.StringPtrInput
+	// Credential version information.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	SecretVersions SecretSecretVersionArrayInput
 	// Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
 	Trn pulumi.StringPtrInput
 	// Credential tenant ID
@@ -255,18 +300,28 @@ func (SecretState) ElementType() reflect.Type {
 type secretArgs struct {
 	// Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
 	AutomaticRotation *bool `pulumi:"automaticRotation"`
+	// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+	CancelSecretDeletion *bool `pulumi:"cancelSecretDeletion"`
 	// Credential description, length: 0 ~ 8192 characters
 	Description *string `pulumi:"description"`
 	// KMS key TRN for encrypting credential value. If not specified, the default key of Credential Manager is used
 	EncryptionKey *string `pulumi:"encryptionKey"`
 	// Credential extension configuration, used to specify properties for non-Generic credentials
 	ExtendedConfig *string `pulumi:"extendedConfig"`
+	// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+	PendingWindowInDays *int `pulumi:"pendingWindowInDays"`
 	// Credential project name. Default value: default
 	ProjectName *string `pulumi:"projectName"`
 	// Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
 	RotationInterval *string `pulumi:"rotationInterval"`
+	// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+	SecretBackup *bool `pulumi:"secretBackup"`
 	// Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
 	SecretName string `pulumi:"secretName"`
+	// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+	SecretRestore *SecretSecretRestore `pulumi:"secretRestore"`
+	// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+	SecretRotate *bool `pulumi:"secretRotate"`
 	// Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
 	SecretType string `pulumi:"secretType"`
 	// Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
@@ -279,18 +334,28 @@ type secretArgs struct {
 type SecretArgs struct {
 	// Whether to enable automatic rotation. Applies only to credentials of type IAM|RDS|Redis|ECS
 	AutomaticRotation pulumi.BoolPtrInput
+	// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+	CancelSecretDeletion pulumi.BoolPtrInput
 	// Credential description, length: 0 ~ 8192 characters
 	Description pulumi.StringPtrInput
 	// KMS key TRN for encrypting credential value. If not specified, the default key of Credential Manager is used
 	EncryptionKey pulumi.StringPtrInput
 	// Credential extension configuration, used to specify properties for non-Generic credentials
 	ExtendedConfig pulumi.StringPtrInput
+	// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+	PendingWindowInDays pulumi.IntPtrInput
 	// Credential project name. Default value: default
 	ProjectName pulumi.StringPtrInput
 	// Automatic rotation interval. Range: 1 ~ 365 days. Format: integer[unit], where integer is the duration and unit is the time unit. Unit value: d (days). For example: 7d means a 7-day interval
 	RotationInterval pulumi.StringPtrInput
+	// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+	SecretBackup pulumi.BoolPtrInput
 	// Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
 	SecretName pulumi.StringInput
+	// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+	SecretRestore SecretSecretRestorePtrInput
+	// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+	SecretRotate pulumi.BoolPtrInput
 	// Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
 	SecretType pulumi.StringInput
 	// Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
@@ -391,6 +456,11 @@ func (o SecretOutput) AutomaticRotation() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Secret) pulumi.BoolOutput { return v.AutomaticRotation }).(pulumi.BoolOutput)
 }
 
+// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+func (o SecretOutput) CancelSecretDeletion() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Secret) pulumi.BoolOutput { return v.CancelSecretDeletion }).(pulumi.BoolOutput)
+}
+
 // Credential creation time
 func (o SecretOutput) CreatedTime() pulumi.IntOutput {
 	return o.ApplyT(func(v *Secret) pulumi.IntOutput { return v.CreatedTime }).(pulumi.IntOutput)
@@ -426,6 +496,11 @@ func (o SecretOutput) OwningService() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.OwningService }).(pulumi.StringOutput)
 }
 
+// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+func (o SecretOutput) PendingWindowInDays() pulumi.IntOutput {
+	return o.ApplyT(func(v *Secret) pulumi.IntOutput { return v.PendingWindowInDays }).(pulumi.IntOutput)
+}
+
 // Credential project name. Default value: default
 func (o SecretOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.ProjectName }).(pulumi.StringOutput)
@@ -456,6 +531,11 @@ func (o SecretOutput) ScheduleRotationTime() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.ScheduleRotationTime }).(pulumi.StringOutput)
 }
 
+// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+func (o SecretOutput) SecretBackup() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Secret) pulumi.BoolOutput { return v.SecretBackup }).(pulumi.BoolOutput)
+}
+
 // Credential unique identifier, UUID format
 func (o SecretOutput) SecretId() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.SecretId }).(pulumi.StringOutput)
@@ -464,6 +544,21 @@ func (o SecretOutput) SecretId() pulumi.StringOutput {
 // Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
 func (o SecretOutput) SecretName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.SecretName }).(pulumi.StringOutput)
+}
+
+// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+func (o SecretOutput) SecretRestore() SecretSecretRestoreOutput {
+	return o.ApplyT(func(v *Secret) SecretSecretRestoreOutput { return v.SecretRestore }).(SecretSecretRestoreOutput)
+}
+
+// Credential restore parameters. Returned only during backup.
+func (o SecretOutput) SecretRestoreRead() SecretSecretRestoreReadOutput {
+	return o.ApplyT(func(v *Secret) SecretSecretRestoreReadOutput { return v.SecretRestoreRead }).(SecretSecretRestoreReadOutput)
+}
+
+// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+func (o SecretOutput) SecretRotate() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Secret) pulumi.BoolOutput { return v.SecretRotate }).(pulumi.BoolOutput)
 }
 
 // Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
@@ -479,6 +574,12 @@ func (o SecretOutput) SecretType() pulumi.StringOutput {
 // Credential value. When SecretType is Generic, users can customize it. It is recommended to use JSON key-value pairs
 func (o SecretOutput) SecretValue() pulumi.StringOutput {
 	return o.ApplyT(func(v *Secret) pulumi.StringOutput { return v.SecretValue }).(pulumi.StringOutput)
+}
+
+// Credential version information.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o SecretOutput) SecretVersions() SecretSecretVersionArrayOutput {
+	return o.ApplyT(func(v *Secret) SecretSecretVersionArrayOutput { return v.SecretVersions }).(SecretSecretVersionArrayOutput)
 }
 
 // Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}

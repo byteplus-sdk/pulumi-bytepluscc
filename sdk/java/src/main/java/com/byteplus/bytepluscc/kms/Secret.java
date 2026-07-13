@@ -6,6 +6,9 @@ package com.byteplus.bytepluscc.kms;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.kms.SecretArgs;
 import com.byteplus.bytepluscc.kms.inputs.SecretState;
+import com.byteplus.bytepluscc.kms.outputs.SecretSecretRestore;
+import com.byteplus.bytepluscc.kms.outputs.SecretSecretRestoreRead;
+import com.byteplus.bytepluscc.kms.outputs.SecretSecretVersion;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -13,6 +16,7 @@ import com.pulumi.core.internal.Codegen;
 import java.lang.Boolean;
 import java.lang.Integer;
 import java.lang.String;
+import java.util.List;
 import javax.annotation.Nullable;
 
 /**
@@ -86,6 +90,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> automaticRotation() {
         return this.automaticRotation;
+    }
+    /**
+     * Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     * 
+     */
+    @Export(name="cancelSecretDeletion", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> cancelSecretDeletion;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+     * 
+     */
+    public Output<Boolean> cancelSecretDeletion() {
+        return this.cancelSecretDeletion;
     }
     /**
      * Credential creation time
@@ -186,6 +204,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
         return this.owningService;
     }
     /**
+     * Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     * 
+     */
+    @Export(name="pendingWindowInDays", refs={Integer.class}, tree="[0]")
+    private Output<Integer> pendingWindowInDays;
+
+    /**
+     * @return Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+     * 
+     */
+    public Output<Integer> pendingWindowInDays() {
+        return this.pendingWindowInDays;
+    }
+    /**
      * Credential project name. Default value: default
      * 
      */
@@ -270,6 +302,20 @@ public class Secret extends com.pulumi.resources.CustomResource {
         return this.scheduleRotationTime;
     }
     /**
+     * Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     * 
+     */
+    @Export(name="secretBackup", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> secretBackup;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+     * 
+     */
+    public Output<Boolean> secretBackup() {
+        return this.secretBackup;
+    }
+    /**
      * Credential unique identifier, UUID format
      * 
      */
@@ -296,6 +342,48 @@ public class Secret extends com.pulumi.resources.CustomResource {
      */
     public Output<String> secretName() {
         return this.secretName;
+    }
+    /**
+     * Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     * 
+     */
+    @Export(name="secretRestore", refs={SecretSecretRestore.class}, tree="[0]")
+    private Output<SecretSecretRestore> secretRestore;
+
+    /**
+     * @return Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+     * 
+     */
+    public Output<SecretSecretRestore> secretRestore() {
+        return this.secretRestore;
+    }
+    /**
+     * Credential restore parameters. Returned only during backup.
+     * 
+     */
+    @Export(name="secretRestoreRead", refs={SecretSecretRestoreRead.class}, tree="[0]")
+    private Output<SecretSecretRestoreRead> secretRestoreRead;
+
+    /**
+     * @return Credential restore parameters. Returned only during backup.
+     * 
+     */
+    public Output<SecretSecretRestoreRead> secretRestoreRead() {
+        return this.secretRestoreRead;
+    }
+    /**
+     * Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     * 
+     */
+    @Export(name="secretRotate", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> secretRotate;
+
+    /**
+     * @return Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+     * 
+     */
+    public Output<Boolean> secretRotate() {
+        return this.secretRotate;
     }
     /**
      * Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
@@ -338,6 +426,22 @@ public class Secret extends com.pulumi.resources.CustomResource {
      */
     public Output<String> secretValue() {
         return this.secretValue;
+    }
+    /**
+     * Credential version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Export(name="secretVersions", refs={List.class,SecretSecretVersion.class}, tree="[0,1]")
+    private Output<List<SecretSecretVersion>> secretVersions;
+
+    /**
+     * @return Credential version information.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Output<List<SecretSecretVersion>> secretVersions() {
+        return this.secretVersions;
     }
     /**
      * Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}

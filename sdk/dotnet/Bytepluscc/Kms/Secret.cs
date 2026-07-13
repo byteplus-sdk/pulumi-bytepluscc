@@ -58,6 +58,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Output<bool> AutomaticRotation { get; private set; } = null!;
 
         /// <summary>
+        /// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+        /// </summary>
+        [Output("cancelSecretDeletion")]
+        public Output<bool> CancelSecretDeletion { get; private set; } = null!;
+
+        /// <summary>
         /// Credential creation time
         /// </summary>
         [Output("createdTime")]
@@ -100,6 +106,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Output<string> OwningService { get; private set; } = null!;
 
         /// <summary>
+        /// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+        /// </summary>
+        [Output("pendingWindowInDays")]
+        public Output<int> PendingWindowInDays { get; private set; } = null!;
+
+        /// <summary>
         /// Credential project name. Default value: default
         /// </summary>
         [Output("projectName")]
@@ -136,6 +148,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Output<string> ScheduleRotationTime { get; private set; } = null!;
 
         /// <summary>
+        /// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        /// </summary>
+        [Output("secretBackup")]
+        public Output<bool> SecretBackup { get; private set; } = null!;
+
+        /// <summary>
         /// Credential unique identifier, UUID format
         /// </summary>
         [Output("secretId")]
@@ -146,6 +164,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Output("secretName")]
         public Output<string> SecretName { get; private set; } = null!;
+
+        /// <summary>
+        /// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        /// </summary>
+        [Output("secretRestore")]
+        public Output<Outputs.SecretSecretRestore> SecretRestore { get; private set; } = null!;
+
+        /// <summary>
+        /// Credential restore parameters. Returned only during backup.
+        /// </summary>
+        [Output("secretRestoreRead")]
+        public Output<Outputs.SecretSecretRestoreRead> SecretRestoreRead { get; private set; } = null!;
+
+        /// <summary>
+        /// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+        /// </summary>
+        [Output("secretRotate")]
+        public Output<bool> SecretRotate { get; private set; } = null!;
 
         /// <summary>
         /// Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
@@ -164,6 +200,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Output("secretValue")]
         public Output<string> SecretValue { get; private set; } = null!;
+
+        /// <summary>
+        /// Credential version information.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        [Output("secretVersions")]
+        public Output<ImmutableArray<Outputs.SecretSecretVersion>> SecretVersions { get; private set; } = null!;
 
         /// <summary>
         /// Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
@@ -243,6 +286,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<bool>? AutomaticRotation { get; set; }
 
         /// <summary>
+        /// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+        /// </summary>
+        [Input("cancelSecretDeletion")]
+        public Input<bool>? CancelSecretDeletion { get; set; }
+
+        /// <summary>
         /// Credential description, length: 0 ~ 8192 characters
         /// </summary>
         [Input("description")]
@@ -261,6 +310,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<string>? ExtendedConfig { get; set; }
 
         /// <summary>
+        /// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+        /// </summary>
+        [Input("pendingWindowInDays")]
+        public Input<int>? PendingWindowInDays { get; set; }
+
+        /// <summary>
         /// Credential project name. Default value: default
         /// </summary>
         [Input("projectName")]
@@ -273,10 +328,28 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<string>? RotationInterval { get; set; }
 
         /// <summary>
+        /// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        /// </summary>
+        [Input("secretBackup")]
+        public Input<bool>? SecretBackup { get; set; }
+
+        /// <summary>
         /// Credential name. Valid characters: [a-zA-Z0-9/_+=.@-]
         /// </summary>
         [Input("secretName", required: true)]
         public Input<string> SecretName { get; set; } = null!;
+
+        /// <summary>
+        /// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        /// </summary>
+        [Input("secretRestore")]
+        public Input<Inputs.SecretSecretRestoreArgs>? SecretRestore { get; set; }
+
+        /// <summary>
+        /// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+        /// </summary>
+        [Input("secretRotate")]
+        public Input<bool>? SecretRotate { get; set; }
 
         /// <summary>
         /// Credential type. Currently supports Generic|IAM|RDS|Redis|ECS|PGSQL|SQLServer
@@ -309,6 +382,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Input("automaticRotation")]
         public Input<bool>? AutomaticRotation { get; set; }
+
+        /// <summary>
+        /// Trigger: When set to true, calls the KMS CancelSecretDeletion API to cancel the scheduled deletion of the credential.
+        /// </summary>
+        [Input("cancelSecretDeletion")]
+        public Input<bool>? CancelSecretDeletion { get; set; }
 
         /// <summary>
         /// Credential creation time
@@ -353,6 +432,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<string>? OwningService { get; set; }
 
         /// <summary>
+        /// Credential pre-deletion period. During this time, you can revoke the deletion of credentials in pending deletion status; after the pre-deletion period, deletion cannot be revoked. Value range: 7 ~ 30. Unit: days. Default: 7. To cancel, use CancelSecretDeletion.
+        /// </summary>
+        [Input("pendingWindowInDays")]
+        public Input<int>? PendingWindowInDays { get; set; }
+
+        /// <summary>
         /// Credential project name. Default value: default
         /// </summary>
         [Input("projectName")]
@@ -389,6 +474,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         public Input<string>? ScheduleRotationTime { get; set; }
 
         /// <summary>
+        /// Trigger: When set to true, calls the KMS BackupSecret API to back up the credential. The backup result is written to SecretRestoreRead. Please keep it safe.
+        /// </summary>
+        [Input("secretBackup")]
+        public Input<bool>? SecretBackup { get; set; }
+
+        /// <summary>
         /// Credential unique identifier, UUID format
         /// </summary>
         [Input("secretId")]
@@ -399,6 +490,24 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Input("secretName")]
         public Input<string>? SecretName { get; set; }
+
+        /// <summary>
+        /// Credential restore parameters. Only effective during creation. If provided, calls the KMS RestoreSecret API to restore the credential from backup data. Other creation parameters such as SecretValue, SecretType, and SecretName will not take effect.
+        /// </summary>
+        [Input("secretRestore")]
+        public Input<Inputs.SecretSecretRestoreGetArgs>? SecretRestore { get; set; }
+
+        /// <summary>
+        /// Credential restore parameters. Returned only during backup.
+        /// </summary>
+        [Input("secretRestoreRead")]
+        public Input<Inputs.SecretSecretRestoreReadGetArgs>? SecretRestoreRead { get; set; }
+
+        /// <summary>
+        /// Trigger: When set to true, calls the KMS RotateSecret API to manually rotate the credential.
+        /// </summary>
+        [Input("secretRotate")]
+        public Input<bool>? SecretRotate { get; set; }
 
         /// <summary>
         /// Credential status. Enable: enabled, Disable: disabled, PendingDelete: scheduled for deletion
@@ -417,6 +526,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Kms
         /// </summary>
         [Input("secretValue")]
         public Input<string>? SecretValue { get; set; }
+
+        [Input("secretVersions")]
+        private InputList<Inputs.SecretSecretVersionGetArgs>? _secretVersions;
+
+        /// <summary>
+        /// Credential version information.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public InputList<Inputs.SecretSecretVersionGetArgs> SecretVersions
+        {
+            get => _secretVersions ?? (_secretVersions = new InputList<Inputs.SecretSecretVersionGetArgs>());
+            set => _secretVersions = value;
+        }
 
         /// <summary>
         /// Credential resource name. Format: trn:kms:${Region}:${AccountID}:secrets/${secret}
