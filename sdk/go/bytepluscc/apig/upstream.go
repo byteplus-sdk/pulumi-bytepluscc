@@ -67,6 +67,17 @@ import (
 //						},
 //					},
 //				},
+//				VersionDetails: apig.UpstreamVersionDetailArray{
+//					&apig.UpstreamVersionDetailArgs{
+//						Labels: apig.UpstreamVersionDetailLabelArray{
+//							&apig.UpstreamVersionDetailLabelArgs{
+//								Key:   pulumi.String("k1"),
+//								Value: pulumi.String("v1"),
+//							},
+//						},
+//						Name: pulumi.String("v1"),
+//					},
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -255,6 +266,9 @@ type upstreamArgs struct {
 	TlsSettings *UpstreamTlsSettings `pulumi:"tlsSettings"`
 	// Upstream Configuration
 	UpstreamSpec UpstreamUpstreamSpec `pulumi:"upstreamSpec"`
+	// Upstream version, only valid when the upstream source type is K8S
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	VersionDetails []UpstreamVersionDetail `pulumi:"versionDetails"`
 }
 
 // The set of arguments for constructing a Upstream resource.
@@ -279,6 +293,9 @@ type UpstreamArgs struct {
 	TlsSettings UpstreamTlsSettingsPtrInput
 	// Upstream Configuration
 	UpstreamSpec UpstreamUpstreamSpecInput
+	// Upstream version, only valid when the upstream source type is K8S
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	VersionDetails UpstreamVersionDetailArrayInput
 }
 
 func (UpstreamArgs) ElementType() reflect.Type {

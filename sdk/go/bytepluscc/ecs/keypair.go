@@ -68,6 +68,8 @@ type Keypair struct {
 	KeyPairId pulumi.StringOutput `pulumi:"keyPairId"`
 	// Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
 	KeyPairName pulumi.StringOutput `pulumi:"keyPairName"`
+	// Private key information for the key pair. Only returned when creating the key pair.
+	PrivateKey pulumi.StringOutput `pulumi:"privateKey"`
 	// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
 	ProjectName pulumi.StringOutput `pulumi:"projectName"`
 	// Public key information of the key pair.
@@ -124,6 +126,8 @@ type keypairState struct {
 	KeyPairId *string `pulumi:"keyPairId"`
 	// Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
 	KeyPairName *string `pulumi:"keyPairName"`
+	// Private key information for the key pair. Only returned when creating the key pair.
+	PrivateKey *string `pulumi:"privateKey"`
 	// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
 	ProjectName *string `pulumi:"projectName"`
 	// Public key information of the key pair.
@@ -148,6 +152,8 @@ type KeypairState struct {
 	KeyPairId pulumi.StringPtrInput
 	// Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
 	KeyPairName pulumi.StringPtrInput
+	// Private key information for the key pair. Only returned when creating the key pair.
+	PrivateKey pulumi.StringPtrInput
 	// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
 	ProjectName pulumi.StringPtrInput
 	// Public key information of the key pair.
@@ -311,6 +317,11 @@ func (o KeypairOutput) KeyPairId() pulumi.StringOutput {
 // Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
 func (o KeypairOutput) KeyPairName() pulumi.StringOutput {
 	return o.ApplyT(func(v *Keypair) pulumi.StringOutput { return v.KeyPairName }).(pulumi.StringOutput)
+}
+
+// Private key information for the key pair. Only returned when creating the key pair.
+func (o KeypairOutput) PrivateKey() pulumi.StringOutput {
+	return o.ApplyT(func(v *Keypair) pulumi.StringOutput { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
 // Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.

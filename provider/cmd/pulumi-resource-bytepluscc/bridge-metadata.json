@@ -1814,6 +1814,24 @@
                     }
                 }
             },
+            "bytepluscc_escloud_ip_allow_list": {
+                "current": "bytepluscc:escloud/ipAllowList:IpAllowList",
+                "fields": {
+                    "allow_list": {
+                        "maxItemsOne": false
+                    },
+                    "groups": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "allow_list": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_filenas_instance": {
                 "current": "bytepluscc:filenas/instance:Instance",
                 "fields": {
@@ -3254,6 +3272,9 @@
                     }
                 }
             },
+            "bytepluscc_tls_download_task": {
+                "current": "bytepluscc:tls/downloadTask:DownloadTask"
+            },
             "bytepluscc_tls_etl": {
                 "current": "bytepluscc:tls/etl:Etl",
                 "fields": {
@@ -3494,6 +3515,9 @@
                     }
                 }
             },
+            "bytepluscc_tls_rule_bound_host_group": {
+                "current": "bytepluscc:tls/ruleBoundHostGroup:RuleBoundHostGroup"
+            },
             "bytepluscc_tls_schedule_sql_task": {
                 "current": "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask"
             },
@@ -3523,6 +3547,9 @@
             "bytepluscc_tls_topic": {
                 "current": "bytepluscc:tls/topic:Topic",
                 "fields": {
+                    "shards": {
+                        "maxItemsOne": false
+                    },
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -4042,6 +4069,14 @@
                     "levels": {
                         "maxItemsOne": false
                     },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vmp_integration_task": {
+                "current": "bytepluscc:vmp/integrationTask:IntegrationTask",
+                "fields": {
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -6899,6 +6934,32 @@
                     }
                 }
             },
+            "bytepluscc_escloud_ip_allow_list": {
+                "current": "bytepluscc:escloud/getIpAllowList:getIpAllowList",
+                "fields": {
+                    "allow_list": {
+                        "maxItemsOne": false
+                    },
+                    "groups": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "allow_list": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_escloud_ip_allow_lists": {
+                "current": "bytepluscc:escloud/getIpAllowLists:getIpAllowLists",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_filenas_instance": {
                 "current": "bytepluscc:filenas/getInstance:getInstance",
                 "fields": {
@@ -9218,6 +9279,17 @@
                     }
                 }
             },
+            "bytepluscc_tls_download_task": {
+                "current": "bytepluscc:tls/getDownloadTask:getDownloadTask"
+            },
+            "bytepluscc_tls_download_tasks": {
+                "current": "bytepluscc:tls/getDownloadTasks:getDownloadTasks",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_tls_etl": {
                 "current": "bytepluscc:tls/getEtl:getEtl",
                 "fields": {
@@ -9506,6 +9578,17 @@
                     }
                 }
             },
+            "bytepluscc_tls_rule_bound_host_group": {
+                "current": "bytepluscc:tls/getRuleBoundHostGroup:getRuleBoundHostGroup"
+            },
+            "bytepluscc_tls_rule_bound_host_groups": {
+                "current": "bytepluscc:tls/getRuleBoundHostGroups:getRuleBoundHostGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_tls_rules": {
                 "current": "bytepluscc:tls/getRules:getRules",
                 "fields": {
@@ -9559,6 +9642,9 @@
             "bytepluscc_tls_topic": {
                 "current": "bytepluscc:tls/getTopic:getTopic",
                 "fields": {
+                    "shards": {
+                        "maxItemsOne": false
+                    },
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -10347,6 +10433,22 @@
                     }
                 }
             },
+            "bytepluscc_vmp_integration_task": {
+                "current": "bytepluscc:vmp/getIntegrationTask:getIntegrationTask",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vmp_integration_tasks": {
+                "current": "bytepluscc:vmp/getIntegrationTasks:getIntegrationTasks",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_vmp_rule_file": {
                 "current": "bytepluscc:vmp/getRuleFile:getRuleFile"
             },
@@ -11066,6 +11168,7 @@
             "bytepluscc_emr_cluster_user_group": {},
             "bytepluscc_emr_node_group": {},
             "bytepluscc_escloud_instance": {},
+            "bytepluscc_escloud_ip_allow_list": {},
             "bytepluscc_filenas_instance": {},
             "bytepluscc_filenas_mount_point": {},
             "bytepluscc_filenas_snapshot": {},
@@ -11166,6 +11269,7 @@
             "bytepluscc_tls_alarm_notify_group": {},
             "bytepluscc_tls_alarm_webhook_integration_type": {},
             "bytepluscc_tls_consumer_group": {},
+            "bytepluscc_tls_download_task": {},
             "bytepluscc_tls_etl": {},
             "bytepluscc_tls_host": {},
             "bytepluscc_tls_host_group": {},
@@ -11173,6 +11277,7 @@
             "bytepluscc_tls_index": {},
             "bytepluscc_tls_project": {},
             "bytepluscc_tls_rule": {},
+            "bytepluscc_tls_rule_bound_host_group": {},
             "bytepluscc_tls_schedule_sql_task": {},
             "bytepluscc_tls_shipper": {},
             "bytepluscc_tls_topic": {},
@@ -11208,6 +11313,7 @@
             "bytepluscc_vke_node_pool": {},
             "bytepluscc_vke_permission": {},
             "bytepluscc_vmp_alerting_rule": {},
+            "bytepluscc_vmp_integration_task": {},
             "bytepluscc_vmp_rule_file": {},
             "bytepluscc_vmp_workspace": {},
             "bytepluscc_vpc_bandwidth_package": {},

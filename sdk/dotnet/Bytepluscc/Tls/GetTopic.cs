@@ -125,6 +125,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
         /// </summary>
         public readonly int ShardCount;
         /// <summary>
+        /// Partition list of the log topic
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetTopicShardResult> Shards;
+        /// <summary>
+        /// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        /// </summary>
+        public readonly int SplitNumber;
+        /// <summary>
+        /// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+        /// </summary>
+        public readonly int SplitShardId;
+        /// <summary>
         /// Tag list.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetTopicTagResult> Tags;
@@ -185,6 +197,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
 
             int shardCount,
 
+            ImmutableArray<Outputs.GetTopicShardResult> shards,
+
+            int splitNumber,
+
+            int splitShardId,
+
             ImmutableArray<Outputs.GetTopicTagResult> tags,
 
             string timeFormat,
@@ -214,6 +232,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
             MaxSplitShard = maxSplitShard;
             ProjectId = projectId;
             ShardCount = shardCount;
+            Shards = shards;
+            SplitNumber = splitNumber;
+            SplitShardId = splitShardId;
             Tags = tags;
             TimeFormat = timeFormat;
             TimeKey = timeKey;

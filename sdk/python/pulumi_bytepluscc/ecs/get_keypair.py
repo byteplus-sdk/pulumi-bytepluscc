@@ -27,7 +27,7 @@ class GetKeypairResult:
     """
     A collection of values returned by getKeypair.
     """
-    def __init__(__self__, created_time=None, description=None, finger_print=None, id=None, instance_ids=None, key_pair_id=None, key_pair_name=None, project_name=None, public_key=None, tags=None, updated_time=None):
+    def __init__(__self__, created_time=None, description=None, finger_print=None, id=None, instance_ids=None, key_pair_id=None, key_pair_name=None, private_key=None, project_name=None, public_key=None, tags=None, updated_time=None):
         if created_time and not isinstance(created_time, str):
             raise TypeError("Expected argument 'created_time' to be a str")
         pulumi.set(__self__, "created_time", created_time)
@@ -49,6 +49,9 @@ class GetKeypairResult:
         if key_pair_name and not isinstance(key_pair_name, str):
             raise TypeError("Expected argument 'key_pair_name' to be a str")
         pulumi.set(__self__, "key_pair_name", key_pair_name)
+        if private_key and not isinstance(private_key, str):
+            raise TypeError("Expected argument 'private_key' to be a str")
+        pulumi.set(__self__, "private_key", private_key)
         if project_name and not isinstance(project_name, str):
             raise TypeError("Expected argument 'project_name' to be a str")
         pulumi.set(__self__, "project_name", project_name)
@@ -119,6 +122,14 @@ class GetKeypairResult:
         return pulumi.get(self, "key_pair_name")
 
     @_builtins.property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> _builtins.str:
+        """
+        Private key information for the key pair. Only returned when creating the key pair.
+        """
+        return pulumi.get(self, "private_key")
+
+    @_builtins.property
     @pulumi.getter(name="projectName")
     def project_name(self) -> _builtins.str:
         """
@@ -164,6 +175,7 @@ class AwaitableGetKeypairResult(GetKeypairResult):
             instance_ids=self.instance_ids,
             key_pair_id=self.key_pair_id,
             key_pair_name=self.key_pair_name,
+            private_key=self.private_key,
             project_name=self.project_name,
             public_key=self.public_key,
             tags=self.tags,
@@ -191,6 +203,7 @@ def get_keypair(id: Optional[_builtins.str] = None,
         instance_ids=pulumi.get(__ret__, 'instance_ids'),
         key_pair_id=pulumi.get(__ret__, 'key_pair_id'),
         key_pair_name=pulumi.get(__ret__, 'key_pair_name'),
+        private_key=pulumi.get(__ret__, 'private_key'),
         project_name=pulumi.get(__ret__, 'project_name'),
         public_key=pulumi.get(__ret__, 'public_key'),
         tags=pulumi.get(__ret__, 'tags'),
@@ -215,6 +228,7 @@ def get_keypair_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         instance_ids=pulumi.get(__response__, 'instance_ids'),
         key_pair_id=pulumi.get(__response__, 'key_pair_id'),
         key_pair_name=pulumi.get(__response__, 'key_pair_name'),
+        private_key=pulumi.get(__response__, 'private_key'),
         project_name=pulumi.get(__response__, 'project_name'),
         public_key=pulumi.get(__response__, 'public_key'),
         tags=pulumi.get(__response__, 'tags'),

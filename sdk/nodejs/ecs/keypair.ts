@@ -85,6 +85,10 @@ export class Keypair extends pulumi.CustomResource {
      */
     declare public readonly keyPairName: pulumi.Output<string>;
     /**
+     * Private key information for the key pair. Only returned when creating the key pair.
+     */
+    declare public /*out*/ readonly privateKey: pulumi.Output<string>;
+    /**
      * Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
      */
     declare public readonly projectName: pulumi.Output<string>;
@@ -121,6 +125,7 @@ export class Keypair extends pulumi.CustomResource {
             resourceInputs["instanceIds"] = state?.instanceIds;
             resourceInputs["keyPairId"] = state?.keyPairId;
             resourceInputs["keyPairName"] = state?.keyPairName;
+            resourceInputs["privateKey"] = state?.privateKey;
             resourceInputs["projectName"] = state?.projectName;
             resourceInputs["publicKey"] = state?.publicKey;
             resourceInputs["tags"] = state?.tags;
@@ -139,6 +144,7 @@ export class Keypair extends pulumi.CustomResource {
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["fingerPrint"] = undefined /*out*/;
             resourceInputs["keyPairId"] = undefined /*out*/;
+            resourceInputs["privateKey"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
@@ -174,6 +180,10 @@ export interface KeypairState {
      * Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
      */
     keyPairName?: pulumi.Input<string | undefined>;
+    /**
+     * Private key information for the key pair. Only returned when creating the key pair.
+     */
+    privateKey?: pulumi.Input<string | undefined>;
     /**
      * Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
      */

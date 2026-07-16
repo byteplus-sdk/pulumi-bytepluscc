@@ -20,6 +20,16 @@ export const getAlertingRules: typeof import("./getAlertingRules").getAlertingRu
 export const getAlertingRulesOutput: typeof import("./getAlertingRules").getAlertingRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getAlertingRules","getAlertingRulesOutput"], () => require("./getAlertingRules"));
 
+export { GetIntegrationTaskArgs, GetIntegrationTaskResult, GetIntegrationTaskOutputArgs } from "./getIntegrationTask";
+export const getIntegrationTask: typeof import("./getIntegrationTask").getIntegrationTask = null as any;
+export const getIntegrationTaskOutput: typeof import("./getIntegrationTask").getIntegrationTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getIntegrationTask","getIntegrationTaskOutput"], () => require("./getIntegrationTask"));
+
+export { GetIntegrationTasksResult } from "./getIntegrationTasks";
+export const getIntegrationTasks: typeof import("./getIntegrationTasks").getIntegrationTasks = null as any;
+export const getIntegrationTasksOutput: typeof import("./getIntegrationTasks").getIntegrationTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getIntegrationTasks","getIntegrationTasksOutput"], () => require("./getIntegrationTasks"));
+
 export { GetRuleFileArgs, GetRuleFileResult, GetRuleFileOutputArgs } from "./getRuleFile";
 export const getRuleFile: typeof import("./getRuleFile").getRuleFile = null as any;
 export const getRuleFileOutput: typeof import("./getRuleFile").getRuleFileOutput = null as any;
@@ -40,6 +50,11 @@ export const getWorkspaces: typeof import("./getWorkspaces").getWorkspaces = nul
 export const getWorkspacesOutput: typeof import("./getWorkspaces").getWorkspacesOutput = null as any;
 utilities.lazyLoad(exports, ["getWorkspaces","getWorkspacesOutput"], () => require("./getWorkspaces"));
 
+export { IntegrationTaskArgs, IntegrationTaskState } from "./integrationTask";
+export type IntegrationTask = import("./integrationTask").IntegrationTask;
+export const IntegrationTask: typeof import("./integrationTask").IntegrationTask = null as any;
+utilities.lazyLoad(exports, ["IntegrationTask"], () => require("./integrationTask"));
+
 export { RuleFileArgs, RuleFileState } from "./ruleFile";
 export type RuleFile = import("./ruleFile").RuleFile;
 export const RuleFile: typeof import("./ruleFile").RuleFile = null as any;
@@ -57,6 +72,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:vmp/alertingRule:AlertingRule":
                 return new AlertingRule(name, <any>undefined, { urn })
+            case "bytepluscc:vmp/integrationTask:IntegrationTask":
+                return new IntegrationTask(name, <any>undefined, { urn })
             case "bytepluscc:vmp/ruleFile:RuleFile":
                 return new RuleFile(name, <any>undefined, { urn })
             case "bytepluscc:vmp/workspace:Workspace":
@@ -67,5 +84,6 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "vmp/alertingRule", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vmp/integrationTask", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vmp/ruleFile", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vmp/workspace", _module)

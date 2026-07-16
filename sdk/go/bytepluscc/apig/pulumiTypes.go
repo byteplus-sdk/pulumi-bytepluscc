@@ -6816,8 +6816,6 @@ type UpstreamVersionDetail struct {
 	Labels []UpstreamVersionDetailLabel `pulumi:"labels"`
 	// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 	Name *string `pulumi:"name"`
-	// Update time
-	UpdateTime *string `pulumi:"updateTime"`
 }
 
 // UpstreamVersionDetailInput is an input type that accepts UpstreamVersionDetailArgs and UpstreamVersionDetailOutput values.
@@ -6837,8 +6835,6 @@ type UpstreamVersionDetailArgs struct {
 	Labels UpstreamVersionDetailLabelArrayInput `pulumi:"labels"`
 	// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Update time
-	UpdateTime pulumi.StringPtrInput `pulumi:"updateTime"`
 }
 
 func (UpstreamVersionDetailArgs) ElementType() reflect.Type {
@@ -6901,11 +6897,6 @@ func (o UpstreamVersionDetailOutput) Labels() UpstreamVersionDetailLabelArrayOut
 // Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
 func (o UpstreamVersionDetailOutput) Name() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v UpstreamVersionDetail) *string { return v.Name }).(pulumi.StringPtrOutput)
-}
-
-// Update time
-func (o UpstreamVersionDetailOutput) UpdateTime() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v UpstreamVersionDetail) *string { return v.UpdateTime }).(pulumi.StringPtrOutput)
 }
 
 type UpstreamVersionDetailArrayOutput struct{ *pulumi.OutputState }

@@ -30,7 +30,8 @@ class UpstreamArgs:
                  connection_pool_settings: pulumi.Input[Optional['UpstreamConnectionPoolSettingsArgs']] = None,
                  load_balancer_settings: pulumi.Input[Optional['UpstreamLoadBalancerSettingsArgs']] = None,
                  protocol: pulumi.Input[Optional[_builtins.str]] = None,
-                 tls_settings: pulumi.Input[Optional['UpstreamTlsSettingsArgs']] = None):
+                 tls_settings: pulumi.Input[Optional['UpstreamTlsSettingsArgs']] = None,
+                 version_details: pulumi.Input[Optional[Sequence[pulumi.Input['UpstreamVersionDetailArgs']]]] = None):
         """
         The set of arguments for constructing a Upstream resource.
 
@@ -44,6 +45,8 @@ class UpstreamArgs:
         :param pulumi.Input['UpstreamLoadBalancerSettingsArgs'] load_balancer_settings: Load Balancing Configuration
         :param pulumi.Input[_builtins.str] protocol: Protocol. Options: HTTP: HTTP/1.1; HTTP2: HTTP/2; GRPC: GRPC
         :param pulumi.Input['UpstreamTlsSettingsArgs'] tls_settings: TLS Configuration
+        :param pulumi.Input[Sequence[pulumi.Input['UpstreamVersionDetailArgs']]] version_details: Upstream version, only valid when the upstream source type is K8S
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         pulumi.set(__self__, "gateway_id", gateway_id)
         pulumi.set(__self__, "name", name)
@@ -61,6 +64,8 @@ class UpstreamArgs:
             pulumi.set(__self__, "protocol", protocol)
         if tls_settings is not None:
             pulumi.set(__self__, "tls_settings", tls_settings)
+        if version_details is not None:
+            pulumi.set(__self__, "version_details", version_details)
 
     @_builtins.property
     @pulumi.getter(name="gatewayId")
@@ -181,6 +186,19 @@ class UpstreamArgs:
     @tls_settings.setter
     def tls_settings(self, value: pulumi.Input[Optional['UpstreamTlsSettingsArgs']]):
         pulumi.set(self, "tls_settings", value)
+
+    @_builtins.property
+    @pulumi.getter(name="versionDetails")
+    def version_details(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['UpstreamVersionDetailArgs']]]]:
+        """
+        Upstream version, only valid when the upstream source type is K8S
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "version_details")
+
+    @version_details.setter
+    def version_details(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['UpstreamVersionDetailArgs']]]]):
+        pulumi.set(self, "version_details", value)
 
 
 @pulumi.input_type
@@ -452,6 +470,7 @@ class Upstream(pulumi.CustomResource):
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
                  tls_settings: pulumi.Input[Optional[Union['UpstreamTlsSettingsArgs', 'UpstreamTlsSettingsArgsDict']]] = None,
                  upstream_spec: pulumi.Input[Optional[Union['UpstreamUpstreamSpecArgs', 'UpstreamUpstreamSpecArgsDict']]] = None,
+                 version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UpstreamVersionDetailArgs', 'UpstreamVersionDetailArgsDict']]]]] = None,
                  __props__=None):
         """
         Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream
@@ -498,7 +517,14 @@ class Upstream(pulumi.CustomResource):
                         "port": 5566,
                     }],
                 },
-            })
+            },
+            version_details=[{
+                "labels": [{
+                    "key": "k1",
+                    "value": "v1",
+                }],
+                "name": "v1",
+            }])
         ```
 
         ## Import
@@ -520,6 +546,8 @@ class Upstream(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] source_type: Upstream source type. Options: VeFaas: function service. ECS: cloud server. K8S: container service. Nacos: registry. AIProvider: AI model proxy
         :param pulumi.Input[Union['UpstreamTlsSettingsArgs', 'UpstreamTlsSettingsArgsDict']] tls_settings: TLS Configuration
         :param pulumi.Input[Union['UpstreamUpstreamSpecArgs', 'UpstreamUpstreamSpecArgsDict']] upstream_spec: Upstream Configuration
+        :param pulumi.Input[Sequence[pulumi.Input[Union['UpstreamVersionDetailArgs', 'UpstreamVersionDetailArgsDict']]]] version_details: Upstream version, only valid when the upstream source type is K8S
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         ...
     @overload
@@ -572,7 +600,14 @@ class Upstream(pulumi.CustomResource):
                         "port": 5566,
                     }],
                 },
-            })
+            },
+            version_details=[{
+                "labels": [{
+                    "key": "k1",
+                    "value": "v1",
+                }],
+                "name": "v1",
+            }])
         ```
 
         ## Import
@@ -607,6 +642,7 @@ class Upstream(pulumi.CustomResource):
                  source_type: pulumi.Input[Optional[_builtins.str]] = None,
                  tls_settings: pulumi.Input[Optional[Union['UpstreamTlsSettingsArgs', 'UpstreamTlsSettingsArgsDict']]] = None,
                  upstream_spec: pulumi.Input[Optional[Union['UpstreamUpstreamSpecArgs', 'UpstreamUpstreamSpecArgsDict']]] = None,
+                 version_details: pulumi.Input[Optional[Sequence[pulumi.Input[Union['UpstreamVersionDetailArgs', 'UpstreamVersionDetailArgsDict']]]]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
         if not isinstance(opts, pulumi.ResourceOptions):
@@ -634,11 +670,11 @@ class Upstream(pulumi.CustomResource):
             if upstream_spec is None and not opts.urn:
                 raise TypeError("Missing required property 'upstream_spec'")
             __props__.__dict__["upstream_spec"] = upstream_spec
+            __props__.__dict__["version_details"] = version_details
             __props__.__dict__["backend_targets"] = None
             __props__.__dict__["created_time"] = None
             __props__.__dict__["updated_time"] = None
             __props__.__dict__["upstream_id"] = None
-            __props__.__dict__["version_details"] = None
         super(Upstream, __self__).__init__(
             'bytepluscc:apig/upstream:Upstream',
             resource_name,

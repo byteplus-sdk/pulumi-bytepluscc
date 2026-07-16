@@ -91,6 +91,18 @@ export interface GetTopicResult {
      */
     readonly shardCount: number;
     /**
+     * Partition list of the log topic
+     */
+    readonly shards: outputs.tls.GetTopicShard[];
+    /**
+     * Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+     */
+    readonly splitNumber: number;
+    /**
+     * Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+     */
+    readonly splitShardId: number;
+    /**
      * Tag list.
      */
     readonly tags: outputs.tls.GetTopicTag[];

@@ -2544,39 +2544,18 @@ class UpstreamUpstreamSpecVeFaas(dict):
 
 @pulumi.output_type
 class UpstreamVersionDetail(dict):
-    @staticmethod
-    def __key_warning(key: str):
-        suggest = None
-        if key == "updateTime":
-            suggest = "update_time"
-
-        if suggest:
-            pulumi.log.warn(f"Key '{key}' not found in UpstreamVersionDetail. Access the value via the '{suggest}' property getter instead.")
-
-    def __getitem__(self, key: str) -> Any:
-        UpstreamVersionDetail.__key_warning(key)
-        return super().__getitem__(key)
-
-    def get(self, key: str, default = None) -> Any:
-        UpstreamVersionDetail.__key_warning(key)
-        return super().get(key, default)
-
     def __init__(__self__, *,
                  labels: Optional[Sequence['outputs.UpstreamVersionDetailLabel']] = None,
-                 name: Optional[_builtins.str] = None,
-                 update_time: Optional[_builtins.str] = None):
+                 name: Optional[_builtins.str] = None):
         """
         :param Sequence['UpstreamVersionDetailLabelArgs'] labels: Tag
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param _builtins.str name: Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
-        :param _builtins.str update_time: Update time
         """
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if update_time is not None:
-            pulumi.set(__self__, "update_time", update_time)
 
     @_builtins.property
     @pulumi.getter
@@ -2594,14 +2573,6 @@ class UpstreamVersionDetail(dict):
         Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
         """
         return pulumi.get(self, "name")
-
-    @_builtins.property
-    @pulumi.getter(name="updateTime")
-    def update_time(self) -> Optional[_builtins.str]:
-        """
-        Update time
-        """
-        return pulumi.get(self, "update_time")
 
 
 @pulumi.output_type

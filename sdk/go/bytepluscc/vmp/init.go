@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:vmp/alertingRule:AlertingRule":
 		r = &AlertingRule{}
+	case "bytepluscc:vmp/integrationTask:IntegrationTask":
+		r = &IntegrationTask{}
 	case "bytepluscc:vmp/ruleFile:RuleFile":
 		r = &RuleFile{}
 	case "bytepluscc:vmp/workspace:Workspace":
@@ -43,6 +45,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vmp/alertingRule",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vmp/integrationTask",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

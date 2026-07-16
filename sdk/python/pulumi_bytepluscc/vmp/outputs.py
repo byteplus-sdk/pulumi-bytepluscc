@@ -21,6 +21,7 @@ __all__ = [
     'AlertingRuleLevel',
     'AlertingRuleQuery',
     'AlertingRuleTag',
+    'IntegrationTaskTag',
     'WorkspaceInstanceType',
     'WorkspaceInstanceTypeCalculatePriceParam',
     'WorkspaceInstanceTypeCalculatePriceParamCalChargeItemList',
@@ -32,6 +33,7 @@ __all__ = [
     'GetAlertingRuleLevelResult',
     'GetAlertingRuleQueryResult',
     'GetAlertingRuleTagResult',
+    'GetIntegrationTaskTagResult',
     'GetWorkspaceInstanceTypeResult',
     'GetWorkspaceInstanceTypeCalculatePriceParamResult',
     'GetWorkspaceInstanceTypeCalculatePriceParamCalChargeItemListResult',
@@ -251,6 +253,37 @@ class AlertingRuleTag(dict):
     def value(self) -> Optional[_builtins.str]:
         """
         Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class IntegrationTaskTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag Key
+        :param _builtins.str value: Tag Value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag Value
         """
         return pulumi.get(self, "value")
 
@@ -911,6 +944,35 @@ class GetAlertingRuleTagResult(dict):
     def value(self) -> _builtins.str:
         """
         Tag or annotation value. If set to empty, the key will be deleted
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetIntegrationTaskTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag Key
+        :param _builtins.str value: Tag Value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag Value
         """
         return pulumi.get(self, "value")
 

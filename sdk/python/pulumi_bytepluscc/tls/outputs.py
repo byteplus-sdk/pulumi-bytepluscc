@@ -35,6 +35,7 @@ __all__ = [
     'AlarmRequestCycle',
     'AlarmTriggerCondition',
     'AlarmWebhookIntegrationTypeWebhookHeader',
+    'DownloadTaskLogContextInfos',
     'EtlTargetResource',
     'HostGroupRule',
     'HostGroupRuleContainerRule',
@@ -79,6 +80,7 @@ __all__ = [
     'IndexUserInnerKeyValueValueJsonKey',
     'IndexUserInnerKeyValueValueJsonKeyValue',
     'ProjectTag',
+    'RuleBoundHostGroupHostGroup',
     'RuleContainerRule',
     'RuleContainerRuleEnvTag',
     'RuleContainerRuleExcludeContainerEnvRegex',
@@ -109,6 +111,7 @@ __all__ = [
     'ShipperContentInfoJsonInfo',
     'ShipperKafkaShipperInfo',
     'ShipperTosShipperInfo',
+    'TopicShard',
     'TopicTag',
     'GetAlarmAlarmNotifyGroupResult',
     'GetAlarmAlarmNotifyGroupNoticeRuleResult',
@@ -134,6 +137,7 @@ __all__ = [
     'GetAlarmRequestCycleResult',
     'GetAlarmTriggerConditionResult',
     'GetAlarmWebhookIntegrationTypeWebhookHeaderResult',
+    'GetDownloadTaskLogContextInfosResult',
     'GetEtlTargetResourceResult',
     'GetHostGroupRuleResult',
     'GetHostGroupRuleContainerRuleResult',
@@ -178,6 +182,7 @@ __all__ = [
     'GetIndexUserInnerKeyValueValueJsonKeyResult',
     'GetIndexUserInnerKeyValueValueJsonKeyValueResult',
     'GetProjectTagResult',
+    'GetRuleBoundHostGroupHostGroupResult',
     'GetRuleContainerRuleResult',
     'GetRuleContainerRuleEnvTagResult',
     'GetRuleContainerRuleExcludeContainerEnvRegexResult',
@@ -208,6 +213,7 @@ __all__ = [
     'GetShipperContentInfoJsonInfoResult',
     'GetShipperKafkaShipperInfoResult',
     'GetShipperTosShipperInfoResult',
+    'GetTopicShardResult',
     'GetTopicTagResult',
 ]
 
@@ -1553,6 +1559,68 @@ class AlarmWebhookIntegrationTypeWebhookHeader(dict):
         Value for custom request header
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class DownloadTaskLogContextInfos(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "contextFlow":
+            suggest = "context_flow"
+        elif key == "packageOffset":
+            suggest = "package_offset"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in DownloadTaskLogContextInfos. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        DownloadTaskLogContextInfos.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        DownloadTaskLogContextInfos.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 context_flow: Optional[_builtins.str] = None,
+                 package_offset: Optional[_builtins.int] = None,
+                 source: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str context_flow: LogGroup ID to which the log context belongs.
+        :param _builtins.int package_offset: Specifies the log index in the LogGroup.
+        :param _builtins.str source: Host of the log source.
+        """
+        if context_flow is not None:
+            pulumi.set(__self__, "context_flow", context_flow)
+        if package_offset is not None:
+            pulumi.set(__self__, "package_offset", package_offset)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @_builtins.property
+    @pulumi.getter(name="contextFlow")
+    def context_flow(self) -> Optional[_builtins.str]:
+        """
+        LogGroup ID to which the log context belongs.
+        """
+        return pulumi.get(self, "context_flow")
+
+    @_builtins.property
+    @pulumi.getter(name="packageOffset")
+    def package_offset(self) -> Optional[_builtins.int]:
+        """
+        Specifies the log index in the LogGroup.
+        """
+        return pulumi.get(self, "package_offset")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> Optional[_builtins.str]:
+        """
+        Host of the log source.
+        """
+        return pulumi.get(self, "source")
 
 
 @pulumi.output_type
@@ -4942,6 +5010,252 @@ class ProjectTag(dict):
 
 
 @pulumi.output_type
+class RuleBoundHostGroupHostGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "abnormalHeartbeatStatusCount":
+            suggest = "abnormal_heartbeat_status_count"
+        elif key == "agentLatestVersion":
+            suggest = "agent_latest_version"
+        elif key == "autoUpdate":
+            suggest = "auto_update"
+        elif key == "createTime":
+            suggest = "create_time"
+        elif key == "hostCount":
+            suggest = "host_count"
+        elif key == "hostGroupId":
+            suggest = "host_group_id"
+        elif key == "hostGroupName":
+            suggest = "host_group_name"
+        elif key == "hostGroupType":
+            suggest = "host_group_type"
+        elif key == "hostIdentifier":
+            suggest = "host_identifier"
+        elif key == "iamProjectName":
+            suggest = "iam_project_name"
+        elif key == "modifyTime":
+            suggest = "modify_time"
+        elif key == "normalHeartbeatStatusCount":
+            suggest = "normal_heartbeat_status_count"
+        elif key == "ruleCount":
+            suggest = "rule_count"
+        elif key == "serviceLogging":
+            suggest = "service_logging"
+        elif key == "updateEndTime":
+            suggest = "update_end_time"
+        elif key == "updateStartTime":
+            suggest = "update_start_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleBoundHostGroupHostGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleBoundHostGroupHostGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleBoundHostGroupHostGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 abnormal_heartbeat_status_count: Optional[_builtins.int] = None,
+                 agent_latest_version: Optional[_builtins.str] = None,
+                 auto_update: Optional[_builtins.bool] = None,
+                 create_time: Optional[_builtins.str] = None,
+                 host_count: Optional[_builtins.int] = None,
+                 host_group_id: Optional[_builtins.str] = None,
+                 host_group_name: Optional[_builtins.str] = None,
+                 host_group_type: Optional[_builtins.str] = None,
+                 host_identifier: Optional[_builtins.str] = None,
+                 iam_project_name: Optional[_builtins.str] = None,
+                 modify_time: Optional[_builtins.str] = None,
+                 normal_heartbeat_status_count: Optional[_builtins.int] = None,
+                 rule_count: Optional[_builtins.int] = None,
+                 service_logging: Optional[_builtins.bool] = None,
+                 update_end_time: Optional[_builtins.str] = None,
+                 update_start_time: Optional[_builtins.str] = None):
+        """
+        :param _builtins.int abnormal_heartbeat_status_count: Number of machines with abnormal heartbeat status
+        :param _builtins.str agent_latest_version: Latest LogCollector version number available for upgrade
+        :param _builtins.bool auto_update: Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+        :param _builtins.str create_time: Machine group creation time
+        :param _builtins.int host_count: Number of machines in the machine group
+        :param _builtins.str host_group_id: Machine group ID
+        :param _builtins.str host_group_name: Machine group name
+        :param _builtins.str host_group_type: Machine group type. IP: machine IP. Label: machine label.
+        :param _builtins.str host_identifier: Machine identifier
+        :param _builtins.str iam_project_name: IAM project associated with the machine group
+        :param _builtins.str modify_time: Machine group modification time
+        :param _builtins.int normal_heartbeat_status_count: Number of machines with normal heartbeat status
+        :param _builtins.int rule_count: Number of collection configurations bound to the machine group
+        :param _builtins.bool service_logging: Enable LogCollector service log feature. true: enabled. false (default): disabled.
+        :param _builtins.str update_end_time: LogCollector auto upgrade end time
+        :param _builtins.str update_start_time: LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+        """
+        if abnormal_heartbeat_status_count is not None:
+            pulumi.set(__self__, "abnormal_heartbeat_status_count", abnormal_heartbeat_status_count)
+        if agent_latest_version is not None:
+            pulumi.set(__self__, "agent_latest_version", agent_latest_version)
+        if auto_update is not None:
+            pulumi.set(__self__, "auto_update", auto_update)
+        if create_time is not None:
+            pulumi.set(__self__, "create_time", create_time)
+        if host_count is not None:
+            pulumi.set(__self__, "host_count", host_count)
+        if host_group_id is not None:
+            pulumi.set(__self__, "host_group_id", host_group_id)
+        if host_group_name is not None:
+            pulumi.set(__self__, "host_group_name", host_group_name)
+        if host_group_type is not None:
+            pulumi.set(__self__, "host_group_type", host_group_type)
+        if host_identifier is not None:
+            pulumi.set(__self__, "host_identifier", host_identifier)
+        if iam_project_name is not None:
+            pulumi.set(__self__, "iam_project_name", iam_project_name)
+        if modify_time is not None:
+            pulumi.set(__self__, "modify_time", modify_time)
+        if normal_heartbeat_status_count is not None:
+            pulumi.set(__self__, "normal_heartbeat_status_count", normal_heartbeat_status_count)
+        if rule_count is not None:
+            pulumi.set(__self__, "rule_count", rule_count)
+        if service_logging is not None:
+            pulumi.set(__self__, "service_logging", service_logging)
+        if update_end_time is not None:
+            pulumi.set(__self__, "update_end_time", update_end_time)
+        if update_start_time is not None:
+            pulumi.set(__self__, "update_start_time", update_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="abnormalHeartbeatStatusCount")
+    def abnormal_heartbeat_status_count(self) -> Optional[_builtins.int]:
+        """
+        Number of machines with abnormal heartbeat status
+        """
+        return pulumi.get(self, "abnormal_heartbeat_status_count")
+
+    @_builtins.property
+    @pulumi.getter(name="agentLatestVersion")
+    def agent_latest_version(self) -> Optional[_builtins.str]:
+        """
+        Latest LogCollector version number available for upgrade
+        """
+        return pulumi.get(self, "agent_latest_version")
+
+    @_builtins.property
+    @pulumi.getter(name="autoUpdate")
+    def auto_update(self) -> Optional[_builtins.bool]:
+        """
+        Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+        """
+        return pulumi.get(self, "auto_update")
+
+    @_builtins.property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> Optional[_builtins.str]:
+        """
+        Machine group creation time
+        """
+        return pulumi.get(self, "create_time")
+
+    @_builtins.property
+    @pulumi.getter(name="hostCount")
+    def host_count(self) -> Optional[_builtins.int]:
+        """
+        Number of machines in the machine group
+        """
+        return pulumi.get(self, "host_count")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupId")
+    def host_group_id(self) -> Optional[_builtins.str]:
+        """
+        Machine group ID
+        """
+        return pulumi.get(self, "host_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupName")
+    def host_group_name(self) -> Optional[_builtins.str]:
+        """
+        Machine group name
+        """
+        return pulumi.get(self, "host_group_name")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupType")
+    def host_group_type(self) -> Optional[_builtins.str]:
+        """
+        Machine group type. IP: machine IP. Label: machine label.
+        """
+        return pulumi.get(self, "host_group_type")
+
+    @_builtins.property
+    @pulumi.getter(name="hostIdentifier")
+    def host_identifier(self) -> Optional[_builtins.str]:
+        """
+        Machine identifier
+        """
+        return pulumi.get(self, "host_identifier")
+
+    @_builtins.property
+    @pulumi.getter(name="iamProjectName")
+    def iam_project_name(self) -> Optional[_builtins.str]:
+        """
+        IAM project associated with the machine group
+        """
+        return pulumi.get(self, "iam_project_name")
+
+    @_builtins.property
+    @pulumi.getter(name="modifyTime")
+    def modify_time(self) -> Optional[_builtins.str]:
+        """
+        Machine group modification time
+        """
+        return pulumi.get(self, "modify_time")
+
+    @_builtins.property
+    @pulumi.getter(name="normalHeartbeatStatusCount")
+    def normal_heartbeat_status_count(self) -> Optional[_builtins.int]:
+        """
+        Number of machines with normal heartbeat status
+        """
+        return pulumi.get(self, "normal_heartbeat_status_count")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleCount")
+    def rule_count(self) -> Optional[_builtins.int]:
+        """
+        Number of collection configurations bound to the machine group
+        """
+        return pulumi.get(self, "rule_count")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceLogging")
+    def service_logging(self) -> Optional[_builtins.bool]:
+        """
+        Enable LogCollector service log feature. true: enabled. false (default): disabled.
+        """
+        return pulumi.get(self, "service_logging")
+
+    @_builtins.property
+    @pulumi.getter(name="updateEndTime")
+    def update_end_time(self) -> Optional[_builtins.str]:
+        """
+        LogCollector auto upgrade end time
+        """
+        return pulumi.get(self, "update_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="updateStartTime")
+    def update_start_time(self) -> Optional[_builtins.str]:
+        """
+        LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+        """
+        return pulumi.get(self, "update_start_time")
+
+
+@pulumi.output_type
 class RuleContainerRule(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -6901,6 +7215,110 @@ class ShipperTosShipperInfo(dict):
 
 
 @pulumi.output_type
+class TopicShard(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "exclusiveEndKey":
+            suggest = "exclusive_end_key"
+        elif key == "inclusiveBeginKey":
+            suggest = "inclusive_begin_key"
+        elif key == "modifyTime":
+            suggest = "modify_time"
+        elif key == "shardId":
+            suggest = "shard_id"
+        elif key == "stopWriteTime":
+            suggest = "stop_write_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in TopicShard. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        TopicShard.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        TopicShard.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 exclusive_end_key: Optional[_builtins.str] = None,
+                 inclusive_begin_key: Optional[_builtins.str] = None,
+                 modify_time: Optional[_builtins.str] = None,
+                 shard_id: Optional[_builtins.int] = None,
+                 status: Optional[_builtins.str] = None,
+                 stop_write_time: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str exclusive_end_key: Ending key value of the partition
+        :param _builtins.str inclusive_begin_key: Starting key value of the partition
+        :param _builtins.str modify_time: Last modified time of the partition
+        :param _builtins.int shard_id: Partition ID of the log topic
+        :param _builtins.str status: Partition status: readwrite means read/write, readonly means read-only
+        :param _builtins.str stop_write_time: Time when the partition stopped writing, that is, the last time logs were written to this partition
+        """
+        if exclusive_end_key is not None:
+            pulumi.set(__self__, "exclusive_end_key", exclusive_end_key)
+        if inclusive_begin_key is not None:
+            pulumi.set(__self__, "inclusive_begin_key", inclusive_begin_key)
+        if modify_time is not None:
+            pulumi.set(__self__, "modify_time", modify_time)
+        if shard_id is not None:
+            pulumi.set(__self__, "shard_id", shard_id)
+        if status is not None:
+            pulumi.set(__self__, "status", status)
+        if stop_write_time is not None:
+            pulumi.set(__self__, "stop_write_time", stop_write_time)
+
+    @_builtins.property
+    @pulumi.getter(name="exclusiveEndKey")
+    def exclusive_end_key(self) -> Optional[_builtins.str]:
+        """
+        Ending key value of the partition
+        """
+        return pulumi.get(self, "exclusive_end_key")
+
+    @_builtins.property
+    @pulumi.getter(name="inclusiveBeginKey")
+    def inclusive_begin_key(self) -> Optional[_builtins.str]:
+        """
+        Starting key value of the partition
+        """
+        return pulumi.get(self, "inclusive_begin_key")
+
+    @_builtins.property
+    @pulumi.getter(name="modifyTime")
+    def modify_time(self) -> Optional[_builtins.str]:
+        """
+        Last modified time of the partition
+        """
+        return pulumi.get(self, "modify_time")
+
+    @_builtins.property
+    @pulumi.getter(name="shardId")
+    def shard_id(self) -> Optional[_builtins.int]:
+        """
+        Partition ID of the log topic
+        """
+        return pulumi.get(self, "shard_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> Optional[_builtins.str]:
+        """
+        Partition status: readwrite means read/write, readonly means read-only
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="stopWriteTime")
+    def stop_write_time(self) -> Optional[_builtins.str]:
+        """
+        Time when the partition stopped writing, that is, the last time logs were written to this partition
+        """
+        return pulumi.get(self, "stop_write_time")
+
+
+@pulumi.output_type
 class TopicTag(dict):
     def __init__(__self__, *,
                  key: Optional[_builtins.str] = None,
@@ -8494,6 +8912,46 @@ class GetAlarmWebhookIntegrationTypeWebhookHeaderResult(dict):
         Value for custom request header
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetDownloadTaskLogContextInfosResult(dict):
+    def __init__(__self__, *,
+                 context_flow: _builtins.str,
+                 package_offset: _builtins.int,
+                 source: _builtins.str):
+        """
+        :param _builtins.str context_flow: LogGroup ID to which the log context belongs.
+        :param _builtins.int package_offset: Specifies the log index in the LogGroup.
+        :param _builtins.str source: Host of the log source.
+        """
+        pulumi.set(__self__, "context_flow", context_flow)
+        pulumi.set(__self__, "package_offset", package_offset)
+        pulumi.set(__self__, "source", source)
+
+    @_builtins.property
+    @pulumi.getter(name="contextFlow")
+    def context_flow(self) -> _builtins.str:
+        """
+        LogGroup ID to which the log context belongs.
+        """
+        return pulumi.get(self, "context_flow")
+
+    @_builtins.property
+    @pulumi.getter(name="packageOffset")
+    def package_offset(self) -> _builtins.int:
+        """
+        Specifies the log index in the LogGroup.
+        """
+        return pulumi.get(self, "package_offset")
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> _builtins.str:
+        """
+        Host of the log source.
+        """
+        return pulumi.get(self, "source")
 
 
 @pulumi.output_type
@@ -11115,6 +11573,189 @@ class GetProjectTagResult(dict):
 
 
 @pulumi.output_type
+class GetRuleBoundHostGroupHostGroupResult(dict):
+    def __init__(__self__, *,
+                 abnormal_heartbeat_status_count: _builtins.int,
+                 agent_latest_version: _builtins.str,
+                 auto_update: _builtins.bool,
+                 create_time: _builtins.str,
+                 host_count: _builtins.int,
+                 host_group_id: _builtins.str,
+                 host_group_name: _builtins.str,
+                 host_group_type: _builtins.str,
+                 host_identifier: _builtins.str,
+                 iam_project_name: _builtins.str,
+                 modify_time: _builtins.str,
+                 normal_heartbeat_status_count: _builtins.int,
+                 rule_count: _builtins.int,
+                 service_logging: _builtins.bool,
+                 update_end_time: _builtins.str,
+                 update_start_time: _builtins.str):
+        """
+        :param _builtins.int abnormal_heartbeat_status_count: Number of machines with abnormal heartbeat status
+        :param _builtins.str agent_latest_version: Latest LogCollector version number available for upgrade
+        :param _builtins.bool auto_update: Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+        :param _builtins.str create_time: Machine group creation time
+        :param _builtins.int host_count: Number of machines in the machine group
+        :param _builtins.str host_group_id: Machine group ID
+        :param _builtins.str host_group_name: Machine group name
+        :param _builtins.str host_group_type: Machine group type. IP: machine IP. Label: machine label.
+        :param _builtins.str host_identifier: Machine identifier
+        :param _builtins.str iam_project_name: IAM project associated with the machine group
+        :param _builtins.str modify_time: Machine group modification time
+        :param _builtins.int normal_heartbeat_status_count: Number of machines with normal heartbeat status
+        :param _builtins.int rule_count: Number of collection configurations bound to the machine group
+        :param _builtins.bool service_logging: Enable LogCollector service log feature. true: enabled. false (default): disabled.
+        :param _builtins.str update_end_time: LogCollector auto upgrade end time
+        :param _builtins.str update_start_time: LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+        """
+        pulumi.set(__self__, "abnormal_heartbeat_status_count", abnormal_heartbeat_status_count)
+        pulumi.set(__self__, "agent_latest_version", agent_latest_version)
+        pulumi.set(__self__, "auto_update", auto_update)
+        pulumi.set(__self__, "create_time", create_time)
+        pulumi.set(__self__, "host_count", host_count)
+        pulumi.set(__self__, "host_group_id", host_group_id)
+        pulumi.set(__self__, "host_group_name", host_group_name)
+        pulumi.set(__self__, "host_group_type", host_group_type)
+        pulumi.set(__self__, "host_identifier", host_identifier)
+        pulumi.set(__self__, "iam_project_name", iam_project_name)
+        pulumi.set(__self__, "modify_time", modify_time)
+        pulumi.set(__self__, "normal_heartbeat_status_count", normal_heartbeat_status_count)
+        pulumi.set(__self__, "rule_count", rule_count)
+        pulumi.set(__self__, "service_logging", service_logging)
+        pulumi.set(__self__, "update_end_time", update_end_time)
+        pulumi.set(__self__, "update_start_time", update_start_time)
+
+    @_builtins.property
+    @pulumi.getter(name="abnormalHeartbeatStatusCount")
+    def abnormal_heartbeat_status_count(self) -> _builtins.int:
+        """
+        Number of machines with abnormal heartbeat status
+        """
+        return pulumi.get(self, "abnormal_heartbeat_status_count")
+
+    @_builtins.property
+    @pulumi.getter(name="agentLatestVersion")
+    def agent_latest_version(self) -> _builtins.str:
+        """
+        Latest LogCollector version number available for upgrade
+        """
+        return pulumi.get(self, "agent_latest_version")
+
+    @_builtins.property
+    @pulumi.getter(name="autoUpdate")
+    def auto_update(self) -> _builtins.bool:
+        """
+        Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+        """
+        return pulumi.get(self, "auto_update")
+
+    @_builtins.property
+    @pulumi.getter(name="createTime")
+    def create_time(self) -> _builtins.str:
+        """
+        Machine group creation time
+        """
+        return pulumi.get(self, "create_time")
+
+    @_builtins.property
+    @pulumi.getter(name="hostCount")
+    def host_count(self) -> _builtins.int:
+        """
+        Number of machines in the machine group
+        """
+        return pulumi.get(self, "host_count")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupId")
+    def host_group_id(self) -> _builtins.str:
+        """
+        Machine group ID
+        """
+        return pulumi.get(self, "host_group_id")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupName")
+    def host_group_name(self) -> _builtins.str:
+        """
+        Machine group name
+        """
+        return pulumi.get(self, "host_group_name")
+
+    @_builtins.property
+    @pulumi.getter(name="hostGroupType")
+    def host_group_type(self) -> _builtins.str:
+        """
+        Machine group type. IP: machine IP. Label: machine label.
+        """
+        return pulumi.get(self, "host_group_type")
+
+    @_builtins.property
+    @pulumi.getter(name="hostIdentifier")
+    def host_identifier(self) -> _builtins.str:
+        """
+        Machine identifier
+        """
+        return pulumi.get(self, "host_identifier")
+
+    @_builtins.property
+    @pulumi.getter(name="iamProjectName")
+    def iam_project_name(self) -> _builtins.str:
+        """
+        IAM project associated with the machine group
+        """
+        return pulumi.get(self, "iam_project_name")
+
+    @_builtins.property
+    @pulumi.getter(name="modifyTime")
+    def modify_time(self) -> _builtins.str:
+        """
+        Machine group modification time
+        """
+        return pulumi.get(self, "modify_time")
+
+    @_builtins.property
+    @pulumi.getter(name="normalHeartbeatStatusCount")
+    def normal_heartbeat_status_count(self) -> _builtins.int:
+        """
+        Number of machines with normal heartbeat status
+        """
+        return pulumi.get(self, "normal_heartbeat_status_count")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleCount")
+    def rule_count(self) -> _builtins.int:
+        """
+        Number of collection configurations bound to the machine group
+        """
+        return pulumi.get(self, "rule_count")
+
+    @_builtins.property
+    @pulumi.getter(name="serviceLogging")
+    def service_logging(self) -> _builtins.bool:
+        """
+        Enable LogCollector service log feature. true: enabled. false (default): disabled.
+        """
+        return pulumi.get(self, "service_logging")
+
+    @_builtins.property
+    @pulumi.getter(name="updateEndTime")
+    def update_end_time(self) -> _builtins.str:
+        """
+        LogCollector auto upgrade end time
+        """
+        return pulumi.get(self, "update_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="updateStartTime")
+    def update_start_time(self) -> _builtins.str:
+        """
+        LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+        """
+        return pulumi.get(self, "update_start_time")
+
+
+@pulumi.output_type
 class GetRuleContainerRuleResult(dict):
     def __init__(__self__, *,
                  container_name_regex: _builtins.str,
@@ -12774,6 +13415,79 @@ class GetShipperTosShipperInfoResult(dict):
         Top-level directory name for the bucket. Cannot start with / or \\, and cannot use consecutive /. Cannot use .. as a folder name. Duplicate names are not allowed within the same bucket.
         """
         return pulumi.get(self, "prefix")
+
+
+@pulumi.output_type
+class GetTopicShardResult(dict):
+    def __init__(__self__, *,
+                 exclusive_end_key: _builtins.str,
+                 inclusive_begin_key: _builtins.str,
+                 modify_time: _builtins.str,
+                 shard_id: _builtins.int,
+                 status: _builtins.str,
+                 stop_write_time: _builtins.str):
+        """
+        :param _builtins.str exclusive_end_key: Ending key value of the partition
+        :param _builtins.str inclusive_begin_key: Starting key value of the partition
+        :param _builtins.str modify_time: Last modified time of the partition
+        :param _builtins.int shard_id: Partition ID of the log topic
+        :param _builtins.str status: Partition status: readwrite means read/write, readonly means read-only
+        :param _builtins.str stop_write_time: Time when the partition stopped writing, that is, the last time logs were written to this partition
+        """
+        pulumi.set(__self__, "exclusive_end_key", exclusive_end_key)
+        pulumi.set(__self__, "inclusive_begin_key", inclusive_begin_key)
+        pulumi.set(__self__, "modify_time", modify_time)
+        pulumi.set(__self__, "shard_id", shard_id)
+        pulumi.set(__self__, "status", status)
+        pulumi.set(__self__, "stop_write_time", stop_write_time)
+
+    @_builtins.property
+    @pulumi.getter(name="exclusiveEndKey")
+    def exclusive_end_key(self) -> _builtins.str:
+        """
+        Ending key value of the partition
+        """
+        return pulumi.get(self, "exclusive_end_key")
+
+    @_builtins.property
+    @pulumi.getter(name="inclusiveBeginKey")
+    def inclusive_begin_key(self) -> _builtins.str:
+        """
+        Starting key value of the partition
+        """
+        return pulumi.get(self, "inclusive_begin_key")
+
+    @_builtins.property
+    @pulumi.getter(name="modifyTime")
+    def modify_time(self) -> _builtins.str:
+        """
+        Last modified time of the partition
+        """
+        return pulumi.get(self, "modify_time")
+
+    @_builtins.property
+    @pulumi.getter(name="shardId")
+    def shard_id(self) -> _builtins.int:
+        """
+        Partition ID of the log topic
+        """
+        return pulumi.get(self, "shard_id")
+
+    @_builtins.property
+    @pulumi.getter
+    def status(self) -> _builtins.str:
+        """
+        Partition status: readwrite means read/write, readonly means read-only
+        """
+        return pulumi.get(self, "status")
+
+    @_builtins.property
+    @pulumi.getter(name="stopWriteTime")
+    def stop_write_time(self) -> _builtins.str:
+        """
+        Time when the partition stopped writing, that is, the last time logs were written to this partition
+        """
+        return pulumi.get(self, "stop_write_time")
 
 
 @pulumi.output_type

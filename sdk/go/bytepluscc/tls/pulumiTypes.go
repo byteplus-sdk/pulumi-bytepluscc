@@ -2947,6 +2947,181 @@ func (o AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) Index(i pulumi.IntI
 	}).(AlarmWebhookIntegrationTypeWebhookHeaderOutput)
 }
 
+type DownloadTaskLogContextInfos struct {
+	// LogGroup ID to which the log context belongs.
+	ContextFlow *string `pulumi:"contextFlow"`
+	// Specifies the log index in the LogGroup.
+	PackageOffset *int `pulumi:"packageOffset"`
+	// Host of the log source.
+	Source *string `pulumi:"source"`
+}
+
+// DownloadTaskLogContextInfosInput is an input type that accepts DownloadTaskLogContextInfosArgs and DownloadTaskLogContextInfosOutput values.
+// You can construct a concrete instance of `DownloadTaskLogContextInfosInput` via:
+//
+//	DownloadTaskLogContextInfosArgs{...}
+type DownloadTaskLogContextInfosInput interface {
+	pulumi.Input
+
+	ToDownloadTaskLogContextInfosOutput() DownloadTaskLogContextInfosOutput
+	ToDownloadTaskLogContextInfosOutputWithContext(context.Context) DownloadTaskLogContextInfosOutput
+}
+
+type DownloadTaskLogContextInfosArgs struct {
+	// LogGroup ID to which the log context belongs.
+	ContextFlow pulumi.StringPtrInput `pulumi:"contextFlow"`
+	// Specifies the log index in the LogGroup.
+	PackageOffset pulumi.IntPtrInput `pulumi:"packageOffset"`
+	// Host of the log source.
+	Source pulumi.StringPtrInput `pulumi:"source"`
+}
+
+func (DownloadTaskLogContextInfosArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DownloadTaskLogContextInfos)(nil)).Elem()
+}
+
+func (i DownloadTaskLogContextInfosArgs) ToDownloadTaskLogContextInfosOutput() DownloadTaskLogContextInfosOutput {
+	return i.ToDownloadTaskLogContextInfosOutputWithContext(context.Background())
+}
+
+func (i DownloadTaskLogContextInfosArgs) ToDownloadTaskLogContextInfosOutputWithContext(ctx context.Context) DownloadTaskLogContextInfosOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DownloadTaskLogContextInfosOutput)
+}
+
+func (i DownloadTaskLogContextInfosArgs) ToDownloadTaskLogContextInfosPtrOutput() DownloadTaskLogContextInfosPtrOutput {
+	return i.ToDownloadTaskLogContextInfosPtrOutputWithContext(context.Background())
+}
+
+func (i DownloadTaskLogContextInfosArgs) ToDownloadTaskLogContextInfosPtrOutputWithContext(ctx context.Context) DownloadTaskLogContextInfosPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DownloadTaskLogContextInfosOutput).ToDownloadTaskLogContextInfosPtrOutputWithContext(ctx)
+}
+
+// DownloadTaskLogContextInfosPtrInput is an input type that accepts DownloadTaskLogContextInfosArgs, DownloadTaskLogContextInfosPtr and DownloadTaskLogContextInfosPtrOutput values.
+// You can construct a concrete instance of `DownloadTaskLogContextInfosPtrInput` via:
+//
+//	        DownloadTaskLogContextInfosArgs{...}
+//
+//	or:
+//
+//	        nil
+type DownloadTaskLogContextInfosPtrInput interface {
+	pulumi.Input
+
+	ToDownloadTaskLogContextInfosPtrOutput() DownloadTaskLogContextInfosPtrOutput
+	ToDownloadTaskLogContextInfosPtrOutputWithContext(context.Context) DownloadTaskLogContextInfosPtrOutput
+}
+
+type downloadTaskLogContextInfosPtrType DownloadTaskLogContextInfosArgs
+
+func DownloadTaskLogContextInfosPtr(v *DownloadTaskLogContextInfosArgs) DownloadTaskLogContextInfosPtrInput {
+	return (*downloadTaskLogContextInfosPtrType)(v)
+}
+
+func (*downloadTaskLogContextInfosPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DownloadTaskLogContextInfos)(nil)).Elem()
+}
+
+func (i *downloadTaskLogContextInfosPtrType) ToDownloadTaskLogContextInfosPtrOutput() DownloadTaskLogContextInfosPtrOutput {
+	return i.ToDownloadTaskLogContextInfosPtrOutputWithContext(context.Background())
+}
+
+func (i *downloadTaskLogContextInfosPtrType) ToDownloadTaskLogContextInfosPtrOutputWithContext(ctx context.Context) DownloadTaskLogContextInfosPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DownloadTaskLogContextInfosPtrOutput)
+}
+
+type DownloadTaskLogContextInfosOutput struct{ *pulumi.OutputState }
+
+func (DownloadTaskLogContextInfosOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DownloadTaskLogContextInfos)(nil)).Elem()
+}
+
+func (o DownloadTaskLogContextInfosOutput) ToDownloadTaskLogContextInfosOutput() DownloadTaskLogContextInfosOutput {
+	return o
+}
+
+func (o DownloadTaskLogContextInfosOutput) ToDownloadTaskLogContextInfosOutputWithContext(ctx context.Context) DownloadTaskLogContextInfosOutput {
+	return o
+}
+
+func (o DownloadTaskLogContextInfosOutput) ToDownloadTaskLogContextInfosPtrOutput() DownloadTaskLogContextInfosPtrOutput {
+	return o.ToDownloadTaskLogContextInfosPtrOutputWithContext(context.Background())
+}
+
+func (o DownloadTaskLogContextInfosOutput) ToDownloadTaskLogContextInfosPtrOutputWithContext(ctx context.Context) DownloadTaskLogContextInfosPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DownloadTaskLogContextInfos) *DownloadTaskLogContextInfos {
+		return &v
+	}).(DownloadTaskLogContextInfosPtrOutput)
+}
+
+// LogGroup ID to which the log context belongs.
+func (o DownloadTaskLogContextInfosOutput) ContextFlow() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DownloadTaskLogContextInfos) *string { return v.ContextFlow }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the log index in the LogGroup.
+func (o DownloadTaskLogContextInfosOutput) PackageOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DownloadTaskLogContextInfos) *int { return v.PackageOffset }).(pulumi.IntPtrOutput)
+}
+
+// Host of the log source.
+func (o DownloadTaskLogContextInfosOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DownloadTaskLogContextInfos) *string { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+type DownloadTaskLogContextInfosPtrOutput struct{ *pulumi.OutputState }
+
+func (DownloadTaskLogContextInfosPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DownloadTaskLogContextInfos)(nil)).Elem()
+}
+
+func (o DownloadTaskLogContextInfosPtrOutput) ToDownloadTaskLogContextInfosPtrOutput() DownloadTaskLogContextInfosPtrOutput {
+	return o
+}
+
+func (o DownloadTaskLogContextInfosPtrOutput) ToDownloadTaskLogContextInfosPtrOutputWithContext(ctx context.Context) DownloadTaskLogContextInfosPtrOutput {
+	return o
+}
+
+func (o DownloadTaskLogContextInfosPtrOutput) Elem() DownloadTaskLogContextInfosOutput {
+	return o.ApplyT(func(v *DownloadTaskLogContextInfos) DownloadTaskLogContextInfos {
+		if v != nil {
+			return *v
+		}
+		var ret DownloadTaskLogContextInfos
+		return ret
+	}).(DownloadTaskLogContextInfosOutput)
+}
+
+// LogGroup ID to which the log context belongs.
+func (o DownloadTaskLogContextInfosPtrOutput) ContextFlow() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DownloadTaskLogContextInfos) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ContextFlow
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specifies the log index in the LogGroup.
+func (o DownloadTaskLogContextInfosPtrOutput) PackageOffset() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DownloadTaskLogContextInfos) *int {
+		if v == nil {
+			return nil
+		}
+		return v.PackageOffset
+	}).(pulumi.IntPtrOutput)
+}
+
+// Host of the log source.
+func (o DownloadTaskLogContextInfosPtrOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DownloadTaskLogContextInfos) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Source
+	}).(pulumi.StringPtrOutput)
+}
+
 type EtlTargetResource struct {
 	// Name of the custom output target. You must use this name to refer to the output target in the data processing rules
 	Alias string `pulumi:"alias"`
@@ -10917,6 +11092,428 @@ func (o ProjectTagArrayOutput) Index(i pulumi.IntInput) ProjectTagOutput {
 	}).(ProjectTagOutput)
 }
 
+type RuleBoundHostGroupHostGroup struct {
+	// Number of machines with abnormal heartbeat status
+	AbnormalHeartbeatStatusCount *int `pulumi:"abnormalHeartbeatStatusCount"`
+	// Latest LogCollector version number available for upgrade
+	AgentLatestVersion *string `pulumi:"agentLatestVersion"`
+	// Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+	AutoUpdate *bool `pulumi:"autoUpdate"`
+	// Machine group creation time
+	CreateTime *string `pulumi:"createTime"`
+	// Number of machines in the machine group
+	HostCount *int `pulumi:"hostCount"`
+	// Machine group ID
+	HostGroupId *string `pulumi:"hostGroupId"`
+	// Machine group name
+	HostGroupName *string `pulumi:"hostGroupName"`
+	// Machine group type. IP: machine IP. Label: machine label.
+	HostGroupType *string `pulumi:"hostGroupType"`
+	// Machine identifier
+	HostIdentifier *string `pulumi:"hostIdentifier"`
+	// IAM project associated with the machine group
+	IamProjectName *string `pulumi:"iamProjectName"`
+	// Machine group modification time
+	ModifyTime *string `pulumi:"modifyTime"`
+	// Number of machines with normal heartbeat status
+	NormalHeartbeatStatusCount *int `pulumi:"normalHeartbeatStatusCount"`
+	// Number of collection configurations bound to the machine group
+	RuleCount *int `pulumi:"ruleCount"`
+	// Enable LogCollector service log feature. true: enabled. false (default): disabled.
+	ServiceLogging *bool `pulumi:"serviceLogging"`
+	// LogCollector auto upgrade end time
+	UpdateEndTime *string `pulumi:"updateEndTime"`
+	// LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+	UpdateStartTime *string `pulumi:"updateStartTime"`
+}
+
+// RuleBoundHostGroupHostGroupInput is an input type that accepts RuleBoundHostGroupHostGroupArgs and RuleBoundHostGroupHostGroupOutput values.
+// You can construct a concrete instance of `RuleBoundHostGroupHostGroupInput` via:
+//
+//	RuleBoundHostGroupHostGroupArgs{...}
+type RuleBoundHostGroupHostGroupInput interface {
+	pulumi.Input
+
+	ToRuleBoundHostGroupHostGroupOutput() RuleBoundHostGroupHostGroupOutput
+	ToRuleBoundHostGroupHostGroupOutputWithContext(context.Context) RuleBoundHostGroupHostGroupOutput
+}
+
+type RuleBoundHostGroupHostGroupArgs struct {
+	// Number of machines with abnormal heartbeat status
+	AbnormalHeartbeatStatusCount pulumi.IntPtrInput `pulumi:"abnormalHeartbeatStatusCount"`
+	// Latest LogCollector version number available for upgrade
+	AgentLatestVersion pulumi.StringPtrInput `pulumi:"agentLatestVersion"`
+	// Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+	AutoUpdate pulumi.BoolPtrInput `pulumi:"autoUpdate"`
+	// Machine group creation time
+	CreateTime pulumi.StringPtrInput `pulumi:"createTime"`
+	// Number of machines in the machine group
+	HostCount pulumi.IntPtrInput `pulumi:"hostCount"`
+	// Machine group ID
+	HostGroupId pulumi.StringPtrInput `pulumi:"hostGroupId"`
+	// Machine group name
+	HostGroupName pulumi.StringPtrInput `pulumi:"hostGroupName"`
+	// Machine group type. IP: machine IP. Label: machine label.
+	HostGroupType pulumi.StringPtrInput `pulumi:"hostGroupType"`
+	// Machine identifier
+	HostIdentifier pulumi.StringPtrInput `pulumi:"hostIdentifier"`
+	// IAM project associated with the machine group
+	IamProjectName pulumi.StringPtrInput `pulumi:"iamProjectName"`
+	// Machine group modification time
+	ModifyTime pulumi.StringPtrInput `pulumi:"modifyTime"`
+	// Number of machines with normal heartbeat status
+	NormalHeartbeatStatusCount pulumi.IntPtrInput `pulumi:"normalHeartbeatStatusCount"`
+	// Number of collection configurations bound to the machine group
+	RuleCount pulumi.IntPtrInput `pulumi:"ruleCount"`
+	// Enable LogCollector service log feature. true: enabled. false (default): disabled.
+	ServiceLogging pulumi.BoolPtrInput `pulumi:"serviceLogging"`
+	// LogCollector auto upgrade end time
+	UpdateEndTime pulumi.StringPtrInput `pulumi:"updateEndTime"`
+	// LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+	UpdateStartTime pulumi.StringPtrInput `pulumi:"updateStartTime"`
+}
+
+func (RuleBoundHostGroupHostGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleBoundHostGroupHostGroup)(nil)).Elem()
+}
+
+func (i RuleBoundHostGroupHostGroupArgs) ToRuleBoundHostGroupHostGroupOutput() RuleBoundHostGroupHostGroupOutput {
+	return i.ToRuleBoundHostGroupHostGroupOutputWithContext(context.Background())
+}
+
+func (i RuleBoundHostGroupHostGroupArgs) ToRuleBoundHostGroupHostGroupOutputWithContext(ctx context.Context) RuleBoundHostGroupHostGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleBoundHostGroupHostGroupOutput)
+}
+
+func (i RuleBoundHostGroupHostGroupArgs) ToRuleBoundHostGroupHostGroupPtrOutput() RuleBoundHostGroupHostGroupPtrOutput {
+	return i.ToRuleBoundHostGroupHostGroupPtrOutputWithContext(context.Background())
+}
+
+func (i RuleBoundHostGroupHostGroupArgs) ToRuleBoundHostGroupHostGroupPtrOutputWithContext(ctx context.Context) RuleBoundHostGroupHostGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleBoundHostGroupHostGroupOutput).ToRuleBoundHostGroupHostGroupPtrOutputWithContext(ctx)
+}
+
+// RuleBoundHostGroupHostGroupPtrInput is an input type that accepts RuleBoundHostGroupHostGroupArgs, RuleBoundHostGroupHostGroupPtr and RuleBoundHostGroupHostGroupPtrOutput values.
+// You can construct a concrete instance of `RuleBoundHostGroupHostGroupPtrInput` via:
+//
+//	        RuleBoundHostGroupHostGroupArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleBoundHostGroupHostGroupPtrInput interface {
+	pulumi.Input
+
+	ToRuleBoundHostGroupHostGroupPtrOutput() RuleBoundHostGroupHostGroupPtrOutput
+	ToRuleBoundHostGroupHostGroupPtrOutputWithContext(context.Context) RuleBoundHostGroupHostGroupPtrOutput
+}
+
+type ruleBoundHostGroupHostGroupPtrType RuleBoundHostGroupHostGroupArgs
+
+func RuleBoundHostGroupHostGroupPtr(v *RuleBoundHostGroupHostGroupArgs) RuleBoundHostGroupHostGroupPtrInput {
+	return (*ruleBoundHostGroupHostGroupPtrType)(v)
+}
+
+func (*ruleBoundHostGroupHostGroupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleBoundHostGroupHostGroup)(nil)).Elem()
+}
+
+func (i *ruleBoundHostGroupHostGroupPtrType) ToRuleBoundHostGroupHostGroupPtrOutput() RuleBoundHostGroupHostGroupPtrOutput {
+	return i.ToRuleBoundHostGroupHostGroupPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleBoundHostGroupHostGroupPtrType) ToRuleBoundHostGroupHostGroupPtrOutputWithContext(ctx context.Context) RuleBoundHostGroupHostGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleBoundHostGroupHostGroupPtrOutput)
+}
+
+type RuleBoundHostGroupHostGroupOutput struct{ *pulumi.OutputState }
+
+func (RuleBoundHostGroupHostGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleBoundHostGroupHostGroup)(nil)).Elem()
+}
+
+func (o RuleBoundHostGroupHostGroupOutput) ToRuleBoundHostGroupHostGroupOutput() RuleBoundHostGroupHostGroupOutput {
+	return o
+}
+
+func (o RuleBoundHostGroupHostGroupOutput) ToRuleBoundHostGroupHostGroupOutputWithContext(ctx context.Context) RuleBoundHostGroupHostGroupOutput {
+	return o
+}
+
+func (o RuleBoundHostGroupHostGroupOutput) ToRuleBoundHostGroupHostGroupPtrOutput() RuleBoundHostGroupHostGroupPtrOutput {
+	return o.ToRuleBoundHostGroupHostGroupPtrOutputWithContext(context.Background())
+}
+
+func (o RuleBoundHostGroupHostGroupOutput) ToRuleBoundHostGroupHostGroupPtrOutputWithContext(ctx context.Context) RuleBoundHostGroupHostGroupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleBoundHostGroupHostGroup) *RuleBoundHostGroupHostGroup {
+		return &v
+	}).(RuleBoundHostGroupHostGroupPtrOutput)
+}
+
+// Number of machines with abnormal heartbeat status
+func (o RuleBoundHostGroupHostGroupOutput) AbnormalHeartbeatStatusCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *int { return v.AbnormalHeartbeatStatusCount }).(pulumi.IntPtrOutput)
+}
+
+// Latest LogCollector version number available for upgrade
+func (o RuleBoundHostGroupHostGroupOutput) AgentLatestVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.AgentLatestVersion }).(pulumi.StringPtrOutput)
+}
+
+// Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+func (o RuleBoundHostGroupHostGroupOutput) AutoUpdate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *bool { return v.AutoUpdate }).(pulumi.BoolPtrOutput)
+}
+
+// Machine group creation time
+func (o RuleBoundHostGroupHostGroupOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.CreateTime }).(pulumi.StringPtrOutput)
+}
+
+// Number of machines in the machine group
+func (o RuleBoundHostGroupHostGroupOutput) HostCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *int { return v.HostCount }).(pulumi.IntPtrOutput)
+}
+
+// Machine group ID
+func (o RuleBoundHostGroupHostGroupOutput) HostGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.HostGroupId }).(pulumi.StringPtrOutput)
+}
+
+// Machine group name
+func (o RuleBoundHostGroupHostGroupOutput) HostGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.HostGroupName }).(pulumi.StringPtrOutput)
+}
+
+// Machine group type. IP: machine IP. Label: machine label.
+func (o RuleBoundHostGroupHostGroupOutput) HostGroupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.HostGroupType }).(pulumi.StringPtrOutput)
+}
+
+// Machine identifier
+func (o RuleBoundHostGroupHostGroupOutput) HostIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.HostIdentifier }).(pulumi.StringPtrOutput)
+}
+
+// IAM project associated with the machine group
+func (o RuleBoundHostGroupHostGroupOutput) IamProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.IamProjectName }).(pulumi.StringPtrOutput)
+}
+
+// Machine group modification time
+func (o RuleBoundHostGroupHostGroupOutput) ModifyTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.ModifyTime }).(pulumi.StringPtrOutput)
+}
+
+// Number of machines with normal heartbeat status
+func (o RuleBoundHostGroupHostGroupOutput) NormalHeartbeatStatusCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *int { return v.NormalHeartbeatStatusCount }).(pulumi.IntPtrOutput)
+}
+
+// Number of collection configurations bound to the machine group
+func (o RuleBoundHostGroupHostGroupOutput) RuleCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *int { return v.RuleCount }).(pulumi.IntPtrOutput)
+}
+
+// Enable LogCollector service log feature. true: enabled. false (default): disabled.
+func (o RuleBoundHostGroupHostGroupOutput) ServiceLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *bool { return v.ServiceLogging }).(pulumi.BoolPtrOutput)
+}
+
+// LogCollector auto upgrade end time
+func (o RuleBoundHostGroupHostGroupOutput) UpdateEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.UpdateEndTime }).(pulumi.StringPtrOutput)
+}
+
+// LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+func (o RuleBoundHostGroupHostGroupOutput) UpdateStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleBoundHostGroupHostGroup) *string { return v.UpdateStartTime }).(pulumi.StringPtrOutput)
+}
+
+type RuleBoundHostGroupHostGroupPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleBoundHostGroupHostGroupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleBoundHostGroupHostGroup)(nil)).Elem()
+}
+
+func (o RuleBoundHostGroupHostGroupPtrOutput) ToRuleBoundHostGroupHostGroupPtrOutput() RuleBoundHostGroupHostGroupPtrOutput {
+	return o
+}
+
+func (o RuleBoundHostGroupHostGroupPtrOutput) ToRuleBoundHostGroupHostGroupPtrOutputWithContext(ctx context.Context) RuleBoundHostGroupHostGroupPtrOutput {
+	return o
+}
+
+func (o RuleBoundHostGroupHostGroupPtrOutput) Elem() RuleBoundHostGroupHostGroupOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) RuleBoundHostGroupHostGroup {
+		if v != nil {
+			return *v
+		}
+		var ret RuleBoundHostGroupHostGroup
+		return ret
+	}).(RuleBoundHostGroupHostGroupOutput)
+}
+
+// Number of machines with abnormal heartbeat status
+func (o RuleBoundHostGroupHostGroupPtrOutput) AbnormalHeartbeatStatusCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AbnormalHeartbeatStatusCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Latest LogCollector version number available for upgrade
+func (o RuleBoundHostGroupHostGroupPtrOutput) AgentLatestVersion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AgentLatestVersion
+	}).(pulumi.StringPtrOutput)
+}
+
+// Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+func (o RuleBoundHostGroupHostGroupPtrOutput) AutoUpdate() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.AutoUpdate
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Machine group creation time
+func (o RuleBoundHostGroupHostGroupPtrOutput) CreateTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CreateTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Number of machines in the machine group
+func (o RuleBoundHostGroupHostGroupPtrOutput) HostCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.HostCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Machine group ID
+func (o RuleBoundHostGroupHostGroupPtrOutput) HostGroupId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostGroupId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Machine group name
+func (o RuleBoundHostGroupHostGroupPtrOutput) HostGroupName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostGroupName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Machine group type. IP: machine IP. Label: machine label.
+func (o RuleBoundHostGroupHostGroupPtrOutput) HostGroupType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostGroupType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Machine identifier
+func (o RuleBoundHostGroupHostGroupPtrOutput) HostIdentifier() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostIdentifier
+	}).(pulumi.StringPtrOutput)
+}
+
+// IAM project associated with the machine group
+func (o RuleBoundHostGroupHostGroupPtrOutput) IamProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IamProjectName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Machine group modification time
+func (o RuleBoundHostGroupHostGroupPtrOutput) ModifyTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ModifyTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Number of machines with normal heartbeat status
+func (o RuleBoundHostGroupHostGroupPtrOutput) NormalHeartbeatStatusCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.NormalHeartbeatStatusCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Number of collection configurations bound to the machine group
+func (o RuleBoundHostGroupHostGroupPtrOutput) RuleCount() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.RuleCount
+	}).(pulumi.IntPtrOutput)
+}
+
+// Enable LogCollector service log feature. true: enabled. false (default): disabled.
+func (o RuleBoundHostGroupHostGroupPtrOutput) ServiceLogging() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ServiceLogging
+	}).(pulumi.BoolPtrOutput)
+}
+
+// LogCollector auto upgrade end time
+func (o RuleBoundHostGroupHostGroupPtrOutput) UpdateEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UpdateEndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+func (o RuleBoundHostGroupHostGroupPtrOutput) UpdateStartTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleBoundHostGroupHostGroup) *string {
+		if v == nil {
+			return nil
+		}
+		return v.UpdateStartTime
+	}).(pulumi.StringPtrOutput)
+}
+
 type RuleContainerRule struct {
 	// Container name to collect. If no container name is specified, all containers in the machine group will be collected. Supports regex matching; for example, setting the container name to ^(container-test)$ will collect all containers named container-test.
 	ContainerNameRegex *string `pulumi:"containerNameRegex"`
@@ -16010,6 +16607,148 @@ func (o ShipperTosShipperInfoPtrOutput) Prefix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
+type TopicShard struct {
+	// Ending key value of the partition
+	ExclusiveEndKey *string `pulumi:"exclusiveEndKey"`
+	// Starting key value of the partition
+	InclusiveBeginKey *string `pulumi:"inclusiveBeginKey"`
+	// Last modified time of the partition
+	ModifyTime *string `pulumi:"modifyTime"`
+	// Partition ID of the log topic
+	ShardId *int `pulumi:"shardId"`
+	// Partition status: readwrite means read/write, readonly means read-only
+	Status *string `pulumi:"status"`
+	// Time when the partition stopped writing, that is, the last time logs were written to this partition
+	StopWriteTime *string `pulumi:"stopWriteTime"`
+}
+
+// TopicShardInput is an input type that accepts TopicShardArgs and TopicShardOutput values.
+// You can construct a concrete instance of `TopicShardInput` via:
+//
+//	TopicShardArgs{...}
+type TopicShardInput interface {
+	pulumi.Input
+
+	ToTopicShardOutput() TopicShardOutput
+	ToTopicShardOutputWithContext(context.Context) TopicShardOutput
+}
+
+type TopicShardArgs struct {
+	// Ending key value of the partition
+	ExclusiveEndKey pulumi.StringPtrInput `pulumi:"exclusiveEndKey"`
+	// Starting key value of the partition
+	InclusiveBeginKey pulumi.StringPtrInput `pulumi:"inclusiveBeginKey"`
+	// Last modified time of the partition
+	ModifyTime pulumi.StringPtrInput `pulumi:"modifyTime"`
+	// Partition ID of the log topic
+	ShardId pulumi.IntPtrInput `pulumi:"shardId"`
+	// Partition status: readwrite means read/write, readonly means read-only
+	Status pulumi.StringPtrInput `pulumi:"status"`
+	// Time when the partition stopped writing, that is, the last time logs were written to this partition
+	StopWriteTime pulumi.StringPtrInput `pulumi:"stopWriteTime"`
+}
+
+func (TopicShardArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TopicShard)(nil)).Elem()
+}
+
+func (i TopicShardArgs) ToTopicShardOutput() TopicShardOutput {
+	return i.ToTopicShardOutputWithContext(context.Background())
+}
+
+func (i TopicShardArgs) ToTopicShardOutputWithContext(ctx context.Context) TopicShardOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TopicShardOutput)
+}
+
+// TopicShardArrayInput is an input type that accepts TopicShardArray and TopicShardArrayOutput values.
+// You can construct a concrete instance of `TopicShardArrayInput` via:
+//
+//	TopicShardArray{ TopicShardArgs{...} }
+type TopicShardArrayInput interface {
+	pulumi.Input
+
+	ToTopicShardArrayOutput() TopicShardArrayOutput
+	ToTopicShardArrayOutputWithContext(context.Context) TopicShardArrayOutput
+}
+
+type TopicShardArray []TopicShardInput
+
+func (TopicShardArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TopicShard)(nil)).Elem()
+}
+
+func (i TopicShardArray) ToTopicShardArrayOutput() TopicShardArrayOutput {
+	return i.ToTopicShardArrayOutputWithContext(context.Background())
+}
+
+func (i TopicShardArray) ToTopicShardArrayOutputWithContext(ctx context.Context) TopicShardArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TopicShardArrayOutput)
+}
+
+type TopicShardOutput struct{ *pulumi.OutputState }
+
+func (TopicShardOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TopicShard)(nil)).Elem()
+}
+
+func (o TopicShardOutput) ToTopicShardOutput() TopicShardOutput {
+	return o
+}
+
+func (o TopicShardOutput) ToTopicShardOutputWithContext(ctx context.Context) TopicShardOutput {
+	return o
+}
+
+// Ending key value of the partition
+func (o TopicShardOutput) ExclusiveEndKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TopicShard) *string { return v.ExclusiveEndKey }).(pulumi.StringPtrOutput)
+}
+
+// Starting key value of the partition
+func (o TopicShardOutput) InclusiveBeginKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TopicShard) *string { return v.InclusiveBeginKey }).(pulumi.StringPtrOutput)
+}
+
+// Last modified time of the partition
+func (o TopicShardOutput) ModifyTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TopicShard) *string { return v.ModifyTime }).(pulumi.StringPtrOutput)
+}
+
+// Partition ID of the log topic
+func (o TopicShardOutput) ShardId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v TopicShard) *int { return v.ShardId }).(pulumi.IntPtrOutput)
+}
+
+// Partition status: readwrite means read/write, readonly means read-only
+func (o TopicShardOutput) Status() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TopicShard) *string { return v.Status }).(pulumi.StringPtrOutput)
+}
+
+// Time when the partition stopped writing, that is, the last time logs were written to this partition
+func (o TopicShardOutput) StopWriteTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TopicShard) *string { return v.StopWriteTime }).(pulumi.StringPtrOutput)
+}
+
+type TopicShardArrayOutput struct{ *pulumi.OutputState }
+
+func (TopicShardArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TopicShard)(nil)).Elem()
+}
+
+func (o TopicShardArrayOutput) ToTopicShardArrayOutput() TopicShardArrayOutput {
+	return o
+}
+
+func (o TopicShardArrayOutput) ToTopicShardArrayOutputWithContext(ctx context.Context) TopicShardArrayOutput {
+	return o
+}
+
+func (o TopicShardArrayOutput) Index(i pulumi.IntInput) TopicShardOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TopicShard {
+		return vs[0].([]TopicShard)[vs[1].(int)]
+	}).(TopicShardOutput)
+}
+
 type TopicTag struct {
 	// User tag key.
 	Key *string `pulumi:"key"`
@@ -18976,6 +19715,76 @@ func (o GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput) Index(i pulumi.I
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetAlarmWebhookIntegrationTypeWebhookHeader {
 		return vs[0].([]GetAlarmWebhookIntegrationTypeWebhookHeader)[vs[1].(int)]
 	}).(GetAlarmWebhookIntegrationTypeWebhookHeaderOutput)
+}
+
+type GetDownloadTaskLogContextInfos struct {
+	// LogGroup ID to which the log context belongs.
+	ContextFlow string `pulumi:"contextFlow"`
+	// Specifies the log index in the LogGroup.
+	PackageOffset int `pulumi:"packageOffset"`
+	// Host of the log source.
+	Source string `pulumi:"source"`
+}
+
+// GetDownloadTaskLogContextInfosInput is an input type that accepts GetDownloadTaskLogContextInfosArgs and GetDownloadTaskLogContextInfosOutput values.
+// You can construct a concrete instance of `GetDownloadTaskLogContextInfosInput` via:
+//
+//	GetDownloadTaskLogContextInfosArgs{...}
+type GetDownloadTaskLogContextInfosInput interface {
+	pulumi.Input
+
+	ToGetDownloadTaskLogContextInfosOutput() GetDownloadTaskLogContextInfosOutput
+	ToGetDownloadTaskLogContextInfosOutputWithContext(context.Context) GetDownloadTaskLogContextInfosOutput
+}
+
+type GetDownloadTaskLogContextInfosArgs struct {
+	// LogGroup ID to which the log context belongs.
+	ContextFlow pulumi.StringInput `pulumi:"contextFlow"`
+	// Specifies the log index in the LogGroup.
+	PackageOffset pulumi.IntInput `pulumi:"packageOffset"`
+	// Host of the log source.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetDownloadTaskLogContextInfosArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDownloadTaskLogContextInfos)(nil)).Elem()
+}
+
+func (i GetDownloadTaskLogContextInfosArgs) ToGetDownloadTaskLogContextInfosOutput() GetDownloadTaskLogContextInfosOutput {
+	return i.ToGetDownloadTaskLogContextInfosOutputWithContext(context.Background())
+}
+
+func (i GetDownloadTaskLogContextInfosArgs) ToGetDownloadTaskLogContextInfosOutputWithContext(ctx context.Context) GetDownloadTaskLogContextInfosOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDownloadTaskLogContextInfosOutput)
+}
+
+type GetDownloadTaskLogContextInfosOutput struct{ *pulumi.OutputState }
+
+func (GetDownloadTaskLogContextInfosOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDownloadTaskLogContextInfos)(nil)).Elem()
+}
+
+func (o GetDownloadTaskLogContextInfosOutput) ToGetDownloadTaskLogContextInfosOutput() GetDownloadTaskLogContextInfosOutput {
+	return o
+}
+
+func (o GetDownloadTaskLogContextInfosOutput) ToGetDownloadTaskLogContextInfosOutputWithContext(ctx context.Context) GetDownloadTaskLogContextInfosOutput {
+	return o
+}
+
+// LogGroup ID to which the log context belongs.
+func (o GetDownloadTaskLogContextInfosOutput) ContextFlow() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDownloadTaskLogContextInfos) string { return v.ContextFlow }).(pulumi.StringOutput)
+}
+
+// Specifies the log index in the LogGroup.
+func (o GetDownloadTaskLogContextInfosOutput) PackageOffset() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDownloadTaskLogContextInfos) int { return v.PackageOffset }).(pulumi.IntOutput)
+}
+
+// Host of the log source.
+func (o GetDownloadTaskLogContextInfosOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDownloadTaskLogContextInfos) string { return v.Source }).(pulumi.StringOutput)
 }
 
 type GetEtlTargetResource struct {
@@ -23790,6 +24599,193 @@ func (o GetProjectTagArrayOutput) Index(i pulumi.IntInput) GetProjectTagOutput {
 	}).(GetProjectTagOutput)
 }
 
+type GetRuleBoundHostGroupHostGroup struct {
+	// Number of machines with abnormal heartbeat status
+	AbnormalHeartbeatStatusCount int `pulumi:"abnormalHeartbeatStatusCount"`
+	// Latest LogCollector version number available for upgrade
+	AgentLatestVersion string `pulumi:"agentLatestVersion"`
+	// Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+	AutoUpdate bool `pulumi:"autoUpdate"`
+	// Machine group creation time
+	CreateTime string `pulumi:"createTime"`
+	// Number of machines in the machine group
+	HostCount int `pulumi:"hostCount"`
+	// Machine group ID
+	HostGroupId string `pulumi:"hostGroupId"`
+	// Machine group name
+	HostGroupName string `pulumi:"hostGroupName"`
+	// Machine group type. IP: machine IP. Label: machine label.
+	HostGroupType string `pulumi:"hostGroupType"`
+	// Machine identifier
+	HostIdentifier string `pulumi:"hostIdentifier"`
+	// IAM project associated with the machine group
+	IamProjectName string `pulumi:"iamProjectName"`
+	// Machine group modification time
+	ModifyTime string `pulumi:"modifyTime"`
+	// Number of machines with normal heartbeat status
+	NormalHeartbeatStatusCount int `pulumi:"normalHeartbeatStatusCount"`
+	// Number of collection configurations bound to the machine group
+	RuleCount int `pulumi:"ruleCount"`
+	// Enable LogCollector service log feature. true: enabled. false (default): disabled.
+	ServiceLogging bool `pulumi:"serviceLogging"`
+	// LogCollector auto upgrade end time
+	UpdateEndTime string `pulumi:"updateEndTime"`
+	// LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+	UpdateStartTime string `pulumi:"updateStartTime"`
+}
+
+// GetRuleBoundHostGroupHostGroupInput is an input type that accepts GetRuleBoundHostGroupHostGroupArgs and GetRuleBoundHostGroupHostGroupOutput values.
+// You can construct a concrete instance of `GetRuleBoundHostGroupHostGroupInput` via:
+//
+//	GetRuleBoundHostGroupHostGroupArgs{...}
+type GetRuleBoundHostGroupHostGroupInput interface {
+	pulumi.Input
+
+	ToGetRuleBoundHostGroupHostGroupOutput() GetRuleBoundHostGroupHostGroupOutput
+	ToGetRuleBoundHostGroupHostGroupOutputWithContext(context.Context) GetRuleBoundHostGroupHostGroupOutput
+}
+
+type GetRuleBoundHostGroupHostGroupArgs struct {
+	// Number of machines with abnormal heartbeat status
+	AbnormalHeartbeatStatusCount pulumi.IntInput `pulumi:"abnormalHeartbeatStatusCount"`
+	// Latest LogCollector version number available for upgrade
+	AgentLatestVersion pulumi.StringInput `pulumi:"agentLatestVersion"`
+	// Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+	AutoUpdate pulumi.BoolInput `pulumi:"autoUpdate"`
+	// Machine group creation time
+	CreateTime pulumi.StringInput `pulumi:"createTime"`
+	// Number of machines in the machine group
+	HostCount pulumi.IntInput `pulumi:"hostCount"`
+	// Machine group ID
+	HostGroupId pulumi.StringInput `pulumi:"hostGroupId"`
+	// Machine group name
+	HostGroupName pulumi.StringInput `pulumi:"hostGroupName"`
+	// Machine group type. IP: machine IP. Label: machine label.
+	HostGroupType pulumi.StringInput `pulumi:"hostGroupType"`
+	// Machine identifier
+	HostIdentifier pulumi.StringInput `pulumi:"hostIdentifier"`
+	// IAM project associated with the machine group
+	IamProjectName pulumi.StringInput `pulumi:"iamProjectName"`
+	// Machine group modification time
+	ModifyTime pulumi.StringInput `pulumi:"modifyTime"`
+	// Number of machines with normal heartbeat status
+	NormalHeartbeatStatusCount pulumi.IntInput `pulumi:"normalHeartbeatStatusCount"`
+	// Number of collection configurations bound to the machine group
+	RuleCount pulumi.IntInput `pulumi:"ruleCount"`
+	// Enable LogCollector service log feature. true: enabled. false (default): disabled.
+	ServiceLogging pulumi.BoolInput `pulumi:"serviceLogging"`
+	// LogCollector auto upgrade end time
+	UpdateEndTime pulumi.StringInput `pulumi:"updateEndTime"`
+	// LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+	UpdateStartTime pulumi.StringInput `pulumi:"updateStartTime"`
+}
+
+func (GetRuleBoundHostGroupHostGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleBoundHostGroupHostGroup)(nil)).Elem()
+}
+
+func (i GetRuleBoundHostGroupHostGroupArgs) ToGetRuleBoundHostGroupHostGroupOutput() GetRuleBoundHostGroupHostGroupOutput {
+	return i.ToGetRuleBoundHostGroupHostGroupOutputWithContext(context.Background())
+}
+
+func (i GetRuleBoundHostGroupHostGroupArgs) ToGetRuleBoundHostGroupHostGroupOutputWithContext(ctx context.Context) GetRuleBoundHostGroupHostGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleBoundHostGroupHostGroupOutput)
+}
+
+type GetRuleBoundHostGroupHostGroupOutput struct{ *pulumi.OutputState }
+
+func (GetRuleBoundHostGroupHostGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleBoundHostGroupHostGroup)(nil)).Elem()
+}
+
+func (o GetRuleBoundHostGroupHostGroupOutput) ToGetRuleBoundHostGroupHostGroupOutput() GetRuleBoundHostGroupHostGroupOutput {
+	return o
+}
+
+func (o GetRuleBoundHostGroupHostGroupOutput) ToGetRuleBoundHostGroupHostGroupOutputWithContext(ctx context.Context) GetRuleBoundHostGroupHostGroupOutput {
+	return o
+}
+
+// Number of machines with abnormal heartbeat status
+func (o GetRuleBoundHostGroupHostGroupOutput) AbnormalHeartbeatStatusCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) int { return v.AbnormalHeartbeatStatusCount }).(pulumi.IntOutput)
+}
+
+// Latest LogCollector version number available for upgrade
+func (o GetRuleBoundHostGroupHostGroupOutput) AgentLatestVersion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.AgentLatestVersion }).(pulumi.StringOutput)
+}
+
+// Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+func (o GetRuleBoundHostGroupHostGroupOutput) AutoUpdate() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) bool { return v.AutoUpdate }).(pulumi.BoolOutput)
+}
+
+// Machine group creation time
+func (o GetRuleBoundHostGroupHostGroupOutput) CreateTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.CreateTime }).(pulumi.StringOutput)
+}
+
+// Number of machines in the machine group
+func (o GetRuleBoundHostGroupHostGroupOutput) HostCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) int { return v.HostCount }).(pulumi.IntOutput)
+}
+
+// Machine group ID
+func (o GetRuleBoundHostGroupHostGroupOutput) HostGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.HostGroupId }).(pulumi.StringOutput)
+}
+
+// Machine group name
+func (o GetRuleBoundHostGroupHostGroupOutput) HostGroupName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.HostGroupName }).(pulumi.StringOutput)
+}
+
+// Machine group type. IP: machine IP. Label: machine label.
+func (o GetRuleBoundHostGroupHostGroupOutput) HostGroupType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.HostGroupType }).(pulumi.StringOutput)
+}
+
+// Machine identifier
+func (o GetRuleBoundHostGroupHostGroupOutput) HostIdentifier() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.HostIdentifier }).(pulumi.StringOutput)
+}
+
+// IAM project associated with the machine group
+func (o GetRuleBoundHostGroupHostGroupOutput) IamProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.IamProjectName }).(pulumi.StringOutput)
+}
+
+// Machine group modification time
+func (o GetRuleBoundHostGroupHostGroupOutput) ModifyTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.ModifyTime }).(pulumi.StringOutput)
+}
+
+// Number of machines with normal heartbeat status
+func (o GetRuleBoundHostGroupHostGroupOutput) NormalHeartbeatStatusCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) int { return v.NormalHeartbeatStatusCount }).(pulumi.IntOutput)
+}
+
+// Number of collection configurations bound to the machine group
+func (o GetRuleBoundHostGroupHostGroupOutput) RuleCount() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) int { return v.RuleCount }).(pulumi.IntOutput)
+}
+
+// Enable LogCollector service log feature. true: enabled. false (default): disabled.
+func (o GetRuleBoundHostGroupHostGroupOutput) ServiceLogging() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) bool { return v.ServiceLogging }).(pulumi.BoolOutput)
+}
+
+// LogCollector auto upgrade end time
+func (o GetRuleBoundHostGroupHostGroupOutput) UpdateEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.UpdateEndTime }).(pulumi.StringOutput)
+}
+
+// LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+func (o GetRuleBoundHostGroupHostGroupOutput) UpdateStartTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleBoundHostGroupHostGroup) string { return v.UpdateStartTime }).(pulumi.StringOutput)
+}
+
 type GetRuleContainerRule struct {
 	// Container name to collect. If no container name is specified, all containers in the machine group will be collected. Supports regex matching; for example, setting the container name to ^(container-test)$ will collect all containers named container-test.
 	ContainerNameRegex string `pulumi:"containerNameRegex"`
@@ -26963,6 +27959,148 @@ func (o GetShipperTosShipperInfoOutput) Prefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetShipperTosShipperInfo) string { return v.Prefix }).(pulumi.StringOutput)
 }
 
+type GetTopicShard struct {
+	// Ending key value of the partition
+	ExclusiveEndKey string `pulumi:"exclusiveEndKey"`
+	// Starting key value of the partition
+	InclusiveBeginKey string `pulumi:"inclusiveBeginKey"`
+	// Last modified time of the partition
+	ModifyTime string `pulumi:"modifyTime"`
+	// Partition ID of the log topic
+	ShardId int `pulumi:"shardId"`
+	// Partition status: readwrite means read/write, readonly means read-only
+	Status string `pulumi:"status"`
+	// Time when the partition stopped writing, that is, the last time logs were written to this partition
+	StopWriteTime string `pulumi:"stopWriteTime"`
+}
+
+// GetTopicShardInput is an input type that accepts GetTopicShardArgs and GetTopicShardOutput values.
+// You can construct a concrete instance of `GetTopicShardInput` via:
+//
+//	GetTopicShardArgs{...}
+type GetTopicShardInput interface {
+	pulumi.Input
+
+	ToGetTopicShardOutput() GetTopicShardOutput
+	ToGetTopicShardOutputWithContext(context.Context) GetTopicShardOutput
+}
+
+type GetTopicShardArgs struct {
+	// Ending key value of the partition
+	ExclusiveEndKey pulumi.StringInput `pulumi:"exclusiveEndKey"`
+	// Starting key value of the partition
+	InclusiveBeginKey pulumi.StringInput `pulumi:"inclusiveBeginKey"`
+	// Last modified time of the partition
+	ModifyTime pulumi.StringInput `pulumi:"modifyTime"`
+	// Partition ID of the log topic
+	ShardId pulumi.IntInput `pulumi:"shardId"`
+	// Partition status: readwrite means read/write, readonly means read-only
+	Status pulumi.StringInput `pulumi:"status"`
+	// Time when the partition stopped writing, that is, the last time logs were written to this partition
+	StopWriteTime pulumi.StringInput `pulumi:"stopWriteTime"`
+}
+
+func (GetTopicShardArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTopicShard)(nil)).Elem()
+}
+
+func (i GetTopicShardArgs) ToGetTopicShardOutput() GetTopicShardOutput {
+	return i.ToGetTopicShardOutputWithContext(context.Background())
+}
+
+func (i GetTopicShardArgs) ToGetTopicShardOutputWithContext(ctx context.Context) GetTopicShardOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTopicShardOutput)
+}
+
+// GetTopicShardArrayInput is an input type that accepts GetTopicShardArray and GetTopicShardArrayOutput values.
+// You can construct a concrete instance of `GetTopicShardArrayInput` via:
+//
+//	GetTopicShardArray{ GetTopicShardArgs{...} }
+type GetTopicShardArrayInput interface {
+	pulumi.Input
+
+	ToGetTopicShardArrayOutput() GetTopicShardArrayOutput
+	ToGetTopicShardArrayOutputWithContext(context.Context) GetTopicShardArrayOutput
+}
+
+type GetTopicShardArray []GetTopicShardInput
+
+func (GetTopicShardArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTopicShard)(nil)).Elem()
+}
+
+func (i GetTopicShardArray) ToGetTopicShardArrayOutput() GetTopicShardArrayOutput {
+	return i.ToGetTopicShardArrayOutputWithContext(context.Background())
+}
+
+func (i GetTopicShardArray) ToGetTopicShardArrayOutputWithContext(ctx context.Context) GetTopicShardArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTopicShardArrayOutput)
+}
+
+type GetTopicShardOutput struct{ *pulumi.OutputState }
+
+func (GetTopicShardOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTopicShard)(nil)).Elem()
+}
+
+func (o GetTopicShardOutput) ToGetTopicShardOutput() GetTopicShardOutput {
+	return o
+}
+
+func (o GetTopicShardOutput) ToGetTopicShardOutputWithContext(ctx context.Context) GetTopicShardOutput {
+	return o
+}
+
+// Ending key value of the partition
+func (o GetTopicShardOutput) ExclusiveEndKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTopicShard) string { return v.ExclusiveEndKey }).(pulumi.StringOutput)
+}
+
+// Starting key value of the partition
+func (o GetTopicShardOutput) InclusiveBeginKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTopicShard) string { return v.InclusiveBeginKey }).(pulumi.StringOutput)
+}
+
+// Last modified time of the partition
+func (o GetTopicShardOutput) ModifyTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTopicShard) string { return v.ModifyTime }).(pulumi.StringOutput)
+}
+
+// Partition ID of the log topic
+func (o GetTopicShardOutput) ShardId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetTopicShard) int { return v.ShardId }).(pulumi.IntOutput)
+}
+
+// Partition status: readwrite means read/write, readonly means read-only
+func (o GetTopicShardOutput) Status() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTopicShard) string { return v.Status }).(pulumi.StringOutput)
+}
+
+// Time when the partition stopped writing, that is, the last time logs were written to this partition
+func (o GetTopicShardOutput) StopWriteTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTopicShard) string { return v.StopWriteTime }).(pulumi.StringOutput)
+}
+
+type GetTopicShardArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTopicShardArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTopicShard)(nil)).Elem()
+}
+
+func (o GetTopicShardArrayOutput) ToGetTopicShardArrayOutput() GetTopicShardArrayOutput {
+	return o
+}
+
+func (o GetTopicShardArrayOutput) ToGetTopicShardArrayOutputWithContext(ctx context.Context) GetTopicShardArrayOutput {
+	return o
+}
+
+func (o GetTopicShardArrayOutput) Index(i pulumi.IntInput) GetTopicShardOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTopicShard {
+		return vs[0].([]GetTopicShard)[vs[1].(int)]
+	}).(GetTopicShardOutput)
+}
+
 type GetTopicTag struct {
 	// User tag key.
 	Key string `pulumi:"key"`
@@ -27108,6 +28246,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmTriggerConditionArrayInput)(nil)).Elem(), AlarmTriggerConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmWebhookIntegrationTypeWebhookHeaderInput)(nil)).Elem(), AlarmWebhookIntegrationTypeWebhookHeaderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlarmWebhookIntegrationTypeWebhookHeaderArrayInput)(nil)).Elem(), AlarmWebhookIntegrationTypeWebhookHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DownloadTaskLogContextInfosInput)(nil)).Elem(), DownloadTaskLogContextInfosArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DownloadTaskLogContextInfosPtrInput)(nil)).Elem(), DownloadTaskLogContextInfosArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EtlTargetResourceInput)(nil)).Elem(), EtlTargetResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EtlTargetResourceArrayInput)(nil)).Elem(), EtlTargetResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRuleInput)(nil)).Elem(), HostGroupRuleArgs{})
@@ -27196,6 +28336,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*IndexUserInnerKeyValueValueJsonKeyValuePtrInput)(nil)).Elem(), IndexUserInnerKeyValueValueJsonKeyValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectTagInput)(nil)).Elem(), ProjectTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ProjectTagArrayInput)(nil)).Elem(), ProjectTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleBoundHostGroupHostGroupInput)(nil)).Elem(), RuleBoundHostGroupHostGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleBoundHostGroupHostGroupPtrInput)(nil)).Elem(), RuleBoundHostGroupHostGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleContainerRuleInput)(nil)).Elem(), RuleContainerRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleContainerRulePtrInput)(nil)).Elem(), RuleContainerRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RuleContainerRuleEnvTagInput)(nil)).Elem(), RuleContainerRuleEnvTagArgs{})
@@ -27256,6 +28398,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ShipperKafkaShipperInfoPtrInput)(nil)).Elem(), ShipperKafkaShipperInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShipperTosShipperInfoInput)(nil)).Elem(), ShipperTosShipperInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ShipperTosShipperInfoPtrInput)(nil)).Elem(), ShipperTosShipperInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TopicShardInput)(nil)).Elem(), TopicShardArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TopicShardArrayInput)(nil)).Elem(), TopicShardArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagInput)(nil)).Elem(), TopicTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TopicTagArrayInput)(nil)).Elem(), TopicTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmAlarmNotifyGroupInput)(nil)).Elem(), GetAlarmAlarmNotifyGroupArgs{})
@@ -27297,6 +28441,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmTriggerConditionArrayInput)(nil)).Elem(), GetAlarmTriggerConditionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmWebhookIntegrationTypeWebhookHeaderInput)(nil)).Elem(), GetAlarmWebhookIntegrationTypeWebhookHeaderArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlarmWebhookIntegrationTypeWebhookHeaderArrayInput)(nil)).Elem(), GetAlarmWebhookIntegrationTypeWebhookHeaderArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDownloadTaskLogContextInfosInput)(nil)).Elem(), GetDownloadTaskLogContextInfosArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEtlTargetResourceInput)(nil)).Elem(), GetEtlTargetResourceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetEtlTargetResourceArrayInput)(nil)).Elem(), GetEtlTargetResourceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRuleInput)(nil)).Elem(), GetHostGroupRuleArgs{})
@@ -27363,6 +28508,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIndexUserInnerKeyValueValueJsonKeyValueInput)(nil)).Elem(), GetIndexUserInnerKeyValueValueJsonKeyValueArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectTagInput)(nil)).Elem(), GetProjectTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetProjectTagArrayInput)(nil)).Elem(), GetProjectTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleBoundHostGroupHostGroupInput)(nil)).Elem(), GetRuleBoundHostGroupHostGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleContainerRuleInput)(nil)).Elem(), GetRuleContainerRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleContainerRuleEnvTagInput)(nil)).Elem(), GetRuleContainerRuleEnvTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleContainerRuleEnvTagArrayInput)(nil)).Elem(), GetRuleContainerRuleEnvTagArray{})
@@ -27408,6 +28554,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShipperContentInfoJsonInfoInput)(nil)).Elem(), GetShipperContentInfoJsonInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShipperKafkaShipperInfoInput)(nil)).Elem(), GetShipperKafkaShipperInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetShipperTosShipperInfoInput)(nil)).Elem(), GetShipperTosShipperInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicShardInput)(nil)).Elem(), GetTopicShardArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicShardArrayInput)(nil)).Elem(), GetTopicShardArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagInput)(nil)).Elem(), GetTopicTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTopicTagArrayInput)(nil)).Elem(), GetTopicTagArray{})
 	pulumi.RegisterOutputType(AlarmAlarmNotifyGroupOutput{})
@@ -27448,6 +28596,8 @@ func init() {
 	pulumi.RegisterOutputType(AlarmTriggerConditionArrayOutput{})
 	pulumi.RegisterOutputType(AlarmWebhookIntegrationTypeWebhookHeaderOutput{})
 	pulumi.RegisterOutputType(AlarmWebhookIntegrationTypeWebhookHeaderArrayOutput{})
+	pulumi.RegisterOutputType(DownloadTaskLogContextInfosOutput{})
+	pulumi.RegisterOutputType(DownloadTaskLogContextInfosPtrOutput{})
 	pulumi.RegisterOutputType(EtlTargetResourceOutput{})
 	pulumi.RegisterOutputType(EtlTargetResourceArrayOutput{})
 	pulumi.RegisterOutputType(HostGroupRuleOutput{})
@@ -27536,6 +28686,8 @@ func init() {
 	pulumi.RegisterOutputType(IndexUserInnerKeyValueValueJsonKeyValuePtrOutput{})
 	pulumi.RegisterOutputType(ProjectTagOutput{})
 	pulumi.RegisterOutputType(ProjectTagArrayOutput{})
+	pulumi.RegisterOutputType(RuleBoundHostGroupHostGroupOutput{})
+	pulumi.RegisterOutputType(RuleBoundHostGroupHostGroupPtrOutput{})
 	pulumi.RegisterOutputType(RuleContainerRuleOutput{})
 	pulumi.RegisterOutputType(RuleContainerRulePtrOutput{})
 	pulumi.RegisterOutputType(RuleContainerRuleEnvTagOutput{})
@@ -27596,6 +28748,8 @@ func init() {
 	pulumi.RegisterOutputType(ShipperKafkaShipperInfoPtrOutput{})
 	pulumi.RegisterOutputType(ShipperTosShipperInfoOutput{})
 	pulumi.RegisterOutputType(ShipperTosShipperInfoPtrOutput{})
+	pulumi.RegisterOutputType(TopicShardOutput{})
+	pulumi.RegisterOutputType(TopicShardArrayOutput{})
 	pulumi.RegisterOutputType(TopicTagOutput{})
 	pulumi.RegisterOutputType(TopicTagArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmAlarmNotifyGroupOutput{})
@@ -27637,6 +28791,7 @@ func init() {
 	pulumi.RegisterOutputType(GetAlarmTriggerConditionArrayOutput{})
 	pulumi.RegisterOutputType(GetAlarmWebhookIntegrationTypeWebhookHeaderOutput{})
 	pulumi.RegisterOutputType(GetAlarmWebhookIntegrationTypeWebhookHeaderArrayOutput{})
+	pulumi.RegisterOutputType(GetDownloadTaskLogContextInfosOutput{})
 	pulumi.RegisterOutputType(GetEtlTargetResourceOutput{})
 	pulumi.RegisterOutputType(GetEtlTargetResourceArrayOutput{})
 	pulumi.RegisterOutputType(GetHostGroupRuleOutput{})
@@ -27703,6 +28858,7 @@ func init() {
 	pulumi.RegisterOutputType(GetIndexUserInnerKeyValueValueJsonKeyValueOutput{})
 	pulumi.RegisterOutputType(GetProjectTagOutput{})
 	pulumi.RegisterOutputType(GetProjectTagArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleBoundHostGroupHostGroupOutput{})
 	pulumi.RegisterOutputType(GetRuleContainerRuleOutput{})
 	pulumi.RegisterOutputType(GetRuleContainerRuleEnvTagOutput{})
 	pulumi.RegisterOutputType(GetRuleContainerRuleEnvTagArrayOutput{})
@@ -27748,6 +28904,8 @@ func init() {
 	pulumi.RegisterOutputType(GetShipperContentInfoJsonInfoOutput{})
 	pulumi.RegisterOutputType(GetShipperKafkaShipperInfoOutput{})
 	pulumi.RegisterOutputType(GetShipperTosShipperInfoOutput{})
+	pulumi.RegisterOutputType(GetTopicShardOutput{})
+	pulumi.RegisterOutputType(GetTopicShardArrayOutput{})
 	pulumi.RegisterOutputType(GetTopicTagOutput{})
 	pulumi.RegisterOutputType(GetTopicTagArrayOutput{})
 }

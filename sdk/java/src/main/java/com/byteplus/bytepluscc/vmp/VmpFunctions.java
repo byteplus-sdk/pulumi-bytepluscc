@@ -6,12 +6,16 @@ package com.byteplus.bytepluscc.vmp;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.vmp.inputs.GetAlertingRuleArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetAlertingRulePlainArgs;
+import com.byteplus.bytepluscc.vmp.inputs.GetIntegrationTaskArgs;
+import com.byteplus.bytepluscc.vmp.inputs.GetIntegrationTaskPlainArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetRuleFileArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetRuleFilePlainArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetWorkspaceArgs;
 import com.byteplus.bytepluscc.vmp.inputs.GetWorkspacePlainArgs;
 import com.byteplus.bytepluscc.vmp.outputs.GetAlertingRuleResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetAlertingRulesResult;
+import com.byteplus.bytepluscc.vmp.outputs.GetIntegrationTaskResult;
+import com.byteplus.bytepluscc.vmp.outputs.GetIntegrationTasksResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetRuleFileResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetRuleFilesResult;
 import com.byteplus.bytepluscc.vmp.outputs.GetWorkspaceResult;
@@ -108,6 +112,90 @@ public final class VmpFunctions {
      */
     public static CompletableFuture<GetAlertingRulesResult> getAlertingRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vmp/getAlertingRules:getAlertingRules", TypeShape.of(GetAlertingRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static Output<GetIntegrationTaskResult> getIntegrationTask(GetIntegrationTaskArgs args) {
+        return getIntegrationTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static CompletableFuture<GetIntegrationTaskResult> getIntegrationTaskPlain(GetIntegrationTaskPlainArgs args) {
+        return getIntegrationTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static Output<GetIntegrationTaskResult> getIntegrationTask(GetIntegrationTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getIntegrationTask:getIntegrationTask", TypeShape.of(GetIntegrationTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static Output<GetIntegrationTaskResult> getIntegrationTask(GetIntegrationTaskArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getIntegrationTask:getIntegrationTask", TypeShape.of(GetIntegrationTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static CompletableFuture<GetIntegrationTaskResult> getIntegrationTaskPlain(GetIntegrationTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vmp/getIntegrationTask:getIntegrationTask", TypeShape.of(GetIntegrationTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static Output<GetIntegrationTasksResult> getIntegrationTasks() {
+        return getIntegrationTasks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static CompletableFuture<GetIntegrationTasksResult> getIntegrationTasksPlain() {
+        return getIntegrationTasksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static Output<GetIntegrationTasksResult> getIntegrationTasks(InvokeArgs args) {
+        return getIntegrationTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static CompletableFuture<GetIntegrationTasksResult> getIntegrationTasksPlain(InvokeArgs args) {
+        return getIntegrationTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static Output<GetIntegrationTasksResult> getIntegrationTasks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getIntegrationTasks:getIntegrationTasks", TypeShape.of(GetIntegrationTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static Output<GetIntegrationTasksResult> getIntegrationTasks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vmp/getIntegrationTasks:getIntegrationTasks", TypeShape.of(GetIntegrationTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VMP::IntegrationTask
+     * 
+     */
+    public static CompletableFuture<GetIntegrationTasksResult> getIntegrationTasksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vmp/getIntegrationTasks:getIntegrationTasks", TypeShape.of(GetIntegrationTasksResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VMP::RuleFile

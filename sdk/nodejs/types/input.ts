@@ -1293,10 +1293,6 @@ export namespace apig {
          * Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
          */
         name?: pulumi.Input<string | undefined>;
-        /**
-         * Update time
-         */
-        updateTime?: pulumi.Input<string | undefined>;
     }
 
     export interface UpstreamVersionDetailLabel {
@@ -7349,6 +7345,17 @@ export namespace escloud {
          */
         warmNodeNum?: pulumi.Input<number | undefined>;
     }
+
+    export interface IpAllowListGroup {
+        /**
+         * Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+         */
+        allowLists?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * Custom group name
+         */
+        name?: pulumi.Input<string | undefined>;
+    }
 }
 
 export namespace filenas {
@@ -12090,6 +12097,21 @@ export namespace tls {
         value?: pulumi.Input<string | undefined>;
     }
 
+    export interface DownloadTaskLogContextInfos {
+        /**
+         * LogGroup ID to which the log context belongs.
+         */
+        contextFlow?: pulumi.Input<string | undefined>;
+        /**
+         * Specifies the log index in the LogGroup.
+         */
+        packageOffset?: pulumi.Input<number | undefined>;
+        /**
+         * Host of the log source.
+         */
+        source?: pulumi.Input<string | undefined>;
+    }
+
     export interface EtlTargetResource {
         /**
          * Name of the custom output target. You must use this name to refer to the output target in the data processing rules
@@ -13067,6 +13089,73 @@ export namespace tls {
         value?: pulumi.Input<string | undefined>;
     }
 
+    export interface RuleBoundHostGroupHostGroup {
+        /**
+         * Number of machines with abnormal heartbeat status
+         */
+        abnormalHeartbeatStatusCount?: pulumi.Input<number | undefined>;
+        /**
+         * Latest LogCollector version number available for upgrade
+         */
+        agentLatestVersion?: pulumi.Input<string | undefined>;
+        /**
+         * Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.
+         */
+        autoUpdate?: pulumi.Input<boolean | undefined>;
+        /**
+         * Machine group creation time
+         */
+        createTime?: pulumi.Input<string | undefined>;
+        /**
+         * Number of machines in the machine group
+         */
+        hostCount?: pulumi.Input<number | undefined>;
+        /**
+         * Machine group ID
+         */
+        hostGroupId?: pulumi.Input<string | undefined>;
+        /**
+         * Machine group name
+         */
+        hostGroupName?: pulumi.Input<string | undefined>;
+        /**
+         * Machine group type. IP: machine IP. Label: machine label.
+         */
+        hostGroupType?: pulumi.Input<string | undefined>;
+        /**
+         * Machine identifier
+         */
+        hostIdentifier?: pulumi.Input<string | undefined>;
+        /**
+         * IAM project associated with the machine group
+         */
+        iamProjectName?: pulumi.Input<string | undefined>;
+        /**
+         * Machine group modification time
+         */
+        modifyTime?: pulumi.Input<string | undefined>;
+        /**
+         * Number of machines with normal heartbeat status
+         */
+        normalHeartbeatStatusCount?: pulumi.Input<number | undefined>;
+        /**
+         * Number of collection configurations bound to the machine group
+         */
+        ruleCount?: pulumi.Input<number | undefined>;
+        /**
+         * Enable LogCollector service log feature. true: enabled. false (default): disabled.
+         */
+        serviceLogging?: pulumi.Input<boolean | undefined>;
+        /**
+         * LogCollector auto upgrade end time
+         */
+        updateEndTime?: pulumi.Input<string | undefined>;
+        /**
+         * LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.
+         */
+        updateStartTime?: pulumi.Input<string | undefined>;
+    }
+
     export interface RuleContainerRule {
         /**
          * Container name to collect. If no container name is specified, all containers in the machine group will be collected. Supports regex matching; for example, setting the container name to ^(container-test)$ will collect all containers named container-test.
@@ -13636,6 +13725,33 @@ export namespace tls {
          * Top-level directory name for the bucket. Cannot start with / or \, and cannot use consecutive /. Cannot use .. as a folder name. Duplicate names are not allowed within the same bucket.
          */
         prefix?: pulumi.Input<string | undefined>;
+    }
+
+    export interface TopicShard {
+        /**
+         * Ending key value of the partition
+         */
+        exclusiveEndKey?: pulumi.Input<string | undefined>;
+        /**
+         * Starting key value of the partition
+         */
+        inclusiveBeginKey?: pulumi.Input<string | undefined>;
+        /**
+         * Last modified time of the partition
+         */
+        modifyTime?: pulumi.Input<string | undefined>;
+        /**
+         * Partition ID of the log topic
+         */
+        shardId?: pulumi.Input<number | undefined>;
+        /**
+         * Partition status: readwrite means read/write, readonly means read-only
+         */
+        status?: pulumi.Input<string | undefined>;
+        /**
+         * Time when the partition stopped writing, that is, the last time logs were written to this partition
+         */
+        stopWriteTime?: pulumi.Input<string | undefined>;
     }
 
     export interface TopicTag {
@@ -15917,6 +16033,17 @@ export namespace vmp {
         key?: pulumi.Input<string | undefined>;
         /**
          * Tag or annotation value. If set to empty, the key will be deleted
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface IntegrationTaskTag {
+        /**
+         * Tag Key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag Value
          */
         value?: pulumi.Input<string | undefined>;
     }

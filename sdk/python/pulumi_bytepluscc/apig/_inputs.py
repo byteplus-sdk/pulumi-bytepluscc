@@ -2971,29 +2971,21 @@ class UpstreamVersionDetailArgsDict(TypedDict):
     """
     Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
     """
-    update_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    Update time
-    """
 
 @pulumi.input_type
 class UpstreamVersionDetailArgs:
     def __init__(__self__, *,
                  labels: pulumi.Input[Optional[Sequence[pulumi.Input['UpstreamVersionDetailLabelArgs']]]] = None,
-                 name: pulumi.Input[Optional[_builtins.str]] = None,
-                 update_time: pulumi.Input[Optional[_builtins.str]] = None):
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[Sequence[pulumi.Input['UpstreamVersionDetailLabelArgs']]] labels: Tag
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] name: Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
-        :param pulumi.Input[_builtins.str] update_time: Update time
         """
         if labels is not None:
             pulumi.set(__self__, "labels", labels)
         if name is not None:
             pulumi.set(__self__, "name", name)
-        if update_time is not None:
-            pulumi.set(__self__, "update_time", update_time)
 
     @_builtins.property
     @pulumi.getter
@@ -3019,18 +3011,6 @@ class UpstreamVersionDetailArgs:
     @name.setter
     def name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "name", value)
-
-    @_builtins.property
-    @pulumi.getter(name="updateTime")
-    def update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Update time
-        """
-        return pulumi.get(self, "update_time")
-
-    @update_time.setter
-    def update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "update_time", value)
 
 
 class UpstreamVersionDetailLabelArgsDict(TypedDict):

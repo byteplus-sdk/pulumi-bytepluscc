@@ -133,6 +133,7 @@ class _KeypairState:
                  instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  key_pair_id: pulumi.Input[Optional[_builtins.str]] = None,
                  key_pair_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  public_key: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input['KeypairTagArgs']]]] = None,
@@ -146,6 +147,7 @@ class _KeypairState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] instance_ids: Instance ID for the operation.
         :param pulumi.Input[_builtins.str] key_pair_id: Unique ID of the key pair.
         :param pulumi.Input[_builtins.str] key_pair_name: Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
+        :param pulumi.Input[_builtins.str] private_key: Private key information for the key pair. Only returned when creating the key pair.
         :param pulumi.Input[_builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         :param pulumi.Input[_builtins.str] public_key: Public key information of the key pair.
         :param pulumi.Input[Sequence[pulumi.Input['KeypairTagArgs']]] tags: Tags of the key pair.
@@ -164,6 +166,8 @@ class _KeypairState:
             pulumi.set(__self__, "key_pair_id", key_pair_id)
         if key_pair_name is not None:
             pulumi.set(__self__, "key_pair_name", key_pair_name)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
         if public_key is not None:
@@ -244,6 +248,18 @@ class _KeypairState:
     @key_pair_name.setter
     def key_pair_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "key_pair_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Private key information for the key pair. Only returned when creating the key pair.
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key", value)
 
     @_builtins.property
     @pulumi.getter(name="projectName")
@@ -417,6 +433,7 @@ class Keypair(pulumi.CustomResource):
             __props__.__dict__["created_time"] = None
             __props__.__dict__["finger_print"] = None
             __props__.__dict__["key_pair_id"] = None
+            __props__.__dict__["private_key"] = None
             __props__.__dict__["updated_time"] = None
         super(Keypair, __self__).__init__(
             'bytepluscc:ecs/keypair:Keypair',
@@ -434,6 +451,7 @@ class Keypair(pulumi.CustomResource):
             instance_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             key_pair_id: pulumi.Input[Optional[_builtins.str]] = None,
             key_pair_name: pulumi.Input[Optional[_builtins.str]] = None,
+            private_key: pulumi.Input[Optional[_builtins.str]] = None,
             project_name: pulumi.Input[Optional[_builtins.str]] = None,
             public_key: pulumi.Input[Optional[_builtins.str]] = None,
             tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['KeypairTagArgs', 'KeypairTagArgsDict']]]]] = None,
@@ -451,6 +469,7 @@ class Keypair(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] instance_ids: Instance ID for the operation.
         :param pulumi.Input[_builtins.str] key_pair_id: Unique ID of the key pair.
         :param pulumi.Input[_builtins.str] key_pair_name: Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
+        :param pulumi.Input[_builtins.str] private_key: Private key information for the key pair. Only returned when creating the key pair.
         :param pulumi.Input[_builtins.str] project_name: Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         :param pulumi.Input[_builtins.str] public_key: Public key information of the key pair.
         :param pulumi.Input[Sequence[pulumi.Input[Union['KeypairTagArgs', 'KeypairTagArgsDict']]]] tags: Tags of the key pair.
@@ -467,6 +486,7 @@ class Keypair(pulumi.CustomResource):
         __props__.__dict__["instance_ids"] = instance_ids
         __props__.__dict__["key_pair_id"] = key_pair_id
         __props__.__dict__["key_pair_name"] = key_pair_name
+        __props__.__dict__["private_key"] = private_key
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["public_key"] = public_key
         __props__.__dict__["tags"] = tags
@@ -520,6 +540,14 @@ class Keypair(pulumi.CustomResource):
         Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.
         """
         return pulumi.get(self, "key_pair_name")
+
+    @_builtins.property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> pulumi.Output[_builtins.str]:
+        """
+        Private key information for the key pair. Only returned when creating the key pair.
+        """
+        return pulumi.get(self, "private_key")
 
     @_builtins.property
     @pulumi.getter(name="projectName")

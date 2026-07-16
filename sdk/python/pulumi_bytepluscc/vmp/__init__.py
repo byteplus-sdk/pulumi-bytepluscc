@@ -9,10 +9,13 @@ import typing
 from .alerting_rule import *
 from .get_alerting_rule import *
 from .get_alerting_rules import *
+from .get_integration_task import *
+from .get_integration_tasks import *
 from .get_rule_file import *
 from .get_rule_files import *
 from .get_workspace import *
 from .get_workspaces import *
+from .integration_task import *
 from .rule_file import *
 from .workspace import *
 from ._inputs import *

@@ -611,6 +611,112 @@ func (o AlertingRuleTagArrayOutput) Index(i pulumi.IntInput) AlertingRuleTagOutp
 	}).(AlertingRuleTagOutput)
 }
 
+type IntegrationTaskTag struct {
+	// Tag Key
+	Key *string `pulumi:"key"`
+	// Tag Value
+	Value *string `pulumi:"value"`
+}
+
+// IntegrationTaskTagInput is an input type that accepts IntegrationTaskTagArgs and IntegrationTaskTagOutput values.
+// You can construct a concrete instance of `IntegrationTaskTagInput` via:
+//
+//	IntegrationTaskTagArgs{...}
+type IntegrationTaskTagInput interface {
+	pulumi.Input
+
+	ToIntegrationTaskTagOutput() IntegrationTaskTagOutput
+	ToIntegrationTaskTagOutputWithContext(context.Context) IntegrationTaskTagOutput
+}
+
+type IntegrationTaskTagArgs struct {
+	// Tag Key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag Value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (IntegrationTaskTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationTaskTag)(nil)).Elem()
+}
+
+func (i IntegrationTaskTagArgs) ToIntegrationTaskTagOutput() IntegrationTaskTagOutput {
+	return i.ToIntegrationTaskTagOutputWithContext(context.Background())
+}
+
+func (i IntegrationTaskTagArgs) ToIntegrationTaskTagOutputWithContext(ctx context.Context) IntegrationTaskTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationTaskTagOutput)
+}
+
+// IntegrationTaskTagArrayInput is an input type that accepts IntegrationTaskTagArray and IntegrationTaskTagArrayOutput values.
+// You can construct a concrete instance of `IntegrationTaskTagArrayInput` via:
+//
+//	IntegrationTaskTagArray{ IntegrationTaskTagArgs{...} }
+type IntegrationTaskTagArrayInput interface {
+	pulumi.Input
+
+	ToIntegrationTaskTagArrayOutput() IntegrationTaskTagArrayOutput
+	ToIntegrationTaskTagArrayOutputWithContext(context.Context) IntegrationTaskTagArrayOutput
+}
+
+type IntegrationTaskTagArray []IntegrationTaskTagInput
+
+func (IntegrationTaskTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationTaskTag)(nil)).Elem()
+}
+
+func (i IntegrationTaskTagArray) ToIntegrationTaskTagArrayOutput() IntegrationTaskTagArrayOutput {
+	return i.ToIntegrationTaskTagArrayOutputWithContext(context.Background())
+}
+
+func (i IntegrationTaskTagArray) ToIntegrationTaskTagArrayOutputWithContext(ctx context.Context) IntegrationTaskTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IntegrationTaskTagArrayOutput)
+}
+
+type IntegrationTaskTagOutput struct{ *pulumi.OutputState }
+
+func (IntegrationTaskTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IntegrationTaskTag)(nil)).Elem()
+}
+
+func (o IntegrationTaskTagOutput) ToIntegrationTaskTagOutput() IntegrationTaskTagOutput {
+	return o
+}
+
+func (o IntegrationTaskTagOutput) ToIntegrationTaskTagOutputWithContext(ctx context.Context) IntegrationTaskTagOutput {
+	return o
+}
+
+// Tag Key
+func (o IntegrationTaskTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationTaskTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag Value
+func (o IntegrationTaskTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IntegrationTaskTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type IntegrationTaskTagArrayOutput struct{ *pulumi.OutputState }
+
+func (IntegrationTaskTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IntegrationTaskTag)(nil)).Elem()
+}
+
+func (o IntegrationTaskTagArrayOutput) ToIntegrationTaskTagArrayOutput() IntegrationTaskTagArrayOutput {
+	return o
+}
+
+func (o IntegrationTaskTagArrayOutput) ToIntegrationTaskTagArrayOutputWithContext(ctx context.Context) IntegrationTaskTagArrayOutput {
+	return o
+}
+
+func (o IntegrationTaskTagArrayOutput) Index(i pulumi.IntInput) IntegrationTaskTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IntegrationTaskTag {
+		return vs[0].([]IntegrationTaskTag)[vs[1].(int)]
+	}).(IntegrationTaskTagOutput)
+}
+
 type WorkspaceInstanceType struct {
 	// Maximum active time series count
 	ActiveSeries *int `pulumi:"activeSeries"`
@@ -2186,6 +2292,112 @@ func (o GetAlertingRuleTagArrayOutput) Index(i pulumi.IntInput) GetAlertingRuleT
 	}).(GetAlertingRuleTagOutput)
 }
 
+type GetIntegrationTaskTag struct {
+	// Tag Key
+	Key string `pulumi:"key"`
+	// Tag Value
+	Value string `pulumi:"value"`
+}
+
+// GetIntegrationTaskTagInput is an input type that accepts GetIntegrationTaskTagArgs and GetIntegrationTaskTagOutput values.
+// You can construct a concrete instance of `GetIntegrationTaskTagInput` via:
+//
+//	GetIntegrationTaskTagArgs{...}
+type GetIntegrationTaskTagInput interface {
+	pulumi.Input
+
+	ToGetIntegrationTaskTagOutput() GetIntegrationTaskTagOutput
+	ToGetIntegrationTaskTagOutputWithContext(context.Context) GetIntegrationTaskTagOutput
+}
+
+type GetIntegrationTaskTagArgs struct {
+	// Tag Key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag Value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIntegrationTaskTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationTaskTag)(nil)).Elem()
+}
+
+func (i GetIntegrationTaskTagArgs) ToGetIntegrationTaskTagOutput() GetIntegrationTaskTagOutput {
+	return i.ToGetIntegrationTaskTagOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationTaskTagArgs) ToGetIntegrationTaskTagOutputWithContext(ctx context.Context) GetIntegrationTaskTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationTaskTagOutput)
+}
+
+// GetIntegrationTaskTagArrayInput is an input type that accepts GetIntegrationTaskTagArray and GetIntegrationTaskTagArrayOutput values.
+// You can construct a concrete instance of `GetIntegrationTaskTagArrayInput` via:
+//
+//	GetIntegrationTaskTagArray{ GetIntegrationTaskTagArgs{...} }
+type GetIntegrationTaskTagArrayInput interface {
+	pulumi.Input
+
+	ToGetIntegrationTaskTagArrayOutput() GetIntegrationTaskTagArrayOutput
+	ToGetIntegrationTaskTagArrayOutputWithContext(context.Context) GetIntegrationTaskTagArrayOutput
+}
+
+type GetIntegrationTaskTagArray []GetIntegrationTaskTagInput
+
+func (GetIntegrationTaskTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationTaskTag)(nil)).Elem()
+}
+
+func (i GetIntegrationTaskTagArray) ToGetIntegrationTaskTagArrayOutput() GetIntegrationTaskTagArrayOutput {
+	return i.ToGetIntegrationTaskTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetIntegrationTaskTagArray) ToGetIntegrationTaskTagArrayOutputWithContext(ctx context.Context) GetIntegrationTaskTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIntegrationTaskTagArrayOutput)
+}
+
+type GetIntegrationTaskTagOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationTaskTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIntegrationTaskTag)(nil)).Elem()
+}
+
+func (o GetIntegrationTaskTagOutput) ToGetIntegrationTaskTagOutput() GetIntegrationTaskTagOutput {
+	return o
+}
+
+func (o GetIntegrationTaskTagOutput) ToGetIntegrationTaskTagOutputWithContext(ctx context.Context) GetIntegrationTaskTagOutput {
+	return o
+}
+
+// Tag Key
+func (o GetIntegrationTaskTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationTaskTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag Value
+func (o GetIntegrationTaskTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIntegrationTaskTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIntegrationTaskTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIntegrationTaskTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIntegrationTaskTag)(nil)).Elem()
+}
+
+func (o GetIntegrationTaskTagArrayOutput) ToGetIntegrationTaskTagArrayOutput() GetIntegrationTaskTagArrayOutput {
+	return o
+}
+
+func (o GetIntegrationTaskTagArrayOutput) ToGetIntegrationTaskTagArrayOutputWithContext(ctx context.Context) GetIntegrationTaskTagArrayOutput {
+	return o
+}
+
+func (o GetIntegrationTaskTagArrayOutput) Index(i pulumi.IntInput) GetIntegrationTaskTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIntegrationTaskTag {
+		return vs[0].([]GetIntegrationTaskTag)[vs[1].(int)]
+	}).(GetIntegrationTaskTagOutput)
+}
+
 type GetWorkspaceInstanceType struct {
 	// Maximum active time series count
 	ActiveSeries int `pulumi:"activeSeries"`
@@ -2837,6 +3049,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleQueryPtrInput)(nil)).Elem(), AlertingRuleQueryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleTagInput)(nil)).Elem(), AlertingRuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AlertingRuleTagArrayInput)(nil)).Elem(), AlertingRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationTaskTagInput)(nil)).Elem(), IntegrationTaskTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IntegrationTaskTagArrayInput)(nil)).Elem(), IntegrationTaskTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeInput)(nil)).Elem(), WorkspaceInstanceTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypePtrInput)(nil)).Elem(), WorkspaceInstanceTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*WorkspaceInstanceTypeCalculatePriceParamInput)(nil)).Elem(), WorkspaceInstanceTypeCalculatePriceParamArgs{})
@@ -2858,6 +3072,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleQueryInput)(nil)).Elem(), GetAlertingRuleQueryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleTagInput)(nil)).Elem(), GetAlertingRuleTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAlertingRuleTagArrayInput)(nil)).Elem(), GetAlertingRuleTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationTaskTagInput)(nil)).Elem(), GetIntegrationTaskTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIntegrationTaskTagArrayInput)(nil)).Elem(), GetIntegrationTaskTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeInput)(nil)).Elem(), GetWorkspaceInstanceTypeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamInput)(nil)).Elem(), GetWorkspaceInstanceTypeCalculatePriceParamArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetWorkspaceInstanceTypeCalculatePriceParamArrayInput)(nil)).Elem(), GetWorkspaceInstanceTypeCalculatePriceParamArray{})
@@ -2877,6 +3093,8 @@ func init() {
 	pulumi.RegisterOutputType(AlertingRuleQueryPtrOutput{})
 	pulumi.RegisterOutputType(AlertingRuleTagOutput{})
 	pulumi.RegisterOutputType(AlertingRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(IntegrationTaskTagOutput{})
+	pulumi.RegisterOutputType(IntegrationTaskTagArrayOutput{})
 	pulumi.RegisterOutputType(WorkspaceInstanceTypeOutput{})
 	pulumi.RegisterOutputType(WorkspaceInstanceTypePtrOutput{})
 	pulumi.RegisterOutputType(WorkspaceInstanceTypeCalculatePriceParamOutput{})
@@ -2898,6 +3116,8 @@ func init() {
 	pulumi.RegisterOutputType(GetAlertingRuleQueryOutput{})
 	pulumi.RegisterOutputType(GetAlertingRuleTagOutput{})
 	pulumi.RegisterOutputType(GetAlertingRuleTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIntegrationTaskTagOutput{})
+	pulumi.RegisterOutputType(GetIntegrationTaskTagArrayOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeCalculatePriceParamOutput{})
 	pulumi.RegisterOutputType(GetWorkspaceInstanceTypeCalculatePriceParamArrayOutput{})

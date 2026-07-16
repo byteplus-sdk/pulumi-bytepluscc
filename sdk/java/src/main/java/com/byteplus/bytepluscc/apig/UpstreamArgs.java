@@ -8,10 +8,12 @@ import com.byteplus.bytepluscc.apig.inputs.UpstreamConnectionPoolSettingsArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamLoadBalancerSettingsArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamTlsSettingsArgs;
 import com.byteplus.bytepluscc.apig.inputs.UpstreamUpstreamSpecArgs;
+import com.byteplus.bytepluscc.apig.inputs.UpstreamVersionDetailArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -171,6 +173,23 @@ public final class UpstreamArgs extends com.pulumi.resources.ResourceArgs {
         return this.upstreamSpec;
     }
 
+    /**
+     * Upstream version, only valid when the upstream source type is K8S
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Import(name="versionDetails")
+    private @Nullable Output<List<UpstreamVersionDetailArgs>> versionDetails;
+
+    /**
+     * @return Upstream version, only valid when the upstream source type is K8S
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Optional<Output<List<UpstreamVersionDetailArgs>>> versionDetails() {
+        return Optional.ofNullable(this.versionDetails);
+    }
+
     private UpstreamArgs() {}
 
     private UpstreamArgs(UpstreamArgs $) {
@@ -184,6 +203,7 @@ public final class UpstreamArgs extends com.pulumi.resources.ResourceArgs {
         this.sourceType = $.sourceType;
         this.tlsSettings = $.tlsSettings;
         this.upstreamSpec = $.upstreamSpec;
+        this.versionDetails = $.versionDetails;
     }
 
     public static Builder builder() {
@@ -412,6 +432,40 @@ public final class UpstreamArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder upstreamSpec(UpstreamUpstreamSpecArgs upstreamSpec) {
             return upstreamSpec(Output.of(upstreamSpec));
+        }
+
+        /**
+         * @param versionDetails Upstream version, only valid when the upstream source type is K8S
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionDetails(@Nullable Output<List<UpstreamVersionDetailArgs>> versionDetails) {
+            $.versionDetails = versionDetails;
+            return this;
+        }
+
+        /**
+         * @param versionDetails Upstream version, only valid when the upstream source type is K8S
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionDetails(List<UpstreamVersionDetailArgs> versionDetails) {
+            return versionDetails(Output.of(versionDetails));
+        }
+
+        /**
+         * @param versionDetails Upstream version, only valid when the upstream source type is K8S
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder versionDetails(UpstreamVersionDetailArgs... versionDetails) {
+            return versionDetails(List.of(versionDetails));
         }
 
         public UpstreamArgs build() {

@@ -23,22 +23,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Outputs
         /// Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)
         /// </summary>
         public readonly string? Name;
-        /// <summary>
-        /// Update time
-        /// </summary>
-        public readonly string? UpdateTime;
 
         [OutputConstructor]
         private UpstreamVersionDetail(
             ImmutableArray<Outputs.UpstreamVersionDetailLabel> labels,
 
-            string? name,
-
-            string? updateTime)
+            string? name)
         {
             Labels = labels;
             Name = name;
-            UpdateTime = updateTime;
         }
     }
 }

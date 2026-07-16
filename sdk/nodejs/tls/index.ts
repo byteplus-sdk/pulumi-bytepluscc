@@ -30,6 +30,11 @@ export type ConsumerGroup = import("./consumerGroup").ConsumerGroup;
 export const ConsumerGroup: typeof import("./consumerGroup").ConsumerGroup = null as any;
 utilities.lazyLoad(exports, ["ConsumerGroup"], () => require("./consumerGroup"));
 
+export { DownloadTaskArgs, DownloadTaskState } from "./downloadTask";
+export type DownloadTask = import("./downloadTask").DownloadTask;
+export const DownloadTask: typeof import("./downloadTask").DownloadTask = null as any;
+utilities.lazyLoad(exports, ["DownloadTask"], () => require("./downloadTask"));
+
 export { EtlArgs, EtlState } from "./etl";
 export type Etl = import("./etl").Etl;
 export const Etl: typeof import("./etl").Etl = null as any;
@@ -84,6 +89,16 @@ export { GetConsumerGroupsResult } from "./getConsumerGroups";
 export const getConsumerGroups: typeof import("./getConsumerGroups").getConsumerGroups = null as any;
 export const getConsumerGroupsOutput: typeof import("./getConsumerGroups").getConsumerGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getConsumerGroups","getConsumerGroupsOutput"], () => require("./getConsumerGroups"));
+
+export { GetDownloadTaskArgs, GetDownloadTaskResult, GetDownloadTaskOutputArgs } from "./getDownloadTask";
+export const getDownloadTask: typeof import("./getDownloadTask").getDownloadTask = null as any;
+export const getDownloadTaskOutput: typeof import("./getDownloadTask").getDownloadTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getDownloadTask","getDownloadTaskOutput"], () => require("./getDownloadTask"));
+
+export { GetDownloadTasksResult } from "./getDownloadTasks";
+export const getDownloadTasks: typeof import("./getDownloadTasks").getDownloadTasks = null as any;
+export const getDownloadTasksOutput: typeof import("./getDownloadTasks").getDownloadTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getDownloadTasks","getDownloadTasksOutput"], () => require("./getDownloadTasks"));
 
 export { GetEtlArgs, GetEtlResult, GetEtlOutputArgs } from "./getEtl";
 export const getEtl: typeof import("./getEtl").getEtl = null as any;
@@ -150,6 +165,16 @@ export const getRule: typeof import("./getRule").getRule = null as any;
 export const getRuleOutput: typeof import("./getRule").getRuleOutput = null as any;
 utilities.lazyLoad(exports, ["getRule","getRuleOutput"], () => require("./getRule"));
 
+export { GetRuleBoundHostGroupArgs, GetRuleBoundHostGroupResult, GetRuleBoundHostGroupOutputArgs } from "./getRuleBoundHostGroup";
+export const getRuleBoundHostGroup: typeof import("./getRuleBoundHostGroup").getRuleBoundHostGroup = null as any;
+export const getRuleBoundHostGroupOutput: typeof import("./getRuleBoundHostGroup").getRuleBoundHostGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getRuleBoundHostGroup","getRuleBoundHostGroupOutput"], () => require("./getRuleBoundHostGroup"));
+
+export { GetRuleBoundHostGroupsResult } from "./getRuleBoundHostGroups";
+export const getRuleBoundHostGroups: typeof import("./getRuleBoundHostGroups").getRuleBoundHostGroups = null as any;
+export const getRuleBoundHostGroupsOutput: typeof import("./getRuleBoundHostGroups").getRuleBoundHostGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getRuleBoundHostGroups","getRuleBoundHostGroupsOutput"], () => require("./getRuleBoundHostGroups"));
+
 export { GetRulesResult } from "./getRules";
 export const getRules: typeof import("./getRules").getRules = null as any;
 export const getRulesOutput: typeof import("./getRules").getRulesOutput = null as any;
@@ -215,6 +240,11 @@ export type Rule = import("./rule").Rule;
 export const Rule: typeof import("./rule").Rule = null as any;
 utilities.lazyLoad(exports, ["Rule"], () => require("./rule"));
 
+export { RuleBoundHostGroupArgs, RuleBoundHostGroupState } from "./ruleBoundHostGroup";
+export type RuleBoundHostGroup = import("./ruleBoundHostGroup").RuleBoundHostGroup;
+export const RuleBoundHostGroup: typeof import("./ruleBoundHostGroup").RuleBoundHostGroup = null as any;
+utilities.lazyLoad(exports, ["RuleBoundHostGroup"], () => require("./ruleBoundHostGroup"));
+
 export { ScheduleSqlTaskArgs, ScheduleSqlTaskState } from "./scheduleSqlTask";
 export type ScheduleSqlTask = import("./scheduleSqlTask").ScheduleSqlTask;
 export const ScheduleSqlTask: typeof import("./scheduleSqlTask").ScheduleSqlTask = null as any;
@@ -245,6 +275,8 @@ const _module = {
                 return new AlarmWebhookIntegrationType(name, <any>undefined, { urn })
             case "bytepluscc:tls/consumerGroup:ConsumerGroup":
                 return new ConsumerGroup(name, <any>undefined, { urn })
+            case "bytepluscc:tls/downloadTask:DownloadTask":
+                return new DownloadTask(name, <any>undefined, { urn })
             case "bytepluscc:tls/etl:Etl":
                 return new Etl(name, <any>undefined, { urn })
             case "bytepluscc:tls/host:Host":
@@ -259,6 +291,8 @@ const _module = {
                 return new Project(name, <any>undefined, { urn })
             case "bytepluscc:tls/rule:Rule":
                 return new Rule(name, <any>undefined, { urn })
+            case "bytepluscc:tls/ruleBoundHostGroup:RuleBoundHostGroup":
+                return new RuleBoundHostGroup(name, <any>undefined, { urn })
             case "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask":
                 return new ScheduleSqlTask(name, <any>undefined, { urn })
             case "bytepluscc:tls/shipper:Shipper":
@@ -275,6 +309,7 @@ pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmContentTemplateTyp
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmNotifyGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/alarmWebhookIntegrationType", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/consumerGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/downloadTask", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/etl", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/host", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/hostGroup", _module)
@@ -282,6 +317,7 @@ pulumi.runtime.registerResourceModule("bytepluscc", "tls/importTask", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/index", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/project", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/rule", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "tls/ruleBoundHostGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/scheduleSqlTask", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/shipper", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "tls/topic", _module)

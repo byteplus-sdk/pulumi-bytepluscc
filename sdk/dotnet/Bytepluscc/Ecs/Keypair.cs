@@ -87,6 +87,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Output<string> KeyPairName { get; private set; } = null!;
 
         /// <summary>
+        /// Private key information for the key pair. Only returned when creating the key pair.
+        /// </summary>
+        [Output("privateKey")]
+        public Output<string> PrivateKey { get; private set; } = null!;
+
+        /// <summary>
         /// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         /// </summary>
         [Output("projectName")]
@@ -256,6 +262,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Input("keyPairName")]
         public Input<string>? KeyPairName { get; set; }
+
+        /// <summary>
+        /// Private key information for the key pair. Only returned when creating the key pair.
+        /// </summary>
+        [Input("privateKey")]
+        public Input<string>? PrivateKey { get; set; }
 
         /// <summary>
         /// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.

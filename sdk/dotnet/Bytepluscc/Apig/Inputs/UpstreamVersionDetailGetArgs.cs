@@ -32,12 +32,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Apig.Inputs
         [Input("name")]
         public Input<string>? Name { get; set; }
 
-        /// <summary>
-        /// Update time
-        /// </summary>
-        [Input("updateTime")]
-        public Input<string>? UpdateTime { get; set; }
-
         public UpstreamVersionDetailGetArgs()
         {
         }

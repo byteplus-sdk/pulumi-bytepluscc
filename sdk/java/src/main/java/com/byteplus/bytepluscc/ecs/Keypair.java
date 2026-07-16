@@ -154,6 +154,20 @@ public class Keypair extends com.pulumi.resources.CustomResource {
         return this.keyPairName;
     }
     /**
+     * Private key information for the key pair. Only returned when creating the key pair.
+     * 
+     */
+    @Export(name="privateKey", refs={String.class}, tree="[0]")
+    private Output<String> privateKey;
+
+    /**
+     * @return Private key information for the key pair. Only returned when creating the key pair.
+     * 
+     */
+    public Output<String> privateKey() {
+        return this.privateKey;
+    }
+    /**
      * Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
      * 
      */

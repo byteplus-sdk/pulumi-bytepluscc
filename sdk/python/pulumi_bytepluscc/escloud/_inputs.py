@@ -59,6 +59,8 @@ __all__ = [
     'InstanceTransferInfoArgsDict',
     'InstanceTransferInfoReduceSpecConfigArgs',
     'InstanceTransferInfoReduceSpecConfigArgsDict',
+    'IpAllowListGroupArgs',
+    'IpAllowListGroupArgsDict',
 ]
 
 class InstanceInstanceConfigurationArgsDict(TypedDict):
@@ -2866,5 +2868,54 @@ class InstanceTransferInfoReduceSpecConfigArgs:
     @warm_node_num.setter
     def warm_node_num(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "warm_node_num", value)
+
+
+class IpAllowListGroupArgsDict(TypedDict):
+    allow_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Custom group name
+    """
+
+@pulumi.input_type
+class IpAllowListGroupArgs:
+    def __init__(__self__, *,
+                 allow_lists: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_lists: Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+        :param pulumi.Input[_builtins.str] name: Custom group name
+        """
+        if allow_lists is not None:
+            pulumi.set(__self__, "allow_lists", allow_lists)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="allowLists")
+    def allow_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+        """
+        return pulumi.get(self, "allow_lists")
+
+    @allow_lists.setter
+    def allow_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "allow_lists", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Custom group name
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
 
 
