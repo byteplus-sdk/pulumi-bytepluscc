@@ -4849,6 +4849,112 @@ func (o InstanceTransferInfoReduceSpecConfigPtrOutput) WarmNodeNum() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
+type IpAllowListGroup struct {
+	// Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+	AllowLists []string `pulumi:"allowLists"`
+	// Custom group name
+	Name *string `pulumi:"name"`
+}
+
+// IpAllowListGroupInput is an input type that accepts IpAllowListGroupArgs and IpAllowListGroupOutput values.
+// You can construct a concrete instance of `IpAllowListGroupInput` via:
+//
+//	IpAllowListGroupArgs{...}
+type IpAllowListGroupInput interface {
+	pulumi.Input
+
+	ToIpAllowListGroupOutput() IpAllowListGroupOutput
+	ToIpAllowListGroupOutputWithContext(context.Context) IpAllowListGroupOutput
+}
+
+type IpAllowListGroupArgs struct {
+	// Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+	AllowLists pulumi.StringArrayInput `pulumi:"allowLists"`
+	// Custom group name
+	Name pulumi.StringPtrInput `pulumi:"name"`
+}
+
+func (IpAllowListGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpAllowListGroup)(nil)).Elem()
+}
+
+func (i IpAllowListGroupArgs) ToIpAllowListGroupOutput() IpAllowListGroupOutput {
+	return i.ToIpAllowListGroupOutputWithContext(context.Background())
+}
+
+func (i IpAllowListGroupArgs) ToIpAllowListGroupOutputWithContext(ctx context.Context) IpAllowListGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpAllowListGroupOutput)
+}
+
+// IpAllowListGroupArrayInput is an input type that accepts IpAllowListGroupArray and IpAllowListGroupArrayOutput values.
+// You can construct a concrete instance of `IpAllowListGroupArrayInput` via:
+//
+//	IpAllowListGroupArray{ IpAllowListGroupArgs{...} }
+type IpAllowListGroupArrayInput interface {
+	pulumi.Input
+
+	ToIpAllowListGroupArrayOutput() IpAllowListGroupArrayOutput
+	ToIpAllowListGroupArrayOutputWithContext(context.Context) IpAllowListGroupArrayOutput
+}
+
+type IpAllowListGroupArray []IpAllowListGroupInput
+
+func (IpAllowListGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpAllowListGroup)(nil)).Elem()
+}
+
+func (i IpAllowListGroupArray) ToIpAllowListGroupArrayOutput() IpAllowListGroupArrayOutput {
+	return i.ToIpAllowListGroupArrayOutputWithContext(context.Background())
+}
+
+func (i IpAllowListGroupArray) ToIpAllowListGroupArrayOutputWithContext(ctx context.Context) IpAllowListGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpAllowListGroupArrayOutput)
+}
+
+type IpAllowListGroupOutput struct{ *pulumi.OutputState }
+
+func (IpAllowListGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpAllowListGroup)(nil)).Elem()
+}
+
+func (o IpAllowListGroupOutput) ToIpAllowListGroupOutput() IpAllowListGroupOutput {
+	return o
+}
+
+func (o IpAllowListGroupOutput) ToIpAllowListGroupOutputWithContext(ctx context.Context) IpAllowListGroupOutput {
+	return o
+}
+
+// Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+func (o IpAllowListGroupOutput) AllowLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v IpAllowListGroup) []string { return v.AllowLists }).(pulumi.StringArrayOutput)
+}
+
+// Custom group name
+func (o IpAllowListGroupOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpAllowListGroup) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+type IpAllowListGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (IpAllowListGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpAllowListGroup)(nil)).Elem()
+}
+
+func (o IpAllowListGroupArrayOutput) ToIpAllowListGroupArrayOutput() IpAllowListGroupArrayOutput {
+	return o
+}
+
+func (o IpAllowListGroupArrayOutput) ToIpAllowListGroupArrayOutputWithContext(ctx context.Context) IpAllowListGroupArrayOutput {
+	return o
+}
+
+func (o IpAllowListGroupArrayOutput) Index(i pulumi.IntInput) IpAllowListGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IpAllowListGroup {
+		return vs[0].([]IpAllowListGroup)[vs[1].(int)]
+	}).(IpAllowListGroupOutput)
+}
+
 type GetInstanceInstanceConfiguration struct {
 	// Administrator password.
 	AdminPassword string `pulumi:"adminPassword"`
@@ -7173,6 +7279,112 @@ func (o GetInstanceTransferInfoReduceSpecConfigOutput) WarmNodeNum() pulumi.IntO
 	return o.ApplyT(func(v GetInstanceTransferInfoReduceSpecConfig) int { return v.WarmNodeNum }).(pulumi.IntOutput)
 }
 
+type GetIpAllowListGroup struct {
+	// Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+	AllowLists []string `pulumi:"allowLists"`
+	// Custom group name
+	Name string `pulumi:"name"`
+}
+
+// GetIpAllowListGroupInput is an input type that accepts GetIpAllowListGroupArgs and GetIpAllowListGroupOutput values.
+// You can construct a concrete instance of `GetIpAllowListGroupInput` via:
+//
+//	GetIpAllowListGroupArgs{...}
+type GetIpAllowListGroupInput interface {
+	pulumi.Input
+
+	ToGetIpAllowListGroupOutput() GetIpAllowListGroupOutput
+	ToGetIpAllowListGroupOutputWithContext(context.Context) GetIpAllowListGroupOutput
+}
+
+type GetIpAllowListGroupArgs struct {
+	// Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+	AllowLists pulumi.StringArrayInput `pulumi:"allowLists"`
+	// Custom group name
+	Name pulumi.StringInput `pulumi:"name"`
+}
+
+func (GetIpAllowListGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpAllowListGroup)(nil)).Elem()
+}
+
+func (i GetIpAllowListGroupArgs) ToGetIpAllowListGroupOutput() GetIpAllowListGroupOutput {
+	return i.ToGetIpAllowListGroupOutputWithContext(context.Background())
+}
+
+func (i GetIpAllowListGroupArgs) ToGetIpAllowListGroupOutputWithContext(ctx context.Context) GetIpAllowListGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpAllowListGroupOutput)
+}
+
+// GetIpAllowListGroupArrayInput is an input type that accepts GetIpAllowListGroupArray and GetIpAllowListGroupArrayOutput values.
+// You can construct a concrete instance of `GetIpAllowListGroupArrayInput` via:
+//
+//	GetIpAllowListGroupArray{ GetIpAllowListGroupArgs{...} }
+type GetIpAllowListGroupArrayInput interface {
+	pulumi.Input
+
+	ToGetIpAllowListGroupArrayOutput() GetIpAllowListGroupArrayOutput
+	ToGetIpAllowListGroupArrayOutputWithContext(context.Context) GetIpAllowListGroupArrayOutput
+}
+
+type GetIpAllowListGroupArray []GetIpAllowListGroupInput
+
+func (GetIpAllowListGroupArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpAllowListGroup)(nil)).Elem()
+}
+
+func (i GetIpAllowListGroupArray) ToGetIpAllowListGroupArrayOutput() GetIpAllowListGroupArrayOutput {
+	return i.ToGetIpAllowListGroupArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpAllowListGroupArray) ToGetIpAllowListGroupArrayOutputWithContext(ctx context.Context) GetIpAllowListGroupArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpAllowListGroupArrayOutput)
+}
+
+type GetIpAllowListGroupOutput struct{ *pulumi.OutputState }
+
+func (GetIpAllowListGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpAllowListGroup)(nil)).Elem()
+}
+
+func (o GetIpAllowListGroupOutput) ToGetIpAllowListGroupOutput() GetIpAllowListGroupOutput {
+	return o
+}
+
+func (o GetIpAllowListGroupOutput) ToGetIpAllowListGroupOutputWithContext(ctx context.Context) GetIpAllowListGroupOutput {
+	return o
+}
+
+// Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+func (o GetIpAllowListGroupOutput) AllowLists() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetIpAllowListGroup) []string { return v.AllowLists }).(pulumi.StringArrayOutput)
+}
+
+// Custom group name
+func (o GetIpAllowListGroupOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpAllowListGroup) string { return v.Name }).(pulumi.StringOutput)
+}
+
+type GetIpAllowListGroupArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpAllowListGroupArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpAllowListGroup)(nil)).Elem()
+}
+
+func (o GetIpAllowListGroupArrayOutput) ToGetIpAllowListGroupArrayOutput() GetIpAllowListGroupArrayOutput {
+	return o
+}
+
+func (o GetIpAllowListGroupArrayOutput) ToGetIpAllowListGroupArrayOutputWithContext(ctx context.Context) GetIpAllowListGroupArrayOutput {
+	return o
+}
+
+func (o GetIpAllowListGroupArrayOutput) Index(i pulumi.IntInput) GetIpAllowListGroupOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpAllowListGroup {
+		return vs[0].([]GetIpAllowListGroup)[vs[1].(int)]
+	}).(GetIpAllowListGroupOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceInstanceConfigurationInput)(nil)).Elem(), InstanceInstanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceInstanceConfigurationPtrInput)(nil)).Elem(), InstanceInstanceConfigurationArgs{})
@@ -7218,6 +7430,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTransferInfoPtrInput)(nil)).Elem(), InstanceTransferInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTransferInfoReduceSpecConfigInput)(nil)).Elem(), InstanceTransferInfoReduceSpecConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTransferInfoReduceSpecConfigPtrInput)(nil)).Elem(), InstanceTransferInfoReduceSpecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpAllowListGroupInput)(nil)).Elem(), IpAllowListGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpAllowListGroupArrayInput)(nil)).Elem(), IpAllowListGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceConfigurationInput)(nil)).Elem(), GetInstanceInstanceConfigurationArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceConfigurationColdNodeResourceSpecInput)(nil)).Elem(), GetInstanceInstanceConfigurationColdNodeResourceSpecArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceInstanceConfigurationColdNodeStorageSpecInput)(nil)).Elem(), GetInstanceInstanceConfigurationColdNodeStorageSpecArgs{})
@@ -7244,6 +7458,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceSubInstanceArrayInput)(nil)).Elem(), GetInstanceSubInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTransferInfoInput)(nil)).Elem(), GetInstanceTransferInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTransferInfoReduceSpecConfigInput)(nil)).Elem(), GetInstanceTransferInfoReduceSpecConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpAllowListGroupInput)(nil)).Elem(), GetIpAllowListGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpAllowListGroupArrayInput)(nil)).Elem(), GetIpAllowListGroupArray{})
 	pulumi.RegisterOutputType(InstanceInstanceConfigurationOutput{})
 	pulumi.RegisterOutputType(InstanceInstanceConfigurationPtrOutput{})
 	pulumi.RegisterOutputType(InstanceInstanceConfigurationColdNodeResourceSpecOutput{})
@@ -7288,6 +7504,8 @@ func init() {
 	pulumi.RegisterOutputType(InstanceTransferInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceTransferInfoReduceSpecConfigOutput{})
 	pulumi.RegisterOutputType(InstanceTransferInfoReduceSpecConfigPtrOutput{})
+	pulumi.RegisterOutputType(IpAllowListGroupOutput{})
+	pulumi.RegisterOutputType(IpAllowListGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceInstanceConfigurationOutput{})
 	pulumi.RegisterOutputType(GetInstanceInstanceConfigurationColdNodeResourceSpecOutput{})
 	pulumi.RegisterOutputType(GetInstanceInstanceConfigurationColdNodeStorageSpecOutput{})
@@ -7314,4 +7532,6 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceSubInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceTransferInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceTransferInfoReduceSpecConfigOutput{})
+	pulumi.RegisterOutputType(GetIpAllowListGroupOutput{})
+	pulumi.RegisterOutputType(GetIpAllowListGroupArrayOutput{})
 }

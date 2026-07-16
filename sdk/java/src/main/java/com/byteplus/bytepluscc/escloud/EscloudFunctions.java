@@ -6,8 +6,12 @@ package com.byteplus.bytepluscc.escloud;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.escloud.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.escloud.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.escloud.inputs.GetIpAllowListArgs;
+import com.byteplus.bytepluscc.escloud.inputs.GetIpAllowListPlainArgs;
 import com.byteplus.bytepluscc.escloud.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.escloud.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.escloud.outputs.GetIpAllowListResult;
+import com.byteplus.bytepluscc.escloud.outputs.GetIpAllowListsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -100,5 +104,89 @@ public final class EscloudFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:escloud/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static Output<GetIpAllowListResult> getIpAllowList(GetIpAllowListArgs args) {
+        return getIpAllowList(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static CompletableFuture<GetIpAllowListResult> getIpAllowListPlain(GetIpAllowListPlainArgs args) {
+        return getIpAllowListPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static Output<GetIpAllowListResult> getIpAllowList(GetIpAllowListArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:escloud/getIpAllowList:getIpAllowList", TypeShape.of(GetIpAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static Output<GetIpAllowListResult> getIpAllowList(GetIpAllowListArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:escloud/getIpAllowList:getIpAllowList", TypeShape.of(GetIpAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static CompletableFuture<GetIpAllowListResult> getIpAllowListPlain(GetIpAllowListPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:escloud/getIpAllowList:getIpAllowList", TypeShape.of(GetIpAllowListResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static Output<GetIpAllowListsResult> getIpAllowLists() {
+        return getIpAllowLists(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static CompletableFuture<GetIpAllowListsResult> getIpAllowListsPlain() {
+        return getIpAllowListsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static Output<GetIpAllowListsResult> getIpAllowLists(InvokeArgs args) {
+        return getIpAllowLists(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static CompletableFuture<GetIpAllowListsResult> getIpAllowListsPlain(InvokeArgs args) {
+        return getIpAllowListsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static Output<GetIpAllowListsResult> getIpAllowLists(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:escloud/getIpAllowLists:getIpAllowLists", TypeShape.of(GetIpAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static Output<GetIpAllowListsResult> getIpAllowLists(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:escloud/getIpAllowLists:getIpAllowLists", TypeShape.of(GetIpAllowListsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ESCloud::IpAllowList
+     * 
+     */
+    public static CompletableFuture<GetIpAllowListsResult> getIpAllowListsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:escloud/getIpAllowLists:getIpAllowLists", TypeShape.of(GetIpAllowListsResult.class), args, Utilities.withVersion(options));
     }
 }

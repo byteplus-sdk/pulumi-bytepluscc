@@ -15,10 +15,25 @@ export const getInstances: typeof import("./getInstances").getInstances = null a
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
 
+export { GetIpAllowListArgs, GetIpAllowListResult, GetIpAllowListOutputArgs } from "./getIpAllowList";
+export const getIpAllowList: typeof import("./getIpAllowList").getIpAllowList = null as any;
+export const getIpAllowListOutput: typeof import("./getIpAllowList").getIpAllowListOutput = null as any;
+utilities.lazyLoad(exports, ["getIpAllowList","getIpAllowListOutput"], () => require("./getIpAllowList"));
+
+export { GetIpAllowListsResult } from "./getIpAllowLists";
+export const getIpAllowLists: typeof import("./getIpAllowLists").getIpAllowLists = null as any;
+export const getIpAllowListsOutput: typeof import("./getIpAllowLists").getIpAllowListsOutput = null as any;
+utilities.lazyLoad(exports, ["getIpAllowLists","getIpAllowListsOutput"], () => require("./getIpAllowLists"));
+
 export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
+export { IpAllowListArgs, IpAllowListState } from "./ipAllowList";
+export type IpAllowList = import("./ipAllowList").IpAllowList;
+export const IpAllowList: typeof import("./ipAllowList").IpAllowList = null as any;
+utilities.lazyLoad(exports, ["IpAllowList"], () => require("./ipAllowList"));
 
 
 const _module = {
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:escloud/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:escloud/ipAllowList:IpAllowList":
+                return new IpAllowList(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "escloud/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "escloud/ipAllowList", _module)

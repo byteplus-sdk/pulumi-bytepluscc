@@ -3660,10 +3660,6 @@
                 "name": {
                     "type": "string",
                     "description": "Version name. Supports uppercase and lowercase letters, numbers, and hyphens (-). Length: 2~63 characters. Cannot start with a hyphen (-)\n"
-                },
-                "updateTime": {
-                    "type": "string",
-                    "description": "Update time\n"
                 }
             },
             "type": "object",
@@ -3671,8 +3667,7 @@
                 "nodejs": {
                     "requiredOutputs": [
                         "labels",
-                        "name",
-                        "updateTime"
+                        "name"
                     ]
                 }
             }
@@ -24798,6 +24793,30 @@
                 }
             }
         },
+        "bytepluscc:escloud/IpAllowListGroup:IpAllowListGroup": {
+            "properties": {
+                "allowLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Custom group name\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "allowLists",
+                        "name"
+                    ]
+                }
+            }
+        },
         "bytepluscc:escloud/getInstanceInstanceConfiguration:getInstanceInstanceConfiguration": {
             "properties": {
                 "adminPassword": {
@@ -25714,6 +25733,31 @@
                 "enablePureMaster",
                 "masterNodeNum",
                 "warmNodeNum"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:escloud/getIpAllowListGroup:getIpAllowListGroup": {
+            "properties": {
+                "allowLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Custom group name\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "allowLists",
+                "name"
             ],
             "language": {
                 "nodejs": {
@@ -41213,6 +41257,32 @@
                 }
             }
         },
+        "bytepluscc:tls/DownloadTaskLogContextInfos:DownloadTaskLogContextInfos": {
+            "properties": {
+                "contextFlow": {
+                    "type": "string",
+                    "description": "LogGroup ID to which the log context belongs.\n"
+                },
+                "packageOffset": {
+                    "type": "integer",
+                    "description": "Specifies the log index in the LogGroup.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "Host of the log source.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "contextFlow",
+                        "packageOffset",
+                        "source"
+                    ]
+                }
+            }
+        },
         "bytepluscc:tls/EtlTargetResource:EtlTargetResource": {
             "properties": {
                 "alias": {
@@ -42804,6 +42874,97 @@
                 }
             }
         },
+        "bytepluscc:tls/RuleBoundHostGroupHostGroup:RuleBoundHostGroupHostGroup": {
+            "properties": {
+                "abnormalHeartbeatStatusCount": {
+                    "type": "integer",
+                    "description": "Number of machines with abnormal heartbeat status\n"
+                },
+                "agentLatestVersion": {
+                    "type": "string",
+                    "description": "Latest LogCollector version number available for upgrade\n"
+                },
+                "autoUpdate": {
+                    "type": "boolean",
+                    "description": "Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "Machine group creation time\n"
+                },
+                "hostCount": {
+                    "type": "integer",
+                    "description": "Number of machines in the machine group\n"
+                },
+                "hostGroupId": {
+                    "type": "string",
+                    "description": "Machine group ID\n"
+                },
+                "hostGroupName": {
+                    "type": "string",
+                    "description": "Machine group name\n"
+                },
+                "hostGroupType": {
+                    "type": "string",
+                    "description": "Machine group type. IP: machine IP. Label: machine label.\n"
+                },
+                "hostIdentifier": {
+                    "type": "string",
+                    "description": "Machine identifier\n"
+                },
+                "iamProjectName": {
+                    "type": "string",
+                    "description": "IAM project associated with the machine group\n"
+                },
+                "modifyTime": {
+                    "type": "string",
+                    "description": "Machine group modification time\n"
+                },
+                "normalHeartbeatStatusCount": {
+                    "type": "integer",
+                    "description": "Number of machines with normal heartbeat status\n"
+                },
+                "ruleCount": {
+                    "type": "integer",
+                    "description": "Number of collection configurations bound to the machine group\n"
+                },
+                "serviceLogging": {
+                    "type": "boolean",
+                    "description": "Enable LogCollector service log feature. true: enabled. false (default): disabled.\n"
+                },
+                "updateEndTime": {
+                    "type": "string",
+                    "description": "LogCollector auto upgrade end time\n"
+                },
+                "updateStartTime": {
+                    "type": "string",
+                    "description": "LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "abnormalHeartbeatStatusCount",
+                        "agentLatestVersion",
+                        "autoUpdate",
+                        "createTime",
+                        "hostCount",
+                        "hostGroupId",
+                        "hostGroupName",
+                        "hostGroupType",
+                        "hostIdentifier",
+                        "iamProjectName",
+                        "modifyTime",
+                        "normalHeartbeatStatusCount",
+                        "ruleCount",
+                        "serviceLogging",
+                        "updateEndTime",
+                        "updateStartTime"
+                    ]
+                }
+            }
+        },
         "bytepluscc:tls/RuleContainerRule:RuleContainerRule": {
             "properties": {
                 "containerNameRegex": {
@@ -43770,6 +43931,47 @@
                         "maxSize",
                         "partitionFormat",
                         "prefix"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:tls/TopicShard:TopicShard": {
+            "properties": {
+                "exclusiveEndKey": {
+                    "type": "string",
+                    "description": "Ending key value of the partition\n"
+                },
+                "inclusiveBeginKey": {
+                    "type": "string",
+                    "description": "Starting key value of the partition\n"
+                },
+                "modifyTime": {
+                    "type": "string",
+                    "description": "Last modified time of the partition\n"
+                },
+                "shardId": {
+                    "type": "integer",
+                    "description": "Partition ID of the log topic\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Partition status: readwrite means read/write, readonly means read-only\n"
+                },
+                "stopWriteTime": {
+                    "type": "string",
+                    "description": "Time when the partition stopped writing, that is, the last time logs were written to this partition\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "exclusiveEndKey",
+                        "inclusiveBeginKey",
+                        "modifyTime",
+                        "shardId",
+                        "status",
+                        "stopWriteTime"
                     ]
                 }
             }
@@ -44786,6 +44988,33 @@
             "required": [
                 "key",
                 "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getDownloadTaskLogContextInfos:getDownloadTaskLogContextInfos": {
+            "properties": {
+                "contextFlow": {
+                    "type": "string",
+                    "description": "LogGroup ID to which the log context belongs.\n"
+                },
+                "packageOffset": {
+                    "type": "integer",
+                    "description": "Specifies the log index in the LogGroup.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "Host of the log source.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "contextFlow",
+                "packageOffset",
+                "source"
             ],
             "language": {
                 "nodejs": {
@@ -46434,6 +46663,98 @@
                 }
             }
         },
+        "bytepluscc:tls/getRuleBoundHostGroupHostGroup:getRuleBoundHostGroupHostGroup": {
+            "properties": {
+                "abnormalHeartbeatStatusCount": {
+                    "type": "integer",
+                    "description": "Number of machines with abnormal heartbeat status\n"
+                },
+                "agentLatestVersion": {
+                    "type": "string",
+                    "description": "Latest LogCollector version number available for upgrade\n"
+                },
+                "autoUpdate": {
+                    "type": "boolean",
+                    "description": "Enable LogCollector auto upgrade on machine group servers. true: The log service will check upgrade conditions during the specified time period each day. If conditions are met, LogCollector will be upgraded automatically without manual intervention. false (default): LogCollector will not upgrade automatically. To use a newer version, refer to the LogCollector upgrade procedure.\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "Machine group creation time\n"
+                },
+                "hostCount": {
+                    "type": "integer",
+                    "description": "Number of machines in the machine group\n"
+                },
+                "hostGroupId": {
+                    "type": "string",
+                    "description": "Machine group ID\n"
+                },
+                "hostGroupName": {
+                    "type": "string",
+                    "description": "Machine group name\n"
+                },
+                "hostGroupType": {
+                    "type": "string",
+                    "description": "Machine group type. IP: machine IP. Label: machine label.\n"
+                },
+                "hostIdentifier": {
+                    "type": "string",
+                    "description": "Machine identifier\n"
+                },
+                "iamProjectName": {
+                    "type": "string",
+                    "description": "IAM project associated with the machine group\n"
+                },
+                "modifyTime": {
+                    "type": "string",
+                    "description": "Machine group modification time\n"
+                },
+                "normalHeartbeatStatusCount": {
+                    "type": "integer",
+                    "description": "Number of machines with normal heartbeat status\n"
+                },
+                "ruleCount": {
+                    "type": "integer",
+                    "description": "Number of collection configurations bound to the machine group\n"
+                },
+                "serviceLogging": {
+                    "type": "boolean",
+                    "description": "Enable LogCollector service log feature. true: enabled. false (default): disabled.\n"
+                },
+                "updateEndTime": {
+                    "type": "string",
+                    "description": "LogCollector auto upgrade end time\n"
+                },
+                "updateStartTime": {
+                    "type": "string",
+                    "description": "LogCollector auto upgrade start time. Note: Only required when AutoUpdate is set to true. It is recommended to schedule auto upgrade during off-peak hours. LogCollector may restart during the upgrade process, but logs will not be lost.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "abnormalHeartbeatStatusCount",
+                "agentLatestVersion",
+                "autoUpdate",
+                "createTime",
+                "hostCount",
+                "hostGroupId",
+                "hostGroupName",
+                "hostGroupType",
+                "hostIdentifier",
+                "iamProjectName",
+                "modifyTime",
+                "normalHeartbeatStatusCount",
+                "ruleCount",
+                "serviceLogging",
+                "updateEndTime",
+                "updateStartTime"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "bytepluscc:tls/getRuleContainerRule:getRuleContainerRule": {
             "properties": {
                 "containerNameRegex": {
@@ -47498,6 +47819,48 @@
                 "maxSize",
                 "partitionFormat",
                 "prefix"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:tls/getTopicShard:getTopicShard": {
+            "properties": {
+                "exclusiveEndKey": {
+                    "type": "string",
+                    "description": "Ending key value of the partition\n"
+                },
+                "inclusiveBeginKey": {
+                    "type": "string",
+                    "description": "Starting key value of the partition\n"
+                },
+                "modifyTime": {
+                    "type": "string",
+                    "description": "Last modified time of the partition\n"
+                },
+                "shardId": {
+                    "type": "integer",
+                    "description": "Partition ID of the log topic\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Partition status: readwrite means read/write, readonly means read-only\n"
+                },
+                "stopWriteTime": {
+                    "type": "string",
+                    "description": "Time when the partition stopped writing, that is, the last time logs were written to this partition\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "exclusiveEndKey",
+                "inclusiveBeginKey",
+                "modifyTime",
+                "shardId",
+                "status",
+                "stopWriteTime"
             ],
             "language": {
                 "nodejs": {
@@ -55235,6 +55598,27 @@
                 }
             }
         },
+        "bytepluscc:vmp/IntegrationTaskTag:IntegrationTaskTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag Key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag Value\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
         "bytepluscc:vmp/WorkspaceInstanceType:WorkspaceInstanceType": {
             "properties": {
                 "activeSeries": {
@@ -55552,6 +55936,28 @@
                 "value": {
                     "type": "string",
                     "description": "Tag or annotation value. If set to empty, the key will be deleted\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:vmp/getIntegrationTaskTag:getIntegrationTaskTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag Key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag Value\n"
                 }
             },
             "type": "object",
@@ -62671,7 +63077,7 @@
             }
         },
         "bytepluscc:apig/upstream:Upstream": {
-            "description": "Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst aPIGUpstreamAIProviderDemo = new bytepluscc.apig.Upstream(\"APIGUpstreamAIProviderDemo\", {\n    circuitBreakingSettings: {\n        base_ejection_time: 30,\n        consecutive_errors: 5,\n        enable: true,\n        interval: 10,\n        max_ejection_percent: 20,\n        min_health_percent: 60,\n    },\n    comments: \"this is a test\",\n    connectionPoolSettings: {\n        enable: true,\n        http_1_max_pending_requests: 1000,\n        idle_timeout: 1000,\n        max_connections: 1000,\n    },\n    gatewayId: \"gd6hagxxxxxkh7is70\",\n    loadBalancerSettings: {\n        lb_policy: \"SimpleLB\",\n        simple_lb: \"LEAST_CONN\",\n        warmup_duration: 5,\n    },\n    name: \"test-7\",\n    protocol: \"HTTP\",\n    tlsSettings: {\n        sni: \"\",\n        tls_mode: \"DISABLE\",\n    },\n    sourceType: \"Domain\",\n    upstreamSpec: {\n        domain: {\n            domainList: [{\n                domain: \"www.test7.com\",\n                port: 5566,\n            }],\n        },\n    },\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\na_pig_upstream_ai_provider_demo = bytepluscc.apig.Upstream(\"APIGUpstreamAIProviderDemo\",\n    circuit_breaking_settings={\n        \"base_ejection_time\": 30,\n        \"consecutive_errors\": 5,\n        \"enable\": True,\n        \"interval\": 10,\n        \"max_ejection_percent\": 20,\n        \"min_health_percent\": 60,\n    },\n    comments=\"this is a test\",\n    connection_pool_settings={\n        \"enable\": True,\n        \"http_1_max_pending_requests\": 1000,\n        \"idle_timeout\": 1000,\n        \"max_connections\": 1000,\n    },\n    gateway_id=\"gd6hagxxxxxkh7is70\",\n    load_balancer_settings={\n        \"lb_policy\": \"SimpleLB\",\n        \"simple_lb\": \"LEAST_CONN\",\n        \"warmup_duration\": 5,\n    },\n    name=\"test-7\",\n    protocol=\"HTTP\",\n    tls_settings={\n        \"sni\": \"\",\n        \"tls_mode\": \"DISABLE\",\n    },\n    source_type=\"Domain\",\n    upstream_spec={\n        \"domain\": {\n            \"domain_list\": [{\n                \"domain\": \"www.test7.com\",\n                \"port\": 5566,\n            }],\n        },\n    })\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var aPIGUpstreamAIProviderDemo = new Bytepluscc.Apig.Upstream(\"APIGUpstreamAIProviderDemo\", new()\n    {\n        CircuitBreakingSettings = new Bytepluscc.Apig.Inputs.UpstreamCircuitBreakingSettingsArgs\n        {\n            Base_ejection_time = 30,\n            Consecutive_errors = 5,\n            Enable = true,\n            Interval = 10,\n            Max_ejection_percent = 20,\n            Min_health_percent = 60,\n        },\n        Comments = \"this is a test\",\n        ConnectionPoolSettings = new Bytepluscc.Apig.Inputs.UpstreamConnectionPoolSettingsArgs\n        {\n            Enable = true,\n            Http_1_max_pending_requests = 1000,\n            Idle_timeout = 1000,\n            Max_connections = 1000,\n        },\n        GatewayId = \"gd6hagxxxxxkh7is70\",\n        LoadBalancerSettings = new Bytepluscc.Apig.Inputs.UpstreamLoadBalancerSettingsArgs\n        {\n            Lb_policy = \"SimpleLB\",\n            Simple_lb = \"LEAST_CONN\",\n            Warmup_duration = 5,\n        },\n        Name = \"test-7\",\n        Protocol = \"HTTP\",\n        TlsSettings = new Bytepluscc.Apig.Inputs.UpstreamTlsSettingsArgs\n        {\n            Sni = \"\",\n            Tls_mode = \"DISABLE\",\n        },\n        SourceType = \"Domain\",\n        UpstreamSpec = new Bytepluscc.Apig.Inputs.UpstreamUpstreamSpecArgs\n        {\n            Domain = new Bytepluscc.Apig.Inputs.UpstreamUpstreamSpecDomainArgs\n            {\n                DomainList = new[]\n                {\n                    \n                    {\n                        { \"domain\", \"www.test7.com\" },\n                        { \"port\", 5566 },\n                    },\n                },\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/apig\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := apig.NewUpstream(ctx, \"APIGUpstreamAIProviderDemo\", \u0026apig.UpstreamArgs{\n\t\t\tCircuitBreakingSettings: \u0026apig.UpstreamCircuitBreakingSettingsArgs{\n\t\t\t\tBase_ejection_time:   30,\n\t\t\t\tConsecutive_errors:   5,\n\t\t\t\tEnable:               pulumi.Bool(true),\n\t\t\t\tInterval:             pulumi.Int(10),\n\t\t\t\tMax_ejection_percent: 20,\n\t\t\t\tMin_health_percent:   60,\n\t\t\t},\n\t\t\tComments: pulumi.String(\"this is a test\"),\n\t\t\tConnectionPoolSettings: \u0026apig.UpstreamConnectionPoolSettingsArgs{\n\t\t\t\tEnable:                      pulumi.Bool(true),\n\t\t\t\tHttp_1_max_pending_requests: 1000,\n\t\t\t\tIdle_timeout:                1000,\n\t\t\t\tMax_connections:             1000,\n\t\t\t},\n\t\t\tGatewayId: pulumi.String(\"gd6hagxxxxxkh7is70\"),\n\t\t\tLoadBalancerSettings: \u0026apig.UpstreamLoadBalancerSettingsArgs{\n\t\t\t\tLb_policy:       \"SimpleLB\",\n\t\t\t\tSimple_lb:       \"LEAST_CONN\",\n\t\t\t\tWarmup_duration: 5,\n\t\t\t},\n\t\t\tName:     pulumi.String(\"test-7\"),\n\t\t\tProtocol: pulumi.String(\"HTTP\"),\n\t\t\tTlsSettings: \u0026apig.UpstreamTlsSettingsArgs{\n\t\t\t\tSni:      pulumi.String(\"\"),\n\t\t\t\tTls_mode: \"DISABLE\",\n\t\t\t},\n\t\t\tSourceType: pulumi.String(\"Domain\"),\n\t\t\tUpstreamSpec: \u0026apig.UpstreamUpstreamSpecArgs{\n\t\t\t\tDomain: \u0026apig.UpstreamUpstreamSpecDomainArgs{\n\t\t\t\t\tDomainList: []map[string]interface{}{\n\t\t\t\t\t\tmap[string]interface{}{\n\t\t\t\t\t\t\t\"domain\": \"www.test7.com\",\n\t\t\t\t\t\t\t\"port\":   5566,\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_apig_upstream\" \"APIGUpstreamAIProviderDemo\" {\n  circuit_breaking_settings = {\n    base_ejection_time   = 30\n    consecutive_errors   = 5\n    enable               = true\n    interval             = 10\n    max_ejection_percent = 20\n    min_health_percent   = 60\n  }\n  comments = \"this is a test\"\n  connection_pool_settings = {\n    enable                      = true\n    http_1_max_pending_requests = 1000\n    idle_timeout                = 1000\n    max_connections             = 1000\n  }\n  gateway_id = \"gd6hagxxxxxkh7is70\"\n  load_balancer_settings = {\n    lb_policy       = \"SimpleLB\"\n    simple_lb       = \"LEAST_CONN\"\n    warmup_duration = 5\n  }\n  name     = \"test-7\"\n  protocol = \"HTTP\"\n  tls_settings = {\n    sni      = \"\"\n    tls_mode = \"DISABLE\"\n  }\n  source_type = \"Domain\"\n  upstream_spec = {\n    domain = {\n      domain_list = [{\n        \"domain\" = \"www.test7.com\"\n        \"port\"   = 5566\n      }]\n    }\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.apig.Upstream;\nimport com.byteplus.bytepluscc.apig.UpstreamArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamCircuitBreakingSettingsArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamConnectionPoolSettingsArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamLoadBalancerSettingsArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamTlsSettingsArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamUpstreamSpecArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamUpstreamSpecDomainArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var aPIGUpstreamAIProviderDemo = new Upstream(\"aPIGUpstreamAIProviderDemo\", UpstreamArgs.builder()\n            .circuitBreakingSettings(UpstreamCircuitBreakingSettingsArgs.builder()\n                .base_ejection_time(30)\n                .consecutive_errors(5)\n                .enable(true)\n                .interval(10)\n                .max_ejection_percent(20)\n                .min_health_percent(60)\n                .build())\n            .comments(\"this is a test\")\n            .connectionPoolSettings(UpstreamConnectionPoolSettingsArgs.builder()\n                .enable(true)\n                .http_1_max_pending_requests(1000)\n                .idle_timeout(1000)\n                .max_connections(1000)\n                .build())\n            .gatewayId(\"gd6hagxxxxxkh7is70\")\n            .loadBalancerSettings(UpstreamLoadBalancerSettingsArgs.builder()\n                .lb_policy(\"SimpleLB\")\n                .simple_lb(\"LEAST_CONN\")\n                .warmup_duration(5)\n                .build())\n            .name(\"test-7\")\n            .protocol(\"HTTP\")\n            .tlsSettings(UpstreamTlsSettingsArgs.builder()\n                .sni(\"\")\n                .tls_mode(\"DISABLE\")\n                .build())\n            .sourceType(\"Domain\")\n            .upstreamSpec(UpstreamUpstreamSpecArgs.builder()\n                .domain(UpstreamUpstreamSpecDomainArgs.builder()\n                    .domainList(Arrays.asList(Map.ofEntries(\n                        Map.entry(\"domain\", \"www.test7.com\"),\n                        Map.entry(\"port\", 5566)\n                    )))\n                    .build())\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  aPIGUpstreamAIProviderDemo:\n    type: bytepluscc:apig:Upstream\n    name: APIGUpstreamAIProviderDemo\n    properties:\n      circuitBreakingSettings:\n        base_ejection_time: 30\n        consecutive_errors: 5\n        enable: true\n        interval: 10\n        max_ejection_percent: 20\n        min_health_percent: 60\n      comments: this is a test\n      connectionPoolSettings:\n        enable: true\n        http_1_max_pending_requests: 1000\n        idle_timeout: 1000\n        max_connections: 1000\n      gatewayId: gd6hagxxxxxkh7is70\n      loadBalancerSettings:\n        lb_policy: SimpleLB\n        simple_lb: LEAST_CONN\n        warmup_duration: 5\n      name: test-7\n      protocol: HTTP\n      tlsSettings:\n        sni: \"\"\n        tls_mode: DISABLE\n      sourceType: Domain\n      upstreamSpec:\n        domain:\n          domainList:\n            - domain: www.test7.com\n              port: 5566\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:apig/upstream:Upstream example \"upstream_id\"\n```\n\n",
+            "description": "Upstream is an abstraction of the backend for API gateway instances. You can group backend applications with the same functionality into an upstream, which decouples routing from backend applications and provides flexible support for scenarios such as canary releases and multi-version management. This article introduces the concept and purpose of upstream\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst aPIGUpstreamAIProviderDemo = new bytepluscc.apig.Upstream(\"APIGUpstreamAIProviderDemo\", {\n    circuitBreakingSettings: {\n        base_ejection_time: 30,\n        consecutive_errors: 5,\n        enable: true,\n        interval: 10,\n        max_ejection_percent: 20,\n        min_health_percent: 60,\n    },\n    comments: \"this is a test\",\n    connectionPoolSettings: {\n        enable: true,\n        http_1_max_pending_requests: 1000,\n        idle_timeout: 1000,\n        max_connections: 1000,\n    },\n    gatewayId: \"gd6hagxxxxxkh7is70\",\n    loadBalancerSettings: {\n        lb_policy: \"SimpleLB\",\n        simple_lb: \"LEAST_CONN\",\n        warmup_duration: 5,\n    },\n    name: \"test-7\",\n    protocol: \"HTTP\",\n    tlsSettings: {\n        sni: \"\",\n        tls_mode: \"DISABLE\",\n    },\n    sourceType: \"Domain\",\n    upstreamSpec: {\n        domain: {\n            domainList: [{\n                domain: \"www.test7.com\",\n                port: 5566,\n            }],\n        },\n    },\n    versionDetails: [{\n        labels: [{\n            key: \"k1\",\n            value: \"v1\",\n        }],\n        name: \"v1\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\na_pig_upstream_ai_provider_demo = bytepluscc.apig.Upstream(\"APIGUpstreamAIProviderDemo\",\n    circuit_breaking_settings={\n        \"base_ejection_time\": 30,\n        \"consecutive_errors\": 5,\n        \"enable\": True,\n        \"interval\": 10,\n        \"max_ejection_percent\": 20,\n        \"min_health_percent\": 60,\n    },\n    comments=\"this is a test\",\n    connection_pool_settings={\n        \"enable\": True,\n        \"http_1_max_pending_requests\": 1000,\n        \"idle_timeout\": 1000,\n        \"max_connections\": 1000,\n    },\n    gateway_id=\"gd6hagxxxxxkh7is70\",\n    load_balancer_settings={\n        \"lb_policy\": \"SimpleLB\",\n        \"simple_lb\": \"LEAST_CONN\",\n        \"warmup_duration\": 5,\n    },\n    name=\"test-7\",\n    protocol=\"HTTP\",\n    tls_settings={\n        \"sni\": \"\",\n        \"tls_mode\": \"DISABLE\",\n    },\n    source_type=\"Domain\",\n    upstream_spec={\n        \"domain\": {\n            \"domain_list\": [{\n                \"domain\": \"www.test7.com\",\n                \"port\": 5566,\n            }],\n        },\n    },\n    version_details=[{\n        \"labels\": [{\n            \"key\": \"k1\",\n            \"value\": \"v1\",\n        }],\n        \"name\": \"v1\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var aPIGUpstreamAIProviderDemo = new Bytepluscc.Apig.Upstream(\"APIGUpstreamAIProviderDemo\", new()\n    {\n        CircuitBreakingSettings = new Bytepluscc.Apig.Inputs.UpstreamCircuitBreakingSettingsArgs\n        {\n            Base_ejection_time = 30,\n            Consecutive_errors = 5,\n            Enable = true,\n            Interval = 10,\n            Max_ejection_percent = 20,\n            Min_health_percent = 60,\n        },\n        Comments = \"this is a test\",\n        ConnectionPoolSettings = new Bytepluscc.Apig.Inputs.UpstreamConnectionPoolSettingsArgs\n        {\n            Enable = true,\n            Http_1_max_pending_requests = 1000,\n            Idle_timeout = 1000,\n            Max_connections = 1000,\n        },\n        GatewayId = \"gd6hagxxxxxkh7is70\",\n        LoadBalancerSettings = new Bytepluscc.Apig.Inputs.UpstreamLoadBalancerSettingsArgs\n        {\n            Lb_policy = \"SimpleLB\",\n            Simple_lb = \"LEAST_CONN\",\n            Warmup_duration = 5,\n        },\n        Name = \"test-7\",\n        Protocol = \"HTTP\",\n        TlsSettings = new Bytepluscc.Apig.Inputs.UpstreamTlsSettingsArgs\n        {\n            Sni = \"\",\n            Tls_mode = \"DISABLE\",\n        },\n        SourceType = \"Domain\",\n        UpstreamSpec = new Bytepluscc.Apig.Inputs.UpstreamUpstreamSpecArgs\n        {\n            Domain = new Bytepluscc.Apig.Inputs.UpstreamUpstreamSpecDomainArgs\n            {\n                DomainList = new[]\n                {\n                    \n                    {\n                        { \"domain\", \"www.test7.com\" },\n                        { \"port\", 5566 },\n                    },\n                },\n            },\n        },\n        VersionDetails = new[]\n        {\n            new Bytepluscc.Apig.Inputs.UpstreamVersionDetailArgs\n            {\n                Labels = new[]\n                {\n                    new Bytepluscc.Apig.Inputs.UpstreamVersionDetailLabelArgs\n                    {\n                        Key = \"k1\",\n                        Value = \"v1\",\n                    },\n                },\n                Name = \"v1\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/apig\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := apig.NewUpstream(ctx, \"APIGUpstreamAIProviderDemo\", \u0026apig.UpstreamArgs{\n\t\t\tCircuitBreakingSettings: \u0026apig.UpstreamCircuitBreakingSettingsArgs{\n\t\t\t\tBase_ejection_time:   30,\n\t\t\t\tConsecutive_errors:   5,\n\t\t\t\tEnable:               pulumi.Bool(true),\n\t\t\t\tInterval:             pulumi.Int(10),\n\t\t\t\tMax_ejection_percent: 20,\n\t\t\t\tMin_health_percent:   60,\n\t\t\t},\n\t\t\tComments: pulumi.String(\"this is a test\"),\n\t\t\tConnectionPoolSettings: \u0026apig.UpstreamConnectionPoolSettingsArgs{\n\t\t\t\tEnable:                      pulumi.Bool(true),\n\t\t\t\tHttp_1_max_pending_requests: 1000,\n\t\t\t\tIdle_timeout:                1000,\n\t\t\t\tMax_connections:             1000,\n\t\t\t},\n\t\t\tGatewayId: pulumi.String(\"gd6hagxxxxxkh7is70\"),\n\t\t\tLoadBalancerSettings: \u0026apig.UpstreamLoadBalancerSettingsArgs{\n\t\t\t\tLb_policy:       \"SimpleLB\",\n\t\t\t\tSimple_lb:       \"LEAST_CONN\",\n\t\t\t\tWarmup_duration: 5,\n\t\t\t},\n\t\t\tName:     pulumi.String(\"test-7\"),\n\t\t\tProtocol: pulumi.String(\"HTTP\"),\n\t\t\tTlsSettings: \u0026apig.UpstreamTlsSettingsArgs{\n\t\t\t\tSni:      pulumi.String(\"\"),\n\t\t\t\tTls_mode: \"DISABLE\",\n\t\t\t},\n\t\t\tSourceType: pulumi.String(\"Domain\"),\n\t\t\tUpstreamSpec: \u0026apig.UpstreamUpstreamSpecArgs{\n\t\t\t\tDomain: \u0026apig.UpstreamUpstreamSpecDomainArgs{\n\t\t\t\t\tDomainList: []map[string]interface{}{\n\t\t\t\t\t\tmap[string]interface{}{\n\t\t\t\t\t\t\t\"domain\": \"www.test7.com\",\n\t\t\t\t\t\t\t\"port\":   5566,\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t\tVersionDetails: apig.UpstreamVersionDetailArray{\n\t\t\t\t\u0026apig.UpstreamVersionDetailArgs{\n\t\t\t\t\tLabels: apig.UpstreamVersionDetailLabelArray{\n\t\t\t\t\t\t\u0026apig.UpstreamVersionDetailLabelArgs{\n\t\t\t\t\t\t\tKey:   pulumi.String(\"k1\"),\n\t\t\t\t\t\t\tValue: pulumi.String(\"v1\"),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tName: pulumi.String(\"v1\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_apig_upstream\" \"APIGUpstreamAIProviderDemo\" {\n  circuit_breaking_settings = {\n    base_ejection_time   = 30\n    consecutive_errors   = 5\n    enable               = true\n    interval             = 10\n    max_ejection_percent = 20\n    min_health_percent   = 60\n  }\n  comments = \"this is a test\"\n  connection_pool_settings = {\n    enable                      = true\n    http_1_max_pending_requests = 1000\n    idle_timeout                = 1000\n    max_connections             = 1000\n  }\n  gateway_id = \"gd6hagxxxxxkh7is70\"\n  load_balancer_settings = {\n    lb_policy       = \"SimpleLB\"\n    simple_lb       = \"LEAST_CONN\"\n    warmup_duration = 5\n  }\n  name     = \"test-7\"\n  protocol = \"HTTP\"\n  tls_settings = {\n    sni      = \"\"\n    tls_mode = \"DISABLE\"\n  }\n  source_type = \"Domain\"\n  upstream_spec = {\n    domain = {\n      domain_list = [{\n        \"domain\" = \"www.test7.com\"\n        \"port\"   = 5566\n      }]\n    }\n  }\n  version_details {\n    labels {\n      key   = \"k1\"\n      value = \"v1\"\n    }\n    name = \"v1\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.apig.Upstream;\nimport com.byteplus.bytepluscc.apig.UpstreamArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamCircuitBreakingSettingsArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamConnectionPoolSettingsArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamLoadBalancerSettingsArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamTlsSettingsArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamUpstreamSpecArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamUpstreamSpecDomainArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamVersionDetailArgs;\nimport com.pulumi.bytepluscc.apig.inputs.UpstreamVersionDetailLabelArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var aPIGUpstreamAIProviderDemo = new Upstream(\"aPIGUpstreamAIProviderDemo\", UpstreamArgs.builder()\n            .circuitBreakingSettings(UpstreamCircuitBreakingSettingsArgs.builder()\n                .base_ejection_time(30)\n                .consecutive_errors(5)\n                .enable(true)\n                .interval(10)\n                .max_ejection_percent(20)\n                .min_health_percent(60)\n                .build())\n            .comments(\"this is a test\")\n            .connectionPoolSettings(UpstreamConnectionPoolSettingsArgs.builder()\n                .enable(true)\n                .http_1_max_pending_requests(1000)\n                .idle_timeout(1000)\n                .max_connections(1000)\n                .build())\n            .gatewayId(\"gd6hagxxxxxkh7is70\")\n            .loadBalancerSettings(UpstreamLoadBalancerSettingsArgs.builder()\n                .lb_policy(\"SimpleLB\")\n                .simple_lb(\"LEAST_CONN\")\n                .warmup_duration(5)\n                .build())\n            .name(\"test-7\")\n            .protocol(\"HTTP\")\n            .tlsSettings(UpstreamTlsSettingsArgs.builder()\n                .sni(\"\")\n                .tls_mode(\"DISABLE\")\n                .build())\n            .sourceType(\"Domain\")\n            .upstreamSpec(UpstreamUpstreamSpecArgs.builder()\n                .domain(UpstreamUpstreamSpecDomainArgs.builder()\n                    .domainList(Arrays.asList(Map.ofEntries(\n                        Map.entry(\"domain\", \"www.test7.com\"),\n                        Map.entry(\"port\", 5566)\n                    )))\n                    .build())\n                .build())\n            .versionDetails(UpstreamVersionDetailArgs.builder()\n                .labels(UpstreamVersionDetailLabelArgs.builder()\n                    .key(\"k1\")\n                    .value(\"v1\")\n                    .build())\n                .name(\"v1\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  aPIGUpstreamAIProviderDemo:\n    type: bytepluscc:apig:Upstream\n    name: APIGUpstreamAIProviderDemo\n    properties:\n      circuitBreakingSettings:\n        base_ejection_time: 30\n        consecutive_errors: 5\n        enable: true\n        interval: 10\n        max_ejection_percent: 20\n        min_health_percent: 60\n      comments: this is a test\n      connectionPoolSettings:\n        enable: true\n        http_1_max_pending_requests: 1000\n        idle_timeout: 1000\n        max_connections: 1000\n      gatewayId: gd6hagxxxxxkh7is70\n      loadBalancerSettings:\n        lb_policy: SimpleLB\n        simple_lb: LEAST_CONN\n        warmup_duration: 5\n      name: test-7\n      protocol: HTTP\n      tlsSettings:\n        sni: \"\"\n        tls_mode: DISABLE\n      sourceType: Domain\n      upstreamSpec:\n        domain:\n          domainList:\n            - domain: www.test7.com\n              port: 5566\n      versionDetails:\n        - labels:\n            - key: k1\n              value: v1\n          name: v1\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:apig/upstream:Upstream example \"upstream_id\"\n```\n\n",
             "properties": {
                 "backendTargets": {
                     "type": "array",
@@ -62797,6 +63203,13 @@
                 "upstreamSpec": {
                     "$ref": "#/types/bytepluscc:apig/UpstreamUpstreamSpec:UpstreamUpstreamSpec",
                     "description": "Upstream Configuration\n"
+                },
+                "versionDetails": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:apig/UpstreamVersionDetail:UpstreamVersionDetail"
+                    },
+                    "description": "Upstream version, only valid when the upstream source type is K8S\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
                 }
             },
             "requiredInputs": [
@@ -75714,6 +76127,10 @@
                     "type": "string",
                     "description": "Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.\n"
                 },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Private key information for the key pair. Only returned when creating the key pair.\n"
+                },
                 "projectName": {
                     "type": "string",
                     "description": "Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.\n"
@@ -75741,6 +76158,7 @@
                 "instanceIds",
                 "keyPairId",
                 "keyPairName",
+                "privateKey",
                 "projectName",
                 "publicKey",
                 "tags",
@@ -75810,6 +76228,10 @@
                     "keyPairName": {
                         "type": "string",
                         "description": "Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.\n"
+                    },
+                    "privateKey": {
+                        "type": "string",
+                        "description": "Private key information for the key pair. Only returned when creating the key pair.\n"
                     },
                     "projectName": {
                         "type": "string",
@@ -77772,6 +78194,97 @@
                     "userId": {
                         "type": "string",
                         "description": "Instance owner's user ID\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:escloud/ipAllowList:IpAllowList": {
+            "description": "IP allowlist information\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.escloud.IpAllowList(\"Example\", {\n    instanceId: \"o-008wv7krnmw4\",\n    type: \"PRIVATE_ES\",\n    allowLists: [\n        \"10.0.0.0/16\",\n        \"192.168.1.1\",\n    ],\n    groups: [\n        {\n            name: \"group1\",\n            allow_list: [\n                \"10.0.0.0/16\",\n                \"192.168.1.2\",\n            ],\n        },\n        {\n            name: \"group2\",\n            allow_list: [\n                \"192.168.2.1\",\n                \"127.0.0.1\",\n            ],\n        },\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.escloud.IpAllowList(\"Example\",\n    instance_id=\"o-008wv7krnmw4\",\n    type=\"PRIVATE_ES\",\n    allow_lists=[\n        \"10.0.0.0/16\",\n        \"192.168.1.1\",\n    ],\n    groups=[\n        {\n            \"name\": \"group1\",\n            \"allow_list\": [\n                \"10.0.0.0/16\",\n                \"192.168.1.2\",\n            ],\n        },\n        {\n            \"name\": \"group2\",\n            \"allow_list\": [\n                \"192.168.2.1\",\n                \"127.0.0.1\",\n            ],\n        },\n    ])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Escloud.IpAllowList(\"Example\", new()\n    {\n        InstanceId = \"o-008wv7krnmw4\",\n        Type = \"PRIVATE_ES\",\n        AllowLists = new[]\n        {\n            \"10.0.0.0/16\",\n            \"192.168.1.1\",\n        },\n        Groups = new[]\n        {\n            new Bytepluscc.Escloud.Inputs.IpAllowListGroupArgs\n            {\n                Name = \"group1\",\n                Allow_list = new[]\n                {\n                    \"10.0.0.0/16\",\n                    \"192.168.1.2\",\n                },\n            },\n            new Bytepluscc.Escloud.Inputs.IpAllowListGroupArgs\n            {\n                Name = \"group2\",\n                Allow_list = new[]\n                {\n                    \"192.168.2.1\",\n                    \"127.0.0.1\",\n                },\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/escloud\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := escloud.NewIpAllowList(ctx, \"Example\", \u0026escloud.IpAllowListArgs{\n\t\t\tInstanceId: pulumi.String(\"o-008wv7krnmw4\"),\n\t\t\tType:       pulumi.String(\"PRIVATE_ES\"),\n\t\t\tAllowLists: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"10.0.0.0/16\"),\n\t\t\t\tpulumi.String(\"192.168.1.1\"),\n\t\t\t},\n\t\t\tGroups: escloud.IpAllowListGroupArray{\n\t\t\t\t\u0026escloud.IpAllowListGroupArgs{\n\t\t\t\t\tName: pulumi.String(\"group1\"),\n\t\t\t\t\tAllow_list: []string{\n\t\t\t\t\t\t\"10.0.0.0/16\",\n\t\t\t\t\t\t\"192.168.1.2\",\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\t\u0026escloud.IpAllowListGroupArgs{\n\t\t\t\t\tName: pulumi.String(\"group2\"),\n\t\t\t\t\tAllow_list: []string{\n\t\t\t\t\t\t\"192.168.2.1\",\n\t\t\t\t\t\t\"127.0.0.1\",\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_escloud_ipallowlist\" \"Example\" {\n  instance_id = \"o-008wv7krnmw4\"\n  type        = \"PRIVATE_ES\"\n  allow_lists = [\"10.0.0.0/16\", \"192.168.1.1\"]\n  groups {\n    name       = \"group1\"\n    allow_list = [\"10.0.0.0/16\", \"192.168.1.2\"]\n  }\n  groups {\n    name       = \"group2\"\n    allow_list = [\"192.168.2.1\", \"127.0.0.1\"]\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.escloud.IpAllowList;\nimport com.byteplus.bytepluscc.escloud.IpAllowListArgs;\nimport com.pulumi.bytepluscc.escloud.inputs.IpAllowListGroupArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new IpAllowList(\"example\", IpAllowListArgs.builder()\n            .instanceId(\"o-008wv7krnmw4\")\n            .type(\"PRIVATE_ES\")\n            .allowLists(            \n                \"10.0.0.0/16\",\n                \"192.168.1.1\")\n            .groups(            \n                IpAllowListGroupArgs.builder()\n                    .name(\"group1\")\n                    .allow_list(Arrays.asList(                    \n                        \"10.0.0.0/16\",\n                        \"192.168.1.2\"))\n                    .build(),\n                IpAllowListGroupArgs.builder()\n                    .name(\"group2\")\n                    .allow_list(Arrays.asList(                    \n                        \"192.168.2.1\",\n                        \"127.0.0.1\"))\n                    .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:escloud:IpAllowList\n    name: Example\n    properties:\n      instanceId: o-008wv7krnmw4\n      type: PRIVATE_ES\n      allowLists:\n        - 10.0.0.0/16\n        - 192.168.1.1\n      groups:\n        - name: group1\n          allow_list:\n            - 10.0.0.0/16\n            - 192.168.1.2\n        - name: group2\n          allow_list:\n            - 192.168.2.1\n            - 127.0.0.1\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:escloud/ipAllowList:IpAllowList example \"instance_id|type\"\n```\n\n",
+            "properties": {
+                "allowLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Default group IP allowlist list; separate multiple IPs with commas (,)"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:escloud/IpAllowListGroup:IpAllowListGroup"
+                    },
+                    "description": "Custom group IP allowlist\n Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability."
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "Instance ID"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Network type\n  \n    - PRIVATE_ES: Instance private network access\n    - PRIVATE_KIBANA: Kibana private network access\n    - PUBLIC_ES: Instance public network access\n    - PUBLIC_KIBANA: Kibana public network access"
+                }
+            },
+            "required": [
+                "allowLists",
+                "groups",
+                "instanceId",
+                "type"
+            ],
+            "inputProperties": {
+                "allowLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Default group IP allowlist list; separate multiple IPs with commas (,)"
+                },
+                "groups": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:escloud/IpAllowListGroup:IpAllowListGroup"
+                    },
+                    "description": "Custom group IP allowlist\n Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability."
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "Instance ID"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Network type\n  \n    - PRIVATE_ES: Instance private network access\n    - PRIVATE_KIBANA: Kibana private network access\n    - PUBLIC_ES: Instance public network access\n    - PUBLIC_KIBANA: Kibana public network access"
+                }
+            },
+            "requiredInputs": [
+                "allowLists",
+                "groups",
+                "instanceId",
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering IpAllowList resources.\n",
+                "properties": {
+                    "allowLists": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Default group IP allowlist list; separate multiple IPs with commas (,)"
+                    },
+                    "groups": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:escloud/IpAllowListGroup:IpAllowListGroup"
+                        },
+                        "description": "Custom group IP allowlist\n Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability."
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "Instance ID"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Network type\n  \n    - PRIVATE_ES: Instance private network access\n    - PRIVATE_KIBANA: Kibana private network access\n    - PUBLIC_ES: Instance public network access\n    - PUBLIC_KIBANA: Kibana public network access"
                     }
                 },
                 "type": "object"
@@ -99308,6 +99821,271 @@
                 "type": "object"
             }
         },
+        "bytepluscc:tls/downloadTask:DownloadTask": {
+            "description": "Log download task, used to export log data retrieved from a log topic as a file for user download.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.tls.DownloadTask(\"Example\", {\n    topicId: \"22fca26e-xxxxx-a3ca-a9bb6d3fb9bd\",\n    taskName: \"task-saie\",\n    query: \"\",\n    startTime: 1767196800000,\n    endTime: 1783585260783,\n    compression: \"gzip\",\n    dataFormat: \"json\",\n    limit: 2000,\n    sort: \"desc\",\n    taskType: 0,\n    allowIncomplete: false,\n    logContextInfos: {\n        source: \"\",\n        context_flow: \"\",\n        package_offset: 0,\n    },\n    mustComplete: true,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.tls.DownloadTask(\"Example\",\n    topic_id=\"22fca26e-xxxxx-a3ca-a9bb6d3fb9bd\",\n    task_name=\"task-saie\",\n    query=\"\",\n    start_time=int(1767196800000),\n    end_time=int(1783585260783),\n    compression=\"gzip\",\n    data_format=\"json\",\n    limit=2000,\n    sort=\"desc\",\n    task_type=0,\n    allow_incomplete=False,\n    log_context_infos={\n        \"source\": \"\",\n        \"context_flow\": \"\",\n        \"package_offset\": 0,\n    },\n    must_complete=True)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Tls.DownloadTask(\"Example\", new()\n    {\n        TopicId = \"22fca26e-xxxxx-a3ca-a9bb6d3fb9bd\",\n        TaskName = \"task-saie\",\n        Query = \"\",\n        StartTime = 1767196800000,\n        EndTime = 1783585260783,\n        Compression = \"gzip\",\n        DataFormat = \"json\",\n        Limit = 2000,\n        Sort = \"desc\",\n        TaskType = 0,\n        AllowIncomplete = false,\n        LogContextInfos = new Bytepluscc.Tls.Inputs.DownloadTaskLogContextInfosArgs\n        {\n            Source = \"\",\n            Context_flow = \"\",\n            Package_offset = 0,\n        },\n        MustComplete = true,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/tls\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := tls.NewDownloadTask(ctx, \"Example\", \u0026tls.DownloadTaskArgs{\n\t\t\tTopicId:         pulumi.String(\"22fca26e-xxxxx-a3ca-a9bb6d3fb9bd\"),\n\t\t\tTaskName:        pulumi.String(\"task-saie\"),\n\t\t\tQuery:           pulumi.String(\"\"),\n\t\t\tStartTime:       pulumi.Int(1767196800000),\n\t\t\tEndTime:         pulumi.Int(1783585260783),\n\t\t\tCompression:     pulumi.String(\"gzip\"),\n\t\t\tDataFormat:      pulumi.String(\"json\"),\n\t\t\tLimit:           pulumi.Int(2000),\n\t\t\tSort:            pulumi.String(\"desc\"),\n\t\t\tTaskType:        pulumi.Int(0),\n\t\t\tAllowIncomplete: pulumi.Bool(false),\n\t\t\tLogContextInfos: \u0026tls.DownloadTaskLogContextInfosArgs{\n\t\t\t\tSource:         pulumi.String(\"\"),\n\t\t\t\tContext_flow:   \"\",\n\t\t\t\tPackage_offset: 0,\n\t\t\t},\n\t\t\tMustComplete: pulumi.Bool(true),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_tls_downloadtask\" \"Example\" {\n  topic_id         = \"22fca26e-xxxxx-a3ca-a9bb6d3fb9bd\"\n  task_name        = \"task-saie\"\n  query            = \"\"\n  start_time       = 1767196800000\n  end_time         = 1783585260783\n  compression      = \"gzip\"\n  data_format      = \"json\"\n  limit            = 2000\n  sort             = \"desc\"\n  task_type        = 0\n  allow_incomplete = false\n  log_context_infos = {\n    source         = \"\"\n    context_flow   = \"\"\n    package_offset = 0\n  }\n  must_complete = true\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.tls.DownloadTask;\nimport com.byteplus.bytepluscc.tls.DownloadTaskArgs;\nimport com.pulumi.bytepluscc.tls.inputs.DownloadTaskLogContextInfosArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new DownloadTask(\"example\", DownloadTaskArgs.builder()\n            .topicId(\"22fca26e-xxxxx-a3ca-a9bb6d3fb9bd\")\n            .taskName(\"task-saie\")\n            .query(\"\")\n            .startTime(1767196800000)\n            .endTime(1783585260783)\n            .compression(\"gzip\")\n            .dataFormat(\"json\")\n            .limit(2000)\n            .sort(\"desc\")\n            .taskType(0)\n            .allowIncomplete(false)\n            .logContextInfos(DownloadTaskLogContextInfosArgs.builder()\n                .source(\"\")\n                .context_flow(\"\")\n                .package_offset(0)\n                .build())\n            .mustComplete(true)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:tls:DownloadTask\n    name: Example\n    properties:\n      topicId: 22fca26e-xxxxx-a3ca-a9bb6d3fb9bd\n      taskName: task-saie\n      query: \"\"\n      startTime: 1.7671968e+12\n      endTime: 1.783585260783e+12\n      compression: gzip\n      dataFormat: json\n      limit: 2000\n      sort: desc\n      taskType: 0\n      allowIncomplete: false\n      logContextInfos:\n        source: \"\"\n        context_flow: \"\"\n        package_offset: 0\n      mustComplete: true\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:tls/downloadTask:DownloadTask example \"topic_id|task_id\"\n```\n\n",
+            "properties": {
+                "allowIncomplete": {
+                    "type": "boolean",
+                    "description": "Whether to allow approximate results when the query statement cannot be calculated precisely.\n"
+                },
+                "compression": {
+                    "type": "string",
+                    "description": "Compression format of the exported file. none: no compression. Recommended only for small data volumes. gzip: compress using gzip format. ip: compress using ip format.\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "Download task creation time.\n"
+                },
+                "dataFormat": {
+                    "type": "string",
+                    "description": "Exported file format. Supported values: csv: CSV format. json: JSON format. jsonl: JSONL format.\n"
+                },
+                "endTime": {
+                    "type": "integer",
+                    "description": "Query end time, accurate to the millisecond. Unix timestamp format, representing the number of milliseconds since 1970-1-1 00:00:00 UTC.\n"
+                },
+                "endTimeStr": {
+                    "type": "string",
+                    "description": "Query end time.\n"
+                },
+                "limit": {
+                    "type": "integer",
+                    "description": "Number of original log entries downloaded, or number of rows in the analysis result.\n"
+                },
+                "logContextInfos": {
+                    "$ref": "#/types/bytepluscc:tls/DownloadTaskLogContextInfos:DownloadTaskLogContextInfos",
+                    "description": "Download the log information required for context queries, including the source host, LogGroup ID, and the log's sequence number within the LogGroup. Set this parameter when TaskType is 2.\n"
+                },
+                "logCount": {
+                    "type": "integer",
+                    "description": "Number of log entries included in the download task.\n"
+                },
+                "logSize": {
+                    "type": "integer",
+                    "description": "Total size of logs included in the download task, in bytes.\n"
+                },
+                "mustComplete": {
+                    "type": "boolean",
+                    "description": "Whether to use fully accurate query results for download. true: use fully accurate query results to ensure the downloaded log data exactly matches the query conditions. false: full accuracy is not required; allows downloading log data that may not exactly match the query conditions.\n"
+                },
+                "query": {
+                    "type": "string",
+                    "description": "Query statement for analysis, with a maximum length of 4 KiB.\n"
+                },
+                "sort": {
+                    "type": "string",
+                    "description": "Log sorting order when only retrieving without analysis. asc: ascending. desc: descending.\n"
+                },
+                "startTime": {
+                    "type": "integer",
+                    "description": "Query start time, accurate to the millisecond. Unix timestamp format, representing the number of milliseconds since 1970-1-1 00:00:00 UTC.\n"
+                },
+                "startTimeStr": {
+                    "type": "string",
+                    "description": "Query start time.\n"
+                },
+                "taskId": {
+                    "type": "string",
+                    "description": "Download task ID.\n"
+                },
+                "taskName": {
+                    "type": "string",
+                    "description": "Download task name. Length range: 1–63 characters.\n"
+                },
+                "taskStatus": {
+                    "type": "string",
+                    "description": "Download task status, indicating the generation status of the log archive file. Includes: creating: file is being generated. created_cut: file has been partially generated. success: file has been generated. wait: waiting. fail: failed.\n"
+                },
+                "taskType": {
+                    "type": "integer",
+                    "description": "Type of logs to download. 0: download search-type logs. 1: download analysis-type logs. 2: download context-type logs.\n"
+                },
+                "topicId": {
+                    "type": "string",
+                    "description": "Log topic ID to which the download task belongs.\n"
+                }
+            },
+            "required": [
+                "allowIncomplete",
+                "compression",
+                "createTime",
+                "dataFormat",
+                "endTime",
+                "endTimeStr",
+                "limit",
+                "logContextInfos",
+                "logCount",
+                "logSize",
+                "mustComplete",
+                "query",
+                "sort",
+                "startTime",
+                "startTimeStr",
+                "taskId",
+                "taskName",
+                "taskStatus",
+                "taskType",
+                "topicId"
+            ],
+            "inputProperties": {
+                "allowIncomplete": {
+                    "type": "boolean",
+                    "description": "Whether to allow approximate results when the query statement cannot be calculated precisely.\n"
+                },
+                "compression": {
+                    "type": "string",
+                    "description": "Compression format of the exported file. none: no compression. Recommended only for small data volumes. gzip: compress using gzip format. ip: compress using ip format.\n"
+                },
+                "dataFormat": {
+                    "type": "string",
+                    "description": "Exported file format. Supported values: csv: CSV format. json: JSON format. jsonl: JSONL format.\n"
+                },
+                "endTime": {
+                    "type": "integer",
+                    "description": "Query end time, accurate to the millisecond. Unix timestamp format, representing the number of milliseconds since 1970-1-1 00:00:00 UTC.\n"
+                },
+                "endTimeStr": {
+                    "type": "string",
+                    "description": "Query end time.\n"
+                },
+                "limit": {
+                    "type": "integer",
+                    "description": "Number of original log entries downloaded, or number of rows in the analysis result.\n"
+                },
+                "logContextInfos": {
+                    "$ref": "#/types/bytepluscc:tls/DownloadTaskLogContextInfos:DownloadTaskLogContextInfos",
+                    "description": "Download the log information required for context queries, including the source host, LogGroup ID, and the log's sequence number within the LogGroup. Set this parameter when TaskType is 2.\n"
+                },
+                "mustComplete": {
+                    "type": "boolean",
+                    "description": "Whether to use fully accurate query results for download. true: use fully accurate query results to ensure the downloaded log data exactly matches the query conditions. false: full accuracy is not required; allows downloading log data that may not exactly match the query conditions.\n"
+                },
+                "query": {
+                    "type": "string",
+                    "description": "Query statement for analysis, with a maximum length of 4 KiB.\n"
+                },
+                "sort": {
+                    "type": "string",
+                    "description": "Log sorting order when only retrieving without analysis. asc: ascending. desc: descending.\n"
+                },
+                "startTime": {
+                    "type": "integer",
+                    "description": "Query start time, accurate to the millisecond. Unix timestamp format, representing the number of milliseconds since 1970-1-1 00:00:00 UTC.\n"
+                },
+                "startTimeStr": {
+                    "type": "string",
+                    "description": "Query start time.\n"
+                },
+                "taskName": {
+                    "type": "string",
+                    "description": "Download task name. Length range: 1–63 characters.\n"
+                },
+                "taskType": {
+                    "type": "integer",
+                    "description": "Type of logs to download. 0: download search-type logs. 1: download analysis-type logs. 2: download context-type logs.\n"
+                },
+                "topicId": {
+                    "type": "string",
+                    "description": "Log topic ID to which the download task belongs.\n"
+                }
+            },
+            "requiredInputs": [
+                "compression",
+                "dataFormat",
+                "endTime",
+                "limit",
+                "sort",
+                "startTime",
+                "taskName",
+                "topicId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering DownloadTask resources.\n",
+                "properties": {
+                    "allowIncomplete": {
+                        "type": "boolean",
+                        "description": "Whether to allow approximate results when the query statement cannot be calculated precisely.\n"
+                    },
+                    "compression": {
+                        "type": "string",
+                        "description": "Compression format of the exported file. none: no compression. Recommended only for small data volumes. gzip: compress using gzip format. ip: compress using ip format.\n"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "Download task creation time.\n"
+                    },
+                    "dataFormat": {
+                        "type": "string",
+                        "description": "Exported file format. Supported values: csv: CSV format. json: JSON format. jsonl: JSONL format.\n"
+                    },
+                    "endTime": {
+                        "type": "integer",
+                        "description": "Query end time, accurate to the millisecond. Unix timestamp format, representing the number of milliseconds since 1970-1-1 00:00:00 UTC.\n"
+                    },
+                    "endTimeStr": {
+                        "type": "string",
+                        "description": "Query end time.\n"
+                    },
+                    "limit": {
+                        "type": "integer",
+                        "description": "Number of original log entries downloaded, or number of rows in the analysis result.\n"
+                    },
+                    "logContextInfos": {
+                        "$ref": "#/types/bytepluscc:tls/DownloadTaskLogContextInfos:DownloadTaskLogContextInfos",
+                        "description": "Download the log information required for context queries, including the source host, LogGroup ID, and the log's sequence number within the LogGroup. Set this parameter when TaskType is 2.\n"
+                    },
+                    "logCount": {
+                        "type": "integer",
+                        "description": "Number of log entries included in the download task.\n"
+                    },
+                    "logSize": {
+                        "type": "integer",
+                        "description": "Total size of logs included in the download task, in bytes.\n"
+                    },
+                    "mustComplete": {
+                        "type": "boolean",
+                        "description": "Whether to use fully accurate query results for download. true: use fully accurate query results to ensure the downloaded log data exactly matches the query conditions. false: full accuracy is not required; allows downloading log data that may not exactly match the query conditions.\n"
+                    },
+                    "query": {
+                        "type": "string",
+                        "description": "Query statement for analysis, with a maximum length of 4 KiB.\n"
+                    },
+                    "sort": {
+                        "type": "string",
+                        "description": "Log sorting order when only retrieving without analysis. asc: ascending. desc: descending.\n"
+                    },
+                    "startTime": {
+                        "type": "integer",
+                        "description": "Query start time, accurate to the millisecond. Unix timestamp format, representing the number of milliseconds since 1970-1-1 00:00:00 UTC.\n"
+                    },
+                    "startTimeStr": {
+                        "type": "string",
+                        "description": "Query start time.\n"
+                    },
+                    "taskId": {
+                        "type": "string",
+                        "description": "Download task ID.\n"
+                    },
+                    "taskName": {
+                        "type": "string",
+                        "description": "Download task name. Length range: 1–63 characters.\n"
+                    },
+                    "taskStatus": {
+                        "type": "string",
+                        "description": "Download task status, indicating the generation status of the log archive file. Includes: creating: file is being generated. created_cut: file has been partially generated. success: file has been generated. wait: waiting. fail: failed.\n"
+                    },
+                    "taskType": {
+                        "type": "integer",
+                        "description": "Type of logs to download. 0: download search-type logs. 1: download analysis-type logs. 2: download context-type logs.\n"
+                    },
+                    "topicId": {
+                        "type": "string",
+                        "description": "Log topic ID to which the download task belongs.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:tls/etl:Etl": {
             "description": "The data processing task cleanses, transforms, and distributes log data in the log service, processing data from the source log topic and outputting it to the target log topic\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst tLSEtlDemo = new bytepluscc.tls.Etl(\"TLSEtlDemo\", {\n    dslType: \"NORMAL\",\n    description: \"ccapi-test\",\n    enable: true,\n    fromTime: 1780302267,\n    name: \"ccapi-test-etltask\",\n    script: `# æŒ‰kvæ‹†åˆ†contentå\\xad—æ®µ\\x0d\next_kv(\"content\", pair_sep=\"\u0026\", kv_sep=\"=\", prefix=\"\", suffix=\"\", mode=\"overwrite\")\\x0d\n# åˆ é™¤contentå\\xad—æ®µ\\x0d\nf_drop(\"content\")`,\n    sourceTopicId: \"b881e3cd-3c45-42e7-966f-fe98xxxxxx\",\n    targetResources: [\n        {\n            alias: \"test-dst12\",\n            region: \"cn-shanghai\",\n            topic_id: \"7ded0540-a2e6-48ea-9667-e0xxxxxx\",\n        },\n        {\n            alias: \"test-dst13\",\n            region: \"cn-beijing\",\n            topic_id: \"c7474a2b-60bf-4d1d-bb5e-664xxxxxx\",\n        },\n    ],\n    taskType: \"Resident\",\n    toTime: 1780475069,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nt_ls_etl_demo = bytepluscc.tls.Etl(\"TLSEtlDemo\",\n    dsl_type=\"NORMAL\",\n    description=\"ccapi-test\",\n    enable=True,\n    from_time=1780302267,\n    name=\"ccapi-test-etltask\",\n    script=\"\"\"# æŒ‰kvæ‹†åˆ†contentå\\xad—æ®µ\\x0d\next_kv(\"content\", pair_sep=\"\u0026\", kv_sep=\"=\", prefix=\"\", suffix=\"\", mode=\"overwrite\")\\x0d\n# åˆ é™¤contentå\\xad—æ®µ\\x0d\nf_drop(\"content\")\"\"\",\n    source_topic_id=\"b881e3cd-3c45-42e7-966f-fe98xxxxxx\",\n    target_resources=[\n        {\n            \"alias\": \"test-dst12\",\n            \"region\": \"cn-shanghai\",\n            \"topic_id\": \"7ded0540-a2e6-48ea-9667-e0xxxxxx\",\n        },\n        {\n            \"alias\": \"test-dst13\",\n            \"region\": \"cn-beijing\",\n            \"topic_id\": \"c7474a2b-60bf-4d1d-bb5e-664xxxxxx\",\n        },\n    ],\n    task_type=\"Resident\",\n    to_time=1780475069)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var tLSEtlDemo = new Bytepluscc.Tls.Etl(\"TLSEtlDemo\", new()\n    {\n        DslType = \"NORMAL\",\n        Description = \"ccapi-test\",\n        Enable = true,\n        FromTime = 1780302267,\n        Name = \"ccapi-test-etltask\",\n        Script = @\"# æŒ‰kvæ‹†åˆ†contentå­—æ®µ\r\next_kv(\"\"content\"\", pair_sep=\"\"\u0026\"\", kv_sep=\"\"=\"\", prefix=\"\"\"\", suffix=\"\"\"\", mode=\"\"overwrite\"\")\r\n# åˆ é™¤contentå­—æ®µ\r\nf_drop(\"\"content\"\")\",\n        SourceTopicId = \"b881e3cd-3c45-42e7-966f-fe98xxxxxx\",\n        TargetResources = new[]\n        {\n            new Bytepluscc.Tls.Inputs.EtlTargetResourceArgs\n            {\n                Alias = \"test-dst12\",\n                Region = \"cn-shanghai\",\n                Topic_id = \"7ded0540-a2e6-48ea-9667-e0xxxxxx\",\n            },\n            new Bytepluscc.Tls.Inputs.EtlTargetResourceArgs\n            {\n                Alias = \"test-dst13\",\n                Region = \"cn-beijing\",\n                Topic_id = \"c7474a2b-60bf-4d1d-bb5e-664xxxxxx\",\n            },\n        },\n        TaskType = \"Resident\",\n        ToTime = 1780475069,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/tls\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := tls.NewEtl(ctx, \"TLSEtlDemo\", \u0026tls.EtlArgs{\n\t\t\tDslType:       pulumi.String(\"NORMAL\"),\n\t\t\tDescription:   pulumi.String(\"ccapi-test\"),\n\t\t\tEnable:        pulumi.Bool(true),\n\t\t\tFromTime:      pulumi.Int(1780302267),\n\t\t\tName:          pulumi.String(\"ccapi-test-etltask\"),\n\t\t\tScript:        pulumi.String(\"# æŒ‰kvæ‹†åˆ†contentå\\u00ad—æ®µ\\r\\next_kv(\\\"content\\\", pair_sep=\\\"\u0026\\\", kv_sep=\\\"=\\\", prefix=\\\"\\\", suffix=\\\"\\\", mode=\\\"overwrite\\\")\\r\\n# åˆ é™¤contentå\\u00ad—æ®µ\\r\\nf_drop(\\\"content\\\")\"),\n\t\t\tSourceTopicId: pulumi.String(\"b881e3cd-3c45-42e7-966f-fe98xxxxxx\"),\n\t\t\tTargetResources: tls.EtlTargetResourceArray{\n\t\t\t\t\u0026tls.EtlTargetResourceArgs{\n\t\t\t\t\tAlias:    pulumi.String(\"test-dst12\"),\n\t\t\t\t\tRegion:   pulumi.String(\"cn-shanghai\"),\n\t\t\t\t\tTopic_id: \"7ded0540-a2e6-48ea-9667-e0xxxxxx\",\n\t\t\t\t},\n\t\t\t\t\u0026tls.EtlTargetResourceArgs{\n\t\t\t\t\tAlias:    pulumi.String(\"test-dst13\"),\n\t\t\t\t\tRegion:   pulumi.String(\"cn-beijing\"),\n\t\t\t\t\tTopic_id: \"c7474a2b-60bf-4d1d-bb5e-664xxxxxx\",\n\t\t\t\t},\n\t\t\t},\n\t\t\tTaskType: pulumi.String(\"Resident\"),\n\t\t\tToTime:   pulumi.Int(1780475069),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_tls_etl\" \"TLSEtlDemo\" {\n  dsl_type        = \"NORMAL\"\n  description     = \"ccapi-test\"\n  enable          = true\n  from_time       = 1780302267\n  name            = \"ccapi-test-etltask\"\n  script          = \"# æŒ‰kvæ‹†åˆ†contentå\\u00ad—æ®µ\\r\\next_kv(\\\"content\\\", pair_sep=\\\"\u0026\\\", kv_sep=\\\"=\\\", prefix=\\\"\\\", suffix=\\\"\\\", mode=\\\"overwrite\\\")\\r\\n# åˆ é™¤contentå\\u00ad—æ®µ\\r\\nf_drop(\\\"content\\\")\"\n  source_topic_id = \"b881e3cd-3c45-42e7-966f-fe98xxxxxx\"\n  target_resources {\n    alias    = \"test-dst12\"\n    region   = \"cn-shanghai\"\n    topic_id = \"7ded0540-a2e6-48ea-9667-e0xxxxxx\"\n  }\n  target_resources {\n    alias    = \"test-dst13\"\n    region   = \"cn-beijing\"\n    topic_id = \"c7474a2b-60bf-4d1d-bb5e-664xxxxxx\"\n  }\n  task_type = \"Resident\"\n  to_time   = 1780475069\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.tls.Etl;\nimport com.byteplus.bytepluscc.tls.EtlArgs;\nimport com.pulumi.bytepluscc.tls.inputs.EtlTargetResourceArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var tLSEtlDemo = new Etl(\"tLSEtlDemo\", EtlArgs.builder()\n            .dslType(\"NORMAL\")\n            .description(\"ccapi-test\")\n            .enable(true)\n            .fromTime(1780302267)\n            .name(\"ccapi-test-etltask\")\n            .script(\"\"\"\n# æŒ‰kvæ‹†åˆ†contentå­—æ®µ\r\next_kv(\"content\", pair_sep=\"\u0026\", kv_sep=\"=\", prefix=\"\", suffix=\"\", mode=\"overwrite\")\r\n# åˆ é™¤contentå­—æ®µ\r\nf_drop(\"content\")            \"\"\")\n            .sourceTopicId(\"b881e3cd-3c45-42e7-966f-fe98xxxxxx\")\n            .targetResources(            \n                EtlTargetResourceArgs.builder()\n                    .alias(\"test-dst12\")\n                    .region(\"cn-shanghai\")\n                    .topic_id(\"7ded0540-a2e6-48ea-9667-e0xxxxxx\")\n                    .build(),\n                EtlTargetResourceArgs.builder()\n                    .alias(\"test-dst13\")\n                    .region(\"cn-beijing\")\n                    .topic_id(\"c7474a2b-60bf-4d1d-bb5e-664xxxxxx\")\n                    .build())\n            .taskType(\"Resident\")\n            .toTime(1780475069)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  tLSEtlDemo:\n    type: bytepluscc:tls:Etl\n    name: TLSEtlDemo\n    properties:\n      dslType: NORMAL\n      description: ccapi-test\n      enable: true\n      fromTime: 1.780302267e+09\n      name: ccapi-test-etltask\n      script: \"# æŒ‰kvæ‹†åˆ†contentå­—æ®µ\\r\\next_kv(\\\"content\\\", pair_sep=\\\"\u0026\\\", kv_sep=\\\"=\\\", prefix=\\\"\\\", suffix=\\\"\\\", mode=\\\"overwrite\\\")\\r\\n# åˆ é™¤contentå­—æ®µ\\r\\nf_drop(\\\"content\\\")\"\n      sourceTopicId: b881e3cd-3c45-42e7-966f-fe98xxxxxx\n      targetResources:\n        - alias: test-dst12\n          region: cn-shanghai\n          topic_id: 7ded0540-a2e6-48ea-9667-e0xxxxxx\n        - alias: test-dst13\n          region: cn-beijing\n          topic_id: c7474a2b-60bf-4d1d-bb5e-664xxxxxx\n      taskType: Resident\n      toTime: 1.780475069e+09\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:tls/etl:Etl example \"task_id\"\n```\n\n",
             "properties": {
@@ -100525,6 +101303,60 @@
                 "type": "object"
             }
         },
+        "bytepluscc:tls/ruleBoundHostGroup:RuleBoundHostGroup": {
+            "description": "Resource representing the binding relationship between collection configuration and machine group\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.tls.RuleBoundHostGroup(\"Example\", {\n    hostGroupId: \"38feb3b9-xxxxxx-a53b-de52cd9103d2\",\n    ruleId: \"09046b89-xxxx-90e5-5e878de6b710\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.tls.RuleBoundHostGroup(\"Example\",\n    host_group_id=\"38feb3b9-xxxxxx-a53b-de52cd9103d2\",\n    rule_id=\"09046b89-xxxx-90e5-5e878de6b710\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Tls.RuleBoundHostGroup(\"Example\", new()\n    {\n        HostGroupId = \"38feb3b9-xxxxxx-a53b-de52cd9103d2\",\n        RuleId = \"09046b89-xxxx-90e5-5e878de6b710\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/tls\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := tls.NewRuleBoundHostGroup(ctx, \"Example\", \u0026tls.RuleBoundHostGroupArgs{\n\t\t\tHostGroupId: pulumi.String(\"38feb3b9-xxxxxx-a53b-de52cd9103d2\"),\n\t\t\tRuleId:      pulumi.String(\"09046b89-xxxx-90e5-5e878de6b710\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_tls_ruleboundhostgroup\" \"Example\" {\n  host_group_id = \"38feb3b9-xxxxxx-a53b-de52cd9103d2\"\n  rule_id       = \"09046b89-xxxx-90e5-5e878de6b710\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.tls.RuleBoundHostGroup;\nimport com.byteplus.bytepluscc.tls.RuleBoundHostGroupArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new RuleBoundHostGroup(\"example\", RuleBoundHostGroupArgs.builder()\n            .hostGroupId(\"38feb3b9-xxxxxx-a53b-de52cd9103d2\")\n            .ruleId(\"09046b89-xxxx-90e5-5e878de6b710\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:tls:RuleBoundHostGroup\n    name: Example\n    properties:\n      hostGroupId: 38feb3b9-xxxxxx-a53b-de52cd9103d2\n      ruleId: 09046b89-xxxx-90e5-5e878de6b710\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:tls/ruleBoundHostGroup:RuleBoundHostGroup example \"rule_id|host_group_id\"\n```\n\n",
+            "properties": {
+                "hostGroup": {
+                    "$ref": "#/types/bytepluscc:tls/RuleBoundHostGroupHostGroup:RuleBoundHostGroupHostGroup",
+                    "description": "Bound machine group configuration information\n"
+                },
+                "hostGroupId": {
+                    "type": "string",
+                    "description": "Machine group ID\n"
+                },
+                "ruleId": {
+                    "type": "string",
+                    "description": "Collection configuration ID\n"
+                }
+            },
+            "required": [
+                "hostGroup",
+                "hostGroupId",
+                "ruleId"
+            ],
+            "inputProperties": {
+                "hostGroupId": {
+                    "type": "string",
+                    "description": "Machine group ID\n"
+                },
+                "ruleId": {
+                    "type": "string",
+                    "description": "Collection configuration ID\n"
+                }
+            },
+            "requiredInputs": [
+                "hostGroupId",
+                "ruleId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering RuleBoundHostGroup resources.\n",
+                "properties": {
+                    "hostGroup": {
+                        "$ref": "#/types/bytepluscc:tls/RuleBoundHostGroupHostGroup:RuleBoundHostGroupHostGroup",
+                        "description": "Bound machine group configuration information\n"
+                    },
+                    "hostGroupId": {
+                        "type": "string",
+                        "description": "Machine group ID\n"
+                    },
+                    "ruleId": {
+                        "type": "string",
+                        "description": "Collection configuration ID\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask": {
             "description": "Resource definition for the scheduled SQL analysis task.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst tLSScheduleSqlTaskDemo = new bytepluscc.tls.ScheduleSqlTask(\"TLSScheduleSqlTaskDemo\", {\n    description: \"testdesc\",\n    destRegion: \"cn-beijing\",\n    destTopicId: \"42fedbb3-2c2a-4822-bc30-9c5cc****\",\n    processEndTime: 0,\n    processSqlDelay: 60,\n    taskType: 0,\n    processStartTime: 1773072000,\n    processTimeWindow: \"@m-15m,@m\",\n    query: \"* | SELECT * limit 10\",\n    requestCycle: {\n        cron_tab: \"0 19 * * *\",\n        cron_time_zone: \"GMT+08:00\",\n        time: 2,\n        type: \"Fixed\",\n    },\n    sourceTopicId: \"22fca26e-a776-4925-a3ca-a9bb6d***\",\n    status: 1,\n    taskName: \"test\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nt_ls_schedule_sql_task_demo = bytepluscc.tls.ScheduleSqlTask(\"TLSScheduleSqlTaskDemo\",\n    description=\"testdesc\",\n    dest_region=\"cn-beijing\",\n    dest_topic_id=\"42fedbb3-2c2a-4822-bc30-9c5cc****\",\n    process_end_time=0,\n    process_sql_delay=60,\n    task_type=0,\n    process_start_time=1773072000,\n    process_time_window=\"@m-15m,@m\",\n    query=\"* | SELECT * limit 10\",\n    request_cycle={\n        \"cron_tab\": \"0 19 * * *\",\n        \"cron_time_zone\": \"GMT+08:00\",\n        \"time\": 2,\n        \"type\": \"Fixed\",\n    },\n    source_topic_id=\"22fca26e-a776-4925-a3ca-a9bb6d***\",\n    status=1,\n    task_name=\"test\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var tLSScheduleSqlTaskDemo = new Bytepluscc.Tls.ScheduleSqlTask(\"TLSScheduleSqlTaskDemo\", new()\n    {\n        Description = \"testdesc\",\n        DestRegion = \"cn-beijing\",\n        DestTopicId = \"42fedbb3-2c2a-4822-bc30-9c5cc****\",\n        ProcessEndTime = 0,\n        ProcessSqlDelay = 60,\n        TaskType = 0,\n        ProcessStartTime = 1773072000,\n        ProcessTimeWindow = \"@m-15m,@m\",\n        Query = \"* | SELECT * limit 10\",\n        RequestCycle = new Bytepluscc.Tls.Inputs.ScheduleSqlTaskRequestCycleArgs\n        {\n            Cron_tab = \"0 19 * * *\",\n            Cron_time_zone = \"GMT+08:00\",\n            Time = 2,\n            Type = \"Fixed\",\n        },\n        SourceTopicId = \"22fca26e-a776-4925-a3ca-a9bb6d***\",\n        Status = 1,\n        TaskName = \"test\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/tls\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := tls.NewScheduleSqlTask(ctx, \"TLSScheduleSqlTaskDemo\", \u0026tls.ScheduleSqlTaskArgs{\n\t\t\tDescription:       pulumi.String(\"testdesc\"),\n\t\t\tDestRegion:        pulumi.String(\"cn-beijing\"),\n\t\t\tDestTopicId:       pulumi.String(\"42fedbb3-2c2a-4822-bc30-9c5cc****\"),\n\t\t\tProcessEndTime:    pulumi.Int(0),\n\t\t\tProcessSqlDelay:   pulumi.Int(60),\n\t\t\tTaskType:          pulumi.Int(0),\n\t\t\tProcessStartTime:  pulumi.Int(1773072000),\n\t\t\tProcessTimeWindow: pulumi.String(\"@m-15m,@m\"),\n\t\t\tQuery:             pulumi.String(\"* | SELECT * limit 10\"),\n\t\t\tRequestCycle: \u0026tls.ScheduleSqlTaskRequestCycleArgs{\n\t\t\t\tCron_tab:       \"0 19 * * *\",\n\t\t\t\tCron_time_zone: \"GMT+08:00\",\n\t\t\t\tTime:           pulumi.Int(2),\n\t\t\t\tType:           pulumi.String(\"Fixed\"),\n\t\t\t},\n\t\t\tSourceTopicId: pulumi.String(\"22fca26e-a776-4925-a3ca-a9bb6d***\"),\n\t\t\tStatus:        pulumi.Int(1),\n\t\t\tTaskName:      pulumi.String(\"test\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_tls_schedulesqltask\" \"TLSScheduleSqlTaskDemo\" {\n  description         = \"testdesc\"\n  dest_region         = \"cn-beijing\"\n  dest_topic_id       = \"42fedbb3-2c2a-4822-bc30-9c5cc****\"\n  process_end_time    = 0\n  process_sql_delay   = 60\n  task_type           = 0\n  process_start_time  = 1773072000\n  process_time_window = \"@m-15m,@m\"\n  query               = \"* | SELECT * limit 10\"\n  request_cycle = {\n    cron_tab       = \"0 19 * * *\"\n    cron_time_zone = \"GMT+08:00\"\n    time           = 2\n    type           = \"Fixed\"\n  }\n  source_topic_id = \"22fca26e-a776-4925-a3ca-a9bb6d***\"\n  status          = 1\n  task_name       = \"test\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.tls.ScheduleSqlTask;\nimport com.byteplus.bytepluscc.tls.ScheduleSqlTaskArgs;\nimport com.pulumi.bytepluscc.tls.inputs.ScheduleSqlTaskRequestCycleArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var tLSScheduleSqlTaskDemo = new ScheduleSqlTask(\"tLSScheduleSqlTaskDemo\", ScheduleSqlTaskArgs.builder()\n            .description(\"testdesc\")\n            .destRegion(\"cn-beijing\")\n            .destTopicId(\"42fedbb3-2c2a-4822-bc30-9c5cc****\")\n            .processEndTime(0)\n            .processSqlDelay(60)\n            .taskType(0)\n            .processStartTime(1773072000)\n            .processTimeWindow(\"@m-15m,@m\")\n            .query(\"* | SELECT * limit 10\")\n            .requestCycle(ScheduleSqlTaskRequestCycleArgs.builder()\n                .cron_tab(\"0 19 * * *\")\n                .cron_time_zone(\"GMT+08:00\")\n                .time(2)\n                .type(\"Fixed\")\n                .build())\n            .sourceTopicId(\"22fca26e-a776-4925-a3ca-a9bb6d***\")\n            .status(1)\n            .taskName(\"test\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  tLSScheduleSqlTaskDemo:\n    type: bytepluscc:tls:ScheduleSqlTask\n    name: TLSScheduleSqlTaskDemo\n    properties:\n      description: testdesc\n      destRegion: cn-beijing\n      destTopicId: 42fedbb3-2c2a-4822-bc30-9c5cc****\n      processEndTime: 0\n      processSqlDelay: 60\n      taskType: 0\n      processStartTime: 1.773072e+09\n      processTimeWindow: '@m-15m,@m'\n      query: '* | SELECT * limit 10'\n      requestCycle:\n        cron_tab: 0 19 * * *\n        cron_time_zone: GMT+08:00\n        time: 2\n        type: Fixed\n      sourceTopicId: 22fca26e-a776-4925-a3ca-a9bb6d***\n      status: 1\n      taskName: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:tls/scheduleSqlTask:ScheduleSqlTask example \"task_id\"\n```\n\n",
             "properties": {
@@ -100993,7 +101825,7 @@
             }
         },
         "bytepluscc:tls/topic:Topic": {
-            "description": "Log topic is the basic unit for log management in the log service. Log ingestion, search and analysis, and consumption are all performed at the log topic level.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst tlsTopicDemo = new bytepluscc.tls.Topic(\"TlsTopicDemo\", {\n    ttl: 187,\n    hotTtl: 8,\n    coldTtl: 79,\n    archiveTtl: 100,\n    shardCount: 2,\n    autoSplit: true,\n    maxSplitShard: 256,\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n    timeKey: \"time\",\n    timeFormat: \"%Y-%m-%d %H:%M:%S\",\n    logPublicIp: false,\n    topicName: \"ccapi-test\",\n    description: \"test\",\n    projectId: \"c6fef4c1-041f-434e-b0f4-d5e9*****\",\n    enableHotTtl: false,\n    allowConsume: false,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\ntls_topic_demo = bytepluscc.tls.Topic(\"TlsTopicDemo\",\n    ttl=187,\n    hot_ttl=8,\n    cold_ttl=79,\n    archive_ttl=100,\n    shard_count=2,\n    auto_split=True,\n    max_split_shard=256,\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }],\n    time_key=\"time\",\n    time_format=\"%Y-%m-%d %H:%M:%S\",\n    log_public_ip=False,\n    topic_name=\"ccapi-test\",\n    description=\"test\",\n    project_id=\"c6fef4c1-041f-434e-b0f4-d5e9*****\",\n    enable_hot_ttl=False,\n    allow_consume=False)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var tlsTopicDemo = new Bytepluscc.Tls.Topic(\"TlsTopicDemo\", new()\n    {\n        Ttl = 187,\n        HotTtl = 8,\n        ColdTtl = 79,\n        ArchiveTtl = 100,\n        ShardCount = 2,\n        AutoSplit = true,\n        MaxSplitShard = 256,\n        Tags = new[]\n        {\n            new Bytepluscc.Tls.Inputs.TopicTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n        TimeKey = \"time\",\n        TimeFormat = \"%Y-%m-%d %H:%M:%S\",\n        LogPublicIp = false,\n        TopicName = \"ccapi-test\",\n        Description = \"test\",\n        ProjectId = \"c6fef4c1-041f-434e-b0f4-d5e9*****\",\n        EnableHotTtl = false,\n        AllowConsume = false,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/tls\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := tls.NewTopic(ctx, \"TlsTopicDemo\", \u0026tls.TopicArgs{\n\t\t\tTtl:           pulumi.Int(187),\n\t\t\tHotTtl:        pulumi.Int(8),\n\t\t\tColdTtl:       pulumi.Int(79),\n\t\t\tArchiveTtl:    pulumi.Int(100),\n\t\t\tShardCount:    pulumi.Int(2),\n\t\t\tAutoSplit:     pulumi.Bool(true),\n\t\t\tMaxSplitShard: pulumi.Int(256),\n\t\t\tTags: tls.TopicTagArray{\n\t\t\t\t\u0026tls.TopicTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tTimeKey:      pulumi.String(\"time\"),\n\t\t\tTimeFormat:   pulumi.String(\"%Y-%m-%d %H:%M:%S\"),\n\t\t\tLogPublicIp:  pulumi.Bool(false),\n\t\t\tTopicName:    pulumi.String(\"ccapi-test\"),\n\t\t\tDescription:  pulumi.String(\"test\"),\n\t\t\tProjectId:    pulumi.String(\"c6fef4c1-041f-434e-b0f4-d5e9*****\"),\n\t\t\tEnableHotTtl: pulumi.Bool(false),\n\t\t\tAllowConsume: pulumi.Bool(false),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_tls_topic\" \"TlsTopicDemo\" {\n  ttl             = 187\n  hot_ttl         = 8\n  cold_ttl        = 79\n  archive_ttl     = 100\n  shard_count     = 2\n  auto_split      = true\n  max_split_shard = 256\n  tags {\n    key   = \"env\"\n    value = \"test\"\n  }\n  time_key       = \"time\"\n  time_format    = \"%Y-%m-%d %H:%M:%S\"\n  log_public_ip  = false\n  topic_name     = \"ccapi-test\"\n  description    = \"test\"\n  project_id     = \"c6fef4c1-041f-434e-b0f4-d5e9*****\"\n  enable_hot_ttl = false\n  allow_consume  = false\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.tls.Topic;\nimport com.byteplus.bytepluscc.tls.TopicArgs;\nimport com.pulumi.bytepluscc.tls.inputs.TopicTagArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var tlsTopicDemo = new Topic(\"tlsTopicDemo\", TopicArgs.builder()\n            .ttl(187)\n            .hotTtl(8)\n            .coldTtl(79)\n            .archiveTtl(100)\n            .shardCount(2)\n            .autoSplit(true)\n            .maxSplitShard(256)\n            .tags(TopicTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .timeKey(\"time\")\n            .timeFormat(\"%Y-%m-%d %H:%M:%S\")\n            .logPublicIp(false)\n            .topicName(\"ccapi-test\")\n            .description(\"test\")\n            .projectId(\"c6fef4c1-041f-434e-b0f4-d5e9*****\")\n            .enableHotTtl(false)\n            .allowConsume(false)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  tlsTopicDemo:\n    type: bytepluscc:tls:Topic\n    name: TlsTopicDemo\n    properties:\n      ttl: 187\n      hotTtl: 8\n      coldTtl: 79\n      archiveTtl: 100\n      shardCount: 2\n      autoSplit: true\n      maxSplitShard: 256\n      tags:\n        - key: env\n          value: test\n      timeKey: time\n      timeFormat: '%Y-%m-%d %H:%M:%S'\n      logPublicIp: false\n      topicName: ccapi-test\n      description: test\n      projectId: c6fef4c1-041f-434e-b0f4-d5e9*****\n      enableHotTtl: false\n      allowConsume: false\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:tls/topic:Topic example \"topic_id\"\n```\n\n",
+            "description": "Log topic is the basic unit for log management in the log service. Log ingestion, search and analysis, and consumption are all performed at the log topic level.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst tlsTopicDemo = new bytepluscc.tls.Topic(\"TlsTopicDemo\", {\n    ttl: 187,\n    hotTtl: 8,\n    coldTtl: 79,\n    archiveTtl: 100,\n    shardCount: 2,\n    autoSplit: true,\n    maxSplitShard: 256,\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n    timeKey: \"time\",\n    timeFormat: \"%Y-%m-%d %H:%M:%S\",\n    logPublicIp: false,\n    topicName: \"ccapi-test\",\n    description: \"test\",\n    projectId: \"c6fef4c1-041f-434e-b0f4-d5e9*****\",\n    enableHotTtl: false,\n    allowConsume: false,\n    splitShardId: 0,\n    splitNumber: 2,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\ntls_topic_demo = bytepluscc.tls.Topic(\"TlsTopicDemo\",\n    ttl=187,\n    hot_ttl=8,\n    cold_ttl=79,\n    archive_ttl=100,\n    shard_count=2,\n    auto_split=True,\n    max_split_shard=256,\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }],\n    time_key=\"time\",\n    time_format=\"%Y-%m-%d %H:%M:%S\",\n    log_public_ip=False,\n    topic_name=\"ccapi-test\",\n    description=\"test\",\n    project_id=\"c6fef4c1-041f-434e-b0f4-d5e9*****\",\n    enable_hot_ttl=False,\n    allow_consume=False,\n    split_shard_id=0,\n    split_number=2)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var tlsTopicDemo = new Bytepluscc.Tls.Topic(\"TlsTopicDemo\", new()\n    {\n        Ttl = 187,\n        HotTtl = 8,\n        ColdTtl = 79,\n        ArchiveTtl = 100,\n        ShardCount = 2,\n        AutoSplit = true,\n        MaxSplitShard = 256,\n        Tags = new[]\n        {\n            new Bytepluscc.Tls.Inputs.TopicTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n        TimeKey = \"time\",\n        TimeFormat = \"%Y-%m-%d %H:%M:%S\",\n        LogPublicIp = false,\n        TopicName = \"ccapi-test\",\n        Description = \"test\",\n        ProjectId = \"c6fef4c1-041f-434e-b0f4-d5e9*****\",\n        EnableHotTtl = false,\n        AllowConsume = false,\n        SplitShardId = 0,\n        SplitNumber = 2,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/tls\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := tls.NewTopic(ctx, \"TlsTopicDemo\", \u0026tls.TopicArgs{\n\t\t\tTtl:           pulumi.Int(187),\n\t\t\tHotTtl:        pulumi.Int(8),\n\t\t\tColdTtl:       pulumi.Int(79),\n\t\t\tArchiveTtl:    pulumi.Int(100),\n\t\t\tShardCount:    pulumi.Int(2),\n\t\t\tAutoSplit:     pulumi.Bool(true),\n\t\t\tMaxSplitShard: pulumi.Int(256),\n\t\t\tTags: tls.TopicTagArray{\n\t\t\t\t\u0026tls.TopicTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tTimeKey:      pulumi.String(\"time\"),\n\t\t\tTimeFormat:   pulumi.String(\"%Y-%m-%d %H:%M:%S\"),\n\t\t\tLogPublicIp:  pulumi.Bool(false),\n\t\t\tTopicName:    pulumi.String(\"ccapi-test\"),\n\t\t\tDescription:  pulumi.String(\"test\"),\n\t\t\tProjectId:    pulumi.String(\"c6fef4c1-041f-434e-b0f4-d5e9*****\"),\n\t\t\tEnableHotTtl: pulumi.Bool(false),\n\t\t\tAllowConsume: pulumi.Bool(false),\n\t\t\tSplitShardId: pulumi.Int(0),\n\t\t\tSplitNumber:  pulumi.Int(2),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_tls_topic\" \"TlsTopicDemo\" {\n  ttl             = 187\n  hot_ttl         = 8\n  cold_ttl        = 79\n  archive_ttl     = 100\n  shard_count     = 2\n  auto_split      = true\n  max_split_shard = 256\n  tags {\n    key   = \"env\"\n    value = \"test\"\n  }\n  time_key       = \"time\"\n  time_format    = \"%Y-%m-%d %H:%M:%S\"\n  log_public_ip  = false\n  topic_name     = \"ccapi-test\"\n  description    = \"test\"\n  project_id     = \"c6fef4c1-041f-434e-b0f4-d5e9*****\"\n  enable_hot_ttl = false\n  allow_consume  = false\n  split_shard_id = 0\n  split_number   = 2\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.tls.Topic;\nimport com.byteplus.bytepluscc.tls.TopicArgs;\nimport com.pulumi.bytepluscc.tls.inputs.TopicTagArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var tlsTopicDemo = new Topic(\"tlsTopicDemo\", TopicArgs.builder()\n            .ttl(187)\n            .hotTtl(8)\n            .coldTtl(79)\n            .archiveTtl(100)\n            .shardCount(2)\n            .autoSplit(true)\n            .maxSplitShard(256)\n            .tags(TopicTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .timeKey(\"time\")\n            .timeFormat(\"%Y-%m-%d %H:%M:%S\")\n            .logPublicIp(false)\n            .topicName(\"ccapi-test\")\n            .description(\"test\")\n            .projectId(\"c6fef4c1-041f-434e-b0f4-d5e9*****\")\n            .enableHotTtl(false)\n            .allowConsume(false)\n            .splitShardId(0)\n            .splitNumber(2)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  tlsTopicDemo:\n    type: bytepluscc:tls:Topic\n    name: TlsTopicDemo\n    properties:\n      ttl: 187\n      hotTtl: 8\n      coldTtl: 79\n      archiveTtl: 100\n      shardCount: 2\n      autoSplit: true\n      maxSplitShard: 256\n      tags:\n        - key: env\n          value: test\n      timeKey: time\n      timeFormat: '%Y-%m-%d %H:%M:%S'\n      logPublicIp: false\n      topicName: ccapi-test\n      description: test\n      projectId: c6fef4c1-041f-434e-b0f4-d5e9*****\n      enableHotTtl: false\n      allowConsume: false\n      splitShardId: 0\n      splitNumber: 2\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:tls/topic:Topic example \"topic_id\"\n```\n\n",
             "properties": {
                 "allowConsume": {
                     "type": "boolean",
@@ -101051,6 +101883,21 @@
                     "type": "integer",
                     "description": "Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.\n"
                 },
+                "shards": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:tls/TopicShard:TopicShard"
+                    },
+                    "description": "Partition list of the log topic\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "splitNumber": {
+                    "type": "integer",
+                    "description": "Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId\n"
+                },
+                "splitShardId": {
+                    "type": "integer",
+                    "description": "Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split\n"
+                },
                 "tags": {
                     "type": "array",
                     "items": {
@@ -101098,6 +101945,9 @@
                 "maxSplitShard",
                 "projectId",
                 "shardCount",
+                "shards",
+                "splitNumber",
+                "splitShardId",
                 "tags",
                 "timeFormat",
                 "timeKey",
@@ -101154,6 +102004,14 @@
                 "shardCount": {
                     "type": "integer",
                     "description": "Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.\n"
+                },
+                "splitNumber": {
+                    "type": "integer",
+                    "description": "Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId\n"
+                },
+                "splitShardId": {
+                    "type": "integer",
+                    "description": "Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split\n"
                 },
                 "tags": {
                     "type": "array",
@@ -101242,6 +102100,21 @@
                     "shardCount": {
                         "type": "integer",
                         "description": "Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.\n"
+                    },
+                    "shards": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:tls/TopicShard:TopicShard"
+                        },
+                        "description": "Partition list of the log topic\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "splitNumber": {
+                        "type": "integer",
+                        "description": "Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId\n"
+                    },
+                    "splitShardId": {
+                        "type": "integer",
+                        "description": "Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split\n"
                     },
                     "tags": {
                         "type": "array",
@@ -107686,6 +108559,192 @@
                     "updateTime": {
                         "type": "string",
                         "description": "Alert rule update time\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:vmp/integrationTask:IntegrationTask": {
+            "description": "VMP Integration Task Resource for Managing Monitoring Data Integration Tasks\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.vmp.IntegrationTask(\"Example\", {\n    name: \"tf_test_1001\",\n    workspaceId: \"f2e31ff4-01e2-4cef-8da5-4bxxxxxx\",\n    type: \"ECS\",\n    environment: \"Managed\",\n    createParams: JSON.stringify({\n        VPCId: \"vpc-25oeebv0e4g06pyvxxxxxx\",\n        SubnetIds: [\"subnet-2ouq84mwautc06oqj0xxxxxx\"],\n        SecurityGroupIds: [\"sg-25oeevlbio746pyvxxxxxx\"],\n        EnableSubnetFilter: true,\n        ScrapeConfig: `global:\n  scrape_interval: 15s\n  scrape_timeout: 10s\nscrape_configs:\n- job_name: ecs\n  scheme: http\n  metrics_path: /metrics\n  volc_sd_configs:\n  - port: 9091`,\n    }),\n    enabled: false,\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport json\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.vmp.IntegrationTask(\"Example\",\n    name=\"tf_test_1001\",\n    workspace_id=\"f2e31ff4-01e2-4cef-8da5-4bxxxxxx\",\n    type=\"ECS\",\n    environment=\"Managed\",\n    create_params=json.dumps({\n        \"VPCId\": \"vpc-25oeebv0e4g06pyvxxxxxx\",\n        \"SubnetIds\": [\"subnet-2ouq84mwautc06oqj0xxxxxx\"],\n        \"SecurityGroupIds\": [\"sg-25oeevlbio746pyvxxxxxx\"],\n        \"EnableSubnetFilter\": True,\n        \"ScrapeConfig\": \"\"\"global:\n  scrape_interval: 15s\n  scrape_timeout: 10s\nscrape_configs:\n- job_name: ecs\n  scheme: http\n  metrics_path: /metrics\n  volc_sd_configs:\n  - port: 9091\"\"\",\n    }),\n    enabled=False,\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing System.Text.Json;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Vmp.IntegrationTask(\"Example\", new()\n    {\n        Name = \"tf_test_1001\",\n        WorkspaceId = \"f2e31ff4-01e2-4cef-8da5-4bxxxxxx\",\n        Type = \"ECS\",\n        Environment = \"Managed\",\n        CreateParams = JsonSerializer.Serialize(new Dictionary\u003cstring, object?\u003e\n        {\n            [\"VPCId\"] = \"vpc-25oeebv0e4g06pyvxxxxxx\",\n            [\"SubnetIds\"] = new[]\n            {\n                \"subnet-2ouq84mwautc06oqj0xxxxxx\",\n            },\n            [\"SecurityGroupIds\"] = new[]\n            {\n                \"sg-25oeevlbio746pyvxxxxxx\",\n            },\n            [\"EnableSubnetFilter\"] = true,\n            [\"ScrapeConfig\"] = @\"global:\n  scrape_interval: 15s\n  scrape_timeout: 10s\nscrape_configs:\n- job_name: ecs\n  scheme: http\n  metrics_path: /metrics\n  volc_sd_configs:\n  - port: 9091\",\n        }),\n        Enabled = false,\n        Tags = new[]\n        {\n            new Bytepluscc.Vmp.Inputs.IntegrationTaskTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"encoding/json\"\n\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/vmp\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\ttmpJSON0, err := json.Marshal(map[string]interface{}{\n\t\t\t\"VPCId\": \"vpc-25oeebv0e4g06pyvxxxxxx\",\n\t\t\t\"SubnetIds\": []string{\n\t\t\t\t\"subnet-2ouq84mwautc06oqj0xxxxxx\",\n\t\t\t},\n\t\t\t\"SecurityGroupIds\": []string{\n\t\t\t\t\"sg-25oeevlbio746pyvxxxxxx\",\n\t\t\t},\n\t\t\t\"EnableSubnetFilter\": true,\n\t\t\t\"ScrapeConfig\": `global:\n  scrape_interval: 15s\n  scrape_timeout: 10s\nscrape_configs:\n- job_name: ecs\n  scheme: http\n  metrics_path: /metrics\n  volc_sd_configs:\n  - port: 9091`,\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\tjson0 := string(tmpJSON0)\n\t\t_, err = vmp.NewIntegrationTask(ctx, \"Example\", \u0026vmp.IntegrationTaskArgs{\n\t\t\tName:         pulumi.String(\"tf_test_1001\"),\n\t\t\tWorkspaceId:  pulumi.String(\"f2e31ff4-01e2-4cef-8da5-4bxxxxxx\"),\n\t\t\tType:         pulumi.String(\"ECS\"),\n\t\t\tEnvironment:  pulumi.String(\"Managed\"),\n\t\t\tCreateParams: pulumi.String(json0),\n\t\t\tEnabled:      pulumi.Bool(false),\n\t\t\tTags: vmp.IntegrationTaskTagArray{\n\t\t\t\t\u0026vmp.IntegrationTaskTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_vmp_integrationtask\" \"Example\" {\n  name         = \"tf_test_1001\"\n  workspace_id = \"f2e31ff4-01e2-4cef-8da5-4bxxxxxx\"\n  type         = \"ECS\"\n  environment  = \"Managed\"\n  create_params = jsonencode({\n    \"VPCId\"              = \"vpc-25oeebv0e4g06pyvxxxxxx\"\n    \"SubnetIds\"          = [\"subnet-2ouq84mwautc06oqj0xxxxxx\"]\n    \"SecurityGroupIds\"   = [\"sg-25oeevlbio746pyvxxxxxx\"]\n    \"EnableSubnetFilter\" = true\n    \"ScrapeConfig\"       = \"global:\\n  scrape_interval: 15s\\n  scrape_timeout: 10s\\nscrape_configs:\\n- job_name: ecs\\n  scheme: http\\n  metrics_path: /metrics\\n  volc_sd_configs:\\n  - port: 9091\"\n  })\n  enabled = false\n  tags {\n    key   = \"env\"\n    value = \"test\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.vmp.IntegrationTask;\nimport com.byteplus.bytepluscc.vmp.IntegrationTaskArgs;\nimport com.pulumi.bytepluscc.vmp.inputs.IntegrationTaskTagArgs;\nimport static com.pulumi.codegen.internal.Serialization.*;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new IntegrationTask(\"example\", IntegrationTaskArgs.builder()\n            .name(\"tf_test_1001\")\n            .workspaceId(\"f2e31ff4-01e2-4cef-8da5-4bxxxxxx\")\n            .type(\"ECS\")\n            .environment(\"Managed\")\n            .createParams(serializeJson(\n                jsonObject(\n                    jsonProperty(\"VPCId\", \"vpc-25oeebv0e4g06pyvxxxxxx\"),\n                    jsonProperty(\"SubnetIds\", jsonArray(\"subnet-2ouq84mwautc06oqj0xxxxxx\")),\n                    jsonProperty(\"SecurityGroupIds\", jsonArray(\"sg-25oeevlbio746pyvxxxxxx\")),\n                    jsonProperty(\"EnableSubnetFilter\", true),\n                    jsonProperty(\"ScrapeConfig\", \"\"\"\nglobal:\n  scrape_interval: 15s\n  scrape_timeout: 10s\nscrape_configs:\n- job_name: ecs\n  scheme: http\n  metrics_path: /metrics\n  volc_sd_configs:\n  - port: 9091                    \"\"\")\n                )))\n            .enabled(false)\n            .tags(IntegrationTaskTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:vmp:IntegrationTask\n    name: Example\n    properties:\n      name: tf_test_1001\n      workspaceId: f2e31ff4-01e2-4cef-8da5-4bxxxxxx\n      type: ECS\n      environment: Managed\n      createParams:\n        fn::toJSON:\n          VPCId: vpc-25oeebv0e4g06pyvxxxxxx\n          SubnetIds:\n            - subnet-2ouq84mwautc06oqj0xxxxxx\n          SecurityGroupIds:\n            - sg-25oeevlbio746pyvxxxxxx\n          EnableSubnetFilter: true\n          ScrapeConfig: |-\n            global:\n              scrape_interval: 15s\n              scrape_timeout: 10s\n            scrape_configs:\n            - job_name: ecs\n              scheme: http\n              metrics_path: /metrics\n              volc_sd_configs:\n              - port: 9091\n      enabled: false\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:vmp/integrationTask:IntegrationTask example \"integration_task_id\"\n```\n\n",
+            "properties": {
+                "createParams": {
+                    "type": "string",
+                    "description": "Integration Task Parameters in JSON Format (provided during creation/update)\n"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Enable Switch for Integration Task. True means enabled, false means disabled\n"
+                },
+                "environment": {
+                    "type": "string",
+                    "description": "Integration Task Environment\n"
+                },
+                "integrationTaskId": {
+                    "type": "string",
+                    "description": "Integration Task Unique Identifier\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Integration Task Name\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project Name to Which Integration Task Belongs\n"
+                },
+                "readParams": {
+                    "type": "string",
+                    "description": "Integration Task Parameters in JSON Format (read-only, returned data)\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Actual Running Status of Integration Task (read-only). Values: Creating, Updating, Active, Disabled, Error, Deleting\n"
+                },
+                "subType": {
+                    "type": "string",
+                    "description": "Integration Task Subtype\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vmp/IntegrationTaskTag:IntegrationTaskTag"
+                    },
+                    "description": "Integration Task Tag List\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Integration Task Type\n"
+                },
+                "vkeClusterId": {
+                    "type": "string",
+                    "description": "VKE Cluster ID Associated with Integration Task\n"
+                },
+                "workspaceId": {
+                    "type": "string",
+                    "description": "Workspace ID Associated with Integration Task\n"
+                }
+            },
+            "required": [
+                "createParams",
+                "enabled",
+                "environment",
+                "integrationTaskId",
+                "name",
+                "projectName",
+                "readParams",
+                "status",
+                "subType",
+                "tags",
+                "type",
+                "vkeClusterId",
+                "workspaceId"
+            ],
+            "inputProperties": {
+                "createParams": {
+                    "type": "string",
+                    "description": "Integration Task Parameters in JSON Format (provided during creation/update)\n"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Enable Switch for Integration Task. True means enabled, false means disabled\n"
+                },
+                "environment": {
+                    "type": "string",
+                    "description": "Integration Task Environment\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Integration Task Name\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project Name to Which Integration Task Belongs\n"
+                },
+                "subType": {
+                    "type": "string",
+                    "description": "Integration Task Subtype\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:vmp/IntegrationTaskTag:IntegrationTaskTag"
+                    },
+                    "description": "Integration Task Tag List\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "type": {
+                    "type": "string",
+                    "description": "Integration Task Type\n"
+                },
+                "vkeClusterId": {
+                    "type": "string",
+                    "description": "VKE Cluster ID Associated with Integration Task\n"
+                },
+                "workspaceId": {
+                    "type": "string",
+                    "description": "Workspace ID Associated with Integration Task\n"
+                }
+            },
+            "requiredInputs": [
+                "createParams",
+                "name",
+                "type"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering IntegrationTask resources.\n",
+                "properties": {
+                    "createParams": {
+                        "type": "string",
+                        "description": "Integration Task Parameters in JSON Format (provided during creation/update)\n"
+                    },
+                    "enabled": {
+                        "type": "boolean",
+                        "description": "Enable Switch for Integration Task. True means enabled, false means disabled\n"
+                    },
+                    "environment": {
+                        "type": "string",
+                        "description": "Integration Task Environment\n"
+                    },
+                    "integrationTaskId": {
+                        "type": "string",
+                        "description": "Integration Task Unique Identifier\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Integration Task Name\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Project Name to Which Integration Task Belongs\n"
+                    },
+                    "readParams": {
+                        "type": "string",
+                        "description": "Integration Task Parameters in JSON Format (read-only, returned data)\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Actual Running Status of Integration Task (read-only). Values: Creating, Updating, Active, Disabled, Error, Deleting\n"
+                    },
+                    "subType": {
+                        "type": "string",
+                        "description": "Integration Task Subtype\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vmp/IntegrationTaskTag:IntegrationTaskTag"
+                        },
+                        "description": "Integration Task Tag List\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "type": {
+                        "type": "string",
+                        "description": "Integration Task Type\n"
+                    },
+                    "vkeClusterId": {
+                        "type": "string",
+                        "description": "VKE Cluster ID Associated with Integration Task\n"
+                    },
+                    "workspaceId": {
+                        "type": "string",
+                        "description": "Workspace ID Associated with Integration Task\n"
                     }
                 },
                 "type": "object"
@@ -124580,6 +125639,10 @@
                         "description": "Key pair name. Must not duplicate existing names. Length must be between 2 and 64 characters. Periods ('.') can be used to separate the name into segments. Each segment can contain uppercase and lowercase letters, numbers, or hyphens ('-'). The name cannot start or end with '-' or '.', and cannot contain consecutive '-' or '.'.\n",
                         "type": "string"
                     },
+                    "privateKey": {
+                        "description": "Private key information for the key pair. Only returned when creating the key pair.\n",
+                        "type": "string"
+                    },
                     "projectName": {
                         "description": "Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.\n",
                         "type": "string"
@@ -124608,6 +125671,7 @@
                     "instanceIds",
                     "keyPairId",
                     "keyPairName",
+                    "privateKey",
                     "projectName",
                     "publicKey",
                     "tags",
@@ -125779,6 +126843,79 @@
             "description": "Plural Data Source schema for Byteplus::ESCloud::Instance\n",
             "outputs": {
                 "description": "A collection of values returned by getInstances.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:escloud/getIpAllowList:getIpAllowList": {
+            "description": "Data Source schema for Byteplus::ESCloud::IpAllowList\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getIpAllowList.\n",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getIpAllowList.\n",
+                "properties": {
+                    "allowLists": {
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "groups": {
+                        "items": {
+                            "$ref": "#/types/bytepluscc:escloud/getIpAllowListGroup:getIpAllowListGroup"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "allowLists",
+                    "groups",
+                    "id",
+                    "instanceId",
+                    "type"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:escloud/getIpAllowLists:getIpAllowLists": {
+            "description": "Plural Data Source schema for Byteplus::ESCloud::IpAllowList\n",
+            "outputs": {
+                "description": "A collection of values returned by getIpAllowLists.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -139638,6 +140775,159 @@
                 "type": "object"
             }
         },
+        "bytepluscc:tls/getDownloadTask:getDownloadTask": {
+            "description": "Data Source schema for Byteplus::TLS::DownloadTask\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getDownloadTask.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getDownloadTask.\n",
+                "properties": {
+                    "allowIncomplete": {
+                        "description": "Whether to allow approximate results when the query statement cannot be calculated precisely.\n",
+                        "type": "boolean"
+                    },
+                    "compression": {
+                        "description": "Compression format of the exported file. none: no compression. Recommended only for small data volumes. gzip: compress using gzip format. ip: compress using ip format.\n",
+                        "type": "string"
+                    },
+                    "createTime": {
+                        "description": "Download task creation time.\n",
+                        "type": "string"
+                    },
+                    "dataFormat": {
+                        "description": "Exported file format. Supported values: csv: CSV format. json: JSON format. jsonl: JSONL format.\n",
+                        "type": "string"
+                    },
+                    "endTime": {
+                        "description": "Query end time, accurate to the millisecond. Unix timestamp format, representing the number of milliseconds since 1970-1-1 00:00:00 UTC.\n",
+                        "type": "integer"
+                    },
+                    "endTimeStr": {
+                        "description": "Query end time.\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "limit": {
+                        "description": "Number of original log entries downloaded, or number of rows in the analysis result.\n",
+                        "type": "integer"
+                    },
+                    "logContextInfos": {
+                        "$ref": "#/types/bytepluscc:tls/getDownloadTaskLogContextInfos:getDownloadTaskLogContextInfos",
+                        "description": "Download the log information required for context queries, including the source host, LogGroup ID, and the log's sequence number within the LogGroup. Set this parameter when TaskType is 2.\n"
+                    },
+                    "logCount": {
+                        "description": "Number of log entries included in the download task.\n",
+                        "type": "integer"
+                    },
+                    "logSize": {
+                        "description": "Total size of logs included in the download task, in bytes.\n",
+                        "type": "integer"
+                    },
+                    "mustComplete": {
+                        "description": "Whether to use fully accurate query results for download. true: use fully accurate query results to ensure the downloaded log data exactly matches the query conditions. false: full accuracy is not required; allows downloading log data that may not exactly match the query conditions.\n",
+                        "type": "boolean"
+                    },
+                    "query": {
+                        "description": "Query statement for analysis, with a maximum length of 4 KiB.\n",
+                        "type": "string"
+                    },
+                    "sort": {
+                        "description": "Log sorting order when only retrieving without analysis. asc: ascending. desc: descending.\n",
+                        "type": "string"
+                    },
+                    "startTime": {
+                        "description": "Query start time, accurate to the millisecond. Unix timestamp format, representing the number of milliseconds since 1970-1-1 00:00:00 UTC.\n",
+                        "type": "integer"
+                    },
+                    "startTimeStr": {
+                        "description": "Query start time.\n",
+                        "type": "string"
+                    },
+                    "taskId": {
+                        "description": "Download task ID.\n",
+                        "type": "string"
+                    },
+                    "taskName": {
+                        "description": "Download task name. Length range: 1–63 characters.\n",
+                        "type": "string"
+                    },
+                    "taskStatus": {
+                        "description": "Download task status, indicating the generation status of the log archive file. Includes: creating: file is being generated. created_cut: file has been partially generated. success: file has been generated. wait: waiting. fail: failed.\n",
+                        "type": "string"
+                    },
+                    "taskType": {
+                        "description": "Type of logs to download. 0: download search-type logs. 1: download analysis-type logs. 2: download context-type logs.\n",
+                        "type": "integer"
+                    },
+                    "topicId": {
+                        "description": "Log topic ID to which the download task belongs.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "allowIncomplete",
+                    "compression",
+                    "createTime",
+                    "dataFormat",
+                    "endTime",
+                    "endTimeStr",
+                    "id",
+                    "limit",
+                    "logContextInfos",
+                    "logCount",
+                    "logSize",
+                    "mustComplete",
+                    "query",
+                    "sort",
+                    "startTime",
+                    "startTimeStr",
+                    "taskId",
+                    "taskName",
+                    "taskStatus",
+                    "taskType",
+                    "topicId"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:tls/getDownloadTasks:getDownloadTasks": {
+            "description": "Plural Data Source schema for Byteplus::TLS::DownloadTask\n",
+            "outputs": {
+                "description": "A collection of values returned by getDownloadTasks.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:tls/getEtl:getEtl": {
             "description": "Data Source schema for Byteplus::TLS::Etl\n",
             "inputs": {
@@ -140452,6 +141742,74 @@
                 "type": "object"
             }
         },
+        "bytepluscc:tls/getRuleBoundHostGroup:getRuleBoundHostGroup": {
+            "description": "Data Source schema for Byteplus::TLS::RuleBoundHostGroup\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getRuleBoundHostGroup.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getRuleBoundHostGroup.\n",
+                "properties": {
+                    "hostGroup": {
+                        "$ref": "#/types/bytepluscc:tls/getRuleBoundHostGroupHostGroup:getRuleBoundHostGroupHostGroup",
+                        "description": "Bound machine group configuration information\n"
+                    },
+                    "hostGroupId": {
+                        "description": "Machine group ID\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "ruleId": {
+                        "description": "Collection configuration ID\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "hostGroup",
+                    "hostGroupId",
+                    "id",
+                    "ruleId"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:tls/getRuleBoundHostGroups:getRuleBoundHostGroups": {
+            "description": "Plural Data Source schema for Byteplus::TLS::RuleBoundHostGroup\n",
+            "outputs": {
+                "description": "A collection of values returned by getRuleBoundHostGroups.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:tls/getRules:getRules": {
             "description": "Plural Data Source schema for Byteplus::TLS::Rule\n",
             "outputs": {
@@ -140845,6 +142203,21 @@
                         "description": "Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.\n",
                         "type": "integer"
                     },
+                    "shards": {
+                        "description": "Partition list of the log topic\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:tls/getTopicShard:getTopicShard"
+                        },
+                        "type": "array"
+                    },
+                    "splitNumber": {
+                        "description": "Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId\n",
+                        "type": "integer"
+                    },
+                    "splitShardId": {
+                        "description": "Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split\n",
+                        "type": "integer"
+                    },
                     "tags": {
                         "description": "Tag list.\n",
                         "items": {
@@ -140893,6 +142266,9 @@
                     "maxSplitShard",
                     "projectId",
                     "shardCount",
+                    "shards",
+                    "splitNumber",
+                    "splitShardId",
                     "tags",
                     "timeFormat",
                     "timeKey",
@@ -145132,6 +146508,127 @@
             "description": "Plural Data Source schema for Byteplus::VMP::AlertingRule\n",
             "outputs": {
                 "description": "A collection of values returned by getAlertingRules.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:vmp/getIntegrationTask:getIntegrationTask": {
+            "description": "Data Source schema for Byteplus::VMP::IntegrationTask\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getIntegrationTask.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getIntegrationTask.\n",
+                "properties": {
+                    "createParams": {
+                        "description": "Integration Task Parameters in JSON Format (provided during creation/update)\n",
+                        "type": "string"
+                    },
+                    "enabled": {
+                        "description": "Enable Switch for Integration Task. True means enabled, false means disabled\n",
+                        "type": "boolean"
+                    },
+                    "environment": {
+                        "description": "Integration Task Environment\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "integrationTaskId": {
+                        "description": "Integration Task Unique Identifier\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Integration Task Name\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "Project Name to Which Integration Task Belongs\n",
+                        "type": "string"
+                    },
+                    "readParams": {
+                        "description": "Integration Task Parameters in JSON Format (read-only, returned data)\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Actual Running Status of Integration Task (read-only). Values: Creating, Updating, Active, Disabled, Error, Deleting\n",
+                        "type": "string"
+                    },
+                    "subType": {
+                        "description": "Integration Task Subtype\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "Integration Task Tag List\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:vmp/getIntegrationTaskTag:getIntegrationTaskTag"
+                        },
+                        "type": "array"
+                    },
+                    "type": {
+                        "description": "Integration Task Type\n",
+                        "type": "string"
+                    },
+                    "vkeClusterId": {
+                        "description": "VKE Cluster ID Associated with Integration Task\n",
+                        "type": "string"
+                    },
+                    "workspaceId": {
+                        "description": "Workspace ID Associated with Integration Task\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "createParams",
+                    "enabled",
+                    "environment",
+                    "id",
+                    "integrationTaskId",
+                    "name",
+                    "projectName",
+                    "readParams",
+                    "status",
+                    "subType",
+                    "tags",
+                    "type",
+                    "vkeClusterId",
+                    "workspaceId"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:vmp/getIntegrationTasks:getIntegrationTasks": {
+            "description": "Plural Data Source schema for Byteplus::VMP::IntegrationTask\n",
+            "outputs": {
+                "description": "A collection of values returned by getIntegrationTasks.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",

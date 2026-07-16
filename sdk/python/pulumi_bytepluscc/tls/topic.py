@@ -34,6 +34,8 @@ class TopicArgs:
                  hot_ttl: pulumi.Input[Optional[_builtins.int]] = None,
                  log_public_ip: pulumi.Input[Optional[_builtins.bool]] = None,
                  max_split_shard: pulumi.Input[Optional[_builtins.int]] = None,
+                 split_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 split_shard_id: pulumi.Input[Optional[_builtins.int]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input['TopicTagArgs']]]] = None,
                  time_format: pulumi.Input[Optional[_builtins.str]] = None,
                  time_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -54,6 +56,8 @@ class TopicArgs:
         :param pulumi.Input[_builtins.int] hot_ttl: Standard storage duration. Default is 30 days; value range: 7–3650. This parameter is effective only when EnableHotTtl is true.
         :param pulumi.Input[_builtins.bool] log_public_ip: Enable external IP recording. Enabled by default. When enabled, the log service automatically adds the following metadata fields to the log content: **tag****client_ip**: Public IP address of the device sending the log. If logs are written using the log service's private domain name, the private IP address is recorded. **tag****receive_time**: Time when the log reaches the server, formatted as a 10-digit Unix timestamp.
         :param pulumi.Input[_builtins.int] max_split_shard: Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
+        :param pulumi.Input[_builtins.int] split_number: Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        :param pulumi.Input[_builtins.int] split_shard_id: Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
         :param pulumi.Input[Sequence[pulumi.Input['TopicTagArgs']]] tags: Tag list.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] time_format: Time format
@@ -83,6 +87,10 @@ class TopicArgs:
             pulumi.set(__self__, "log_public_ip", log_public_ip)
         if max_split_shard is not None:
             pulumi.set(__self__, "max_split_shard", max_split_shard)
+        if split_number is not None:
+            pulumi.set(__self__, "split_number", split_number)
+        if split_shard_id is not None:
+            pulumi.set(__self__, "split_shard_id", split_shard_id)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
         if time_format is not None:
@@ -249,6 +257,30 @@ class TopicArgs:
         pulumi.set(self, "max_split_shard", value)
 
     @_builtins.property
+    @pulumi.getter(name="splitNumber")
+    def split_number(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        """
+        return pulumi.get(self, "split_number")
+
+    @split_number.setter
+    def split_number(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "split_number", value)
+
+    @_builtins.property
+    @pulumi.getter(name="splitShardId")
+    def split_shard_id(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+        """
+        return pulumi.get(self, "split_shard_id")
+
+    @split_shard_id.setter
+    def split_shard_id(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "split_shard_id", value)
+
+    @_builtins.property
     @pulumi.getter
     def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TopicTagArgs']]]]:
         """
@@ -315,6 +347,9 @@ class _TopicState:
                  max_split_shard: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  shard_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 shards: pulumi.Input[Optional[Sequence[pulumi.Input['TopicShardArgs']]]] = None,
+                 split_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 split_shard_id: pulumi.Input[Optional[_builtins.int]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input['TopicTagArgs']]]] = None,
                  time_format: pulumi.Input[Optional[_builtins.str]] = None,
                  time_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -339,6 +374,10 @@ class _TopicState:
         :param pulumi.Input[_builtins.int] max_split_shard: Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
         :param pulumi.Input[_builtins.str] project_id: Log project ID to which the log topic belongs.
         :param pulumi.Input[_builtins.int] shard_count: Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
+        :param pulumi.Input[Sequence[pulumi.Input['TopicShardArgs']]] shards: Partition list of the log topic
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.int] split_number: Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        :param pulumi.Input[_builtins.int] split_shard_id: Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
         :param pulumi.Input[Sequence[pulumi.Input['TopicTagArgs']]] tags: Tag list.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] time_format: Time format
@@ -376,6 +415,12 @@ class _TopicState:
             pulumi.set(__self__, "project_id", project_id)
         if shard_count is not None:
             pulumi.set(__self__, "shard_count", shard_count)
+        if shards is not None:
+            pulumi.set(__self__, "shards", shards)
+        if split_number is not None:
+            pulumi.set(__self__, "split_number", split_number)
+        if split_shard_id is not None:
+            pulumi.set(__self__, "split_shard_id", split_shard_id)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
         if time_format is not None:
@@ -561,6 +606,43 @@ class _TopicState:
 
     @_builtins.property
     @pulumi.getter
+    def shards(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TopicShardArgs']]]]:
+        """
+        Partition list of the log topic
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "shards")
+
+    @shards.setter
+    def shards(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['TopicShardArgs']]]]):
+        pulumi.set(self, "shards", value)
+
+    @_builtins.property
+    @pulumi.getter(name="splitNumber")
+    def split_number(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        """
+        return pulumi.get(self, "split_number")
+
+    @split_number.setter
+    def split_number(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "split_number", value)
+
+    @_builtins.property
+    @pulumi.getter(name="splitShardId")
+    def split_shard_id(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+        """
+        return pulumi.get(self, "split_shard_id")
+
+    @split_shard_id.setter
+    def split_shard_id(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "split_shard_id", value)
+
+    @_builtins.property
+    @pulumi.getter
     def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['TopicTagArgs']]]]:
         """
         Tag list.
@@ -663,6 +745,8 @@ class Topic(pulumi.CustomResource):
                  max_split_shard: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  shard_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 split_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 split_shard_id: pulumi.Input[Optional[_builtins.int]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TopicTagArgs', 'TopicTagArgsDict']]]]] = None,
                  time_format: pulumi.Input[Optional[_builtins.str]] = None,
                  time_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -697,7 +781,9 @@ class Topic(pulumi.CustomResource):
             description="test",
             project_id="c6fef4c1-041f-434e-b0f4-d5e9*****",
             enable_hot_ttl=False,
-            allow_consume=False)
+            allow_consume=False,
+            split_shard_id=0,
+            split_number=2)
         ```
 
         ## Import
@@ -721,6 +807,8 @@ class Topic(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] max_split_shard: Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
         :param pulumi.Input[_builtins.str] project_id: Log project ID to which the log topic belongs.
         :param pulumi.Input[_builtins.int] shard_count: Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
+        :param pulumi.Input[_builtins.int] split_number: Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        :param pulumi.Input[_builtins.int] split_shard_id: Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
         :param pulumi.Input[Sequence[pulumi.Input[Union['TopicTagArgs', 'TopicTagArgsDict']]]] tags: Tag list.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] time_format: Time format
@@ -762,7 +850,9 @@ class Topic(pulumi.CustomResource):
             description="test",
             project_id="c6fef4c1-041f-434e-b0f4-d5e9*****",
             enable_hot_ttl=False,
-            allow_consume=False)
+            allow_consume=False,
+            split_shard_id=0,
+            split_number=2)
         ```
 
         ## Import
@@ -799,6 +889,8 @@ class Topic(pulumi.CustomResource):
                  max_split_shard: pulumi.Input[Optional[_builtins.int]] = None,
                  project_id: pulumi.Input[Optional[_builtins.str]] = None,
                  shard_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 split_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 split_shard_id: pulumi.Input[Optional[_builtins.int]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TopicTagArgs', 'TopicTagArgsDict']]]]] = None,
                  time_format: pulumi.Input[Optional[_builtins.str]] = None,
                  time_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -829,6 +921,8 @@ class Topic(pulumi.CustomResource):
             if shard_count is None and not opts.urn:
                 raise TypeError("Missing required property 'shard_count'")
             __props__.__dict__["shard_count"] = shard_count
+            __props__.__dict__["split_number"] = split_number
+            __props__.__dict__["split_shard_id"] = split_shard_id
             __props__.__dict__["tags"] = tags
             __props__.__dict__["time_format"] = time_format
             __props__.__dict__["time_key"] = time_key
@@ -838,6 +932,7 @@ class Topic(pulumi.CustomResource):
             __props__.__dict__["ttl"] = ttl
             __props__.__dict__["consume_topic"] = None
             __props__.__dict__["created_time"] = None
+            __props__.__dict__["shards"] = None
             __props__.__dict__["topic_id"] = None
             __props__.__dict__["updated_time"] = None
         super(Topic, __self__).__init__(
@@ -864,6 +959,9 @@ class Topic(pulumi.CustomResource):
             max_split_shard: pulumi.Input[Optional[_builtins.int]] = None,
             project_id: pulumi.Input[Optional[_builtins.str]] = None,
             shard_count: pulumi.Input[Optional[_builtins.int]] = None,
+            shards: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TopicShardArgs', 'TopicShardArgsDict']]]]] = None,
+            split_number: pulumi.Input[Optional[_builtins.int]] = None,
+            split_shard_id: pulumi.Input[Optional[_builtins.int]] = None,
             tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['TopicTagArgs', 'TopicTagArgsDict']]]]] = None,
             time_format: pulumi.Input[Optional[_builtins.str]] = None,
             time_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -892,6 +990,10 @@ class Topic(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] max_split_shard: Maximum partition split count, which is the maximum number of partitions after splitting. Value range: 1–256, default is 256. Required only when automatic log partition splitting is enabled (AutoSplit is true). MaxSplitShard must be greater than the specified ShardCount; otherwise, the log service cannot automatically split partitions.
         :param pulumi.Input[_builtins.str] project_id: Log project ID to which the log topic belongs.
         :param pulumi.Input[_builtins.int] shard_count: Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['TopicShardArgs', 'TopicShardArgsDict']]]] shards: Partition list of the log topic
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.int] split_number: Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        :param pulumi.Input[_builtins.int] split_shard_id: Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
         :param pulumi.Input[Sequence[pulumi.Input[Union['TopicTagArgs', 'TopicTagArgsDict']]]] tags: Tag list.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] time_format: Time format
@@ -919,6 +1021,9 @@ class Topic(pulumi.CustomResource):
         __props__.__dict__["max_split_shard"] = max_split_shard
         __props__.__dict__["project_id"] = project_id
         __props__.__dict__["shard_count"] = shard_count
+        __props__.__dict__["shards"] = shards
+        __props__.__dict__["split_number"] = split_number
+        __props__.__dict__["split_shard_id"] = split_shard_id
         __props__.__dict__["tags"] = tags
         __props__.__dict__["time_format"] = time_format
         __props__.__dict__["time_key"] = time_key
@@ -1039,6 +1144,31 @@ class Topic(pulumi.CustomResource):
         Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
         """
         return pulumi.get(self, "shard_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def shards(self) -> pulumi.Output[Sequence['outputs.TopicShard']]:
+        """
+        Partition list of the log topic
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "shards")
+
+    @_builtins.property
+    @pulumi.getter(name="splitNumber")
+    def split_number(self) -> pulumi.Output[_builtins.int]:
+        """
+        Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        """
+        return pulumi.get(self, "split_number")
+
+    @_builtins.property
+    @pulumi.getter(name="splitShardId")
+    def split_shard_id(self) -> pulumi.Output[_builtins.int]:
+        """
+        Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+        """
+        return pulumi.get(self, "split_shard_id")
 
     @_builtins.property
     @pulumi.getter

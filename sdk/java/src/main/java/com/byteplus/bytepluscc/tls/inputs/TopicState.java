@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.tls.inputs;
 
+import com.byteplus.bytepluscc.tls.inputs.TopicShardArgs;
 import com.byteplus.bytepluscc.tls.inputs.TopicTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -230,6 +231,53 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Partition list of the log topic
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Import(name="shards")
+    private @Nullable Output<List<TopicShardArgs>> shards;
+
+    /**
+     * @return Partition list of the log topic
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Optional<Output<List<TopicShardArgs>>> shards() {
+        return Optional.ofNullable(this.shards);
+    }
+
+    /**
+     * Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+     * 
+     */
+    @Import(name="splitNumber")
+    private @Nullable Output<Integer> splitNumber;
+
+    /**
+     * @return Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+     * 
+     */
+    public Optional<Output<Integer>> splitNumber() {
+        return Optional.ofNullable(this.splitNumber);
+    }
+
+    /**
+     * Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+     * 
+     */
+    @Import(name="splitShardId")
+    private @Nullable Output<Integer> splitShardId;
+
+    /**
+     * @return Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+     * 
+     */
+    public Optional<Output<Integer>> splitShardId() {
+        return Optional.ofNullable(this.splitShardId);
+    }
+
+    /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
@@ -353,6 +401,9 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
         this.maxSplitShard = $.maxSplitShard;
         this.projectId = $.projectId;
         this.shardCount = $.shardCount;
+        this.shards = $.shards;
+        this.splitNumber = $.splitNumber;
+        this.splitShardId = $.splitShardId;
         this.tags = $.tags;
         this.timeFormat = $.timeFormat;
         this.timeKey = $.timeKey;
@@ -672,6 +723,82 @@ public final class TopicState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder shardCount(Integer shardCount) {
             return shardCount(Output.of(shardCount));
+        }
+
+        /**
+         * @param shards Partition list of the log topic
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shards(@Nullable Output<List<TopicShardArgs>> shards) {
+            $.shards = shards;
+            return this;
+        }
+
+        /**
+         * @param shards Partition list of the log topic
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shards(List<TopicShardArgs> shards) {
+            return shards(Output.of(shards));
+        }
+
+        /**
+         * @param shards Partition list of the log topic
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder shards(TopicShardArgs... shards) {
+            return shards(List.of(shards));
+        }
+
+        /**
+         * @param splitNumber Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+         * 
+         * @return builder
+         * 
+         */
+        public Builder splitNumber(@Nullable Output<Integer> splitNumber) {
+            $.splitNumber = splitNumber;
+            return this;
+        }
+
+        /**
+         * @param splitNumber Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+         * 
+         * @return builder
+         * 
+         */
+        public Builder splitNumber(Integer splitNumber) {
+            return splitNumber(Output.of(splitNumber));
+        }
+
+        /**
+         * @param splitShardId Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+         * 
+         * @return builder
+         * 
+         */
+        public Builder splitShardId(@Nullable Output<Integer> splitShardId) {
+            $.splitShardId = splitShardId;
+            return this;
+        }
+
+        /**
+         * @param splitShardId Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+         * 
+         * @return builder
+         * 
+         */
+        public Builder splitShardId(Integer splitShardId) {
+            return splitShardId(Output.of(splitShardId));
         }
 
         /**

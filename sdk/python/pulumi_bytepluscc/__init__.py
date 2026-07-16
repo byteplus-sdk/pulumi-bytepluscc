@@ -772,6 +772,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "escloud/ipAllowList",
+  "fqn": "pulumi_bytepluscc.escloud",
+  "classes": {
+   "bytepluscc:escloud/ipAllowList:IpAllowList": "IpAllowList"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "filenas/instance",
   "fqn": "pulumi_bytepluscc.filenas",
   "classes": {
@@ -1572,6 +1580,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "tls/downloadTask",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/downloadTask:DownloadTask": "DownloadTask"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "tls/etl",
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
@@ -1624,6 +1640,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.tls",
   "classes": {
    "bytepluscc:tls/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "tls/ruleBoundHostGroup",
+  "fqn": "pulumi_bytepluscc.tls",
+  "classes": {
+   "bytepluscc:tls/ruleBoundHostGroup:RuleBoundHostGroup": "RuleBoundHostGroup"
   }
  },
  {
@@ -1904,6 +1928,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vmp",
   "classes": {
    "bytepluscc:vmp/alertingRule:AlertingRule": "AlertingRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vmp/integrationTask",
+  "fqn": "pulumi_bytepluscc.vmp",
+  "classes": {
+   "bytepluscc:vmp/integrationTask:IntegrationTask": "IntegrationTask"
   }
  },
  {

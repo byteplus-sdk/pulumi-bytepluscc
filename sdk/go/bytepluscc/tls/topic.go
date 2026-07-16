@@ -50,6 +50,8 @@ import (
 //				ProjectId:    pulumi.String("c6fef4c1-041f-434e-b0f4-d5e9*****"),
 //				EnableHotTtl: pulumi.Bool(false),
 //				AllowConsume: pulumi.Bool(false),
+//				SplitShardId: pulumi.Int(0),
+//				SplitNumber:  pulumi.Int(2),
 //			})
 //			if err != nil {
 //				return err
@@ -96,6 +98,13 @@ type Topic struct {
 	ProjectId pulumi.StringOutput `pulumi:"projectId"`
 	// Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
 	ShardCount pulumi.IntOutput `pulumi:"shardCount"`
+	// Partition list of the log topic
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Shards TopicShardArrayOutput `pulumi:"shards"`
+	// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+	SplitNumber pulumi.IntOutput `pulumi:"splitNumber"`
+	// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+	SplitShardId pulumi.IntOutput `pulumi:"splitShardId"`
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags TopicTagArrayOutput `pulumi:"tags"`
@@ -180,6 +189,13 @@ type topicState struct {
 	ProjectId *string `pulumi:"projectId"`
 	// Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
 	ShardCount *int `pulumi:"shardCount"`
+	// Partition list of the log topic
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Shards []TopicShard `pulumi:"shards"`
+	// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+	SplitNumber *int `pulumi:"splitNumber"`
+	// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+	SplitShardId *int `pulumi:"splitShardId"`
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []TopicTag `pulumi:"tags"`
@@ -226,6 +242,13 @@ type TopicState struct {
 	ProjectId pulumi.StringPtrInput
 	// Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
 	ShardCount pulumi.IntPtrInput
+	// Partition list of the log topic
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Shards TopicShardArrayInput
+	// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+	SplitNumber pulumi.IntPtrInput
+	// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+	SplitShardId pulumi.IntPtrInput
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags TopicTagArrayInput
@@ -272,6 +295,10 @@ type topicArgs struct {
 	ProjectId string `pulumi:"projectId"`
 	// Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
 	ShardCount int `pulumi:"shardCount"`
+	// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+	SplitNumber *int `pulumi:"splitNumber"`
+	// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+	SplitShardId *int `pulumi:"splitShardId"`
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []TopicTag `pulumi:"tags"`
@@ -311,6 +338,10 @@ type TopicArgs struct {
 	ProjectId pulumi.StringInput
 	// Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
 	ShardCount pulumi.IntInput
+	// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+	SplitNumber pulumi.IntPtrInput
+	// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+	SplitShardId pulumi.IntPtrInput
 	// Tag list.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags TopicTagArrayInput
@@ -479,6 +510,22 @@ func (o TopicOutput) ProjectId() pulumi.StringOutput {
 // Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
 func (o TopicOutput) ShardCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Topic) pulumi.IntOutput { return v.ShardCount }).(pulumi.IntOutput)
+}
+
+// Partition list of the log topic
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o TopicOutput) Shards() TopicShardArrayOutput {
+	return o.ApplyT(func(v *Topic) TopicShardArrayOutput { return v.Shards }).(TopicShardArrayOutput)
+}
+
+// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+func (o TopicOutput) SplitNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v *Topic) pulumi.IntOutput { return v.SplitNumber }).(pulumi.IntOutput)
+}
+
+// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+func (o TopicOutput) SplitShardId() pulumi.IntOutput {
+	return o.ApplyT(func(v *Topic) pulumi.IntOutput { return v.SplitShardId }).(pulumi.IntOutput)
 }
 
 // Tag list.

@@ -11,6 +11,7 @@ from .alarm_content_template_type import *
 from .alarm_notify_group import *
 from .alarm_webhook_integration_type import *
 from .consumer_group import *
+from .download_task import *
 from .etl import *
 from .get_alarm import *
 from .get_alarm_content_template_type import *
@@ -22,6 +23,8 @@ from .get_alarm_webhook_integration_types import *
 from .get_alarms import *
 from .get_consumer_group import *
 from .get_consumer_groups import *
+from .get_download_task import *
+from .get_download_tasks import *
 from .get_etl import *
 from .get_etls import *
 from .get_host import *
@@ -35,6 +38,8 @@ from .get_indices import *
 from .get_project import *
 from .get_projects import *
 from .get_rule import *
+from .get_rule_bound_host_group import *
+from .get_rule_bound_host_groups import *
 from .get_rules import *
 from .get_schedule_sql_task import *
 from .get_schedule_sql_tasks import *
@@ -48,6 +53,7 @@ from .import_task import *
 from .index import *
 from .project import *
 from .rule import *
+from .rule_bound_host_group import *
 from .schedule_sql_task import *
 from .shipper import *
 from .topic import *

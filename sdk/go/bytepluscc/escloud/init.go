@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:escloud/instance:Instance":
 		r = &Instance{}
+	case "bytepluscc:escloud/ipAllowList:IpAllowList":
+		r = &IpAllowList{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -39,6 +41,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"escloud/instance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"escloud/ipAllowList",
 		&module{version},
 	)
 }

@@ -27,7 +27,7 @@ class GetTopicResult:
     """
     A collection of values returned by getTopic.
     """
-    def __init__(__self__, allow_consume=None, archive_ttl=None, auto_split=None, cold_ttl=None, consume_topic=None, created_time=None, description=None, enable_hot_ttl=None, enable_tracking=None, hot_ttl=None, id=None, log_public_ip=None, max_split_shard=None, project_id=None, shard_count=None, tags=None, time_format=None, time_key=None, topic_id=None, topic_name=None, ttl=None, updated_time=None):
+    def __init__(__self__, allow_consume=None, archive_ttl=None, auto_split=None, cold_ttl=None, consume_topic=None, created_time=None, description=None, enable_hot_ttl=None, enable_tracking=None, hot_ttl=None, id=None, log_public_ip=None, max_split_shard=None, project_id=None, shard_count=None, shards=None, split_number=None, split_shard_id=None, tags=None, time_format=None, time_key=None, topic_id=None, topic_name=None, ttl=None, updated_time=None):
         if allow_consume and not isinstance(allow_consume, bool):
             raise TypeError("Expected argument 'allow_consume' to be a bool")
         pulumi.set(__self__, "allow_consume", allow_consume)
@@ -73,6 +73,15 @@ class GetTopicResult:
         if shard_count and not isinstance(shard_count, int):
             raise TypeError("Expected argument 'shard_count' to be a int")
         pulumi.set(__self__, "shard_count", shard_count)
+        if shards and not isinstance(shards, list):
+            raise TypeError("Expected argument 'shards' to be a list")
+        pulumi.set(__self__, "shards", shards)
+        if split_number and not isinstance(split_number, int):
+            raise TypeError("Expected argument 'split_number' to be a int")
+        pulumi.set(__self__, "split_number", split_number)
+        if split_shard_id and not isinstance(split_shard_id, int):
+            raise TypeError("Expected argument 'split_shard_id' to be a int")
+        pulumi.set(__self__, "split_shard_id", split_shard_id)
         if tags and not isinstance(tags, list):
             raise TypeError("Expected argument 'tags' to be a list")
         pulumi.set(__self__, "tags", tags)
@@ -217,6 +226,30 @@ class GetTopicResult:
 
     @_builtins.property
     @pulumi.getter
+    def shards(self) -> Sequence['outputs.GetTopicShardResult']:
+        """
+        Partition list of the log topic
+        """
+        return pulumi.get(self, "shards")
+
+    @_builtins.property
+    @pulumi.getter(name="splitNumber")
+    def split_number(self) -> _builtins.int:
+        """
+        Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        """
+        return pulumi.get(self, "split_number")
+
+    @_builtins.property
+    @pulumi.getter(name="splitShardId")
+    def split_shard_id(self) -> _builtins.int:
+        """
+        Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+        """
+        return pulumi.get(self, "split_shard_id")
+
+    @_builtins.property
+    @pulumi.getter
     def tags(self) -> Sequence['outputs.GetTopicTagResult']:
         """
         Tag list.
@@ -293,6 +326,9 @@ class AwaitableGetTopicResult(GetTopicResult):
             max_split_shard=self.max_split_shard,
             project_id=self.project_id,
             shard_count=self.shard_count,
+            shards=self.shards,
+            split_number=self.split_number,
+            split_shard_id=self.split_shard_id,
             tags=self.tags,
             time_format=self.time_format,
             time_key=self.time_key,
@@ -331,6 +367,9 @@ def get_topic(id: Optional[_builtins.str] = None,
         max_split_shard=pulumi.get(__ret__, 'max_split_shard'),
         project_id=pulumi.get(__ret__, 'project_id'),
         shard_count=pulumi.get(__ret__, 'shard_count'),
+        shards=pulumi.get(__ret__, 'shards'),
+        split_number=pulumi.get(__ret__, 'split_number'),
+        split_shard_id=pulumi.get(__ret__, 'split_shard_id'),
         tags=pulumi.get(__ret__, 'tags'),
         time_format=pulumi.get(__ret__, 'time_format'),
         time_key=pulumi.get(__ret__, 'time_key'),
@@ -366,6 +405,9 @@ def get_topic_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         max_split_shard=pulumi.get(__response__, 'max_split_shard'),
         project_id=pulumi.get(__response__, 'project_id'),
         shard_count=pulumi.get(__response__, 'shard_count'),
+        shards=pulumi.get(__response__, 'shards'),
+        split_number=pulumi.get(__response__, 'split_number'),
+        split_shard_id=pulumi.get(__response__, 'split_shard_id'),
         tags=pulumi.get(__response__, 'tags'),
         time_format=pulumi.get(__response__, 'time_format'),
         time_key=pulumi.get(__response__, 'time_key'),

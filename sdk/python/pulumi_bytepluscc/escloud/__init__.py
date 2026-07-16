@@ -8,6 +8,9 @@ import typing
 # Export this package's modules as members:
 from .get_instance import *
 from .get_instances import *
+from .get_ip_allow_list import *
+from .get_ip_allow_lists import *
 from .instance import *
+from .ip_allow_list import *
 from ._inputs import *
 from . import outputs

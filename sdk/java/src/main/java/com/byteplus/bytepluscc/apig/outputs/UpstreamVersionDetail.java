@@ -24,11 +24,6 @@ public final class UpstreamVersionDetail {
      * 
      */
     private @Nullable String name;
-    /**
-     * @return Update time
-     * 
-     */
-    private @Nullable String updateTime;
 
     private UpstreamVersionDetail() {}
     /**
@@ -46,13 +41,6 @@ public final class UpstreamVersionDetail {
     public Optional<String> name() {
         return Optional.ofNullable(this.name);
     }
-    /**
-     * @return Update time
-     * 
-     */
-    public Optional<String> updateTime() {
-        return Optional.ofNullable(this.updateTime);
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -65,13 +53,11 @@ public final class UpstreamVersionDetail {
     public static final class Builder {
         private @Nullable List<UpstreamVersionDetailLabel> labels;
         private @Nullable String name;
-        private @Nullable String updateTime;
         public Builder() {}
         public Builder(UpstreamVersionDetail defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.labels = defaults.labels;
     	      this.name = defaults.name;
-    	      this.updateTime = defaults.updateTime;
         }
 
         @CustomType.Setter
@@ -89,17 +75,10 @@ public final class UpstreamVersionDetail {
             this.name = name;
             return this;
         }
-        @CustomType.Setter
-        public Builder updateTime(@Nullable String updateTime) {
-
-            this.updateTime = updateTime;
-            return this;
-        }
         public UpstreamVersionDetail build() {
             final var _resultValue = new UpstreamVersionDetail();
             _resultValue.labels = labels;
             _resultValue.name = name;
-            _resultValue.updateTime = updateTime;
             return _resultValue;
         }
     }

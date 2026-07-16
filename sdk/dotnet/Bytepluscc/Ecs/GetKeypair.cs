@@ -93,6 +93,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         public readonly string KeyPairName;
         /// <summary>
+        /// Private key information for the key pair. Only returned when creating the key pair.
+        /// </summary>
+        public readonly string PrivateKey;
+        /// <summary>
         /// Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
         /// </summary>
         public readonly string ProjectName;
@@ -125,6 +129,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
             string keyPairName,
 
+            string privateKey,
+
             string projectName,
 
             string publicKey,
@@ -140,6 +146,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             InstanceIds = instanceIds;
             KeyPairId = keyPairId;
             KeyPairName = keyPairName;
+            PrivateKey = privateKey;
             ProjectName = projectName;
             PublicKey = publicKey;
             Tags = tags;

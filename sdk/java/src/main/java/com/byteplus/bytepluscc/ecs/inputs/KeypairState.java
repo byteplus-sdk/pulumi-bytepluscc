@@ -108,6 +108,21 @@ public final class KeypairState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Private key information for the key pair. Only returned when creating the key pair.
+     * 
+     */
+    @Import(name="privateKey")
+    private @Nullable Output<String> privateKey;
+
+    /**
+     * @return Private key information for the key pair. Only returned when creating the key pair.
+     * 
+     */
+    public Optional<Output<String>> privateKey() {
+        return Optional.ofNullable(this.privateKey);
+    }
+
+    /**
      * Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
      * 
      */
@@ -178,6 +193,7 @@ public final class KeypairState extends com.pulumi.resources.ResourceArgs {
         this.instanceIds = $.instanceIds;
         this.keyPairId = $.keyPairId;
         this.keyPairName = $.keyPairName;
+        this.privateKey = $.privateKey;
         this.projectName = $.projectName;
         this.publicKey = $.publicKey;
         this.tags = $.tags;
@@ -336,6 +352,27 @@ public final class KeypairState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder keyPairName(String keyPairName) {
             return keyPairName(Output.of(keyPairName));
+        }
+
+        /**
+         * @param privateKey Private key information for the key pair. Only returned when creating the key pair.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKey(@Nullable Output<String> privateKey) {
+            $.privateKey = privateKey;
+            return this;
+        }
+
+        /**
+         * @param privateKey Private key information for the key pair. Only returned when creating the key pair.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder privateKey(String privateKey) {
+            return privateKey(Output.of(privateKey));
         }
 
         /**

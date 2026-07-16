@@ -35,6 +35,8 @@ import * as utilities from "../utilities";
  *     projectId: "c6fef4c1-041f-434e-b0f4-d5e9*****",
  *     enableHotTtl: false,
  *     allowConsume: false,
+ *     splitShardId: 0,
+ *     splitNumber: 2,
  * });
  * ```
  *
@@ -129,6 +131,19 @@ export class Topic extends pulumi.CustomResource {
      */
     declare public readonly shardCount: pulumi.Output<number>;
     /**
+     * Partition list of the log topic
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    declare public /*out*/ readonly shards: pulumi.Output<outputs.tls.TopicShard[]>;
+    /**
+     * Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+     */
+    declare public readonly splitNumber: pulumi.Output<number>;
+    /**
+     * Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+     */
+    declare public readonly splitShardId: pulumi.Output<number>;
+    /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
@@ -185,6 +200,9 @@ export class Topic extends pulumi.CustomResource {
             resourceInputs["maxSplitShard"] = state?.maxSplitShard;
             resourceInputs["projectId"] = state?.projectId;
             resourceInputs["shardCount"] = state?.shardCount;
+            resourceInputs["shards"] = state?.shards;
+            resourceInputs["splitNumber"] = state?.splitNumber;
+            resourceInputs["splitShardId"] = state?.splitShardId;
             resourceInputs["tags"] = state?.tags;
             resourceInputs["timeFormat"] = state?.timeFormat;
             resourceInputs["timeKey"] = state?.timeKey;
@@ -215,6 +233,8 @@ export class Topic extends pulumi.CustomResource {
             resourceInputs["maxSplitShard"] = args?.maxSplitShard;
             resourceInputs["projectId"] = args?.projectId;
             resourceInputs["shardCount"] = args?.shardCount;
+            resourceInputs["splitNumber"] = args?.splitNumber;
+            resourceInputs["splitShardId"] = args?.splitShardId;
             resourceInputs["tags"] = args?.tags;
             resourceInputs["timeFormat"] = args?.timeFormat;
             resourceInputs["timeKey"] = args?.timeKey;
@@ -222,6 +242,7 @@ export class Topic extends pulumi.CustomResource {
             resourceInputs["ttl"] = args?.ttl;
             resourceInputs["consumeTopic"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
+            resourceInputs["shards"] = undefined /*out*/;
             resourceInputs["topicId"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
         }
@@ -290,6 +311,19 @@ export interface TopicState {
      * Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
      */
     shardCount?: pulumi.Input<number | undefined>;
+    /**
+     * Partition list of the log topic
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    shards?: pulumi.Input<pulumi.Input<inputs.tls.TopicShard>[] | undefined>;
+    /**
+     * Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+     */
+    splitNumber?: pulumi.Input<number | undefined>;
+    /**
+     * Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+     */
+    splitShardId?: pulumi.Input<number | undefined>;
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
@@ -373,6 +407,14 @@ export interface TopicArgs {
      * Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
      */
     shardCount: pulumi.Input<number>;
+    /**
+     * Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+     */
+    splitNumber?: pulumi.Input<number | undefined>;
+    /**
+     * Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+     */
+    splitShardId?: pulumi.Input<number | undefined>;
     /**
      * Tag list.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.

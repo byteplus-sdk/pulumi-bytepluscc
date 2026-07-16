@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.tls.outputs;
 
+import com.byteplus.bytepluscc.tls.outputs.GetTopicShard;
 import com.byteplus.bytepluscc.tls.outputs.GetTopicTag;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
@@ -89,6 +90,21 @@ public final class GetTopicResult {
      * 
      */
     private Integer shardCount;
+    /**
+     * @return Partition list of the log topic
+     * 
+     */
+    private List<GetTopicShard> shards;
+    /**
+     * @return Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+     * 
+     */
+    private Integer splitNumber;
+    /**
+     * @return Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+     * 
+     */
+    private Integer splitShardId;
     /**
      * @return Tag list.
      * 
@@ -232,6 +248,27 @@ public final class GetTopicResult {
         return this.shardCount;
     }
     /**
+     * @return Partition list of the log topic
+     * 
+     */
+    public List<GetTopicShard> shards() {
+        return this.shards;
+    }
+    /**
+     * @return Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+     * 
+     */
+    public Integer splitNumber() {
+        return this.splitNumber;
+    }
+    /**
+     * @return Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+     * 
+     */
+    public Integer splitShardId() {
+        return this.splitShardId;
+    }
+    /**
      * @return Tag list.
      * 
      */
@@ -305,6 +342,9 @@ public final class GetTopicResult {
         private Integer maxSplitShard;
         private String projectId;
         private Integer shardCount;
+        private List<GetTopicShard> shards;
+        private Integer splitNumber;
+        private Integer splitShardId;
         private List<GetTopicTag> tags;
         private String timeFormat;
         private String timeKey;
@@ -330,6 +370,9 @@ public final class GetTopicResult {
     	      this.maxSplitShard = defaults.maxSplitShard;
     	      this.projectId = defaults.projectId;
     	      this.shardCount = defaults.shardCount;
+    	      this.shards = defaults.shards;
+    	      this.splitNumber = defaults.splitNumber;
+    	      this.splitShardId = defaults.splitShardId;
     	      this.tags = defaults.tags;
     	      this.timeFormat = defaults.timeFormat;
     	      this.timeKey = defaults.timeKey;
@@ -460,6 +503,33 @@ public final class GetTopicResult {
             return this;
         }
         @CustomType.Setter
+        public Builder shards(List<GetTopicShard> shards) {
+            if (shards == null) {
+              throw new MissingRequiredPropertyException("GetTopicResult", "shards");
+            }
+            this.shards = shards;
+            return this;
+        }
+        public Builder shards(GetTopicShard... shards) {
+            return shards(List.of(shards));
+        }
+        @CustomType.Setter
+        public Builder splitNumber(Integer splitNumber) {
+            if (splitNumber == null) {
+              throw new MissingRequiredPropertyException("GetTopicResult", "splitNumber");
+            }
+            this.splitNumber = splitNumber;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder splitShardId(Integer splitShardId) {
+            if (splitShardId == null) {
+              throw new MissingRequiredPropertyException("GetTopicResult", "splitShardId");
+            }
+            this.splitShardId = splitShardId;
+            return this;
+        }
+        @CustomType.Setter
         public Builder tags(List<GetTopicTag> tags) {
             if (tags == null) {
               throw new MissingRequiredPropertyException("GetTopicResult", "tags");
@@ -535,6 +605,9 @@ public final class GetTopicResult {
             _resultValue.maxSplitShard = maxSplitShard;
             _resultValue.projectId = projectId;
             _resultValue.shardCount = shardCount;
+            _resultValue.shards = shards;
+            _resultValue.splitNumber = splitNumber;
+            _resultValue.splitShardId = splitShardId;
             _resultValue.tags = tags;
             _resultValue.timeFormat = timeFormat;
             _resultValue.timeKey = timeKey;

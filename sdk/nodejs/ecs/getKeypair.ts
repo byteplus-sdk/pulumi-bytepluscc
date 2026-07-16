@@ -59,6 +59,10 @@ export interface GetKeypairResult {
      */
     readonly keyPairName: string;
     /**
+     * Private key information for the key pair. Only returned when creating the key pair.
+     */
+    readonly privateKey: string;
+    /**
      * Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore ('_'), period ('.'), and hyphen ('-'). Length must not exceed 64 characters.
      */
     readonly projectName: string;

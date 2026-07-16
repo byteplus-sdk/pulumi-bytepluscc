@@ -42,6 +42,8 @@ import javax.annotation.Nullable;
  * import com.pulumi.bytepluscc.apig.inputs.UpstreamTlsSettingsArgs;
  * import com.pulumi.bytepluscc.apig.inputs.UpstreamUpstreamSpecArgs;
  * import com.pulumi.bytepluscc.apig.inputs.UpstreamUpstreamSpecDomainArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamVersionDetailArgs;
+ * import com.pulumi.bytepluscc.apig.inputs.UpstreamVersionDetailLabelArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -91,6 +93,13 @@ import javax.annotation.Nullable;
  *                         Map.entry("port", 5566)
  *                     )))
  *                     .build())
+ *                 .build())
+ *             .versionDetails(UpstreamVersionDetailArgs.builder()
+ *                 .labels(UpstreamVersionDetailLabelArgs.builder()
+ *                     .key("k1")
+ *                     .value("v1")
+ *                     .build())
+ *                 .name("v1")
  *                 .build())
  *             .build());
  * 

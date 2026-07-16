@@ -60,6 +60,12 @@ type LookupTopicResult struct {
 	ProjectId string `pulumi:"projectId"`
 	// Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
 	ShardCount int `pulumi:"shardCount"`
+	// Partition list of the log topic
+	Shards []GetTopicShard `pulumi:"shards"`
+	// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+	SplitNumber int `pulumi:"splitNumber"`
+	// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+	SplitShardId int `pulumi:"splitShardId"`
 	// Tag list.
 	Tags []GetTopicTag `pulumi:"tags"`
 	// Time format
@@ -183,6 +189,21 @@ func (o LookupTopicResultOutput) ProjectId() pulumi.StringOutput {
 // Number of log partitions. By default, 1 partition is created; value range: 1–10. Each partition provides write capacity of 5 MiB/s, 500 ops/s, and read capacity of 20 MiB/s, 100 ops/s. Plan partitions appropriately when creating a log topic; partition count cannot be modified after creation.
 func (o LookupTopicResultOutput) ShardCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupTopicResult) int { return v.ShardCount }).(pulumi.IntOutput)
+}
+
+// Partition list of the log topic
+func (o LookupTopicResultOutput) Shards() GetTopicShardArrayOutput {
+	return o.ApplyT(func(v LookupTopicResult) []GetTopicShard { return v.Shards }).(GetTopicShardArrayOutput)
+}
+
+// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+func (o LookupTopicResultOutput) SplitNumber() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupTopicResult) int { return v.SplitNumber }).(pulumi.IntOutput)
+}
+
+// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+func (o LookupTopicResultOutput) SplitShardId() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupTopicResult) int { return v.SplitShardId }).(pulumi.IntOutput)
 }
 
 // Tag list.

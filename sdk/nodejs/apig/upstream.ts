@@ -52,6 +52,13 @@ import * as utilities from "../utilities";
  *             }],
  *         },
  *     },
+ *     versionDetails: [{
+ *         labels: [{
+ *             key: "k1",
+ *             value: "v1",
+ *         }],
+ *         name: "v1",
+ *     }],
  * });
  * ```
  *
@@ -150,7 +157,7 @@ export class Upstream extends pulumi.CustomResource {
      * Upstream version, only valid when the upstream source type is K8S
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
-    declare public /*out*/ readonly versionDetails: pulumi.Output<outputs.apig.UpstreamVersionDetail[]>;
+    declare public readonly versionDetails: pulumi.Output<outputs.apig.UpstreamVersionDetail[]>;
 
     /**
      * Create a Upstream resource with the given unique name, arguments, and options.
@@ -204,11 +211,11 @@ export class Upstream extends pulumi.CustomResource {
             resourceInputs["sourceType"] = args?.sourceType;
             resourceInputs["tlsSettings"] = args?.tlsSettings;
             resourceInputs["upstreamSpec"] = args?.upstreamSpec;
+            resourceInputs["versionDetails"] = args?.versionDetails;
             resourceInputs["backendTargets"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
             resourceInputs["upstreamId"] = undefined /*out*/;
-            resourceInputs["versionDetails"] = undefined /*out*/;
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
         super(Upstream.__pulumiType, name, resourceInputs, opts);
@@ -327,4 +334,9 @@ export interface UpstreamArgs {
      * Upstream Configuration
      */
     upstreamSpec: pulumi.Input<inputs.apig.UpstreamUpstreamSpec>;
+    /**
+     * Upstream version, only valid when the upstream source type is K8S
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     */
+    versionDetails?: pulumi.Input<pulumi.Input<inputs.apig.UpstreamVersionDetail>[] | undefined>;
 }

@@ -48,6 +48,11 @@ public final class GetKeypairResult {
      */
     private String keyPairName;
     /**
+     * @return Private key information for the key pair. Only returned when creating the key pair.
+     * 
+     */
+    private String privateKey;
+    /**
      * @return Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
      * 
      */
@@ -119,6 +124,13 @@ public final class GetKeypairResult {
         return this.keyPairName;
     }
     /**
+     * @return Private key information for the key pair. Only returned when creating the key pair.
+     * 
+     */
+    public String privateKey() {
+        return this.privateKey;
+    }
+    /**
      * @return Project to which the resource belongs. Each resource can belong to only one project. Can only contain letters, numbers, underscore (&#39;_&#39;), period (&#39;.&#39;), and hyphen (&#39;-&#39;). Length must not exceed 64 characters.
      * 
      */
@@ -163,6 +175,7 @@ public final class GetKeypairResult {
         private List<String> instanceIds;
         private String keyPairId;
         private String keyPairName;
+        private String privateKey;
         private String projectName;
         private String publicKey;
         private List<GetKeypairTag> tags;
@@ -177,6 +190,7 @@ public final class GetKeypairResult {
     	      this.instanceIds = defaults.instanceIds;
     	      this.keyPairId = defaults.keyPairId;
     	      this.keyPairName = defaults.keyPairName;
+    	      this.privateKey = defaults.privateKey;
     	      this.projectName = defaults.projectName;
     	      this.publicKey = defaults.publicKey;
     	      this.tags = defaults.tags;
@@ -243,6 +257,14 @@ public final class GetKeypairResult {
             return this;
         }
         @CustomType.Setter
+        public Builder privateKey(String privateKey) {
+            if (privateKey == null) {
+              throw new MissingRequiredPropertyException("GetKeypairResult", "privateKey");
+            }
+            this.privateKey = privateKey;
+            return this;
+        }
+        @CustomType.Setter
         public Builder projectName(String projectName) {
             if (projectName == null) {
               throw new MissingRequiredPropertyException("GetKeypairResult", "projectName");
@@ -286,6 +308,7 @@ public final class GetKeypairResult {
             _resultValue.instanceIds = instanceIds;
             _resultValue.keyPairId = keyPairId;
             _resultValue.keyPairName = keyPairName;
+            _resultValue.privateKey = privateKey;
             _resultValue.projectName = projectName;
             _resultValue.publicKey = publicKey;
             _resultValue.tags = tags;

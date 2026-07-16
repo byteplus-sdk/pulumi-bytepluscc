@@ -48,6 +48,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
     ///         ProjectId = "c6fef4c1-041f-434e-b0f4-d5e9*****",
     ///         EnableHotTtl = false,
     ///         AllowConsume = false,
+    ///         SplitShardId = 0,
+    ///         SplitNumber = 2,
     ///     });
     /// 
     /// });
@@ -145,6 +147,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
         /// </summary>
         [Output("shardCount")]
         public Output<int> ShardCount { get; private set; } = null!;
+
+        /// <summary>
+        /// Partition list of the log topic
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        [Output("shards")]
+        public Output<ImmutableArray<Outputs.TopicShard>> Shards { get; private set; } = null!;
+
+        /// <summary>
+        /// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        /// </summary>
+        [Output("splitNumber")]
+        public Output<int> SplitNumber { get; private set; } = null!;
+
+        /// <summary>
+        /// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+        /// </summary>
+        [Output("splitShardId")]
+        public Output<int> SplitShardId { get; private set; } = null!;
 
         /// <summary>
         /// Tag list.
@@ -308,6 +329,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
         [Input("shardCount", required: true)]
         public Input<int> ShardCount { get; set; } = null!;
 
+        /// <summary>
+        /// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        /// </summary>
+        [Input("splitNumber")]
+        public Input<int>? SplitNumber { get; set; }
+
+        /// <summary>
+        /// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+        /// </summary>
+        [Input("splitShardId")]
+        public Input<int>? SplitShardId { get; set; }
+
         [Input("tags")]
         private InputList<Inputs.TopicTagArgs>? _tags;
 
@@ -436,6 +469,31 @@ namespace Byteplus.Pulumi.Bytepluscc.Tls
         /// </summary>
         [Input("shardCount")]
         public Input<int>? ShardCount { get; set; }
+
+        [Input("shards")]
+        private InputList<Inputs.TopicShardGetArgs>? _shards;
+
+        /// <summary>
+        /// Partition list of the log topic
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public InputList<Inputs.TopicShardGetArgs> Shards
+        {
+            get => _shards ?? (_shards = new InputList<Inputs.TopicShardGetArgs>());
+            set => _shards = value;
+        }
+
+        /// <summary>
+        /// Number of splits for the partition. The split number must be a non-zero even number, such as 2, 4, 8, or 16. After splitting, the total number of readwrite partitions must not exceed 256. Must be used together with SplitShardId
+        /// </summary>
+        [Input("splitNumber")]
+        public Input<int>? SplitNumber { get; set; }
+
+        /// <summary>
+        /// Partition ID to be manually split. Must be used together with SplitNumber. Only partitions with readwrite status can be split
+        /// </summary>
+        [Input("splitShardId")]
+        public Input<int>? SplitShardId { get; set; }
 
         [Input("tags")]
         private InputList<Inputs.TopicTagGetArgs>? _tags;

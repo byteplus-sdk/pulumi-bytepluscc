@@ -14,6 +14,8 @@ import com.byteplus.bytepluscc.tls.inputs.GetAlarmWebhookIntegrationTypeArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetAlarmWebhookIntegrationTypePlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetConsumerGroupPlainArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetDownloadTaskArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetDownloadTaskPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetEtlArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetEtlPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetHostArgs;
@@ -27,6 +29,8 @@ import com.byteplus.bytepluscc.tls.inputs.GetIndexPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetProjectArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetProjectPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetRuleArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetRuleBoundHostGroupArgs;
+import com.byteplus.bytepluscc.tls.inputs.GetRuleBoundHostGroupPlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetRulePlainArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetScheduleSqlTaskArgs;
 import com.byteplus.bytepluscc.tls.inputs.GetScheduleSqlTaskPlainArgs;
@@ -44,6 +48,8 @@ import com.byteplus.bytepluscc.tls.outputs.GetAlarmWebhookIntegrationTypesResult
 import com.byteplus.bytepluscc.tls.outputs.GetAlarmsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupResult;
 import com.byteplus.bytepluscc.tls.outputs.GetConsumerGroupsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetDownloadTaskResult;
+import com.byteplus.bytepluscc.tls.outputs.GetDownloadTasksResult;
 import com.byteplus.bytepluscc.tls.outputs.GetEtlResult;
 import com.byteplus.bytepluscc.tls.outputs.GetEtlsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetHostGroupResult;
@@ -56,6 +62,8 @@ import com.byteplus.bytepluscc.tls.outputs.GetIndexResult;
 import com.byteplus.bytepluscc.tls.outputs.GetIndicesResult;
 import com.byteplus.bytepluscc.tls.outputs.GetProjectResult;
 import com.byteplus.bytepluscc.tls.outputs.GetProjectsResult;
+import com.byteplus.bytepluscc.tls.outputs.GetRuleBoundHostGroupResult;
+import com.byteplus.bytepluscc.tls.outputs.GetRuleBoundHostGroupsResult;
 import com.byteplus.bytepluscc.tls.outputs.GetRuleResult;
 import com.byteplus.bytepluscc.tls.outputs.GetRulesResult;
 import com.byteplus.bytepluscc.tls.outputs.GetScheduleSqlTaskResult;
@@ -492,6 +500,90 @@ public final class TlsFunctions {
      */
     public static CompletableFuture<GetConsumerGroupsResult> getConsumerGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:tls/getConsumerGroups:getConsumerGroups", TypeShape.of(GetConsumerGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static Output<GetDownloadTaskResult> getDownloadTask(GetDownloadTaskArgs args) {
+        return getDownloadTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static CompletableFuture<GetDownloadTaskResult> getDownloadTaskPlain(GetDownloadTaskPlainArgs args) {
+        return getDownloadTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static Output<GetDownloadTaskResult> getDownloadTask(GetDownloadTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getDownloadTask:getDownloadTask", TypeShape.of(GetDownloadTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static Output<GetDownloadTaskResult> getDownloadTask(GetDownloadTaskArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getDownloadTask:getDownloadTask", TypeShape.of(GetDownloadTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static CompletableFuture<GetDownloadTaskResult> getDownloadTaskPlain(GetDownloadTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getDownloadTask:getDownloadTask", TypeShape.of(GetDownloadTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static Output<GetDownloadTasksResult> getDownloadTasks() {
+        return getDownloadTasks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static CompletableFuture<GetDownloadTasksResult> getDownloadTasksPlain() {
+        return getDownloadTasksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static Output<GetDownloadTasksResult> getDownloadTasks(InvokeArgs args) {
+        return getDownloadTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static CompletableFuture<GetDownloadTasksResult> getDownloadTasksPlain(InvokeArgs args) {
+        return getDownloadTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static Output<GetDownloadTasksResult> getDownloadTasks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getDownloadTasks:getDownloadTasks", TypeShape.of(GetDownloadTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static Output<GetDownloadTasksResult> getDownloadTasks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getDownloadTasks:getDownloadTasks", TypeShape.of(GetDownloadTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::DownloadTask
+     * 
+     */
+    public static CompletableFuture<GetDownloadTasksResult> getDownloadTasksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getDownloadTasks:getDownloadTasks", TypeShape.of(GetDownloadTasksResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::TLS::Etl
@@ -1031,6 +1123,90 @@ public final class TlsFunctions {
      */
     public static CompletableFuture<GetRuleResult> getRulePlain(GetRulePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:tls/getRule:getRule", TypeShape.of(GetRuleResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static Output<GetRuleBoundHostGroupResult> getRuleBoundHostGroup(GetRuleBoundHostGroupArgs args) {
+        return getRuleBoundHostGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static CompletableFuture<GetRuleBoundHostGroupResult> getRuleBoundHostGroupPlain(GetRuleBoundHostGroupPlainArgs args) {
+        return getRuleBoundHostGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static Output<GetRuleBoundHostGroupResult> getRuleBoundHostGroup(GetRuleBoundHostGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getRuleBoundHostGroup:getRuleBoundHostGroup", TypeShape.of(GetRuleBoundHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static Output<GetRuleBoundHostGroupResult> getRuleBoundHostGroup(GetRuleBoundHostGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getRuleBoundHostGroup:getRuleBoundHostGroup", TypeShape.of(GetRuleBoundHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static CompletableFuture<GetRuleBoundHostGroupResult> getRuleBoundHostGroupPlain(GetRuleBoundHostGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getRuleBoundHostGroup:getRuleBoundHostGroup", TypeShape.of(GetRuleBoundHostGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static Output<GetRuleBoundHostGroupsResult> getRuleBoundHostGroups() {
+        return getRuleBoundHostGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static CompletableFuture<GetRuleBoundHostGroupsResult> getRuleBoundHostGroupsPlain() {
+        return getRuleBoundHostGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static Output<GetRuleBoundHostGroupsResult> getRuleBoundHostGroups(InvokeArgs args) {
+        return getRuleBoundHostGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static CompletableFuture<GetRuleBoundHostGroupsResult> getRuleBoundHostGroupsPlain(InvokeArgs args) {
+        return getRuleBoundHostGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static Output<GetRuleBoundHostGroupsResult> getRuleBoundHostGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getRuleBoundHostGroups:getRuleBoundHostGroups", TypeShape.of(GetRuleBoundHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static Output<GetRuleBoundHostGroupsResult> getRuleBoundHostGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:tls/getRuleBoundHostGroups:getRuleBoundHostGroups", TypeShape.of(GetRuleBoundHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::TLS::RuleBoundHostGroup
+     * 
+     */
+    public static CompletableFuture<GetRuleBoundHostGroupsResult> getRuleBoundHostGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:tls/getRuleBoundHostGroups:getRuleBoundHostGroups", TypeShape.of(GetRuleBoundHostGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::TLS::Rule

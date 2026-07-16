@@ -49,27 +49,11 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
         return Optional.ofNullable(this.name);
     }
 
-    /**
-     * Update time
-     * 
-     */
-    @Import(name="updateTime")
-    private @Nullable Output<String> updateTime;
-
-    /**
-     * @return Update time
-     * 
-     */
-    public Optional<Output<String>> updateTime() {
-        return Optional.ofNullable(this.updateTime);
-    }
-
     private UpstreamVersionDetailArgs() {}
 
     private UpstreamVersionDetailArgs(UpstreamVersionDetailArgs $) {
         this.labels = $.labels;
         this.name = $.name;
-        this.updateTime = $.updateTime;
     }
 
     public static Builder builder() {
@@ -143,27 +127,6 @@ public final class UpstreamVersionDetailArgs extends com.pulumi.resources.Resour
          */
         public Builder name(String name) {
             return name(Output.of(name));
-        }
-
-        /**
-         * @param updateTime Update time
-         * 
-         * @return builder
-         * 
-         */
-        public Builder updateTime(@Nullable Output<String> updateTime) {
-            $.updateTime = updateTime;
-            return this;
-        }
-
-        /**
-         * @param updateTime Update time
-         * 
-         * @return builder
-         * 
-         */
-        public Builder updateTime(String updateTime) {
-            return updateTime(Output.of(updateTime));
         }
 
         public UpstreamVersionDetailArgs build() {

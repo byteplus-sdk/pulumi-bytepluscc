@@ -38,6 +38,7 @@ __all__ = [
     'InstanceSubInstance',
     'InstanceTransferInfo',
     'InstanceTransferInfoReduceSpecConfig',
+    'IpAllowListGroup',
     'GetInstanceInstanceConfigurationResult',
     'GetInstanceInstanceConfigurationColdNodeResourceSpecResult',
     'GetInstanceInstanceConfigurationColdNodeStorageSpecResult',
@@ -60,6 +61,7 @@ __all__ = [
     'GetInstanceSubInstanceResult',
     'GetInstanceTransferInfoResult',
     'GetInstanceTransferInfoReduceSpecConfigResult',
+    'GetIpAllowListGroupResult',
 ]
 
 @pulumi.output_type
@@ -2241,6 +2243,54 @@ class InstanceTransferInfoReduceSpecConfig(dict):
 
 
 @pulumi.output_type
+class IpAllowListGroup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "allowLists":
+            suggest = "allow_lists"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IpAllowListGroup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IpAllowListGroup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IpAllowListGroup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 allow_lists: Optional[Sequence[_builtins.str]] = None,
+                 name: Optional[_builtins.str] = None):
+        """
+        :param Sequence[_builtins.str] allow_lists: Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+        :param _builtins.str name: Custom group name
+        """
+        if allow_lists is not None:
+            pulumi.set(__self__, "allow_lists", allow_lists)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="allowLists")
+    def allow_lists(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+        """
+        return pulumi.get(self, "allow_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> Optional[_builtins.str]:
+        """
+        Custom group name
+        """
+        return pulumi.get(self, "name")
+
+
+@pulumi.output_type
 class GetInstanceInstanceConfigurationResult(dict):
     def __init__(__self__, *,
                  admin_password: _builtins.str,
@@ -3822,5 +3872,34 @@ class GetInstanceTransferInfoReduceSpecConfigResult(dict):
         Number of warm nodes
         """
         return pulumi.get(self, "warm_node_num")
+
+
+@pulumi.output_type
+class GetIpAllowListGroupResult(dict):
+    def __init__(__self__, *,
+                 allow_lists: Sequence[_builtins.str],
+                 name: _builtins.str):
+        """
+        :param Sequence[_builtins.str] allow_lists: Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+        :param _builtins.str name: Custom group name
+        """
+        pulumi.set(__self__, "allow_lists", allow_lists)
+        pulumi.set(__self__, "name", name)
+
+    @_builtins.property
+    @pulumi.getter(name="allowLists")
+    def allow_lists(self) -> Sequence[_builtins.str]:
+        """
+        Custom group IP allowlist list cannot be empty; to configure multiple IPs, use commas (,)
+        """
+        return pulumi.get(self, "allow_lists")
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> _builtins.str:
+        """
+        Custom group name
+        """
+        return pulumi.get(self, "name")
 
 
