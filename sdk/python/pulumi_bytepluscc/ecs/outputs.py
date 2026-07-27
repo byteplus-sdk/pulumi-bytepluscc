@@ -26,6 +26,7 @@ __all__ = [
     'ImageSnapshot',
     'ImageTag',
     'InstanceCpuMemory',
+    'InstanceCpuOptions',
     'InstanceDataVolume',
     'InstanceEipAddress',
     'InstanceImage',
@@ -65,6 +66,7 @@ __all__ = [
     'GetImageSnapshotResult',
     'GetImageTagResult',
     'GetInstanceCpuMemoryResult',
+    'GetInstanceCpuOptionsResult',
     'GetInstanceDataVolumeResult',
     'GetInstanceEipAddressResult',
     'GetInstanceImageResult',
@@ -705,6 +707,52 @@ class InstanceCpuMemory(dict):
         Threads per core for the instance.
         """
         return pulumi.get(self, "threads_per_core")
+
+
+@pulumi.output_type
+class InstanceCpuOptions(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "topologyType":
+            suggest = "topology_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceCpuOptions. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceCpuOptions.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceCpuOptions.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 topology_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str topology_type: CPU topology mode. Available values:
+                   - ContinuousCoreToHTMapping: Continuous HT mode
+                   - DiscreteCoreToHTMapping (default): Discrete HT mode
+                 
+                 **Note:**
+                 This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+        """
+        if topology_type is not None:
+            pulumi.set(__self__, "topology_type", topology_type)
+
+    @_builtins.property
+    @pulumi.getter(name="topologyType")
+    def topology_type(self) -> Optional[_builtins.str]:
+        """
+        CPU topology mode. Available values:
+            - ContinuousCoreToHTMapping: Continuous HT mode
+            - DiscreteCoreToHTMapping (default): Discrete HT mode
+          
+          **Note:**
+          This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+        """
+        return pulumi.get(self, "topology_type")
 
 
 @pulumi.output_type
@@ -3920,6 +3968,34 @@ class GetInstanceCpuMemoryResult(dict):
         Threads per core for the instance.
         """
         return pulumi.get(self, "threads_per_core")
+
+
+@pulumi.output_type
+class GetInstanceCpuOptionsResult(dict):
+    def __init__(__self__, *,
+                 topology_type: _builtins.str):
+        """
+        :param _builtins.str topology_type: CPU topology mode. Available values:
+                   - ContinuousCoreToHTMapping: Continuous HT mode
+                   - DiscreteCoreToHTMapping (default): Discrete HT mode
+                 
+                 **Note:**
+                 This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+        """
+        pulumi.set(__self__, "topology_type", topology_type)
+
+    @_builtins.property
+    @pulumi.getter(name="topologyType")
+    def topology_type(self) -> _builtins.str:
+        """
+        CPU topology mode. Available values:
+            - ContinuousCoreToHTMapping: Continuous HT mode
+            - DiscreteCoreToHTMapping (default): Discrete HT mode
+          
+          **Note:**
+          This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+        """
+        return pulumi.get(self, "topology_type")
 
 
 @pulumi.output_type

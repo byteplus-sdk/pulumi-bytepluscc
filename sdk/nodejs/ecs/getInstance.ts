@@ -34,6 +34,7 @@ export interface GetInstanceResult {
     readonly autoRenewPeriod: number;
     readonly cpuMaxFrequency: number;
     readonly cpuMemory: outputs.ecs.GetInstanceCpuMemory;
+    readonly cpuOptions: outputs.ecs.GetInstanceCpuOptions;
     readonly createdAt: string;
     readonly creditSpecification: string;
     readonly dataVolumes: outputs.ecs.GetInstanceDataVolume[];

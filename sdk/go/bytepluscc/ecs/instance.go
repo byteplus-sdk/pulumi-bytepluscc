@@ -78,6 +78,9 @@ import (
 //					Delete_with_instance: true,
 //					Volume_type:          "ESSD_FlexPL",
 //				},
+//				CpuOptions: &ecs.InstanceCpuOptionsArgs{
+//					Topology_type: "DiscreteCoreToHTMapping",
+//				},
 //			})
 //			if err != nil {
 //				return err
@@ -125,6 +128,8 @@ type Instance struct {
 	CpuMaxFrequency pulumi.Float64Output `pulumi:"cpuMaxFrequency"`
 	// The CPU options for the instance.
 	CpuMemory InstanceCpuMemoryOutput `pulumi:"cpuMemory"`
+	// CPU configuration options for the instance
+	CpuOptions InstanceCpuOptionsOutput `pulumi:"cpuOptions"`
 	// Instance creation time.
 	CreatedAt pulumi.StringOutput `pulumi:"createdAt"`
 	// Burstable instance operating mode. Values:
@@ -365,6 +370,8 @@ type instanceState struct {
 	CpuMaxFrequency *float64 `pulumi:"cpuMaxFrequency"`
 	// The CPU options for the instance.
 	CpuMemory *InstanceCpuMemory `pulumi:"cpuMemory"`
+	// CPU configuration options for the instance
+	CpuOptions *InstanceCpuOptions `pulumi:"cpuOptions"`
 	// Instance creation time.
 	CreatedAt *string `pulumi:"createdAt"`
 	// Burstable instance operating mode. Values:
@@ -558,6 +565,8 @@ type InstanceState struct {
 	CpuMaxFrequency pulumi.Float64PtrInput
 	// The CPU options for the instance.
 	CpuMemory InstanceCpuMemoryPtrInput
+	// CPU configuration options for the instance
+	CpuOptions InstanceCpuOptionsPtrInput
 	// Instance creation time.
 	CreatedAt pulumi.StringPtrInput
 	// Burstable instance operating mode. Values:
@@ -751,6 +760,8 @@ type instanceArgs struct {
 	//     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
 	//     - This feature is in invitation-only testing. To use it, please contact your account manager.
 	CpuMaxFrequency *float64 `pulumi:"cpuMaxFrequency"`
+	// CPU configuration options for the instance
+	CpuOptions *InstanceCpuOptions `pulumi:"cpuOptions"`
 	// Burstable instance operating mode. Values:
 	//     - Standard: Standard mode.
 	//     - Unlimited: Unlimited performance mode (not supported yet).
@@ -919,6 +930,8 @@ type InstanceArgs struct {
 	//     - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
 	//     - This feature is in invitation-only testing. To use it, please contact your account manager.
 	CpuMaxFrequency pulumi.Float64PtrInput
+	// CPU configuration options for the instance
+	CpuOptions InstanceCpuOptionsPtrInput
 	// Burstable instance operating mode. Values:
 	//     - Standard: Standard mode.
 	//     - Unlimited: Unlimited performance mode (not supported yet).
@@ -1197,6 +1210,11 @@ func (o InstanceOutput) CpuMaxFrequency() pulumi.Float64Output {
 // The CPU options for the instance.
 func (o InstanceOutput) CpuMemory() InstanceCpuMemoryOutput {
 	return o.ApplyT(func(v *Instance) InstanceCpuMemoryOutput { return v.CpuMemory }).(InstanceCpuMemoryOutput)
+}
+
+// CPU configuration options for the instance
+func (o InstanceOutput) CpuOptions() InstanceCpuOptionsOutput {
+	return o.ApplyT(func(v *Instance) InstanceCpuOptionsOutput { return v.CpuOptions }).(InstanceCpuOptionsOutput)
 }
 
 // Instance creation time.

@@ -59,6 +59,9 @@ import * as utilities from "../utilities";
  *         delete_with_instance: true,
  *         volume_type: "ESSD_FlexPL",
  *     },
+ *     cpuOptions: {
+ *         topology_type: "DiscreteCoreToHTMapping",
+ *     },
  * });
  * ```
  *
@@ -139,6 +142,10 @@ export class Instance extends pulumi.CustomResource {
      * The CPU options for the instance.
      */
     declare public /*out*/ readonly cpuMemory: pulumi.Output<outputs.ecs.InstanceCpuMemory>;
+    /**
+     * CPU configuration options for the instance
+     */
+    declare public readonly cpuOptions: pulumi.Output<outputs.ecs.InstanceCpuOptions>;
     /**
      * Instance creation time.
      */
@@ -409,6 +416,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["autoRenewPeriod"] = state?.autoRenewPeriod;
             resourceInputs["cpuMaxFrequency"] = state?.cpuMaxFrequency;
             resourceInputs["cpuMemory"] = state?.cpuMemory;
+            resourceInputs["cpuOptions"] = state?.cpuOptions;
             resourceInputs["createdAt"] = state?.createdAt;
             resourceInputs["creditSpecification"] = state?.creditSpecification;
             resourceInputs["dataVolumes"] = state?.dataVolumes;
@@ -478,6 +486,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["autoRenew"] = args?.autoRenew;
             resourceInputs["autoRenewPeriod"] = args?.autoRenewPeriod;
             resourceInputs["cpuMaxFrequency"] = args?.cpuMaxFrequency;
+            resourceInputs["cpuOptions"] = args?.cpuOptions;
             resourceInputs["creditSpecification"] = args?.creditSpecification;
             resourceInputs["dataVolumes"] = args?.dataVolumes;
             resourceInputs["deletionProtection"] = args?.deletionProtection;
@@ -577,6 +586,10 @@ export interface InstanceState {
      * The CPU options for the instance.
      */
     cpuMemory?: pulumi.Input<inputs.ecs.InstanceCpuMemory | undefined>;
+    /**
+     * CPU configuration options for the instance
+     */
+    cpuOptions?: pulumi.Input<inputs.ecs.InstanceCpuOptions | undefined>;
     /**
      * Instance creation time.
      */
@@ -867,6 +880,10 @@ export interface InstanceArgs {
      *     - This feature is in invitation-only testing. To use it, please contact your account manager.
      */
     cpuMaxFrequency?: pulumi.Input<number | undefined>;
+    /**
+     * CPU configuration options for the instance
+     */
+    cpuOptions?: pulumi.Input<inputs.ecs.InstanceCpuOptions | undefined>;
     /**
      * Burstable instance operating mode. Values:
      *     - Standard: Standard mode.
