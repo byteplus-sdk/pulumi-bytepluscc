@@ -3,6 +3,7 @@
 
 package com.byteplus.bytepluscc.ecs;
 
+import com.byteplus.bytepluscc.ecs.inputs.InstanceCpuOptionsArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceDataVolumeArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceEipAddressArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceImageArgs;
@@ -133,6 +134,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Double>> cpuMaxFrequency() {
         return Optional.ofNullable(this.cpuMaxFrequency);
+    }
+
+    /**
+     * CPU configuration options for the instance
+     * 
+     */
+    @Import(name="cpuOptions")
+    private @Nullable Output<InstanceCpuOptionsArgs> cpuOptions;
+
+    /**
+     * @return CPU configuration options for the instance
+     * 
+     */
+    public Optional<Output<InstanceCpuOptionsArgs>> cpuOptions() {
+        return Optional.ofNullable(this.cpuOptions);
     }
 
     /**
@@ -795,6 +811,7 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.autoRenew = $.autoRenew;
         this.autoRenewPeriod = $.autoRenewPeriod;
         this.cpuMaxFrequency = $.cpuMaxFrequency;
+        this.cpuOptions = $.cpuOptions;
         this.creditSpecification = $.creditSpecification;
         this.dataVolumes = $.dataVolumes;
         this.deletionProtection = $.deletionProtection;
@@ -982,6 +999,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder cpuMaxFrequency(Double cpuMaxFrequency) {
             return cpuMaxFrequency(Output.of(cpuMaxFrequency));
+        }
+
+        /**
+         * @param cpuOptions CPU configuration options for the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuOptions(@Nullable Output<InstanceCpuOptionsArgs> cpuOptions) {
+            $.cpuOptions = cpuOptions;
+            return this;
+        }
+
+        /**
+         * @param cpuOptions CPU configuration options for the instance
+         * 
+         * @return builder
+         * 
+         */
+        public Builder cpuOptions(InstanceCpuOptionsArgs cpuOptions) {
+            return cpuOptions(Output.of(cpuOptions));
         }
 
         /**

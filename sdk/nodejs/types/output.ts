@@ -11022,6 +11022,18 @@ export namespace ecs {
         threadsPerCore: number;
     }
 
+    export interface GetInstanceCpuOptions {
+        /**
+         * CPU topology mode. Available values:
+         *     - ContinuousCoreToHTMapping: Continuous HT mode
+         *     - DiscreteCoreToHTMapping (default): Discrete HT mode
+         *   
+         *   **Note:**
+         *   This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+         */
+        topologyType: string;
+    }
+
     export interface GetInstanceDataVolume {
         /**
          * Whether the attached resources are deleted along with the instance.
@@ -11884,6 +11896,18 @@ export namespace ecs {
          * Threads per core for the instance.
          */
         threadsPerCore: number;
+    }
+
+    export interface InstanceCpuOptions {
+        /**
+         * CPU topology mode. Available values:
+         *     - ContinuousCoreToHTMapping: Continuous HT mode
+         *     - DiscreteCoreToHTMapping (default): Discrete HT mode
+         *   
+         *   **Note:**
+         *   This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+         */
+        topologyType: string;
     }
 
     export interface InstanceDataVolume {

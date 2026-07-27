@@ -5505,6 +5505,18 @@ export namespace ecs {
         threadsPerCore?: pulumi.Input<number | undefined>;
     }
 
+    export interface InstanceCpuOptions {
+        /**
+         * CPU topology mode. Available values:
+         *     - ContinuousCoreToHTMapping: Continuous HT mode
+         *     - DiscreteCoreToHTMapping (default): Discrete HT mode
+         *   
+         *   **Note:**
+         *   This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+         */
+        topologyType?: pulumi.Input<string | undefined>;
+    }
+
     export interface InstanceDataVolume {
         /**
          * Whether the attached resources are deleted along with the instance.

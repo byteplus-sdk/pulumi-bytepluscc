@@ -35,6 +35,8 @@ __all__ = [
     'ImageTagArgsDict',
     'InstanceCpuMemoryArgs',
     'InstanceCpuMemoryArgsDict',
+    'InstanceCpuOptionsArgs',
+    'InstanceCpuOptionsArgsDict',
     'InstanceDataVolumeArgs',
     'InstanceDataVolumeArgsDict',
     'InstanceEipAddressArgs',
@@ -846,6 +848,50 @@ class InstanceCpuMemoryArgs:
     @threads_per_core.setter
     def threads_per_core(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "threads_per_core", value)
+
+
+class InstanceCpuOptionsArgsDict(TypedDict):
+    topology_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    CPU topology mode. Available values:
+        - ContinuousCoreToHTMapping: Continuous HT mode
+        - DiscreteCoreToHTMapping (default): Discrete HT mode
+      
+      **Note:**
+      This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+    """
+
+@pulumi.input_type
+class InstanceCpuOptionsArgs:
+    def __init__(__self__, *,
+                 topology_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] topology_type: CPU topology mode. Available values:
+                   - ContinuousCoreToHTMapping: Continuous HT mode
+                   - DiscreteCoreToHTMapping (default): Discrete HT mode
+                 
+                 **Note:**
+                 This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+        """
+        if topology_type is not None:
+            pulumi.set(__self__, "topology_type", topology_type)
+
+    @_builtins.property
+    @pulumi.getter(name="topologyType")
+    def topology_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        CPU topology mode. Available values:
+            - ContinuousCoreToHTMapping: Continuous HT mode
+            - DiscreteCoreToHTMapping (default): Discrete HT mode
+          
+          **Note:**
+          This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+        """
+        return pulumi.get(self, "topology_type")
+
+    @topology_type.setter
+    def topology_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "topology_type", value)
 
 
 class InstanceDataVolumeArgsDict(TypedDict):

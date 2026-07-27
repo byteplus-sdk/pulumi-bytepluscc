@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, affinity_group_id=None, affinity_group_size=None, auto_pay=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, created_at=None, credit_specification=None, data_volumes=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, elastic_scheduled_instance_type=None, enable_jumbo_frame=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, include_data_volumes=None, install_run_command_agent=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, local_volumes=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, rdma_ip_addresses=None, rdma_network_interface_details=None, renew_info=None, role_names=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, affinity_group_id=None, affinity_group_size=None, auto_pay=None, auto_renew=None, auto_renew_period=None, cpu_max_frequency=None, cpu_memory=None, cpu_options=None, created_at=None, credit_specification=None, data_volumes=None, deletion_protection=None, deployment_set_group_number=None, deployment_set_id=None, description=None, eip_address=None, elastic_scheduled_instance_type=None, enable_jumbo_frame=None, expired_at=None, hostname=None, hpc_cluster_id=None, id=None, image=None, include_data_volumes=None, install_run_command_agent=None, instance_charge_type=None, instance_id=None, instance_name=None, instance_type=None, key_pair=None, local_volumes=None, operation_system=None, password=None, period=None, period_unit=None, placement=None, primary_network_interface=None, project_name=None, rdma_ip_addresses=None, rdma_network_interface_details=None, renew_info=None, role_names=None, secondary_network_interfaces=None, spot_price_limit=None, spot_strategy=None, status=None, stopped_mode=None, system_volume=None, tags=None, updated_at=None, user_data=None, vpc_id=None, zone_id=None):
         if affinity_group_id and not isinstance(affinity_group_id, str):
             raise TypeError("Expected argument 'affinity_group_id' to be a str")
         pulumi.set(__self__, "affinity_group_id", affinity_group_id)
@@ -49,6 +49,9 @@ class GetInstanceResult:
         if cpu_memory and not isinstance(cpu_memory, dict):
             raise TypeError("Expected argument 'cpu_memory' to be a dict")
         pulumi.set(__self__, "cpu_memory", cpu_memory)
+        if cpu_options and not isinstance(cpu_options, dict):
+            raise TypeError("Expected argument 'cpu_options' to be a dict")
+        pulumi.set(__self__, "cpu_options", cpu_options)
         if created_at and not isinstance(created_at, str):
             raise TypeError("Expected argument 'created_at' to be a str")
         pulumi.set(__self__, "created_at", created_at)
@@ -219,6 +222,11 @@ class GetInstanceResult:
     @pulumi.getter(name="cpuMemory")
     def cpu_memory(self) -> 'outputs.GetInstanceCpuMemoryResult':
         return pulumi.get(self, "cpu_memory")
+
+    @_builtins.property
+    @pulumi.getter(name="cpuOptions")
+    def cpu_options(self) -> 'outputs.GetInstanceCpuOptionsResult':
+        return pulumi.get(self, "cpu_options")
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -459,6 +467,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             auto_renew_period=self.auto_renew_period,
             cpu_max_frequency=self.cpu_max_frequency,
             cpu_memory=self.cpu_memory,
+            cpu_options=self.cpu_options,
             created_at=self.created_at,
             credit_specification=self.credit_specification,
             data_volumes=self.data_volumes,
@@ -524,6 +533,7 @@ def get_instance(id: Optional[_builtins.str] = None,
         auto_renew_period=pulumi.get(__ret__, 'auto_renew_period'),
         cpu_max_frequency=pulumi.get(__ret__, 'cpu_max_frequency'),
         cpu_memory=pulumi.get(__ret__, 'cpu_memory'),
+        cpu_options=pulumi.get(__ret__, 'cpu_options'),
         created_at=pulumi.get(__ret__, 'created_at'),
         credit_specification=pulumi.get(__ret__, 'credit_specification'),
         data_volumes=pulumi.get(__ret__, 'data_volumes'),
@@ -586,6 +596,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         auto_renew_period=pulumi.get(__response__, 'auto_renew_period'),
         cpu_max_frequency=pulumi.get(__response__, 'cpu_max_frequency'),
         cpu_memory=pulumi.get(__response__, 'cpu_memory'),
+        cpu_options=pulumi.get(__response__, 'cpu_options'),
         created_at=pulumi.get(__response__, 'created_at'),
         credit_specification=pulumi.get(__response__, 'credit_specification'),
         data_volumes=pulumi.get(__response__, 'data_volumes'),

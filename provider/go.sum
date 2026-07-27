@@ -138,8 +138,8 @@ github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.68 h1:HBus7SmCF5Pzd84pMQE4699CCM
 github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.68/go.mod h1:eqR3bDX3XtdPBcB9vERznOyi0MAcAI1GFAdcRspNMBU=
 github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 h1:rrlsRCitt/isPkfLGPQFHf8G65iyxSgNgG2PbAR5v4Y=
 github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16/go.mod h1:7iCaE+dR9EycrJU0GQyMhptbInLbQhsKXiDKDjNi8Vs=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.47 h1:dwkSGvZC+C2O9kq933c1k0ZMRss+ehqafkO3eGDI+3M=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.47/go.mod h1:gbHyQQgDLH5CS2P1kE1vafSlmwSieRnxQma1RjftQ50=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.48 h1:mTd4+AjnH0QMepGMH/LVWriaxlYOvwnheDo+Sl4qH+4=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.48/go.mod h1:gbHyQQgDLH5CS2P1kE1vafSlmwSieRnxQma1RjftQ50=
 github.com/cenkalti/backoff/v4 v4.3.0 h1:MyRJ/UdXutAwSAT+s3wNd7MfTIcy71VQueUuFK343L8=
 github.com/cenkalti/backoff/v4 v4.3.0/go.mod h1:Y3VNntkOUPxTVeUxJ/G5vcM//AlwfmyYozVcomhLiZE=
 github.com/cenkalti/backoff/v5 v5.0.3 h1:ZN+IMa753KfX5hd8vVaMixjnqRZ3y8CuJKRKj1xcsSM=

@@ -1364,6 +1364,167 @@ func (o InstanceCpuMemoryPtrOutput) ThreadsPerCore() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
+type InstanceCpuOptions struct {
+	// CPU topology mode. Available values:
+	//     - ContinuousCoreToHTMapping: Continuous HT mode
+	//     - DiscreteCoreToHTMapping (default): Discrete HT mode
+	//
+	//   **Note:**
+	//   This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+	TopologyType *string `pulumi:"topologyType"`
+}
+
+// InstanceCpuOptionsInput is an input type that accepts InstanceCpuOptionsArgs and InstanceCpuOptionsOutput values.
+// You can construct a concrete instance of `InstanceCpuOptionsInput` via:
+//
+//	InstanceCpuOptionsArgs{...}
+type InstanceCpuOptionsInput interface {
+	pulumi.Input
+
+	ToInstanceCpuOptionsOutput() InstanceCpuOptionsOutput
+	ToInstanceCpuOptionsOutputWithContext(context.Context) InstanceCpuOptionsOutput
+}
+
+type InstanceCpuOptionsArgs struct {
+	// CPU topology mode. Available values:
+	//     - ContinuousCoreToHTMapping: Continuous HT mode
+	//     - DiscreteCoreToHTMapping (default): Discrete HT mode
+	//
+	//   **Note:**
+	//   This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+	TopologyType pulumi.StringPtrInput `pulumi:"topologyType"`
+}
+
+func (InstanceCpuOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceCpuOptions)(nil)).Elem()
+}
+
+func (i InstanceCpuOptionsArgs) ToInstanceCpuOptionsOutput() InstanceCpuOptionsOutput {
+	return i.ToInstanceCpuOptionsOutputWithContext(context.Background())
+}
+
+func (i InstanceCpuOptionsArgs) ToInstanceCpuOptionsOutputWithContext(ctx context.Context) InstanceCpuOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCpuOptionsOutput)
+}
+
+func (i InstanceCpuOptionsArgs) ToInstanceCpuOptionsPtrOutput() InstanceCpuOptionsPtrOutput {
+	return i.ToInstanceCpuOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceCpuOptionsArgs) ToInstanceCpuOptionsPtrOutputWithContext(ctx context.Context) InstanceCpuOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCpuOptionsOutput).ToInstanceCpuOptionsPtrOutputWithContext(ctx)
+}
+
+// InstanceCpuOptionsPtrInput is an input type that accepts InstanceCpuOptionsArgs, InstanceCpuOptionsPtr and InstanceCpuOptionsPtrOutput values.
+// You can construct a concrete instance of `InstanceCpuOptionsPtrInput` via:
+//
+//	        InstanceCpuOptionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceCpuOptionsPtrInput interface {
+	pulumi.Input
+
+	ToInstanceCpuOptionsPtrOutput() InstanceCpuOptionsPtrOutput
+	ToInstanceCpuOptionsPtrOutputWithContext(context.Context) InstanceCpuOptionsPtrOutput
+}
+
+type instanceCpuOptionsPtrType InstanceCpuOptionsArgs
+
+func InstanceCpuOptionsPtr(v *InstanceCpuOptionsArgs) InstanceCpuOptionsPtrInput {
+	return (*instanceCpuOptionsPtrType)(v)
+}
+
+func (*instanceCpuOptionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceCpuOptions)(nil)).Elem()
+}
+
+func (i *instanceCpuOptionsPtrType) ToInstanceCpuOptionsPtrOutput() InstanceCpuOptionsPtrOutput {
+	return i.ToInstanceCpuOptionsPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceCpuOptionsPtrType) ToInstanceCpuOptionsPtrOutputWithContext(ctx context.Context) InstanceCpuOptionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCpuOptionsPtrOutput)
+}
+
+type InstanceCpuOptionsOutput struct{ *pulumi.OutputState }
+
+func (InstanceCpuOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceCpuOptions)(nil)).Elem()
+}
+
+func (o InstanceCpuOptionsOutput) ToInstanceCpuOptionsOutput() InstanceCpuOptionsOutput {
+	return o
+}
+
+func (o InstanceCpuOptionsOutput) ToInstanceCpuOptionsOutputWithContext(ctx context.Context) InstanceCpuOptionsOutput {
+	return o
+}
+
+func (o InstanceCpuOptionsOutput) ToInstanceCpuOptionsPtrOutput() InstanceCpuOptionsPtrOutput {
+	return o.ToInstanceCpuOptionsPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceCpuOptionsOutput) ToInstanceCpuOptionsPtrOutputWithContext(ctx context.Context) InstanceCpuOptionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceCpuOptions) *InstanceCpuOptions {
+		return &v
+	}).(InstanceCpuOptionsPtrOutput)
+}
+
+// CPU topology mode. Available values:
+//
+//   - ContinuousCoreToHTMapping: Continuous HT mode
+//
+//   - DiscreteCoreToHTMapping (default): Discrete HT mode
+//
+//     **Note:**
+//     This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+func (o InstanceCpuOptionsOutput) TopologyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceCpuOptions) *string { return v.TopologyType }).(pulumi.StringPtrOutput)
+}
+
+type InstanceCpuOptionsPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceCpuOptionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceCpuOptions)(nil)).Elem()
+}
+
+func (o InstanceCpuOptionsPtrOutput) ToInstanceCpuOptionsPtrOutput() InstanceCpuOptionsPtrOutput {
+	return o
+}
+
+func (o InstanceCpuOptionsPtrOutput) ToInstanceCpuOptionsPtrOutputWithContext(ctx context.Context) InstanceCpuOptionsPtrOutput {
+	return o
+}
+
+func (o InstanceCpuOptionsPtrOutput) Elem() InstanceCpuOptionsOutput {
+	return o.ApplyT(func(v *InstanceCpuOptions) InstanceCpuOptions {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceCpuOptions
+		return ret
+	}).(InstanceCpuOptionsOutput)
+}
+
+// CPU topology mode. Available values:
+//
+//   - ContinuousCoreToHTMapping: Continuous HT mode
+//
+//   - DiscreteCoreToHTMapping (default): Discrete HT mode
+//
+//     **Note:**
+//     This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+func (o InstanceCpuOptionsPtrOutput) TopologyType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceCpuOptions) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopologyType
+	}).(pulumi.StringPtrOutput)
+}
+
 type InstanceDataVolume struct {
 	// Whether the attached resources are deleted along with the instance.
 	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
@@ -7812,6 +7973,75 @@ func (o GetInstanceCpuMemoryOutput) ThreadsPerCore() pulumi.IntOutput {
 	return o.ApplyT(func(v GetInstanceCpuMemory) int { return v.ThreadsPerCore }).(pulumi.IntOutput)
 }
 
+type GetInstanceCpuOptions struct {
+	// CPU topology mode. Available values:
+	//     - ContinuousCoreToHTMapping: Continuous HT mode
+	//     - DiscreteCoreToHTMapping (default): Discrete HT mode
+	//
+	//   **Note:**
+	//   This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+	TopologyType string `pulumi:"topologyType"`
+}
+
+// GetInstanceCpuOptionsInput is an input type that accepts GetInstanceCpuOptionsArgs and GetInstanceCpuOptionsOutput values.
+// You can construct a concrete instance of `GetInstanceCpuOptionsInput` via:
+//
+//	GetInstanceCpuOptionsArgs{...}
+type GetInstanceCpuOptionsInput interface {
+	pulumi.Input
+
+	ToGetInstanceCpuOptionsOutput() GetInstanceCpuOptionsOutput
+	ToGetInstanceCpuOptionsOutputWithContext(context.Context) GetInstanceCpuOptionsOutput
+}
+
+type GetInstanceCpuOptionsArgs struct {
+	// CPU topology mode. Available values:
+	//     - ContinuousCoreToHTMapping: Continuous HT mode
+	//     - DiscreteCoreToHTMapping (default): Discrete HT mode
+	//
+	//   **Note:**
+	//   This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+	TopologyType pulumi.StringInput `pulumi:"topologyType"`
+}
+
+func (GetInstanceCpuOptionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceCpuOptions)(nil)).Elem()
+}
+
+func (i GetInstanceCpuOptionsArgs) ToGetInstanceCpuOptionsOutput() GetInstanceCpuOptionsOutput {
+	return i.ToGetInstanceCpuOptionsOutputWithContext(context.Background())
+}
+
+func (i GetInstanceCpuOptionsArgs) ToGetInstanceCpuOptionsOutputWithContext(ctx context.Context) GetInstanceCpuOptionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceCpuOptionsOutput)
+}
+
+type GetInstanceCpuOptionsOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceCpuOptionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceCpuOptions)(nil)).Elem()
+}
+
+func (o GetInstanceCpuOptionsOutput) ToGetInstanceCpuOptionsOutput() GetInstanceCpuOptionsOutput {
+	return o
+}
+
+func (o GetInstanceCpuOptionsOutput) ToGetInstanceCpuOptionsOutputWithContext(ctx context.Context) GetInstanceCpuOptionsOutput {
+	return o
+}
+
+// CPU topology mode. Available values:
+//
+//   - ContinuousCoreToHTMapping: Continuous HT mode
+//
+//   - DiscreteCoreToHTMapping (default): Discrete HT mode
+//
+//     **Note:**
+//     This feature is currently in invitation-only testing. To use it, please contact your account manager to apply.
+func (o GetInstanceCpuOptionsOutput) TopologyType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceCpuOptions) string { return v.TopologyType }).(pulumi.StringOutput)
+}
+
 type GetInstanceDataVolume struct {
 	// Whether the attached resources are deleted along with the instance.
 	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
@@ -11371,6 +11601,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ImageTagArrayInput)(nil)).Elem(), ImageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCpuMemoryInput)(nil)).Elem(), InstanceCpuMemoryArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCpuMemoryPtrInput)(nil)).Elem(), InstanceCpuMemoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCpuOptionsInput)(nil)).Elem(), InstanceCpuOptionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCpuOptionsPtrInput)(nil)).Elem(), InstanceCpuOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceDataVolumeInput)(nil)).Elem(), InstanceDataVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceDataVolumeArrayInput)(nil)).Elem(), InstanceDataVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceEipAddressInput)(nil)).Elem(), InstanceEipAddressArgs{})
@@ -11446,6 +11678,7 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageTagInput)(nil)).Elem(), GetImageTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetImageTagArrayInput)(nil)).Elem(), GetImageTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCpuMemoryInput)(nil)).Elem(), GetInstanceCpuMemoryArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCpuOptionsInput)(nil)).Elem(), GetInstanceCpuOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDataVolumeInput)(nil)).Elem(), GetInstanceDataVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceDataVolumeArrayInput)(nil)).Elem(), GetInstanceDataVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceEipAddressInput)(nil)).Elem(), GetInstanceEipAddressArgs{})
@@ -11511,6 +11744,8 @@ func init() {
 	pulumi.RegisterOutputType(ImageTagArrayOutput{})
 	pulumi.RegisterOutputType(InstanceCpuMemoryOutput{})
 	pulumi.RegisterOutputType(InstanceCpuMemoryPtrOutput{})
+	pulumi.RegisterOutputType(InstanceCpuOptionsOutput{})
+	pulumi.RegisterOutputType(InstanceCpuOptionsPtrOutput{})
 	pulumi.RegisterOutputType(InstanceDataVolumeOutput{})
 	pulumi.RegisterOutputType(InstanceDataVolumeArrayOutput{})
 	pulumi.RegisterOutputType(InstanceEipAddressOutput{})
@@ -11586,6 +11821,7 @@ func init() {
 	pulumi.RegisterOutputType(GetImageTagOutput{})
 	pulumi.RegisterOutputType(GetImageTagArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceCpuMemoryOutput{})
+	pulumi.RegisterOutputType(GetInstanceCpuOptionsOutput{})
 	pulumi.RegisterOutputType(GetInstanceDataVolumeOutput{})
 	pulumi.RegisterOutputType(GetInstanceDataVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceEipAddressOutput{})

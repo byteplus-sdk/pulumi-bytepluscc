@@ -36,6 +36,7 @@ type LookupInstanceResult struct {
 	AutoRenewPeriod              int                                     `pulumi:"autoRenewPeriod"`
 	CpuMaxFrequency              float64                                 `pulumi:"cpuMaxFrequency"`
 	CpuMemory                    GetInstanceCpuMemory                    `pulumi:"cpuMemory"`
+	CpuOptions                   GetInstanceCpuOptions                   `pulumi:"cpuOptions"`
 	CreatedAt                    string                                  `pulumi:"createdAt"`
 	CreditSpecification          string                                  `pulumi:"creditSpecification"`
 	DataVolumes                  []GetInstanceDataVolume                 `pulumi:"dataVolumes"`
@@ -142,6 +143,10 @@ func (o LookupInstanceResultOutput) CpuMaxFrequency() pulumi.Float64Output {
 
 func (o LookupInstanceResultOutput) CpuMemory() GetInstanceCpuMemoryOutput {
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceCpuMemory { return v.CpuMemory }).(GetInstanceCpuMemoryOutput)
+}
+
+func (o LookupInstanceResultOutput) CpuOptions() GetInstanceCpuOptionsOutput {
+	return o.ApplyT(func(v LookupInstanceResult) GetInstanceCpuOptions { return v.CpuOptions }).(GetInstanceCpuOptionsOutput)
 }
 
 func (o LookupInstanceResultOutput) CreatedAt() pulumi.StringOutput {

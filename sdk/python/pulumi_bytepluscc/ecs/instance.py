@@ -32,6 +32,7 @@ class InstanceArgs:
                  auto_renew: pulumi.Input[Optional[_builtins.bool]] = None,
                  auto_renew_period: pulumi.Input[Optional[_builtins.int]] = None,
                  cpu_max_frequency: pulumi.Input[Optional[_builtins.float]] = None,
+                 cpu_options: pulumi.Input[Optional['InstanceCpuOptionsArgs']] = None,
                  credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
                  data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceDataVolumeArgs']]]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -94,6 +95,7 @@ class InstanceArgs:
                  **Note:**
                    - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
                    - This feature is in invitation-only testing. To use it, please contact your account manager.
+        :param pulumi.Input['InstanceCpuOptionsArgs'] cpu_options: CPU configuration options for the instance
         :param pulumi.Input[_builtins.str] credit_specification: Burstable instance operating mode. Values:
                    - Standard: Standard mode.
                    - Unlimited: Unlimited performance mode (not supported yet).
@@ -205,6 +207,8 @@ class InstanceArgs:
             pulumi.set(__self__, "auto_renew_period", auto_renew_period)
         if cpu_max_frequency is not None:
             pulumi.set(__self__, "cpu_max_frequency", cpu_max_frequency)
+        if cpu_options is not None:
+            pulumi.set(__self__, "cpu_options", cpu_options)
         if credit_specification is not None:
             pulumi.set(__self__, "credit_specification", credit_specification)
         if data_volumes is not None:
@@ -413,6 +417,18 @@ class InstanceArgs:
     @cpu_max_frequency.setter
     def cpu_max_frequency(self, value: pulumi.Input[Optional[_builtins.float]]):
         pulumi.set(self, "cpu_max_frequency", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuOptions")
+    def cpu_options(self) -> pulumi.Input[Optional['InstanceCpuOptionsArgs']]:
+        """
+        CPU configuration options for the instance
+        """
+        return pulumi.get(self, "cpu_options")
+
+    @cpu_options.setter
+    def cpu_options(self, value: pulumi.Input[Optional['InstanceCpuOptionsArgs']]):
+        pulumi.set(self, "cpu_options", value)
 
     @_builtins.property
     @pulumi.getter(name="creditSpecification")
@@ -827,6 +843,7 @@ class _InstanceState:
                  auto_renew_period: pulumi.Input[Optional[_builtins.int]] = None,
                  cpu_max_frequency: pulumi.Input[Optional[_builtins.float]] = None,
                  cpu_memory: pulumi.Input[Optional['InstanceCpuMemoryArgs']] = None,
+                 cpu_options: pulumi.Input[Optional['InstanceCpuOptionsArgs']] = None,
                  created_at: pulumi.Input[Optional[_builtins.str]] = None,
                  credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
                  data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceDataVolumeArgs']]]] = None,
@@ -896,6 +913,7 @@ class _InstanceState:
                    - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
                    - This feature is in invitation-only testing. To use it, please contact your account manager.
         :param pulumi.Input['InstanceCpuMemoryArgs'] cpu_memory: The CPU options for the instance.
+        :param pulumi.Input['InstanceCpuOptionsArgs'] cpu_options: CPU configuration options for the instance
         :param pulumi.Input[_builtins.str] created_at: Instance creation time.
         :param pulumi.Input[_builtins.str] credit_specification: Burstable instance operating mode. Values:
                    - Standard: Standard mode.
@@ -1028,6 +1046,8 @@ class _InstanceState:
             pulumi.set(__self__, "cpu_max_frequency", cpu_max_frequency)
         if cpu_memory is not None:
             pulumi.set(__self__, "cpu_memory", cpu_memory)
+        if cpu_options is not None:
+            pulumi.set(__self__, "cpu_options", cpu_options)
         if created_at is not None:
             pulumi.set(__self__, "created_at", created_at)
         if credit_specification is not None:
@@ -1215,6 +1235,18 @@ class _InstanceState:
     @cpu_memory.setter
     def cpu_memory(self, value: pulumi.Input[Optional['InstanceCpuMemoryArgs']]):
         pulumi.set(self, "cpu_memory", value)
+
+    @_builtins.property
+    @pulumi.getter(name="cpuOptions")
+    def cpu_options(self) -> pulumi.Input[Optional['InstanceCpuOptionsArgs']]:
+        """
+        CPU configuration options for the instance
+        """
+        return pulumi.get(self, "cpu_options")
+
+    @cpu_options.setter
+    def cpu_options(self, value: pulumi.Input[Optional['InstanceCpuOptionsArgs']]):
+        pulumi.set(self, "cpu_options", value)
 
     @_builtins.property
     @pulumi.getter(name="createdAt")
@@ -1829,6 +1861,7 @@ class Instance(pulumi.CustomResource):
                  auto_renew: pulumi.Input[Optional[_builtins.bool]] = None,
                  auto_renew_period: pulumi.Input[Optional[_builtins.int]] = None,
                  cpu_max_frequency: pulumi.Input[Optional[_builtins.float]] = None,
+                 cpu_options: pulumi.Input[Optional[Union['InstanceCpuOptionsArgs', 'InstanceCpuOptionsArgsDict']]] = None,
                  credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
                  data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceDataVolumeArgs', 'InstanceDataVolumeArgsDict']]]]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1916,6 +1949,9 @@ class Instance(pulumi.CustomResource):
                 "size": 50,
                 "delete_with_instance": True,
                 "volume_type": "ESSD_FlexPL",
+            },
+            cpu_options={
+                "topology_type": "DiscreteCoreToHTMapping",
             })
         ```
 
@@ -1948,6 +1984,7 @@ class Instance(pulumi.CustomResource):
                  **Note:**
                    - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
                    - This feature is in invitation-only testing. To use it, please contact your account manager.
+        :param pulumi.Input[Union['InstanceCpuOptionsArgs', 'InstanceCpuOptionsArgsDict']] cpu_options: CPU configuration options for the instance
         :param pulumi.Input[_builtins.str] credit_specification: Burstable instance operating mode. Values:
                    - Standard: Standard mode.
                    - Unlimited: Unlimited performance mode (not supported yet).
@@ -2112,6 +2149,9 @@ class Instance(pulumi.CustomResource):
                 "size": 50,
                 "delete_with_instance": True,
                 "volume_type": "ESSD_FlexPL",
+            },
+            cpu_options={
+                "topology_type": "DiscreteCoreToHTMapping",
             })
         ```
 
@@ -2142,6 +2182,7 @@ class Instance(pulumi.CustomResource):
                  auto_renew: pulumi.Input[Optional[_builtins.bool]] = None,
                  auto_renew_period: pulumi.Input[Optional[_builtins.int]] = None,
                  cpu_max_frequency: pulumi.Input[Optional[_builtins.float]] = None,
+                 cpu_options: pulumi.Input[Optional[Union['InstanceCpuOptionsArgs', 'InstanceCpuOptionsArgsDict']]] = None,
                  credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
                  data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceDataVolumeArgs', 'InstanceDataVolumeArgsDict']]]]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -2190,6 +2231,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["auto_renew"] = auto_renew
             __props__.__dict__["auto_renew_period"] = auto_renew_period
             __props__.__dict__["cpu_max_frequency"] = cpu_max_frequency
+            __props__.__dict__["cpu_options"] = cpu_options
             __props__.__dict__["credit_specification"] = credit_specification
             __props__.__dict__["data_volumes"] = data_volumes
             __props__.__dict__["deletion_protection"] = deletion_protection
@@ -2265,6 +2307,7 @@ class Instance(pulumi.CustomResource):
             auto_renew_period: pulumi.Input[Optional[_builtins.int]] = None,
             cpu_max_frequency: pulumi.Input[Optional[_builtins.float]] = None,
             cpu_memory: pulumi.Input[Optional[Union['InstanceCpuMemoryArgs', 'InstanceCpuMemoryArgsDict']]] = None,
+            cpu_options: pulumi.Input[Optional[Union['InstanceCpuOptionsArgs', 'InstanceCpuOptionsArgsDict']]] = None,
             created_at: pulumi.Input[Optional[_builtins.str]] = None,
             credit_specification: pulumi.Input[Optional[_builtins.str]] = None,
             data_volumes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceDataVolumeArgs', 'InstanceDataVolumeArgsDict']]]]] = None,
@@ -2338,6 +2381,7 @@ class Instance(pulumi.CustomResource):
                    - Currently, only g3al, c3al, r3al, g4i, c4i, r4i, g4ie, c4ie, r4ie instances support this parameter. For base/turbo frequencies and more information, see [Instance Specifications Introduction](https://www.volcengine.com/docs/6396/70840).
                    - This feature is in invitation-only testing. To use it, please contact your account manager.
         :param pulumi.Input[Union['InstanceCpuMemoryArgs', 'InstanceCpuMemoryArgsDict']] cpu_memory: The CPU options for the instance.
+        :param pulumi.Input[Union['InstanceCpuOptionsArgs', 'InstanceCpuOptionsArgsDict']] cpu_options: CPU configuration options for the instance
         :param pulumi.Input[_builtins.str] created_at: Instance creation time.
         :param pulumi.Input[_builtins.str] credit_specification: Burstable instance operating mode. Values:
                    - Standard: Standard mode.
@@ -2467,6 +2511,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["auto_renew_period"] = auto_renew_period
         __props__.__dict__["cpu_max_frequency"] = cpu_max_frequency
         __props__.__dict__["cpu_memory"] = cpu_memory
+        __props__.__dict__["cpu_options"] = cpu_options
         __props__.__dict__["created_at"] = created_at
         __props__.__dict__["credit_specification"] = credit_specification
         __props__.__dict__["data_volumes"] = data_volumes
@@ -2583,6 +2628,14 @@ class Instance(pulumi.CustomResource):
         The CPU options for the instance.
         """
         return pulumi.get(self, "cpu_memory")
+
+    @_builtins.property
+    @pulumi.getter(name="cpuOptions")
+    def cpu_options(self) -> pulumi.Output['outputs.InstanceCpuOptions']:
+        """
+        CPU configuration options for the instance
+        """
+        return pulumi.get(self, "cpu_options")
 
     @_builtins.property
     @pulumi.getter(name="createdAt")

@@ -83,6 +83,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
     ///             Delete_with_instance = true,
     ///             Volume_type = "ESSD_FlexPL",
     ///         },
+    ///         CpuOptions = new Bytepluscc.Ecs.Inputs.InstanceCpuOptionsArgs
+    ///         {
+    ///             Topology_type = "DiscreteCoreToHTMapping",
+    ///         },
     ///     });
     /// 
     /// });
@@ -153,6 +157,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Output("cpuMemory")]
         public Output<Outputs.InstanceCpuMemory> CpuMemory { get; private set; } = null!;
+
+        /// <summary>
+        /// CPU configuration options for the instance
+        /// </summary>
+        [Output("cpuOptions")]
+        public Output<Outputs.InstanceCpuOptions> CpuOptions { get; private set; } = null!;
 
         /// <summary>
         /// Instance creation time.
@@ -584,6 +594,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public Input<double>? CpuMaxFrequency { get; set; }
 
         /// <summary>
+        /// CPU configuration options for the instance
+        /// </summary>
+        [Input("cpuOptions")]
+        public Input<Inputs.InstanceCpuOptionsArgs>? CpuOptions { get; set; }
+
+        /// <summary>
         /// Burstable instance operating mode. Values:
         ///     - Standard: Standard mode.
         ///     - Unlimited: Unlimited performance mode (not supported yet).
@@ -946,6 +962,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         /// </summary>
         [Input("cpuMemory")]
         public Input<Inputs.InstanceCpuMemoryGetArgs>? CpuMemory { get; set; }
+
+        /// <summary>
+        /// CPU configuration options for the instance
+        /// </summary>
+        [Input("cpuOptions")]
+        public Input<Inputs.InstanceCpuOptionsGetArgs>? CpuOptions { get; set; }
 
         /// <summary>
         /// Instance creation time.

@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.ecs.InstanceArgs;
 import com.byteplus.bytepluscc.ecs.inputs.InstanceState;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceCpuMemory;
+import com.byteplus.bytepluscc.ecs.outputs.InstanceCpuOptions;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceDataVolume;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceEipAddress;
 import com.byteplus.bytepluscc.ecs.outputs.InstanceImage;
@@ -52,6 +53,7 @@ import javax.annotation.Nullable;
  * import com.pulumi.bytepluscc.ecs.inputs.InstanceSecondaryNetworkInterfaceArgs;
  * import com.pulumi.bytepluscc.ecs.inputs.InstancePlacementArgs;
  * import com.pulumi.bytepluscc.ecs.inputs.InstanceSystemVolumeArgs;
+ * import com.pulumi.bytepluscc.ecs.inputs.InstanceCpuOptionsArgs;
  * import java.util.ArrayList;
  * import java.util.Arrays;
  * import java.util.Map;
@@ -108,6 +110,9 @@ import javax.annotation.Nullable;
  *                 .size(50)
  *                 .delete_with_instance(true)
  *                 .volume_type("ESSD_FlexPL")
+ *                 .build())
+ *             .cpuOptions(InstanceCpuOptionsArgs.builder()
+ *                 .topology_type("DiscreteCoreToHTMapping")
  *                 .build())
  *             .build());
  * 
@@ -253,6 +258,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<InstanceCpuMemory> cpuMemory() {
         return this.cpuMemory;
+    }
+    /**
+     * CPU configuration options for the instance
+     * 
+     */
+    @Export(name="cpuOptions", refs={InstanceCpuOptions.class}, tree="[0]")
+    private Output<InstanceCpuOptions> cpuOptions;
+
+    /**
+     * @return CPU configuration options for the instance
+     * 
+     */
+    public Output<InstanceCpuOptions> cpuOptions() {
+        return this.cpuOptions;
     }
     /**
      * Instance creation time.
