@@ -1013,3 +1013,5 @@ class HostGroupRelatedRuleArgs:
     @rule_type.setter
     def rule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_type", value)
+
+

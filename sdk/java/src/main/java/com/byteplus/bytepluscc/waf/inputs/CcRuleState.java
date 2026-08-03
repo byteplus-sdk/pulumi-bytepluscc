@@ -21,14 +21,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.
-     *
+     * 
      */
     @Import(name="accurateGroup")
     private @Nullable Output<CcRuleAccurateGroupArgs> accurateGroup;
 
     /**
      * @return Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.
-     *
+     * 
      */
     public Optional<Output<CcRuleAccurateGroupArgs>> accurateGroup() {
         return Optional.ofNullable(this.accurateGroup);
@@ -36,14 +36,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.
-     *
+     * 
      */
     @Import(name="ccType")
     private @Nullable Output<Integer> ccType;
 
     /**
      * @return Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.
-     *
+     * 
      */
     public Optional<Output<Integer>> ccType() {
         return Optional.ofNullable(this.ccType);
@@ -51,14 +51,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Statistical time window, unit: seconds. Range: 5–1800.
-     *
+     * 
      */
     @Import(name="countTime")
     private @Nullable Output<Integer> countTime;
 
     /**
      * @return Statistical time window, unit: seconds. Range: 5–1800.
-     *
+     * 
      */
     public Optional<Output<Integer>> countTime() {
         return Optional.ofNullable(this.countTime);
@@ -67,7 +67,7 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
     /**
      * Scheduled activation configuration list. Required only when CronEnable=1.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="cronConfs")
     private @Nullable Output<List<CcRuleCronConfArgs>> cronConfs;
@@ -75,7 +75,7 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
     /**
      * @return Scheduled activation configuration list. Required only when CronEnable=1.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<CcRuleCronConfArgs>>> cronConfs() {
         return Optional.ofNullable(this.cronConfs);
@@ -83,14 +83,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured
-     *
+     * 
      */
     @Import(name="cronEnable")
     private @Nullable Output<Integer> cronEnable;
 
     /**
      * @return Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured
-     *
+     * 
      */
     public Optional<Output<Integer>> cronEnable() {
         return Optional.ofNullable(this.cronEnable);
@@ -98,14 +98,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Custom response page ID. An empty string means not configured.
-     *
+     * 
      */
     @Import(name="customResponsePageId")
     private @Nullable Output<String> customResponsePageId;
 
     /**
      * @return Custom response page ID. An empty string means not configured.
-     *
+     * 
      */
     public Optional<Output<String>> customResponsePageId() {
         return Optional.ofNullable(this.customResponsePageId);
@@ -113,14 +113,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Action duration. Unit: seconds. Range: 1–86400
-     *
+     * 
      */
     @Import(name="effectTime")
     private @Nullable Output<Integer> effectTime;
 
     /**
      * @return Action duration. Unit: seconds. Range: 1–86400
-     *
+     * 
      */
     public Optional<Output<Integer>> effectTime() {
         return Optional.ofNullable(this.effectTime);
@@ -128,14 +128,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Rule switch. 0: Off; 1: On
-     *
+     * 
      */
     @Import(name="enable")
     private @Nullable Output<Integer> enable;
 
     /**
      * @return Rule switch. 0: Off; 1: On
-     *
+     * 
      */
     public Optional<Output<Integer>> enable() {
         return Optional.ofNullable(this.enable);
@@ -143,14 +143,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600
-     *
+     * 
      */
     @Import(name="exemptionTime")
     private @Nullable Output<Integer> exemptionTime;
 
     /**
      * @return Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600
-     *
+     * 
      */
     public Optional<Output<Integer>> exemptionTime() {
         return Optional.ofNullable(this.exemptionTime);
@@ -158,14 +158,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.
-     *
+     * 
      */
     @Import(name="field")
     private @Nullable Output<String> field;
 
     /**
      * @return Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.
-     *
+     * 
      */
     public Optional<Output<String>> field() {
         return Optional.ofNullable(this.field);
@@ -173,14 +173,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling
-     *
+     * 
      */
     @Import(name="host")
     private @Nullable Output<String> host;
 
     /**
      * @return Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling
-     *
+     * 
      */
     public Optional<Output<String>> host() {
         return Optional.ofNullable(this.host);
@@ -188,14 +188,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Rule initial entry time.
-     *
+     * 
      */
     @Import(name="insertTime")
     private @Nullable Output<String> insertTime;
 
     /**
      * @return Rule initial entry time.
-     *
+     * 
      */
     public Optional<Output<String>> insertTime() {
         return Optional.ofNullable(this.insertTime);
@@ -203,14 +203,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -218,14 +218,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Overall threshold for the current path. Range: 1–300000, unit: times
-     *
+     * 
      */
     @Import(name="pathThreshold")
     private @Nullable Output<Integer> pathThreshold;
 
     /**
      * @return Overall threshold for the current path. Range: 1–300000, unit: times
-     *
+     * 
      */
     public Optional<Output<Integer>> pathThreshold() {
         return Optional.ofNullable(this.pathThreshold);
@@ -233,14 +233,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated
-     *
+     * 
      */
     @Import(name="projectName")
     private @Nullable Output<String> projectName;
 
     /**
      * @return Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated
-     *
+     * 
      */
     public Optional<Output<String>> projectName() {
         return Optional.ofNullable(this.projectName);
@@ -248,14 +248,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * CC rule ID.
-     *
+     * 
      */
     @Import(name="ruleId")
     private @Nullable Output<String> ruleId;
 
     /**
      * @return CC rule ID.
-     *
+     * 
      */
     public Optional<Output<String>> ruleId() {
         return Optional.ofNullable(this.ruleId);
@@ -263,14 +263,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Rule priority. Range: 0–9, where 0 is the highest priority
-     *
+     * 
      */
     @Import(name="rulePriority")
     private @Nullable Output<Integer> rulePriority;
 
     /**
      * @return Rule priority. Range: 0–9, where 0 is the highest priority
-     *
+     * 
      */
     public Optional<Output<Integer>> rulePriority() {
         return Optional.ofNullable(this.rulePriority);
@@ -278,14 +278,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624
-     *
+     * 
      */
     @Import(name="ruleTag")
     private @Nullable Output<String> ruleTag;
 
     /**
      * @return Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624
-     *
+     * 
      */
     public Optional<Output<String>> ruleTag() {
         return Optional.ofNullable(this.ruleTag);
@@ -293,14 +293,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Threshold for a single statistical object. Range: 1–300000, unit: times.
-     *
+     * 
      */
     @Import(name="singleThreshold")
     private @Nullable Output<Integer> singleThreshold;
 
     /**
      * @return Threshold for a single statistical object. Range: 1–300000, unit: times.
-     *
+     * 
      */
     public Optional<Output<Integer>> singleThreshold() {
         return Optional.ofNullable(this.singleThreshold);
@@ -308,14 +308,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Last rule update time.
-     *
+     * 
      */
     @Import(name="updateTime")
     private @Nullable Output<String> updateTime;
 
     /**
      * @return Last rule update time.
-     *
+     * 
      */
     public Optional<Output<String>> updateTime() {
         return Optional.ofNullable(this.updateTime);
@@ -323,14 +323,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.
-     *
+     * 
      */
     @Import(name="url")
     private @Nullable Output<String> url;
 
     /**
      * @return URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.
-     *
+     * 
      */
     public Optional<Output<String>> url() {
         return Optional.ofNullable(this.url);
@@ -338,14 +338,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1
-     *
+     * 
      */
     @Import(name="wsCdnByteThreshold")
     private @Nullable Output<Integer> wsCdnByteThreshold;
 
     /**
      * @return Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1
-     *
+     * 
      */
     public Optional<Output<Integer>> wsCdnByteThreshold() {
         return Optional.ofNullable(this.wsCdnByteThreshold);
@@ -353,14 +353,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured
-     *
+     * 
      */
     @Import(name="wsCdnEnable")
     private @Nullable Output<Integer> wsCdnEnable;
 
     /**
      * @return Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured
-     *
+     * 
      */
     public Optional<Output<Integer>> wsCdnEnable() {
         return Optional.ofNullable(this.wsCdnEnable);
@@ -368,14 +368,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Websocket connection frame threshold. Required only when WSCdnEnable=1.
-     *
+     * 
      */
     @Import(name="wsCdnFrameThreshold")
     private @Nullable Output<Integer> wsCdnFrameThreshold;
 
     /**
      * @return Websocket connection frame threshold. Required only when WSCdnEnable=1.
-     *
+     * 
      */
     public Optional<Output<Integer>> wsCdnFrameThreshold() {
         return Optional.ofNullable(this.wsCdnFrameThreshold);
@@ -383,14 +383,14 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
-     *
+     * 
      */
     @Import(name="wsCdnUnit")
     private @Nullable Output<String> wsCdnUnit;
 
     /**
      * @return Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
-     *
+     * 
      */
     public Optional<Output<String>> wsCdnUnit() {
         return Optional.ofNullable(this.wsCdnUnit);
@@ -446,9 +446,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accurateGroup Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accurateGroup(@Nullable Output<CcRuleAccurateGroupArgs> accurateGroup) {
             $.accurateGroup = accurateGroup;
@@ -457,9 +457,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param accurateGroup Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accurateGroup(CcRuleAccurateGroupArgs accurateGroup) {
             return accurateGroup(Output.of(accurateGroup));
@@ -467,9 +467,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ccType Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ccType(@Nullable Output<Integer> ccType) {
             $.ccType = ccType;
@@ -478,9 +478,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ccType Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ccType(Integer ccType) {
             return ccType(Output.of(ccType));
@@ -488,9 +488,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param countTime Statistical time window, unit: seconds. Range: 5–1800.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder countTime(@Nullable Output<Integer> countTime) {
             $.countTime = countTime;
@@ -499,9 +499,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param countTime Statistical time window, unit: seconds. Range: 5–1800.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder countTime(Integer countTime) {
             return countTime(Output.of(countTime));
@@ -510,9 +510,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param cronConfs Scheduled activation configuration list. Required only when CronEnable=1.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cronConfs(@Nullable Output<List<CcRuleCronConfArgs>> cronConfs) {
             $.cronConfs = cronConfs;
@@ -522,9 +522,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param cronConfs Scheduled activation configuration list. Required only when CronEnable=1.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cronConfs(List<CcRuleCronConfArgs> cronConfs) {
             return cronConfs(Output.of(cronConfs));
@@ -533,9 +533,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
         /**
          * @param cronConfs Scheduled activation configuration list. Required only when CronEnable=1.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cronConfs(CcRuleCronConfArgs... cronConfs) {
             return cronConfs(List.of(cronConfs));
@@ -543,9 +543,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cronEnable Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cronEnable(@Nullable Output<Integer> cronEnable) {
             $.cronEnable = cronEnable;
@@ -554,9 +554,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param cronEnable Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder cronEnable(Integer cronEnable) {
             return cronEnable(Output.of(cronEnable));
@@ -564,9 +564,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customResponsePageId Custom response page ID. An empty string means not configured.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customResponsePageId(@Nullable Output<String> customResponsePageId) {
             $.customResponsePageId = customResponsePageId;
@@ -575,9 +575,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param customResponsePageId Custom response page ID. An empty string means not configured.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder customResponsePageId(String customResponsePageId) {
             return customResponsePageId(Output.of(customResponsePageId));
@@ -585,9 +585,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param effectTime Action duration. Unit: seconds. Range: 1–86400
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder effectTime(@Nullable Output<Integer> effectTime) {
             $.effectTime = effectTime;
@@ -596,9 +596,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param effectTime Action duration. Unit: seconds. Range: 1–86400
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder effectTime(Integer effectTime) {
             return effectTime(Output.of(effectTime));
@@ -606,9 +606,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Rule switch. 0: Off; 1: On
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enable(@Nullable Output<Integer> enable) {
             $.enable = enable;
@@ -617,9 +617,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param enable Rule switch. 0: Off; 1: On
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder enable(Integer enable) {
             return enable(Output.of(enable));
@@ -627,9 +627,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exemptionTime Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder exemptionTime(@Nullable Output<Integer> exemptionTime) {
             $.exemptionTime = exemptionTime;
@@ -638,9 +638,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param exemptionTime Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder exemptionTime(Integer exemptionTime) {
             return exemptionTime(Output.of(exemptionTime));
@@ -648,9 +648,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param field Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder field(@Nullable Output<String> field) {
             $.field = field;
@@ -659,9 +659,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param field Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder field(String field) {
             return field(Output.of(field));
@@ -669,9 +669,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder host(@Nullable Output<String> host) {
             $.host = host;
@@ -680,9 +680,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param host Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder host(String host) {
             return host(Output.of(host));
@@ -690,9 +690,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param insertTime Rule initial entry time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder insertTime(@Nullable Output<String> insertTime) {
             $.insertTime = insertTime;
@@ -701,9 +701,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param insertTime Rule initial entry time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder insertTime(String insertTime) {
             return insertTime(Output.of(insertTime));
@@ -711,9 +711,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -722,9 +722,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -732,9 +732,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pathThreshold Overall threshold for the current path. Range: 1–300000, unit: times
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pathThreshold(@Nullable Output<Integer> pathThreshold) {
             $.pathThreshold = pathThreshold;
@@ -743,9 +743,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param pathThreshold Overall threshold for the current path. Range: 1–300000, unit: times
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pathThreshold(Integer pathThreshold) {
             return pathThreshold(Output.of(pathThreshold));
@@ -753,9 +753,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(@Nullable Output<String> projectName) {
             $.projectName = projectName;
@@ -764,9 +764,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param projectName Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder projectName(String projectName) {
             return projectName(Output.of(projectName));
@@ -774,9 +774,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId CC rule ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(@Nullable Output<String> ruleId) {
             $.ruleId = ruleId;
@@ -785,9 +785,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleId CC rule ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleId(String ruleId) {
             return ruleId(Output.of(ruleId));
@@ -795,9 +795,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rulePriority Rule priority. Range: 0–9, where 0 is the highest priority
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rulePriority(@Nullable Output<Integer> rulePriority) {
             $.rulePriority = rulePriority;
@@ -806,9 +806,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param rulePriority Rule priority. Range: 0–9, where 0 is the highest priority
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder rulePriority(Integer rulePriority) {
             return rulePriority(Output.of(rulePriority));
@@ -816,9 +816,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleTag Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleTag(@Nullable Output<String> ruleTag) {
             $.ruleTag = ruleTag;
@@ -827,9 +827,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param ruleTag Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder ruleTag(String ruleTag) {
             return ruleTag(Output.of(ruleTag));
@@ -837,9 +837,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param singleThreshold Threshold for a single statistical object. Range: 1–300000, unit: times.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder singleThreshold(@Nullable Output<Integer> singleThreshold) {
             $.singleThreshold = singleThreshold;
@@ -848,9 +848,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param singleThreshold Threshold for a single statistical object. Range: 1–300000, unit: times.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder singleThreshold(Integer singleThreshold) {
             return singleThreshold(Output.of(singleThreshold));
@@ -858,9 +858,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Last rule update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(@Nullable Output<String> updateTime) {
             $.updateTime = updateTime;
@@ -869,9 +869,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param updateTime Last rule update time.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder updateTime(String updateTime) {
             return updateTime(Output.of(updateTime));
@@ -879,9 +879,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param url URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder url(@Nullable Output<String> url) {
             $.url = url;
@@ -890,9 +890,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param url URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder url(String url) {
             return url(Output.of(url));
@@ -900,9 +900,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wsCdnByteThreshold Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wsCdnByteThreshold(@Nullable Output<Integer> wsCdnByteThreshold) {
             $.wsCdnByteThreshold = wsCdnByteThreshold;
@@ -911,9 +911,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wsCdnByteThreshold Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wsCdnByteThreshold(Integer wsCdnByteThreshold) {
             return wsCdnByteThreshold(Output.of(wsCdnByteThreshold));
@@ -921,9 +921,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wsCdnEnable Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wsCdnEnable(@Nullable Output<Integer> wsCdnEnable) {
             $.wsCdnEnable = wsCdnEnable;
@@ -932,9 +932,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wsCdnEnable Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wsCdnEnable(Integer wsCdnEnable) {
             return wsCdnEnable(Output.of(wsCdnEnable));
@@ -942,9 +942,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wsCdnFrameThreshold Websocket connection frame threshold. Required only when WSCdnEnable=1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wsCdnFrameThreshold(@Nullable Output<Integer> wsCdnFrameThreshold) {
             $.wsCdnFrameThreshold = wsCdnFrameThreshold;
@@ -953,9 +953,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wsCdnFrameThreshold Websocket connection frame threshold. Required only when WSCdnEnable=1.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wsCdnFrameThreshold(Integer wsCdnFrameThreshold) {
             return wsCdnFrameThreshold(Output.of(wsCdnFrameThreshold));
@@ -963,9 +963,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wsCdnUnit Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wsCdnUnit(@Nullable Output<String> wsCdnUnit) {
             $.wsCdnUnit = wsCdnUnit;
@@ -974,9 +974,9 @@ public final class CcRuleState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param wsCdnUnit Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder wsCdnUnit(String wsCdnUnit) {
             return wsCdnUnit(Output.of(wsCdnUnit));

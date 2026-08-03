@@ -27,252 +27,252 @@ import java.util.concurrent.CompletableFuture;
 public final class WafFunctions {
     /**
      * Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static Output<GetCcRuleResult> getCcRule(GetCcRuleArgs args) {
         return getCcRule(args, InvokeOptions.Empty);
     }
     /**
      * Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static CompletableFuture<GetCcRuleResult> getCcRulePlain(GetCcRulePlainArgs args) {
         return getCcRulePlain(args, InvokeOptions.Empty);
     }
     /**
      * Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static Output<GetCcRuleResult> getCcRule(GetCcRuleArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getCcRule:getCcRule", TypeShape.of(GetCcRuleResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static Output<GetCcRuleResult> getCcRule(GetCcRuleArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getCcRule:getCcRule", TypeShape.of(GetCcRuleResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static CompletableFuture<GetCcRuleResult> getCcRulePlain(GetCcRulePlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getCcRule:getCcRule", TypeShape.of(GetCcRuleResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static Output<GetCcRulesResult> getCcRules() {
         return getCcRules(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static CompletableFuture<GetCcRulesResult> getCcRulesPlain() {
         return getCcRulesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static Output<GetCcRulesResult> getCcRules(InvokeArgs args) {
         return getCcRules(args, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static CompletableFuture<GetCcRulesResult> getCcRulesPlain(InvokeArgs args) {
         return getCcRulesPlain(args, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static Output<GetCcRulesResult> getCcRules(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getCcRules:getCcRules", TypeShape.of(GetCcRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static Output<GetCcRulesResult> getCcRules(InvokeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getCcRules:getCcRules", TypeShape.of(GetCcRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::CcRule
-     *
+     * 
      */
     public static CompletableFuture<GetCcRulesResult> getCcRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getCcRules:getCcRules", TypeShape.of(GetCcRulesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static Output<GetDomainResult> getDomain(GetDomainArgs args) {
         return getDomain(args, InvokeOptions.Empty);
     }
     /**
      * Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static CompletableFuture<GetDomainResult> getDomainPlain(GetDomainPlainArgs args) {
         return getDomainPlain(args, InvokeOptions.Empty);
     }
     /**
      * Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static Output<GetDomainResult> getDomain(GetDomainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getDomain:getDomain", TypeShape.of(GetDomainResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static Output<GetDomainResult> getDomain(GetDomainArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getDomain:getDomain", TypeShape.of(GetDomainResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static CompletableFuture<GetDomainResult> getDomainPlain(GetDomainPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getDomain:getDomain", TypeShape.of(GetDomainResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static Output<GetDomainsResult> getDomains() {
         return getDomains(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static CompletableFuture<GetDomainsResult> getDomainsPlain() {
         return getDomainsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static Output<GetDomainsResult> getDomains(InvokeArgs args) {
         return getDomains(args, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static CompletableFuture<GetDomainsResult> getDomainsPlain(InvokeArgs args) {
         return getDomainsPlain(args, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static Output<GetDomainsResult> getDomains(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getDomains:getDomains", TypeShape.of(GetDomainsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static Output<GetDomainsResult> getDomains(InvokeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getDomains:getDomains", TypeShape.of(GetDomainsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::Domain
-     *
+     * 
      */
     public static CompletableFuture<GetDomainsResult> getDomainsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getDomains:getDomains", TypeShape.of(GetDomainsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args) {
         return getHostGroup(args, InvokeOptions.Empty);
     }
     /**
      * Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static CompletableFuture<GetHostGroupResult> getHostGroupPlain(GetHostGroupPlainArgs args) {
         return getHostGroupPlain(args, InvokeOptions.Empty);
     }
     /**
      * Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static Output<GetHostGroupResult> getHostGroup(GetHostGroupArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static CompletableFuture<GetHostGroupResult> getHostGroupPlain(GetHostGroupPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getHostGroup:getHostGroup", TypeShape.of(GetHostGroupResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static Output<GetHostGroupsResult> getHostGroups() {
         return getHostGroups(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain() {
         return getHostGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args) {
         return getHostGroups(args, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain(InvokeArgs args) {
         return getHostGroupsPlain(args, InvokeOptions.Empty);
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static Output<GetHostGroupsResult> getHostGroups(InvokeArgs args, InvokeOutputOptions options) {
         return Deployment.getInstance().invoke("bytepluscc:waf/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Plural Data Source schema for Byteplus::WAF::HostGroup
-     *
+     * 
      */
     public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));

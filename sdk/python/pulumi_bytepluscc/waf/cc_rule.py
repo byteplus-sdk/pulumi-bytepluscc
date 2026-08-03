@@ -1285,3 +1285,4 @@ class CcRule(pulumi.CustomResource):
         Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
         """
         return pulumi.get(self, "ws_cdn_unit")
+

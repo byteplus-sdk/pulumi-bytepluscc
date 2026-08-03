@@ -18,14 +18,14 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
-     *
+     * 
      */
     @Import(name="crontab")
     private @Nullable Output<String> crontab;
 
     /**
      * @return crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
-     *
+     * 
      */
     public Optional<Output<String>> crontab() {
         return Optional.ofNullable(this.crontab);
@@ -33,14 +33,14 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Total path threshold during the specified period. Range: 1–300000
-     *
+     * 
      */
     @Import(name="pathThreshold")
     private @Nullable Output<Integer> pathThreshold;
 
     /**
      * @return Total path threshold during the specified period. Range: 1–300000
-     *
+     * 
      */
     public Optional<Output<Integer>> pathThreshold() {
         return Optional.ofNullable(this.pathThreshold);
@@ -48,14 +48,14 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
     /**
      * Threshold for a single object during this time period. Range: 1–300000.
-     *
+     * 
      */
     @Import(name="singleThreshold")
     private @Nullable Output<Integer> singleThreshold;
 
     /**
      * @return Threshold for a single object during this time period. Range: 1–300000.
-     *
+     * 
      */
     public Optional<Output<Integer>> singleThreshold() {
         return Optional.ofNullable(this.singleThreshold);
@@ -89,9 +89,9 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param crontab crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder crontab(@Nullable Output<String> crontab) {
             $.crontab = crontab;
@@ -100,9 +100,9 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param crontab crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder crontab(String crontab) {
             return crontab(Output.of(crontab));
@@ -110,9 +110,9 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param pathThreshold Total path threshold during the specified period. Range: 1–300000
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pathThreshold(@Nullable Output<Integer> pathThreshold) {
             $.pathThreshold = pathThreshold;
@@ -121,9 +121,9 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param pathThreshold Total path threshold during the specified period. Range: 1–300000
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder pathThreshold(Integer pathThreshold) {
             return pathThreshold(Output.of(pathThreshold));
@@ -131,9 +131,9 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param singleThreshold Threshold for a single object during this time period. Range: 1–300000.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder singleThreshold(@Nullable Output<Integer> singleThreshold) {
             $.singleThreshold = singleThreshold;
@@ -142,9 +142,9 @@ public final class CcRuleCronConfArgs extends com.pulumi.resources.ResourceArgs 
 
         /**
          * @param singleThreshold Threshold for a single object during this time period. Range: 1–300000.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder singleThreshold(Integer singleThreshold) {
             return singleThreshold(Output.of(singleThreshold));

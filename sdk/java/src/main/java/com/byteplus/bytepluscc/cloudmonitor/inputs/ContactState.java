@@ -18,14 +18,14 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-     *
+     * 
      */
     @Import(name="contactGroupIds")
     private @Nullable Output<List<String>> contactGroupIds;
 
     /**
      * @return List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-     *
+     * 
      */
     public Optional<Output<List<String>>> contactGroupIds() {
         return Optional.ofNullable(this.contactGroupIds);
@@ -33,14 +33,14 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert contact ID.
-     *
+     * 
      */
     @Import(name="contactId")
     private @Nullable Output<String> contactId;
 
     /**
      * @return Alert contact ID.
-     *
+     * 
      */
     public Optional<Output<String>> contactId() {
         return Optional.ofNullable(this.contactId);
@@ -48,14 +48,14 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.
-     *
+     * 
      */
     @Import(name="email")
     private @Nullable Output<String> email;
 
     /**
      * @return Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.
-     *
+     * 
      */
     public Optional<Output<String>> email() {
         return Optional.ofNullable(this.email);
@@ -63,14 +63,14 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
      * @return Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Optional<Output<String>> name() {
         return Optional.ofNullable(this.name);
@@ -78,14 +78,14 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
     /**
      * Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
-     *
+     * 
      */
     @Import(name="phone")
     private @Nullable Output<String> phone;
 
     /**
      * @return Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
-     *
+     * 
      */
     public Optional<Output<String>> phone() {
         return Optional.ofNullable(this.phone);
@@ -121,9 +121,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactGroupIds List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contactGroupIds(@Nullable Output<List<String>> contactGroupIds) {
             $.contactGroupIds = contactGroupIds;
@@ -132,9 +132,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactGroupIds List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contactGroupIds(List<String> contactGroupIds) {
             return contactGroupIds(Output.of(contactGroupIds));
@@ -142,9 +142,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactGroupIds List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contactGroupIds(String... contactGroupIds) {
             return contactGroupIds(List.of(contactGroupIds));
@@ -152,9 +152,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactId Alert contact ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contactId(@Nullable Output<String> contactId) {
             $.contactId = contactId;
@@ -163,9 +163,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param contactId Alert contact ID.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder contactId(String contactId) {
             return contactId(Output.of(contactId));
@@ -173,9 +173,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param email Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder email(@Nullable Output<String> email) {
             $.email = email;
@@ -184,9 +184,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param email Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder email(String email) {
             return email(Output.of(email));
@@ -194,9 +194,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(@Nullable Output<String> name) {
             $.name = name;
@@ -205,9 +205,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param name Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder name(String name) {
             return name(Output.of(name));
@@ -215,9 +215,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param phone Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder phone(@Nullable Output<String> phone) {
             $.phone = phone;
@@ -226,9 +226,9 @@ public final class ContactState extends com.pulumi.resources.ResourceArgs {
 
         /**
          * @param phone Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder phone(String phone) {
             return phone(Output.of(phone));

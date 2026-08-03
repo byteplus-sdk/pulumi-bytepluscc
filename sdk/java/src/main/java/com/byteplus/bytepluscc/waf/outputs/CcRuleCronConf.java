@@ -14,38 +14,38 @@ import javax.annotation.Nullable;
 public final class CcRuleCronConf {
     /**
      * @return crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
-     *
+     * 
      */
     private @Nullable String crontab;
     /**
      * @return Total path threshold during the specified period. Range: 1–300000
-     *
+     * 
      */
     private @Nullable Integer pathThreshold;
     /**
      * @return Threshold for a single object during this time period. Range: 1–300000.
-     *
+     * 
      */
     private @Nullable Integer singleThreshold;
 
     private CcRuleCronConf() {}
     /**
      * @return crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
-     *
+     * 
      */
     public Optional<String> crontab() {
         return Optional.ofNullable(this.crontab);
     }
     /**
      * @return Total path threshold during the specified period. Range: 1–300000
-     *
+     * 
      */
     public Optional<Integer> pathThreshold() {
         return Optional.ofNullable(this.pathThreshold);
     }
     /**
      * @return Threshold for a single object during this time period. Range: 1–300000.
-     *
+     * 
      */
     public Optional<Integer> singleThreshold() {
         return Optional.ofNullable(this.singleThreshold);
@@ -65,10 +65,10 @@ public final class CcRuleCronConf {
         private @Nullable Integer singleThreshold;
         public Builder() {}
         public Builder(CcRuleCronConf defaults) {
-              Objects.requireNonNull(defaults);
-              this.crontab = defaults.crontab;
-              this.pathThreshold = defaults.pathThreshold;
-              this.singleThreshold = defaults.singleThreshold;
+    	      Objects.requireNonNull(defaults);
+    	      this.crontab = defaults.crontab;
+    	      this.pathThreshold = defaults.pathThreshold;
+    	      this.singleThreshold = defaults.singleThreshold;
         }
 
         @CustomType.Setter

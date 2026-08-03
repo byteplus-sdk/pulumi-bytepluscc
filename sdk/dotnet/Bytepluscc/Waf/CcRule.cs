@@ -12,16 +12,16 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
 {
     /// <summary>
     /// WAF CC protection rule. Restricts requests based on network access IP, session, and other HTTP request objects. When the specified statistical conditions are met, a protection action is triggered
-    ///
+    /// 
     /// ## Example Usage
-    ///
+    /// 
     /// ```csharp
     /// using System.Collections.Generic;
     /// using System.Linq;
     /// using Pulumi;
     /// using Bytepluscc = Byteplus.Pulumi.Bytepluscc;
-    ///
-    /// return await Deployment.RunAsync(() =&gt;
+    /// 
+    /// return await Deployment.RunAsync(() =&gt; 
     /// {
     ///     var primaryWafCcruleCase2 = new Bytepluscc.Waf.CcRule("primary_waf_ccrule_case_2", new()
     ///     {
@@ -46,12 +46,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Waf
     ///         Url = "/admin",
     ///         Name = "test-rule-block",
     ///     });
-    ///
+    /// 
     /// });
     /// ```
-    ///
+    /// 
     /// ## Import
-    ///
+    /// 
     /// ```sh
     /// $ pulumi import bytepluscc:waf/ccRule:CcRule example "host|rule_id"
     /// ```

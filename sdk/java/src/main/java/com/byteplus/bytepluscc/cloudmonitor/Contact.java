@@ -16,14 +16,14 @@ import javax.annotation.Nullable;
 
 /**
  * Cloud Monitoring alert contact. Used to configure recipients for alert notifications. You can add a contact to one or more contact groups.
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -35,12 +35,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App }{{@code
  *     public static void main(String[] args) }{{@code
  *         Pulumi.run(App::stack);
  *     }}{@code
- *
+ * 
  *     public static void stack(Context ctx) }{{@code
  *         var example = new Contact("example", ContactArgs.builder()
  *             .email("test_contact2}{@literal @}{@code example.com")
@@ -48,88 +48,88 @@ import javax.annotation.Nullable;
  *             .phone("138*****000")
  *             .name("Test_Contact2")
  *             .build());
- *
+ * 
  *     }}{@code
  * }}{@code
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:cloudmonitor/contact:Contact example &#34;contact_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:cloudmonitor/contact:Contact")
 public class Contact extends com.pulumi.resources.CustomResource {
     /**
      * List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-     *
+     * 
      */
     @Export(name="contactGroupIds", refs={List.class,String.class}, tree="[0,1]")
     private Output<List<String>> contactGroupIds;
 
     /**
      * @return List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-     *
+     * 
      */
     public Output<List<String>> contactGroupIds() {
         return this.contactGroupIds;
     }
     /**
      * Alert contact ID.
-     *
+     * 
      */
     @Export(name="contactId", refs={String.class}, tree="[0]")
     private Output<String> contactId;
 
     /**
      * @return Alert contact ID.
-     *
+     * 
      */
     public Output<String> contactId() {
         return this.contactId;
     }
     /**
      * Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.
-     *
+     * 
      */
     @Export(name="email", refs={String.class}, tree="[0]")
     private Output<String> email;
 
     /**
      * @return Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.
-     *
+     * 
      */
     public Output<String> email() {
         return this.email;
     }
     /**
      * Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
-     *
+     * 
      */
     @Export(name="phone", refs={String.class}, tree="[0]")
     private Output<String> phone;
 
     /**
      * @return Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
-     *
+     * 
      */
     public Output<String> phone() {
         return this.phone;
