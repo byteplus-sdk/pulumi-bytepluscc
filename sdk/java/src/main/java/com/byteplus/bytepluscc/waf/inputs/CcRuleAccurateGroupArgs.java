@@ -19,14 +19,14 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
     /**
      * Advanced condition group priority. Not required when creating/updating, used only for list display.
-     *
+     * 
      */
     @Import(name="accurateGroupPriority")
     private @Nullable Output<Integer> accurateGroupPriority;
 
     /**
      * @return Advanced condition group priority. Not required when creating/updating, used only for list display.
-     *
+     * 
      */
     public Optional<Output<Integer>> accurateGroupPriority() {
         return Optional.ofNullable(this.accurateGroupPriority);
@@ -35,7 +35,7 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
     /**
      * List of subrules in advanced conditions
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Import(name="accurateRules")
     private @Nullable Output<List<CcRuleAccurateGroupAccurateRuleArgs>> accurateRules;
@@ -43,7 +43,7 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
     /**
      * @return List of subrules in advanced conditions
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Optional<Output<List<CcRuleAccurateGroupAccurateRuleArgs>>> accurateRules() {
         return Optional.ofNullable(this.accurateRules);
@@ -51,14 +51,14 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
     /**
      * Advanced condition group ID. Not required for create/update; used only for list display
-     *
+     * 
      */
     @Import(name="id")
     private @Nullable Output<Integer> id;
 
     /**
      * @return Advanced condition group ID. Not required for create/update; used only for list display
-     *
+     * 
      */
     public Optional<Output<Integer>> id() {
         return Optional.ofNullable(this.id);
@@ -66,14 +66,14 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
     /**
      * Logical relationship. 1: AND; 2: OR.
-     *
+     * 
      */
     @Import(name="logic")
     private @Nullable Output<Integer> logic;
 
     /**
      * @return Logical relationship. 1: AND; 2: OR.
-     *
+     * 
      */
     public Optional<Output<Integer>> logic() {
         return Optional.ofNullable(this.logic);
@@ -108,9 +108,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
         /**
          * @param accurateGroupPriority Advanced condition group priority. Not required when creating/updating, used only for list display.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accurateGroupPriority(@Nullable Output<Integer> accurateGroupPriority) {
             $.accurateGroupPriority = accurateGroupPriority;
@@ -119,9 +119,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
         /**
          * @param accurateGroupPriority Advanced condition group priority. Not required when creating/updating, used only for list display.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accurateGroupPriority(Integer accurateGroupPriority) {
             return accurateGroupPriority(Output.of(accurateGroupPriority));
@@ -130,9 +130,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
         /**
          * @param accurateRules List of subrules in advanced conditions
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accurateRules(@Nullable Output<List<CcRuleAccurateGroupAccurateRuleArgs>> accurateRules) {
             $.accurateRules = accurateRules;
@@ -142,9 +142,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
         /**
          * @param accurateRules List of subrules in advanced conditions
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accurateRules(List<CcRuleAccurateGroupAccurateRuleArgs> accurateRules) {
             return accurateRules(Output.of(accurateRules));
@@ -153,9 +153,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
         /**
          * @param accurateRules List of subrules in advanced conditions
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder accurateRules(CcRuleAccurateGroupAccurateRuleArgs... accurateRules) {
             return accurateRules(List.of(accurateRules));
@@ -163,9 +163,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
         /**
          * @param id Advanced condition group ID. Not required for create/update; used only for list display
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder id(@Nullable Output<Integer> id) {
             $.id = id;
@@ -174,9 +174,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
         /**
          * @param id Advanced condition group ID. Not required for create/update; used only for list display
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder id(Integer id) {
             return id(Output.of(id));
@@ -184,9 +184,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
         /**
          * @param logic Logical relationship. 1: AND; 2: OR.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logic(@Nullable Output<Integer> logic) {
             $.logic = logic;
@@ -195,9 +195,9 @@ public final class CcRuleAccurateGroupArgs extends com.pulumi.resources.Resource
 
         /**
          * @param logic Logical relationship. 1: AND; 2: OR.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder logic(Integer logic) {
             return logic(Output.of(logic));

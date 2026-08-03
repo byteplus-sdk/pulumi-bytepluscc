@@ -1383,3 +1383,5 @@ class GetHostGroupRelatedRuleResult(dict):
         Rule type. Allow indicates an allowlist, Block indicates a blocklist.
         """
         return pulumi.get(self, "rule_type")
+
+

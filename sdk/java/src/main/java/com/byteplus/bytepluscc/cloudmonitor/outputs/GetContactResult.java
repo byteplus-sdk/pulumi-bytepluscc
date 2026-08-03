@@ -13,74 +13,74 @@ import java.util.Objects;
 public final class GetContactResult {
     /**
      * @return List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-     *
+     * 
      */
     private List<String> contactGroupIds;
     /**
      * @return Alert contact ID.
-     *
+     * 
      */
     private String contactId;
     /**
      * @return Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.
-     *
+     * 
      */
     private String email;
     /**
      * @return Uniquely identifies the resource.
-     *
+     * 
      */
     private String id;
     /**
      * @return Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     private String name;
     /**
      * @return Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
-     *
+     * 
      */
     private String phone;
 
     private GetContactResult() {}
     /**
      * @return List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact&#39;s existing associated groups.
-     *
+     * 
      */
     public List<String> contactGroupIds() {
         return this.contactGroupIds;
     }
     /**
      * @return Alert contact ID.
-     *
+     * 
      */
     public String contactId() {
         return this.contactId;
     }
     /**
      * @return Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.
-     *
+     * 
      */
     public String email() {
         return this.email;
     }
     /**
      * @return Uniquely identifies the resource.
-     *
+     * 
      */
     public String id() {
         return this.id;
     }
     /**
      * @return Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.
-     *
+     * 
      */
     public String name() {
         return this.name;
     }
     /**
      * @return Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
-     *
+     * 
      */
     public String phone() {
         return this.phone;
@@ -103,13 +103,13 @@ public final class GetContactResult {
         private String phone;
         public Builder() {}
         public Builder(GetContactResult defaults) {
-              Objects.requireNonNull(defaults);
-              this.contactGroupIds = defaults.contactGroupIds;
-              this.contactId = defaults.contactId;
-              this.email = defaults.email;
-              this.id = defaults.id;
-              this.name = defaults.name;
-              this.phone = defaults.phone;
+    	      Objects.requireNonNull(defaults);
+    	      this.contactGroupIds = defaults.contactGroupIds;
+    	      this.contactId = defaults.contactId;
+    	      this.email = defaults.email;
+    	      this.id = defaults.id;
+    	      this.name = defaults.name;
+    	      this.phone = defaults.phone;
         }
 
         @CustomType.Setter

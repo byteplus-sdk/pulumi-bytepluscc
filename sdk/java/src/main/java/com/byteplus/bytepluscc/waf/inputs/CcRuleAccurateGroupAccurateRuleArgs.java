@@ -18,14 +18,14 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
     /**
      * Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
-     *
+     * 
      */
     @Import(name="httpObj")
     private @Nullable Output<String> httpObj;
 
     /**
      * @return Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
-     *
+     * 
      */
     public Optional<Output<String>> httpObj() {
         return Optional.ofNullable(this.httpObj);
@@ -33,14 +33,14 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
     /**
      * Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
-     *
+     * 
      */
     @Import(name="objType")
     private @Nullable Output<Integer> objType;
 
     /**
      * @return Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
-     *
+     * 
      */
     public Optional<Output<Integer>> objType() {
         return Optional.ofNullable(this.objType);
@@ -48,14 +48,14 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
     /**
      * Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
-     *
+     * 
      */
     @Import(name="opretar")
     private @Nullable Output<Integer> opretar;
 
     /**
      * @return Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
-     *
+     * 
      */
     public Optional<Output<Integer>> opretar() {
         return Optional.ofNullable(this.opretar);
@@ -63,14 +63,14 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
     /**
      * Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
-     *
+     * 
      */
     @Import(name="property")
     private @Nullable Output<Integer> property;
 
     /**
      * @return Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
-     *
+     * 
      */
     public Optional<Output<Integer>> property() {
         return Optional.ofNullable(this.property);
@@ -78,14 +78,14 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
     /**
      * Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
-     *
+     * 
      */
     @Import(name="valueString")
     private @Nullable Output<String> valueString;
 
     /**
      * @return Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
-     *
+     * 
      */
     public Optional<Output<String>> valueString() {
         return Optional.ofNullable(this.valueString);
@@ -121,9 +121,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param httpObj Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder httpObj(@Nullable Output<String> httpObj) {
             $.httpObj = httpObj;
@@ -132,9 +132,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param httpObj Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder httpObj(String httpObj) {
             return httpObj(Output.of(httpObj));
@@ -142,9 +142,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param objType Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder objType(@Nullable Output<Integer> objType) {
             $.objType = objType;
@@ -153,9 +153,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param objType Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder objType(Integer objType) {
             return objType(Output.of(objType));
@@ -163,9 +163,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param opretar Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder opretar(@Nullable Output<Integer> opretar) {
             $.opretar = opretar;
@@ -174,9 +174,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param opretar Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder opretar(Integer opretar) {
             return opretar(Output.of(opretar));
@@ -184,9 +184,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param property Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder property(@Nullable Output<Integer> property) {
             $.property = property;
@@ -195,9 +195,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param property Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder property(Integer property) {
             return property(Output.of(property));
@@ -205,9 +205,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param valueString Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder valueString(@Nullable Output<String> valueString) {
             $.valueString = valueString;
@@ -216,9 +216,9 @@ public final class CcRuleAccurateGroupAccurateRuleArgs extends com.pulumi.resour
 
         /**
          * @param valueString Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder valueString(String valueString) {
             return valueString(Output.of(valueString));

@@ -14,50 +14,50 @@ import java.util.Objects;
 public final class GetCcRuleAccurateGroup {
     /**
      * @return Advanced condition group priority. Not required when creating/updating, used only for list display.
-     *
+     * 
      */
     private Integer accurateGroupPriority;
     /**
      * @return List of subrules in advanced conditions
-     *
+     * 
      */
     private List<GetCcRuleAccurateGroupAccurateRule> accurateRules;
     /**
      * @return Advanced condition group ID. Not required for create/update; used only for list display
-     *
+     * 
      */
     private Integer id;
     /**
      * @return Logical relationship. 1: AND; 2: OR.
-     *
+     * 
      */
     private Integer logic;
 
     private GetCcRuleAccurateGroup() {}
     /**
      * @return Advanced condition group priority. Not required when creating/updating, used only for list display.
-     *
+     * 
      */
     public Integer accurateGroupPriority() {
         return this.accurateGroupPriority;
     }
     /**
      * @return List of subrules in advanced conditions
-     *
+     * 
      */
     public List<GetCcRuleAccurateGroupAccurateRule> accurateRules() {
         return this.accurateRules;
     }
     /**
      * @return Advanced condition group ID. Not required for create/update; used only for list display
-     *
+     * 
      */
     public Integer id() {
         return this.id;
     }
     /**
      * @return Logical relationship. 1: AND; 2: OR.
-     *
+     * 
      */
     public Integer logic() {
         return this.logic;
@@ -78,11 +78,11 @@ public final class GetCcRuleAccurateGroup {
         private Integer logic;
         public Builder() {}
         public Builder(GetCcRuleAccurateGroup defaults) {
-              Objects.requireNonNull(defaults);
-              this.accurateGroupPriority = defaults.accurateGroupPriority;
-              this.accurateRules = defaults.accurateRules;
-              this.id = defaults.id;
-              this.logic = defaults.logic;
+    	      Objects.requireNonNull(defaults);
+    	      this.accurateGroupPriority = defaults.accurateGroupPriority;
+    	      this.accurateRules = defaults.accurateRules;
+    	      this.id = defaults.id;
+    	      this.logic = defaults.logic;
         }
 
         @CustomType.Setter

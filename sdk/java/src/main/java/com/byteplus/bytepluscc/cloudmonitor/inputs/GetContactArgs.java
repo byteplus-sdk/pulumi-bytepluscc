@@ -16,14 +16,14 @@ public final class GetContactArgs extends com.pulumi.resources.InvokeArgs {
 
     /**
      * Uniquely identifies the resource.
-     *
+     * 
      */
     @Import(name="id", required=true)
     private Output<String> id;
 
     /**
      * @return Uniquely identifies the resource.
-     *
+     * 
      */
     public Output<String> id() {
         return this.id;
@@ -55,9 +55,9 @@ public final class GetContactArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param id Uniquely identifies the resource.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder id(Output<String> id) {
             $.id = id;
@@ -66,9 +66,9 @@ public final class GetContactArgs extends com.pulumi.resources.InvokeArgs {
 
         /**
          * @param id Uniquely identifies the resource.
-         *
+         * 
          * @return builder
-         *
+         * 
          */
         public Builder id(String id) {
             return id(Output.of(id));

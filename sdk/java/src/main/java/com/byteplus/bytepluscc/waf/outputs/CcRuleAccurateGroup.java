@@ -15,30 +15,30 @@ import javax.annotation.Nullable;
 public final class CcRuleAccurateGroup {
     /**
      * @return Advanced condition group priority. Not required when creating/updating, used only for list display.
-     *
+     * 
      */
     private @Nullable Integer accurateGroupPriority;
     /**
      * @return List of subrules in advanced conditions
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     private @Nullable List<CcRuleAccurateGroupAccurateRule> accurateRules;
     /**
      * @return Advanced condition group ID. Not required for create/update; used only for list display
-     *
+     * 
      */
     private @Nullable Integer id;
     /**
      * @return Logical relationship. 1: AND; 2: OR.
-     *
+     * 
      */
     private @Nullable Integer logic;
 
     private CcRuleAccurateGroup() {}
     /**
      * @return Advanced condition group priority. Not required when creating/updating, used only for list display.
-     *
+     * 
      */
     public Optional<Integer> accurateGroupPriority() {
         return Optional.ofNullable(this.accurateGroupPriority);
@@ -46,21 +46,21 @@ public final class CcRuleAccurateGroup {
     /**
      * @return List of subrules in advanced conditions
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public List<CcRuleAccurateGroupAccurateRule> accurateRules() {
         return this.accurateRules == null ? List.of() : this.accurateRules;
     }
     /**
      * @return Advanced condition group ID. Not required for create/update; used only for list display
-     *
+     * 
      */
     public Optional<Integer> id() {
         return Optional.ofNullable(this.id);
     }
     /**
      * @return Logical relationship. 1: AND; 2: OR.
-     *
+     * 
      */
     public Optional<Integer> logic() {
         return Optional.ofNullable(this.logic);
@@ -81,11 +81,11 @@ public final class CcRuleAccurateGroup {
         private @Nullable Integer logic;
         public Builder() {}
         public Builder(CcRuleAccurateGroup defaults) {
-              Objects.requireNonNull(defaults);
-              this.accurateGroupPriority = defaults.accurateGroupPriority;
-              this.accurateRules = defaults.accurateRules;
-              this.id = defaults.id;
-              this.logic = defaults.logic;
+    	      Objects.requireNonNull(defaults);
+    	      this.accurateGroupPriority = defaults.accurateGroupPriority;
+    	      this.accurateRules = defaults.accurateRules;
+    	      this.id = defaults.id;
+    	      this.logic = defaults.logic;
         }
 
         @CustomType.Setter

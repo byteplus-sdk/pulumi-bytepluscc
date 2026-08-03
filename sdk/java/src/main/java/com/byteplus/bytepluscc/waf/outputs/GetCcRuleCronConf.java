@@ -13,38 +13,38 @@ import java.util.Objects;
 public final class GetCcRuleCronConf {
     /**
      * @return crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
-     *
+     * 
      */
     private String crontab;
     /**
      * @return Total path threshold during the specified period. Range: 1–300000
-     *
+     * 
      */
     private Integer pathThreshold;
     /**
      * @return Threshold for a single object during this time period. Range: 1–300000.
-     *
+     * 
      */
     private Integer singleThreshold;
 
     private GetCcRuleCronConf() {}
     /**
      * @return crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
-     *
+     * 
      */
     public String crontab() {
         return this.crontab;
     }
     /**
      * @return Total path threshold during the specified period. Range: 1–300000
-     *
+     * 
      */
     public Integer pathThreshold() {
         return this.pathThreshold;
     }
     /**
      * @return Threshold for a single object during this time period. Range: 1–300000.
-     *
+     * 
      */
     public Integer singleThreshold() {
         return this.singleThreshold;
@@ -64,10 +64,10 @@ public final class GetCcRuleCronConf {
         private Integer singleThreshold;
         public Builder() {}
         public Builder(GetCcRuleCronConf defaults) {
-              Objects.requireNonNull(defaults);
-              this.crontab = defaults.crontab;
-              this.pathThreshold = defaults.pathThreshold;
-              this.singleThreshold = defaults.singleThreshold;
+    	      Objects.requireNonNull(defaults);
+    	      this.crontab = defaults.crontab;
+    	      this.pathThreshold = defaults.pathThreshold;
+    	      this.singleThreshold = defaults.singleThreshold;
         }
 
         @CustomType.Setter

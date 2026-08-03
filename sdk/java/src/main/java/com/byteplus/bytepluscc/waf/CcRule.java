@@ -19,14 +19,14 @@ import javax.annotation.Nullable;
 
 /**
  * WAF CC protection rule. Restricts requests based on network access IP, session, and other HTTP request objects. When the specified statistical conditions are met, a protection action is triggered
- *
+ * 
  * ## Example Usage
- *
+ * 
  * &lt;!--Start PulumiCodeChooser --&gt;
  * <pre>
  * {@code
  * package generated_program;
- *
+ * 
  * import com.pulumi.Context;
  * import com.pulumi.Pulumi;
  * import com.pulumi.core.Output;
@@ -39,12 +39,12 @@ import javax.annotation.Nullable;
  * import java.io.File;
  * import java.nio.file.Files;
  * import java.nio.file.Paths;
- *
+ * 
  * public class App {
  *     public static void main(String[] args) {
  *         Pulumi.run(App::stack);
  *     }
- *
+ * 
  *     public static void stack(Context ctx) {
  *         var primaryWafCcruleCase2 = new CcRule("primaryWafCcruleCase2", CcRuleArgs.builder()
  *             .field("HEADER:Authorization")
@@ -64,60 +64,60 @@ import javax.annotation.Nullable;
  *             .url("/admin")
  *             .name("test-rule-block")
  *             .build());
- *
+ * 
  *     }
  * }
  * }
  * </pre>
  * &lt;!--End PulumiCodeChooser --&gt;
- *
+ * 
  * ## Import
- *
+ * 
  * ```sh
  * $ pulumi import bytepluscc:waf/ccRule:CcRule example &#34;host|rule_id&#34;
  * ```
- *
+ * 
  */
 @ResourceType(type="bytepluscc:waf/ccRule:CcRule")
 public class CcRule extends com.pulumi.resources.CustomResource {
     /**
      * Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.
-     *
+     * 
      */
     @Export(name="accurateGroup", refs={CcRuleAccurateGroup.class}, tree="[0]")
     private Output<CcRuleAccurateGroup> accurateGroup;
 
     /**
      * @return Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.
-     *
+     * 
      */
     public Output<CcRuleAccurateGroup> accurateGroup() {
         return this.accurateGroup;
     }
     /**
      * Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.
-     *
+     * 
      */
     @Export(name="ccType", refs={Integer.class}, tree="[0]")
     private Output<Integer> ccType;
 
     /**
      * @return Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.
-     *
+     * 
      */
     public Output<Integer> ccType() {
         return this.ccType;
     }
     /**
      * Statistical time window, unit: seconds. Range: 5–1800.
-     *
+     * 
      */
     @Export(name="countTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> countTime;
 
     /**
      * @return Statistical time window, unit: seconds. Range: 5–1800.
-     *
+     * 
      */
     public Output<Integer> countTime() {
         return this.countTime;
@@ -125,7 +125,7 @@ public class CcRule extends com.pulumi.resources.CustomResource {
     /**
      * Scheduled activation configuration list. Required only when CronEnable=1.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     @Export(name="cronConfs", refs={List.class,CcRuleCronConf.class}, tree="[0,1]")
     private Output<List<CcRuleCronConf>> cronConfs;
@@ -133,301 +133,301 @@ public class CcRule extends com.pulumi.resources.CustomResource {
     /**
      * @return Scheduled activation configuration list. Required only when CronEnable=1.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     *
+     * 
      */
     public Output<List<CcRuleCronConf>> cronConfs() {
         return this.cronConfs;
     }
     /**
      * Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured
-     *
+     * 
      */
     @Export(name="cronEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> cronEnable;
 
     /**
      * @return Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured
-     *
+     * 
      */
     public Output<Integer> cronEnable() {
         return this.cronEnable;
     }
     /**
      * Custom response page ID. An empty string means not configured.
-     *
+     * 
      */
     @Export(name="customResponsePageId", refs={String.class}, tree="[0]")
     private Output<String> customResponsePageId;
 
     /**
      * @return Custom response page ID. An empty string means not configured.
-     *
+     * 
      */
     public Output<String> customResponsePageId() {
         return this.customResponsePageId;
     }
     /**
      * Action duration. Unit: seconds. Range: 1–86400
-     *
+     * 
      */
     @Export(name="effectTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> effectTime;
 
     /**
      * @return Action duration. Unit: seconds. Range: 1–86400
-     *
+     * 
      */
     public Output<Integer> effectTime() {
         return this.effectTime;
     }
     /**
      * Rule switch. 0: Off; 1: On
-     *
+     * 
      */
     @Export(name="enable", refs={Integer.class}, tree="[0]")
     private Output<Integer> enable;
 
     /**
      * @return Rule switch. 0: Off; 1: On
-     *
+     * 
      */
     public Output<Integer> enable() {
         return this.enable;
     }
     /**
      * Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600
-     *
+     * 
      */
     @Export(name="exemptionTime", refs={Integer.class}, tree="[0]")
     private Output<Integer> exemptionTime;
 
     /**
      * @return Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600
-     *
+     * 
      */
     public Output<Integer> exemptionTime() {
         return this.exemptionTime;
     }
     /**
      * Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.
-     *
+     * 
      */
     @Export(name="field", refs={String.class}, tree="[0]")
     private Output<String> field;
 
     /**
      * @return Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.
-     *
+     * 
      */
     public Output<String> field() {
         return this.field;
     }
     /**
      * Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling
-     *
+     * 
      */
     @Export(name="host", refs={String.class}, tree="[0]")
     private Output<String> host;
 
     /**
      * @return Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling
-     *
+     * 
      */
     public Output<String> host() {
         return this.host;
     }
     /**
      * Rule initial entry time.
-     *
+     * 
      */
     @Export(name="insertTime", refs={String.class}, tree="[0]")
     private Output<String> insertTime;
 
     /**
      * @return Rule initial entry time.
-     *
+     * 
      */
     public Output<String> insertTime() {
         return this.insertTime;
     }
     /**
      * Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.
-     *
+     * 
      */
     @Export(name="name", refs={String.class}, tree="[0]")
     private Output<String> name;
 
     /**
      * @return Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.
-     *
+     * 
      */
     public Output<String> name() {
         return this.name;
     }
     /**
      * Overall threshold for the current path. Range: 1–300000, unit: times
-     *
+     * 
      */
     @Export(name="pathThreshold", refs={Integer.class}, tree="[0]")
     private Output<Integer> pathThreshold;
 
     /**
      * @return Overall threshold for the current path. Range: 1–300000, unit: times
-     *
+     * 
      */
     public Output<Integer> pathThreshold() {
         return this.pathThreshold;
     }
     /**
      * Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated
-     *
+     * 
      */
     @Export(name="projectName", refs={String.class}, tree="[0]")
     private Output<String> projectName;
 
     /**
      * @return Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated
-     *
+     * 
      */
     public Output<String> projectName() {
         return this.projectName;
     }
     /**
      * CC rule ID.
-     *
+     * 
      */
     @Export(name="ruleId", refs={String.class}, tree="[0]")
     private Output<String> ruleId;
 
     /**
      * @return CC rule ID.
-     *
+     * 
      */
     public Output<String> ruleId() {
         return this.ruleId;
     }
     /**
      * Rule priority. Range: 0–9, where 0 is the highest priority
-     *
+     * 
      */
     @Export(name="rulePriority", refs={Integer.class}, tree="[0]")
     private Output<Integer> rulePriority;
 
     /**
      * @return Rule priority. Range: 0–9, where 0 is the highest priority
-     *
+     * 
      */
     public Output<Integer> rulePriority() {
         return this.rulePriority;
     }
     /**
      * Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624
-     *
+     * 
      */
     @Export(name="ruleTag", refs={String.class}, tree="[0]")
     private Output<String> ruleTag;
 
     /**
      * @return Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624
-     *
+     * 
      */
     public Output<String> ruleTag() {
         return this.ruleTag;
     }
     /**
      * Threshold for a single statistical object. Range: 1–300000, unit: times.
-     *
+     * 
      */
     @Export(name="singleThreshold", refs={Integer.class}, tree="[0]")
     private Output<Integer> singleThreshold;
 
     /**
      * @return Threshold for a single statistical object. Range: 1–300000, unit: times.
-     *
+     * 
      */
     public Output<Integer> singleThreshold() {
         return this.singleThreshold;
     }
     /**
      * Last rule update time.
-     *
+     * 
      */
     @Export(name="updateTime", refs={String.class}, tree="[0]")
     private Output<String> updateTime;
 
     /**
      * @return Last rule update time.
-     *
+     * 
      */
     public Output<String> updateTime() {
         return this.updateTime;
     }
     /**
      * URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.
-     *
+     * 
      */
     @Export(name="url", refs={String.class}, tree="[0]")
     private Output<String> url;
 
     /**
      * @return URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.
-     *
+     * 
      */
     public Output<String> url() {
         return this.url;
     }
     /**
      * Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1
-     *
+     * 
      */
     @Export(name="wsCdnByteThreshold", refs={Integer.class}, tree="[0]")
     private Output<Integer> wsCdnByteThreshold;
 
     /**
      * @return Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1
-     *
+     * 
      */
     public Output<Integer> wsCdnByteThreshold() {
         return this.wsCdnByteThreshold;
     }
     /**
      * Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured
-     *
+     * 
      */
     @Export(name="wsCdnEnable", refs={Integer.class}, tree="[0]")
     private Output<Integer> wsCdnEnable;
 
     /**
      * @return Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured
-     *
+     * 
      */
     public Output<Integer> wsCdnEnable() {
         return this.wsCdnEnable;
     }
     /**
      * Websocket connection frame threshold. Required only when WSCdnEnable=1.
-     *
+     * 
      */
     @Export(name="wsCdnFrameThreshold", refs={Integer.class}, tree="[0]")
     private Output<Integer> wsCdnFrameThreshold;
 
     /**
      * @return Websocket connection frame threshold. Required only when WSCdnEnable=1.
-     *
+     * 
      */
     public Output<Integer> wsCdnFrameThreshold() {
         return this.wsCdnFrameThreshold;
     }
     /**
      * Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
-     *
+     * 
      */
     @Export(name="wsCdnUnit", refs={String.class}, tree="[0]")
     private Output<String> wsCdnUnit;
 
     /**
      * @return Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
-     *
+     * 
      */
     public Output<String> wsCdnUnit() {
         return this.wsCdnUnit;

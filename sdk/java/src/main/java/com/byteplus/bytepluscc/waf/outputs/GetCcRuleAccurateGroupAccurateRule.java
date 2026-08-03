@@ -13,62 +13,62 @@ import java.util.Objects;
 public final class GetCcRuleAccurateGroupAccurateRule {
     /**
      * @return Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
-     *
+     * 
      */
     private String httpObj;
     /**
      * @return Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
-     *
+     * 
      */
     private Integer objType;
     /**
      * @return Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
-     *
+     * 
      */
     private Integer opretar;
     /**
      * @return Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
-     *
+     * 
      */
     private Integer property;
     /**
      * @return Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
-     *
+     * 
      */
     private String valueString;
 
     private GetCcRuleAccurateGroupAccurateRule() {}
     /**
      * @return Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
-     *
+     * 
      */
     public String httpObj() {
         return this.httpObj;
     }
     /**
      * @return Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
-     *
+     * 
      */
     public Integer objType() {
         return this.objType;
     }
     /**
      * @return Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
-     *
+     * 
      */
     public Integer opretar() {
         return this.opretar;
     }
     /**
      * @return Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
-     *
+     * 
      */
     public Integer property() {
         return this.property;
     }
     /**
      * @return Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
-     *
+     * 
      */
     public String valueString() {
         return this.valueString;
@@ -90,12 +90,12 @@ public final class GetCcRuleAccurateGroupAccurateRule {
         private String valueString;
         public Builder() {}
         public Builder(GetCcRuleAccurateGroupAccurateRule defaults) {
-              Objects.requireNonNull(defaults);
-              this.httpObj = defaults.httpObj;
-              this.objType = defaults.objType;
-              this.opretar = defaults.opretar;
-              this.property = defaults.property;
-              this.valueString = defaults.valueString;
+    	      Objects.requireNonNull(defaults);
+    	      this.httpObj = defaults.httpObj;
+    	      this.objType = defaults.objType;
+    	      this.opretar = defaults.opretar;
+    	      this.property = defaults.property;
+    	      this.valueString = defaults.valueString;
         }
 
         @CustomType.Setter

@@ -16,314 +16,314 @@ import java.util.Objects;
 public final class GetCcRuleResult {
     /**
      * @return Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.
-     *
+     * 
      */
     private GetCcRuleAccurateGroup accurateGroup;
     /**
      * @return Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.
-     *
+     * 
      */
     private Integer ccType;
     /**
      * @return Statistical time window, unit: seconds. Range: 5–1800.
-     *
+     * 
      */
     private Integer countTime;
     /**
      * @return Scheduled activation configuration list. Required only when CronEnable=1.
-     *
+     * 
      */
     private List<GetCcRuleCronConf> cronConfs;
     /**
      * @return Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured
-     *
+     * 
      */
     private Integer cronEnable;
     /**
      * @return Custom response page ID. An empty string means not configured.
-     *
+     * 
      */
     private String customResponsePageId;
     /**
      * @return Action duration. Unit: seconds. Range: 1–86400
-     *
+     * 
      */
     private Integer effectTime;
     /**
      * @return Rule switch. 0: Off; 1: On
-     *
+     * 
      */
     private Integer enable;
     /**
      * @return Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600
-     *
+     * 
      */
     private Integer exemptionTime;
     /**
      * @return Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.
-     *
+     * 
      */
     private String field;
     /**
      * @return Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling
-     *
+     * 
      */
     private String host;
     /**
      * @return Uniquely identifies the resource.
-     *
+     * 
      */
     private String id;
     /**
      * @return Rule initial entry time.
-     *
+     * 
      */
     private String insertTime;
     /**
      * @return Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.
-     *
+     * 
      */
     private String name;
     /**
      * @return Overall threshold for the current path. Range: 1–300000, unit: times
-     *
+     * 
      */
     private Integer pathThreshold;
     /**
      * @return Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated
-     *
+     * 
      */
     private String projectName;
     /**
      * @return CC rule ID.
-     *
+     * 
      */
     private String ruleId;
     /**
      * @return Rule priority. Range: 0–9, where 0 is the highest priority
-     *
+     * 
      */
     private Integer rulePriority;
     /**
      * @return Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624
-     *
+     * 
      */
     private String ruleTag;
     /**
      * @return Threshold for a single statistical object. Range: 1–300000, unit: times.
-     *
+     * 
      */
     private Integer singleThreshold;
     /**
      * @return Last rule update time.
-     *
+     * 
      */
     private String updateTime;
     /**
      * @return URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.
-     *
+     * 
      */
     private String url;
     /**
      * @return Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1
-     *
+     * 
      */
     private Integer wsCdnByteThreshold;
     /**
      * @return Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured
-     *
+     * 
      */
     private Integer wsCdnEnable;
     /**
      * @return Websocket connection frame threshold. Required only when WSCdnEnable=1.
-     *
+     * 
      */
     private Integer wsCdnFrameThreshold;
     /**
      * @return Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
-     *
+     * 
      */
     private String wsCdnUnit;
 
     private GetCcRuleResult() {}
     /**
      * @return Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.
-     *
+     * 
      */
     public GetCcRuleAccurateGroup accurateGroup() {
         return this.accurateGroup;
     }
     /**
      * @return Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.
-     *
+     * 
      */
     public Integer ccType() {
         return this.ccType;
     }
     /**
      * @return Statistical time window, unit: seconds. Range: 5–1800.
-     *
+     * 
      */
     public Integer countTime() {
         return this.countTime;
     }
     /**
      * @return Scheduled activation configuration list. Required only when CronEnable=1.
-     *
+     * 
      */
     public List<GetCcRuleCronConf> cronConfs() {
         return this.cronConfs;
     }
     /**
      * @return Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured
-     *
+     * 
      */
     public Integer cronEnable() {
         return this.cronEnable;
     }
     /**
      * @return Custom response page ID. An empty string means not configured.
-     *
+     * 
      */
     public String customResponsePageId() {
         return this.customResponsePageId;
     }
     /**
      * @return Action duration. Unit: seconds. Range: 1–86400
-     *
+     * 
      */
     public Integer effectTime() {
         return this.effectTime;
     }
     /**
      * @return Rule switch. 0: Off; 1: On
-     *
+     * 
      */
     public Integer enable() {
         return this.enable;
     }
     /**
      * @return Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600
-     *
+     * 
      */
     public Integer exemptionTime() {
         return this.exemptionTime;
     }
     /**
      * @return Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.
-     *
+     * 
      */
     public String field() {
         return this.field;
     }
     /**
      * @return Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling
-     *
+     * 
      */
     public String host() {
         return this.host;
     }
     /**
      * @return Uniquely identifies the resource.
-     *
+     * 
      */
     public String id() {
         return this.id;
     }
     /**
      * @return Rule initial entry time.
-     *
+     * 
      */
     public String insertTime() {
         return this.insertTime;
     }
     /**
      * @return Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.
-     *
+     * 
      */
     public String name() {
         return this.name;
     }
     /**
      * @return Overall threshold for the current path. Range: 1–300000, unit: times
-     *
+     * 
      */
     public Integer pathThreshold() {
         return this.pathThreshold;
     }
     /**
      * @return Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated
-     *
+     * 
      */
     public String projectName() {
         return this.projectName;
     }
     /**
      * @return CC rule ID.
-     *
+     * 
      */
     public String ruleId() {
         return this.ruleId;
     }
     /**
      * @return Rule priority. Range: 0–9, where 0 is the highest priority
-     *
+     * 
      */
     public Integer rulePriority() {
         return this.rulePriority;
     }
     /**
      * @return Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624
-     *
+     * 
      */
     public String ruleTag() {
         return this.ruleTag;
     }
     /**
      * @return Threshold for a single statistical object. Range: 1–300000, unit: times.
-     *
+     * 
      */
     public Integer singleThreshold() {
         return this.singleThreshold;
     }
     /**
      * @return Last rule update time.
-     *
+     * 
      */
     public String updateTime() {
         return this.updateTime;
     }
     /**
      * @return URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.
-     *
+     * 
      */
     public String url() {
         return this.url;
     }
     /**
      * @return Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1
-     *
+     * 
      */
     public Integer wsCdnByteThreshold() {
         return this.wsCdnByteThreshold;
     }
     /**
      * @return Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured
-     *
+     * 
      */
     public Integer wsCdnEnable() {
         return this.wsCdnEnable;
     }
     /**
      * @return Websocket connection frame threshold. Required only when WSCdnEnable=1.
-     *
+     * 
      */
     public Integer wsCdnFrameThreshold() {
         return this.wsCdnFrameThreshold;
     }
     /**
      * @return Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1
-     *
+     * 
      */
     public String wsCdnUnit() {
         return this.wsCdnUnit;
@@ -366,33 +366,33 @@ public final class GetCcRuleResult {
         private String wsCdnUnit;
         public Builder() {}
         public Builder(GetCcRuleResult defaults) {
-              Objects.requireNonNull(defaults);
-              this.accurateGroup = defaults.accurateGroup;
-              this.ccType = defaults.ccType;
-              this.countTime = defaults.countTime;
-              this.cronConfs = defaults.cronConfs;
-              this.cronEnable = defaults.cronEnable;
-              this.customResponsePageId = defaults.customResponsePageId;
-              this.effectTime = defaults.effectTime;
-              this.enable = defaults.enable;
-              this.exemptionTime = defaults.exemptionTime;
-              this.field = defaults.field;
-              this.host = defaults.host;
-              this.id = defaults.id;
-              this.insertTime = defaults.insertTime;
-              this.name = defaults.name;
-              this.pathThreshold = defaults.pathThreshold;
-              this.projectName = defaults.projectName;
-              this.ruleId = defaults.ruleId;
-              this.rulePriority = defaults.rulePriority;
-              this.ruleTag = defaults.ruleTag;
-              this.singleThreshold = defaults.singleThreshold;
-              this.updateTime = defaults.updateTime;
-              this.url = defaults.url;
-              this.wsCdnByteThreshold = defaults.wsCdnByteThreshold;
-              this.wsCdnEnable = defaults.wsCdnEnable;
-              this.wsCdnFrameThreshold = defaults.wsCdnFrameThreshold;
-              this.wsCdnUnit = defaults.wsCdnUnit;
+    	      Objects.requireNonNull(defaults);
+    	      this.accurateGroup = defaults.accurateGroup;
+    	      this.ccType = defaults.ccType;
+    	      this.countTime = defaults.countTime;
+    	      this.cronConfs = defaults.cronConfs;
+    	      this.cronEnable = defaults.cronEnable;
+    	      this.customResponsePageId = defaults.customResponsePageId;
+    	      this.effectTime = defaults.effectTime;
+    	      this.enable = defaults.enable;
+    	      this.exemptionTime = defaults.exemptionTime;
+    	      this.field = defaults.field;
+    	      this.host = defaults.host;
+    	      this.id = defaults.id;
+    	      this.insertTime = defaults.insertTime;
+    	      this.name = defaults.name;
+    	      this.pathThreshold = defaults.pathThreshold;
+    	      this.projectName = defaults.projectName;
+    	      this.ruleId = defaults.ruleId;
+    	      this.rulePriority = defaults.rulePriority;
+    	      this.ruleTag = defaults.ruleTag;
+    	      this.singleThreshold = defaults.singleThreshold;
+    	      this.updateTime = defaults.updateTime;
+    	      this.url = defaults.url;
+    	      this.wsCdnByteThreshold = defaults.wsCdnByteThreshold;
+    	      this.wsCdnEnable = defaults.wsCdnEnable;
+    	      this.wsCdnFrameThreshold = defaults.wsCdnFrameThreshold;
+    	      this.wsCdnUnit = defaults.wsCdnUnit;
         }
 
         @CustomType.Setter

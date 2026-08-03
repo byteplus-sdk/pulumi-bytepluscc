@@ -361,3 +361,4 @@ class Contact(pulumi.CustomResource):
         Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.
         """
         return pulumi.get(self, "phone")
+

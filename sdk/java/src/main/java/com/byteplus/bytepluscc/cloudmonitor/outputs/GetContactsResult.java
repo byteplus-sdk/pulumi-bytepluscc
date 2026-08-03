@@ -13,26 +13,26 @@ import java.util.Objects;
 public final class GetContactsResult {
     /**
      * @return Uniquely identifies the data source.
-     *
+     * 
      */
     private String id;
     /**
      * @return Set of Resource Identifiers.
-     *
+     * 
      */
     private List<String> ids;
 
     private GetContactsResult() {}
     /**
      * @return Uniquely identifies the data source.
-     *
+     * 
      */
     public String id() {
         return this.id;
     }
     /**
      * @return Set of Resource Identifiers.
-     *
+     * 
      */
     public List<String> ids() {
         return this.ids;
@@ -51,9 +51,9 @@ public final class GetContactsResult {
         private List<String> ids;
         public Builder() {}
         public Builder(GetContactsResult defaults) {
-              Objects.requireNonNull(defaults);
-              this.id = defaults.id;
-              this.ids = defaults.ids;
+    	      Objects.requireNonNull(defaults);
+    	      this.id = defaults.id;
+    	      this.ids = defaults.ids;
         }
 
         @CustomType.Setter
