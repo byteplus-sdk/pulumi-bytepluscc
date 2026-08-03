@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { CcRuleArgs, CcRuleState } from "./ccRule";
+export type CcRule = import("./ccRule").CcRule;
+export const CcRule: typeof import("./ccRule").CcRule = null as any;
+utilities.lazyLoad(exports, ["CcRule"], () => require("./ccRule"));
+
 export { DomainArgs, DomainState } from "./domain";
 export type Domain = import("./domain").Domain;
 export const Domain: typeof import("./domain").Domain = null as any;
 utilities.lazyLoad(exports, ["Domain"], () => require("./domain"));
+
+export { GetCcRuleArgs, GetCcRuleResult, GetCcRuleOutputArgs } from "./getCcRule";
+export const getCcRule: typeof import("./getCcRule").getCcRule = null as any;
+export const getCcRuleOutput: typeof import("./getCcRule").getCcRuleOutput = null as any;
+utilities.lazyLoad(exports, ["getCcRule","getCcRuleOutput"], () => require("./getCcRule"));
+
+export { GetCcRulesResult } from "./getCcRules";
+export const getCcRules: typeof import("./getCcRules").getCcRules = null as any;
+export const getCcRulesOutput: typeof import("./getCcRules").getCcRulesOutput = null as any;
+utilities.lazyLoad(exports, ["getCcRules","getCcRulesOutput"], () => require("./getCcRules"));
 
 export { GetDomainArgs, GetDomainResult, GetDomainOutputArgs } from "./getDomain";
 export const getDomain: typeof import("./getDomain").getDomain = null as any;
@@ -40,6 +55,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:waf/ccRule:CcRule":
+                return new CcRule(name, <any>undefined, { urn })
             case "bytepluscc:waf/domain:Domain":
                 return new Domain(name, <any>undefined, { urn })
             case "bytepluscc:waf/hostGroup:HostGroup":
@@ -49,5 +66,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "waf/ccRule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/domain", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/hostGroup", _module)

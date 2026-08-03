@@ -15,6 +15,12 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'CcRuleAccurateGroupArgs',
+    'CcRuleAccurateGroupArgsDict',
+    'CcRuleAccurateGroupAccurateRuleArgs',
+    'CcRuleAccurateGroupAccurateRuleArgsDict',
+    'CcRuleCronConfArgs',
+    'CcRuleCronConfArgsDict',
     'DomainBackendGroupArgs',
     'DomainBackendGroupArgsDict',
     'DomainBackendGroupBackendArgs',
@@ -32,6 +38,276 @@ __all__ = [
     'HostGroupRelatedRuleArgs',
     'HostGroupRelatedRuleArgsDict',
 ]
+
+class CcRuleAccurateGroupArgsDict(TypedDict):
+    accurate_group_priority: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Advanced condition group priority. Not required when creating/updating, used only for list display.
+    """
+    accurate_rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['CcRuleAccurateGroupAccurateRuleArgsDict']]]]]
+    """
+    List of subrules in advanced conditions
+    Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Advanced condition group ID. Not required for create/update; used only for list display
+    """
+    logic: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Logical relationship. 1: AND; 2: OR.
+    """
+
+@pulumi.input_type
+class CcRuleAccurateGroupArgs:
+    def __init__(__self__, *,
+                 accurate_group_priority: pulumi.Input[Optional[_builtins.int]] = None,
+                 accurate_rules: pulumi.Input[Optional[Sequence[pulumi.Input['CcRuleAccurateGroupAccurateRuleArgs']]]] = None,
+                 id: pulumi.Input[Optional[_builtins.int]] = None,
+                 logic: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.int] accurate_group_priority: Advanced condition group priority. Not required when creating/updating, used only for list display.
+        :param pulumi.Input[Sequence[pulumi.Input['CcRuleAccurateGroupAccurateRuleArgs']]] accurate_rules: List of subrules in advanced conditions
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.int] id: Advanced condition group ID. Not required for create/update; used only for list display
+        :param pulumi.Input[_builtins.int] logic: Logical relationship. 1: AND; 2: OR.
+        """
+        if accurate_group_priority is not None:
+            pulumi.set(__self__, "accurate_group_priority", accurate_group_priority)
+        if accurate_rules is not None:
+            pulumi.set(__self__, "accurate_rules", accurate_rules)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if logic is not None:
+            pulumi.set(__self__, "logic", logic)
+
+    @_builtins.property
+    @pulumi.getter(name="accurateGroupPriority")
+    def accurate_group_priority(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Advanced condition group priority. Not required when creating/updating, used only for list display.
+        """
+        return pulumi.get(self, "accurate_group_priority")
+
+    @accurate_group_priority.setter
+    def accurate_group_priority(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "accurate_group_priority", value)
+
+    @_builtins.property
+    @pulumi.getter(name="accurateRules")
+    def accurate_rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['CcRuleAccurateGroupAccurateRuleArgs']]]]:
+        """
+        List of subrules in advanced conditions
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "accurate_rules")
+
+    @accurate_rules.setter
+    def accurate_rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['CcRuleAccurateGroupAccurateRuleArgs']]]]):
+        pulumi.set(self, "accurate_rules", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Advanced condition group ID. Not required for create/update; used only for list display
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def logic(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Logical relationship. 1: AND; 2: OR.
+        """
+        return pulumi.get(self, "logic")
+
+    @logic.setter
+    def logic(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "logic", value)
+
+
+class CcRuleAccurateGroupAccurateRuleArgsDict(TypedDict):
+    http_obj: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+    """
+    obj_type: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+    """
+    opretar: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+    """
+    property: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+    """
+    value_string: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+    """
+
+@pulumi.input_type
+class CcRuleAccurateGroupAccurateRuleArgs:
+    def __init__(__self__, *,
+                 http_obj: pulumi.Input[Optional[_builtins.str]] = None,
+                 obj_type: pulumi.Input[Optional[_builtins.int]] = None,
+                 opretar: pulumi.Input[Optional[_builtins.int]] = None,
+                 property: pulumi.Input[Optional[_builtins.int]] = None,
+                 value_string: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] http_obj: Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+        :param pulumi.Input[_builtins.int] obj_type: Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+        :param pulumi.Input[_builtins.int] opretar: Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+        :param pulumi.Input[_builtins.int] property: Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+        :param pulumi.Input[_builtins.str] value_string: Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+        """
+        if http_obj is not None:
+            pulumi.set(__self__, "http_obj", http_obj)
+        if obj_type is not None:
+            pulumi.set(__self__, "obj_type", obj_type)
+        if opretar is not None:
+            pulumi.set(__self__, "opretar", opretar)
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+        if value_string is not None:
+            pulumi.set(__self__, "value_string", value_string)
+
+    @_builtins.property
+    @pulumi.getter(name="httpObj")
+    def http_obj(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+        """
+        return pulumi.get(self, "http_obj")
+
+    @http_obj.setter
+    def http_obj(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "http_obj", value)
+
+    @_builtins.property
+    @pulumi.getter(name="objType")
+    def obj_type(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+        """
+        return pulumi.get(self, "obj_type")
+
+    @obj_type.setter
+    def obj_type(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "obj_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def opretar(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+        """
+        return pulumi.get(self, "opretar")
+
+    @opretar.setter
+    def opretar(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "opretar", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def property(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+        """
+        return pulumi.get(self, "property")
+
+    @property.setter
+    def property(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "property", value)
+
+    @_builtins.property
+    @pulumi.getter(name="valueString")
+    def value_string(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+        """
+        return pulumi.get(self, "value_string")
+
+    @value_string.setter
+    def value_string(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value_string", value)
+
+
+class CcRuleCronConfArgsDict(TypedDict):
+    crontab: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    crontab expression. Recommended format: * \\n\\n-\\n\\n * * \\n\\n, for example * 18-20 * * 1,2,3,4,5.
+    """
+    path_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total path threshold during the specified period. Range: 1–300000
+    """
+    single_threshold: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Threshold for a single object during this time period. Range: 1–300000.
+    """
+
+@pulumi.input_type
+class CcRuleCronConfArgs:
+    def __init__(__self__, *,
+                 crontab: pulumi.Input[Optional[_builtins.str]] = None,
+                 path_threshold: pulumi.Input[Optional[_builtins.int]] = None,
+                 single_threshold: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.str] crontab: crontab expression. Recommended format: * \\n\\n-\\n\\n * * \\n\\n, for example * 18-20 * * 1,2,3,4,5.
+        :param pulumi.Input[_builtins.int] path_threshold: Total path threshold during the specified period. Range: 1–300000
+        :param pulumi.Input[_builtins.int] single_threshold: Threshold for a single object during this time period. Range: 1–300000.
+        """
+        if crontab is not None:
+            pulumi.set(__self__, "crontab", crontab)
+        if path_threshold is not None:
+            pulumi.set(__self__, "path_threshold", path_threshold)
+        if single_threshold is not None:
+            pulumi.set(__self__, "single_threshold", single_threshold)
+
+    @_builtins.property
+    @pulumi.getter
+    def crontab(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        crontab expression. Recommended format: * \\n\\n-\\n\\n * * \\n\\n, for example * 18-20 * * 1,2,3,4,5.
+        """
+        return pulumi.get(self, "crontab")
+
+    @crontab.setter
+    def crontab(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "crontab", value)
+
+    @_builtins.property
+    @pulumi.getter(name="pathThreshold")
+    def path_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total path threshold during the specified period. Range: 1–300000
+        """
+        return pulumi.get(self, "path_threshold")
+
+    @path_threshold.setter
+    def path_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "path_threshold", value)
+
+    @_builtins.property
+    @pulumi.getter(name="singleThreshold")
+    def single_threshold(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Threshold for a single object during this time period. Range: 1–300000.
+        """
+        return pulumi.get(self, "single_threshold")
+
+    @single_threshold.setter
+    def single_threshold(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "single_threshold", value)
+
 
 class DomainBackendGroupArgsDict(TypedDict):
     access_ports: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
@@ -737,5 +1013,3 @@ class HostGroupRelatedRuleArgs:
     @rule_type.setter
     def rule_type(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "rule_type", value)
-
-

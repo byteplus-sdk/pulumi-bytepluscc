@@ -1208,6 +1208,14 @@
             "bytepluscc_cloudidentity_user_provisioning": {
                 "current": "bytepluscc:cloudidentity/userProvisioning:UserProvisioning"
             },
+            "bytepluscc_cloudmonitor_contact": {
+                "current": "bytepluscc:cloudmonitor/contact:Contact",
+                "fields": {
+                    "contact_group_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudmonitor_contact_group": {
                 "current": "bytepluscc:cloudmonitor/contactGroup:ContactGroup",
                 "fields": {
@@ -4411,6 +4419,21 @@
                     }
                 }
             },
+            "bytepluscc_waf_cc_rule": {
+                "current": "bytepluscc:waf/ccRule:CcRule",
+                "fields": {
+                    "accurate_group": {
+                        "fields": {
+                            "accurate_rules": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "cron_confs": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_waf_domain": {
                 "current": "bytepluscc:waf/domain:Domain",
                 "fields": {
@@ -6077,6 +6100,14 @@
                     }
                 }
             },
+            "bytepluscc_cloudmonitor_contact": {
+                "current": "bytepluscc:cloudmonitor/getContact:getContact",
+                "fields": {
+                    "contact_group_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cloudmonitor_contact_group": {
                 "current": "bytepluscc:cloudmonitor/getContactGroup:getContactGroup",
                 "fields": {
@@ -6087,6 +6118,14 @@
             },
             "bytepluscc_cloudmonitor_contact_groups": {
                 "current": "bytepluscc:cloudmonitor/getContactGroups:getContactGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_cloudmonitor_contacts": {
+                "current": "bytepluscc:cloudmonitor/getContacts:getContacts",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -10999,6 +11038,29 @@
                     }
                 }
             },
+            "bytepluscc_waf_cc_rule": {
+                "current": "bytepluscc:waf/getCcRule:getCcRule",
+                "fields": {
+                    "accurate_group": {
+                        "fields": {
+                            "accurate_rules": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "cron_confs": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_waf_cc_rules": {
+                "current": "bytepluscc:waf/getCcRules:getCcRules",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_waf_domain": {
                 "current": "bytepluscc:waf/getDomain:getDomain",
                 "fields": {
@@ -11137,6 +11199,7 @@
             "bytepluscc_cloudidentity_permission_set_provisioning": {},
             "bytepluscc_cloudidentity_user": {},
             "bytepluscc_cloudidentity_user_provisioning": {},
+            "bytepluscc_cloudmonitor_contact": {},
             "bytepluscc_cloudmonitor_contact_group": {},
             "bytepluscc_cloudmonitor_event_rule": {},
             "bytepluscc_cloudmonitor_rule": {},
@@ -11339,6 +11402,7 @@
             "bytepluscc_vpn_vpn_connection": {},
             "bytepluscc_vpn_vpn_gateway": {},
             "bytepluscc_vpn_vpn_gateway_route": {},
+            "bytepluscc_waf_cc_rule": {},
             "bytepluscc_waf_domain": {},
             "bytepluscc_waf_host_group": {}
         }

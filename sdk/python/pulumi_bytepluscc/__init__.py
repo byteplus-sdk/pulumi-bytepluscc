@@ -524,6 +524,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cloudmonitor/contact",
+  "fqn": "pulumi_bytepluscc.cloudmonitor",
+  "classes": {
+   "bytepluscc:cloudmonitor/contact:Contact": "Contact"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cloudmonitor/contactGroup",
   "fqn": "pulumi_bytepluscc.cloudmonitor",
   "classes": {
@@ -2136,6 +2144,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpn",
   "classes": {
    "bytepluscc:vpn/vpnGatewayRoute:VpnGatewayRoute": "VpnGatewayRoute"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "waf/ccRule",
+  "fqn": "pulumi_bytepluscc.waf",
+  "classes": {
+   "bytepluscc:waf/ccRule:CcRule": "CcRule"
   }
  },
  {

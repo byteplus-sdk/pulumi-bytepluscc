@@ -59689,6 +59689,102 @@
                 }
             }
         },
+        "bytepluscc:waf/CcRuleAccurateGroup:CcRuleAccurateGroup": {
+            "properties": {
+                "accurateGroupPriority": {
+                    "type": "integer",
+                    "description": "Advanced condition group priority. Not required when creating/updating, used only for list display.\n"
+                },
+                "accurateRules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:waf/CcRuleAccurateGroupAccurateRule:CcRuleAccurateGroupAccurateRule"
+                    },
+                    "description": "List of subrules in advanced conditions\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "Advanced condition group ID. Not required for create/update; used only for list display\n"
+                },
+                "logic": {
+                    "type": "integer",
+                    "description": "Logical relationship. 1: AND; 2: OR.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "accurateGroupPriority",
+                        "accurateRules",
+                        "id",
+                        "logic"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:waf/CcRuleAccurateGroupAccurateRule:CcRuleAccurateGroupAccurateRule": {
+            "properties": {
+                "httpObj": {
+                    "type": "string",
+                    "description": "Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc\n"
+                },
+                "objType": {
+                    "type": "integer",
+                    "description": "Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.\n"
+                },
+                "opretar": {
+                    "type": "integer",
+                    "description": "Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong\n"
+                },
+                "property": {
+                    "type": "integer",
+                    "description": "Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.\n"
+                },
+                "valueString": {
+                    "type": "string",
+                    "description": "Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "httpObj",
+                        "objType",
+                        "opretar",
+                        "property",
+                        "valueString"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:waf/CcRuleCronConf:CcRuleCronConf": {
+            "properties": {
+                "crontab": {
+                    "type": "string",
+                    "description": "crontab expression. Recommended format: * \\n\\n-\\n\\n * * \\n\\n, for example * 18-20 * * 1,2,3,4,5.\n"
+                },
+                "pathThreshold": {
+                    "type": "integer",
+                    "description": "Total path threshold during the specified period. Range: 1–300000\n"
+                },
+                "singleThreshold": {
+                    "type": "integer",
+                    "description": "Threshold for a single object during this time period. Range: 1–300000.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "crontab",
+                        "pathThreshold",
+                        "singleThreshold"
+                    ]
+                }
+            }
+        },
         "bytepluscc:waf/DomainBackendGroup:DomainBackendGroup": {
             "properties": {
                 "accessPorts": {
@@ -59951,6 +60047,105 @@
                         "ruleTag",
                         "ruleType"
                     ]
+                }
+            }
+        },
+        "bytepluscc:waf/getCcRuleAccurateGroup:getCcRuleAccurateGroup": {
+            "properties": {
+                "accurateGroupPriority": {
+                    "type": "integer",
+                    "description": "Advanced condition group priority. Not required when creating/updating, used only for list display.\n"
+                },
+                "accurateRules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:waf/getCcRuleAccurateGroupAccurateRule:getCcRuleAccurateGroupAccurateRule"
+                    },
+                    "description": "List of subrules in advanced conditions\n"
+                },
+                "id": {
+                    "type": "integer",
+                    "description": "Advanced condition group ID. Not required for create/update; used only for list display\n"
+                },
+                "logic": {
+                    "type": "integer",
+                    "description": "Logical relationship. 1: AND; 2: OR.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accurateGroupPriority",
+                "accurateRules",
+                "id",
+                "logic"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:waf/getCcRuleAccurateGroupAccurateRule:getCcRuleAccurateGroupAccurateRule": {
+            "properties": {
+                "httpObj": {
+                    "type": "string",
+                    "description": "Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc\n"
+                },
+                "objType": {
+                    "type": "integer",
+                    "description": "Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.\n"
+                },
+                "opretar": {
+                    "type": "integer",
+                    "description": "Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong\n"
+                },
+                "property": {
+                    "type": "integer",
+                    "description": "Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.\n"
+                },
+                "valueString": {
+                    "type": "string",
+                    "description": "Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "httpObj",
+                "objType",
+                "opretar",
+                "property",
+                "valueString"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:waf/getCcRuleCronConf:getCcRuleCronConf": {
+            "properties": {
+                "crontab": {
+                    "type": "string",
+                    "description": "crontab expression. Recommended format: * \\n\\n-\\n\\n * * \\n\\n, for example * 18-20 * * 1,2,3,4,5.\n"
+                },
+                "pathThreshold": {
+                    "type": "integer",
+                    "description": "Total path threshold during the specified period. Range: 1–300000\n"
+                },
+                "singleThreshold": {
+                    "type": "integer",
+                    "description": "Threshold for a single object during this time period. Range: 1–300000.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "crontab",
+                "pathThreshold",
+                "singleThreshold"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
                 }
             }
         },
@@ -71150,6 +71345,95 @@
                     "userProvisioningId": {
                         "type": "string",
                         "description": "IAM User Synchronization Task ID\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudmonitor/contact:Contact": {
+            "description": "Cloud Monitoring alert contact. Used to configure recipients for alert notifications. You can add a contact to one or more contact groups.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.cloudmonitor.Contact(\"Example\", {\n    email: \"test_contact2@example.com\",\n    contactGroupIds: [\"20493********741184\"],\n    phone: \"138*****000\",\n    name: \"Test_Contact2\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.cloudmonitor.Contact(\"Example\",\n    email=\"test_contact2@example.com\",\n    contact_group_ids=[\"20493********741184\"],\n    phone=\"138*****000\",\n    name=\"Test_Contact2\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Cloudmonitor.Contact(\"Example\", new()\n    {\n        Email = \"test_contact2@example.com\",\n        ContactGroupIds = new[]\n        {\n            \"20493********741184\",\n        },\n        Phone = \"138*****000\",\n        Name = \"Test_Contact2\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/cloudmonitor\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := cloudmonitor.NewContact(ctx, \"Example\", \u0026cloudmonitor.ContactArgs{\n\t\t\tEmail: pulumi.String(\"test_contact2@example.com\"),\n\t\t\tContactGroupIds: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"20493********741184\"),\n\t\t\t},\n\t\t\tPhone: pulumi.String(\"138*****000\"),\n\t\t\tName:  pulumi.String(\"Test_Contact2\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_cloudmonitor_contact\" \"Example\" {\n  email             = \"test_contact2@example.com\"\n  contact_group_ids = [\"20493********741184\"]\n  phone             = \"138*****000\"\n  name              = \"Test_Contact2\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.cloudmonitor.Contact;\nimport com.byteplus.bytepluscc.cloudmonitor.ContactArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new Contact(\"example\", ContactArgs.builder()\n            .email(\"test_contact2@example.com\")\n            .contactGroupIds(\"20493********741184\")\n            .phone(\"138*****000\")\n            .name(\"Test_Contact2\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:cloudmonitor:Contact\n    name: Example\n    properties:\n      email: test_contact2@example.com\n      contactGroupIds:\n        - 20493********741184\n      phone: 138*****000\n      name: Test_Contact2\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:cloudmonitor/contact:Contact example \"contact_id\"\n```\n\n",
+            "properties": {
+                "contactGroupIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact's existing associated groups.\n"
+                },
+                "contactId": {
+                    "type": "string",
+                    "description": "Alert contact ID.\n"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.\n"
+                },
+                "phone": {
+                    "type": "string",
+                    "description": "Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.\n"
+                }
+            },
+            "required": [
+                "contactGroupIds",
+                "contactId",
+                "email",
+                "name",
+                "phone"
+            ],
+            "inputProperties": {
+                "contactGroupIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact's existing associated groups.\n"
+                },
+                "email": {
+                    "type": "string",
+                    "description": "Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.\n"
+                },
+                "phone": {
+                    "type": "string",
+                    "description": "Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.\n"
+                }
+            },
+            "requiredInputs": [
+                "email",
+                "name"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Contact resources.\n",
+                "properties": {
+                    "contactGroupIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact's existing associated groups.\n"
+                    },
+                    "contactId": {
+                        "type": "string",
+                        "description": "Alert contact ID.\n"
+                    },
+                    "email": {
+                        "type": "string",
+                        "description": "Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.\n"
+                    },
+                    "phone": {
+                        "type": "string",
+                        "description": "Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.\n"
                     }
                 },
                 "type": "object"
@@ -114818,6 +115102,351 @@
                 "type": "object"
             }
         },
+        "bytepluscc:waf/ccRule:CcRule": {
+            "description": "WAF CC protection rule. Restricts requests based on network access IP, session, and other HTTP request objects. When the specified statistical conditions are met, a protection action is triggered\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst primaryWafCcruleCase2 = new bytepluscc.waf.CcRule(\"primary_waf_ccrule_case_2\", {\n    field: \"HEADER:Authorization\",\n    ccType: 2,\n    countTime: 300,\n    enable: 1,\n    singleThreshold: 30,\n    host: \"www.testwaf.com\",\n    pathThreshold: 300,\n    rulePriority: 9,\n    cronEnable: 1,\n    cronConfs: [{\n        single_threshold: 10,\n        path_threshold: 100,\n        crontab: \"* 18-20 * * 1,2,3,4,5\",\n    }],\n    url: \"/admin\",\n    name: \"test-rule-block\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nprimary_waf_ccrule_case2 = bytepluscc.waf.CcRule(\"primary_waf_ccrule_case_2\",\n    field=\"HEADER:Authorization\",\n    cc_type=2,\n    count_time=300,\n    enable=1,\n    single_threshold=30,\n    host=\"www.testwaf.com\",\n    path_threshold=300,\n    rule_priority=9,\n    cron_enable=1,\n    cron_confs=[{\n        \"single_threshold\": 10,\n        \"path_threshold\": 100,\n        \"crontab\": \"* 18-20 * * 1,2,3,4,5\",\n    }],\n    url=\"/admin\",\n    name=\"test-rule-block\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var primaryWafCcruleCase2 = new Bytepluscc.Waf.CcRule(\"primary_waf_ccrule_case_2\", new()\n    {\n        Field = \"HEADER:Authorization\",\n        CcType = 2,\n        CountTime = 300,\n        Enable = 1,\n        SingleThreshold = 30,\n        Host = \"www.testwaf.com\",\n        PathThreshold = 300,\n        RulePriority = 9,\n        CronEnable = 1,\n        CronConfs = new[]\n        {\n            new Bytepluscc.Waf.Inputs.CcRuleCronConfArgs\n            {\n                Single_threshold = 10,\n                Path_threshold = 100,\n                Crontab = \"* 18-20 * * 1,2,3,4,5\",\n            },\n        },\n        Url = \"/admin\",\n        Name = \"test-rule-block\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/waf\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := waf.NewCcRule(ctx, \"primary_waf_ccrule_case_2\", \u0026waf.CcRuleArgs{\n\t\t\tField:           pulumi.String(\"HEADER:Authorization\"),\n\t\t\tCcType:          pulumi.Int(2),\n\t\t\tCountTime:       pulumi.Int(300),\n\t\t\tEnable:          pulumi.Int(1),\n\t\t\tSingleThreshold: pulumi.Int(30),\n\t\t\tHost:            pulumi.String(\"www.testwaf.com\"),\n\t\t\tPathThreshold:   pulumi.Int(300),\n\t\t\tRulePriority:    pulumi.Int(9),\n\t\t\tCronEnable:      pulumi.Int(1),\n\t\t\tCronConfs: waf.CcRuleCronConfArray{\n\t\t\t\t\u0026waf.CcRuleCronConfArgs{\n\t\t\t\t\tSingle_threshold: 10,\n\t\t\t\t\tPath_threshold:   100,\n\t\t\t\t\tCrontab:          pulumi.String(\"* 18-20 * * 1,2,3,4,5\"),\n\t\t\t\t},\n\t\t\t},\n\t\t\tUrl:  pulumi.String(\"/admin\"),\n\t\t\tName: pulumi.String(\"test-rule-block\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_waf_ccrule\" \"primary_waf_ccrule_case_2\" {\n  field            = \"HEADER:Authorization\"\n  cc_type          = 2\n  count_time       = 300\n  enable           = 1\n  single_threshold = 30\n  host             = \"www.testwaf.com\"\n  path_threshold   = 300\n  rule_priority    = 9\n  cron_enable      = 1\n  cron_confs {\n    single_threshold = 10\n    path_threshold   = 100\n    crontab          = \"* 18-20 * * 1,2,3,4,5\"\n  }\n  url  = \"/admin\"\n  name = \"test-rule-block\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.waf.CcRule;\nimport com.byteplus.bytepluscc.waf.CcRuleArgs;\nimport com.pulumi.bytepluscc.waf.inputs.CcRuleCronConfArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var primaryWafCcruleCase2 = new CcRule(\"primaryWafCcruleCase2\", CcRuleArgs.builder()\n            .field(\"HEADER:Authorization\")\n            .ccType(2)\n            .countTime(300)\n            .enable(1)\n            .singleThreshold(30)\n            .host(\"www.testwaf.com\")\n            .pathThreshold(300)\n            .rulePriority(9)\n            .cronEnable(1)\n            .cronConfs(CcRuleCronConfArgs.builder()\n                .single_threshold(10)\n                .path_threshold(100)\n                .crontab(\"* 18-20 * * 1,2,3,4,5\")\n                .build())\n            .url(\"/admin\")\n            .name(\"test-rule-block\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  primaryWafCcruleCase2:\n    type: bytepluscc:waf:CcRule\n    name: primary_waf_ccrule_case_2\n    properties:\n      field: HEADER:Authorization\n      ccType: 2\n      countTime: 300\n      enable: 1\n      singleThreshold: 30\n      host: www.testwaf.com\n      pathThreshold: 300\n      rulePriority: 9\n      cronEnable: 1\n      cronConfs:\n        - single_threshold: 10\n          path_threshold: 100\n          crontab: '* 18-20 * * 1,2,3,4,5'\n      url: /admin\n      name: test-rule-block\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:waf/ccRule:CcRule example \"host|rule_id\"\n```\n\n",
+            "properties": {
+                "accurateGroup": {
+                    "$ref": "#/types/bytepluscc:waf/CcRuleAccurateGroup:CcRuleAccurateGroup",
+                    "description": "Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.\n"
+                },
+                "ccType": {
+                    "type": "integer",
+                    "description": "Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.\n"
+                },
+                "countTime": {
+                    "type": "integer",
+                    "description": "Statistical time window, unit: seconds. Range: 5–1800.\n"
+                },
+                "cronConfs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:waf/CcRuleCronConf:CcRuleCronConf"
+                    },
+                    "description": "Scheduled activation configuration list. Required only when CronEnable=1.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "cronEnable": {
+                    "type": "integer",
+                    "description": "Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured\n"
+                },
+                "customResponsePageId": {
+                    "type": "string",
+                    "description": "Custom response page ID. An empty string means not configured.\n"
+                },
+                "effectTime": {
+                    "type": "integer",
+                    "description": "Action duration. Unit: seconds. Range: 1–86400\n"
+                },
+                "enable": {
+                    "type": "integer",
+                    "description": "Rule switch. 0: Off; 1: On\n"
+                },
+                "exemptionTime": {
+                    "type": "integer",
+                    "description": "Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600\n"
+                },
+                "field": {
+                    "type": "string",
+                    "description": "Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.\n"
+                },
+                "host": {
+                    "type": "string",
+                    "description": "Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling\n"
+                },
+                "insertTime": {
+                    "type": "string",
+                    "description": "Rule initial entry time.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.\n"
+                },
+                "pathThreshold": {
+                    "type": "integer",
+                    "description": "Overall threshold for the current path. Range: 1–300000, unit: times\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated\n"
+                },
+                "ruleId": {
+                    "type": "string",
+                    "description": "CC rule ID.\n"
+                },
+                "rulePriority": {
+                    "type": "integer",
+                    "description": "Rule priority. Range: 0–9, where 0 is the highest priority\n"
+                },
+                "ruleTag": {
+                    "type": "string",
+                    "description": "Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624\n"
+                },
+                "singleThreshold": {
+                    "type": "integer",
+                    "description": "Threshold for a single statistical object. Range: 1–300000, unit: times.\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Last rule update time.\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.\n"
+                },
+                "wsCdnByteThreshold": {
+                    "type": "integer",
+                    "description": "Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1\n"
+                },
+                "wsCdnEnable": {
+                    "type": "integer",
+                    "description": "Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured\n"
+                },
+                "wsCdnFrameThreshold": {
+                    "type": "integer",
+                    "description": "Websocket connection frame threshold. Required only when WSCdnEnable=1.\n"
+                },
+                "wsCdnUnit": {
+                    "type": "string",
+                    "description": "Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1\n"
+                }
+            },
+            "required": [
+                "accurateGroup",
+                "ccType",
+                "countTime",
+                "cronConfs",
+                "cronEnable",
+                "customResponsePageId",
+                "effectTime",
+                "enable",
+                "exemptionTime",
+                "field",
+                "host",
+                "insertTime",
+                "name",
+                "pathThreshold",
+                "projectName",
+                "ruleId",
+                "rulePriority",
+                "ruleTag",
+                "singleThreshold",
+                "updateTime",
+                "url",
+                "wsCdnByteThreshold",
+                "wsCdnEnable",
+                "wsCdnFrameThreshold",
+                "wsCdnUnit"
+            ],
+            "inputProperties": {
+                "accurateGroup": {
+                    "$ref": "#/types/bytepluscc:waf/CcRuleAccurateGroup:CcRuleAccurateGroup",
+                    "description": "Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.\n"
+                },
+                "ccType": {
+                    "type": "integer",
+                    "description": "Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.\n"
+                },
+                "countTime": {
+                    "type": "integer",
+                    "description": "Statistical time window, unit: seconds. Range: 5–1800.\n"
+                },
+                "cronConfs": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:waf/CcRuleCronConf:CcRuleCronConf"
+                    },
+                    "description": "Scheduled activation configuration list. Required only when CronEnable=1.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "cronEnable": {
+                    "type": "integer",
+                    "description": "Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured\n"
+                },
+                "customResponsePageId": {
+                    "type": "string",
+                    "description": "Custom response page ID. An empty string means not configured.\n"
+                },
+                "effectTime": {
+                    "type": "integer",
+                    "description": "Action duration. Unit: seconds. Range: 1–86400\n"
+                },
+                "enable": {
+                    "type": "integer",
+                    "description": "Rule switch. 0: Off; 1: On\n"
+                },
+                "exemptionTime": {
+                    "type": "integer",
+                    "description": "Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600\n"
+                },
+                "field": {
+                    "type": "string",
+                    "description": "Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.\n"
+                },
+                "host": {
+                    "type": "string",
+                    "description": "Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.\n"
+                },
+                "pathThreshold": {
+                    "type": "integer",
+                    "description": "Overall threshold for the current path. Range: 1–300000, unit: times\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated\n"
+                },
+                "rulePriority": {
+                    "type": "integer",
+                    "description": "Rule priority. Range: 0–9, where 0 is the highest priority\n"
+                },
+                "singleThreshold": {
+                    "type": "integer",
+                    "description": "Threshold for a single statistical object. Range: 1–300000, unit: times.\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.\n"
+                },
+                "wsCdnByteThreshold": {
+                    "type": "integer",
+                    "description": "Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1\n"
+                },
+                "wsCdnEnable": {
+                    "type": "integer",
+                    "description": "Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured\n"
+                },
+                "wsCdnFrameThreshold": {
+                    "type": "integer",
+                    "description": "Websocket connection frame threshold. Required only when WSCdnEnable=1.\n"
+                },
+                "wsCdnUnit": {
+                    "type": "string",
+                    "description": "Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1\n"
+                }
+            },
+            "requiredInputs": [
+                "ccType",
+                "countTime",
+                "enable",
+                "field",
+                "host",
+                "name",
+                "pathThreshold",
+                "rulePriority",
+                "singleThreshold",
+                "url"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CcRule resources.\n",
+                "properties": {
+                    "accurateGroup": {
+                        "$ref": "#/types/bytepluscc:waf/CcRuleAccurateGroup:CcRuleAccurateGroup",
+                        "description": "Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.\n"
+                    },
+                    "ccType": {
+                        "type": "integer",
+                        "description": "Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.\n"
+                    },
+                    "countTime": {
+                        "type": "integer",
+                        "description": "Statistical time window, unit: seconds. Range: 5–1800.\n"
+                    },
+                    "cronConfs": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:waf/CcRuleCronConf:CcRuleCronConf"
+                        },
+                        "description": "Scheduled activation configuration list. Required only when CronEnable=1.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "cronEnable": {
+                        "type": "integer",
+                        "description": "Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured\n"
+                    },
+                    "customResponsePageId": {
+                        "type": "string",
+                        "description": "Custom response page ID. An empty string means not configured.\n"
+                    },
+                    "effectTime": {
+                        "type": "integer",
+                        "description": "Action duration. Unit: seconds. Range: 1–86400\n"
+                    },
+                    "enable": {
+                        "type": "integer",
+                        "description": "Rule switch. 0: Off; 1: On\n"
+                    },
+                    "exemptionTime": {
+                        "type": "integer",
+                        "description": "Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600\n"
+                    },
+                    "field": {
+                        "type": "string",
+                        "description": "Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.\n"
+                    },
+                    "host": {
+                        "type": "string",
+                        "description": "Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling\n"
+                    },
+                    "insertTime": {
+                        "type": "string",
+                        "description": "Rule initial entry time.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.\n"
+                    },
+                    "pathThreshold": {
+                        "type": "integer",
+                        "description": "Overall threshold for the current path. Range: 1–300000, unit: times\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated\n"
+                    },
+                    "ruleId": {
+                        "type": "string",
+                        "description": "CC rule ID.\n"
+                    },
+                    "rulePriority": {
+                        "type": "integer",
+                        "description": "Rule priority. Range: 0–9, where 0 is the highest priority\n"
+                    },
+                    "ruleTag": {
+                        "type": "string",
+                        "description": "Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624\n"
+                    },
+                    "singleThreshold": {
+                        "type": "integer",
+                        "description": "Threshold for a single statistical object. Range: 1–300000, unit: times.\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Last rule update time.\n"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.\n"
+                    },
+                    "wsCdnByteThreshold": {
+                        "type": "integer",
+                        "description": "Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1\n"
+                    },
+                    "wsCdnEnable": {
+                        "type": "integer",
+                        "description": "Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured\n"
+                    },
+                    "wsCdnFrameThreshold": {
+                        "type": "integer",
+                        "description": "Websocket connection frame threshold. Required only when WSCdnEnable=1.\n"
+                    },
+                    "wsCdnUnit": {
+                        "type": "string",
+                        "description": "Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:waf/domain:Domain": {
             "description": "Connect the protected site via CNAME or load balancing, configure access and origin capabilities, and route business traffic to the WAF instance for protection\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst wafDomainDemo = new bytepluscc.waf.Domain(\"WafDomainDemo\", {\n    accessMode: 10,\n    domain: \"www.test.com\",\n    lbAlgorithm: \"wrr\",\n    publicRealServer: 1,\n    vpcId: \"\",\n    protocolPorts: {\n        http: [80],\n    },\n    protocols: [\"HTTP\"],\n    backendGroups: [{\n        access_port: [80],\n        backends: [{\n            protocol: \"HTTP\",\n            port: 80,\n            ip: \"1.1.1.1\",\n            weight: 50,\n        }],\n        name: \"default\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nwaf_domain_demo = bytepluscc.waf.Domain(\"WafDomainDemo\",\n    access_mode=10,\n    domain=\"www.test.com\",\n    lb_algorithm=\"wrr\",\n    public_real_server=1,\n    vpc_id=\"\",\n    protocol_ports={\n        \"http\": [80],\n    },\n    protocols=[\"HTTP\"],\n    backend_groups=[{\n        \"access_port\": [80],\n        \"backends\": [{\n            \"protocol\": \"HTTP\",\n            \"port\": 80,\n            \"ip\": \"1.1.1.1\",\n            \"weight\": 50,\n        }],\n        \"name\": \"default\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var wafDomainDemo = new Bytepluscc.Waf.Domain(\"WafDomainDemo\", new()\n    {\n        AccessMode = 10,\n        DomainValue = \"www.test.com\",\n        LbAlgorithm = \"wrr\",\n        PublicRealServer = 1,\n        VpcId = \"\",\n        ProtocolPorts = new Bytepluscc.Waf.Inputs.DomainProtocolPortsArgs\n        {\n            Http = new[]\n            {\n                80,\n            },\n        },\n        Protocols = new[]\n        {\n            \"HTTP\",\n        },\n        BackendGroups = new[]\n        {\n            new Bytepluscc.Waf.Inputs.DomainBackendGroupArgs\n            {\n                Access_port = new[]\n                {\n                    80,\n                },\n                Backends = new[]\n                {\n                    new Bytepluscc.Waf.Inputs.DomainBackendGroupBackendArgs\n                    {\n                        Protocol = \"HTTP\",\n                        Port = 80,\n                        Ip = \"1.1.1.1\",\n                        Weight = 50,\n                    },\n                },\n                Name = \"default\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/waf\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := waf.NewDomain(ctx, \"WafDomainDemo\", \u0026waf.DomainArgs{\n\t\t\tAccessMode:       pulumi.Int(10),\n\t\t\tDomain:           pulumi.String(\"www.test.com\"),\n\t\t\tLbAlgorithm:      pulumi.String(\"wrr\"),\n\t\t\tPublicRealServer: pulumi.Int(1),\n\t\t\tVpcId:            pulumi.String(\"\"),\n\t\t\tProtocolPorts: \u0026waf.DomainProtocolPortsArgs{\n\t\t\t\tHttp: pulumi.IntArray{\n\t\t\t\t\tpulumi.Int(80),\n\t\t\t\t},\n\t\t\t},\n\t\t\tProtocols: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"HTTP\"),\n\t\t\t},\n\t\t\tBackendGroups: waf.DomainBackendGroupArray{\n\t\t\t\t\u0026waf.DomainBackendGroupArgs{\n\t\t\t\t\tAccess_port: []int{\n\t\t\t\t\t\t80,\n\t\t\t\t\t},\n\t\t\t\t\tBackends: waf.DomainBackendGroupBackendArray{\n\t\t\t\t\t\t\u0026waf.DomainBackendGroupBackendArgs{\n\t\t\t\t\t\t\tProtocol: pulumi.String(\"HTTP\"),\n\t\t\t\t\t\t\tPort:     pulumi.Int(80),\n\t\t\t\t\t\t\tIp:       pulumi.String(\"1.1.1.1\"),\n\t\t\t\t\t\t\tWeight:   pulumi.Int(50),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tName: pulumi.String(\"default\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_waf_domain\" \"WafDomainDemo\" {\n  access_mode        = 10\n  domain             = \"www.test.com\"\n  lb_algorithm       = \"wrr\"\n  public_real_server = 1\n  vpc_id             = \"\"\n  protocol_ports = {\n    http = [80]\n  }\n  protocols = [\"HTTP\"]\n  backend_groups {\n    access_port = [80]\n    backends {\n      protocol = \"HTTP\"\n      port     = 80\n      ip       = \"1.1.1.1\"\n      weight   = 50\n    }\n    name = \"default\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.waf.Domain;\nimport com.byteplus.bytepluscc.waf.DomainArgs;\nimport com.pulumi.bytepluscc.waf.inputs.DomainProtocolPortsArgs;\nimport com.pulumi.bytepluscc.waf.inputs.DomainBackendGroupArgs;\nimport com.pulumi.bytepluscc.waf.inputs.DomainBackendGroupBackendArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var wafDomainDemo = new Domain(\"wafDomainDemo\", DomainArgs.builder()\n            .accessMode(10)\n            .domain(\"www.test.com\")\n            .lbAlgorithm(\"wrr\")\n            .publicRealServer(1)\n            .vpcId(\"\")\n            .protocolPorts(DomainProtocolPortsArgs.builder()\n                .http(80)\n                .build())\n            .protocols(\"HTTP\")\n            .backendGroups(DomainBackendGroupArgs.builder()\n                .access_port(Arrays.asList(80))\n                .backends(DomainBackendGroupBackendArgs.builder()\n                    .protocol(\"HTTP\")\n                    .port(80)\n                    .ip(\"1.1.1.1\")\n                    .weight(50)\n                    .build())\n                .name(\"default\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  wafDomainDemo:\n    type: bytepluscc:waf:Domain\n    name: WafDomainDemo\n    properties:\n      accessMode: 10\n      domain: www.test.com\n      lbAlgorithm: wrr\n      publicRealServer: 1\n      vpcId: \"\"\n      protocolPorts:\n        http:\n          - 80\n      protocols:\n        - HTTP\n      backendGroups:\n        - access_port:\n            - 80\n          backends:\n            - protocol: HTTP\n              port: 80\n              ip: 1.1.1.1\n              weight: 50\n          name: default\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:waf/domain:Domain example \"domain\"\n```\n\n",
             "properties": {
@@ -122515,6 +123144,63 @@
                 "type": "object"
             }
         },
+        "bytepluscc:cloudmonitor/getContact:getContact": {
+            "description": "Data Source schema for Byteplus::CloudMonitor::Contact\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getContact.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getContact.\n",
+                "properties": {
+                    "contactGroupIds": {
+                        "description": "List of contact group IDs the contact has joined. A single contact can be added to up to 10 contact groups. The value will replace the contact's existing associated groups.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "contactId": {
+                        "description": "Alert contact ID.\n",
+                        "type": "string"
+                    },
+                    "email": {
+                        "description": "Required when updating. Alert email address. Cloud Monitoring will send a verification email to the provided address. You must open the verification link in the email to complete verification. Only after the email address is verified can it receive alert notifications.\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Contact name. Cannot start with a digit or hyphen. Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be between 1 and 128 characters.\n",
+                        "type": "string"
+                    },
+                    "phone": {
+                        "description": "Alert phone number. If not provided during update, the original value remains. Cloud Monitoring will send a verification SMS to the provided phone number. You must open the verification link in the SMS to complete verification. Only after the phone number is verified can it receive alert messages.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "contactGroupIds",
+                    "contactId",
+                    "email",
+                    "id",
+                    "name",
+                    "phone"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:cloudmonitor/getContactGroup:getContactGroup": {
             "description": "Data Source schema for Byteplus::CloudMonitor::ContactGroup\n",
             "inputs": {
@@ -122586,6 +123272,30 @@
             "description": "Plural Data Source schema for Byteplus::CloudMonitor::ContactGroup\n",
             "outputs": {
                 "description": "A collection of values returned by getContactGroups.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:cloudmonitor/getContacts:getContacts": {
+            "description": "Plural Data Source schema for Byteplus::CloudMonitor::Contact\n",
+            "outputs": {
+                "description": "A collection of values returned by getContacts.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -150434,6 +151144,187 @@
             "description": "Plural Data Source schema for Byteplus::VPN::VPNGateway\n",
             "outputs": {
                 "description": "A collection of values returned by getVpnGateways.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/getCcRule:getCcRule": {
+            "description": "Data Source schema for Byteplus::WAF::CcRule\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getCcRule.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCcRule.\n",
+                "properties": {
+                    "accurateGroup": {
+                        "$ref": "#/types/bytepluscc:waf/getCcRuleAccurateGroup:getCcRuleAccurateGroup",
+                        "description": "Advanced condition group. The current path Url and AccurateGroup are in an AND relationship; the rule takes effect only when both are matched. Do not pass this field if not enabled or the list is empty.\n"
+                    },
+                    "ccType": {
+                        "description": "Action. 0: Observe; 1: Rate limit; 2: Block; 6: JS challenge; 7: CAPTCHA.\n",
+                        "type": "integer"
+                    },
+                    "countTime": {
+                        "description": "Statistical time window, unit: seconds. Range: 5–1800.\n",
+                        "type": "integer"
+                    },
+                    "cronConfs": {
+                        "description": "Scheduled activation configuration list. Required only when CronEnable=1.\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:waf/getCcRuleCronConf:getCcRuleCronConf"
+                        },
+                        "type": "array"
+                    },
+                    "cronEnable": {
+                        "description": "Scheduled activation switch. 0: Off (default); 1: On. If enabled, CronConfs must also be configured\n",
+                        "type": "integer"
+                    },
+                    "customResponsePageId": {
+                        "description": "Custom response page ID. An empty string means not configured.\n",
+                        "type": "string"
+                    },
+                    "effectTime": {
+                        "description": "Action duration. Unit: seconds. Range: 1–86400\n",
+                        "type": "integer"
+                    },
+                    "enable": {
+                        "description": "Rule switch. 0: Off; 1: On\n",
+                        "type": "integer"
+                    },
+                    "exemptionTime": {
+                        "description": "Exemption time for CAPTCHA or JS challenge. Unit: seconds. Range: 1–3600\n",
+                        "type": "integer"
+                    },
+                    "field": {
+                        "description": "Statistical object. Supports single or multiple fields, separated by commas. Up to 10 fields allowed. Basic format is DataType:Value, for example HEADER:Authorization, COOKIE:PHPSESSID, ARGS:device_id, CLIENTIP, JA3HASH, SESSION-ID, FP.\n",
+                        "type": "string"
+                    },
+                    "host": {
+                        "description": "Domain name. The website domain to protect. Make sure the domain has been added to the current WAF instance before calling\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "insertTime": {
+                        "description": "Rule initial entry time.\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, English period (.), underscore (_), and hyphen (-). Length: 1–128 characters.\n",
+                        "type": "string"
+                    },
+                    "pathThreshold": {
+                        "description": "Overall threshold for the current path. Range: 1–300000, unit: times\n",
+                        "type": "integer"
+                    },
+                    "projectName": {
+                        "description": "Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated\n",
+                        "type": "string"
+                    },
+                    "ruleId": {
+                        "description": "CC rule ID.\n",
+                        "type": "string"
+                    },
+                    "rulePriority": {
+                        "description": "Rule priority. Range: 0–9, where 0 is the highest priority\n",
+                        "type": "integer"
+                    },
+                    "ruleTag": {
+                        "description": "Rule display ID. The RuleTag prefix for CC rules is always E, for example E000000003624\n",
+                        "type": "string"
+                    },
+                    "singleThreshold": {
+                        "description": "Threshold for a single statistical object. Range: 1–300000, unit: times.\n",
+                        "type": "integer"
+                    },
+                    "updateTime": {
+                        "description": "Last rule update time.\n",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "URL match path. Supports wildcards * and ?, where * matches zero or more characters and ? matches a single character. When AccurateGroup exists, Url and AccurateGroup are in an AND relationship.\n",
+                        "type": "string"
+                    },
+                    "wsCdnByteThreshold": {
+                        "description": "Websocket traffic threshold. Unit specified by WSCdnUnit. Required only when WSCdnEnable=1\n",
+                        "type": "integer"
+                    },
+                    "wsCdnEnable": {
+                        "description": "Websocket traffic statistics switch. 0: Off (default); 1: On. If enabled, WSCdnByteThreshold/WSCdnFrameThreshold/WSCdnUnit must also be configured\n",
+                        "type": "integer"
+                    },
+                    "wsCdnFrameThreshold": {
+                        "description": "Websocket connection frame threshold. Required only when WSCdnEnable=1.\n",
+                        "type": "integer"
+                    },
+                    "wsCdnUnit": {
+                        "description": "Websocket traffic threshold unit. KB: kilobytes; MB: megabytes. Required only when WSCdnEnable=1\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accurateGroup",
+                    "ccType",
+                    "countTime",
+                    "cronConfs",
+                    "cronEnable",
+                    "customResponsePageId",
+                    "effectTime",
+                    "enable",
+                    "exemptionTime",
+                    "field",
+                    "host",
+                    "id",
+                    "insertTime",
+                    "name",
+                    "pathThreshold",
+                    "projectName",
+                    "ruleId",
+                    "rulePriority",
+                    "ruleTag",
+                    "singleThreshold",
+                    "updateTime",
+                    "url",
+                    "wsCdnByteThreshold",
+                    "wsCdnEnable",
+                    "wsCdnFrameThreshold",
+                    "wsCdnUnit"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/getCcRules:getCcRules": {
+            "description": "Plural Data Source schema for Byteplus::WAF::CcRule\n",
+            "outputs": {
+                "description": "A collection of values returned by getCcRules.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",

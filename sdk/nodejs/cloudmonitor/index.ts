@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ContactArgs, ContactState } from "./contact";
+export type Contact = import("./contact").Contact;
+export const Contact: typeof import("./contact").Contact = null as any;
+utilities.lazyLoad(exports, ["Contact"], () => require("./contact"));
+
 export { ContactGroupArgs, ContactGroupState } from "./contactGroup";
 export type ContactGroup = import("./contactGroup").ContactGroup;
 export const ContactGroup: typeof import("./contactGroup").ContactGroup = null as any;
@@ -15,6 +20,11 @@ export type EventRule = import("./eventRule").EventRule;
 export const EventRule: typeof import("./eventRule").EventRule = null as any;
 utilities.lazyLoad(exports, ["EventRule"], () => require("./eventRule"));
 
+export { GetContactArgs, GetContactResult, GetContactOutputArgs } from "./getContact";
+export const getContact: typeof import("./getContact").getContact = null as any;
+export const getContactOutput: typeof import("./getContact").getContactOutput = null as any;
+utilities.lazyLoad(exports, ["getContact","getContactOutput"], () => require("./getContact"));
+
 export { GetContactGroupArgs, GetContactGroupResult, GetContactGroupOutputArgs } from "./getContactGroup";
 export const getContactGroup: typeof import("./getContactGroup").getContactGroup = null as any;
 export const getContactGroupOutput: typeof import("./getContactGroup").getContactGroupOutput = null as any;
@@ -24,6 +34,11 @@ export { GetContactGroupsResult } from "./getContactGroups";
 export const getContactGroups: typeof import("./getContactGroups").getContactGroups = null as any;
 export const getContactGroupsOutput: typeof import("./getContactGroups").getContactGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getContactGroups","getContactGroupsOutput"], () => require("./getContactGroups"));
+
+export { GetContactsResult } from "./getContacts";
+export const getContacts: typeof import("./getContacts").getContacts = null as any;
+export const getContactsOutput: typeof import("./getContacts").getContactsOutput = null as any;
+utilities.lazyLoad(exports, ["getContacts","getContactsOutput"], () => require("./getContacts"));
 
 export { GetEventRuleArgs, GetEventRuleResult, GetEventRuleOutputArgs } from "./getEventRule";
 export const getEventRule: typeof import("./getEventRule").getEventRule = null as any;
@@ -55,6 +70,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:cloudmonitor/contact:Contact":
+                return new Contact(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/contactGroup:ContactGroup":
                 return new ContactGroup(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/eventRule:EventRule":
@@ -66,6 +83,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/contact", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/contactGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/eventRule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/rule", _module)

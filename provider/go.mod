@@ -60,7 +60,7 @@ require (
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.68 // indirect
 	github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 // indirect
-	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.48 // indirect
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.49 // indirect
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/charmbracelet/bubbles v1.0.0 // indirect

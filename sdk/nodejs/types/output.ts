@@ -35196,6 +35196,64 @@ export namespace vpn {
 }
 
 export namespace waf {
+    export interface CcRuleAccurateGroup {
+        /**
+         * Advanced condition group priority. Not required when creating/updating, used only for list display.
+         */
+        accurateGroupPriority: number;
+        /**
+         * List of subrules in advanced conditions
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        accurateRules: outputs.waf.CcRuleAccurateGroupAccurateRule[];
+        /**
+         * Advanced condition group ID. Not required for create/update; used only for list display
+         */
+        id: number;
+        /**
+         * Logical relationship. 1: AND; 2: OR.
+         */
+        logic: number;
+    }
+
+    export interface CcRuleAccurateGroupAccurateRule {
+        /**
+         * Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+         */
+        httpObj: string;
+        /**
+         * Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+         */
+        objType: number;
+        /**
+         * Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+         */
+        opretar: number;
+        /**
+         * Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+         */
+        property: number;
+        /**
+         * Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+         */
+        valueString: string;
+    }
+
+    export interface CcRuleCronConf {
+        /**
+         * crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+         */
+        crontab: string;
+        /**
+         * Total path threshold during the specified period. Range: 1–300000
+         */
+        pathThreshold: number;
+        /**
+         * Threshold for a single object during this time period. Range: 1–300000.
+         */
+        singleThreshold: number;
+    }
+
     export interface DomainBackendGroup {
         /**
          * Access port number.
@@ -35329,6 +35387,63 @@ export namespace waf {
          * Statistics header fields. Use the specified fields for log analysis and alerts.
          */
         statisticalKeyLists: string[];
+    }
+
+    export interface GetCcRuleAccurateGroup {
+        /**
+         * Advanced condition group priority. Not required when creating/updating, used only for list display.
+         */
+        accurateGroupPriority: number;
+        /**
+         * List of subrules in advanced conditions
+         */
+        accurateRules: outputs.waf.GetCcRuleAccurateGroupAccurateRule[];
+        /**
+         * Advanced condition group ID. Not required for create/update; used only for list display
+         */
+        id: number;
+        /**
+         * Logical relationship. 1: AND; 2: OR.
+         */
+        logic: number;
+    }
+
+    export interface GetCcRuleAccurateGroupAccurateRule {
+        /**
+         * Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+         */
+        httpObj: string;
+        /**
+         * Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+         */
+        objType: number;
+        /**
+         * Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+         */
+        opretar: number;
+        /**
+         * Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+         */
+        property: number;
+        /**
+         * Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+         */
+        valueString: string;
+    }
+
+    export interface GetCcRuleCronConf {
+        /**
+         * crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+         */
+        crontab: string;
+        /**
+         * Total path threshold during the specified period. Range: 1–300000
+         */
+        pathThreshold: number;
+        /**
+         * Threshold for a single object during this time period. Range: 1–300000.
+         */
+        singleThreshold: number;
     }
 
     export interface GetDomainBackendGroup {

@@ -13,6 +13,452 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type CcRuleAccurateGroup struct {
+	// Advanced condition group priority. Not required when creating/updating, used only for list display.
+	AccurateGroupPriority *int `pulumi:"accurateGroupPriority"`
+	// List of subrules in advanced conditions
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AccurateRules []CcRuleAccurateGroupAccurateRule `pulumi:"accurateRules"`
+	// Advanced condition group ID. Not required for create/update; used only for list display
+	Id *int `pulumi:"id"`
+	// Logical relationship. 1: AND; 2: OR.
+	Logic *int `pulumi:"logic"`
+}
+
+// CcRuleAccurateGroupInput is an input type that accepts CcRuleAccurateGroupArgs and CcRuleAccurateGroupOutput values.
+// You can construct a concrete instance of `CcRuleAccurateGroupInput` via:
+//
+//	CcRuleAccurateGroupArgs{...}
+type CcRuleAccurateGroupInput interface {
+	pulumi.Input
+
+	ToCcRuleAccurateGroupOutput() CcRuleAccurateGroupOutput
+	ToCcRuleAccurateGroupOutputWithContext(context.Context) CcRuleAccurateGroupOutput
+}
+
+type CcRuleAccurateGroupArgs struct {
+	// Advanced condition group priority. Not required when creating/updating, used only for list display.
+	AccurateGroupPriority pulumi.IntPtrInput `pulumi:"accurateGroupPriority"`
+	// List of subrules in advanced conditions
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AccurateRules CcRuleAccurateGroupAccurateRuleArrayInput `pulumi:"accurateRules"`
+	// Advanced condition group ID. Not required for create/update; used only for list display
+	Id pulumi.IntPtrInput `pulumi:"id"`
+	// Logical relationship. 1: AND; 2: OR.
+	Logic pulumi.IntPtrInput `pulumi:"logic"`
+}
+
+func (CcRuleAccurateGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CcRuleAccurateGroup)(nil)).Elem()
+}
+
+func (i CcRuleAccurateGroupArgs) ToCcRuleAccurateGroupOutput() CcRuleAccurateGroupOutput {
+	return i.ToCcRuleAccurateGroupOutputWithContext(context.Background())
+}
+
+func (i CcRuleAccurateGroupArgs) ToCcRuleAccurateGroupOutputWithContext(ctx context.Context) CcRuleAccurateGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CcRuleAccurateGroupOutput)
+}
+
+func (i CcRuleAccurateGroupArgs) ToCcRuleAccurateGroupPtrOutput() CcRuleAccurateGroupPtrOutput {
+	return i.ToCcRuleAccurateGroupPtrOutputWithContext(context.Background())
+}
+
+func (i CcRuleAccurateGroupArgs) ToCcRuleAccurateGroupPtrOutputWithContext(ctx context.Context) CcRuleAccurateGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CcRuleAccurateGroupOutput).ToCcRuleAccurateGroupPtrOutputWithContext(ctx)
+}
+
+// CcRuleAccurateGroupPtrInput is an input type that accepts CcRuleAccurateGroupArgs, CcRuleAccurateGroupPtr and CcRuleAccurateGroupPtrOutput values.
+// You can construct a concrete instance of `CcRuleAccurateGroupPtrInput` via:
+//
+//	        CcRuleAccurateGroupArgs{...}
+//
+//	or:
+//
+//	        nil
+type CcRuleAccurateGroupPtrInput interface {
+	pulumi.Input
+
+	ToCcRuleAccurateGroupPtrOutput() CcRuleAccurateGroupPtrOutput
+	ToCcRuleAccurateGroupPtrOutputWithContext(context.Context) CcRuleAccurateGroupPtrOutput
+}
+
+type ccRuleAccurateGroupPtrType CcRuleAccurateGroupArgs
+
+func CcRuleAccurateGroupPtr(v *CcRuleAccurateGroupArgs) CcRuleAccurateGroupPtrInput {
+	return (*ccRuleAccurateGroupPtrType)(v)
+}
+
+func (*ccRuleAccurateGroupPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CcRuleAccurateGroup)(nil)).Elem()
+}
+
+func (i *ccRuleAccurateGroupPtrType) ToCcRuleAccurateGroupPtrOutput() CcRuleAccurateGroupPtrOutput {
+	return i.ToCcRuleAccurateGroupPtrOutputWithContext(context.Background())
+}
+
+func (i *ccRuleAccurateGroupPtrType) ToCcRuleAccurateGroupPtrOutputWithContext(ctx context.Context) CcRuleAccurateGroupPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CcRuleAccurateGroupPtrOutput)
+}
+
+type CcRuleAccurateGroupOutput struct{ *pulumi.OutputState }
+
+func (CcRuleAccurateGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CcRuleAccurateGroup)(nil)).Elem()
+}
+
+func (o CcRuleAccurateGroupOutput) ToCcRuleAccurateGroupOutput() CcRuleAccurateGroupOutput {
+	return o
+}
+
+func (o CcRuleAccurateGroupOutput) ToCcRuleAccurateGroupOutputWithContext(ctx context.Context) CcRuleAccurateGroupOutput {
+	return o
+}
+
+func (o CcRuleAccurateGroupOutput) ToCcRuleAccurateGroupPtrOutput() CcRuleAccurateGroupPtrOutput {
+	return o.ToCcRuleAccurateGroupPtrOutputWithContext(context.Background())
+}
+
+func (o CcRuleAccurateGroupOutput) ToCcRuleAccurateGroupPtrOutputWithContext(ctx context.Context) CcRuleAccurateGroupPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CcRuleAccurateGroup) *CcRuleAccurateGroup {
+		return &v
+	}).(CcRuleAccurateGroupPtrOutput)
+}
+
+// Advanced condition group priority. Not required when creating/updating, used only for list display.
+func (o CcRuleAccurateGroupOutput) AccurateGroupPriority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroup) *int { return v.AccurateGroupPriority }).(pulumi.IntPtrOutput)
+}
+
+// List of subrules in advanced conditions
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o CcRuleAccurateGroupOutput) AccurateRules() CcRuleAccurateGroupAccurateRuleArrayOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroup) []CcRuleAccurateGroupAccurateRule { return v.AccurateRules }).(CcRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+// Advanced condition group ID. Not required for create/update; used only for list display
+func (o CcRuleAccurateGroupOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroup) *int { return v.Id }).(pulumi.IntPtrOutput)
+}
+
+// Logical relationship. 1: AND; 2: OR.
+func (o CcRuleAccurateGroupOutput) Logic() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroup) *int { return v.Logic }).(pulumi.IntPtrOutput)
+}
+
+type CcRuleAccurateGroupPtrOutput struct{ *pulumi.OutputState }
+
+func (CcRuleAccurateGroupPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CcRuleAccurateGroup)(nil)).Elem()
+}
+
+func (o CcRuleAccurateGroupPtrOutput) ToCcRuleAccurateGroupPtrOutput() CcRuleAccurateGroupPtrOutput {
+	return o
+}
+
+func (o CcRuleAccurateGroupPtrOutput) ToCcRuleAccurateGroupPtrOutputWithContext(ctx context.Context) CcRuleAccurateGroupPtrOutput {
+	return o
+}
+
+func (o CcRuleAccurateGroupPtrOutput) Elem() CcRuleAccurateGroupOutput {
+	return o.ApplyT(func(v *CcRuleAccurateGroup) CcRuleAccurateGroup {
+		if v != nil {
+			return *v
+		}
+		var ret CcRuleAccurateGroup
+		return ret
+	}).(CcRuleAccurateGroupOutput)
+}
+
+// Advanced condition group priority. Not required when creating/updating, used only for list display.
+func (o CcRuleAccurateGroupPtrOutput) AccurateGroupPriority() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CcRuleAccurateGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AccurateGroupPriority
+	}).(pulumi.IntPtrOutput)
+}
+
+// List of subrules in advanced conditions
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o CcRuleAccurateGroupPtrOutput) AccurateRules() CcRuleAccurateGroupAccurateRuleArrayOutput {
+	return o.ApplyT(func(v *CcRuleAccurateGroup) []CcRuleAccurateGroupAccurateRule {
+		if v == nil {
+			return nil
+		}
+		return v.AccurateRules
+	}).(CcRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+// Advanced condition group ID. Not required for create/update; used only for list display
+func (o CcRuleAccurateGroupPtrOutput) Id() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CcRuleAccurateGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Id
+	}).(pulumi.IntPtrOutput)
+}
+
+// Logical relationship. 1: AND; 2: OR.
+func (o CcRuleAccurateGroupPtrOutput) Logic() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CcRuleAccurateGroup) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Logic
+	}).(pulumi.IntPtrOutput)
+}
+
+type CcRuleAccurateGroupAccurateRule struct {
+	// Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+	HttpObj *string `pulumi:"httpObj"`
+	// Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+	ObjType *int `pulumi:"objType"`
+	// Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+	Opretar *int `pulumi:"opretar"`
+	// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+	Property *int `pulumi:"property"`
+	// Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+	ValueString *string `pulumi:"valueString"`
+}
+
+// CcRuleAccurateGroupAccurateRuleInput is an input type that accepts CcRuleAccurateGroupAccurateRuleArgs and CcRuleAccurateGroupAccurateRuleOutput values.
+// You can construct a concrete instance of `CcRuleAccurateGroupAccurateRuleInput` via:
+//
+//	CcRuleAccurateGroupAccurateRuleArgs{...}
+type CcRuleAccurateGroupAccurateRuleInput interface {
+	pulumi.Input
+
+	ToCcRuleAccurateGroupAccurateRuleOutput() CcRuleAccurateGroupAccurateRuleOutput
+	ToCcRuleAccurateGroupAccurateRuleOutputWithContext(context.Context) CcRuleAccurateGroupAccurateRuleOutput
+}
+
+type CcRuleAccurateGroupAccurateRuleArgs struct {
+	// Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+	HttpObj pulumi.StringPtrInput `pulumi:"httpObj"`
+	// Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+	ObjType pulumi.IntPtrInput `pulumi:"objType"`
+	// Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+	Opretar pulumi.IntPtrInput `pulumi:"opretar"`
+	// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+	Property pulumi.IntPtrInput `pulumi:"property"`
+	// Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+	ValueString pulumi.StringPtrInput `pulumi:"valueString"`
+}
+
+func (CcRuleAccurateGroupAccurateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CcRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (i CcRuleAccurateGroupAccurateRuleArgs) ToCcRuleAccurateGroupAccurateRuleOutput() CcRuleAccurateGroupAccurateRuleOutput {
+	return i.ToCcRuleAccurateGroupAccurateRuleOutputWithContext(context.Background())
+}
+
+func (i CcRuleAccurateGroupAccurateRuleArgs) ToCcRuleAccurateGroupAccurateRuleOutputWithContext(ctx context.Context) CcRuleAccurateGroupAccurateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CcRuleAccurateGroupAccurateRuleOutput)
+}
+
+// CcRuleAccurateGroupAccurateRuleArrayInput is an input type that accepts CcRuleAccurateGroupAccurateRuleArray and CcRuleAccurateGroupAccurateRuleArrayOutput values.
+// You can construct a concrete instance of `CcRuleAccurateGroupAccurateRuleArrayInput` via:
+//
+//	CcRuleAccurateGroupAccurateRuleArray{ CcRuleAccurateGroupAccurateRuleArgs{...} }
+type CcRuleAccurateGroupAccurateRuleArrayInput interface {
+	pulumi.Input
+
+	ToCcRuleAccurateGroupAccurateRuleArrayOutput() CcRuleAccurateGroupAccurateRuleArrayOutput
+	ToCcRuleAccurateGroupAccurateRuleArrayOutputWithContext(context.Context) CcRuleAccurateGroupAccurateRuleArrayOutput
+}
+
+type CcRuleAccurateGroupAccurateRuleArray []CcRuleAccurateGroupAccurateRuleInput
+
+func (CcRuleAccurateGroupAccurateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CcRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (i CcRuleAccurateGroupAccurateRuleArray) ToCcRuleAccurateGroupAccurateRuleArrayOutput() CcRuleAccurateGroupAccurateRuleArrayOutput {
+	return i.ToCcRuleAccurateGroupAccurateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i CcRuleAccurateGroupAccurateRuleArray) ToCcRuleAccurateGroupAccurateRuleArrayOutputWithContext(ctx context.Context) CcRuleAccurateGroupAccurateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CcRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+type CcRuleAccurateGroupAccurateRuleOutput struct{ *pulumi.OutputState }
+
+func (CcRuleAccurateGroupAccurateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CcRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (o CcRuleAccurateGroupAccurateRuleOutput) ToCcRuleAccurateGroupAccurateRuleOutput() CcRuleAccurateGroupAccurateRuleOutput {
+	return o
+}
+
+func (o CcRuleAccurateGroupAccurateRuleOutput) ToCcRuleAccurateGroupAccurateRuleOutputWithContext(ctx context.Context) CcRuleAccurateGroupAccurateRuleOutput {
+	return o
+}
+
+// Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+func (o CcRuleAccurateGroupAccurateRuleOutput) HttpObj() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroupAccurateRule) *string { return v.HttpObj }).(pulumi.StringPtrOutput)
+}
+
+// Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+func (o CcRuleAccurateGroupAccurateRuleOutput) ObjType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroupAccurateRule) *int { return v.ObjType }).(pulumi.IntPtrOutput)
+}
+
+// Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+func (o CcRuleAccurateGroupAccurateRuleOutput) Opretar() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroupAccurateRule) *int { return v.Opretar }).(pulumi.IntPtrOutput)
+}
+
+// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+func (o CcRuleAccurateGroupAccurateRuleOutput) Property() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroupAccurateRule) *int { return v.Property }).(pulumi.IntPtrOutput)
+}
+
+// Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+func (o CcRuleAccurateGroupAccurateRuleOutput) ValueString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CcRuleAccurateGroupAccurateRule) *string { return v.ValueString }).(pulumi.StringPtrOutput)
+}
+
+type CcRuleAccurateGroupAccurateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (CcRuleAccurateGroupAccurateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CcRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (o CcRuleAccurateGroupAccurateRuleArrayOutput) ToCcRuleAccurateGroupAccurateRuleArrayOutput() CcRuleAccurateGroupAccurateRuleArrayOutput {
+	return o
+}
+
+func (o CcRuleAccurateGroupAccurateRuleArrayOutput) ToCcRuleAccurateGroupAccurateRuleArrayOutputWithContext(ctx context.Context) CcRuleAccurateGroupAccurateRuleArrayOutput {
+	return o
+}
+
+func (o CcRuleAccurateGroupAccurateRuleArrayOutput) Index(i pulumi.IntInput) CcRuleAccurateGroupAccurateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CcRuleAccurateGroupAccurateRule {
+		return vs[0].([]CcRuleAccurateGroupAccurateRule)[vs[1].(int)]
+	}).(CcRuleAccurateGroupAccurateRuleOutput)
+}
+
+type CcRuleCronConf struct {
+	// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+	Crontab *string `pulumi:"crontab"`
+	// Total path threshold during the specified period. Range: 1–300000
+	PathThreshold *int `pulumi:"pathThreshold"`
+	// Threshold for a single object during this time period. Range: 1–300000.
+	SingleThreshold *int `pulumi:"singleThreshold"`
+}
+
+// CcRuleCronConfInput is an input type that accepts CcRuleCronConfArgs and CcRuleCronConfOutput values.
+// You can construct a concrete instance of `CcRuleCronConfInput` via:
+//
+//	CcRuleCronConfArgs{...}
+type CcRuleCronConfInput interface {
+	pulumi.Input
+
+	ToCcRuleCronConfOutput() CcRuleCronConfOutput
+	ToCcRuleCronConfOutputWithContext(context.Context) CcRuleCronConfOutput
+}
+
+type CcRuleCronConfArgs struct {
+	// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+	Crontab pulumi.StringPtrInput `pulumi:"crontab"`
+	// Total path threshold during the specified period. Range: 1–300000
+	PathThreshold pulumi.IntPtrInput `pulumi:"pathThreshold"`
+	// Threshold for a single object during this time period. Range: 1–300000.
+	SingleThreshold pulumi.IntPtrInput `pulumi:"singleThreshold"`
+}
+
+func (CcRuleCronConfArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CcRuleCronConf)(nil)).Elem()
+}
+
+func (i CcRuleCronConfArgs) ToCcRuleCronConfOutput() CcRuleCronConfOutput {
+	return i.ToCcRuleCronConfOutputWithContext(context.Background())
+}
+
+func (i CcRuleCronConfArgs) ToCcRuleCronConfOutputWithContext(ctx context.Context) CcRuleCronConfOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CcRuleCronConfOutput)
+}
+
+// CcRuleCronConfArrayInput is an input type that accepts CcRuleCronConfArray and CcRuleCronConfArrayOutput values.
+// You can construct a concrete instance of `CcRuleCronConfArrayInput` via:
+//
+//	CcRuleCronConfArray{ CcRuleCronConfArgs{...} }
+type CcRuleCronConfArrayInput interface {
+	pulumi.Input
+
+	ToCcRuleCronConfArrayOutput() CcRuleCronConfArrayOutput
+	ToCcRuleCronConfArrayOutputWithContext(context.Context) CcRuleCronConfArrayOutput
+}
+
+type CcRuleCronConfArray []CcRuleCronConfInput
+
+func (CcRuleCronConfArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CcRuleCronConf)(nil)).Elem()
+}
+
+func (i CcRuleCronConfArray) ToCcRuleCronConfArrayOutput() CcRuleCronConfArrayOutput {
+	return i.ToCcRuleCronConfArrayOutputWithContext(context.Background())
+}
+
+func (i CcRuleCronConfArray) ToCcRuleCronConfArrayOutputWithContext(ctx context.Context) CcRuleCronConfArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CcRuleCronConfArrayOutput)
+}
+
+type CcRuleCronConfOutput struct{ *pulumi.OutputState }
+
+func (CcRuleCronConfOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CcRuleCronConf)(nil)).Elem()
+}
+
+func (o CcRuleCronConfOutput) ToCcRuleCronConfOutput() CcRuleCronConfOutput {
+	return o
+}
+
+func (o CcRuleCronConfOutput) ToCcRuleCronConfOutputWithContext(ctx context.Context) CcRuleCronConfOutput {
+	return o
+}
+
+// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+func (o CcRuleCronConfOutput) Crontab() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CcRuleCronConf) *string { return v.Crontab }).(pulumi.StringPtrOutput)
+}
+
+// Total path threshold during the specified period. Range: 1–300000
+func (o CcRuleCronConfOutput) PathThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CcRuleCronConf) *int { return v.PathThreshold }).(pulumi.IntPtrOutput)
+}
+
+// Threshold for a single object during this time period. Range: 1–300000.
+func (o CcRuleCronConfOutput) SingleThreshold() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CcRuleCronConf) *int { return v.SingleThreshold }).(pulumi.IntPtrOutput)
+}
+
+type CcRuleCronConfArrayOutput struct{ *pulumi.OutputState }
+
+func (CcRuleCronConfArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CcRuleCronConf)(nil)).Elem()
+}
+
+func (o CcRuleCronConfArrayOutput) ToCcRuleCronConfArrayOutput() CcRuleCronConfArrayOutput {
+	return o
+}
+
+func (o CcRuleCronConfArrayOutput) ToCcRuleCronConfArrayOutputWithContext(ctx context.Context) CcRuleCronConfArrayOutput {
+	return o
+}
+
+func (o CcRuleCronConfArrayOutput) Index(i pulumi.IntInput) CcRuleCronConfOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CcRuleCronConf {
+		return vs[0].([]CcRuleCronConf)[vs[1].(int)]
+	}).(CcRuleCronConfOutput)
+}
+
 type DomainBackendGroup struct {
 	// Access port number.
 	AccessPorts []int `pulumi:"accessPorts"`
@@ -1154,6 +1600,333 @@ func (o HostGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) HostGroupRelat
 	}).(HostGroupRelatedRuleOutput)
 }
 
+type GetCcRuleAccurateGroup struct {
+	// Advanced condition group priority. Not required when creating/updating, used only for list display.
+	AccurateGroupPriority int `pulumi:"accurateGroupPriority"`
+	// List of subrules in advanced conditions
+	AccurateRules []GetCcRuleAccurateGroupAccurateRule `pulumi:"accurateRules"`
+	// Advanced condition group ID. Not required for create/update; used only for list display
+	Id int `pulumi:"id"`
+	// Logical relationship. 1: AND; 2: OR.
+	Logic int `pulumi:"logic"`
+}
+
+// GetCcRuleAccurateGroupInput is an input type that accepts GetCcRuleAccurateGroupArgs and GetCcRuleAccurateGroupOutput values.
+// You can construct a concrete instance of `GetCcRuleAccurateGroupInput` via:
+//
+//	GetCcRuleAccurateGroupArgs{...}
+type GetCcRuleAccurateGroupInput interface {
+	pulumi.Input
+
+	ToGetCcRuleAccurateGroupOutput() GetCcRuleAccurateGroupOutput
+	ToGetCcRuleAccurateGroupOutputWithContext(context.Context) GetCcRuleAccurateGroupOutput
+}
+
+type GetCcRuleAccurateGroupArgs struct {
+	// Advanced condition group priority. Not required when creating/updating, used only for list display.
+	AccurateGroupPriority pulumi.IntInput `pulumi:"accurateGroupPriority"`
+	// List of subrules in advanced conditions
+	AccurateRules GetCcRuleAccurateGroupAccurateRuleArrayInput `pulumi:"accurateRules"`
+	// Advanced condition group ID. Not required for create/update; used only for list display
+	Id pulumi.IntInput `pulumi:"id"`
+	// Logical relationship. 1: AND; 2: OR.
+	Logic pulumi.IntInput `pulumi:"logic"`
+}
+
+func (GetCcRuleAccurateGroupArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCcRuleAccurateGroup)(nil)).Elem()
+}
+
+func (i GetCcRuleAccurateGroupArgs) ToGetCcRuleAccurateGroupOutput() GetCcRuleAccurateGroupOutput {
+	return i.ToGetCcRuleAccurateGroupOutputWithContext(context.Background())
+}
+
+func (i GetCcRuleAccurateGroupArgs) ToGetCcRuleAccurateGroupOutputWithContext(ctx context.Context) GetCcRuleAccurateGroupOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCcRuleAccurateGroupOutput)
+}
+
+type GetCcRuleAccurateGroupOutput struct{ *pulumi.OutputState }
+
+func (GetCcRuleAccurateGroupOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCcRuleAccurateGroup)(nil)).Elem()
+}
+
+func (o GetCcRuleAccurateGroupOutput) ToGetCcRuleAccurateGroupOutput() GetCcRuleAccurateGroupOutput {
+	return o
+}
+
+func (o GetCcRuleAccurateGroupOutput) ToGetCcRuleAccurateGroupOutputWithContext(ctx context.Context) GetCcRuleAccurateGroupOutput {
+	return o
+}
+
+// Advanced condition group priority. Not required when creating/updating, used only for list display.
+func (o GetCcRuleAccurateGroupOutput) AccurateGroupPriority() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroup) int { return v.AccurateGroupPriority }).(pulumi.IntOutput)
+}
+
+// List of subrules in advanced conditions
+func (o GetCcRuleAccurateGroupOutput) AccurateRules() GetCcRuleAccurateGroupAccurateRuleArrayOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroup) []GetCcRuleAccurateGroupAccurateRule { return v.AccurateRules }).(GetCcRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+// Advanced condition group ID. Not required for create/update; used only for list display
+func (o GetCcRuleAccurateGroupOutput) Id() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroup) int { return v.Id }).(pulumi.IntOutput)
+}
+
+// Logical relationship. 1: AND; 2: OR.
+func (o GetCcRuleAccurateGroupOutput) Logic() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroup) int { return v.Logic }).(pulumi.IntOutput)
+}
+
+type GetCcRuleAccurateGroupAccurateRule struct {
+	// Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+	HttpObj string `pulumi:"httpObj"`
+	// Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+	ObjType int `pulumi:"objType"`
+	// Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+	Opretar int `pulumi:"opretar"`
+	// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+	Property int `pulumi:"property"`
+	// Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+	ValueString string `pulumi:"valueString"`
+}
+
+// GetCcRuleAccurateGroupAccurateRuleInput is an input type that accepts GetCcRuleAccurateGroupAccurateRuleArgs and GetCcRuleAccurateGroupAccurateRuleOutput values.
+// You can construct a concrete instance of `GetCcRuleAccurateGroupAccurateRuleInput` via:
+//
+//	GetCcRuleAccurateGroupAccurateRuleArgs{...}
+type GetCcRuleAccurateGroupAccurateRuleInput interface {
+	pulumi.Input
+
+	ToGetCcRuleAccurateGroupAccurateRuleOutput() GetCcRuleAccurateGroupAccurateRuleOutput
+	ToGetCcRuleAccurateGroupAccurateRuleOutputWithContext(context.Context) GetCcRuleAccurateGroupAccurateRuleOutput
+}
+
+type GetCcRuleAccurateGroupAccurateRuleArgs struct {
+	// Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+	HttpObj pulumi.StringInput `pulumi:"httpObj"`
+	// Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+	ObjType pulumi.IntInput `pulumi:"objType"`
+	// Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+	Opretar pulumi.IntInput `pulumi:"opretar"`
+	// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+	Property pulumi.IntInput `pulumi:"property"`
+	// Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+	ValueString pulumi.StringInput `pulumi:"valueString"`
+}
+
+func (GetCcRuleAccurateGroupAccurateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCcRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (i GetCcRuleAccurateGroupAccurateRuleArgs) ToGetCcRuleAccurateGroupAccurateRuleOutput() GetCcRuleAccurateGroupAccurateRuleOutput {
+	return i.ToGetCcRuleAccurateGroupAccurateRuleOutputWithContext(context.Background())
+}
+
+func (i GetCcRuleAccurateGroupAccurateRuleArgs) ToGetCcRuleAccurateGroupAccurateRuleOutputWithContext(ctx context.Context) GetCcRuleAccurateGroupAccurateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCcRuleAccurateGroupAccurateRuleOutput)
+}
+
+// GetCcRuleAccurateGroupAccurateRuleArrayInput is an input type that accepts GetCcRuleAccurateGroupAccurateRuleArray and GetCcRuleAccurateGroupAccurateRuleArrayOutput values.
+// You can construct a concrete instance of `GetCcRuleAccurateGroupAccurateRuleArrayInput` via:
+//
+//	GetCcRuleAccurateGroupAccurateRuleArray{ GetCcRuleAccurateGroupAccurateRuleArgs{...} }
+type GetCcRuleAccurateGroupAccurateRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetCcRuleAccurateGroupAccurateRuleArrayOutput() GetCcRuleAccurateGroupAccurateRuleArrayOutput
+	ToGetCcRuleAccurateGroupAccurateRuleArrayOutputWithContext(context.Context) GetCcRuleAccurateGroupAccurateRuleArrayOutput
+}
+
+type GetCcRuleAccurateGroupAccurateRuleArray []GetCcRuleAccurateGroupAccurateRuleInput
+
+func (GetCcRuleAccurateGroupAccurateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCcRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (i GetCcRuleAccurateGroupAccurateRuleArray) ToGetCcRuleAccurateGroupAccurateRuleArrayOutput() GetCcRuleAccurateGroupAccurateRuleArrayOutput {
+	return i.ToGetCcRuleAccurateGroupAccurateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetCcRuleAccurateGroupAccurateRuleArray) ToGetCcRuleAccurateGroupAccurateRuleArrayOutputWithContext(ctx context.Context) GetCcRuleAccurateGroupAccurateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCcRuleAccurateGroupAccurateRuleArrayOutput)
+}
+
+type GetCcRuleAccurateGroupAccurateRuleOutput struct{ *pulumi.OutputState }
+
+func (GetCcRuleAccurateGroupAccurateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCcRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (o GetCcRuleAccurateGroupAccurateRuleOutput) ToGetCcRuleAccurateGroupAccurateRuleOutput() GetCcRuleAccurateGroupAccurateRuleOutput {
+	return o
+}
+
+func (o GetCcRuleAccurateGroupAccurateRuleOutput) ToGetCcRuleAccurateGroupAccurateRuleOutputWithContext(ctx context.Context) GetCcRuleAccurateGroupAccurateRuleOutput {
+	return o
+}
+
+// Match object. Fixed objects are automatically generated as HttpObj by ObjType; custom objects require a specific Key in HttpObj. For example: request.header.clientip, request.uri, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc
+func (o GetCcRuleAccurateGroupAccurateRuleOutput) HttpObj() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroupAccurateRule) string { return v.HttpObj }).(pulumi.StringOutput)
+}
+
+// Match object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameters; 5: Request headers; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie; 23: JA3 Hash; 25: Session-ID; 26: Client fingerprint.
+func (o GetCcRuleAccurateGroupAccurateRuleOutput) ObjType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroupAccurateRule) int { return v.ObjType }).(pulumi.IntOutput)
+}
+
+// Match operator enumeration. 0–5: size comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP identification (only request.header.clientip or custom objects); 23/24: include/exclude address group; 25/26: include/exclude location; 27: include IP intelligence; 28/29: AS number belongs/does not belong
+func (o GetCcRuleAccurateGroupAccurateRuleOutput) Opretar() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroupAccurateRule) int { return v.Opretar }).(pulumi.IntOutput)
+}
+
+// Match attribute type enumeration. 0: Value; 1: StrLen; 2: Size; 3: Keys; 4: Version; 5: IP (only used when Opretar=17–21); 6: Country.
+func (o GetCcRuleAccurateGroupAccurateRuleOutput) Property() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroupAccurateRule) int { return v.Property }).(pulumi.IntOutput)
+}
+
+// Match value. For Opretar=17–21 (IP identification), no match content is involved and can be an empty string; for Opretar=23–29, fill in according to the required format (IP address group ID/location code/IP intelligence tag/ASN); for other operators, enter the actual match value
+func (o GetCcRuleAccurateGroupAccurateRuleOutput) ValueString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCcRuleAccurateGroupAccurateRule) string { return v.ValueString }).(pulumi.StringOutput)
+}
+
+type GetCcRuleAccurateGroupAccurateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCcRuleAccurateGroupAccurateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCcRuleAccurateGroupAccurateRule)(nil)).Elem()
+}
+
+func (o GetCcRuleAccurateGroupAccurateRuleArrayOutput) ToGetCcRuleAccurateGroupAccurateRuleArrayOutput() GetCcRuleAccurateGroupAccurateRuleArrayOutput {
+	return o
+}
+
+func (o GetCcRuleAccurateGroupAccurateRuleArrayOutput) ToGetCcRuleAccurateGroupAccurateRuleArrayOutputWithContext(ctx context.Context) GetCcRuleAccurateGroupAccurateRuleArrayOutput {
+	return o
+}
+
+func (o GetCcRuleAccurateGroupAccurateRuleArrayOutput) Index(i pulumi.IntInput) GetCcRuleAccurateGroupAccurateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCcRuleAccurateGroupAccurateRule {
+		return vs[0].([]GetCcRuleAccurateGroupAccurateRule)[vs[1].(int)]
+	}).(GetCcRuleAccurateGroupAccurateRuleOutput)
+}
+
+type GetCcRuleCronConf struct {
+	// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+	Crontab string `pulumi:"crontab"`
+	// Total path threshold during the specified period. Range: 1–300000
+	PathThreshold int `pulumi:"pathThreshold"`
+	// Threshold for a single object during this time period. Range: 1–300000.
+	SingleThreshold int `pulumi:"singleThreshold"`
+}
+
+// GetCcRuleCronConfInput is an input type that accepts GetCcRuleCronConfArgs and GetCcRuleCronConfOutput values.
+// You can construct a concrete instance of `GetCcRuleCronConfInput` via:
+//
+//	GetCcRuleCronConfArgs{...}
+type GetCcRuleCronConfInput interface {
+	pulumi.Input
+
+	ToGetCcRuleCronConfOutput() GetCcRuleCronConfOutput
+	ToGetCcRuleCronConfOutputWithContext(context.Context) GetCcRuleCronConfOutput
+}
+
+type GetCcRuleCronConfArgs struct {
+	// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+	Crontab pulumi.StringInput `pulumi:"crontab"`
+	// Total path threshold during the specified period. Range: 1–300000
+	PathThreshold pulumi.IntInput `pulumi:"pathThreshold"`
+	// Threshold for a single object during this time period. Range: 1–300000.
+	SingleThreshold pulumi.IntInput `pulumi:"singleThreshold"`
+}
+
+func (GetCcRuleCronConfArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCcRuleCronConf)(nil)).Elem()
+}
+
+func (i GetCcRuleCronConfArgs) ToGetCcRuleCronConfOutput() GetCcRuleCronConfOutput {
+	return i.ToGetCcRuleCronConfOutputWithContext(context.Background())
+}
+
+func (i GetCcRuleCronConfArgs) ToGetCcRuleCronConfOutputWithContext(ctx context.Context) GetCcRuleCronConfOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCcRuleCronConfOutput)
+}
+
+// GetCcRuleCronConfArrayInput is an input type that accepts GetCcRuleCronConfArray and GetCcRuleCronConfArrayOutput values.
+// You can construct a concrete instance of `GetCcRuleCronConfArrayInput` via:
+//
+//	GetCcRuleCronConfArray{ GetCcRuleCronConfArgs{...} }
+type GetCcRuleCronConfArrayInput interface {
+	pulumi.Input
+
+	ToGetCcRuleCronConfArrayOutput() GetCcRuleCronConfArrayOutput
+	ToGetCcRuleCronConfArrayOutputWithContext(context.Context) GetCcRuleCronConfArrayOutput
+}
+
+type GetCcRuleCronConfArray []GetCcRuleCronConfInput
+
+func (GetCcRuleCronConfArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCcRuleCronConf)(nil)).Elem()
+}
+
+func (i GetCcRuleCronConfArray) ToGetCcRuleCronConfArrayOutput() GetCcRuleCronConfArrayOutput {
+	return i.ToGetCcRuleCronConfArrayOutputWithContext(context.Background())
+}
+
+func (i GetCcRuleCronConfArray) ToGetCcRuleCronConfArrayOutputWithContext(ctx context.Context) GetCcRuleCronConfArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCcRuleCronConfArrayOutput)
+}
+
+type GetCcRuleCronConfOutput struct{ *pulumi.OutputState }
+
+func (GetCcRuleCronConfOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCcRuleCronConf)(nil)).Elem()
+}
+
+func (o GetCcRuleCronConfOutput) ToGetCcRuleCronConfOutput() GetCcRuleCronConfOutput {
+	return o
+}
+
+func (o GetCcRuleCronConfOutput) ToGetCcRuleCronConfOutputWithContext(ctx context.Context) GetCcRuleCronConfOutput {
+	return o
+}
+
+// crontab expression. Recommended format: * \n\n-\n\n * * \n\n, for example * 18-20 * * 1,2,3,4,5.
+func (o GetCcRuleCronConfOutput) Crontab() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCcRuleCronConf) string { return v.Crontab }).(pulumi.StringOutput)
+}
+
+// Total path threshold during the specified period. Range: 1–300000
+func (o GetCcRuleCronConfOutput) PathThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCcRuleCronConf) int { return v.PathThreshold }).(pulumi.IntOutput)
+}
+
+// Threshold for a single object during this time period. Range: 1–300000.
+func (o GetCcRuleCronConfOutput) SingleThreshold() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCcRuleCronConf) int { return v.SingleThreshold }).(pulumi.IntOutput)
+}
+
+type GetCcRuleCronConfArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCcRuleCronConfArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCcRuleCronConf)(nil)).Elem()
+}
+
+func (o GetCcRuleCronConfArrayOutput) ToGetCcRuleCronConfArrayOutput() GetCcRuleCronConfArrayOutput {
+	return o
+}
+
+func (o GetCcRuleCronConfArrayOutput) ToGetCcRuleCronConfArrayOutputWithContext(ctx context.Context) GetCcRuleCronConfArrayOutput {
+	return o
+}
+
+func (o GetCcRuleCronConfArrayOutput) Index(i pulumi.IntInput) GetCcRuleCronConfOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCcRuleCronConf {
+		return vs[0].([]GetCcRuleCronConf)[vs[1].(int)]
+	}).(GetCcRuleCronConfOutput)
+}
+
 type GetDomainBackendGroup struct {
 	// Access port number.
 	AccessPorts []int `pulumi:"accessPorts"`
@@ -2009,6 +2782,12 @@ func (o GetHostGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) GetHostGrou
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupInput)(nil)).Elem(), CcRuleAccurateGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupPtrInput)(nil)).Elem(), CcRuleAccurateGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupAccurateRuleInput)(nil)).Elem(), CcRuleAccurateGroupAccurateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupAccurateRuleArrayInput)(nil)).Elem(), CcRuleAccurateGroupAccurateRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleCronConfInput)(nil)).Elem(), CcRuleCronConfArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleCronConfArrayInput)(nil)).Elem(), CcRuleCronConfArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainBackendGroupInput)(nil)).Elem(), DomainBackendGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainBackendGroupArrayInput)(nil)).Elem(), DomainBackendGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainBackendGroupBackendInput)(nil)).Elem(), DomainBackendGroupBackendArgs{})
@@ -2025,6 +2804,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainTlsFieldsConfigHeadersConfigPtrInput)(nil)).Elem(), DomainTlsFieldsConfigHeadersConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRelatedRuleInput)(nil)).Elem(), HostGroupRelatedRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRelatedRuleArrayInput)(nil)).Elem(), HostGroupRelatedRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupInput)(nil)).Elem(), GetCcRuleAccurateGroupArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupAccurateRuleInput)(nil)).Elem(), GetCcRuleAccurateGroupAccurateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupAccurateRuleArrayInput)(nil)).Elem(), GetCcRuleAccurateGroupAccurateRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleCronConfInput)(nil)).Elem(), GetCcRuleCronConfArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleCronConfArrayInput)(nil)).Elem(), GetCcRuleCronConfArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupInput)(nil)).Elem(), GetDomainBackendGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupArrayInput)(nil)).Elem(), GetDomainBackendGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupBackendInput)(nil)).Elem(), GetDomainBackendGroupBackendArgs{})
@@ -2038,6 +2822,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainTlsFieldsConfigHeadersConfigInput)(nil)).Elem(), GetDomainTlsFieldsConfigHeadersConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRelatedRuleInput)(nil)).Elem(), GetHostGroupRelatedRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRelatedRuleArrayInput)(nil)).Elem(), GetHostGroupRelatedRuleArray{})
+	pulumi.RegisterOutputType(CcRuleAccurateGroupOutput{})
+	pulumi.RegisterOutputType(CcRuleAccurateGroupPtrOutput{})
+	pulumi.RegisterOutputType(CcRuleAccurateGroupAccurateRuleOutput{})
+	pulumi.RegisterOutputType(CcRuleAccurateGroupAccurateRuleArrayOutput{})
+	pulumi.RegisterOutputType(CcRuleCronConfOutput{})
+	pulumi.RegisterOutputType(CcRuleCronConfArrayOutput{})
 	pulumi.RegisterOutputType(DomainBackendGroupOutput{})
 	pulumi.RegisterOutputType(DomainBackendGroupArrayOutput{})
 	pulumi.RegisterOutputType(DomainBackendGroupBackendOutput{})
@@ -2054,6 +2844,11 @@ func init() {
 	pulumi.RegisterOutputType(DomainTlsFieldsConfigHeadersConfigPtrOutput{})
 	pulumi.RegisterOutputType(HostGroupRelatedRuleOutput{})
 	pulumi.RegisterOutputType(HostGroupRelatedRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetCcRuleAccurateGroupOutput{})
+	pulumi.RegisterOutputType(GetCcRuleAccurateGroupAccurateRuleOutput{})
+	pulumi.RegisterOutputType(GetCcRuleAccurateGroupAccurateRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetCcRuleCronConfOutput{})
+	pulumi.RegisterOutputType(GetCcRuleCronConfArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupBackendOutput{})
