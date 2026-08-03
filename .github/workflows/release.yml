@@ -323,7 +323,7 @@ jobs:
           build-root-directory: ./sdk/java
           gradle-version: ${{ matrix.gradleversion }}
     strategy:
-      fail-fast: true
+      fail-fast: false
       matrix:
         dotnetversion:
           - 6.0.408
