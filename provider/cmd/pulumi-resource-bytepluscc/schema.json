@@ -15805,6 +15805,838 @@
                 }
             }
         },
+        "bytepluscc:certificateservice/ChildCertInstanceCertificateDetail:ChildCertInstanceCertificateDetail": {
+            "properties": {
+                "chains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate\n"
+                },
+                "fingerPrintSha1": {
+                    "type": "string",
+                    "description": "SHA-1 fingerprint\n"
+                },
+                "fingerPrintSha256": {
+                    "type": "string",
+                    "description": "SHA-256 fingerprint\n"
+                },
+                "issuer": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceCertificateDetailIssuer:ChildCertInstanceCertificateDetailIssuer",
+                    "description": "Issuer information of the certificate\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Key algorithm\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Private key\n"
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "description": "Serial number\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Signature algorithm\n"
+                },
+                "subject": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceCertificateDetailSubject:ChildCertInstanceCertificateDetailSubject",
+                    "description": "Certificate subject information\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "chains",
+                        "fingerPrintSha1",
+                        "fingerPrintSha256",
+                        "issuer",
+                        "keyAlgorithm",
+                        "privateKey",
+                        "serialNumber",
+                        "signatureAlgorithm",
+                        "subject"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceCertificateDetailIssuer:ChildCertInstanceCertificateDetailIssuer": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Address (Street)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN)\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Country (C)\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City (L)\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Organization name (O)\n"
+                },
+                "organizationUnit": {
+                    "type": "string",
+                    "description": "Department (OU)\n"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Postal code (PostalCode)\n"
+                },
+                "province": {
+                    "type": "string",
+                    "description": "Province or state (ST)\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "address",
+                        "commonName",
+                        "country",
+                        "locality",
+                        "organization",
+                        "organizationUnit",
+                        "postalCode",
+                        "province"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceCertificateDetailSubject:ChildCertInstanceCertificateDetailSubject": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Address (Street)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN)\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Country (C)\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City (L)\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Organization name (O)\n"
+                },
+                "organizationUnit": {
+                    "type": "string",
+                    "description": "Department (OU)\n"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Postal code (PostalCode)\n"
+                },
+                "province": {
+                    "type": "string",
+                    "description": "Province or state (ST)\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "address",
+                        "commonName",
+                        "country",
+                        "locality",
+                        "organization",
+                        "organizationUnit",
+                        "postalCode",
+                        "province"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceEncryptionCertificateDetail:ChildCertInstanceEncryptionCertificateDetail": {
+            "properties": {
+                "chains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate\n"
+                },
+                "fingerPrintSha1": {
+                    "type": "string",
+                    "description": "SHA-1 fingerprint\n"
+                },
+                "fingerPrintSha256": {
+                    "type": "string",
+                    "description": "SHA-256 fingerprint\n"
+                },
+                "issuer": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceEncryptionCertificateDetailIssuer:ChildCertInstanceEncryptionCertificateDetailIssuer",
+                    "description": "Issuer information of the certificate\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Key algorithm\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Private key\n"
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "description": "Serial number\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Signature algorithm\n"
+                },
+                "subject": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceEncryptionCertificateDetailSubject:ChildCertInstanceEncryptionCertificateDetailSubject",
+                    "description": "Certificate subject information\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "chains",
+                        "fingerPrintSha1",
+                        "fingerPrintSha256",
+                        "issuer",
+                        "keyAlgorithm",
+                        "privateKey",
+                        "serialNumber",
+                        "signatureAlgorithm",
+                        "subject"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceEncryptionCertificateDetailIssuer:ChildCertInstanceEncryptionCertificateDetailIssuer": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Address (Street)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN)\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Country (C)\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City (L)\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Organization name (O)\n"
+                },
+                "organizationUnit": {
+                    "type": "string",
+                    "description": "Department (OU)\n"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Postal code (PostalCode)\n"
+                },
+                "province": {
+                    "type": "string",
+                    "description": "Province or state (ST)\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "address",
+                        "commonName",
+                        "country",
+                        "locality",
+                        "organization",
+                        "organizationUnit",
+                        "postalCode",
+                        "province"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceEncryptionCertificateDetailSubject:ChildCertInstanceEncryptionCertificateDetailSubject": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Address (Street)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN)\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Country (C)\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City (L)\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Organization name (O)\n"
+                },
+                "organizationUnit": {
+                    "type": "string",
+                    "description": "Department (OU)\n"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Postal code (PostalCode)\n"
+                },
+                "province": {
+                    "type": "string",
+                    "description": "Province or state (ST)\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "address",
+                        "commonName",
+                        "country",
+                        "locality",
+                        "organization",
+                        "organizationUnit",
+                        "postalCode",
+                        "province"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceImportCertificateInfo:ChildCertInstanceImportCertificateInfo": {
+            "properties": {
+                "certificateChain": {
+                    "type": "string",
+                    "description": "Content of the certificate (or certificate chain)\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "The content of the private key corresponding to the certificate\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certificateChain",
+                        "privateKey"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceImportGmCertificateInfo:ChildCertInstanceImportGmCertificateInfo": {
+            "properties": {
+                "encryptCertificateChain": {
+                    "type": "string",
+                    "description": "Content of the encrypted certificate (or certificate chain)\n"
+                },
+                "encryptPrivateKey": {
+                    "type": "string",
+                    "description": "The content of the private key corresponding to the encrypted certificate\n"
+                },
+                "signCertificateChain": {
+                    "type": "string",
+                    "description": "Content of the signed certificate (or certificate chain)\n"
+                },
+                "signPrivateKey": {
+                    "type": "string",
+                    "description": "The content of the private key corresponding to the signature certificate\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "encryptCertificateChain",
+                        "encryptPrivateKey",
+                        "signCertificateChain",
+                        "signPrivateKey"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceOptions:ChildCertInstanceOptions": {
+            "properties": {
+                "expiredNotice": {
+                    "type": "string",
+                    "description": "Set the status of certificate expiration alerts. Options: Enabled, Disabled\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "expiredNotice"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/ChildCertInstanceTag:ChildCertInstanceTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag value\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceCertificateDetail:getChildCertInstanceCertificateDetail": {
+            "properties": {
+                "chains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate\n"
+                },
+                "fingerPrintSha1": {
+                    "type": "string",
+                    "description": "SHA-1 fingerprint\n"
+                },
+                "fingerPrintSha256": {
+                    "type": "string",
+                    "description": "SHA-256 fingerprint\n"
+                },
+                "issuer": {
+                    "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceCertificateDetailIssuer:getChildCertInstanceCertificateDetailIssuer",
+                    "description": "Issuer information of the certificate\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Key algorithm\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Private key\n"
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "description": "Serial number\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Signature algorithm\n"
+                },
+                "subject": {
+                    "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceCertificateDetailSubject:getChildCertInstanceCertificateDetailSubject",
+                    "description": "Certificate subject information\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "chains",
+                "fingerPrintSha1",
+                "fingerPrintSha256",
+                "issuer",
+                "keyAlgorithm",
+                "privateKey",
+                "serialNumber",
+                "signatureAlgorithm",
+                "subject"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceCertificateDetailIssuer:getChildCertInstanceCertificateDetailIssuer": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Address (Street)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN)\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Country (C)\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City (L)\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Organization name (O)\n"
+                },
+                "organizationUnit": {
+                    "type": "string",
+                    "description": "Department (OU)\n"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Postal code (PostalCode)\n"
+                },
+                "province": {
+                    "type": "string",
+                    "description": "Province or state (ST)\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "address",
+                "commonName",
+                "country",
+                "locality",
+                "organization",
+                "organizationUnit",
+                "postalCode",
+                "province"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceCertificateDetailSubject:getChildCertInstanceCertificateDetailSubject": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Address (Street)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN)\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Country (C)\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City (L)\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Organization name (O)\n"
+                },
+                "organizationUnit": {
+                    "type": "string",
+                    "description": "Department (OU)\n"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Postal code (PostalCode)\n"
+                },
+                "province": {
+                    "type": "string",
+                    "description": "Province or state (ST)\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "address",
+                "commonName",
+                "country",
+                "locality",
+                "organization",
+                "organizationUnit",
+                "postalCode",
+                "province"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceEncryptionCertificateDetail:getChildCertInstanceEncryptionCertificateDetail": {
+            "properties": {
+                "chains": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate\n"
+                },
+                "fingerPrintSha1": {
+                    "type": "string",
+                    "description": "SHA-1 fingerprint\n"
+                },
+                "fingerPrintSha256": {
+                    "type": "string",
+                    "description": "SHA-256 fingerprint\n"
+                },
+                "issuer": {
+                    "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceEncryptionCertificateDetailIssuer:getChildCertInstanceEncryptionCertificateDetailIssuer",
+                    "description": "Issuer information of the certificate\n"
+                },
+                "keyAlgorithm": {
+                    "type": "string",
+                    "description": "Key algorithm\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Private key\n"
+                },
+                "serialNumber": {
+                    "type": "string",
+                    "description": "Serial number\n"
+                },
+                "signatureAlgorithm": {
+                    "type": "string",
+                    "description": "Signature algorithm\n"
+                },
+                "subject": {
+                    "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceEncryptionCertificateDetailSubject:getChildCertInstanceEncryptionCertificateDetailSubject",
+                    "description": "Certificate subject information\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "chains",
+                "fingerPrintSha1",
+                "fingerPrintSha256",
+                "issuer",
+                "keyAlgorithm",
+                "privateKey",
+                "serialNumber",
+                "signatureAlgorithm",
+                "subject"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceEncryptionCertificateDetailIssuer:getChildCertInstanceEncryptionCertificateDetailIssuer": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Address (Street)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN)\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Country (C)\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City (L)\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Organization name (O)\n"
+                },
+                "organizationUnit": {
+                    "type": "string",
+                    "description": "Department (OU)\n"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Postal code (PostalCode)\n"
+                },
+                "province": {
+                    "type": "string",
+                    "description": "Province or state (ST)\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "address",
+                "commonName",
+                "country",
+                "locality",
+                "organization",
+                "organizationUnit",
+                "postalCode",
+                "province"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceEncryptionCertificateDetailSubject:getChildCertInstanceEncryptionCertificateDetailSubject": {
+            "properties": {
+                "address": {
+                    "type": "string",
+                    "description": "Address (Street)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN)\n"
+                },
+                "country": {
+                    "type": "string",
+                    "description": "Country (C)\n"
+                },
+                "locality": {
+                    "type": "string",
+                    "description": "City (L)\n"
+                },
+                "organization": {
+                    "type": "string",
+                    "description": "Organization name (O)\n"
+                },
+                "organizationUnit": {
+                    "type": "string",
+                    "description": "Department (OU)\n"
+                },
+                "postalCode": {
+                    "type": "string",
+                    "description": "Postal code (PostalCode)\n"
+                },
+                "province": {
+                    "type": "string",
+                    "description": "Province or state (ST)\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "address",
+                "commonName",
+                "country",
+                "locality",
+                "organization",
+                "organizationUnit",
+                "postalCode",
+                "province"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceImportCertificateInfo:getChildCertInstanceImportCertificateInfo": {
+            "properties": {
+                "certificateChain": {
+                    "type": "string",
+                    "description": "Content of the certificate (or certificate chain)\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "The content of the private key corresponding to the certificate\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificateChain",
+                "privateKey"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceImportGmCertificateInfo:getChildCertInstanceImportGmCertificateInfo": {
+            "properties": {
+                "encryptCertificateChain": {
+                    "type": "string",
+                    "description": "Content of the encrypted certificate (or certificate chain)\n"
+                },
+                "encryptPrivateKey": {
+                    "type": "string",
+                    "description": "The content of the private key corresponding to the encrypted certificate\n"
+                },
+                "signCertificateChain": {
+                    "type": "string",
+                    "description": "Content of the signed certificate (or certificate chain)\n"
+                },
+                "signPrivateKey": {
+                    "type": "string",
+                    "description": "The content of the private key corresponding to the signature certificate\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "encryptCertificateChain",
+                "encryptPrivateKey",
+                "signCertificateChain",
+                "signPrivateKey"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceOptions:getChildCertInstanceOptions": {
+            "properties": {
+                "expiredNotice": {
+                    "type": "string",
+                    "description": "Set the status of certificate expiration alerts. Options: Enabled, Disabled\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "expiredNotice"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstanceTag:getChildCertInstanceTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag value\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
         "bytepluscc:clb/AclAclEntry:AclAclEntry": {
             "properties": {
                 "description": {
@@ -40043,6 +40875,49 @@
                 "range",
                 "type",
                 "unit"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:resourceshare/ResourceShareTag:ResourceShareTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag value\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "key",
+                        "value"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:resourceshare/getResourceShareTag:getResourceShareTag": {
+            "properties": {
+                "key": {
+                    "type": "string",
+                    "description": "Tag key\n"
+                },
+                "value": {
+                    "type": "string",
+                    "description": "Tag value\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "key",
+                "value"
             ],
             "language": {
                 "nodejs": {
@@ -67460,6 +68335,418 @@
                     "status": {
                         "type": "string",
                         "description": "Cloud service access route status.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:certificateservice/childCertInstance:ChildCertInstance": {
+            "description": "Certificate instance\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst primaryCertificateserviceChildcertinstanceCase3 = new bytepluscc.certificateservice.ChildCertInstance(\"primary_certificateservice_childcertinstance_case_3\", {\n    tag: \"dx-cert-2\",\n    projectName: \"default\",\n    repeatable: true,\n    noVerifyAndFixChain: false,\n    importCertificateInfo: {\n        certificate_chain: `-----BEGIN CERTIFICATE-----\nMIID0EXAMPLECERTIFICATECONTENT\n-----END CERTIFICATE-----`,\n        private_key: `-----BEGIN RSA PRIVATE KEY-----\nMIIEoEXAMPLEPRIVATEKEYCONTENT\n-----END RSA PRIVATE KEY-----`,\n    },\n    tags: [{\n        key: \"aaa\",\n        value: \"111\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nprimary_certificateservice_childcertinstance_case3 = bytepluscc.certificateservice.ChildCertInstance(\"primary_certificateservice_childcertinstance_case_3\",\n    tag=\"dx-cert-2\",\n    project_name=\"default\",\n    repeatable=True,\n    no_verify_and_fix_chain=False,\n    import_certificate_info={\n        \"certificate_chain\": \"\"\"-----BEGIN CERTIFICATE-----\nMIID0EXAMPLECERTIFICATECONTENT\n-----END CERTIFICATE-----\"\"\",\n        \"private_key\": \"\"\"-----BEGIN RSA PRIVATE KEY-----\nMIIEoEXAMPLEPRIVATEKEYCONTENT\n-----END RSA PRIVATE KEY-----\"\"\",\n    },\n    tags=[{\n        \"key\": \"aaa\",\n        \"value\": \"111\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var primaryCertificateserviceChildcertinstanceCase3 = new Bytepluscc.Certificateservice.ChildCertInstance(\"primary_certificateservice_childcertinstance_case_3\", new()\n    {\n        Tag = \"dx-cert-2\",\n        ProjectName = \"default\",\n        Repeatable = true,\n        NoVerifyAndFixChain = false,\n        ImportCertificateInfo = new Bytepluscc.Certificateservice.Inputs.ChildCertInstanceImportCertificateInfoArgs\n        {\n            Certificate_chain = @\"-----BEGIN CERTIFICATE-----\nMIID0EXAMPLECERTIFICATECONTENT\n-----END CERTIFICATE-----\",\n            Private_key = @\"-----BEGIN RSA PRIVATE KEY-----\nMIIEoEXAMPLEPRIVATEKEYCONTENT\n-----END RSA PRIVATE KEY-----\",\n        },\n        Tags = new[]\n        {\n            new Bytepluscc.Certificateservice.Inputs.ChildCertInstanceTagArgs\n            {\n                Key = \"aaa\",\n                Value = \"111\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/certificateservice\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := certificateservice.NewChildCertInstance(ctx, \"primary_certificateservice_childcertinstance_case_3\", \u0026certificateservice.ChildCertInstanceArgs{\n\t\t\tTag:                 pulumi.String(\"dx-cert-2\"),\n\t\t\tProjectName:         pulumi.String(\"default\"),\n\t\t\tRepeatable:          pulumi.Bool(true),\n\t\t\tNoVerifyAndFixChain: pulumi.Bool(false),\n\t\t\tImportCertificateInfo: \u0026certificateservice.ChildCertInstanceImportCertificateInfoArgs{\n\t\t\t\tCertificate_chain: \"-----BEGIN CERTIFICATE-----\\nMIID0EXAMPLECERTIFICATECONTENT\\n-----END CERTIFICATE-----\",\n\t\t\t\tPrivate_key:       \"-----BEGIN RSA PRIVATE KEY-----\\nMIIEoEXAMPLEPRIVATEKEYCONTENT\\n-----END RSA PRIVATE KEY-----\",\n\t\t\t},\n\t\t\tTags: certificateservice.ChildCertInstanceTagArray{\n\t\t\t\t\u0026certificateservice.ChildCertInstanceTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"aaa\"),\n\t\t\t\t\tValue: pulumi.String(\"111\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_certificateservice_childcertinstance\" \"primary_certificateservice_childcertinstance_case_3\" {\n  tag                     = \"dx-cert-2\"\n  project_name            = \"default\"\n  repeatable              = true\n  no_verify_and_fix_chain = false\n  import_certificate_info = {\n    certificate_chain = \"-----BEGIN CERTIFICATE-----\\nMIID0EXAMPLECERTIFICATECONTENT\\n-----END CERTIFICATE-----\"\n    private_key       = \"-----BEGIN RSA PRIVATE KEY-----\\nMIIEoEXAMPLEPRIVATEKEYCONTENT\\n-----END RSA PRIVATE KEY-----\"\n  }\n  tags {\n    key   = \"aaa\"\n    value = \"111\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.certificateservice.ChildCertInstance;\nimport com.byteplus.bytepluscc.certificateservice.ChildCertInstanceArgs;\nimport com.pulumi.bytepluscc.certificateservice.inputs.ChildCertInstanceImportCertificateInfoArgs;\nimport com.pulumi.bytepluscc.certificateservice.inputs.ChildCertInstanceTagArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var primaryCertificateserviceChildcertinstanceCase3 = new ChildCertInstance(\"primaryCertificateserviceChildcertinstanceCase3\", ChildCertInstanceArgs.builder()\n            .tag(\"dx-cert-2\")\n            .projectName(\"default\")\n            .repeatable(true)\n            .noVerifyAndFixChain(false)\n            .importCertificateInfo(ChildCertInstanceImportCertificateInfoArgs.builder()\n                .certificate_chain(\"\"\"\n-----BEGIN CERTIFICATE-----\nMIID0EXAMPLECERTIFICATECONTENT\n-----END CERTIFICATE-----                \"\"\")\n                .private_key(\"\"\"\n-----BEGIN RSA PRIVATE KEY-----\nMIIEoEXAMPLEPRIVATEKEYCONTENT\n-----END RSA PRIVATE KEY-----                \"\"\")\n                .build())\n            .tags(ChildCertInstanceTagArgs.builder()\n                .key(\"aaa\")\n                .value(\"111\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  primaryCertificateserviceChildcertinstanceCase3:\n    type: bytepluscc:certificateservice:ChildCertInstance\n    name: primary_certificateservice_childcertinstance_case_3\n    properties:\n      tag: dx-cert-2\n      projectName: default\n      repeatable: true\n      noVerifyAndFixChain: false\n      importCertificateInfo:\n        certificate_chain: |-\n          -----BEGIN CERTIFICATE-----\n          MIID0EXAMPLECERTIFICATECONTENT\n          -----END CERTIFICATE-----\n        private_key: |-\n          -----BEGIN RSA PRIVATE KEY-----\n          MIIEoEXAMPLEPRIVATEKEYCONTENT\n          -----END RSA PRIVATE KEY-----\n      tags:\n        - key: aaa\n          value: '111'\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:certificateservice/childCertInstance:ChildCertInstance example \"instance_id\"\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "Account ID\n"
+                },
+                "certificateDetail": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceCertificateDetail:ChildCertInstanceCertificateDetail",
+                    "description": "Certificate details\n"
+                },
+                "certificateDomainType": {
+                    "type": "string",
+                    "description": "Domain type of the certificate. Valid values: Single (single domain), Wildcard (wildcard domain), Multi (multi-domain)\n"
+                },
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN) of the certificate\n"
+                },
+                "createdTime": {
+                    "type": "string",
+                    "description": "Creation time of the certificate instance\n"
+                },
+                "csr": {
+                    "type": "string",
+                    "description": "Your self-generated CSR (Certificate Signing Request)\n"
+                },
+                "encryptionCertificateDetail": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceEncryptionCertificateDetail:ChildCertInstanceEncryptionCertificateDetail",
+                    "description": "Applicable only to SM certificates; indicates details of the SM certificate\n"
+                },
+                "importCertificateInfo": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceImportCertificateInfo:ChildCertInstanceImportCertificateInfo",
+                    "description": "Details of the SSL certificate (non-SM certificate) to be uploaded\n"
+                },
+                "importGmCertificateInfo": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceImportGmCertificateInfo:ChildCertInstanceImportGmCertificateInfo",
+                    "description": "Details of the SSL certificate (SM certificate) to be uploaded\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "Certificate instance ID\n"
+                },
+                "instanceLevel": {
+                    "type": "string",
+                    "description": "Certificate type. Valid values: dv (domain validation), ov (organization validation), ev (extended validation)\n"
+                },
+                "instanceType": {
+                    "type": "string",
+                    "description": "Certificate instance type. Options: Free, Test (paid), Paid (formal certificate [paid]), Imported (uploaded certificate)\n"
+                },
+                "isCertificateRevoked": {
+                    "type": "boolean",
+                    "description": "Whether the certificate has been revoked\n"
+                },
+                "isCertificateSm": {
+                    "type": "boolean",
+                    "description": "Whether the certificate is an SM certificate\n"
+                },
+                "issuer": {
+                    "type": "string",
+                    "description": "Common name (CN) of the certificate issuer\n"
+                },
+                "keyAlg": {
+                    "type": "string",
+                    "description": "Set the key algorithm used by the certificate. Options: rsa (non-SM certificate only), ecc (non-SM certificate only), SM2 (SM certificate only)\n"
+                },
+                "noVerifyAndFixChain": {
+                    "type": "boolean",
+                    "description": "Ignore certificate integrity check. Default: false\n"
+                },
+                "notAfter": {
+                    "type": "string",
+                    "description": "End time of certificate validity period\n"
+                },
+                "notBefore": {
+                    "type": "string",
+                    "description": "Start time of certificate validity period\n"
+                },
+                "options": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceOptions:ChildCertInstanceOptions",
+                    "description": "Operation options\n"
+                },
+                "orderBrand": {
+                    "type": "string",
+                    "description": "Certificate brand\n"
+                },
+                "orderOrganizationId": {
+                    "type": "string",
+                    "description": "ID of the information template associated with the certificate order\n"
+                },
+                "orderPeriod": {
+                    "type": "integer",
+                    "description": "Duration of certificate service (unit: month)\n"
+                },
+                "orderPlan": {
+                    "type": "string",
+                    "description": "Certificate specification\n"
+                },
+                "organizationId": {
+                    "type": "string",
+                    "description": "Specify the information template ID for certificate application. Required when purchasing a certificate\n"
+                },
+                "plan": {
+                    "type": "string",
+                    "description": "Specify the specifications for the SSL certificate you wish to order. Required when purchasing a certificate\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Private key corresponding to the CSR\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Name of the project to which the certificate instance belongs\n"
+                },
+                "repeatable": {
+                    "type": "boolean",
+                    "description": "Allow uploading the same certificate. Default: false\n"
+                },
+                "sans": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Subject Alternative Name (SAN) of the certificate. Subject Alternative Name includes all domains protected by the certificate\n"
+                },
+                "sourceId": {
+                    "type": "string",
+                    "description": "For certificates obtained through renewal, indicates the ID of the previous certificate instance that was renewed\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Certificate instance status. Options: NotSubmitted, Pending, Issued, Cancelling, Canceled, Revoking, Revoked, Failed, Unknown\n"
+                },
+                "tag": {
+                    "type": "string",
+                    "description": "Remarks for the certificate instance\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceTag:ChildCertInstanceTag"
+                    },
+                    "description": "Resource tag list bound to the certificate instance\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "validationType": {
+                    "type": "string",
+                    "description": "Set the domain ownership verification method. Valid values: dns*cname, dns*txt, https, http. Required when purchasing a certificate\n"
+                }
+            },
+            "required": [
+                "accountId",
+                "certificateDetail",
+                "certificateDomainType",
+                "commonName",
+                "createdTime",
+                "csr",
+                "encryptionCertificateDetail",
+                "importCertificateInfo",
+                "importGmCertificateInfo",
+                "instanceId",
+                "instanceLevel",
+                "instanceType",
+                "isCertificateRevoked",
+                "isCertificateSm",
+                "issuer",
+                "keyAlg",
+                "noVerifyAndFixChain",
+                "notAfter",
+                "notBefore",
+                "options",
+                "orderBrand",
+                "orderOrganizationId",
+                "orderPeriod",
+                "orderPlan",
+                "organizationId",
+                "plan",
+                "privateKey",
+                "projectName",
+                "repeatable",
+                "sans",
+                "sourceId",
+                "status",
+                "tag",
+                "tags",
+                "validationType"
+            ],
+            "inputProperties": {
+                "commonName": {
+                    "type": "string",
+                    "description": "Common name (CN) of the certificate\n"
+                },
+                "csr": {
+                    "type": "string",
+                    "description": "Your self-generated CSR (Certificate Signing Request)\n"
+                },
+                "importCertificateInfo": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceImportCertificateInfo:ChildCertInstanceImportCertificateInfo",
+                    "description": "Details of the SSL certificate (non-SM certificate) to be uploaded\n"
+                },
+                "importGmCertificateInfo": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceImportGmCertificateInfo:ChildCertInstanceImportGmCertificateInfo",
+                    "description": "Details of the SSL certificate (SM certificate) to be uploaded\n"
+                },
+                "keyAlg": {
+                    "type": "string",
+                    "description": "Set the key algorithm used by the certificate. Options: rsa (non-SM certificate only), ecc (non-SM certificate only), SM2 (SM certificate only)\n"
+                },
+                "noVerifyAndFixChain": {
+                    "type": "boolean",
+                    "description": "Ignore certificate integrity check. Default: false\n"
+                },
+                "options": {
+                    "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceOptions:ChildCertInstanceOptions",
+                    "description": "Operation options\n"
+                },
+                "organizationId": {
+                    "type": "string",
+                    "description": "Specify the information template ID for certificate application. Required when purchasing a certificate\n"
+                },
+                "plan": {
+                    "type": "string",
+                    "description": "Specify the specifications for the SSL certificate you wish to order. Required when purchasing a certificate\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Private key corresponding to the CSR\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Name of the project to which the certificate instance belongs\n"
+                },
+                "repeatable": {
+                    "type": "boolean",
+                    "description": "Allow uploading the same certificate. Default: false\n"
+                },
+                "sans": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Subject Alternative Name (SAN) of the certificate. Subject Alternative Name includes all domains protected by the certificate\n"
+                },
+                "tag": {
+                    "type": "string",
+                    "description": "Remarks for the certificate instance\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceTag:ChildCertInstanceTag"
+                    },
+                    "description": "Resource tag list bound to the certificate instance\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "validationType": {
+                    "type": "string",
+                    "description": "Set the domain ownership verification method. Valid values: dns*cname, dns*txt, https, http. Required when purchasing a certificate\n"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ChildCertInstance resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "Account ID\n"
+                    },
+                    "certificateDetail": {
+                        "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceCertificateDetail:ChildCertInstanceCertificateDetail",
+                        "description": "Certificate details\n"
+                    },
+                    "certificateDomainType": {
+                        "type": "string",
+                        "description": "Domain type of the certificate. Valid values: Single (single domain), Wildcard (wildcard domain), Multi (multi-domain)\n"
+                    },
+                    "commonName": {
+                        "type": "string",
+                        "description": "Common name (CN) of the certificate\n"
+                    },
+                    "createdTime": {
+                        "type": "string",
+                        "description": "Creation time of the certificate instance\n"
+                    },
+                    "csr": {
+                        "type": "string",
+                        "description": "Your self-generated CSR (Certificate Signing Request)\n"
+                    },
+                    "encryptionCertificateDetail": {
+                        "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceEncryptionCertificateDetail:ChildCertInstanceEncryptionCertificateDetail",
+                        "description": "Applicable only to SM certificates; indicates details of the SM certificate\n"
+                    },
+                    "importCertificateInfo": {
+                        "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceImportCertificateInfo:ChildCertInstanceImportCertificateInfo",
+                        "description": "Details of the SSL certificate (non-SM certificate) to be uploaded\n"
+                    },
+                    "importGmCertificateInfo": {
+                        "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceImportGmCertificateInfo:ChildCertInstanceImportGmCertificateInfo",
+                        "description": "Details of the SSL certificate (SM certificate) to be uploaded\n"
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "Certificate instance ID\n"
+                    },
+                    "instanceLevel": {
+                        "type": "string",
+                        "description": "Certificate type. Valid values: dv (domain validation), ov (organization validation), ev (extended validation)\n"
+                    },
+                    "instanceType": {
+                        "type": "string",
+                        "description": "Certificate instance type. Options: Free, Test (paid), Paid (formal certificate [paid]), Imported (uploaded certificate)\n"
+                    },
+                    "isCertificateRevoked": {
+                        "type": "boolean",
+                        "description": "Whether the certificate has been revoked\n"
+                    },
+                    "isCertificateSm": {
+                        "type": "boolean",
+                        "description": "Whether the certificate is an SM certificate\n"
+                    },
+                    "issuer": {
+                        "type": "string",
+                        "description": "Common name (CN) of the certificate issuer\n"
+                    },
+                    "keyAlg": {
+                        "type": "string",
+                        "description": "Set the key algorithm used by the certificate. Options: rsa (non-SM certificate only), ecc (non-SM certificate only), SM2 (SM certificate only)\n"
+                    },
+                    "noVerifyAndFixChain": {
+                        "type": "boolean",
+                        "description": "Ignore certificate integrity check. Default: false\n"
+                    },
+                    "notAfter": {
+                        "type": "string",
+                        "description": "End time of certificate validity period\n"
+                    },
+                    "notBefore": {
+                        "type": "string",
+                        "description": "Start time of certificate validity period\n"
+                    },
+                    "options": {
+                        "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceOptions:ChildCertInstanceOptions",
+                        "description": "Operation options\n"
+                    },
+                    "orderBrand": {
+                        "type": "string",
+                        "description": "Certificate brand\n"
+                    },
+                    "orderOrganizationId": {
+                        "type": "string",
+                        "description": "ID of the information template associated with the certificate order\n"
+                    },
+                    "orderPeriod": {
+                        "type": "integer",
+                        "description": "Duration of certificate service (unit: month)\n"
+                    },
+                    "orderPlan": {
+                        "type": "string",
+                        "description": "Certificate specification\n"
+                    },
+                    "organizationId": {
+                        "type": "string",
+                        "description": "Specify the information template ID for certificate application. Required when purchasing a certificate\n"
+                    },
+                    "plan": {
+                        "type": "string",
+                        "description": "Specify the specifications for the SSL certificate you wish to order. Required when purchasing a certificate\n"
+                    },
+                    "privateKey": {
+                        "type": "string",
+                        "description": "Private key corresponding to the CSR\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Name of the project to which the certificate instance belongs\n"
+                    },
+                    "repeatable": {
+                        "type": "boolean",
+                        "description": "Allow uploading the same certificate. Default: false\n"
+                    },
+                    "sans": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Subject Alternative Name (SAN) of the certificate. Subject Alternative Name includes all domains protected by the certificate\n"
+                    },
+                    "sourceId": {
+                        "type": "string",
+                        "description": "For certificates obtained through renewal, indicates the ID of the previous certificate instance that was renewed\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Certificate instance status. Options: NotSubmitted, Pending, Issued, Cancelling, Canceled, Revoking, Revoked, Failed, Unknown\n"
+                    },
+                    "tag": {
+                        "type": "string",
+                        "description": "Remarks for the certificate instance\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:certificateservice/ChildCertInstanceTag:ChildCertInstanceTag"
+                        },
+                        "description": "Resource tag list bound to the certificate instance\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "validationType": {
+                        "type": "string",
+                        "description": "Set the domain ownership verification method. Valid values: dns*cname, dns*txt, https, http. Required when purchasing a certificate\n"
                     }
                 },
                 "type": "object"
@@ -98334,6 +99621,152 @@
                 "type": "object"
             }
         },
+        "bytepluscc:resourceshare/resourceShare:ResourceShare": {
+            "description": "Volcano Engine Resource Share unit. Resource share units allow you to share resources under your account (such as subnets) with specified principals (Principal, which can be an account, organization, or organizational unit) for their use\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.resourceshare.ResourceShare(\"example\", {\n    resourceShareName: \"cc-test-example\",\n    allowShareType: \"ANY\",\n    resourceTrns: \"trn:vpc:ap-southeast-1:210000****:subnet/subnet-example\",\n    principals: \"210000****,210001****\",\n    tags: [\n        {\n            key: \"key1\",\n            value: \"value1\",\n        },\n        {\n            key: \"key2\",\n            value: \"value2\",\n        },\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.resourceshare.ResourceShare(\"example\",\n    resource_share_name=\"cc-test-example\",\n    allow_share_type=\"ANY\",\n    resource_trns=\"trn:vpc:ap-southeast-1:210000****:subnet/subnet-example\",\n    principals=\"210000****,210001****\",\n    tags=[\n        {\n            \"key\": \"key1\",\n            \"value\": \"value1\",\n        },\n        {\n            \"key\": \"key2\",\n            \"value\": \"value2\",\n        },\n    ])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Resourceshare.ResourceShare(\"example\", new()\n    {\n        ResourceShareName = \"cc-test-example\",\n        AllowShareType = \"ANY\",\n        ResourceTrns = \"trn:vpc:ap-southeast-1:210000****:subnet/subnet-example\",\n        Principals = \"210000****,210001****\",\n        Tags = new[]\n        {\n            new Bytepluscc.Resourceshare.Inputs.ResourceShareTagArgs\n            {\n                Key = \"key1\",\n                Value = \"value1\",\n            },\n            new Bytepluscc.Resourceshare.Inputs.ResourceShareTagArgs\n            {\n                Key = \"key2\",\n                Value = \"value2\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/resourceshare\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := resourceshare.NewResourceShare(ctx, \"example\", \u0026resourceshare.ResourceShareArgs{\n\t\t\tResourceShareName: pulumi.String(\"cc-test-example\"),\n\t\t\tAllowShareType:    pulumi.String(\"ANY\"),\n\t\t\tResourceTrns:      pulumi.String(\"trn:vpc:ap-southeast-1:210000****:subnet/subnet-example\"),\n\t\t\tPrincipals:        pulumi.String(\"210000****,210001****\"),\n\t\t\tTags: resourceshare.ResourceShareTagArray{\n\t\t\t\t\u0026resourceshare.ResourceShareTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"key1\"),\n\t\t\t\t\tValue: pulumi.String(\"value1\"),\n\t\t\t\t},\n\t\t\t\t\u0026resourceshare.ResourceShareTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"key2\"),\n\t\t\t\t\tValue: pulumi.String(\"value2\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_resourceshare_resourceshare\" \"example\" {\n  resource_share_name = \"cc-test-example\"\n  allow_share_type    = \"ANY\"\n  resource_trns       = \"trn:vpc:ap-southeast-1:210000****:subnet/subnet-example\"\n  principals          = \"210000****,210001****\"\n  tags {\n    key   = \"key1\"\n    value = \"value1\"\n  }\n  tags {\n    key   = \"key2\"\n    value = \"value2\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.resourceshare.ResourceShare;\nimport com.byteplus.bytepluscc.resourceshare.ResourceShareArgs;\nimport com.pulumi.bytepluscc.resourceshare.inputs.ResourceShareTagArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new ResourceShare(\"example\", ResourceShareArgs.builder()\n            .resourceShareName(\"cc-test-example\")\n            .allowShareType(\"ANY\")\n            .resourceTrns(\"trn:vpc:ap-southeast-1:210000****:subnet/subnet-example\")\n            .principals(\"210000****,210001****\")\n            .tags(            \n                ResourceShareTagArgs.builder()\n                    .key(\"key1\")\n                    .value(\"value1\")\n                    .build(),\n                ResourceShareTagArgs.builder()\n                    .key(\"key2\")\n                    .value(\"value2\")\n                    .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:resourceshare:ResourceShare\n    properties:\n      resourceShareName: cc-test-example\n      allowShareType: ANY\n      resourceTrns: trn:vpc:ap-southeast-1:210000****:subnet/subnet-example\n      principals: 210000****,210001****\n      tags:\n        - key: key1\n          value: value1\n        - key: key2\n          value: value2\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:resourceshare/resourceShare:ResourceShare example \"resource_share_trn\"\n```\n\n",
+            "properties": {
+                "allowShareType": {
+                    "type": "string",
+                    "description": "Resource share unit type. Values can be ORG   - allows sharing only within the organization; ANY   - allows sharing with any account. Default is ANY\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "Creation time\n"
+                },
+                "owningAccountId": {
+                    "type": "integer",
+                    "description": "Resource share unit creator account ID\n"
+                },
+                "principals": {
+                    "type": "string",
+                    "description": "Associated Principals (Principal refers to the recipient, which can be a user, organization, or organizational unit)\n"
+                },
+                "resourceShareId": {
+                    "type": "string",
+                    "description": "Resource share unit ID\n"
+                },
+                "resourceShareName": {
+                    "type": "string",
+                    "description": "Resource share unit name\n"
+                },
+                "resourceShareTrn": {
+                    "type": "string",
+                    "description": "Resource share unit Trn\n"
+                },
+                "resourceTrns": {
+                    "type": "string",
+                    "description": "Associated resources\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Resource share unit status, including UNKNOWN   - unknown status; ACTIVE   - active status; DELETING   - deleting status; DELETED   - deleted status; FAILED   - share failed status; NEW   - newly created status\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:resourceshare/ResourceShareTag:ResourceShareTag"
+                    },
+                    "description": "Tag key-value pair\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Update time\n"
+                }
+            },
+            "required": [
+                "allowShareType",
+                "createTime",
+                "owningAccountId",
+                "principals",
+                "resourceShareId",
+                "resourceShareName",
+                "resourceShareTrn",
+                "resourceTrns",
+                "status",
+                "tags",
+                "updateTime"
+            ],
+            "inputProperties": {
+                "allowShareType": {
+                    "type": "string",
+                    "description": "Resource share unit type. Values can be ORG   - allows sharing only within the organization; ANY   - allows sharing with any account. Default is ANY\n"
+                },
+                "principals": {
+                    "type": "string",
+                    "description": "Associated Principals (Principal refers to the recipient, which can be a user, organization, or organizational unit)\n"
+                },
+                "resourceShareName": {
+                    "type": "string",
+                    "description": "Resource share unit name\n"
+                },
+                "resourceTrns": {
+                    "type": "string",
+                    "description": "Associated resources\n"
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:resourceshare/ResourceShareTag:ResourceShareTag"
+                    },
+                    "description": "Tag key-value pair\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                }
+            },
+            "requiredInputs": [
+                "resourceShareName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ResourceShare resources.\n",
+                "properties": {
+                    "allowShareType": {
+                        "type": "string",
+                        "description": "Resource share unit type. Values can be ORG   - allows sharing only within the organization; ANY   - allows sharing with any account. Default is ANY\n"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "Creation time\n"
+                    },
+                    "owningAccountId": {
+                        "type": "integer",
+                        "description": "Resource share unit creator account ID\n"
+                    },
+                    "principals": {
+                        "type": "string",
+                        "description": "Associated Principals (Principal refers to the recipient, which can be a user, organization, or organizational unit)\n"
+                    },
+                    "resourceShareId": {
+                        "type": "string",
+                        "description": "Resource share unit ID\n"
+                    },
+                    "resourceShareName": {
+                        "type": "string",
+                        "description": "Resource share unit name\n"
+                    },
+                    "resourceShareTrn": {
+                        "type": "string",
+                        "description": "Resource share unit Trn\n"
+                    },
+                    "resourceTrns": {
+                        "type": "string",
+                        "description": "Associated resources\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Resource share unit status, including UNKNOWN   - unknown status; ACTIVE   - active status; DELETING   - deleting status; DELETED   - deleted status; FAILED   - share failed status; NEW   - newly created status\n"
+                    },
+                    "tags": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:resourceshare/ResourceShareTag:ResourceShareTag"
+                        },
+                        "description": "Tag key-value pair\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Update time\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:storageebs/snapshot:Snapshot": {
             "description": "A snapshot is a backup method. Each snapshot is a backup file of cloud disk data at a specific point in time. When data is lost or a failure occurs, you can roll back cloud disk data using the snapshot to recover lost data.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst storageEBSSnapshotDemo = new bytepluscc.storageebs.Snapshot(\"StorageEBSSnapshotDemo\", {\n    volumeId: \"vol-3wt6pip1dy3qu*****\",\n    snapshotName: \"StorageEBSSnapshotDemo\",\n    description: \"StorageEBSSnapshotDemo description\",\n    projectName: \"default\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nstorage_ebs_snapshot_demo = bytepluscc.storageebs.Snapshot(\"StorageEBSSnapshotDemo\",\n    volume_id=\"vol-3wt6pip1dy3qu*****\",\n    snapshot_name=\"StorageEBSSnapshotDemo\",\n    description=\"StorageEBSSnapshotDemo description\",\n    project_name=\"default\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var storageEBSSnapshotDemo = new Bytepluscc.Storageebs.Snapshot(\"StorageEBSSnapshotDemo\", new()\n    {\n        VolumeId = \"vol-3wt6pip1dy3qu*****\",\n        SnapshotName = \"StorageEBSSnapshotDemo\",\n        Description = \"StorageEBSSnapshotDemo description\",\n        ProjectName = \"default\",\n        Tags = new[]\n        {\n            new Bytepluscc.Storageebs.Inputs.SnapshotTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/storageebs\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := storageebs.NewSnapshot(ctx, \"StorageEBSSnapshotDemo\", \u0026storageebs.SnapshotArgs{\n\t\t\tVolumeId:     pulumi.String(\"vol-3wt6pip1dy3qu*****\"),\n\t\t\tSnapshotName: pulumi.String(\"StorageEBSSnapshotDemo\"),\n\t\t\tDescription:  pulumi.String(\"StorageEBSSnapshotDemo description\"),\n\t\t\tProjectName:  pulumi.String(\"default\"),\n\t\t\tTags: storageebs.SnapshotTagArray{\n\t\t\t\t\u0026storageebs.SnapshotTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_storageebs_snapshot\" \"StorageEBSSnapshotDemo\" {\n  volume_id     = \"vol-3wt6pip1dy3qu*****\"\n  snapshot_name = \"StorageEBSSnapshotDemo\"\n  description   = \"StorageEBSSnapshotDemo description\"\n  project_name  = \"default\"\n  tags {\n    key   = \"env\"\n    value = \"test\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.storageebs.Snapshot;\nimport com.byteplus.bytepluscc.storageebs.SnapshotArgs;\nimport com.pulumi.bytepluscc.storageebs.inputs.SnapshotTagArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var storageEBSSnapshotDemo = new Snapshot(\"storageEBSSnapshotDemo\", SnapshotArgs.builder()\n            .volumeId(\"vol-3wt6pip1dy3qu*****\")\n            .snapshotName(\"StorageEBSSnapshotDemo\")\n            .description(\"StorageEBSSnapshotDemo description\")\n            .projectName(\"default\")\n            .tags(SnapshotTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  storageEBSSnapshotDemo:\n    type: bytepluscc:storageebs:Snapshot\n    name: StorageEBSSnapshotDemo\n    properties:\n      volumeId: vol-3wt6pip1dy3qu*****\n      snapshotName: StorageEBSSnapshotDemo\n      description: StorageEBSSnapshotDemo description\n      projectName: default\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:storageebs/snapshot:Snapshot example \"snapshot_id\"\n```\n\n",
             "properties": {
@@ -120676,6 +122109,240 @@
                 "type": "object"
             }
         },
+        "bytepluscc:certificateservice/getChildCertInstance:getChildCertInstance": {
+            "description": "Data Source schema for Byteplus::CertificateService::ChildCertInstance\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getChildCertInstance.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getChildCertInstance.\n",
+                "properties": {
+                    "accountId": {
+                        "description": "Account ID\n",
+                        "type": "string"
+                    },
+                    "certificateDetail": {
+                        "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceCertificateDetail:getChildCertInstanceCertificateDetail",
+                        "description": "Certificate details\n"
+                    },
+                    "certificateDomainType": {
+                        "description": "Domain type of the certificate. Valid values: Single (single domain), Wildcard (wildcard domain), Multi (multi-domain)\n",
+                        "type": "string"
+                    },
+                    "commonName": {
+                        "description": "Common name (CN) of the certificate\n",
+                        "type": "string"
+                    },
+                    "createdTime": {
+                        "description": "Creation time of the certificate instance\n",
+                        "type": "string"
+                    },
+                    "csr": {
+                        "description": "Your self-generated CSR (Certificate Signing Request)\n",
+                        "type": "string"
+                    },
+                    "encryptionCertificateDetail": {
+                        "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceEncryptionCertificateDetail:getChildCertInstanceEncryptionCertificateDetail",
+                        "description": "Applicable only to SM certificates; indicates details of the SM certificate\n"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "importCertificateInfo": {
+                        "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceImportCertificateInfo:getChildCertInstanceImportCertificateInfo",
+                        "description": "Details of the SSL certificate (non-SM certificate) to be uploaded\n"
+                    },
+                    "importGmCertificateInfo": {
+                        "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceImportGmCertificateInfo:getChildCertInstanceImportGmCertificateInfo",
+                        "description": "Details of the SSL certificate (SM certificate) to be uploaded\n"
+                    },
+                    "instanceId": {
+                        "description": "Certificate instance ID\n",
+                        "type": "string"
+                    },
+                    "instanceLevel": {
+                        "description": "Certificate type. Valid values: dv (domain validation), ov (organization validation), ev (extended validation)\n",
+                        "type": "string"
+                    },
+                    "instanceType": {
+                        "description": "Certificate instance type. Options: Free, Test (paid), Paid (formal certificate [paid]), Imported (uploaded certificate)\n",
+                        "type": "string"
+                    },
+                    "isCertificateRevoked": {
+                        "description": "Whether the certificate has been revoked\n",
+                        "type": "boolean"
+                    },
+                    "isCertificateSm": {
+                        "description": "Whether the certificate is an SM certificate\n",
+                        "type": "boolean"
+                    },
+                    "issuer": {
+                        "description": "Common name (CN) of the certificate issuer\n",
+                        "type": "string"
+                    },
+                    "keyAlg": {
+                        "description": "Set the key algorithm used by the certificate. Options: rsa (non-SM certificate only), ecc (non-SM certificate only), SM2 (SM certificate only)\n",
+                        "type": "string"
+                    },
+                    "noVerifyAndFixChain": {
+                        "description": "Ignore certificate integrity check. Default: false\n",
+                        "type": "boolean"
+                    },
+                    "notAfter": {
+                        "description": "End time of certificate validity period\n",
+                        "type": "string"
+                    },
+                    "notBefore": {
+                        "description": "Start time of certificate validity period\n",
+                        "type": "string"
+                    },
+                    "options": {
+                        "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceOptions:getChildCertInstanceOptions",
+                        "description": "Operation options\n"
+                    },
+                    "orderBrand": {
+                        "description": "Certificate brand\n",
+                        "type": "string"
+                    },
+                    "orderOrganizationId": {
+                        "description": "ID of the information template associated with the certificate order\n",
+                        "type": "string"
+                    },
+                    "orderPeriod": {
+                        "description": "Duration of certificate service (unit: month)\n",
+                        "type": "integer"
+                    },
+                    "orderPlan": {
+                        "description": "Certificate specification\n",
+                        "type": "string"
+                    },
+                    "organizationId": {
+                        "description": "Specify the information template ID for certificate application. Required when purchasing a certificate\n",
+                        "type": "string"
+                    },
+                    "plan": {
+                        "description": "Specify the specifications for the SSL certificate you wish to order. Required when purchasing a certificate\n",
+                        "type": "string"
+                    },
+                    "privateKey": {
+                        "description": "Private key corresponding to the CSR\n",
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "description": "Name of the project to which the certificate instance belongs\n",
+                        "type": "string"
+                    },
+                    "repeatable": {
+                        "description": "Allow uploading the same certificate. Default: false\n",
+                        "type": "boolean"
+                    },
+                    "sans": {
+                        "description": "Subject Alternative Name (SAN) of the certificate. Subject Alternative Name includes all domains protected by the certificate\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "sourceId": {
+                        "description": "For certificates obtained through renewal, indicates the ID of the previous certificate instance that was renewed\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Certificate instance status. Options: NotSubmitted, Pending, Issued, Cancelling, Canceled, Revoking, Revoked, Failed, Unknown\n",
+                        "type": "string"
+                    },
+                    "tag": {
+                        "description": "Remarks for the certificate instance\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "Resource tag list bound to the certificate instance\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:certificateservice/getChildCertInstanceTag:getChildCertInstanceTag"
+                        },
+                        "type": "array"
+                    },
+                    "validationType": {
+                        "description": "Set the domain ownership verification method. Valid values: dns*cname, dns*txt, https, http. Required when purchasing a certificate\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "certificateDetail",
+                    "certificateDomainType",
+                    "commonName",
+                    "createdTime",
+                    "csr",
+                    "encryptionCertificateDetail",
+                    "id",
+                    "importCertificateInfo",
+                    "importGmCertificateInfo",
+                    "instanceId",
+                    "instanceLevel",
+                    "instanceType",
+                    "isCertificateRevoked",
+                    "isCertificateSm",
+                    "issuer",
+                    "keyAlg",
+                    "noVerifyAndFixChain",
+                    "notAfter",
+                    "notBefore",
+                    "options",
+                    "orderBrand",
+                    "orderOrganizationId",
+                    "orderPeriod",
+                    "orderPlan",
+                    "organizationId",
+                    "plan",
+                    "privateKey",
+                    "projectName",
+                    "repeatable",
+                    "sans",
+                    "sourceId",
+                    "status",
+                    "tag",
+                    "tags",
+                    "validationType"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:certificateservice/getChildCertInstances:getChildCertInstances": {
+            "description": "Plural Data Source schema for Byteplus::CertificateService::ChildCertInstance\n",
+            "outputs": {
+                "description": "A collection of values returned by getChildCertInstances.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:clb/getAcl:getAcl": {
             "description": "Data Source schema for Byteplus::CLB::ACL\n",
             "inputs": {
@@ -140331,6 +141998,117 @@
             "description": "Plural Data Source schema for Byteplus::Redis::ParameterGroup\n",
             "outputs": {
                 "description": "A collection of values returned by getParameterGroups.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:resourceshare/getResourceShare:getResourceShare": {
+            "description": "Data Source schema for Byteplus::ResourceShare::ResourceShare\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getResourceShare.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getResourceShare.\n",
+                "properties": {
+                    "allowShareType": {
+                        "description": "Resource share unit type. Values can be ORG   - allows sharing only within the organization; ANY   - allows sharing with any account. Default is ANY\n",
+                        "type": "string"
+                    },
+                    "createTime": {
+                        "description": "Creation time\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "owningAccountId": {
+                        "description": "Resource share unit creator account ID\n",
+                        "type": "integer"
+                    },
+                    "principals": {
+                        "description": "Associated Principals (Principal refers to the recipient, which can be a user, organization, or organizational unit)\n",
+                        "type": "string"
+                    },
+                    "resourceShareId": {
+                        "description": "Resource share unit ID\n",
+                        "type": "string"
+                    },
+                    "resourceShareName": {
+                        "description": "Resource share unit name\n",
+                        "type": "string"
+                    },
+                    "resourceShareTrn": {
+                        "description": "Resource share unit Trn\n",
+                        "type": "string"
+                    },
+                    "resourceTrns": {
+                        "description": "Associated resources\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Resource share unit status, including UNKNOWN   - unknown status; ACTIVE   - active status; DELETING   - deleting status; DELETED   - deleted status; FAILED   - share failed status; NEW   - newly created status\n",
+                        "type": "string"
+                    },
+                    "tags": {
+                        "description": "Tag key-value pair\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:resourceshare/getResourceShareTag:getResourceShareTag"
+                        },
+                        "type": "array"
+                    },
+                    "updateTime": {
+                        "description": "Update time\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "allowShareType",
+                    "createTime",
+                    "id",
+                    "owningAccountId",
+                    "principals",
+                    "resourceShareId",
+                    "resourceShareName",
+                    "resourceShareTrn",
+                    "resourceTrns",
+                    "status",
+                    "tags",
+                    "updateTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:resourceshare/getResourceShares:getResourceShares": {
+            "description": "Plural Data Source schema for Byteplus::ResourceShare::ResourceShare\n",
+            "outputs": {
+                "description": "A collection of values returned by getResourceShares.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
