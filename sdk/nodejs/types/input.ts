@@ -4356,6 +4356,275 @@ export namespace cen {
     }
 }
 
+export namespace certificateservice {
+    export interface ChildCertInstanceCertificateDetail {
+        /**
+         * Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate
+         */
+        chains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * SHA-1 fingerprint
+         */
+        fingerPrintSha1?: pulumi.Input<string | undefined>;
+        /**
+         * SHA-256 fingerprint
+         */
+        fingerPrintSha256?: pulumi.Input<string | undefined>;
+        /**
+         * Issuer information of the certificate
+         */
+        issuer?: pulumi.Input<inputs.certificateservice.ChildCertInstanceCertificateDetailIssuer | undefined>;
+        /**
+         * Key algorithm
+         */
+        keyAlgorithm?: pulumi.Input<string | undefined>;
+        /**
+         * Private key
+         */
+        privateKey?: pulumi.Input<string | undefined>;
+        /**
+         * Serial number
+         */
+        serialNumber?: pulumi.Input<string | undefined>;
+        /**
+         * Signature algorithm
+         */
+        signatureAlgorithm?: pulumi.Input<string | undefined>;
+        /**
+         * Certificate subject information
+         */
+        subject?: pulumi.Input<inputs.certificateservice.ChildCertInstanceCertificateDetailSubject | undefined>;
+    }
+
+    export interface ChildCertInstanceCertificateDetailIssuer {
+        /**
+         * Address (Street)
+         */
+        address?: pulumi.Input<string | undefined>;
+        /**
+         * Common name (CN)
+         */
+        commonName?: pulumi.Input<string | undefined>;
+        /**
+         * Country (C)
+         */
+        country?: pulumi.Input<string | undefined>;
+        /**
+         * City (L)
+         */
+        locality?: pulumi.Input<string | undefined>;
+        /**
+         * Organization name (O)
+         */
+        organization?: pulumi.Input<string | undefined>;
+        /**
+         * Department (OU)
+         */
+        organizationUnit?: pulumi.Input<string | undefined>;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode?: pulumi.Input<string | undefined>;
+        /**
+         * Province or state (ST)
+         */
+        province?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ChildCertInstanceCertificateDetailSubject {
+        /**
+         * Address (Street)
+         */
+        address?: pulumi.Input<string | undefined>;
+        /**
+         * Common name (CN)
+         */
+        commonName?: pulumi.Input<string | undefined>;
+        /**
+         * Country (C)
+         */
+        country?: pulumi.Input<string | undefined>;
+        /**
+         * City (L)
+         */
+        locality?: pulumi.Input<string | undefined>;
+        /**
+         * Organization name (O)
+         */
+        organization?: pulumi.Input<string | undefined>;
+        /**
+         * Department (OU)
+         */
+        organizationUnit?: pulumi.Input<string | undefined>;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode?: pulumi.Input<string | undefined>;
+        /**
+         * Province or state (ST)
+         */
+        province?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ChildCertInstanceEncryptionCertificateDetail {
+        /**
+         * Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate
+         */
+        chains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+        /**
+         * SHA-1 fingerprint
+         */
+        fingerPrintSha1?: pulumi.Input<string | undefined>;
+        /**
+         * SHA-256 fingerprint
+         */
+        fingerPrintSha256?: pulumi.Input<string | undefined>;
+        /**
+         * Issuer information of the certificate
+         */
+        issuer?: pulumi.Input<inputs.certificateservice.ChildCertInstanceEncryptionCertificateDetailIssuer | undefined>;
+        /**
+         * Key algorithm
+         */
+        keyAlgorithm?: pulumi.Input<string | undefined>;
+        /**
+         * Private key
+         */
+        privateKey?: pulumi.Input<string | undefined>;
+        /**
+         * Serial number
+         */
+        serialNumber?: pulumi.Input<string | undefined>;
+        /**
+         * Signature algorithm
+         */
+        signatureAlgorithm?: pulumi.Input<string | undefined>;
+        /**
+         * Certificate subject information
+         */
+        subject?: pulumi.Input<inputs.certificateservice.ChildCertInstanceEncryptionCertificateDetailSubject | undefined>;
+    }
+
+    export interface ChildCertInstanceEncryptionCertificateDetailIssuer {
+        /**
+         * Address (Street)
+         */
+        address?: pulumi.Input<string | undefined>;
+        /**
+         * Common name (CN)
+         */
+        commonName?: pulumi.Input<string | undefined>;
+        /**
+         * Country (C)
+         */
+        country?: pulumi.Input<string | undefined>;
+        /**
+         * City (L)
+         */
+        locality?: pulumi.Input<string | undefined>;
+        /**
+         * Organization name (O)
+         */
+        organization?: pulumi.Input<string | undefined>;
+        /**
+         * Department (OU)
+         */
+        organizationUnit?: pulumi.Input<string | undefined>;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode?: pulumi.Input<string | undefined>;
+        /**
+         * Province or state (ST)
+         */
+        province?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ChildCertInstanceEncryptionCertificateDetailSubject {
+        /**
+         * Address (Street)
+         */
+        address?: pulumi.Input<string | undefined>;
+        /**
+         * Common name (CN)
+         */
+        commonName?: pulumi.Input<string | undefined>;
+        /**
+         * Country (C)
+         */
+        country?: pulumi.Input<string | undefined>;
+        /**
+         * City (L)
+         */
+        locality?: pulumi.Input<string | undefined>;
+        /**
+         * Organization name (O)
+         */
+        organization?: pulumi.Input<string | undefined>;
+        /**
+         * Department (OU)
+         */
+        organizationUnit?: pulumi.Input<string | undefined>;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode?: pulumi.Input<string | undefined>;
+        /**
+         * Province or state (ST)
+         */
+        province?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ChildCertInstanceImportCertificateInfo {
+        /**
+         * Content of the certificate (or certificate chain)
+         */
+        certificateChain?: pulumi.Input<string | undefined>;
+        /**
+         * The content of the private key corresponding to the certificate
+         */
+        privateKey?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ChildCertInstanceImportGmCertificateInfo {
+        /**
+         * Content of the encrypted certificate (or certificate chain)
+         */
+        encryptCertificateChain?: pulumi.Input<string | undefined>;
+        /**
+         * The content of the private key corresponding to the encrypted certificate
+         */
+        encryptPrivateKey?: pulumi.Input<string | undefined>;
+        /**
+         * Content of the signed certificate (or certificate chain)
+         */
+        signCertificateChain?: pulumi.Input<string | undefined>;
+        /**
+         * The content of the private key corresponding to the signature certificate
+         */
+        signPrivateKey?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ChildCertInstanceOptions {
+        /**
+         * Set the status of certificate expiration alerts. Options: Enabled, Disabled
+         */
+        expiredNotice?: pulumi.Input<string | undefined>;
+    }
+
+    export interface ChildCertInstanceTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+}
+
 export namespace clb {
     export interface AclAclEntry {
         /**
@@ -11539,6 +11808,19 @@ export namespace redis {
          * Parameter unit
          */
         unit?: pulumi.Input<string | undefined>;
+    }
+}
+
+export namespace resourceshare {
+    export interface ResourceShareTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string | undefined>;
     }
 }
 

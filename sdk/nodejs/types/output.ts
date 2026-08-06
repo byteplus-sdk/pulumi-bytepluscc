@@ -8731,6 +8731,541 @@ export namespace cen {
 
 }
 
+export namespace certificateservice {
+    export interface ChildCertInstanceCertificateDetail {
+        /**
+         * Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate
+         */
+        chains: string[];
+        /**
+         * SHA-1 fingerprint
+         */
+        fingerPrintSha1: string;
+        /**
+         * SHA-256 fingerprint
+         */
+        fingerPrintSha256: string;
+        /**
+         * Issuer information of the certificate
+         */
+        issuer: outputs.certificateservice.ChildCertInstanceCertificateDetailIssuer;
+        /**
+         * Key algorithm
+         */
+        keyAlgorithm: string;
+        /**
+         * Private key
+         */
+        privateKey: string;
+        /**
+         * Serial number
+         */
+        serialNumber: string;
+        /**
+         * Signature algorithm
+         */
+        signatureAlgorithm: string;
+        /**
+         * Certificate subject information
+         */
+        subject: outputs.certificateservice.ChildCertInstanceCertificateDetailSubject;
+    }
+
+    export interface ChildCertInstanceCertificateDetailIssuer {
+        /**
+         * Address (Street)
+         */
+        address: string;
+        /**
+         * Common name (CN)
+         */
+        commonName: string;
+        /**
+         * Country (C)
+         */
+        country: string;
+        /**
+         * City (L)
+         */
+        locality: string;
+        /**
+         * Organization name (O)
+         */
+        organization: string;
+        /**
+         * Department (OU)
+         */
+        organizationUnit: string;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode: string;
+        /**
+         * Province or state (ST)
+         */
+        province: string;
+    }
+
+    export interface ChildCertInstanceCertificateDetailSubject {
+        /**
+         * Address (Street)
+         */
+        address: string;
+        /**
+         * Common name (CN)
+         */
+        commonName: string;
+        /**
+         * Country (C)
+         */
+        country: string;
+        /**
+         * City (L)
+         */
+        locality: string;
+        /**
+         * Organization name (O)
+         */
+        organization: string;
+        /**
+         * Department (OU)
+         */
+        organizationUnit: string;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode: string;
+        /**
+         * Province or state (ST)
+         */
+        province: string;
+    }
+
+    export interface ChildCertInstanceEncryptionCertificateDetail {
+        /**
+         * Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate
+         */
+        chains: string[];
+        /**
+         * SHA-1 fingerprint
+         */
+        fingerPrintSha1: string;
+        /**
+         * SHA-256 fingerprint
+         */
+        fingerPrintSha256: string;
+        /**
+         * Issuer information of the certificate
+         */
+        issuer: outputs.certificateservice.ChildCertInstanceEncryptionCertificateDetailIssuer;
+        /**
+         * Key algorithm
+         */
+        keyAlgorithm: string;
+        /**
+         * Private key
+         */
+        privateKey: string;
+        /**
+         * Serial number
+         */
+        serialNumber: string;
+        /**
+         * Signature algorithm
+         */
+        signatureAlgorithm: string;
+        /**
+         * Certificate subject information
+         */
+        subject: outputs.certificateservice.ChildCertInstanceEncryptionCertificateDetailSubject;
+    }
+
+    export interface ChildCertInstanceEncryptionCertificateDetailIssuer {
+        /**
+         * Address (Street)
+         */
+        address: string;
+        /**
+         * Common name (CN)
+         */
+        commonName: string;
+        /**
+         * Country (C)
+         */
+        country: string;
+        /**
+         * City (L)
+         */
+        locality: string;
+        /**
+         * Organization name (O)
+         */
+        organization: string;
+        /**
+         * Department (OU)
+         */
+        organizationUnit: string;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode: string;
+        /**
+         * Province or state (ST)
+         */
+        province: string;
+    }
+
+    export interface ChildCertInstanceEncryptionCertificateDetailSubject {
+        /**
+         * Address (Street)
+         */
+        address: string;
+        /**
+         * Common name (CN)
+         */
+        commonName: string;
+        /**
+         * Country (C)
+         */
+        country: string;
+        /**
+         * City (L)
+         */
+        locality: string;
+        /**
+         * Organization name (O)
+         */
+        organization: string;
+        /**
+         * Department (OU)
+         */
+        organizationUnit: string;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode: string;
+        /**
+         * Province or state (ST)
+         */
+        province: string;
+    }
+
+    export interface ChildCertInstanceImportCertificateInfo {
+        /**
+         * Content of the certificate (or certificate chain)
+         */
+        certificateChain: string;
+        /**
+         * The content of the private key corresponding to the certificate
+         */
+        privateKey: string;
+    }
+
+    export interface ChildCertInstanceImportGmCertificateInfo {
+        /**
+         * Content of the encrypted certificate (or certificate chain)
+         */
+        encryptCertificateChain: string;
+        /**
+         * The content of the private key corresponding to the encrypted certificate
+         */
+        encryptPrivateKey: string;
+        /**
+         * Content of the signed certificate (or certificate chain)
+         */
+        signCertificateChain: string;
+        /**
+         * The content of the private key corresponding to the signature certificate
+         */
+        signPrivateKey: string;
+    }
+
+    export interface ChildCertInstanceOptions {
+        /**
+         * Set the status of certificate expiration alerts. Options: Enabled, Disabled
+         */
+        expiredNotice: string;
+    }
+
+    export interface ChildCertInstanceTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetChildCertInstanceCertificateDetail {
+        /**
+         * Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate
+         */
+        chains: string[];
+        /**
+         * SHA-1 fingerprint
+         */
+        fingerPrintSha1: string;
+        /**
+         * SHA-256 fingerprint
+         */
+        fingerPrintSha256: string;
+        /**
+         * Issuer information of the certificate
+         */
+        issuer: outputs.certificateservice.GetChildCertInstanceCertificateDetailIssuer;
+        /**
+         * Key algorithm
+         */
+        keyAlgorithm: string;
+        /**
+         * Private key
+         */
+        privateKey: string;
+        /**
+         * Serial number
+         */
+        serialNumber: string;
+        /**
+         * Signature algorithm
+         */
+        signatureAlgorithm: string;
+        /**
+         * Certificate subject information
+         */
+        subject: outputs.certificateservice.GetChildCertInstanceCertificateDetailSubject;
+    }
+
+    export interface GetChildCertInstanceCertificateDetailIssuer {
+        /**
+         * Address (Street)
+         */
+        address: string;
+        /**
+         * Common name (CN)
+         */
+        commonName: string;
+        /**
+         * Country (C)
+         */
+        country: string;
+        /**
+         * City (L)
+         */
+        locality: string;
+        /**
+         * Organization name (O)
+         */
+        organization: string;
+        /**
+         * Department (OU)
+         */
+        organizationUnit: string;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode: string;
+        /**
+         * Province or state (ST)
+         */
+        province: string;
+    }
+
+    export interface GetChildCertInstanceCertificateDetailSubject {
+        /**
+         * Address (Street)
+         */
+        address: string;
+        /**
+         * Common name (CN)
+         */
+        commonName: string;
+        /**
+         * Country (C)
+         */
+        country: string;
+        /**
+         * City (L)
+         */
+        locality: string;
+        /**
+         * Organization name (O)
+         */
+        organization: string;
+        /**
+         * Department (OU)
+         */
+        organizationUnit: string;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode: string;
+        /**
+         * Province or state (ST)
+         */
+        province: string;
+    }
+
+    export interface GetChildCertInstanceEncryptionCertificateDetail {
+        /**
+         * Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate
+         */
+        chains: string[];
+        /**
+         * SHA-1 fingerprint
+         */
+        fingerPrintSha1: string;
+        /**
+         * SHA-256 fingerprint
+         */
+        fingerPrintSha256: string;
+        /**
+         * Issuer information of the certificate
+         */
+        issuer: outputs.certificateservice.GetChildCertInstanceEncryptionCertificateDetailIssuer;
+        /**
+         * Key algorithm
+         */
+        keyAlgorithm: string;
+        /**
+         * Private key
+         */
+        privateKey: string;
+        /**
+         * Serial number
+         */
+        serialNumber: string;
+        /**
+         * Signature algorithm
+         */
+        signatureAlgorithm: string;
+        /**
+         * Certificate subject information
+         */
+        subject: outputs.certificateservice.GetChildCertInstanceEncryptionCertificateDetailSubject;
+    }
+
+    export interface GetChildCertInstanceEncryptionCertificateDetailIssuer {
+        /**
+         * Address (Street)
+         */
+        address: string;
+        /**
+         * Common name (CN)
+         */
+        commonName: string;
+        /**
+         * Country (C)
+         */
+        country: string;
+        /**
+         * City (L)
+         */
+        locality: string;
+        /**
+         * Organization name (O)
+         */
+        organization: string;
+        /**
+         * Department (OU)
+         */
+        organizationUnit: string;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode: string;
+        /**
+         * Province or state (ST)
+         */
+        province: string;
+    }
+
+    export interface GetChildCertInstanceEncryptionCertificateDetailSubject {
+        /**
+         * Address (Street)
+         */
+        address: string;
+        /**
+         * Common name (CN)
+         */
+        commonName: string;
+        /**
+         * Country (C)
+         */
+        country: string;
+        /**
+         * City (L)
+         */
+        locality: string;
+        /**
+         * Organization name (O)
+         */
+        organization: string;
+        /**
+         * Department (OU)
+         */
+        organizationUnit: string;
+        /**
+         * Postal code (PostalCode)
+         */
+        postalCode: string;
+        /**
+         * Province or state (ST)
+         */
+        province: string;
+    }
+
+    export interface GetChildCertInstanceImportCertificateInfo {
+        /**
+         * Content of the certificate (or certificate chain)
+         */
+        certificateChain: string;
+        /**
+         * The content of the private key corresponding to the certificate
+         */
+        privateKey: string;
+    }
+
+    export interface GetChildCertInstanceImportGmCertificateInfo {
+        /**
+         * Content of the encrypted certificate (or certificate chain)
+         */
+        encryptCertificateChain: string;
+        /**
+         * The content of the private key corresponding to the encrypted certificate
+         */
+        encryptPrivateKey: string;
+        /**
+         * Content of the signed certificate (or certificate chain)
+         */
+        signCertificateChain: string;
+        /**
+         * The content of the private key corresponding to the signature certificate
+         */
+        signPrivateKey: string;
+    }
+
+    export interface GetChildCertInstanceOptions {
+        /**
+         * Set the status of certificate expiration alerts. Options: Enabled, Disabled
+         */
+        expiredNotice: string;
+    }
+
+    export interface GetChildCertInstanceTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+}
+
 export namespace clb {
     export interface AclAclEntry {
         /**
@@ -23542,6 +24077,31 @@ export namespace redis {
          * Parameter unit
          */
         unit: string;
+    }
+
+}
+
+export namespace resourceshare {
+    export interface GetResourceShareTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface ResourceShareTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
     }
 
 }

@@ -25,6 +25,8 @@ if typing.TYPE_CHECKING:
     cdn = __cdn
     import pulumi_bytepluscc.cen as __cen
     cen = __cen
+    import pulumi_bytepluscc.certificateservice as __certificateservice
+    certificateservice = __certificateservice
     import pulumi_bytepluscc.clb as __clb
     clb = __clb
     import pulumi_bytepluscc.cloudidentity as __cloudidentity
@@ -81,6 +83,8 @@ if typing.TYPE_CHECKING:
     rdspostgresql = __rdspostgresql
     import pulumi_bytepluscc.redis as __redis
     redis = __redis
+    import pulumi_bytepluscc.resourceshare as __resourceshare
+    resourceshare = __resourceshare
     import pulumi_bytepluscc.storageebs as __storageebs
     storageebs = __storageebs
     import pulumi_bytepluscc.tls as __tls
@@ -111,6 +115,7 @@ else:
     bmq = _utilities.lazy_import('pulumi_bytepluscc.bmq')
     cdn = _utilities.lazy_import('pulumi_bytepluscc.cdn')
     cen = _utilities.lazy_import('pulumi_bytepluscc.cen')
+    certificateservice = _utilities.lazy_import('pulumi_bytepluscc.certificateservice')
     clb = _utilities.lazy_import('pulumi_bytepluscc.clb')
     cloudidentity = _utilities.lazy_import('pulumi_bytepluscc.cloudidentity')
     cloudmonitor = _utilities.lazy_import('pulumi_bytepluscc.cloudmonitor')
@@ -139,6 +144,7 @@ else:
     rdsmysql = _utilities.lazy_import('pulumi_bytepluscc.rdsmysql')
     rdspostgresql = _utilities.lazy_import('pulumi_bytepluscc.rdspostgresql')
     redis = _utilities.lazy_import('pulumi_bytepluscc.redis')
+    resourceshare = _utilities.lazy_import('pulumi_bytepluscc.resourceshare')
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
     tls = _utilities.lazy_import('pulumi_bytepluscc.tls')
     transitrouter = _utilities.lazy_import('pulumi_bytepluscc.transitrouter')
@@ -376,6 +382,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.cen",
   "classes": {
    "bytepluscc:cen/serviceRouteEntry:ServiceRouteEntry": "ServiceRouteEntry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "certificateservice/childCertInstance",
+  "fqn": "pulumi_bytepluscc.certificateservice",
+  "classes": {
+   "bytepluscc:certificateservice/childCertInstance:ChildCertInstance": "ChildCertInstance"
   }
  },
  {
@@ -1512,6 +1526,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.redis",
   "classes": {
    "bytepluscc:redis/parameterGroup:ParameterGroup": "ParameterGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "resourceshare/resourceShare",
+  "fqn": "pulumi_bytepluscc.resourceshare",
+  "classes": {
+   "bytepluscc:resourceshare/resourceShare:ResourceShare": "ResourceShare"
   }
  },
  {

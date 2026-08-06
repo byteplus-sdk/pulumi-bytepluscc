@@ -1014,6 +1014,31 @@
                     }
                 }
             },
+            "bytepluscc_certificateservice_child_cert_instance": {
+                "current": "bytepluscc:certificateservice/childCertInstance:ChildCertInstance",
+                "fields": {
+                    "certificate_detail": {
+                        "fields": {
+                            "chain": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "encryption_certificate_detail": {
+                        "fields": {
+                            "chain": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "san": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_clb_acl": {
                 "current": "bytepluscc:clb/acl:Acl",
                 "fields": {
@@ -3124,6 +3149,14 @@
                         "maxItemsOne": false
                     },
                     "parameters": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_resourceshare_resource_share": {
+                "current": "bytepluscc:resourceshare/resourceShare:ResourceShare",
+                "fields": {
+                    "tags": {
                         "maxItemsOne": false
                     }
                 }
@@ -5758,6 +5791,39 @@
                 "current": "bytepluscc:cen/getServiceRouteEntry:getServiceRouteEntry",
                 "fields": {
                     "publish_to_instances": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_certificateservice_child_cert_instance": {
+                "current": "bytepluscc:certificateservice/getChildCertInstance:getChildCertInstance",
+                "fields": {
+                    "certificate_detail": {
+                        "fields": {
+                            "chain": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "encryption_certificate_detail": {
+                        "fields": {
+                            "chain": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "san": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_certificateservice_child_cert_instances": {
+                "current": "bytepluscc:certificateservice/getChildCertInstances:getChildCertInstances",
+                "fields": {
+                    "ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -9036,6 +9102,22 @@
                     }
                 }
             },
+            "bytepluscc_resourceshare_resource_share": {
+                "current": "bytepluscc:resourceshare/getResourceShare:getResourceShare",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_resourceshare_resource_shares": {
+                "current": "bytepluscc:resourceshare/getResourceShares:getResourceShares",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_storageebs_snapshot": {
                 "current": "bytepluscc:storageebs/getSnapshot:getSnapshot",
                 "fields": {
@@ -11181,6 +11263,7 @@
             "bytepluscc_cen_inter_region_bandwidth": {},
             "bytepluscc_cen_route_entry": {},
             "bytepluscc_cen_service_route_entry": {},
+            "bytepluscc_certificateservice_child_cert_instance": {},
             "bytepluscc_clb_acl": {},
             "bytepluscc_clb_certificate": {},
             "bytepluscc_clb_check_log_project": {},
@@ -11323,6 +11406,7 @@
             "bytepluscc_redis_endpoint_public_address": {},
             "bytepluscc_redis_instance": {},
             "bytepluscc_redis_parameter_group": {},
+            "bytepluscc_resourceshare_resource_share": {},
             "bytepluscc_storageebs_snapshot": {},
             "bytepluscc_storageebs_snapshot_group": {},
             "bytepluscc_storageebs_snapshot_policy": {},
