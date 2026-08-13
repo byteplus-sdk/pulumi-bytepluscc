@@ -9264,6 +9264,74 @@ export namespace certificateservice {
         value: string;
     }
 
+    export interface GetOrganizationInfoContact {
+        /**
+         * Contact person's email address.
+         */
+        email: string;
+        /**
+         * Contact person's given name.
+         */
+        firstName: string;
+        /**
+         * Contact person's ID number.
+         */
+        idCardNo: string;
+        /**
+         * Contact person's surname.
+         */
+        lastName: string;
+        /**
+         * Contact person's phone number.
+         */
+        phone: string;
+    }
+
+    export interface GetOrganizationInfoTag {
+        /**
+         * Tag key.
+         */
+        key: string;
+        /**
+         * Tag value.
+         */
+        value: string;
+    }
+
+    export interface OrganizationInfoContact {
+        /**
+         * Contact person's email address.
+         */
+        email: string;
+        /**
+         * Contact person's given name.
+         */
+        firstName: string;
+        /**
+         * Contact person's ID number.
+         */
+        idCardNo: string;
+        /**
+         * Contact person's surname.
+         */
+        lastName: string;
+        /**
+         * Contact person's phone number.
+         */
+        phone: string;
+    }
+
+    export interface OrganizationInfoTag {
+        /**
+         * Tag key.
+         */
+        key: string;
+        /**
+         * Tag value.
+         */
+        value: string;
+    }
+
 }
 
 export namespace clb {
@@ -10981,6 +11049,454 @@ export namespace config {
         sts?: string;
     }
 
+    export interface GetGroupRuleScope {
+        /**
+         * Project filter scope
+         */
+        projects: outputs.config.GetGroupRuleScopeProjects;
+        /**
+         * Resource region list
+         */
+        regions: outputs.config.GetGroupRuleScopeRegions;
+        /**
+         * Resource ID list
+         */
+        resourceIds: outputs.config.GetGroupRuleScopeResourceIds;
+        /**
+         * Resource type scope
+         */
+        resourceTypes: outputs.config.GetGroupRuleScopeResourceTypes;
+        /**
+         * Resource tag list
+         */
+        tags: outputs.config.GetGroupRuleScopeTags;
+    }
+
+    export interface GetGroupRuleScopeProjects {
+        /**
+         * Exclude list
+         */
+        excludes: string[];
+        /**
+         * Include list
+         */
+        includes: string[];
+    }
+
+    export interface GetGroupRuleScopeRegions {
+        /**
+         * Exclude list
+         */
+        excludes: string[];
+        /**
+         * Include list
+         */
+        includes: string[];
+    }
+
+    export interface GetGroupRuleScopeResourceIds {
+        /**
+         * Exclude list
+         */
+        excludes: string[];
+        /**
+         * Include list
+         */
+        includes: string[];
+    }
+
+    export interface GetGroupRuleScopeResourceTypes {
+        /**
+         * Exclude list
+         */
+        excludes: string[];
+        /**
+         * Include list
+         */
+        includes: string[];
+    }
+
+    export interface GetGroupRuleScopeTags {
+        /**
+         * Exclude list
+         */
+        excludes: outputs.config.GetGroupRuleScopeTagsExclude[];
+        /**
+         * Include list
+         */
+        includes: outputs.config.GetGroupRuleScopeTagsInclude[];
+    }
+
+    export interface GetGroupRuleScopeTagsExclude {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetGroupRuleScopeTagsInclude {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetGroupRuleTrigger {
+        /**
+         * Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+         */
+        maximumExecutionFrequency: string;
+        /**
+         * Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+         */
+        triggerType: string;
+    }
+
+    export interface GetRuleScope {
+        /**
+         * Project filter scope
+         */
+        projects: outputs.config.GetRuleScopeProjects;
+        /**
+         * Resource region list
+         */
+        regions: outputs.config.GetRuleScopeRegions;
+        /**
+         * Resource ID list
+         */
+        resourceIds: outputs.config.GetRuleScopeResourceIds;
+        /**
+         * Resource type scope
+         */
+        resourceTypes: outputs.config.GetRuleScopeResourceTypes;
+        /**
+         * Resource tag list
+         */
+        tags: outputs.config.GetRuleScopeTags;
+    }
+
+    export interface GetRuleScopeProjects {
+        /**
+         * Exclusion list
+         */
+        excludes: string[];
+        /**
+         * Inclusion list
+         */
+        includes: string[];
+    }
+
+    export interface GetRuleScopeRegions {
+        /**
+         * Exclusion list
+         */
+        excludes: string[];
+        /**
+         * Inclusion list
+         */
+        includes: string[];
+    }
+
+    export interface GetRuleScopeResourceIds {
+        /**
+         * Exclusion list
+         */
+        excludes: string[];
+        /**
+         * Inclusion list
+         */
+        includes: string[];
+    }
+
+    export interface GetRuleScopeResourceTypes {
+        /**
+         * Exclusion list
+         */
+        excludes: string[];
+        /**
+         * Inclusion list
+         */
+        includes: string[];
+    }
+
+    export interface GetRuleScopeTags {
+        /**
+         * Exclusion list
+         */
+        excludes: outputs.config.GetRuleScopeTagsExclude[];
+        /**
+         * Inclusion list
+         */
+        includes: outputs.config.GetRuleScopeTagsInclude[];
+    }
+
+    export interface GetRuleScopeTagsExclude {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetRuleScopeTagsInclude {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetRuleTrigger {
+        /**
+         * Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+         */
+        maximumExecutionFrequency: string;
+        /**
+         * Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+         */
+        triggerType: string;
+    }
+
+    export interface GroupRuleScope {
+        /**
+         * Project filter scope
+         */
+        projects: outputs.config.GroupRuleScopeProjects;
+        /**
+         * Resource region list
+         */
+        regions: outputs.config.GroupRuleScopeRegions;
+        /**
+         * Resource ID list
+         */
+        resourceIds: outputs.config.GroupRuleScopeResourceIds;
+        /**
+         * Resource type scope
+         */
+        resourceTypes: outputs.config.GroupRuleScopeResourceTypes;
+        /**
+         * Resource tag list
+         */
+        tags: outputs.config.GroupRuleScopeTags;
+    }
+
+    export interface GroupRuleScopeProjects {
+        /**
+         * Exclude list
+         */
+        excludes: string[];
+        /**
+         * Include list
+         */
+        includes: string[];
+    }
+
+    export interface GroupRuleScopeRegions {
+        /**
+         * Exclude list
+         */
+        excludes: string[];
+        /**
+         * Include list
+         */
+        includes: string[];
+    }
+
+    export interface GroupRuleScopeResourceIds {
+        /**
+         * Exclude list
+         */
+        excludes: string[];
+        /**
+         * Include list
+         */
+        includes: string[];
+    }
+
+    export interface GroupRuleScopeResourceTypes {
+        /**
+         * Exclude list
+         */
+        excludes: string[];
+        /**
+         * Include list
+         */
+        includes: string[];
+    }
+
+    export interface GroupRuleScopeTags {
+        /**
+         * Exclude list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        excludes: outputs.config.GroupRuleScopeTagsExclude[];
+        /**
+         * Include list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        includes: outputs.config.GroupRuleScopeTagsInclude[];
+    }
+
+    export interface GroupRuleScopeTagsExclude {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GroupRuleScopeTagsInclude {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GroupRuleTrigger {
+        /**
+         * Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+         */
+        maximumExecutionFrequency: string;
+        /**
+         * Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+         */
+        triggerType: string;
+    }
+
+    export interface RuleScope {
+        /**
+         * Project filter scope
+         */
+        projects: outputs.config.RuleScopeProjects;
+        /**
+         * Resource region list
+         */
+        regions: outputs.config.RuleScopeRegions;
+        /**
+         * Resource ID list
+         */
+        resourceIds: outputs.config.RuleScopeResourceIds;
+        /**
+         * Resource type scope
+         */
+        resourceTypes: outputs.config.RuleScopeResourceTypes;
+        /**
+         * Resource tag list
+         */
+        tags: outputs.config.RuleScopeTags;
+    }
+
+    export interface RuleScopeProjects {
+        /**
+         * Exclusion list
+         */
+        excludes: string[];
+        /**
+         * Inclusion list
+         */
+        includes: string[];
+    }
+
+    export interface RuleScopeRegions {
+        /**
+         * Exclusion list
+         */
+        excludes: string[];
+        /**
+         * Inclusion list
+         */
+        includes: string[];
+    }
+
+    export interface RuleScopeResourceIds {
+        /**
+         * Exclusion list
+         */
+        excludes: string[];
+        /**
+         * Inclusion list
+         */
+        includes: string[];
+    }
+
+    export interface RuleScopeResourceTypes {
+        /**
+         * Exclusion list
+         */
+        excludes: string[];
+        /**
+         * Inclusion list
+         */
+        includes: string[];
+    }
+
+    export interface RuleScopeTags {
+        /**
+         * Exclusion list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        excludes: outputs.config.RuleScopeTagsExclude[];
+        /**
+         * Inclusion list
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        includes: outputs.config.RuleScopeTagsInclude[];
+    }
+
+    export interface RuleScopeTagsExclude {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface RuleScopeTagsInclude {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface RuleTrigger {
+        /**
+         * Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+         */
+        maximumExecutionFrequency: string;
+        /**
+         * Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+         */
+        triggerType: string;
+    }
+
 }
 
 export namespace cr {
@@ -12335,6 +12851,282 @@ export namespace ecs {
         volumeType: string;
     }
 
+    export interface GetScheduledInstanceEipAddress {
+        /**
+         * The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+         */
+        bandwidthMbps: number;
+        /**
+         * ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+         */
+        bandwidthPackageId: string;
+        /**
+         * Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription. 
+         *   **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+         */
+        chargeType: string;
+        /**
+         * Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+         */
+        isp: string;
+        /**
+         * Whether the public IP is released with the instance
+         *     - true: The public IP is released with the instance
+         *     - false (default): The public IP is not released with the instance
+         */
+        releaseWithInstance: boolean;
+        /**
+         * DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+         */
+        securityProtectionInstanceId: number;
+        /**
+         * Security protection type for public IP.
+         *     - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+         *     - Values:
+         *       - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+         *       
+         *   **Note:**
+         *         - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+         *         - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+         *       
+         *       - If not specified, the default protection type public IP will be applied.
+         */
+        securityProtectionTypes: string[];
+    }
+
+    export interface GetScheduledInstanceInstanceConfig {
+        /**
+         * Description of the instance.
+         */
+        description: string;
+        /**
+         * Public IP information bound to the instance.
+         */
+        eipAddress: outputs.ecs.GetScheduledInstanceInstanceConfigEipAddress;
+        /**
+         * Instance hostname.
+         */
+        hostName: string;
+        /**
+         * High performance computing cluster ID.
+         */
+        hpcClusterId: string;
+        /**
+         * Image ID
+         */
+        imageId: string;
+        /**
+         * Instance name.
+         */
+        instanceName: string;
+        /**
+         * Instance type.
+         */
+        instanceTypeId: string;
+        /**
+         * Key pair name.
+         */
+        keyPairName: string;
+        /**
+         * Network interface information attached to the instance.
+         */
+        networkInterfaces: outputs.ecs.GetScheduledInstanceInstanceConfigNetworkInterface[];
+        /**
+         * Project to which the instance belongs.
+         */
+        projectName: string;
+        /**
+         * Tag information for the instance.
+         */
+        tags: outputs.ecs.GetScheduledInstanceInstanceConfigTag[];
+        /**
+         * Information about the cloud disks attached to the instance.
+         */
+        volumes: outputs.ecs.GetScheduledInstanceInstanceConfigVolume[];
+        /**
+         * Availability zone ID where the elastic reservation order is located.
+         */
+        zoneId: string;
+    }
+
+    export interface GetScheduledInstanceInstanceConfigEipAddress {
+        /**
+         * Maximum bandwidth for the public IP, in Mbps
+         *     - Default: 1
+         *     - Value range:
+         *       - If `ChargeType` is `PayByBandwidth`: 1–500
+         *       - If `ChargeType` is `PayByTraffic`: 1–200
+         */
+        bandwidthMbps: number;
+        /**
+         * Shared bandwidth package ID.
+         */
+        bandwidthPackageId: string;
+        /**
+         * Billing method for public IP. Values:
+         *     - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+         *     - PayByTraffic: Pay-as-you-go by actual traffic
+         *     - PrePaid: Subscription
+         */
+        chargeType: string;
+        /**
+         * Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+         */
+        isp: string;
+        /**
+         * Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+         */
+        releaseWithInstance: boolean;
+        /**
+         * ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+         */
+        securityProtectionInstanceId: string;
+        /**
+         * Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+         */
+        securityProtectionTypes: string[];
+    }
+
+    export interface GetScheduledInstanceInstanceConfigNetworkInterface {
+        /**
+         * Security group ID associated with the network interface.
+         */
+        securityGroupIds: string[];
+        /**
+         * Private network subnet ID of the instance.
+         */
+        subnetId: string;
+    }
+
+    export interface GetScheduledInstanceInstanceConfigTag {
+        /**
+         * Resource tag key.
+         */
+        key: string;
+        /**
+         * Resource tag value
+         */
+        value: string;
+    }
+
+    export interface GetScheduledInstanceInstanceConfigVolume {
+        /**
+         * Disk type. Values:   - system: System disk   - data: Data disk
+         */
+        kind: string;
+        /**
+         * Cloud disk capacity, in GiB.
+         */
+        size: number;
+        /**
+         * Cloud disk type. Values:
+         *     - ESSD_PL0: Ultra-fast SSD PL0
+         *     - ESSD_FlexPL: Ultra-fast SSD FlexPL
+         */
+        volumeType: string;
+    }
+
+    export interface GetScheduledInstanceNetworkInterface {
+        /**
+         * Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+         */
+        primaryIpAddress: string;
+        /**
+         * Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+         */
+        privateIpAddresses: string[];
+        /**
+         * Security group ID associated with the network interface.
+         *     - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+         *     - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+         *     - Use & to separate multiple security group IDs.
+         */
+        securityGroupIds: string[];
+        /**
+         * Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+         */
+        subnetId: string;
+        /**
+         * Private network
+         */
+        vpcId: string;
+    }
+
+    export interface GetScheduledInstanceTag {
+        /**
+         * Resource tag key.
+         */
+        key: string;
+        /**
+         * Resource tag value
+         */
+        value: string;
+    }
+
+    export interface GetScheduledInstanceVolume {
+        /**
+         * Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance. 
+         *   **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+         */
+        deleteWithInstance: boolean;
+        /**
+         * Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+         *     - IOPS type: 1–50000
+         *     - Balance type: 1–50000
+         *   
+         *   **Note:**
+         *     - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+         *     - Use & to separate multiple cloud disks.
+         */
+        extraPerformanceIops: number;
+        /**
+         * Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650. 
+         *   **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+         */
+        extraPerformanceThroughputMb: number;
+        /**
+         * Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+         *     - Balance: Balanced extra performance
+         *     - IOPS: IOPS extra performance
+         *     - Throughput: Throughput extra performance
+         *   For more information about extra performance, see [Cloud Disk Extra Performance].
+         *   
+         *   **Note:**
+         *     - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+         *   N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+         *   N ≥ 2 indicates a data disk. This parameter can be set normally.
+         *     - Use & to separate multiple cloud disks.
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+         *     - System disk:
+         *       - ESSD_PL0: 20–2048
+         *       - ESSD_FlexPL: 20–2048
+         *     
+         *   **Note:**
+         *     Default: max{40, image size of ImageId}
+         *     
+         *     - Data disk:
+         *       - ESSD_PL0: 10–32768
+         *       - ESSD_FlexPL: 10–32768
+         *     
+         *   **Note:**
+         *     If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+         */
+        size: number;
+        /**
+         * Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks. 
+         *   **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+         */
+        snapshotId: string;
+        /**
+         * Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL 
+         *   **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+         */
+        volumeType: string;
+    }
+
     export interface HpcClusterTag {
         /**
          * Tag key
@@ -13210,6 +14002,285 @@ export namespace ecs {
         snapshotId: string;
         /**
          * Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
+         */
+        volumeType: string;
+    }
+
+    export interface ScheduledInstanceEipAddress {
+        /**
+         * The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+         */
+        bandwidthMbps: number;
+        /**
+         * ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+         */
+        bandwidthPackageId: string;
+        /**
+         * Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription. 
+         *   **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+         */
+        chargeType: string;
+        /**
+         * Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+         */
+        isp: string;
+        /**
+         * Whether the public IP is released with the instance
+         *     - true: The public IP is released with the instance
+         *     - false (default): The public IP is not released with the instance
+         */
+        releaseWithInstance: boolean;
+        /**
+         * DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+         */
+        securityProtectionInstanceId: number;
+        /**
+         * Security protection type for public IP.
+         *     - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+         *     - Values:
+         *       - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+         *       
+         *   **Note:**
+         *         - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+         *         - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+         *       
+         *       - If not specified, the default protection type public IP will be applied.
+         */
+        securityProtectionTypes: string[];
+    }
+
+    export interface ScheduledInstanceInstanceConfig {
+        /**
+         * Description of the instance.
+         */
+        description: string;
+        /**
+         * Public IP information bound to the instance.
+         */
+        eipAddress: outputs.ecs.ScheduledInstanceInstanceConfigEipAddress;
+        /**
+         * Instance hostname.
+         */
+        hostName: string;
+        /**
+         * High performance computing cluster ID.
+         */
+        hpcClusterId: string;
+        /**
+         * Image ID
+         */
+        imageId: string;
+        /**
+         * Instance name.
+         */
+        instanceName: string;
+        /**
+         * Instance type.
+         */
+        instanceTypeId: string;
+        /**
+         * Key pair name.
+         */
+        keyPairName: string;
+        /**
+         * Network interface information attached to the instance.
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        networkInterfaces: outputs.ecs.ScheduledInstanceInstanceConfigNetworkInterface[];
+        /**
+         * Project to which the instance belongs.
+         */
+        projectName: string;
+        /**
+         * Tag information for the instance.
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        tags: outputs.ecs.ScheduledInstanceInstanceConfigTag[];
+        /**
+         * Information about the cloud disks attached to the instance.
+         *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        volumes: outputs.ecs.ScheduledInstanceInstanceConfigVolume[];
+        /**
+         * Availability zone ID where the elastic reservation order is located.
+         */
+        zoneId: string;
+    }
+
+    export interface ScheduledInstanceInstanceConfigEipAddress {
+        /**
+         * Maximum bandwidth for the public IP, in Mbps
+         *     - Default: 1
+         *     - Value range:
+         *       - If `ChargeType` is `PayByBandwidth`: 1–500
+         *       - If `ChargeType` is `PayByTraffic`: 1–200
+         */
+        bandwidthMbps: number;
+        /**
+         * Shared bandwidth package ID.
+         */
+        bandwidthPackageId: string;
+        /**
+         * Billing method for public IP. Values:
+         *     - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+         *     - PayByTraffic: Pay-as-you-go by actual traffic
+         *     - PrePaid: Subscription
+         */
+        chargeType: string;
+        /**
+         * Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+         */
+        isp: string;
+        /**
+         * Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+         */
+        releaseWithInstance: boolean;
+        /**
+         * ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+         */
+        securityProtectionInstanceId: string;
+        /**
+         * Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+         */
+        securityProtectionTypes: string[];
+    }
+
+    export interface ScheduledInstanceInstanceConfigNetworkInterface {
+        /**
+         * Security group ID associated with the network interface.
+         */
+        securityGroupIds: string[];
+        /**
+         * Private network subnet ID of the instance.
+         */
+        subnetId: string;
+    }
+
+    export interface ScheduledInstanceInstanceConfigTag {
+        /**
+         * Resource tag key.
+         */
+        key: string;
+        /**
+         * Resource tag value
+         */
+        value: string;
+    }
+
+    export interface ScheduledInstanceInstanceConfigVolume {
+        /**
+         * Disk type. Values:   - system: System disk   - data: Data disk
+         */
+        kind: string;
+        /**
+         * Cloud disk capacity, in GiB.
+         */
+        size: number;
+        /**
+         * Cloud disk type. Values:
+         *     - ESSD_PL0: Ultra-fast SSD PL0
+         *     - ESSD_FlexPL: Ultra-fast SSD FlexPL
+         */
+        volumeType: string;
+    }
+
+    export interface ScheduledInstanceNetworkInterface {
+        /**
+         * Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+         */
+        primaryIpAddress: string;
+        /**
+         * Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+         */
+        privateIpAddresses: string[];
+        /**
+         * Security group ID associated with the network interface.
+         *     - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+         *     - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+         *     - Use & to separate multiple security group IDs.
+         */
+        securityGroupIds: string[];
+        /**
+         * Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+         */
+        subnetId: string;
+        /**
+         * Private network
+         */
+        vpcId: string;
+    }
+
+    export interface ScheduledInstanceTag {
+        /**
+         * Resource tag key.
+         */
+        key: string;
+        /**
+         * Resource tag value
+         */
+        value: string;
+    }
+
+    export interface ScheduledInstanceVolume {
+        /**
+         * Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance. 
+         *   **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+         */
+        deleteWithInstance: boolean;
+        /**
+         * Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+         *     - IOPS type: 1–50000
+         *     - Balance type: 1–50000
+         *   
+         *   **Note:**
+         *     - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+         *     - Use & to separate multiple cloud disks.
+         */
+        extraPerformanceIops: number;
+        /**
+         * Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650. 
+         *   **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+         */
+        extraPerformanceThroughputMb: number;
+        /**
+         * Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+         *     - Balance: Balanced extra performance
+         *     - IOPS: IOPS extra performance
+         *     - Throughput: Throughput extra performance
+         *   For more information about extra performance, see [Cloud Disk Extra Performance].
+         *   
+         *   **Note:**
+         *     - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+         *   N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+         *   N ≥ 2 indicates a data disk. This parameter can be set normally.
+         *     - Use & to separate multiple cloud disks.
+         */
+        extraPerformanceTypeId: string;
+        /**
+         * Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+         *     - System disk:
+         *       - ESSD_PL0: 20–2048
+         *       - ESSD_FlexPL: 20–2048
+         *     
+         *   **Note:**
+         *     Default: max{40, image size of ImageId}
+         *     
+         *     - Data disk:
+         *       - ESSD_PL0: 10–32768
+         *       - ESSD_FlexPL: 10–32768
+         *     
+         *   **Note:**
+         *     If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+         */
+        size: number;
+        /**
+         * Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks. 
+         *   **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+         */
+        snapshotId: string;
+        /**
+         * Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL 
+         *   **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
          */
         volumeType: string;
     }
@@ -33849,6 +34920,17 @@ export namespace vpc {
         value: string;
     }
 
+    export interface GetIpPoolTag {
+        /**
+         * Tag key.
+         */
+        key: string;
+        /**
+         * Tag value.
+         */
+        value: string;
+    }
+
     export interface GetIpv6AddressBandwidthTag {
         /**
          * Tag key
@@ -34517,6 +35599,17 @@ export namespace vpc {
         key: string;
         /**
          * Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
+         */
+        value: string;
+    }
+
+    export interface IpPoolTag {
+        /**
+         * Tag key.
+         */
+        key: string;
+        /**
+         * Tag value.
          */
         value: string;
     }

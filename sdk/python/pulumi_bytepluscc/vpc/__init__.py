@@ -20,6 +20,10 @@ from .get_flow_log import *
 from .get_flow_logs import *
 from .get_ha_vip import *
 from .get_ha_vips import *
+from .get_ip_pool import *
+from .get_ip_pool_cidr_block import *
+from .get_ip_pool_cidr_blocks import *
+from .get_ip_pools import *
 from .get_ipv6_address_bandwidth import *
 from .get_ipv6_address_bandwidths import *
 from .get_ipv6_gateway import *
@@ -45,6 +49,8 @@ from .get_traffic_mirror_targets import *
 from .get_vpc import *
 from .get_vpcs import *
 from .ha_vip import *
+from .ip_pool import *
+from .ip_pool_cidr_block import *
 from .ipv6_address_bandwidth import *
 from .ipv6_gateway import *
 from .network_acl import *

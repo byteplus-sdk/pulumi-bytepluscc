@@ -39,6 +39,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &LaunchTemplate{}
 	case "bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion":
 		r = &LaunchTemplateVersion{}
+	case "bytepluscc:ecs/scheduledInstance:ScheduledInstance":
+		r = &ScheduledInstance{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -95,6 +97,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"ecs/launchTemplateVersion",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"ecs/scheduledInstance",
 		&module{version},
 	)
 }

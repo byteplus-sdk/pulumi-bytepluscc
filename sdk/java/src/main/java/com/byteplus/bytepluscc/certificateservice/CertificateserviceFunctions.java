@@ -6,8 +6,12 @@ package com.byteplus.bytepluscc.certificateservice;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.certificateservice.inputs.GetChildCertInstanceArgs;
 import com.byteplus.bytepluscc.certificateservice.inputs.GetChildCertInstancePlainArgs;
+import com.byteplus.bytepluscc.certificateservice.inputs.GetOrganizationInfoArgs;
+import com.byteplus.bytepluscc.certificateservice.inputs.GetOrganizationInfoPlainArgs;
 import com.byteplus.bytepluscc.certificateservice.outputs.GetChildCertInstanceResult;
 import com.byteplus.bytepluscc.certificateservice.outputs.GetChildCertInstancesResult;
+import com.byteplus.bytepluscc.certificateservice.outputs.GetOrganizationInfoResult;
+import com.byteplus.bytepluscc.certificateservice.outputs.GetOrganizationInfosResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -100,5 +104,89 @@ public final class CertificateserviceFunctions {
      */
     public static CompletableFuture<GetChildCertInstancesResult> getChildCertInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:certificateservice/getChildCertInstances:getChildCertInstances", TypeShape.of(GetChildCertInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static Output<GetOrganizationInfoResult> getOrganizationInfo(GetOrganizationInfoArgs args) {
+        return getOrganizationInfo(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static CompletableFuture<GetOrganizationInfoResult> getOrganizationInfoPlain(GetOrganizationInfoPlainArgs args) {
+        return getOrganizationInfoPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static Output<GetOrganizationInfoResult> getOrganizationInfo(GetOrganizationInfoArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:certificateservice/getOrganizationInfo:getOrganizationInfo", TypeShape.of(GetOrganizationInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static Output<GetOrganizationInfoResult> getOrganizationInfo(GetOrganizationInfoArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:certificateservice/getOrganizationInfo:getOrganizationInfo", TypeShape.of(GetOrganizationInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static CompletableFuture<GetOrganizationInfoResult> getOrganizationInfoPlain(GetOrganizationInfoPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:certificateservice/getOrganizationInfo:getOrganizationInfo", TypeShape.of(GetOrganizationInfoResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static Output<GetOrganizationInfosResult> getOrganizationInfos() {
+        return getOrganizationInfos(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static CompletableFuture<GetOrganizationInfosResult> getOrganizationInfosPlain() {
+        return getOrganizationInfosPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static Output<GetOrganizationInfosResult> getOrganizationInfos(InvokeArgs args) {
+        return getOrganizationInfos(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static CompletableFuture<GetOrganizationInfosResult> getOrganizationInfosPlain(InvokeArgs args) {
+        return getOrganizationInfosPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static Output<GetOrganizationInfosResult> getOrganizationInfos(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:certificateservice/getOrganizationInfos:getOrganizationInfos", TypeShape.of(GetOrganizationInfosResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static Output<GetOrganizationInfosResult> getOrganizationInfos(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:certificateservice/getOrganizationInfos:getOrganizationInfos", TypeShape.of(GetOrganizationInfosResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CertificateService::OrganizationInfo
+     * 
+     */
+    public static CompletableFuture<GetOrganizationInfosResult> getOrganizationInfosPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:certificateservice/getOrganizationInfos:getOrganizationInfos", TypeShape.of(GetOrganizationInfosResult.class), args, Utilities.withVersion(options));
     }
 }

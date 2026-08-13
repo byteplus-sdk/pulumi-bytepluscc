@@ -95,6 +95,24 @@ __all__ = [
     'LaunchTemplateVersionTagArgsDict',
     'LaunchTemplateVersionVolumeArgs',
     'LaunchTemplateVersionVolumeArgsDict',
+    'ScheduledInstanceEipAddressArgs',
+    'ScheduledInstanceEipAddressArgsDict',
+    'ScheduledInstanceInstanceConfigArgs',
+    'ScheduledInstanceInstanceConfigArgsDict',
+    'ScheduledInstanceInstanceConfigEipAddressArgs',
+    'ScheduledInstanceInstanceConfigEipAddressArgsDict',
+    'ScheduledInstanceInstanceConfigNetworkInterfaceArgs',
+    'ScheduledInstanceInstanceConfigNetworkInterfaceArgsDict',
+    'ScheduledInstanceInstanceConfigTagArgs',
+    'ScheduledInstanceInstanceConfigTagArgsDict',
+    'ScheduledInstanceInstanceConfigVolumeArgs',
+    'ScheduledInstanceInstanceConfigVolumeArgsDict',
+    'ScheduledInstanceNetworkInterfaceArgs',
+    'ScheduledInstanceNetworkInterfaceArgsDict',
+    'ScheduledInstanceTagArgs',
+    'ScheduledInstanceTagArgsDict',
+    'ScheduledInstanceVolumeArgs',
+    'ScheduledInstanceVolumeArgsDict',
 ]
 
 class CommandParameterDefinitionArgsDict(TypedDict):
@@ -4480,6 +4498,1227 @@ class LaunchTemplateVersionVolumeArgs:
     def volume_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Cloud disk type. ESSD_PL0: Ultra-fast SSD PL0. PTSSD: Performance SSD.
+        """
+        return pulumi.get(self, "volume_type")
+
+    @volume_type.setter
+    def volume_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "volume_type", value)
+
+
+class ScheduledInstanceEipAddressArgsDict(TypedDict):
+    bandwidth_mbps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+    """
+    bandwidth_package_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+    """
+    charge_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription. 
+      **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+    """
+    isp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+    """
+    release_with_instance: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the public IP is released with the instance
+        - true: The public IP is released with the instance
+        - false (default): The public IP is not released with the instance
+    """
+    security_protection_instance_id: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+    """
+    security_protection_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Security protection type for public IP.
+        - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+        - Values:
+          - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+          
+      **Note:**
+            - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+            - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+          
+          - If not specified, the default protection type public IP will be applied.
+    """
+
+@pulumi.input_type
+class ScheduledInstanceEipAddressArgs:
+    def __init__(__self__, *,
+                 bandwidth_mbps: pulumi.Input[Optional[_builtins.int]] = None,
+                 bandwidth_package_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 charge_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 isp: pulumi.Input[Optional[_builtins.str]] = None,
+                 release_with_instance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_protection_instance_id: pulumi.Input[Optional[_builtins.int]] = None,
+                 security_protection_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.int] bandwidth_mbps: The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+        :param pulumi.Input[_builtins.str] bandwidth_package_id: ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+        :param pulumi.Input[_builtins.str] charge_type: Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription. 
+                 **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+        :param pulumi.Input[_builtins.str] isp: Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+        :param pulumi.Input[_builtins.bool] release_with_instance: Whether the public IP is released with the instance
+                   - true: The public IP is released with the instance
+                   - false (default): The public IP is not released with the instance
+        :param pulumi.Input[_builtins.int] security_protection_instance_id: DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_protection_types: Security protection type for public IP.
+                   - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+                   - Values:
+                     - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+                     
+                 **Note:**
+                       - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+                       - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+                     
+                     - If not specified, the default protection type public IP will be applied.
+        """
+        if bandwidth_mbps is not None:
+            pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        if bandwidth_package_id is not None:
+            pulumi.set(__self__, "bandwidth_package_id", bandwidth_package_id)
+        if charge_type is not None:
+            pulumi.set(__self__, "charge_type", charge_type)
+        if isp is not None:
+            pulumi.set(__self__, "isp", isp)
+        if release_with_instance is not None:
+            pulumi.set(__self__, "release_with_instance", release_with_instance)
+        if security_protection_instance_id is not None:
+            pulumi.set(__self__, "security_protection_instance_id", security_protection_instance_id)
+        if security_protection_types is not None:
+            pulumi.set(__self__, "security_protection_types", security_protection_types)
+
+    @_builtins.property
+    @pulumi.getter(name="bandwidthMbps")
+    def bandwidth_mbps(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+        """
+        return pulumi.get(self, "bandwidth_mbps")
+
+    @bandwidth_mbps.setter
+    def bandwidth_mbps(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "bandwidth_mbps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bandwidthPackageId")
+    def bandwidth_package_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+        """
+        return pulumi.get(self, "bandwidth_package_id")
+
+    @bandwidth_package_id.setter
+    def bandwidth_package_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bandwidth_package_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="chargeType")
+    def charge_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription. 
+          **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+        """
+        return pulumi.get(self, "charge_type")
+
+    @charge_type.setter
+    def charge_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "charge_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def isp(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+        """
+        return pulumi.get(self, "isp")
+
+    @isp.setter
+    def isp(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "isp", value)
+
+    @_builtins.property
+    @pulumi.getter(name="releaseWithInstance")
+    def release_with_instance(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the public IP is released with the instance
+            - true: The public IP is released with the instance
+            - false (default): The public IP is not released with the instance
+        """
+        return pulumi.get(self, "release_with_instance")
+
+    @release_with_instance.setter
+    def release_with_instance(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "release_with_instance", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityProtectionInstanceId")
+    def security_protection_instance_id(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+        """
+        return pulumi.get(self, "security_protection_instance_id")
+
+    @security_protection_instance_id.setter
+    def security_protection_instance_id(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "security_protection_instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityProtectionTypes")
+    def security_protection_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Security protection type for public IP.
+            - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+            - Values:
+              - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+              
+          **Note:**
+                - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+                - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+              
+              - If not specified, the default protection type public IP will be applied.
+        """
+        return pulumi.get(self, "security_protection_types")
+
+    @security_protection_types.setter
+    def security_protection_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_protection_types", value)
+
+
+class ScheduledInstanceInstanceConfigArgsDict(TypedDict):
+    description: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Description of the instance.
+    """
+    eip_address: NotRequired[pulumi.Input[Optional['ScheduledInstanceInstanceConfigEipAddressArgsDict']]]
+    """
+    Public IP information bound to the instance.
+    """
+    host_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instance hostname.
+    """
+    hpc_cluster_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    High performance computing cluster ID.
+    """
+    image_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Image ID
+    """
+    instance_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instance name.
+    """
+    instance_type_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instance type.
+    """
+    key_pair_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Key pair name.
+    """
+    network_interfaces: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigNetworkInterfaceArgsDict']]]]]
+    """
+    Network interface information attached to the instance.
+     Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
+    project_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Project to which the instance belongs.
+    """
+    tags: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigTagArgsDict']]]]]
+    """
+    Tag information for the instance.
+     Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
+    volumes: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigVolumeArgsDict']]]]]
+    """
+    Information about the cloud disks attached to the instance.
+     Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
+    zone_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Availability zone ID where the elastic reservation order is located.
+    """
+
+@pulumi.input_type
+class ScheduledInstanceInstanceConfigArgs:
+    def __init__(__self__, *,
+                 description: pulumi.Input[Optional[_builtins.str]] = None,
+                 eip_address: pulumi.Input[Optional['ScheduledInstanceInstanceConfigEipAddressArgs']] = None,
+                 host_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 hpc_cluster_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 image_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 instance_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 key_pair_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 network_interfaces: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigNetworkInterfaceArgs']]]] = None,
+                 project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigTagArgs']]]] = None,
+                 volumes: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigVolumeArgs']]]] = None,
+                 zone_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] description: Description of the instance.
+        :param pulumi.Input['ScheduledInstanceInstanceConfigEipAddressArgs'] eip_address: Public IP information bound to the instance.
+        :param pulumi.Input[_builtins.str] host_name: Instance hostname.
+        :param pulumi.Input[_builtins.str] hpc_cluster_id: High performance computing cluster ID.
+        :param pulumi.Input[_builtins.str] image_id: Image ID
+        :param pulumi.Input[_builtins.str] instance_name: Instance name.
+        :param pulumi.Input[_builtins.str] instance_type_id: Instance type.
+        :param pulumi.Input[_builtins.str] key_pair_name: Key pair name.
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigNetworkInterfaceArgs']]] network_interfaces: Network interface information attached to the instance.
+                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] project_name: Project to which the instance belongs.
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigTagArgs']]] tags: Tag information for the instance.
+                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigVolumeArgs']]] volumes: Information about the cloud disks attached to the instance.
+                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] zone_id: Availability zone ID where the elastic reservation order is located.
+        """
+        if description is not None:
+            pulumi.set(__self__, "description", description)
+        if eip_address is not None:
+            pulumi.set(__self__, "eip_address", eip_address)
+        if host_name is not None:
+            pulumi.set(__self__, "host_name", host_name)
+        if hpc_cluster_id is not None:
+            pulumi.set(__self__, "hpc_cluster_id", hpc_cluster_id)
+        if image_id is not None:
+            pulumi.set(__self__, "image_id", image_id)
+        if instance_name is not None:
+            pulumi.set(__self__, "instance_name", instance_name)
+        if instance_type_id is not None:
+            pulumi.set(__self__, "instance_type_id", instance_type_id)
+        if key_pair_name is not None:
+            pulumi.set(__self__, "key_pair_name", key_pair_name)
+        if network_interfaces is not None:
+            pulumi.set(__self__, "network_interfaces", network_interfaces)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+        if volumes is not None:
+            pulumi.set(__self__, "volumes", volumes)
+        if zone_id is not None:
+            pulumi.set(__self__, "zone_id", zone_id)
+
+    @_builtins.property
+    @pulumi.getter
+    def description(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Description of the instance.
+        """
+        return pulumi.get(self, "description")
+
+    @description.setter
+    def description(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "description", value)
+
+    @_builtins.property
+    @pulumi.getter(name="eipAddress")
+    def eip_address(self) -> pulumi.Input[Optional['ScheduledInstanceInstanceConfigEipAddressArgs']]:
+        """
+        Public IP information bound to the instance.
+        """
+        return pulumi.get(self, "eip_address")
+
+    @eip_address.setter
+    def eip_address(self, value: pulumi.Input[Optional['ScheduledInstanceInstanceConfigEipAddressArgs']]):
+        pulumi.set(self, "eip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hostName")
+    def host_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instance hostname.
+        """
+        return pulumi.get(self, "host_name")
+
+    @host_name.setter
+    def host_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "host_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="hpcClusterId")
+    def hpc_cluster_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        High performance computing cluster ID.
+        """
+        return pulumi.get(self, "hpc_cluster_id")
+
+    @hpc_cluster_id.setter
+    def hpc_cluster_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "hpc_cluster_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="imageId")
+    def image_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Image ID
+        """
+        return pulumi.get(self, "image_id")
+
+    @image_id.setter
+    def image_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "image_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceName")
+    def instance_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instance name.
+        """
+        return pulumi.get(self, "instance_name")
+
+    @instance_name.setter
+    def instance_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instance_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceTypeId")
+    def instance_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instance type.
+        """
+        return pulumi.get(self, "instance_type_id")
+
+    @instance_type_id.setter
+    def instance_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instance_type_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="keyPairName")
+    def key_pair_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Key pair name.
+        """
+        return pulumi.get(self, "key_pair_name")
+
+    @key_pair_name.setter
+    def key_pair_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key_pair_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="networkInterfaces")
+    def network_interfaces(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigNetworkInterfaceArgs']]]]:
+        """
+        Network interface information attached to the instance.
+         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "network_interfaces")
+
+    @network_interfaces.setter
+    def network_interfaces(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigNetworkInterfaceArgs']]]]):
+        pulumi.set(self, "network_interfaces", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Project to which the instance belongs.
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigTagArgs']]]]:
+        """
+        Tag information for the instance.
+         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "tags")
+
+    @tags.setter
+    def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigTagArgs']]]]):
+        pulumi.set(self, "tags", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def volumes(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigVolumeArgs']]]]:
+        """
+        Information about the cloud disks attached to the instance.
+         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "volumes")
+
+    @volumes.setter
+    def volumes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['ScheduledInstanceInstanceConfigVolumeArgs']]]]):
+        pulumi.set(self, "volumes", value)
+
+    @_builtins.property
+    @pulumi.getter(name="zoneId")
+    def zone_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Availability zone ID where the elastic reservation order is located.
+        """
+        return pulumi.get(self, "zone_id")
+
+    @zone_id.setter
+    def zone_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "zone_id", value)
+
+
+class ScheduledInstanceInstanceConfigEipAddressArgsDict(TypedDict):
+    bandwidth_mbps: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Maximum bandwidth for the public IP, in Mbps
+        - Default: 1
+        - Value range:
+          - If `ChargeType` is `PayByBandwidth`: 1–500
+          - If `ChargeType` is `PayByTraffic`: 1–200
+    """
+    bandwidth_package_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Shared bandwidth package ID.
+    """
+    charge_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Billing method for public IP. Values:
+        - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+        - PayByTraffic: Pay-as-you-go by actual traffic
+        - PrePaid: Subscription
+    """
+    isp: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+    """
+    release_with_instance: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+    """
+    security_protection_instance_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+    """
+    security_protection_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+    """
+
+@pulumi.input_type
+class ScheduledInstanceInstanceConfigEipAddressArgs:
+    def __init__(__self__, *,
+                 bandwidth_mbps: pulumi.Input[Optional[_builtins.int]] = None,
+                 bandwidth_package_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 charge_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 isp: pulumi.Input[Optional[_builtins.str]] = None,
+                 release_with_instance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 security_protection_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 security_protection_types: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None):
+        """
+        :param pulumi.Input[_builtins.int] bandwidth_mbps: Maximum bandwidth for the public IP, in Mbps
+                   - Default: 1
+                   - Value range:
+                     - If `ChargeType` is `PayByBandwidth`: 1–500
+                     - If `ChargeType` is `PayByTraffic`: 1–200
+        :param pulumi.Input[_builtins.str] bandwidth_package_id: Shared bandwidth package ID.
+        :param pulumi.Input[_builtins.str] charge_type: Billing method for public IP. Values:
+                   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+                   - PayByTraffic: Pay-as-you-go by actual traffic
+                   - PrePaid: Subscription
+        :param pulumi.Input[_builtins.str] isp: Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+        :param pulumi.Input[_builtins.bool] release_with_instance: Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+        :param pulumi.Input[_builtins.str] security_protection_instance_id: ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_protection_types: Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+        """
+        if bandwidth_mbps is not None:
+            pulumi.set(__self__, "bandwidth_mbps", bandwidth_mbps)
+        if bandwidth_package_id is not None:
+            pulumi.set(__self__, "bandwidth_package_id", bandwidth_package_id)
+        if charge_type is not None:
+            pulumi.set(__self__, "charge_type", charge_type)
+        if isp is not None:
+            pulumi.set(__self__, "isp", isp)
+        if release_with_instance is not None:
+            pulumi.set(__self__, "release_with_instance", release_with_instance)
+        if security_protection_instance_id is not None:
+            pulumi.set(__self__, "security_protection_instance_id", security_protection_instance_id)
+        if security_protection_types is not None:
+            pulumi.set(__self__, "security_protection_types", security_protection_types)
+
+    @_builtins.property
+    @pulumi.getter(name="bandwidthMbps")
+    def bandwidth_mbps(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Maximum bandwidth for the public IP, in Mbps
+            - Default: 1
+            - Value range:
+              - If `ChargeType` is `PayByBandwidth`: 1–500
+              - If `ChargeType` is `PayByTraffic`: 1–200
+        """
+        return pulumi.get(self, "bandwidth_mbps")
+
+    @bandwidth_mbps.setter
+    def bandwidth_mbps(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "bandwidth_mbps", value)
+
+    @_builtins.property
+    @pulumi.getter(name="bandwidthPackageId")
+    def bandwidth_package_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Shared bandwidth package ID.
+        """
+        return pulumi.get(self, "bandwidth_package_id")
+
+    @bandwidth_package_id.setter
+    def bandwidth_package_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "bandwidth_package_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="chargeType")
+    def charge_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Billing method for public IP. Values:
+            - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+            - PayByTraffic: Pay-as-you-go by actual traffic
+            - PrePaid: Subscription
+        """
+        return pulumi.get(self, "charge_type")
+
+    @charge_type.setter
+    def charge_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "charge_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def isp(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+        """
+        return pulumi.get(self, "isp")
+
+    @isp.setter
+    def isp(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "isp", value)
+
+    @_builtins.property
+    @pulumi.getter(name="releaseWithInstance")
+    def release_with_instance(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+        """
+        return pulumi.get(self, "release_with_instance")
+
+    @release_with_instance.setter
+    def release_with_instance(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "release_with_instance", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityProtectionInstanceId")
+    def security_protection_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+        """
+        return pulumi.get(self, "security_protection_instance_id")
+
+    @security_protection_instance_id.setter
+    def security_protection_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "security_protection_instance_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityProtectionTypes")
+    def security_protection_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+        """
+        return pulumi.get(self, "security_protection_types")
+
+    @security_protection_types.setter
+    def security_protection_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_protection_types", value)
+
+
+class ScheduledInstanceInstanceConfigNetworkInterfaceArgsDict(TypedDict):
+    security_group_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Security group ID associated with the network interface.
+    """
+    subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Private network subnet ID of the instance.
+    """
+
+@pulumi.input_type
+class ScheduledInstanceInstanceConfigNetworkInterfaceArgs:
+    def __init__(__self__, *,
+                 security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_group_ids: Security group ID associated with the network interface.
+        :param pulumi.Input[_builtins.str] subnet_id: Private network subnet ID of the instance.
+        """
+        if security_group_ids is not None:
+            pulumi.set(__self__, "security_group_ids", security_group_ids)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroupIds")
+    def security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Security group ID associated with the network interface.
+        """
+        return pulumi.get(self, "security_group_ids")
+
+    @security_group_ids.setter
+    def security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_group_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Private network subnet ID of the instance.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+
+class ScheduledInstanceInstanceConfigTagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource tag key.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource tag value
+    """
+
+@pulumi.input_type
+class ScheduledInstanceInstanceConfigTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: Resource tag key.
+        :param pulumi.Input[_builtins.str] value: Resource tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class ScheduledInstanceInstanceConfigVolumeArgsDict(TypedDict):
+    kind: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Disk type. Values:   - system: System disk   - data: Data disk
+    """
+    size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Cloud disk capacity, in GiB.
+    """
+    volume_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cloud disk type. Values:
+        - ESSD_PL0: Ultra-fast SSD PL0
+        - ESSD_FlexPL: Ultra-fast SSD FlexPL
+    """
+
+@pulumi.input_type
+class ScheduledInstanceInstanceConfigVolumeArgs:
+    def __init__(__self__, *,
+                 kind: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 volume_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] kind: Disk type. Values:   - system: System disk   - data: Data disk
+        :param pulumi.Input[_builtins.int] size: Cloud disk capacity, in GiB.
+        :param pulumi.Input[_builtins.str] volume_type: Cloud disk type. Values:
+                   - ESSD_PL0: Ultra-fast SSD PL0
+                   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+        """
+        if kind is not None:
+            pulumi.set(__self__, "kind", kind)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+
+    @_builtins.property
+    @pulumi.getter
+    def kind(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Disk type. Values:   - system: System disk   - data: Data disk
+        """
+        return pulumi.get(self, "kind")
+
+    @kind.setter
+    def kind(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "kind", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Cloud disk capacity, in GiB.
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cloud disk type. Values:
+            - ESSD_PL0: Ultra-fast SSD PL0
+            - ESSD_FlexPL: Ultra-fast SSD FlexPL
+        """
+        return pulumi.get(self, "volume_type")
+
+    @volume_type.setter
+    def volume_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "volume_type", value)
+
+
+class ScheduledInstanceNetworkInterfaceArgsDict(TypedDict):
+    primary_ip_address: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+    """
+    private_ip_addresses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+    """
+    security_group_ids: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]]
+    """
+    Security group ID associated with the network interface.
+        - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+        - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+        - Use & to separate multiple security group IDs.
+    """
+    subnet_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+    """
+    vpc_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Private network
+    """
+
+@pulumi.input_type
+class ScheduledInstanceNetworkInterfaceArgs:
+    def __init__(__self__, *,
+                 primary_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_ip_addresses: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 security_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
+                 subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 vpc_id: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] primary_ip_address: Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] private_ip_addresses: Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] security_group_ids: Security group ID associated with the network interface.
+                   - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+                   - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+                   - Use & to separate multiple security group IDs.
+        :param pulumi.Input[_builtins.str] subnet_id: Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+        :param pulumi.Input[_builtins.str] vpc_id: Private network
+        """
+        if primary_ip_address is not None:
+            pulumi.set(__self__, "primary_ip_address", primary_ip_address)
+        if private_ip_addresses is not None:
+            pulumi.set(__self__, "private_ip_addresses", private_ip_addresses)
+        if security_group_ids is not None:
+            pulumi.set(__self__, "security_group_ids", security_group_ids)
+        if subnet_id is not None:
+            pulumi.set(__self__, "subnet_id", subnet_id)
+        if vpc_id is not None:
+            pulumi.set(__self__, "vpc_id", vpc_id)
+
+    @_builtins.property
+    @pulumi.getter(name="primaryIpAddress")
+    def primary_ip_address(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+        """
+        return pulumi.get(self, "primary_ip_address")
+
+    @primary_ip_address.setter
+    def primary_ip_address(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "primary_ip_address", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateIpAddresses")
+    def private_ip_addresses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+        """
+        return pulumi.get(self, "private_ip_addresses")
+
+    @private_ip_addresses.setter
+    def private_ip_addresses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "private_ip_addresses", value)
+
+    @_builtins.property
+    @pulumi.getter(name="securityGroupIds")
+    def security_group_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Security group ID associated with the network interface.
+            - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+            - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+            - Use & to separate multiple security group IDs.
+        """
+        return pulumi.get(self, "security_group_ids")
+
+    @security_group_ids.setter
+    def security_group_ids(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "security_group_ids", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subnetId")
+    def subnet_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+        """
+        return pulumi.get(self, "subnet_id")
+
+    @subnet_id.setter
+    def subnet_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "subnet_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="vpcId")
+    def vpc_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Private network
+        """
+        return pulumi.get(self, "vpc_id")
+
+    @vpc_id.setter
+    def vpc_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "vpc_id", value)
+
+
+class ScheduledInstanceTagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource tag key.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Resource tag value
+    """
+
+@pulumi.input_type
+class ScheduledInstanceTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: Resource tag key.
+        :param pulumi.Input[_builtins.str] value: Resource tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Resource tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class ScheduledInstanceVolumeArgsDict(TypedDict):
+    delete_with_instance: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance. 
+      **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+    """
+    extra_performance_iops: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+        - IOPS type: 1–50000
+        - Balance type: 1–50000
+      
+      **Note:**
+        - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+        - Use & to separate multiple cloud disks.
+    """
+    extra_performance_throughput_mb: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650. 
+      **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+    """
+    extra_performance_type_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+        - Balance: Balanced extra performance
+        - IOPS: IOPS extra performance
+        - Throughput: Throughput extra performance
+      For more information about extra performance, see [Cloud Disk Extra Performance].
+      
+      **Note:**
+        - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+      N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+      N ≥ 2 indicates a data disk. This parameter can be set normally.
+        - Use & to separate multiple cloud disks.
+    """
+    size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+        - System disk:
+          - ESSD_PL0: 20–2048
+          - ESSD_FlexPL: 20–2048
+        
+      **Note:**
+        Default: max{40, image size of ImageId}
+        
+        - Data disk:
+          - ESSD_PL0: 10–32768
+          - ESSD_FlexPL: 10–32768
+        
+      **Note:**
+        If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+    """
+    snapshot_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks. 
+      **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+    """
+    volume_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL 
+      **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+    """
+
+@pulumi.input_type
+class ScheduledInstanceVolumeArgs:
+    def __init__(__self__, *,
+                 delete_with_instance: pulumi.Input[Optional[_builtins.bool]] = None,
+                 extra_performance_iops: pulumi.Input[Optional[_builtins.int]] = None,
+                 extra_performance_throughput_mb: pulumi.Input[Optional[_builtins.int]] = None,
+                 extra_performance_type_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 size: pulumi.Input[Optional[_builtins.int]] = None,
+                 snapshot_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 volume_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] delete_with_instance: Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance. 
+                 **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+        :param pulumi.Input[_builtins.int] extra_performance_iops: Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+                   - IOPS type: 1–50000
+                   - Balance type: 1–50000
+                 
+                 **Note:**
+                   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+                   - Use & to separate multiple cloud disks.
+        :param pulumi.Input[_builtins.int] extra_performance_throughput_mb: Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650. 
+                 **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+        :param pulumi.Input[_builtins.str] extra_performance_type_id: Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+                   - Balance: Balanced extra performance
+                   - IOPS: IOPS extra performance
+                   - Throughput: Throughput extra performance
+                 For more information about extra performance, see [Cloud Disk Extra Performance].
+                 
+                 **Note:**
+                   - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+                 N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+                 N ≥ 2 indicates a data disk. This parameter can be set normally.
+                   - Use & to separate multiple cloud disks.
+        :param pulumi.Input[_builtins.int] size: Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+                   - System disk:
+                     - ESSD_PL0: 20–2048
+                     - ESSD_FlexPL: 20–2048
+                   
+                 **Note:**
+                   Default: max{40, image size of ImageId}
+                   
+                   - Data disk:
+                     - ESSD_PL0: 10–32768
+                     - ESSD_FlexPL: 10–32768
+                   
+                 **Note:**
+                   If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+        :param pulumi.Input[_builtins.str] snapshot_id: Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks. 
+                 **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+        :param pulumi.Input[_builtins.str] volume_type: Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL 
+                 **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+        """
+        if delete_with_instance is not None:
+            pulumi.set(__self__, "delete_with_instance", delete_with_instance)
+        if extra_performance_iops is not None:
+            pulumi.set(__self__, "extra_performance_iops", extra_performance_iops)
+        if extra_performance_throughput_mb is not None:
+            pulumi.set(__self__, "extra_performance_throughput_mb", extra_performance_throughput_mb)
+        if extra_performance_type_id is not None:
+            pulumi.set(__self__, "extra_performance_type_id", extra_performance_type_id)
+        if size is not None:
+            pulumi.set(__self__, "size", size)
+        if snapshot_id is not None:
+            pulumi.set(__self__, "snapshot_id", snapshot_id)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+
+    @_builtins.property
+    @pulumi.getter(name="deleteWithInstance")
+    def delete_with_instance(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance. 
+          **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+        """
+        return pulumi.get(self, "delete_with_instance")
+
+    @delete_with_instance.setter
+    def delete_with_instance(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "delete_with_instance", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extraPerformanceIops")
+    def extra_performance_iops(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+            - IOPS type: 1–50000
+            - Balance type: 1–50000
+          
+          **Note:**
+            - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+            - Use & to separate multiple cloud disks.
+        """
+        return pulumi.get(self, "extra_performance_iops")
+
+    @extra_performance_iops.setter
+    def extra_performance_iops(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "extra_performance_iops", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extraPerformanceThroughputMb")
+    def extra_performance_throughput_mb(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650. 
+          **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+        """
+        return pulumi.get(self, "extra_performance_throughput_mb")
+
+    @extra_performance_throughput_mb.setter
+    def extra_performance_throughput_mb(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "extra_performance_throughput_mb", value)
+
+    @_builtins.property
+    @pulumi.getter(name="extraPerformanceTypeId")
+    def extra_performance_type_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+            - Balance: Balanced extra performance
+            - IOPS: IOPS extra performance
+            - Throughput: Throughput extra performance
+          For more information about extra performance, see [Cloud Disk Extra Performance].
+          
+          **Note:**
+            - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+          N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+          N ≥ 2 indicates a data disk. This parameter can be set normally.
+            - Use & to separate multiple cloud disks.
+        """
+        return pulumi.get(self, "extra_performance_type_id")
+
+    @extra_performance_type_id.setter
+    def extra_performance_type_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "extra_performance_type_id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+            - System disk:
+              - ESSD_PL0: 20–2048
+              - ESSD_FlexPL: 20–2048
+            
+          **Note:**
+            Default: max{40, image size of ImageId}
+            
+            - Data disk:
+              - ESSD_PL0: 10–32768
+              - ESSD_FlexPL: 10–32768
+            
+          **Note:**
+            If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+        """
+        return pulumi.get(self, "size")
+
+    @size.setter
+    def size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="snapshotId")
+    def snapshot_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks. 
+          **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+        """
+        return pulumi.get(self, "snapshot_id")
+
+    @snapshot_id.setter
+    def snapshot_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "snapshot_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL 
+          **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
         """
         return pulumi.get(self, "volume_type")
 

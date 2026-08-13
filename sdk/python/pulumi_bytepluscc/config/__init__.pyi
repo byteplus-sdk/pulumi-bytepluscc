@@ -17,12 +17,12 @@ from . import outputs
 
 accessKey: Optional[str]
 """
-The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
 """
 
 assumeRole: Optional[str]
 """
-An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+An `assume_role` block that uses the selected source credentials to obtain target-role credentials. Only one `assume_role` block may be in the configuration.
 """
 
 customerHeaders: Optional[str]
@@ -42,17 +42,32 @@ An `endpoints` block (documented below). Only one `endpoints` block may be in th
 
 filePath: Optional[str]
 """
-The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+"""
+
+noProxy: Optional[str]
+"""
+Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
 """
 
 profile: Optional[str]
 """
-The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
+"""
+
+proxyAuthorization: Optional[str]
+"""
+Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+"""
+
+proxyIncludeDomains: Optional[str]
+"""
+Hosts, domain suffixes, IP addresses, or CIDR ranges that use proxy_url while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
 """
 
 proxyUrl: Optional[str]
 """
-PROXY URL for Byteplus Provider
+HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
 """
 
 region: Optional[str]
@@ -62,7 +77,7 @@ The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGI
 
 secretKey: Optional[str]
 """
-he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
 """
 
 sessionToken: Optional[str]

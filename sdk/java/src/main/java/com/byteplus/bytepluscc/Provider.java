@@ -10,6 +10,7 @@ import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
 import com.pulumi.core.internal.Codegen;
 import java.lang.String;
+import java.util.List;
 import java.util.Optional;
 import javax.annotation.Nullable;
 
@@ -23,14 +24,14 @@ import javax.annotation.Nullable;
 @ResourceType(type="pulumi:providers:bytepluscc")
 public class Provider extends com.pulumi.resources.ProviderResource {
     /**
-     * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+     * The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
      * 
      */
     @Export(name="accessKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> accessKey;
 
     /**
-     * @return The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+     * @return The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
      * 
      */
     public Output<Optional<String>> accessKey() {
@@ -51,42 +52,70 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.customerHeaders);
     }
     /**
-     * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     * The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
      * 
      */
     @Export(name="filePath", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> filePath;
 
     /**
-     * @return The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     * @return The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
      * 
      */
     public Output<Optional<String>> filePath() {
         return Codegen.optional(this.filePath);
     }
     /**
-     * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     * 
+     */
+    @Export(name="noProxy", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> noProxy;
+
+    /**
+     * @return Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     * 
+     */
+    public Output<Optional<String>> noProxy() {
+        return Codegen.optional(this.noProxy);
+    }
+    /**
+     * The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
      * 
      */
     @Export(name="profile", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> profile;
 
     /**
-     * @return The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     * @return The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
      * 
      */
     public Output<Optional<String>> profile() {
         return Codegen.optional(this.profile);
     }
     /**
-     * PROXY URL for Byteplus Provider
+     * Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic &lt;token&gt;`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+     * 
+     */
+    @Export(name="proxyAuthorization", refs={String.class}, tree="[0]")
+    private Output</* @Nullable */ String> proxyAuthorization;
+
+    /**
+     * @return Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic &lt;token&gt;`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+     * 
+     */
+    public Output<Optional<String>> proxyAuthorization() {
+        return Codegen.optional(this.proxyAuthorization);
+    }
+    /**
+     * HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
      * 
      */
     @Export(name="proxyUrl", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> proxyUrl;
 
     /**
-     * @return PROXY URL for Byteplus Provider
+     * @return HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
      * 
      */
     public Output<Optional<String>> proxyUrl() {
@@ -107,14 +136,14 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         return Codegen.optional(this.region);
     }
     /**
-     * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+     * The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
      * 
      */
     @Export(name="secretKey", refs={String.class}, tree="[0]")
     private Output</* @Nullable */ String> secretKey;
 
     /**
-     * @return he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+     * @return The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
      * 
      */
     public Output<Optional<String>> secretKey() {
@@ -171,6 +200,9 @@ public class Provider extends com.pulumi.resources.ProviderResource {
         var defaultOptions = com.pulumi.resources.CustomResourceOptions.builder()
             .version(Utilities.getVersion())
             .pluginDownloadURL("github://api.github.com/byteplus-sdk")
+            .additionalSecretOutputs(List.of(
+                "proxyAuthorization"
+            ))
             .build();
         return com.pulumi.resources.CustomResourceOptions.merge(defaultOptions, options, id);
     }

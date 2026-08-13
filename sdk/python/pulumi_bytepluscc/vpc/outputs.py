@@ -26,6 +26,7 @@ __all__ = [
     'EniTag',
     'FlowLogTag',
     'HaVipTag',
+    'IpPoolTag',
     'Ipv6AddressBandwidthTag',
     'Ipv6GatewayTag',
     'NetworkAclDefaultEgressAclEntry',
@@ -63,6 +64,7 @@ __all__ = [
     'GetEniTagResult',
     'GetFlowLogTagResult',
     'GetHaVipTagResult',
+    'GetIpPoolTagResult',
     'GetIpv6AddressBandwidthTagResult',
     'GetIpv6GatewayTagResult',
     'GetNetworkAclDefaultEgressAclEntryResult',
@@ -491,6 +493,37 @@ class HaVipTag(dict):
     def value(self) -> Optional[_builtins.str]:
         """
         Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class IpPoolTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag key.
+        :param _builtins.str value: Tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -2899,6 +2932,35 @@ class GetHaVipTagResult(dict):
     def value(self) -> _builtins.str:
         """
         Tag value for user tags. Supports input of characters in any language, numbers, spaces ( ), underscores (_), periods (.), colons (:), slashes (/), equals signs (=), plus signs (+), hyphens (-), and @ (@). Case sensitive. If the tag value starts or ends with a space, the system automatically removes it
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetIpPoolTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag key.
+        :param _builtins.str value: Tag value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag value.
         """
         return pulumi.get(self, "value")
 

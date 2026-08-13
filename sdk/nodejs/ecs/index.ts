@@ -105,6 +105,16 @@ export const getLaunchTemplates: typeof import("./getLaunchTemplates").getLaunch
 export const getLaunchTemplatesOutput: typeof import("./getLaunchTemplates").getLaunchTemplatesOutput = null as any;
 utilities.lazyLoad(exports, ["getLaunchTemplates","getLaunchTemplatesOutput"], () => require("./getLaunchTemplates"));
 
+export { GetScheduledInstanceArgs, GetScheduledInstanceResult, GetScheduledInstanceOutputArgs } from "./getScheduledInstance";
+export const getScheduledInstance: typeof import("./getScheduledInstance").getScheduledInstance = null as any;
+export const getScheduledInstanceOutput: typeof import("./getScheduledInstance").getScheduledInstanceOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduledInstance","getScheduledInstanceOutput"], () => require("./getScheduledInstance"));
+
+export { GetScheduledInstancesResult } from "./getScheduledInstances";
+export const getScheduledInstances: typeof import("./getScheduledInstances").getScheduledInstances = null as any;
+export const getScheduledInstancesOutput: typeof import("./getScheduledInstances").getScheduledInstancesOutput = null as any;
+utilities.lazyLoad(exports, ["getScheduledInstances","getScheduledInstancesOutput"], () => require("./getScheduledInstances"));
+
 export { HpcClusterArgs, HpcClusterState } from "./hpcCluster";
 export type HpcCluster = import("./hpcCluster").HpcCluster;
 export const HpcCluster: typeof import("./hpcCluster").HpcCluster = null as any;
@@ -140,6 +150,11 @@ export type LaunchTemplateVersion = import("./launchTemplateVersion").LaunchTemp
 export const LaunchTemplateVersion: typeof import("./launchTemplateVersion").LaunchTemplateVersion = null as any;
 utilities.lazyLoad(exports, ["LaunchTemplateVersion"], () => require("./launchTemplateVersion"));
 
+export { ScheduledInstanceArgs, ScheduledInstanceState } from "./scheduledInstance";
+export type ScheduledInstance = import("./scheduledInstance").ScheduledInstance;
+export const ScheduledInstance: typeof import("./scheduledInstance").ScheduledInstance = null as any;
+utilities.lazyLoad(exports, ["ScheduledInstance"], () => require("./scheduledInstance"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -163,6 +178,8 @@ const _module = {
                 return new LaunchTemplate(name, <any>undefined, { urn })
             case "bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion":
                 return new LaunchTemplateVersion(name, <any>undefined, { urn })
+            case "bytepluscc:ecs/scheduledInstance:ScheduledInstance":
+                return new ScheduledInstance(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -177,3 +194,4 @@ pulumi.runtime.registerResourceModule("bytepluscc", "ecs/invocation", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/keypair", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/launchTemplate", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/launchTemplateVersion", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "ecs/scheduledInstance", _module)

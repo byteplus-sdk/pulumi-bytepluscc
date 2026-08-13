@@ -20,6 +20,21 @@ export const getChildCertInstances: typeof import("./getChildCertInstances").get
 export const getChildCertInstancesOutput: typeof import("./getChildCertInstances").getChildCertInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getChildCertInstances","getChildCertInstancesOutput"], () => require("./getChildCertInstances"));
 
+export { GetOrganizationInfoArgs, GetOrganizationInfoResult, GetOrganizationInfoOutputArgs } from "./getOrganizationInfo";
+export const getOrganizationInfo: typeof import("./getOrganizationInfo").getOrganizationInfo = null as any;
+export const getOrganizationInfoOutput: typeof import("./getOrganizationInfo").getOrganizationInfoOutput = null as any;
+utilities.lazyLoad(exports, ["getOrganizationInfo","getOrganizationInfoOutput"], () => require("./getOrganizationInfo"));
+
+export { GetOrganizationInfosResult } from "./getOrganizationInfos";
+export const getOrganizationInfos: typeof import("./getOrganizationInfos").getOrganizationInfos = null as any;
+export const getOrganizationInfosOutput: typeof import("./getOrganizationInfos").getOrganizationInfosOutput = null as any;
+utilities.lazyLoad(exports, ["getOrganizationInfos","getOrganizationInfosOutput"], () => require("./getOrganizationInfos"));
+
+export { OrganizationInfoArgs, OrganizationInfoState } from "./organizationInfo";
+export type OrganizationInfo = import("./organizationInfo").OrganizationInfo;
+export const OrganizationInfo: typeof import("./organizationInfo").OrganizationInfo = null as any;
+utilities.lazyLoad(exports, ["OrganizationInfo"], () => require("./organizationInfo"));
+
 
 const _module = {
     version: utilities.getVersion(),
@@ -27,9 +42,12 @@ const _module = {
         switch (type) {
             case "bytepluscc:certificateservice/childCertInstance:ChildCertInstance":
                 return new ChildCertInstance(name, <any>undefined, { urn })
+            case "bytepluscc:certificateservice/organizationInfo:OrganizationInfo":
+                return new OrganizationInfo(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "certificateservice/childCertInstance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "certificateservice/organizationInfo", _module)

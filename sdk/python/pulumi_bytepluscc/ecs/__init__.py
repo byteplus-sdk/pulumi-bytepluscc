@@ -26,6 +26,8 @@ from .get_launch_template import *
 from .get_launch_template_version import *
 from .get_launch_template_versions import *
 from .get_launch_templates import *
+from .get_scheduled_instance import *
+from .get_scheduled_instances import *
 from .hpc_cluster import *
 from .image import *
 from .instance import *
@@ -33,5 +35,6 @@ from .invocation import *
 from .keypair import *
 from .launch_template import *
 from .launch_template_version import *
+from .scheduled_instance import *
 from ._inputs import *
 from . import outputs

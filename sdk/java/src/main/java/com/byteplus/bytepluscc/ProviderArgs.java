@@ -10,6 +10,7 @@ import com.pulumi.core.annotations.Import;
 import com.pulumi.core.internal.Codegen;
 import java.lang.Boolean;
 import java.lang.String;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -20,14 +21,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     public static final ProviderArgs Empty = new ProviderArgs();
 
     /**
-     * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+     * The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
      * 
      */
     @Import(name="accessKey")
     private @Nullable Output<String> accessKey;
 
     /**
-     * @return The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+     * @return The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
      * 
      */
     public Optional<Output<String>> accessKey() {
@@ -35,14 +36,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
+     * An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block that uses the selected source credentials to obtain target-role credentials. Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
      * 
      */
     @Import(name="assumeRole", json=true)
     private @Nullable Output<ProviderAssumeRoleArgs> assumeRole;
 
     /**
-     * @return An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
+     * @return An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block that uses the selected source credentials to obtain target-role credentials. Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
      * 
      */
     public Optional<Output<ProviderAssumeRoleArgs>> assumeRole() {
@@ -95,14 +96,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     * The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
      * 
      */
     @Import(name="filePath")
     private @Nullable Output<String> filePath;
 
     /**
-     * @return The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     * @return The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
      * 
      */
     public Optional<Output<String>> filePath() {
@@ -110,14 +111,29 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     * 
+     */
+    @Import(name="noProxy")
+    private @Nullable Output<String> noProxy;
+
+    /**
+     * @return Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     * 
+     */
+    public Optional<Output<String>> noProxy() {
+        return Optional.ofNullable(this.noProxy);
+    }
+
+    /**
+     * The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
      * 
      */
     @Import(name="profile")
     private @Nullable Output<String> profile;
 
     /**
-     * @return The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     * @return The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
      * 
      */
     public Optional<Output<String>> profile() {
@@ -125,14 +141,44 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * PROXY URL for Byteplus Provider
+     * Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic &lt;token&gt;`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+     * 
+     */
+    @Import(name="proxyAuthorization")
+    private @Nullable Output<String> proxyAuthorization;
+
+    /**
+     * @return Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic &lt;token&gt;`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+     * 
+     */
+    public Optional<Output<String>> proxyAuthorization() {
+        return Optional.ofNullable(this.proxyAuthorization);
+    }
+
+    /**
+     * Hosts, domain suffixes, IP addresses, or CIDR ranges that use&lt;span pulumi-lang-nodejs=&#34; proxyUrl &#34; pulumi-lang-dotnet=&#34; ProxyUrl &#34; pulumi-lang-go=&#34; proxyUrl &#34; pulumi-lang-python=&#34; proxy_url &#34; pulumi-lang-yaml=&#34; proxyUrl &#34; pulumi-lang-java=&#34; proxyUrl &#34; pulumi-lang-hcl=&#34; proxy_url &#34;&gt; proxyUrl &lt;/span&gt;while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+     * 
+     */
+    @Import(name="proxyIncludeDomains", json=true)
+    private @Nullable Output<List<String>> proxyIncludeDomains;
+
+    /**
+     * @return Hosts, domain suffixes, IP addresses, or CIDR ranges that use&lt;span pulumi-lang-nodejs=&#34; proxyUrl &#34; pulumi-lang-dotnet=&#34; ProxyUrl &#34; pulumi-lang-go=&#34; proxyUrl &#34; pulumi-lang-python=&#34; proxy_url &#34; pulumi-lang-yaml=&#34; proxyUrl &#34; pulumi-lang-java=&#34; proxyUrl &#34; pulumi-lang-hcl=&#34; proxy_url &#34;&gt; proxyUrl &lt;/span&gt;while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+     * 
+     */
+    public Optional<Output<List<String>>> proxyIncludeDomains() {
+        return Optional.ofNullable(this.proxyIncludeDomains);
+    }
+
+    /**
+     * HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
      * 
      */
     @Import(name="proxyUrl")
     private @Nullable Output<String> proxyUrl;
 
     /**
-     * @return PROXY URL for Byteplus Provider
+     * @return HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
      * 
      */
     public Optional<Output<String>> proxyUrl() {
@@ -155,14 +201,14 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+     * The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
      * 
      */
     @Import(name="secretKey")
     private @Nullable Output<String> secretKey;
 
     /**
-     * @return he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+     * @return The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
      * 
      */
     public Optional<Output<String>> secretKey() {
@@ -193,7 +239,10 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         this.disableSsl = $.disableSsl;
         this.endpoints = $.endpoints;
         this.filePath = $.filePath;
+        this.noProxy = $.noProxy;
         this.profile = $.profile;
+        this.proxyAuthorization = $.proxyAuthorization;
+        this.proxyIncludeDomains = $.proxyIncludeDomains;
         this.proxyUrl = $.proxyUrl;
         this.region = $.region;
         this.secretKey = $.secretKey;
@@ -219,7 +268,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKey The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+         * @param accessKey The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
          * 
          * @return builder
          * 
@@ -230,7 +279,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param accessKey The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+         * @param accessKey The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
          * 
          * @return builder
          * 
@@ -240,7 +289,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param assumeRole An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
+         * @param assumeRole An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block that uses the selected source credentials to obtain target-role credentials. Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
          * 
          * @return builder
          * 
@@ -251,7 +300,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param assumeRole An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block (documented below). Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
+         * @param assumeRole An &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block that uses the selected source credentials to obtain target-role credentials. Only one &lt;span pulumi-lang-nodejs=&#34;`assumeRole`&#34; pulumi-lang-dotnet=&#34;`AssumeRole`&#34; pulumi-lang-go=&#34;`assumeRole`&#34; pulumi-lang-python=&#34;`assume_role`&#34; pulumi-lang-yaml=&#34;`assumeRole`&#34; pulumi-lang-java=&#34;`assumeRole`&#34; pulumi-lang-hcl=&#34;`assume_role`&#34;&gt;`assumeRole`&lt;/span&gt; block may be in the configuration.
          * 
          * @return builder
          * 
@@ -324,7 +373,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param filePath The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+         * @param filePath The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
          * 
          * @return builder
          * 
@@ -335,7 +384,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param filePath The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+         * @param filePath The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
          * 
          * @return builder
          * 
@@ -345,7 +394,28 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param profile The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+         * @param noProxy Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder noProxy(@Nullable Output<String> noProxy) {
+            $.noProxy = noProxy;
+            return this;
+        }
+
+        /**
+         * @param noProxy Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder noProxy(String noProxy) {
+            return noProxy(Output.of(noProxy));
+        }
+
+        /**
+         * @param profile The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
          * 
          * @return builder
          * 
@@ -356,7 +426,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param profile The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+         * @param profile The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
          * 
          * @return builder
          * 
@@ -366,7 +436,59 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyUrl PROXY URL for Byteplus Provider
+         * @param proxyAuthorization Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic &lt;token&gt;`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyAuthorization(@Nullable Output<String> proxyAuthorization) {
+            $.proxyAuthorization = proxyAuthorization;
+            return this;
+        }
+
+        /**
+         * @param proxyAuthorization Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic &lt;token&gt;`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyAuthorization(String proxyAuthorization) {
+            return proxyAuthorization(Output.of(proxyAuthorization));
+        }
+
+        /**
+         * @param proxyIncludeDomains Hosts, domain suffixes, IP addresses, or CIDR ranges that use&lt;span pulumi-lang-nodejs=&#34; proxyUrl &#34; pulumi-lang-dotnet=&#34; ProxyUrl &#34; pulumi-lang-go=&#34; proxyUrl &#34; pulumi-lang-python=&#34; proxy_url &#34; pulumi-lang-yaml=&#34; proxyUrl &#34; pulumi-lang-java=&#34; proxyUrl &#34; pulumi-lang-hcl=&#34; proxy_url &#34;&gt; proxyUrl &lt;/span&gt;while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyIncludeDomains(@Nullable Output<List<String>> proxyIncludeDomains) {
+            $.proxyIncludeDomains = proxyIncludeDomains;
+            return this;
+        }
+
+        /**
+         * @param proxyIncludeDomains Hosts, domain suffixes, IP addresses, or CIDR ranges that use&lt;span pulumi-lang-nodejs=&#34; proxyUrl &#34; pulumi-lang-dotnet=&#34; ProxyUrl &#34; pulumi-lang-go=&#34; proxyUrl &#34; pulumi-lang-python=&#34; proxy_url &#34; pulumi-lang-yaml=&#34; proxyUrl &#34; pulumi-lang-java=&#34; proxyUrl &#34; pulumi-lang-hcl=&#34; proxy_url &#34;&gt; proxyUrl &lt;/span&gt;while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyIncludeDomains(List<String> proxyIncludeDomains) {
+            return proxyIncludeDomains(Output.of(proxyIncludeDomains));
+        }
+
+        /**
+         * @param proxyIncludeDomains Hosts, domain suffixes, IP addresses, or CIDR ranges that use&lt;span pulumi-lang-nodejs=&#34; proxyUrl &#34; pulumi-lang-dotnet=&#34; ProxyUrl &#34; pulumi-lang-go=&#34; proxyUrl &#34; pulumi-lang-python=&#34; proxy_url &#34; pulumi-lang-yaml=&#34; proxyUrl &#34; pulumi-lang-java=&#34; proxyUrl &#34; pulumi-lang-hcl=&#34; proxy_url &#34;&gt; proxyUrl &lt;/span&gt;while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder proxyIncludeDomains(String... proxyIncludeDomains) {
+            return proxyIncludeDomains(List.of(proxyIncludeDomains));
+        }
+
+        /**
+         * @param proxyUrl HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
          * 
          * @return builder
          * 
@@ -377,7 +499,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param proxyUrl PROXY URL for Byteplus Provider
+         * @param proxyUrl HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
          * 
          * @return builder
          * 
@@ -408,7 +530,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretKey he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+         * @param secretKey The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
          * 
          * @return builder
          * 
@@ -419,7 +541,7 @@ public final class ProviderArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param secretKey he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+         * @param secretKey The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
          * 
          * @return builder
          * 
