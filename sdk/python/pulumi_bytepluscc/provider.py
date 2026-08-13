@@ -26,7 +26,10 @@ class ProviderArgs:
                  disable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
                  endpoints: pulumi.Input[Optional['ProviderEndpointsArgs']] = None,
                  file_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_proxy: pulumi.Input[Optional[_builtins.str]] = None,
                  profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_include_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -34,16 +37,19 @@ class ProviderArgs:
         """
         The set of arguments for constructing a Provider resource.
 
-        :param pulumi.Input[_builtins.str] access_key: The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
-        :param pulumi.Input['ProviderAssumeRoleArgs'] assume_role: An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+        :param pulumi.Input[_builtins.str] access_key: The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+        :param pulumi.Input['ProviderAssumeRoleArgs'] assume_role: An `assume_role` block that uses the selected source credentials to obtain target-role credentials. Only one `assume_role` block may be in the configuration.
         :param pulumi.Input[_builtins.str] customer_headers: CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
         :param pulumi.Input[_builtins.bool] disable_ssl: Disable SSL for Byteplus Provider
         :param pulumi.Input['ProviderEndpointsArgs'] endpoints: An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
-        :param pulumi.Input[_builtins.str] file_path: The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
-        :param pulumi.Input[_builtins.str] profile: The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
-        :param pulumi.Input[_builtins.str] proxy_url: PROXY URL for Byteplus Provider
+        :param pulumi.Input[_builtins.str] file_path: The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        :param pulumi.Input[_builtins.str] no_proxy: Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        :param pulumi.Input[_builtins.str] profile: The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
+        :param pulumi.Input[_builtins.str] proxy_authorization: Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] proxy_include_domains: Hosts, domain suffixes, IP addresses, or CIDR ranges that use proxy_url while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+        :param pulumi.Input[_builtins.str] proxy_url: HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
         :param pulumi.Input[_builtins.str] region: The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
-        :param pulumi.Input[_builtins.str] secret_key: he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+        :param pulumi.Input[_builtins.str] secret_key: The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
         :param pulumi.Input[_builtins.str] session_token: The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
         """
         if access_key is None:
@@ -66,10 +72,16 @@ class ProviderArgs:
             file_path = _utilities.get_env('BYTEPLUS_FILE_PATH')
         if file_path is not None:
             pulumi.set(__self__, "file_path", file_path)
+        if no_proxy is not None:
+            pulumi.set(__self__, "no_proxy", no_proxy)
         if profile is None:
             profile = _utilities.get_env('BYTEPLUS_PROFILE')
         if profile is not None:
             pulumi.set(__self__, "profile", profile)
+        if proxy_authorization is not None:
+            pulumi.set(__self__, "proxy_authorization", proxy_authorization)
+        if proxy_include_domains is not None:
+            pulumi.set(__self__, "proxy_include_domains", proxy_include_domains)
         if proxy_url is None:
             proxy_url = _utilities.get_env('BYTEPLUS_PROXY_URL')
         if proxy_url is not None:
@@ -91,7 +103,7 @@ class ProviderArgs:
     @pulumi.getter(name="accessKey")
     def access_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+        The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
         """
         return pulumi.get(self, "access_key")
 
@@ -103,7 +115,7 @@ class ProviderArgs:
     @pulumi.getter(name="assumeRole")
     def assume_role(self) -> pulumi.Input[Optional['ProviderAssumeRoleArgs']]:
         """
-        An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+        An `assume_role` block that uses the selected source credentials to obtain target-role credentials. Only one `assume_role` block may be in the configuration.
         """
         return pulumi.get(self, "assume_role")
 
@@ -151,7 +163,7 @@ class ProviderArgs:
     @pulumi.getter(name="filePath")
     def file_path(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
         """
         return pulumi.get(self, "file_path")
 
@@ -160,10 +172,22 @@ class ProviderArgs:
         pulumi.set(self, "file_path", value)
 
     @_builtins.property
+    @pulumi.getter(name="noProxy")
+    def no_proxy(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        """
+        return pulumi.get(self, "no_proxy")
+
+    @no_proxy.setter
+    def no_proxy(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "no_proxy", value)
+
+    @_builtins.property
     @pulumi.getter
     def profile(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
         """
         return pulumi.get(self, "profile")
 
@@ -172,10 +196,34 @@ class ProviderArgs:
         pulumi.set(self, "profile", value)
 
     @_builtins.property
+    @pulumi.getter(name="proxyAuthorization")
+    def proxy_authorization(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+        """
+        return pulumi.get(self, "proxy_authorization")
+
+    @proxy_authorization.setter
+    def proxy_authorization(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "proxy_authorization", value)
+
+    @_builtins.property
+    @pulumi.getter(name="proxyIncludeDomains")
+    def proxy_include_domains(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
+        """
+        Hosts, domain suffixes, IP addresses, or CIDR ranges that use proxy_url while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+        """
+        return pulumi.get(self, "proxy_include_domains")
+
+    @proxy_include_domains.setter
+    def proxy_include_domains(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]):
+        pulumi.set(self, "proxy_include_domains", value)
+
+    @_builtins.property
     @pulumi.getter(name="proxyUrl")
     def proxy_url(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        PROXY URL for Byteplus Provider
+        HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
         """
         return pulumi.get(self, "proxy_url")
 
@@ -199,7 +247,7 @@ class ProviderArgs:
     @pulumi.getter(name="secretKey")
     def secret_key(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+        The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
         """
         return pulumi.get(self, "secret_key")
 
@@ -232,7 +280,10 @@ class Provider(pulumi.ProviderResource):
                  disable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
                  endpoints: pulumi.Input[Optional[Union['ProviderEndpointsArgs', 'ProviderEndpointsArgsDict']]] = None,
                  file_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_proxy: pulumi.Input[Optional[_builtins.str]] = None,
                  profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_include_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -247,16 +298,19 @@ class Provider(pulumi.ProviderResource):
 
         :param str resource_name: The name of the resource.
         :param pulumi.ResourceOptions opts: Options for the resource.
-        :param pulumi.Input[_builtins.str] access_key: The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
-        :param pulumi.Input[Union['ProviderAssumeRoleArgs', 'ProviderAssumeRoleArgsDict']] assume_role: An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+        :param pulumi.Input[_builtins.str] access_key: The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+        :param pulumi.Input[Union['ProviderAssumeRoleArgs', 'ProviderAssumeRoleArgsDict']] assume_role: An `assume_role` block that uses the selected source credentials to obtain target-role credentials. Only one `assume_role` block may be in the configuration.
         :param pulumi.Input[_builtins.str] customer_headers: CUSTOMER HEADERS for Byteplus Provider. The customer_headers field uses commas (,) to separate multiple headers, and colons (:) to separate each header key from its corresponding value.
         :param pulumi.Input[_builtins.bool] disable_ssl: Disable SSL for Byteplus Provider
         :param pulumi.Input[Union['ProviderEndpointsArgs', 'ProviderEndpointsArgsDict']] endpoints: An `endpoints` block (documented below). Only one `endpoints` block may be in the configuration.
-        :param pulumi.Input[_builtins.str] file_path: The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
-        :param pulumi.Input[_builtins.str] profile: The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
-        :param pulumi.Input[_builtins.str] proxy_url: PROXY URL for Byteplus Provider
+        :param pulumi.Input[_builtins.str] file_path: The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        :param pulumi.Input[_builtins.str] no_proxy: Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        :param pulumi.Input[_builtins.str] profile: The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
+        :param pulumi.Input[_builtins.str] proxy_authorization: Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] proxy_include_domains: Hosts, domain suffixes, IP addresses, or CIDR ranges that use proxy_url while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+        :param pulumi.Input[_builtins.str] proxy_url: HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
         :param pulumi.Input[_builtins.str] region: The Region for Byteplus Provider. It can also be sourced from the `BYTEPLUS_REGION` environment variable. Defaults to `ap-southeast-1` when not provided.
-        :param pulumi.Input[_builtins.str] secret_key: he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+        :param pulumi.Input[_builtins.str] secret_key: The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
         :param pulumi.Input[_builtins.str] session_token: The Session Token for Byteplus Provider, used together with temporary AK/SK obtained from STS. It can also be sourced from the `BYTEPLUS_SESSION_TOKEN` environment variable
         """
         ...
@@ -293,7 +347,10 @@ class Provider(pulumi.ProviderResource):
                  disable_ssl: pulumi.Input[Optional[_builtins.bool]] = None,
                  endpoints: pulumi.Input[Optional[Union['ProviderEndpointsArgs', 'ProviderEndpointsArgsDict']]] = None,
                  file_path: pulumi.Input[Optional[_builtins.str]] = None,
+                 no_proxy: pulumi.Input[Optional[_builtins.str]] = None,
                  profile: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_authorization: pulumi.Input[Optional[_builtins.str]] = None,
+                 proxy_include_domains: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  proxy_url: pulumi.Input[Optional[_builtins.str]] = None,
                  region: pulumi.Input[Optional[_builtins.str]] = None,
                  secret_key: pulumi.Input[Optional[_builtins.str]] = None,
@@ -321,9 +378,12 @@ class Provider(pulumi.ProviderResource):
             if file_path is None:
                 file_path = _utilities.get_env('BYTEPLUS_FILE_PATH')
             __props__.__dict__["file_path"] = file_path
+            __props__.__dict__["no_proxy"] = no_proxy
             if profile is None:
                 profile = _utilities.get_env('BYTEPLUS_PROFILE')
             __props__.__dict__["profile"] = profile
+            __props__.__dict__["proxy_authorization"] = None if proxy_authorization is None else pulumi.Output.secret(proxy_authorization)
+            __props__.__dict__["proxy_include_domains"] = pulumi.Output.from_input(proxy_include_domains).apply(pulumi.runtime.to_json) if proxy_include_domains is not None else None
             if proxy_url is None:
                 proxy_url = _utilities.get_env('BYTEPLUS_PROXY_URL')
             __props__.__dict__["proxy_url"] = proxy_url
@@ -336,6 +396,8 @@ class Provider(pulumi.ProviderResource):
             if session_token is None:
                 session_token = _utilities.get_env('BYTEPLUS_SESSION_TOKEN')
             __props__.__dict__["session_token"] = session_token
+        secret_opts = pulumi.ResourceOptions(additional_secret_outputs=["proxyAuthorization"])
+        opts = pulumi.ResourceOptions.merge(opts, secret_opts)
         super(Provider, __self__).__init__(
             'bytepluscc',
             resource_name,
@@ -346,7 +408,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="accessKey")
     def access_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+        The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
         """
         return pulumi.get(self, "access_key")
 
@@ -362,23 +424,39 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="filePath")
     def file_path(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
         """
         return pulumi.get(self, "file_path")
+
+    @_builtins.property
+    @pulumi.getter(name="noProxy")
+    def no_proxy(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        """
+        return pulumi.get(self, "no_proxy")
 
     @_builtins.property
     @pulumi.getter
     def profile(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
         """
         return pulumi.get(self, "profile")
+
+    @_builtins.property
+    @pulumi.getter(name="proxyAuthorization")
+    def proxy_authorization(self) -> pulumi.Output[Optional[_builtins.str]]:
+        """
+        Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+        """
+        return pulumi.get(self, "proxy_authorization")
 
     @_builtins.property
     @pulumi.getter(name="proxyUrl")
     def proxy_url(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        PROXY URL for Byteplus Provider
+        HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
         """
         return pulumi.get(self, "proxy_url")
 
@@ -394,7 +472,7 @@ class Provider(pulumi.ProviderResource):
     @pulumi.getter(name="secretKey")
     def secret_key(self) -> pulumi.Output[Optional[_builtins.str]]:
         """
-        he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+        The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
         """
         return pulumi.get(self, "secret_key")
 

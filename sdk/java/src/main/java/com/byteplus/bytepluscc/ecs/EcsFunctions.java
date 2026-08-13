@@ -22,6 +22,8 @@ import com.byteplus.bytepluscc.ecs.inputs.GetLaunchTemplateArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetLaunchTemplatePlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetLaunchTemplateVersionArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetLaunchTemplateVersionPlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetScheduledInstanceArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetScheduledInstancePlainArgs;
 import com.byteplus.bytepluscc.ecs.outputs.GetCommandResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetCommandsResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetDeploymentSetResult;
@@ -40,6 +42,8 @@ import com.byteplus.bytepluscc.ecs.outputs.GetLaunchTemplateResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetLaunchTemplateVersionResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetLaunchTemplateVersionsResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetLaunchTemplatesResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetScheduledInstanceResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetScheduledInstancesResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -804,5 +808,89 @@ public final class EcsFunctions {
      */
     public static CompletableFuture<GetLaunchTemplatesResult> getLaunchTemplatesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getLaunchTemplates:getLaunchTemplates", TypeShape.of(GetLaunchTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static Output<GetScheduledInstanceResult> getScheduledInstance(GetScheduledInstanceArgs args) {
+        return getScheduledInstance(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static CompletableFuture<GetScheduledInstanceResult> getScheduledInstancePlain(GetScheduledInstancePlainArgs args) {
+        return getScheduledInstancePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static Output<GetScheduledInstanceResult> getScheduledInstance(GetScheduledInstanceArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getScheduledInstance:getScheduledInstance", TypeShape.of(GetScheduledInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static Output<GetScheduledInstanceResult> getScheduledInstance(GetScheduledInstanceArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getScheduledInstance:getScheduledInstance", TypeShape.of(GetScheduledInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static CompletableFuture<GetScheduledInstanceResult> getScheduledInstancePlain(GetScheduledInstancePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getScheduledInstance:getScheduledInstance", TypeShape.of(GetScheduledInstanceResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static Output<GetScheduledInstancesResult> getScheduledInstances() {
+        return getScheduledInstances(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static CompletableFuture<GetScheduledInstancesResult> getScheduledInstancesPlain() {
+        return getScheduledInstancesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static Output<GetScheduledInstancesResult> getScheduledInstances(InvokeArgs args) {
+        return getScheduledInstances(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static CompletableFuture<GetScheduledInstancesResult> getScheduledInstancesPlain(InvokeArgs args) {
+        return getScheduledInstancesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static Output<GetScheduledInstancesResult> getScheduledInstances(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getScheduledInstances:getScheduledInstances", TypeShape.of(GetScheduledInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static Output<GetScheduledInstancesResult> getScheduledInstances(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getScheduledInstances:getScheduledInstances", TypeShape.of(GetScheduledInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::ScheduledInstance
+     * 
+     */
+    public static CompletableFuture<GetScheduledInstancesResult> getScheduledInstancesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getScheduledInstances:getScheduledInstances", TypeShape.of(GetScheduledInstancesResult.class), args, Utilities.withVersion(options));
     }
 }

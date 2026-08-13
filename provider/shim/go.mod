@@ -3,7 +3,7 @@ module github.com/byteplus-sdk/terraform-provider-bytepluscc/shim
 go 1.25.8
 
 require (
-	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.50
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.52
 	github.com/hashicorp/terraform-plugin-framework v1.19.0
 )
 
@@ -27,8 +27,10 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/volcengine/volc-sdk-golang v1.0.23 // indirect
-	github.com/volcengine/volcengine-go-sdk v1.2.12 // indirect
+	github.com/volcengine/volcengine-go-sdk v1.2.36 // indirect
+	golang.org/x/net v0.52.0 // indirect
 	golang.org/x/sys v0.43.0 // indirect
+	golang.org/x/text v0.36.0 // indirect
 	google.golang.org/genproto/googleapis/rpc v0.0.0-20251202230838-ff82c1b0f217 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 )

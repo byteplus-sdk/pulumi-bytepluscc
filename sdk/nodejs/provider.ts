@@ -28,7 +28,7 @@ export class Provider extends pulumi.ProviderResource {
     }
 
     /**
-     * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+     * The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
      */
     declare public readonly accessKey: pulumi.Output<string | undefined>;
     /**
@@ -36,15 +36,23 @@ export class Provider extends pulumi.ProviderResource {
      */
     declare public readonly customerHeaders: pulumi.Output<string | undefined>;
     /**
-     * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     * The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
      */
     declare public readonly filePath: pulumi.Output<string | undefined>;
     /**
-     * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     */
+    declare public readonly noProxy: pulumi.Output<string | undefined>;
+    /**
+     * The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
      */
     declare public readonly profile: pulumi.Output<string | undefined>;
     /**
-     * PROXY URL for Byteplus Provider
+     * Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+     */
+    declare public readonly proxyAuthorization: pulumi.Output<string | undefined>;
+    /**
+     * HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
      */
     declare public readonly proxyUrl: pulumi.Output<string | undefined>;
     /**
@@ -52,7 +60,7 @@ export class Provider extends pulumi.ProviderResource {
      */
     declare public readonly region: pulumi.Output<string | undefined>;
     /**
-     * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+     * The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
      */
     declare public readonly secretKey: pulumi.Output<string | undefined>;
     /**
@@ -77,13 +85,18 @@ export class Provider extends pulumi.ProviderResource {
             resourceInputs["disableSsl"] = pulumi.output((args?.disableSsl) ?? utilities.getEnvBoolean("BYTEPLUS_DISABLE_SSL")).apply(JSON.stringify);
             resourceInputs["endpoints"] = pulumi.output(args?.endpoints).apply(JSON.stringify);
             resourceInputs["filePath"] = (args?.filePath) ?? utilities.getEnv("BYTEPLUS_FILE_PATH");
+            resourceInputs["noProxy"] = args?.noProxy;
             resourceInputs["profile"] = (args?.profile) ?? utilities.getEnv("BYTEPLUS_PROFILE");
+            resourceInputs["proxyAuthorization"] = args?.proxyAuthorization ? pulumi.secret(args.proxyAuthorization) : undefined;
+            resourceInputs["proxyIncludeDomains"] = pulumi.output(args?.proxyIncludeDomains).apply(JSON.stringify);
             resourceInputs["proxyUrl"] = (args?.proxyUrl) ?? utilities.getEnv("BYTEPLUS_PROXY_URL");
             resourceInputs["region"] = (args?.region) ?? utilities.getEnv("BYTEPLUS_REGION");
             resourceInputs["secretKey"] = (args?.secretKey) ?? utilities.getEnv("BYTEPLUS_SECRET_KEY");
             resourceInputs["sessionToken"] = (args?.sessionToken) ?? utilities.getEnv("BYTEPLUS_SESSION_TOKEN");
         }
         opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts);
+        const secretOpts = { additionalSecretOutputs: ["proxyAuthorization"] };
+        opts = pulumi.mergeOptions(opts, secretOpts);
         super(Provider.__pulumiType, name, resourceInputs, opts);
     }
 
@@ -102,11 +115,11 @@ export class Provider extends pulumi.ProviderResource {
  */
 export interface ProviderArgs {
     /**
-     * The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+     * The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
      */
     accessKey?: pulumi.Input<string | undefined>;
     /**
-     * An `assumeRole` block (documented below). Only one `assumeRole` block may be in the configuration.
+     * An `assumeRole` block that uses the selected source credentials to obtain target-role credentials. Only one `assumeRole` block may be in the configuration.
      */
     assumeRole?: pulumi.Input<inputs.ProviderAssumeRole | undefined>;
     /**
@@ -122,15 +135,27 @@ export interface ProviderArgs {
      */
     endpoints?: pulumi.Input<inputs.ProviderEndpoints | undefined>;
     /**
-     * The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+     * The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
      */
     filePath?: pulumi.Input<string | undefined>;
     /**
-     * The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+     * Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+     */
+    noProxy?: pulumi.Input<string | undefined>;
+    /**
+     * The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
      */
     profile?: pulumi.Input<string | undefined>;
     /**
-     * PROXY URL for Byteplus Provider
+     * Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+     */
+    proxyAuthorization?: pulumi.Input<string | undefined>;
+    /**
+     * Hosts, domain suffixes, IP addresses, or CIDR ranges that use proxyUrl while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+     */
+    proxyIncludeDomains?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
+     * HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
      */
     proxyUrl?: pulumi.Input<string | undefined>;
     /**
@@ -138,7 +163,7 @@ export interface ProviderArgs {
      */
     region?: pulumi.Input<string | undefined>;
     /**
-     * he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+     * The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
      */
     secretKey?: pulumi.Input<string | undefined>;
     /**

@@ -20,7 +20,7 @@ namespace Byteplus.Pulumi.Bytepluscc
     public partial class Provider : global::Pulumi.ProviderResource
     {
         /// <summary>
-        /// The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+        /// The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
         /// </summary>
         [Output("accessKey")]
         public Output<string?> AccessKey { get; private set; } = null!;
@@ -32,19 +32,31 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Output<string?> CustomerHeaders { get; private set; } = null!;
 
         /// <summary>
-        /// The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        /// The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
         /// </summary>
         [Output("filePath")]
         public Output<string?> FilePath { get; private set; } = null!;
 
         /// <summary>
-        /// The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        /// </summary>
+        [Output("noProxy")]
+        public Output<string?> NoProxy { get; private set; } = null!;
+
+        /// <summary>
+        /// The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
         /// </summary>
         [Output("profile")]
         public Output<string?> Profile { get; private set; } = null!;
 
         /// <summary>
-        /// PROXY URL for Byteplus Provider
+        /// Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic &lt;token&gt;`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+        /// </summary>
+        [Output("proxyAuthorization")]
+        public Output<string?> ProxyAuthorization { get; private set; } = null!;
+
+        /// <summary>
+        /// HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
         /// </summary>
         [Output("proxyUrl")]
         public Output<string?> ProxyUrl { get; private set; } = null!;
@@ -56,7 +68,7 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Output<string?> Region { get; private set; } = null!;
 
         /// <summary>
-        /// he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+        /// The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
         /// </summary>
         [Output("secretKey")]
         public Output<string?> SecretKey { get; private set; } = null!;
@@ -86,6 +98,10 @@ namespace Byteplus.Pulumi.Bytepluscc
             {
                 Version = Utilities.Version,
                 PluginDownloadURL = "github://api.github.com/byteplus-sdk",
+                AdditionalSecretOutputs =
+                {
+                    "proxyAuthorization",
+                },
             };
             var merged = CustomResourceOptions.Merge(defaultOptions, options);
             // Override the ID if one was specified for consistency with other language SDKs.
@@ -103,13 +119,13 @@ namespace Byteplus.Pulumi.Bytepluscc
     public sealed class ProviderArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+        /// The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
         /// </summary>
         [Input("accessKey")]
         public Input<string>? AccessKey { get; set; }
 
         /// <summary>
-        /// An `AssumeRole` block (documented below). Only one `AssumeRole` block may be in the configuration.
+        /// An `AssumeRole` block that uses the selected source credentials to obtain target-role credentials. Only one `AssumeRole` block may be in the configuration.
         /// </summary>
         [Input("assumeRole", json: true)]
         public Input<Inputs.ProviderAssumeRoleArgs>? AssumeRole { get; set; }
@@ -133,19 +149,53 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Input<Inputs.ProviderEndpointsArgs>? Endpoints { get; set; }
 
         /// <summary>
-        /// The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        /// The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
         /// </summary>
         [Input("filePath")]
         public Input<string>? FilePath { get; set; }
 
         /// <summary>
-        /// The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        /// Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        /// </summary>
+        [Input("noProxy")]
+        public Input<string>? NoProxy { get; set; }
+
+        /// <summary>
+        /// The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
         /// </summary>
         [Input("profile")]
         public Input<string>? Profile { get; set; }
 
+        [Input("proxyAuthorization")]
+        private Input<string>? _proxyAuthorization;
+
         /// <summary>
-        /// PROXY URL for Byteplus Provider
+        /// Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic &lt;token&gt;`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+        /// </summary>
+        public Input<string>? ProxyAuthorization
+        {
+            get => _proxyAuthorization;
+            set
+            {
+                var emptySecret = Output.CreateSecret(0);
+                _proxyAuthorization = Output.Tuple<Input<string>?, int>(value, emptySecret).Apply(t => t.Item1);
+            }
+        }
+
+        [Input("proxyIncludeDomains", json: true)]
+        private InputList<string>? _proxyIncludeDomains;
+
+        /// <summary>
+        /// Hosts, domain suffixes, IP addresses, or CIDR ranges that use ProxyUrl while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+        /// </summary>
+        public InputList<string> ProxyIncludeDomains
+        {
+            get => _proxyIncludeDomains ?? (_proxyIncludeDomains = new InputList<string>());
+            set => _proxyIncludeDomains = value;
+        }
+
+        /// <summary>
+        /// HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
         /// </summary>
         [Input("proxyUrl")]
         public Input<string>? ProxyUrl { get; set; }
@@ -157,7 +207,7 @@ namespace Byteplus.Pulumi.Bytepluscc
         public Input<string>? Region { get; set; }
 
         /// <summary>
-        /// he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+        /// The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
         /// </summary>
         [Input("secretKey")]
         public Input<string>? SecretKey { get; set; }

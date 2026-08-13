@@ -2270,6 +2270,325 @@ func (o ChildCertInstanceTagArrayOutput) Index(i pulumi.IntInput) ChildCertInsta
 	}).(ChildCertInstanceTagOutput)
 }
 
+type OrganizationInfoContact struct {
+	// Contact person's email address.
+	Email *string `pulumi:"email"`
+	// Contact person's given name.
+	FirstName *string `pulumi:"firstName"`
+	// Contact person's ID number.
+	IdCardNo *string `pulumi:"idCardNo"`
+	// Contact person's surname.
+	LastName *string `pulumi:"lastName"`
+	// Contact person's phone number.
+	Phone *string `pulumi:"phone"`
+}
+
+// OrganizationInfoContactInput is an input type that accepts OrganizationInfoContactArgs and OrganizationInfoContactOutput values.
+// You can construct a concrete instance of `OrganizationInfoContactInput` via:
+//
+//	OrganizationInfoContactArgs{...}
+type OrganizationInfoContactInput interface {
+	pulumi.Input
+
+	ToOrganizationInfoContactOutput() OrganizationInfoContactOutput
+	ToOrganizationInfoContactOutputWithContext(context.Context) OrganizationInfoContactOutput
+}
+
+type OrganizationInfoContactArgs struct {
+	// Contact person's email address.
+	Email pulumi.StringPtrInput `pulumi:"email"`
+	// Contact person's given name.
+	FirstName pulumi.StringPtrInput `pulumi:"firstName"`
+	// Contact person's ID number.
+	IdCardNo pulumi.StringPtrInput `pulumi:"idCardNo"`
+	// Contact person's surname.
+	LastName pulumi.StringPtrInput `pulumi:"lastName"`
+	// Contact person's phone number.
+	Phone pulumi.StringPtrInput `pulumi:"phone"`
+}
+
+func (OrganizationInfoContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OrganizationInfoContact)(nil)).Elem()
+}
+
+func (i OrganizationInfoContactArgs) ToOrganizationInfoContactOutput() OrganizationInfoContactOutput {
+	return i.ToOrganizationInfoContactOutputWithContext(context.Background())
+}
+
+func (i OrganizationInfoContactArgs) ToOrganizationInfoContactOutputWithContext(ctx context.Context) OrganizationInfoContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationInfoContactOutput)
+}
+
+func (i OrganizationInfoContactArgs) ToOrganizationInfoContactPtrOutput() OrganizationInfoContactPtrOutput {
+	return i.ToOrganizationInfoContactPtrOutputWithContext(context.Background())
+}
+
+func (i OrganizationInfoContactArgs) ToOrganizationInfoContactPtrOutputWithContext(ctx context.Context) OrganizationInfoContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationInfoContactOutput).ToOrganizationInfoContactPtrOutputWithContext(ctx)
+}
+
+// OrganizationInfoContactPtrInput is an input type that accepts OrganizationInfoContactArgs, OrganizationInfoContactPtr and OrganizationInfoContactPtrOutput values.
+// You can construct a concrete instance of `OrganizationInfoContactPtrInput` via:
+//
+//	        OrganizationInfoContactArgs{...}
+//
+//	or:
+//
+//	        nil
+type OrganizationInfoContactPtrInput interface {
+	pulumi.Input
+
+	ToOrganizationInfoContactPtrOutput() OrganizationInfoContactPtrOutput
+	ToOrganizationInfoContactPtrOutputWithContext(context.Context) OrganizationInfoContactPtrOutput
+}
+
+type organizationInfoContactPtrType OrganizationInfoContactArgs
+
+func OrganizationInfoContactPtr(v *OrganizationInfoContactArgs) OrganizationInfoContactPtrInput {
+	return (*organizationInfoContactPtrType)(v)
+}
+
+func (*organizationInfoContactPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**OrganizationInfoContact)(nil)).Elem()
+}
+
+func (i *organizationInfoContactPtrType) ToOrganizationInfoContactPtrOutput() OrganizationInfoContactPtrOutput {
+	return i.ToOrganizationInfoContactPtrOutputWithContext(context.Background())
+}
+
+func (i *organizationInfoContactPtrType) ToOrganizationInfoContactPtrOutputWithContext(ctx context.Context) OrganizationInfoContactPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationInfoContactPtrOutput)
+}
+
+type OrganizationInfoContactOutput struct{ *pulumi.OutputState }
+
+func (OrganizationInfoContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OrganizationInfoContact)(nil)).Elem()
+}
+
+func (o OrganizationInfoContactOutput) ToOrganizationInfoContactOutput() OrganizationInfoContactOutput {
+	return o
+}
+
+func (o OrganizationInfoContactOutput) ToOrganizationInfoContactOutputWithContext(ctx context.Context) OrganizationInfoContactOutput {
+	return o
+}
+
+func (o OrganizationInfoContactOutput) ToOrganizationInfoContactPtrOutput() OrganizationInfoContactPtrOutput {
+	return o.ToOrganizationInfoContactPtrOutputWithContext(context.Background())
+}
+
+func (o OrganizationInfoContactOutput) ToOrganizationInfoContactPtrOutputWithContext(ctx context.Context) OrganizationInfoContactPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v OrganizationInfoContact) *OrganizationInfoContact {
+		return &v
+	}).(OrganizationInfoContactPtrOutput)
+}
+
+// Contact person's email address.
+func (o OrganizationInfoContactOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationInfoContact) *string { return v.Email }).(pulumi.StringPtrOutput)
+}
+
+// Contact person's given name.
+func (o OrganizationInfoContactOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationInfoContact) *string { return v.FirstName }).(pulumi.StringPtrOutput)
+}
+
+// Contact person's ID number.
+func (o OrganizationInfoContactOutput) IdCardNo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationInfoContact) *string { return v.IdCardNo }).(pulumi.StringPtrOutput)
+}
+
+// Contact person's surname.
+func (o OrganizationInfoContactOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationInfoContact) *string { return v.LastName }).(pulumi.StringPtrOutput)
+}
+
+// Contact person's phone number.
+func (o OrganizationInfoContactOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationInfoContact) *string { return v.Phone }).(pulumi.StringPtrOutput)
+}
+
+type OrganizationInfoContactPtrOutput struct{ *pulumi.OutputState }
+
+func (OrganizationInfoContactPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**OrganizationInfoContact)(nil)).Elem()
+}
+
+func (o OrganizationInfoContactPtrOutput) ToOrganizationInfoContactPtrOutput() OrganizationInfoContactPtrOutput {
+	return o
+}
+
+func (o OrganizationInfoContactPtrOutput) ToOrganizationInfoContactPtrOutputWithContext(ctx context.Context) OrganizationInfoContactPtrOutput {
+	return o
+}
+
+func (o OrganizationInfoContactPtrOutput) Elem() OrganizationInfoContactOutput {
+	return o.ApplyT(func(v *OrganizationInfoContact) OrganizationInfoContact {
+		if v != nil {
+			return *v
+		}
+		var ret OrganizationInfoContact
+		return ret
+	}).(OrganizationInfoContactOutput)
+}
+
+// Contact person's email address.
+func (o OrganizationInfoContactPtrOutput) Email() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationInfoContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Email
+	}).(pulumi.StringPtrOutput)
+}
+
+// Contact person's given name.
+func (o OrganizationInfoContactPtrOutput) FirstName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationInfoContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FirstName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Contact person's ID number.
+func (o OrganizationInfoContactPtrOutput) IdCardNo() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationInfoContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.IdCardNo
+	}).(pulumi.StringPtrOutput)
+}
+
+// Contact person's surname.
+func (o OrganizationInfoContactPtrOutput) LastName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationInfoContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LastName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Contact person's phone number.
+func (o OrganizationInfoContactPtrOutput) Phone() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *OrganizationInfoContact) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Phone
+	}).(pulumi.StringPtrOutput)
+}
+
+type OrganizationInfoTag struct {
+	// Tag key.
+	Key *string `pulumi:"key"`
+	// Tag value.
+	Value *string `pulumi:"value"`
+}
+
+// OrganizationInfoTagInput is an input type that accepts OrganizationInfoTagArgs and OrganizationInfoTagOutput values.
+// You can construct a concrete instance of `OrganizationInfoTagInput` via:
+//
+//	OrganizationInfoTagArgs{...}
+type OrganizationInfoTagInput interface {
+	pulumi.Input
+
+	ToOrganizationInfoTagOutput() OrganizationInfoTagOutput
+	ToOrganizationInfoTagOutputWithContext(context.Context) OrganizationInfoTagOutput
+}
+
+type OrganizationInfoTagArgs struct {
+	// Tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (OrganizationInfoTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*OrganizationInfoTag)(nil)).Elem()
+}
+
+func (i OrganizationInfoTagArgs) ToOrganizationInfoTagOutput() OrganizationInfoTagOutput {
+	return i.ToOrganizationInfoTagOutputWithContext(context.Background())
+}
+
+func (i OrganizationInfoTagArgs) ToOrganizationInfoTagOutputWithContext(ctx context.Context) OrganizationInfoTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationInfoTagOutput)
+}
+
+// OrganizationInfoTagArrayInput is an input type that accepts OrganizationInfoTagArray and OrganizationInfoTagArrayOutput values.
+// You can construct a concrete instance of `OrganizationInfoTagArrayInput` via:
+//
+//	OrganizationInfoTagArray{ OrganizationInfoTagArgs{...} }
+type OrganizationInfoTagArrayInput interface {
+	pulumi.Input
+
+	ToOrganizationInfoTagArrayOutput() OrganizationInfoTagArrayOutput
+	ToOrganizationInfoTagArrayOutputWithContext(context.Context) OrganizationInfoTagArrayOutput
+}
+
+type OrganizationInfoTagArray []OrganizationInfoTagInput
+
+func (OrganizationInfoTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OrganizationInfoTag)(nil)).Elem()
+}
+
+func (i OrganizationInfoTagArray) ToOrganizationInfoTagArrayOutput() OrganizationInfoTagArrayOutput {
+	return i.ToOrganizationInfoTagArrayOutputWithContext(context.Background())
+}
+
+func (i OrganizationInfoTagArray) ToOrganizationInfoTagArrayOutputWithContext(ctx context.Context) OrganizationInfoTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(OrganizationInfoTagArrayOutput)
+}
+
+type OrganizationInfoTagOutput struct{ *pulumi.OutputState }
+
+func (OrganizationInfoTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*OrganizationInfoTag)(nil)).Elem()
+}
+
+func (o OrganizationInfoTagOutput) ToOrganizationInfoTagOutput() OrganizationInfoTagOutput {
+	return o
+}
+
+func (o OrganizationInfoTagOutput) ToOrganizationInfoTagOutputWithContext(ctx context.Context) OrganizationInfoTagOutput {
+	return o
+}
+
+// Tag key.
+func (o OrganizationInfoTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationInfoTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value.
+func (o OrganizationInfoTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v OrganizationInfoTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type OrganizationInfoTagArrayOutput struct{ *pulumi.OutputState }
+
+func (OrganizationInfoTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]OrganizationInfoTag)(nil)).Elem()
+}
+
+func (o OrganizationInfoTagArrayOutput) ToOrganizationInfoTagArrayOutput() OrganizationInfoTagArrayOutput {
+	return o
+}
+
+func (o OrganizationInfoTagArrayOutput) ToOrganizationInfoTagArrayOutputWithContext(ctx context.Context) OrganizationInfoTagArrayOutput {
+	return o
+}
+
+func (o OrganizationInfoTagArrayOutput) Index(i pulumi.IntInput) OrganizationInfoTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) OrganizationInfoTag {
+		return vs[0].([]OrganizationInfoTag)[vs[1].(int)]
+	}).(OrganizationInfoTagOutput)
+}
+
 type GetChildCertInstanceCertificateDetail struct {
 	// Certificate chain (PEM format). The certificate chain consists of the leaf certificate, intermediate certificate, and root certificate
 	Chains []string `pulumi:"chains"`
@@ -3284,6 +3603,200 @@ func (o GetChildCertInstanceTagArrayOutput) Index(i pulumi.IntInput) GetChildCer
 	}).(GetChildCertInstanceTagOutput)
 }
 
+type GetOrganizationInfoContact struct {
+	// Contact person's email address.
+	Email string `pulumi:"email"`
+	// Contact person's given name.
+	FirstName string `pulumi:"firstName"`
+	// Contact person's ID number.
+	IdCardNo string `pulumi:"idCardNo"`
+	// Contact person's surname.
+	LastName string `pulumi:"lastName"`
+	// Contact person's phone number.
+	Phone string `pulumi:"phone"`
+}
+
+// GetOrganizationInfoContactInput is an input type that accepts GetOrganizationInfoContactArgs and GetOrganizationInfoContactOutput values.
+// You can construct a concrete instance of `GetOrganizationInfoContactInput` via:
+//
+//	GetOrganizationInfoContactArgs{...}
+type GetOrganizationInfoContactInput interface {
+	pulumi.Input
+
+	ToGetOrganizationInfoContactOutput() GetOrganizationInfoContactOutput
+	ToGetOrganizationInfoContactOutputWithContext(context.Context) GetOrganizationInfoContactOutput
+}
+
+type GetOrganizationInfoContactArgs struct {
+	// Contact person's email address.
+	Email pulumi.StringInput `pulumi:"email"`
+	// Contact person's given name.
+	FirstName pulumi.StringInput `pulumi:"firstName"`
+	// Contact person's ID number.
+	IdCardNo pulumi.StringInput `pulumi:"idCardNo"`
+	// Contact person's surname.
+	LastName pulumi.StringInput `pulumi:"lastName"`
+	// Contact person's phone number.
+	Phone pulumi.StringInput `pulumi:"phone"`
+}
+
+func (GetOrganizationInfoContactArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationInfoContact)(nil)).Elem()
+}
+
+func (i GetOrganizationInfoContactArgs) ToGetOrganizationInfoContactOutput() GetOrganizationInfoContactOutput {
+	return i.ToGetOrganizationInfoContactOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationInfoContactArgs) ToGetOrganizationInfoContactOutputWithContext(ctx context.Context) GetOrganizationInfoContactOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationInfoContactOutput)
+}
+
+type GetOrganizationInfoContactOutput struct{ *pulumi.OutputState }
+
+func (GetOrganizationInfoContactOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationInfoContact)(nil)).Elem()
+}
+
+func (o GetOrganizationInfoContactOutput) ToGetOrganizationInfoContactOutput() GetOrganizationInfoContactOutput {
+	return o
+}
+
+func (o GetOrganizationInfoContactOutput) ToGetOrganizationInfoContactOutputWithContext(ctx context.Context) GetOrganizationInfoContactOutput {
+	return o
+}
+
+// Contact person's email address.
+func (o GetOrganizationInfoContactOutput) Email() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationInfoContact) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// Contact person's given name.
+func (o GetOrganizationInfoContactOutput) FirstName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationInfoContact) string { return v.FirstName }).(pulumi.StringOutput)
+}
+
+// Contact person's ID number.
+func (o GetOrganizationInfoContactOutput) IdCardNo() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationInfoContact) string { return v.IdCardNo }).(pulumi.StringOutput)
+}
+
+// Contact person's surname.
+func (o GetOrganizationInfoContactOutput) LastName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationInfoContact) string { return v.LastName }).(pulumi.StringOutput)
+}
+
+// Contact person's phone number.
+func (o GetOrganizationInfoContactOutput) Phone() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationInfoContact) string { return v.Phone }).(pulumi.StringOutput)
+}
+
+type GetOrganizationInfoTag struct {
+	// Tag key.
+	Key string `pulumi:"key"`
+	// Tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetOrganizationInfoTagInput is an input type that accepts GetOrganizationInfoTagArgs and GetOrganizationInfoTagOutput values.
+// You can construct a concrete instance of `GetOrganizationInfoTagInput` via:
+//
+//	GetOrganizationInfoTagArgs{...}
+type GetOrganizationInfoTagInput interface {
+	pulumi.Input
+
+	ToGetOrganizationInfoTagOutput() GetOrganizationInfoTagOutput
+	ToGetOrganizationInfoTagOutputWithContext(context.Context) GetOrganizationInfoTagOutput
+}
+
+type GetOrganizationInfoTagArgs struct {
+	// Tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetOrganizationInfoTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationInfoTag)(nil)).Elem()
+}
+
+func (i GetOrganizationInfoTagArgs) ToGetOrganizationInfoTagOutput() GetOrganizationInfoTagOutput {
+	return i.ToGetOrganizationInfoTagOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationInfoTagArgs) ToGetOrganizationInfoTagOutputWithContext(ctx context.Context) GetOrganizationInfoTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationInfoTagOutput)
+}
+
+// GetOrganizationInfoTagArrayInput is an input type that accepts GetOrganizationInfoTagArray and GetOrganizationInfoTagArrayOutput values.
+// You can construct a concrete instance of `GetOrganizationInfoTagArrayInput` via:
+//
+//	GetOrganizationInfoTagArray{ GetOrganizationInfoTagArgs{...} }
+type GetOrganizationInfoTagArrayInput interface {
+	pulumi.Input
+
+	ToGetOrganizationInfoTagArrayOutput() GetOrganizationInfoTagArrayOutput
+	ToGetOrganizationInfoTagArrayOutputWithContext(context.Context) GetOrganizationInfoTagArrayOutput
+}
+
+type GetOrganizationInfoTagArray []GetOrganizationInfoTagInput
+
+func (GetOrganizationInfoTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOrganizationInfoTag)(nil)).Elem()
+}
+
+func (i GetOrganizationInfoTagArray) ToGetOrganizationInfoTagArrayOutput() GetOrganizationInfoTagArrayOutput {
+	return i.ToGetOrganizationInfoTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetOrganizationInfoTagArray) ToGetOrganizationInfoTagArrayOutputWithContext(ctx context.Context) GetOrganizationInfoTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetOrganizationInfoTagArrayOutput)
+}
+
+type GetOrganizationInfoTagOutput struct{ *pulumi.OutputState }
+
+func (GetOrganizationInfoTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetOrganizationInfoTag)(nil)).Elem()
+}
+
+func (o GetOrganizationInfoTagOutput) ToGetOrganizationInfoTagOutput() GetOrganizationInfoTagOutput {
+	return o
+}
+
+func (o GetOrganizationInfoTagOutput) ToGetOrganizationInfoTagOutputWithContext(ctx context.Context) GetOrganizationInfoTagOutput {
+	return o
+}
+
+// Tag key.
+func (o GetOrganizationInfoTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationInfoTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value.
+func (o GetOrganizationInfoTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetOrganizationInfoTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetOrganizationInfoTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetOrganizationInfoTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetOrganizationInfoTag)(nil)).Elem()
+}
+
+func (o GetOrganizationInfoTagArrayOutput) ToGetOrganizationInfoTagArrayOutput() GetOrganizationInfoTagArrayOutput {
+	return o
+}
+
+func (o GetOrganizationInfoTagArrayOutput) ToGetOrganizationInfoTagArrayOutputWithContext(ctx context.Context) GetOrganizationInfoTagArrayOutput {
+	return o
+}
+
+func (o GetOrganizationInfoTagArrayOutput) Index(i pulumi.IntInput) GetOrganizationInfoTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetOrganizationInfoTag {
+		return vs[0].([]GetOrganizationInfoTag)[vs[1].(int)]
+	}).(GetOrganizationInfoTagOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ChildCertInstanceCertificateDetailInput)(nil)).Elem(), ChildCertInstanceCertificateDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChildCertInstanceCertificateDetailPtrInput)(nil)).Elem(), ChildCertInstanceCertificateDetailArgs{})
@@ -3305,6 +3818,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*ChildCertInstanceOptionsPtrInput)(nil)).Elem(), ChildCertInstanceOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChildCertInstanceTagInput)(nil)).Elem(), ChildCertInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*ChildCertInstanceTagArrayInput)(nil)).Elem(), ChildCertInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationInfoContactInput)(nil)).Elem(), OrganizationInfoContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationInfoContactPtrInput)(nil)).Elem(), OrganizationInfoContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationInfoTagInput)(nil)).Elem(), OrganizationInfoTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*OrganizationInfoTagArrayInput)(nil)).Elem(), OrganizationInfoTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChildCertInstanceCertificateDetailInput)(nil)).Elem(), GetChildCertInstanceCertificateDetailArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChildCertInstanceCertificateDetailIssuerInput)(nil)).Elem(), GetChildCertInstanceCertificateDetailIssuerArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChildCertInstanceCertificateDetailSubjectInput)(nil)).Elem(), GetChildCertInstanceCertificateDetailSubjectArgs{})
@@ -3316,6 +3833,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChildCertInstanceOptionsInput)(nil)).Elem(), GetChildCertInstanceOptionsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChildCertInstanceTagInput)(nil)).Elem(), GetChildCertInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetChildCertInstanceTagArrayInput)(nil)).Elem(), GetChildCertInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationInfoContactInput)(nil)).Elem(), GetOrganizationInfoContactArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationInfoTagInput)(nil)).Elem(), GetOrganizationInfoTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetOrganizationInfoTagArrayInput)(nil)).Elem(), GetOrganizationInfoTagArray{})
 	pulumi.RegisterOutputType(ChildCertInstanceCertificateDetailOutput{})
 	pulumi.RegisterOutputType(ChildCertInstanceCertificateDetailPtrOutput{})
 	pulumi.RegisterOutputType(ChildCertInstanceCertificateDetailIssuerOutput{})
@@ -3336,6 +3856,10 @@ func init() {
 	pulumi.RegisterOutputType(ChildCertInstanceOptionsPtrOutput{})
 	pulumi.RegisterOutputType(ChildCertInstanceTagOutput{})
 	pulumi.RegisterOutputType(ChildCertInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(OrganizationInfoContactOutput{})
+	pulumi.RegisterOutputType(OrganizationInfoContactPtrOutput{})
+	pulumi.RegisterOutputType(OrganizationInfoTagOutput{})
+	pulumi.RegisterOutputType(OrganizationInfoTagArrayOutput{})
 	pulumi.RegisterOutputType(GetChildCertInstanceCertificateDetailOutput{})
 	pulumi.RegisterOutputType(GetChildCertInstanceCertificateDetailIssuerOutput{})
 	pulumi.RegisterOutputType(GetChildCertInstanceCertificateDetailSubjectOutput{})
@@ -3347,4 +3871,7 @@ func init() {
 	pulumi.RegisterOutputType(GetChildCertInstanceOptionsOutput{})
 	pulumi.RegisterOutputType(GetChildCertInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetChildCertInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetOrganizationInfoContactOutput{})
+	pulumi.RegisterOutputType(GetOrganizationInfoTagOutput{})
+	pulumi.RegisterOutputType(GetOrganizationInfoTagArrayOutput{})
 }

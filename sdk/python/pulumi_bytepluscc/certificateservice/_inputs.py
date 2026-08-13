@@ -35,6 +35,10 @@ __all__ = [
     'ChildCertInstanceOptionsArgsDict',
     'ChildCertInstanceTagArgs',
     'ChildCertInstanceTagArgsDict',
+    'OrganizationInfoContactArgs',
+    'OrganizationInfoContactArgsDict',
+    'OrganizationInfoTagArgs',
+    'OrganizationInfoTagArgsDict',
 ]
 
 class ChildCertInstanceCertificateDetailArgsDict(TypedDict):
@@ -1299,6 +1303,164 @@ class ChildCertInstanceTagArgs:
     def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class OrganizationInfoContactArgsDict(TypedDict):
+    email: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Contact person's email address.
+    """
+    first_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Contact person's given name.
+    """
+    id_card_no: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Contact person's ID number.
+    """
+    last_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Contact person's surname.
+    """
+    phone: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Contact person's phone number.
+    """
+
+@pulumi.input_type
+class OrganizationInfoContactArgs:
+    def __init__(__self__, *,
+                 email: pulumi.Input[Optional[_builtins.str]] = None,
+                 first_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 id_card_no: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 phone: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] email: Contact person's email address.
+        :param pulumi.Input[_builtins.str] first_name: Contact person's given name.
+        :param pulumi.Input[_builtins.str] id_card_no: Contact person's ID number.
+        :param pulumi.Input[_builtins.str] last_name: Contact person's surname.
+        :param pulumi.Input[_builtins.str] phone: Contact person's phone number.
+        """
+        if email is not None:
+            pulumi.set(__self__, "email", email)
+        if first_name is not None:
+            pulumi.set(__self__, "first_name", first_name)
+        if id_card_no is not None:
+            pulumi.set(__self__, "id_card_no", id_card_no)
+        if last_name is not None:
+            pulumi.set(__self__, "last_name", last_name)
+        if phone is not None:
+            pulumi.set(__self__, "phone", phone)
+
+    @_builtins.property
+    @pulumi.getter
+    def email(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Contact person's email address.
+        """
+        return pulumi.get(self, "email")
+
+    @email.setter
+    def email(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "email", value)
+
+    @_builtins.property
+    @pulumi.getter(name="firstName")
+    def first_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Contact person's given name.
+        """
+        return pulumi.get(self, "first_name")
+
+    @first_name.setter
+    def first_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "first_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="idCardNo")
+    def id_card_no(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Contact person's ID number.
+        """
+        return pulumi.get(self, "id_card_no")
+
+    @id_card_no.setter
+    def id_card_no(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id_card_no", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lastName")
+    def last_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Contact person's surname.
+        """
+        return pulumi.get(self, "last_name")
+
+    @last_name.setter
+    def last_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "last_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def phone(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Contact person's phone number.
+        """
+        return pulumi.get(self, "phone")
+
+    @phone.setter
+    def phone(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "phone", value)
+
+
+class OrganizationInfoTagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag key.
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag value.
+    """
+
+@pulumi.input_type
+class OrganizationInfoTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: Tag key.
+        :param pulumi.Input[_builtins.str] value: Tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag value.
         """
         return pulumi.get(self, "value")
 

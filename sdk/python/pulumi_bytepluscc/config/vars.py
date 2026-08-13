@@ -24,14 +24,14 @@ class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def access_key(self) -> Optional[str]:
         """
-        The Access Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
+        The Access Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_ACCESS_KEY` environment variable
         """
         return __config__.get('accessKey') or _utilities.get_env('BYTEPLUS_ACCESS_KEY')
 
     @_builtins.property
     def assume_role(self) -> Optional[str]:
         """
-        An `assume_role` block (documented below). Only one `assume_role` block may be in the configuration.
+        An `assume_role` block that uses the selected source credentials to obtain target-role credentials. Only one `assume_role` block may be in the configuration.
         """
         return __config__.get('assumeRole')
 
@@ -59,21 +59,42 @@ class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def file_path(self) -> Optional[str]:
         """
-        The file path for Byteplus Provider configuration. It can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
+        The Profile configuration file path for Byteplus Provider. It defaults to `~/.byteplus/config.json` and can be sourced from the `BYTEPLUS_FILE_PATH` environment variable
         """
         return __config__.get('filePath') or _utilities.get_env('BYTEPLUS_FILE_PATH')
 
     @_builtins.property
+    def no_proxy(self) -> Optional[str]:
+        """
+        Comma-separated hosts, domain suffixes, IP addresses, or CIDR ranges that bypass proxy_url. It follows standard NO_PROXY matching and can be sourced from BYTEPLUS_NO_PROXY, NO_PROXY, or no_proxy.
+        """
+        return __config__.get('noProxy')
+
+    @_builtins.property
     def profile(self) -> Optional[str]:
         """
-        The profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable
+        The Profile for Byteplus Provider. It can be sourced from the `BYTEPLUS_PROFILE` environment variable. Complete AccessKey and SecretKey credentials take precedence when both sources are configured
         """
         return __config__.get('profile') or _utilities.get_env('BYTEPLUS_PROFILE')
 
     @_builtins.property
+    def proxy_authorization(self) -> Optional[str]:
+        """
+        Value of the Proxy-Authorization header for Cloud Control API proxy requests, for example `Basic <token>`. It can also be sourced from the `BYTEPLUS_PROXY_AUTHORIZATION` environment variable.
+        """
+        return __config__.get('proxyAuthorization')
+
+    @_builtins.property
+    def proxy_include_domains(self) -> Optional[str]:
+        """
+        Hosts, domain suffixes, IP addresses, or CIDR ranges that use proxy_url while all other destinations connect directly. It can be sourced as a comma-separated list from BYTEPLUS_PROXY_INCLUDE_DOMAINS and cannot be combined with no_proxy.
+        """
+        return __config__.get('proxyIncludeDomains')
+
+    @_builtins.property
     def proxy_url(self) -> Optional[str]:
         """
-        PROXY URL for Byteplus Provider
+        HTTP, HTTPS, SOCKS5, or SOCKS5H proxy URL for Cloud Control API requests. It can also be sourced from the `BYTEPLUS_PROXY_URL` environment variable.
         """
         return __config__.get('proxyUrl') or _utilities.get_env('BYTEPLUS_PROXY_URL')
 
@@ -87,7 +108,7 @@ class _ExportableConfig(types.ModuleType):
     @_builtins.property
     def secret_key(self) -> Optional[str]:
         """
-        he Secret Key for Byteplus Provider. It must be provided, but it can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
+        The Secret Key for Byteplus Provider. It can also be sourced from the `BYTEPLUS_SECRET_KEY` environment variable
         """
         return __config__.get('secretKey') or _utilities.get_env('BYTEPLUS_SECRET_KEY')
 

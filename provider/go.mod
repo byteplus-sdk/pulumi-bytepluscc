@@ -60,7 +60,7 @@ require (
 	github.com/blang/semver v3.5.1+incompatible // indirect
 	github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.68 // indirect
 	github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 // indirect
-	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.50 // indirect
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.52 // indirect
 	github.com/cenkalti/backoff/v5 v5.0.3 // indirect
 	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/charmbracelet/bubbles v1.0.0 // indirect
@@ -208,7 +208,7 @@ require (
 	github.com/vmihailenco/msgpack/v5 v5.4.1 // indirect
 	github.com/vmihailenco/tagparser/v2 v2.0.0 // indirect
 	github.com/volcengine/volc-sdk-golang v1.0.23 // indirect
-	github.com/volcengine/volcengine-go-sdk v1.2.12 // indirect
+	github.com/volcengine/volcengine-go-sdk v1.2.36 // indirect
 	github.com/xanzy/ssh-agent v0.3.3 // indirect
 	github.com/xo/terminfo v0.0.0-20220910002029-abceb7e1c41e // indirect
 	github.com/yuin/goldmark v1.7.13 // indirect

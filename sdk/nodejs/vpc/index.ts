@@ -75,6 +75,26 @@ export const getHaVips: typeof import("./getHaVips").getHaVips = null as any;
 export const getHaVipsOutput: typeof import("./getHaVips").getHaVipsOutput = null as any;
 utilities.lazyLoad(exports, ["getHaVips","getHaVipsOutput"], () => require("./getHaVips"));
 
+export { GetIpPoolArgs, GetIpPoolResult, GetIpPoolOutputArgs } from "./getIpPool";
+export const getIpPool: typeof import("./getIpPool").getIpPool = null as any;
+export const getIpPoolOutput: typeof import("./getIpPool").getIpPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getIpPool","getIpPoolOutput"], () => require("./getIpPool"));
+
+export { GetIpPoolCidrBlockArgs, GetIpPoolCidrBlockResult, GetIpPoolCidrBlockOutputArgs } from "./getIpPoolCidrBlock";
+export const getIpPoolCidrBlock: typeof import("./getIpPoolCidrBlock").getIpPoolCidrBlock = null as any;
+export const getIpPoolCidrBlockOutput: typeof import("./getIpPoolCidrBlock").getIpPoolCidrBlockOutput = null as any;
+utilities.lazyLoad(exports, ["getIpPoolCidrBlock","getIpPoolCidrBlockOutput"], () => require("./getIpPoolCidrBlock"));
+
+export { GetIpPoolCidrBlocksResult } from "./getIpPoolCidrBlocks";
+export const getIpPoolCidrBlocks: typeof import("./getIpPoolCidrBlocks").getIpPoolCidrBlocks = null as any;
+export const getIpPoolCidrBlocksOutput: typeof import("./getIpPoolCidrBlocks").getIpPoolCidrBlocksOutput = null as any;
+utilities.lazyLoad(exports, ["getIpPoolCidrBlocks","getIpPoolCidrBlocksOutput"], () => require("./getIpPoolCidrBlocks"));
+
+export { GetIpPoolsResult } from "./getIpPools";
+export const getIpPools: typeof import("./getIpPools").getIpPools = null as any;
+export const getIpPoolsOutput: typeof import("./getIpPools").getIpPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getIpPools","getIpPoolsOutput"], () => require("./getIpPools"));
+
 export { GetIpv6AddressBandwidthArgs, GetIpv6AddressBandwidthResult, GetIpv6AddressBandwidthOutputArgs } from "./getIpv6AddressBandwidth";
 export const getIpv6AddressBandwidth: typeof import("./getIpv6AddressBandwidth").getIpv6AddressBandwidth = null as any;
 export const getIpv6AddressBandwidthOutput: typeof import("./getIpv6AddressBandwidth").getIpv6AddressBandwidthOutput = null as any;
@@ -200,6 +220,16 @@ export type HaVip = import("./haVip").HaVip;
 export const HaVip: typeof import("./haVip").HaVip = null as any;
 utilities.lazyLoad(exports, ["HaVip"], () => require("./haVip"));
 
+export { IpPoolArgs, IpPoolState } from "./ipPool";
+export type IpPool = import("./ipPool").IpPool;
+export const IpPool: typeof import("./ipPool").IpPool = null as any;
+utilities.lazyLoad(exports, ["IpPool"], () => require("./ipPool"));
+
+export { IpPoolCidrBlockArgs, IpPoolCidrBlockState } from "./ipPoolCidrBlock";
+export type IpPoolCidrBlock = import("./ipPoolCidrBlock").IpPoolCidrBlock;
+export const IpPoolCidrBlock: typeof import("./ipPoolCidrBlock").IpPoolCidrBlock = null as any;
+utilities.lazyLoad(exports, ["IpPoolCidrBlock"], () => require("./ipPoolCidrBlock"));
+
 export { Ipv6AddressBandwidthArgs, Ipv6AddressBandwidthState } from "./ipv6AddressBandwidth";
 export type Ipv6AddressBandwidth = import("./ipv6AddressBandwidth").Ipv6AddressBandwidth;
 export const Ipv6AddressBandwidth: typeof import("./ipv6AddressBandwidth").Ipv6AddressBandwidth = null as any;
@@ -275,6 +305,10 @@ const _module = {
                 return new FlowLog(name, <any>undefined, { urn })
             case "bytepluscc:vpc/haVip:HaVip":
                 return new HaVip(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/ipPool:IpPool":
+                return new IpPool(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/ipPoolCidrBlock:IpPoolCidrBlock":
+                return new IpPoolCidrBlock(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth":
                 return new Ipv6AddressBandwidth(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipv6Gateway:Ipv6Gateway":
@@ -309,6 +343,8 @@ pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eip", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/eni", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/flowLog", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/haVip", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipPool", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipPoolCidrBlock", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv6AddressBandwidth", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv6Gateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/networkAcl", _module)

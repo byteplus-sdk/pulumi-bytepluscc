@@ -14,6 +14,10 @@ import com.byteplus.bytepluscc.vpc.inputs.GetFlowLogArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetFlowLogPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetHaVipArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetHaVipPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpPoolArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpPoolCidrBlockArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpPoolCidrBlockPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpPoolPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpv6AddressBandwidthArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpv6AddressBandwidthPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpv6GatewayArgs;
@@ -48,6 +52,10 @@ import com.byteplus.bytepluscc.vpc.outputs.GetFlowLogResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetFlowLogsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetHaVipResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetHaVipsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpPoolCidrBlockResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpPoolCidrBlocksResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpPoolResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpPoolsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpv6AddressBandwidthResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpv6AddressBandwidthsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpv6GatewayResult;
@@ -500,6 +508,174 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetHaVipsResult> getHaVipsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getHaVips:getHaVips", TypeShape.of(GetHaVipsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static Output<GetIpPoolResult> getIpPool(GetIpPoolArgs args) {
+        return getIpPool(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static CompletableFuture<GetIpPoolResult> getIpPoolPlain(GetIpPoolPlainArgs args) {
+        return getIpPoolPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static Output<GetIpPoolResult> getIpPool(GetIpPoolArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpPool:getIpPool", TypeShape.of(GetIpPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static Output<GetIpPoolResult> getIpPool(GetIpPoolArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpPool:getIpPool", TypeShape.of(GetIpPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static CompletableFuture<GetIpPoolResult> getIpPoolPlain(GetIpPoolPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpPool:getIpPool", TypeShape.of(GetIpPoolResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static Output<GetIpPoolCidrBlockResult> getIpPoolCidrBlock(GetIpPoolCidrBlockArgs args) {
+        return getIpPoolCidrBlock(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static CompletableFuture<GetIpPoolCidrBlockResult> getIpPoolCidrBlockPlain(GetIpPoolCidrBlockPlainArgs args) {
+        return getIpPoolCidrBlockPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static Output<GetIpPoolCidrBlockResult> getIpPoolCidrBlock(GetIpPoolCidrBlockArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpPoolCidrBlock:getIpPoolCidrBlock", TypeShape.of(GetIpPoolCidrBlockResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static Output<GetIpPoolCidrBlockResult> getIpPoolCidrBlock(GetIpPoolCidrBlockArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpPoolCidrBlock:getIpPoolCidrBlock", TypeShape.of(GetIpPoolCidrBlockResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static CompletableFuture<GetIpPoolCidrBlockResult> getIpPoolCidrBlockPlain(GetIpPoolCidrBlockPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpPoolCidrBlock:getIpPoolCidrBlock", TypeShape.of(GetIpPoolCidrBlockResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static Output<GetIpPoolCidrBlocksResult> getIpPoolCidrBlocks() {
+        return getIpPoolCidrBlocks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static CompletableFuture<GetIpPoolCidrBlocksResult> getIpPoolCidrBlocksPlain() {
+        return getIpPoolCidrBlocksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static Output<GetIpPoolCidrBlocksResult> getIpPoolCidrBlocks(InvokeArgs args) {
+        return getIpPoolCidrBlocks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static CompletableFuture<GetIpPoolCidrBlocksResult> getIpPoolCidrBlocksPlain(InvokeArgs args) {
+        return getIpPoolCidrBlocksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static Output<GetIpPoolCidrBlocksResult> getIpPoolCidrBlocks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpPoolCidrBlocks:getIpPoolCidrBlocks", TypeShape.of(GetIpPoolCidrBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static Output<GetIpPoolCidrBlocksResult> getIpPoolCidrBlocks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpPoolCidrBlocks:getIpPoolCidrBlocks", TypeShape.of(GetIpPoolCidrBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPoolCidrBlock
+     * 
+     */
+    public static CompletableFuture<GetIpPoolCidrBlocksResult> getIpPoolCidrBlocksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpPoolCidrBlocks:getIpPoolCidrBlocks", TypeShape.of(GetIpPoolCidrBlocksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static Output<GetIpPoolsResult> getIpPools() {
+        return getIpPools(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static CompletableFuture<GetIpPoolsResult> getIpPoolsPlain() {
+        return getIpPoolsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static Output<GetIpPoolsResult> getIpPools(InvokeArgs args) {
+        return getIpPools(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static CompletableFuture<GetIpPoolsResult> getIpPoolsPlain(InvokeArgs args) {
+        return getIpPoolsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static Output<GetIpPoolsResult> getIpPools(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpPools:getIpPools", TypeShape.of(GetIpPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static Output<GetIpPoolsResult> getIpPools(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpPools:getIpPools", TypeShape.of(GetIpPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IpPool
+     * 
+     */
+    public static CompletableFuture<GetIpPoolsResult> getIpPoolsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpPools:getIpPools", TypeShape.of(GetIpPoolsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth

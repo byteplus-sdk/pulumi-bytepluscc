@@ -1233,6 +1233,112 @@ func (o HaVipTagArrayOutput) Index(i pulumi.IntInput) HaVipTagOutput {
 	}).(HaVipTagOutput)
 }
 
+type IpPoolTag struct {
+	// Tag key.
+	Key *string `pulumi:"key"`
+	// Tag value.
+	Value *string `pulumi:"value"`
+}
+
+// IpPoolTagInput is an input type that accepts IpPoolTagArgs and IpPoolTagOutput values.
+// You can construct a concrete instance of `IpPoolTagInput` via:
+//
+//	IpPoolTagArgs{...}
+type IpPoolTagInput interface {
+	pulumi.Input
+
+	ToIpPoolTagOutput() IpPoolTagOutput
+	ToIpPoolTagOutputWithContext(context.Context) IpPoolTagOutput
+}
+
+type IpPoolTagArgs struct {
+	// Tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (IpPoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpPoolTag)(nil)).Elem()
+}
+
+func (i IpPoolTagArgs) ToIpPoolTagOutput() IpPoolTagOutput {
+	return i.ToIpPoolTagOutputWithContext(context.Background())
+}
+
+func (i IpPoolTagArgs) ToIpPoolTagOutputWithContext(ctx context.Context) IpPoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpPoolTagOutput)
+}
+
+// IpPoolTagArrayInput is an input type that accepts IpPoolTagArray and IpPoolTagArrayOutput values.
+// You can construct a concrete instance of `IpPoolTagArrayInput` via:
+//
+//	IpPoolTagArray{ IpPoolTagArgs{...} }
+type IpPoolTagArrayInput interface {
+	pulumi.Input
+
+	ToIpPoolTagArrayOutput() IpPoolTagArrayOutput
+	ToIpPoolTagArrayOutputWithContext(context.Context) IpPoolTagArrayOutput
+}
+
+type IpPoolTagArray []IpPoolTagInput
+
+func (IpPoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpPoolTag)(nil)).Elem()
+}
+
+func (i IpPoolTagArray) ToIpPoolTagArrayOutput() IpPoolTagArrayOutput {
+	return i.ToIpPoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i IpPoolTagArray) ToIpPoolTagArrayOutputWithContext(ctx context.Context) IpPoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpPoolTagArrayOutput)
+}
+
+type IpPoolTagOutput struct{ *pulumi.OutputState }
+
+func (IpPoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpPoolTag)(nil)).Elem()
+}
+
+func (o IpPoolTagOutput) ToIpPoolTagOutput() IpPoolTagOutput {
+	return o
+}
+
+func (o IpPoolTagOutput) ToIpPoolTagOutputWithContext(ctx context.Context) IpPoolTagOutput {
+	return o
+}
+
+// Tag key.
+func (o IpPoolTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpPoolTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value.
+func (o IpPoolTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpPoolTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type IpPoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (IpPoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpPoolTag)(nil)).Elem()
+}
+
+func (o IpPoolTagArrayOutput) ToIpPoolTagArrayOutput() IpPoolTagArrayOutput {
+	return o
+}
+
+func (o IpPoolTagArrayOutput) ToIpPoolTagArrayOutputWithContext(ctx context.Context) IpPoolTagArrayOutput {
+	return o
+}
+
+func (o IpPoolTagArrayOutput) Index(i pulumi.IntInput) IpPoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IpPoolTag {
+		return vs[0].([]IpPoolTag)[vs[1].(int)]
+	}).(IpPoolTagOutput)
+}
+
 type Ipv6AddressBandwidthTag struct {
 	// Tag key
 	Key *string `pulumi:"key"`
@@ -5772,6 +5878,112 @@ func (o GetHaVipTagArrayOutput) Index(i pulumi.IntInput) GetHaVipTagOutput {
 	}).(GetHaVipTagOutput)
 }
 
+type GetIpPoolTag struct {
+	// Tag key.
+	Key string `pulumi:"key"`
+	// Tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetIpPoolTagInput is an input type that accepts GetIpPoolTagArgs and GetIpPoolTagOutput values.
+// You can construct a concrete instance of `GetIpPoolTagInput` via:
+//
+//	GetIpPoolTagArgs{...}
+type GetIpPoolTagInput interface {
+	pulumi.Input
+
+	ToGetIpPoolTagOutput() GetIpPoolTagOutput
+	ToGetIpPoolTagOutputWithContext(context.Context) GetIpPoolTagOutput
+}
+
+type GetIpPoolTagArgs struct {
+	// Tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIpPoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpPoolTag)(nil)).Elem()
+}
+
+func (i GetIpPoolTagArgs) ToGetIpPoolTagOutput() GetIpPoolTagOutput {
+	return i.ToGetIpPoolTagOutputWithContext(context.Background())
+}
+
+func (i GetIpPoolTagArgs) ToGetIpPoolTagOutputWithContext(ctx context.Context) GetIpPoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpPoolTagOutput)
+}
+
+// GetIpPoolTagArrayInput is an input type that accepts GetIpPoolTagArray and GetIpPoolTagArrayOutput values.
+// You can construct a concrete instance of `GetIpPoolTagArrayInput` via:
+//
+//	GetIpPoolTagArray{ GetIpPoolTagArgs{...} }
+type GetIpPoolTagArrayInput interface {
+	pulumi.Input
+
+	ToGetIpPoolTagArrayOutput() GetIpPoolTagArrayOutput
+	ToGetIpPoolTagArrayOutputWithContext(context.Context) GetIpPoolTagArrayOutput
+}
+
+type GetIpPoolTagArray []GetIpPoolTagInput
+
+func (GetIpPoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpPoolTag)(nil)).Elem()
+}
+
+func (i GetIpPoolTagArray) ToGetIpPoolTagArrayOutput() GetIpPoolTagArrayOutput {
+	return i.ToGetIpPoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpPoolTagArray) ToGetIpPoolTagArrayOutputWithContext(ctx context.Context) GetIpPoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpPoolTagArrayOutput)
+}
+
+type GetIpPoolTagOutput struct{ *pulumi.OutputState }
+
+func (GetIpPoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpPoolTag)(nil)).Elem()
+}
+
+func (o GetIpPoolTagOutput) ToGetIpPoolTagOutput() GetIpPoolTagOutput {
+	return o
+}
+
+func (o GetIpPoolTagOutput) ToGetIpPoolTagOutputWithContext(ctx context.Context) GetIpPoolTagOutput {
+	return o
+}
+
+// Tag key.
+func (o GetIpPoolTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpPoolTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value.
+func (o GetIpPoolTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpPoolTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIpPoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpPoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpPoolTag)(nil)).Elem()
+}
+
+func (o GetIpPoolTagArrayOutput) ToGetIpPoolTagArrayOutput() GetIpPoolTagArrayOutput {
+	return o
+}
+
+func (o GetIpPoolTagArrayOutput) ToGetIpPoolTagArrayOutputWithContext(ctx context.Context) GetIpPoolTagArrayOutput {
+	return o
+}
+
+func (o GetIpPoolTagArrayOutput) Index(i pulumi.IntInput) GetIpPoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpPoolTag {
+		return vs[0].([]GetIpPoolTag)[vs[1].(int)]
+	}).(GetIpPoolTagOutput)
+}
+
 type GetIpv6AddressBandwidthTag struct {
 	// Tag key
 	Key string `pulumi:"key"`
@@ -9429,6 +9641,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*FlowLogTagArrayInput)(nil)).Elem(), FlowLogTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HaVipTagInput)(nil)).Elem(), HaVipTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HaVipTagArrayInput)(nil)).Elem(), HaVipTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpPoolTagInput)(nil)).Elem(), IpPoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpPoolTagArrayInput)(nil)).Elem(), IpPoolTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6AddressBandwidthTagInput)(nil)).Elem(), Ipv6AddressBandwidthTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6AddressBandwidthTagArrayInput)(nil)).Elem(), Ipv6AddressBandwidthTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6GatewayTagInput)(nil)).Elem(), Ipv6GatewayTagArgs{})
@@ -9500,6 +9714,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetFlowLogTagArrayInput)(nil)).Elem(), GetFlowLogTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHaVipTagInput)(nil)).Elem(), GetHaVipTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHaVipTagArrayInput)(nil)).Elem(), GetHaVipTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpPoolTagInput)(nil)).Elem(), GetIpPoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpPoolTagArrayInput)(nil)).Elem(), GetIpPoolTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6AddressBandwidthTagInput)(nil)).Elem(), GetIpv6AddressBandwidthTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6AddressBandwidthTagArrayInput)(nil)).Elem(), GetIpv6AddressBandwidthTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6GatewayTagInput)(nil)).Elem(), GetIpv6GatewayTagArgs{})
@@ -9573,6 +9789,8 @@ func init() {
 	pulumi.RegisterOutputType(FlowLogTagArrayOutput{})
 	pulumi.RegisterOutputType(HaVipTagOutput{})
 	pulumi.RegisterOutputType(HaVipTagArrayOutput{})
+	pulumi.RegisterOutputType(IpPoolTagOutput{})
+	pulumi.RegisterOutputType(IpPoolTagArrayOutput{})
 	pulumi.RegisterOutputType(Ipv6AddressBandwidthTagOutput{})
 	pulumi.RegisterOutputType(Ipv6AddressBandwidthTagArrayOutput{})
 	pulumi.RegisterOutputType(Ipv6GatewayTagOutput{})
@@ -9644,6 +9862,8 @@ func init() {
 	pulumi.RegisterOutputType(GetFlowLogTagArrayOutput{})
 	pulumi.RegisterOutputType(GetHaVipTagOutput{})
 	pulumi.RegisterOutputType(GetHaVipTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIpPoolTagOutput{})
+	pulumi.RegisterOutputType(GetIpPoolTagArrayOutput{})
 	pulumi.RegisterOutputType(GetIpv6AddressBandwidthTagOutput{})
 	pulumi.RegisterOutputType(GetIpv6AddressBandwidthTagArrayOutput{})
 	pulumi.RegisterOutputType(GetIpv6GatewayTagOutput{})

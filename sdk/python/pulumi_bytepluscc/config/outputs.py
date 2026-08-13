@@ -13,11 +13,762 @@ if sys.version_info >= (3, 11):
 else:
     from typing_extensions import NotRequired, TypedDict, TypeAlias
 from .. import _utilities
+from . import outputs
 
 __all__ = [
+    'GroupRuleScope',
+    'GroupRuleScopeProjects',
+    'GroupRuleScopeRegions',
+    'GroupRuleScopeResourceIds',
+    'GroupRuleScopeResourceTypes',
+    'GroupRuleScopeTags',
+    'GroupRuleScopeTagsExclude',
+    'GroupRuleScopeTagsInclude',
+    'GroupRuleTrigger',
+    'RuleScope',
+    'RuleScopeProjects',
+    'RuleScopeRegions',
+    'RuleScopeResourceIds',
+    'RuleScopeResourceTypes',
+    'RuleScopeTags',
+    'RuleScopeTagsExclude',
+    'RuleScopeTagsInclude',
+    'RuleTrigger',
     'AssumeRole',
     'Endpoints',
+    'GetGroupRuleScopeResult',
+    'GetGroupRuleScopeProjectsResult',
+    'GetGroupRuleScopeRegionsResult',
+    'GetGroupRuleScopeResourceIdsResult',
+    'GetGroupRuleScopeResourceTypesResult',
+    'GetGroupRuleScopeTagsResult',
+    'GetGroupRuleScopeTagsExcludeResult',
+    'GetGroupRuleScopeTagsIncludeResult',
+    'GetGroupRuleTriggerResult',
+    'GetRuleScopeResult',
+    'GetRuleScopeProjectsResult',
+    'GetRuleScopeRegionsResult',
+    'GetRuleScopeResourceIdsResult',
+    'GetRuleScopeResourceTypesResult',
+    'GetRuleScopeTagsResult',
+    'GetRuleScopeTagsExcludeResult',
+    'GetRuleScopeTagsIncludeResult',
+    'GetRuleTriggerResult',
 ]
+
+@pulumi.output_type
+class GroupRuleScope(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceIds":
+            suggest = "resource_ids"
+        elif key == "resourceTypes":
+            suggest = "resource_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GroupRuleScope. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GroupRuleScope.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GroupRuleScope.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 projects: Optional['outputs.GroupRuleScopeProjects'] = None,
+                 regions: Optional['outputs.GroupRuleScopeRegions'] = None,
+                 resource_ids: Optional['outputs.GroupRuleScopeResourceIds'] = None,
+                 resource_types: Optional['outputs.GroupRuleScopeResourceTypes'] = None,
+                 tags: Optional['outputs.GroupRuleScopeTags'] = None):
+        """
+        :param 'GroupRuleScopeProjectsArgs' projects: Project filter scope
+        :param 'GroupRuleScopeRegionsArgs' regions: Resource region list
+        :param 'GroupRuleScopeResourceIdsArgs' resource_ids: Resource ID list
+        :param 'GroupRuleScopeResourceTypesArgs' resource_types: Resource type scope
+        :param 'GroupRuleScopeTagsArgs' tags: Resource tag list
+        """
+        if projects is not None:
+            pulumi.set(__self__, "projects", projects)
+        if regions is not None:
+            pulumi.set(__self__, "regions", regions)
+        if resource_ids is not None:
+            pulumi.set(__self__, "resource_ids", resource_ids)
+        if resource_types is not None:
+            pulumi.set(__self__, "resource_types", resource_types)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> Optional['outputs.GroupRuleScopeProjects']:
+        """
+        Project filter scope
+        """
+        return pulumi.get(self, "projects")
+
+    @_builtins.property
+    @pulumi.getter
+    def regions(self) -> Optional['outputs.GroupRuleScopeRegions']:
+        """
+        Resource region list
+        """
+        return pulumi.get(self, "regions")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceIds")
+    def resource_ids(self) -> Optional['outputs.GroupRuleScopeResourceIds']:
+        """
+        Resource ID list
+        """
+        return pulumi.get(self, "resource_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceTypes")
+    def resource_types(self) -> Optional['outputs.GroupRuleScopeResourceTypes']:
+        """
+        Resource type scope
+        """
+        return pulumi.get(self, "resource_types")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional['outputs.GroupRuleScopeTags']:
+        """
+        Resource tag list
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class GroupRuleScopeProjects(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence[_builtins.str]] = None,
+                 includes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] excludes: Exclude list
+        :param Sequence[_builtins.str] includes: Include list
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GroupRuleScopeRegions(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence[_builtins.str]] = None,
+                 includes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] excludes: Exclude list
+        :param Sequence[_builtins.str] includes: Include list
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GroupRuleScopeResourceIds(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence[_builtins.str]] = None,
+                 includes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] excludes: Exclude list
+        :param Sequence[_builtins.str] includes: Include list
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GroupRuleScopeResourceTypes(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence[_builtins.str]] = None,
+                 includes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] excludes: Exclude list
+        :param Sequence[_builtins.str] includes: Include list
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GroupRuleScopeTags(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence['outputs.GroupRuleScopeTagsExclude']] = None,
+                 includes: Optional[Sequence['outputs.GroupRuleScopeTagsInclude']] = None):
+        """
+        :param Sequence['GroupRuleScopeTagsExcludeArgs'] excludes: Exclude list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param Sequence['GroupRuleScopeTagsIncludeArgs'] includes: Include list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence['outputs.GroupRuleScopeTagsExclude']]:
+        """
+        Exclude list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence['outputs.GroupRuleScopeTagsInclude']]:
+        """
+        Include list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GroupRuleScopeTagsExclude(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GroupRuleScopeTagsInclude(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GroupRuleTrigger(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maximumExecutionFrequency":
+            suggest = "maximum_execution_frequency"
+        elif key == "triggerType":
+            suggest = "trigger_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in GroupRuleTrigger. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        GroupRuleTrigger.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        GroupRuleTrigger.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 maximum_execution_frequency: Optional[_builtins.str] = None,
+                 trigger_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str maximum_execution_frequency: Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+        :param _builtins.str trigger_type: Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+        """
+        if maximum_execution_frequency is not None:
+            pulumi.set(__self__, "maximum_execution_frequency", maximum_execution_frequency)
+        if trigger_type is not None:
+            pulumi.set(__self__, "trigger_type", trigger_type)
+
+    @_builtins.property
+    @pulumi.getter(name="maximumExecutionFrequency")
+    def maximum_execution_frequency(self) -> Optional[_builtins.str]:
+        """
+        Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+        """
+        return pulumi.get(self, "maximum_execution_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="triggerType")
+    def trigger_type(self) -> Optional[_builtins.str]:
+        """
+        Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+        """
+        return pulumi.get(self, "trigger_type")
+
+
+@pulumi.output_type
+class RuleScope(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "resourceIds":
+            suggest = "resource_ids"
+        elif key == "resourceTypes":
+            suggest = "resource_types"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleScope. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleScope.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleScope.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 projects: Optional['outputs.RuleScopeProjects'] = None,
+                 regions: Optional['outputs.RuleScopeRegions'] = None,
+                 resource_ids: Optional['outputs.RuleScopeResourceIds'] = None,
+                 resource_types: Optional['outputs.RuleScopeResourceTypes'] = None,
+                 tags: Optional['outputs.RuleScopeTags'] = None):
+        """
+        :param 'RuleScopeProjectsArgs' projects: Project filter scope
+        :param 'RuleScopeRegionsArgs' regions: Resource region list
+        :param 'RuleScopeResourceIdsArgs' resource_ids: Resource ID list
+        :param 'RuleScopeResourceTypesArgs' resource_types: Resource type scope
+        :param 'RuleScopeTagsArgs' tags: Resource tag list
+        """
+        if projects is not None:
+            pulumi.set(__self__, "projects", projects)
+        if regions is not None:
+            pulumi.set(__self__, "regions", regions)
+        if resource_ids is not None:
+            pulumi.set(__self__, "resource_ids", resource_ids)
+        if resource_types is not None:
+            pulumi.set(__self__, "resource_types", resource_types)
+        if tags is not None:
+            pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> Optional['outputs.RuleScopeProjects']:
+        """
+        Project filter scope
+        """
+        return pulumi.get(self, "projects")
+
+    @_builtins.property
+    @pulumi.getter
+    def regions(self) -> Optional['outputs.RuleScopeRegions']:
+        """
+        Resource region list
+        """
+        return pulumi.get(self, "regions")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceIds")
+    def resource_ids(self) -> Optional['outputs.RuleScopeResourceIds']:
+        """
+        Resource ID list
+        """
+        return pulumi.get(self, "resource_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceTypes")
+    def resource_types(self) -> Optional['outputs.RuleScopeResourceTypes']:
+        """
+        Resource type scope
+        """
+        return pulumi.get(self, "resource_types")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> Optional['outputs.RuleScopeTags']:
+        """
+        Resource tag list
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class RuleScopeProjects(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence[_builtins.str]] = None,
+                 includes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] excludes: Exclusion list
+        :param Sequence[_builtins.str] includes: Inclusion list
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class RuleScopeRegions(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence[_builtins.str]] = None,
+                 includes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] excludes: Exclusion list
+        :param Sequence[_builtins.str] includes: Inclusion list
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class RuleScopeResourceIds(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence[_builtins.str]] = None,
+                 includes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] excludes: Exclusion list
+        :param Sequence[_builtins.str] includes: Inclusion list
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class RuleScopeResourceTypes(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence[_builtins.str]] = None,
+                 includes: Optional[Sequence[_builtins.str]] = None):
+        """
+        :param Sequence[_builtins.str] excludes: Exclusion list
+        :param Sequence[_builtins.str] includes: Inclusion list
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence[_builtins.str]]:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class RuleScopeTags(dict):
+    def __init__(__self__, *,
+                 excludes: Optional[Sequence['outputs.RuleScopeTagsExclude']] = None,
+                 includes: Optional[Sequence['outputs.RuleScopeTagsInclude']] = None):
+        """
+        :param Sequence['RuleScopeTagsExcludeArgs'] excludes: Exclusion list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param Sequence['RuleScopeTagsIncludeArgs'] includes: Inclusion list
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        if excludes is not None:
+            pulumi.set(__self__, "excludes", excludes)
+        if includes is not None:
+            pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Optional[Sequence['outputs.RuleScopeTagsExclude']]:
+        """
+        Exclusion list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Optional[Sequence['outputs.RuleScopeTagsInclude']]:
+        """
+        Inclusion list
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class RuleScopeTagsExclude(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class RuleScopeTagsInclude(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class RuleTrigger(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "maximumExecutionFrequency":
+            suggest = "maximum_execution_frequency"
+        elif key == "triggerType":
+            suggest = "trigger_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in RuleTrigger. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        RuleTrigger.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        RuleTrigger.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 maximum_execution_frequency: Optional[_builtins.str] = None,
+                 trigger_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str maximum_execution_frequency: Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+        :param _builtins.str trigger_type: Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+        """
+        if maximum_execution_frequency is not None:
+            pulumi.set(__self__, "maximum_execution_frequency", maximum_execution_frequency)
+        if trigger_type is not None:
+            pulumi.set(__self__, "trigger_type", trigger_type)
+
+    @_builtins.property
+    @pulumi.getter(name="maximumExecutionFrequency")
+    def maximum_execution_frequency(self) -> Optional[_builtins.str]:
+        """
+        Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+        """
+        return pulumi.get(self, "maximum_execution_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="triggerType")
+    def trigger_type(self) -> Optional[_builtins.str]:
+        """
+        Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+        """
+        return pulumi.get(self, "trigger_type")
+
 
 @pulumi.output_type
 class AssumeRole(dict):
@@ -90,5 +841,593 @@ class Endpoints(dict):
         Use this to override the default STS service endpoint URL
         """
         return pulumi.get(self, "sts")
+
+
+@pulumi.output_type
+class GetGroupRuleScopeResult(dict):
+    def __init__(__self__, *,
+                 projects: 'outputs.GetGroupRuleScopeProjectsResult',
+                 regions: 'outputs.GetGroupRuleScopeRegionsResult',
+                 resource_ids: 'outputs.GetGroupRuleScopeResourceIdsResult',
+                 resource_types: 'outputs.GetGroupRuleScopeResourceTypesResult',
+                 tags: 'outputs.GetGroupRuleScopeTagsResult'):
+        """
+        :param 'GetGroupRuleScopeProjectsArgs' projects: Project filter scope
+        :param 'GetGroupRuleScopeRegionsArgs' regions: Resource region list
+        :param 'GetGroupRuleScopeResourceIdsArgs' resource_ids: Resource ID list
+        :param 'GetGroupRuleScopeResourceTypesArgs' resource_types: Resource type scope
+        :param 'GetGroupRuleScopeTagsArgs' tags: Resource tag list
+        """
+        pulumi.set(__self__, "projects", projects)
+        pulumi.set(__self__, "regions", regions)
+        pulumi.set(__self__, "resource_ids", resource_ids)
+        pulumi.set(__self__, "resource_types", resource_types)
+        pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> 'outputs.GetGroupRuleScopeProjectsResult':
+        """
+        Project filter scope
+        """
+        return pulumi.get(self, "projects")
+
+    @_builtins.property
+    @pulumi.getter
+    def regions(self) -> 'outputs.GetGroupRuleScopeRegionsResult':
+        """
+        Resource region list
+        """
+        return pulumi.get(self, "regions")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceIds")
+    def resource_ids(self) -> 'outputs.GetGroupRuleScopeResourceIdsResult':
+        """
+        Resource ID list
+        """
+        return pulumi.get(self, "resource_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceTypes")
+    def resource_types(self) -> 'outputs.GetGroupRuleScopeResourceTypesResult':
+        """
+        Resource type scope
+        """
+        return pulumi.get(self, "resource_types")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> 'outputs.GetGroupRuleScopeTagsResult':
+        """
+        Resource tag list
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class GetGroupRuleScopeProjectsResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence[_builtins.str],
+                 includes: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] excludes: Exclude list
+        :param Sequence[_builtins.str] includes: Include list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence[_builtins.str]:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence[_builtins.str]:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetGroupRuleScopeRegionsResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence[_builtins.str],
+                 includes: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] excludes: Exclude list
+        :param Sequence[_builtins.str] includes: Include list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence[_builtins.str]:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence[_builtins.str]:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetGroupRuleScopeResourceIdsResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence[_builtins.str],
+                 includes: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] excludes: Exclude list
+        :param Sequence[_builtins.str] includes: Include list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence[_builtins.str]:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence[_builtins.str]:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetGroupRuleScopeResourceTypesResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence[_builtins.str],
+                 includes: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] excludes: Exclude list
+        :param Sequence[_builtins.str] includes: Include list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence[_builtins.str]:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence[_builtins.str]:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetGroupRuleScopeTagsResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence['outputs.GetGroupRuleScopeTagsExcludeResult'],
+                 includes: Sequence['outputs.GetGroupRuleScopeTagsIncludeResult']):
+        """
+        :param Sequence['GetGroupRuleScopeTagsExcludeArgs'] excludes: Exclude list
+        :param Sequence['GetGroupRuleScopeTagsIncludeArgs'] includes: Include list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence['outputs.GetGroupRuleScopeTagsExcludeResult']:
+        """
+        Exclude list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence['outputs.GetGroupRuleScopeTagsIncludeResult']:
+        """
+        Include list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetGroupRuleScopeTagsExcludeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGroupRuleScopeTagsIncludeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetGroupRuleTriggerResult(dict):
+    def __init__(__self__, *,
+                 maximum_execution_frequency: _builtins.str,
+                 trigger_type: _builtins.str):
+        """
+        :param _builtins.str maximum_execution_frequency: Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+        :param _builtins.str trigger_type: Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+        """
+        pulumi.set(__self__, "maximum_execution_frequency", maximum_execution_frequency)
+        pulumi.set(__self__, "trigger_type", trigger_type)
+
+    @_builtins.property
+    @pulumi.getter(name="maximumExecutionFrequency")
+    def maximum_execution_frequency(self) -> _builtins.str:
+        """
+        Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+        """
+        return pulumi.get(self, "maximum_execution_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="triggerType")
+    def trigger_type(self) -> _builtins.str:
+        """
+        Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+        """
+        return pulumi.get(self, "trigger_type")
+
+
+@pulumi.output_type
+class GetRuleScopeResult(dict):
+    def __init__(__self__, *,
+                 projects: 'outputs.GetRuleScopeProjectsResult',
+                 regions: 'outputs.GetRuleScopeRegionsResult',
+                 resource_ids: 'outputs.GetRuleScopeResourceIdsResult',
+                 resource_types: 'outputs.GetRuleScopeResourceTypesResult',
+                 tags: 'outputs.GetRuleScopeTagsResult'):
+        """
+        :param 'GetRuleScopeProjectsArgs' projects: Project filter scope
+        :param 'GetRuleScopeRegionsArgs' regions: Resource region list
+        :param 'GetRuleScopeResourceIdsArgs' resource_ids: Resource ID list
+        :param 'GetRuleScopeResourceTypesArgs' resource_types: Resource type scope
+        :param 'GetRuleScopeTagsArgs' tags: Resource tag list
+        """
+        pulumi.set(__self__, "projects", projects)
+        pulumi.set(__self__, "regions", regions)
+        pulumi.set(__self__, "resource_ids", resource_ids)
+        pulumi.set(__self__, "resource_types", resource_types)
+        pulumi.set(__self__, "tags", tags)
+
+    @_builtins.property
+    @pulumi.getter
+    def projects(self) -> 'outputs.GetRuleScopeProjectsResult':
+        """
+        Project filter scope
+        """
+        return pulumi.get(self, "projects")
+
+    @_builtins.property
+    @pulumi.getter
+    def regions(self) -> 'outputs.GetRuleScopeRegionsResult':
+        """
+        Resource region list
+        """
+        return pulumi.get(self, "regions")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceIds")
+    def resource_ids(self) -> 'outputs.GetRuleScopeResourceIdsResult':
+        """
+        Resource ID list
+        """
+        return pulumi.get(self, "resource_ids")
+
+    @_builtins.property
+    @pulumi.getter(name="resourceTypes")
+    def resource_types(self) -> 'outputs.GetRuleScopeResourceTypesResult':
+        """
+        Resource type scope
+        """
+        return pulumi.get(self, "resource_types")
+
+    @_builtins.property
+    @pulumi.getter
+    def tags(self) -> 'outputs.GetRuleScopeTagsResult':
+        """
+        Resource tag list
+        """
+        return pulumi.get(self, "tags")
+
+
+@pulumi.output_type
+class GetRuleScopeProjectsResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence[_builtins.str],
+                 includes: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] excludes: Exclusion list
+        :param Sequence[_builtins.str] includes: Inclusion list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence[_builtins.str]:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence[_builtins.str]:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetRuleScopeRegionsResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence[_builtins.str],
+                 includes: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] excludes: Exclusion list
+        :param Sequence[_builtins.str] includes: Inclusion list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence[_builtins.str]:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence[_builtins.str]:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetRuleScopeResourceIdsResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence[_builtins.str],
+                 includes: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] excludes: Exclusion list
+        :param Sequence[_builtins.str] includes: Inclusion list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence[_builtins.str]:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence[_builtins.str]:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetRuleScopeResourceTypesResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence[_builtins.str],
+                 includes: Sequence[_builtins.str]):
+        """
+        :param Sequence[_builtins.str] excludes: Exclusion list
+        :param Sequence[_builtins.str] includes: Inclusion list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence[_builtins.str]:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence[_builtins.str]:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetRuleScopeTagsResult(dict):
+    def __init__(__self__, *,
+                 excludes: Sequence['outputs.GetRuleScopeTagsExcludeResult'],
+                 includes: Sequence['outputs.GetRuleScopeTagsIncludeResult']):
+        """
+        :param Sequence['GetRuleScopeTagsExcludeArgs'] excludes: Exclusion list
+        :param Sequence['GetRuleScopeTagsIncludeArgs'] includes: Inclusion list
+        """
+        pulumi.set(__self__, "excludes", excludes)
+        pulumi.set(__self__, "includes", includes)
+
+    @_builtins.property
+    @pulumi.getter
+    def excludes(self) -> Sequence['outputs.GetRuleScopeTagsExcludeResult']:
+        """
+        Exclusion list
+        """
+        return pulumi.get(self, "excludes")
+
+    @_builtins.property
+    @pulumi.getter
+    def includes(self) -> Sequence['outputs.GetRuleScopeTagsIncludeResult']:
+        """
+        Inclusion list
+        """
+        return pulumi.get(self, "includes")
+
+
+@pulumi.output_type
+class GetRuleScopeTagsExcludeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetRuleScopeTagsIncludeResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetRuleTriggerResult(dict):
+    def __init__(__self__, *,
+                 maximum_execution_frequency: _builtins.str,
+                 trigger_type: _builtins.str):
+        """
+        :param _builtins.str maximum_execution_frequency: Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+        :param _builtins.str trigger_type: Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+        """
+        pulumi.set(__self__, "maximum_execution_frequency", maximum_execution_frequency)
+        pulumi.set(__self__, "trigger_type", trigger_type)
+
+    @_builtins.property
+    @pulumi.getter(name="maximumExecutionFrequency")
+    def maximum_execution_frequency(self) -> _builtins.str:
+        """
+        Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+        """
+        return pulumi.get(self, "maximum_execution_frequency")
+
+    @_builtins.property
+    @pulumi.getter(name="triggerType")
+    def trigger_type(self) -> _builtins.str:
+        """
+        Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+        """
+        return pulumi.get(self, "trigger_type")
 
 

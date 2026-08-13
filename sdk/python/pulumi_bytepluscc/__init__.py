@@ -394,6 +394,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "certificateservice/organizationInfo",
+  "fqn": "pulumi_bytepluscc.certificateservice",
+  "classes": {
+   "bytepluscc:certificateservice/organizationInfo:OrganizationInfo": "OrganizationInfo"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "clb/acl",
   "fqn": "pulumi_bytepluscc.clb",
   "classes": {
@@ -566,6 +574,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.cloudmonitor",
   "classes": {
    "bytepluscc:cloudmonitor/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "config/groupRule",
+  "fqn": "pulumi_bytepluscc.config",
+  "classes": {
+   "bytepluscc:config/groupRule:GroupRule": "GroupRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "config/rule",
+  "fqn": "pulumi_bytepluscc.config",
+  "classes": {
+   "bytepluscc:config/rule:Rule": "Rule"
   }
  },
  {
@@ -750,6 +774,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.ecs",
   "classes": {
    "bytepluscc:ecs/launchTemplateVersion:LaunchTemplateVersion": "LaunchTemplateVersion"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "ecs/scheduledInstance",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/scheduledInstance:ScheduledInstance": "ScheduledInstance"
   }
  },
  {
@@ -2022,6 +2054,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/haVip:HaVip": "HaVip"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/ipPool",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipPool:IpPool": "IpPool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/ipPoolCidrBlock",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipPoolCidrBlock:IpPoolCidrBlock": "IpPoolCidrBlock"
   }
  },
  {

@@ -6931,6 +6931,1832 @@ func (o LaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.IntInput) LaunchT
 	}).(LaunchTemplateVersionVolumeOutput)
 }
 
+type ScheduledInstanceEipAddress struct {
+	// The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+	BandwidthMbps *int `pulumi:"bandwidthMbps"`
+	// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
+	// Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription.
+	//   **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+	ChargeType *string `pulumi:"chargeType"`
+	// Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+	Isp *string `pulumi:"isp"`
+	// Whether the public IP is released with the instance
+	//     - true: The public IP is released with the instance
+	//     - false (default): The public IP is not released with the instance
+	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
+	// DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+	SecurityProtectionInstanceId *int `pulumi:"securityProtectionInstanceId"`
+	// Security protection type for public IP.
+	//     - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+	//     - Values:
+	//       - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+	//
+	//   **Note:**
+	//         - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+	//         - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+	//
+	//       - If not specified, the default protection type public IP will be applied.
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// ScheduledInstanceEipAddressInput is an input type that accepts ScheduledInstanceEipAddressArgs and ScheduledInstanceEipAddressOutput values.
+// You can construct a concrete instance of `ScheduledInstanceEipAddressInput` via:
+//
+//	ScheduledInstanceEipAddressArgs{...}
+type ScheduledInstanceEipAddressInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceEipAddressOutput() ScheduledInstanceEipAddressOutput
+	ToScheduledInstanceEipAddressOutputWithContext(context.Context) ScheduledInstanceEipAddressOutput
+}
+
+type ScheduledInstanceEipAddressArgs struct {
+	// The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+	BandwidthMbps pulumi.IntPtrInput `pulumi:"bandwidthMbps"`
+	// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
+	// Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription.
+	//   **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
+	// Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// Whether the public IP is released with the instance
+	//     - true: The public IP is released with the instance
+	//     - false (default): The public IP is not released with the instance
+	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
+	// DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+	SecurityProtectionInstanceId pulumi.IntPtrInput `pulumi:"securityProtectionInstanceId"`
+	// Security protection type for public IP.
+	//     - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+	//     - Values:
+	//       - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+	//
+	//   **Note:**
+	//         - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+	//         - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+	//
+	//       - If not specified, the default protection type public IP will be applied.
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (ScheduledInstanceEipAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceEipAddress)(nil)).Elem()
+}
+
+func (i ScheduledInstanceEipAddressArgs) ToScheduledInstanceEipAddressOutput() ScheduledInstanceEipAddressOutput {
+	return i.ToScheduledInstanceEipAddressOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceEipAddressArgs) ToScheduledInstanceEipAddressOutputWithContext(ctx context.Context) ScheduledInstanceEipAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceEipAddressOutput)
+}
+
+func (i ScheduledInstanceEipAddressArgs) ToScheduledInstanceEipAddressPtrOutput() ScheduledInstanceEipAddressPtrOutput {
+	return i.ToScheduledInstanceEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceEipAddressArgs) ToScheduledInstanceEipAddressPtrOutputWithContext(ctx context.Context) ScheduledInstanceEipAddressPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceEipAddressOutput).ToScheduledInstanceEipAddressPtrOutputWithContext(ctx)
+}
+
+// ScheduledInstanceEipAddressPtrInput is an input type that accepts ScheduledInstanceEipAddressArgs, ScheduledInstanceEipAddressPtr and ScheduledInstanceEipAddressPtrOutput values.
+// You can construct a concrete instance of `ScheduledInstanceEipAddressPtrInput` via:
+//
+//	        ScheduledInstanceEipAddressArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledInstanceEipAddressPtrInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceEipAddressPtrOutput() ScheduledInstanceEipAddressPtrOutput
+	ToScheduledInstanceEipAddressPtrOutputWithContext(context.Context) ScheduledInstanceEipAddressPtrOutput
+}
+
+type scheduledInstanceEipAddressPtrType ScheduledInstanceEipAddressArgs
+
+func ScheduledInstanceEipAddressPtr(v *ScheduledInstanceEipAddressArgs) ScheduledInstanceEipAddressPtrInput {
+	return (*scheduledInstanceEipAddressPtrType)(v)
+}
+
+func (*scheduledInstanceEipAddressPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledInstanceEipAddress)(nil)).Elem()
+}
+
+func (i *scheduledInstanceEipAddressPtrType) ToScheduledInstanceEipAddressPtrOutput() ScheduledInstanceEipAddressPtrOutput {
+	return i.ToScheduledInstanceEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledInstanceEipAddressPtrType) ToScheduledInstanceEipAddressPtrOutputWithContext(ctx context.Context) ScheduledInstanceEipAddressPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceEipAddressPtrOutput)
+}
+
+type ScheduledInstanceEipAddressOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceEipAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceEipAddress)(nil)).Elem()
+}
+
+func (o ScheduledInstanceEipAddressOutput) ToScheduledInstanceEipAddressOutput() ScheduledInstanceEipAddressOutput {
+	return o
+}
+
+func (o ScheduledInstanceEipAddressOutput) ToScheduledInstanceEipAddressOutputWithContext(ctx context.Context) ScheduledInstanceEipAddressOutput {
+	return o
+}
+
+func (o ScheduledInstanceEipAddressOutput) ToScheduledInstanceEipAddressPtrOutput() ScheduledInstanceEipAddressPtrOutput {
+	return o.ToScheduledInstanceEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledInstanceEipAddressOutput) ToScheduledInstanceEipAddressPtrOutputWithContext(ctx context.Context) ScheduledInstanceEipAddressPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledInstanceEipAddress) *ScheduledInstanceEipAddress {
+		return &v
+	}).(ScheduledInstanceEipAddressPtrOutput)
+}
+
+// The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+func (o ScheduledInstanceEipAddressOutput) BandwidthMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceEipAddress) *int { return v.BandwidthMbps }).(pulumi.IntPtrOutput)
+}
+
+// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+func (o ScheduledInstanceEipAddressOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceEipAddress) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
+}
+
+// Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription.
+//
+//	**Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+func (o ScheduledInstanceEipAddressOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceEipAddress) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
+}
+
+// Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+func (o ScheduledInstanceEipAddressOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceEipAddress) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+// Whether the public IP is released with the instance
+//   - true: The public IP is released with the instance
+//   - false (default): The public IP is not released with the instance
+func (o ScheduledInstanceEipAddressOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceEipAddress) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+func (o ScheduledInstanceEipAddressOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceEipAddress) *int { return v.SecurityProtectionInstanceId }).(pulumi.IntPtrOutput)
+}
+
+// Security protection type for public IP.
+//
+//   - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+//
+//   - Values:
+//
+//   - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+//
+//     **Note:**
+//
+//   - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+//
+//   - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+//
+//   - If not specified, the default protection type public IP will be applied.
+func (o ScheduledInstanceEipAddressOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduledInstanceEipAddress) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type ScheduledInstanceEipAddressPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceEipAddressPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledInstanceEipAddress)(nil)).Elem()
+}
+
+func (o ScheduledInstanceEipAddressPtrOutput) ToScheduledInstanceEipAddressPtrOutput() ScheduledInstanceEipAddressPtrOutput {
+	return o
+}
+
+func (o ScheduledInstanceEipAddressPtrOutput) ToScheduledInstanceEipAddressPtrOutputWithContext(ctx context.Context) ScheduledInstanceEipAddressPtrOutput {
+	return o
+}
+
+func (o ScheduledInstanceEipAddressPtrOutput) Elem() ScheduledInstanceEipAddressOutput {
+	return o.ApplyT(func(v *ScheduledInstanceEipAddress) ScheduledInstanceEipAddress {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledInstanceEipAddress
+		return ret
+	}).(ScheduledInstanceEipAddressOutput)
+}
+
+// The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+func (o ScheduledInstanceEipAddressPtrOutput) BandwidthMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceEipAddress) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthMbps
+	}).(pulumi.IntPtrOutput)
+}
+
+// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+func (o ScheduledInstanceEipAddressPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthPackageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription.
+//
+//	**Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+func (o ScheduledInstanceEipAddressPtrOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+func (o ScheduledInstanceEipAddressPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether the public IP is released with the instance
+//   - true: The public IP is released with the instance
+//   - false (default): The public IP is not released with the instance
+func (o ScheduledInstanceEipAddressPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceEipAddress) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ReleaseWithInstance
+	}).(pulumi.BoolPtrOutput)
+}
+
+// DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+func (o ScheduledInstanceEipAddressPtrOutput) SecurityProtectionInstanceId() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceEipAddress) *int {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionInstanceId
+	}).(pulumi.IntPtrOutput)
+}
+
+// Security protection type for public IP.
+//
+//   - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+//
+//   - Values:
+//
+//   - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+//
+//     **Note:**
+//
+//   - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+//
+//   - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+//
+//   - If not specified, the default protection type public IP will be applied.
+func (o ScheduledInstanceEipAddressPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ScheduledInstanceEipAddress) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+type ScheduledInstanceInstanceConfig struct {
+	// Description of the instance.
+	Description *string `pulumi:"description"`
+	// Public IP information bound to the instance.
+	EipAddress *ScheduledInstanceInstanceConfigEipAddress `pulumi:"eipAddress"`
+	// Instance hostname.
+	HostName *string `pulumi:"hostName"`
+	// High performance computing cluster ID.
+	HpcClusterId *string `pulumi:"hpcClusterId"`
+	// Image ID
+	ImageId *string `pulumi:"imageId"`
+	// Instance name.
+	InstanceName *string `pulumi:"instanceName"`
+	// Instance type.
+	InstanceTypeId *string `pulumi:"instanceTypeId"`
+	// Key pair name.
+	KeyPairName *string `pulumi:"keyPairName"`
+	// Network interface information attached to the instance.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	NetworkInterfaces []ScheduledInstanceInstanceConfigNetworkInterface `pulumi:"networkInterfaces"`
+	// Project to which the instance belongs.
+	ProjectName *string `pulumi:"projectName"`
+	// Tag information for the instance.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Tags []ScheduledInstanceInstanceConfigTag `pulumi:"tags"`
+	// Information about the cloud disks attached to the instance.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Volumes []ScheduledInstanceInstanceConfigVolume `pulumi:"volumes"`
+	// Availability zone ID where the elastic reservation order is located.
+	ZoneId *string `pulumi:"zoneId"`
+}
+
+// ScheduledInstanceInstanceConfigInput is an input type that accepts ScheduledInstanceInstanceConfigArgs and ScheduledInstanceInstanceConfigOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigInput` via:
+//
+//	ScheduledInstanceInstanceConfigArgs{...}
+type ScheduledInstanceInstanceConfigInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigOutput() ScheduledInstanceInstanceConfigOutput
+	ToScheduledInstanceInstanceConfigOutputWithContext(context.Context) ScheduledInstanceInstanceConfigOutput
+}
+
+type ScheduledInstanceInstanceConfigArgs struct {
+	// Description of the instance.
+	Description pulumi.StringPtrInput `pulumi:"description"`
+	// Public IP information bound to the instance.
+	EipAddress ScheduledInstanceInstanceConfigEipAddressPtrInput `pulumi:"eipAddress"`
+	// Instance hostname.
+	HostName pulumi.StringPtrInput `pulumi:"hostName"`
+	// High performance computing cluster ID.
+	HpcClusterId pulumi.StringPtrInput `pulumi:"hpcClusterId"`
+	// Image ID
+	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
+	// Instance name.
+	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
+	// Instance type.
+	InstanceTypeId pulumi.StringPtrInput `pulumi:"instanceTypeId"`
+	// Key pair name.
+	KeyPairName pulumi.StringPtrInput `pulumi:"keyPairName"`
+	// Network interface information attached to the instance.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	NetworkInterfaces ScheduledInstanceInstanceConfigNetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
+	// Project to which the instance belongs.
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// Tag information for the instance.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Tags ScheduledInstanceInstanceConfigTagArrayInput `pulumi:"tags"`
+	// Information about the cloud disks attached to the instance.
+	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Volumes ScheduledInstanceInstanceConfigVolumeArrayInput `pulumi:"volumes"`
+	// Availability zone ID where the elastic reservation order is located.
+	ZoneId pulumi.StringPtrInput `pulumi:"zoneId"`
+}
+
+func (ScheduledInstanceInstanceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfig)(nil)).Elem()
+}
+
+func (i ScheduledInstanceInstanceConfigArgs) ToScheduledInstanceInstanceConfigOutput() ScheduledInstanceInstanceConfigOutput {
+	return i.ToScheduledInstanceInstanceConfigOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigArgs) ToScheduledInstanceInstanceConfigOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigOutput)
+}
+
+func (i ScheduledInstanceInstanceConfigArgs) ToScheduledInstanceInstanceConfigPtrOutput() ScheduledInstanceInstanceConfigPtrOutput {
+	return i.ToScheduledInstanceInstanceConfigPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigArgs) ToScheduledInstanceInstanceConfigPtrOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigOutput).ToScheduledInstanceInstanceConfigPtrOutputWithContext(ctx)
+}
+
+// ScheduledInstanceInstanceConfigPtrInput is an input type that accepts ScheduledInstanceInstanceConfigArgs, ScheduledInstanceInstanceConfigPtr and ScheduledInstanceInstanceConfigPtrOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigPtrInput` via:
+//
+//	        ScheduledInstanceInstanceConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledInstanceInstanceConfigPtrInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigPtrOutput() ScheduledInstanceInstanceConfigPtrOutput
+	ToScheduledInstanceInstanceConfigPtrOutputWithContext(context.Context) ScheduledInstanceInstanceConfigPtrOutput
+}
+
+type scheduledInstanceInstanceConfigPtrType ScheduledInstanceInstanceConfigArgs
+
+func ScheduledInstanceInstanceConfigPtr(v *ScheduledInstanceInstanceConfigArgs) ScheduledInstanceInstanceConfigPtrInput {
+	return (*scheduledInstanceInstanceConfigPtrType)(v)
+}
+
+func (*scheduledInstanceInstanceConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledInstanceInstanceConfig)(nil)).Elem()
+}
+
+func (i *scheduledInstanceInstanceConfigPtrType) ToScheduledInstanceInstanceConfigPtrOutput() ScheduledInstanceInstanceConfigPtrOutput {
+	return i.ToScheduledInstanceInstanceConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledInstanceInstanceConfigPtrType) ToScheduledInstanceInstanceConfigPtrOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigPtrOutput)
+}
+
+type ScheduledInstanceInstanceConfigOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfig)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigOutput) ToScheduledInstanceInstanceConfigOutput() ScheduledInstanceInstanceConfigOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigOutput) ToScheduledInstanceInstanceConfigOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigOutput) ToScheduledInstanceInstanceConfigPtrOutput() ScheduledInstanceInstanceConfigPtrOutput {
+	return o.ToScheduledInstanceInstanceConfigPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledInstanceInstanceConfigOutput) ToScheduledInstanceInstanceConfigPtrOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledInstanceInstanceConfig) *ScheduledInstanceInstanceConfig {
+		return &v
+	}).(ScheduledInstanceInstanceConfigPtrOutput)
+}
+
+// Description of the instance.
+func (o ScheduledInstanceInstanceConfigOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.Description }).(pulumi.StringPtrOutput)
+}
+
+// Public IP information bound to the instance.
+func (o ScheduledInstanceInstanceConfigOutput) EipAddress() ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *ScheduledInstanceInstanceConfigEipAddress {
+		return v.EipAddress
+	}).(ScheduledInstanceInstanceConfigEipAddressPtrOutput)
+}
+
+// Instance hostname.
+func (o ScheduledInstanceInstanceConfigOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.HostName }).(pulumi.StringPtrOutput)
+}
+
+// High performance computing cluster ID.
+func (o ScheduledInstanceInstanceConfigOutput) HpcClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.HpcClusterId }).(pulumi.StringPtrOutput)
+}
+
+// Image ID
+func (o ScheduledInstanceInstanceConfigOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.ImageId }).(pulumi.StringPtrOutput)
+}
+
+// Instance name.
+func (o ScheduledInstanceInstanceConfigOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
+}
+
+// Instance type.
+func (o ScheduledInstanceInstanceConfigOutput) InstanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.InstanceTypeId }).(pulumi.StringPtrOutput)
+}
+
+// Key pair name.
+func (o ScheduledInstanceInstanceConfigOutput) KeyPairName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.KeyPairName }).(pulumi.StringPtrOutput)
+}
+
+// Network interface information attached to the instance.
+//
+//	Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ScheduledInstanceInstanceConfigOutput) NetworkInterfaces() ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) []ScheduledInstanceInstanceConfigNetworkInterface {
+		return v.NetworkInterfaces
+	}).(ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput)
+}
+
+// Project to which the instance belongs.
+func (o ScheduledInstanceInstanceConfigOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// Tag information for the instance.
+//
+//	Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ScheduledInstanceInstanceConfigOutput) Tags() ScheduledInstanceInstanceConfigTagArrayOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) []ScheduledInstanceInstanceConfigTag { return v.Tags }).(ScheduledInstanceInstanceConfigTagArrayOutput)
+}
+
+// Information about the cloud disks attached to the instance.
+//
+//	Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ScheduledInstanceInstanceConfigOutput) Volumes() ScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) []ScheduledInstanceInstanceConfigVolume { return v.Volumes }).(ScheduledInstanceInstanceConfigVolumeArrayOutput)
+}
+
+// Availability zone ID where the elastic reservation order is located.
+func (o ScheduledInstanceInstanceConfigOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfig) *string { return v.ZoneId }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledInstanceInstanceConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledInstanceInstanceConfig)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigPtrOutput) ToScheduledInstanceInstanceConfigPtrOutput() ScheduledInstanceInstanceConfigPtrOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigPtrOutput) ToScheduledInstanceInstanceConfigPtrOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigPtrOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigPtrOutput) Elem() ScheduledInstanceInstanceConfigOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) ScheduledInstanceInstanceConfig {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledInstanceInstanceConfig
+		return ret
+	}).(ScheduledInstanceInstanceConfigOutput)
+}
+
+// Description of the instance.
+func (o ScheduledInstanceInstanceConfigPtrOutput) Description() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Description
+	}).(pulumi.StringPtrOutput)
+}
+
+// Public IP information bound to the instance.
+func (o ScheduledInstanceInstanceConfigPtrOutput) EipAddress() ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *ScheduledInstanceInstanceConfigEipAddress {
+		if v == nil {
+			return nil
+		}
+		return v.EipAddress
+	}).(ScheduledInstanceInstanceConfigEipAddressPtrOutput)
+}
+
+// Instance hostname.
+func (o ScheduledInstanceInstanceConfigPtrOutput) HostName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HostName
+	}).(pulumi.StringPtrOutput)
+}
+
+// High performance computing cluster ID.
+func (o ScheduledInstanceInstanceConfigPtrOutput) HpcClusterId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.HpcClusterId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Image ID
+func (o ScheduledInstanceInstanceConfigPtrOutput) ImageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ImageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Instance name.
+func (o ScheduledInstanceInstanceConfigPtrOutput) InstanceName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Instance type.
+func (o ScheduledInstanceInstanceConfigPtrOutput) InstanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.InstanceTypeId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Key pair name.
+func (o ScheduledInstanceInstanceConfigPtrOutput) KeyPairName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.KeyPairName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Network interface information attached to the instance.
+//
+//	Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ScheduledInstanceInstanceConfigPtrOutput) NetworkInterfaces() ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) []ScheduledInstanceInstanceConfigNetworkInterface {
+		if v == nil {
+			return nil
+		}
+		return v.NetworkInterfaces
+	}).(ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput)
+}
+
+// Project to which the instance belongs.
+func (o ScheduledInstanceInstanceConfigPtrOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Tag information for the instance.
+//
+//	Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ScheduledInstanceInstanceConfigPtrOutput) Tags() ScheduledInstanceInstanceConfigTagArrayOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) []ScheduledInstanceInstanceConfigTag {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(ScheduledInstanceInstanceConfigTagArrayOutput)
+}
+
+// Information about the cloud disks attached to the instance.
+//
+//	Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o ScheduledInstanceInstanceConfigPtrOutput) Volumes() ScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) []ScheduledInstanceInstanceConfigVolume {
+		if v == nil {
+			return nil
+		}
+		return v.Volumes
+	}).(ScheduledInstanceInstanceConfigVolumeArrayOutput)
+}
+
+// Availability zone ID where the elastic reservation order is located.
+func (o ScheduledInstanceInstanceConfigPtrOutput) ZoneId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ZoneId
+	}).(pulumi.StringPtrOutput)
+}
+
+type ScheduledInstanceInstanceConfigEipAddress struct {
+	// Maximum bandwidth for the public IP, in Mbps
+	//     - Default: 1
+	//     - Value range:
+	//       - If `ChargeType` is `PayByBandwidth`: 1–500
+	//       - If `ChargeType` is `PayByTraffic`: 1–200
+	BandwidthMbps *int `pulumi:"bandwidthMbps"`
+	// Shared bandwidth package ID.
+	BandwidthPackageId *string `pulumi:"bandwidthPackageId"`
+	// Billing method for public IP. Values:
+	//     - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+	//     - PayByTraffic: Pay-as-you-go by actual traffic
+	//     - PrePaid: Subscription
+	ChargeType *string `pulumi:"chargeType"`
+	// Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+	Isp *string `pulumi:"isp"`
+	// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+	ReleaseWithInstance *bool `pulumi:"releaseWithInstance"`
+	// ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+	SecurityProtectionInstanceId *string `pulumi:"securityProtectionInstanceId"`
+	// Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// ScheduledInstanceInstanceConfigEipAddressInput is an input type that accepts ScheduledInstanceInstanceConfigEipAddressArgs and ScheduledInstanceInstanceConfigEipAddressOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigEipAddressInput` via:
+//
+//	ScheduledInstanceInstanceConfigEipAddressArgs{...}
+type ScheduledInstanceInstanceConfigEipAddressInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigEipAddressOutput() ScheduledInstanceInstanceConfigEipAddressOutput
+	ToScheduledInstanceInstanceConfigEipAddressOutputWithContext(context.Context) ScheduledInstanceInstanceConfigEipAddressOutput
+}
+
+type ScheduledInstanceInstanceConfigEipAddressArgs struct {
+	// Maximum bandwidth for the public IP, in Mbps
+	//     - Default: 1
+	//     - Value range:
+	//       - If `ChargeType` is `PayByBandwidth`: 1–500
+	//       - If `ChargeType` is `PayByTraffic`: 1–200
+	BandwidthMbps pulumi.IntPtrInput `pulumi:"bandwidthMbps"`
+	// Shared bandwidth package ID.
+	BandwidthPackageId pulumi.StringPtrInput `pulumi:"bandwidthPackageId"`
+	// Billing method for public IP. Values:
+	//     - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+	//     - PayByTraffic: Pay-as-you-go by actual traffic
+	//     - PrePaid: Subscription
+	ChargeType pulumi.StringPtrInput `pulumi:"chargeType"`
+	// Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+	Isp pulumi.StringPtrInput `pulumi:"isp"`
+	// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+	ReleaseWithInstance pulumi.BoolPtrInput `pulumi:"releaseWithInstance"`
+	// ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+	SecurityProtectionInstanceId pulumi.StringPtrInput `pulumi:"securityProtectionInstanceId"`
+	// Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (ScheduledInstanceInstanceConfigEipAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfigEipAddress)(nil)).Elem()
+}
+
+func (i ScheduledInstanceInstanceConfigEipAddressArgs) ToScheduledInstanceInstanceConfigEipAddressOutput() ScheduledInstanceInstanceConfigEipAddressOutput {
+	return i.ToScheduledInstanceInstanceConfigEipAddressOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigEipAddressArgs) ToScheduledInstanceInstanceConfigEipAddressOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigEipAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigEipAddressOutput)
+}
+
+func (i ScheduledInstanceInstanceConfigEipAddressArgs) ToScheduledInstanceInstanceConfigEipAddressPtrOutput() ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return i.ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigEipAddressArgs) ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigEipAddressOutput).ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(ctx)
+}
+
+// ScheduledInstanceInstanceConfigEipAddressPtrInput is an input type that accepts ScheduledInstanceInstanceConfigEipAddressArgs, ScheduledInstanceInstanceConfigEipAddressPtr and ScheduledInstanceInstanceConfigEipAddressPtrOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigEipAddressPtrInput` via:
+//
+//	        ScheduledInstanceInstanceConfigEipAddressArgs{...}
+//
+//	or:
+//
+//	        nil
+type ScheduledInstanceInstanceConfigEipAddressPtrInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigEipAddressPtrOutput() ScheduledInstanceInstanceConfigEipAddressPtrOutput
+	ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(context.Context) ScheduledInstanceInstanceConfigEipAddressPtrOutput
+}
+
+type scheduledInstanceInstanceConfigEipAddressPtrType ScheduledInstanceInstanceConfigEipAddressArgs
+
+func ScheduledInstanceInstanceConfigEipAddressPtr(v *ScheduledInstanceInstanceConfigEipAddressArgs) ScheduledInstanceInstanceConfigEipAddressPtrInput {
+	return (*scheduledInstanceInstanceConfigEipAddressPtrType)(v)
+}
+
+func (*scheduledInstanceInstanceConfigEipAddressPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledInstanceInstanceConfigEipAddress)(nil)).Elem()
+}
+
+func (i *scheduledInstanceInstanceConfigEipAddressPtrType) ToScheduledInstanceInstanceConfigEipAddressPtrOutput() ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return i.ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (i *scheduledInstanceInstanceConfigEipAddressPtrType) ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigEipAddressPtrOutput)
+}
+
+type ScheduledInstanceInstanceConfigEipAddressOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigEipAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfigEipAddress)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) ToScheduledInstanceInstanceConfigEipAddressOutput() ScheduledInstanceInstanceConfigEipAddressOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) ToScheduledInstanceInstanceConfigEipAddressOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigEipAddressOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) ToScheduledInstanceInstanceConfigEipAddressPtrOutput() ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return o.ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(context.Background())
+}
+
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v ScheduledInstanceInstanceConfigEipAddress) *ScheduledInstanceInstanceConfigEipAddress {
+		return &v
+	}).(ScheduledInstanceInstanceConfigEipAddressPtrOutput)
+}
+
+// Maximum bandwidth for the public IP, in Mbps
+//   - Default: 1
+//   - Value range:
+//   - If `ChargeType` is `PayByBandwidth`: 1–500
+//   - If `ChargeType` is `PayByTraffic`: 1–200
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) BandwidthMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigEipAddress) *int { return v.BandwidthMbps }).(pulumi.IntPtrOutput)
+}
+
+// Shared bandwidth package ID.
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigEipAddress) *string { return v.BandwidthPackageId }).(pulumi.StringPtrOutput)
+}
+
+// Billing method for public IP. Values:
+//   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+//   - PayByTraffic: Pay-as-you-go by actual traffic
+//   - PrePaid: Subscription
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigEipAddress) *string { return v.ChargeType }).(pulumi.StringPtrOutput)
+}
+
+// Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigEipAddress) *string { return v.Isp }).(pulumi.StringPtrOutput)
+}
+
+// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigEipAddress) *bool { return v.ReleaseWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) SecurityProtectionInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigEipAddress) *string { return v.SecurityProtectionInstanceId }).(pulumi.StringPtrOutput)
+}
+
+// Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+func (o ScheduledInstanceInstanceConfigEipAddressOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigEipAddress) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type ScheduledInstanceInstanceConfigEipAddressPtrOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigEipAddressPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**ScheduledInstanceInstanceConfigEipAddress)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) ToScheduledInstanceInstanceConfigEipAddressPtrOutput() ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) ToScheduledInstanceInstanceConfigEipAddressPtrOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigEipAddressPtrOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) Elem() ScheduledInstanceInstanceConfigEipAddressOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfigEipAddress) ScheduledInstanceInstanceConfigEipAddress {
+		if v != nil {
+			return *v
+		}
+		var ret ScheduledInstanceInstanceConfigEipAddress
+		return ret
+	}).(ScheduledInstanceInstanceConfigEipAddressOutput)
+}
+
+// Maximum bandwidth for the public IP, in Mbps
+//   - Default: 1
+//   - Value range:
+//   - If `ChargeType` is `PayByBandwidth`: 1–500
+//   - If `ChargeType` is `PayByTraffic`: 1–200
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) BandwidthMbps() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfigEipAddress) *int {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthMbps
+	}).(pulumi.IntPtrOutput)
+}
+
+// Shared bandwidth package ID.
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) BandwidthPackageId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfigEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.BandwidthPackageId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Billing method for public IP. Values:
+//   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+//   - PayByTraffic: Pay-as-you-go by actual traffic
+//   - PrePaid: Subscription
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) ChargeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfigEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ChargeType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) Isp() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfigEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Isp
+	}).(pulumi.StringPtrOutput)
+}
+
+// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) ReleaseWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfigEipAddress) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.ReleaseWithInstance
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) SecurityProtectionInstanceId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfigEipAddress) *string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionInstanceId
+	}).(pulumi.StringPtrOutput)
+}
+
+// Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+func (o ScheduledInstanceInstanceConfigEipAddressPtrOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *ScheduledInstanceInstanceConfigEipAddress) []string {
+		if v == nil {
+			return nil
+		}
+		return v.SecurityProtectionTypes
+	}).(pulumi.StringArrayOutput)
+}
+
+type ScheduledInstanceInstanceConfigNetworkInterface struct {
+	// Security group ID associated with the network interface.
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// Private network subnet ID of the instance.
+	SubnetId *string `pulumi:"subnetId"`
+}
+
+// ScheduledInstanceInstanceConfigNetworkInterfaceInput is an input type that accepts ScheduledInstanceInstanceConfigNetworkInterfaceArgs and ScheduledInstanceInstanceConfigNetworkInterfaceOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigNetworkInterfaceInput` via:
+//
+//	ScheduledInstanceInstanceConfigNetworkInterfaceArgs{...}
+type ScheduledInstanceInstanceConfigNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigNetworkInterfaceOutput() ScheduledInstanceInstanceConfigNetworkInterfaceOutput
+	ToScheduledInstanceInstanceConfigNetworkInterfaceOutputWithContext(context.Context) ScheduledInstanceInstanceConfigNetworkInterfaceOutput
+}
+
+type ScheduledInstanceInstanceConfigNetworkInterfaceArgs struct {
+	// Security group ID associated with the network interface.
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// Private network subnet ID of the instance.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+}
+
+func (ScheduledInstanceInstanceConfigNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfigNetworkInterface)(nil)).Elem()
+}
+
+func (i ScheduledInstanceInstanceConfigNetworkInterfaceArgs) ToScheduledInstanceInstanceConfigNetworkInterfaceOutput() ScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return i.ToScheduledInstanceInstanceConfigNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigNetworkInterfaceArgs) ToScheduledInstanceInstanceConfigNetworkInterfaceOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigNetworkInterfaceOutput)
+}
+
+// ScheduledInstanceInstanceConfigNetworkInterfaceArrayInput is an input type that accepts ScheduledInstanceInstanceConfigNetworkInterfaceArray and ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigNetworkInterfaceArrayInput` via:
+//
+//	ScheduledInstanceInstanceConfigNetworkInterfaceArray{ ScheduledInstanceInstanceConfigNetworkInterfaceArgs{...} }
+type ScheduledInstanceInstanceConfigNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput() ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput
+	ToScheduledInstanceInstanceConfigNetworkInterfaceArrayOutputWithContext(context.Context) ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput
+}
+
+type ScheduledInstanceInstanceConfigNetworkInterfaceArray []ScheduledInstanceInstanceConfigNetworkInterfaceInput
+
+func (ScheduledInstanceInstanceConfigNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceInstanceConfigNetworkInterface)(nil)).Elem()
+}
+
+func (i ScheduledInstanceInstanceConfigNetworkInterfaceArray) ToScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput() ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return i.ToScheduledInstanceInstanceConfigNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigNetworkInterfaceArray) ToScheduledInstanceInstanceConfigNetworkInterfaceArrayOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput)
+}
+
+type ScheduledInstanceInstanceConfigNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfigNetworkInterface)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigNetworkInterfaceOutput) ToScheduledInstanceInstanceConfigNetworkInterfaceOutput() ScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigNetworkInterfaceOutput) ToScheduledInstanceInstanceConfigNetworkInterfaceOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return o
+}
+
+// Security group ID associated with the network interface.
+func (o ScheduledInstanceInstanceConfigNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Private network subnet ID of the instance.
+func (o ScheduledInstanceInstanceConfigNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceInstanceConfigNetworkInterface)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput) ToScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput() ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput) ToScheduledInstanceInstanceConfigNetworkInterfaceArrayOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) ScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduledInstanceInstanceConfigNetworkInterface {
+		return vs[0].([]ScheduledInstanceInstanceConfigNetworkInterface)[vs[1].(int)]
+	}).(ScheduledInstanceInstanceConfigNetworkInterfaceOutput)
+}
+
+type ScheduledInstanceInstanceConfigTag struct {
+	// Resource tag key.
+	Key *string `pulumi:"key"`
+	// Resource tag value
+	Value *string `pulumi:"value"`
+}
+
+// ScheduledInstanceInstanceConfigTagInput is an input type that accepts ScheduledInstanceInstanceConfigTagArgs and ScheduledInstanceInstanceConfigTagOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigTagInput` via:
+//
+//	ScheduledInstanceInstanceConfigTagArgs{...}
+type ScheduledInstanceInstanceConfigTagInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigTagOutput() ScheduledInstanceInstanceConfigTagOutput
+	ToScheduledInstanceInstanceConfigTagOutputWithContext(context.Context) ScheduledInstanceInstanceConfigTagOutput
+}
+
+type ScheduledInstanceInstanceConfigTagArgs struct {
+	// Resource tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Resource tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ScheduledInstanceInstanceConfigTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfigTag)(nil)).Elem()
+}
+
+func (i ScheduledInstanceInstanceConfigTagArgs) ToScheduledInstanceInstanceConfigTagOutput() ScheduledInstanceInstanceConfigTagOutput {
+	return i.ToScheduledInstanceInstanceConfigTagOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigTagArgs) ToScheduledInstanceInstanceConfigTagOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigTagOutput)
+}
+
+// ScheduledInstanceInstanceConfigTagArrayInput is an input type that accepts ScheduledInstanceInstanceConfigTagArray and ScheduledInstanceInstanceConfigTagArrayOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigTagArrayInput` via:
+//
+//	ScheduledInstanceInstanceConfigTagArray{ ScheduledInstanceInstanceConfigTagArgs{...} }
+type ScheduledInstanceInstanceConfigTagArrayInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigTagArrayOutput() ScheduledInstanceInstanceConfigTagArrayOutput
+	ToScheduledInstanceInstanceConfigTagArrayOutputWithContext(context.Context) ScheduledInstanceInstanceConfigTagArrayOutput
+}
+
+type ScheduledInstanceInstanceConfigTagArray []ScheduledInstanceInstanceConfigTagInput
+
+func (ScheduledInstanceInstanceConfigTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceInstanceConfigTag)(nil)).Elem()
+}
+
+func (i ScheduledInstanceInstanceConfigTagArray) ToScheduledInstanceInstanceConfigTagArrayOutput() ScheduledInstanceInstanceConfigTagArrayOutput {
+	return i.ToScheduledInstanceInstanceConfigTagArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigTagArray) ToScheduledInstanceInstanceConfigTagArrayOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigTagArrayOutput)
+}
+
+type ScheduledInstanceInstanceConfigTagOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfigTag)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigTagOutput) ToScheduledInstanceInstanceConfigTagOutput() ScheduledInstanceInstanceConfigTagOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigTagOutput) ToScheduledInstanceInstanceConfigTagOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigTagOutput {
+	return o
+}
+
+// Resource tag key.
+func (o ScheduledInstanceInstanceConfigTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Resource tag value
+func (o ScheduledInstanceInstanceConfigTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledInstanceInstanceConfigTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceInstanceConfigTag)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigTagArrayOutput) ToScheduledInstanceInstanceConfigTagArrayOutput() ScheduledInstanceInstanceConfigTagArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigTagArrayOutput) ToScheduledInstanceInstanceConfigTagArrayOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigTagArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigTagArrayOutput) Index(i pulumi.IntInput) ScheduledInstanceInstanceConfigTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduledInstanceInstanceConfigTag {
+		return vs[0].([]ScheduledInstanceInstanceConfigTag)[vs[1].(int)]
+	}).(ScheduledInstanceInstanceConfigTagOutput)
+}
+
+type ScheduledInstanceInstanceConfigVolume struct {
+	// Disk type. Values:   - system: System disk   - data: Data disk
+	Kind *string `pulumi:"kind"`
+	// Cloud disk capacity, in GiB.
+	Size *int `pulumi:"size"`
+	// Cloud disk type. Values:
+	//     - ESSD_PL0: Ultra-fast SSD PL0
+	//     - ESSD_FlexPL: Ultra-fast SSD FlexPL
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// ScheduledInstanceInstanceConfigVolumeInput is an input type that accepts ScheduledInstanceInstanceConfigVolumeArgs and ScheduledInstanceInstanceConfigVolumeOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigVolumeInput` via:
+//
+//	ScheduledInstanceInstanceConfigVolumeArgs{...}
+type ScheduledInstanceInstanceConfigVolumeInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigVolumeOutput() ScheduledInstanceInstanceConfigVolumeOutput
+	ToScheduledInstanceInstanceConfigVolumeOutputWithContext(context.Context) ScheduledInstanceInstanceConfigVolumeOutput
+}
+
+type ScheduledInstanceInstanceConfigVolumeArgs struct {
+	// Disk type. Values:   - system: System disk   - data: Data disk
+	Kind pulumi.StringPtrInput `pulumi:"kind"`
+	// Cloud disk capacity, in GiB.
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// Cloud disk type. Values:
+	//     - ESSD_PL0: Ultra-fast SSD PL0
+	//     - ESSD_FlexPL: Ultra-fast SSD FlexPL
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (ScheduledInstanceInstanceConfigVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfigVolume)(nil)).Elem()
+}
+
+func (i ScheduledInstanceInstanceConfigVolumeArgs) ToScheduledInstanceInstanceConfigVolumeOutput() ScheduledInstanceInstanceConfigVolumeOutput {
+	return i.ToScheduledInstanceInstanceConfigVolumeOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigVolumeArgs) ToScheduledInstanceInstanceConfigVolumeOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigVolumeOutput)
+}
+
+// ScheduledInstanceInstanceConfigVolumeArrayInput is an input type that accepts ScheduledInstanceInstanceConfigVolumeArray and ScheduledInstanceInstanceConfigVolumeArrayOutput values.
+// You can construct a concrete instance of `ScheduledInstanceInstanceConfigVolumeArrayInput` via:
+//
+//	ScheduledInstanceInstanceConfigVolumeArray{ ScheduledInstanceInstanceConfigVolumeArgs{...} }
+type ScheduledInstanceInstanceConfigVolumeArrayInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceInstanceConfigVolumeArrayOutput() ScheduledInstanceInstanceConfigVolumeArrayOutput
+	ToScheduledInstanceInstanceConfigVolumeArrayOutputWithContext(context.Context) ScheduledInstanceInstanceConfigVolumeArrayOutput
+}
+
+type ScheduledInstanceInstanceConfigVolumeArray []ScheduledInstanceInstanceConfigVolumeInput
+
+func (ScheduledInstanceInstanceConfigVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceInstanceConfigVolume)(nil)).Elem()
+}
+
+func (i ScheduledInstanceInstanceConfigVolumeArray) ToScheduledInstanceInstanceConfigVolumeArrayOutput() ScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return i.ToScheduledInstanceInstanceConfigVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceInstanceConfigVolumeArray) ToScheduledInstanceInstanceConfigVolumeArrayOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceInstanceConfigVolumeArrayOutput)
+}
+
+type ScheduledInstanceInstanceConfigVolumeOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceInstanceConfigVolume)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigVolumeOutput) ToScheduledInstanceInstanceConfigVolumeOutput() ScheduledInstanceInstanceConfigVolumeOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigVolumeOutput) ToScheduledInstanceInstanceConfigVolumeOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigVolumeOutput {
+	return o
+}
+
+// Disk type. Values:   - system: System disk   - data: Data disk
+func (o ScheduledInstanceInstanceConfigVolumeOutput) Kind() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigVolume) *string { return v.Kind }).(pulumi.StringPtrOutput)
+}
+
+// Cloud disk capacity, in GiB.
+func (o ScheduledInstanceInstanceConfigVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// Cloud disk type. Values:
+//   - ESSD_PL0: Ultra-fast SSD PL0
+//   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+func (o ScheduledInstanceInstanceConfigVolumeOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceInstanceConfigVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledInstanceInstanceConfigVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceInstanceConfigVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceInstanceConfigVolume)(nil)).Elem()
+}
+
+func (o ScheduledInstanceInstanceConfigVolumeArrayOutput) ToScheduledInstanceInstanceConfigVolumeArrayOutput() ScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigVolumeArrayOutput) ToScheduledInstanceInstanceConfigVolumeArrayOutputWithContext(ctx context.Context) ScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceInstanceConfigVolumeArrayOutput) Index(i pulumi.IntInput) ScheduledInstanceInstanceConfigVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduledInstanceInstanceConfigVolume {
+		return vs[0].([]ScheduledInstanceInstanceConfigVolume)[vs[1].(int)]
+	}).(ScheduledInstanceInstanceConfigVolumeOutput)
+}
+
+type ScheduledInstanceNetworkInterface struct {
+	// Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+	PrimaryIpAddress *string `pulumi:"primaryIpAddress"`
+	// Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
+	// Security group ID associated with the network interface.
+	//     - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+	//     - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+	//     - Use & to separate multiple security group IDs.
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+	SubnetId *string `pulumi:"subnetId"`
+	// Private network
+	VpcId *string `pulumi:"vpcId"`
+}
+
+// ScheduledInstanceNetworkInterfaceInput is an input type that accepts ScheduledInstanceNetworkInterfaceArgs and ScheduledInstanceNetworkInterfaceOutput values.
+// You can construct a concrete instance of `ScheduledInstanceNetworkInterfaceInput` via:
+//
+//	ScheduledInstanceNetworkInterfaceArgs{...}
+type ScheduledInstanceNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceNetworkInterfaceOutput() ScheduledInstanceNetworkInterfaceOutput
+	ToScheduledInstanceNetworkInterfaceOutputWithContext(context.Context) ScheduledInstanceNetworkInterfaceOutput
+}
+
+type ScheduledInstanceNetworkInterfaceArgs struct {
+	// Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+	PrimaryIpAddress pulumi.StringPtrInput `pulumi:"primaryIpAddress"`
+	// Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
+	// Security group ID associated with the network interface.
+	//     - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+	//     - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+	//     - Use & to separate multiple security group IDs.
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+	SubnetId pulumi.StringPtrInput `pulumi:"subnetId"`
+	// Private network
+	VpcId pulumi.StringPtrInput `pulumi:"vpcId"`
+}
+
+func (ScheduledInstanceNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceNetworkInterface)(nil)).Elem()
+}
+
+func (i ScheduledInstanceNetworkInterfaceArgs) ToScheduledInstanceNetworkInterfaceOutput() ScheduledInstanceNetworkInterfaceOutput {
+	return i.ToScheduledInstanceNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceNetworkInterfaceArgs) ToScheduledInstanceNetworkInterfaceOutputWithContext(ctx context.Context) ScheduledInstanceNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceNetworkInterfaceOutput)
+}
+
+// ScheduledInstanceNetworkInterfaceArrayInput is an input type that accepts ScheduledInstanceNetworkInterfaceArray and ScheduledInstanceNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `ScheduledInstanceNetworkInterfaceArrayInput` via:
+//
+//	ScheduledInstanceNetworkInterfaceArray{ ScheduledInstanceNetworkInterfaceArgs{...} }
+type ScheduledInstanceNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceNetworkInterfaceArrayOutput() ScheduledInstanceNetworkInterfaceArrayOutput
+	ToScheduledInstanceNetworkInterfaceArrayOutputWithContext(context.Context) ScheduledInstanceNetworkInterfaceArrayOutput
+}
+
+type ScheduledInstanceNetworkInterfaceArray []ScheduledInstanceNetworkInterfaceInput
+
+func (ScheduledInstanceNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceNetworkInterface)(nil)).Elem()
+}
+
+func (i ScheduledInstanceNetworkInterfaceArray) ToScheduledInstanceNetworkInterfaceArrayOutput() ScheduledInstanceNetworkInterfaceArrayOutput {
+	return i.ToScheduledInstanceNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceNetworkInterfaceArray) ToScheduledInstanceNetworkInterfaceArrayOutputWithContext(ctx context.Context) ScheduledInstanceNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceNetworkInterfaceArrayOutput)
+}
+
+type ScheduledInstanceNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceNetworkInterface)(nil)).Elem()
+}
+
+func (o ScheduledInstanceNetworkInterfaceOutput) ToScheduledInstanceNetworkInterfaceOutput() ScheduledInstanceNetworkInterfaceOutput {
+	return o
+}
+
+func (o ScheduledInstanceNetworkInterfaceOutput) ToScheduledInstanceNetworkInterfaceOutputWithContext(ctx context.Context) ScheduledInstanceNetworkInterfaceOutput {
+	return o
+}
+
+// Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+func (o ScheduledInstanceNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceNetworkInterface) *string { return v.PrimaryIpAddress }).(pulumi.StringPtrOutput)
+}
+
+// Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+func (o ScheduledInstanceNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduledInstanceNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// Security group ID associated with the network interface.
+//   - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+//   - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+//   - Use & to separate multiple security group IDs.
+func (o ScheduledInstanceNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v ScheduledInstanceNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+func (o ScheduledInstanceNetworkInterfaceOutput) SubnetId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceNetworkInterface) *string { return v.SubnetId }).(pulumi.StringPtrOutput)
+}
+
+// Private network
+func (o ScheduledInstanceNetworkInterfaceOutput) VpcId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceNetworkInterface) *string { return v.VpcId }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledInstanceNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceNetworkInterface)(nil)).Elem()
+}
+
+func (o ScheduledInstanceNetworkInterfaceArrayOutput) ToScheduledInstanceNetworkInterfaceArrayOutput() ScheduledInstanceNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceNetworkInterfaceArrayOutput) ToScheduledInstanceNetworkInterfaceArrayOutputWithContext(ctx context.Context) ScheduledInstanceNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) ScheduledInstanceNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduledInstanceNetworkInterface {
+		return vs[0].([]ScheduledInstanceNetworkInterface)[vs[1].(int)]
+	}).(ScheduledInstanceNetworkInterfaceOutput)
+}
+
+type ScheduledInstanceTag struct {
+	// Resource tag key.
+	Key *string `pulumi:"key"`
+	// Resource tag value
+	Value *string `pulumi:"value"`
+}
+
+// ScheduledInstanceTagInput is an input type that accepts ScheduledInstanceTagArgs and ScheduledInstanceTagOutput values.
+// You can construct a concrete instance of `ScheduledInstanceTagInput` via:
+//
+//	ScheduledInstanceTagArgs{...}
+type ScheduledInstanceTagInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceTagOutput() ScheduledInstanceTagOutput
+	ToScheduledInstanceTagOutputWithContext(context.Context) ScheduledInstanceTagOutput
+}
+
+type ScheduledInstanceTagArgs struct {
+	// Resource tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Resource tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (ScheduledInstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceTag)(nil)).Elem()
+}
+
+func (i ScheduledInstanceTagArgs) ToScheduledInstanceTagOutput() ScheduledInstanceTagOutput {
+	return i.ToScheduledInstanceTagOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceTagArgs) ToScheduledInstanceTagOutputWithContext(ctx context.Context) ScheduledInstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceTagOutput)
+}
+
+// ScheduledInstanceTagArrayInput is an input type that accepts ScheduledInstanceTagArray and ScheduledInstanceTagArrayOutput values.
+// You can construct a concrete instance of `ScheduledInstanceTagArrayInput` via:
+//
+//	ScheduledInstanceTagArray{ ScheduledInstanceTagArgs{...} }
+type ScheduledInstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceTagArrayOutput() ScheduledInstanceTagArrayOutput
+	ToScheduledInstanceTagArrayOutputWithContext(context.Context) ScheduledInstanceTagArrayOutput
+}
+
+type ScheduledInstanceTagArray []ScheduledInstanceTagInput
+
+func (ScheduledInstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceTag)(nil)).Elem()
+}
+
+func (i ScheduledInstanceTagArray) ToScheduledInstanceTagArrayOutput() ScheduledInstanceTagArrayOutput {
+	return i.ToScheduledInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceTagArray) ToScheduledInstanceTagArrayOutputWithContext(ctx context.Context) ScheduledInstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceTagArrayOutput)
+}
+
+type ScheduledInstanceTagOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceTag)(nil)).Elem()
+}
+
+func (o ScheduledInstanceTagOutput) ToScheduledInstanceTagOutput() ScheduledInstanceTagOutput {
+	return o
+}
+
+func (o ScheduledInstanceTagOutput) ToScheduledInstanceTagOutputWithContext(ctx context.Context) ScheduledInstanceTagOutput {
+	return o
+}
+
+// Resource tag key.
+func (o ScheduledInstanceTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Resource tag value
+func (o ScheduledInstanceTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledInstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceTag)(nil)).Elem()
+}
+
+func (o ScheduledInstanceTagArrayOutput) ToScheduledInstanceTagArrayOutput() ScheduledInstanceTagArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceTagArrayOutput) ToScheduledInstanceTagArrayOutputWithContext(ctx context.Context) ScheduledInstanceTagArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceTagArrayOutput) Index(i pulumi.IntInput) ScheduledInstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduledInstanceTag {
+		return vs[0].([]ScheduledInstanceTag)[vs[1].(int)]
+	}).(ScheduledInstanceTagOutput)
+}
+
+type ScheduledInstanceVolume struct {
+	// Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance.
+	//   **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+	DeleteWithInstance *bool `pulumi:"deleteWithInstance"`
+	// Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+	//     - IOPS type: 1–50000
+	//     - Balance type: 1–50000
+	//
+	//   **Note:**
+	//     - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+	//     - Use & to separate multiple cloud disks.
+	ExtraPerformanceIops *int `pulumi:"extraPerformanceIops"`
+	// Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650.
+	//   **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+	ExtraPerformanceThroughputMb *int `pulumi:"extraPerformanceThroughputMb"`
+	// Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+	//     - Balance: Balanced extra performance
+	//     - IOPS: IOPS extra performance
+	//     - Throughput: Throughput extra performance
+	//   For more information about extra performance, see [Cloud Disk Extra Performance].
+	//
+	//   **Note:**
+	//     - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+	//   N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+	//   N ≥ 2 indicates a data disk. This parameter can be set normally.
+	//     - Use & to separate multiple cloud disks.
+	ExtraPerformanceTypeId *string `pulumi:"extraPerformanceTypeId"`
+	// Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+	//     - System disk:
+	//       - ESSD_PL0: 20–2048
+	//       - ESSD_FlexPL: 20–2048
+	//
+	//   **Note:**
+	//     Default: max{40, image size of ImageId}
+	//
+	//     - Data disk:
+	//       - ESSD_PL0: 10–32768
+	//       - ESSD_FlexPL: 10–32768
+	//
+	//   **Note:**
+	//     If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+	Size *int `pulumi:"size"`
+	// Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks.
+	//   **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+	SnapshotId *string `pulumi:"snapshotId"`
+	// Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+	//   **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// ScheduledInstanceVolumeInput is an input type that accepts ScheduledInstanceVolumeArgs and ScheduledInstanceVolumeOutput values.
+// You can construct a concrete instance of `ScheduledInstanceVolumeInput` via:
+//
+//	ScheduledInstanceVolumeArgs{...}
+type ScheduledInstanceVolumeInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceVolumeOutput() ScheduledInstanceVolumeOutput
+	ToScheduledInstanceVolumeOutputWithContext(context.Context) ScheduledInstanceVolumeOutput
+}
+
+type ScheduledInstanceVolumeArgs struct {
+	// Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance.
+	//   **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+	DeleteWithInstance pulumi.BoolPtrInput `pulumi:"deleteWithInstance"`
+	// Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+	//     - IOPS type: 1–50000
+	//     - Balance type: 1–50000
+	//
+	//   **Note:**
+	//     - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+	//     - Use & to separate multiple cloud disks.
+	ExtraPerformanceIops pulumi.IntPtrInput `pulumi:"extraPerformanceIops"`
+	// Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650.
+	//   **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+	ExtraPerformanceThroughputMb pulumi.IntPtrInput `pulumi:"extraPerformanceThroughputMb"`
+	// Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+	//     - Balance: Balanced extra performance
+	//     - IOPS: IOPS extra performance
+	//     - Throughput: Throughput extra performance
+	//   For more information about extra performance, see [Cloud Disk Extra Performance].
+	//
+	//   **Note:**
+	//     - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+	//   N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+	//   N ≥ 2 indicates a data disk. This parameter can be set normally.
+	//     - Use & to separate multiple cloud disks.
+	ExtraPerformanceTypeId pulumi.StringPtrInput `pulumi:"extraPerformanceTypeId"`
+	// Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+	//     - System disk:
+	//       - ESSD_PL0: 20–2048
+	//       - ESSD_FlexPL: 20–2048
+	//
+	//   **Note:**
+	//     Default: max{40, image size of ImageId}
+	//
+	//     - Data disk:
+	//       - ESSD_PL0: 10–32768
+	//       - ESSD_FlexPL: 10–32768
+	//
+	//   **Note:**
+	//     If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+	Size pulumi.IntPtrInput `pulumi:"size"`
+	// Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks.
+	//   **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
+	// Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+	//   **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (ScheduledInstanceVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceVolume)(nil)).Elem()
+}
+
+func (i ScheduledInstanceVolumeArgs) ToScheduledInstanceVolumeOutput() ScheduledInstanceVolumeOutput {
+	return i.ToScheduledInstanceVolumeOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceVolumeArgs) ToScheduledInstanceVolumeOutputWithContext(ctx context.Context) ScheduledInstanceVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceVolumeOutput)
+}
+
+// ScheduledInstanceVolumeArrayInput is an input type that accepts ScheduledInstanceVolumeArray and ScheduledInstanceVolumeArrayOutput values.
+// You can construct a concrete instance of `ScheduledInstanceVolumeArrayInput` via:
+//
+//	ScheduledInstanceVolumeArray{ ScheduledInstanceVolumeArgs{...} }
+type ScheduledInstanceVolumeArrayInput interface {
+	pulumi.Input
+
+	ToScheduledInstanceVolumeArrayOutput() ScheduledInstanceVolumeArrayOutput
+	ToScheduledInstanceVolumeArrayOutputWithContext(context.Context) ScheduledInstanceVolumeArrayOutput
+}
+
+type ScheduledInstanceVolumeArray []ScheduledInstanceVolumeInput
+
+func (ScheduledInstanceVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceVolume)(nil)).Elem()
+}
+
+func (i ScheduledInstanceVolumeArray) ToScheduledInstanceVolumeArrayOutput() ScheduledInstanceVolumeArrayOutput {
+	return i.ToScheduledInstanceVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i ScheduledInstanceVolumeArray) ToScheduledInstanceVolumeArrayOutputWithContext(ctx context.Context) ScheduledInstanceVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(ScheduledInstanceVolumeArrayOutput)
+}
+
+type ScheduledInstanceVolumeOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*ScheduledInstanceVolume)(nil)).Elem()
+}
+
+func (o ScheduledInstanceVolumeOutput) ToScheduledInstanceVolumeOutput() ScheduledInstanceVolumeOutput {
+	return o
+}
+
+func (o ScheduledInstanceVolumeOutput) ToScheduledInstanceVolumeOutputWithContext(ctx context.Context) ScheduledInstanceVolumeOutput {
+	return o
+}
+
+// Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance.
+//
+//	**Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+func (o ScheduledInstanceVolumeOutput) DeleteWithInstance() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceVolume) *bool { return v.DeleteWithInstance }).(pulumi.BoolPtrOutput)
+}
+
+// Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+//
+//   - IOPS type: 1–50000
+//
+//   - Balance type: 1–50000
+//
+//     **Note:**
+//
+//   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+//
+//   - Use & to separate multiple cloud disks.
+func (o ScheduledInstanceVolumeOutput) ExtraPerformanceIops() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceVolume) *int { return v.ExtraPerformanceIops }).(pulumi.IntPtrOutput)
+}
+
+// Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650.
+//
+//	**Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+func (o ScheduledInstanceVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceVolume) *int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntPtrOutput)
+}
+
+// Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+//
+//   - Balance: Balanced extra performance
+//
+//   - IOPS: IOPS extra performance
+//
+//   - Throughput: Throughput extra performance
+//     For more information about extra performance, see [Cloud Disk Extra Performance].
+//
+//     **Note:**
+//
+//   - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+//     N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+//     N ≥ 2 indicates a data disk. This parameter can be set normally.
+//
+//   - Use & to separate multiple cloud disks.
+func (o ScheduledInstanceVolumeOutput) ExtraPerformanceTypeId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceVolume) *string { return v.ExtraPerformanceTypeId }).(pulumi.StringPtrOutput)
+}
+
+// Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+//
+//   - System disk:
+//
+//   - ESSD_PL0: 20–2048
+//
+//   - ESSD_FlexPL: 20–2048
+//
+//     **Note:**
+//     Default: max{40, image size of ImageId}
+//
+//   - Data disk:
+//
+//   - ESSD_PL0: 10–32768
+//
+//   - ESSD_FlexPL: 10–32768
+//
+//     **Note:**
+//     If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+func (o ScheduledInstanceVolumeOutput) Size() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
+}
+
+// Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks.
+//
+//	**Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+func (o ScheduledInstanceVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
+}
+
+// Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+//
+//	**Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+func (o ScheduledInstanceVolumeOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v ScheduledInstanceVolume) *string { return v.VolumeType }).(pulumi.StringPtrOutput)
+}
+
+type ScheduledInstanceVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (ScheduledInstanceVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]ScheduledInstanceVolume)(nil)).Elem()
+}
+
+func (o ScheduledInstanceVolumeArrayOutput) ToScheduledInstanceVolumeArrayOutput() ScheduledInstanceVolumeArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceVolumeArrayOutput) ToScheduledInstanceVolumeArrayOutputWithContext(ctx context.Context) ScheduledInstanceVolumeArrayOutput {
+	return o
+}
+
+func (o ScheduledInstanceVolumeArrayOutput) Index(i pulumi.IntInput) ScheduledInstanceVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) ScheduledInstanceVolume {
+		return vs[0].([]ScheduledInstanceVolume)[vs[1].(int)]
+	}).(ScheduledInstanceVolumeOutput)
+}
+
 type GetCommandParameterDefinition struct {
 	// Allowed decimal places for custom parameter (number).
 	DecimalPrecision int `pulumi:"decimalPrecision"`
@@ -11580,6 +13406,1296 @@ func (o GetLaunchTemplateVersionVolumeArrayOutput) Index(i pulumi.IntInput) GetL
 	}).(GetLaunchTemplateVersionVolumeOutput)
 }
 
+type GetScheduledInstanceEipAddress struct {
+	// The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+	BandwidthMbps int `pulumi:"bandwidthMbps"`
+	// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
+	// Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription.
+	//   **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+	ChargeType string `pulumi:"chargeType"`
+	// Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+	Isp string `pulumi:"isp"`
+	// Whether the public IP is released with the instance
+	//     - true: The public IP is released with the instance
+	//     - false (default): The public IP is not released with the instance
+	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
+	// DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+	SecurityProtectionInstanceId int `pulumi:"securityProtectionInstanceId"`
+	// Security protection type for public IP.
+	//     - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+	//     - Values:
+	//       - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+	//
+	//   **Note:**
+	//         - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+	//         - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+	//
+	//       - If not specified, the default protection type public IP will be applied.
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// GetScheduledInstanceEipAddressInput is an input type that accepts GetScheduledInstanceEipAddressArgs and GetScheduledInstanceEipAddressOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceEipAddressInput` via:
+//
+//	GetScheduledInstanceEipAddressArgs{...}
+type GetScheduledInstanceEipAddressInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceEipAddressOutput() GetScheduledInstanceEipAddressOutput
+	ToGetScheduledInstanceEipAddressOutputWithContext(context.Context) GetScheduledInstanceEipAddressOutput
+}
+
+type GetScheduledInstanceEipAddressArgs struct {
+	// The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
+	// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
+	// Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription.
+	//   **Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+	// Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+	Isp pulumi.StringInput `pulumi:"isp"`
+	// Whether the public IP is released with the instance
+	//     - true: The public IP is released with the instance
+	//     - false (default): The public IP is not released with the instance
+	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
+	// DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+	SecurityProtectionInstanceId pulumi.IntInput `pulumi:"securityProtectionInstanceId"`
+	// Security protection type for public IP.
+	//     - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+	//     - Values:
+	//       - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+	//
+	//   **Note:**
+	//         - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+	//         - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+	//
+	//       - If not specified, the default protection type public IP will be applied.
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (GetScheduledInstanceEipAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceEipAddress)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceEipAddressArgs) ToGetScheduledInstanceEipAddressOutput() GetScheduledInstanceEipAddressOutput {
+	return i.ToGetScheduledInstanceEipAddressOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceEipAddressArgs) ToGetScheduledInstanceEipAddressOutputWithContext(ctx context.Context) GetScheduledInstanceEipAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceEipAddressOutput)
+}
+
+type GetScheduledInstanceEipAddressOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceEipAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceEipAddress)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceEipAddressOutput) ToGetScheduledInstanceEipAddressOutput() GetScheduledInstanceEipAddressOutput {
+	return o
+}
+
+func (o GetScheduledInstanceEipAddressOutput) ToGetScheduledInstanceEipAddressOutputWithContext(ctx context.Context) GetScheduledInstanceEipAddressOutput {
+	return o
+}
+
+// The maximum bandwidth for the public IP address. Default value: 1. Unit: Mbps.   - When `ChargeType` is set to `PayByBandwidth`: valid range is 1–500.   - When `ChargeType` is set to `PayByTraffic`: valid range is 1–200.
+func (o GetScheduledInstanceEipAddressOutput) BandwidthMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledInstanceEipAddress) int { return v.BandwidthMbps }).(pulumi.IntOutput)
+}
+
+// ID of the shared bandwidth package, indicating that the public IP will be added to the shared bandwidth package.   - You can call the [DescribeBandwidthPackages] API to query the ID of the shared bandwidth package.   - The following conditions must be met to add a public IP to a shared bandwidth package:    - Both must have the same security protection type.    - Both must be in the same region.    - The billing method for the public IP must be pay-as-you-go.    - The shared bandwidth package must be of IPv4 type.
+func (o GetScheduledInstanceEipAddressOutput) BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceEipAddress) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
+}
+
+// Public IP billing method. Options:   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap.   - PayByTraffic: Pay-as-you-go by actual traffic.   - PrePaid: Subscription.
+//
+//	**Note:** When the instance billing type `InstanceChargeType` is set to `PostPaid`, this parameter cannot be set to `PrePaid`.
+func (o GetScheduledInstanceEipAddressOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceEipAddress) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+// Public IP line type. Defaults to BGP. Options:   - BGP: BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use:   - ChinaMobile: China Mobile static single-line.   - ChinaTelecom: China Telecom static single-line.   - ChinaUnicom: China Unicom static single-line.   - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.   - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+func (o GetScheduledInstanceEipAddressOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceEipAddress) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// Whether the public IP is released with the instance
+//   - true: The public IP is released with the instance
+//   - false (default): The public IP is not released with the instance
+func (o GetScheduledInstanceEipAddressOutput) ReleaseWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledInstanceEipAddress) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
+}
+
+// DDoS Native Protection (Enterprise Edition) ID.   - You can call the [DescInstanceList] API to query the DDoS Native Protection (Enterprise Edition) ID.   - When `SecurityProtectionTypes` is set to `AntiDDoS_Enhanced`, this parameter is required.
+func (o GetScheduledInstanceEipAddressOutput) SecurityProtectionInstanceId() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledInstanceEipAddress) int { return v.SecurityProtectionInstanceId }).(pulumi.IntOutput)
+}
+
+// Security protection type for public IP.
+//
+//   - Parameter   - N: Indicates the sequence number of the security protection type. Currently, only 1 is supported.
+//
+//   - Values:
+//
+//   - AntiDDoS_Enhanced: Apply for a public IP with enhanced protection, which can be added to a DDoS native protection (Enterprise Edition) instance.
+//
+//     **Note:**
+//
+//   - If `EipAddress.SecurityProtectionTypes.N` is set to `AntiDDoS_Enhanced`, `EipAddress.ChargeType` cannot be `PrePaid`, and `EipAddress.ISP` must be set to `BGP`.
+//
+//   - Enhanced protection public IP is in invitation-only testing. To try it, contact your account manager.
+//
+//   - If not specified, the default protection type public IP will be applied.
+func (o GetScheduledInstanceEipAddressOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledInstanceEipAddress) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetScheduledInstanceInstanceConfig struct {
+	// Description of the instance.
+	Description string `pulumi:"description"`
+	// Public IP information bound to the instance.
+	EipAddress GetScheduledInstanceInstanceConfigEipAddress `pulumi:"eipAddress"`
+	// Instance hostname.
+	HostName string `pulumi:"hostName"`
+	// High performance computing cluster ID.
+	HpcClusterId string `pulumi:"hpcClusterId"`
+	// Image ID
+	ImageId string `pulumi:"imageId"`
+	// Instance name.
+	InstanceName string `pulumi:"instanceName"`
+	// Instance type.
+	InstanceTypeId string `pulumi:"instanceTypeId"`
+	// Key pair name.
+	KeyPairName string `pulumi:"keyPairName"`
+	// Network interface information attached to the instance.
+	NetworkInterfaces []GetScheduledInstanceInstanceConfigNetworkInterface `pulumi:"networkInterfaces"`
+	// Project to which the instance belongs.
+	ProjectName string `pulumi:"projectName"`
+	// Tag information for the instance.
+	Tags []GetScheduledInstanceInstanceConfigTag `pulumi:"tags"`
+	// Information about the cloud disks attached to the instance.
+	Volumes []GetScheduledInstanceInstanceConfigVolume `pulumi:"volumes"`
+	// Availability zone ID where the elastic reservation order is located.
+	ZoneId string `pulumi:"zoneId"`
+}
+
+// GetScheduledInstanceInstanceConfigInput is an input type that accepts GetScheduledInstanceInstanceConfigArgs and GetScheduledInstanceInstanceConfigOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceInstanceConfigInput` via:
+//
+//	GetScheduledInstanceInstanceConfigArgs{...}
+type GetScheduledInstanceInstanceConfigInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceInstanceConfigOutput() GetScheduledInstanceInstanceConfigOutput
+	ToGetScheduledInstanceInstanceConfigOutputWithContext(context.Context) GetScheduledInstanceInstanceConfigOutput
+}
+
+type GetScheduledInstanceInstanceConfigArgs struct {
+	// Description of the instance.
+	Description pulumi.StringInput `pulumi:"description"`
+	// Public IP information bound to the instance.
+	EipAddress GetScheduledInstanceInstanceConfigEipAddressInput `pulumi:"eipAddress"`
+	// Instance hostname.
+	HostName pulumi.StringInput `pulumi:"hostName"`
+	// High performance computing cluster ID.
+	HpcClusterId pulumi.StringInput `pulumi:"hpcClusterId"`
+	// Image ID
+	ImageId pulumi.StringInput `pulumi:"imageId"`
+	// Instance name.
+	InstanceName pulumi.StringInput `pulumi:"instanceName"`
+	// Instance type.
+	InstanceTypeId pulumi.StringInput `pulumi:"instanceTypeId"`
+	// Key pair name.
+	KeyPairName pulumi.StringInput `pulumi:"keyPairName"`
+	// Network interface information attached to the instance.
+	NetworkInterfaces GetScheduledInstanceInstanceConfigNetworkInterfaceArrayInput `pulumi:"networkInterfaces"`
+	// Project to which the instance belongs.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// Tag information for the instance.
+	Tags GetScheduledInstanceInstanceConfigTagArrayInput `pulumi:"tags"`
+	// Information about the cloud disks attached to the instance.
+	Volumes GetScheduledInstanceInstanceConfigVolumeArrayInput `pulumi:"volumes"`
+	// Availability zone ID where the elastic reservation order is located.
+	ZoneId pulumi.StringInput `pulumi:"zoneId"`
+}
+
+func (GetScheduledInstanceInstanceConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfig)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceInstanceConfigArgs) ToGetScheduledInstanceInstanceConfigOutput() GetScheduledInstanceInstanceConfigOutput {
+	return i.ToGetScheduledInstanceInstanceConfigOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceInstanceConfigArgs) ToGetScheduledInstanceInstanceConfigOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceInstanceConfigOutput)
+}
+
+type GetScheduledInstanceInstanceConfigOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceInstanceConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfig)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceInstanceConfigOutput) ToGetScheduledInstanceInstanceConfigOutput() GetScheduledInstanceInstanceConfigOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigOutput) ToGetScheduledInstanceInstanceConfigOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigOutput {
+	return o
+}
+
+// Description of the instance.
+func (o GetScheduledInstanceInstanceConfigOutput) Description() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.Description }).(pulumi.StringOutput)
+}
+
+// Public IP information bound to the instance.
+func (o GetScheduledInstanceInstanceConfigOutput) EipAddress() GetScheduledInstanceInstanceConfigEipAddressOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) GetScheduledInstanceInstanceConfigEipAddress {
+		return v.EipAddress
+	}).(GetScheduledInstanceInstanceConfigEipAddressOutput)
+}
+
+// Instance hostname.
+func (o GetScheduledInstanceInstanceConfigOutput) HostName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.HostName }).(pulumi.StringOutput)
+}
+
+// High performance computing cluster ID.
+func (o GetScheduledInstanceInstanceConfigOutput) HpcClusterId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.HpcClusterId }).(pulumi.StringOutput)
+}
+
+// Image ID
+func (o GetScheduledInstanceInstanceConfigOutput) ImageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.ImageId }).(pulumi.StringOutput)
+}
+
+// Instance name.
+func (o GetScheduledInstanceInstanceConfigOutput) InstanceName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.InstanceName }).(pulumi.StringOutput)
+}
+
+// Instance type.
+func (o GetScheduledInstanceInstanceConfigOutput) InstanceTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.InstanceTypeId }).(pulumi.StringOutput)
+}
+
+// Key pair name.
+func (o GetScheduledInstanceInstanceConfigOutput) KeyPairName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.KeyPairName }).(pulumi.StringOutput)
+}
+
+// Network interface information attached to the instance.
+func (o GetScheduledInstanceInstanceConfigOutput) NetworkInterfaces() GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) []GetScheduledInstanceInstanceConfigNetworkInterface {
+		return v.NetworkInterfaces
+	}).(GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput)
+}
+
+// Project to which the instance belongs.
+func (o GetScheduledInstanceInstanceConfigOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// Tag information for the instance.
+func (o GetScheduledInstanceInstanceConfigOutput) Tags() GetScheduledInstanceInstanceConfigTagArrayOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) []GetScheduledInstanceInstanceConfigTag { return v.Tags }).(GetScheduledInstanceInstanceConfigTagArrayOutput)
+}
+
+// Information about the cloud disks attached to the instance.
+func (o GetScheduledInstanceInstanceConfigOutput) Volumes() GetScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) []GetScheduledInstanceInstanceConfigVolume {
+		return v.Volumes
+	}).(GetScheduledInstanceInstanceConfigVolumeArrayOutput)
+}
+
+// Availability zone ID where the elastic reservation order is located.
+func (o GetScheduledInstanceInstanceConfigOutput) ZoneId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfig) string { return v.ZoneId }).(pulumi.StringOutput)
+}
+
+type GetScheduledInstanceInstanceConfigEipAddress struct {
+	// Maximum bandwidth for the public IP, in Mbps
+	//     - Default: 1
+	//     - Value range:
+	//       - If `ChargeType` is `PayByBandwidth`: 1–500
+	//       - If `ChargeType` is `PayByTraffic`: 1–200
+	BandwidthMbps int `pulumi:"bandwidthMbps"`
+	// Shared bandwidth package ID.
+	BandwidthPackageId string `pulumi:"bandwidthPackageId"`
+	// Billing method for public IP. Values:
+	//     - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+	//     - PayByTraffic: Pay-as-you-go by actual traffic
+	//     - PrePaid: Subscription
+	ChargeType string `pulumi:"chargeType"`
+	// Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+	Isp string `pulumi:"isp"`
+	// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+	ReleaseWithInstance bool `pulumi:"releaseWithInstance"`
+	// ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+	SecurityProtectionInstanceId string `pulumi:"securityProtectionInstanceId"`
+	// Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+	SecurityProtectionTypes []string `pulumi:"securityProtectionTypes"`
+}
+
+// GetScheduledInstanceInstanceConfigEipAddressInput is an input type that accepts GetScheduledInstanceInstanceConfigEipAddressArgs and GetScheduledInstanceInstanceConfigEipAddressOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceInstanceConfigEipAddressInput` via:
+//
+//	GetScheduledInstanceInstanceConfigEipAddressArgs{...}
+type GetScheduledInstanceInstanceConfigEipAddressInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceInstanceConfigEipAddressOutput() GetScheduledInstanceInstanceConfigEipAddressOutput
+	ToGetScheduledInstanceInstanceConfigEipAddressOutputWithContext(context.Context) GetScheduledInstanceInstanceConfigEipAddressOutput
+}
+
+type GetScheduledInstanceInstanceConfigEipAddressArgs struct {
+	// Maximum bandwidth for the public IP, in Mbps
+	//     - Default: 1
+	//     - Value range:
+	//       - If `ChargeType` is `PayByBandwidth`: 1–500
+	//       - If `ChargeType` is `PayByTraffic`: 1–200
+	BandwidthMbps pulumi.IntInput `pulumi:"bandwidthMbps"`
+	// Shared bandwidth package ID.
+	BandwidthPackageId pulumi.StringInput `pulumi:"bandwidthPackageId"`
+	// Billing method for public IP. Values:
+	//     - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+	//     - PayByTraffic: Pay-as-you-go by actual traffic
+	//     - PrePaid: Subscription
+	ChargeType pulumi.StringInput `pulumi:"chargeType"`
+	// Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+	Isp pulumi.StringInput `pulumi:"isp"`
+	// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+	ReleaseWithInstance pulumi.BoolInput `pulumi:"releaseWithInstance"`
+	// ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+	SecurityProtectionInstanceId pulumi.StringInput `pulumi:"securityProtectionInstanceId"`
+	// Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+	SecurityProtectionTypes pulumi.StringArrayInput `pulumi:"securityProtectionTypes"`
+}
+
+func (GetScheduledInstanceInstanceConfigEipAddressArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfigEipAddress)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceInstanceConfigEipAddressArgs) ToGetScheduledInstanceInstanceConfigEipAddressOutput() GetScheduledInstanceInstanceConfigEipAddressOutput {
+	return i.ToGetScheduledInstanceInstanceConfigEipAddressOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceInstanceConfigEipAddressArgs) ToGetScheduledInstanceInstanceConfigEipAddressOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigEipAddressOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceInstanceConfigEipAddressOutput)
+}
+
+type GetScheduledInstanceInstanceConfigEipAddressOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceInstanceConfigEipAddressOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfigEipAddress)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) ToGetScheduledInstanceInstanceConfigEipAddressOutput() GetScheduledInstanceInstanceConfigEipAddressOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) ToGetScheduledInstanceInstanceConfigEipAddressOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigEipAddressOutput {
+	return o
+}
+
+// Maximum bandwidth for the public IP, in Mbps
+//   - Default: 1
+//   - Value range:
+//   - If `ChargeType` is `PayByBandwidth`: 1–500
+//   - If `ChargeType` is `PayByTraffic`: 1–200
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) BandwidthMbps() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigEipAddress) int { return v.BandwidthMbps }).(pulumi.IntOutput)
+}
+
+// Shared bandwidth package ID.
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) BandwidthPackageId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigEipAddress) string { return v.BandwidthPackageId }).(pulumi.StringOutput)
+}
+
+// Billing method for public IP. Values:
+//   - PayByBandwidth (default): Pay-as-you-go by bandwidth cap
+//   - PayByTraffic: Pay-as-you-go by actual traffic
+//   - PrePaid: Subscription
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) ChargeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigEipAddress) string { return v.ChargeType }).(pulumi.StringOutput)
+}
+
+// Line type. Values:   - BGP (default): BGP (multi-line).   - If your account has applied for and enabled static single-line permissions, you can use the following values:    - ChinaMobile: China Mobile static single line.    - ChinaTelecom: China Telecom static single line.    - ChinaUnicom: China Unicom static single line.    - If your account has applied for and enabled BGP single-line permissions, you can use SingleLine_BGP.    - If your account has applied for and enabled static BGP permissions, you can use Static_BGP.
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) Isp() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigEipAddress) string { return v.Isp }).(pulumi.StringOutput)
+}
+
+// Whether the public IP is released with the instance. Only applies to pay-as-you-go public IPs. Options:   - true: Public IP is released with the instance. When the instance is automatically reclaimed by the system (24 hours after unsubscribe, expiration, etc.) or deleted via [DeleteInstance] or [DeleteInstances] API, the public IP is released together with the instance.   - false: Public IP is not released with the instance.
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) ReleaseWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigEipAddress) bool { return v.ReleaseWithInstance }).(pulumi.BoolOutput)
+}
+
+// ID of the bound security protection package. This parameter is returned only when `SecurityProtectionTypes` is not empty.
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) SecurityProtectionInstanceId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigEipAddress) string { return v.SecurityProtectionInstanceId }).(pulumi.StringOutput)
+}
+
+// Security protection type for public IP.   - AntiDDoS_Enhanced: Public IP with enhanced protection (can be added to DDoS Native Protection (Enterprise Edition) instance).   - Null: Public IP with basic protection.
+func (o GetScheduledInstanceInstanceConfigEipAddressOutput) SecurityProtectionTypes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigEipAddress) []string { return v.SecurityProtectionTypes }).(pulumi.StringArrayOutput)
+}
+
+type GetScheduledInstanceInstanceConfigNetworkInterface struct {
+	// Security group ID associated with the network interface.
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// Private network subnet ID of the instance.
+	SubnetId string `pulumi:"subnetId"`
+}
+
+// GetScheduledInstanceInstanceConfigNetworkInterfaceInput is an input type that accepts GetScheduledInstanceInstanceConfigNetworkInterfaceArgs and GetScheduledInstanceInstanceConfigNetworkInterfaceOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceInstanceConfigNetworkInterfaceInput` via:
+//
+//	GetScheduledInstanceInstanceConfigNetworkInterfaceArgs{...}
+type GetScheduledInstanceInstanceConfigNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceInstanceConfigNetworkInterfaceOutput() GetScheduledInstanceInstanceConfigNetworkInterfaceOutput
+	ToGetScheduledInstanceInstanceConfigNetworkInterfaceOutputWithContext(context.Context) GetScheduledInstanceInstanceConfigNetworkInterfaceOutput
+}
+
+type GetScheduledInstanceInstanceConfigNetworkInterfaceArgs struct {
+	// Security group ID associated with the network interface.
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// Private network subnet ID of the instance.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+}
+
+func (GetScheduledInstanceInstanceConfigNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfigNetworkInterface)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceInstanceConfigNetworkInterfaceArgs) ToGetScheduledInstanceInstanceConfigNetworkInterfaceOutput() GetScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return i.ToGetScheduledInstanceInstanceConfigNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceInstanceConfigNetworkInterfaceArgs) ToGetScheduledInstanceInstanceConfigNetworkInterfaceOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceInstanceConfigNetworkInterfaceOutput)
+}
+
+// GetScheduledInstanceInstanceConfigNetworkInterfaceArrayInput is an input type that accepts GetScheduledInstanceInstanceConfigNetworkInterfaceArray and GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceInstanceConfigNetworkInterfaceArrayInput` via:
+//
+//	GetScheduledInstanceInstanceConfigNetworkInterfaceArray{ GetScheduledInstanceInstanceConfigNetworkInterfaceArgs{...} }
+type GetScheduledInstanceInstanceConfigNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput() GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput
+	ToGetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutputWithContext(context.Context) GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput
+}
+
+type GetScheduledInstanceInstanceConfigNetworkInterfaceArray []GetScheduledInstanceInstanceConfigNetworkInterfaceInput
+
+func (GetScheduledInstanceInstanceConfigNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceInstanceConfigNetworkInterface)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceInstanceConfigNetworkInterfaceArray) ToGetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput() GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return i.ToGetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceInstanceConfigNetworkInterfaceArray) ToGetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput)
+}
+
+type GetScheduledInstanceInstanceConfigNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceInstanceConfigNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfigNetworkInterface)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceInstanceConfigNetworkInterfaceOutput) ToGetScheduledInstanceInstanceConfigNetworkInterfaceOutput() GetScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigNetworkInterfaceOutput) ToGetScheduledInstanceInstanceConfigNetworkInterfaceOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return o
+}
+
+// Security group ID associated with the network interface.
+func (o GetScheduledInstanceInstanceConfigNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Private network subnet ID of the instance.
+func (o GetScheduledInstanceInstanceConfigNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+type GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceInstanceConfigNetworkInterface)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput) ToGetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput() GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput) ToGetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) GetScheduledInstanceInstanceConfigNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledInstanceInstanceConfigNetworkInterface {
+		return vs[0].([]GetScheduledInstanceInstanceConfigNetworkInterface)[vs[1].(int)]
+	}).(GetScheduledInstanceInstanceConfigNetworkInterfaceOutput)
+}
+
+type GetScheduledInstanceInstanceConfigTag struct {
+	// Resource tag key.
+	Key string `pulumi:"key"`
+	// Resource tag value
+	Value string `pulumi:"value"`
+}
+
+// GetScheduledInstanceInstanceConfigTagInput is an input type that accepts GetScheduledInstanceInstanceConfigTagArgs and GetScheduledInstanceInstanceConfigTagOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceInstanceConfigTagInput` via:
+//
+//	GetScheduledInstanceInstanceConfigTagArgs{...}
+type GetScheduledInstanceInstanceConfigTagInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceInstanceConfigTagOutput() GetScheduledInstanceInstanceConfigTagOutput
+	ToGetScheduledInstanceInstanceConfigTagOutputWithContext(context.Context) GetScheduledInstanceInstanceConfigTagOutput
+}
+
+type GetScheduledInstanceInstanceConfigTagArgs struct {
+	// Resource tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Resource tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetScheduledInstanceInstanceConfigTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfigTag)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceInstanceConfigTagArgs) ToGetScheduledInstanceInstanceConfigTagOutput() GetScheduledInstanceInstanceConfigTagOutput {
+	return i.ToGetScheduledInstanceInstanceConfigTagOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceInstanceConfigTagArgs) ToGetScheduledInstanceInstanceConfigTagOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceInstanceConfigTagOutput)
+}
+
+// GetScheduledInstanceInstanceConfigTagArrayInput is an input type that accepts GetScheduledInstanceInstanceConfigTagArray and GetScheduledInstanceInstanceConfigTagArrayOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceInstanceConfigTagArrayInput` via:
+//
+//	GetScheduledInstanceInstanceConfigTagArray{ GetScheduledInstanceInstanceConfigTagArgs{...} }
+type GetScheduledInstanceInstanceConfigTagArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceInstanceConfigTagArrayOutput() GetScheduledInstanceInstanceConfigTagArrayOutput
+	ToGetScheduledInstanceInstanceConfigTagArrayOutputWithContext(context.Context) GetScheduledInstanceInstanceConfigTagArrayOutput
+}
+
+type GetScheduledInstanceInstanceConfigTagArray []GetScheduledInstanceInstanceConfigTagInput
+
+func (GetScheduledInstanceInstanceConfigTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceInstanceConfigTag)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceInstanceConfigTagArray) ToGetScheduledInstanceInstanceConfigTagArrayOutput() GetScheduledInstanceInstanceConfigTagArrayOutput {
+	return i.ToGetScheduledInstanceInstanceConfigTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceInstanceConfigTagArray) ToGetScheduledInstanceInstanceConfigTagArrayOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceInstanceConfigTagArrayOutput)
+}
+
+type GetScheduledInstanceInstanceConfigTagOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceInstanceConfigTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfigTag)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceInstanceConfigTagOutput) ToGetScheduledInstanceInstanceConfigTagOutput() GetScheduledInstanceInstanceConfigTagOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigTagOutput) ToGetScheduledInstanceInstanceConfigTagOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigTagOutput {
+	return o
+}
+
+// Resource tag key.
+func (o GetScheduledInstanceInstanceConfigTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Resource tag value
+func (o GetScheduledInstanceInstanceConfigTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetScheduledInstanceInstanceConfigTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceInstanceConfigTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceInstanceConfigTag)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceInstanceConfigTagArrayOutput) ToGetScheduledInstanceInstanceConfigTagArrayOutput() GetScheduledInstanceInstanceConfigTagArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigTagArrayOutput) ToGetScheduledInstanceInstanceConfigTagArrayOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigTagArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigTagArrayOutput) Index(i pulumi.IntInput) GetScheduledInstanceInstanceConfigTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledInstanceInstanceConfigTag {
+		return vs[0].([]GetScheduledInstanceInstanceConfigTag)[vs[1].(int)]
+	}).(GetScheduledInstanceInstanceConfigTagOutput)
+}
+
+type GetScheduledInstanceInstanceConfigVolume struct {
+	// Disk type. Values:   - system: System disk   - data: Data disk
+	Kind string `pulumi:"kind"`
+	// Cloud disk capacity, in GiB.
+	Size int `pulumi:"size"`
+	// Cloud disk type. Values:
+	//     - ESSD_PL0: Ultra-fast SSD PL0
+	//     - ESSD_FlexPL: Ultra-fast SSD FlexPL
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetScheduledInstanceInstanceConfigVolumeInput is an input type that accepts GetScheduledInstanceInstanceConfigVolumeArgs and GetScheduledInstanceInstanceConfigVolumeOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceInstanceConfigVolumeInput` via:
+//
+//	GetScheduledInstanceInstanceConfigVolumeArgs{...}
+type GetScheduledInstanceInstanceConfigVolumeInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceInstanceConfigVolumeOutput() GetScheduledInstanceInstanceConfigVolumeOutput
+	ToGetScheduledInstanceInstanceConfigVolumeOutputWithContext(context.Context) GetScheduledInstanceInstanceConfigVolumeOutput
+}
+
+type GetScheduledInstanceInstanceConfigVolumeArgs struct {
+	// Disk type. Values:   - system: System disk   - data: Data disk
+	Kind pulumi.StringInput `pulumi:"kind"`
+	// Cloud disk capacity, in GiB.
+	Size pulumi.IntInput `pulumi:"size"`
+	// Cloud disk type. Values:
+	//     - ESSD_PL0: Ultra-fast SSD PL0
+	//     - ESSD_FlexPL: Ultra-fast SSD FlexPL
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetScheduledInstanceInstanceConfigVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfigVolume)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceInstanceConfigVolumeArgs) ToGetScheduledInstanceInstanceConfigVolumeOutput() GetScheduledInstanceInstanceConfigVolumeOutput {
+	return i.ToGetScheduledInstanceInstanceConfigVolumeOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceInstanceConfigVolumeArgs) ToGetScheduledInstanceInstanceConfigVolumeOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceInstanceConfigVolumeOutput)
+}
+
+// GetScheduledInstanceInstanceConfigVolumeArrayInput is an input type that accepts GetScheduledInstanceInstanceConfigVolumeArray and GetScheduledInstanceInstanceConfigVolumeArrayOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceInstanceConfigVolumeArrayInput` via:
+//
+//	GetScheduledInstanceInstanceConfigVolumeArray{ GetScheduledInstanceInstanceConfigVolumeArgs{...} }
+type GetScheduledInstanceInstanceConfigVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceInstanceConfigVolumeArrayOutput() GetScheduledInstanceInstanceConfigVolumeArrayOutput
+	ToGetScheduledInstanceInstanceConfigVolumeArrayOutputWithContext(context.Context) GetScheduledInstanceInstanceConfigVolumeArrayOutput
+}
+
+type GetScheduledInstanceInstanceConfigVolumeArray []GetScheduledInstanceInstanceConfigVolumeInput
+
+func (GetScheduledInstanceInstanceConfigVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceInstanceConfigVolume)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceInstanceConfigVolumeArray) ToGetScheduledInstanceInstanceConfigVolumeArrayOutput() GetScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return i.ToGetScheduledInstanceInstanceConfigVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceInstanceConfigVolumeArray) ToGetScheduledInstanceInstanceConfigVolumeArrayOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceInstanceConfigVolumeArrayOutput)
+}
+
+type GetScheduledInstanceInstanceConfigVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceInstanceConfigVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceInstanceConfigVolume)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceInstanceConfigVolumeOutput) ToGetScheduledInstanceInstanceConfigVolumeOutput() GetScheduledInstanceInstanceConfigVolumeOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigVolumeOutput) ToGetScheduledInstanceInstanceConfigVolumeOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigVolumeOutput {
+	return o
+}
+
+// Disk type. Values:   - system: System disk   - data: Data disk
+func (o GetScheduledInstanceInstanceConfigVolumeOutput) Kind() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigVolume) string { return v.Kind }).(pulumi.StringOutput)
+}
+
+// Cloud disk capacity, in GiB.
+func (o GetScheduledInstanceInstanceConfigVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// Cloud disk type. Values:
+//   - ESSD_PL0: Ultra-fast SSD PL0
+//   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+func (o GetScheduledInstanceInstanceConfigVolumeOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceInstanceConfigVolume) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetScheduledInstanceInstanceConfigVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceInstanceConfigVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceInstanceConfigVolume)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceInstanceConfigVolumeArrayOutput) ToGetScheduledInstanceInstanceConfigVolumeArrayOutput() GetScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigVolumeArrayOutput) ToGetScheduledInstanceInstanceConfigVolumeArrayOutputWithContext(ctx context.Context) GetScheduledInstanceInstanceConfigVolumeArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceInstanceConfigVolumeArrayOutput) Index(i pulumi.IntInput) GetScheduledInstanceInstanceConfigVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledInstanceInstanceConfigVolume {
+		return vs[0].([]GetScheduledInstanceInstanceConfigVolume)[vs[1].(int)]
+	}).(GetScheduledInstanceInstanceConfigVolumeOutput)
+}
+
+type GetScheduledInstanceNetworkInterface struct {
+	// Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+	PrimaryIpAddress string `pulumi:"primaryIpAddress"`
+	// Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+	PrivateIpAddresses []string `pulumi:"privateIpAddresses"`
+	// Security group ID associated with the network interface.
+	//     - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+	//     - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+	//     - Use & to separate multiple security group IDs.
+	SecurityGroupIds []string `pulumi:"securityGroupIds"`
+	// Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+	SubnetId string `pulumi:"subnetId"`
+	// Private network
+	VpcId string `pulumi:"vpcId"`
+}
+
+// GetScheduledInstanceNetworkInterfaceInput is an input type that accepts GetScheduledInstanceNetworkInterfaceArgs and GetScheduledInstanceNetworkInterfaceOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceNetworkInterfaceInput` via:
+//
+//	GetScheduledInstanceNetworkInterfaceArgs{...}
+type GetScheduledInstanceNetworkInterfaceInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceNetworkInterfaceOutput() GetScheduledInstanceNetworkInterfaceOutput
+	ToGetScheduledInstanceNetworkInterfaceOutputWithContext(context.Context) GetScheduledInstanceNetworkInterfaceOutput
+}
+
+type GetScheduledInstanceNetworkInterfaceArgs struct {
+	// Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+	PrimaryIpAddress pulumi.StringInput `pulumi:"primaryIpAddress"`
+	// Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+	PrivateIpAddresses pulumi.StringArrayInput `pulumi:"privateIpAddresses"`
+	// Security group ID associated with the network interface.
+	//     - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+	//     - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+	//     - Use & to separate multiple security group IDs.
+	SecurityGroupIds pulumi.StringArrayInput `pulumi:"securityGroupIds"`
+	// Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+	SubnetId pulumi.StringInput `pulumi:"subnetId"`
+	// Private network
+	VpcId pulumi.StringInput `pulumi:"vpcId"`
+}
+
+func (GetScheduledInstanceNetworkInterfaceArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceNetworkInterface)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceNetworkInterfaceArgs) ToGetScheduledInstanceNetworkInterfaceOutput() GetScheduledInstanceNetworkInterfaceOutput {
+	return i.ToGetScheduledInstanceNetworkInterfaceOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceNetworkInterfaceArgs) ToGetScheduledInstanceNetworkInterfaceOutputWithContext(ctx context.Context) GetScheduledInstanceNetworkInterfaceOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceNetworkInterfaceOutput)
+}
+
+// GetScheduledInstanceNetworkInterfaceArrayInput is an input type that accepts GetScheduledInstanceNetworkInterfaceArray and GetScheduledInstanceNetworkInterfaceArrayOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceNetworkInterfaceArrayInput` via:
+//
+//	GetScheduledInstanceNetworkInterfaceArray{ GetScheduledInstanceNetworkInterfaceArgs{...} }
+type GetScheduledInstanceNetworkInterfaceArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceNetworkInterfaceArrayOutput() GetScheduledInstanceNetworkInterfaceArrayOutput
+	ToGetScheduledInstanceNetworkInterfaceArrayOutputWithContext(context.Context) GetScheduledInstanceNetworkInterfaceArrayOutput
+}
+
+type GetScheduledInstanceNetworkInterfaceArray []GetScheduledInstanceNetworkInterfaceInput
+
+func (GetScheduledInstanceNetworkInterfaceArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceNetworkInterface)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceNetworkInterfaceArray) ToGetScheduledInstanceNetworkInterfaceArrayOutput() GetScheduledInstanceNetworkInterfaceArrayOutput {
+	return i.ToGetScheduledInstanceNetworkInterfaceArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceNetworkInterfaceArray) ToGetScheduledInstanceNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetScheduledInstanceNetworkInterfaceArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceNetworkInterfaceArrayOutput)
+}
+
+type GetScheduledInstanceNetworkInterfaceOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceNetworkInterfaceOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceNetworkInterface)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceNetworkInterfaceOutput) ToGetScheduledInstanceNetworkInterfaceOutput() GetScheduledInstanceNetworkInterfaceOutput {
+	return o
+}
+
+func (o GetScheduledInstanceNetworkInterfaceOutput) ToGetScheduledInstanceNetworkInterfaceOutputWithContext(ctx context.Context) GetScheduledInstanceNetworkInterfaceOutput {
+	return o
+}
+
+// Specify the primary IP address of the NIC. Currently, only one primary IP address can be specified for either the primary or auxiliary NIC.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple NICs with &.
+func (o GetScheduledInstanceNetworkInterfaceOutput) PrimaryIpAddress() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceNetworkInterface) string { return v.PrimaryIpAddress }).(pulumi.StringOutput)
+}
+
+// Specify the secondary IP address of the primary network interface. Currently, only the primary network interface supports specifying secondary IPs.   - The first N: Indicates the sequence number of the primary network interface. Only one primary network interface can be bound.   - The second N: Indicates the sequence number of the secondary IP on the primary network interface. The maximum number of assignable secondary IP addresses is the number of private IPs per single network interface for this [instance type] minus one primary private IP.   - Separate multiple secondary IPs with &.
+func (o GetScheduledInstanceNetworkInterfaceOutput) PrivateIpAddresses() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledInstanceNetworkInterface) []string { return v.PrivateIpAddresses }).(pulumi.StringArrayOutput)
+}
+
+// Security group ID associated with the network interface.
+//   - The first N: Indicates the sequence number of the network interface, N = 1 is the primary network interface; N ≥ 2 is a secondary network interface.
+//   - The second N: Indicates the sequence number of the security group associated with the network interface, value range: 1–5.
+//   - Use & to separate multiple security group IDs.
+func (o GetScheduledInstanceNetworkInterfaceOutput) SecurityGroupIds() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetScheduledInstanceNetworkInterface) []string { return v.SecurityGroupIds }).(pulumi.StringArrayOutput)
+}
+
+// Private network subnet ID of the instance. When creating an instance, you can bind auxiliary NICs at the same time.   - Parameter   - N: indicates the NIC index, N = 1 means primary NIC; N ≥ 2 means auxiliary NIC.   - Separate multiple private network subnet IDs with &.
+func (o GetScheduledInstanceNetworkInterfaceOutput) SubnetId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceNetworkInterface) string { return v.SubnetId }).(pulumi.StringOutput)
+}
+
+// Private network
+func (o GetScheduledInstanceNetworkInterfaceOutput) VpcId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceNetworkInterface) string { return v.VpcId }).(pulumi.StringOutput)
+}
+
+type GetScheduledInstanceNetworkInterfaceArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceNetworkInterfaceArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceNetworkInterface)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceNetworkInterfaceArrayOutput) ToGetScheduledInstanceNetworkInterfaceArrayOutput() GetScheduledInstanceNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceNetworkInterfaceArrayOutput) ToGetScheduledInstanceNetworkInterfaceArrayOutputWithContext(ctx context.Context) GetScheduledInstanceNetworkInterfaceArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceNetworkInterfaceArrayOutput) Index(i pulumi.IntInput) GetScheduledInstanceNetworkInterfaceOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledInstanceNetworkInterface {
+		return vs[0].([]GetScheduledInstanceNetworkInterface)[vs[1].(int)]
+	}).(GetScheduledInstanceNetworkInterfaceOutput)
+}
+
+type GetScheduledInstanceTag struct {
+	// Resource tag key.
+	Key string `pulumi:"key"`
+	// Resource tag value
+	Value string `pulumi:"value"`
+}
+
+// GetScheduledInstanceTagInput is an input type that accepts GetScheduledInstanceTagArgs and GetScheduledInstanceTagOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceTagInput` via:
+//
+//	GetScheduledInstanceTagArgs{...}
+type GetScheduledInstanceTagInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceTagOutput() GetScheduledInstanceTagOutput
+	ToGetScheduledInstanceTagOutputWithContext(context.Context) GetScheduledInstanceTagOutput
+}
+
+type GetScheduledInstanceTagArgs struct {
+	// Resource tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Resource tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetScheduledInstanceTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceTag)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceTagArgs) ToGetScheduledInstanceTagOutput() GetScheduledInstanceTagOutput {
+	return i.ToGetScheduledInstanceTagOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceTagArgs) ToGetScheduledInstanceTagOutputWithContext(ctx context.Context) GetScheduledInstanceTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceTagOutput)
+}
+
+// GetScheduledInstanceTagArrayInput is an input type that accepts GetScheduledInstanceTagArray and GetScheduledInstanceTagArrayOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceTagArrayInput` via:
+//
+//	GetScheduledInstanceTagArray{ GetScheduledInstanceTagArgs{...} }
+type GetScheduledInstanceTagArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceTagArrayOutput() GetScheduledInstanceTagArrayOutput
+	ToGetScheduledInstanceTagArrayOutputWithContext(context.Context) GetScheduledInstanceTagArrayOutput
+}
+
+type GetScheduledInstanceTagArray []GetScheduledInstanceTagInput
+
+func (GetScheduledInstanceTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceTag)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceTagArray) ToGetScheduledInstanceTagArrayOutput() GetScheduledInstanceTagArrayOutput {
+	return i.ToGetScheduledInstanceTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceTagArray) ToGetScheduledInstanceTagArrayOutputWithContext(ctx context.Context) GetScheduledInstanceTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceTagArrayOutput)
+}
+
+type GetScheduledInstanceTagOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceTag)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceTagOutput) ToGetScheduledInstanceTagOutput() GetScheduledInstanceTagOutput {
+	return o
+}
+
+func (o GetScheduledInstanceTagOutput) ToGetScheduledInstanceTagOutputWithContext(ctx context.Context) GetScheduledInstanceTagOutput {
+	return o
+}
+
+// Resource tag key.
+func (o GetScheduledInstanceTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Resource tag value
+func (o GetScheduledInstanceTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetScheduledInstanceTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceTag)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceTagArrayOutput) ToGetScheduledInstanceTagArrayOutput() GetScheduledInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceTagArrayOutput) ToGetScheduledInstanceTagArrayOutputWithContext(ctx context.Context) GetScheduledInstanceTagArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceTagArrayOutput) Index(i pulumi.IntInput) GetScheduledInstanceTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledInstanceTag {
+		return vs[0].([]GetScheduledInstanceTag)[vs[1].(int)]
+	}).(GetScheduledInstanceTagOutput)
+}
+
+type GetScheduledInstanceVolume struct {
+	// Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance.
+	//   **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+	DeleteWithInstance bool `pulumi:"deleteWithInstance"`
+	// Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+	//     - IOPS type: 1–50000
+	//     - Balance type: 1–50000
+	//
+	//   **Note:**
+	//     - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+	//     - Use & to separate multiple cloud disks.
+	ExtraPerformanceIops int `pulumi:"extraPerformanceIops"`
+	// Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650.
+	//   **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+	ExtraPerformanceThroughputMb int `pulumi:"extraPerformanceThroughputMb"`
+	// Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+	//     - Balance: Balanced extra performance
+	//     - IOPS: IOPS extra performance
+	//     - Throughput: Throughput extra performance
+	//   For more information about extra performance, see [Cloud Disk Extra Performance].
+	//
+	//   **Note:**
+	//     - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+	//   N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+	//   N ≥ 2 indicates a data disk. This parameter can be set normally.
+	//     - Use & to separate multiple cloud disks.
+	ExtraPerformanceTypeId string `pulumi:"extraPerformanceTypeId"`
+	// Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+	//     - System disk:
+	//       - ESSD_PL0: 20–2048
+	//       - ESSD_FlexPL: 20–2048
+	//
+	//   **Note:**
+	//     Default: max{40, image size of ImageId}
+	//
+	//     - Data disk:
+	//       - ESSD_PL0: 10–32768
+	//       - ESSD_FlexPL: 10–32768
+	//
+	//   **Note:**
+	//     If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+	Size int `pulumi:"size"`
+	// Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks.
+	//   **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+	SnapshotId string `pulumi:"snapshotId"`
+	// Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+	//   **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetScheduledInstanceVolumeInput is an input type that accepts GetScheduledInstanceVolumeArgs and GetScheduledInstanceVolumeOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceVolumeInput` via:
+//
+//	GetScheduledInstanceVolumeArgs{...}
+type GetScheduledInstanceVolumeInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceVolumeOutput() GetScheduledInstanceVolumeOutput
+	ToGetScheduledInstanceVolumeOutputWithContext(context.Context) GetScheduledInstanceVolumeOutput
+}
+
+type GetScheduledInstanceVolumeArgs struct {
+	// Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance.
+	//   **Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+	DeleteWithInstance pulumi.BoolInput `pulumi:"deleteWithInstance"`
+	// Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+	//     - IOPS type: 1–50000
+	//     - Balance type: 1–50000
+	//
+	//   **Note:**
+	//     - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+	//     - Use & to separate multiple cloud disks.
+	ExtraPerformanceIops pulumi.IntInput `pulumi:"extraPerformanceIops"`
+	// Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650.
+	//   **Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+	ExtraPerformanceThroughputMb pulumi.IntInput `pulumi:"extraPerformanceThroughputMb"`
+	// Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+	//     - Balance: Balanced extra performance
+	//     - IOPS: IOPS extra performance
+	//     - Throughput: Throughput extra performance
+	//   For more information about extra performance, see [Cloud Disk Extra Performance].
+	//
+	//   **Note:**
+	//     - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+	//   N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+	//   N ≥ 2 indicates a data disk. This parameter can be set normally.
+	//     - Use & to separate multiple cloud disks.
+	ExtraPerformanceTypeId pulumi.StringInput `pulumi:"extraPerformanceTypeId"`
+	// Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+	//     - System disk:
+	//       - ESSD_PL0: 20–2048
+	//       - ESSD_FlexPL: 20–2048
+	//
+	//   **Note:**
+	//     Default: max{40, image size of ImageId}
+	//
+	//     - Data disk:
+	//       - ESSD_PL0: 10–32768
+	//       - ESSD_FlexPL: 10–32768
+	//
+	//   **Note:**
+	//     If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+	Size pulumi.IntInput `pulumi:"size"`
+	// Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks.
+	//   **Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
+	// Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+	//   **Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetScheduledInstanceVolumeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceVolume)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceVolumeArgs) ToGetScheduledInstanceVolumeOutput() GetScheduledInstanceVolumeOutput {
+	return i.ToGetScheduledInstanceVolumeOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceVolumeArgs) ToGetScheduledInstanceVolumeOutputWithContext(ctx context.Context) GetScheduledInstanceVolumeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceVolumeOutput)
+}
+
+// GetScheduledInstanceVolumeArrayInput is an input type that accepts GetScheduledInstanceVolumeArray and GetScheduledInstanceVolumeArrayOutput values.
+// You can construct a concrete instance of `GetScheduledInstanceVolumeArrayInput` via:
+//
+//	GetScheduledInstanceVolumeArray{ GetScheduledInstanceVolumeArgs{...} }
+type GetScheduledInstanceVolumeArrayInput interface {
+	pulumi.Input
+
+	ToGetScheduledInstanceVolumeArrayOutput() GetScheduledInstanceVolumeArrayOutput
+	ToGetScheduledInstanceVolumeArrayOutputWithContext(context.Context) GetScheduledInstanceVolumeArrayOutput
+}
+
+type GetScheduledInstanceVolumeArray []GetScheduledInstanceVolumeInput
+
+func (GetScheduledInstanceVolumeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceVolume)(nil)).Elem()
+}
+
+func (i GetScheduledInstanceVolumeArray) ToGetScheduledInstanceVolumeArrayOutput() GetScheduledInstanceVolumeArrayOutput {
+	return i.ToGetScheduledInstanceVolumeArrayOutputWithContext(context.Background())
+}
+
+func (i GetScheduledInstanceVolumeArray) ToGetScheduledInstanceVolumeArrayOutputWithContext(ctx context.Context) GetScheduledInstanceVolumeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetScheduledInstanceVolumeArrayOutput)
+}
+
+type GetScheduledInstanceVolumeOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceVolumeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetScheduledInstanceVolume)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceVolumeOutput) ToGetScheduledInstanceVolumeOutput() GetScheduledInstanceVolumeOutput {
+	return o
+}
+
+func (o GetScheduledInstanceVolumeOutput) ToGetScheduledInstanceVolumeOutputWithContext(ctx context.Context) GetScheduledInstanceVolumeOutput {
+	return o
+}
+
+// Whether the cloud disk is released with the instance. Values:   - true (default): The cloud disk is released with the instance.   - false: The cloud disk is not released with the instance.
+//
+//	**Note:**   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, which is released with the instance by default and cannot be retained; N ≥ 2 indicates a data disk, which can be optionally released with the instance.   - Separate multiple cloud disks with &.
+func (o GetScheduledInstanceVolumeOutput) DeleteWithInstance() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetScheduledInstanceVolume) bool { return v.DeleteWithInstance }).(pulumi.BoolOutput)
+}
+
+// Extra IOPS performance size for the cloud disk, supported only by ESSD FlexPL data disks, measured in operations/second. This parameter must be set when `ExtraPerformanceTypeId` is `Balance` or `IOPS`. The value ranges for each type are as follows:
+//
+//   - IOPS type: 1–50000
+//
+//   - Balance type: 1–50000
+//
+//     **Note:**
+//
+//   - Parameter   - N: Indicates the sequence number of the cloud disk, value range: 1–16. N = 1 indicates the system disk, so when N is 1, this parameter is ignored. N ≥ 2 indicates a data disk, and this parameter can be set normally.
+//
+//   - Use & to separate multiple cloud disks.
+func (o GetScheduledInstanceVolumeOutput) ExtraPerformanceIops() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledInstanceVolume) int { return v.ExtraPerformanceIops }).(pulumi.IntOutput)
+}
+
+// Extra disk throughput performance in MB/s. Supported only by ESSD FlexPL data disks. Set this parameter when `ExtraPerformanceTypeId` is `Throughput`. Value range: 1–650.
+//
+//	**Note:**   - Parameter   - N: indicates the disk index, value range: 1–16. N = 1 means system disk; if N is 1, this parameter will be ignored. N ≥ 2 means data disk; you can set this parameter normally.   - Separate multiple disks with &.
+func (o GetScheduledInstanceVolumeOutput) ExtraPerformanceThroughputMb() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledInstanceVolume) int { return v.ExtraPerformanceThroughputMb }).(pulumi.IntOutput)
+}
+
+// Type of extra cloud disk performance, supported only by ESSD FlexPL data disks. Values:
+//
+//   - Balance: Balanced extra performance
+//
+//   - IOPS: IOPS extra performance
+//
+//   - Throughput: Throughput extra performance
+//     For more information about extra performance, see [Cloud Disk Extra Performance].
+//
+//     **Note:**
+//
+//   - Parameter   - N: Indicates the sequence number of the cloud disk. Value range: 1–16.
+//     N = 1 indicates the system disk. If N is set to 1, this parameter will be ignored.
+//     N ≥ 2 indicates a data disk. This parameter can be set normally.
+//
+//   - Use & to separate multiple cloud disks.
+func (o GetScheduledInstanceVolumeOutput) ExtraPerformanceTypeId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceVolume) string { return v.ExtraPerformanceTypeId }).(pulumi.StringOutput)
+}
+
+// Cloud disk capacity, in GiB. N ranges from 1 to 16, where N = 1 is the system disk, and N ≥ 2 are data disks. Separate multiple cloud disks with &. Cloud disk capacity ranges:
+//
+//   - System disk:
+//
+//   - ESSD_PL0: 20–2048
+//
+//   - ESSD_FlexPL: 20–2048
+//
+//     **Note:**
+//     Default: max{40, image size of ImageId}
+//
+//   - Data disk:
+//
+//   - ESSD_PL0: 10–32768
+//
+//   - ESSD_FlexPL: 10–32768
+//
+//     **Note:**
+//     If this parameter is not specified, the snapshot size corresponding to `Volumes.N.SnapshotId` is used as the data disk capacity. If `Volumes.N.SnapshotId` is not specified, an error LimitExceeded.DataVolumeSize is returned
+func (o GetScheduledInstanceVolumeOutput) Size() pulumi.IntOutput {
+	return o.ApplyT(func(v GetScheduledInstanceVolume) int { return v.Size }).(pulumi.IntOutput)
+}
+
+// Create a disk from a snapshot; only data disks are supported. You can call the [DescribeSnapshots] API to query the snapshot ID.   - Parameter   - N: Indicates the disk sequence number, value range: 1–16. N = 1 indicates the system disk; when N is 1, this parameter will be ignored. N ≥ 2 indicates a data disk; you can specify the target data disk snapshot ID.   - Use & to separate multiple disks.
+//
+//	**Note:**  - Only ultra-fast SSDs support creating disks from snapshots; performance SSDs do not support snapshot-related features.   - Only snapshots in the 'Available' state support creating new disks. Snapshots in 'Creating', 'Rolling back', 'Deleting', or 'Error' states do not support creating new disks.
+func (o GetScheduledInstanceVolumeOutput) SnapshotId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
+}
+
+// Cloud disk type. Values:   - ESSD_PL0: Ultra-fast SSD PL0   - ESSD_FlexPL: Ultra-fast SSD FlexPL
+//
+//	**Note:**   - Parameter   - N: Indicates the disk number, range: 1–16. N = 1 indicates the system disk; N ≥ 2 indicates a data disk.   - Use & to separate multiple disks.
+func (o GetScheduledInstanceVolumeOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetScheduledInstanceVolume) string { return v.VolumeType }).(pulumi.StringOutput)
+}
+
+type GetScheduledInstanceVolumeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetScheduledInstanceVolumeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetScheduledInstanceVolume)(nil)).Elem()
+}
+
+func (o GetScheduledInstanceVolumeArrayOutput) ToGetScheduledInstanceVolumeArrayOutput() GetScheduledInstanceVolumeArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceVolumeArrayOutput) ToGetScheduledInstanceVolumeArrayOutputWithContext(ctx context.Context) GetScheduledInstanceVolumeArrayOutput {
+	return o
+}
+
+func (o GetScheduledInstanceVolumeArrayOutput) Index(i pulumi.IntInput) GetScheduledInstanceVolumeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetScheduledInstanceVolume {
+		return vs[0].([]GetScheduledInstanceVolume)[vs[1].(int)]
+	}).(GetScheduledInstanceVolumeOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandParameterDefinitionInput)(nil)).Elem(), CommandParameterDefinitionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandParameterDefinitionArrayInput)(nil)).Elem(), CommandParameterDefinitionArray{})
@@ -11661,6 +14777,24 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionTagArrayInput)(nil)).Elem(), LaunchTemplateVersionTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionVolumeInput)(nil)).Elem(), LaunchTemplateVersionVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*LaunchTemplateVersionVolumeArrayInput)(nil)).Elem(), LaunchTemplateVersionVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceEipAddressInput)(nil)).Elem(), ScheduledInstanceEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceEipAddressPtrInput)(nil)).Elem(), ScheduledInstanceEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigInput)(nil)).Elem(), ScheduledInstanceInstanceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigPtrInput)(nil)).Elem(), ScheduledInstanceInstanceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigEipAddressInput)(nil)).Elem(), ScheduledInstanceInstanceConfigEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigEipAddressPtrInput)(nil)).Elem(), ScheduledInstanceInstanceConfigEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigNetworkInterfaceInput)(nil)).Elem(), ScheduledInstanceInstanceConfigNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigNetworkInterfaceArrayInput)(nil)).Elem(), ScheduledInstanceInstanceConfigNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigTagInput)(nil)).Elem(), ScheduledInstanceInstanceConfigTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigTagArrayInput)(nil)).Elem(), ScheduledInstanceInstanceConfigTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigVolumeInput)(nil)).Elem(), ScheduledInstanceInstanceConfigVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceInstanceConfigVolumeArrayInput)(nil)).Elem(), ScheduledInstanceInstanceConfigVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceNetworkInterfaceInput)(nil)).Elem(), ScheduledInstanceNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceNetworkInterfaceArrayInput)(nil)).Elem(), ScheduledInstanceNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceTagInput)(nil)).Elem(), ScheduledInstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceTagArrayInput)(nil)).Elem(), ScheduledInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceVolumeInput)(nil)).Elem(), ScheduledInstanceVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*ScheduledInstanceVolumeArrayInput)(nil)).Elem(), ScheduledInstanceVolumeArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandParameterDefinitionInput)(nil)).Elem(), GetCommandParameterDefinitionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandParameterDefinitionArrayInput)(nil)).Elem(), GetCommandParameterDefinitionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandTagInput)(nil)).Elem(), GetCommandTagArgs{})
@@ -11724,6 +14858,21 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionTagArrayInput)(nil)).Elem(), GetLaunchTemplateVersionTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionVolumeInput)(nil)).Elem(), GetLaunchTemplateVersionVolumeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetLaunchTemplateVersionVolumeArrayInput)(nil)).Elem(), GetLaunchTemplateVersionVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceEipAddressInput)(nil)).Elem(), GetScheduledInstanceEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceInstanceConfigInput)(nil)).Elem(), GetScheduledInstanceInstanceConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceInstanceConfigEipAddressInput)(nil)).Elem(), GetScheduledInstanceInstanceConfigEipAddressArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceInstanceConfigNetworkInterfaceInput)(nil)).Elem(), GetScheduledInstanceInstanceConfigNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceInstanceConfigNetworkInterfaceArrayInput)(nil)).Elem(), GetScheduledInstanceInstanceConfigNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceInstanceConfigTagInput)(nil)).Elem(), GetScheduledInstanceInstanceConfigTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceInstanceConfigTagArrayInput)(nil)).Elem(), GetScheduledInstanceInstanceConfigTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceInstanceConfigVolumeInput)(nil)).Elem(), GetScheduledInstanceInstanceConfigVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceInstanceConfigVolumeArrayInput)(nil)).Elem(), GetScheduledInstanceInstanceConfigVolumeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceNetworkInterfaceInput)(nil)).Elem(), GetScheduledInstanceNetworkInterfaceArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceNetworkInterfaceArrayInput)(nil)).Elem(), GetScheduledInstanceNetworkInterfaceArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceTagInput)(nil)).Elem(), GetScheduledInstanceTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceTagArrayInput)(nil)).Elem(), GetScheduledInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceVolumeInput)(nil)).Elem(), GetScheduledInstanceVolumeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetScheduledInstanceVolumeArrayInput)(nil)).Elem(), GetScheduledInstanceVolumeArray{})
 	pulumi.RegisterOutputType(CommandParameterDefinitionOutput{})
 	pulumi.RegisterOutputType(CommandParameterDefinitionArrayOutput{})
 	pulumi.RegisterOutputType(CommandTagOutput{})
@@ -11804,6 +14953,24 @@ func init() {
 	pulumi.RegisterOutputType(LaunchTemplateVersionTagArrayOutput{})
 	pulumi.RegisterOutputType(LaunchTemplateVersionVolumeOutput{})
 	pulumi.RegisterOutputType(LaunchTemplateVersionVolumeArrayOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceEipAddressOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceEipAddressPtrOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigPtrOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigEipAddressOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigEipAddressPtrOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigTagOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigTagArrayOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigVolumeOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceInstanceConfigVolumeArrayOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceTagOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceVolumeOutput{})
+	pulumi.RegisterOutputType(ScheduledInstanceVolumeArrayOutput{})
 	pulumi.RegisterOutputType(GetCommandParameterDefinitionOutput{})
 	pulumi.RegisterOutputType(GetCommandParameterDefinitionArrayOutput{})
 	pulumi.RegisterOutputType(GetCommandTagOutput{})
@@ -11867,4 +15034,19 @@ func init() {
 	pulumi.RegisterOutputType(GetLaunchTemplateVersionTagArrayOutput{})
 	pulumi.RegisterOutputType(GetLaunchTemplateVersionVolumeOutput{})
 	pulumi.RegisterOutputType(GetLaunchTemplateVersionVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceEipAddressOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceInstanceConfigOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceInstanceConfigEipAddressOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceInstanceConfigNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceInstanceConfigNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceInstanceConfigTagOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceInstanceConfigTagArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceInstanceConfigVolumeOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceInstanceConfigVolumeArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceNetworkInterfaceOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceNetworkInterfaceArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceTagOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceVolumeOutput{})
+	pulumi.RegisterOutputType(GetScheduledInstanceVolumeArrayOutput{})
 }

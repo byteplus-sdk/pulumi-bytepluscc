@@ -13,6 +13,2644 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type GroupRuleScope struct {
+	// Project filter scope
+	Projects *GroupRuleScopeProjects `pulumi:"projects"`
+	// Resource region list
+	Regions *GroupRuleScopeRegions `pulumi:"regions"`
+	// Resource ID list
+	ResourceIds *GroupRuleScopeResourceIds `pulumi:"resourceIds"`
+	// Resource type scope
+	ResourceTypes *GroupRuleScopeResourceTypes `pulumi:"resourceTypes"`
+	// Resource tag list
+	Tags *GroupRuleScopeTags `pulumi:"tags"`
+}
+
+// GroupRuleScopeInput is an input type that accepts GroupRuleScopeArgs and GroupRuleScopeOutput values.
+// You can construct a concrete instance of `GroupRuleScopeInput` via:
+//
+//	GroupRuleScopeArgs{...}
+type GroupRuleScopeInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeOutput() GroupRuleScopeOutput
+	ToGroupRuleScopeOutputWithContext(context.Context) GroupRuleScopeOutput
+}
+
+type GroupRuleScopeArgs struct {
+	// Project filter scope
+	Projects GroupRuleScopeProjectsPtrInput `pulumi:"projects"`
+	// Resource region list
+	Regions GroupRuleScopeRegionsPtrInput `pulumi:"regions"`
+	// Resource ID list
+	ResourceIds GroupRuleScopeResourceIdsPtrInput `pulumi:"resourceIds"`
+	// Resource type scope
+	ResourceTypes GroupRuleScopeResourceTypesPtrInput `pulumi:"resourceTypes"`
+	// Resource tag list
+	Tags GroupRuleScopeTagsPtrInput `pulumi:"tags"`
+}
+
+func (GroupRuleScopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScope)(nil)).Elem()
+}
+
+func (i GroupRuleScopeArgs) ToGroupRuleScopeOutput() GroupRuleScopeOutput {
+	return i.ToGroupRuleScopeOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeArgs) ToGroupRuleScopeOutputWithContext(ctx context.Context) GroupRuleScopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeOutput)
+}
+
+func (i GroupRuleScopeArgs) ToGroupRuleScopePtrOutput() GroupRuleScopePtrOutput {
+	return i.ToGroupRuleScopePtrOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeArgs) ToGroupRuleScopePtrOutputWithContext(ctx context.Context) GroupRuleScopePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeOutput).ToGroupRuleScopePtrOutputWithContext(ctx)
+}
+
+// GroupRuleScopePtrInput is an input type that accepts GroupRuleScopeArgs, GroupRuleScopePtr and GroupRuleScopePtrOutput values.
+// You can construct a concrete instance of `GroupRuleScopePtrInput` via:
+//
+//	        GroupRuleScopeArgs{...}
+//
+//	or:
+//
+//	        nil
+type GroupRuleScopePtrInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopePtrOutput() GroupRuleScopePtrOutput
+	ToGroupRuleScopePtrOutputWithContext(context.Context) GroupRuleScopePtrOutput
+}
+
+type groupRuleScopePtrType GroupRuleScopeArgs
+
+func GroupRuleScopePtr(v *GroupRuleScopeArgs) GroupRuleScopePtrInput {
+	return (*groupRuleScopePtrType)(v)
+}
+
+func (*groupRuleScopePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScope)(nil)).Elem()
+}
+
+func (i *groupRuleScopePtrType) ToGroupRuleScopePtrOutput() GroupRuleScopePtrOutput {
+	return i.ToGroupRuleScopePtrOutputWithContext(context.Background())
+}
+
+func (i *groupRuleScopePtrType) ToGroupRuleScopePtrOutputWithContext(ctx context.Context) GroupRuleScopePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopePtrOutput)
+}
+
+type GroupRuleScopeOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScope)(nil)).Elem()
+}
+
+func (o GroupRuleScopeOutput) ToGroupRuleScopeOutput() GroupRuleScopeOutput {
+	return o
+}
+
+func (o GroupRuleScopeOutput) ToGroupRuleScopeOutputWithContext(ctx context.Context) GroupRuleScopeOutput {
+	return o
+}
+
+func (o GroupRuleScopeOutput) ToGroupRuleScopePtrOutput() GroupRuleScopePtrOutput {
+	return o.ToGroupRuleScopePtrOutputWithContext(context.Background())
+}
+
+func (o GroupRuleScopeOutput) ToGroupRuleScopePtrOutputWithContext(ctx context.Context) GroupRuleScopePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GroupRuleScope) *GroupRuleScope {
+		return &v
+	}).(GroupRuleScopePtrOutput)
+}
+
+// Project filter scope
+func (o GroupRuleScopeOutput) Projects() GroupRuleScopeProjectsPtrOutput {
+	return o.ApplyT(func(v GroupRuleScope) *GroupRuleScopeProjects { return v.Projects }).(GroupRuleScopeProjectsPtrOutput)
+}
+
+// Resource region list
+func (o GroupRuleScopeOutput) Regions() GroupRuleScopeRegionsPtrOutput {
+	return o.ApplyT(func(v GroupRuleScope) *GroupRuleScopeRegions { return v.Regions }).(GroupRuleScopeRegionsPtrOutput)
+}
+
+// Resource ID list
+func (o GroupRuleScopeOutput) ResourceIds() GroupRuleScopeResourceIdsPtrOutput {
+	return o.ApplyT(func(v GroupRuleScope) *GroupRuleScopeResourceIds { return v.ResourceIds }).(GroupRuleScopeResourceIdsPtrOutput)
+}
+
+// Resource type scope
+func (o GroupRuleScopeOutput) ResourceTypes() GroupRuleScopeResourceTypesPtrOutput {
+	return o.ApplyT(func(v GroupRuleScope) *GroupRuleScopeResourceTypes { return v.ResourceTypes }).(GroupRuleScopeResourceTypesPtrOutput)
+}
+
+// Resource tag list
+func (o GroupRuleScopeOutput) Tags() GroupRuleScopeTagsPtrOutput {
+	return o.ApplyT(func(v GroupRuleScope) *GroupRuleScopeTags { return v.Tags }).(GroupRuleScopeTagsPtrOutput)
+}
+
+type GroupRuleScopePtrOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScope)(nil)).Elem()
+}
+
+func (o GroupRuleScopePtrOutput) ToGroupRuleScopePtrOutput() GroupRuleScopePtrOutput {
+	return o
+}
+
+func (o GroupRuleScopePtrOutput) ToGroupRuleScopePtrOutputWithContext(ctx context.Context) GroupRuleScopePtrOutput {
+	return o
+}
+
+func (o GroupRuleScopePtrOutput) Elem() GroupRuleScopeOutput {
+	return o.ApplyT(func(v *GroupRuleScope) GroupRuleScope {
+		if v != nil {
+			return *v
+		}
+		var ret GroupRuleScope
+		return ret
+	}).(GroupRuleScopeOutput)
+}
+
+// Project filter scope
+func (o GroupRuleScopePtrOutput) Projects() GroupRuleScopeProjectsPtrOutput {
+	return o.ApplyT(func(v *GroupRuleScope) *GroupRuleScopeProjects {
+		if v == nil {
+			return nil
+		}
+		return v.Projects
+	}).(GroupRuleScopeProjectsPtrOutput)
+}
+
+// Resource region list
+func (o GroupRuleScopePtrOutput) Regions() GroupRuleScopeRegionsPtrOutput {
+	return o.ApplyT(func(v *GroupRuleScope) *GroupRuleScopeRegions {
+		if v == nil {
+			return nil
+		}
+		return v.Regions
+	}).(GroupRuleScopeRegionsPtrOutput)
+}
+
+// Resource ID list
+func (o GroupRuleScopePtrOutput) ResourceIds() GroupRuleScopeResourceIdsPtrOutput {
+	return o.ApplyT(func(v *GroupRuleScope) *GroupRuleScopeResourceIds {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceIds
+	}).(GroupRuleScopeResourceIdsPtrOutput)
+}
+
+// Resource type scope
+func (o GroupRuleScopePtrOutput) ResourceTypes() GroupRuleScopeResourceTypesPtrOutput {
+	return o.ApplyT(func(v *GroupRuleScope) *GroupRuleScopeResourceTypes {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceTypes
+	}).(GroupRuleScopeResourceTypesPtrOutput)
+}
+
+// Resource tag list
+func (o GroupRuleScopePtrOutput) Tags() GroupRuleScopeTagsPtrOutput {
+	return o.ApplyT(func(v *GroupRuleScope) *GroupRuleScopeTags {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(GroupRuleScopeTagsPtrOutput)
+}
+
+type GroupRuleScopeProjects struct {
+	// Exclude list
+	Excludes []string `pulumi:"excludes"`
+	// Include list
+	Includes []string `pulumi:"includes"`
+}
+
+// GroupRuleScopeProjectsInput is an input type that accepts GroupRuleScopeProjectsArgs and GroupRuleScopeProjectsOutput values.
+// You can construct a concrete instance of `GroupRuleScopeProjectsInput` via:
+//
+//	GroupRuleScopeProjectsArgs{...}
+type GroupRuleScopeProjectsInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeProjectsOutput() GroupRuleScopeProjectsOutput
+	ToGroupRuleScopeProjectsOutputWithContext(context.Context) GroupRuleScopeProjectsOutput
+}
+
+type GroupRuleScopeProjectsArgs struct {
+	// Exclude list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GroupRuleScopeProjectsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeProjects)(nil)).Elem()
+}
+
+func (i GroupRuleScopeProjectsArgs) ToGroupRuleScopeProjectsOutput() GroupRuleScopeProjectsOutput {
+	return i.ToGroupRuleScopeProjectsOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeProjectsArgs) ToGroupRuleScopeProjectsOutputWithContext(ctx context.Context) GroupRuleScopeProjectsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeProjectsOutput)
+}
+
+func (i GroupRuleScopeProjectsArgs) ToGroupRuleScopeProjectsPtrOutput() GroupRuleScopeProjectsPtrOutput {
+	return i.ToGroupRuleScopeProjectsPtrOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeProjectsArgs) ToGroupRuleScopeProjectsPtrOutputWithContext(ctx context.Context) GroupRuleScopeProjectsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeProjectsOutput).ToGroupRuleScopeProjectsPtrOutputWithContext(ctx)
+}
+
+// GroupRuleScopeProjectsPtrInput is an input type that accepts GroupRuleScopeProjectsArgs, GroupRuleScopeProjectsPtr and GroupRuleScopeProjectsPtrOutput values.
+// You can construct a concrete instance of `GroupRuleScopeProjectsPtrInput` via:
+//
+//	        GroupRuleScopeProjectsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GroupRuleScopeProjectsPtrInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeProjectsPtrOutput() GroupRuleScopeProjectsPtrOutput
+	ToGroupRuleScopeProjectsPtrOutputWithContext(context.Context) GroupRuleScopeProjectsPtrOutput
+}
+
+type groupRuleScopeProjectsPtrType GroupRuleScopeProjectsArgs
+
+func GroupRuleScopeProjectsPtr(v *GroupRuleScopeProjectsArgs) GroupRuleScopeProjectsPtrInput {
+	return (*groupRuleScopeProjectsPtrType)(v)
+}
+
+func (*groupRuleScopeProjectsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeProjects)(nil)).Elem()
+}
+
+func (i *groupRuleScopeProjectsPtrType) ToGroupRuleScopeProjectsPtrOutput() GroupRuleScopeProjectsPtrOutput {
+	return i.ToGroupRuleScopeProjectsPtrOutputWithContext(context.Background())
+}
+
+func (i *groupRuleScopeProjectsPtrType) ToGroupRuleScopeProjectsPtrOutputWithContext(ctx context.Context) GroupRuleScopeProjectsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeProjectsPtrOutput)
+}
+
+type GroupRuleScopeProjectsOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeProjectsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeProjects)(nil)).Elem()
+}
+
+func (o GroupRuleScopeProjectsOutput) ToGroupRuleScopeProjectsOutput() GroupRuleScopeProjectsOutput {
+	return o
+}
+
+func (o GroupRuleScopeProjectsOutput) ToGroupRuleScopeProjectsOutputWithContext(ctx context.Context) GroupRuleScopeProjectsOutput {
+	return o
+}
+
+func (o GroupRuleScopeProjectsOutput) ToGroupRuleScopeProjectsPtrOutput() GroupRuleScopeProjectsPtrOutput {
+	return o.ToGroupRuleScopeProjectsPtrOutputWithContext(context.Background())
+}
+
+func (o GroupRuleScopeProjectsOutput) ToGroupRuleScopeProjectsPtrOutputWithContext(ctx context.Context) GroupRuleScopeProjectsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GroupRuleScopeProjects) *GroupRuleScopeProjects {
+		return &v
+	}).(GroupRuleScopeProjectsPtrOutput)
+}
+
+// Exclude list
+func (o GroupRuleScopeProjectsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeProjects) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GroupRuleScopeProjectsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeProjects) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GroupRuleScopeProjectsPtrOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeProjectsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeProjects)(nil)).Elem()
+}
+
+func (o GroupRuleScopeProjectsPtrOutput) ToGroupRuleScopeProjectsPtrOutput() GroupRuleScopeProjectsPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeProjectsPtrOutput) ToGroupRuleScopeProjectsPtrOutputWithContext(ctx context.Context) GroupRuleScopeProjectsPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeProjectsPtrOutput) Elem() GroupRuleScopeProjectsOutput {
+	return o.ApplyT(func(v *GroupRuleScopeProjects) GroupRuleScopeProjects {
+		if v != nil {
+			return *v
+		}
+		var ret GroupRuleScopeProjects
+		return ret
+	}).(GroupRuleScopeProjectsOutput)
+}
+
+// Exclude list
+func (o GroupRuleScopeProjectsPtrOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeProjects) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GroupRuleScopeProjectsPtrOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeProjects) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(pulumi.StringArrayOutput)
+}
+
+type GroupRuleScopeRegions struct {
+	// Exclude list
+	Excludes []string `pulumi:"excludes"`
+	// Include list
+	Includes []string `pulumi:"includes"`
+}
+
+// GroupRuleScopeRegionsInput is an input type that accepts GroupRuleScopeRegionsArgs and GroupRuleScopeRegionsOutput values.
+// You can construct a concrete instance of `GroupRuleScopeRegionsInput` via:
+//
+//	GroupRuleScopeRegionsArgs{...}
+type GroupRuleScopeRegionsInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeRegionsOutput() GroupRuleScopeRegionsOutput
+	ToGroupRuleScopeRegionsOutputWithContext(context.Context) GroupRuleScopeRegionsOutput
+}
+
+type GroupRuleScopeRegionsArgs struct {
+	// Exclude list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GroupRuleScopeRegionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeRegions)(nil)).Elem()
+}
+
+func (i GroupRuleScopeRegionsArgs) ToGroupRuleScopeRegionsOutput() GroupRuleScopeRegionsOutput {
+	return i.ToGroupRuleScopeRegionsOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeRegionsArgs) ToGroupRuleScopeRegionsOutputWithContext(ctx context.Context) GroupRuleScopeRegionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeRegionsOutput)
+}
+
+func (i GroupRuleScopeRegionsArgs) ToGroupRuleScopeRegionsPtrOutput() GroupRuleScopeRegionsPtrOutput {
+	return i.ToGroupRuleScopeRegionsPtrOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeRegionsArgs) ToGroupRuleScopeRegionsPtrOutputWithContext(ctx context.Context) GroupRuleScopeRegionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeRegionsOutput).ToGroupRuleScopeRegionsPtrOutputWithContext(ctx)
+}
+
+// GroupRuleScopeRegionsPtrInput is an input type that accepts GroupRuleScopeRegionsArgs, GroupRuleScopeRegionsPtr and GroupRuleScopeRegionsPtrOutput values.
+// You can construct a concrete instance of `GroupRuleScopeRegionsPtrInput` via:
+//
+//	        GroupRuleScopeRegionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GroupRuleScopeRegionsPtrInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeRegionsPtrOutput() GroupRuleScopeRegionsPtrOutput
+	ToGroupRuleScopeRegionsPtrOutputWithContext(context.Context) GroupRuleScopeRegionsPtrOutput
+}
+
+type groupRuleScopeRegionsPtrType GroupRuleScopeRegionsArgs
+
+func GroupRuleScopeRegionsPtr(v *GroupRuleScopeRegionsArgs) GroupRuleScopeRegionsPtrInput {
+	return (*groupRuleScopeRegionsPtrType)(v)
+}
+
+func (*groupRuleScopeRegionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeRegions)(nil)).Elem()
+}
+
+func (i *groupRuleScopeRegionsPtrType) ToGroupRuleScopeRegionsPtrOutput() GroupRuleScopeRegionsPtrOutput {
+	return i.ToGroupRuleScopeRegionsPtrOutputWithContext(context.Background())
+}
+
+func (i *groupRuleScopeRegionsPtrType) ToGroupRuleScopeRegionsPtrOutputWithContext(ctx context.Context) GroupRuleScopeRegionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeRegionsPtrOutput)
+}
+
+type GroupRuleScopeRegionsOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeRegionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeRegions)(nil)).Elem()
+}
+
+func (o GroupRuleScopeRegionsOutput) ToGroupRuleScopeRegionsOutput() GroupRuleScopeRegionsOutput {
+	return o
+}
+
+func (o GroupRuleScopeRegionsOutput) ToGroupRuleScopeRegionsOutputWithContext(ctx context.Context) GroupRuleScopeRegionsOutput {
+	return o
+}
+
+func (o GroupRuleScopeRegionsOutput) ToGroupRuleScopeRegionsPtrOutput() GroupRuleScopeRegionsPtrOutput {
+	return o.ToGroupRuleScopeRegionsPtrOutputWithContext(context.Background())
+}
+
+func (o GroupRuleScopeRegionsOutput) ToGroupRuleScopeRegionsPtrOutputWithContext(ctx context.Context) GroupRuleScopeRegionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GroupRuleScopeRegions) *GroupRuleScopeRegions {
+		return &v
+	}).(GroupRuleScopeRegionsPtrOutput)
+}
+
+// Exclude list
+func (o GroupRuleScopeRegionsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeRegions) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GroupRuleScopeRegionsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeRegions) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GroupRuleScopeRegionsPtrOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeRegionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeRegions)(nil)).Elem()
+}
+
+func (o GroupRuleScopeRegionsPtrOutput) ToGroupRuleScopeRegionsPtrOutput() GroupRuleScopeRegionsPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeRegionsPtrOutput) ToGroupRuleScopeRegionsPtrOutputWithContext(ctx context.Context) GroupRuleScopeRegionsPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeRegionsPtrOutput) Elem() GroupRuleScopeRegionsOutput {
+	return o.ApplyT(func(v *GroupRuleScopeRegions) GroupRuleScopeRegions {
+		if v != nil {
+			return *v
+		}
+		var ret GroupRuleScopeRegions
+		return ret
+	}).(GroupRuleScopeRegionsOutput)
+}
+
+// Exclude list
+func (o GroupRuleScopeRegionsPtrOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeRegions) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GroupRuleScopeRegionsPtrOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeRegions) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(pulumi.StringArrayOutput)
+}
+
+type GroupRuleScopeResourceIds struct {
+	// Exclude list
+	Excludes []string `pulumi:"excludes"`
+	// Include list
+	Includes []string `pulumi:"includes"`
+}
+
+// GroupRuleScopeResourceIdsInput is an input type that accepts GroupRuleScopeResourceIdsArgs and GroupRuleScopeResourceIdsOutput values.
+// You can construct a concrete instance of `GroupRuleScopeResourceIdsInput` via:
+//
+//	GroupRuleScopeResourceIdsArgs{...}
+type GroupRuleScopeResourceIdsInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeResourceIdsOutput() GroupRuleScopeResourceIdsOutput
+	ToGroupRuleScopeResourceIdsOutputWithContext(context.Context) GroupRuleScopeResourceIdsOutput
+}
+
+type GroupRuleScopeResourceIdsArgs struct {
+	// Exclude list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GroupRuleScopeResourceIdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeResourceIds)(nil)).Elem()
+}
+
+func (i GroupRuleScopeResourceIdsArgs) ToGroupRuleScopeResourceIdsOutput() GroupRuleScopeResourceIdsOutput {
+	return i.ToGroupRuleScopeResourceIdsOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeResourceIdsArgs) ToGroupRuleScopeResourceIdsOutputWithContext(ctx context.Context) GroupRuleScopeResourceIdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeResourceIdsOutput)
+}
+
+func (i GroupRuleScopeResourceIdsArgs) ToGroupRuleScopeResourceIdsPtrOutput() GroupRuleScopeResourceIdsPtrOutput {
+	return i.ToGroupRuleScopeResourceIdsPtrOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeResourceIdsArgs) ToGroupRuleScopeResourceIdsPtrOutputWithContext(ctx context.Context) GroupRuleScopeResourceIdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeResourceIdsOutput).ToGroupRuleScopeResourceIdsPtrOutputWithContext(ctx)
+}
+
+// GroupRuleScopeResourceIdsPtrInput is an input type that accepts GroupRuleScopeResourceIdsArgs, GroupRuleScopeResourceIdsPtr and GroupRuleScopeResourceIdsPtrOutput values.
+// You can construct a concrete instance of `GroupRuleScopeResourceIdsPtrInput` via:
+//
+//	        GroupRuleScopeResourceIdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GroupRuleScopeResourceIdsPtrInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeResourceIdsPtrOutput() GroupRuleScopeResourceIdsPtrOutput
+	ToGroupRuleScopeResourceIdsPtrOutputWithContext(context.Context) GroupRuleScopeResourceIdsPtrOutput
+}
+
+type groupRuleScopeResourceIdsPtrType GroupRuleScopeResourceIdsArgs
+
+func GroupRuleScopeResourceIdsPtr(v *GroupRuleScopeResourceIdsArgs) GroupRuleScopeResourceIdsPtrInput {
+	return (*groupRuleScopeResourceIdsPtrType)(v)
+}
+
+func (*groupRuleScopeResourceIdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeResourceIds)(nil)).Elem()
+}
+
+func (i *groupRuleScopeResourceIdsPtrType) ToGroupRuleScopeResourceIdsPtrOutput() GroupRuleScopeResourceIdsPtrOutput {
+	return i.ToGroupRuleScopeResourceIdsPtrOutputWithContext(context.Background())
+}
+
+func (i *groupRuleScopeResourceIdsPtrType) ToGroupRuleScopeResourceIdsPtrOutputWithContext(ctx context.Context) GroupRuleScopeResourceIdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeResourceIdsPtrOutput)
+}
+
+type GroupRuleScopeResourceIdsOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeResourceIdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeResourceIds)(nil)).Elem()
+}
+
+func (o GroupRuleScopeResourceIdsOutput) ToGroupRuleScopeResourceIdsOutput() GroupRuleScopeResourceIdsOutput {
+	return o
+}
+
+func (o GroupRuleScopeResourceIdsOutput) ToGroupRuleScopeResourceIdsOutputWithContext(ctx context.Context) GroupRuleScopeResourceIdsOutput {
+	return o
+}
+
+func (o GroupRuleScopeResourceIdsOutput) ToGroupRuleScopeResourceIdsPtrOutput() GroupRuleScopeResourceIdsPtrOutput {
+	return o.ToGroupRuleScopeResourceIdsPtrOutputWithContext(context.Background())
+}
+
+func (o GroupRuleScopeResourceIdsOutput) ToGroupRuleScopeResourceIdsPtrOutputWithContext(ctx context.Context) GroupRuleScopeResourceIdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GroupRuleScopeResourceIds) *GroupRuleScopeResourceIds {
+		return &v
+	}).(GroupRuleScopeResourceIdsPtrOutput)
+}
+
+// Exclude list
+func (o GroupRuleScopeResourceIdsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeResourceIds) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GroupRuleScopeResourceIdsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeResourceIds) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GroupRuleScopeResourceIdsPtrOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeResourceIdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeResourceIds)(nil)).Elem()
+}
+
+func (o GroupRuleScopeResourceIdsPtrOutput) ToGroupRuleScopeResourceIdsPtrOutput() GroupRuleScopeResourceIdsPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeResourceIdsPtrOutput) ToGroupRuleScopeResourceIdsPtrOutputWithContext(ctx context.Context) GroupRuleScopeResourceIdsPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeResourceIdsPtrOutput) Elem() GroupRuleScopeResourceIdsOutput {
+	return o.ApplyT(func(v *GroupRuleScopeResourceIds) GroupRuleScopeResourceIds {
+		if v != nil {
+			return *v
+		}
+		var ret GroupRuleScopeResourceIds
+		return ret
+	}).(GroupRuleScopeResourceIdsOutput)
+}
+
+// Exclude list
+func (o GroupRuleScopeResourceIdsPtrOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeResourceIds) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GroupRuleScopeResourceIdsPtrOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeResourceIds) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(pulumi.StringArrayOutput)
+}
+
+type GroupRuleScopeResourceTypes struct {
+	// Exclude list
+	Excludes []string `pulumi:"excludes"`
+	// Include list
+	Includes []string `pulumi:"includes"`
+}
+
+// GroupRuleScopeResourceTypesInput is an input type that accepts GroupRuleScopeResourceTypesArgs and GroupRuleScopeResourceTypesOutput values.
+// You can construct a concrete instance of `GroupRuleScopeResourceTypesInput` via:
+//
+//	GroupRuleScopeResourceTypesArgs{...}
+type GroupRuleScopeResourceTypesInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeResourceTypesOutput() GroupRuleScopeResourceTypesOutput
+	ToGroupRuleScopeResourceTypesOutputWithContext(context.Context) GroupRuleScopeResourceTypesOutput
+}
+
+type GroupRuleScopeResourceTypesArgs struct {
+	// Exclude list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GroupRuleScopeResourceTypesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (i GroupRuleScopeResourceTypesArgs) ToGroupRuleScopeResourceTypesOutput() GroupRuleScopeResourceTypesOutput {
+	return i.ToGroupRuleScopeResourceTypesOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeResourceTypesArgs) ToGroupRuleScopeResourceTypesOutputWithContext(ctx context.Context) GroupRuleScopeResourceTypesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeResourceTypesOutput)
+}
+
+func (i GroupRuleScopeResourceTypesArgs) ToGroupRuleScopeResourceTypesPtrOutput() GroupRuleScopeResourceTypesPtrOutput {
+	return i.ToGroupRuleScopeResourceTypesPtrOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeResourceTypesArgs) ToGroupRuleScopeResourceTypesPtrOutputWithContext(ctx context.Context) GroupRuleScopeResourceTypesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeResourceTypesOutput).ToGroupRuleScopeResourceTypesPtrOutputWithContext(ctx)
+}
+
+// GroupRuleScopeResourceTypesPtrInput is an input type that accepts GroupRuleScopeResourceTypesArgs, GroupRuleScopeResourceTypesPtr and GroupRuleScopeResourceTypesPtrOutput values.
+// You can construct a concrete instance of `GroupRuleScopeResourceTypesPtrInput` via:
+//
+//	        GroupRuleScopeResourceTypesArgs{...}
+//
+//	or:
+//
+//	        nil
+type GroupRuleScopeResourceTypesPtrInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeResourceTypesPtrOutput() GroupRuleScopeResourceTypesPtrOutput
+	ToGroupRuleScopeResourceTypesPtrOutputWithContext(context.Context) GroupRuleScopeResourceTypesPtrOutput
+}
+
+type groupRuleScopeResourceTypesPtrType GroupRuleScopeResourceTypesArgs
+
+func GroupRuleScopeResourceTypesPtr(v *GroupRuleScopeResourceTypesArgs) GroupRuleScopeResourceTypesPtrInput {
+	return (*groupRuleScopeResourceTypesPtrType)(v)
+}
+
+func (*groupRuleScopeResourceTypesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (i *groupRuleScopeResourceTypesPtrType) ToGroupRuleScopeResourceTypesPtrOutput() GroupRuleScopeResourceTypesPtrOutput {
+	return i.ToGroupRuleScopeResourceTypesPtrOutputWithContext(context.Background())
+}
+
+func (i *groupRuleScopeResourceTypesPtrType) ToGroupRuleScopeResourceTypesPtrOutputWithContext(ctx context.Context) GroupRuleScopeResourceTypesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeResourceTypesPtrOutput)
+}
+
+type GroupRuleScopeResourceTypesOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeResourceTypesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (o GroupRuleScopeResourceTypesOutput) ToGroupRuleScopeResourceTypesOutput() GroupRuleScopeResourceTypesOutput {
+	return o
+}
+
+func (o GroupRuleScopeResourceTypesOutput) ToGroupRuleScopeResourceTypesOutputWithContext(ctx context.Context) GroupRuleScopeResourceTypesOutput {
+	return o
+}
+
+func (o GroupRuleScopeResourceTypesOutput) ToGroupRuleScopeResourceTypesPtrOutput() GroupRuleScopeResourceTypesPtrOutput {
+	return o.ToGroupRuleScopeResourceTypesPtrOutputWithContext(context.Background())
+}
+
+func (o GroupRuleScopeResourceTypesOutput) ToGroupRuleScopeResourceTypesPtrOutputWithContext(ctx context.Context) GroupRuleScopeResourceTypesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GroupRuleScopeResourceTypes) *GroupRuleScopeResourceTypes {
+		return &v
+	}).(GroupRuleScopeResourceTypesPtrOutput)
+}
+
+// Exclude list
+func (o GroupRuleScopeResourceTypesOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeResourceTypes) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GroupRuleScopeResourceTypesOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeResourceTypes) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GroupRuleScopeResourceTypesPtrOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeResourceTypesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (o GroupRuleScopeResourceTypesPtrOutput) ToGroupRuleScopeResourceTypesPtrOutput() GroupRuleScopeResourceTypesPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeResourceTypesPtrOutput) ToGroupRuleScopeResourceTypesPtrOutputWithContext(ctx context.Context) GroupRuleScopeResourceTypesPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeResourceTypesPtrOutput) Elem() GroupRuleScopeResourceTypesOutput {
+	return o.ApplyT(func(v *GroupRuleScopeResourceTypes) GroupRuleScopeResourceTypes {
+		if v != nil {
+			return *v
+		}
+		var ret GroupRuleScopeResourceTypes
+		return ret
+	}).(GroupRuleScopeResourceTypesOutput)
+}
+
+// Exclude list
+func (o GroupRuleScopeResourceTypesPtrOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeResourceTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GroupRuleScopeResourceTypesPtrOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeResourceTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(pulumi.StringArrayOutput)
+}
+
+type GroupRuleScopeTags struct {
+	// Exclude list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Excludes []GroupRuleScopeTagsExclude `pulumi:"excludes"`
+	// Include list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Includes []GroupRuleScopeTagsInclude `pulumi:"includes"`
+}
+
+// GroupRuleScopeTagsInput is an input type that accepts GroupRuleScopeTagsArgs and GroupRuleScopeTagsOutput values.
+// You can construct a concrete instance of `GroupRuleScopeTagsInput` via:
+//
+//	GroupRuleScopeTagsArgs{...}
+type GroupRuleScopeTagsInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeTagsOutput() GroupRuleScopeTagsOutput
+	ToGroupRuleScopeTagsOutputWithContext(context.Context) GroupRuleScopeTagsOutput
+}
+
+type GroupRuleScopeTagsArgs struct {
+	// Exclude list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Excludes GroupRuleScopeTagsExcludeArrayInput `pulumi:"excludes"`
+	// Include list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Includes GroupRuleScopeTagsIncludeArrayInput `pulumi:"includes"`
+}
+
+func (GroupRuleScopeTagsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeTags)(nil)).Elem()
+}
+
+func (i GroupRuleScopeTagsArgs) ToGroupRuleScopeTagsOutput() GroupRuleScopeTagsOutput {
+	return i.ToGroupRuleScopeTagsOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeTagsArgs) ToGroupRuleScopeTagsOutputWithContext(ctx context.Context) GroupRuleScopeTagsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeTagsOutput)
+}
+
+func (i GroupRuleScopeTagsArgs) ToGroupRuleScopeTagsPtrOutput() GroupRuleScopeTagsPtrOutput {
+	return i.ToGroupRuleScopeTagsPtrOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeTagsArgs) ToGroupRuleScopeTagsPtrOutputWithContext(ctx context.Context) GroupRuleScopeTagsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeTagsOutput).ToGroupRuleScopeTagsPtrOutputWithContext(ctx)
+}
+
+// GroupRuleScopeTagsPtrInput is an input type that accepts GroupRuleScopeTagsArgs, GroupRuleScopeTagsPtr and GroupRuleScopeTagsPtrOutput values.
+// You can construct a concrete instance of `GroupRuleScopeTagsPtrInput` via:
+//
+//	        GroupRuleScopeTagsArgs{...}
+//
+//	or:
+//
+//	        nil
+type GroupRuleScopeTagsPtrInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeTagsPtrOutput() GroupRuleScopeTagsPtrOutput
+	ToGroupRuleScopeTagsPtrOutputWithContext(context.Context) GroupRuleScopeTagsPtrOutput
+}
+
+type groupRuleScopeTagsPtrType GroupRuleScopeTagsArgs
+
+func GroupRuleScopeTagsPtr(v *GroupRuleScopeTagsArgs) GroupRuleScopeTagsPtrInput {
+	return (*groupRuleScopeTagsPtrType)(v)
+}
+
+func (*groupRuleScopeTagsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeTags)(nil)).Elem()
+}
+
+func (i *groupRuleScopeTagsPtrType) ToGroupRuleScopeTagsPtrOutput() GroupRuleScopeTagsPtrOutput {
+	return i.ToGroupRuleScopeTagsPtrOutputWithContext(context.Background())
+}
+
+func (i *groupRuleScopeTagsPtrType) ToGroupRuleScopeTagsPtrOutputWithContext(ctx context.Context) GroupRuleScopeTagsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeTagsPtrOutput)
+}
+
+type GroupRuleScopeTagsOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeTagsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeTags)(nil)).Elem()
+}
+
+func (o GroupRuleScopeTagsOutput) ToGroupRuleScopeTagsOutput() GroupRuleScopeTagsOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsOutput) ToGroupRuleScopeTagsOutputWithContext(ctx context.Context) GroupRuleScopeTagsOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsOutput) ToGroupRuleScopeTagsPtrOutput() GroupRuleScopeTagsPtrOutput {
+	return o.ToGroupRuleScopeTagsPtrOutputWithContext(context.Background())
+}
+
+func (o GroupRuleScopeTagsOutput) ToGroupRuleScopeTagsPtrOutputWithContext(ctx context.Context) GroupRuleScopeTagsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v GroupRuleScopeTags) *GroupRuleScopeTags {
+		return &v
+	}).(GroupRuleScopeTagsPtrOutput)
+}
+
+// Exclude list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o GroupRuleScopeTagsOutput) Excludes() GroupRuleScopeTagsExcludeArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeTags) []GroupRuleScopeTagsExclude { return v.Excludes }).(GroupRuleScopeTagsExcludeArrayOutput)
+}
+
+// Include list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o GroupRuleScopeTagsOutput) Includes() GroupRuleScopeTagsIncludeArrayOutput {
+	return o.ApplyT(func(v GroupRuleScopeTags) []GroupRuleScopeTagsInclude { return v.Includes }).(GroupRuleScopeTagsIncludeArrayOutput)
+}
+
+type GroupRuleScopeTagsPtrOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeTagsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**GroupRuleScopeTags)(nil)).Elem()
+}
+
+func (o GroupRuleScopeTagsPtrOutput) ToGroupRuleScopeTagsPtrOutput() GroupRuleScopeTagsPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsPtrOutput) ToGroupRuleScopeTagsPtrOutputWithContext(ctx context.Context) GroupRuleScopeTagsPtrOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsPtrOutput) Elem() GroupRuleScopeTagsOutput {
+	return o.ApplyT(func(v *GroupRuleScopeTags) GroupRuleScopeTags {
+		if v != nil {
+			return *v
+		}
+		var ret GroupRuleScopeTags
+		return ret
+	}).(GroupRuleScopeTagsOutput)
+}
+
+// Exclude list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o GroupRuleScopeTagsPtrOutput) Excludes() GroupRuleScopeTagsExcludeArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeTags) []GroupRuleScopeTagsExclude {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(GroupRuleScopeTagsExcludeArrayOutput)
+}
+
+// Include list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o GroupRuleScopeTagsPtrOutput) Includes() GroupRuleScopeTagsIncludeArrayOutput {
+	return o.ApplyT(func(v *GroupRuleScopeTags) []GroupRuleScopeTagsInclude {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(GroupRuleScopeTagsIncludeArrayOutput)
+}
+
+type GroupRuleScopeTagsExclude struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// GroupRuleScopeTagsExcludeInput is an input type that accepts GroupRuleScopeTagsExcludeArgs and GroupRuleScopeTagsExcludeOutput values.
+// You can construct a concrete instance of `GroupRuleScopeTagsExcludeInput` via:
+//
+//	GroupRuleScopeTagsExcludeArgs{...}
+type GroupRuleScopeTagsExcludeInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeTagsExcludeOutput() GroupRuleScopeTagsExcludeOutput
+	ToGroupRuleScopeTagsExcludeOutputWithContext(context.Context) GroupRuleScopeTagsExcludeOutput
+}
+
+type GroupRuleScopeTagsExcludeArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (GroupRuleScopeTagsExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (i GroupRuleScopeTagsExcludeArgs) ToGroupRuleScopeTagsExcludeOutput() GroupRuleScopeTagsExcludeOutput {
+	return i.ToGroupRuleScopeTagsExcludeOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeTagsExcludeArgs) ToGroupRuleScopeTagsExcludeOutputWithContext(ctx context.Context) GroupRuleScopeTagsExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeTagsExcludeOutput)
+}
+
+// GroupRuleScopeTagsExcludeArrayInput is an input type that accepts GroupRuleScopeTagsExcludeArray and GroupRuleScopeTagsExcludeArrayOutput values.
+// You can construct a concrete instance of `GroupRuleScopeTagsExcludeArrayInput` via:
+//
+//	GroupRuleScopeTagsExcludeArray{ GroupRuleScopeTagsExcludeArgs{...} }
+type GroupRuleScopeTagsExcludeArrayInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeTagsExcludeArrayOutput() GroupRuleScopeTagsExcludeArrayOutput
+	ToGroupRuleScopeTagsExcludeArrayOutputWithContext(context.Context) GroupRuleScopeTagsExcludeArrayOutput
+}
+
+type GroupRuleScopeTagsExcludeArray []GroupRuleScopeTagsExcludeInput
+
+func (GroupRuleScopeTagsExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (i GroupRuleScopeTagsExcludeArray) ToGroupRuleScopeTagsExcludeArrayOutput() GroupRuleScopeTagsExcludeArrayOutput {
+	return i.ToGroupRuleScopeTagsExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeTagsExcludeArray) ToGroupRuleScopeTagsExcludeArrayOutputWithContext(ctx context.Context) GroupRuleScopeTagsExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeTagsExcludeArrayOutput)
+}
+
+type GroupRuleScopeTagsExcludeOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeTagsExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (o GroupRuleScopeTagsExcludeOutput) ToGroupRuleScopeTagsExcludeOutput() GroupRuleScopeTagsExcludeOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsExcludeOutput) ToGroupRuleScopeTagsExcludeOutputWithContext(ctx context.Context) GroupRuleScopeTagsExcludeOutput {
+	return o
+}
+
+// Tag key
+func (o GroupRuleScopeTagsExcludeOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupRuleScopeTagsExclude) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o GroupRuleScopeTagsExcludeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupRuleScopeTagsExclude) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GroupRuleScopeTagsExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeTagsExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (o GroupRuleScopeTagsExcludeArrayOutput) ToGroupRuleScopeTagsExcludeArrayOutput() GroupRuleScopeTagsExcludeArrayOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsExcludeArrayOutput) ToGroupRuleScopeTagsExcludeArrayOutputWithContext(ctx context.Context) GroupRuleScopeTagsExcludeArrayOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsExcludeArrayOutput) Index(i pulumi.IntInput) GroupRuleScopeTagsExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GroupRuleScopeTagsExclude {
+		return vs[0].([]GroupRuleScopeTagsExclude)[vs[1].(int)]
+	}).(GroupRuleScopeTagsExcludeOutput)
+}
+
+type GroupRuleScopeTagsInclude struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// GroupRuleScopeTagsIncludeInput is an input type that accepts GroupRuleScopeTagsIncludeArgs and GroupRuleScopeTagsIncludeOutput values.
+// You can construct a concrete instance of `GroupRuleScopeTagsIncludeInput` via:
+//
+//	GroupRuleScopeTagsIncludeArgs{...}
+type GroupRuleScopeTagsIncludeInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeTagsIncludeOutput() GroupRuleScopeTagsIncludeOutput
+	ToGroupRuleScopeTagsIncludeOutputWithContext(context.Context) GroupRuleScopeTagsIncludeOutput
+}
+
+type GroupRuleScopeTagsIncludeArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (GroupRuleScopeTagsIncludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (i GroupRuleScopeTagsIncludeArgs) ToGroupRuleScopeTagsIncludeOutput() GroupRuleScopeTagsIncludeOutput {
+	return i.ToGroupRuleScopeTagsIncludeOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeTagsIncludeArgs) ToGroupRuleScopeTagsIncludeOutputWithContext(ctx context.Context) GroupRuleScopeTagsIncludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeTagsIncludeOutput)
+}
+
+// GroupRuleScopeTagsIncludeArrayInput is an input type that accepts GroupRuleScopeTagsIncludeArray and GroupRuleScopeTagsIncludeArrayOutput values.
+// You can construct a concrete instance of `GroupRuleScopeTagsIncludeArrayInput` via:
+//
+//	GroupRuleScopeTagsIncludeArray{ GroupRuleScopeTagsIncludeArgs{...} }
+type GroupRuleScopeTagsIncludeArrayInput interface {
+	pulumi.Input
+
+	ToGroupRuleScopeTagsIncludeArrayOutput() GroupRuleScopeTagsIncludeArrayOutput
+	ToGroupRuleScopeTagsIncludeArrayOutputWithContext(context.Context) GroupRuleScopeTagsIncludeArrayOutput
+}
+
+type GroupRuleScopeTagsIncludeArray []GroupRuleScopeTagsIncludeInput
+
+func (GroupRuleScopeTagsIncludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (i GroupRuleScopeTagsIncludeArray) ToGroupRuleScopeTagsIncludeArrayOutput() GroupRuleScopeTagsIncludeArrayOutput {
+	return i.ToGroupRuleScopeTagsIncludeArrayOutputWithContext(context.Background())
+}
+
+func (i GroupRuleScopeTagsIncludeArray) ToGroupRuleScopeTagsIncludeArrayOutputWithContext(ctx context.Context) GroupRuleScopeTagsIncludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleScopeTagsIncludeArrayOutput)
+}
+
+type GroupRuleScopeTagsIncludeOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeTagsIncludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (o GroupRuleScopeTagsIncludeOutput) ToGroupRuleScopeTagsIncludeOutput() GroupRuleScopeTagsIncludeOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsIncludeOutput) ToGroupRuleScopeTagsIncludeOutputWithContext(ctx context.Context) GroupRuleScopeTagsIncludeOutput {
+	return o
+}
+
+// Tag key
+func (o GroupRuleScopeTagsIncludeOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupRuleScopeTagsInclude) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o GroupRuleScopeTagsIncludeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupRuleScopeTagsInclude) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type GroupRuleScopeTagsIncludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleScopeTagsIncludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (o GroupRuleScopeTagsIncludeArrayOutput) ToGroupRuleScopeTagsIncludeArrayOutput() GroupRuleScopeTagsIncludeArrayOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsIncludeArrayOutput) ToGroupRuleScopeTagsIncludeArrayOutputWithContext(ctx context.Context) GroupRuleScopeTagsIncludeArrayOutput {
+	return o
+}
+
+func (o GroupRuleScopeTagsIncludeArrayOutput) Index(i pulumi.IntInput) GroupRuleScopeTagsIncludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GroupRuleScopeTagsInclude {
+		return vs[0].([]GroupRuleScopeTagsInclude)[vs[1].(int)]
+	}).(GroupRuleScopeTagsIncludeOutput)
+}
+
+type GroupRuleTrigger struct {
+	// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+	MaximumExecutionFrequency *string `pulumi:"maximumExecutionFrequency"`
+	// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+	TriggerType *string `pulumi:"triggerType"`
+}
+
+// GroupRuleTriggerInput is an input type that accepts GroupRuleTriggerArgs and GroupRuleTriggerOutput values.
+// You can construct a concrete instance of `GroupRuleTriggerInput` via:
+//
+//	GroupRuleTriggerArgs{...}
+type GroupRuleTriggerInput interface {
+	pulumi.Input
+
+	ToGroupRuleTriggerOutput() GroupRuleTriggerOutput
+	ToGroupRuleTriggerOutputWithContext(context.Context) GroupRuleTriggerOutput
+}
+
+type GroupRuleTriggerArgs struct {
+	// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+	MaximumExecutionFrequency pulumi.StringPtrInput `pulumi:"maximumExecutionFrequency"`
+	// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+	TriggerType pulumi.StringPtrInput `pulumi:"triggerType"`
+}
+
+func (GroupRuleTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleTrigger)(nil)).Elem()
+}
+
+func (i GroupRuleTriggerArgs) ToGroupRuleTriggerOutput() GroupRuleTriggerOutput {
+	return i.ToGroupRuleTriggerOutputWithContext(context.Background())
+}
+
+func (i GroupRuleTriggerArgs) ToGroupRuleTriggerOutputWithContext(ctx context.Context) GroupRuleTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleTriggerOutput)
+}
+
+// GroupRuleTriggerArrayInput is an input type that accepts GroupRuleTriggerArray and GroupRuleTriggerArrayOutput values.
+// You can construct a concrete instance of `GroupRuleTriggerArrayInput` via:
+//
+//	GroupRuleTriggerArray{ GroupRuleTriggerArgs{...} }
+type GroupRuleTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGroupRuleTriggerArrayOutput() GroupRuleTriggerArrayOutput
+	ToGroupRuleTriggerArrayOutputWithContext(context.Context) GroupRuleTriggerArrayOutput
+}
+
+type GroupRuleTriggerArray []GroupRuleTriggerInput
+
+func (GroupRuleTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupRuleTrigger)(nil)).Elem()
+}
+
+func (i GroupRuleTriggerArray) ToGroupRuleTriggerArrayOutput() GroupRuleTriggerArrayOutput {
+	return i.ToGroupRuleTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GroupRuleTriggerArray) ToGroupRuleTriggerArrayOutputWithContext(ctx context.Context) GroupRuleTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GroupRuleTriggerArrayOutput)
+}
+
+type GroupRuleTriggerOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GroupRuleTrigger)(nil)).Elem()
+}
+
+func (o GroupRuleTriggerOutput) ToGroupRuleTriggerOutput() GroupRuleTriggerOutput {
+	return o
+}
+
+func (o GroupRuleTriggerOutput) ToGroupRuleTriggerOutputWithContext(ctx context.Context) GroupRuleTriggerOutput {
+	return o
+}
+
+// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+func (o GroupRuleTriggerOutput) MaximumExecutionFrequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupRuleTrigger) *string { return v.MaximumExecutionFrequency }).(pulumi.StringPtrOutput)
+}
+
+// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+func (o GroupRuleTriggerOutput) TriggerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v GroupRuleTrigger) *string { return v.TriggerType }).(pulumi.StringPtrOutput)
+}
+
+type GroupRuleTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GroupRuleTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GroupRuleTrigger)(nil)).Elem()
+}
+
+func (o GroupRuleTriggerArrayOutput) ToGroupRuleTriggerArrayOutput() GroupRuleTriggerArrayOutput {
+	return o
+}
+
+func (o GroupRuleTriggerArrayOutput) ToGroupRuleTriggerArrayOutputWithContext(ctx context.Context) GroupRuleTriggerArrayOutput {
+	return o
+}
+
+func (o GroupRuleTriggerArrayOutput) Index(i pulumi.IntInput) GroupRuleTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GroupRuleTrigger {
+		return vs[0].([]GroupRuleTrigger)[vs[1].(int)]
+	}).(GroupRuleTriggerOutput)
+}
+
+type RuleScope struct {
+	// Project filter scope
+	Projects *RuleScopeProjects `pulumi:"projects"`
+	// Resource region list
+	Regions *RuleScopeRegions `pulumi:"regions"`
+	// Resource ID list
+	ResourceIds *RuleScopeResourceIds `pulumi:"resourceIds"`
+	// Resource type scope
+	ResourceTypes *RuleScopeResourceTypes `pulumi:"resourceTypes"`
+	// Resource tag list
+	Tags *RuleScopeTags `pulumi:"tags"`
+}
+
+// RuleScopeInput is an input type that accepts RuleScopeArgs and RuleScopeOutput values.
+// You can construct a concrete instance of `RuleScopeInput` via:
+//
+//	RuleScopeArgs{...}
+type RuleScopeInput interface {
+	pulumi.Input
+
+	ToRuleScopeOutput() RuleScopeOutput
+	ToRuleScopeOutputWithContext(context.Context) RuleScopeOutput
+}
+
+type RuleScopeArgs struct {
+	// Project filter scope
+	Projects RuleScopeProjectsPtrInput `pulumi:"projects"`
+	// Resource region list
+	Regions RuleScopeRegionsPtrInput `pulumi:"regions"`
+	// Resource ID list
+	ResourceIds RuleScopeResourceIdsPtrInput `pulumi:"resourceIds"`
+	// Resource type scope
+	ResourceTypes RuleScopeResourceTypesPtrInput `pulumi:"resourceTypes"`
+	// Resource tag list
+	Tags RuleScopeTagsPtrInput `pulumi:"tags"`
+}
+
+func (RuleScopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScope)(nil)).Elem()
+}
+
+func (i RuleScopeArgs) ToRuleScopeOutput() RuleScopeOutput {
+	return i.ToRuleScopeOutputWithContext(context.Background())
+}
+
+func (i RuleScopeArgs) ToRuleScopeOutputWithContext(ctx context.Context) RuleScopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeOutput)
+}
+
+func (i RuleScopeArgs) ToRuleScopePtrOutput() RuleScopePtrOutput {
+	return i.ToRuleScopePtrOutputWithContext(context.Background())
+}
+
+func (i RuleScopeArgs) ToRuleScopePtrOutputWithContext(ctx context.Context) RuleScopePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeOutput).ToRuleScopePtrOutputWithContext(ctx)
+}
+
+// RuleScopePtrInput is an input type that accepts RuleScopeArgs, RuleScopePtr and RuleScopePtrOutput values.
+// You can construct a concrete instance of `RuleScopePtrInput` via:
+//
+//	        RuleScopeArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleScopePtrInput interface {
+	pulumi.Input
+
+	ToRuleScopePtrOutput() RuleScopePtrOutput
+	ToRuleScopePtrOutputWithContext(context.Context) RuleScopePtrOutput
+}
+
+type ruleScopePtrType RuleScopeArgs
+
+func RuleScopePtr(v *RuleScopeArgs) RuleScopePtrInput {
+	return (*ruleScopePtrType)(v)
+}
+
+func (*ruleScopePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScope)(nil)).Elem()
+}
+
+func (i *ruleScopePtrType) ToRuleScopePtrOutput() RuleScopePtrOutput {
+	return i.ToRuleScopePtrOutputWithContext(context.Background())
+}
+
+func (i *ruleScopePtrType) ToRuleScopePtrOutputWithContext(ctx context.Context) RuleScopePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopePtrOutput)
+}
+
+type RuleScopeOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScope)(nil)).Elem()
+}
+
+func (o RuleScopeOutput) ToRuleScopeOutput() RuleScopeOutput {
+	return o
+}
+
+func (o RuleScopeOutput) ToRuleScopeOutputWithContext(ctx context.Context) RuleScopeOutput {
+	return o
+}
+
+func (o RuleScopeOutput) ToRuleScopePtrOutput() RuleScopePtrOutput {
+	return o.ToRuleScopePtrOutputWithContext(context.Background())
+}
+
+func (o RuleScopeOutput) ToRuleScopePtrOutputWithContext(ctx context.Context) RuleScopePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleScope) *RuleScope {
+		return &v
+	}).(RuleScopePtrOutput)
+}
+
+// Project filter scope
+func (o RuleScopeOutput) Projects() RuleScopeProjectsPtrOutput {
+	return o.ApplyT(func(v RuleScope) *RuleScopeProjects { return v.Projects }).(RuleScopeProjectsPtrOutput)
+}
+
+// Resource region list
+func (o RuleScopeOutput) Regions() RuleScopeRegionsPtrOutput {
+	return o.ApplyT(func(v RuleScope) *RuleScopeRegions { return v.Regions }).(RuleScopeRegionsPtrOutput)
+}
+
+// Resource ID list
+func (o RuleScopeOutput) ResourceIds() RuleScopeResourceIdsPtrOutput {
+	return o.ApplyT(func(v RuleScope) *RuleScopeResourceIds { return v.ResourceIds }).(RuleScopeResourceIdsPtrOutput)
+}
+
+// Resource type scope
+func (o RuleScopeOutput) ResourceTypes() RuleScopeResourceTypesPtrOutput {
+	return o.ApplyT(func(v RuleScope) *RuleScopeResourceTypes { return v.ResourceTypes }).(RuleScopeResourceTypesPtrOutput)
+}
+
+// Resource tag list
+func (o RuleScopeOutput) Tags() RuleScopeTagsPtrOutput {
+	return o.ApplyT(func(v RuleScope) *RuleScopeTags { return v.Tags }).(RuleScopeTagsPtrOutput)
+}
+
+type RuleScopePtrOutput struct{ *pulumi.OutputState }
+
+func (RuleScopePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScope)(nil)).Elem()
+}
+
+func (o RuleScopePtrOutput) ToRuleScopePtrOutput() RuleScopePtrOutput {
+	return o
+}
+
+func (o RuleScopePtrOutput) ToRuleScopePtrOutputWithContext(ctx context.Context) RuleScopePtrOutput {
+	return o
+}
+
+func (o RuleScopePtrOutput) Elem() RuleScopeOutput {
+	return o.ApplyT(func(v *RuleScope) RuleScope {
+		if v != nil {
+			return *v
+		}
+		var ret RuleScope
+		return ret
+	}).(RuleScopeOutput)
+}
+
+// Project filter scope
+func (o RuleScopePtrOutput) Projects() RuleScopeProjectsPtrOutput {
+	return o.ApplyT(func(v *RuleScope) *RuleScopeProjects {
+		if v == nil {
+			return nil
+		}
+		return v.Projects
+	}).(RuleScopeProjectsPtrOutput)
+}
+
+// Resource region list
+func (o RuleScopePtrOutput) Regions() RuleScopeRegionsPtrOutput {
+	return o.ApplyT(func(v *RuleScope) *RuleScopeRegions {
+		if v == nil {
+			return nil
+		}
+		return v.Regions
+	}).(RuleScopeRegionsPtrOutput)
+}
+
+// Resource ID list
+func (o RuleScopePtrOutput) ResourceIds() RuleScopeResourceIdsPtrOutput {
+	return o.ApplyT(func(v *RuleScope) *RuleScopeResourceIds {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceIds
+	}).(RuleScopeResourceIdsPtrOutput)
+}
+
+// Resource type scope
+func (o RuleScopePtrOutput) ResourceTypes() RuleScopeResourceTypesPtrOutput {
+	return o.ApplyT(func(v *RuleScope) *RuleScopeResourceTypes {
+		if v == nil {
+			return nil
+		}
+		return v.ResourceTypes
+	}).(RuleScopeResourceTypesPtrOutput)
+}
+
+// Resource tag list
+func (o RuleScopePtrOutput) Tags() RuleScopeTagsPtrOutput {
+	return o.ApplyT(func(v *RuleScope) *RuleScopeTags {
+		if v == nil {
+			return nil
+		}
+		return v.Tags
+	}).(RuleScopeTagsPtrOutput)
+}
+
+type RuleScopeProjects struct {
+	// Exclusion list
+	Excludes []string `pulumi:"excludes"`
+	// Inclusion list
+	Includes []string `pulumi:"includes"`
+}
+
+// RuleScopeProjectsInput is an input type that accepts RuleScopeProjectsArgs and RuleScopeProjectsOutput values.
+// You can construct a concrete instance of `RuleScopeProjectsInput` via:
+//
+//	RuleScopeProjectsArgs{...}
+type RuleScopeProjectsInput interface {
+	pulumi.Input
+
+	ToRuleScopeProjectsOutput() RuleScopeProjectsOutput
+	ToRuleScopeProjectsOutputWithContext(context.Context) RuleScopeProjectsOutput
+}
+
+type RuleScopeProjectsArgs struct {
+	// Exclusion list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (RuleScopeProjectsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeProjects)(nil)).Elem()
+}
+
+func (i RuleScopeProjectsArgs) ToRuleScopeProjectsOutput() RuleScopeProjectsOutput {
+	return i.ToRuleScopeProjectsOutputWithContext(context.Background())
+}
+
+func (i RuleScopeProjectsArgs) ToRuleScopeProjectsOutputWithContext(ctx context.Context) RuleScopeProjectsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeProjectsOutput)
+}
+
+func (i RuleScopeProjectsArgs) ToRuleScopeProjectsPtrOutput() RuleScopeProjectsPtrOutput {
+	return i.ToRuleScopeProjectsPtrOutputWithContext(context.Background())
+}
+
+func (i RuleScopeProjectsArgs) ToRuleScopeProjectsPtrOutputWithContext(ctx context.Context) RuleScopeProjectsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeProjectsOutput).ToRuleScopeProjectsPtrOutputWithContext(ctx)
+}
+
+// RuleScopeProjectsPtrInput is an input type that accepts RuleScopeProjectsArgs, RuleScopeProjectsPtr and RuleScopeProjectsPtrOutput values.
+// You can construct a concrete instance of `RuleScopeProjectsPtrInput` via:
+//
+//	        RuleScopeProjectsArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleScopeProjectsPtrInput interface {
+	pulumi.Input
+
+	ToRuleScopeProjectsPtrOutput() RuleScopeProjectsPtrOutput
+	ToRuleScopeProjectsPtrOutputWithContext(context.Context) RuleScopeProjectsPtrOutput
+}
+
+type ruleScopeProjectsPtrType RuleScopeProjectsArgs
+
+func RuleScopeProjectsPtr(v *RuleScopeProjectsArgs) RuleScopeProjectsPtrInput {
+	return (*ruleScopeProjectsPtrType)(v)
+}
+
+func (*ruleScopeProjectsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeProjects)(nil)).Elem()
+}
+
+func (i *ruleScopeProjectsPtrType) ToRuleScopeProjectsPtrOutput() RuleScopeProjectsPtrOutput {
+	return i.ToRuleScopeProjectsPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleScopeProjectsPtrType) ToRuleScopeProjectsPtrOutputWithContext(ctx context.Context) RuleScopeProjectsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeProjectsPtrOutput)
+}
+
+type RuleScopeProjectsOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeProjectsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeProjects)(nil)).Elem()
+}
+
+func (o RuleScopeProjectsOutput) ToRuleScopeProjectsOutput() RuleScopeProjectsOutput {
+	return o
+}
+
+func (o RuleScopeProjectsOutput) ToRuleScopeProjectsOutputWithContext(ctx context.Context) RuleScopeProjectsOutput {
+	return o
+}
+
+func (o RuleScopeProjectsOutput) ToRuleScopeProjectsPtrOutput() RuleScopeProjectsPtrOutput {
+	return o.ToRuleScopeProjectsPtrOutputWithContext(context.Background())
+}
+
+func (o RuleScopeProjectsOutput) ToRuleScopeProjectsPtrOutputWithContext(ctx context.Context) RuleScopeProjectsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleScopeProjects) *RuleScopeProjects {
+		return &v
+	}).(RuleScopeProjectsPtrOutput)
+}
+
+// Exclusion list
+func (o RuleScopeProjectsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleScopeProjects) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o RuleScopeProjectsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleScopeProjects) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type RuleScopeProjectsPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeProjectsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeProjects)(nil)).Elem()
+}
+
+func (o RuleScopeProjectsPtrOutput) ToRuleScopeProjectsPtrOutput() RuleScopeProjectsPtrOutput {
+	return o
+}
+
+func (o RuleScopeProjectsPtrOutput) ToRuleScopeProjectsPtrOutputWithContext(ctx context.Context) RuleScopeProjectsPtrOutput {
+	return o
+}
+
+func (o RuleScopeProjectsPtrOutput) Elem() RuleScopeProjectsOutput {
+	return o.ApplyT(func(v *RuleScopeProjects) RuleScopeProjects {
+		if v != nil {
+			return *v
+		}
+		var ret RuleScopeProjects
+		return ret
+	}).(RuleScopeProjectsOutput)
+}
+
+// Exclusion list
+func (o RuleScopeProjectsPtrOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleScopeProjects) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o RuleScopeProjectsPtrOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleScopeProjects) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(pulumi.StringArrayOutput)
+}
+
+type RuleScopeRegions struct {
+	// Exclusion list
+	Excludes []string `pulumi:"excludes"`
+	// Inclusion list
+	Includes []string `pulumi:"includes"`
+}
+
+// RuleScopeRegionsInput is an input type that accepts RuleScopeRegionsArgs and RuleScopeRegionsOutput values.
+// You can construct a concrete instance of `RuleScopeRegionsInput` via:
+//
+//	RuleScopeRegionsArgs{...}
+type RuleScopeRegionsInput interface {
+	pulumi.Input
+
+	ToRuleScopeRegionsOutput() RuleScopeRegionsOutput
+	ToRuleScopeRegionsOutputWithContext(context.Context) RuleScopeRegionsOutput
+}
+
+type RuleScopeRegionsArgs struct {
+	// Exclusion list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (RuleScopeRegionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeRegions)(nil)).Elem()
+}
+
+func (i RuleScopeRegionsArgs) ToRuleScopeRegionsOutput() RuleScopeRegionsOutput {
+	return i.ToRuleScopeRegionsOutputWithContext(context.Background())
+}
+
+func (i RuleScopeRegionsArgs) ToRuleScopeRegionsOutputWithContext(ctx context.Context) RuleScopeRegionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeRegionsOutput)
+}
+
+func (i RuleScopeRegionsArgs) ToRuleScopeRegionsPtrOutput() RuleScopeRegionsPtrOutput {
+	return i.ToRuleScopeRegionsPtrOutputWithContext(context.Background())
+}
+
+func (i RuleScopeRegionsArgs) ToRuleScopeRegionsPtrOutputWithContext(ctx context.Context) RuleScopeRegionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeRegionsOutput).ToRuleScopeRegionsPtrOutputWithContext(ctx)
+}
+
+// RuleScopeRegionsPtrInput is an input type that accepts RuleScopeRegionsArgs, RuleScopeRegionsPtr and RuleScopeRegionsPtrOutput values.
+// You can construct a concrete instance of `RuleScopeRegionsPtrInput` via:
+//
+//	        RuleScopeRegionsArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleScopeRegionsPtrInput interface {
+	pulumi.Input
+
+	ToRuleScopeRegionsPtrOutput() RuleScopeRegionsPtrOutput
+	ToRuleScopeRegionsPtrOutputWithContext(context.Context) RuleScopeRegionsPtrOutput
+}
+
+type ruleScopeRegionsPtrType RuleScopeRegionsArgs
+
+func RuleScopeRegionsPtr(v *RuleScopeRegionsArgs) RuleScopeRegionsPtrInput {
+	return (*ruleScopeRegionsPtrType)(v)
+}
+
+func (*ruleScopeRegionsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeRegions)(nil)).Elem()
+}
+
+func (i *ruleScopeRegionsPtrType) ToRuleScopeRegionsPtrOutput() RuleScopeRegionsPtrOutput {
+	return i.ToRuleScopeRegionsPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleScopeRegionsPtrType) ToRuleScopeRegionsPtrOutputWithContext(ctx context.Context) RuleScopeRegionsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeRegionsPtrOutput)
+}
+
+type RuleScopeRegionsOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeRegionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeRegions)(nil)).Elem()
+}
+
+func (o RuleScopeRegionsOutput) ToRuleScopeRegionsOutput() RuleScopeRegionsOutput {
+	return o
+}
+
+func (o RuleScopeRegionsOutput) ToRuleScopeRegionsOutputWithContext(ctx context.Context) RuleScopeRegionsOutput {
+	return o
+}
+
+func (o RuleScopeRegionsOutput) ToRuleScopeRegionsPtrOutput() RuleScopeRegionsPtrOutput {
+	return o.ToRuleScopeRegionsPtrOutputWithContext(context.Background())
+}
+
+func (o RuleScopeRegionsOutput) ToRuleScopeRegionsPtrOutputWithContext(ctx context.Context) RuleScopeRegionsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleScopeRegions) *RuleScopeRegions {
+		return &v
+	}).(RuleScopeRegionsPtrOutput)
+}
+
+// Exclusion list
+func (o RuleScopeRegionsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleScopeRegions) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o RuleScopeRegionsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleScopeRegions) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type RuleScopeRegionsPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeRegionsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeRegions)(nil)).Elem()
+}
+
+func (o RuleScopeRegionsPtrOutput) ToRuleScopeRegionsPtrOutput() RuleScopeRegionsPtrOutput {
+	return o
+}
+
+func (o RuleScopeRegionsPtrOutput) ToRuleScopeRegionsPtrOutputWithContext(ctx context.Context) RuleScopeRegionsPtrOutput {
+	return o
+}
+
+func (o RuleScopeRegionsPtrOutput) Elem() RuleScopeRegionsOutput {
+	return o.ApplyT(func(v *RuleScopeRegions) RuleScopeRegions {
+		if v != nil {
+			return *v
+		}
+		var ret RuleScopeRegions
+		return ret
+	}).(RuleScopeRegionsOutput)
+}
+
+// Exclusion list
+func (o RuleScopeRegionsPtrOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleScopeRegions) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o RuleScopeRegionsPtrOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleScopeRegions) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(pulumi.StringArrayOutput)
+}
+
+type RuleScopeResourceIds struct {
+	// Exclusion list
+	Excludes []string `pulumi:"excludes"`
+	// Inclusion list
+	Includes []string `pulumi:"includes"`
+}
+
+// RuleScopeResourceIdsInput is an input type that accepts RuleScopeResourceIdsArgs and RuleScopeResourceIdsOutput values.
+// You can construct a concrete instance of `RuleScopeResourceIdsInput` via:
+//
+//	RuleScopeResourceIdsArgs{...}
+type RuleScopeResourceIdsInput interface {
+	pulumi.Input
+
+	ToRuleScopeResourceIdsOutput() RuleScopeResourceIdsOutput
+	ToRuleScopeResourceIdsOutputWithContext(context.Context) RuleScopeResourceIdsOutput
+}
+
+type RuleScopeResourceIdsArgs struct {
+	// Exclusion list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (RuleScopeResourceIdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeResourceIds)(nil)).Elem()
+}
+
+func (i RuleScopeResourceIdsArgs) ToRuleScopeResourceIdsOutput() RuleScopeResourceIdsOutput {
+	return i.ToRuleScopeResourceIdsOutputWithContext(context.Background())
+}
+
+func (i RuleScopeResourceIdsArgs) ToRuleScopeResourceIdsOutputWithContext(ctx context.Context) RuleScopeResourceIdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeResourceIdsOutput)
+}
+
+func (i RuleScopeResourceIdsArgs) ToRuleScopeResourceIdsPtrOutput() RuleScopeResourceIdsPtrOutput {
+	return i.ToRuleScopeResourceIdsPtrOutputWithContext(context.Background())
+}
+
+func (i RuleScopeResourceIdsArgs) ToRuleScopeResourceIdsPtrOutputWithContext(ctx context.Context) RuleScopeResourceIdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeResourceIdsOutput).ToRuleScopeResourceIdsPtrOutputWithContext(ctx)
+}
+
+// RuleScopeResourceIdsPtrInput is an input type that accepts RuleScopeResourceIdsArgs, RuleScopeResourceIdsPtr and RuleScopeResourceIdsPtrOutput values.
+// You can construct a concrete instance of `RuleScopeResourceIdsPtrInput` via:
+//
+//	        RuleScopeResourceIdsArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleScopeResourceIdsPtrInput interface {
+	pulumi.Input
+
+	ToRuleScopeResourceIdsPtrOutput() RuleScopeResourceIdsPtrOutput
+	ToRuleScopeResourceIdsPtrOutputWithContext(context.Context) RuleScopeResourceIdsPtrOutput
+}
+
+type ruleScopeResourceIdsPtrType RuleScopeResourceIdsArgs
+
+func RuleScopeResourceIdsPtr(v *RuleScopeResourceIdsArgs) RuleScopeResourceIdsPtrInput {
+	return (*ruleScopeResourceIdsPtrType)(v)
+}
+
+func (*ruleScopeResourceIdsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeResourceIds)(nil)).Elem()
+}
+
+func (i *ruleScopeResourceIdsPtrType) ToRuleScopeResourceIdsPtrOutput() RuleScopeResourceIdsPtrOutput {
+	return i.ToRuleScopeResourceIdsPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleScopeResourceIdsPtrType) ToRuleScopeResourceIdsPtrOutputWithContext(ctx context.Context) RuleScopeResourceIdsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeResourceIdsPtrOutput)
+}
+
+type RuleScopeResourceIdsOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeResourceIdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeResourceIds)(nil)).Elem()
+}
+
+func (o RuleScopeResourceIdsOutput) ToRuleScopeResourceIdsOutput() RuleScopeResourceIdsOutput {
+	return o
+}
+
+func (o RuleScopeResourceIdsOutput) ToRuleScopeResourceIdsOutputWithContext(ctx context.Context) RuleScopeResourceIdsOutput {
+	return o
+}
+
+func (o RuleScopeResourceIdsOutput) ToRuleScopeResourceIdsPtrOutput() RuleScopeResourceIdsPtrOutput {
+	return o.ToRuleScopeResourceIdsPtrOutputWithContext(context.Background())
+}
+
+func (o RuleScopeResourceIdsOutput) ToRuleScopeResourceIdsPtrOutputWithContext(ctx context.Context) RuleScopeResourceIdsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleScopeResourceIds) *RuleScopeResourceIds {
+		return &v
+	}).(RuleScopeResourceIdsPtrOutput)
+}
+
+// Exclusion list
+func (o RuleScopeResourceIdsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleScopeResourceIds) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o RuleScopeResourceIdsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleScopeResourceIds) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type RuleScopeResourceIdsPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeResourceIdsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeResourceIds)(nil)).Elem()
+}
+
+func (o RuleScopeResourceIdsPtrOutput) ToRuleScopeResourceIdsPtrOutput() RuleScopeResourceIdsPtrOutput {
+	return o
+}
+
+func (o RuleScopeResourceIdsPtrOutput) ToRuleScopeResourceIdsPtrOutputWithContext(ctx context.Context) RuleScopeResourceIdsPtrOutput {
+	return o
+}
+
+func (o RuleScopeResourceIdsPtrOutput) Elem() RuleScopeResourceIdsOutput {
+	return o.ApplyT(func(v *RuleScopeResourceIds) RuleScopeResourceIds {
+		if v != nil {
+			return *v
+		}
+		var ret RuleScopeResourceIds
+		return ret
+	}).(RuleScopeResourceIdsOutput)
+}
+
+// Exclusion list
+func (o RuleScopeResourceIdsPtrOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleScopeResourceIds) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o RuleScopeResourceIdsPtrOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleScopeResourceIds) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(pulumi.StringArrayOutput)
+}
+
+type RuleScopeResourceTypes struct {
+	// Exclusion list
+	Excludes []string `pulumi:"excludes"`
+	// Inclusion list
+	Includes []string `pulumi:"includes"`
+}
+
+// RuleScopeResourceTypesInput is an input type that accepts RuleScopeResourceTypesArgs and RuleScopeResourceTypesOutput values.
+// You can construct a concrete instance of `RuleScopeResourceTypesInput` via:
+//
+//	RuleScopeResourceTypesArgs{...}
+type RuleScopeResourceTypesInput interface {
+	pulumi.Input
+
+	ToRuleScopeResourceTypesOutput() RuleScopeResourceTypesOutput
+	ToRuleScopeResourceTypesOutputWithContext(context.Context) RuleScopeResourceTypesOutput
+}
+
+type RuleScopeResourceTypesArgs struct {
+	// Exclusion list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (RuleScopeResourceTypesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (i RuleScopeResourceTypesArgs) ToRuleScopeResourceTypesOutput() RuleScopeResourceTypesOutput {
+	return i.ToRuleScopeResourceTypesOutputWithContext(context.Background())
+}
+
+func (i RuleScopeResourceTypesArgs) ToRuleScopeResourceTypesOutputWithContext(ctx context.Context) RuleScopeResourceTypesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeResourceTypesOutput)
+}
+
+func (i RuleScopeResourceTypesArgs) ToRuleScopeResourceTypesPtrOutput() RuleScopeResourceTypesPtrOutput {
+	return i.ToRuleScopeResourceTypesPtrOutputWithContext(context.Background())
+}
+
+func (i RuleScopeResourceTypesArgs) ToRuleScopeResourceTypesPtrOutputWithContext(ctx context.Context) RuleScopeResourceTypesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeResourceTypesOutput).ToRuleScopeResourceTypesPtrOutputWithContext(ctx)
+}
+
+// RuleScopeResourceTypesPtrInput is an input type that accepts RuleScopeResourceTypesArgs, RuleScopeResourceTypesPtr and RuleScopeResourceTypesPtrOutput values.
+// You can construct a concrete instance of `RuleScopeResourceTypesPtrInput` via:
+//
+//	        RuleScopeResourceTypesArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleScopeResourceTypesPtrInput interface {
+	pulumi.Input
+
+	ToRuleScopeResourceTypesPtrOutput() RuleScopeResourceTypesPtrOutput
+	ToRuleScopeResourceTypesPtrOutputWithContext(context.Context) RuleScopeResourceTypesPtrOutput
+}
+
+type ruleScopeResourceTypesPtrType RuleScopeResourceTypesArgs
+
+func RuleScopeResourceTypesPtr(v *RuleScopeResourceTypesArgs) RuleScopeResourceTypesPtrInput {
+	return (*ruleScopeResourceTypesPtrType)(v)
+}
+
+func (*ruleScopeResourceTypesPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (i *ruleScopeResourceTypesPtrType) ToRuleScopeResourceTypesPtrOutput() RuleScopeResourceTypesPtrOutput {
+	return i.ToRuleScopeResourceTypesPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleScopeResourceTypesPtrType) ToRuleScopeResourceTypesPtrOutputWithContext(ctx context.Context) RuleScopeResourceTypesPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeResourceTypesPtrOutput)
+}
+
+type RuleScopeResourceTypesOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeResourceTypesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (o RuleScopeResourceTypesOutput) ToRuleScopeResourceTypesOutput() RuleScopeResourceTypesOutput {
+	return o
+}
+
+func (o RuleScopeResourceTypesOutput) ToRuleScopeResourceTypesOutputWithContext(ctx context.Context) RuleScopeResourceTypesOutput {
+	return o
+}
+
+func (o RuleScopeResourceTypesOutput) ToRuleScopeResourceTypesPtrOutput() RuleScopeResourceTypesPtrOutput {
+	return o.ToRuleScopeResourceTypesPtrOutputWithContext(context.Background())
+}
+
+func (o RuleScopeResourceTypesOutput) ToRuleScopeResourceTypesPtrOutputWithContext(ctx context.Context) RuleScopeResourceTypesPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleScopeResourceTypes) *RuleScopeResourceTypes {
+		return &v
+	}).(RuleScopeResourceTypesPtrOutput)
+}
+
+// Exclusion list
+func (o RuleScopeResourceTypesOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleScopeResourceTypes) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o RuleScopeResourceTypesOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RuleScopeResourceTypes) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type RuleScopeResourceTypesPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeResourceTypesPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (o RuleScopeResourceTypesPtrOutput) ToRuleScopeResourceTypesPtrOutput() RuleScopeResourceTypesPtrOutput {
+	return o
+}
+
+func (o RuleScopeResourceTypesPtrOutput) ToRuleScopeResourceTypesPtrOutputWithContext(ctx context.Context) RuleScopeResourceTypesPtrOutput {
+	return o
+}
+
+func (o RuleScopeResourceTypesPtrOutput) Elem() RuleScopeResourceTypesOutput {
+	return o.ApplyT(func(v *RuleScopeResourceTypes) RuleScopeResourceTypes {
+		if v != nil {
+			return *v
+		}
+		var ret RuleScopeResourceTypes
+		return ret
+	}).(RuleScopeResourceTypesOutput)
+}
+
+// Exclusion list
+func (o RuleScopeResourceTypesPtrOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleScopeResourceTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o RuleScopeResourceTypesPtrOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *RuleScopeResourceTypes) []string {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(pulumi.StringArrayOutput)
+}
+
+type RuleScopeTags struct {
+	// Exclusion list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Excludes []RuleScopeTagsExclude `pulumi:"excludes"`
+	// Inclusion list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Includes []RuleScopeTagsInclude `pulumi:"includes"`
+}
+
+// RuleScopeTagsInput is an input type that accepts RuleScopeTagsArgs and RuleScopeTagsOutput values.
+// You can construct a concrete instance of `RuleScopeTagsInput` via:
+//
+//	RuleScopeTagsArgs{...}
+type RuleScopeTagsInput interface {
+	pulumi.Input
+
+	ToRuleScopeTagsOutput() RuleScopeTagsOutput
+	ToRuleScopeTagsOutputWithContext(context.Context) RuleScopeTagsOutput
+}
+
+type RuleScopeTagsArgs struct {
+	// Exclusion list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Excludes RuleScopeTagsExcludeArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Includes RuleScopeTagsIncludeArrayInput `pulumi:"includes"`
+}
+
+func (RuleScopeTagsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeTags)(nil)).Elem()
+}
+
+func (i RuleScopeTagsArgs) ToRuleScopeTagsOutput() RuleScopeTagsOutput {
+	return i.ToRuleScopeTagsOutputWithContext(context.Background())
+}
+
+func (i RuleScopeTagsArgs) ToRuleScopeTagsOutputWithContext(ctx context.Context) RuleScopeTagsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeTagsOutput)
+}
+
+func (i RuleScopeTagsArgs) ToRuleScopeTagsPtrOutput() RuleScopeTagsPtrOutput {
+	return i.ToRuleScopeTagsPtrOutputWithContext(context.Background())
+}
+
+func (i RuleScopeTagsArgs) ToRuleScopeTagsPtrOutputWithContext(ctx context.Context) RuleScopeTagsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeTagsOutput).ToRuleScopeTagsPtrOutputWithContext(ctx)
+}
+
+// RuleScopeTagsPtrInput is an input type that accepts RuleScopeTagsArgs, RuleScopeTagsPtr and RuleScopeTagsPtrOutput values.
+// You can construct a concrete instance of `RuleScopeTagsPtrInput` via:
+//
+//	        RuleScopeTagsArgs{...}
+//
+//	or:
+//
+//	        nil
+type RuleScopeTagsPtrInput interface {
+	pulumi.Input
+
+	ToRuleScopeTagsPtrOutput() RuleScopeTagsPtrOutput
+	ToRuleScopeTagsPtrOutputWithContext(context.Context) RuleScopeTagsPtrOutput
+}
+
+type ruleScopeTagsPtrType RuleScopeTagsArgs
+
+func RuleScopeTagsPtr(v *RuleScopeTagsArgs) RuleScopeTagsPtrInput {
+	return (*ruleScopeTagsPtrType)(v)
+}
+
+func (*ruleScopeTagsPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeTags)(nil)).Elem()
+}
+
+func (i *ruleScopeTagsPtrType) ToRuleScopeTagsPtrOutput() RuleScopeTagsPtrOutput {
+	return i.ToRuleScopeTagsPtrOutputWithContext(context.Background())
+}
+
+func (i *ruleScopeTagsPtrType) ToRuleScopeTagsPtrOutputWithContext(ctx context.Context) RuleScopeTagsPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeTagsPtrOutput)
+}
+
+type RuleScopeTagsOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeTagsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeTags)(nil)).Elem()
+}
+
+func (o RuleScopeTagsOutput) ToRuleScopeTagsOutput() RuleScopeTagsOutput {
+	return o
+}
+
+func (o RuleScopeTagsOutput) ToRuleScopeTagsOutputWithContext(ctx context.Context) RuleScopeTagsOutput {
+	return o
+}
+
+func (o RuleScopeTagsOutput) ToRuleScopeTagsPtrOutput() RuleScopeTagsPtrOutput {
+	return o.ToRuleScopeTagsPtrOutputWithContext(context.Background())
+}
+
+func (o RuleScopeTagsOutput) ToRuleScopeTagsPtrOutputWithContext(ctx context.Context) RuleScopeTagsPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v RuleScopeTags) *RuleScopeTags {
+		return &v
+	}).(RuleScopeTagsPtrOutput)
+}
+
+// Exclusion list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o RuleScopeTagsOutput) Excludes() RuleScopeTagsExcludeArrayOutput {
+	return o.ApplyT(func(v RuleScopeTags) []RuleScopeTagsExclude { return v.Excludes }).(RuleScopeTagsExcludeArrayOutput)
+}
+
+// Inclusion list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o RuleScopeTagsOutput) Includes() RuleScopeTagsIncludeArrayOutput {
+	return o.ApplyT(func(v RuleScopeTags) []RuleScopeTagsInclude { return v.Includes }).(RuleScopeTagsIncludeArrayOutput)
+}
+
+type RuleScopeTagsPtrOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeTagsPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**RuleScopeTags)(nil)).Elem()
+}
+
+func (o RuleScopeTagsPtrOutput) ToRuleScopeTagsPtrOutput() RuleScopeTagsPtrOutput {
+	return o
+}
+
+func (o RuleScopeTagsPtrOutput) ToRuleScopeTagsPtrOutputWithContext(ctx context.Context) RuleScopeTagsPtrOutput {
+	return o
+}
+
+func (o RuleScopeTagsPtrOutput) Elem() RuleScopeTagsOutput {
+	return o.ApplyT(func(v *RuleScopeTags) RuleScopeTags {
+		if v != nil {
+			return *v
+		}
+		var ret RuleScopeTags
+		return ret
+	}).(RuleScopeTagsOutput)
+}
+
+// Exclusion list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o RuleScopeTagsPtrOutput) Excludes() RuleScopeTagsExcludeArrayOutput {
+	return o.ApplyT(func(v *RuleScopeTags) []RuleScopeTagsExclude {
+		if v == nil {
+			return nil
+		}
+		return v.Excludes
+	}).(RuleScopeTagsExcludeArrayOutput)
+}
+
+// Inclusion list
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o RuleScopeTagsPtrOutput) Includes() RuleScopeTagsIncludeArrayOutput {
+	return o.ApplyT(func(v *RuleScopeTags) []RuleScopeTagsInclude {
+		if v == nil {
+			return nil
+		}
+		return v.Includes
+	}).(RuleScopeTagsIncludeArrayOutput)
+}
+
+type RuleScopeTagsExclude struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// RuleScopeTagsExcludeInput is an input type that accepts RuleScopeTagsExcludeArgs and RuleScopeTagsExcludeOutput values.
+// You can construct a concrete instance of `RuleScopeTagsExcludeInput` via:
+//
+//	RuleScopeTagsExcludeArgs{...}
+type RuleScopeTagsExcludeInput interface {
+	pulumi.Input
+
+	ToRuleScopeTagsExcludeOutput() RuleScopeTagsExcludeOutput
+	ToRuleScopeTagsExcludeOutputWithContext(context.Context) RuleScopeTagsExcludeOutput
+}
+
+type RuleScopeTagsExcludeArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (RuleScopeTagsExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (i RuleScopeTagsExcludeArgs) ToRuleScopeTagsExcludeOutput() RuleScopeTagsExcludeOutput {
+	return i.ToRuleScopeTagsExcludeOutputWithContext(context.Background())
+}
+
+func (i RuleScopeTagsExcludeArgs) ToRuleScopeTagsExcludeOutputWithContext(ctx context.Context) RuleScopeTagsExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeTagsExcludeOutput)
+}
+
+// RuleScopeTagsExcludeArrayInput is an input type that accepts RuleScopeTagsExcludeArray and RuleScopeTagsExcludeArrayOutput values.
+// You can construct a concrete instance of `RuleScopeTagsExcludeArrayInput` via:
+//
+//	RuleScopeTagsExcludeArray{ RuleScopeTagsExcludeArgs{...} }
+type RuleScopeTagsExcludeArrayInput interface {
+	pulumi.Input
+
+	ToRuleScopeTagsExcludeArrayOutput() RuleScopeTagsExcludeArrayOutput
+	ToRuleScopeTagsExcludeArrayOutputWithContext(context.Context) RuleScopeTagsExcludeArrayOutput
+}
+
+type RuleScopeTagsExcludeArray []RuleScopeTagsExcludeInput
+
+func (RuleScopeTagsExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (i RuleScopeTagsExcludeArray) ToRuleScopeTagsExcludeArrayOutput() RuleScopeTagsExcludeArrayOutput {
+	return i.ToRuleScopeTagsExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i RuleScopeTagsExcludeArray) ToRuleScopeTagsExcludeArrayOutputWithContext(ctx context.Context) RuleScopeTagsExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeTagsExcludeArrayOutput)
+}
+
+type RuleScopeTagsExcludeOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeTagsExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (o RuleScopeTagsExcludeOutput) ToRuleScopeTagsExcludeOutput() RuleScopeTagsExcludeOutput {
+	return o
+}
+
+func (o RuleScopeTagsExcludeOutput) ToRuleScopeTagsExcludeOutputWithContext(ctx context.Context) RuleScopeTagsExcludeOutput {
+	return o
+}
+
+// Tag key
+func (o RuleScopeTagsExcludeOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleScopeTagsExclude) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o RuleScopeTagsExcludeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleScopeTagsExclude) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type RuleScopeTagsExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeTagsExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (o RuleScopeTagsExcludeArrayOutput) ToRuleScopeTagsExcludeArrayOutput() RuleScopeTagsExcludeArrayOutput {
+	return o
+}
+
+func (o RuleScopeTagsExcludeArrayOutput) ToRuleScopeTagsExcludeArrayOutputWithContext(ctx context.Context) RuleScopeTagsExcludeArrayOutput {
+	return o
+}
+
+func (o RuleScopeTagsExcludeArrayOutput) Index(i pulumi.IntInput) RuleScopeTagsExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleScopeTagsExclude {
+		return vs[0].([]RuleScopeTagsExclude)[vs[1].(int)]
+	}).(RuleScopeTagsExcludeOutput)
+}
+
+type RuleScopeTagsInclude struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// RuleScopeTagsIncludeInput is an input type that accepts RuleScopeTagsIncludeArgs and RuleScopeTagsIncludeOutput values.
+// You can construct a concrete instance of `RuleScopeTagsIncludeInput` via:
+//
+//	RuleScopeTagsIncludeArgs{...}
+type RuleScopeTagsIncludeInput interface {
+	pulumi.Input
+
+	ToRuleScopeTagsIncludeOutput() RuleScopeTagsIncludeOutput
+	ToRuleScopeTagsIncludeOutputWithContext(context.Context) RuleScopeTagsIncludeOutput
+}
+
+type RuleScopeTagsIncludeArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (RuleScopeTagsIncludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (i RuleScopeTagsIncludeArgs) ToRuleScopeTagsIncludeOutput() RuleScopeTagsIncludeOutput {
+	return i.ToRuleScopeTagsIncludeOutputWithContext(context.Background())
+}
+
+func (i RuleScopeTagsIncludeArgs) ToRuleScopeTagsIncludeOutputWithContext(ctx context.Context) RuleScopeTagsIncludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeTagsIncludeOutput)
+}
+
+// RuleScopeTagsIncludeArrayInput is an input type that accepts RuleScopeTagsIncludeArray and RuleScopeTagsIncludeArrayOutput values.
+// You can construct a concrete instance of `RuleScopeTagsIncludeArrayInput` via:
+//
+//	RuleScopeTagsIncludeArray{ RuleScopeTagsIncludeArgs{...} }
+type RuleScopeTagsIncludeArrayInput interface {
+	pulumi.Input
+
+	ToRuleScopeTagsIncludeArrayOutput() RuleScopeTagsIncludeArrayOutput
+	ToRuleScopeTagsIncludeArrayOutputWithContext(context.Context) RuleScopeTagsIncludeArrayOutput
+}
+
+type RuleScopeTagsIncludeArray []RuleScopeTagsIncludeInput
+
+func (RuleScopeTagsIncludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (i RuleScopeTagsIncludeArray) ToRuleScopeTagsIncludeArrayOutput() RuleScopeTagsIncludeArrayOutput {
+	return i.ToRuleScopeTagsIncludeArrayOutputWithContext(context.Background())
+}
+
+func (i RuleScopeTagsIncludeArray) ToRuleScopeTagsIncludeArrayOutputWithContext(ctx context.Context) RuleScopeTagsIncludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleScopeTagsIncludeArrayOutput)
+}
+
+type RuleScopeTagsIncludeOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeTagsIncludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (o RuleScopeTagsIncludeOutput) ToRuleScopeTagsIncludeOutput() RuleScopeTagsIncludeOutput {
+	return o
+}
+
+func (o RuleScopeTagsIncludeOutput) ToRuleScopeTagsIncludeOutputWithContext(ctx context.Context) RuleScopeTagsIncludeOutput {
+	return o
+}
+
+// Tag key
+func (o RuleScopeTagsIncludeOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleScopeTagsInclude) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o RuleScopeTagsIncludeOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleScopeTagsInclude) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type RuleScopeTagsIncludeArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleScopeTagsIncludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (o RuleScopeTagsIncludeArrayOutput) ToRuleScopeTagsIncludeArrayOutput() RuleScopeTagsIncludeArrayOutput {
+	return o
+}
+
+func (o RuleScopeTagsIncludeArrayOutput) ToRuleScopeTagsIncludeArrayOutputWithContext(ctx context.Context) RuleScopeTagsIncludeArrayOutput {
+	return o
+}
+
+func (o RuleScopeTagsIncludeArrayOutput) Index(i pulumi.IntInput) RuleScopeTagsIncludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleScopeTagsInclude {
+		return vs[0].([]RuleScopeTagsInclude)[vs[1].(int)]
+	}).(RuleScopeTagsIncludeOutput)
+}
+
+type RuleTrigger struct {
+	// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+	MaximumExecutionFrequency *string `pulumi:"maximumExecutionFrequency"`
+	// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+	TriggerType *string `pulumi:"triggerType"`
+}
+
+// RuleTriggerInput is an input type that accepts RuleTriggerArgs and RuleTriggerOutput values.
+// You can construct a concrete instance of `RuleTriggerInput` via:
+//
+//	RuleTriggerArgs{...}
+type RuleTriggerInput interface {
+	pulumi.Input
+
+	ToRuleTriggerOutput() RuleTriggerOutput
+	ToRuleTriggerOutputWithContext(context.Context) RuleTriggerOutput
+}
+
+type RuleTriggerArgs struct {
+	// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+	MaximumExecutionFrequency pulumi.StringPtrInput `pulumi:"maximumExecutionFrequency"`
+	// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+	TriggerType pulumi.StringPtrInput `pulumi:"triggerType"`
+}
+
+func (RuleTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleTrigger)(nil)).Elem()
+}
+
+func (i RuleTriggerArgs) ToRuleTriggerOutput() RuleTriggerOutput {
+	return i.ToRuleTriggerOutputWithContext(context.Background())
+}
+
+func (i RuleTriggerArgs) ToRuleTriggerOutputWithContext(ctx context.Context) RuleTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleTriggerOutput)
+}
+
+// RuleTriggerArrayInput is an input type that accepts RuleTriggerArray and RuleTriggerArrayOutput values.
+// You can construct a concrete instance of `RuleTriggerArrayInput` via:
+//
+//	RuleTriggerArray{ RuleTriggerArgs{...} }
+type RuleTriggerArrayInput interface {
+	pulumi.Input
+
+	ToRuleTriggerArrayOutput() RuleTriggerArrayOutput
+	ToRuleTriggerArrayOutputWithContext(context.Context) RuleTriggerArrayOutput
+}
+
+type RuleTriggerArray []RuleTriggerInput
+
+func (RuleTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleTrigger)(nil)).Elem()
+}
+
+func (i RuleTriggerArray) ToRuleTriggerArrayOutput() RuleTriggerArrayOutput {
+	return i.ToRuleTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i RuleTriggerArray) ToRuleTriggerArrayOutputWithContext(ctx context.Context) RuleTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RuleTriggerArrayOutput)
+}
+
+type RuleTriggerOutput struct{ *pulumi.OutputState }
+
+func (RuleTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RuleTrigger)(nil)).Elem()
+}
+
+func (o RuleTriggerOutput) ToRuleTriggerOutput() RuleTriggerOutput {
+	return o
+}
+
+func (o RuleTriggerOutput) ToRuleTriggerOutputWithContext(ctx context.Context) RuleTriggerOutput {
+	return o
+}
+
+// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+func (o RuleTriggerOutput) MaximumExecutionFrequency() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleTrigger) *string { return v.MaximumExecutionFrequency }).(pulumi.StringPtrOutput)
+}
+
+// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+func (o RuleTriggerOutput) TriggerType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleTrigger) *string { return v.TriggerType }).(pulumi.StringPtrOutput)
+}
+
+type RuleTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (RuleTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RuleTrigger)(nil)).Elem()
+}
+
+func (o RuleTriggerArrayOutput) ToRuleTriggerArrayOutput() RuleTriggerArrayOutput {
+	return o
+}
+
+func (o RuleTriggerArrayOutput) ToRuleTriggerArrayOutputWithContext(ctx context.Context) RuleTriggerArrayOutput {
+	return o
+}
+
+func (o RuleTriggerArrayOutput) Index(i pulumi.IntInput) RuleTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RuleTrigger {
+		return vs[0].([]RuleTrigger)[vs[1].(int)]
+	}).(RuleTriggerOutput)
+}
+
 type AssumeRole struct {
 	// he TRN of the role to assume.
 	AssumeRoleTrn string `pulumi:"assumeRoleTrn"`
@@ -144,9 +2782,1551 @@ func (o EndpointsOutput) Sts() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v Endpoints) *string { return v.Sts }).(pulumi.StringPtrOutput)
 }
 
+type GetGroupRuleScope struct {
+	// Project filter scope
+	Projects GetGroupRuleScopeProjects `pulumi:"projects"`
+	// Resource region list
+	Regions GetGroupRuleScopeRegions `pulumi:"regions"`
+	// Resource ID list
+	ResourceIds GetGroupRuleScopeResourceIds `pulumi:"resourceIds"`
+	// Resource type scope
+	ResourceTypes GetGroupRuleScopeResourceTypes `pulumi:"resourceTypes"`
+	// Resource tag list
+	Tags GetGroupRuleScopeTags `pulumi:"tags"`
+}
+
+// GetGroupRuleScopeInput is an input type that accepts GetGroupRuleScopeArgs and GetGroupRuleScopeOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeInput` via:
+//
+//	GetGroupRuleScopeArgs{...}
+type GetGroupRuleScopeInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeOutput() GetGroupRuleScopeOutput
+	ToGetGroupRuleScopeOutputWithContext(context.Context) GetGroupRuleScopeOutput
+}
+
+type GetGroupRuleScopeArgs struct {
+	// Project filter scope
+	Projects GetGroupRuleScopeProjectsInput `pulumi:"projects"`
+	// Resource region list
+	Regions GetGroupRuleScopeRegionsInput `pulumi:"regions"`
+	// Resource ID list
+	ResourceIds GetGroupRuleScopeResourceIdsInput `pulumi:"resourceIds"`
+	// Resource type scope
+	ResourceTypes GetGroupRuleScopeResourceTypesInput `pulumi:"resourceTypes"`
+	// Resource tag list
+	Tags GetGroupRuleScopeTagsInput `pulumi:"tags"`
+}
+
+func (GetGroupRuleScopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScope)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeArgs) ToGetGroupRuleScopeOutput() GetGroupRuleScopeOutput {
+	return i.ToGetGroupRuleScopeOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeArgs) ToGetGroupRuleScopeOutputWithContext(ctx context.Context) GetGroupRuleScopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeOutput)
+}
+
+type GetGroupRuleScopeOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScope)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeOutput) ToGetGroupRuleScopeOutput() GetGroupRuleScopeOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeOutput) ToGetGroupRuleScopeOutputWithContext(ctx context.Context) GetGroupRuleScopeOutput {
+	return o
+}
+
+// Project filter scope
+func (o GetGroupRuleScopeOutput) Projects() GetGroupRuleScopeProjectsOutput {
+	return o.ApplyT(func(v GetGroupRuleScope) GetGroupRuleScopeProjects { return v.Projects }).(GetGroupRuleScopeProjectsOutput)
+}
+
+// Resource region list
+func (o GetGroupRuleScopeOutput) Regions() GetGroupRuleScopeRegionsOutput {
+	return o.ApplyT(func(v GetGroupRuleScope) GetGroupRuleScopeRegions { return v.Regions }).(GetGroupRuleScopeRegionsOutput)
+}
+
+// Resource ID list
+func (o GetGroupRuleScopeOutput) ResourceIds() GetGroupRuleScopeResourceIdsOutput {
+	return o.ApplyT(func(v GetGroupRuleScope) GetGroupRuleScopeResourceIds { return v.ResourceIds }).(GetGroupRuleScopeResourceIdsOutput)
+}
+
+// Resource type scope
+func (o GetGroupRuleScopeOutput) ResourceTypes() GetGroupRuleScopeResourceTypesOutput {
+	return o.ApplyT(func(v GetGroupRuleScope) GetGroupRuleScopeResourceTypes { return v.ResourceTypes }).(GetGroupRuleScopeResourceTypesOutput)
+}
+
+// Resource tag list
+func (o GetGroupRuleScopeOutput) Tags() GetGroupRuleScopeTagsOutput {
+	return o.ApplyT(func(v GetGroupRuleScope) GetGroupRuleScopeTags { return v.Tags }).(GetGroupRuleScopeTagsOutput)
+}
+
+type GetGroupRuleScopeProjects struct {
+	// Exclude list
+	Excludes []string `pulumi:"excludes"`
+	// Include list
+	Includes []string `pulumi:"includes"`
+}
+
+// GetGroupRuleScopeProjectsInput is an input type that accepts GetGroupRuleScopeProjectsArgs and GetGroupRuleScopeProjectsOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeProjectsInput` via:
+//
+//	GetGroupRuleScopeProjectsArgs{...}
+type GetGroupRuleScopeProjectsInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeProjectsOutput() GetGroupRuleScopeProjectsOutput
+	ToGetGroupRuleScopeProjectsOutputWithContext(context.Context) GetGroupRuleScopeProjectsOutput
+}
+
+type GetGroupRuleScopeProjectsArgs struct {
+	// Exclude list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GetGroupRuleScopeProjectsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeProjects)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeProjectsArgs) ToGetGroupRuleScopeProjectsOutput() GetGroupRuleScopeProjectsOutput {
+	return i.ToGetGroupRuleScopeProjectsOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeProjectsArgs) ToGetGroupRuleScopeProjectsOutputWithContext(ctx context.Context) GetGroupRuleScopeProjectsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeProjectsOutput)
+}
+
+type GetGroupRuleScopeProjectsOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeProjectsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeProjects)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeProjectsOutput) ToGetGroupRuleScopeProjectsOutput() GetGroupRuleScopeProjectsOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeProjectsOutput) ToGetGroupRuleScopeProjectsOutputWithContext(ctx context.Context) GetGroupRuleScopeProjectsOutput {
+	return o
+}
+
+// Exclude list
+func (o GetGroupRuleScopeProjectsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeProjects) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GetGroupRuleScopeProjectsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeProjects) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GetGroupRuleScopeRegions struct {
+	// Exclude list
+	Excludes []string `pulumi:"excludes"`
+	// Include list
+	Includes []string `pulumi:"includes"`
+}
+
+// GetGroupRuleScopeRegionsInput is an input type that accepts GetGroupRuleScopeRegionsArgs and GetGroupRuleScopeRegionsOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeRegionsInput` via:
+//
+//	GetGroupRuleScopeRegionsArgs{...}
+type GetGroupRuleScopeRegionsInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeRegionsOutput() GetGroupRuleScopeRegionsOutput
+	ToGetGroupRuleScopeRegionsOutputWithContext(context.Context) GetGroupRuleScopeRegionsOutput
+}
+
+type GetGroupRuleScopeRegionsArgs struct {
+	// Exclude list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GetGroupRuleScopeRegionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeRegions)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeRegionsArgs) ToGetGroupRuleScopeRegionsOutput() GetGroupRuleScopeRegionsOutput {
+	return i.ToGetGroupRuleScopeRegionsOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeRegionsArgs) ToGetGroupRuleScopeRegionsOutputWithContext(ctx context.Context) GetGroupRuleScopeRegionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeRegionsOutput)
+}
+
+type GetGroupRuleScopeRegionsOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeRegionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeRegions)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeRegionsOutput) ToGetGroupRuleScopeRegionsOutput() GetGroupRuleScopeRegionsOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeRegionsOutput) ToGetGroupRuleScopeRegionsOutputWithContext(ctx context.Context) GetGroupRuleScopeRegionsOutput {
+	return o
+}
+
+// Exclude list
+func (o GetGroupRuleScopeRegionsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeRegions) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GetGroupRuleScopeRegionsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeRegions) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GetGroupRuleScopeResourceIds struct {
+	// Exclude list
+	Excludes []string `pulumi:"excludes"`
+	// Include list
+	Includes []string `pulumi:"includes"`
+}
+
+// GetGroupRuleScopeResourceIdsInput is an input type that accepts GetGroupRuleScopeResourceIdsArgs and GetGroupRuleScopeResourceIdsOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeResourceIdsInput` via:
+//
+//	GetGroupRuleScopeResourceIdsArgs{...}
+type GetGroupRuleScopeResourceIdsInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeResourceIdsOutput() GetGroupRuleScopeResourceIdsOutput
+	ToGetGroupRuleScopeResourceIdsOutputWithContext(context.Context) GetGroupRuleScopeResourceIdsOutput
+}
+
+type GetGroupRuleScopeResourceIdsArgs struct {
+	// Exclude list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GetGroupRuleScopeResourceIdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeResourceIds)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeResourceIdsArgs) ToGetGroupRuleScopeResourceIdsOutput() GetGroupRuleScopeResourceIdsOutput {
+	return i.ToGetGroupRuleScopeResourceIdsOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeResourceIdsArgs) ToGetGroupRuleScopeResourceIdsOutputWithContext(ctx context.Context) GetGroupRuleScopeResourceIdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeResourceIdsOutput)
+}
+
+type GetGroupRuleScopeResourceIdsOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeResourceIdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeResourceIds)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeResourceIdsOutput) ToGetGroupRuleScopeResourceIdsOutput() GetGroupRuleScopeResourceIdsOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeResourceIdsOutput) ToGetGroupRuleScopeResourceIdsOutputWithContext(ctx context.Context) GetGroupRuleScopeResourceIdsOutput {
+	return o
+}
+
+// Exclude list
+func (o GetGroupRuleScopeResourceIdsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeResourceIds) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GetGroupRuleScopeResourceIdsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeResourceIds) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GetGroupRuleScopeResourceTypes struct {
+	// Exclude list
+	Excludes []string `pulumi:"excludes"`
+	// Include list
+	Includes []string `pulumi:"includes"`
+}
+
+// GetGroupRuleScopeResourceTypesInput is an input type that accepts GetGroupRuleScopeResourceTypesArgs and GetGroupRuleScopeResourceTypesOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeResourceTypesInput` via:
+//
+//	GetGroupRuleScopeResourceTypesArgs{...}
+type GetGroupRuleScopeResourceTypesInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeResourceTypesOutput() GetGroupRuleScopeResourceTypesOutput
+	ToGetGroupRuleScopeResourceTypesOutputWithContext(context.Context) GetGroupRuleScopeResourceTypesOutput
+}
+
+type GetGroupRuleScopeResourceTypesArgs struct {
+	// Exclude list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GetGroupRuleScopeResourceTypesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeResourceTypesArgs) ToGetGroupRuleScopeResourceTypesOutput() GetGroupRuleScopeResourceTypesOutput {
+	return i.ToGetGroupRuleScopeResourceTypesOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeResourceTypesArgs) ToGetGroupRuleScopeResourceTypesOutputWithContext(ctx context.Context) GetGroupRuleScopeResourceTypesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeResourceTypesOutput)
+}
+
+type GetGroupRuleScopeResourceTypesOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeResourceTypesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeResourceTypesOutput) ToGetGroupRuleScopeResourceTypesOutput() GetGroupRuleScopeResourceTypesOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeResourceTypesOutput) ToGetGroupRuleScopeResourceTypesOutputWithContext(ctx context.Context) GetGroupRuleScopeResourceTypesOutput {
+	return o
+}
+
+// Exclude list
+func (o GetGroupRuleScopeResourceTypesOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeResourceTypes) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Include list
+func (o GetGroupRuleScopeResourceTypesOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeResourceTypes) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GetGroupRuleScopeTags struct {
+	// Exclude list
+	Excludes []GetGroupRuleScopeTagsExclude `pulumi:"excludes"`
+	// Include list
+	Includes []GetGroupRuleScopeTagsInclude `pulumi:"includes"`
+}
+
+// GetGroupRuleScopeTagsInput is an input type that accepts GetGroupRuleScopeTagsArgs and GetGroupRuleScopeTagsOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeTagsInput` via:
+//
+//	GetGroupRuleScopeTagsArgs{...}
+type GetGroupRuleScopeTagsInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeTagsOutput() GetGroupRuleScopeTagsOutput
+	ToGetGroupRuleScopeTagsOutputWithContext(context.Context) GetGroupRuleScopeTagsOutput
+}
+
+type GetGroupRuleScopeTagsArgs struct {
+	// Exclude list
+	Excludes GetGroupRuleScopeTagsExcludeArrayInput `pulumi:"excludes"`
+	// Include list
+	Includes GetGroupRuleScopeTagsIncludeArrayInput `pulumi:"includes"`
+}
+
+func (GetGroupRuleScopeTagsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeTags)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeTagsArgs) ToGetGroupRuleScopeTagsOutput() GetGroupRuleScopeTagsOutput {
+	return i.ToGetGroupRuleScopeTagsOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeTagsArgs) ToGetGroupRuleScopeTagsOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeTagsOutput)
+}
+
+type GetGroupRuleScopeTagsOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeTagsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeTags)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeTagsOutput) ToGetGroupRuleScopeTagsOutput() GetGroupRuleScopeTagsOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeTagsOutput) ToGetGroupRuleScopeTagsOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsOutput {
+	return o
+}
+
+// Exclude list
+func (o GetGroupRuleScopeTagsOutput) Excludes() GetGroupRuleScopeTagsExcludeArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeTags) []GetGroupRuleScopeTagsExclude { return v.Excludes }).(GetGroupRuleScopeTagsExcludeArrayOutput)
+}
+
+// Include list
+func (o GetGroupRuleScopeTagsOutput) Includes() GetGroupRuleScopeTagsIncludeArrayOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeTags) []GetGroupRuleScopeTagsInclude { return v.Includes }).(GetGroupRuleScopeTagsIncludeArrayOutput)
+}
+
+type GetGroupRuleScopeTagsExclude struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetGroupRuleScopeTagsExcludeInput is an input type that accepts GetGroupRuleScopeTagsExcludeArgs and GetGroupRuleScopeTagsExcludeOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeTagsExcludeInput` via:
+//
+//	GetGroupRuleScopeTagsExcludeArgs{...}
+type GetGroupRuleScopeTagsExcludeInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeTagsExcludeOutput() GetGroupRuleScopeTagsExcludeOutput
+	ToGetGroupRuleScopeTagsExcludeOutputWithContext(context.Context) GetGroupRuleScopeTagsExcludeOutput
+}
+
+type GetGroupRuleScopeTagsExcludeArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGroupRuleScopeTagsExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeTagsExcludeArgs) ToGetGroupRuleScopeTagsExcludeOutput() GetGroupRuleScopeTagsExcludeOutput {
+	return i.ToGetGroupRuleScopeTagsExcludeOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeTagsExcludeArgs) ToGetGroupRuleScopeTagsExcludeOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeTagsExcludeOutput)
+}
+
+// GetGroupRuleScopeTagsExcludeArrayInput is an input type that accepts GetGroupRuleScopeTagsExcludeArray and GetGroupRuleScopeTagsExcludeArrayOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeTagsExcludeArrayInput` via:
+//
+//	GetGroupRuleScopeTagsExcludeArray{ GetGroupRuleScopeTagsExcludeArgs{...} }
+type GetGroupRuleScopeTagsExcludeArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeTagsExcludeArrayOutput() GetGroupRuleScopeTagsExcludeArrayOutput
+	ToGetGroupRuleScopeTagsExcludeArrayOutputWithContext(context.Context) GetGroupRuleScopeTagsExcludeArrayOutput
+}
+
+type GetGroupRuleScopeTagsExcludeArray []GetGroupRuleScopeTagsExcludeInput
+
+func (GetGroupRuleScopeTagsExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeTagsExcludeArray) ToGetGroupRuleScopeTagsExcludeArrayOutput() GetGroupRuleScopeTagsExcludeArrayOutput {
+	return i.ToGetGroupRuleScopeTagsExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeTagsExcludeArray) ToGetGroupRuleScopeTagsExcludeArrayOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeTagsExcludeArrayOutput)
+}
+
+type GetGroupRuleScopeTagsExcludeOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeTagsExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeTagsExcludeOutput) ToGetGroupRuleScopeTagsExcludeOutput() GetGroupRuleScopeTagsExcludeOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeTagsExcludeOutput) ToGetGroupRuleScopeTagsExcludeOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsExcludeOutput {
+	return o
+}
+
+// Tag key
+func (o GetGroupRuleScopeTagsExcludeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeTagsExclude) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetGroupRuleScopeTagsExcludeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeTagsExclude) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetGroupRuleScopeTagsExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeTagsExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeTagsExcludeArrayOutput) ToGetGroupRuleScopeTagsExcludeArrayOutput() GetGroupRuleScopeTagsExcludeArrayOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeTagsExcludeArrayOutput) ToGetGroupRuleScopeTagsExcludeArrayOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsExcludeArrayOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeTagsExcludeArrayOutput) Index(i pulumi.IntInput) GetGroupRuleScopeTagsExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupRuleScopeTagsExclude {
+		return vs[0].([]GetGroupRuleScopeTagsExclude)[vs[1].(int)]
+	}).(GetGroupRuleScopeTagsExcludeOutput)
+}
+
+type GetGroupRuleScopeTagsInclude struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetGroupRuleScopeTagsIncludeInput is an input type that accepts GetGroupRuleScopeTagsIncludeArgs and GetGroupRuleScopeTagsIncludeOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeTagsIncludeInput` via:
+//
+//	GetGroupRuleScopeTagsIncludeArgs{...}
+type GetGroupRuleScopeTagsIncludeInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeTagsIncludeOutput() GetGroupRuleScopeTagsIncludeOutput
+	ToGetGroupRuleScopeTagsIncludeOutputWithContext(context.Context) GetGroupRuleScopeTagsIncludeOutput
+}
+
+type GetGroupRuleScopeTagsIncludeArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetGroupRuleScopeTagsIncludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeTagsIncludeArgs) ToGetGroupRuleScopeTagsIncludeOutput() GetGroupRuleScopeTagsIncludeOutput {
+	return i.ToGetGroupRuleScopeTagsIncludeOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeTagsIncludeArgs) ToGetGroupRuleScopeTagsIncludeOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsIncludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeTagsIncludeOutput)
+}
+
+// GetGroupRuleScopeTagsIncludeArrayInput is an input type that accepts GetGroupRuleScopeTagsIncludeArray and GetGroupRuleScopeTagsIncludeArrayOutput values.
+// You can construct a concrete instance of `GetGroupRuleScopeTagsIncludeArrayInput` via:
+//
+//	GetGroupRuleScopeTagsIncludeArray{ GetGroupRuleScopeTagsIncludeArgs{...} }
+type GetGroupRuleScopeTagsIncludeArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleScopeTagsIncludeArrayOutput() GetGroupRuleScopeTagsIncludeArrayOutput
+	ToGetGroupRuleScopeTagsIncludeArrayOutputWithContext(context.Context) GetGroupRuleScopeTagsIncludeArrayOutput
+}
+
+type GetGroupRuleScopeTagsIncludeArray []GetGroupRuleScopeTagsIncludeInput
+
+func (GetGroupRuleScopeTagsIncludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (i GetGroupRuleScopeTagsIncludeArray) ToGetGroupRuleScopeTagsIncludeArrayOutput() GetGroupRuleScopeTagsIncludeArrayOutput {
+	return i.ToGetGroupRuleScopeTagsIncludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleScopeTagsIncludeArray) ToGetGroupRuleScopeTagsIncludeArrayOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsIncludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleScopeTagsIncludeArrayOutput)
+}
+
+type GetGroupRuleScopeTagsIncludeOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeTagsIncludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeTagsIncludeOutput) ToGetGroupRuleScopeTagsIncludeOutput() GetGroupRuleScopeTagsIncludeOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeTagsIncludeOutput) ToGetGroupRuleScopeTagsIncludeOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsIncludeOutput {
+	return o
+}
+
+// Tag key
+func (o GetGroupRuleScopeTagsIncludeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeTagsInclude) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetGroupRuleScopeTagsIncludeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupRuleScopeTagsInclude) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetGroupRuleScopeTagsIncludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleScopeTagsIncludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (o GetGroupRuleScopeTagsIncludeArrayOutput) ToGetGroupRuleScopeTagsIncludeArrayOutput() GetGroupRuleScopeTagsIncludeArrayOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeTagsIncludeArrayOutput) ToGetGroupRuleScopeTagsIncludeArrayOutputWithContext(ctx context.Context) GetGroupRuleScopeTagsIncludeArrayOutput {
+	return o
+}
+
+func (o GetGroupRuleScopeTagsIncludeArrayOutput) Index(i pulumi.IntInput) GetGroupRuleScopeTagsIncludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupRuleScopeTagsInclude {
+		return vs[0].([]GetGroupRuleScopeTagsInclude)[vs[1].(int)]
+	}).(GetGroupRuleScopeTagsIncludeOutput)
+}
+
+type GetGroupRuleTrigger struct {
+	// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+	MaximumExecutionFrequency string `pulumi:"maximumExecutionFrequency"`
+	// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+	TriggerType string `pulumi:"triggerType"`
+}
+
+// GetGroupRuleTriggerInput is an input type that accepts GetGroupRuleTriggerArgs and GetGroupRuleTriggerOutput values.
+// You can construct a concrete instance of `GetGroupRuleTriggerInput` via:
+//
+//	GetGroupRuleTriggerArgs{...}
+type GetGroupRuleTriggerInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleTriggerOutput() GetGroupRuleTriggerOutput
+	ToGetGroupRuleTriggerOutputWithContext(context.Context) GetGroupRuleTriggerOutput
+}
+
+type GetGroupRuleTriggerArgs struct {
+	// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+	MaximumExecutionFrequency pulumi.StringInput `pulumi:"maximumExecutionFrequency"`
+	// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+	TriggerType pulumi.StringInput `pulumi:"triggerType"`
+}
+
+func (GetGroupRuleTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleTrigger)(nil)).Elem()
+}
+
+func (i GetGroupRuleTriggerArgs) ToGetGroupRuleTriggerOutput() GetGroupRuleTriggerOutput {
+	return i.ToGetGroupRuleTriggerOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleTriggerArgs) ToGetGroupRuleTriggerOutputWithContext(ctx context.Context) GetGroupRuleTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleTriggerOutput)
+}
+
+// GetGroupRuleTriggerArrayInput is an input type that accepts GetGroupRuleTriggerArray and GetGroupRuleTriggerArrayOutput values.
+// You can construct a concrete instance of `GetGroupRuleTriggerArrayInput` via:
+//
+//	GetGroupRuleTriggerArray{ GetGroupRuleTriggerArgs{...} }
+type GetGroupRuleTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGetGroupRuleTriggerArrayOutput() GetGroupRuleTriggerArrayOutput
+	ToGetGroupRuleTriggerArrayOutputWithContext(context.Context) GetGroupRuleTriggerArrayOutput
+}
+
+type GetGroupRuleTriggerArray []GetGroupRuleTriggerInput
+
+func (GetGroupRuleTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupRuleTrigger)(nil)).Elem()
+}
+
+func (i GetGroupRuleTriggerArray) ToGetGroupRuleTriggerArrayOutput() GetGroupRuleTriggerArrayOutput {
+	return i.ToGetGroupRuleTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GetGroupRuleTriggerArray) ToGetGroupRuleTriggerArrayOutputWithContext(ctx context.Context) GetGroupRuleTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetGroupRuleTriggerArrayOutput)
+}
+
+type GetGroupRuleTriggerOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetGroupRuleTrigger)(nil)).Elem()
+}
+
+func (o GetGroupRuleTriggerOutput) ToGetGroupRuleTriggerOutput() GetGroupRuleTriggerOutput {
+	return o
+}
+
+func (o GetGroupRuleTriggerOutput) ToGetGroupRuleTriggerOutputWithContext(ctx context.Context) GetGroupRuleTriggerOutput {
+	return o
+}
+
+// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+func (o GetGroupRuleTriggerOutput) MaximumExecutionFrequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupRuleTrigger) string { return v.MaximumExecutionFrequency }).(pulumi.StringOutput)
+}
+
+// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+func (o GetGroupRuleTriggerOutput) TriggerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetGroupRuleTrigger) string { return v.TriggerType }).(pulumi.StringOutput)
+}
+
+type GetGroupRuleTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetGroupRuleTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetGroupRuleTrigger)(nil)).Elem()
+}
+
+func (o GetGroupRuleTriggerArrayOutput) ToGetGroupRuleTriggerArrayOutput() GetGroupRuleTriggerArrayOutput {
+	return o
+}
+
+func (o GetGroupRuleTriggerArrayOutput) ToGetGroupRuleTriggerArrayOutputWithContext(ctx context.Context) GetGroupRuleTriggerArrayOutput {
+	return o
+}
+
+func (o GetGroupRuleTriggerArrayOutput) Index(i pulumi.IntInput) GetGroupRuleTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetGroupRuleTrigger {
+		return vs[0].([]GetGroupRuleTrigger)[vs[1].(int)]
+	}).(GetGroupRuleTriggerOutput)
+}
+
+type GetRuleScope struct {
+	// Project filter scope
+	Projects GetRuleScopeProjects `pulumi:"projects"`
+	// Resource region list
+	Regions GetRuleScopeRegions `pulumi:"regions"`
+	// Resource ID list
+	ResourceIds GetRuleScopeResourceIds `pulumi:"resourceIds"`
+	// Resource type scope
+	ResourceTypes GetRuleScopeResourceTypes `pulumi:"resourceTypes"`
+	// Resource tag list
+	Tags GetRuleScopeTags `pulumi:"tags"`
+}
+
+// GetRuleScopeInput is an input type that accepts GetRuleScopeArgs and GetRuleScopeOutput values.
+// You can construct a concrete instance of `GetRuleScopeInput` via:
+//
+//	GetRuleScopeArgs{...}
+type GetRuleScopeInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeOutput() GetRuleScopeOutput
+	ToGetRuleScopeOutputWithContext(context.Context) GetRuleScopeOutput
+}
+
+type GetRuleScopeArgs struct {
+	// Project filter scope
+	Projects GetRuleScopeProjectsInput `pulumi:"projects"`
+	// Resource region list
+	Regions GetRuleScopeRegionsInput `pulumi:"regions"`
+	// Resource ID list
+	ResourceIds GetRuleScopeResourceIdsInput `pulumi:"resourceIds"`
+	// Resource type scope
+	ResourceTypes GetRuleScopeResourceTypesInput `pulumi:"resourceTypes"`
+	// Resource tag list
+	Tags GetRuleScopeTagsInput `pulumi:"tags"`
+}
+
+func (GetRuleScopeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScope)(nil)).Elem()
+}
+
+func (i GetRuleScopeArgs) ToGetRuleScopeOutput() GetRuleScopeOutput {
+	return i.ToGetRuleScopeOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeArgs) ToGetRuleScopeOutputWithContext(ctx context.Context) GetRuleScopeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeOutput)
+}
+
+type GetRuleScopeOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScope)(nil)).Elem()
+}
+
+func (o GetRuleScopeOutput) ToGetRuleScopeOutput() GetRuleScopeOutput {
+	return o
+}
+
+func (o GetRuleScopeOutput) ToGetRuleScopeOutputWithContext(ctx context.Context) GetRuleScopeOutput {
+	return o
+}
+
+// Project filter scope
+func (o GetRuleScopeOutput) Projects() GetRuleScopeProjectsOutput {
+	return o.ApplyT(func(v GetRuleScope) GetRuleScopeProjects { return v.Projects }).(GetRuleScopeProjectsOutput)
+}
+
+// Resource region list
+func (o GetRuleScopeOutput) Regions() GetRuleScopeRegionsOutput {
+	return o.ApplyT(func(v GetRuleScope) GetRuleScopeRegions { return v.Regions }).(GetRuleScopeRegionsOutput)
+}
+
+// Resource ID list
+func (o GetRuleScopeOutput) ResourceIds() GetRuleScopeResourceIdsOutput {
+	return o.ApplyT(func(v GetRuleScope) GetRuleScopeResourceIds { return v.ResourceIds }).(GetRuleScopeResourceIdsOutput)
+}
+
+// Resource type scope
+func (o GetRuleScopeOutput) ResourceTypes() GetRuleScopeResourceTypesOutput {
+	return o.ApplyT(func(v GetRuleScope) GetRuleScopeResourceTypes { return v.ResourceTypes }).(GetRuleScopeResourceTypesOutput)
+}
+
+// Resource tag list
+func (o GetRuleScopeOutput) Tags() GetRuleScopeTagsOutput {
+	return o.ApplyT(func(v GetRuleScope) GetRuleScopeTags { return v.Tags }).(GetRuleScopeTagsOutput)
+}
+
+type GetRuleScopeProjects struct {
+	// Exclusion list
+	Excludes []string `pulumi:"excludes"`
+	// Inclusion list
+	Includes []string `pulumi:"includes"`
+}
+
+// GetRuleScopeProjectsInput is an input type that accepts GetRuleScopeProjectsArgs and GetRuleScopeProjectsOutput values.
+// You can construct a concrete instance of `GetRuleScopeProjectsInput` via:
+//
+//	GetRuleScopeProjectsArgs{...}
+type GetRuleScopeProjectsInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeProjectsOutput() GetRuleScopeProjectsOutput
+	ToGetRuleScopeProjectsOutputWithContext(context.Context) GetRuleScopeProjectsOutput
+}
+
+type GetRuleScopeProjectsArgs struct {
+	// Exclusion list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GetRuleScopeProjectsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeProjects)(nil)).Elem()
+}
+
+func (i GetRuleScopeProjectsArgs) ToGetRuleScopeProjectsOutput() GetRuleScopeProjectsOutput {
+	return i.ToGetRuleScopeProjectsOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeProjectsArgs) ToGetRuleScopeProjectsOutputWithContext(ctx context.Context) GetRuleScopeProjectsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeProjectsOutput)
+}
+
+type GetRuleScopeProjectsOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeProjectsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeProjects)(nil)).Elem()
+}
+
+func (o GetRuleScopeProjectsOutput) ToGetRuleScopeProjectsOutput() GetRuleScopeProjectsOutput {
+	return o
+}
+
+func (o GetRuleScopeProjectsOutput) ToGetRuleScopeProjectsOutputWithContext(ctx context.Context) GetRuleScopeProjectsOutput {
+	return o
+}
+
+// Exclusion list
+func (o GetRuleScopeProjectsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeProjects) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o GetRuleScopeProjectsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeProjects) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GetRuleScopeRegions struct {
+	// Exclusion list
+	Excludes []string `pulumi:"excludes"`
+	// Inclusion list
+	Includes []string `pulumi:"includes"`
+}
+
+// GetRuleScopeRegionsInput is an input type that accepts GetRuleScopeRegionsArgs and GetRuleScopeRegionsOutput values.
+// You can construct a concrete instance of `GetRuleScopeRegionsInput` via:
+//
+//	GetRuleScopeRegionsArgs{...}
+type GetRuleScopeRegionsInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeRegionsOutput() GetRuleScopeRegionsOutput
+	ToGetRuleScopeRegionsOutputWithContext(context.Context) GetRuleScopeRegionsOutput
+}
+
+type GetRuleScopeRegionsArgs struct {
+	// Exclusion list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GetRuleScopeRegionsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeRegions)(nil)).Elem()
+}
+
+func (i GetRuleScopeRegionsArgs) ToGetRuleScopeRegionsOutput() GetRuleScopeRegionsOutput {
+	return i.ToGetRuleScopeRegionsOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeRegionsArgs) ToGetRuleScopeRegionsOutputWithContext(ctx context.Context) GetRuleScopeRegionsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeRegionsOutput)
+}
+
+type GetRuleScopeRegionsOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeRegionsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeRegions)(nil)).Elem()
+}
+
+func (o GetRuleScopeRegionsOutput) ToGetRuleScopeRegionsOutput() GetRuleScopeRegionsOutput {
+	return o
+}
+
+func (o GetRuleScopeRegionsOutput) ToGetRuleScopeRegionsOutputWithContext(ctx context.Context) GetRuleScopeRegionsOutput {
+	return o
+}
+
+// Exclusion list
+func (o GetRuleScopeRegionsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeRegions) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o GetRuleScopeRegionsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeRegions) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GetRuleScopeResourceIds struct {
+	// Exclusion list
+	Excludes []string `pulumi:"excludes"`
+	// Inclusion list
+	Includes []string `pulumi:"includes"`
+}
+
+// GetRuleScopeResourceIdsInput is an input type that accepts GetRuleScopeResourceIdsArgs and GetRuleScopeResourceIdsOutput values.
+// You can construct a concrete instance of `GetRuleScopeResourceIdsInput` via:
+//
+//	GetRuleScopeResourceIdsArgs{...}
+type GetRuleScopeResourceIdsInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeResourceIdsOutput() GetRuleScopeResourceIdsOutput
+	ToGetRuleScopeResourceIdsOutputWithContext(context.Context) GetRuleScopeResourceIdsOutput
+}
+
+type GetRuleScopeResourceIdsArgs struct {
+	// Exclusion list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GetRuleScopeResourceIdsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeResourceIds)(nil)).Elem()
+}
+
+func (i GetRuleScopeResourceIdsArgs) ToGetRuleScopeResourceIdsOutput() GetRuleScopeResourceIdsOutput {
+	return i.ToGetRuleScopeResourceIdsOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeResourceIdsArgs) ToGetRuleScopeResourceIdsOutputWithContext(ctx context.Context) GetRuleScopeResourceIdsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeResourceIdsOutput)
+}
+
+type GetRuleScopeResourceIdsOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeResourceIdsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeResourceIds)(nil)).Elem()
+}
+
+func (o GetRuleScopeResourceIdsOutput) ToGetRuleScopeResourceIdsOutput() GetRuleScopeResourceIdsOutput {
+	return o
+}
+
+func (o GetRuleScopeResourceIdsOutput) ToGetRuleScopeResourceIdsOutputWithContext(ctx context.Context) GetRuleScopeResourceIdsOutput {
+	return o
+}
+
+// Exclusion list
+func (o GetRuleScopeResourceIdsOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeResourceIds) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o GetRuleScopeResourceIdsOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeResourceIds) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GetRuleScopeResourceTypes struct {
+	// Exclusion list
+	Excludes []string `pulumi:"excludes"`
+	// Inclusion list
+	Includes []string `pulumi:"includes"`
+}
+
+// GetRuleScopeResourceTypesInput is an input type that accepts GetRuleScopeResourceTypesArgs and GetRuleScopeResourceTypesOutput values.
+// You can construct a concrete instance of `GetRuleScopeResourceTypesInput` via:
+//
+//	GetRuleScopeResourceTypesArgs{...}
+type GetRuleScopeResourceTypesInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeResourceTypesOutput() GetRuleScopeResourceTypesOutput
+	ToGetRuleScopeResourceTypesOutputWithContext(context.Context) GetRuleScopeResourceTypesOutput
+}
+
+type GetRuleScopeResourceTypesArgs struct {
+	// Exclusion list
+	Excludes pulumi.StringArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes pulumi.StringArrayInput `pulumi:"includes"`
+}
+
+func (GetRuleScopeResourceTypesArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (i GetRuleScopeResourceTypesArgs) ToGetRuleScopeResourceTypesOutput() GetRuleScopeResourceTypesOutput {
+	return i.ToGetRuleScopeResourceTypesOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeResourceTypesArgs) ToGetRuleScopeResourceTypesOutputWithContext(ctx context.Context) GetRuleScopeResourceTypesOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeResourceTypesOutput)
+}
+
+type GetRuleScopeResourceTypesOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeResourceTypesOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeResourceTypes)(nil)).Elem()
+}
+
+func (o GetRuleScopeResourceTypesOutput) ToGetRuleScopeResourceTypesOutput() GetRuleScopeResourceTypesOutput {
+	return o
+}
+
+func (o GetRuleScopeResourceTypesOutput) ToGetRuleScopeResourceTypesOutputWithContext(ctx context.Context) GetRuleScopeResourceTypesOutput {
+	return o
+}
+
+// Exclusion list
+func (o GetRuleScopeResourceTypesOutput) Excludes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeResourceTypes) []string { return v.Excludes }).(pulumi.StringArrayOutput)
+}
+
+// Inclusion list
+func (o GetRuleScopeResourceTypesOutput) Includes() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeResourceTypes) []string { return v.Includes }).(pulumi.StringArrayOutput)
+}
+
+type GetRuleScopeTags struct {
+	// Exclusion list
+	Excludes []GetRuleScopeTagsExclude `pulumi:"excludes"`
+	// Inclusion list
+	Includes []GetRuleScopeTagsInclude `pulumi:"includes"`
+}
+
+// GetRuleScopeTagsInput is an input type that accepts GetRuleScopeTagsArgs and GetRuleScopeTagsOutput values.
+// You can construct a concrete instance of `GetRuleScopeTagsInput` via:
+//
+//	GetRuleScopeTagsArgs{...}
+type GetRuleScopeTagsInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeTagsOutput() GetRuleScopeTagsOutput
+	ToGetRuleScopeTagsOutputWithContext(context.Context) GetRuleScopeTagsOutput
+}
+
+type GetRuleScopeTagsArgs struct {
+	// Exclusion list
+	Excludes GetRuleScopeTagsExcludeArrayInput `pulumi:"excludes"`
+	// Inclusion list
+	Includes GetRuleScopeTagsIncludeArrayInput `pulumi:"includes"`
+}
+
+func (GetRuleScopeTagsArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeTags)(nil)).Elem()
+}
+
+func (i GetRuleScopeTagsArgs) ToGetRuleScopeTagsOutput() GetRuleScopeTagsOutput {
+	return i.ToGetRuleScopeTagsOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeTagsArgs) ToGetRuleScopeTagsOutputWithContext(ctx context.Context) GetRuleScopeTagsOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeTagsOutput)
+}
+
+type GetRuleScopeTagsOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeTagsOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeTags)(nil)).Elem()
+}
+
+func (o GetRuleScopeTagsOutput) ToGetRuleScopeTagsOutput() GetRuleScopeTagsOutput {
+	return o
+}
+
+func (o GetRuleScopeTagsOutput) ToGetRuleScopeTagsOutputWithContext(ctx context.Context) GetRuleScopeTagsOutput {
+	return o
+}
+
+// Exclusion list
+func (o GetRuleScopeTagsOutput) Excludes() GetRuleScopeTagsExcludeArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeTags) []GetRuleScopeTagsExclude { return v.Excludes }).(GetRuleScopeTagsExcludeArrayOutput)
+}
+
+// Inclusion list
+func (o GetRuleScopeTagsOutput) Includes() GetRuleScopeTagsIncludeArrayOutput {
+	return o.ApplyT(func(v GetRuleScopeTags) []GetRuleScopeTagsInclude { return v.Includes }).(GetRuleScopeTagsIncludeArrayOutput)
+}
+
+type GetRuleScopeTagsExclude struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetRuleScopeTagsExcludeInput is an input type that accepts GetRuleScopeTagsExcludeArgs and GetRuleScopeTagsExcludeOutput values.
+// You can construct a concrete instance of `GetRuleScopeTagsExcludeInput` via:
+//
+//	GetRuleScopeTagsExcludeArgs{...}
+type GetRuleScopeTagsExcludeInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeTagsExcludeOutput() GetRuleScopeTagsExcludeOutput
+	ToGetRuleScopeTagsExcludeOutputWithContext(context.Context) GetRuleScopeTagsExcludeOutput
+}
+
+type GetRuleScopeTagsExcludeArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetRuleScopeTagsExcludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (i GetRuleScopeTagsExcludeArgs) ToGetRuleScopeTagsExcludeOutput() GetRuleScopeTagsExcludeOutput {
+	return i.ToGetRuleScopeTagsExcludeOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeTagsExcludeArgs) ToGetRuleScopeTagsExcludeOutputWithContext(ctx context.Context) GetRuleScopeTagsExcludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeTagsExcludeOutput)
+}
+
+// GetRuleScopeTagsExcludeArrayInput is an input type that accepts GetRuleScopeTagsExcludeArray and GetRuleScopeTagsExcludeArrayOutput values.
+// You can construct a concrete instance of `GetRuleScopeTagsExcludeArrayInput` via:
+//
+//	GetRuleScopeTagsExcludeArray{ GetRuleScopeTagsExcludeArgs{...} }
+type GetRuleScopeTagsExcludeArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeTagsExcludeArrayOutput() GetRuleScopeTagsExcludeArrayOutput
+	ToGetRuleScopeTagsExcludeArrayOutputWithContext(context.Context) GetRuleScopeTagsExcludeArrayOutput
+}
+
+type GetRuleScopeTagsExcludeArray []GetRuleScopeTagsExcludeInput
+
+func (GetRuleScopeTagsExcludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (i GetRuleScopeTagsExcludeArray) ToGetRuleScopeTagsExcludeArrayOutput() GetRuleScopeTagsExcludeArrayOutput {
+	return i.ToGetRuleScopeTagsExcludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeTagsExcludeArray) ToGetRuleScopeTagsExcludeArrayOutputWithContext(ctx context.Context) GetRuleScopeTagsExcludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeTagsExcludeArrayOutput)
+}
+
+type GetRuleScopeTagsExcludeOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeTagsExcludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (o GetRuleScopeTagsExcludeOutput) ToGetRuleScopeTagsExcludeOutput() GetRuleScopeTagsExcludeOutput {
+	return o
+}
+
+func (o GetRuleScopeTagsExcludeOutput) ToGetRuleScopeTagsExcludeOutputWithContext(ctx context.Context) GetRuleScopeTagsExcludeOutput {
+	return o
+}
+
+// Tag key
+func (o GetRuleScopeTagsExcludeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleScopeTagsExclude) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetRuleScopeTagsExcludeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleScopeTagsExclude) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetRuleScopeTagsExcludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeTagsExcludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleScopeTagsExclude)(nil)).Elem()
+}
+
+func (o GetRuleScopeTagsExcludeArrayOutput) ToGetRuleScopeTagsExcludeArrayOutput() GetRuleScopeTagsExcludeArrayOutput {
+	return o
+}
+
+func (o GetRuleScopeTagsExcludeArrayOutput) ToGetRuleScopeTagsExcludeArrayOutputWithContext(ctx context.Context) GetRuleScopeTagsExcludeArrayOutput {
+	return o
+}
+
+func (o GetRuleScopeTagsExcludeArrayOutput) Index(i pulumi.IntInput) GetRuleScopeTagsExcludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleScopeTagsExclude {
+		return vs[0].([]GetRuleScopeTagsExclude)[vs[1].(int)]
+	}).(GetRuleScopeTagsExcludeOutput)
+}
+
+type GetRuleScopeTagsInclude struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetRuleScopeTagsIncludeInput is an input type that accepts GetRuleScopeTagsIncludeArgs and GetRuleScopeTagsIncludeOutput values.
+// You can construct a concrete instance of `GetRuleScopeTagsIncludeInput` via:
+//
+//	GetRuleScopeTagsIncludeArgs{...}
+type GetRuleScopeTagsIncludeInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeTagsIncludeOutput() GetRuleScopeTagsIncludeOutput
+	ToGetRuleScopeTagsIncludeOutputWithContext(context.Context) GetRuleScopeTagsIncludeOutput
+}
+
+type GetRuleScopeTagsIncludeArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetRuleScopeTagsIncludeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (i GetRuleScopeTagsIncludeArgs) ToGetRuleScopeTagsIncludeOutput() GetRuleScopeTagsIncludeOutput {
+	return i.ToGetRuleScopeTagsIncludeOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeTagsIncludeArgs) ToGetRuleScopeTagsIncludeOutputWithContext(ctx context.Context) GetRuleScopeTagsIncludeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeTagsIncludeOutput)
+}
+
+// GetRuleScopeTagsIncludeArrayInput is an input type that accepts GetRuleScopeTagsIncludeArray and GetRuleScopeTagsIncludeArrayOutput values.
+// You can construct a concrete instance of `GetRuleScopeTagsIncludeArrayInput` via:
+//
+//	GetRuleScopeTagsIncludeArray{ GetRuleScopeTagsIncludeArgs{...} }
+type GetRuleScopeTagsIncludeArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleScopeTagsIncludeArrayOutput() GetRuleScopeTagsIncludeArrayOutput
+	ToGetRuleScopeTagsIncludeArrayOutputWithContext(context.Context) GetRuleScopeTagsIncludeArrayOutput
+}
+
+type GetRuleScopeTagsIncludeArray []GetRuleScopeTagsIncludeInput
+
+func (GetRuleScopeTagsIncludeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (i GetRuleScopeTagsIncludeArray) ToGetRuleScopeTagsIncludeArrayOutput() GetRuleScopeTagsIncludeArrayOutput {
+	return i.ToGetRuleScopeTagsIncludeArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleScopeTagsIncludeArray) ToGetRuleScopeTagsIncludeArrayOutputWithContext(ctx context.Context) GetRuleScopeTagsIncludeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleScopeTagsIncludeArrayOutput)
+}
+
+type GetRuleScopeTagsIncludeOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeTagsIncludeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (o GetRuleScopeTagsIncludeOutput) ToGetRuleScopeTagsIncludeOutput() GetRuleScopeTagsIncludeOutput {
+	return o
+}
+
+func (o GetRuleScopeTagsIncludeOutput) ToGetRuleScopeTagsIncludeOutputWithContext(ctx context.Context) GetRuleScopeTagsIncludeOutput {
+	return o
+}
+
+// Tag key
+func (o GetRuleScopeTagsIncludeOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleScopeTagsInclude) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetRuleScopeTagsIncludeOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleScopeTagsInclude) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetRuleScopeTagsIncludeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleScopeTagsIncludeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleScopeTagsInclude)(nil)).Elem()
+}
+
+func (o GetRuleScopeTagsIncludeArrayOutput) ToGetRuleScopeTagsIncludeArrayOutput() GetRuleScopeTagsIncludeArrayOutput {
+	return o
+}
+
+func (o GetRuleScopeTagsIncludeArrayOutput) ToGetRuleScopeTagsIncludeArrayOutputWithContext(ctx context.Context) GetRuleScopeTagsIncludeArrayOutput {
+	return o
+}
+
+func (o GetRuleScopeTagsIncludeArrayOutput) Index(i pulumi.IntInput) GetRuleScopeTagsIncludeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleScopeTagsInclude {
+		return vs[0].([]GetRuleScopeTagsInclude)[vs[1].(int)]
+	}).(GetRuleScopeTagsIncludeOutput)
+}
+
+type GetRuleTrigger struct {
+	// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+	MaximumExecutionFrequency string `pulumi:"maximumExecutionFrequency"`
+	// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+	TriggerType string `pulumi:"triggerType"`
+}
+
+// GetRuleTriggerInput is an input type that accepts GetRuleTriggerArgs and GetRuleTriggerOutput values.
+// You can construct a concrete instance of `GetRuleTriggerInput` via:
+//
+//	GetRuleTriggerArgs{...}
+type GetRuleTriggerInput interface {
+	pulumi.Input
+
+	ToGetRuleTriggerOutput() GetRuleTriggerOutput
+	ToGetRuleTriggerOutputWithContext(context.Context) GetRuleTriggerOutput
+}
+
+type GetRuleTriggerArgs struct {
+	// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+	MaximumExecutionFrequency pulumi.StringInput `pulumi:"maximumExecutionFrequency"`
+	// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+	TriggerType pulumi.StringInput `pulumi:"triggerType"`
+}
+
+func (GetRuleTriggerArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleTrigger)(nil)).Elem()
+}
+
+func (i GetRuleTriggerArgs) ToGetRuleTriggerOutput() GetRuleTriggerOutput {
+	return i.ToGetRuleTriggerOutputWithContext(context.Background())
+}
+
+func (i GetRuleTriggerArgs) ToGetRuleTriggerOutputWithContext(ctx context.Context) GetRuleTriggerOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleTriggerOutput)
+}
+
+// GetRuleTriggerArrayInput is an input type that accepts GetRuleTriggerArray and GetRuleTriggerArrayOutput values.
+// You can construct a concrete instance of `GetRuleTriggerArrayInput` via:
+//
+//	GetRuleTriggerArray{ GetRuleTriggerArgs{...} }
+type GetRuleTriggerArrayInput interface {
+	pulumi.Input
+
+	ToGetRuleTriggerArrayOutput() GetRuleTriggerArrayOutput
+	ToGetRuleTriggerArrayOutputWithContext(context.Context) GetRuleTriggerArrayOutput
+}
+
+type GetRuleTriggerArray []GetRuleTriggerInput
+
+func (GetRuleTriggerArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleTrigger)(nil)).Elem()
+}
+
+func (i GetRuleTriggerArray) ToGetRuleTriggerArrayOutput() GetRuleTriggerArrayOutput {
+	return i.ToGetRuleTriggerArrayOutputWithContext(context.Background())
+}
+
+func (i GetRuleTriggerArray) ToGetRuleTriggerArrayOutputWithContext(ctx context.Context) GetRuleTriggerArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRuleTriggerArrayOutput)
+}
+
+type GetRuleTriggerOutput struct{ *pulumi.OutputState }
+
+func (GetRuleTriggerOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRuleTrigger)(nil)).Elem()
+}
+
+func (o GetRuleTriggerOutput) ToGetRuleTriggerOutput() GetRuleTriggerOutput {
+	return o
+}
+
+func (o GetRuleTriggerOutput) ToGetRuleTriggerOutputWithContext(ctx context.Context) GetRuleTriggerOutput {
+	return o
+}
+
+// Maximum execution frequency. Options: OneHour, ThreeHours, SixHours, TwelveHours, TwentyFourHours
+func (o GetRuleTriggerOutput) MaximumExecutionFrequency() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleTrigger) string { return v.MaximumExecutionFrequency }).(pulumi.StringOutput)
+}
+
+// Trigger type. Options: ConfigurationItemChange, Periodic, Manual
+func (o GetRuleTriggerOutput) TriggerType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleTrigger) string { return v.TriggerType }).(pulumi.StringOutput)
+}
+
+type GetRuleTriggerArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRuleTriggerArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRuleTrigger)(nil)).Elem()
+}
+
+func (o GetRuleTriggerArrayOutput) ToGetRuleTriggerArrayOutput() GetRuleTriggerArrayOutput {
+	return o
+}
+
+func (o GetRuleTriggerArrayOutput) ToGetRuleTriggerArrayOutputWithContext(ctx context.Context) GetRuleTriggerArrayOutput {
+	return o
+}
+
+func (o GetRuleTriggerArrayOutput) Index(i pulumi.IntInput) GetRuleTriggerOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRuleTrigger {
+		return vs[0].([]GetRuleTrigger)[vs[1].(int)]
+	}).(GetRuleTriggerOutput)
+}
+
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeInput)(nil)).Elem(), GroupRuleScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopePtrInput)(nil)).Elem(), GroupRuleScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeProjectsInput)(nil)).Elem(), GroupRuleScopeProjectsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeProjectsPtrInput)(nil)).Elem(), GroupRuleScopeProjectsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeRegionsInput)(nil)).Elem(), GroupRuleScopeRegionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeRegionsPtrInput)(nil)).Elem(), GroupRuleScopeRegionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeResourceIdsInput)(nil)).Elem(), GroupRuleScopeResourceIdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeResourceIdsPtrInput)(nil)).Elem(), GroupRuleScopeResourceIdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeResourceTypesInput)(nil)).Elem(), GroupRuleScopeResourceTypesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeResourceTypesPtrInput)(nil)).Elem(), GroupRuleScopeResourceTypesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeTagsInput)(nil)).Elem(), GroupRuleScopeTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeTagsPtrInput)(nil)).Elem(), GroupRuleScopeTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeTagsExcludeInput)(nil)).Elem(), GroupRuleScopeTagsExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeTagsExcludeArrayInput)(nil)).Elem(), GroupRuleScopeTagsExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeTagsIncludeInput)(nil)).Elem(), GroupRuleScopeTagsIncludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleScopeTagsIncludeArrayInput)(nil)).Elem(), GroupRuleScopeTagsIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleTriggerInput)(nil)).Elem(), GroupRuleTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GroupRuleTriggerArrayInput)(nil)).Elem(), GroupRuleTriggerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeInput)(nil)).Elem(), RuleScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopePtrInput)(nil)).Elem(), RuleScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeProjectsInput)(nil)).Elem(), RuleScopeProjectsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeProjectsPtrInput)(nil)).Elem(), RuleScopeProjectsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeRegionsInput)(nil)).Elem(), RuleScopeRegionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeRegionsPtrInput)(nil)).Elem(), RuleScopeRegionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeResourceIdsInput)(nil)).Elem(), RuleScopeResourceIdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeResourceIdsPtrInput)(nil)).Elem(), RuleScopeResourceIdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeResourceTypesInput)(nil)).Elem(), RuleScopeResourceTypesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeResourceTypesPtrInput)(nil)).Elem(), RuleScopeResourceTypesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeTagsInput)(nil)).Elem(), RuleScopeTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeTagsPtrInput)(nil)).Elem(), RuleScopeTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeTagsExcludeInput)(nil)).Elem(), RuleScopeTagsExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeTagsExcludeArrayInput)(nil)).Elem(), RuleScopeTagsExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeTagsIncludeInput)(nil)).Elem(), RuleScopeTagsIncludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleScopeTagsIncludeArrayInput)(nil)).Elem(), RuleScopeTagsIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleTriggerInput)(nil)).Elem(), RuleTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RuleTriggerArrayInput)(nil)).Elem(), RuleTriggerArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AssumeRoleInput)(nil)).Elem(), AssumeRoleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*EndpointsInput)(nil)).Elem(), EndpointsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeInput)(nil)).Elem(), GetGroupRuleScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeProjectsInput)(nil)).Elem(), GetGroupRuleScopeProjectsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeRegionsInput)(nil)).Elem(), GetGroupRuleScopeRegionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeResourceIdsInput)(nil)).Elem(), GetGroupRuleScopeResourceIdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeResourceTypesInput)(nil)).Elem(), GetGroupRuleScopeResourceTypesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeTagsInput)(nil)).Elem(), GetGroupRuleScopeTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeTagsExcludeInput)(nil)).Elem(), GetGroupRuleScopeTagsExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeTagsExcludeArrayInput)(nil)).Elem(), GetGroupRuleScopeTagsExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeTagsIncludeInput)(nil)).Elem(), GetGroupRuleScopeTagsIncludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleScopeTagsIncludeArrayInput)(nil)).Elem(), GetGroupRuleScopeTagsIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleTriggerInput)(nil)).Elem(), GetGroupRuleTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetGroupRuleTriggerArrayInput)(nil)).Elem(), GetGroupRuleTriggerArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeInput)(nil)).Elem(), GetRuleScopeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeProjectsInput)(nil)).Elem(), GetRuleScopeProjectsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeRegionsInput)(nil)).Elem(), GetRuleScopeRegionsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeResourceIdsInput)(nil)).Elem(), GetRuleScopeResourceIdsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeResourceTypesInput)(nil)).Elem(), GetRuleScopeResourceTypesArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeTagsInput)(nil)).Elem(), GetRuleScopeTagsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeTagsExcludeInput)(nil)).Elem(), GetRuleScopeTagsExcludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeTagsExcludeArrayInput)(nil)).Elem(), GetRuleScopeTagsExcludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeTagsIncludeInput)(nil)).Elem(), GetRuleScopeTagsIncludeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleScopeTagsIncludeArrayInput)(nil)).Elem(), GetRuleScopeTagsIncludeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTriggerInput)(nil)).Elem(), GetRuleTriggerArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRuleTriggerArrayInput)(nil)).Elem(), GetRuleTriggerArray{})
+	pulumi.RegisterOutputType(GroupRuleScopeOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopePtrOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeProjectsOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeProjectsPtrOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeRegionsOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeRegionsPtrOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeResourceIdsOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeResourceIdsPtrOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeResourceTypesOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeResourceTypesPtrOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeTagsOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeTagsPtrOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeTagsExcludeOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeTagsExcludeArrayOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeTagsIncludeOutput{})
+	pulumi.RegisterOutputType(GroupRuleScopeTagsIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GroupRuleTriggerOutput{})
+	pulumi.RegisterOutputType(GroupRuleTriggerArrayOutput{})
+	pulumi.RegisterOutputType(RuleScopeOutput{})
+	pulumi.RegisterOutputType(RuleScopePtrOutput{})
+	pulumi.RegisterOutputType(RuleScopeProjectsOutput{})
+	pulumi.RegisterOutputType(RuleScopeProjectsPtrOutput{})
+	pulumi.RegisterOutputType(RuleScopeRegionsOutput{})
+	pulumi.RegisterOutputType(RuleScopeRegionsPtrOutput{})
+	pulumi.RegisterOutputType(RuleScopeResourceIdsOutput{})
+	pulumi.RegisterOutputType(RuleScopeResourceIdsPtrOutput{})
+	pulumi.RegisterOutputType(RuleScopeResourceTypesOutput{})
+	pulumi.RegisterOutputType(RuleScopeResourceTypesPtrOutput{})
+	pulumi.RegisterOutputType(RuleScopeTagsOutput{})
+	pulumi.RegisterOutputType(RuleScopeTagsPtrOutput{})
+	pulumi.RegisterOutputType(RuleScopeTagsExcludeOutput{})
+	pulumi.RegisterOutputType(RuleScopeTagsExcludeArrayOutput{})
+	pulumi.RegisterOutputType(RuleScopeTagsIncludeOutput{})
+	pulumi.RegisterOutputType(RuleScopeTagsIncludeArrayOutput{})
+	pulumi.RegisterOutputType(RuleTriggerOutput{})
+	pulumi.RegisterOutputType(RuleTriggerArrayOutput{})
 	pulumi.RegisterOutputType(AssumeRoleOutput{})
 	pulumi.RegisterOutputType(EndpointsOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeProjectsOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeRegionsOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeResourceIdsOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeResourceTypesOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeTagsOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeTagsExcludeOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeTagsExcludeArrayOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeTagsIncludeOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleScopeTagsIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleTriggerOutput{})
+	pulumi.RegisterOutputType(GetGroupRuleTriggerArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeProjectsOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeRegionsOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeResourceIdsOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeResourceTypesOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeTagsOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeTagsExcludeOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeTagsExcludeArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeTagsIncludeOutput{})
+	pulumi.RegisterOutputType(GetRuleScopeTagsIncludeArrayOutput{})
+	pulumi.RegisterOutputType(GetRuleTriggerOutput{})
+	pulumi.RegisterOutputType(GetRuleTriggerArrayOutput{})
 }
