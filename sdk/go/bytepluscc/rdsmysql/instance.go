@@ -114,7 +114,7 @@ type Instance struct {
 	AllowListVersion pulumi.StringOutput `pulumi:"allowListVersion"`
 	// Auto scaling configuration
 	AutoStorageScalingConfig InstanceAutoStorageScalingConfigOutput `pulumi:"autoStorageScalingConfig"`
-	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+	// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
 	AutoUpgradeMinorVersion pulumi.StringOutput `pulumi:"autoUpgradeMinorVersion"`
 	// Space used by audit logs in backup.
 	BackupAuditLogSize pulumi.IntOutput `pulumi:"backupAuditLogSize"`
@@ -165,6 +165,8 @@ type Instance struct {
 	DrDtsTaskStatus pulumi.StringOutput `pulumi:"drDtsTaskStatus"`
 	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster pulumi.IntOutput `pulumi:"drSecondsBehindMaster"`
+	// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+	EnableExternalReplication pulumi.BoolOutput `pulumi:"enableExternalReplication"`
 	// Instance connection information.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Endpoints InstanceEndpointArrayOutput `pulumi:"endpoints"`
@@ -207,8 +209,6 @@ type Instance struct {
 	// Instance node information.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Nodes InstanceNodeArrayOutput `pulumi:"nodes"`
-	// Parameter template ID.
-	ParameterTemplateId pulumi.StringOutput `pulumi:"parameterTemplateId"`
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntOutput `pulumi:"port"`
 	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
@@ -320,7 +320,7 @@ type instanceState struct {
 	AllowListVersion *string `pulumi:"allowListVersion"`
 	// Auto scaling configuration
 	AutoStorageScalingConfig *InstanceAutoStorageScalingConfig `pulumi:"autoStorageScalingConfig"`
-	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+	// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
 	AutoUpgradeMinorVersion *string `pulumi:"autoUpgradeMinorVersion"`
 	// Space used by audit logs in backup.
 	BackupAuditLogSize *int `pulumi:"backupAuditLogSize"`
@@ -371,6 +371,8 @@ type instanceState struct {
 	DrDtsTaskStatus *string `pulumi:"drDtsTaskStatus"`
 	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster *int `pulumi:"drSecondsBehindMaster"`
+	// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+	EnableExternalReplication *bool `pulumi:"enableExternalReplication"`
 	// Instance connection information.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Endpoints []InstanceEndpoint `pulumi:"endpoints"`
@@ -413,8 +415,6 @@ type instanceState struct {
 	// Instance node information.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Nodes []InstanceNode `pulumi:"nodes"`
-	// Parameter template ID.
-	ParameterTemplateId *string `pulumi:"parameterTemplateId"`
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port *int `pulumi:"port"`
 	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
@@ -476,7 +476,7 @@ type InstanceState struct {
 	AllowListVersion pulumi.StringPtrInput
 	// Auto scaling configuration
 	AutoStorageScalingConfig InstanceAutoStorageScalingConfigPtrInput
-	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+	// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
 	AutoUpgradeMinorVersion pulumi.StringPtrInput
 	// Space used by audit logs in backup.
 	BackupAuditLogSize pulumi.IntPtrInput
@@ -527,6 +527,8 @@ type InstanceState struct {
 	DrDtsTaskStatus pulumi.StringPtrInput
 	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster pulumi.IntPtrInput
+	// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+	EnableExternalReplication pulumi.BoolPtrInput
 	// Instance connection information.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Endpoints InstanceEndpointArrayInput
@@ -569,8 +571,6 @@ type InstanceState struct {
 	// Instance node information.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Nodes InstanceNodeArrayInput
-	// Parameter template ID.
-	ParameterTemplateId pulumi.StringPtrInput
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntPtrInput
 	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
@@ -631,7 +631,7 @@ type instanceArgs struct {
 	AllowListIds []string `pulumi:"allowListIds"`
 	// Auto scaling configuration
 	AutoStorageScalingConfig *InstanceAutoStorageScalingConfig `pulumi:"autoStorageScalingConfig"`
-	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+	// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
 	AutoUpgradeMinorVersion *string `pulumi:"autoUpgradeMinorVersion"`
 	// Instance backup policy configuration.
 	BackupPolicy *InstanceBackupPolicy `pulumi:"backupPolicy"`
@@ -647,6 +647,8 @@ type instanceArgs struct {
 	DbTimeZone *string `pulumi:"dbTimeZone"`
 	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection *string `pulumi:"deletionProtection"`
+	// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+	EnableExternalReplication *bool `pulumi:"enableExternalReplication"`
 	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
 	EngineType *string `pulumi:"engineType"`
 	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
@@ -664,8 +666,6 @@ type instanceArgs struct {
 	// Instance node information.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Nodes []InstanceNode `pulumi:"nodes"`
-	// Parameter template ID.
-	ParameterTemplateId *string `pulumi:"parameterTemplateId"`
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port *int `pulumi:"port"`
 	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
@@ -697,7 +697,7 @@ type InstanceArgs struct {
 	AllowListIds pulumi.StringArrayInput
 	// Auto scaling configuration
 	AutoStorageScalingConfig InstanceAutoStorageScalingConfigPtrInput
-	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+	// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
 	AutoUpgradeMinorVersion pulumi.StringPtrInput
 	// Instance backup policy configuration.
 	BackupPolicy InstanceBackupPolicyPtrInput
@@ -713,6 +713,8 @@ type InstanceArgs struct {
 	DbTimeZone pulumi.StringPtrInput
 	// Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
 	DeletionProtection pulumi.StringPtrInput
+	// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+	EnableExternalReplication pulumi.BoolPtrInput
 	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
 	EngineType pulumi.StringPtrInput
 	// Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
@@ -730,8 +732,6 @@ type InstanceArgs struct {
 	// Instance node information.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Nodes InstanceNodeArrayInput
-	// Parameter template ID.
-	ParameterTemplateId pulumi.StringPtrInput
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port pulumi.IntPtrInput
 	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
@@ -865,7 +865,7 @@ func (o InstanceOutput) AutoStorageScalingConfig() InstanceAutoStorageScalingCon
 	return o.ApplyT(func(v *Instance) InstanceAutoStorageScalingConfigOutput { return v.AutoStorageScalingConfig }).(InstanceAutoStorageScalingConfigOutput)
 }
 
-// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
 func (o InstanceOutput) AutoUpgradeMinorVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.AutoUpgradeMinorVersion }).(pulumi.StringOutput)
 }
@@ -991,6 +991,11 @@ func (o InstanceOutput) DrSecondsBehindMaster() pulumi.IntOutput {
 	return o.ApplyT(func(v *Instance) pulumi.IntOutput { return v.DrSecondsBehindMaster }).(pulumi.IntOutput)
 }
 
+// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+func (o InstanceOutput) EnableExternalReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.EnableExternalReplication }).(pulumi.BoolOutput)
+}
+
 // Instance connection information.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o InstanceOutput) Endpoints() InstanceEndpointArrayOutput {
@@ -1091,11 +1096,6 @@ func (o InstanceOutput) NodeSpec() pulumi.StringOutput {
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o InstanceOutput) Nodes() InstanceNodeArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceNodeArrayOutput { return v.Nodes }).(InstanceNodeArrayOutput)
-}
-
-// Parameter template ID.
-func (o InstanceOutput) ParameterTemplateId() pulumi.StringOutput {
-	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.ParameterTemplateId }).(pulumi.StringOutput)
 }
 
 // Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.

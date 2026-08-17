@@ -81,7 +81,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         public readonly Outputs.GetInstanceAutoStorageScalingConfigResult AutoStorageScalingConfig;
         /// <summary>
-        /// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        /// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         /// </summary>
         public readonly string AutoUpgradeMinorVersion;
         /// <summary>
@@ -181,6 +181,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         public readonly int DrSecondsBehindMaster;
         /// <summary>
+        /// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+        /// </summary>
+        public readonly bool EnableExternalReplication;
+        /// <summary>
         /// Instance connection information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceEndpointResult> Endpoints;
@@ -264,10 +268,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// Instance node information.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceNodeResult> Nodes;
-        /// <summary>
-        /// Parameter template ID.
-        /// </summary>
-        public readonly string ParameterTemplateId;
         /// <summary>
         /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         /// </summary>
@@ -425,6 +425,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
 
             int drSecondsBehindMaster,
 
+            bool enableExternalReplication,
+
             ImmutableArray<Outputs.GetInstanceEndpointResult> endpoints,
 
             string engineType,
@@ -466,8 +468,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             string nodeSpec,
 
             ImmutableArray<Outputs.GetInstanceNodeResult> nodes,
-
-            string parameterTemplateId,
 
             int port,
 
@@ -546,6 +546,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             DrDtsTaskName = drDtsTaskName;
             DrDtsTaskStatus = drDtsTaskStatus;
             DrSecondsBehindMaster = drSecondsBehindMaster;
+            EnableExternalReplication = enableExternalReplication;
             Endpoints = endpoints;
             EngineType = engineType;
             GlobalReadOnly = globalReadOnly;
@@ -567,7 +568,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             NodeSpaceUsedPercentage = nodeSpaceUsedPercentage;
             NodeSpec = nodeSpec;
             Nodes = nodes;
-            ParameterTemplateId = parameterTemplateId;
             Port = port;
             PrivateIpAddress = privateIpAddress;
             ProjectName = projectName;

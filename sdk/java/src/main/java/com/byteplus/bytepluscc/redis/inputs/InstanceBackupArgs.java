@@ -47,6 +47,21 @@ public final class InstanceBackupArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
+     * Current backup progress. Measured as a percentage.
+     * 
+     */
+    @Import(name="backupProgress")
+    private @Nullable Output<Integer> backupProgress;
+
+    /**
+     * @return Current backup progress. Measured as a percentage.
+     * 
+     */
+    public Optional<Output<Integer>> backupProgress() {
+        return Optional.ofNullable(this.backupProgress);
+    }
+
+    /**
      * Backup policy
      * 
      */
@@ -156,6 +171,7 @@ public final class InstanceBackupArgs extends com.pulumi.resources.ResourceArgs 
     private InstanceBackupArgs(InstanceBackupArgs $) {
         this.backupPointId = $.backupPointId;
         this.backupPointName = $.backupPointName;
+        this.backupProgress = $.backupProgress;
         this.backupStrategy = $.backupStrategy;
         this.backupType = $.backupType;
         this.endTime = $.endTime;
@@ -223,6 +239,27 @@ public final class InstanceBackupArgs extends com.pulumi.resources.ResourceArgs 
          */
         public Builder backupPointName(String backupPointName) {
             return backupPointName(Output.of(backupPointName));
+        }
+
+        /**
+         * @param backupProgress Current backup progress. Measured as a percentage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupProgress(@Nullable Output<Integer> backupProgress) {
+            $.backupProgress = backupProgress;
+            return this;
+        }
+
+        /**
+         * @param backupProgress Current backup progress. Measured as a percentage.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupProgress(Integer backupProgress) {
+            return backupProgress(Output.of(backupProgress));
         }
 
         /**

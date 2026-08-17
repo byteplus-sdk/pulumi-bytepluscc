@@ -274,6 +274,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "autoscaling/notificationConfiguration",
+  "fqn": "pulumi_bytepluscc.autoscaling",
+  "classes": {
+   "bytepluscc:autoscaling/notificationConfiguration:NotificationConfiguration": "NotificationConfiguration"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "autoscaling/scalingConfiguration",
   "fqn": "pulumi_bytepluscc.autoscaling",
   "classes": {
@@ -574,6 +582,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.cloudmonitor",
   "classes": {
    "bytepluscc:cloudmonitor/rule:Rule": "Rule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "config/configurationRecorder",
+  "fqn": "pulumi_bytepluscc.config",
+  "classes": {
+   "bytepluscc:config/configurationRecorder:ConfigurationRecorder": "ConfigurationRecorder"
   }
  },
  {
@@ -1798,6 +1814,30 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
    "bytepluscc:transitrouter/transitRouterRouteTableAssociation:TransitRouterRouteTableAssociation": "TransitRouterRouteTableAssociation"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterTrafficQosMarkingEntry",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterTrafficQosMarkingEntry:TransitRouterTrafficQosMarkingEntry": "TransitRouterTrafficQosMarkingEntry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterTrafficQosMarkingPolicy",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterTrafficQosMarkingPolicy:TransitRouterTrafficQosMarkingPolicy": "TransitRouterTrafficQosMarkingPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterTrafficQosQueueEntry",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry": "TransitRouterTrafficQosQueueEntry"
   }
  },
  {

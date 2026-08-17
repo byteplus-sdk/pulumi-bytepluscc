@@ -6,6 +6,8 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .get_notification_configuration import *
+from .get_notification_configurations import *
 from .get_scaling_configuration import *
 from .get_scaling_configurations import *
 from .get_scaling_group import *
@@ -14,6 +16,7 @@ from .get_scaling_lifecycle_hook import *
 from .get_scaling_lifecycle_hooks import *
 from .get_scaling_policies import *
 from .get_scaling_policy import *
+from .notification_configuration import *
 from .scaling_configuration import *
 from .scaling_group import *
 from .scaling_lifecycle_hook import *

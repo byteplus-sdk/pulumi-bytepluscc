@@ -248,6 +248,8 @@ type InstanceBackup struct {
 	BackupPointId *string `pulumi:"backupPointId"`
 	// Backup point name
 	BackupPointName *string `pulumi:"backupPointName"`
+	// Current backup progress. Measured as a percentage.
+	BackupProgress *int `pulumi:"backupProgress"`
 	// Backup policy
 	BackupStrategy *string `pulumi:"backupStrategy"`
 	// Backup type
@@ -280,6 +282,8 @@ type InstanceBackupArgs struct {
 	BackupPointId pulumi.StringPtrInput `pulumi:"backupPointId"`
 	// Backup point name
 	BackupPointName pulumi.StringPtrInput `pulumi:"backupPointName"`
+	// Current backup progress. Measured as a percentage.
+	BackupProgress pulumi.IntPtrInput `pulumi:"backupProgress"`
 	// Backup policy
 	BackupStrategy pulumi.StringPtrInput `pulumi:"backupStrategy"`
 	// Backup type
@@ -355,6 +359,11 @@ func (o InstanceBackupOutput) BackupPointId() pulumi.StringPtrOutput {
 // Backup point name
 func (o InstanceBackupOutput) BackupPointName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v InstanceBackup) *string { return v.BackupPointName }).(pulumi.StringPtrOutput)
+}
+
+// Current backup progress. Measured as a percentage.
+func (o InstanceBackupOutput) BackupProgress() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceBackup) *int { return v.BackupProgress }).(pulumi.IntPtrOutput)
 }
 
 // Backup policy
@@ -1840,6 +1849,8 @@ type GetInstanceBackup struct {
 	BackupPointId string `pulumi:"backupPointId"`
 	// Backup point name
 	BackupPointName string `pulumi:"backupPointName"`
+	// Current backup progress. Measured as a percentage.
+	BackupProgress int `pulumi:"backupProgress"`
 	// Backup policy
 	BackupStrategy string `pulumi:"backupStrategy"`
 	// Backup type
@@ -1872,6 +1883,8 @@ type GetInstanceBackupArgs struct {
 	BackupPointId pulumi.StringInput `pulumi:"backupPointId"`
 	// Backup point name
 	BackupPointName pulumi.StringInput `pulumi:"backupPointName"`
+	// Current backup progress. Measured as a percentage.
+	BackupProgress pulumi.IntInput `pulumi:"backupProgress"`
 	// Backup policy
 	BackupStrategy pulumi.StringInput `pulumi:"backupStrategy"`
 	// Backup type
@@ -1947,6 +1960,11 @@ func (o GetInstanceBackupOutput) BackupPointId() pulumi.StringOutput {
 // Backup point name
 func (o GetInstanceBackupOutput) BackupPointName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetInstanceBackup) string { return v.BackupPointName }).(pulumi.StringOutput)
+}
+
+// Current backup progress. Measured as a percentage.
+func (o GetInstanceBackupOutput) BackupProgress() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceBackup) int { return v.BackupProgress }).(pulumi.IntOutput)
 }
 
 // Backup policy

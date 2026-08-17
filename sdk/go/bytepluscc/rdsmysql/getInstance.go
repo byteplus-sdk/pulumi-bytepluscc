@@ -38,7 +38,7 @@ type LookupInstanceResult struct {
 	AllowListVersion string `pulumi:"allowListVersion"`
 	// Auto scaling configuration
 	AutoStorageScalingConfig GetInstanceAutoStorageScalingConfig `pulumi:"autoStorageScalingConfig"`
-	// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+	// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
 	AutoUpgradeMinorVersion string `pulumi:"autoUpgradeMinorVersion"`
 	// Space used by audit logs in backup.
 	BackupAuditLogSize int `pulumi:"backupAuditLogSize"`
@@ -88,6 +88,8 @@ type LookupInstanceResult struct {
 	DrDtsTaskStatus string `pulumi:"drDtsTaskStatus"`
 	// Latency between the disaster recovery instance and the primary instance.
 	DrSecondsBehindMaster int `pulumi:"drSecondsBehindMaster"`
+	// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+	EnableExternalReplication bool `pulumi:"enableExternalReplication"`
 	// Instance connection information.
 	Endpoints []GetInstanceEndpoint `pulumi:"endpoints"`
 	// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
@@ -130,8 +132,6 @@ type LookupInstanceResult struct {
 	NodeSpec string `pulumi:"nodeSpec"`
 	// Instance node information.
 	Nodes []GetInstanceNode `pulumi:"nodes"`
-	// Parameter template ID.
-	ParameterTemplateId string `pulumi:"parameterTemplateId"`
 	// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
 	Port int `pulumi:"port"`
 	// Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
@@ -236,7 +236,7 @@ func (o LookupInstanceResultOutput) AutoStorageScalingConfig() GetInstanceAutoSt
 	return o.ApplyT(func(v LookupInstanceResult) GetInstanceAutoStorageScalingConfig { return v.AutoStorageScalingConfig }).(GetInstanceAutoStorageScalingConfigOutput)
 }
 
-// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
 func (o LookupInstanceResultOutput) AutoUpgradeMinorVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.AutoUpgradeMinorVersion }).(pulumi.StringOutput)
 }
@@ -361,6 +361,11 @@ func (o LookupInstanceResultOutput) DrSecondsBehindMaster() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupInstanceResult) int { return v.DrSecondsBehindMaster }).(pulumi.IntOutput)
 }
 
+// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+func (o LookupInstanceResultOutput) EnableExternalReplication() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupInstanceResult) bool { return v.EnableExternalReplication }).(pulumi.BoolOutput)
+}
+
 // Instance connection information.
 func (o LookupInstanceResultOutput) Endpoints() GetInstanceEndpointArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceEndpoint { return v.Endpoints }).(GetInstanceEndpointArrayOutput)
@@ -464,11 +469,6 @@ func (o LookupInstanceResultOutput) NodeSpec() pulumi.StringOutput {
 // Instance node information.
 func (o LookupInstanceResultOutput) Nodes() GetInstanceNodeArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceNode { return v.Nodes }).(GetInstanceNodeArrayOutput)
-}
-
-// Parameter template ID.
-func (o LookupInstanceResultOutput) ParameterTemplateId() pulumi.StringOutput {
-	return o.ApplyT(func(v LookupInstanceResult) string { return v.ParameterTemplateId }).(pulumi.StringOutput)
 }
 
 // Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.

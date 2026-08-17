@@ -21,6 +21,8 @@ func (m *module) Version() semver.Version {
 
 func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi.Resource, err error) {
 	switch typ {
+	case "bytepluscc:autoscaling/notificationConfiguration:NotificationConfiguration":
+		r = &NotificationConfiguration{}
 	case "bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration":
 		r = &ScalingConfiguration{}
 	case "bytepluscc:autoscaling/scalingGroup:ScalingGroup":
@@ -42,6 +44,11 @@ func init() {
 	if err != nil {
 		version = semver.Version{Major: 1}
 	}
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"autoscaling/notificationConfiguration",
+		&module{version},
+	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"autoscaling/scalingConfiguration",

@@ -134,7 +134,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<Outputs.InstanceAutoStorageScalingConfig> AutoStorageScalingConfig { get; private set; } = null!;
 
         /// <summary>
-        /// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        /// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         /// </summary>
         [Output("autoUpgradeMinorVersion")]
         public Output<string> AutoUpgradeMinorVersion { get; private set; } = null!;
@@ -285,6 +285,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<int> DrSecondsBehindMaster { get; private set; } = null!;
 
         /// <summary>
+        /// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+        /// </summary>
+        [Output("enableExternalReplication")]
+        public Output<bool> EnableExternalReplication { get; private set; } = null!;
+
+        /// <summary>
         /// Instance connection information.
         /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         /// </summary>
@@ -405,12 +411,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         [Output("nodes")]
         public Output<ImmutableArray<Outputs.InstanceNode>> Nodes { get; private set; } = null!;
-
-        /// <summary>
-        /// Parameter template ID.
-        /// </summary>
-        [Output("parameterTemplateId")]
-        public Output<string> ParameterTemplateId { get; private set; } = null!;
 
         /// <summary>
         /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
@@ -623,7 +623,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Input<Inputs.InstanceAutoStorageScalingConfigArgs>? AutoStorageScalingConfig { get; set; }
 
         /// <summary>
-        /// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        /// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         /// </summary>
         [Input("autoUpgradeMinorVersion")]
         public Input<string>? AutoUpgradeMinorVersion { get; set; }
@@ -669,6 +669,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         [Input("deletionProtection")]
         public Input<string>? DeletionProtection { get; set; }
+
+        /// <summary>
+        /// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+        /// </summary>
+        [Input("enableExternalReplication")]
+        public Input<bool>? EnableExternalReplication { get; set; }
 
         /// <summary>
         /// Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
@@ -724,12 +730,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             get => _nodes ?? (_nodes = new InputList<Inputs.InstanceNodeArgs>());
             set => _nodes = value;
         }
-
-        /// <summary>
-        /// Parameter template ID.
-        /// </summary>
-        [Input("parameterTemplateId")]
-        public Input<string>? ParameterTemplateId { get; set; }
 
         /// <summary>
         /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
@@ -850,7 +850,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Input<Inputs.InstanceAutoStorageScalingConfigGetArgs>? AutoStorageScalingConfig { get; set; }
 
         /// <summary>
-        /// Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        /// Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         /// </summary>
         [Input("autoUpgradeMinorVersion")]
         public Input<string>? AutoUpgradeMinorVersion { get; set; }
@@ -1006,6 +1006,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         [Input("drSecondsBehindMaster")]
         public Input<int>? DrSecondsBehindMaster { get; set; }
 
+        /// <summary>
+        /// Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+        /// </summary>
+        [Input("enableExternalReplication")]
+        public Input<bool>? EnableExternalReplication { get; set; }
+
         [Input("endpoints")]
         private InputList<Inputs.InstanceEndpointGetArgs>? _endpoints;
 
@@ -1139,12 +1145,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
             get => _nodes ?? (_nodes = new InputList<Inputs.InstanceNodeGetArgs>());
             set => _nodes = value;
         }
-
-        /// <summary>
-        /// Parameter template ID.
-        /// </summary>
-        [Input("parameterTemplateId")]
-        public Input<string>? ParameterTemplateId { get; set; }
 
         /// <summary>
         /// Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.

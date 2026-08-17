@@ -125,7 +125,7 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public readonly autoStorageScalingConfig: pulumi.Output<outputs.rdsmysql.InstanceAutoStorageScalingConfig>;
     /**
-     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
      */
     declare public readonly autoUpgradeMinorVersion: pulumi.Output<string>;
     /**
@@ -226,6 +226,10 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly drSecondsBehindMaster: pulumi.Output<number>;
     /**
+     * Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     */
+    declare public readonly enableExternalReplication: pulumi.Output<boolean>;
+    /**
      * Instance connection information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
@@ -307,10 +311,6 @@ export class Instance extends pulumi.CustomResource {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     declare public readonly nodes: pulumi.Output<outputs.rdsmysql.InstanceNode[]>;
-    /**
-     * Parameter template ID.
-     */
-    declare public readonly parameterTemplateId: pulumi.Output<string>;
     /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
@@ -451,6 +451,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["drDtsTaskName"] = state?.drDtsTaskName;
             resourceInputs["drDtsTaskStatus"] = state?.drDtsTaskStatus;
             resourceInputs["drSecondsBehindMaster"] = state?.drSecondsBehindMaster;
+            resourceInputs["enableExternalReplication"] = state?.enableExternalReplication;
             resourceInputs["endpoints"] = state?.endpoints;
             resourceInputs["engineType"] = state?.engineType;
             resourceInputs["globalReadOnly"] = state?.globalReadOnly;
@@ -471,7 +472,6 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["nodeSpaceUsedPercentage"] = state?.nodeSpaceUsedPercentage;
             resourceInputs["nodeSpec"] = state?.nodeSpec;
             resourceInputs["nodes"] = state?.nodes;
-            resourceInputs["parameterTemplateId"] = state?.parameterTemplateId;
             resourceInputs["port"] = state?.port;
             resourceInputs["privateIpAddress"] = state?.privateIpAddress;
             resourceInputs["projectName"] = state?.projectName;
@@ -529,6 +529,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["dbParamGroupId"] = args?.dbParamGroupId;
             resourceInputs["dbTimeZone"] = args?.dbTimeZone;
             resourceInputs["deletionProtection"] = args?.deletionProtection;
+            resourceInputs["enableExternalReplication"] = args?.enableExternalReplication;
             resourceInputs["engineType"] = args?.engineType;
             resourceInputs["globalReadOnly"] = args?.globalReadOnly;
             resourceInputs["instanceName"] = args?.instanceName;
@@ -537,7 +538,6 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["maintenanceWindow"] = args?.maintenanceWindow;
             resourceInputs["nodeSpec"] = args?.nodeSpec;
             resourceInputs["nodes"] = args?.nodes;
-            resourceInputs["parameterTemplateId"] = args?.parameterTemplateId;
             resourceInputs["port"] = args?.port;
             resourceInputs["privateIpAddress"] = args?.privateIpAddress;
             resourceInputs["projectName"] = args?.projectName;
@@ -621,7 +621,7 @@ export interface InstanceState {
      */
     autoStorageScalingConfig?: pulumi.Input<inputs.rdsmysql.InstanceAutoStorageScalingConfig | undefined>;
     /**
-     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
      */
     autoUpgradeMinorVersion?: pulumi.Input<string | undefined>;
     /**
@@ -722,6 +722,10 @@ export interface InstanceState {
      */
     drSecondsBehindMaster?: pulumi.Input<number | undefined>;
     /**
+     * Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     */
+    enableExternalReplication?: pulumi.Input<boolean | undefined>;
+    /**
      * Instance connection information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
@@ -803,10 +807,6 @@ export interface InstanceState {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     nodes?: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceNode>[] | undefined>;
-    /**
-     * Parameter template ID.
-     */
-    parameterTemplateId?: pulumi.Input<string | undefined>;
     /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */
@@ -919,7 +919,7 @@ export interface InstanceArgs {
      */
     autoStorageScalingConfig?: pulumi.Input<inputs.rdsmysql.InstanceAutoStorageScalingConfig | undefined>;
     /**
-     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
      */
     autoUpgradeMinorVersion?: pulumi.Input<string | undefined>;
     /**
@@ -950,6 +950,10 @@ export interface InstanceArgs {
      * Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
      */
     deletionProtection?: pulumi.Input<string | undefined>;
+    /**
+     * Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     */
+    enableExternalReplication?: pulumi.Input<boolean | undefined>;
     /**
      * Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
      */
@@ -983,10 +987,6 @@ export interface InstanceArgs {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     nodes: pulumi.Input<pulumi.Input<inputs.rdsmysql.InstanceNode>[]>;
-    /**
-     * Parameter template ID.
-     */
-    parameterTemplateId?: pulumi.Input<string | undefined>;
     /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */

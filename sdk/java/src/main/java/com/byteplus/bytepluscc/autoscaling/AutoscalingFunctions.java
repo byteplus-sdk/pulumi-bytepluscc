@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.autoscaling;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.autoscaling.inputs.GetNotificationConfigurationArgs;
+import com.byteplus.bytepluscc.autoscaling.inputs.GetNotificationConfigurationPlainArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingConfigurationArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingConfigurationPlainArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingGroupArgs;
@@ -12,6 +14,8 @@ import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingLifecycleHookArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingLifecycleHookPlainArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingPolicyArgs;
 import com.byteplus.bytepluscc.autoscaling.inputs.GetScalingPolicyPlainArgs;
+import com.byteplus.bytepluscc.autoscaling.outputs.GetNotificationConfigurationResult;
+import com.byteplus.bytepluscc.autoscaling.outputs.GetNotificationConfigurationsResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingConfigurationResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingConfigurationsResult;
 import com.byteplus.bytepluscc.autoscaling.outputs.GetScalingGroupResult;
@@ -29,6 +33,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class AutoscalingFunctions {
+    /**
+     * Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static Output<GetNotificationConfigurationResult> getNotificationConfiguration(GetNotificationConfigurationArgs args) {
+        return getNotificationConfiguration(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static CompletableFuture<GetNotificationConfigurationResult> getNotificationConfigurationPlain(GetNotificationConfigurationPlainArgs args) {
+        return getNotificationConfigurationPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static Output<GetNotificationConfigurationResult> getNotificationConfiguration(GetNotificationConfigurationArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getNotificationConfiguration:getNotificationConfiguration", TypeShape.of(GetNotificationConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static Output<GetNotificationConfigurationResult> getNotificationConfiguration(GetNotificationConfigurationArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getNotificationConfiguration:getNotificationConfiguration", TypeShape.of(GetNotificationConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static CompletableFuture<GetNotificationConfigurationResult> getNotificationConfigurationPlain(GetNotificationConfigurationPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:autoscaling/getNotificationConfiguration:getNotificationConfiguration", TypeShape.of(GetNotificationConfigurationResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static Output<GetNotificationConfigurationsResult> getNotificationConfigurations() {
+        return getNotificationConfigurations(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static CompletableFuture<GetNotificationConfigurationsResult> getNotificationConfigurationsPlain() {
+        return getNotificationConfigurationsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static Output<GetNotificationConfigurationsResult> getNotificationConfigurations(InvokeArgs args) {
+        return getNotificationConfigurations(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static CompletableFuture<GetNotificationConfigurationsResult> getNotificationConfigurationsPlain(InvokeArgs args) {
+        return getNotificationConfigurationsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static Output<GetNotificationConfigurationsResult> getNotificationConfigurations(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getNotificationConfigurations:getNotificationConfigurations", TypeShape.of(GetNotificationConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static Output<GetNotificationConfigurationsResult> getNotificationConfigurations(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:autoscaling/getNotificationConfigurations:getNotificationConfigurations", TypeShape.of(GetNotificationConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::AutoScaling::NotificationConfiguration
+     * 
+     */
+    public static CompletableFuture<GetNotificationConfigurationsResult> getNotificationConfigurationsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:autoscaling/getNotificationConfigurations:getNotificationConfigurations", TypeShape.of(GetNotificationConfigurationsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::AutoScaling::ScalingConfiguration
      * 

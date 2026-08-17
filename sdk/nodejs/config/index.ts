@@ -5,6 +5,21 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { ConfigurationRecorderArgs, ConfigurationRecorderState } from "./configurationRecorder";
+export type ConfigurationRecorder = import("./configurationRecorder").ConfigurationRecorder;
+export const ConfigurationRecorder: typeof import("./configurationRecorder").ConfigurationRecorder = null as any;
+utilities.lazyLoad(exports, ["ConfigurationRecorder"], () => require("./configurationRecorder"));
+
+export { GetConfigurationRecorderArgs, GetConfigurationRecorderResult, GetConfigurationRecorderOutputArgs } from "./getConfigurationRecorder";
+export const getConfigurationRecorder: typeof import("./getConfigurationRecorder").getConfigurationRecorder = null as any;
+export const getConfigurationRecorderOutput: typeof import("./getConfigurationRecorder").getConfigurationRecorderOutput = null as any;
+utilities.lazyLoad(exports, ["getConfigurationRecorder","getConfigurationRecorderOutput"], () => require("./getConfigurationRecorder"));
+
+export { GetConfigurationRecordersResult } from "./getConfigurationRecorders";
+export const getConfigurationRecorders: typeof import("./getConfigurationRecorders").getConfigurationRecorders = null as any;
+export const getConfigurationRecordersOutput: typeof import("./getConfigurationRecorders").getConfigurationRecordersOutput = null as any;
+utilities.lazyLoad(exports, ["getConfigurationRecorders","getConfigurationRecordersOutput"], () => require("./getConfigurationRecorders"));
+
 export { GetGroupRuleArgs, GetGroupRuleResult, GetGroupRuleOutputArgs } from "./getGroupRule";
 export const getGroupRule: typeof import("./getGroupRule").getGroupRule = null as any;
 export const getGroupRuleOutput: typeof import("./getGroupRule").getGroupRuleOutput = null as any;
@@ -41,6 +56,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:config/configurationRecorder:ConfigurationRecorder":
+                return new ConfigurationRecorder(name, <any>undefined, { urn })
             case "bytepluscc:config/groupRule:GroupRule":
                 return new GroupRule(name, <any>undefined, { urn })
             case "bytepluscc:config/rule:Rule":
@@ -50,5 +67,6 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "config/configurationRecorder", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "config/groupRule", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "config/rule", _module)

@@ -11,8 +11,8 @@ github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.68 h1:HBus7SmCF5Pzd84pMQE4699CCM
 github.com/byteplus-sdk/byteplus-go-sdk-v2 v1.0.68/go.mod h1:eqR3bDX3XtdPBcB9vERznOyi0MAcAI1GFAdcRspNMBU=
 github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16 h1:rrlsRCitt/isPkfLGPQFHf8G65iyxSgNgG2PbAR5v4Y=
 github.com/byteplus-sdk/byteplus-sdk-golang v1.0.16/go.mod h1:7iCaE+dR9EycrJU0GQyMhptbInLbQhsKXiDKDjNi8Vs=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.52 h1:Y3DdyIyPZm7vpcpIUu5OwjtAbfKR3wAGdL6zxAIdwio=
-github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.52/go.mod h1:Oy/+t7L6hFs7HkIXAtjqBoiQSYU4fCqDwCwjEPoEbx4=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.53 h1:c6NjoOXi4I9+OQ2cu+DR6r9OO8BReMpYyeueQOSfVQ8=
+github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.53/go.mod h1:Oy/+t7L6hFs7HkIXAtjqBoiQSYU4fCqDwCwjEPoEbx4=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/client9/misspell v0.3.4/go.mod h1:qj6jICC3Q7zFZvVWo7KLAzC3yx5G7kyvSDkc90ppPyw=
 github.com/cloudflare/circl v1.6.3 h1:9GPOhQGF9MCYUeXyMYlqTR6a5gTrgR/fBLXvUgtVcg8=

@@ -188,6 +188,10 @@ class InstanceBackupArgsDict(TypedDict):
     """
     Backup point name
     """
+    backup_progress: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Current backup progress. Measured as a percentage.
+    """
     backup_strategy: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Backup policy
@@ -222,6 +226,7 @@ class InstanceBackupArgs:
     def __init__(__self__, *,
                  backup_point_id: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_point_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_progress: pulumi.Input[Optional[_builtins.int]] = None,
                  backup_strategy: pulumi.Input[Optional[_builtins.str]] = None,
                  backup_type: pulumi.Input[Optional[_builtins.str]] = None,
                  end_time: pulumi.Input[Optional[_builtins.str]] = None,
@@ -232,6 +237,7 @@ class InstanceBackupArgs:
         """
         :param pulumi.Input[_builtins.str] backup_point_id: Backup point ID
         :param pulumi.Input[_builtins.str] backup_point_name: Backup point name
+        :param pulumi.Input[_builtins.int] backup_progress: Current backup progress. Measured as a percentage.
         :param pulumi.Input[_builtins.str] backup_strategy: Backup policy
         :param pulumi.Input[_builtins.str] backup_type: Backup type
         :param pulumi.Input[_builtins.str] end_time: Backup end time
@@ -244,6 +250,8 @@ class InstanceBackupArgs:
             pulumi.set(__self__, "backup_point_id", backup_point_id)
         if backup_point_name is not None:
             pulumi.set(__self__, "backup_point_name", backup_point_name)
+        if backup_progress is not None:
+            pulumi.set(__self__, "backup_progress", backup_progress)
         if backup_strategy is not None:
             pulumi.set(__self__, "backup_strategy", backup_strategy)
         if backup_type is not None:
@@ -282,6 +290,18 @@ class InstanceBackupArgs:
     @backup_point_name.setter
     def backup_point_name(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "backup_point_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupProgress")
+    def backup_progress(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Current backup progress. Measured as a percentage.
+        """
+        return pulumi.get(self, "backup_progress")
+
+    @backup_progress.setter
+    def backup_progress(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "backup_progress", value)
 
     @_builtins.property
     @pulumi.getter(name="backupStrategy")

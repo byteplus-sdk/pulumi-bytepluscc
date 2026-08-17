@@ -36,6 +36,7 @@ class InstanceArgs:
                  db_param_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  db_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_external_replication: pulumi.Input[Optional[_builtins.bool]] = None,
                  engine_type: pulumi.Input[Optional[_builtins.str]] = None,
                  global_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -43,7 +44,6 @@ class InstanceArgs:
                  lower_case_table_names: pulumi.Input[Optional[_builtins.str]] = None,
                  maintenance_window: pulumi.Input[Optional['InstanceMaintenanceWindowArgs']] = None,
                  node_spec: pulumi.Input[Optional[_builtins.str]] = None,
-                 parameter_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
                  private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -64,12 +64,13 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] vpc_id: VPC (Virtual Private Cloud) ID.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         :param pulumi.Input['InstanceAutoStorageScalingConfigArgs'] auto_storage_scaling_config: Auto scaling configuration
-        :param pulumi.Input[_builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[_builtins.str] auto_upgrade_minor_version: Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         :param pulumi.Input['InstanceBackupPolicyArgs'] backup_policy: Instance backup policy configuration.
         :param pulumi.Input[_builtins.int] cpu_num: Number of CPU cores for the database proxy service of the instance
         :param pulumi.Input[_builtins.str] db_param_group_id: Parameter template ID. Default value is the default parameter template for the database engine version
         :param pulumi.Input[_builtins.str] db_time_zone: Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         :param pulumi.Input[_builtins.str] deletion_protection: Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
+        :param pulumi.Input[_builtins.bool] enable_external_replication: Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
         :param pulumi.Input[_builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
         :param pulumi.Input[_builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         :param pulumi.Input[_builtins.str] instance_name: Instance name.
@@ -77,7 +78,6 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         :param pulumi.Input[_builtins.str] node_spec: Node specifications.
-        :param pulumi.Input[_builtins.str] parameter_template_id: Parameter template ID.
         :param pulumi.Input[_builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         :param pulumi.Input[_builtins.str] private_ip_address: Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
         :param pulumi.Input[_builtins.str] project_name: Project.
@@ -110,6 +110,8 @@ class InstanceArgs:
             pulumi.set(__self__, "db_time_zone", db_time_zone)
         if deletion_protection is not None:
             pulumi.set(__self__, "deletion_protection", deletion_protection)
+        if enable_external_replication is not None:
+            pulumi.set(__self__, "enable_external_replication", enable_external_replication)
         if engine_type is not None:
             pulumi.set(__self__, "engine_type", engine_type)
         if global_read_only is not None:
@@ -124,8 +126,6 @@ class InstanceArgs:
             pulumi.set(__self__, "maintenance_window", maintenance_window)
         if node_spec is not None:
             pulumi.set(__self__, "node_spec", node_spec)
-        if parameter_template_id is not None:
-            pulumi.set(__self__, "parameter_template_id", parameter_template_id)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if private_ip_address is not None:
@@ -254,7 +254,7 @@ class InstanceArgs:
     @pulumi.getter(name="autoUpgradeMinorVersion")
     def auto_upgrade_minor_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         """
         return pulumi.get(self, "auto_upgrade_minor_version")
 
@@ -321,6 +321,18 @@ class InstanceArgs:
     @deletion_protection.setter
     def deletion_protection(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "deletion_protection", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enableExternalReplication")
+    def enable_external_replication(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+        """
+        return pulumi.get(self, "enable_external_replication")
+
+    @enable_external_replication.setter
+    def enable_external_replication(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_external_replication", value)
 
     @_builtins.property
     @pulumi.getter(name="engineType")
@@ -405,18 +417,6 @@ class InstanceArgs:
     @node_spec.setter
     def node_spec(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "node_spec", value)
-
-    @_builtins.property
-    @pulumi.getter(name="parameterTemplateId")
-    def parameter_template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Parameter template ID.
-        """
-        return pulumi.get(self, "parameter_template_id")
-
-    @parameter_template_id.setter
-    def parameter_template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "parameter_template_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -536,6 +536,7 @@ class _InstanceState:
                  dr_dts_task_name: pulumi.Input[Optional[_builtins.str]] = None,
                  dr_dts_task_status: pulumi.Input[Optional[_builtins.str]] = None,
                  dr_seconds_behind_master: pulumi.Input[Optional[_builtins.int]] = None,
+                 enable_external_replication: pulumi.Input[Optional[_builtins.bool]] = None,
                  endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceEndpointArgs']]]] = None,
                  engine_type: pulumi.Input[Optional[_builtins.str]] = None,
                  global_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -556,7 +557,6 @@ class _InstanceState:
                  node_space_used_percentage: pulumi.Input[Optional[_builtins.float]] = None,
                  node_spec: pulumi.Input[Optional[_builtins.str]] = None,
                  nodes: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceNodeArgs']]]] = None,
-                 parameter_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
                  private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -589,7 +589,7 @@ class _InstanceState:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         :param pulumi.Input[_builtins.str] allow_list_version: Allowlist version
         :param pulumi.Input['InstanceAutoStorageScalingConfigArgs'] auto_storage_scaling_config: Auto scaling configuration
-        :param pulumi.Input[_builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[_builtins.str] auto_upgrade_minor_version: Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         :param pulumi.Input[_builtins.int] backup_audit_log_size: Space used by audit logs in backup.
         :param pulumi.Input[_builtins.int] backup_bin_log_size: Space used by binlog logs in backup.
         :param pulumi.Input[_builtins.int] backup_data_size: Space used by data in backup.
@@ -615,6 +615,7 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] dr_dts_task_name: Name of synchronization tasks between primary and disaster recovery instances.
         :param pulumi.Input[_builtins.str] dr_dts_task_status: Status of synchronization tasks between primary and disaster recovery instances.
         :param pulumi.Input[_builtins.int] dr_seconds_behind_master: Latency between the disaster recovery instance and the primary instance.
+        :param pulumi.Input[_builtins.bool] enable_external_replication: Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceEndpointArgs']]] endpoints: Instance connection information.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
@@ -637,7 +638,6 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] node_spec: Node specifications.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceNodeArgs']]] nodes: Instance node information.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        :param pulumi.Input[_builtins.str] parameter_template_id: Parameter template ID.
         :param pulumi.Input[_builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         :param pulumi.Input[_builtins.str] private_ip_address: Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
         :param pulumi.Input[_builtins.str] project_name: Project.
@@ -722,6 +722,8 @@ class _InstanceState:
             pulumi.set(__self__, "dr_dts_task_status", dr_dts_task_status)
         if dr_seconds_behind_master is not None:
             pulumi.set(__self__, "dr_seconds_behind_master", dr_seconds_behind_master)
+        if enable_external_replication is not None:
+            pulumi.set(__self__, "enable_external_replication", enable_external_replication)
         if endpoints is not None:
             pulumi.set(__self__, "endpoints", endpoints)
         if engine_type is not None:
@@ -762,8 +764,6 @@ class _InstanceState:
             pulumi.set(__self__, "node_spec", node_spec)
         if nodes is not None:
             pulumi.set(__self__, "nodes", nodes)
-        if parameter_template_id is not None:
-            pulumi.set(__self__, "parameter_template_id", parameter_template_id)
         if port is not None:
             pulumi.set(__self__, "port", port)
         if private_ip_address is not None:
@@ -866,7 +866,7 @@ class _InstanceState:
     @pulumi.getter(name="autoUpgradeMinorVersion")
     def auto_upgrade_minor_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         """
         return pulumi.get(self, "auto_upgrade_minor_version")
 
@@ -1164,6 +1164,18 @@ class _InstanceState:
         pulumi.set(self, "dr_seconds_behind_master", value)
 
     @_builtins.property
+    @pulumi.getter(name="enableExternalReplication")
+    def enable_external_replication(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+        """
+        return pulumi.get(self, "enable_external_replication")
+
+    @enable_external_replication.setter
+    def enable_external_replication(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable_external_replication", value)
+
+    @_builtins.property
     @pulumi.getter
     def endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceEndpointArgs']]]]:
         """
@@ -1404,18 +1416,6 @@ class _InstanceState:
     @nodes.setter
     def nodes(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceNodeArgs']]]]):
         pulumi.set(self, "nodes", value)
-
-    @_builtins.property
-    @pulumi.getter(name="parameterTemplateId")
-    def parameter_template_id(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Parameter template ID.
-        """
-        return pulumi.get(self, "parameter_template_id")
-
-    @parameter_template_id.setter
-    def parameter_template_id(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "parameter_template_id", value)
 
     @_builtins.property
     @pulumi.getter
@@ -1723,6 +1723,7 @@ class Instance(pulumi.CustomResource):
                  db_param_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  db_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_external_replication: pulumi.Input[Optional[_builtins.bool]] = None,
                  engine_type: pulumi.Input[Optional[_builtins.str]] = None,
                  global_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1731,7 +1732,6 @@ class Instance(pulumi.CustomResource):
                  maintenance_window: pulumi.Input[Optional[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
                  node_spec: pulumi.Input[Optional[_builtins.str]] = None,
                  nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceNodeArgs', 'InstanceNodeArgsDict']]]]] = None,
-                 parameter_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
                  private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1821,7 +1821,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         :param pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']] auto_storage_scaling_config: Auto scaling configuration
-        :param pulumi.Input[_builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[_builtins.str] auto_upgrade_minor_version: Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         :param pulumi.Input[Union['InstanceBackupPolicyArgs', 'InstanceBackupPolicyArgsDict']] backup_policy: Instance backup policy configuration.
         :param pulumi.Input[Union['InstanceChargeDetailArgs', 'InstanceChargeDetailArgsDict']] charge_detail: Billing method
         :param pulumi.Input[_builtins.int] cpu_num: Number of CPU cores for the database proxy service of the instance
@@ -1829,6 +1829,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] db_param_group_id: Parameter template ID. Default value is the default parameter template for the database engine version
         :param pulumi.Input[_builtins.str] db_time_zone: Time zone. Supports UTC -12:00 ~ +13:00. Default is the time zone of the region.
         :param pulumi.Input[_builtins.str] deletion_protection: Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.
+        :param pulumi.Input[_builtins.bool] enable_external_replication: Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
         :param pulumi.Input[_builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
         :param pulumi.Input[_builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         :param pulumi.Input[_builtins.str] instance_name: Instance name.
@@ -1838,7 +1839,6 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] node_spec: Node specifications.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeArgs', 'InstanceNodeArgsDict']]]] nodes: Instance node information.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        :param pulumi.Input[_builtins.str] parameter_template_id: Parameter template ID.
         :param pulumi.Input[_builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         :param pulumi.Input[_builtins.str] private_ip_address: Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
         :param pulumi.Input[_builtins.str] project_name: Project.
@@ -1956,6 +1956,7 @@ class Instance(pulumi.CustomResource):
                  db_param_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  db_time_zone: pulumi.Input[Optional[_builtins.str]] = None,
                  deletion_protection: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable_external_replication: pulumi.Input[Optional[_builtins.bool]] = None,
                  engine_type: pulumi.Input[Optional[_builtins.str]] = None,
                  global_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1964,7 +1965,6 @@ class Instance(pulumi.CustomResource):
                  maintenance_window: pulumi.Input[Optional[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']]] = None,
                  node_spec: pulumi.Input[Optional[_builtins.str]] = None,
                  nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceNodeArgs', 'InstanceNodeArgsDict']]]]] = None,
-                 parameter_template_id: pulumi.Input[Optional[_builtins.str]] = None,
                  port: pulumi.Input[Optional[_builtins.int]] = None,
                  private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1999,6 +1999,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["db_param_group_id"] = db_param_group_id
             __props__.__dict__["db_time_zone"] = db_time_zone
             __props__.__dict__["deletion_protection"] = deletion_protection
+            __props__.__dict__["enable_external_replication"] = enable_external_replication
             __props__.__dict__["engine_type"] = engine_type
             __props__.__dict__["global_read_only"] = global_read_only
             __props__.__dict__["instance_name"] = instance_name
@@ -2009,7 +2010,6 @@ class Instance(pulumi.CustomResource):
             if nodes is None and not opts.urn:
                 raise TypeError("Missing required property 'nodes'")
             __props__.__dict__["nodes"] = nodes
-            __props__.__dict__["parameter_template_id"] = parameter_template_id
             __props__.__dict__["port"] = port
             __props__.__dict__["private_ip_address"] = private_ip_address
             __props__.__dict__["project_name"] = project_name
@@ -2112,6 +2112,7 @@ class Instance(pulumi.CustomResource):
             dr_dts_task_name: pulumi.Input[Optional[_builtins.str]] = None,
             dr_dts_task_status: pulumi.Input[Optional[_builtins.str]] = None,
             dr_seconds_behind_master: pulumi.Input[Optional[_builtins.int]] = None,
+            enable_external_replication: pulumi.Input[Optional[_builtins.bool]] = None,
             endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceEndpointArgs', 'InstanceEndpointArgsDict']]]]] = None,
             engine_type: pulumi.Input[Optional[_builtins.str]] = None,
             global_read_only: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -2132,7 +2133,6 @@ class Instance(pulumi.CustomResource):
             node_space_used_percentage: pulumi.Input[Optional[_builtins.float]] = None,
             node_spec: pulumi.Input[Optional[_builtins.str]] = None,
             nodes: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceNodeArgs', 'InstanceNodeArgsDict']]]]] = None,
-            parameter_template_id: pulumi.Input[Optional[_builtins.str]] = None,
             port: pulumi.Input[Optional[_builtins.int]] = None,
             private_ip_address: pulumi.Input[Optional[_builtins.str]] = None,
             project_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -2169,7 +2169,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID. To bind multiple allowlists, separate allowlist IDs with commas (,). Each instance can bind up to 100 allowlists
         :param pulumi.Input[_builtins.str] allow_list_version: Allowlist version
         :param pulumi.Input[Union['InstanceAutoStorageScalingConfigArgs', 'InstanceAutoStorageScalingConfigArgsDict']] auto_storage_scaling_config: Auto scaling configuration
-        :param pulumi.Input[_builtins.str] auto_upgrade_minor_version: Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        :param pulumi.Input[_builtins.str] auto_upgrade_minor_version: Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         :param pulumi.Input[_builtins.int] backup_audit_log_size: Space used by audit logs in backup.
         :param pulumi.Input[_builtins.int] backup_bin_log_size: Space used by binlog logs in backup.
         :param pulumi.Input[_builtins.int] backup_data_size: Space used by data in backup.
@@ -2195,6 +2195,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] dr_dts_task_name: Name of synchronization tasks between primary and disaster recovery instances.
         :param pulumi.Input[_builtins.str] dr_dts_task_status: Status of synchronization tasks between primary and disaster recovery instances.
         :param pulumi.Input[_builtins.int] dr_seconds_behind_master: Latency between the disaster recovery instance and the primary instance.
+        :param pulumi.Input[_builtins.bool] enable_external_replication: Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceEndpointArgs', 'InstanceEndpointArgsDict']]]] endpoints: Instance connection information.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
@@ -2217,7 +2218,6 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] node_spec: Node specifications.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceNodeArgs', 'InstanceNodeArgsDict']]]] nodes: Instance node information.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        :param pulumi.Input[_builtins.str] parameter_template_id: Parameter template ID.
         :param pulumi.Input[_builtins.int] port: Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
         :param pulumi.Input[_builtins.str] private_ip_address: Specify the default terminal IP address of the instance within the designated private network and subnet. Note: If not set, the default terminal IP address will be automatically assigned within the specified private network and subnet.
         :param pulumi.Input[_builtins.str] project_name: Project.
@@ -2277,6 +2277,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["dr_dts_task_name"] = dr_dts_task_name
         __props__.__dict__["dr_dts_task_status"] = dr_dts_task_status
         __props__.__dict__["dr_seconds_behind_master"] = dr_seconds_behind_master
+        __props__.__dict__["enable_external_replication"] = enable_external_replication
         __props__.__dict__["endpoints"] = endpoints
         __props__.__dict__["engine_type"] = engine_type
         __props__.__dict__["global_read_only"] = global_read_only
@@ -2297,7 +2298,6 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["node_space_used_percentage"] = node_space_used_percentage
         __props__.__dict__["node_spec"] = node_spec
         __props__.__dict__["nodes"] = nodes
-        __props__.__dict__["parameter_template_id"] = parameter_template_id
         __props__.__dict__["port"] = port
         __props__.__dict__["private_ip_address"] = private_ip_address
         __props__.__dict__["project_name"] = project_name
@@ -2361,7 +2361,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="autoUpgradeMinorVersion")
     def auto_upgrade_minor_version(self) -> pulumi.Output[_builtins.str]:
         """
-        Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         """
         return pulumi.get(self, "auto_upgrade_minor_version")
 
@@ -2559,6 +2559,14 @@ class Instance(pulumi.CustomResource):
         return pulumi.get(self, "dr_seconds_behind_master")
 
     @_builtins.property
+    @pulumi.getter(name="enableExternalReplication")
+    def enable_external_replication(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+        """
+        return pulumi.get(self, "enable_external_replication")
+
+    @_builtins.property
     @pulumi.getter
     def endpoints(self) -> pulumi.Output[Sequence['outputs.InstanceEndpoint']]:
         """
@@ -2719,14 +2727,6 @@ class Instance(pulumi.CustomResource):
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "nodes")
-
-    @_builtins.property
-    @pulumi.getter(name="parameterTemplateId")
-    def parameter_template_id(self) -> pulumi.Output[_builtins.str]:
-        """
-        Parameter template ID.
-        """
-        return pulumi.get(self, "parameter_template_id")
 
     @_builtins.property
     @pulumi.getter

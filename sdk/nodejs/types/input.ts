@@ -12170,6 +12170,10 @@ export namespace redis {
          */
         backupPointName?: pulumi.Input<string | undefined>;
         /**
+         * Current backup progress. Measured as a percentage.
+         */
+        backupProgress?: pulumi.Input<number | undefined>;
+        /**
          * Backup policy
          */
         backupStrategy?: pulumi.Input<string | undefined>;
