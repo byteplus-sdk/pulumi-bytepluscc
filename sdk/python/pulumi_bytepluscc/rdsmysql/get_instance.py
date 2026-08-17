@@ -27,7 +27,7 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, address_objects=None, allow_list_ids=None, allow_list_version=None, auto_storage_scaling_config=None, auto_upgrade_minor_version=None, backup_audit_log_size=None, backup_bin_log_size=None, backup_data_size=None, backup_error_log_size=None, backup_free_quota_size=None, backup_log_size=None, backup_policy=None, backup_slow_log_size=None, backup_use=None, basic_backup_binlog_size=None, basic_backup_data_size=None, charge_detail=None, cpu_num=None, created_time=None, current_kernel_version=None, db_engine_version=None, db_param_group_id=None, db_time_zone=None, deletion_protection=None, disaster_recovery_instances=None, dr_dts_task_id=None, dr_dts_task_name=None, dr_dts_task_status=None, dr_seconds_behind_master=None, endpoints=None, engine_type=None, global_read_only=None, has_disaster_recovery_instances=None, has_green_instance=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, lower_case_table_names=None, maintenance_window=None, master_instance_id=None, master_instance_name=None, memory=None, node_cpu_used_percentage=None, node_memory_used_percentage=None, node_number=None, node_space_used_percentage=None, node_spec=None, nodes=None, parameter_template_id=None, port=None, private_ip_address=None, project_name=None, proxy_detail=None, storage_audit_log_size=None, storage_bin_log_size=None, storage_data_size=None, storage_error_log_size=None, storage_log_size=None, storage_slow_log_size=None, storage_space=None, storage_type=None, storage_use=None, subnet_id=None, super_account_name=None, super_account_password=None, sync_mode=None, tags=None, time_zone=None, updated_time=None, vcpu=None, vpc_id=None, zone_id=None, zone_ids=None):
+    def __init__(__self__, address_objects=None, allow_list_ids=None, allow_list_version=None, auto_storage_scaling_config=None, auto_upgrade_minor_version=None, backup_audit_log_size=None, backup_bin_log_size=None, backup_data_size=None, backup_error_log_size=None, backup_free_quota_size=None, backup_log_size=None, backup_policy=None, backup_slow_log_size=None, backup_use=None, basic_backup_binlog_size=None, basic_backup_data_size=None, charge_detail=None, cpu_num=None, created_time=None, current_kernel_version=None, db_engine_version=None, db_param_group_id=None, db_time_zone=None, deletion_protection=None, disaster_recovery_instances=None, dr_dts_task_id=None, dr_dts_task_name=None, dr_dts_task_status=None, dr_seconds_behind_master=None, enable_external_replication=None, endpoints=None, engine_type=None, global_read_only=None, has_disaster_recovery_instances=None, has_green_instance=None, id=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, lower_case_table_names=None, maintenance_window=None, master_instance_id=None, master_instance_name=None, memory=None, node_cpu_used_percentage=None, node_memory_used_percentage=None, node_number=None, node_space_used_percentage=None, node_spec=None, nodes=None, port=None, private_ip_address=None, project_name=None, proxy_detail=None, storage_audit_log_size=None, storage_bin_log_size=None, storage_data_size=None, storage_error_log_size=None, storage_log_size=None, storage_slow_log_size=None, storage_space=None, storage_type=None, storage_use=None, subnet_id=None, super_account_name=None, super_account_password=None, sync_mode=None, tags=None, time_zone=None, updated_time=None, vcpu=None, vpc_id=None, zone_id=None, zone_ids=None):
         if address_objects and not isinstance(address_objects, list):
             raise TypeError("Expected argument 'address_objects' to be a list")
         pulumi.set(__self__, "address_objects", address_objects)
@@ -115,6 +115,9 @@ class GetInstanceResult:
         if dr_seconds_behind_master and not isinstance(dr_seconds_behind_master, int):
             raise TypeError("Expected argument 'dr_seconds_behind_master' to be a int")
         pulumi.set(__self__, "dr_seconds_behind_master", dr_seconds_behind_master)
+        if enable_external_replication and not isinstance(enable_external_replication, bool):
+            raise TypeError("Expected argument 'enable_external_replication' to be a bool")
+        pulumi.set(__self__, "enable_external_replication", enable_external_replication)
         if endpoints and not isinstance(endpoints, list):
             raise TypeError("Expected argument 'endpoints' to be a list")
         pulumi.set(__self__, "endpoints", endpoints)
@@ -178,9 +181,6 @@ class GetInstanceResult:
         if nodes and not isinstance(nodes, list):
             raise TypeError("Expected argument 'nodes' to be a list")
         pulumi.set(__self__, "nodes", nodes)
-        if parameter_template_id and not isinstance(parameter_template_id, str):
-            raise TypeError("Expected argument 'parameter_template_id' to be a str")
-        pulumi.set(__self__, "parameter_template_id", parameter_template_id)
         if port and not isinstance(port, int):
             raise TypeError("Expected argument 'port' to be a int")
         pulumi.set(__self__, "port", port)
@@ -290,7 +290,7 @@ class GetInstanceResult:
     @pulumi.getter(name="autoUpgradeMinorVersion")
     def auto_upgrade_minor_version(self) -> _builtins.str:
         """
-        Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+        Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
         """
         return pulumi.get(self, "auto_upgrade_minor_version")
 
@@ -487,6 +487,14 @@ class GetInstanceResult:
         return pulumi.get(self, "dr_seconds_behind_master")
 
     @_builtins.property
+    @pulumi.getter(name="enableExternalReplication")
+    def enable_external_replication(self) -> _builtins.bool:
+        """
+        Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+        """
+        return pulumi.get(self, "enable_external_replication")
+
+    @_builtins.property
     @pulumi.getter
     def endpoints(self) -> Sequence['outputs.GetInstanceEndpointResult']:
         """
@@ -653,14 +661,6 @@ class GetInstanceResult:
         Instance node information.
         """
         return pulumi.get(self, "nodes")
-
-    @_builtins.property
-    @pulumi.getter(name="parameterTemplateId")
-    def parameter_template_id(self) -> _builtins.str:
-        """
-        Parameter template ID.
-        """
-        return pulumi.get(self, "parameter_template_id")
 
     @_builtins.property
     @pulumi.getter
@@ -890,6 +890,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             dr_dts_task_name=self.dr_dts_task_name,
             dr_dts_task_status=self.dr_dts_task_status,
             dr_seconds_behind_master=self.dr_seconds_behind_master,
+            enable_external_replication=self.enable_external_replication,
             endpoints=self.endpoints,
             engine_type=self.engine_type,
             global_read_only=self.global_read_only,
@@ -911,7 +912,6 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             node_space_used_percentage=self.node_space_used_percentage,
             node_spec=self.node_spec,
             nodes=self.nodes,
-            parameter_template_id=self.parameter_template_id,
             port=self.port,
             private_ip_address=self.private_ip_address,
             project_name=self.project_name,
@@ -981,6 +981,7 @@ def get_instance(id: Optional[_builtins.str] = None,
         dr_dts_task_name=pulumi.get(__ret__, 'dr_dts_task_name'),
         dr_dts_task_status=pulumi.get(__ret__, 'dr_dts_task_status'),
         dr_seconds_behind_master=pulumi.get(__ret__, 'dr_seconds_behind_master'),
+        enable_external_replication=pulumi.get(__ret__, 'enable_external_replication'),
         endpoints=pulumi.get(__ret__, 'endpoints'),
         engine_type=pulumi.get(__ret__, 'engine_type'),
         global_read_only=pulumi.get(__ret__, 'global_read_only'),
@@ -1002,7 +1003,6 @@ def get_instance(id: Optional[_builtins.str] = None,
         node_space_used_percentage=pulumi.get(__ret__, 'node_space_used_percentage'),
         node_spec=pulumi.get(__ret__, 'node_spec'),
         nodes=pulumi.get(__ret__, 'nodes'),
-        parameter_template_id=pulumi.get(__ret__, 'parameter_template_id'),
         port=pulumi.get(__ret__, 'port'),
         private_ip_address=pulumi.get(__ret__, 'private_ip_address'),
         project_name=pulumi.get(__ret__, 'project_name'),
@@ -1069,6 +1069,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         dr_dts_task_name=pulumi.get(__response__, 'dr_dts_task_name'),
         dr_dts_task_status=pulumi.get(__response__, 'dr_dts_task_status'),
         dr_seconds_behind_master=pulumi.get(__response__, 'dr_seconds_behind_master'),
+        enable_external_replication=pulumi.get(__response__, 'enable_external_replication'),
         endpoints=pulumi.get(__response__, 'endpoints'),
         engine_type=pulumi.get(__response__, 'engine_type'),
         global_read_only=pulumi.get(__response__, 'global_read_only'),
@@ -1090,7 +1091,6 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         node_space_used_percentage=pulumi.get(__response__, 'node_space_used_percentage'),
         node_spec=pulumi.get(__response__, 'node_spec'),
         nodes=pulumi.get(__response__, 'nodes'),
-        parameter_template_id=pulumi.get(__response__, 'parameter_template_id'),
         port=pulumi.get(__response__, 'port'),
         private_ip_address=pulumi.get(__response__, 'private_ip_address'),
         project_name=pulumi.get(__response__, 'project_name'),

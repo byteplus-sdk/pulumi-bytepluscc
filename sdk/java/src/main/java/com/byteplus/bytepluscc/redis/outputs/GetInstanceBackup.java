@@ -22,6 +22,11 @@ public final class GetInstanceBackup {
      */
     private String backupPointName;
     /**
+     * @return Current backup progress. Measured as a percentage.
+     * 
+     */
+    private Integer backupProgress;
+    /**
      * @return Backup policy
      * 
      */
@@ -71,6 +76,13 @@ public final class GetInstanceBackup {
      */
     public String backupPointName() {
         return this.backupPointName;
+    }
+    /**
+     * @return Current backup progress. Measured as a percentage.
+     * 
+     */
+    public Integer backupProgress() {
+        return this.backupProgress;
     }
     /**
      * @return Backup policy
@@ -133,6 +145,7 @@ public final class GetInstanceBackup {
     public static final class Builder {
         private String backupPointId;
         private String backupPointName;
+        private Integer backupProgress;
         private String backupStrategy;
         private String backupType;
         private String endTime;
@@ -145,6 +158,7 @@ public final class GetInstanceBackup {
     	      Objects.requireNonNull(defaults);
     	      this.backupPointId = defaults.backupPointId;
     	      this.backupPointName = defaults.backupPointName;
+    	      this.backupProgress = defaults.backupProgress;
     	      this.backupStrategy = defaults.backupStrategy;
     	      this.backupType = defaults.backupType;
     	      this.endTime = defaults.endTime;
@@ -168,6 +182,14 @@ public final class GetInstanceBackup {
               throw new MissingRequiredPropertyException("GetInstanceBackup", "backupPointName");
             }
             this.backupPointName = backupPointName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupProgress(Integer backupProgress) {
+            if (backupProgress == null) {
+              throw new MissingRequiredPropertyException("GetInstanceBackup", "backupProgress");
+            }
+            this.backupProgress = backupProgress;
             return this;
         }
         @CustomType.Setter
@@ -230,6 +252,7 @@ public final class GetInstanceBackup {
             final var _resultValue = new GetInstanceBackup();
             _resultValue.backupPointId = backupPointId;
             _resultValue.backupPointName = backupPointName;
+            _resultValue.backupProgress = backupProgress;
             _resultValue.backupStrategy = backupStrategy;
             _resultValue.backupType = backupType;
             _resultValue.endTime = endTime;

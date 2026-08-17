@@ -189,14 +189,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.autoStorageScalingConfig;
     }
     /**
-     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see &#34;Manually upgrade the instance&#39;s minor kernel version.&#34; Note: If the instance&#39;s minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance&#39;s minor kernel version.
      * 
      */
     @Export(name="autoUpgradeMinorVersion", refs={String.class}, tree="[0]")
     private Output<String> autoUpgradeMinorVersion;
 
     /**
-     * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * @return Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see &#34;Manually upgrade the instance&#39;s minor kernel version.&#34; Note: If the instance&#39;s minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance&#39;s minor kernel version.
      * 
      */
     public Output<String> autoUpgradeMinorVersion() {
@@ -541,6 +541,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.drSecondsBehindMaster;
     }
     /**
+     * Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     * 
+     */
+    @Export(name="enableExternalReplication", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> enableExternalReplication;
+
+    /**
+     * @return Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     * 
+     */
+    public Output<Boolean> enableExternalReplication() {
+        return this.enableExternalReplication;
+    }
+    /**
      * Instance connection information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
@@ -823,20 +837,6 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<InstanceNode>> nodes() {
         return this.nodes;
-    }
-    /**
-     * Parameter template ID.
-     * 
-     */
-    @Export(name="parameterTemplateId", refs={String.class}, tree="[0]")
-    private Output<String> parameterTemplateId;
-
-    /**
-     * @return Parameter template ID.
-     * 
-     */
-    public Output<String> parameterTemplateId() {
-        return this.parameterTemplateId;
     }
     /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.

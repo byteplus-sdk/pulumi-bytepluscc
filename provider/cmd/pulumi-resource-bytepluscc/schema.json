@@ -42024,6 +42024,10 @@
                     "type": "string",
                     "description": "Backup point name\n"
                 },
+                "backupProgress": {
+                    "type": "integer",
+                    "description": "Current backup progress. Measured as a percentage.\n"
+                },
                 "backupStrategy": {
                     "type": "string",
                     "description": "Backup policy\n"
@@ -42059,6 +42063,7 @@
                     "requiredOutputs": [
                         "backupPointId",
                         "backupPointName",
+                        "backupProgress",
                         "backupStrategy",
                         "backupType",
                         "endTime",
@@ -42395,6 +42400,10 @@
                     "type": "string",
                     "description": "Backup point name\n"
                 },
+                "backupProgress": {
+                    "type": "integer",
+                    "description": "Current backup progress. Measured as a percentage.\n"
+                },
                 "backupStrategy": {
                     "type": "string",
                     "description": "Backup policy\n"
@@ -42428,6 +42437,7 @@
             "required": [
                 "backupPointId",
                 "backupPointName",
+                "backupProgress",
                 "backupStrategy",
                 "backupType",
                 "endTime",
@@ -66682,6 +66692,92 @@
                 "type": "object"
             }
         },
+        "bytepluscc:autoscaling/notificationConfiguration:NotificationConfiguration": {
+            "description": "Volcano Engine AutoScaling event notification configuration. Configure event notifications for scaling activities in a specified scaling group. When a scaling activity triggers a specified event type, notifications are sent via cloud monitoring. Only one event notification can be configured for each scaling group.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.autoscaling.NotificationConfiguration(\"example\", {\n    scalingGroupId: \"scg-xxxxxxxxxxxxxxxxx\",\n    notificationType: \"cloudmonitor\",\n    eventTypes: [\n        \"ScaleOutSuccess\",\n        \"ScaleInSuccess\",\n        \"ScaleOutError\",\n        \"ScaleInError\",\n        \"ScaleOutWarn\",\n        \"ScaleInWarn\",\n        \"ScaleReject\",\n        \"ScaleOutStart\",\n        \"ScaleInStart\",\n        \"ScheduleTaskExpiring\",\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.autoscaling.NotificationConfiguration(\"example\",\n    scaling_group_id=\"scg-xxxxxxxxxxxxxxxxx\",\n    notification_type=\"cloudmonitor\",\n    event_types=[\n        \"ScaleOutSuccess\",\n        \"ScaleInSuccess\",\n        \"ScaleOutError\",\n        \"ScaleInError\",\n        \"ScaleOutWarn\",\n        \"ScaleInWarn\",\n        \"ScaleReject\",\n        \"ScaleOutStart\",\n        \"ScaleInStart\",\n        \"ScheduleTaskExpiring\",\n    ])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Autoscaling.NotificationConfiguration(\"example\", new()\n    {\n        ScalingGroupId = \"scg-xxxxxxxxxxxxxxxxx\",\n        NotificationType = \"cloudmonitor\",\n        EventTypes = new[]\n        {\n            \"ScaleOutSuccess\",\n            \"ScaleInSuccess\",\n            \"ScaleOutError\",\n            \"ScaleInError\",\n            \"ScaleOutWarn\",\n            \"ScaleInWarn\",\n            \"ScaleReject\",\n            \"ScaleOutStart\",\n            \"ScaleInStart\",\n            \"ScheduleTaskExpiring\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/autoscaling\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := autoscaling.NewNotificationConfiguration(ctx, \"example\", \u0026autoscaling.NotificationConfigurationArgs{\n\t\t\tScalingGroupId:   pulumi.String(\"scg-xxxxxxxxxxxxxxxxx\"),\n\t\t\tNotificationType: pulumi.String(\"cloudmonitor\"),\n\t\t\tEventTypes: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"ScaleOutSuccess\"),\n\t\t\t\tpulumi.String(\"ScaleInSuccess\"),\n\t\t\t\tpulumi.String(\"ScaleOutError\"),\n\t\t\t\tpulumi.String(\"ScaleInError\"),\n\t\t\t\tpulumi.String(\"ScaleOutWarn\"),\n\t\t\t\tpulumi.String(\"ScaleInWarn\"),\n\t\t\t\tpulumi.String(\"ScaleReject\"),\n\t\t\t\tpulumi.String(\"ScaleOutStart\"),\n\t\t\t\tpulumi.String(\"ScaleInStart\"),\n\t\t\t\tpulumi.String(\"ScheduleTaskExpiring\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_autoscaling_notificationconfiguration\" \"example\" {\n  scaling_group_id  = \"scg-xxxxxxxxxxxxxxxxx\"\n  notification_type = \"cloudmonitor\"\n  event_types       = [\"ScaleOutSuccess\", \"ScaleInSuccess\", \"ScaleOutError\", \"ScaleInError\", \"ScaleOutWarn\", \"ScaleInWarn\", \"ScaleReject\", \"ScaleOutStart\", \"ScaleInStart\", \"ScheduleTaskExpiring\"]\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.autoscaling.NotificationConfiguration;\nimport com.byteplus.bytepluscc.autoscaling.NotificationConfigurationArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new NotificationConfiguration(\"example\", NotificationConfigurationArgs.builder()\n            .scalingGroupId(\"scg-xxxxxxxxxxxxxxxxx\")\n            .notificationType(\"cloudmonitor\")\n            .eventTypes(            \n                \"ScaleOutSuccess\",\n                \"ScaleInSuccess\",\n                \"ScaleOutError\",\n                \"ScaleInError\",\n                \"ScaleOutWarn\",\n                \"ScaleInWarn\",\n                \"ScaleReject\",\n                \"ScaleOutStart\",\n                \"ScaleInStart\",\n                \"ScheduleTaskExpiring\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:autoscaling:NotificationConfiguration\n    properties:\n      scalingGroupId: scg-xxxxxxxxxxxxxxxxx\n      notificationType: cloudmonitor\n      eventTypes:\n        - ScaleOutSuccess\n        - ScaleInSuccess\n        - ScaleOutError\n        - ScaleInError\n        - ScaleOutWarn\n        - ScaleInWarn\n        - ScaleReject\n        - ScaleOutStart\n        - ScaleInStart\n        - ScheduleTaskExpiring\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:autoscaling/notificationConfiguration:NotificationConfiguration example \"scaling_group_id\"\n```\n\n",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "description": "Event notification creation time.\n"
+                },
+                "eventTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Event notification type. Values: ScaleOutSuccess (successful scale-out activity), ScaleInSuccess (successful scale-in activity), ScaleOutError (failed scale-out activity), ScaleInError (failed scale-in activity), ScaleOutWarn (partially successful scale-out activity), ScaleInWarn (partially successful scale-in activity), ScaleReject (rejected scaling activity), ScaleOutStart (scaling group scale-out activity started), ScaleInStart (scaling group scale-in activity started), ScheduleTaskExpiring (scheduled rule expiration reminder).\n"
+                },
+                "notificationType": {
+                    "type": "string",
+                    "description": "Event notification method. Currently, only cloud monitoring notifications are supported. Value: cloudmonitor.\n"
+                },
+                "scalingGroupId": {
+                    "type": "string",
+                    "description": "Scaling group ID. You can call DescribeScalingGroups to query the scaling group ID.\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "Event notification update time.\n"
+                }
+            },
+            "required": [
+                "createdAt",
+                "eventTypes",
+                "notificationType",
+                "scalingGroupId",
+                "updatedAt"
+            ],
+            "inputProperties": {
+                "eventTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Event notification type. Values: ScaleOutSuccess (successful scale-out activity), ScaleInSuccess (successful scale-in activity), ScaleOutError (failed scale-out activity), ScaleInError (failed scale-in activity), ScaleOutWarn (partially successful scale-out activity), ScaleInWarn (partially successful scale-in activity), ScaleReject (rejected scaling activity), ScaleOutStart (scaling group scale-out activity started), ScaleInStart (scaling group scale-in activity started), ScheduleTaskExpiring (scheduled rule expiration reminder).\n"
+                },
+                "notificationType": {
+                    "type": "string",
+                    "description": "Event notification method. Currently, only cloud monitoring notifications are supported. Value: cloudmonitor.\n"
+                },
+                "scalingGroupId": {
+                    "type": "string",
+                    "description": "Scaling group ID. You can call DescribeScalingGroups to query the scaling group ID.\n"
+                }
+            },
+            "requiredInputs": [
+                "eventTypes",
+                "notificationType",
+                "scalingGroupId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering NotificationConfiguration resources.\n",
+                "properties": {
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Event notification creation time.\n"
+                    },
+                    "eventTypes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "Event notification type. Values: ScaleOutSuccess (successful scale-out activity), ScaleInSuccess (successful scale-in activity), ScaleOutError (failed scale-out activity), ScaleInError (failed scale-in activity), ScaleOutWarn (partially successful scale-out activity), ScaleInWarn (partially successful scale-in activity), ScaleReject (rejected scaling activity), ScaleOutStart (scaling group scale-out activity started), ScaleInStart (scaling group scale-in activity started), ScheduleTaskExpiring (scheduled rule expiration reminder).\n"
+                    },
+                    "notificationType": {
+                        "type": "string",
+                        "description": "Event notification method. Currently, only cloud monitoring notifications are supported. Value: cloudmonitor.\n"
+                    },
+                    "scalingGroupId": {
+                        "type": "string",
+                        "description": "Scaling group ID. You can call DescribeScalingGroups to query the scaling group ID.\n"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Event notification update time.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration": {
             "description": "Defines the instance configuration in the scaling group, including compute, memory, network, storage, and security. When the scaling group expands, new instances are created based on this configuration source.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst autoScalingDemo = new bytepluscc.autoscaling.ScalingConfiguration(\"AutoScalingDemo\", {\n    instanceName: \"AutoScalingDemo\",\n    scalingConfigurationName: \"AutoScalingDemo\",\n    hostName: \"AutoScalingDemo\",\n    scalingGroupId: \"scg-ye43d97gsvkxgganxxxx\",\n    securityGroupIds: [\"sg-rrco3fkzzy0wv0x589wxxxx\"],\n    eip: {\n        bandwidth: 1,\n        billing_type: \"PostPaidByBandwidth\",\n        isp: \"BGP\",\n        bandwidth_package_id: \"bwp-btgl56gbli4g5h0b2v7ixxxx\",\n        release_with_instance: true,\n    },\n    ipv6AddressCount: 1,\n    spotStrategy: \"SpotWithPriceLimit\",\n    instanceTypeOverrides: [{\n        instance_type: \"ecs.g4il.large\",\n        price_limit: 0.5,\n    }],\n    imageId: \"image-aagd56zrvqjtdripxxxx\",\n    securityEnhancementStrategy: \"Active\",\n    volumes: [\n        {\n            delete_with_instance: true,\n            size: 40,\n            volume_type: \"ESSD_PL0\",\n        },\n        {\n            delete_with_instance: true,\n            size: 500,\n            volume_type: \"ESSD_FlexPL\",\n            extra_performance_iops: 3,\n            extra_performance_type_id: \"Balance\",\n        },\n        {\n            delete_with_instance: true,\n            size: 510,\n            volume_type: \"ESSD_FlexPL\",\n            extra_performance_iops: 2,\n            extra_performance_type_id: \"IOPS\",\n        },\n        {\n            delete_with_instance: true,\n            size: 520,\n            volume_type: \"ESSD_FlexPL\",\n            extra_performance_throughput_mb: 2,\n            extra_performance_type_id: \"Throughput\",\n        },\n    ],\n    projectName: \"default\",\n    keyPairName: \"test\",\n    password: \"test\",\n    instanceDescription: \"Web server configuration\",\n    zoneId: \"cn-test\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nauto_scaling_demo = bytepluscc.autoscaling.ScalingConfiguration(\"AutoScalingDemo\",\n    instance_name=\"AutoScalingDemo\",\n    scaling_configuration_name=\"AutoScalingDemo\",\n    host_name=\"AutoScalingDemo\",\n    scaling_group_id=\"scg-ye43d97gsvkxgganxxxx\",\n    security_group_ids=[\"sg-rrco3fkzzy0wv0x589wxxxx\"],\n    eip={\n        \"bandwidth\": 1,\n        \"billing_type\": \"PostPaidByBandwidth\",\n        \"isp\": \"BGP\",\n        \"bandwidth_package_id\": \"bwp-btgl56gbli4g5h0b2v7ixxxx\",\n        \"release_with_instance\": True,\n    },\n    ipv6_address_count=1,\n    spot_strategy=\"SpotWithPriceLimit\",\n    instance_type_overrides=[{\n        \"instance_type\": \"ecs.g4il.large\",\n        \"price_limit\": 0.5,\n    }],\n    image_id=\"image-aagd56zrvqjtdripxxxx\",\n    security_enhancement_strategy=\"Active\",\n    volumes=[\n        {\n            \"delete_with_instance\": True,\n            \"size\": 40,\n            \"volume_type\": \"ESSD_PL0\",\n        },\n        {\n            \"delete_with_instance\": True,\n            \"size\": 500,\n            \"volume_type\": \"ESSD_FlexPL\",\n            \"extra_performance_iops\": 3,\n            \"extra_performance_type_id\": \"Balance\",\n        },\n        {\n            \"delete_with_instance\": True,\n            \"size\": 510,\n            \"volume_type\": \"ESSD_FlexPL\",\n            \"extra_performance_iops\": 2,\n            \"extra_performance_type_id\": \"IOPS\",\n        },\n        {\n            \"delete_with_instance\": True,\n            \"size\": 520,\n            \"volume_type\": \"ESSD_FlexPL\",\n            \"extra_performance_throughput_mb\": 2,\n            \"extra_performance_type_id\": \"Throughput\",\n        },\n    ],\n    project_name=\"default\",\n    key_pair_name=\"test\",\n    password=\"test\",\n    instance_description=\"Web server configuration\",\n    zone_id=\"cn-test\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var autoScalingDemo = new Bytepluscc.Autoscaling.ScalingConfiguration(\"AutoScalingDemo\", new()\n    {\n        InstanceName = \"AutoScalingDemo\",\n        ScalingConfigurationName = \"AutoScalingDemo\",\n        HostName = \"AutoScalingDemo\",\n        ScalingGroupId = \"scg-ye43d97gsvkxgganxxxx\",\n        SecurityGroupIds = new[]\n        {\n            \"sg-rrco3fkzzy0wv0x589wxxxx\",\n        },\n        Eip = new Bytepluscc.Autoscaling.Inputs.ScalingConfigurationEipArgs\n        {\n            Bandwidth = 1,\n            Billing_type = \"PostPaidByBandwidth\",\n            Isp = \"BGP\",\n            Bandwidth_package_id = \"bwp-btgl56gbli4g5h0b2v7ixxxx\",\n            Release_with_instance = true,\n        },\n        Ipv6AddressCount = 1,\n        SpotStrategy = \"SpotWithPriceLimit\",\n        InstanceTypeOverrides = new[]\n        {\n            new Bytepluscc.Autoscaling.Inputs.ScalingConfigurationInstanceTypeOverrideArgs\n            {\n                Instance_type = \"ecs.g4il.large\",\n                Price_limit = 0.5,\n            },\n        },\n        ImageId = \"image-aagd56zrvqjtdripxxxx\",\n        SecurityEnhancementStrategy = \"Active\",\n        Volumes = new[]\n        {\n            new Bytepluscc.Autoscaling.Inputs.ScalingConfigurationVolumeArgs\n            {\n                Delete_with_instance = true,\n                Size = 40,\n                Volume_type = \"ESSD_PL0\",\n            },\n            new Bytepluscc.Autoscaling.Inputs.ScalingConfigurationVolumeArgs\n            {\n                Delete_with_instance = true,\n                Size = 500,\n                Volume_type = \"ESSD_FlexPL\",\n                Extra_performance_iops = 3,\n                Extra_performance_type_id = \"Balance\",\n            },\n            new Bytepluscc.Autoscaling.Inputs.ScalingConfigurationVolumeArgs\n            {\n                Delete_with_instance = true,\n                Size = 510,\n                Volume_type = \"ESSD_FlexPL\",\n                Extra_performance_iops = 2,\n                Extra_performance_type_id = \"IOPS\",\n            },\n            new Bytepluscc.Autoscaling.Inputs.ScalingConfigurationVolumeArgs\n            {\n                Delete_with_instance = true,\n                Size = 520,\n                Volume_type = \"ESSD_FlexPL\",\n                Extra_performance_throughput_mb = 2,\n                Extra_performance_type_id = \"Throughput\",\n            },\n        },\n        ProjectName = \"default\",\n        KeyPairName = \"test\",\n        Password = \"test\",\n        InstanceDescription = \"Web server configuration\",\n        ZoneId = \"cn-test\",\n        Tags = new[]\n        {\n            new Bytepluscc.Autoscaling.Inputs.ScalingConfigurationTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/autoscaling\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := autoscaling.NewScalingConfiguration(ctx, \"AutoScalingDemo\", \u0026autoscaling.ScalingConfigurationArgs{\n\t\t\tInstanceName:             pulumi.String(\"AutoScalingDemo\"),\n\t\t\tScalingConfigurationName: pulumi.String(\"AutoScalingDemo\"),\n\t\t\tHostName:                 pulumi.String(\"AutoScalingDemo\"),\n\t\t\tScalingGroupId:           pulumi.String(\"scg-ye43d97gsvkxgganxxxx\"),\n\t\t\tSecurityGroupIds: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"sg-rrco3fkzzy0wv0x589wxxxx\"),\n\t\t\t},\n\t\t\tEip: \u0026autoscaling.ScalingConfigurationEipArgs{\n\t\t\t\tBandwidth:             pulumi.Int(1),\n\t\t\t\tBilling_type:          \"PostPaidByBandwidth\",\n\t\t\t\tIsp:                   pulumi.String(\"BGP\"),\n\t\t\t\tBandwidth_package_id:  \"bwp-btgl56gbli4g5h0b2v7ixxxx\",\n\t\t\t\tRelease_with_instance: true,\n\t\t\t},\n\t\t\tIpv6AddressCount: pulumi.Int(1),\n\t\t\tSpotStrategy:     pulumi.String(\"SpotWithPriceLimit\"),\n\t\t\tInstanceTypeOverrides: autoscaling.ScalingConfigurationInstanceTypeOverrideArray{\n\t\t\t\t\u0026autoscaling.ScalingConfigurationInstanceTypeOverrideArgs{\n\t\t\t\t\tInstance_type: \"ecs.g4il.large\",\n\t\t\t\t\tPrice_limit:   0.5,\n\t\t\t\t},\n\t\t\t},\n\t\t\tImageId:                     pulumi.String(\"image-aagd56zrvqjtdripxxxx\"),\n\t\t\tSecurityEnhancementStrategy: pulumi.String(\"Active\"),\n\t\t\tVolumes: autoscaling.ScalingConfigurationVolumeArray{\n\t\t\t\t\u0026autoscaling.ScalingConfigurationVolumeArgs{\n\t\t\t\t\tDelete_with_instance: true,\n\t\t\t\t\tSize:                 pulumi.Int(40),\n\t\t\t\t\tVolume_type:          \"ESSD_PL0\",\n\t\t\t\t},\n\t\t\t\t\u0026autoscaling.ScalingConfigurationVolumeArgs{\n\t\t\t\t\tDelete_with_instance:      true,\n\t\t\t\t\tSize:                      pulumi.Int(500),\n\t\t\t\t\tVolume_type:               \"ESSD_FlexPL\",\n\t\t\t\t\tExtra_performance_iops:    3,\n\t\t\t\t\tExtra_performance_type_id: \"Balance\",\n\t\t\t\t},\n\t\t\t\t\u0026autoscaling.ScalingConfigurationVolumeArgs{\n\t\t\t\t\tDelete_with_instance:      true,\n\t\t\t\t\tSize:                      pulumi.Int(510),\n\t\t\t\t\tVolume_type:               \"ESSD_FlexPL\",\n\t\t\t\t\tExtra_performance_iops:    2,\n\t\t\t\t\tExtra_performance_type_id: \"IOPS\",\n\t\t\t\t},\n\t\t\t\t\u0026autoscaling.ScalingConfigurationVolumeArgs{\n\t\t\t\t\tDelete_with_instance:            true,\n\t\t\t\t\tSize:                            pulumi.Int(520),\n\t\t\t\t\tVolume_type:                     \"ESSD_FlexPL\",\n\t\t\t\t\tExtra_performance_throughput_mb: 2,\n\t\t\t\t\tExtra_performance_type_id:       \"Throughput\",\n\t\t\t\t},\n\t\t\t},\n\t\t\tProjectName:         pulumi.String(\"default\"),\n\t\t\tKeyPairName:         pulumi.String(\"test\"),\n\t\t\tPassword:            pulumi.String(\"test\"),\n\t\t\tInstanceDescription: pulumi.String(\"Web server configuration\"),\n\t\t\tZoneId:              pulumi.String(\"cn-test\"),\n\t\t\tTags: autoscaling.ScalingConfigurationTagArray{\n\t\t\t\t\u0026autoscaling.ScalingConfigurationTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_autoscaling_scalingconfiguration\" \"AutoScalingDemo\" {\n  instance_name              = \"AutoScalingDemo\"\n  scaling_configuration_name = \"AutoScalingDemo\"\n  host_name                  = \"AutoScalingDemo\"\n  scaling_group_id           = \"scg-ye43d97gsvkxgganxxxx\"\n  security_group_ids         = [\"sg-rrco3fkzzy0wv0x589wxxxx\"]\n  eip = {\n    bandwidth             = 1\n    billing_type          = \"PostPaidByBandwidth\"\n    isp                   = \"BGP\"\n    bandwidth_package_id  = \"bwp-btgl56gbli4g5h0b2v7ixxxx\"\n    release_with_instance = true\n  }\n  ipv6_address_count = 1\n  spot_strategy      = \"SpotWithPriceLimit\"\n  instance_type_overrides {\n    instance_type = \"ecs.g4il.large\"\n    price_limit   = 0.5\n  }\n  image_id                      = \"image-aagd56zrvqjtdripxxxx\"\n  security_enhancement_strategy = \"Active\"\n  volumes {\n    delete_with_instance = true\n    size                 = 40\n    volume_type          = \"ESSD_PL0\"\n  }\n  volumes {\n    delete_with_instance      = true\n    size                      = 500\n    volume_type               = \"ESSD_FlexPL\"\n    extra_performance_iops    = 3\n    extra_performance_type_id = \"Balance\"\n  }\n  volumes {\n    delete_with_instance      = true\n    size                      = 510\n    volume_type               = \"ESSD_FlexPL\"\n    extra_performance_iops    = 2\n    extra_performance_type_id = \"IOPS\"\n  }\n  volumes {\n    delete_with_instance            = true\n    size                            = 520\n    volume_type                     = \"ESSD_FlexPL\"\n    extra_performance_throughput_mb = 2\n    extra_performance_type_id       = \"Throughput\"\n  }\n  project_name         = \"default\"\n  key_pair_name        = \"test\"\n  password             = \"test\"\n  instance_description = \"Web server configuration\"\n  zone_id              = \"cn-test\"\n  tags {\n    key   = \"env\"\n    value = \"test\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.autoscaling.ScalingConfiguration;\nimport com.byteplus.bytepluscc.autoscaling.ScalingConfigurationArgs;\nimport com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationEipArgs;\nimport com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationInstanceTypeOverrideArgs;\nimport com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationVolumeArgs;\nimport com.pulumi.bytepluscc.autoscaling.inputs.ScalingConfigurationTagArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var autoScalingDemo = new ScalingConfiguration(\"autoScalingDemo\", ScalingConfigurationArgs.builder()\n            .instanceName(\"AutoScalingDemo\")\n            .scalingConfigurationName(\"AutoScalingDemo\")\n            .hostName(\"AutoScalingDemo\")\n            .scalingGroupId(\"scg-ye43d97gsvkxgganxxxx\")\n            .securityGroupIds(\"sg-rrco3fkzzy0wv0x589wxxxx\")\n            .eip(ScalingConfigurationEipArgs.builder()\n                .bandwidth(1)\n                .billing_type(\"PostPaidByBandwidth\")\n                .isp(\"BGP\")\n                .bandwidth_package_id(\"bwp-btgl56gbli4g5h0b2v7ixxxx\")\n                .release_with_instance(true)\n                .build())\n            .ipv6AddressCount(1)\n            .spotStrategy(\"SpotWithPriceLimit\")\n            .instanceTypeOverrides(ScalingConfigurationInstanceTypeOverrideArgs.builder()\n                .instance_type(\"ecs.g4il.large\")\n                .price_limit(0.5)\n                .build())\n            .imageId(\"image-aagd56zrvqjtdripxxxx\")\n            .securityEnhancementStrategy(\"Active\")\n            .volumes(            \n                ScalingConfigurationVolumeArgs.builder()\n                    .delete_with_instance(true)\n                    .size(40)\n                    .volume_type(\"ESSD_PL0\")\n                    .build(),\n                ScalingConfigurationVolumeArgs.builder()\n                    .delete_with_instance(true)\n                    .size(500)\n                    .volume_type(\"ESSD_FlexPL\")\n                    .extra_performance_iops(3)\n                    .extra_performance_type_id(\"Balance\")\n                    .build(),\n                ScalingConfigurationVolumeArgs.builder()\n                    .delete_with_instance(true)\n                    .size(510)\n                    .volume_type(\"ESSD_FlexPL\")\n                    .extra_performance_iops(2)\n                    .extra_performance_type_id(\"IOPS\")\n                    .build(),\n                ScalingConfigurationVolumeArgs.builder()\n                    .delete_with_instance(true)\n                    .size(520)\n                    .volume_type(\"ESSD_FlexPL\")\n                    .extra_performance_throughput_mb(2)\n                    .extra_performance_type_id(\"Throughput\")\n                    .build())\n            .projectName(\"default\")\n            .keyPairName(\"test\")\n            .password(\"test\")\n            .instanceDescription(\"Web server configuration\")\n            .zoneId(\"cn-test\")\n            .tags(ScalingConfigurationTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  autoScalingDemo:\n    type: bytepluscc:autoscaling:ScalingConfiguration\n    name: AutoScalingDemo\n    properties:\n      instanceName: AutoScalingDemo\n      scalingConfigurationName: AutoScalingDemo\n      hostName: AutoScalingDemo\n      scalingGroupId: scg-ye43d97gsvkxgganxxxx\n      securityGroupIds:\n        - sg-rrco3fkzzy0wv0x589wxxxx\n      eip:\n        bandwidth: 1\n        billing_type: PostPaidByBandwidth\n        isp: BGP\n        bandwidth_package_id: bwp-btgl56gbli4g5h0b2v7ixxxx\n        release_with_instance: true\n      ipv6AddressCount: 1\n      spotStrategy: SpotWithPriceLimit\n      instanceTypeOverrides:\n        - instance_type: ecs.g4il.large\n          price_limit: 0.5\n      imageId: image-aagd56zrvqjtdripxxxx\n      securityEnhancementStrategy: Active\n      volumes:\n        - delete_with_instance: true\n          size: 40\n          volume_type: ESSD_PL0\n        - delete_with_instance: true\n          size: 500\n          volume_type: ESSD_FlexPL\n          extra_performance_iops: 3\n          extra_performance_type_id: Balance\n        - delete_with_instance: true\n          size: 510\n          volume_type: ESSD_FlexPL\n          extra_performance_iops: 2\n          extra_performance_type_id: IOPS\n        - delete_with_instance: true\n          size: 520\n          volume_type: ESSD_FlexPL\n          extra_performance_throughput_mb: 2\n          extra_performance_type_id: Throughput\n      projectName: default\n      keyPairName: test\n      password: test\n      instanceDescription: Web server configuration\n      zoneId: cn-test\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration example \"scaling_configuration_id\"\n```\n\n",
             "properties": {
@@ -75658,6 +75754,108 @@
                             "type": "string"
                         },
                         "description": "Alarm callback ID list when an alarm occurs.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:config/configurationRecorder:ConfigurationRecorder": {
+            "description": "Configuration Recorder is used to record and track configuration changes for specified resource types under the Volcano Engine account\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.config.ConfigurationRecorder(\"example\", {\n    recorderType: \"SingleAccount\",\n    includeAllResourceTypes: false,\n    includeResourceTypes: [\"Byteplus::ALB::ACL\"],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.config.ConfigurationRecorder(\"example\",\n    recorder_type=\"SingleAccount\",\n    include_all_resource_types=False,\n    include_resource_types=[\"Byteplus::ALB::ACL\"])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Config.ConfigurationRecorder(\"example\", new()\n    {\n        RecorderType = \"SingleAccount\",\n        IncludeAllResourceTypes = false,\n        IncludeResourceTypes = new[]\n        {\n            \"Byteplus::ALB::ACL\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/config\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := config.NewConfigurationRecorder(ctx, \"example\", \u0026config.ConfigurationRecorderArgs{\n\t\t\tRecorderType:            pulumi.String(\"SingleAccount\"),\n\t\t\tIncludeAllResourceTypes: pulumi.Bool(false),\n\t\t\tIncludeResourceTypes: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"Byteplus::ALB::ACL\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_config_configurationrecorder\" \"example\" {\n  recorder_type              = \"SingleAccount\"\n  include_all_resource_types = false\n  include_resource_types     = [\"Byteplus::ALB::ACL\"]\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.config.ConfigurationRecorder;\nimport com.byteplus.bytepluscc.config.ConfigurationRecorderArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new ConfigurationRecorder(\"example\", ConfigurationRecorderArgs.builder()\n            .recorderType(\"SingleAccount\")\n            .includeAllResourceTypes(false)\n            .includeResourceTypes(\"Byteplus::ALB::ACL\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:config:ConfigurationRecorder\n    properties:\n      recorderType: SingleAccount\n      includeAllResourceTypes: false\n      includeResourceTypes:\n        - Byteplus::ALB::ACL\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:config/configurationRecorder:ConfigurationRecorder example \"recorder_type\"\n```\n\n",
+            "properties": {
+                "configurationRecorderStatus": {
+                    "type": "string",
+                    "description": "Configuration recorder status. Options: Disabled, PendingEnable, Building, Rebuilding, Enabled, PendingDisable\n"
+                },
+                "createBy": {
+                    "type": "string",
+                    "description": "Configuration recorder creation source\n"
+                },
+                "includeAllResourceTypes": {
+                    "type": "boolean",
+                    "description": "Whether to record all supported resource types\n"
+                },
+                "includeResourceTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of specified resource types to record\n"
+                },
+                "recorderId": {
+                    "type": "string",
+                    "description": "Configuration recorder ID\n"
+                },
+                "recorderName": {
+                    "type": "string",
+                    "description": "Configuration recorder name\n"
+                },
+                "recorderType": {
+                    "type": "string",
+                    "description": "Configuration recorder type. Options: SingleAccount, Organization\n"
+                }
+            },
+            "required": [
+                "configurationRecorderStatus",
+                "createBy",
+                "includeAllResourceTypes",
+                "includeResourceTypes",
+                "recorderId",
+                "recorderName",
+                "recorderType"
+            ],
+            "inputProperties": {
+                "includeAllResourceTypes": {
+                    "type": "boolean",
+                    "description": "Whether to record all supported resource types\n"
+                },
+                "includeResourceTypes": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of specified resource types to record\n"
+                },
+                "recorderType": {
+                    "type": "string",
+                    "description": "Configuration recorder type. Options: SingleAccount, Organization\n"
+                }
+            },
+            "requiredInputs": [
+                "recorderType"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ConfigurationRecorder resources.\n",
+                "properties": {
+                    "configurationRecorderStatus": {
+                        "type": "string",
+                        "description": "Configuration recorder status. Options: Disabled, PendingEnable, Building, Rebuilding, Enabled, PendingDisable\n"
+                    },
+                    "createBy": {
+                        "type": "string",
+                        "description": "Configuration recorder creation source\n"
+                    },
+                    "includeAllResourceTypes": {
+                        "type": "boolean",
+                        "description": "Whether to record all supported resource types\n"
+                    },
+                    "includeResourceTypes": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of specified resource types to record\n"
+                    },
+                    "recorderId": {
+                        "type": "string",
+                        "description": "Configuration recorder ID\n"
+                    },
+                    "recorderName": {
+                        "type": "string",
+                        "description": "Configuration recorder name\n"
+                    },
+                    "recorderType": {
+                        "type": "string",
+                        "description": "Configuration recorder type. Options: SingleAccount, Organization\n"
                     }
                 },
                 "type": "object"
@@ -98590,7 +98788,7 @@
                 },
                 "autoUpgradeMinorVersion": {
                     "type": "string",
-                    "description": "Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.\n"
+                    "description": "Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see \"Manually upgrade the instance's minor kernel version.\" Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.\n"
                 },
                 "backupAuditLogSize": {
                     "type": "integer",
@@ -98691,6 +98889,10 @@
                     "type": "integer",
                     "description": "Latency between the disaster recovery instance and the primary instance.\n"
                 },
+                "enableExternalReplication": {
+                    "type": "boolean",
+                    "description": "Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.\n"
+                },
                 "endpoints": {
                     "type": "array",
                     "items": {
@@ -98776,10 +98978,6 @@
                         "$ref": "#/types/bytepluscc:rdsmysql/InstanceNode:InstanceNode"
                     },
                     "description": "Instance node information.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
-                },
-                "parameterTemplateId": {
-                    "type": "string",
-                    "description": "Parameter template ID.\n"
                 },
                 "port": {
                     "type": "integer",
@@ -98914,6 +99112,7 @@
                 "drDtsTaskName",
                 "drDtsTaskStatus",
                 "drSecondsBehindMaster",
+                "enableExternalReplication",
                 "endpoints",
                 "engineType",
                 "globalReadOnly",
@@ -98934,7 +99133,6 @@
                 "nodeSpaceUsedPercentage",
                 "nodeSpec",
                 "nodes",
-                "parameterTemplateId",
                 "port",
                 "privateIpAddress",
                 "projectName",
@@ -98974,7 +99172,7 @@
                 },
                 "autoUpgradeMinorVersion": {
                     "type": "string",
-                    "description": "Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.\n"
+                    "description": "Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see \"Manually upgrade the instance's minor kernel version.\" Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.\n"
                 },
                 "backupPolicy": {
                     "$ref": "#/types/bytepluscc:rdsmysql/InstanceBackupPolicy:InstanceBackupPolicy",
@@ -99003,6 +99201,10 @@
                 "deletionProtection": {
                     "type": "string",
                     "description": "Whether to enable instance deletion protection. Values: Enabled: Yes. Disabled: No. Default value.\n"
+                },
+                "enableExternalReplication": {
+                    "type": "boolean",
+                    "description": "Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.\n"
                 },
                 "engineType": {
                     "type": "string",
@@ -99038,10 +99240,6 @@
                         "$ref": "#/types/bytepluscc:rdsmysql/InstanceNode:InstanceNode"
                     },
                     "description": "Instance node information.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
-                },
-                "parameterTemplateId": {
-                    "type": "string",
-                    "description": "Parameter template ID.\n"
                 },
                 "port": {
                     "type": "integer",
@@ -99127,7 +99325,7 @@
                     },
                     "autoUpgradeMinorVersion": {
                         "type": "string",
-                        "description": "Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.\n"
+                        "description": "Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see \"Manually upgrade the instance's minor kernel version.\" Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.\n"
                     },
                     "backupAuditLogSize": {
                         "type": "integer",
@@ -99228,6 +99426,10 @@
                         "type": "integer",
                         "description": "Latency between the disaster recovery instance and the primary instance.\n"
                     },
+                    "enableExternalReplication": {
+                        "type": "boolean",
+                        "description": "Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.\n"
+                    },
                     "endpoints": {
                         "type": "array",
                         "items": {
@@ -99313,10 +99515,6 @@
                             "$ref": "#/types/bytepluscc:rdsmysql/InstanceNode:InstanceNode"
                         },
                         "description": "Instance node information.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
-                    },
-                    "parameterTemplateId": {
-                        "type": "string",
-                        "description": "Parameter template ID.\n"
                     },
                     "port": {
                         "type": "integer",
@@ -108276,6 +108474,482 @@
                     "transitRouterRouteTableId": {
                         "type": "string",
                         "description": "ID of the route table associated with the transit router instance.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/transitRouterTrafficQosMarkingEntry:TransitRouterTrafficQosMarkingEntry": {
+            "description": "The marking rule of the transit router's flow marking policy.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.transitrouter.TransitRouterTrafficQosMarkingEntry(\"example\", {\n    transitRouterTrafficQosMarkingPolicyId: \"tr-qos-marking-policy-xxxxxxxx\",\n    transitRouterTrafficQosMarkingEntryName: \"ccapi-qos-marking-entry-full\",\n    priority: 20,\n    protocol: \"tcp\",\n    sourceCidrBlock: \"10.0.0.0/24\",\n    destinationCidrBlock: \"172.16.0.0/24\",\n    sourcePortStart: 1000,\n    sourcePortEnd: 2000,\n    destinationPortStart: 3000,\n    destinationPortEnd: 4000,\n    matchDscp: 10,\n    remarkingDscp: 50,\n    description: \"traffic qos marking entry full fields\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.transitrouter.TransitRouterTrafficQosMarkingEntry(\"example\",\n    transit_router_traffic_qos_marking_policy_id=\"tr-qos-marking-policy-xxxxxxxx\",\n    transit_router_traffic_qos_marking_entry_name=\"ccapi-qos-marking-entry-full\",\n    priority=20,\n    protocol=\"tcp\",\n    source_cidr_block=\"10.0.0.0/24\",\n    destination_cidr_block=\"172.16.0.0/24\",\n    source_port_start=1000,\n    source_port_end=2000,\n    destination_port_start=3000,\n    destination_port_end=4000,\n    match_dscp=10,\n    remarking_dscp=50,\n    description=\"traffic qos marking entry full fields\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Transitrouter.TransitRouterTrafficQosMarkingEntry(\"example\", new()\n    {\n        TransitRouterTrafficQosMarkingPolicyId = \"tr-qos-marking-policy-xxxxxxxx\",\n        TransitRouterTrafficQosMarkingEntryName = \"ccapi-qos-marking-entry-full\",\n        Priority = 20,\n        Protocol = \"tcp\",\n        SourceCidrBlock = \"10.0.0.0/24\",\n        DestinationCidrBlock = \"172.16.0.0/24\",\n        SourcePortStart = 1000,\n        SourcePortEnd = 2000,\n        DestinationPortStart = 3000,\n        DestinationPortEnd = 4000,\n        MatchDscp = 10,\n        RemarkingDscp = 50,\n        Description = \"traffic qos marking entry full fields\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/transitrouter\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := transitrouter.NewTransitRouterTrafficQosMarkingEntry(ctx, \"example\", \u0026transitrouter.TransitRouterTrafficQosMarkingEntryArgs{\n\t\t\tTransitRouterTrafficQosMarkingPolicyId:  pulumi.String(\"tr-qos-marking-policy-xxxxxxxx\"),\n\t\t\tTransitRouterTrafficQosMarkingEntryName: pulumi.String(\"ccapi-qos-marking-entry-full\"),\n\t\t\tPriority:                                pulumi.Int(20),\n\t\t\tProtocol:                                pulumi.String(\"tcp\"),\n\t\t\tSourceCidrBlock:                         pulumi.String(\"10.0.0.0/24\"),\n\t\t\tDestinationCidrBlock:                    pulumi.String(\"172.16.0.0/24\"),\n\t\t\tSourcePortStart:                         pulumi.Int(1000),\n\t\t\tSourcePortEnd:                           pulumi.Int(2000),\n\t\t\tDestinationPortStart:                    pulumi.Int(3000),\n\t\t\tDestinationPortEnd:                      pulumi.Int(4000),\n\t\t\tMatchDscp:                               pulumi.Int(10),\n\t\t\tRemarkingDscp:                           pulumi.Int(50),\n\t\t\tDescription:                             pulumi.String(\"traffic qos marking entry full fields\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_transitrouter_transitroutertrafficqosmarkingentry\" \"example\" {\n  transit_router_traffic_qos_marking_policy_id  = \"tr-qos-marking-policy-xxxxxxxx\"\n  transit_router_traffic_qos_marking_entry_name = \"ccapi-qos-marking-entry-full\"\n  priority                                      = 20\n  protocol                                      = \"tcp\"\n  source_cidr_block                             = \"10.0.0.0/24\"\n  destination_cidr_block                        = \"172.16.0.0/24\"\n  source_port_start                             = 1000\n  source_port_end                               = 2000\n  destination_port_start                        = 3000\n  destination_port_end                          = 4000\n  match_dscp                                    = 10\n  remarking_dscp                                = 50\n  description                                   = \"traffic qos marking entry full fields\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.transitrouter.TransitRouterTrafficQosMarkingEntry;\nimport com.byteplus.bytepluscc.transitrouter.TransitRouterTrafficQosMarkingEntryArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new TransitRouterTrafficQosMarkingEntry(\"example\", TransitRouterTrafficQosMarkingEntryArgs.builder()\n            .transitRouterTrafficQosMarkingPolicyId(\"tr-qos-marking-policy-xxxxxxxx\")\n            .transitRouterTrafficQosMarkingEntryName(\"ccapi-qos-marking-entry-full\")\n            .priority(20)\n            .protocol(\"tcp\")\n            .sourceCidrBlock(\"10.0.0.0/24\")\n            .destinationCidrBlock(\"172.16.0.0/24\")\n            .sourcePortStart(1000)\n            .sourcePortEnd(2000)\n            .destinationPortStart(3000)\n            .destinationPortEnd(4000)\n            .matchDscp(10)\n            .remarkingDscp(50)\n            .description(\"traffic qos marking entry full fields\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:transitrouter:TransitRouterTrafficQosMarkingEntry\n    properties:\n      transitRouterTrafficQosMarkingPolicyId: tr-qos-marking-policy-xxxxxxxx\n      transitRouterTrafficQosMarkingEntryName: ccapi-qos-marking-entry-full\n      priority: 20\n      protocol: tcp\n      sourceCidrBlock: 10.0.0.0/24\n      destinationCidrBlock: 172.16.0.0/24\n      sourcePortStart: 1000\n      sourcePortEnd: 2000\n      destinationPortStart: 3000\n      destinationPortEnd: 4000\n      matchDscp: 10\n      remarkingDscp: 50\n      description: traffic qos marking entry full fields\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:transitrouter/transitRouterTrafficQosMarkingEntry:TransitRouterTrafficQosMarkingEntry example \"transit_router_traffic_qos_marking_policy_id|transit_router_traffic_qos_marking_entry_id\"\n```\n\n",
+            "properties": {
+                "creationTime": {
+                    "type": "string",
+                    "description": "Flow marking rule creation time\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the flow marking rule. Length limit: 0–255 characters\n"
+                },
+                "destinationCidrBlock": {
+                    "type": "string",
+                    "description": "IP subnet of the destination address, supports IPv4 and IPv6\nWhen Protocol is tcp, udp, gre, or all, this parameter can accept IPv4 or IPv6 subnets\nWhen Protocol is icmp, this parameter only supports IPv4 subnets\nWhen Protocol is icmpv6, this parameter only supports IPv6 subnets\nThe IP subnet type entered for this parameter should match SourceCidrBlock; both must be IPv4 subnets or both IPv6 subnets\n"
+                },
+                "destinationPortEnd": {
+                    "type": "integer",
+                    "description": "End value of the destination port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, gre, or all, only -1 is supported\n"
+                },
+                "destinationPortStart": {
+                    "type": "integer",
+                    "description": "Start value of the destination port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, gre, or all, only -1 is supported\n"
+                },
+                "matchDscp": {
+                    "type": "integer",
+                    "description": "The DSCP value of the traffic packet itself. Value range: -1, 0–63. The default value is -1, which means that packets with any DSCP value will match this marking rule.\n"
+                },
+                "priority": {
+                    "type": "integer",
+                    "description": "Priority of the marking rule. Valid values: 1–10000\nPriorities of different marking rules must not be duplicated\n"
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": "Protocol type\ntcp: TCP protocol\nudp: UDP protocol\ngre: GRE protocol\nicmp: ICMP protocol\nicmpv6: ICMPV6 protocol\nall (default): Supports all protocols\nNote: IPv6 functionality for transit routers is currently in beta. To use it, please contact your account manager. ICMPV6 can only be used after enabling IPv6 for transit routers\n"
+                },
+                "remarkingDscp": {
+                    "type": "integer",
+                    "description": "DSCP value to modify for target traffic packets. Valid values: 0–63\nWhen target traffic matches this marking rule, the DSCP value of the packet is replaced with this parameter value\n"
+                },
+                "sourceCidrBlock": {
+                    "type": "string",
+                    "description": "IP subnet of the source address, supports IPv4 and IPv6\nWhen Protocol is tcp, udp, gre, or all, this parameter can accept IPv4 or IPv6 subnets\nWhen Protocol is icmp, this parameter only supports IPv4 subnets\nWhen Protocol is icmpv6, this parameter only supports IPv6 subnets\n"
+                },
+                "sourcePortEnd": {
+                    "type": "integer",
+                    "description": "End value of the source port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, or gre, only -1 is supported\n"
+                },
+                "sourcePortStart": {
+                    "type": "integer",
+                    "description": "Start value of the source port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, or gre, only -1 is supported\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Flow marking rule status\n"
+                },
+                "transitRouterTrafficQosMarkingEntryId": {
+                    "type": "string",
+                    "description": "Flow marking rule ID\n"
+                },
+                "transitRouterTrafficQosMarkingEntryName": {
+                    "type": "string",
+                    "description": "Name of the flow marking rule. Must start with a letter, number, or Chinese character; can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters\n"
+                },
+                "transitRouterTrafficQosMarkingPolicyId": {
+                    "type": "string",
+                    "description": "Flow marking policy ID\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Last operation time of the flow marking rule\n"
+                }
+            },
+            "required": [
+                "creationTime",
+                "description",
+                "destinationCidrBlock",
+                "destinationPortEnd",
+                "destinationPortStart",
+                "matchDscp",
+                "priority",
+                "protocol",
+                "remarkingDscp",
+                "sourceCidrBlock",
+                "sourcePortEnd",
+                "sourcePortStart",
+                "status",
+                "transitRouterTrafficQosMarkingEntryId",
+                "transitRouterTrafficQosMarkingEntryName",
+                "transitRouterTrafficQosMarkingPolicyId",
+                "updateTime"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the flow marking rule. Length limit: 0–255 characters\n"
+                },
+                "destinationCidrBlock": {
+                    "type": "string",
+                    "description": "IP subnet of the destination address, supports IPv4 and IPv6\nWhen Protocol is tcp, udp, gre, or all, this parameter can accept IPv4 or IPv6 subnets\nWhen Protocol is icmp, this parameter only supports IPv4 subnets\nWhen Protocol is icmpv6, this parameter only supports IPv6 subnets\nThe IP subnet type entered for this parameter should match SourceCidrBlock; both must be IPv4 subnets or both IPv6 subnets\n"
+                },
+                "destinationPortEnd": {
+                    "type": "integer",
+                    "description": "End value of the destination port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, gre, or all, only -1 is supported\n"
+                },
+                "destinationPortStart": {
+                    "type": "integer",
+                    "description": "Start value of the destination port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, gre, or all, only -1 is supported\n"
+                },
+                "matchDscp": {
+                    "type": "integer",
+                    "description": "The DSCP value of the traffic packet itself. Value range: -1, 0–63. The default value is -1, which means that packets with any DSCP value will match this marking rule.\n"
+                },
+                "priority": {
+                    "type": "integer",
+                    "description": "Priority of the marking rule. Valid values: 1–10000\nPriorities of different marking rules must not be duplicated\n"
+                },
+                "protocol": {
+                    "type": "string",
+                    "description": "Protocol type\ntcp: TCP protocol\nudp: UDP protocol\ngre: GRE protocol\nicmp: ICMP protocol\nicmpv6: ICMPV6 protocol\nall (default): Supports all protocols\nNote: IPv6 functionality for transit routers is currently in beta. To use it, please contact your account manager. ICMPV6 can only be used after enabling IPv6 for transit routers\n"
+                },
+                "remarkingDscp": {
+                    "type": "integer",
+                    "description": "DSCP value to modify for target traffic packets. Valid values: 0–63\nWhen target traffic matches this marking rule, the DSCP value of the packet is replaced with this parameter value\n"
+                },
+                "sourceCidrBlock": {
+                    "type": "string",
+                    "description": "IP subnet of the source address, supports IPv4 and IPv6\nWhen Protocol is tcp, udp, gre, or all, this parameter can accept IPv4 or IPv6 subnets\nWhen Protocol is icmp, this parameter only supports IPv4 subnets\nWhen Protocol is icmpv6, this parameter only supports IPv6 subnets\n"
+                },
+                "sourcePortEnd": {
+                    "type": "integer",
+                    "description": "End value of the source port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, or gre, only -1 is supported\n"
+                },
+                "sourcePortStart": {
+                    "type": "integer",
+                    "description": "Start value of the source port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, or gre, only -1 is supported\n"
+                },
+                "transitRouterTrafficQosMarkingEntryName": {
+                    "type": "string",
+                    "description": "Name of the flow marking rule. Must start with a letter, number, or Chinese character; can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters\n"
+                },
+                "transitRouterTrafficQosMarkingPolicyId": {
+                    "type": "string",
+                    "description": "Flow marking policy ID\n"
+                }
+            },
+            "requiredInputs": [
+                "destinationCidrBlock",
+                "destinationPortEnd",
+                "destinationPortStart",
+                "priority",
+                "remarkingDscp",
+                "sourceCidrBlock",
+                "sourcePortEnd",
+                "sourcePortStart",
+                "transitRouterTrafficQosMarkingPolicyId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TransitRouterTrafficQosMarkingEntry resources.\n",
+                "properties": {
+                    "creationTime": {
+                        "type": "string",
+                        "description": "Flow marking rule creation time\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the flow marking rule. Length limit: 0–255 characters\n"
+                    },
+                    "destinationCidrBlock": {
+                        "type": "string",
+                        "description": "IP subnet of the destination address, supports IPv4 and IPv6\nWhen Protocol is tcp, udp, gre, or all, this parameter can accept IPv4 or IPv6 subnets\nWhen Protocol is icmp, this parameter only supports IPv4 subnets\nWhen Protocol is icmpv6, this parameter only supports IPv6 subnets\nThe IP subnet type entered for this parameter should match SourceCidrBlock; both must be IPv4 subnets or both IPv6 subnets\n"
+                    },
+                    "destinationPortEnd": {
+                        "type": "integer",
+                        "description": "End value of the destination port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, gre, or all, only -1 is supported\n"
+                    },
+                    "destinationPortStart": {
+                        "type": "integer",
+                        "description": "Start value of the destination port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, gre, or all, only -1 is supported\n"
+                    },
+                    "matchDscp": {
+                        "type": "integer",
+                        "description": "The DSCP value of the traffic packet itself. Value range: -1, 0–63. The default value is -1, which means that packets with any DSCP value will match this marking rule.\n"
+                    },
+                    "priority": {
+                        "type": "integer",
+                        "description": "Priority of the marking rule. Valid values: 1–10000\nPriorities of different marking rules must not be duplicated\n"
+                    },
+                    "protocol": {
+                        "type": "string",
+                        "description": "Protocol type\ntcp: TCP protocol\nudp: UDP protocol\ngre: GRE protocol\nicmp: ICMP protocol\nicmpv6: ICMPV6 protocol\nall (default): Supports all protocols\nNote: IPv6 functionality for transit routers is currently in beta. To use it, please contact your account manager. ICMPV6 can only be used after enabling IPv6 for transit routers\n"
+                    },
+                    "remarkingDscp": {
+                        "type": "integer",
+                        "description": "DSCP value to modify for target traffic packets. Valid values: 0–63\nWhen target traffic matches this marking rule, the DSCP value of the packet is replaced with this parameter value\n"
+                    },
+                    "sourceCidrBlock": {
+                        "type": "string",
+                        "description": "IP subnet of the source address, supports IPv4 and IPv6\nWhen Protocol is tcp, udp, gre, or all, this parameter can accept IPv4 or IPv6 subnets\nWhen Protocol is icmp, this parameter only supports IPv4 subnets\nWhen Protocol is icmpv6, this parameter only supports IPv6 subnets\n"
+                    },
+                    "sourcePortEnd": {
+                        "type": "integer",
+                        "description": "End value of the source port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, or gre, only -1 is supported\n"
+                    },
+                    "sourcePortStart": {
+                        "type": "integer",
+                        "description": "Start value of the source port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, or gre, only -1 is supported\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Flow marking rule status\n"
+                    },
+                    "transitRouterTrafficQosMarkingEntryId": {
+                        "type": "string",
+                        "description": "Flow marking rule ID\n"
+                    },
+                    "transitRouterTrafficQosMarkingEntryName": {
+                        "type": "string",
+                        "description": "Name of the flow marking rule. Must start with a letter, number, or Chinese character; can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters\n"
+                    },
+                    "transitRouterTrafficQosMarkingPolicyId": {
+                        "type": "string",
+                        "description": "Flow marking policy ID\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Last operation time of the flow marking rule\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/transitRouterTrafficQosMarkingPolicy:TransitRouterTrafficQosMarkingPolicy": {
+            "description": "Transit router flow marking policy. The flow marking policy is used to match traffic forwarded by the transit router to specified scheduling queues, enabling differentiated scheduling based on business importance.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.transitrouter.TransitRouterTrafficQosMarkingPolicy(\"example\", {\n    transitRouterId: \"tr-xxxxxxxx\",\n    transitRouterTrafficQosMarkingPolicyName: \"ccapi-qos-marking-policy-full\",\n    description: \"traffic qos marking policy full fields\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.transitrouter.TransitRouterTrafficQosMarkingPolicy(\"example\",\n    transit_router_id=\"tr-xxxxxxxx\",\n    transit_router_traffic_qos_marking_policy_name=\"ccapi-qos-marking-policy-full\",\n    description=\"traffic qos marking policy full fields\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Transitrouter.TransitRouterTrafficQosMarkingPolicy(\"example\", new()\n    {\n        TransitRouterId = \"tr-xxxxxxxx\",\n        TransitRouterTrafficQosMarkingPolicyName = \"ccapi-qos-marking-policy-full\",\n        Description = \"traffic qos marking policy full fields\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/transitrouter\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := transitrouter.NewTransitRouterTrafficQosMarkingPolicy(ctx, \"example\", \u0026transitrouter.TransitRouterTrafficQosMarkingPolicyArgs{\n\t\t\tTransitRouterId:                          pulumi.String(\"tr-xxxxxxxx\"),\n\t\t\tTransitRouterTrafficQosMarkingPolicyName: pulumi.String(\"ccapi-qos-marking-policy-full\"),\n\t\t\tDescription:                              pulumi.String(\"traffic qos marking policy full fields\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_transitrouter_transitroutertrafficqosmarkingpolicy\" \"example\" {\n  transit_router_id                              = \"tr-xxxxxxxx\"\n  transit_router_traffic_qos_marking_policy_name = \"ccapi-qos-marking-policy-full\"\n  description                                    = \"traffic qos marking policy full fields\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.transitrouter.TransitRouterTrafficQosMarkingPolicy;\nimport com.byteplus.bytepluscc.transitrouter.TransitRouterTrafficQosMarkingPolicyArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new TransitRouterTrafficQosMarkingPolicy(\"example\", TransitRouterTrafficQosMarkingPolicyArgs.builder()\n            .transitRouterId(\"tr-xxxxxxxx\")\n            .transitRouterTrafficQosMarkingPolicyName(\"ccapi-qos-marking-policy-full\")\n            .description(\"traffic qos marking policy full fields\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:transitrouter:TransitRouterTrafficQosMarkingPolicy\n    properties:\n      transitRouterId: tr-xxxxxxxx\n      transitRouterTrafficQosMarkingPolicyName: ccapi-qos-marking-policy-full\n      description: traffic qos marking policy full fields\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:transitrouter/transitRouterTrafficQosMarkingPolicy:TransitRouterTrafficQosMarkingPolicy example \"transit_router_id|transit_router_traffic_qos_marking_policy_id\"\n```\n\n",
+            "properties": {
+                "creationTime": {
+                    "type": "string",
+                    "description": "Creation time of the flow marking policy.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the flow marking policy. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the flow marking policy. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.\n"
+                },
+                "transitRouterId": {
+                    "type": "string",
+                    "description": "Transit router instance ID.\n"
+                },
+                "transitRouterTrafficQosMarkingPolicyId": {
+                    "type": "string",
+                    "description": "Flow marking policy ID.\n"
+                },
+                "transitRouterTrafficQosMarkingPolicyName": {
+                    "type": "string",
+                    "description": "Name of the flow marking policy. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is passed, the default is the flow marking policy ID.\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Last update time of the flow marking policy.\n"
+                }
+            },
+            "required": [
+                "creationTime",
+                "description",
+                "status",
+                "transitRouterId",
+                "transitRouterTrafficQosMarkingPolicyId",
+                "transitRouterTrafficQosMarkingPolicyName",
+                "updateTime"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the flow marking policy. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.\n"
+                },
+                "transitRouterId": {
+                    "type": "string",
+                    "description": "Transit router instance ID.\n"
+                },
+                "transitRouterTrafficQosMarkingPolicyName": {
+                    "type": "string",
+                    "description": "Name of the flow marking policy. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is passed, the default is the flow marking policy ID.\n"
+                }
+            },
+            "requiredInputs": [
+                "transitRouterId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TransitRouterTrafficQosMarkingPolicy resources.\n",
+                "properties": {
+                    "creationTime": {
+                        "type": "string",
+                        "description": "Creation time of the flow marking policy.\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the flow marking policy. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Status of the flow marking policy. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.\n"
+                    },
+                    "transitRouterId": {
+                        "type": "string",
+                        "description": "Transit router instance ID.\n"
+                    },
+                    "transitRouterTrafficQosMarkingPolicyId": {
+                        "type": "string",
+                        "description": "Flow marking policy ID.\n"
+                    },
+                    "transitRouterTrafficQosMarkingPolicyName": {
+                        "type": "string",
+                        "description": "Name of the flow marking policy. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is passed, the default is the flow marking policy ID.\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Last update time of the flow marking policy.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry": {
+            "description": "Transit router flow queue entry. The flow queue entry defines the mapping between specific DSCP sets and priorities, used to assign matched traffic to the corresponding scheduling queue for differentiated scheduling based on business importance.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.transitrouter.TransitRouterTrafficQosQueueEntry(\"example\", {\n    transitRouterTrafficQosQueuePolicyId: \"tr-qos-queue-policy-xxxxxxxx\",\n    transitRouterTrafficQosQueueEntryName: \"ccapi-qos-entry-full\",\n    description: \"traffic qos queue entry full fields\",\n    bandwidthPercent: 30,\n    dscps: [\n        20,\n        21,\n    ],\n    priority: \"Normal\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.transitrouter.TransitRouterTrafficQosQueueEntry(\"example\",\n    transit_router_traffic_qos_queue_policy_id=\"tr-qos-queue-policy-xxxxxxxx\",\n    transit_router_traffic_qos_queue_entry_name=\"ccapi-qos-entry-full\",\n    description=\"traffic qos queue entry full fields\",\n    bandwidth_percent=30,\n    dscps=[\n        20,\n        21,\n    ],\n    priority=\"Normal\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Transitrouter.TransitRouterTrafficQosQueueEntry(\"example\", new()\n    {\n        TransitRouterTrafficQosQueuePolicyId = \"tr-qos-queue-policy-xxxxxxxx\",\n        TransitRouterTrafficQosQueueEntryName = \"ccapi-qos-entry-full\",\n        Description = \"traffic qos queue entry full fields\",\n        BandwidthPercent = 30,\n        Dscps = new[]\n        {\n            20,\n            21,\n        },\n        Priority = \"Normal\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/transitrouter\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := transitrouter.NewTransitRouterTrafficQosQueueEntry(ctx, \"example\", \u0026transitrouter.TransitRouterTrafficQosQueueEntryArgs{\n\t\t\tTransitRouterTrafficQosQueuePolicyId:  pulumi.String(\"tr-qos-queue-policy-xxxxxxxx\"),\n\t\t\tTransitRouterTrafficQosQueueEntryName: pulumi.String(\"ccapi-qos-entry-full\"),\n\t\t\tDescription:                           pulumi.String(\"traffic qos queue entry full fields\"),\n\t\t\tBandwidthPercent:                      pulumi.Int(30),\n\t\t\tDscps: pulumi.IntArray{\n\t\t\t\tpulumi.Int(20),\n\t\t\t\tpulumi.Int(21),\n\t\t\t},\n\t\t\tPriority: pulumi.String(\"Normal\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_transitrouter_transitroutertrafficqosqueueentry\" \"example\" {\n  transit_router_traffic_qos_queue_policy_id  = \"tr-qos-queue-policy-xxxxxxxx\"\n  transit_router_traffic_qos_queue_entry_name = \"ccapi-qos-entry-full\"\n  description                                 = \"traffic qos queue entry full fields\"\n  bandwidth_percent                           = 30\n  dscps                                       = [20, 21]\n  priority                                    = \"Normal\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.transitrouter.TransitRouterTrafficQosQueueEntry;\nimport com.byteplus.bytepluscc.transitrouter.TransitRouterTrafficQosQueueEntryArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new TransitRouterTrafficQosQueueEntry(\"example\", TransitRouterTrafficQosQueueEntryArgs.builder()\n            .transitRouterTrafficQosQueuePolicyId(\"tr-qos-queue-policy-xxxxxxxx\")\n            .transitRouterTrafficQosQueueEntryName(\"ccapi-qos-entry-full\")\n            .description(\"traffic qos queue entry full fields\")\n            .bandwidthPercent(30)\n            .dscps(            \n                20,\n                21)\n            .priority(\"Normal\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:transitrouter:TransitRouterTrafficQosQueueEntry\n    properties:\n      transitRouterTrafficQosQueuePolicyId: tr-qos-queue-policy-xxxxxxxx\n      transitRouterTrafficQosQueueEntryName: ccapi-qos-entry-full\n      description: traffic qos queue entry full fields\n      bandwidthPercent: 30\n      dscps:\n        - 20\n        - 21\n      priority: Normal\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry example \"transit_router_traffic_qos_queue_policy_id|transit_router_traffic_qos_queue_entry_id\"\n```\n\n",
+            "properties": {
+                "bandwidthPercent": {
+                    "type": "integer",
+                    "description": "Bandwidth percentage allocated to the flow queue entry. Value range: 0 to 100.\n"
+                },
+                "creationTime": {
+                    "type": "string",
+                    "description": "Creation time of the flow queue entry.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the flow queue entry. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0 to 255 characters.\n"
+                },
+                "dscps": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "List of DSCP values matched by the flow queue entry. Each DSCP value ranges from 0 to 63.\n"
+                },
+                "isDefault": {
+                    "type": "boolean",
+                    "description": "Indicates whether this is the default flow queue entry. true: Yes. false: No.\n"
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "Priority of the flow queue entry. Normal: Normal. High: High.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the flow queue entry. Creating: Creating. Deleting: Deleting. Pending: Pending. Available: Available.\n"
+                },
+                "transitRouterTrafficQosQueueEntryId": {
+                    "type": "string",
+                    "description": "ID of the flow queue entry.\n"
+                },
+                "transitRouterTrafficQosQueueEntryName": {
+                    "type": "string",
+                    "description": "Name of the flow queue entry. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters.\n"
+                },
+                "transitRouterTrafficQosQueuePolicyId": {
+                    "type": "string",
+                    "description": "ID of the flow queue policy, identifying the flow queue policy to which this entry belongs.\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Most recent update time of the flow queue entry.\n"
+                }
+            },
+            "required": [
+                "bandwidthPercent",
+                "creationTime",
+                "description",
+                "dscps",
+                "isDefault",
+                "priority",
+                "status",
+                "transitRouterTrafficQosQueueEntryId",
+                "transitRouterTrafficQosQueueEntryName",
+                "transitRouterTrafficQosQueuePolicyId",
+                "updateTime"
+            ],
+            "inputProperties": {
+                "bandwidthPercent": {
+                    "type": "integer",
+                    "description": "Bandwidth percentage allocated to the flow queue entry. Value range: 0 to 100.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the flow queue entry. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0 to 255 characters.\n"
+                },
+                "dscps": {
+                    "type": "array",
+                    "items": {
+                        "type": "integer"
+                    },
+                    "description": "List of DSCP values matched by the flow queue entry. Each DSCP value ranges from 0 to 63.\n"
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "Priority of the flow queue entry. Normal: Normal. High: High.\n"
+                },
+                "transitRouterTrafficQosQueueEntryName": {
+                    "type": "string",
+                    "description": "Name of the flow queue entry. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters.\n"
+                },
+                "transitRouterTrafficQosQueuePolicyId": {
+                    "type": "string",
+                    "description": "ID of the flow queue policy, identifying the flow queue policy to which this entry belongs.\n"
+                }
+            },
+            "requiredInputs": [
+                "dscps",
+                "transitRouterTrafficQosQueueEntryName",
+                "transitRouterTrafficQosQueuePolicyId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering TransitRouterTrafficQosQueueEntry resources.\n",
+                "properties": {
+                    "bandwidthPercent": {
+                        "type": "integer",
+                        "description": "Bandwidth percentage allocated to the flow queue entry. Value range: 0 to 100.\n"
+                    },
+                    "creationTime": {
+                        "type": "string",
+                        "description": "Creation time of the flow queue entry.\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the flow queue entry. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0 to 255 characters.\n"
+                    },
+                    "dscps": {
+                        "type": "array",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "description": "List of DSCP values matched by the flow queue entry. Each DSCP value ranges from 0 to 63.\n"
+                    },
+                    "isDefault": {
+                        "type": "boolean",
+                        "description": "Indicates whether this is the default flow queue entry. true: Yes. false: No.\n"
+                    },
+                    "priority": {
+                        "type": "string",
+                        "description": "Priority of the flow queue entry. Normal: Normal. High: High.\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Status of the flow queue entry. Creating: Creating. Deleting: Deleting. Pending: Pending. Available: Available.\n"
+                    },
+                    "transitRouterTrafficQosQueueEntryId": {
+                        "type": "string",
+                        "description": "ID of the flow queue entry.\n"
+                    },
+                    "transitRouterTrafficQosQueueEntryName": {
+                        "type": "string",
+                        "description": "Name of the flow queue entry. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters.\n"
+                    },
+                    "transitRouterTrafficQosQueuePolicyId": {
+                        "type": "string",
+                        "description": "ID of the flow queue policy, identifying the flow queue policy to which this entry belongs.\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Most recent update time of the flow queue entry.\n"
                     }
                 },
                 "type": "object"
@@ -123353,6 +124027,87 @@
                 "type": "object"
             }
         },
+        "bytepluscc:autoscaling/getNotificationConfiguration:getNotificationConfiguration": {
+            "description": "Data Source schema for Byteplus::AutoScaling::NotificationConfiguration\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getNotificationConfiguration.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getNotificationConfiguration.\n",
+                "properties": {
+                    "createdAt": {
+                        "description": "Event notification creation time.\n",
+                        "type": "string"
+                    },
+                    "eventTypes": {
+                        "description": "Event notification type. Values: ScaleOutSuccess (successful scale-out activity), ScaleInSuccess (successful scale-in activity), ScaleOutError (failed scale-out activity), ScaleInError (failed scale-in activity), ScaleOutWarn (partially successful scale-out activity), ScaleInWarn (partially successful scale-in activity), ScaleReject (rejected scaling activity), ScaleOutStart (scaling group scale-out activity started), ScaleInStart (scaling group scale-in activity started), ScheduleTaskExpiring (scheduled rule expiration reminder).\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "notificationType": {
+                        "description": "Event notification method. Currently, only cloud monitoring notifications are supported. Value: cloudmonitor.\n",
+                        "type": "string"
+                    },
+                    "scalingGroupId": {
+                        "description": "Scaling group ID. You can call DescribeScalingGroups to query the scaling group ID.\n",
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "description": "Event notification update time.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "createdAt",
+                    "eventTypes",
+                    "id",
+                    "notificationType",
+                    "scalingGroupId",
+                    "updatedAt"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:autoscaling/getNotificationConfigurations:getNotificationConfigurations": {
+            "description": "Plural Data Source schema for Byteplus::AutoScaling::NotificationConfiguration\n",
+            "outputs": {
+                "description": "A collection of values returned by getNotificationConfigurations.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:autoscaling/getScalingConfiguration:getScalingConfiguration": {
             "description": "Data Source schema for Byteplus::AutoScaling::ScalingConfiguration\n",
             "inputs": {
@@ -128809,6 +129564,97 @@
             "description": "Plural Data Source schema for Byteplus::CloudMonitor::Rule\n",
             "outputs": {
                 "description": "A collection of values returned by getRules.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:config/getConfigurationRecorder:getConfigurationRecorder": {
+            "description": "Data Source schema for Byteplus::Config::ConfigurationRecorder\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getConfigurationRecorder.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getConfigurationRecorder.\n",
+                "properties": {
+                    "configurationRecorderStatus": {
+                        "description": "Configuration recorder status. Options: Disabled, PendingEnable, Building, Rebuilding, Enabled, PendingDisable\n",
+                        "type": "string"
+                    },
+                    "createBy": {
+                        "description": "Configuration recorder creation source\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "includeAllResourceTypes": {
+                        "description": "Whether to record all supported resource types\n",
+                        "type": "boolean"
+                    },
+                    "includeResourceTypes": {
+                        "description": "List of specified resource types to record\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "recorderId": {
+                        "description": "Configuration recorder ID\n",
+                        "type": "string"
+                    },
+                    "recorderName": {
+                        "description": "Configuration recorder name\n",
+                        "type": "string"
+                    },
+                    "recorderType": {
+                        "description": "Configuration recorder type. Options: SingleAccount, Organization\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "configurationRecorderStatus",
+                    "createBy",
+                    "id",
+                    "includeAllResourceTypes",
+                    "includeResourceTypes",
+                    "recorderId",
+                    "recorderName",
+                    "recorderType"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:config/getConfigurationRecorders:getConfigurationRecorders": {
+            "description": "Plural Data Source schema for Byteplus::Config::ConfigurationRecorder\n",
+            "outputs": {
+                "description": "A collection of values returned by getConfigurationRecorders.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -143440,7 +144286,7 @@
                         "description": "Auto scaling configuration\n"
                     },
                     "autoUpgradeMinorVersion": {
-                        "description": "Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.\n",
+                        "description": "Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see \"Manually upgrade the instance's minor kernel version.\" Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.\n",
                         "type": "string"
                     },
                     "backupAuditLogSize": {
@@ -143542,6 +144388,10 @@
                         "description": "Latency between the disaster recovery instance and the primary instance.\n",
                         "type": "integer"
                     },
+                    "enableExternalReplication": {
+                        "description": "Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.\n",
+                        "type": "boolean"
+                    },
                     "endpoints": {
                         "description": "Instance connection information.\n",
                         "items": {
@@ -143631,10 +144481,6 @@
                             "$ref": "#/types/bytepluscc:rdsmysql/getInstanceNode:getInstanceNode"
                         },
                         "type": "array"
-                    },
-                    "parameterTemplateId": {
-                        "description": "Parameter template ID.\n",
-                        "type": "string"
                     },
                     "port": {
                         "description": "Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.\n",
@@ -143769,6 +144615,7 @@
                     "drDtsTaskName",
                     "drDtsTaskStatus",
                     "drSecondsBehindMaster",
+                    "enableExternalReplication",
                     "endpoints",
                     "engineType",
                     "globalReadOnly",
@@ -143790,7 +144637,6 @@
                     "nodeSpaceUsedPercentage",
                     "nodeSpec",
                     "nodes",
-                    "parameterTemplateId",
                     "port",
                     "privateIpAddress",
                     "projectName",
@@ -149722,6 +150568,343 @@
                 "required": [
                     "id",
                     "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/getTransitRouterTrafficQosMarkingEntries:getTransitRouterTrafficQosMarkingEntries": {
+            "description": "Plural Data Source schema for Byteplus::TransitRouter::TransitRouterTrafficQosMarkingEntry\n",
+            "outputs": {
+                "description": "A collection of values returned by getTransitRouterTrafficQosMarkingEntries.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/getTransitRouterTrafficQosMarkingEntry:getTransitRouterTrafficQosMarkingEntry": {
+            "description": "Data Source schema for Byteplus::TransitRouter::TransitRouterTrafficQosMarkingEntry\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getTransitRouterTrafficQosMarkingEntry.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTransitRouterTrafficQosMarkingEntry.\n",
+                "properties": {
+                    "creationTime": {
+                        "description": "Flow marking rule creation time\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the flow marking rule. Length limit: 0–255 characters\n",
+                        "type": "string"
+                    },
+                    "destinationCidrBlock": {
+                        "description": "IP subnet of the destination address, supports IPv4 and IPv6\nWhen Protocol is tcp, udp, gre, or all, this parameter can accept IPv4 or IPv6 subnets\nWhen Protocol is icmp, this parameter only supports IPv4 subnets\nWhen Protocol is icmpv6, this parameter only supports IPv6 subnets\nThe IP subnet type entered for this parameter should match SourceCidrBlock; both must be IPv4 subnets or both IPv6 subnets\n",
+                        "type": "string"
+                    },
+                    "destinationPortEnd": {
+                        "description": "End value of the destination port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, gre, or all, only -1 is supported\n",
+                        "type": "integer"
+                    },
+                    "destinationPortStart": {
+                        "description": "Start value of the destination port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, gre, or all, only -1 is supported\n",
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "matchDscp": {
+                        "description": "The DSCP value of the traffic packet itself. Value range: -1, 0–63. The default value is -1, which means that packets with any DSCP value will match this marking rule.\n",
+                        "type": "integer"
+                    },
+                    "priority": {
+                        "description": "Priority of the marking rule. Valid values: 1–10000\nPriorities of different marking rules must not be duplicated\n",
+                        "type": "integer"
+                    },
+                    "protocol": {
+                        "description": "Protocol type\ntcp: TCP protocol\nudp: UDP protocol\ngre: GRE protocol\nicmp: ICMP protocol\nicmpv6: ICMPV6 protocol\nall (default): Supports all protocols\nNote: IPv6 functionality for transit routers is currently in beta. To use it, please contact your account manager. ICMPV6 can only be used after enabling IPv6 for transit routers\n",
+                        "type": "string"
+                    },
+                    "remarkingDscp": {
+                        "description": "DSCP value to modify for target traffic packets. Valid values: 0–63\nWhen target traffic matches this marking rule, the DSCP value of the packet is replaced with this parameter value\n",
+                        "type": "integer"
+                    },
+                    "sourceCidrBlock": {
+                        "description": "IP subnet of the source address, supports IPv4 and IPv6\nWhen Protocol is tcp, udp, gre, or all, this parameter can accept IPv4 or IPv6 subnets\nWhen Protocol is icmp, this parameter only supports IPv4 subnets\nWhen Protocol is icmpv6, this parameter only supports IPv6 subnets\n",
+                        "type": "string"
+                    },
+                    "sourcePortEnd": {
+                        "description": "End value of the source port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, or gre, only -1 is supported\n",
+                        "type": "integer"
+                    },
+                    "sourcePortStart": {
+                        "description": "Start value of the source port range. Valid values: -1, 1–65535\n-1 means no port restriction\nWhen Protocol is icmp, icmpv6, or gre, only -1 is supported\n",
+                        "type": "integer"
+                    },
+                    "status": {
+                        "description": "Flow marking rule status\n",
+                        "type": "string"
+                    },
+                    "transitRouterTrafficQosMarkingEntryId": {
+                        "description": "Flow marking rule ID\n",
+                        "type": "string"
+                    },
+                    "transitRouterTrafficQosMarkingEntryName": {
+                        "description": "Name of the flow marking rule. Must start with a letter, number, or Chinese character; can include letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters\n",
+                        "type": "string"
+                    },
+                    "transitRouterTrafficQosMarkingPolicyId": {
+                        "description": "Flow marking policy ID\n",
+                        "type": "string"
+                    },
+                    "updateTime": {
+                        "description": "Last operation time of the flow marking rule\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "creationTime",
+                    "description",
+                    "destinationCidrBlock",
+                    "destinationPortEnd",
+                    "destinationPortStart",
+                    "id",
+                    "matchDscp",
+                    "priority",
+                    "protocol",
+                    "remarkingDscp",
+                    "sourceCidrBlock",
+                    "sourcePortEnd",
+                    "sourcePortStart",
+                    "status",
+                    "transitRouterTrafficQosMarkingEntryId",
+                    "transitRouterTrafficQosMarkingEntryName",
+                    "transitRouterTrafficQosMarkingPolicyId",
+                    "updateTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/getTransitRouterTrafficQosMarkingPolicies:getTransitRouterTrafficQosMarkingPolicies": {
+            "description": "Plural Data Source schema for Byteplus::TransitRouter::TransitRouterTrafficQosMarkingPolicy\n",
+            "outputs": {
+                "description": "A collection of values returned by getTransitRouterTrafficQosMarkingPolicies.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/getTransitRouterTrafficQosMarkingPolicy:getTransitRouterTrafficQosMarkingPolicy": {
+            "description": "Data Source schema for Byteplus::TransitRouter::TransitRouterTrafficQosMarkingPolicy\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getTransitRouterTrafficQosMarkingPolicy.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTransitRouterTrafficQosMarkingPolicy.\n",
+                "properties": {
+                    "creationTime": {
+                        "description": "Creation time of the flow marking policy.\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the flow marking policy. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length limit: 0–255 characters.\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the flow marking policy. Creating: being created. Deleting: being deleted. Pending: being configured. Available: available.\n",
+                        "type": "string"
+                    },
+                    "transitRouterId": {
+                        "description": "Transit router instance ID.\n",
+                        "type": "string"
+                    },
+                    "transitRouterTrafficQosMarkingPolicyId": {
+                        "description": "Flow marking policy ID.\n",
+                        "type": "string"
+                    },
+                    "transitRouterTrafficQosMarkingPolicyName": {
+                        "description": "Name of the flow marking policy. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length limit: 1–128 characters. If this parameter is not provided or no value is passed, the default is the flow marking policy ID.\n",
+                        "type": "string"
+                    },
+                    "updateTime": {
+                        "description": "Last update time of the flow marking policy.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "creationTime",
+                    "description",
+                    "id",
+                    "status",
+                    "transitRouterId",
+                    "transitRouterTrafficQosMarkingPolicyId",
+                    "transitRouterTrafficQosMarkingPolicyName",
+                    "updateTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/getTransitRouterTrafficQosQueueEntries:getTransitRouterTrafficQosQueueEntries": {
+            "description": "Plural Data Source schema for Byteplus::TransitRouter::TransitRouterTrafficQosQueueEntry\n",
+            "outputs": {
+                "description": "A collection of values returned by getTransitRouterTrafficQosQueueEntries.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:transitrouter/getTransitRouterTrafficQosQueueEntry:getTransitRouterTrafficQosQueueEntry": {
+            "description": "Data Source schema for Byteplus::TransitRouter::TransitRouterTrafficQosQueueEntry\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getTransitRouterTrafficQosQueueEntry.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getTransitRouterTrafficQosQueueEntry.\n",
+                "properties": {
+                    "bandwidthPercent": {
+                        "description": "Bandwidth percentage allocated to the flow queue entry. Value range: 0 to 100.\n",
+                        "type": "integer"
+                    },
+                    "creationTime": {
+                        "description": "Creation time of the flow queue entry.\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the flow queue entry. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: English comma (,), period (.), underscore (_), space ( ), equals sign (=), hyphen (-), Chinese comma (，), and Chinese period (。). Length: 0 to 255 characters.\n",
+                        "type": "string"
+                    },
+                    "dscps": {
+                        "description": "List of DSCP values matched by the flow queue entry. Each DSCP value ranges from 0 to 63.\n",
+                        "items": {
+                            "type": "integer"
+                        },
+                        "type": "array"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "isDefault": {
+                        "description": "Indicates whether this is the default flow queue entry. true: Yes. false: No.\n",
+                        "type": "boolean"
+                    },
+                    "priority": {
+                        "description": "Priority of the flow queue entry. Normal: Normal. High: High.\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the flow queue entry. Creating: Creating. Deleting: Deleting. Pending: Pending. Available: Available.\n",
+                        "type": "string"
+                    },
+                    "transitRouterTrafficQosQueueEntryId": {
+                        "description": "ID of the flow queue entry.\n",
+                        "type": "string"
+                    },
+                    "transitRouterTrafficQosQueueEntryName": {
+                        "description": "Name of the flow queue entry. Must start with a letter, number, or Chinese character. Can contain letters, numbers, Chinese characters, and the following special characters: period (.), underscore (_), and hyphen (-). Length: 1 to 128 characters.\n",
+                        "type": "string"
+                    },
+                    "transitRouterTrafficQosQueuePolicyId": {
+                        "description": "ID of the flow queue policy, identifying the flow queue policy to which this entry belongs.\n",
+                        "type": "string"
+                    },
+                    "updateTime": {
+                        "description": "Most recent update time of the flow queue entry.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "bandwidthPercent",
+                    "creationTime",
+                    "description",
+                    "dscps",
+                    "id",
+                    "isDefault",
+                    "priority",
+                    "status",
+                    "transitRouterTrafficQosQueueEntryId",
+                    "transitRouterTrafficQosQueueEntryName",
+                    "transitRouterTrafficQosQueuePolicyId",
+                    "updateTime"
                 ],
                 "type": "object"
             }

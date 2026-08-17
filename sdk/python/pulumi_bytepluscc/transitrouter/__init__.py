@@ -22,6 +22,12 @@ from .get_transit_router_route_table import *
 from .get_transit_router_route_table_association import *
 from .get_transit_router_route_table_associations import *
 from .get_transit_router_route_tables import *
+from .get_transit_router_traffic_qos_marking_entries import *
+from .get_transit_router_traffic_qos_marking_entry import *
+from .get_transit_router_traffic_qos_marking_policies import *
+from .get_transit_router_traffic_qos_marking_policy import *
+from .get_transit_router_traffic_qos_queue_entries import *
+from .get_transit_router_traffic_qos_queue_entry import *
 from .get_transit_routers import *
 from .get_vpc_attachment import *
 from .get_vpc_attachments import *
@@ -34,6 +40,9 @@ from .transit_router_bandwidth_package import *
 from .transit_router_route_entry import *
 from .transit_router_route_table import *
 from .transit_router_route_table_association import *
+from .transit_router_traffic_qos_marking_entry import *
+from .transit_router_traffic_qos_marking_policy import *
+from .transit_router_traffic_qos_queue_entry import *
 from .vpc_attachment import *
 from .vpn_attachment import *
 from ._inputs import *

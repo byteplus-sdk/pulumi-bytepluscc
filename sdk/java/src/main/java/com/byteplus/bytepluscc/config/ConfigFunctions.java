@@ -4,10 +4,14 @@
 package com.byteplus.bytepluscc.config;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.config.inputs.GetConfigurationRecorderArgs;
+import com.byteplus.bytepluscc.config.inputs.GetConfigurationRecorderPlainArgs;
 import com.byteplus.bytepluscc.config.inputs.GetGroupRuleArgs;
 import com.byteplus.bytepluscc.config.inputs.GetGroupRulePlainArgs;
 import com.byteplus.bytepluscc.config.inputs.GetRuleArgs;
 import com.byteplus.bytepluscc.config.inputs.GetRulePlainArgs;
+import com.byteplus.bytepluscc.config.outputs.GetConfigurationRecorderResult;
+import com.byteplus.bytepluscc.config.outputs.GetConfigurationRecordersResult;
 import com.byteplus.bytepluscc.config.outputs.GetGroupRuleResult;
 import com.byteplus.bytepluscc.config.outputs.GetGroupRulesResult;
 import com.byteplus.bytepluscc.config.outputs.GetRuleResult;
@@ -21,6 +25,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class ConfigFunctions {
+    /**
+     * Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static Output<GetConfigurationRecorderResult> getConfigurationRecorder(GetConfigurationRecorderArgs args) {
+        return getConfigurationRecorder(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static CompletableFuture<GetConfigurationRecorderResult> getConfigurationRecorderPlain(GetConfigurationRecorderPlainArgs args) {
+        return getConfigurationRecorderPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static Output<GetConfigurationRecorderResult> getConfigurationRecorder(GetConfigurationRecorderArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:config/getConfigurationRecorder:getConfigurationRecorder", TypeShape.of(GetConfigurationRecorderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static Output<GetConfigurationRecorderResult> getConfigurationRecorder(GetConfigurationRecorderArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:config/getConfigurationRecorder:getConfigurationRecorder", TypeShape.of(GetConfigurationRecorderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static CompletableFuture<GetConfigurationRecorderResult> getConfigurationRecorderPlain(GetConfigurationRecorderPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:config/getConfigurationRecorder:getConfigurationRecorder", TypeShape.of(GetConfigurationRecorderResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static Output<GetConfigurationRecordersResult> getConfigurationRecorders() {
+        return getConfigurationRecorders(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static CompletableFuture<GetConfigurationRecordersResult> getConfigurationRecordersPlain() {
+        return getConfigurationRecordersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static Output<GetConfigurationRecordersResult> getConfigurationRecorders(InvokeArgs args) {
+        return getConfigurationRecorders(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static CompletableFuture<GetConfigurationRecordersResult> getConfigurationRecordersPlain(InvokeArgs args) {
+        return getConfigurationRecordersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static Output<GetConfigurationRecordersResult> getConfigurationRecorders(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:config/getConfigurationRecorders:getConfigurationRecorders", TypeShape.of(GetConfigurationRecordersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static Output<GetConfigurationRecordersResult> getConfigurationRecorders(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:config/getConfigurationRecorders:getConfigurationRecorders", TypeShape.of(GetConfigurationRecordersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Config::ConfigurationRecorder
+     * 
+     */
+    public static CompletableFuture<GetConfigurationRecordersResult> getConfigurationRecordersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:config/getConfigurationRecorders:getConfigurationRecorders", TypeShape.of(GetConfigurationRecordersResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::Config::GroupRule
      * 

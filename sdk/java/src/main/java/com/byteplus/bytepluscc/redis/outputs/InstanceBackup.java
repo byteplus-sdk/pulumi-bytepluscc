@@ -23,6 +23,11 @@ public final class InstanceBackup {
      */
     private @Nullable String backupPointName;
     /**
+     * @return Current backup progress. Measured as a percentage.
+     * 
+     */
+    private @Nullable Integer backupProgress;
+    /**
      * @return Backup policy
      * 
      */
@@ -72,6 +77,13 @@ public final class InstanceBackup {
      */
     public Optional<String> backupPointName() {
         return Optional.ofNullable(this.backupPointName);
+    }
+    /**
+     * @return Current backup progress. Measured as a percentage.
+     * 
+     */
+    public Optional<Integer> backupProgress() {
+        return Optional.ofNullable(this.backupProgress);
     }
     /**
      * @return Backup policy
@@ -134,6 +146,7 @@ public final class InstanceBackup {
     public static final class Builder {
         private @Nullable String backupPointId;
         private @Nullable String backupPointName;
+        private @Nullable Integer backupProgress;
         private @Nullable String backupStrategy;
         private @Nullable String backupType;
         private @Nullable String endTime;
@@ -146,6 +159,7 @@ public final class InstanceBackup {
     	      Objects.requireNonNull(defaults);
     	      this.backupPointId = defaults.backupPointId;
     	      this.backupPointName = defaults.backupPointName;
+    	      this.backupProgress = defaults.backupProgress;
     	      this.backupStrategy = defaults.backupStrategy;
     	      this.backupType = defaults.backupType;
     	      this.endTime = defaults.endTime;
@@ -165,6 +179,12 @@ public final class InstanceBackup {
         public Builder backupPointName(@Nullable String backupPointName) {
 
             this.backupPointName = backupPointName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupProgress(@Nullable Integer backupProgress) {
+
+            this.backupProgress = backupProgress;
             return this;
         }
         @CustomType.Setter
@@ -213,6 +233,7 @@ public final class InstanceBackup {
             final var _resultValue = new InstanceBackup();
             _resultValue.backupPointId = backupPointId;
             _resultValue.backupPointName = backupPointName;
+            _resultValue.backupProgress = backupProgress;
             _resultValue.backupStrategy = backupStrategy;
             _resultValue.backupType = backupType;
             _resultValue.endTime = endTime;

@@ -45,7 +45,7 @@ public final class GetInstanceResult {
      */
     private GetInstanceAutoStorageScalingConfig autoStorageScalingConfig;
     /**
-     * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * @return Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see &#34;Manually upgrade the instance&#39;s minor kernel version.&#34; Note: If the instance&#39;s minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance&#39;s minor kernel version.
      * 
      */
     private String autoUpgradeMinorVersion;
@@ -170,6 +170,11 @@ public final class GetInstanceResult {
      */
     private Integer drSecondsBehindMaster;
     /**
+     * @return Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     * 
+     */
+    private Boolean enableExternalReplication;
+    /**
      * @return Instance connection information.
      * 
      */
@@ -274,11 +279,6 @@ public final class GetInstanceResult {
      * 
      */
     private List<GetInstanceNode> nodes;
-    /**
-     * @return Parameter template ID.
-     * 
-     */
-    private String parameterTemplateId;
     /**
      * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      * 
@@ -430,7 +430,7 @@ public final class GetInstanceResult {
         return this.autoStorageScalingConfig;
     }
     /**
-     * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * @return Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see &#34;Manually upgrade the instance&#39;s minor kernel version.&#34; Note: If the instance&#39;s minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance&#39;s minor kernel version.
      * 
      */
     public String autoUpgradeMinorVersion() {
@@ -605,6 +605,13 @@ public final class GetInstanceResult {
         return this.drSecondsBehindMaster;
     }
     /**
+     * @return Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     * 
+     */
+    public Boolean enableExternalReplication() {
+        return this.enableExternalReplication;
+    }
+    /**
      * @return Instance connection information.
      * 
      */
@@ -750,13 +757,6 @@ public final class GetInstanceResult {
      */
     public List<GetInstanceNode> nodes() {
         return this.nodes;
-    }
-    /**
-     * @return Parameter template ID.
-     * 
-     */
-    public String parameterTemplateId() {
-        return this.parameterTemplateId;
     }
     /**
      * @return Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
@@ -965,6 +965,7 @@ public final class GetInstanceResult {
         private String drDtsTaskName;
         private String drDtsTaskStatus;
         private Integer drSecondsBehindMaster;
+        private Boolean enableExternalReplication;
         private List<GetInstanceEndpoint> endpoints;
         private String engineType;
         private Boolean globalReadOnly;
@@ -986,7 +987,6 @@ public final class GetInstanceResult {
         private Double nodeSpaceUsedPercentage;
         private String nodeSpec;
         private List<GetInstanceNode> nodes;
-        private String parameterTemplateId;
         private Integer port;
         private String privateIpAddress;
         private String projectName;
@@ -1043,6 +1043,7 @@ public final class GetInstanceResult {
     	      this.drDtsTaskName = defaults.drDtsTaskName;
     	      this.drDtsTaskStatus = defaults.drDtsTaskStatus;
     	      this.drSecondsBehindMaster = defaults.drSecondsBehindMaster;
+    	      this.enableExternalReplication = defaults.enableExternalReplication;
     	      this.endpoints = defaults.endpoints;
     	      this.engineType = defaults.engineType;
     	      this.globalReadOnly = defaults.globalReadOnly;
@@ -1064,7 +1065,6 @@ public final class GetInstanceResult {
     	      this.nodeSpaceUsedPercentage = defaults.nodeSpaceUsedPercentage;
     	      this.nodeSpec = defaults.nodeSpec;
     	      this.nodes = defaults.nodes;
-    	      this.parameterTemplateId = defaults.parameterTemplateId;
     	      this.port = defaults.port;
     	      this.privateIpAddress = defaults.privateIpAddress;
     	      this.projectName = defaults.projectName;
@@ -1333,6 +1333,14 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder enableExternalReplication(Boolean enableExternalReplication) {
+            if (enableExternalReplication == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "enableExternalReplication");
+            }
+            this.enableExternalReplication = enableExternalReplication;
+            return this;
+        }
+        @CustomType.Setter
         public Builder endpoints(List<GetInstanceEndpoint> endpoints) {
             if (endpoints == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "endpoints");
@@ -1505,14 +1513,6 @@ public final class GetInstanceResult {
         }
         public Builder nodes(GetInstanceNode... nodes) {
             return nodes(List.of(nodes));
-        }
-        @CustomType.Setter
-        public Builder parameterTemplateId(String parameterTemplateId) {
-            if (parameterTemplateId == null) {
-              throw new MissingRequiredPropertyException("GetInstanceResult", "parameterTemplateId");
-            }
-            this.parameterTemplateId = parameterTemplateId;
-            return this;
         }
         @CustomType.Setter
         public Builder port(Integer port) {
@@ -1743,6 +1743,7 @@ public final class GetInstanceResult {
             _resultValue.drDtsTaskName = drDtsTaskName;
             _resultValue.drDtsTaskStatus = drDtsTaskStatus;
             _resultValue.drSecondsBehindMaster = drSecondsBehindMaster;
+            _resultValue.enableExternalReplication = enableExternalReplication;
             _resultValue.endpoints = endpoints;
             _resultValue.engineType = engineType;
             _resultValue.globalReadOnly = globalReadOnly;
@@ -1764,7 +1765,6 @@ public final class GetInstanceResult {
             _resultValue.nodeSpaceUsedPercentage = nodeSpaceUsedPercentage;
             _resultValue.nodeSpec = nodeSpec;
             _resultValue.nodes = nodes;
-            _resultValue.parameterTemplateId = parameterTemplateId;
             _resultValue.port = port;
             _resultValue.privateIpAddress = privateIpAddress;
             _resultValue.projectName = projectName;

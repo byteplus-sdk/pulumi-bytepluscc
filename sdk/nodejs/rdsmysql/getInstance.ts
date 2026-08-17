@@ -47,7 +47,7 @@ export interface GetInstanceResult {
      */
     readonly autoStorageScalingConfig: outputs.rdsmysql.GetInstanceAutoStorageScalingConfig;
     /**
-     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see "Manually upgrade the instance's minor kernel version." Note: If the instance's minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance's minor kernel version.
      */
     readonly autoUpgradeMinorVersion: string;
     /**
@@ -147,6 +147,10 @@ export interface GetInstanceResult {
      */
     readonly drSecondsBehindMaster: number;
     /**
+     * Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     */
+    readonly enableExternalReplication: boolean;
+    /**
      * Instance connection information.
      */
     readonly endpoints: outputs.rdsmysql.GetInstanceEndpoint[];
@@ -230,10 +234,6 @@ export interface GetInstanceResult {
      * Instance node information.
      */
     readonly nodes: outputs.rdsmysql.GetInstanceNode[];
-    /**
-     * Parameter template ID.
-     */
-    readonly parameterTemplateId: string;
     /**
      * Default endpoint private network port. Port range: 1000~65534, default is 3306. When creating a new connection endpoint or enabling a new address, the default endpoint private network port is used for real-time configuration as the default port.
      */

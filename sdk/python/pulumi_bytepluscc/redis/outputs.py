@@ -177,6 +177,8 @@ class InstanceBackup(dict):
             suggest = "backup_point_id"
         elif key == "backupPointName":
             suggest = "backup_point_name"
+        elif key == "backupProgress":
+            suggest = "backup_progress"
         elif key == "backupStrategy":
             suggest = "backup_strategy"
         elif key == "backupType":
@@ -202,6 +204,7 @@ class InstanceBackup(dict):
     def __init__(__self__, *,
                  backup_point_id: Optional[_builtins.str] = None,
                  backup_point_name: Optional[_builtins.str] = None,
+                 backup_progress: Optional[_builtins.int] = None,
                  backup_strategy: Optional[_builtins.str] = None,
                  backup_type: Optional[_builtins.str] = None,
                  end_time: Optional[_builtins.str] = None,
@@ -212,6 +215,7 @@ class InstanceBackup(dict):
         """
         :param _builtins.str backup_point_id: Backup point ID
         :param _builtins.str backup_point_name: Backup point name
+        :param _builtins.int backup_progress: Current backup progress. Measured as a percentage.
         :param _builtins.str backup_strategy: Backup policy
         :param _builtins.str backup_type: Backup type
         :param _builtins.str end_time: Backup end time
@@ -224,6 +228,8 @@ class InstanceBackup(dict):
             pulumi.set(__self__, "backup_point_id", backup_point_id)
         if backup_point_name is not None:
             pulumi.set(__self__, "backup_point_name", backup_point_name)
+        if backup_progress is not None:
+            pulumi.set(__self__, "backup_progress", backup_progress)
         if backup_strategy is not None:
             pulumi.set(__self__, "backup_strategy", backup_strategy)
         if backup_type is not None:
@@ -254,6 +260,14 @@ class InstanceBackup(dict):
         Backup point name
         """
         return pulumi.get(self, "backup_point_name")
+
+    @_builtins.property
+    @pulumi.getter(name="backupProgress")
+    def backup_progress(self) -> Optional[_builtins.int]:
+        """
+        Current backup progress. Measured as a percentage.
+        """
+        return pulumi.get(self, "backup_progress")
 
     @_builtins.property
     @pulumi.getter(name="backupStrategy")
@@ -947,6 +961,7 @@ class GetInstanceBackupResult(dict):
     def __init__(__self__, *,
                  backup_point_id: _builtins.str,
                  backup_point_name: _builtins.str,
+                 backup_progress: _builtins.int,
                  backup_strategy: _builtins.str,
                  backup_type: _builtins.str,
                  end_time: _builtins.str,
@@ -957,6 +972,7 @@ class GetInstanceBackupResult(dict):
         """
         :param _builtins.str backup_point_id: Backup point ID
         :param _builtins.str backup_point_name: Backup point name
+        :param _builtins.int backup_progress: Current backup progress. Measured as a percentage.
         :param _builtins.str backup_strategy: Backup policy
         :param _builtins.str backup_type: Backup type
         :param _builtins.str end_time: Backup end time
@@ -967,6 +983,7 @@ class GetInstanceBackupResult(dict):
         """
         pulumi.set(__self__, "backup_point_id", backup_point_id)
         pulumi.set(__self__, "backup_point_name", backup_point_name)
+        pulumi.set(__self__, "backup_progress", backup_progress)
         pulumi.set(__self__, "backup_strategy", backup_strategy)
         pulumi.set(__self__, "backup_type", backup_type)
         pulumi.set(__self__, "end_time", end_time)
@@ -990,6 +1007,14 @@ class GetInstanceBackupResult(dict):
         Backup point name
         """
         return pulumi.get(self, "backup_point_name")
+
+    @_builtins.property
+    @pulumi.getter(name="backupProgress")
+    def backup_progress(self) -> _builtins.int:
+        """
+        Current backup progress. Measured as a percentage.
+        """
+        return pulumi.get(self, "backup_progress")
 
     @_builtins.property
     @pulumi.getter(name="backupStrategy")

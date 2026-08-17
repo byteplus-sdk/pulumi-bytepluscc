@@ -92,14 +92,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see &#34;Manually upgrade the instance&#39;s minor kernel version.&#34; Note: If the instance&#39;s minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance&#39;s minor kernel version.
      * 
      */
     @Import(name="autoUpgradeMinorVersion")
     private @Nullable Output<String> autoUpgradeMinorVersion;
 
     /**
-     * @return Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+     * @return Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see &#34;Manually upgrade the instance&#39;s minor kernel version.&#34; Note: If the instance&#39;s minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance&#39;s minor kernel version.
      * 
      */
     public Optional<Output<String>> autoUpgradeMinorVersion() {
@@ -469,6 +469,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     * 
+     */
+    @Import(name="enableExternalReplication")
+    private @Nullable Output<Boolean> enableExternalReplication;
+
+    /**
+     * @return Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+     * 
+     */
+    public Optional<Output<Boolean>> enableExternalReplication() {
+        return Optional.ofNullable(this.enableExternalReplication);
+    }
+
+    /**
      * Instance connection information.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
@@ -770,21 +785,6 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<InstanceNodeArgs>>> nodes() {
         return Optional.ofNullable(this.nodes);
-    }
-
-    /**
-     * Parameter template ID.
-     * 
-     */
-    @Import(name="parameterTemplateId")
-    private @Nullable Output<String> parameterTemplateId;
-
-    /**
-     * @return Parameter template ID.
-     * 
-     */
-    public Optional<Output<String>> parameterTemplateId() {
-        return Optional.ofNullable(this.parameterTemplateId);
     }
 
     /**
@@ -1181,6 +1181,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.drDtsTaskName = $.drDtsTaskName;
         this.drDtsTaskStatus = $.drDtsTaskStatus;
         this.drSecondsBehindMaster = $.drSecondsBehindMaster;
+        this.enableExternalReplication = $.enableExternalReplication;
         this.endpoints = $.endpoints;
         this.engineType = $.engineType;
         this.globalReadOnly = $.globalReadOnly;
@@ -1201,7 +1202,6 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         this.nodeSpaceUsedPercentage = $.nodeSpaceUsedPercentage;
         this.nodeSpec = $.nodeSpec;
         this.nodes = $.nodes;
-        this.parameterTemplateId = $.parameterTemplateId;
         this.port = $.port;
         this.privateIpAddress = $.privateIpAddress;
         this.projectName = $.projectName;
@@ -1354,7 +1354,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoUpgradeMinorVersion Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+         * @param autoUpgradeMinorVersion Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see &#34;Manually upgrade the instance&#39;s minor kernel version.&#34; Note: If the instance&#39;s minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance&#39;s minor kernel version.
          * 
          * @return builder
          * 
@@ -1365,7 +1365,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param autoUpgradeMinorVersion Instance kernel minor version upgrade policy. Values: Auto: Automatic upgrade. Manual: Manual upgrade.
+         * @param autoUpgradeMinorVersion Minor kernel version upgrade policy. Values: Auto: Automatic upgrade. When a new minor kernel version is released, the instance automatically upgrades to the latest minor kernel version during the specified maintenance window. Manual: Manual upgrade. When a new minor kernel version is released, you need to manually upgrade to the latest minor kernel version in the console. For details, see &#34;Manually upgrade the instance&#39;s minor kernel version.&#34; Note: If the instance&#39;s minor kernel version is beyond the maintenance period, the system temporarily ignores the upgrade policy setting and automatically upgrades the instance&#39;s minor kernel version.
          * 
          * @return builder
          * 
@@ -1892,6 +1892,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param enableExternalReplication Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableExternalReplication(@Nullable Output<Boolean> enableExternalReplication) {
+            $.enableExternalReplication = enableExternalReplication;
+            return this;
+        }
+
+        /**
+         * @param enableExternalReplication Enable native replication. Values: true: Yes. false: No (default). Note: This configuration only takes effect when InstanceType is set to SingleNode.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enableExternalReplication(Boolean enableExternalReplication) {
+            return enableExternalReplication(Output.of(enableExternalReplication));
+        }
+
+        /**
          * @param endpoints Instance connection information.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
@@ -2335,27 +2356,6 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder nodes(InstanceNodeArgs... nodes) {
             return nodes(List.of(nodes));
-        }
-
-        /**
-         * @param parameterTemplateId Parameter template ID.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder parameterTemplateId(@Nullable Output<String> parameterTemplateId) {
-            $.parameterTemplateId = parameterTemplateId;
-            return this;
-        }
-
-        /**
-         * @param parameterTemplateId Parameter template ID.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder parameterTemplateId(String parameterTemplateId) {
-            return parameterTemplateId(Output.of(parameterTemplateId));
         }
 
         /**

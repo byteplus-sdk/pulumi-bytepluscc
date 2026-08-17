@@ -273,6 +273,14 @@
                     }
                 }
             },
+            "bytepluscc_autoscaling_notification_configuration": {
+                "current": "bytepluscc:autoscaling/notificationConfiguration:NotificationConfiguration",
+                "fields": {
+                    "event_types": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_autoscaling_scaling_configuration": {
                 "current": "bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration",
                 "fields": {
@@ -1343,6 +1351,14 @@
                         "maxItemsOne": false
                     },
                     "webhook_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_config_configuration_recorder": {
+                "current": "bytepluscc:config/configurationRecorder:ConfigurationRecorder",
+                "fields": {
+                    "include_resource_types": {
                         "maxItemsOne": false
                     }
                 }
@@ -3853,6 +3869,20 @@
             "bytepluscc_transitrouter_transit_router_route_table_association": {
                 "current": "bytepluscc:transitrouter/transitRouterRouteTableAssociation:TransitRouterRouteTableAssociation"
             },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_marking_entry": {
+                "current": "bytepluscc:transitrouter/transitRouterTrafficQosMarkingEntry:TransitRouterTrafficQosMarkingEntry"
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_marking_policy": {
+                "current": "bytepluscc:transitrouter/transitRouterTrafficQosMarkingPolicy:TransitRouterTrafficQosMarkingPolicy"
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_queue_entry": {
+                "current": "bytepluscc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry",
+                "fields": {
+                    "dscps": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_transitrouter_vpc_attachment": {
                 "current": "bytepluscc:transitrouter/vpcAttachment:VpcAttachment",
                 "fields": {
@@ -5140,6 +5170,22 @@
             },
             "bytepluscc_ark_endpoints": {
                 "current": "bytepluscc:ark/getEndpoints:getEndpoints",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_autoscaling_notification_configuration": {
+                "current": "bytepluscc:autoscaling/getNotificationConfiguration:getNotificationConfiguration",
+                "fields": {
+                    "event_types": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_autoscaling_notification_configurations": {
+                "current": "bytepluscc:autoscaling/getNotificationConfigurations:getNotificationConfigurations",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -6518,6 +6564,22 @@
             },
             "bytepluscc_cloudmonitor_rules": {
                 "current": "bytepluscc:cloudmonitor/getRules:getRules",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_config_configuration_recorder": {
+                "current": "bytepluscc:config/getConfigurationRecorder:getConfigurationRecorder",
+                "fields": {
+                    "include_resource_types": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_config_configuration_recorders": {
+                "current": "bytepluscc:config/getConfigurationRecorders:getConfigurationRecorders",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -10328,6 +10390,44 @@
                     }
                 }
             },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_marking_entries": {
+                "current": "bytepluscc:transitrouter/getTransitRouterTrafficQosMarkingEntries:getTransitRouterTrafficQosMarkingEntries",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_marking_entry": {
+                "current": "bytepluscc:transitrouter/getTransitRouterTrafficQosMarkingEntry:getTransitRouterTrafficQosMarkingEntry"
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_marking_policies": {
+                "current": "bytepluscc:transitrouter/getTransitRouterTrafficQosMarkingPolicies:getTransitRouterTrafficQosMarkingPolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_marking_policy": {
+                "current": "bytepluscc:transitrouter/getTransitRouterTrafficQosMarkingPolicy:getTransitRouterTrafficQosMarkingPolicy"
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_queue_entries": {
+                "current": "bytepluscc:transitrouter/getTransitRouterTrafficQosQueueEntries:getTransitRouterTrafficQosQueueEntries",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_queue_entry": {
+                "current": "bytepluscc:transitrouter/getTransitRouterTrafficQosQueueEntry:getTransitRouterTrafficQosQueueEntry",
+                "fields": {
+                    "dscps": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_transitrouter_transit_routers": {
                 "current": "bytepluscc:transitrouter/getTransitRouters:getTransitRouters",
                 "fields": {
@@ -11705,6 +11805,7 @@
             "bytepluscc_apig_upstream": {},
             "bytepluscc_apig_upstream_source": {},
             "bytepluscc_ark_endpoint": {},
+            "bytepluscc_autoscaling_notification_configuration": {},
             "bytepluscc_autoscaling_scaling_configuration": {},
             "bytepluscc_autoscaling_scaling_group": {},
             "bytepluscc_autoscaling_scaling_lifecycle_hook": {},
@@ -11743,6 +11844,7 @@
             "bytepluscc_cloudmonitor_contact_group": {},
             "bytepluscc_cloudmonitor_event_rule": {},
             "bytepluscc_cloudmonitor_rule": {},
+            "bytepluscc_config_configuration_recorder": {},
             "bytepluscc_config_group_rule": {},
             "bytepluscc_config_rule": {},
             "bytepluscc_cr_endpoint_acl_policy": {},
@@ -11896,6 +11998,9 @@
             "bytepluscc_transitrouter_transit_router_route_entry": {},
             "bytepluscc_transitrouter_transit_router_route_table": {},
             "bytepluscc_transitrouter_transit_router_route_table_association": {},
+            "bytepluscc_transitrouter_transit_router_traffic_qos_marking_entry": {},
+            "bytepluscc_transitrouter_transit_router_traffic_qos_marking_policy": {},
+            "bytepluscc_transitrouter_transit_router_traffic_qos_queue_entry": {},
             "bytepluscc_transitrouter_vpc_attachment": {},
             "bytepluscc_transitrouter_vpn_attachment": {},
             "bytepluscc_vedbm_account": {},

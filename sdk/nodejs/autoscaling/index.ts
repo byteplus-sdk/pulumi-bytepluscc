@@ -5,6 +5,16 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { GetNotificationConfigurationArgs, GetNotificationConfigurationResult, GetNotificationConfigurationOutputArgs } from "./getNotificationConfiguration";
+export const getNotificationConfiguration: typeof import("./getNotificationConfiguration").getNotificationConfiguration = null as any;
+export const getNotificationConfigurationOutput: typeof import("./getNotificationConfiguration").getNotificationConfigurationOutput = null as any;
+utilities.lazyLoad(exports, ["getNotificationConfiguration","getNotificationConfigurationOutput"], () => require("./getNotificationConfiguration"));
+
+export { GetNotificationConfigurationsResult } from "./getNotificationConfigurations";
+export const getNotificationConfigurations: typeof import("./getNotificationConfigurations").getNotificationConfigurations = null as any;
+export const getNotificationConfigurationsOutput: typeof import("./getNotificationConfigurations").getNotificationConfigurationsOutput = null as any;
+utilities.lazyLoad(exports, ["getNotificationConfigurations","getNotificationConfigurationsOutput"], () => require("./getNotificationConfigurations"));
+
 export { GetScalingConfigurationArgs, GetScalingConfigurationResult, GetScalingConfigurationOutputArgs } from "./getScalingConfiguration";
 export const getScalingConfiguration: typeof import("./getScalingConfiguration").getScalingConfiguration = null as any;
 export const getScalingConfigurationOutput: typeof import("./getScalingConfiguration").getScalingConfigurationOutput = null as any;
@@ -45,6 +55,11 @@ export const getScalingPolicy: typeof import("./getScalingPolicy").getScalingPol
 export const getScalingPolicyOutput: typeof import("./getScalingPolicy").getScalingPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getScalingPolicy","getScalingPolicyOutput"], () => require("./getScalingPolicy"));
 
+export { NotificationConfigurationArgs, NotificationConfigurationState } from "./notificationConfiguration";
+export type NotificationConfiguration = import("./notificationConfiguration").NotificationConfiguration;
+export const NotificationConfiguration: typeof import("./notificationConfiguration").NotificationConfiguration = null as any;
+utilities.lazyLoad(exports, ["NotificationConfiguration"], () => require("./notificationConfiguration"));
+
 export { ScalingConfigurationArgs, ScalingConfigurationState } from "./scalingConfiguration";
 export type ScalingConfiguration = import("./scalingConfiguration").ScalingConfiguration;
 export const ScalingConfiguration: typeof import("./scalingConfiguration").ScalingConfiguration = null as any;
@@ -70,6 +85,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:autoscaling/notificationConfiguration:NotificationConfiguration":
+                return new NotificationConfiguration(name, <any>undefined, { urn })
             case "bytepluscc:autoscaling/scalingConfiguration:ScalingConfiguration":
                 return new ScalingConfiguration(name, <any>undefined, { urn })
             case "bytepluscc:autoscaling/scalingGroup:ScalingGroup":
@@ -83,6 +100,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/notificationConfiguration", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingConfiguration", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "autoscaling/scalingLifecycleHook", _module)
