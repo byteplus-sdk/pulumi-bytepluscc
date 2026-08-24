@@ -4,6 +4,8 @@
 package com.byteplus.bytepluscc.kafka;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.kafka.inputs.GetAclArgs;
+import com.byteplus.bytepluscc.kafka.inputs.GetAclPlainArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetAllowListArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetAllowListPlainArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetGroupArgs;
@@ -14,6 +16,8 @@ import com.byteplus.bytepluscc.kafka.inputs.GetTopicArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetTopicPlainArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetUserArgs;
 import com.byteplus.bytepluscc.kafka.inputs.GetUserPlainArgs;
+import com.byteplus.bytepluscc.kafka.outputs.GetAclResult;
+import com.byteplus.bytepluscc.kafka.outputs.GetAclsResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.kafka.outputs.GetGroupResult;
@@ -33,6 +37,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class KafkaFunctions {
+    /**
+     * Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args) {
+        return getAcl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclResult> getAclPlain(GetAclPlainArgs args) {
+        return getAclPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclResult> getAcl(GetAclArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclResult> getAclPlain(GetAclPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kafka/getAcl:getAcl", TypeShape.of(GetAclResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls() {
+        return getAcls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain() {
+        return getAclsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args) {
+        return getAcls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain(InvokeArgs args) {
+        return getAclsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static Output<GetAclsResult> getAcls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:kafka/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Kafka::ACL
+     * 
+     */
+    public static CompletableFuture<GetAclsResult> getAclsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:kafka/getAcls:getAcls", TypeShape.of(GetAclsResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::Kafka::AllowList
      * 

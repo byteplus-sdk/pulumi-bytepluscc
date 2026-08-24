@@ -898,6 +898,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "fwcenter/natFireWall",
+  "fqn": "pulumi_bytepluscc.fwcenter",
+  "classes": {
+   "bytepluscc:fwcenter/natFireWall:NatFireWall": "NatFireWall"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "fwcenter/natFireWallControlPolicy",
   "fqn": "pulumi_bytepluscc.fwcenter",
   "classes": {
@@ -1078,6 +1086,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.id",
   "classes": {
    "bytepluscc:id/workloadPool:WorkloadPool": "WorkloadPool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "kafka/acl",
+  "fqn": "pulumi_bytepluscc.kafka",
+  "classes": {
+   "bytepluscc:kafka/acl:Acl": "Acl"
   }
  },
  {
@@ -1466,6 +1482,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "rdsmysql/ssl",
+  "fqn": "pulumi_bytepluscc.rdsmysql",
+  "classes": {
+   "bytepluscc:rdsmysql/ssl:Ssl": "Ssl"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "rdspostgresql/allowList",
   "fqn": "pulumi_bytepluscc.rdspostgresql",
   "classes": {
@@ -1786,10 +1810,34 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterAttachmentToRouteTable",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterAttachmentToRouteTable:TransitRouterAttachmentToRouteTable": "TransitRouterAttachmentToRouteTable"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "transitrouter/transitRouterBandwidthPackage",
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
    "bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage": "TransitRouterBandwidthPackage"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterForwardPolicyTable",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterForwardPolicyTable:TransitRouterForwardPolicyTable": "TransitRouterForwardPolicyTable"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterMulticastDomain",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterMulticastDomain:TransitRouterMulticastDomain": "TransitRouterMulticastDomain"
   }
  },
  {
@@ -1838,6 +1886,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
    "bytepluscc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry": "TransitRouterTrafficQosQueueEntry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterTrafficQosQueuePolicy",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterTrafficQosQueuePolicy:TransitRouterTrafficQosQueuePolicy": "TransitRouterTrafficQosQueuePolicy"
   }
  },
  {
@@ -1942,6 +1998,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vefaas",
   "classes": {
    "bytepluscc:vefaas/timer:Timer": "Timer"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vepfs/dataFlowTask",
+  "fqn": "pulumi_bytepluscc.vepfs",
+  "classes": {
+   "bytepluscc:vepfs/dataFlowTask:DataFlowTask": "DataFlowTask"
   }
  },
  {
@@ -2110,6 +2174,30 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/ipPoolCidrBlock:IpPoolCidrBlock": "IpPoolCidrBlock"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/ipam",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipam:Ipam": "Ipam"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/ipamPool",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipamPool:IpamPool": "IpamPool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/ipamScope",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipamScope:IpamScope": "IpamScope"
   }
  },
  {

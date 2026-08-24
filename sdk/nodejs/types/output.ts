@@ -30050,6 +30050,17 @@ export namespace transitrouter {
         value: string;
     }
 
+    export interface GetTransitRouterMulticastDomainTag {
+        /**
+         * Tag key.
+         */
+        key: string;
+        /**
+         * Tag value.
+         */
+        value: string;
+    }
+
     export interface GetTransitRouterRouteTableTag {
         /**
          * Tag key
@@ -30241,6 +30252,17 @@ export namespace transitrouter {
         key: string;
         /**
          * Tag value
+         */
+        value: string;
+    }
+
+    export interface TransitRouterMulticastDomainTag {
+        /**
+         * Tag key.
+         */
+        key: string;
+        /**
+         * Tag value.
          */
         value: string;
     }
@@ -31427,6 +31449,150 @@ export namespace vefaas {
 }
 
 export namespace vepfs {
+    export interface DataFlowTaskDeletePolicy {
+        /**
+         * Specify the deletion time (data before this time will be deleted), in milliseconds.
+         */
+        deleteTimeBefore: string;
+        /**
+         * Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+         */
+        rule: string;
+    }
+
+    export interface DataFlowTaskEntryListFileInfo {
+        /**
+         * TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+         */
+        fileBucket: string;
+        /**
+         * Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+         */
+        fileKey: string;
+        /**
+         * Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+         */
+        fileName: string;
+    }
+
+    export interface DataFlowTaskReport {
+        /**
+         * Download link for the report.
+         */
+        path: string;
+        /**
+         * Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+         */
+        type: string;
+    }
+
+    export interface DataFlowTaskTlsInfo {
+        /**
+         * Whether to enable TLS log.
+         */
+        enable: boolean;
+        /**
+         * TLS log project ID.
+         */
+        projectId: string;
+        /**
+         * TLS log project name.
+         */
+        projectName: string;
+        /**
+         * Redirect URL for the TLS log project.
+         */
+        projectUrl: string;
+        /**
+         * Embedded address of the TLS log topic.
+         */
+        topicEmbeddedUrl: string;
+        /**
+         * TLS log topic ID.
+         */
+        topicId: string;
+        /**
+         * TLS log topic name.
+         */
+        topicName: string;
+        /**
+         * Redirect URL for TLS log topic.
+         */
+        topicUrl: string;
+    }
+
+    export interface GetDataFlowTaskDeletePolicy {
+        /**
+         * Specify the deletion time (data before this time will be deleted), in milliseconds.
+         */
+        deleteTimeBefore: string;
+        /**
+         * Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+         */
+        rule: string;
+    }
+
+    export interface GetDataFlowTaskEntryListFileInfo {
+        /**
+         * TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+         */
+        fileBucket: string;
+        /**
+         * Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+         */
+        fileKey: string;
+        /**
+         * Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+         */
+        fileName: string;
+    }
+
+    export interface GetDataFlowTaskReport {
+        /**
+         * Download link for the report.
+         */
+        path: string;
+        /**
+         * Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+         */
+        type: string;
+    }
+
+    export interface GetDataFlowTaskTlsInfo {
+        /**
+         * Whether to enable TLS log.
+         */
+        enable: boolean;
+        /**
+         * TLS log project ID.
+         */
+        projectId: string;
+        /**
+         * TLS log project name.
+         */
+        projectName: string;
+        /**
+         * Redirect URL for the TLS log project.
+         */
+        projectUrl: string;
+        /**
+         * Embedded address of the TLS log topic.
+         */
+        topicEmbeddedUrl: string;
+        /**
+         * TLS log topic ID.
+         */
+        topicId: string;
+        /**
+         * TLS log topic name.
+         */
+        topicName: string;
+        /**
+         * Redirect URL for TLS log topic.
+         */
+        topicUrl: string;
+    }
+
     export interface GetInstanceCapacityInfo {
         /**
          * Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
@@ -34939,6 +35105,39 @@ export namespace vpc {
         value: string;
     }
 
+    export interface GetIpamPoolTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface GetIpamScopeTag {
+        /**
+         * Tag Key
+         */
+        key: string;
+        /**
+         * Tag Value
+         */
+        value: string;
+    }
+
+    export interface GetIpamTag {
+        /**
+         * Tag Key
+         */
+        key: string;
+        /**
+         * Tag Value
+         */
+        value: string;
+    }
+
     export interface GetIpv6AddressBandwidthTag {
         /**
          * Tag key
@@ -35618,6 +35817,39 @@ export namespace vpc {
         key: string;
         /**
          * Tag value.
+         */
+        value: string;
+    }
+
+    export interface IpamPoolTag {
+        /**
+         * Tag key
+         */
+        key: string;
+        /**
+         * Tag value
+         */
+        value: string;
+    }
+
+    export interface IpamScopeTag {
+        /**
+         * Tag Key
+         */
+        key: string;
+        /**
+         * Tag Value
+         */
+        value: string;
+    }
+
+    export interface IpamTag {
+        /**
+         * Tag Key
+         */
+        key: string;
+        /**
+         * Tag Value
          */
         value: string;
     }

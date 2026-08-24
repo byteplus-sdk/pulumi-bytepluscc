@@ -125,6 +125,16 @@ export const getParameterTemplates: typeof import("./getParameterTemplates").get
 export const getParameterTemplatesOutput: typeof import("./getParameterTemplates").getParameterTemplatesOutput = null as any;
 utilities.lazyLoad(exports, ["getParameterTemplates","getParameterTemplatesOutput"], () => require("./getParameterTemplates"));
 
+export { GetSslArgs, GetSslResult, GetSslOutputArgs } from "./getSsl";
+export const getSsl: typeof import("./getSsl").getSsl = null as any;
+export const getSslOutput: typeof import("./getSsl").getSslOutput = null as any;
+utilities.lazyLoad(exports, ["getSsl","getSslOutput"], () => require("./getSsl"));
+
+export { GetSslsResult } from "./getSsls";
+export const getSsls: typeof import("./getSsls").getSsls = null as any;
+export const getSslsOutput: typeof import("./getSsls").getSslsOutput = null as any;
+utilities.lazyLoad(exports, ["getSsls","getSslsOutput"], () => require("./getSsls"));
+
 export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
@@ -139,6 +149,11 @@ export { ParameterTemplateArgs, ParameterTemplateState } from "./parameterTempla
 export type ParameterTemplate = import("./parameterTemplate").ParameterTemplate;
 export const ParameterTemplate: typeof import("./parameterTemplate").ParameterTemplate = null as any;
 utilities.lazyLoad(exports, ["ParameterTemplate"], () => require("./parameterTemplate"));
+
+export { SslArgs, SslState } from "./ssl";
+export type Ssl = import("./ssl").Ssl;
+export const Ssl: typeof import("./ssl").Ssl = null as any;
+utilities.lazyLoad(exports, ["Ssl"], () => require("./ssl"));
 
 
 const _module = {
@@ -163,6 +178,8 @@ const _module = {
                 return new InstanceReadonlyNode(name, <any>undefined, { urn })
             case "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate":
                 return new ParameterTemplate(name, <any>undefined, { urn })
+            case "bytepluscc:rdsmysql/ssl:Ssl":
+                return new Ssl(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
@@ -177,3 +194,4 @@ pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/endpointPublicAddr
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/instanceReadonlyNode", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/parameterTemplate", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "rdsmysql/ssl", _module)

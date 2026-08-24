@@ -15,6 +15,14 @@ else:
 from .. import _utilities
 
 __all__ = [
+    'DataFlowTaskDeletePolicyArgs',
+    'DataFlowTaskDeletePolicyArgsDict',
+    'DataFlowTaskEntryListFileInfoArgs',
+    'DataFlowTaskEntryListFileInfoArgsDict',
+    'DataFlowTaskReportArgs',
+    'DataFlowTaskReportArgsDict',
+    'DataFlowTaskTlsInfoArgs',
+    'DataFlowTaskTlsInfoArgsDict',
     'InstanceCapacityInfoArgs',
     'InstanceCapacityInfoArgsDict',
     'InstanceTagArgs',
@@ -24,6 +32,342 @@ __all__ = [
     'MountServiceNodeArgs',
     'MountServiceNodeArgsDict',
 ]
+
+class DataFlowTaskDeletePolicyArgsDict(TypedDict):
+    delete_time_before: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Specify the deletion time (data before this time will be deleted), in milliseconds.
+    """
+    rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+    """
+
+@pulumi.input_type
+class DataFlowTaskDeletePolicyArgs:
+    def __init__(__self__, *,
+                 delete_time_before: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] delete_time_before: Specify the deletion time (data before this time will be deleted), in milliseconds.
+        :param pulumi.Input[_builtins.str] rule: Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+        """
+        if delete_time_before is not None:
+            pulumi.set(__self__, "delete_time_before", delete_time_before)
+        if rule is not None:
+            pulumi.set(__self__, "rule", rule)
+
+    @_builtins.property
+    @pulumi.getter(name="deleteTimeBefore")
+    def delete_time_before(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specify the deletion time (data before this time will be deleted), in milliseconds.
+        """
+        return pulumi.get(self, "delete_time_before")
+
+    @delete_time_before.setter
+    def delete_time_before(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "delete_time_before", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rule(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+        """
+        return pulumi.get(self, "rule")
+
+    @rule.setter
+    def rule(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rule", value)
+
+
+class DataFlowTaskEntryListFileInfoArgsDict(TypedDict):
+    file_bucket: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+    """
+    file_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+    """
+    file_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+    """
+
+@pulumi.input_type
+class DataFlowTaskEntryListFileInfoArgs:
+    def __init__(__self__, *,
+                 file_bucket: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 file_name: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] file_bucket: TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+        :param pulumi.Input[_builtins.str] file_key: Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+        :param pulumi.Input[_builtins.str] file_name: Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+        """
+        if file_bucket is not None:
+            pulumi.set(__self__, "file_bucket", file_bucket)
+        if file_key is not None:
+            pulumi.set(__self__, "file_key", file_key)
+        if file_name is not None:
+            pulumi.set(__self__, "file_name", file_name)
+
+    @_builtins.property
+    @pulumi.getter(name="fileBucket")
+    def file_bucket(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+        """
+        return pulumi.get(self, "file_bucket")
+
+    @file_bucket.setter
+    def file_bucket(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "file_bucket", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fileKey")
+    def file_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+        """
+        return pulumi.get(self, "file_key")
+
+    @file_key.setter
+    def file_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "file_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="fileName")
+    def file_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+        """
+        return pulumi.get(self, "file_name")
+
+    @file_name.setter
+    def file_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "file_name", value)
+
+
+class DataFlowTaskReportArgsDict(TypedDict):
+    path: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Download link for the report.
+    """
+    type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+    """
+
+@pulumi.input_type
+class DataFlowTaskReportArgs:
+    def __init__(__self__, *,
+                 path: pulumi.Input[Optional[_builtins.str]] = None,
+                 type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] path: Download link for the report.
+        :param pulumi.Input[_builtins.str] type: Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+        """
+        if path is not None:
+            pulumi.set(__self__, "path", path)
+        if type is not None:
+            pulumi.set(__self__, "type", type)
+
+    @_builtins.property
+    @pulumi.getter
+    def path(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Download link for the report.
+        """
+        return pulumi.get(self, "path")
+
+    @path.setter
+    def path(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "path", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+        """
+        return pulumi.get(self, "type")
+
+    @type.setter
+    def type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "type", value)
+
+
+class DataFlowTaskTlsInfoArgsDict(TypedDict):
+    enable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to enable TLS log.
+    """
+    project_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS log project ID.
+    """
+    project_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS log project name.
+    """
+    project_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Redirect URL for the TLS log project.
+    """
+    topic_embedded_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Embedded address of the TLS log topic.
+    """
+    topic_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS log topic ID.
+    """
+    topic_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    TLS log topic name.
+    """
+    topic_url: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Redirect URL for TLS log topic.
+    """
+
+@pulumi.input_type
+class DataFlowTaskTlsInfoArgs:
+    def __init__(__self__, *,
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None,
+                 project_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 project_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic_embedded_url: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 topic_url: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] enable: Whether to enable TLS log.
+        :param pulumi.Input[_builtins.str] project_id: TLS log project ID.
+        :param pulumi.Input[_builtins.str] project_name: TLS log project name.
+        :param pulumi.Input[_builtins.str] project_url: Redirect URL for the TLS log project.
+        :param pulumi.Input[_builtins.str] topic_embedded_url: Embedded address of the TLS log topic.
+        :param pulumi.Input[_builtins.str] topic_id: TLS log topic ID.
+        :param pulumi.Input[_builtins.str] topic_name: TLS log topic name.
+        :param pulumi.Input[_builtins.str] topic_url: Redirect URL for TLS log topic.
+        """
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+        if project_id is not None:
+            pulumi.set(__self__, "project_id", project_id)
+        if project_name is not None:
+            pulumi.set(__self__, "project_name", project_name)
+        if project_url is not None:
+            pulumi.set(__self__, "project_url", project_url)
+        if topic_embedded_url is not None:
+            pulumi.set(__self__, "topic_embedded_url", topic_embedded_url)
+        if topic_id is not None:
+            pulumi.set(__self__, "topic_id", topic_id)
+        if topic_name is not None:
+            pulumi.set(__self__, "topic_name", topic_name)
+        if topic_url is not None:
+            pulumi.set(__self__, "topic_url", topic_url)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to enable TLS log.
+        """
+        return pulumi.get(self, "enable")
+
+    @enable.setter
+    def enable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectId")
+    def project_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS log project ID.
+        """
+        return pulumi.get(self, "project_id")
+
+    @project_id.setter
+    def project_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectName")
+    def project_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS log project name.
+        """
+        return pulumi.get(self, "project_name")
+
+    @project_name.setter
+    def project_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="projectUrl")
+    def project_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Redirect URL for the TLS log project.
+        """
+        return pulumi.get(self, "project_url")
+
+    @project_url.setter
+    def project_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "project_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="topicEmbeddedUrl")
+    def topic_embedded_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Embedded address of the TLS log topic.
+        """
+        return pulumi.get(self, "topic_embedded_url")
+
+    @topic_embedded_url.setter
+    def topic_embedded_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "topic_embedded_url", value)
+
+    @_builtins.property
+    @pulumi.getter(name="topicId")
+    def topic_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS log topic ID.
+        """
+        return pulumi.get(self, "topic_id")
+
+    @topic_id.setter
+    def topic_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "topic_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="topicName")
+    def topic_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        TLS log topic name.
+        """
+        return pulumi.get(self, "topic_name")
+
+    @topic_name.setter
+    def topic_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "topic_name", value)
+
+    @_builtins.property
+    @pulumi.getter(name="topicUrl")
+    def topic_url(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Redirect URL for TLS log topic.
+        """
+        return pulumi.get(self, "topic_url")
+
+    @topic_url.setter
+    def topic_url(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "topic_url", value)
+
 
 class InstanceCapacityInfoArgsDict(TypedDict):
     total_ti_b: NotRequired[pulumi.Input[Optional[_builtins.int]]]

@@ -832,6 +832,112 @@ func (o TransitRouterBandwidthPackageTagArrayOutput) Index(i pulumi.IntInput) Tr
 	}).(TransitRouterBandwidthPackageTagOutput)
 }
 
+type TransitRouterMulticastDomainTag struct {
+	// Tag key.
+	Key *string `pulumi:"key"`
+	// Tag value.
+	Value *string `pulumi:"value"`
+}
+
+// TransitRouterMulticastDomainTagInput is an input type that accepts TransitRouterMulticastDomainTagArgs and TransitRouterMulticastDomainTagOutput values.
+// You can construct a concrete instance of `TransitRouterMulticastDomainTagInput` via:
+//
+//	TransitRouterMulticastDomainTagArgs{...}
+type TransitRouterMulticastDomainTagInput interface {
+	pulumi.Input
+
+	ToTransitRouterMulticastDomainTagOutput() TransitRouterMulticastDomainTagOutput
+	ToTransitRouterMulticastDomainTagOutputWithContext(context.Context) TransitRouterMulticastDomainTagOutput
+}
+
+type TransitRouterMulticastDomainTagArgs struct {
+	// Tag key.
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (TransitRouterMulticastDomainTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*TransitRouterMulticastDomainTag)(nil)).Elem()
+}
+
+func (i TransitRouterMulticastDomainTagArgs) ToTransitRouterMulticastDomainTagOutput() TransitRouterMulticastDomainTagOutput {
+	return i.ToTransitRouterMulticastDomainTagOutputWithContext(context.Background())
+}
+
+func (i TransitRouterMulticastDomainTagArgs) ToTransitRouterMulticastDomainTagOutputWithContext(ctx context.Context) TransitRouterMulticastDomainTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TransitRouterMulticastDomainTagOutput)
+}
+
+// TransitRouterMulticastDomainTagArrayInput is an input type that accepts TransitRouterMulticastDomainTagArray and TransitRouterMulticastDomainTagArrayOutput values.
+// You can construct a concrete instance of `TransitRouterMulticastDomainTagArrayInput` via:
+//
+//	TransitRouterMulticastDomainTagArray{ TransitRouterMulticastDomainTagArgs{...} }
+type TransitRouterMulticastDomainTagArrayInput interface {
+	pulumi.Input
+
+	ToTransitRouterMulticastDomainTagArrayOutput() TransitRouterMulticastDomainTagArrayOutput
+	ToTransitRouterMulticastDomainTagArrayOutputWithContext(context.Context) TransitRouterMulticastDomainTagArrayOutput
+}
+
+type TransitRouterMulticastDomainTagArray []TransitRouterMulticastDomainTagInput
+
+func (TransitRouterMulticastDomainTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TransitRouterMulticastDomainTag)(nil)).Elem()
+}
+
+func (i TransitRouterMulticastDomainTagArray) ToTransitRouterMulticastDomainTagArrayOutput() TransitRouterMulticastDomainTagArrayOutput {
+	return i.ToTransitRouterMulticastDomainTagArrayOutputWithContext(context.Background())
+}
+
+func (i TransitRouterMulticastDomainTagArray) ToTransitRouterMulticastDomainTagArrayOutputWithContext(ctx context.Context) TransitRouterMulticastDomainTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(TransitRouterMulticastDomainTagArrayOutput)
+}
+
+type TransitRouterMulticastDomainTagOutput struct{ *pulumi.OutputState }
+
+func (TransitRouterMulticastDomainTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*TransitRouterMulticastDomainTag)(nil)).Elem()
+}
+
+func (o TransitRouterMulticastDomainTagOutput) ToTransitRouterMulticastDomainTagOutput() TransitRouterMulticastDomainTagOutput {
+	return o
+}
+
+func (o TransitRouterMulticastDomainTagOutput) ToTransitRouterMulticastDomainTagOutputWithContext(ctx context.Context) TransitRouterMulticastDomainTagOutput {
+	return o
+}
+
+// Tag key.
+func (o TransitRouterMulticastDomainTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TransitRouterMulticastDomainTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value.
+func (o TransitRouterMulticastDomainTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v TransitRouterMulticastDomainTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type TransitRouterMulticastDomainTagArrayOutput struct{ *pulumi.OutputState }
+
+func (TransitRouterMulticastDomainTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]TransitRouterMulticastDomainTag)(nil)).Elem()
+}
+
+func (o TransitRouterMulticastDomainTagArrayOutput) ToTransitRouterMulticastDomainTagArrayOutput() TransitRouterMulticastDomainTagArrayOutput {
+	return o
+}
+
+func (o TransitRouterMulticastDomainTagArrayOutput) ToTransitRouterMulticastDomainTagArrayOutputWithContext(ctx context.Context) TransitRouterMulticastDomainTagArrayOutput {
+	return o
+}
+
+func (o TransitRouterMulticastDomainTagArrayOutput) Index(i pulumi.IntInput) TransitRouterMulticastDomainTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) TransitRouterMulticastDomainTag {
+		return vs[0].([]TransitRouterMulticastDomainTag)[vs[1].(int)]
+	}).(TransitRouterMulticastDomainTagOutput)
+}
+
 type TransitRouterRouteTableTag struct {
 	// Tag key
 	Key *string `pulumi:"key"`
@@ -2178,6 +2284,112 @@ func (o GetTransitRouterBandwidthPackageTagArrayOutput) Index(i pulumi.IntInput)
 	}).(GetTransitRouterBandwidthPackageTagOutput)
 }
 
+type GetTransitRouterMulticastDomainTag struct {
+	// Tag key.
+	Key string `pulumi:"key"`
+	// Tag value.
+	Value string `pulumi:"value"`
+}
+
+// GetTransitRouterMulticastDomainTagInput is an input type that accepts GetTransitRouterMulticastDomainTagArgs and GetTransitRouterMulticastDomainTagOutput values.
+// You can construct a concrete instance of `GetTransitRouterMulticastDomainTagInput` via:
+//
+//	GetTransitRouterMulticastDomainTagArgs{...}
+type GetTransitRouterMulticastDomainTagInput interface {
+	pulumi.Input
+
+	ToGetTransitRouterMulticastDomainTagOutput() GetTransitRouterMulticastDomainTagOutput
+	ToGetTransitRouterMulticastDomainTagOutputWithContext(context.Context) GetTransitRouterMulticastDomainTagOutput
+}
+
+type GetTransitRouterMulticastDomainTagArgs struct {
+	// Tag key.
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value.
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetTransitRouterMulticastDomainTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTransitRouterMulticastDomainTag)(nil)).Elem()
+}
+
+func (i GetTransitRouterMulticastDomainTagArgs) ToGetTransitRouterMulticastDomainTagOutput() GetTransitRouterMulticastDomainTagOutput {
+	return i.ToGetTransitRouterMulticastDomainTagOutputWithContext(context.Background())
+}
+
+func (i GetTransitRouterMulticastDomainTagArgs) ToGetTransitRouterMulticastDomainTagOutputWithContext(ctx context.Context) GetTransitRouterMulticastDomainTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTransitRouterMulticastDomainTagOutput)
+}
+
+// GetTransitRouterMulticastDomainTagArrayInput is an input type that accepts GetTransitRouterMulticastDomainTagArray and GetTransitRouterMulticastDomainTagArrayOutput values.
+// You can construct a concrete instance of `GetTransitRouterMulticastDomainTagArrayInput` via:
+//
+//	GetTransitRouterMulticastDomainTagArray{ GetTransitRouterMulticastDomainTagArgs{...} }
+type GetTransitRouterMulticastDomainTagArrayInput interface {
+	pulumi.Input
+
+	ToGetTransitRouterMulticastDomainTagArrayOutput() GetTransitRouterMulticastDomainTagArrayOutput
+	ToGetTransitRouterMulticastDomainTagArrayOutputWithContext(context.Context) GetTransitRouterMulticastDomainTagArrayOutput
+}
+
+type GetTransitRouterMulticastDomainTagArray []GetTransitRouterMulticastDomainTagInput
+
+func (GetTransitRouterMulticastDomainTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTransitRouterMulticastDomainTag)(nil)).Elem()
+}
+
+func (i GetTransitRouterMulticastDomainTagArray) ToGetTransitRouterMulticastDomainTagArrayOutput() GetTransitRouterMulticastDomainTagArrayOutput {
+	return i.ToGetTransitRouterMulticastDomainTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetTransitRouterMulticastDomainTagArray) ToGetTransitRouterMulticastDomainTagArrayOutputWithContext(ctx context.Context) GetTransitRouterMulticastDomainTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetTransitRouterMulticastDomainTagArrayOutput)
+}
+
+type GetTransitRouterMulticastDomainTagOutput struct{ *pulumi.OutputState }
+
+func (GetTransitRouterMulticastDomainTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetTransitRouterMulticastDomainTag)(nil)).Elem()
+}
+
+func (o GetTransitRouterMulticastDomainTagOutput) ToGetTransitRouterMulticastDomainTagOutput() GetTransitRouterMulticastDomainTagOutput {
+	return o
+}
+
+func (o GetTransitRouterMulticastDomainTagOutput) ToGetTransitRouterMulticastDomainTagOutputWithContext(ctx context.Context) GetTransitRouterMulticastDomainTagOutput {
+	return o
+}
+
+// Tag key.
+func (o GetTransitRouterMulticastDomainTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTransitRouterMulticastDomainTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value.
+func (o GetTransitRouterMulticastDomainTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetTransitRouterMulticastDomainTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetTransitRouterMulticastDomainTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetTransitRouterMulticastDomainTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetTransitRouterMulticastDomainTag)(nil)).Elem()
+}
+
+func (o GetTransitRouterMulticastDomainTagArrayOutput) ToGetTransitRouterMulticastDomainTagArrayOutput() GetTransitRouterMulticastDomainTagArrayOutput {
+	return o
+}
+
+func (o GetTransitRouterMulticastDomainTagArrayOutput) ToGetTransitRouterMulticastDomainTagArrayOutputWithContext(ctx context.Context) GetTransitRouterMulticastDomainTagArrayOutput {
+	return o
+}
+
+func (o GetTransitRouterMulticastDomainTagArrayOutput) Index(i pulumi.IntInput) GetTransitRouterMulticastDomainTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetTransitRouterMulticastDomainTag {
+		return vs[0].([]GetTransitRouterMulticastDomainTag)[vs[1].(int)]
+	}).(GetTransitRouterMulticastDomainTagOutput)
+}
+
 type GetTransitRouterRouteTableTag struct {
 	// Tag key
 	Key string `pulumi:"key"`
@@ -2730,6 +2942,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterBandwidthPackageAllocationArrayInput)(nil)).Elem(), TransitRouterBandwidthPackageAllocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterBandwidthPackageTagInput)(nil)).Elem(), TransitRouterBandwidthPackageTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterBandwidthPackageTagArrayInput)(nil)).Elem(), TransitRouterBandwidthPackageTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterMulticastDomainTagInput)(nil)).Elem(), TransitRouterMulticastDomainTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterMulticastDomainTagArrayInput)(nil)).Elem(), TransitRouterMulticastDomainTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterRouteTableTagInput)(nil)).Elem(), TransitRouterRouteTableTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterRouteTableTagArrayInput)(nil)).Elem(), TransitRouterRouteTableTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*TransitRouterTagInput)(nil)).Elem(), TransitRouterTagArgs{})
@@ -2752,6 +2966,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterBandwidthPackageAllocationArrayInput)(nil)).Elem(), GetTransitRouterBandwidthPackageAllocationArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterBandwidthPackageTagInput)(nil)).Elem(), GetTransitRouterBandwidthPackageTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterBandwidthPackageTagArrayInput)(nil)).Elem(), GetTransitRouterBandwidthPackageTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterMulticastDomainTagInput)(nil)).Elem(), GetTransitRouterMulticastDomainTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterMulticastDomainTagArrayInput)(nil)).Elem(), GetTransitRouterMulticastDomainTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterRouteTableTagInput)(nil)).Elem(), GetTransitRouterRouteTableTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterRouteTableTagArrayInput)(nil)).Elem(), GetTransitRouterRouteTableTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetTransitRouterTagInput)(nil)).Elem(), GetTransitRouterTagArgs{})
@@ -2774,6 +2990,8 @@ func init() {
 	pulumi.RegisterOutputType(TransitRouterBandwidthPackageAllocationArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterBandwidthPackageTagOutput{})
 	pulumi.RegisterOutputType(TransitRouterBandwidthPackageTagArrayOutput{})
+	pulumi.RegisterOutputType(TransitRouterMulticastDomainTagOutput{})
+	pulumi.RegisterOutputType(TransitRouterMulticastDomainTagArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterRouteTableTagOutput{})
 	pulumi.RegisterOutputType(TransitRouterRouteTableTagArrayOutput{})
 	pulumi.RegisterOutputType(TransitRouterTagOutput{})
@@ -2796,6 +3014,8 @@ func init() {
 	pulumi.RegisterOutputType(GetTransitRouterBandwidthPackageAllocationArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterBandwidthPackageTagOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterBandwidthPackageTagArrayOutput{})
+	pulumi.RegisterOutputType(GetTransitRouterMulticastDomainTagOutput{})
+	pulumi.RegisterOutputType(GetTransitRouterMulticastDomainTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterRouteTableTagOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterRouteTableTagArrayOutput{})
 	pulumi.RegisterOutputType(GetTransitRouterTagOutput{})

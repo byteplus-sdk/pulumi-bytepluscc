@@ -5,10 +5,25 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { DataFlowTaskArgs, DataFlowTaskState } from "./dataFlowTask";
+export type DataFlowTask = import("./dataFlowTask").DataFlowTask;
+export const DataFlowTask: typeof import("./dataFlowTask").DataFlowTask = null as any;
+utilities.lazyLoad(exports, ["DataFlowTask"], () => require("./dataFlowTask"));
+
 export { FilesetArgs, FilesetState } from "./fileset";
 export type Fileset = import("./fileset").Fileset;
 export const Fileset: typeof import("./fileset").Fileset = null as any;
 utilities.lazyLoad(exports, ["Fileset"], () => require("./fileset"));
+
+export { GetDataFlowTaskArgs, GetDataFlowTaskResult, GetDataFlowTaskOutputArgs } from "./getDataFlowTask";
+export const getDataFlowTask: typeof import("./getDataFlowTask").getDataFlowTask = null as any;
+export const getDataFlowTaskOutput: typeof import("./getDataFlowTask").getDataFlowTaskOutput = null as any;
+utilities.lazyLoad(exports, ["getDataFlowTask","getDataFlowTaskOutput"], () => require("./getDataFlowTask"));
+
+export { GetDataFlowTasksResult } from "./getDataFlowTasks";
+export const getDataFlowTasks: typeof import("./getDataFlowTasks").getDataFlowTasks = null as any;
+export const getDataFlowTasksOutput: typeof import("./getDataFlowTasks").getDataFlowTasksOutput = null as any;
+utilities.lazyLoad(exports, ["getDataFlowTasks","getDataFlowTasksOutput"], () => require("./getDataFlowTasks"));
 
 export { GetFilesetArgs, GetFilesetResult, GetFilesetOutputArgs } from "./getFileset";
 export const getFileset: typeof import("./getFileset").getFileset = null as any;
@@ -55,6 +70,8 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:vepfs/dataFlowTask:DataFlowTask":
+                return new DataFlowTask(name, <any>undefined, { urn })
             case "bytepluscc:vepfs/fileset:Fileset":
                 return new Fileset(name, <any>undefined, { urn })
             case "bytepluscc:vepfs/instance:Instance":
@@ -66,6 +83,7 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/dataFlowTask", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/fileset", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/instance", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vepfs/mountService", _module)

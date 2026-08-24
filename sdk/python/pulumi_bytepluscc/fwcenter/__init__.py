@@ -15,10 +15,13 @@ from .get_control_policies import *
 from .get_control_policy import *
 from .get_dns_control_policies import *
 from .get_dns_control_policy import *
+from .get_nat_fire_wall import *
 from .get_nat_fire_wall_control_policies import *
 from .get_nat_fire_wall_control_policy import *
+from .get_nat_fire_walls import *
 from .get_vpc_fire_wall_acl_rule import *
 from .get_vpc_fire_wall_acl_rules import *
+from .nat_fire_wall import *
 from .nat_fire_wall_control_policy import *
 from .vpc_fire_wall_acl_rule import *
 from ._inputs import *

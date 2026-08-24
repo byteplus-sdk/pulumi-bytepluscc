@@ -29,8 +29,14 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &RouteTablePropagation{}
 	case "bytepluscc:transitrouter/transitRouter:TransitRouter":
 		r = &TransitRouter{}
+	case "bytepluscc:transitrouter/transitRouterAttachmentToRouteTable:TransitRouterAttachmentToRouteTable":
+		r = &TransitRouterAttachmentToRouteTable{}
 	case "bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage":
 		r = &TransitRouterBandwidthPackage{}
+	case "bytepluscc:transitrouter/transitRouterForwardPolicyTable:TransitRouterForwardPolicyTable":
+		r = &TransitRouterForwardPolicyTable{}
+	case "bytepluscc:transitrouter/transitRouterMulticastDomain:TransitRouterMulticastDomain":
+		r = &TransitRouterMulticastDomain{}
 	case "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry":
 		r = &TransitRouterRouteEntry{}
 	case "bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable":
@@ -43,6 +49,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &TransitRouterTrafficQosMarkingPolicy{}
 	case "bytepluscc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry":
 		r = &TransitRouterTrafficQosQueueEntry{}
+	case "bytepluscc:transitrouter/transitRouterTrafficQosQueuePolicy:TransitRouterTrafficQosQueuePolicy":
+		r = &TransitRouterTrafficQosQueuePolicy{}
 	case "bytepluscc:transitrouter/vpcAttachment:VpcAttachment":
 		r = &VpcAttachment{}
 	case "bytepluscc:transitrouter/vpnAttachment:VpnAttachment":
@@ -82,7 +90,22 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"transitrouter/transitRouterAttachmentToRouteTable",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"transitrouter/transitRouterBandwidthPackage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"transitrouter/transitRouterForwardPolicyTable",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"transitrouter/transitRouterMulticastDomain",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
@@ -113,6 +136,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"transitrouter/transitRouterTrafficQosQueueEntry",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"transitrouter/transitRouterTrafficQosQueuePolicy",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
