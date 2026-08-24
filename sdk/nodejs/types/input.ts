@@ -14749,6 +14749,17 @@ export namespace transitrouter {
         value?: pulumi.Input<string | undefined>;
     }
 
+    export interface TransitRouterMulticastDomainTag {
+        /**
+         * Tag key.
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag value.
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
     export interface TransitRouterRouteTableTag {
         /**
          * Tag key
@@ -15367,6 +15378,78 @@ export namespace vefaas {
 }
 
 export namespace vepfs {
+    export interface DataFlowTaskDeletePolicy {
+        /**
+         * Specify the deletion time (data before this time will be deleted), in milliseconds.
+         */
+        deleteTimeBefore?: pulumi.Input<string | undefined>;
+        /**
+         * Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+         */
+        rule?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DataFlowTaskEntryListFileInfo {
+        /**
+         * TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+         */
+        fileBucket?: pulumi.Input<string | undefined>;
+        /**
+         * Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+         */
+        fileKey?: pulumi.Input<string | undefined>;
+        /**
+         * Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+         */
+        fileName?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DataFlowTaskReport {
+        /**
+         * Download link for the report.
+         */
+        path?: pulumi.Input<string | undefined>;
+        /**
+         * Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+         */
+        type?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DataFlowTaskTlsInfo {
+        /**
+         * Whether to enable TLS log.
+         */
+        enable?: pulumi.Input<boolean | undefined>;
+        /**
+         * TLS log project ID.
+         */
+        projectId?: pulumi.Input<string | undefined>;
+        /**
+         * TLS log project name.
+         */
+        projectName?: pulumi.Input<string | undefined>;
+        /**
+         * Redirect URL for the TLS log project.
+         */
+        projectUrl?: pulumi.Input<string | undefined>;
+        /**
+         * Embedded address of the TLS log topic.
+         */
+        topicEmbeddedUrl?: pulumi.Input<string | undefined>;
+        /**
+         * TLS log topic ID.
+         */
+        topicId?: pulumi.Input<string | undefined>;
+        /**
+         * TLS log topic name.
+         */
+        topicName?: pulumi.Input<string | undefined>;
+        /**
+         * Redirect URL for TLS log topic.
+         */
+        topicUrl?: pulumi.Input<string | undefined>;
+    }
+
     export interface InstanceCapacityInfo {
         /**
          * Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
@@ -17130,6 +17213,39 @@ export namespace vpc {
         key?: pulumi.Input<string | undefined>;
         /**
          * Tag value.
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface IpamPoolTag {
+        /**
+         * Tag key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag value
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface IpamScopeTag {
+        /**
+         * Tag Key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag Value
+         */
+        value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface IpamTag {
+        /**
+         * Tag Key
+         */
+        key?: pulumi.Input<string | undefined>;
+        /**
+         * Tag Value
          */
         value?: pulumi.Input<string | undefined>;
     }

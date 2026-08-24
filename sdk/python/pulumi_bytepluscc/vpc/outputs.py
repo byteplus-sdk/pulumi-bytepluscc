@@ -27,6 +27,9 @@ __all__ = [
     'FlowLogTag',
     'HaVipTag',
     'IpPoolTag',
+    'IpamPoolTag',
+    'IpamScopeTag',
+    'IpamTag',
     'Ipv6AddressBandwidthTag',
     'Ipv6GatewayTag',
     'NetworkAclDefaultEgressAclEntry',
@@ -65,6 +68,9 @@ __all__ = [
     'GetFlowLogTagResult',
     'GetHaVipTagResult',
     'GetIpPoolTagResult',
+    'GetIpamPoolTagResult',
+    'GetIpamScopeTagResult',
+    'GetIpamTagResult',
     'GetIpv6AddressBandwidthTagResult',
     'GetIpv6GatewayTagResult',
     'GetNetworkAclDefaultEgressAclEntryResult',
@@ -524,6 +530,99 @@ class IpPoolTag(dict):
     def value(self) -> Optional[_builtins.str]:
         """
         Tag value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class IpamPoolTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class IpamScopeTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag Key
+        :param _builtins.str value: Tag Value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag Value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class IpamTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag Key
+        :param _builtins.str value: Tag Value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag Value
         """
         return pulumi.get(self, "value")
 
@@ -2961,6 +3060,93 @@ class GetIpPoolTagResult(dict):
     def value(self) -> _builtins.str:
         """
         Tag value.
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetIpamPoolTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag key
+        :param _builtins.str value: Tag value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetIpamScopeTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag Key
+        :param _builtins.str value: Tag Value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag Value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetIpamTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag Key
+        :param _builtins.str value: Tag Value
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag Value
         """
         return pulumi.get(self, "value")
 

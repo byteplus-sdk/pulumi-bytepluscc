@@ -30,8 +30,11 @@ from .get_instance_readonly_nodes import *
 from .get_instances import *
 from .get_parameter_template import *
 from .get_parameter_templates import *
+from .get_ssl import *
+from .get_ssls import *
 from .instance import *
 from .instance_readonly_node import *
 from .parameter_template import *
+from .ssl import *
 from ._inputs import *
 from . import outputs

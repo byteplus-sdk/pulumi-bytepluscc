@@ -95,6 +95,36 @@ export const getIpPools: typeof import("./getIpPools").getIpPools = null as any;
 export const getIpPoolsOutput: typeof import("./getIpPools").getIpPoolsOutput = null as any;
 utilities.lazyLoad(exports, ["getIpPools","getIpPoolsOutput"], () => require("./getIpPools"));
 
+export { GetIpamArgs, GetIpamResult, GetIpamOutputArgs } from "./getIpam";
+export const getIpam: typeof import("./getIpam").getIpam = null as any;
+export const getIpamOutput: typeof import("./getIpam").getIpamOutput = null as any;
+utilities.lazyLoad(exports, ["getIpam","getIpamOutput"], () => require("./getIpam"));
+
+export { GetIpamPoolArgs, GetIpamPoolResult, GetIpamPoolOutputArgs } from "./getIpamPool";
+export const getIpamPool: typeof import("./getIpamPool").getIpamPool = null as any;
+export const getIpamPoolOutput: typeof import("./getIpamPool").getIpamPoolOutput = null as any;
+utilities.lazyLoad(exports, ["getIpamPool","getIpamPoolOutput"], () => require("./getIpamPool"));
+
+export { GetIpamPoolsResult } from "./getIpamPools";
+export const getIpamPools: typeof import("./getIpamPools").getIpamPools = null as any;
+export const getIpamPoolsOutput: typeof import("./getIpamPools").getIpamPoolsOutput = null as any;
+utilities.lazyLoad(exports, ["getIpamPools","getIpamPoolsOutput"], () => require("./getIpamPools"));
+
+export { GetIpamScopeArgs, GetIpamScopeResult, GetIpamScopeOutputArgs } from "./getIpamScope";
+export const getIpamScope: typeof import("./getIpamScope").getIpamScope = null as any;
+export const getIpamScopeOutput: typeof import("./getIpamScope").getIpamScopeOutput = null as any;
+utilities.lazyLoad(exports, ["getIpamScope","getIpamScopeOutput"], () => require("./getIpamScope"));
+
+export { GetIpamScopesResult } from "./getIpamScopes";
+export const getIpamScopes: typeof import("./getIpamScopes").getIpamScopes = null as any;
+export const getIpamScopesOutput: typeof import("./getIpamScopes").getIpamScopesOutput = null as any;
+utilities.lazyLoad(exports, ["getIpamScopes","getIpamScopesOutput"], () => require("./getIpamScopes"));
+
+export { GetIpamsResult } from "./getIpams";
+export const getIpams: typeof import("./getIpams").getIpams = null as any;
+export const getIpamsOutput: typeof import("./getIpams").getIpamsOutput = null as any;
+utilities.lazyLoad(exports, ["getIpams","getIpamsOutput"], () => require("./getIpams"));
+
 export { GetIpv6AddressBandwidthArgs, GetIpv6AddressBandwidthResult, GetIpv6AddressBandwidthOutputArgs } from "./getIpv6AddressBandwidth";
 export const getIpv6AddressBandwidth: typeof import("./getIpv6AddressBandwidth").getIpv6AddressBandwidth = null as any;
 export const getIpv6AddressBandwidthOutput: typeof import("./getIpv6AddressBandwidth").getIpv6AddressBandwidthOutput = null as any;
@@ -230,6 +260,21 @@ export type IpPoolCidrBlock = import("./ipPoolCidrBlock").IpPoolCidrBlock;
 export const IpPoolCidrBlock: typeof import("./ipPoolCidrBlock").IpPoolCidrBlock = null as any;
 utilities.lazyLoad(exports, ["IpPoolCidrBlock"], () => require("./ipPoolCidrBlock"));
 
+export { IpamArgs, IpamState } from "./ipam";
+export type Ipam = import("./ipam").Ipam;
+export const Ipam: typeof import("./ipam").Ipam = null as any;
+utilities.lazyLoad(exports, ["Ipam"], () => require("./ipam"));
+
+export { IpamPoolArgs, IpamPoolState } from "./ipamPool";
+export type IpamPool = import("./ipamPool").IpamPool;
+export const IpamPool: typeof import("./ipamPool").IpamPool = null as any;
+utilities.lazyLoad(exports, ["IpamPool"], () => require("./ipamPool"));
+
+export { IpamScopeArgs, IpamScopeState } from "./ipamScope";
+export type IpamScope = import("./ipamScope").IpamScope;
+export const IpamScope: typeof import("./ipamScope").IpamScope = null as any;
+utilities.lazyLoad(exports, ["IpamScope"], () => require("./ipamScope"));
+
 export { Ipv6AddressBandwidthArgs, Ipv6AddressBandwidthState } from "./ipv6AddressBandwidth";
 export type Ipv6AddressBandwidth = import("./ipv6AddressBandwidth").Ipv6AddressBandwidth;
 export const Ipv6AddressBandwidth: typeof import("./ipv6AddressBandwidth").Ipv6AddressBandwidth = null as any;
@@ -309,6 +354,12 @@ const _module = {
                 return new IpPool(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipPoolCidrBlock:IpPoolCidrBlock":
                 return new IpPoolCidrBlock(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/ipam:Ipam":
+                return new Ipam(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/ipamPool:IpamPool":
+                return new IpamPool(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/ipamScope:IpamScope":
+                return new IpamScope(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth":
                 return new Ipv6AddressBandwidth(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipv6Gateway:Ipv6Gateway":
@@ -345,6 +396,9 @@ pulumi.runtime.registerResourceModule("bytepluscc", "vpc/flowLog", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/haVip", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipPool", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipPoolCidrBlock", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipam", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipamPool", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipamScope", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv6AddressBandwidth", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv6Gateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/networkAcl", _module)

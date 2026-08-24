@@ -37,6 +37,12 @@ __all__ = [
     'HaVipTagArgsDict',
     'IpPoolTagArgs',
     'IpPoolTagArgsDict',
+    'IpamPoolTagArgs',
+    'IpamPoolTagArgsDict',
+    'IpamScopeTagArgs',
+    'IpamScopeTagArgsDict',
+    'IpamTagArgs',
+    'IpamTagArgsDict',
     'Ipv6AddressBandwidthTagArgs',
     'Ipv6AddressBandwidthTagArgsDict',
     'Ipv6GatewayTagArgs',
@@ -624,6 +630,153 @@ class IpPoolTagArgs:
     def value(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
         Tag value.
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class IpamPoolTagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag key
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag value
+    """
+
+@pulumi.input_type
+class IpamPoolTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: Tag key
+        :param pulumi.Input[_builtins.str] value: Tag value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class IpamScopeTagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag Key
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag Value
+    """
+
+@pulumi.input_type
+class IpamScopeTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: Tag Key
+        :param pulumi.Input[_builtins.str] value: Tag Value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag Value
+        """
+        return pulumi.get(self, "value")
+
+    @value.setter
+    def value(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "value", value)
+
+
+class IpamTagArgsDict(TypedDict):
+    key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag Key
+    """
+    value: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Tag Value
+    """
+
+@pulumi.input_type
+class IpamTagArgs:
+    def __init__(__self__, *,
+                 key: pulumi.Input[Optional[_builtins.str]] = None,
+                 value: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] key: Tag Key
+        :param pulumi.Input[_builtins.str] value: Tag Value
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag Key
+        """
+        return pulumi.get(self, "key")
+
+    @key.setter
+    def key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "key", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Tag Value
         """
         return pulumi.get(self, "value")
 

@@ -22,6 +22,8 @@ import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstanceReadonlyNodeArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetInstanceReadonlyNodePlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetParameterTemplateArgs;
 import com.byteplus.bytepluscc.rdsmysql.inputs.GetParameterTemplatePlainArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetSslArgs;
+import com.byteplus.bytepluscc.rdsmysql.inputs.GetSslPlainArgs;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetAllowListResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetAllowListsResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetBackupResult;
@@ -40,6 +42,8 @@ import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetInstancesResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetParameterTemplateResult;
 import com.byteplus.bytepluscc.rdsmysql.outputs.GetParameterTemplatesResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetSslResult;
+import com.byteplus.bytepluscc.rdsmysql.outputs.GetSslsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -804,5 +808,89 @@ public final class RdsmysqlFunctions {
      */
     public static CompletableFuture<GetParameterTemplatesResult> getParameterTemplatesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getParameterTemplates:getParameterTemplates", TypeShape.of(GetParameterTemplatesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslResult> getSsl(GetSslArgs args) {
+        return getSsl(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslResult> getSslPlain(GetSslPlainArgs args) {
+        return getSslPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslResult> getSsl(GetSslArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getSsl:getSsl", TypeShape.of(GetSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslResult> getSsl(GetSslArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getSsl:getSsl", TypeShape.of(GetSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslResult> getSslPlain(GetSslPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getSsl:getSsl", TypeShape.of(GetSslResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslsResult> getSsls() {
+        return getSsls(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslsResult> getSslsPlain() {
+        return getSslsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslsResult> getSsls(InvokeArgs args) {
+        return getSsls(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslsResult> getSslsPlain(InvokeArgs args) {
+        return getSslsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslsResult> getSsls(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getSsls:getSsls", TypeShape.of(GetSslsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static Output<GetSslsResult> getSsls(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:rdsmysql/getSsls:getSsls", TypeShape.of(GetSslsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::RDSMySQL::Ssl
+     * 
+     */
+    public static CompletableFuture<GetSslsResult> getSslsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:rdsmysql/getSsls:getSsls", TypeShape.of(GetSslsResult.class), args, Utilities.withVersion(options));
     }
 }

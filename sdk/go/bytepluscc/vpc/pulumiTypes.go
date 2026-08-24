@@ -1339,6 +1339,324 @@ func (o IpPoolTagArrayOutput) Index(i pulumi.IntInput) IpPoolTagOutput {
 	}).(IpPoolTagOutput)
 }
 
+type IpamPoolTag struct {
+	// Tag key
+	Key *string `pulumi:"key"`
+	// Tag value
+	Value *string `pulumi:"value"`
+}
+
+// IpamPoolTagInput is an input type that accepts IpamPoolTagArgs and IpamPoolTagOutput values.
+// You can construct a concrete instance of `IpamPoolTagInput` via:
+//
+//	IpamPoolTagArgs{...}
+type IpamPoolTagInput interface {
+	pulumi.Input
+
+	ToIpamPoolTagOutput() IpamPoolTagOutput
+	ToIpamPoolTagOutputWithContext(context.Context) IpamPoolTagOutput
+}
+
+type IpamPoolTagArgs struct {
+	// Tag key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (IpamPoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpamPoolTag)(nil)).Elem()
+}
+
+func (i IpamPoolTagArgs) ToIpamPoolTagOutput() IpamPoolTagOutput {
+	return i.ToIpamPoolTagOutputWithContext(context.Background())
+}
+
+func (i IpamPoolTagArgs) ToIpamPoolTagOutputWithContext(ctx context.Context) IpamPoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpamPoolTagOutput)
+}
+
+// IpamPoolTagArrayInput is an input type that accepts IpamPoolTagArray and IpamPoolTagArrayOutput values.
+// You can construct a concrete instance of `IpamPoolTagArrayInput` via:
+//
+//	IpamPoolTagArray{ IpamPoolTagArgs{...} }
+type IpamPoolTagArrayInput interface {
+	pulumi.Input
+
+	ToIpamPoolTagArrayOutput() IpamPoolTagArrayOutput
+	ToIpamPoolTagArrayOutputWithContext(context.Context) IpamPoolTagArrayOutput
+}
+
+type IpamPoolTagArray []IpamPoolTagInput
+
+func (IpamPoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpamPoolTag)(nil)).Elem()
+}
+
+func (i IpamPoolTagArray) ToIpamPoolTagArrayOutput() IpamPoolTagArrayOutput {
+	return i.ToIpamPoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i IpamPoolTagArray) ToIpamPoolTagArrayOutputWithContext(ctx context.Context) IpamPoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpamPoolTagArrayOutput)
+}
+
+type IpamPoolTagOutput struct{ *pulumi.OutputState }
+
+func (IpamPoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpamPoolTag)(nil)).Elem()
+}
+
+func (o IpamPoolTagOutput) ToIpamPoolTagOutput() IpamPoolTagOutput {
+	return o
+}
+
+func (o IpamPoolTagOutput) ToIpamPoolTagOutputWithContext(ctx context.Context) IpamPoolTagOutput {
+	return o
+}
+
+// Tag key
+func (o IpamPoolTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpamPoolTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag value
+func (o IpamPoolTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpamPoolTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type IpamPoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (IpamPoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpamPoolTag)(nil)).Elem()
+}
+
+func (o IpamPoolTagArrayOutput) ToIpamPoolTagArrayOutput() IpamPoolTagArrayOutput {
+	return o
+}
+
+func (o IpamPoolTagArrayOutput) ToIpamPoolTagArrayOutputWithContext(ctx context.Context) IpamPoolTagArrayOutput {
+	return o
+}
+
+func (o IpamPoolTagArrayOutput) Index(i pulumi.IntInput) IpamPoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IpamPoolTag {
+		return vs[0].([]IpamPoolTag)[vs[1].(int)]
+	}).(IpamPoolTagOutput)
+}
+
+type IpamScopeTag struct {
+	// Tag Key
+	Key *string `pulumi:"key"`
+	// Tag Value
+	Value *string `pulumi:"value"`
+}
+
+// IpamScopeTagInput is an input type that accepts IpamScopeTagArgs and IpamScopeTagOutput values.
+// You can construct a concrete instance of `IpamScopeTagInput` via:
+//
+//	IpamScopeTagArgs{...}
+type IpamScopeTagInput interface {
+	pulumi.Input
+
+	ToIpamScopeTagOutput() IpamScopeTagOutput
+	ToIpamScopeTagOutputWithContext(context.Context) IpamScopeTagOutput
+}
+
+type IpamScopeTagArgs struct {
+	// Tag Key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag Value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (IpamScopeTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpamScopeTag)(nil)).Elem()
+}
+
+func (i IpamScopeTagArgs) ToIpamScopeTagOutput() IpamScopeTagOutput {
+	return i.ToIpamScopeTagOutputWithContext(context.Background())
+}
+
+func (i IpamScopeTagArgs) ToIpamScopeTagOutputWithContext(ctx context.Context) IpamScopeTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpamScopeTagOutput)
+}
+
+// IpamScopeTagArrayInput is an input type that accepts IpamScopeTagArray and IpamScopeTagArrayOutput values.
+// You can construct a concrete instance of `IpamScopeTagArrayInput` via:
+//
+//	IpamScopeTagArray{ IpamScopeTagArgs{...} }
+type IpamScopeTagArrayInput interface {
+	pulumi.Input
+
+	ToIpamScopeTagArrayOutput() IpamScopeTagArrayOutput
+	ToIpamScopeTagArrayOutputWithContext(context.Context) IpamScopeTagArrayOutput
+}
+
+type IpamScopeTagArray []IpamScopeTagInput
+
+func (IpamScopeTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpamScopeTag)(nil)).Elem()
+}
+
+func (i IpamScopeTagArray) ToIpamScopeTagArrayOutput() IpamScopeTagArrayOutput {
+	return i.ToIpamScopeTagArrayOutputWithContext(context.Background())
+}
+
+func (i IpamScopeTagArray) ToIpamScopeTagArrayOutputWithContext(ctx context.Context) IpamScopeTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpamScopeTagArrayOutput)
+}
+
+type IpamScopeTagOutput struct{ *pulumi.OutputState }
+
+func (IpamScopeTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpamScopeTag)(nil)).Elem()
+}
+
+func (o IpamScopeTagOutput) ToIpamScopeTagOutput() IpamScopeTagOutput {
+	return o
+}
+
+func (o IpamScopeTagOutput) ToIpamScopeTagOutputWithContext(ctx context.Context) IpamScopeTagOutput {
+	return o
+}
+
+// Tag Key
+func (o IpamScopeTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpamScopeTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag Value
+func (o IpamScopeTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpamScopeTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type IpamScopeTagArrayOutput struct{ *pulumi.OutputState }
+
+func (IpamScopeTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpamScopeTag)(nil)).Elem()
+}
+
+func (o IpamScopeTagArrayOutput) ToIpamScopeTagArrayOutput() IpamScopeTagArrayOutput {
+	return o
+}
+
+func (o IpamScopeTagArrayOutput) ToIpamScopeTagArrayOutputWithContext(ctx context.Context) IpamScopeTagArrayOutput {
+	return o
+}
+
+func (o IpamScopeTagArrayOutput) Index(i pulumi.IntInput) IpamScopeTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IpamScopeTag {
+		return vs[0].([]IpamScopeTag)[vs[1].(int)]
+	}).(IpamScopeTagOutput)
+}
+
+type IpamTag struct {
+	// Tag Key
+	Key *string `pulumi:"key"`
+	// Tag Value
+	Value *string `pulumi:"value"`
+}
+
+// IpamTagInput is an input type that accepts IpamTagArgs and IpamTagOutput values.
+// You can construct a concrete instance of `IpamTagInput` via:
+//
+//	IpamTagArgs{...}
+type IpamTagInput interface {
+	pulumi.Input
+
+	ToIpamTagOutput() IpamTagOutput
+	ToIpamTagOutputWithContext(context.Context) IpamTagOutput
+}
+
+type IpamTagArgs struct {
+	// Tag Key
+	Key pulumi.StringPtrInput `pulumi:"key"`
+	// Tag Value
+	Value pulumi.StringPtrInput `pulumi:"value"`
+}
+
+func (IpamTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpamTag)(nil)).Elem()
+}
+
+func (i IpamTagArgs) ToIpamTagOutput() IpamTagOutput {
+	return i.ToIpamTagOutputWithContext(context.Background())
+}
+
+func (i IpamTagArgs) ToIpamTagOutputWithContext(ctx context.Context) IpamTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpamTagOutput)
+}
+
+// IpamTagArrayInput is an input type that accepts IpamTagArray and IpamTagArrayOutput values.
+// You can construct a concrete instance of `IpamTagArrayInput` via:
+//
+//	IpamTagArray{ IpamTagArgs{...} }
+type IpamTagArrayInput interface {
+	pulumi.Input
+
+	ToIpamTagArrayOutput() IpamTagArrayOutput
+	ToIpamTagArrayOutputWithContext(context.Context) IpamTagArrayOutput
+}
+
+type IpamTagArray []IpamTagInput
+
+func (IpamTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpamTag)(nil)).Elem()
+}
+
+func (i IpamTagArray) ToIpamTagArrayOutput() IpamTagArrayOutput {
+	return i.ToIpamTagArrayOutputWithContext(context.Background())
+}
+
+func (i IpamTagArray) ToIpamTagArrayOutputWithContext(ctx context.Context) IpamTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpamTagArrayOutput)
+}
+
+type IpamTagOutput struct{ *pulumi.OutputState }
+
+func (IpamTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpamTag)(nil)).Elem()
+}
+
+func (o IpamTagOutput) ToIpamTagOutput() IpamTagOutput {
+	return o
+}
+
+func (o IpamTagOutput) ToIpamTagOutputWithContext(ctx context.Context) IpamTagOutput {
+	return o
+}
+
+// Tag Key
+func (o IpamTagOutput) Key() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpamTag) *string { return v.Key }).(pulumi.StringPtrOutput)
+}
+
+// Tag Value
+func (o IpamTagOutput) Value() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpamTag) *string { return v.Value }).(pulumi.StringPtrOutput)
+}
+
+type IpamTagArrayOutput struct{ *pulumi.OutputState }
+
+func (IpamTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpamTag)(nil)).Elem()
+}
+
+func (o IpamTagArrayOutput) ToIpamTagArrayOutput() IpamTagArrayOutput {
+	return o
+}
+
+func (o IpamTagArrayOutput) ToIpamTagArrayOutputWithContext(ctx context.Context) IpamTagArrayOutput {
+	return o
+}
+
+func (o IpamTagArrayOutput) Index(i pulumi.IntInput) IpamTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IpamTag {
+		return vs[0].([]IpamTag)[vs[1].(int)]
+	}).(IpamTagOutput)
+}
+
 type Ipv6AddressBandwidthTag struct {
 	// Tag key
 	Key *string `pulumi:"key"`
@@ -5984,6 +6302,324 @@ func (o GetIpPoolTagArrayOutput) Index(i pulumi.IntInput) GetIpPoolTagOutput {
 	}).(GetIpPoolTagOutput)
 }
 
+type GetIpamPoolTag struct {
+	// Tag key
+	Key string `pulumi:"key"`
+	// Tag value
+	Value string `pulumi:"value"`
+}
+
+// GetIpamPoolTagInput is an input type that accepts GetIpamPoolTagArgs and GetIpamPoolTagOutput values.
+// You can construct a concrete instance of `GetIpamPoolTagInput` via:
+//
+//	GetIpamPoolTagArgs{...}
+type GetIpamPoolTagInput interface {
+	pulumi.Input
+
+	ToGetIpamPoolTagOutput() GetIpamPoolTagOutput
+	ToGetIpamPoolTagOutputWithContext(context.Context) GetIpamPoolTagOutput
+}
+
+type GetIpamPoolTagArgs struct {
+	// Tag key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIpamPoolTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpamPoolTag)(nil)).Elem()
+}
+
+func (i GetIpamPoolTagArgs) ToGetIpamPoolTagOutput() GetIpamPoolTagOutput {
+	return i.ToGetIpamPoolTagOutputWithContext(context.Background())
+}
+
+func (i GetIpamPoolTagArgs) ToGetIpamPoolTagOutputWithContext(ctx context.Context) GetIpamPoolTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpamPoolTagOutput)
+}
+
+// GetIpamPoolTagArrayInput is an input type that accepts GetIpamPoolTagArray and GetIpamPoolTagArrayOutput values.
+// You can construct a concrete instance of `GetIpamPoolTagArrayInput` via:
+//
+//	GetIpamPoolTagArray{ GetIpamPoolTagArgs{...} }
+type GetIpamPoolTagArrayInput interface {
+	pulumi.Input
+
+	ToGetIpamPoolTagArrayOutput() GetIpamPoolTagArrayOutput
+	ToGetIpamPoolTagArrayOutputWithContext(context.Context) GetIpamPoolTagArrayOutput
+}
+
+type GetIpamPoolTagArray []GetIpamPoolTagInput
+
+func (GetIpamPoolTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpamPoolTag)(nil)).Elem()
+}
+
+func (i GetIpamPoolTagArray) ToGetIpamPoolTagArrayOutput() GetIpamPoolTagArrayOutput {
+	return i.ToGetIpamPoolTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpamPoolTagArray) ToGetIpamPoolTagArrayOutputWithContext(ctx context.Context) GetIpamPoolTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpamPoolTagArrayOutput)
+}
+
+type GetIpamPoolTagOutput struct{ *pulumi.OutputState }
+
+func (GetIpamPoolTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpamPoolTag)(nil)).Elem()
+}
+
+func (o GetIpamPoolTagOutput) ToGetIpamPoolTagOutput() GetIpamPoolTagOutput {
+	return o
+}
+
+func (o GetIpamPoolTagOutput) ToGetIpamPoolTagOutputWithContext(ctx context.Context) GetIpamPoolTagOutput {
+	return o
+}
+
+// Tag key
+func (o GetIpamPoolTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpamPoolTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag value
+func (o GetIpamPoolTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpamPoolTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIpamPoolTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpamPoolTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpamPoolTag)(nil)).Elem()
+}
+
+func (o GetIpamPoolTagArrayOutput) ToGetIpamPoolTagArrayOutput() GetIpamPoolTagArrayOutput {
+	return o
+}
+
+func (o GetIpamPoolTagArrayOutput) ToGetIpamPoolTagArrayOutputWithContext(ctx context.Context) GetIpamPoolTagArrayOutput {
+	return o
+}
+
+func (o GetIpamPoolTagArrayOutput) Index(i pulumi.IntInput) GetIpamPoolTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpamPoolTag {
+		return vs[0].([]GetIpamPoolTag)[vs[1].(int)]
+	}).(GetIpamPoolTagOutput)
+}
+
+type GetIpamScopeTag struct {
+	// Tag Key
+	Key string `pulumi:"key"`
+	// Tag Value
+	Value string `pulumi:"value"`
+}
+
+// GetIpamScopeTagInput is an input type that accepts GetIpamScopeTagArgs and GetIpamScopeTagOutput values.
+// You can construct a concrete instance of `GetIpamScopeTagInput` via:
+//
+//	GetIpamScopeTagArgs{...}
+type GetIpamScopeTagInput interface {
+	pulumi.Input
+
+	ToGetIpamScopeTagOutput() GetIpamScopeTagOutput
+	ToGetIpamScopeTagOutputWithContext(context.Context) GetIpamScopeTagOutput
+}
+
+type GetIpamScopeTagArgs struct {
+	// Tag Key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag Value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIpamScopeTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpamScopeTag)(nil)).Elem()
+}
+
+func (i GetIpamScopeTagArgs) ToGetIpamScopeTagOutput() GetIpamScopeTagOutput {
+	return i.ToGetIpamScopeTagOutputWithContext(context.Background())
+}
+
+func (i GetIpamScopeTagArgs) ToGetIpamScopeTagOutputWithContext(ctx context.Context) GetIpamScopeTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpamScopeTagOutput)
+}
+
+// GetIpamScopeTagArrayInput is an input type that accepts GetIpamScopeTagArray and GetIpamScopeTagArrayOutput values.
+// You can construct a concrete instance of `GetIpamScopeTagArrayInput` via:
+//
+//	GetIpamScopeTagArray{ GetIpamScopeTagArgs{...} }
+type GetIpamScopeTagArrayInput interface {
+	pulumi.Input
+
+	ToGetIpamScopeTagArrayOutput() GetIpamScopeTagArrayOutput
+	ToGetIpamScopeTagArrayOutputWithContext(context.Context) GetIpamScopeTagArrayOutput
+}
+
+type GetIpamScopeTagArray []GetIpamScopeTagInput
+
+func (GetIpamScopeTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpamScopeTag)(nil)).Elem()
+}
+
+func (i GetIpamScopeTagArray) ToGetIpamScopeTagArrayOutput() GetIpamScopeTagArrayOutput {
+	return i.ToGetIpamScopeTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpamScopeTagArray) ToGetIpamScopeTagArrayOutputWithContext(ctx context.Context) GetIpamScopeTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpamScopeTagArrayOutput)
+}
+
+type GetIpamScopeTagOutput struct{ *pulumi.OutputState }
+
+func (GetIpamScopeTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpamScopeTag)(nil)).Elem()
+}
+
+func (o GetIpamScopeTagOutput) ToGetIpamScopeTagOutput() GetIpamScopeTagOutput {
+	return o
+}
+
+func (o GetIpamScopeTagOutput) ToGetIpamScopeTagOutputWithContext(ctx context.Context) GetIpamScopeTagOutput {
+	return o
+}
+
+// Tag Key
+func (o GetIpamScopeTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpamScopeTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag Value
+func (o GetIpamScopeTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpamScopeTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIpamScopeTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpamScopeTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpamScopeTag)(nil)).Elem()
+}
+
+func (o GetIpamScopeTagArrayOutput) ToGetIpamScopeTagArrayOutput() GetIpamScopeTagArrayOutput {
+	return o
+}
+
+func (o GetIpamScopeTagArrayOutput) ToGetIpamScopeTagArrayOutputWithContext(ctx context.Context) GetIpamScopeTagArrayOutput {
+	return o
+}
+
+func (o GetIpamScopeTagArrayOutput) Index(i pulumi.IntInput) GetIpamScopeTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpamScopeTag {
+		return vs[0].([]GetIpamScopeTag)[vs[1].(int)]
+	}).(GetIpamScopeTagOutput)
+}
+
+type GetIpamTag struct {
+	// Tag Key
+	Key string `pulumi:"key"`
+	// Tag Value
+	Value string `pulumi:"value"`
+}
+
+// GetIpamTagInput is an input type that accepts GetIpamTagArgs and GetIpamTagOutput values.
+// You can construct a concrete instance of `GetIpamTagInput` via:
+//
+//	GetIpamTagArgs{...}
+type GetIpamTagInput interface {
+	pulumi.Input
+
+	ToGetIpamTagOutput() GetIpamTagOutput
+	ToGetIpamTagOutputWithContext(context.Context) GetIpamTagOutput
+}
+
+type GetIpamTagArgs struct {
+	// Tag Key
+	Key pulumi.StringInput `pulumi:"key"`
+	// Tag Value
+	Value pulumi.StringInput `pulumi:"value"`
+}
+
+func (GetIpamTagArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpamTag)(nil)).Elem()
+}
+
+func (i GetIpamTagArgs) ToGetIpamTagOutput() GetIpamTagOutput {
+	return i.ToGetIpamTagOutputWithContext(context.Background())
+}
+
+func (i GetIpamTagArgs) ToGetIpamTagOutputWithContext(ctx context.Context) GetIpamTagOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpamTagOutput)
+}
+
+// GetIpamTagArrayInput is an input type that accepts GetIpamTagArray and GetIpamTagArrayOutput values.
+// You can construct a concrete instance of `GetIpamTagArrayInput` via:
+//
+//	GetIpamTagArray{ GetIpamTagArgs{...} }
+type GetIpamTagArrayInput interface {
+	pulumi.Input
+
+	ToGetIpamTagArrayOutput() GetIpamTagArrayOutput
+	ToGetIpamTagArrayOutputWithContext(context.Context) GetIpamTagArrayOutput
+}
+
+type GetIpamTagArray []GetIpamTagInput
+
+func (GetIpamTagArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpamTag)(nil)).Elem()
+}
+
+func (i GetIpamTagArray) ToGetIpamTagArrayOutput() GetIpamTagArrayOutput {
+	return i.ToGetIpamTagArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpamTagArray) ToGetIpamTagArrayOutputWithContext(ctx context.Context) GetIpamTagArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpamTagArrayOutput)
+}
+
+type GetIpamTagOutput struct{ *pulumi.OutputState }
+
+func (GetIpamTagOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpamTag)(nil)).Elem()
+}
+
+func (o GetIpamTagOutput) ToGetIpamTagOutput() GetIpamTagOutput {
+	return o
+}
+
+func (o GetIpamTagOutput) ToGetIpamTagOutputWithContext(ctx context.Context) GetIpamTagOutput {
+	return o
+}
+
+// Tag Key
+func (o GetIpamTagOutput) Key() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpamTag) string { return v.Key }).(pulumi.StringOutput)
+}
+
+// Tag Value
+func (o GetIpamTagOutput) Value() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpamTag) string { return v.Value }).(pulumi.StringOutput)
+}
+
+type GetIpamTagArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpamTagArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpamTag)(nil)).Elem()
+}
+
+func (o GetIpamTagArrayOutput) ToGetIpamTagArrayOutput() GetIpamTagArrayOutput {
+	return o
+}
+
+func (o GetIpamTagArrayOutput) ToGetIpamTagArrayOutputWithContext(ctx context.Context) GetIpamTagArrayOutput {
+	return o
+}
+
+func (o GetIpamTagArrayOutput) Index(i pulumi.IntInput) GetIpamTagOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpamTag {
+		return vs[0].([]GetIpamTag)[vs[1].(int)]
+	}).(GetIpamTagOutput)
+}
+
 type GetIpv6AddressBandwidthTag struct {
 	// Tag key
 	Key string `pulumi:"key"`
@@ -9643,6 +10279,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*HaVipTagArrayInput)(nil)).Elem(), HaVipTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpPoolTagInput)(nil)).Elem(), IpPoolTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*IpPoolTagArrayInput)(nil)).Elem(), IpPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpamPoolTagInput)(nil)).Elem(), IpamPoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpamPoolTagArrayInput)(nil)).Elem(), IpamPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpamScopeTagInput)(nil)).Elem(), IpamScopeTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpamScopeTagArrayInput)(nil)).Elem(), IpamScopeTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpamTagInput)(nil)).Elem(), IpamTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpamTagArrayInput)(nil)).Elem(), IpamTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6AddressBandwidthTagInput)(nil)).Elem(), Ipv6AddressBandwidthTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6AddressBandwidthTagArrayInput)(nil)).Elem(), Ipv6AddressBandwidthTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*Ipv6GatewayTagInput)(nil)).Elem(), Ipv6GatewayTagArgs{})
@@ -9716,6 +10358,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHaVipTagArrayInput)(nil)).Elem(), GetHaVipTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpPoolTagInput)(nil)).Elem(), GetIpPoolTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpPoolTagArrayInput)(nil)).Elem(), GetIpPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamPoolTagInput)(nil)).Elem(), GetIpamPoolTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamPoolTagArrayInput)(nil)).Elem(), GetIpamPoolTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamScopeTagInput)(nil)).Elem(), GetIpamScopeTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamScopeTagArrayInput)(nil)).Elem(), GetIpamScopeTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamTagInput)(nil)).Elem(), GetIpamTagArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpamTagArrayInput)(nil)).Elem(), GetIpamTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6AddressBandwidthTagInput)(nil)).Elem(), GetIpv6AddressBandwidthTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6AddressBandwidthTagArrayInput)(nil)).Elem(), GetIpv6AddressBandwidthTagArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetIpv6GatewayTagInput)(nil)).Elem(), GetIpv6GatewayTagArgs{})
@@ -9791,6 +10439,12 @@ func init() {
 	pulumi.RegisterOutputType(HaVipTagArrayOutput{})
 	pulumi.RegisterOutputType(IpPoolTagOutput{})
 	pulumi.RegisterOutputType(IpPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(IpamPoolTagOutput{})
+	pulumi.RegisterOutputType(IpamPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(IpamScopeTagOutput{})
+	pulumi.RegisterOutputType(IpamScopeTagArrayOutput{})
+	pulumi.RegisterOutputType(IpamTagOutput{})
+	pulumi.RegisterOutputType(IpamTagArrayOutput{})
 	pulumi.RegisterOutputType(Ipv6AddressBandwidthTagOutput{})
 	pulumi.RegisterOutputType(Ipv6AddressBandwidthTagArrayOutput{})
 	pulumi.RegisterOutputType(Ipv6GatewayTagOutput{})
@@ -9864,6 +10518,12 @@ func init() {
 	pulumi.RegisterOutputType(GetHaVipTagArrayOutput{})
 	pulumi.RegisterOutputType(GetIpPoolTagOutput{})
 	pulumi.RegisterOutputType(GetIpPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIpamPoolTagOutput{})
+	pulumi.RegisterOutputType(GetIpamPoolTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIpamScopeTagOutput{})
+	pulumi.RegisterOutputType(GetIpamScopeTagArrayOutput{})
+	pulumi.RegisterOutputType(GetIpamTagOutput{})
+	pulumi.RegisterOutputType(GetIpamTagArrayOutput{})
 	pulumi.RegisterOutputType(GetIpv6AddressBandwidthTagOutput{})
 	pulumi.RegisterOutputType(GetIpv6AddressBandwidthTagArrayOutput{})
 	pulumi.RegisterOutputType(GetIpv6GatewayTagOutput{})

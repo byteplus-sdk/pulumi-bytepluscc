@@ -2160,6 +2160,9 @@
                     }
                 }
             },
+            "bytepluscc_fwcenter_nat_fire_wall": {
+                "current": "bytepluscc:fwcenter/natFireWall:NatFireWall"
+            },
             "bytepluscc_fwcenter_nat_fire_wall_control_policy": {
                 "current": "bytepluscc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy",
                 "fields": {
@@ -2566,6 +2569,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_kafka_acl": {
+                "current": "bytepluscc:kafka/acl:Acl"
             },
             "bytepluscc_kafka_allow_list": {
                 "current": "bytepluscc:kafka/allowList:AllowList",
@@ -3177,6 +3183,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_rdsmysql_ssl": {
+                "current": "bytepluscc:rdsmysql/ssl:Ssl"
             },
             "bytepluscc_rdspostgresql_allow_list": {
                 "current": "bytepluscc:rdspostgresql/allowList:AllowList",
@@ -3839,12 +3848,31 @@
                     }
                 }
             },
+            "bytepluscc_transitrouter_transit_router_attachment_to_route_table": {
+                "current": "bytepluscc:transitrouter/transitRouterAttachmentToRouteTable:TransitRouterAttachmentToRouteTable"
+            },
             "bytepluscc_transitrouter_transit_router_bandwidth_package": {
                 "current": "bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage",
                 "fields": {
                     "allocations": {
                         "maxItemsOne": false
                     },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_forward_policy_table": {
+                "current": "bytepluscc:transitrouter/transitRouterForwardPolicyTable:TransitRouterForwardPolicyTable",
+                "fields": {
+                    "transit_router_attachment_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_multicast_domain": {
+                "current": "bytepluscc:transitrouter/transitRouterMulticastDomain:TransitRouterMulticastDomain",
+                "fields": {
                     "tags": {
                         "maxItemsOne": false
                     }
@@ -3882,6 +3910,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_queue_policy": {
+                "current": "bytepluscc:transitrouter/transitRouterTrafficQosQueuePolicy:TransitRouterTrafficQosQueuePolicy"
             },
             "bytepluscc_transitrouter_vpc_attachment": {
                 "current": "bytepluscc:transitrouter/vpcAttachment:VpcAttachment",
@@ -4034,6 +4065,14 @@
             },
             "bytepluscc_vefaas_timer": {
                 "current": "bytepluscc:vefaas/timer:Timer"
+            },
+            "bytepluscc_vepfs_data_flow_task": {
+                "current": "bytepluscc:vepfs/dataFlowTask:DataFlowTask",
+                "fields": {
+                    "reports": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_vepfs_fileset": {
                 "current": "bytepluscc:vepfs/fileset:Fileset"
@@ -4445,6 +4484,33 @@
             },
             "bytepluscc_vpc_ip_pool_cidr_block": {
                 "current": "bytepluscc:vpc/ipPoolCidrBlock:IpPoolCidrBlock"
+            },
+            "bytepluscc_vpc_ipam": {
+                "current": "bytepluscc:vpc/ipam:Ipam",
+                "fields": {
+                    "operating_regions": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_ipam_pool": {
+                "current": "bytepluscc:vpc/ipamPool:IpamPool",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_ipam_scope": {
+                "current": "bytepluscc:vpc/ipamScope:IpamScope",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
             },
             "bytepluscc_vpc_ipv6_address_bandwidth": {
                 "current": "bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth",
@@ -7690,6 +7756,9 @@
                     }
                 }
             },
+            "bytepluscc_fwcenter_nat_fire_wall": {
+                "current": "bytepluscc:fwcenter/getNatFireWall:getNatFireWall"
+            },
             "bytepluscc_fwcenter_nat_fire_wall_control_policies": {
                 "current": "bytepluscc:fwcenter/getNatFireWallControlPolicies:getNatFireWallControlPolicies",
                 "fields": {
@@ -7723,6 +7792,14 @@
                         "maxItemsOne": false
                     },
                     "source_cidr_list_v1": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_fwcenter_nat_fire_walls": {
+                "current": "bytepluscc:fwcenter/getNatFireWalls:getNatFireWalls",
+                "fields": {
+                    "ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -8282,6 +8359,17 @@
             },
             "bytepluscc_id_workload_pools": {
                 "current": "bytepluscc:id/getWorkloadPools:getWorkloadPools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_kafka_acl": {
+                "current": "bytepluscc:kafka/getAcl:getAcl"
+            },
+            "bytepluscc_kafka_acls": {
+                "current": "bytepluscc:kafka/getAcls:getAcls",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -9284,6 +9372,17 @@
             },
             "bytepluscc_rdsmysql_parameter_templates": {
                 "current": "bytepluscc:rdsmysql/getParameterTemplates:getParameterTemplates",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_rdsmysql_ssl": {
+                "current": "bytepluscc:rdsmysql/getSsl:getSsl"
+            },
+            "bytepluscc_rdsmysql_ssls": {
+                "current": "bytepluscc:rdsmysql/getSsls:getSsls",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -10328,6 +10427,17 @@
                     }
                 }
             },
+            "bytepluscc_transitrouter_transit_router_attachment_to_route_table": {
+                "current": "bytepluscc:transitrouter/getTransitRouterAttachmentToRouteTable:getTransitRouterAttachmentToRouteTable"
+            },
+            "bytepluscc_transitrouter_transit_router_attachment_to_route_tables": {
+                "current": "bytepluscc:transitrouter/getTransitRouterAttachmentToRouteTables:getTransitRouterAttachmentToRouteTables",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_transitrouter_transit_router_bandwidth_package": {
                 "current": "bytepluscc:transitrouter/getTransitRouterBandwidthPackage:getTransitRouterBandwidthPackage",
                 "fields": {
@@ -10341,6 +10451,38 @@
             },
             "bytepluscc_transitrouter_transit_router_bandwidth_packages": {
                 "current": "bytepluscc:transitrouter/getTransitRouterBandwidthPackages:getTransitRouterBandwidthPackages",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_forward_policy_table": {
+                "current": "bytepluscc:transitrouter/getTransitRouterForwardPolicyTable:getTransitRouterForwardPolicyTable",
+                "fields": {
+                    "transit_router_attachment_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_forward_policy_tables": {
+                "current": "bytepluscc:transitrouter/getTransitRouterForwardPolicyTables:getTransitRouterForwardPolicyTables",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_multicast_domain": {
+                "current": "bytepluscc:transitrouter/getTransitRouterMulticastDomain:getTransitRouterMulticastDomain",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_multicast_domains": {
+                "current": "bytepluscc:transitrouter/getTransitRouterMulticastDomains:getTransitRouterMulticastDomains",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -10427,6 +10569,17 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_queue_policies": {
+                "current": "bytepluscc:transitrouter/getTransitRouterTrafficQosQueuePolicies:getTransitRouterTrafficQosQueuePolicies",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_transitrouter_transit_router_traffic_qos_queue_policy": {
+                "current": "bytepluscc:transitrouter/getTransitRouterTrafficQosQueuePolicy:getTransitRouterTrafficQosQueuePolicy"
             },
             "bytepluscc_transitrouter_transit_routers": {
                 "current": "bytepluscc:transitrouter/getTransitRouters:getTransitRouters",
@@ -10686,6 +10839,22 @@
             },
             "bytepluscc_vefaas_timers": {
                 "current": "bytepluscc:vefaas/getTimers:getTimers",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vepfs_data_flow_task": {
+                "current": "bytepluscc:vepfs/getDataFlowTask:getDataFlowTask",
+                "fields": {
+                    "reports": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vepfs_data_flow_tasks": {
+                "current": "bytepluscc:vepfs/getDataFlowTasks:getDataFlowTasks",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -11265,6 +11434,57 @@
             },
             "bytepluscc_vpc_ip_pools": {
                 "current": "bytepluscc:vpc/getIpPools:getIpPools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_ipam": {
+                "current": "bytepluscc:vpc/getIpam:getIpam",
+                "fields": {
+                    "operating_regions": {
+                        "maxItemsOne": false
+                    },
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_ipam_pool": {
+                "current": "bytepluscc:vpc/getIpamPool:getIpamPool",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_ipam_pools": {
+                "current": "bytepluscc:vpc/getIpamPools:getIpamPools",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_ipam_scope": {
+                "current": "bytepluscc:vpc/getIpamScope:getIpamScope",
+                "fields": {
+                    "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_ipam_scopes": {
+                "current": "bytepluscc:vpc/getIpamScopes:getIpamScopes",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_vpc_ipams": {
+                "current": "bytepluscc:vpc/getIpams:getIpams",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -11883,6 +12103,7 @@
             "bytepluscc_fwcenter_address_book": {},
             "bytepluscc_fwcenter_control_policy": {},
             "bytepluscc_fwcenter_dns_control_policy": {},
+            "bytepluscc_fwcenter_nat_fire_wall": {},
             "bytepluscc_fwcenter_nat_fire_wall_control_policy": {},
             "bytepluscc_fwcenter_vpc_fire_wall_acl_rule": {},
             "bytepluscc_gtm_gtm": {},
@@ -11906,6 +12127,7 @@
             "bytepluscc_id_service": {},
             "bytepluscc_id_user_pool": {},
             "bytepluscc_id_workload_pool": {},
+            "bytepluscc_kafka_acl": {},
             "bytepluscc_kafka_allow_list": {},
             "bytepluscc_kafka_group": {},
             "bytepluscc_kafka_instance": {},
@@ -11954,6 +12176,7 @@
             "bytepluscc_rdsmysql_instance": {},
             "bytepluscc_rdsmysql_instance_readonly_node": {},
             "bytepluscc_rdsmysql_parameter_template": {},
+            "bytepluscc_rdsmysql_ssl": {},
             "bytepluscc_rdspostgresql_allow_list": {},
             "bytepluscc_rdspostgresql_backup": {},
             "bytepluscc_rdspostgresql_database": {},
@@ -11994,13 +12217,17 @@
             "bytepluscc_transitrouter_peer_attachment": {},
             "bytepluscc_transitrouter_route_table_propagation": {},
             "bytepluscc_transitrouter_transit_router": {},
+            "bytepluscc_transitrouter_transit_router_attachment_to_route_table": {},
             "bytepluscc_transitrouter_transit_router_bandwidth_package": {},
+            "bytepluscc_transitrouter_transit_router_forward_policy_table": {},
+            "bytepluscc_transitrouter_transit_router_multicast_domain": {},
             "bytepluscc_transitrouter_transit_router_route_entry": {},
             "bytepluscc_transitrouter_transit_router_route_table": {},
             "bytepluscc_transitrouter_transit_router_route_table_association": {},
             "bytepluscc_transitrouter_transit_router_traffic_qos_marking_entry": {},
             "bytepluscc_transitrouter_transit_router_traffic_qos_marking_policy": {},
             "bytepluscc_transitrouter_transit_router_traffic_qos_queue_entry": {},
+            "bytepluscc_transitrouter_transit_router_traffic_qos_queue_policy": {},
             "bytepluscc_transitrouter_vpc_attachment": {},
             "bytepluscc_transitrouter_vpn_attachment": {},
             "bytepluscc_vedbm_account": {},
@@ -12014,6 +12241,7 @@
             "bytepluscc_vefaas_release": {},
             "bytepluscc_vefaas_sandbox": {},
             "bytepluscc_vefaas_timer": {},
+            "bytepluscc_vepfs_data_flow_task": {},
             "bytepluscc_vepfs_fileset": {},
             "bytepluscc_vepfs_instance": {},
             "bytepluscc_vepfs_mount_service": {},
@@ -12035,6 +12263,9 @@
             "bytepluscc_vpc_ha_vip": {},
             "bytepluscc_vpc_ip_pool": {},
             "bytepluscc_vpc_ip_pool_cidr_block": {},
+            "bytepluscc_vpc_ipam": {},
+            "bytepluscc_vpc_ipam_pool": {},
+            "bytepluscc_vpc_ipam_scope": {},
             "bytepluscc_vpc_ipv6_address_bandwidth": {},
             "bytepluscc_vpc_ipv6_gateway": {},
             "bytepluscc_vpc_network_acl": {},

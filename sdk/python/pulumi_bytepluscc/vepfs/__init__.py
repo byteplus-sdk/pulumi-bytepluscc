@@ -6,7 +6,10 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .data_flow_task import *
 from .fileset import *
+from .get_data_flow_task import *
+from .get_data_flow_tasks import *
 from .get_fileset import *
 from .get_filesets import *
 from .get_instance import *

@@ -13,6 +13,713 @@ import (
 
 var _ = internal.GetEnvOrDefault
 
+type DataFlowTaskDeletePolicy struct {
+	// Specify the deletion time (data before this time will be deleted), in milliseconds.
+	DeleteTimeBefore *string `pulumi:"deleteTimeBefore"`
+	// Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+	Rule *string `pulumi:"rule"`
+}
+
+// DataFlowTaskDeletePolicyInput is an input type that accepts DataFlowTaskDeletePolicyArgs and DataFlowTaskDeletePolicyOutput values.
+// You can construct a concrete instance of `DataFlowTaskDeletePolicyInput` via:
+//
+//	DataFlowTaskDeletePolicyArgs{...}
+type DataFlowTaskDeletePolicyInput interface {
+	pulumi.Input
+
+	ToDataFlowTaskDeletePolicyOutput() DataFlowTaskDeletePolicyOutput
+	ToDataFlowTaskDeletePolicyOutputWithContext(context.Context) DataFlowTaskDeletePolicyOutput
+}
+
+type DataFlowTaskDeletePolicyArgs struct {
+	// Specify the deletion time (data before this time will be deleted), in milliseconds.
+	DeleteTimeBefore pulumi.StringPtrInput `pulumi:"deleteTimeBefore"`
+	// Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+	Rule pulumi.StringPtrInput `pulumi:"rule"`
+}
+
+func (DataFlowTaskDeletePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataFlowTaskDeletePolicy)(nil)).Elem()
+}
+
+func (i DataFlowTaskDeletePolicyArgs) ToDataFlowTaskDeletePolicyOutput() DataFlowTaskDeletePolicyOutput {
+	return i.ToDataFlowTaskDeletePolicyOutputWithContext(context.Background())
+}
+
+func (i DataFlowTaskDeletePolicyArgs) ToDataFlowTaskDeletePolicyOutputWithContext(ctx context.Context) DataFlowTaskDeletePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskDeletePolicyOutput)
+}
+
+func (i DataFlowTaskDeletePolicyArgs) ToDataFlowTaskDeletePolicyPtrOutput() DataFlowTaskDeletePolicyPtrOutput {
+	return i.ToDataFlowTaskDeletePolicyPtrOutputWithContext(context.Background())
+}
+
+func (i DataFlowTaskDeletePolicyArgs) ToDataFlowTaskDeletePolicyPtrOutputWithContext(ctx context.Context) DataFlowTaskDeletePolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskDeletePolicyOutput).ToDataFlowTaskDeletePolicyPtrOutputWithContext(ctx)
+}
+
+// DataFlowTaskDeletePolicyPtrInput is an input type that accepts DataFlowTaskDeletePolicyArgs, DataFlowTaskDeletePolicyPtr and DataFlowTaskDeletePolicyPtrOutput values.
+// You can construct a concrete instance of `DataFlowTaskDeletePolicyPtrInput` via:
+//
+//	        DataFlowTaskDeletePolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type DataFlowTaskDeletePolicyPtrInput interface {
+	pulumi.Input
+
+	ToDataFlowTaskDeletePolicyPtrOutput() DataFlowTaskDeletePolicyPtrOutput
+	ToDataFlowTaskDeletePolicyPtrOutputWithContext(context.Context) DataFlowTaskDeletePolicyPtrOutput
+}
+
+type dataFlowTaskDeletePolicyPtrType DataFlowTaskDeletePolicyArgs
+
+func DataFlowTaskDeletePolicyPtr(v *DataFlowTaskDeletePolicyArgs) DataFlowTaskDeletePolicyPtrInput {
+	return (*dataFlowTaskDeletePolicyPtrType)(v)
+}
+
+func (*dataFlowTaskDeletePolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataFlowTaskDeletePolicy)(nil)).Elem()
+}
+
+func (i *dataFlowTaskDeletePolicyPtrType) ToDataFlowTaskDeletePolicyPtrOutput() DataFlowTaskDeletePolicyPtrOutput {
+	return i.ToDataFlowTaskDeletePolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *dataFlowTaskDeletePolicyPtrType) ToDataFlowTaskDeletePolicyPtrOutputWithContext(ctx context.Context) DataFlowTaskDeletePolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskDeletePolicyPtrOutput)
+}
+
+type DataFlowTaskDeletePolicyOutput struct{ *pulumi.OutputState }
+
+func (DataFlowTaskDeletePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataFlowTaskDeletePolicy)(nil)).Elem()
+}
+
+func (o DataFlowTaskDeletePolicyOutput) ToDataFlowTaskDeletePolicyOutput() DataFlowTaskDeletePolicyOutput {
+	return o
+}
+
+func (o DataFlowTaskDeletePolicyOutput) ToDataFlowTaskDeletePolicyOutputWithContext(ctx context.Context) DataFlowTaskDeletePolicyOutput {
+	return o
+}
+
+func (o DataFlowTaskDeletePolicyOutput) ToDataFlowTaskDeletePolicyPtrOutput() DataFlowTaskDeletePolicyPtrOutput {
+	return o.ToDataFlowTaskDeletePolicyPtrOutputWithContext(context.Background())
+}
+
+func (o DataFlowTaskDeletePolicyOutput) ToDataFlowTaskDeletePolicyPtrOutputWithContext(ctx context.Context) DataFlowTaskDeletePolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataFlowTaskDeletePolicy) *DataFlowTaskDeletePolicy {
+		return &v
+	}).(DataFlowTaskDeletePolicyPtrOutput)
+}
+
+// Specify the deletion time (data before this time will be deleted), in milliseconds.
+func (o DataFlowTaskDeletePolicyOutput) DeleteTimeBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskDeletePolicy) *string { return v.DeleteTimeBefore }).(pulumi.StringPtrOutput)
+}
+
+// Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+func (o DataFlowTaskDeletePolicyOutput) Rule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskDeletePolicy) *string { return v.Rule }).(pulumi.StringPtrOutput)
+}
+
+type DataFlowTaskDeletePolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (DataFlowTaskDeletePolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataFlowTaskDeletePolicy)(nil)).Elem()
+}
+
+func (o DataFlowTaskDeletePolicyPtrOutput) ToDataFlowTaskDeletePolicyPtrOutput() DataFlowTaskDeletePolicyPtrOutput {
+	return o
+}
+
+func (o DataFlowTaskDeletePolicyPtrOutput) ToDataFlowTaskDeletePolicyPtrOutputWithContext(ctx context.Context) DataFlowTaskDeletePolicyPtrOutput {
+	return o
+}
+
+func (o DataFlowTaskDeletePolicyPtrOutput) Elem() DataFlowTaskDeletePolicyOutput {
+	return o.ApplyT(func(v *DataFlowTaskDeletePolicy) DataFlowTaskDeletePolicy {
+		if v != nil {
+			return *v
+		}
+		var ret DataFlowTaskDeletePolicy
+		return ret
+	}).(DataFlowTaskDeletePolicyOutput)
+}
+
+// Specify the deletion time (data before this time will be deleted), in milliseconds.
+func (o DataFlowTaskDeletePolicyPtrOutput) DeleteTimeBefore() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskDeletePolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DeleteTimeBefore
+	}).(pulumi.StringPtrOutput)
+}
+
+// Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+func (o DataFlowTaskDeletePolicyPtrOutput) Rule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskDeletePolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Rule
+	}).(pulumi.StringPtrOutput)
+}
+
+type DataFlowTaskEntryListFileInfo struct {
+	// TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+	FileBucket *string `pulumi:"fileBucket"`
+	// Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+	FileKey *string `pulumi:"fileKey"`
+	// Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+	FileName *string `pulumi:"fileName"`
+}
+
+// DataFlowTaskEntryListFileInfoInput is an input type that accepts DataFlowTaskEntryListFileInfoArgs and DataFlowTaskEntryListFileInfoOutput values.
+// You can construct a concrete instance of `DataFlowTaskEntryListFileInfoInput` via:
+//
+//	DataFlowTaskEntryListFileInfoArgs{...}
+type DataFlowTaskEntryListFileInfoInput interface {
+	pulumi.Input
+
+	ToDataFlowTaskEntryListFileInfoOutput() DataFlowTaskEntryListFileInfoOutput
+	ToDataFlowTaskEntryListFileInfoOutputWithContext(context.Context) DataFlowTaskEntryListFileInfoOutput
+}
+
+type DataFlowTaskEntryListFileInfoArgs struct {
+	// TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+	FileBucket pulumi.StringPtrInput `pulumi:"fileBucket"`
+	// Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+	FileKey pulumi.StringPtrInput `pulumi:"fileKey"`
+	// Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+	FileName pulumi.StringPtrInput `pulumi:"fileName"`
+}
+
+func (DataFlowTaskEntryListFileInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataFlowTaskEntryListFileInfo)(nil)).Elem()
+}
+
+func (i DataFlowTaskEntryListFileInfoArgs) ToDataFlowTaskEntryListFileInfoOutput() DataFlowTaskEntryListFileInfoOutput {
+	return i.ToDataFlowTaskEntryListFileInfoOutputWithContext(context.Background())
+}
+
+func (i DataFlowTaskEntryListFileInfoArgs) ToDataFlowTaskEntryListFileInfoOutputWithContext(ctx context.Context) DataFlowTaskEntryListFileInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskEntryListFileInfoOutput)
+}
+
+func (i DataFlowTaskEntryListFileInfoArgs) ToDataFlowTaskEntryListFileInfoPtrOutput() DataFlowTaskEntryListFileInfoPtrOutput {
+	return i.ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(context.Background())
+}
+
+func (i DataFlowTaskEntryListFileInfoArgs) ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(ctx context.Context) DataFlowTaskEntryListFileInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskEntryListFileInfoOutput).ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(ctx)
+}
+
+// DataFlowTaskEntryListFileInfoPtrInput is an input type that accepts DataFlowTaskEntryListFileInfoArgs, DataFlowTaskEntryListFileInfoPtr and DataFlowTaskEntryListFileInfoPtrOutput values.
+// You can construct a concrete instance of `DataFlowTaskEntryListFileInfoPtrInput` via:
+//
+//	        DataFlowTaskEntryListFileInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type DataFlowTaskEntryListFileInfoPtrInput interface {
+	pulumi.Input
+
+	ToDataFlowTaskEntryListFileInfoPtrOutput() DataFlowTaskEntryListFileInfoPtrOutput
+	ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(context.Context) DataFlowTaskEntryListFileInfoPtrOutput
+}
+
+type dataFlowTaskEntryListFileInfoPtrType DataFlowTaskEntryListFileInfoArgs
+
+func DataFlowTaskEntryListFileInfoPtr(v *DataFlowTaskEntryListFileInfoArgs) DataFlowTaskEntryListFileInfoPtrInput {
+	return (*dataFlowTaskEntryListFileInfoPtrType)(v)
+}
+
+func (*dataFlowTaskEntryListFileInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataFlowTaskEntryListFileInfo)(nil)).Elem()
+}
+
+func (i *dataFlowTaskEntryListFileInfoPtrType) ToDataFlowTaskEntryListFileInfoPtrOutput() DataFlowTaskEntryListFileInfoPtrOutput {
+	return i.ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *dataFlowTaskEntryListFileInfoPtrType) ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(ctx context.Context) DataFlowTaskEntryListFileInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskEntryListFileInfoPtrOutput)
+}
+
+type DataFlowTaskEntryListFileInfoOutput struct{ *pulumi.OutputState }
+
+func (DataFlowTaskEntryListFileInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataFlowTaskEntryListFileInfo)(nil)).Elem()
+}
+
+func (o DataFlowTaskEntryListFileInfoOutput) ToDataFlowTaskEntryListFileInfoOutput() DataFlowTaskEntryListFileInfoOutput {
+	return o
+}
+
+func (o DataFlowTaskEntryListFileInfoOutput) ToDataFlowTaskEntryListFileInfoOutputWithContext(ctx context.Context) DataFlowTaskEntryListFileInfoOutput {
+	return o
+}
+
+func (o DataFlowTaskEntryListFileInfoOutput) ToDataFlowTaskEntryListFileInfoPtrOutput() DataFlowTaskEntryListFileInfoPtrOutput {
+	return o.ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(context.Background())
+}
+
+func (o DataFlowTaskEntryListFileInfoOutput) ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(ctx context.Context) DataFlowTaskEntryListFileInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataFlowTaskEntryListFileInfo) *DataFlowTaskEntryListFileInfo {
+		return &v
+	}).(DataFlowTaskEntryListFileInfoPtrOutput)
+}
+
+// TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+func (o DataFlowTaskEntryListFileInfoOutput) FileBucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskEntryListFileInfo) *string { return v.FileBucket }).(pulumi.StringPtrOutput)
+}
+
+// Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+func (o DataFlowTaskEntryListFileInfoOutput) FileKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskEntryListFileInfo) *string { return v.FileKey }).(pulumi.StringPtrOutput)
+}
+
+// Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+func (o DataFlowTaskEntryListFileInfoOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskEntryListFileInfo) *string { return v.FileName }).(pulumi.StringPtrOutput)
+}
+
+type DataFlowTaskEntryListFileInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (DataFlowTaskEntryListFileInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataFlowTaskEntryListFileInfo)(nil)).Elem()
+}
+
+func (o DataFlowTaskEntryListFileInfoPtrOutput) ToDataFlowTaskEntryListFileInfoPtrOutput() DataFlowTaskEntryListFileInfoPtrOutput {
+	return o
+}
+
+func (o DataFlowTaskEntryListFileInfoPtrOutput) ToDataFlowTaskEntryListFileInfoPtrOutputWithContext(ctx context.Context) DataFlowTaskEntryListFileInfoPtrOutput {
+	return o
+}
+
+func (o DataFlowTaskEntryListFileInfoPtrOutput) Elem() DataFlowTaskEntryListFileInfoOutput {
+	return o.ApplyT(func(v *DataFlowTaskEntryListFileInfo) DataFlowTaskEntryListFileInfo {
+		if v != nil {
+			return *v
+		}
+		var ret DataFlowTaskEntryListFileInfo
+		return ret
+	}).(DataFlowTaskEntryListFileInfoOutput)
+}
+
+// TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+func (o DataFlowTaskEntryListFileInfoPtrOutput) FileBucket() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskEntryListFileInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FileBucket
+	}).(pulumi.StringPtrOutput)
+}
+
+// Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+func (o DataFlowTaskEntryListFileInfoPtrOutput) FileKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskEntryListFileInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FileKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+func (o DataFlowTaskEntryListFileInfoPtrOutput) FileName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskEntryListFileInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.FileName
+	}).(pulumi.StringPtrOutput)
+}
+
+type DataFlowTaskReport struct {
+	// Download link for the report.
+	Path *string `pulumi:"path"`
+	// Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+	Type *string `pulumi:"type"`
+}
+
+// DataFlowTaskReportInput is an input type that accepts DataFlowTaskReportArgs and DataFlowTaskReportOutput values.
+// You can construct a concrete instance of `DataFlowTaskReportInput` via:
+//
+//	DataFlowTaskReportArgs{...}
+type DataFlowTaskReportInput interface {
+	pulumi.Input
+
+	ToDataFlowTaskReportOutput() DataFlowTaskReportOutput
+	ToDataFlowTaskReportOutputWithContext(context.Context) DataFlowTaskReportOutput
+}
+
+type DataFlowTaskReportArgs struct {
+	// Download link for the report.
+	Path pulumi.StringPtrInput `pulumi:"path"`
+	// Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+	Type pulumi.StringPtrInput `pulumi:"type"`
+}
+
+func (DataFlowTaskReportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataFlowTaskReport)(nil)).Elem()
+}
+
+func (i DataFlowTaskReportArgs) ToDataFlowTaskReportOutput() DataFlowTaskReportOutput {
+	return i.ToDataFlowTaskReportOutputWithContext(context.Background())
+}
+
+func (i DataFlowTaskReportArgs) ToDataFlowTaskReportOutputWithContext(ctx context.Context) DataFlowTaskReportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskReportOutput)
+}
+
+// DataFlowTaskReportArrayInput is an input type that accepts DataFlowTaskReportArray and DataFlowTaskReportArrayOutput values.
+// You can construct a concrete instance of `DataFlowTaskReportArrayInput` via:
+//
+//	DataFlowTaskReportArray{ DataFlowTaskReportArgs{...} }
+type DataFlowTaskReportArrayInput interface {
+	pulumi.Input
+
+	ToDataFlowTaskReportArrayOutput() DataFlowTaskReportArrayOutput
+	ToDataFlowTaskReportArrayOutputWithContext(context.Context) DataFlowTaskReportArrayOutput
+}
+
+type DataFlowTaskReportArray []DataFlowTaskReportInput
+
+func (DataFlowTaskReportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DataFlowTaskReport)(nil)).Elem()
+}
+
+func (i DataFlowTaskReportArray) ToDataFlowTaskReportArrayOutput() DataFlowTaskReportArrayOutput {
+	return i.ToDataFlowTaskReportArrayOutputWithContext(context.Background())
+}
+
+func (i DataFlowTaskReportArray) ToDataFlowTaskReportArrayOutputWithContext(ctx context.Context) DataFlowTaskReportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskReportArrayOutput)
+}
+
+type DataFlowTaskReportOutput struct{ *pulumi.OutputState }
+
+func (DataFlowTaskReportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataFlowTaskReport)(nil)).Elem()
+}
+
+func (o DataFlowTaskReportOutput) ToDataFlowTaskReportOutput() DataFlowTaskReportOutput {
+	return o
+}
+
+func (o DataFlowTaskReportOutput) ToDataFlowTaskReportOutputWithContext(ctx context.Context) DataFlowTaskReportOutput {
+	return o
+}
+
+// Download link for the report.
+func (o DataFlowTaskReportOutput) Path() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskReport) *string { return v.Path }).(pulumi.StringPtrOutput)
+}
+
+// Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+func (o DataFlowTaskReportOutput) Type() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskReport) *string { return v.Type }).(pulumi.StringPtrOutput)
+}
+
+type DataFlowTaskReportArrayOutput struct{ *pulumi.OutputState }
+
+func (DataFlowTaskReportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DataFlowTaskReport)(nil)).Elem()
+}
+
+func (o DataFlowTaskReportArrayOutput) ToDataFlowTaskReportArrayOutput() DataFlowTaskReportArrayOutput {
+	return o
+}
+
+func (o DataFlowTaskReportArrayOutput) ToDataFlowTaskReportArrayOutputWithContext(ctx context.Context) DataFlowTaskReportArrayOutput {
+	return o
+}
+
+func (o DataFlowTaskReportArrayOutput) Index(i pulumi.IntInput) DataFlowTaskReportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DataFlowTaskReport {
+		return vs[0].([]DataFlowTaskReport)[vs[1].(int)]
+	}).(DataFlowTaskReportOutput)
+}
+
+type DataFlowTaskTlsInfo struct {
+	// Whether to enable TLS log.
+	Enable *bool `pulumi:"enable"`
+	// TLS log project ID.
+	ProjectId *string `pulumi:"projectId"`
+	// TLS log project name.
+	ProjectName *string `pulumi:"projectName"`
+	// Redirect URL for the TLS log project.
+	ProjectUrl *string `pulumi:"projectUrl"`
+	// Embedded address of the TLS log topic.
+	TopicEmbeddedUrl *string `pulumi:"topicEmbeddedUrl"`
+	// TLS log topic ID.
+	TopicId *string `pulumi:"topicId"`
+	// TLS log topic name.
+	TopicName *string `pulumi:"topicName"`
+	// Redirect URL for TLS log topic.
+	TopicUrl *string `pulumi:"topicUrl"`
+}
+
+// DataFlowTaskTlsInfoInput is an input type that accepts DataFlowTaskTlsInfoArgs and DataFlowTaskTlsInfoOutput values.
+// You can construct a concrete instance of `DataFlowTaskTlsInfoInput` via:
+//
+//	DataFlowTaskTlsInfoArgs{...}
+type DataFlowTaskTlsInfoInput interface {
+	pulumi.Input
+
+	ToDataFlowTaskTlsInfoOutput() DataFlowTaskTlsInfoOutput
+	ToDataFlowTaskTlsInfoOutputWithContext(context.Context) DataFlowTaskTlsInfoOutput
+}
+
+type DataFlowTaskTlsInfoArgs struct {
+	// Whether to enable TLS log.
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+	// TLS log project ID.
+	ProjectId pulumi.StringPtrInput `pulumi:"projectId"`
+	// TLS log project name.
+	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
+	// Redirect URL for the TLS log project.
+	ProjectUrl pulumi.StringPtrInput `pulumi:"projectUrl"`
+	// Embedded address of the TLS log topic.
+	TopicEmbeddedUrl pulumi.StringPtrInput `pulumi:"topicEmbeddedUrl"`
+	// TLS log topic ID.
+	TopicId pulumi.StringPtrInput `pulumi:"topicId"`
+	// TLS log topic name.
+	TopicName pulumi.StringPtrInput `pulumi:"topicName"`
+	// Redirect URL for TLS log topic.
+	TopicUrl pulumi.StringPtrInput `pulumi:"topicUrl"`
+}
+
+func (DataFlowTaskTlsInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataFlowTaskTlsInfo)(nil)).Elem()
+}
+
+func (i DataFlowTaskTlsInfoArgs) ToDataFlowTaskTlsInfoOutput() DataFlowTaskTlsInfoOutput {
+	return i.ToDataFlowTaskTlsInfoOutputWithContext(context.Background())
+}
+
+func (i DataFlowTaskTlsInfoArgs) ToDataFlowTaskTlsInfoOutputWithContext(ctx context.Context) DataFlowTaskTlsInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskTlsInfoOutput)
+}
+
+func (i DataFlowTaskTlsInfoArgs) ToDataFlowTaskTlsInfoPtrOutput() DataFlowTaskTlsInfoPtrOutput {
+	return i.ToDataFlowTaskTlsInfoPtrOutputWithContext(context.Background())
+}
+
+func (i DataFlowTaskTlsInfoArgs) ToDataFlowTaskTlsInfoPtrOutputWithContext(ctx context.Context) DataFlowTaskTlsInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskTlsInfoOutput).ToDataFlowTaskTlsInfoPtrOutputWithContext(ctx)
+}
+
+// DataFlowTaskTlsInfoPtrInput is an input type that accepts DataFlowTaskTlsInfoArgs, DataFlowTaskTlsInfoPtr and DataFlowTaskTlsInfoPtrOutput values.
+// You can construct a concrete instance of `DataFlowTaskTlsInfoPtrInput` via:
+//
+//	        DataFlowTaskTlsInfoArgs{...}
+//
+//	or:
+//
+//	        nil
+type DataFlowTaskTlsInfoPtrInput interface {
+	pulumi.Input
+
+	ToDataFlowTaskTlsInfoPtrOutput() DataFlowTaskTlsInfoPtrOutput
+	ToDataFlowTaskTlsInfoPtrOutputWithContext(context.Context) DataFlowTaskTlsInfoPtrOutput
+}
+
+type dataFlowTaskTlsInfoPtrType DataFlowTaskTlsInfoArgs
+
+func DataFlowTaskTlsInfoPtr(v *DataFlowTaskTlsInfoArgs) DataFlowTaskTlsInfoPtrInput {
+	return (*dataFlowTaskTlsInfoPtrType)(v)
+}
+
+func (*dataFlowTaskTlsInfoPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataFlowTaskTlsInfo)(nil)).Elem()
+}
+
+func (i *dataFlowTaskTlsInfoPtrType) ToDataFlowTaskTlsInfoPtrOutput() DataFlowTaskTlsInfoPtrOutput {
+	return i.ToDataFlowTaskTlsInfoPtrOutputWithContext(context.Background())
+}
+
+func (i *dataFlowTaskTlsInfoPtrType) ToDataFlowTaskTlsInfoPtrOutputWithContext(ctx context.Context) DataFlowTaskTlsInfoPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DataFlowTaskTlsInfoPtrOutput)
+}
+
+type DataFlowTaskTlsInfoOutput struct{ *pulumi.OutputState }
+
+func (DataFlowTaskTlsInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DataFlowTaskTlsInfo)(nil)).Elem()
+}
+
+func (o DataFlowTaskTlsInfoOutput) ToDataFlowTaskTlsInfoOutput() DataFlowTaskTlsInfoOutput {
+	return o
+}
+
+func (o DataFlowTaskTlsInfoOutput) ToDataFlowTaskTlsInfoOutputWithContext(ctx context.Context) DataFlowTaskTlsInfoOutput {
+	return o
+}
+
+func (o DataFlowTaskTlsInfoOutput) ToDataFlowTaskTlsInfoPtrOutput() DataFlowTaskTlsInfoPtrOutput {
+	return o.ToDataFlowTaskTlsInfoPtrOutputWithContext(context.Background())
+}
+
+func (o DataFlowTaskTlsInfoOutput) ToDataFlowTaskTlsInfoPtrOutputWithContext(ctx context.Context) DataFlowTaskTlsInfoPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DataFlowTaskTlsInfo) *DataFlowTaskTlsInfo {
+		return &v
+	}).(DataFlowTaskTlsInfoPtrOutput)
+}
+
+// Whether to enable TLS log.
+func (o DataFlowTaskTlsInfoOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskTlsInfo) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+// TLS log project ID.
+func (o DataFlowTaskTlsInfoOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskTlsInfo) *string { return v.ProjectId }).(pulumi.StringPtrOutput)
+}
+
+// TLS log project name.
+func (o DataFlowTaskTlsInfoOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskTlsInfo) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
+}
+
+// Redirect URL for the TLS log project.
+func (o DataFlowTaskTlsInfoOutput) ProjectUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskTlsInfo) *string { return v.ProjectUrl }).(pulumi.StringPtrOutput)
+}
+
+// Embedded address of the TLS log topic.
+func (o DataFlowTaskTlsInfoOutput) TopicEmbeddedUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskTlsInfo) *string { return v.TopicEmbeddedUrl }).(pulumi.StringPtrOutput)
+}
+
+// TLS log topic ID.
+func (o DataFlowTaskTlsInfoOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskTlsInfo) *string { return v.TopicId }).(pulumi.StringPtrOutput)
+}
+
+// TLS log topic name.
+func (o DataFlowTaskTlsInfoOutput) TopicName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskTlsInfo) *string { return v.TopicName }).(pulumi.StringPtrOutput)
+}
+
+// Redirect URL for TLS log topic.
+func (o DataFlowTaskTlsInfoOutput) TopicUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DataFlowTaskTlsInfo) *string { return v.TopicUrl }).(pulumi.StringPtrOutput)
+}
+
+type DataFlowTaskTlsInfoPtrOutput struct{ *pulumi.OutputState }
+
+func (DataFlowTaskTlsInfoPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DataFlowTaskTlsInfo)(nil)).Elem()
+}
+
+func (o DataFlowTaskTlsInfoPtrOutput) ToDataFlowTaskTlsInfoPtrOutput() DataFlowTaskTlsInfoPtrOutput {
+	return o
+}
+
+func (o DataFlowTaskTlsInfoPtrOutput) ToDataFlowTaskTlsInfoPtrOutputWithContext(ctx context.Context) DataFlowTaskTlsInfoPtrOutput {
+	return o
+}
+
+func (o DataFlowTaskTlsInfoPtrOutput) Elem() DataFlowTaskTlsInfoOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) DataFlowTaskTlsInfo {
+		if v != nil {
+			return *v
+		}
+		var ret DataFlowTaskTlsInfo
+		return ret
+	}).(DataFlowTaskTlsInfoOutput)
+}
+
+// Whether to enable TLS log.
+func (o DataFlowTaskTlsInfoPtrOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Enable
+	}).(pulumi.BoolPtrOutput)
+}
+
+// TLS log project ID.
+func (o DataFlowTaskTlsInfoPtrOutput) ProjectId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectId
+	}).(pulumi.StringPtrOutput)
+}
+
+// TLS log project name.
+func (o DataFlowTaskTlsInfoPtrOutput) ProjectName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Redirect URL for the TLS log project.
+func (o DataFlowTaskTlsInfoPtrOutput) ProjectUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ProjectUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// Embedded address of the TLS log topic.
+func (o DataFlowTaskTlsInfoPtrOutput) TopicEmbeddedUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicEmbeddedUrl
+	}).(pulumi.StringPtrOutput)
+}
+
+// TLS log topic ID.
+func (o DataFlowTaskTlsInfoPtrOutput) TopicId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicId
+	}).(pulumi.StringPtrOutput)
+}
+
+// TLS log topic name.
+func (o DataFlowTaskTlsInfoPtrOutput) TopicName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicName
+	}).(pulumi.StringPtrOutput)
+}
+
+// Redirect URL for TLS log topic.
+func (o DataFlowTaskTlsInfoPtrOutput) TopicUrl() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DataFlowTaskTlsInfo) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TopicUrl
+	}).(pulumi.StringPtrOutput)
+}
+
 type InstanceCapacityInfo struct {
 	// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 	TotalTiB *int `pulumi:"totalTiB"`
@@ -514,6 +1221,358 @@ func (o MountServiceNodeArrayOutput) Index(i pulumi.IntInput) MountServiceNodeOu
 	}).(MountServiceNodeOutput)
 }
 
+type GetDataFlowTaskDeletePolicy struct {
+	// Specify the deletion time (data before this time will be deleted), in milliseconds.
+	DeleteTimeBefore string `pulumi:"deleteTimeBefore"`
+	// Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+	Rule string `pulumi:"rule"`
+}
+
+// GetDataFlowTaskDeletePolicyInput is an input type that accepts GetDataFlowTaskDeletePolicyArgs and GetDataFlowTaskDeletePolicyOutput values.
+// You can construct a concrete instance of `GetDataFlowTaskDeletePolicyInput` via:
+//
+//	GetDataFlowTaskDeletePolicyArgs{...}
+type GetDataFlowTaskDeletePolicyInput interface {
+	pulumi.Input
+
+	ToGetDataFlowTaskDeletePolicyOutput() GetDataFlowTaskDeletePolicyOutput
+	ToGetDataFlowTaskDeletePolicyOutputWithContext(context.Context) GetDataFlowTaskDeletePolicyOutput
+}
+
+type GetDataFlowTaskDeletePolicyArgs struct {
+	// Specify the deletion time (data before this time will be deleted), in milliseconds.
+	DeleteTimeBefore pulumi.StringInput `pulumi:"deleteTimeBefore"`
+	// Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+	Rule pulumi.StringInput `pulumi:"rule"`
+}
+
+func (GetDataFlowTaskDeletePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFlowTaskDeletePolicy)(nil)).Elem()
+}
+
+func (i GetDataFlowTaskDeletePolicyArgs) ToGetDataFlowTaskDeletePolicyOutput() GetDataFlowTaskDeletePolicyOutput {
+	return i.ToGetDataFlowTaskDeletePolicyOutputWithContext(context.Background())
+}
+
+func (i GetDataFlowTaskDeletePolicyArgs) ToGetDataFlowTaskDeletePolicyOutputWithContext(ctx context.Context) GetDataFlowTaskDeletePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFlowTaskDeletePolicyOutput)
+}
+
+type GetDataFlowTaskDeletePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetDataFlowTaskDeletePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFlowTaskDeletePolicy)(nil)).Elem()
+}
+
+func (o GetDataFlowTaskDeletePolicyOutput) ToGetDataFlowTaskDeletePolicyOutput() GetDataFlowTaskDeletePolicyOutput {
+	return o
+}
+
+func (o GetDataFlowTaskDeletePolicyOutput) ToGetDataFlowTaskDeletePolicyOutputWithContext(ctx context.Context) GetDataFlowTaskDeletePolicyOutput {
+	return o
+}
+
+// Specify the deletion time (data before this time will be deleted), in milliseconds.
+func (o GetDataFlowTaskDeletePolicyOutput) DeleteTimeBefore() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskDeletePolicy) string { return v.DeleteTimeBefore }).(pulumi.StringOutput)
+}
+
+// Deletion rule. DELETE*TYPE*ONLY*FS: Delete only objects in the file system; DELETE*TYPE*FS*WITH*LATEST*OBJECT: Delete objects in the file system and their latest TOS object versions; DELETE*TYPE*FS*WITH*ALLVERSION_OBJECT: Delete objects in the file system and all their TOS object versions.
+func (o GetDataFlowTaskDeletePolicyOutput) Rule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskDeletePolicy) string { return v.Rule }).(pulumi.StringOutput)
+}
+
+type GetDataFlowTaskEntryListFileInfo struct {
+	// TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+	FileBucket string `pulumi:"fileBucket"`
+	// Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+	FileKey string `pulumi:"fileKey"`
+	// Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+	FileName string `pulumi:"fileName"`
+}
+
+// GetDataFlowTaskEntryListFileInfoInput is an input type that accepts GetDataFlowTaskEntryListFileInfoArgs and GetDataFlowTaskEntryListFileInfoOutput values.
+// You can construct a concrete instance of `GetDataFlowTaskEntryListFileInfoInput` via:
+//
+//	GetDataFlowTaskEntryListFileInfoArgs{...}
+type GetDataFlowTaskEntryListFileInfoInput interface {
+	pulumi.Input
+
+	ToGetDataFlowTaskEntryListFileInfoOutput() GetDataFlowTaskEntryListFileInfoOutput
+	ToGetDataFlowTaskEntryListFileInfoOutputWithContext(context.Context) GetDataFlowTaskEntryListFileInfoOutput
+}
+
+type GetDataFlowTaskEntryListFileInfoArgs struct {
+	// TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+	FileBucket pulumi.StringInput `pulumi:"fileBucket"`
+	// Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+	FileKey pulumi.StringInput `pulumi:"fileKey"`
+	// Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+	FileName pulumi.StringInput `pulumi:"fileName"`
+}
+
+func (GetDataFlowTaskEntryListFileInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFlowTaskEntryListFileInfo)(nil)).Elem()
+}
+
+func (i GetDataFlowTaskEntryListFileInfoArgs) ToGetDataFlowTaskEntryListFileInfoOutput() GetDataFlowTaskEntryListFileInfoOutput {
+	return i.ToGetDataFlowTaskEntryListFileInfoOutputWithContext(context.Background())
+}
+
+func (i GetDataFlowTaskEntryListFileInfoArgs) ToGetDataFlowTaskEntryListFileInfoOutputWithContext(ctx context.Context) GetDataFlowTaskEntryListFileInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFlowTaskEntryListFileInfoOutput)
+}
+
+type GetDataFlowTaskEntryListFileInfoOutput struct{ *pulumi.OutputState }
+
+func (GetDataFlowTaskEntryListFileInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFlowTaskEntryListFileInfo)(nil)).Elem()
+}
+
+func (o GetDataFlowTaskEntryListFileInfoOutput) ToGetDataFlowTaskEntryListFileInfoOutput() GetDataFlowTaskEntryListFileInfoOutput {
+	return o
+}
+
+func (o GetDataFlowTaskEntryListFileInfoOutput) ToGetDataFlowTaskEntryListFileInfoOutputWithContext(ctx context.Context) GetDataFlowTaskEntryListFileInfoOutput {
+	return o
+}
+
+// TOS bucket containing the list file for task execution. Required when using a list file from the user's TOS bucket for preheating or settling.
+func (o GetDataFlowTaskEntryListFileInfoOutput) FileBucket() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskEntryListFileInfo) string { return v.FileBucket }).(pulumi.StringOutput)
+}
+
+// Identifier for the list file used in task execution. For local list files, this is the identifier returned by CreatePreSignedUrl; for list files in the user's TOS bucket, this is the object path of the list file.
+func (o GetDataFlowTaskEntryListFileInfoOutput) FileKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskEntryListFileInfo) string { return v.FileKey }).(pulumi.StringOutput)
+}
+
+// Name of the list file for task execution. Required when using either a local list file or a list file from the user's TOS bucket for preheating or settling.
+func (o GetDataFlowTaskEntryListFileInfoOutput) FileName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskEntryListFileInfo) string { return v.FileName }).(pulumi.StringOutput)
+}
+
+type GetDataFlowTaskReport struct {
+	// Download link for the report.
+	Path string `pulumi:"path"`
+	// Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+	Type string `pulumi:"type"`
+}
+
+// GetDataFlowTaskReportInput is an input type that accepts GetDataFlowTaskReportArgs and GetDataFlowTaskReportOutput values.
+// You can construct a concrete instance of `GetDataFlowTaskReportInput` via:
+//
+//	GetDataFlowTaskReportArgs{...}
+type GetDataFlowTaskReportInput interface {
+	pulumi.Input
+
+	ToGetDataFlowTaskReportOutput() GetDataFlowTaskReportOutput
+	ToGetDataFlowTaskReportOutputWithContext(context.Context) GetDataFlowTaskReportOutput
+}
+
+type GetDataFlowTaskReportArgs struct {
+	// Download link for the report.
+	Path pulumi.StringInput `pulumi:"path"`
+	// Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+	Type pulumi.StringInput `pulumi:"type"`
+}
+
+func (GetDataFlowTaskReportArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFlowTaskReport)(nil)).Elem()
+}
+
+func (i GetDataFlowTaskReportArgs) ToGetDataFlowTaskReportOutput() GetDataFlowTaskReportOutput {
+	return i.ToGetDataFlowTaskReportOutputWithContext(context.Background())
+}
+
+func (i GetDataFlowTaskReportArgs) ToGetDataFlowTaskReportOutputWithContext(ctx context.Context) GetDataFlowTaskReportOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFlowTaskReportOutput)
+}
+
+// GetDataFlowTaskReportArrayInput is an input type that accepts GetDataFlowTaskReportArray and GetDataFlowTaskReportArrayOutput values.
+// You can construct a concrete instance of `GetDataFlowTaskReportArrayInput` via:
+//
+//	GetDataFlowTaskReportArray{ GetDataFlowTaskReportArgs{...} }
+type GetDataFlowTaskReportArrayInput interface {
+	pulumi.Input
+
+	ToGetDataFlowTaskReportArrayOutput() GetDataFlowTaskReportArrayOutput
+	ToGetDataFlowTaskReportArrayOutputWithContext(context.Context) GetDataFlowTaskReportArrayOutput
+}
+
+type GetDataFlowTaskReportArray []GetDataFlowTaskReportInput
+
+func (GetDataFlowTaskReportArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataFlowTaskReport)(nil)).Elem()
+}
+
+func (i GetDataFlowTaskReportArray) ToGetDataFlowTaskReportArrayOutput() GetDataFlowTaskReportArrayOutput {
+	return i.ToGetDataFlowTaskReportArrayOutputWithContext(context.Background())
+}
+
+func (i GetDataFlowTaskReportArray) ToGetDataFlowTaskReportArrayOutputWithContext(ctx context.Context) GetDataFlowTaskReportArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFlowTaskReportArrayOutput)
+}
+
+type GetDataFlowTaskReportOutput struct{ *pulumi.OutputState }
+
+func (GetDataFlowTaskReportOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFlowTaskReport)(nil)).Elem()
+}
+
+func (o GetDataFlowTaskReportOutput) ToGetDataFlowTaskReportOutput() GetDataFlowTaskReportOutput {
+	return o
+}
+
+func (o GetDataFlowTaskReportOutput) ToGetDataFlowTaskReportOutputWithContext(ctx context.Context) GetDataFlowTaskReportOutput {
+	return o
+}
+
+// Download link for the report.
+func (o GetDataFlowTaskReportOutput) Path() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskReport) string { return v.Path }).(pulumi.StringOutput)
+}
+
+// Report type. TotalFiles: all files; FailedFiles: failure report; SuccessFiles: success report; InventoryFiles: reconciliation report.
+func (o GetDataFlowTaskReportOutput) Type() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskReport) string { return v.Type }).(pulumi.StringOutput)
+}
+
+type GetDataFlowTaskReportArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDataFlowTaskReportArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDataFlowTaskReport)(nil)).Elem()
+}
+
+func (o GetDataFlowTaskReportArrayOutput) ToGetDataFlowTaskReportArrayOutput() GetDataFlowTaskReportArrayOutput {
+	return o
+}
+
+func (o GetDataFlowTaskReportArrayOutput) ToGetDataFlowTaskReportArrayOutputWithContext(ctx context.Context) GetDataFlowTaskReportArrayOutput {
+	return o
+}
+
+func (o GetDataFlowTaskReportArrayOutput) Index(i pulumi.IntInput) GetDataFlowTaskReportOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDataFlowTaskReport {
+		return vs[0].([]GetDataFlowTaskReport)[vs[1].(int)]
+	}).(GetDataFlowTaskReportOutput)
+}
+
+type GetDataFlowTaskTlsInfo struct {
+	// Whether to enable TLS log.
+	Enable bool `pulumi:"enable"`
+	// TLS log project ID.
+	ProjectId string `pulumi:"projectId"`
+	// TLS log project name.
+	ProjectName string `pulumi:"projectName"`
+	// Redirect URL for the TLS log project.
+	ProjectUrl string `pulumi:"projectUrl"`
+	// Embedded address of the TLS log topic.
+	TopicEmbeddedUrl string `pulumi:"topicEmbeddedUrl"`
+	// TLS log topic ID.
+	TopicId string `pulumi:"topicId"`
+	// TLS log topic name.
+	TopicName string `pulumi:"topicName"`
+	// Redirect URL for TLS log topic.
+	TopicUrl string `pulumi:"topicUrl"`
+}
+
+// GetDataFlowTaskTlsInfoInput is an input type that accepts GetDataFlowTaskTlsInfoArgs and GetDataFlowTaskTlsInfoOutput values.
+// You can construct a concrete instance of `GetDataFlowTaskTlsInfoInput` via:
+//
+//	GetDataFlowTaskTlsInfoArgs{...}
+type GetDataFlowTaskTlsInfoInput interface {
+	pulumi.Input
+
+	ToGetDataFlowTaskTlsInfoOutput() GetDataFlowTaskTlsInfoOutput
+	ToGetDataFlowTaskTlsInfoOutputWithContext(context.Context) GetDataFlowTaskTlsInfoOutput
+}
+
+type GetDataFlowTaskTlsInfoArgs struct {
+	// Whether to enable TLS log.
+	Enable pulumi.BoolInput `pulumi:"enable"`
+	// TLS log project ID.
+	ProjectId pulumi.StringInput `pulumi:"projectId"`
+	// TLS log project name.
+	ProjectName pulumi.StringInput `pulumi:"projectName"`
+	// Redirect URL for the TLS log project.
+	ProjectUrl pulumi.StringInput `pulumi:"projectUrl"`
+	// Embedded address of the TLS log topic.
+	TopicEmbeddedUrl pulumi.StringInput `pulumi:"topicEmbeddedUrl"`
+	// TLS log topic ID.
+	TopicId pulumi.StringInput `pulumi:"topicId"`
+	// TLS log topic name.
+	TopicName pulumi.StringInput `pulumi:"topicName"`
+	// Redirect URL for TLS log topic.
+	TopicUrl pulumi.StringInput `pulumi:"topicUrl"`
+}
+
+func (GetDataFlowTaskTlsInfoArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFlowTaskTlsInfo)(nil)).Elem()
+}
+
+func (i GetDataFlowTaskTlsInfoArgs) ToGetDataFlowTaskTlsInfoOutput() GetDataFlowTaskTlsInfoOutput {
+	return i.ToGetDataFlowTaskTlsInfoOutputWithContext(context.Background())
+}
+
+func (i GetDataFlowTaskTlsInfoArgs) ToGetDataFlowTaskTlsInfoOutputWithContext(ctx context.Context) GetDataFlowTaskTlsInfoOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDataFlowTaskTlsInfoOutput)
+}
+
+type GetDataFlowTaskTlsInfoOutput struct{ *pulumi.OutputState }
+
+func (GetDataFlowTaskTlsInfoOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDataFlowTaskTlsInfo)(nil)).Elem()
+}
+
+func (o GetDataFlowTaskTlsInfoOutput) ToGetDataFlowTaskTlsInfoOutput() GetDataFlowTaskTlsInfoOutput {
+	return o
+}
+
+func (o GetDataFlowTaskTlsInfoOutput) ToGetDataFlowTaskTlsInfoOutputWithContext(ctx context.Context) GetDataFlowTaskTlsInfoOutput {
+	return o
+}
+
+// Whether to enable TLS log.
+func (o GetDataFlowTaskTlsInfoOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDataFlowTaskTlsInfo) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+// TLS log project ID.
+func (o GetDataFlowTaskTlsInfoOutput) ProjectId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskTlsInfo) string { return v.ProjectId }).(pulumi.StringOutput)
+}
+
+// TLS log project name.
+func (o GetDataFlowTaskTlsInfoOutput) ProjectName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskTlsInfo) string { return v.ProjectName }).(pulumi.StringOutput)
+}
+
+// Redirect URL for the TLS log project.
+func (o GetDataFlowTaskTlsInfoOutput) ProjectUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskTlsInfo) string { return v.ProjectUrl }).(pulumi.StringOutput)
+}
+
+// Embedded address of the TLS log topic.
+func (o GetDataFlowTaskTlsInfoOutput) TopicEmbeddedUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskTlsInfo) string { return v.TopicEmbeddedUrl }).(pulumi.StringOutput)
+}
+
+// TLS log topic ID.
+func (o GetDataFlowTaskTlsInfoOutput) TopicId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskTlsInfo) string { return v.TopicId }).(pulumi.StringOutput)
+}
+
+// TLS log topic name.
+func (o GetDataFlowTaskTlsInfoOutput) TopicName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskTlsInfo) string { return v.TopicName }).(pulumi.StringOutput)
+}
+
+// Redirect URL for TLS log topic.
+func (o GetDataFlowTaskTlsInfoOutput) TopicUrl() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDataFlowTaskTlsInfo) string { return v.TopicUrl }).(pulumi.StringOutput)
+}
+
 type GetInstanceCapacityInfo struct {
 	// Total file system capacity, unit: TiB. Note: Disk balancing time varies based on cluster capacity, cluster load, and other factors. For clusters above the PiB level, expansion typically requires day-level disk balancing time. The expansion capacity becomes effective (and is billed) only after disk balancing is complete.
 	TotalTiB int `pulumi:"totalTiB"`
@@ -930,6 +1989,14 @@ func (o GetMountServiceNodeArrayOutput) Index(i pulumi.IntInput) GetMountService
 }
 
 func init() {
+	pulumi.RegisterInputType(reflect.TypeOf((*DataFlowTaskDeletePolicyInput)(nil)).Elem(), DataFlowTaskDeletePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataFlowTaskDeletePolicyPtrInput)(nil)).Elem(), DataFlowTaskDeletePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataFlowTaskEntryListFileInfoInput)(nil)).Elem(), DataFlowTaskEntryListFileInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataFlowTaskEntryListFileInfoPtrInput)(nil)).Elem(), DataFlowTaskEntryListFileInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataFlowTaskReportInput)(nil)).Elem(), DataFlowTaskReportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataFlowTaskReportArrayInput)(nil)).Elem(), DataFlowTaskReportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataFlowTaskTlsInfoInput)(nil)).Elem(), DataFlowTaskTlsInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DataFlowTaskTlsInfoPtrInput)(nil)).Elem(), DataFlowTaskTlsInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityInfoInput)(nil)).Elem(), InstanceCapacityInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCapacityInfoPtrInput)(nil)).Elem(), InstanceCapacityInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
@@ -938,6 +2005,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*MountServiceAttachFileSystemArrayInput)(nil)).Elem(), MountServiceAttachFileSystemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountServiceNodeInput)(nil)).Elem(), MountServiceNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*MountServiceNodeArrayInput)(nil)).Elem(), MountServiceNodeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFlowTaskDeletePolicyInput)(nil)).Elem(), GetDataFlowTaskDeletePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFlowTaskEntryListFileInfoInput)(nil)).Elem(), GetDataFlowTaskEntryListFileInfoArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFlowTaskReportInput)(nil)).Elem(), GetDataFlowTaskReportArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFlowTaskReportArrayInput)(nil)).Elem(), GetDataFlowTaskReportArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDataFlowTaskTlsInfoInput)(nil)).Elem(), GetDataFlowTaskTlsInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCapacityInfoInput)(nil)).Elem(), GetInstanceCapacityInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
@@ -945,6 +2017,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountServiceAttachFileSystemArrayInput)(nil)).Elem(), GetMountServiceAttachFileSystemArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountServiceNodeInput)(nil)).Elem(), GetMountServiceNodeArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetMountServiceNodeArrayInput)(nil)).Elem(), GetMountServiceNodeArray{})
+	pulumi.RegisterOutputType(DataFlowTaskDeletePolicyOutput{})
+	pulumi.RegisterOutputType(DataFlowTaskDeletePolicyPtrOutput{})
+	pulumi.RegisterOutputType(DataFlowTaskEntryListFileInfoOutput{})
+	pulumi.RegisterOutputType(DataFlowTaskEntryListFileInfoPtrOutput{})
+	pulumi.RegisterOutputType(DataFlowTaskReportOutput{})
+	pulumi.RegisterOutputType(DataFlowTaskReportArrayOutput{})
+	pulumi.RegisterOutputType(DataFlowTaskTlsInfoOutput{})
+	pulumi.RegisterOutputType(DataFlowTaskTlsInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityInfoOutput{})
 	pulumi.RegisterOutputType(InstanceCapacityInfoPtrOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
@@ -953,6 +2033,11 @@ func init() {
 	pulumi.RegisterOutputType(MountServiceAttachFileSystemArrayOutput{})
 	pulumi.RegisterOutputType(MountServiceNodeOutput{})
 	pulumi.RegisterOutputType(MountServiceNodeArrayOutput{})
+	pulumi.RegisterOutputType(GetDataFlowTaskDeletePolicyOutput{})
+	pulumi.RegisterOutputType(GetDataFlowTaskEntryListFileInfoOutput{})
+	pulumi.RegisterOutputType(GetDataFlowTaskReportOutput{})
+	pulumi.RegisterOutputType(GetDataFlowTaskReportArrayOutput{})
+	pulumi.RegisterOutputType(GetDataFlowTaskTlsInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceCapacityInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})

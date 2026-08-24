@@ -39,6 +39,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &InstanceReadonlyNode{}
 	case "bytepluscc:rdsmysql/parameterTemplate:ParameterTemplate":
 		r = &ParameterTemplate{}
+	case "bytepluscc:rdsmysql/ssl:Ssl":
+		r = &Ssl{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -95,6 +97,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"rdsmysql/parameterTemplate",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"rdsmysql/ssl",
 		&module{version},
 	)
 }

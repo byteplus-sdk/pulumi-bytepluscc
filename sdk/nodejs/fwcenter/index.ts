@@ -50,6 +50,11 @@ export const getDnsControlPolicy: typeof import("./getDnsControlPolicy").getDnsC
 export const getDnsControlPolicyOutput: typeof import("./getDnsControlPolicy").getDnsControlPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getDnsControlPolicy","getDnsControlPolicyOutput"], () => require("./getDnsControlPolicy"));
 
+export { GetNatFireWallArgs, GetNatFireWallResult, GetNatFireWallOutputArgs } from "./getNatFireWall";
+export const getNatFireWall: typeof import("./getNatFireWall").getNatFireWall = null as any;
+export const getNatFireWallOutput: typeof import("./getNatFireWall").getNatFireWallOutput = null as any;
+utilities.lazyLoad(exports, ["getNatFireWall","getNatFireWallOutput"], () => require("./getNatFireWall"));
+
 export { GetNatFireWallControlPoliciesResult } from "./getNatFireWallControlPolicies";
 export const getNatFireWallControlPolicies: typeof import("./getNatFireWallControlPolicies").getNatFireWallControlPolicies = null as any;
 export const getNatFireWallControlPoliciesOutput: typeof import("./getNatFireWallControlPolicies").getNatFireWallControlPoliciesOutput = null as any;
@@ -60,6 +65,11 @@ export const getNatFireWallControlPolicy: typeof import("./getNatFireWallControl
 export const getNatFireWallControlPolicyOutput: typeof import("./getNatFireWallControlPolicy").getNatFireWallControlPolicyOutput = null as any;
 utilities.lazyLoad(exports, ["getNatFireWallControlPolicy","getNatFireWallControlPolicyOutput"], () => require("./getNatFireWallControlPolicy"));
 
+export { GetNatFireWallsResult } from "./getNatFireWalls";
+export const getNatFireWalls: typeof import("./getNatFireWalls").getNatFireWalls = null as any;
+export const getNatFireWallsOutput: typeof import("./getNatFireWalls").getNatFireWallsOutput = null as any;
+utilities.lazyLoad(exports, ["getNatFireWalls","getNatFireWallsOutput"], () => require("./getNatFireWalls"));
+
 export { GetVpcFireWallAclRuleArgs, GetVpcFireWallAclRuleResult, GetVpcFireWallAclRuleOutputArgs } from "./getVpcFireWallAclRule";
 export const getVpcFireWallAclRule: typeof import("./getVpcFireWallAclRule").getVpcFireWallAclRule = null as any;
 export const getVpcFireWallAclRuleOutput: typeof import("./getVpcFireWallAclRule").getVpcFireWallAclRuleOutput = null as any;
@@ -69,6 +79,11 @@ export { GetVpcFireWallAclRulesResult } from "./getVpcFireWallAclRules";
 export const getVpcFireWallAclRules: typeof import("./getVpcFireWallAclRules").getVpcFireWallAclRules = null as any;
 export const getVpcFireWallAclRulesOutput: typeof import("./getVpcFireWallAclRules").getVpcFireWallAclRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getVpcFireWallAclRules","getVpcFireWallAclRulesOutput"], () => require("./getVpcFireWallAclRules"));
+
+export { NatFireWallArgs, NatFireWallState } from "./natFireWall";
+export type NatFireWall = import("./natFireWall").NatFireWall;
+export const NatFireWall: typeof import("./natFireWall").NatFireWall = null as any;
+utilities.lazyLoad(exports, ["NatFireWall"], () => require("./natFireWall"));
 
 export { NatFireWallControlPolicyArgs, NatFireWallControlPolicyState } from "./natFireWallControlPolicy";
 export type NatFireWallControlPolicy = import("./natFireWallControlPolicy").NatFireWallControlPolicy;
@@ -91,6 +106,8 @@ const _module = {
                 return new ControlPolicy(name, <any>undefined, { urn })
             case "bytepluscc:fwcenter/dnsControlPolicy:DnsControlPolicy":
                 return new DnsControlPolicy(name, <any>undefined, { urn })
+            case "bytepluscc:fwcenter/natFireWall:NatFireWall":
+                return new NatFireWall(name, <any>undefined, { urn })
             case "bytepluscc:fwcenter/natFireWallControlPolicy:NatFireWallControlPolicy":
                 return new NatFireWallControlPolicy(name, <any>undefined, { urn })
             case "bytepluscc:fwcenter/vpcFireWallAclRule:VpcFireWallAclRule":
@@ -103,5 +120,6 @@ const _module = {
 pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/addressBook", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/controlPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/dnsControlPolicy", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/natFireWall", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/natFireWallControlPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "fwcenter/vpcFireWallAclRule", _module)

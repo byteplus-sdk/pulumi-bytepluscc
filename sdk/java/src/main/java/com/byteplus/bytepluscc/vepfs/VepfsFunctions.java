@@ -4,12 +4,16 @@
 package com.byteplus.bytepluscc.vepfs;
 
 import com.byteplus.bytepluscc.Utilities;
+import com.byteplus.bytepluscc.vepfs.inputs.GetDataFlowTaskArgs;
+import com.byteplus.bytepluscc.vepfs.inputs.GetDataFlowTaskPlainArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetFilesetArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetFilesetPlainArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetInstancePlainArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetMountServiceArgs;
 import com.byteplus.bytepluscc.vepfs.inputs.GetMountServicePlainArgs;
+import com.byteplus.bytepluscc.vepfs.outputs.GetDataFlowTaskResult;
+import com.byteplus.bytepluscc.vepfs.outputs.GetDataFlowTasksResult;
 import com.byteplus.bytepluscc.vepfs.outputs.GetFilesetResult;
 import com.byteplus.bytepluscc.vepfs.outputs.GetFilesetsResult;
 import com.byteplus.bytepluscc.vepfs.outputs.GetInstanceResult;
@@ -25,6 +29,90 @@ import com.pulumi.resources.InvokeArgs;
 import java.util.concurrent.CompletableFuture;
 
 public final class VepfsFunctions {
+    /**
+     * Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTaskResult> getDataFlowTask(GetDataFlowTaskArgs args) {
+        return getDataFlowTask(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTaskResult> getDataFlowTaskPlain(GetDataFlowTaskPlainArgs args) {
+        return getDataFlowTaskPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTaskResult> getDataFlowTask(GetDataFlowTaskArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getDataFlowTask:getDataFlowTask", TypeShape.of(GetDataFlowTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTaskResult> getDataFlowTask(GetDataFlowTaskArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getDataFlowTask:getDataFlowTask", TypeShape.of(GetDataFlowTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTaskResult> getDataFlowTaskPlain(GetDataFlowTaskPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vepfs/getDataFlowTask:getDataFlowTask", TypeShape.of(GetDataFlowTaskResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTasksResult> getDataFlowTasks() {
+        return getDataFlowTasks(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTasksResult> getDataFlowTasksPlain() {
+        return getDataFlowTasksPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTasksResult> getDataFlowTasks(InvokeArgs args) {
+        return getDataFlowTasks(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTasksResult> getDataFlowTasksPlain(InvokeArgs args) {
+        return getDataFlowTasksPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTasksResult> getDataFlowTasks(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getDataFlowTasks:getDataFlowTasks", TypeShape.of(GetDataFlowTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static Output<GetDataFlowTasksResult> getDataFlowTasks(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vepfs/getDataFlowTasks:getDataFlowTasks", TypeShape.of(GetDataFlowTasksResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VEPFS::DataFlowTask
+     * 
+     */
+    public static CompletableFuture<GetDataFlowTasksResult> getDataFlowTasksPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vepfs/getDataFlowTasks:getDataFlowTasks", TypeShape.of(GetDataFlowTasksResult.class), args, Utilities.withVersion(options));
+    }
     /**
      * Data Source schema for Byteplus::VEPFS::Fileset
      * 

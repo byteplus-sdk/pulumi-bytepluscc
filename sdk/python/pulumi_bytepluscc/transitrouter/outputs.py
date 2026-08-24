@@ -22,6 +22,7 @@ __all__ = [
     'TransitRouterAttachmentTag',
     'TransitRouterBandwidthPackageAllocation',
     'TransitRouterBandwidthPackageTag',
+    'TransitRouterMulticastDomainTag',
     'TransitRouterRouteTableTag',
     'TransitRouterTag',
     'VpcAttachmentAttachPoint',
@@ -33,6 +34,7 @@ __all__ = [
     'GetTransitRouterAttachmentTagResult',
     'GetTransitRouterBandwidthPackageAllocationResult',
     'GetTransitRouterBandwidthPackageTagResult',
+    'GetTransitRouterMulticastDomainTagResult',
     'GetTransitRouterRouteTableTagResult',
     'GetTransitRouterTagResult',
     'GetVpcAttachmentAttachPointResult',
@@ -534,6 +536,37 @@ class TransitRouterBandwidthPackageTag(dict):
     def value(self) -> Optional[_builtins.str]:
         """
         Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class TransitRouterMulticastDomainTag(dict):
+    def __init__(__self__, *,
+                 key: Optional[_builtins.str] = None,
+                 value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str key: Tag key.
+        :param _builtins.str value: Tag value.
+        """
+        if key is not None:
+            pulumi.set(__self__, "key", key)
+        if value is not None:
+            pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> Optional[_builtins.str]:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> Optional[_builtins.str]:
+        """
+        Tag value.
         """
         return pulumi.get(self, "value")
 
@@ -1100,6 +1133,35 @@ class GetTransitRouterBandwidthPackageTagResult(dict):
     def value(self) -> _builtins.str:
         """
         Tag value
+        """
+        return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetTransitRouterMulticastDomainTagResult(dict):
+    def __init__(__self__, *,
+                 key: _builtins.str,
+                 value: _builtins.str):
+        """
+        :param _builtins.str key: Tag key.
+        :param _builtins.str value: Tag value.
+        """
+        pulumi.set(__self__, "key", key)
+        pulumi.set(__self__, "value", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def key(self) -> _builtins.str:
+        """
+        Tag key.
+        """
+        return pulumi.get(self, "key")
+
+    @_builtins.property
+    @pulumi.getter
+    def value(self) -> _builtins.str:
+        """
+        Tag value.
         """
         return pulumi.get(self, "value")
 

@@ -45,6 +45,16 @@ export const getTransitRouter: typeof import("./getTransitRouter").getTransitRou
 export const getTransitRouterOutput: typeof import("./getTransitRouter").getTransitRouterOutput = null as any;
 utilities.lazyLoad(exports, ["getTransitRouter","getTransitRouterOutput"], () => require("./getTransitRouter"));
 
+export { GetTransitRouterAttachmentToRouteTableArgs, GetTransitRouterAttachmentToRouteTableResult, GetTransitRouterAttachmentToRouteTableOutputArgs } from "./getTransitRouterAttachmentToRouteTable";
+export const getTransitRouterAttachmentToRouteTable: typeof import("./getTransitRouterAttachmentToRouteTable").getTransitRouterAttachmentToRouteTable = null as any;
+export const getTransitRouterAttachmentToRouteTableOutput: typeof import("./getTransitRouterAttachmentToRouteTable").getTransitRouterAttachmentToRouteTableOutput = null as any;
+utilities.lazyLoad(exports, ["getTransitRouterAttachmentToRouteTable","getTransitRouterAttachmentToRouteTableOutput"], () => require("./getTransitRouterAttachmentToRouteTable"));
+
+export { GetTransitRouterAttachmentToRouteTablesResult } from "./getTransitRouterAttachmentToRouteTables";
+export const getTransitRouterAttachmentToRouteTables: typeof import("./getTransitRouterAttachmentToRouteTables").getTransitRouterAttachmentToRouteTables = null as any;
+export const getTransitRouterAttachmentToRouteTablesOutput: typeof import("./getTransitRouterAttachmentToRouteTables").getTransitRouterAttachmentToRouteTablesOutput = null as any;
+utilities.lazyLoad(exports, ["getTransitRouterAttachmentToRouteTables","getTransitRouterAttachmentToRouteTablesOutput"], () => require("./getTransitRouterAttachmentToRouteTables"));
+
 export { GetTransitRouterBandwidthPackageArgs, GetTransitRouterBandwidthPackageResult, GetTransitRouterBandwidthPackageOutputArgs } from "./getTransitRouterBandwidthPackage";
 export const getTransitRouterBandwidthPackage: typeof import("./getTransitRouterBandwidthPackage").getTransitRouterBandwidthPackage = null as any;
 export const getTransitRouterBandwidthPackageOutput: typeof import("./getTransitRouterBandwidthPackage").getTransitRouterBandwidthPackageOutput = null as any;
@@ -54,6 +64,26 @@ export { GetTransitRouterBandwidthPackagesResult } from "./getTransitRouterBandw
 export const getTransitRouterBandwidthPackages: typeof import("./getTransitRouterBandwidthPackages").getTransitRouterBandwidthPackages = null as any;
 export const getTransitRouterBandwidthPackagesOutput: typeof import("./getTransitRouterBandwidthPackages").getTransitRouterBandwidthPackagesOutput = null as any;
 utilities.lazyLoad(exports, ["getTransitRouterBandwidthPackages","getTransitRouterBandwidthPackagesOutput"], () => require("./getTransitRouterBandwidthPackages"));
+
+export { GetTransitRouterForwardPolicyTableArgs, GetTransitRouterForwardPolicyTableResult, GetTransitRouterForwardPolicyTableOutputArgs } from "./getTransitRouterForwardPolicyTable";
+export const getTransitRouterForwardPolicyTable: typeof import("./getTransitRouterForwardPolicyTable").getTransitRouterForwardPolicyTable = null as any;
+export const getTransitRouterForwardPolicyTableOutput: typeof import("./getTransitRouterForwardPolicyTable").getTransitRouterForwardPolicyTableOutput = null as any;
+utilities.lazyLoad(exports, ["getTransitRouterForwardPolicyTable","getTransitRouterForwardPolicyTableOutput"], () => require("./getTransitRouterForwardPolicyTable"));
+
+export { GetTransitRouterForwardPolicyTablesResult } from "./getTransitRouterForwardPolicyTables";
+export const getTransitRouterForwardPolicyTables: typeof import("./getTransitRouterForwardPolicyTables").getTransitRouterForwardPolicyTables = null as any;
+export const getTransitRouterForwardPolicyTablesOutput: typeof import("./getTransitRouterForwardPolicyTables").getTransitRouterForwardPolicyTablesOutput = null as any;
+utilities.lazyLoad(exports, ["getTransitRouterForwardPolicyTables","getTransitRouterForwardPolicyTablesOutput"], () => require("./getTransitRouterForwardPolicyTables"));
+
+export { GetTransitRouterMulticastDomainArgs, GetTransitRouterMulticastDomainResult, GetTransitRouterMulticastDomainOutputArgs } from "./getTransitRouterMulticastDomain";
+export const getTransitRouterMulticastDomain: typeof import("./getTransitRouterMulticastDomain").getTransitRouterMulticastDomain = null as any;
+export const getTransitRouterMulticastDomainOutput: typeof import("./getTransitRouterMulticastDomain").getTransitRouterMulticastDomainOutput = null as any;
+utilities.lazyLoad(exports, ["getTransitRouterMulticastDomain","getTransitRouterMulticastDomainOutput"], () => require("./getTransitRouterMulticastDomain"));
+
+export { GetTransitRouterMulticastDomainsResult } from "./getTransitRouterMulticastDomains";
+export const getTransitRouterMulticastDomains: typeof import("./getTransitRouterMulticastDomains").getTransitRouterMulticastDomains = null as any;
+export const getTransitRouterMulticastDomainsOutput: typeof import("./getTransitRouterMulticastDomains").getTransitRouterMulticastDomainsOutput = null as any;
+utilities.lazyLoad(exports, ["getTransitRouterMulticastDomains","getTransitRouterMulticastDomainsOutput"], () => require("./getTransitRouterMulticastDomains"));
 
 export { GetTransitRouterRouteEntriesResult } from "./getTransitRouterRouteEntries";
 export const getTransitRouterRouteEntries: typeof import("./getTransitRouterRouteEntries").getTransitRouterRouteEntries = null as any;
@@ -115,6 +145,16 @@ export const getTransitRouterTrafficQosQueueEntry: typeof import("./getTransitRo
 export const getTransitRouterTrafficQosQueueEntryOutput: typeof import("./getTransitRouterTrafficQosQueueEntry").getTransitRouterTrafficQosQueueEntryOutput = null as any;
 utilities.lazyLoad(exports, ["getTransitRouterTrafficQosQueueEntry","getTransitRouterTrafficQosQueueEntryOutput"], () => require("./getTransitRouterTrafficQosQueueEntry"));
 
+export { GetTransitRouterTrafficQosQueuePoliciesResult } from "./getTransitRouterTrafficQosQueuePolicies";
+export const getTransitRouterTrafficQosQueuePolicies: typeof import("./getTransitRouterTrafficQosQueuePolicies").getTransitRouterTrafficQosQueuePolicies = null as any;
+export const getTransitRouterTrafficQosQueuePoliciesOutput: typeof import("./getTransitRouterTrafficQosQueuePolicies").getTransitRouterTrafficQosQueuePoliciesOutput = null as any;
+utilities.lazyLoad(exports, ["getTransitRouterTrafficQosQueuePolicies","getTransitRouterTrafficQosQueuePoliciesOutput"], () => require("./getTransitRouterTrafficQosQueuePolicies"));
+
+export { GetTransitRouterTrafficQosQueuePolicyArgs, GetTransitRouterTrafficQosQueuePolicyResult, GetTransitRouterTrafficQosQueuePolicyOutputArgs } from "./getTransitRouterTrafficQosQueuePolicy";
+export const getTransitRouterTrafficQosQueuePolicy: typeof import("./getTransitRouterTrafficQosQueuePolicy").getTransitRouterTrafficQosQueuePolicy = null as any;
+export const getTransitRouterTrafficQosQueuePolicyOutput: typeof import("./getTransitRouterTrafficQosQueuePolicy").getTransitRouterTrafficQosQueuePolicyOutput = null as any;
+utilities.lazyLoad(exports, ["getTransitRouterTrafficQosQueuePolicy","getTransitRouterTrafficQosQueuePolicyOutput"], () => require("./getTransitRouterTrafficQosQueuePolicy"));
+
 export { GetTransitRoutersResult } from "./getTransitRouters";
 export const getTransitRouters: typeof import("./getTransitRouters").getTransitRouters = null as any;
 export const getTransitRoutersOutput: typeof import("./getTransitRouters").getTransitRoutersOutput = null as any;
@@ -155,10 +195,25 @@ export type TransitRouter = import("./transitRouter").TransitRouter;
 export const TransitRouter: typeof import("./transitRouter").TransitRouter = null as any;
 utilities.lazyLoad(exports, ["TransitRouter"], () => require("./transitRouter"));
 
+export { TransitRouterAttachmentToRouteTableArgs, TransitRouterAttachmentToRouteTableState } from "./transitRouterAttachmentToRouteTable";
+export type TransitRouterAttachmentToRouteTable = import("./transitRouterAttachmentToRouteTable").TransitRouterAttachmentToRouteTable;
+export const TransitRouterAttachmentToRouteTable: typeof import("./transitRouterAttachmentToRouteTable").TransitRouterAttachmentToRouteTable = null as any;
+utilities.lazyLoad(exports, ["TransitRouterAttachmentToRouteTable"], () => require("./transitRouterAttachmentToRouteTable"));
+
 export { TransitRouterBandwidthPackageArgs, TransitRouterBandwidthPackageState } from "./transitRouterBandwidthPackage";
 export type TransitRouterBandwidthPackage = import("./transitRouterBandwidthPackage").TransitRouterBandwidthPackage;
 export const TransitRouterBandwidthPackage: typeof import("./transitRouterBandwidthPackage").TransitRouterBandwidthPackage = null as any;
 utilities.lazyLoad(exports, ["TransitRouterBandwidthPackage"], () => require("./transitRouterBandwidthPackage"));
+
+export { TransitRouterForwardPolicyTableArgs, TransitRouterForwardPolicyTableState } from "./transitRouterForwardPolicyTable";
+export type TransitRouterForwardPolicyTable = import("./transitRouterForwardPolicyTable").TransitRouterForwardPolicyTable;
+export const TransitRouterForwardPolicyTable: typeof import("./transitRouterForwardPolicyTable").TransitRouterForwardPolicyTable = null as any;
+utilities.lazyLoad(exports, ["TransitRouterForwardPolicyTable"], () => require("./transitRouterForwardPolicyTable"));
+
+export { TransitRouterMulticastDomainArgs, TransitRouterMulticastDomainState } from "./transitRouterMulticastDomain";
+export type TransitRouterMulticastDomain = import("./transitRouterMulticastDomain").TransitRouterMulticastDomain;
+export const TransitRouterMulticastDomain: typeof import("./transitRouterMulticastDomain").TransitRouterMulticastDomain = null as any;
+utilities.lazyLoad(exports, ["TransitRouterMulticastDomain"], () => require("./transitRouterMulticastDomain"));
 
 export { TransitRouterRouteEntryArgs, TransitRouterRouteEntryState } from "./transitRouterRouteEntry";
 export type TransitRouterRouteEntry = import("./transitRouterRouteEntry").TransitRouterRouteEntry;
@@ -190,6 +245,11 @@ export type TransitRouterTrafficQosQueueEntry = import("./transitRouterTrafficQo
 export const TransitRouterTrafficQosQueueEntry: typeof import("./transitRouterTrafficQosQueueEntry").TransitRouterTrafficQosQueueEntry = null as any;
 utilities.lazyLoad(exports, ["TransitRouterTrafficQosQueueEntry"], () => require("./transitRouterTrafficQosQueueEntry"));
 
+export { TransitRouterTrafficQosQueuePolicyArgs, TransitRouterTrafficQosQueuePolicyState } from "./transitRouterTrafficQosQueuePolicy";
+export type TransitRouterTrafficQosQueuePolicy = import("./transitRouterTrafficQosQueuePolicy").TransitRouterTrafficQosQueuePolicy;
+export const TransitRouterTrafficQosQueuePolicy: typeof import("./transitRouterTrafficQosQueuePolicy").TransitRouterTrafficQosQueuePolicy = null as any;
+utilities.lazyLoad(exports, ["TransitRouterTrafficQosQueuePolicy"], () => require("./transitRouterTrafficQosQueuePolicy"));
+
 export { VpcAttachmentArgs, VpcAttachmentState } from "./vpcAttachment";
 export type VpcAttachment = import("./vpcAttachment").VpcAttachment;
 export const VpcAttachment: typeof import("./vpcAttachment").VpcAttachment = null as any;
@@ -213,8 +273,14 @@ const _module = {
                 return new RouteTablePropagation(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouter:TransitRouter":
                 return new TransitRouter(name, <any>undefined, { urn })
+            case "bytepluscc:transitrouter/transitRouterAttachmentToRouteTable:TransitRouterAttachmentToRouteTable":
+                return new TransitRouterAttachmentToRouteTable(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouterBandwidthPackage:TransitRouterBandwidthPackage":
                 return new TransitRouterBandwidthPackage(name, <any>undefined, { urn })
+            case "bytepluscc:transitrouter/transitRouterForwardPolicyTable:TransitRouterForwardPolicyTable":
+                return new TransitRouterForwardPolicyTable(name, <any>undefined, { urn })
+            case "bytepluscc:transitrouter/transitRouterMulticastDomain:TransitRouterMulticastDomain":
+                return new TransitRouterMulticastDomain(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry":
                 return new TransitRouterRouteEntry(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouterRouteTable:TransitRouterRouteTable":
@@ -227,6 +293,8 @@ const _module = {
                 return new TransitRouterTrafficQosMarkingPolicy(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/transitRouterTrafficQosQueueEntry:TransitRouterTrafficQosQueueEntry":
                 return new TransitRouterTrafficQosQueueEntry(name, <any>undefined, { urn })
+            case "bytepluscc:transitrouter/transitRouterTrafficQosQueuePolicy:TransitRouterTrafficQosQueuePolicy":
+                return new TransitRouterTrafficQosQueuePolicy(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/vpcAttachment:VpcAttachment":
                 return new VpcAttachment(name, <any>undefined, { urn })
             case "bytepluscc:transitrouter/vpnAttachment:VpnAttachment":
@@ -240,12 +308,16 @@ pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/directConnect
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/peerAttachment", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/routeTablePropagation", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouter", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterAttachmentToRouteTable", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterBandwidthPackage", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterForwardPolicyTable", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterMulticastDomain", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteEntry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteTable", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterRouteTableAssociation", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterTrafficQosMarkingEntry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterTrafficQosMarkingPolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterTrafficQosQueueEntry", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/transitRouterTrafficQosQueuePolicy", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/vpcAttachment", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "transitrouter/vpnAttachment", _module)
