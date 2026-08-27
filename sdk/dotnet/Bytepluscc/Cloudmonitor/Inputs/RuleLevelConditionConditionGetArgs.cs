@@ -20,10 +20,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
         public Input<string>? ComparisonOperator { get; set; }
 
         /// <summary>
-        /// Metric display name.
+        /// Evaluation window (minutes)
         /// </summary>
-        [Input("displayName")]
-        public Input<string>? DisplayName { get; set; }
+        [Input("evaluationWindow")]
+        public Input<int>? EvaluationWindow { get; set; }
 
         /// <summary>
         /// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
@@ -48,6 +48,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
         /// </summary>
         [Input("statistics")]
         public Input<string>? Statistics { get; set; }
+
+        /// <summary>
+        /// Sub-namespace
+        /// </summary>
+        [Input("subNamespace")]
+        public Input<string>? SubNamespace { get; set; }
 
         /// <summary>
         /// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.

@@ -116,6 +116,11 @@ public final class GetListenerResult {
      */
     private Integer endPort;
     /**
+     * @return Enable weighted extension for the scheduling algorithm?
+     * 
+     */
+    private String enhancedSchedulerEnable;
+    /**
      * @return Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      * 
      */
@@ -200,6 +205,11 @@ public final class GetListenerResult {
      * 
      */
     private Integer proxySendTimeout;
+    /**
+     * @return Enable response validation?
+     * 
+     */
+    private String responseCheckEnabled;
     /**
      * @return List of rule IDs bound to the listener.
      * 
@@ -393,6 +403,13 @@ public final class GetListenerResult {
         return this.endPort;
     }
     /**
+     * @return Enable weighted extension for the scheduling algorithm?
+     * 
+     */
+    public String enhancedSchedulerEnable() {
+        return this.enhancedSchedulerEnable;
+    }
+    /**
      * @return Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      * 
      */
@@ -512,6 +529,13 @@ public final class GetListenerResult {
         return this.proxySendTimeout;
     }
     /**
+     * @return Enable response validation?
+     * 
+     */
+    public String responseCheckEnabled() {
+        return this.responseCheckEnabled;
+    }
+    /**
      * @return List of rule IDs bound to the listener.
      * 
      */
@@ -611,6 +635,7 @@ public final class GetListenerResult {
         private List<GetListenerDomainExtension> domainExtensions;
         private String enabled;
         private Integer endPort;
+        private String enhancedSchedulerEnable;
         private Integer establishedTimeout;
         private GetListenerHealthCheck healthCheck;
         private String http2Enabled;
@@ -628,6 +653,7 @@ public final class GetListenerResult {
         private String proxyProtocolType;
         private Integer proxyReadTimeout;
         private Integer proxySendTimeout;
+        private String responseCheckEnabled;
         private List<String> ruleIds;
         private String scheduler;
         private String securityPolicyId;
@@ -661,6 +687,7 @@ public final class GetListenerResult {
     	      this.domainExtensions = defaults.domainExtensions;
     	      this.enabled = defaults.enabled;
     	      this.endPort = defaults.endPort;
+    	      this.enhancedSchedulerEnable = defaults.enhancedSchedulerEnable;
     	      this.establishedTimeout = defaults.establishedTimeout;
     	      this.healthCheck = defaults.healthCheck;
     	      this.http2Enabled = defaults.http2Enabled;
@@ -678,6 +705,7 @@ public final class GetListenerResult {
     	      this.proxyProtocolType = defaults.proxyProtocolType;
     	      this.proxyReadTimeout = defaults.proxyReadTimeout;
     	      this.proxySendTimeout = defaults.proxySendTimeout;
+    	      this.responseCheckEnabled = defaults.responseCheckEnabled;
     	      this.ruleIds = defaults.ruleIds;
     	      this.scheduler = defaults.scheduler;
     	      this.securityPolicyId = defaults.securityPolicyId;
@@ -857,6 +885,14 @@ public final class GetListenerResult {
             return this;
         }
         @CustomType.Setter
+        public Builder enhancedSchedulerEnable(String enhancedSchedulerEnable) {
+            if (enhancedSchedulerEnable == null) {
+              throw new MissingRequiredPropertyException("GetListenerResult", "enhancedSchedulerEnable");
+            }
+            this.enhancedSchedulerEnable = enhancedSchedulerEnable;
+            return this;
+        }
+        @CustomType.Setter
         public Builder establishedTimeout(Integer establishedTimeout) {
             if (establishedTimeout == null) {
               throw new MissingRequiredPropertyException("GetListenerResult", "establishedTimeout");
@@ -993,6 +1029,14 @@ public final class GetListenerResult {
             return this;
         }
         @CustomType.Setter
+        public Builder responseCheckEnabled(String responseCheckEnabled) {
+            if (responseCheckEnabled == null) {
+              throw new MissingRequiredPropertyException("GetListenerResult", "responseCheckEnabled");
+            }
+            this.responseCheckEnabled = responseCheckEnabled;
+            return this;
+        }
+        @CustomType.Setter
         public Builder ruleIds(List<String> ruleIds) {
             if (ruleIds == null) {
               throw new MissingRequiredPropertyException("GetListenerResult", "ruleIds");
@@ -1100,6 +1144,7 @@ public final class GetListenerResult {
             _resultValue.domainExtensions = domainExtensions;
             _resultValue.enabled = enabled;
             _resultValue.endPort = endPort;
+            _resultValue.enhancedSchedulerEnable = enhancedSchedulerEnable;
             _resultValue.establishedTimeout = establishedTimeout;
             _resultValue.healthCheck = healthCheck;
             _resultValue.http2Enabled = http2Enabled;
@@ -1117,6 +1162,7 @@ public final class GetListenerResult {
             _resultValue.proxyProtocolType = proxyProtocolType;
             _resultValue.proxyReadTimeout = proxyReadTimeout;
             _resultValue.proxySendTimeout = proxySendTimeout;
+            _resultValue.responseCheckEnabled = responseCheckEnabled;
             _resultValue.ruleIds = ruleIds;
             _resultValue.scheduler = scheduler;
             _resultValue.securityPolicyId = securityPolicyId;

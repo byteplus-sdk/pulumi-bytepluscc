@@ -156,6 +156,10 @@ export class Rule extends pulumi.CustomResource {
      */
     declare public readonly evaluationCount: pulumi.Output<number>;
     /**
+     * Evaluation interval (minutes)
+     */
+    declare public readonly evaluationInterval: pulumi.Output<number>;
+    /**
      * Alert level. critical: critical, warning: warning, notice: notification
      */
     declare public readonly level: pulumi.Output<string>;
@@ -185,6 +189,10 @@ export class Rule extends pulumi.CustomResource {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     declare public readonly notifyTemplates: pulumi.Output<outputs.cloudmonitor.RuleNotifyTemplate[]>;
+    /**
+     * Object group ID
+     */
+    declare public readonly objectGroupId: pulumi.Output<string>;
     /**
      * Resource ID detected by the alert policy.
      */
@@ -268,6 +276,7 @@ export class Rule extends pulumi.CustomResource {
             resourceInputs["effectStartAt"] = state?.effectStartAt;
             resourceInputs["enableState"] = state?.enableState;
             resourceInputs["evaluationCount"] = state?.evaluationCount;
+            resourceInputs["evaluationInterval"] = state?.evaluationInterval;
             resourceInputs["level"] = state?.level;
             resourceInputs["levelConditions"] = state?.levelConditions;
             resourceInputs["multipleConditions"] = state?.multipleConditions;
@@ -275,6 +284,7 @@ export class Rule extends pulumi.CustomResource {
             resourceInputs["noData"] = state?.noData;
             resourceInputs["notificationId"] = state?.notificationId;
             resourceInputs["notifyTemplates"] = state?.notifyTemplates;
+            resourceInputs["objectGroupId"] = state?.objectGroupId;
             resourceInputs["originalDimensions"] = state?.originalDimensions;
             resourceInputs["projectName"] = state?.projectName;
             resourceInputs["recoveryNotify"] = state?.recoveryNotify;
@@ -331,6 +341,7 @@ export class Rule extends pulumi.CustomResource {
             resourceInputs["effectStartAt"] = args?.effectStartAt;
             resourceInputs["enableState"] = args?.enableState;
             resourceInputs["evaluationCount"] = args?.evaluationCount;
+            resourceInputs["evaluationInterval"] = args?.evaluationInterval;
             resourceInputs["level"] = args?.level;
             resourceInputs["levelConditions"] = args?.levelConditions;
             resourceInputs["multipleConditions"] = args?.multipleConditions;
@@ -338,6 +349,7 @@ export class Rule extends pulumi.CustomResource {
             resourceInputs["noData"] = args?.noData;
             resourceInputs["notificationId"] = args?.notificationId;
             resourceInputs["notifyTemplates"] = args?.notifyTemplates;
+            resourceInputs["objectGroupId"] = args?.objectGroupId;
             resourceInputs["originalDimensions"] = args?.originalDimensions;
             resourceInputs["projectName"] = args?.projectName;
             resourceInputs["recoveryNotify"] = args?.recoveryNotify;
@@ -414,6 +426,10 @@ export interface RuleState {
      */
     evaluationCount?: pulumi.Input<number | undefined>;
     /**
+     * Evaluation interval (minutes)
+     */
+    evaluationInterval?: pulumi.Input<number | undefined>;
+    /**
      * Alert level. critical: critical, warning: warning, notice: notification
      */
     level?: pulumi.Input<string | undefined>;
@@ -443,6 +459,10 @@ export interface RuleState {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     notifyTemplates?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleNotifyTemplate>[] | undefined>;
+    /**
+     * Object group ID
+     */
+    objectGroupId?: pulumi.Input<string | undefined>;
     /**
      * Resource ID detected by the alert policy.
      */
@@ -548,6 +568,10 @@ export interface RuleArgs {
      */
     evaluationCount: pulumi.Input<number>;
     /**
+     * Evaluation interval (minutes)
+     */
+    evaluationInterval?: pulumi.Input<number | undefined>;
+    /**
      * Alert level. critical: critical, warning: warning, notice: notification
      */
     level: pulumi.Input<string>;
@@ -577,6 +601,10 @@ export interface RuleArgs {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     notifyTemplates?: pulumi.Input<pulumi.Input<inputs.cloudmonitor.RuleNotifyTemplate>[] | undefined>;
+    /**
+     * Object group ID
+     */
+    objectGroupId?: pulumi.Input<string | undefined>;
     /**
      * Resource ID detected by the alert policy.
      */

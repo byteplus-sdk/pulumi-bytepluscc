@@ -27,7 +27,7 @@ class GetListenerResult:
     """
     A collection of values returned by getListener.
     """
-    def __init__(__self__, acl_ids=None, acl_status=None, acl_type=None, bandwidth=None, ca_certificate_id=None, ca_enabled=None, cert_center_certificate_id=None, certificate_id=None, certificate_source=None, client_body_timeout=None, client_header_timeout=None, connection_drain_enabled=None, connection_drain_timeout=None, cookie=None, cps=None, created_time=None, description=None, domain_extensions=None, enabled=None, end_port=None, established_timeout=None, health_check=None, http2_enabled=None, id=None, keepalive_timeout=None, listener_id=None, listener_name=None, load_balancer_id=None, max_connections=None, persistence_timeout=None, persistence_type=None, port=None, protocol=None, proxy_connect_timeout=None, proxy_protocol_type=None, proxy_read_timeout=None, proxy_send_timeout=None, rule_ids=None, scheduler=None, security_policy_id=None, send_timeout=None, server_group_id=None, start_port=None, status=None, tags=None, updated_time=None, waf_protection_enabled=None):
+    def __init__(__self__, acl_ids=None, acl_status=None, acl_type=None, bandwidth=None, ca_certificate_id=None, ca_enabled=None, cert_center_certificate_id=None, certificate_id=None, certificate_source=None, client_body_timeout=None, client_header_timeout=None, connection_drain_enabled=None, connection_drain_timeout=None, cookie=None, cps=None, created_time=None, description=None, domain_extensions=None, enabled=None, end_port=None, enhanced_scheduler_enable=None, established_timeout=None, health_check=None, http2_enabled=None, id=None, keepalive_timeout=None, listener_id=None, listener_name=None, load_balancer_id=None, max_connections=None, persistence_timeout=None, persistence_type=None, port=None, protocol=None, proxy_connect_timeout=None, proxy_protocol_type=None, proxy_read_timeout=None, proxy_send_timeout=None, response_check_enabled=None, rule_ids=None, scheduler=None, security_policy_id=None, send_timeout=None, server_group_id=None, start_port=None, status=None, tags=None, updated_time=None, waf_protection_enabled=None):
         if acl_ids and not isinstance(acl_ids, list):
             raise TypeError("Expected argument 'acl_ids' to be a list")
         pulumi.set(__self__, "acl_ids", acl_ids)
@@ -88,6 +88,9 @@ class GetListenerResult:
         if end_port and not isinstance(end_port, int):
             raise TypeError("Expected argument 'end_port' to be a int")
         pulumi.set(__self__, "end_port", end_port)
+        if enhanced_scheduler_enable and not isinstance(enhanced_scheduler_enable, str):
+            raise TypeError("Expected argument 'enhanced_scheduler_enable' to be a str")
+        pulumi.set(__self__, "enhanced_scheduler_enable", enhanced_scheduler_enable)
         if established_timeout and not isinstance(established_timeout, int):
             raise TypeError("Expected argument 'established_timeout' to be a int")
         pulumi.set(__self__, "established_timeout", established_timeout)
@@ -139,6 +142,9 @@ class GetListenerResult:
         if proxy_send_timeout and not isinstance(proxy_send_timeout, int):
             raise TypeError("Expected argument 'proxy_send_timeout' to be a int")
         pulumi.set(__self__, "proxy_send_timeout", proxy_send_timeout)
+        if response_check_enabled and not isinstance(response_check_enabled, str):
+            raise TypeError("Expected argument 'response_check_enabled' to be a str")
+        pulumi.set(__self__, "response_check_enabled", response_check_enabled)
         if rule_ids and not isinstance(rule_ids, list):
             raise TypeError("Expected argument 'rule_ids' to be a list")
         pulumi.set(__self__, "rule_ids", rule_ids)
@@ -331,6 +337,14 @@ class GetListenerResult:
         return pulumi.get(self, "end_port")
 
     @_builtins.property
+    @pulumi.getter(name="enhancedSchedulerEnable")
+    def enhanced_scheduler_enable(self) -> _builtins.str:
+        """
+        Enable weighted extension for the scheduling algorithm?
+        """
+        return pulumi.get(self, "enhanced_scheduler_enable")
+
+    @_builtins.property
     @pulumi.getter(name="establishedTimeout")
     def established_timeout(self) -> _builtins.int:
         """
@@ -467,6 +481,14 @@ class GetListenerResult:
         return pulumi.get(self, "proxy_send_timeout")
 
     @_builtins.property
+    @pulumi.getter(name="responseCheckEnabled")
+    def response_check_enabled(self) -> _builtins.str:
+        """
+        Enable response validation?
+        """
+        return pulumi.get(self, "response_check_enabled")
+
+    @_builtins.property
     @pulumi.getter(name="ruleIds")
     def rule_ids(self) -> Sequence[_builtins.str]:
         """
@@ -573,6 +595,7 @@ class AwaitableGetListenerResult(GetListenerResult):
             domain_extensions=self.domain_extensions,
             enabled=self.enabled,
             end_port=self.end_port,
+            enhanced_scheduler_enable=self.enhanced_scheduler_enable,
             established_timeout=self.established_timeout,
             health_check=self.health_check,
             http2_enabled=self.http2_enabled,
@@ -590,6 +613,7 @@ class AwaitableGetListenerResult(GetListenerResult):
             proxy_protocol_type=self.proxy_protocol_type,
             proxy_read_timeout=self.proxy_read_timeout,
             proxy_send_timeout=self.proxy_send_timeout,
+            response_check_enabled=self.response_check_enabled,
             rule_ids=self.rule_ids,
             scheduler=self.scheduler,
             security_policy_id=self.security_policy_id,
@@ -636,6 +660,7 @@ def get_listener(id: Optional[_builtins.str] = None,
         domain_extensions=pulumi.get(__ret__, 'domain_extensions'),
         enabled=pulumi.get(__ret__, 'enabled'),
         end_port=pulumi.get(__ret__, 'end_port'),
+        enhanced_scheduler_enable=pulumi.get(__ret__, 'enhanced_scheduler_enable'),
         established_timeout=pulumi.get(__ret__, 'established_timeout'),
         health_check=pulumi.get(__ret__, 'health_check'),
         http2_enabled=pulumi.get(__ret__, 'http2_enabled'),
@@ -653,6 +678,7 @@ def get_listener(id: Optional[_builtins.str] = None,
         proxy_protocol_type=pulumi.get(__ret__, 'proxy_protocol_type'),
         proxy_read_timeout=pulumi.get(__ret__, 'proxy_read_timeout'),
         proxy_send_timeout=pulumi.get(__ret__, 'proxy_send_timeout'),
+        response_check_enabled=pulumi.get(__ret__, 'response_check_enabled'),
         rule_ids=pulumi.get(__ret__, 'rule_ids'),
         scheduler=pulumi.get(__ret__, 'scheduler'),
         security_policy_id=pulumi.get(__ret__, 'security_policy_id'),
@@ -696,6 +722,7 @@ def get_listener_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         domain_extensions=pulumi.get(__response__, 'domain_extensions'),
         enabled=pulumi.get(__response__, 'enabled'),
         end_port=pulumi.get(__response__, 'end_port'),
+        enhanced_scheduler_enable=pulumi.get(__response__, 'enhanced_scheduler_enable'),
         established_timeout=pulumi.get(__response__, 'established_timeout'),
         health_check=pulumi.get(__response__, 'health_check'),
         http2_enabled=pulumi.get(__response__, 'http2_enabled'),
@@ -713,6 +740,7 @@ def get_listener_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         proxy_protocol_type=pulumi.get(__response__, 'proxy_protocol_type'),
         proxy_read_timeout=pulumi.get(__response__, 'proxy_read_timeout'),
         proxy_send_timeout=pulumi.get(__response__, 'proxy_send_timeout'),
+        response_check_enabled=pulumi.get(__response__, 'response_check_enabled'),
         rule_ids=pulumi.get(__response__, 'rule_ids'),
         scheduler=pulumi.get(__response__, 'scheduler'),
         security_policy_id=pulumi.get(__response__, 'security_policy_id'),

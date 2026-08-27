@@ -104,7 +104,7 @@ export class Listener extends pulumi.CustomResource {
     /**
      * CA certificate for mutual authentication.
      */
-    declare public readonly caCertificateId: pulumi.Output<string>;
+    declare public /*out*/ readonly caCertificateId: pulumi.Output<string>;
     /**
      * Enable mutual authentication. on: enabled. off (default): disabled.
      */
@@ -112,15 +112,15 @@ export class Listener extends pulumi.CustomResource {
     /**
      * Certificate ID from Certificate Center.
      */
-    declare public readonly certCenterCertificateId: pulumi.Output<string>;
+    declare public /*out*/ readonly certCenterCertificateId: pulumi.Output<string>;
     /**
      * Certificate ID from the CLB certificate management module.
      */
-    declare public readonly certificateId: pulumi.Output<string>;
+    declare public /*out*/ readonly certificateId: pulumi.Output<string>;
     /**
      * Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
      */
-    declare public readonly certificateSource: pulumi.Output<string>;
+    declare public /*out*/ readonly certificateSource: pulumi.Output<string>;
     /**
      * Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      */
@@ -166,6 +166,10 @@ export class Listener extends pulumi.CustomResource {
      * End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
      */
     declare public readonly endPort: pulumi.Output<number>;
+    /**
+     * Enable weighted extension for the scheduling algorithm?
+     */
+    declare public readonly enhancedSchedulerEnable: pulumi.Output<string>;
     /**
      * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      */
@@ -230,6 +234,10 @@ export class Listener extends pulumi.CustomResource {
      * Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      */
     declare public readonly proxySendTimeout: pulumi.Output<number>;
+    /**
+     * Enable response validation?
+     */
+    declare public /*out*/ readonly responseCheckEnabled: pulumi.Output<string>;
     /**
      * List of rule IDs bound to the listener.
      */
@@ -305,6 +313,7 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["domainExtensions"] = state?.domainExtensions;
             resourceInputs["enabled"] = state?.enabled;
             resourceInputs["endPort"] = state?.endPort;
+            resourceInputs["enhancedSchedulerEnable"] = state?.enhancedSchedulerEnable;
             resourceInputs["establishedTimeout"] = state?.establishedTimeout;
             resourceInputs["healthCheck"] = state?.healthCheck;
             resourceInputs["http2Enabled"] = state?.http2Enabled;
@@ -321,6 +330,7 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["proxyProtocolType"] = state?.proxyProtocolType;
             resourceInputs["proxyReadTimeout"] = state?.proxyReadTimeout;
             resourceInputs["proxySendTimeout"] = state?.proxySendTimeout;
+            resourceInputs["responseCheckEnabled"] = state?.responseCheckEnabled;
             resourceInputs["ruleIds"] = state?.ruleIds;
             resourceInputs["scheduler"] = state?.scheduler;
             resourceInputs["securityPolicyId"] = state?.securityPolicyId;
@@ -349,11 +359,7 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["aclStatus"] = args?.aclStatus;
             resourceInputs["aclType"] = args?.aclType;
             resourceInputs["bandwidth"] = args?.bandwidth;
-            resourceInputs["caCertificateId"] = args?.caCertificateId;
             resourceInputs["caEnabled"] = args?.caEnabled;
-            resourceInputs["certCenterCertificateId"] = args?.certCenterCertificateId;
-            resourceInputs["certificateId"] = args?.certificateId;
-            resourceInputs["certificateSource"] = args?.certificateSource;
             resourceInputs["clientBodyTimeout"] = args?.clientBodyTimeout;
             resourceInputs["clientHeaderTimeout"] = args?.clientHeaderTimeout;
             resourceInputs["connectionDrainEnabled"] = args?.connectionDrainEnabled;
@@ -364,6 +370,7 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["domainExtensions"] = args?.domainExtensions;
             resourceInputs["enabled"] = args?.enabled;
             resourceInputs["endPort"] = args?.endPort;
+            resourceInputs["enhancedSchedulerEnable"] = args?.enhancedSchedulerEnable;
             resourceInputs["establishedTimeout"] = args?.establishedTimeout;
             resourceInputs["healthCheck"] = args?.healthCheck;
             resourceInputs["http2Enabled"] = args?.http2Enabled;
@@ -385,8 +392,13 @@ export class Listener extends pulumi.CustomResource {
             resourceInputs["serverGroupId"] = args?.serverGroupId;
             resourceInputs["startPort"] = args?.startPort;
             resourceInputs["tags"] = args?.tags;
+            resourceInputs["caCertificateId"] = undefined /*out*/;
+            resourceInputs["certCenterCertificateId"] = undefined /*out*/;
+            resourceInputs["certificateId"] = undefined /*out*/;
+            resourceInputs["certificateSource"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
             resourceInputs["listenerId"] = undefined /*out*/;
+            resourceInputs["responseCheckEnabled"] = undefined /*out*/;
             resourceInputs["ruleIds"] = undefined /*out*/;
             resourceInputs["status"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
@@ -483,6 +495,10 @@ export interface ListenerState {
      */
     endPort?: pulumi.Input<number | undefined>;
     /**
+     * Enable weighted extension for the scheduling algorithm?
+     */
+    enhancedSchedulerEnable?: pulumi.Input<string | undefined>;
+    /**
      * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      */
     establishedTimeout?: pulumi.Input<number | undefined>;
@@ -547,6 +563,10 @@ export interface ListenerState {
      */
     proxySendTimeout?: pulumi.Input<number | undefined>;
     /**
+     * Enable response validation?
+     */
+    responseCheckEnabled?: pulumi.Input<string | undefined>;
+    /**
      * List of rule IDs bound to the listener.
      */
     ruleIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
@@ -610,25 +630,9 @@ export interface ListenerArgs {
      */
     bandwidth?: pulumi.Input<number | undefined>;
     /**
-     * CA certificate for mutual authentication.
-     */
-    caCertificateId?: pulumi.Input<string | undefined>;
-    /**
      * Enable mutual authentication. on: enabled. off (default): disabled.
      */
     caEnabled?: pulumi.Input<string | undefined>;
-    /**
-     * Certificate ID from Certificate Center.
-     */
-    certCenterCertificateId?: pulumi.Input<string | undefined>;
-    /**
-     * Certificate ID from the CLB certificate management module.
-     */
-    certificateId?: pulumi.Input<string | undefined>;
-    /**
-     * Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-     */
-    certificateSource?: pulumi.Input<string | undefined>;
     /**
      * Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      */
@@ -670,6 +674,10 @@ export interface ListenerArgs {
      * End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
      */
     endPort?: pulumi.Input<number | undefined>;
+    /**
+     * Enable weighted extension for the scheduling algorithm?
+     */
+    enhancedSchedulerEnable?: pulumi.Input<string | undefined>;
     /**
      * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      */

@@ -82,6 +82,11 @@ public final class GetRuleResult {
      */
     private Integer evaluationCount;
     /**
+     * @return Evaluation interval (minutes)
+     * 
+     */
+    private Integer evaluationInterval;
+    /**
      * @return Uniquely identifies the resource.
      * 
      */
@@ -121,6 +126,11 @@ public final class GetRuleResult {
      * 
      */
     private List<GetRuleNotifyTemplate> notifyTemplates;
+    /**
+     * @return Object group ID
+     * 
+     */
+    private String objectGroupId;
     /**
      * @return Resource ID detected by the alert policy.
      * 
@@ -278,6 +288,13 @@ public final class GetRuleResult {
         return this.evaluationCount;
     }
     /**
+     * @return Evaluation interval (minutes)
+     * 
+     */
+    public Integer evaluationInterval() {
+        return this.evaluationInterval;
+    }
+    /**
      * @return Uniquely identifies the resource.
      * 
      */
@@ -332,6 +349,13 @@ public final class GetRuleResult {
      */
     public List<GetRuleNotifyTemplate> notifyTemplates() {
         return this.notifyTemplates;
+    }
+    /**
+     * @return Object group ID
+     * 
+     */
+    public String objectGroupId() {
+        return this.objectGroupId;
     }
     /**
      * @return Resource ID detected by the alert policy.
@@ -453,6 +477,7 @@ public final class GetRuleResult {
         private String effectStartAt;
         private String enableState;
         private Integer evaluationCount;
+        private Integer evaluationInterval;
         private String id;
         private String level;
         private List<GetRuleLevelCondition> levelConditions;
@@ -461,6 +486,7 @@ public final class GetRuleResult {
         private GetRuleNoData noData;
         private String notificationId;
         private List<GetRuleNotifyTemplate> notifyTemplates;
+        private String objectGroupId;
         private GetRuleOriginalDimensions originalDimensions;
         private String projectName;
         private GetRuleRecoveryNotify recoveryNotify;
@@ -490,6 +516,7 @@ public final class GetRuleResult {
     	      this.effectStartAt = defaults.effectStartAt;
     	      this.enableState = defaults.enableState;
     	      this.evaluationCount = defaults.evaluationCount;
+    	      this.evaluationInterval = defaults.evaluationInterval;
     	      this.id = defaults.id;
     	      this.level = defaults.level;
     	      this.levelConditions = defaults.levelConditions;
@@ -498,6 +525,7 @@ public final class GetRuleResult {
     	      this.noData = defaults.noData;
     	      this.notificationId = defaults.notificationId;
     	      this.notifyTemplates = defaults.notifyTemplates;
+    	      this.objectGroupId = defaults.objectGroupId;
     	      this.originalDimensions = defaults.originalDimensions;
     	      this.projectName = defaults.projectName;
     	      this.recoveryNotify = defaults.recoveryNotify;
@@ -620,6 +648,14 @@ public final class GetRuleResult {
             return this;
         }
         @CustomType.Setter
+        public Builder evaluationInterval(Integer evaluationInterval) {
+            if (evaluationInterval == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "evaluationInterval");
+            }
+            this.evaluationInterval = evaluationInterval;
+            return this;
+        }
+        @CustomType.Setter
         public Builder id(String id) {
             if (id == null) {
               throw new MissingRequiredPropertyException("GetRuleResult", "id");
@@ -688,6 +724,14 @@ public final class GetRuleResult {
         }
         public Builder notifyTemplates(GetRuleNotifyTemplate... notifyTemplates) {
             return notifyTemplates(List.of(notifyTemplates));
+        }
+        @CustomType.Setter
+        public Builder objectGroupId(String objectGroupId) {
+            if (objectGroupId == null) {
+              throw new MissingRequiredPropertyException("GetRuleResult", "objectGroupId");
+            }
+            this.objectGroupId = objectGroupId;
+            return this;
         }
         @CustomType.Setter
         public Builder originalDimensions(GetRuleOriginalDimensions originalDimensions) {
@@ -824,6 +868,7 @@ public final class GetRuleResult {
             _resultValue.effectStartAt = effectStartAt;
             _resultValue.enableState = enableState;
             _resultValue.evaluationCount = evaluationCount;
+            _resultValue.evaluationInterval = evaluationInterval;
             _resultValue.id = id;
             _resultValue.level = level;
             _resultValue.levelConditions = levelConditions;
@@ -832,6 +877,7 @@ public final class GetRuleResult {
             _resultValue.noData = noData;
             _resultValue.notificationId = notificationId;
             _resultValue.notifyTemplates = notifyTemplates;
+            _resultValue.objectGroupId = objectGroupId;
             _resultValue.originalDimensions = originalDimensions;
             _resultValue.projectName = projectName;
             _resultValue.recoveryNotify = recoveryNotify;

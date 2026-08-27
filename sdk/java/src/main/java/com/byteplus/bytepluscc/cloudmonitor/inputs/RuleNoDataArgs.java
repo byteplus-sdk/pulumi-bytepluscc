@@ -7,6 +7,7 @@ import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -46,11 +47,27 @@ public final class RuleNoDataArgs extends com.pulumi.resources.ResourceArgs {
         return Optional.ofNullable(this.evaluationCount);
     }
 
+    /**
+     * No data alert level (critical, warning, notice)
+     * 
+     */
+    @Import(name="level")
+    private @Nullable Output<String> level;
+
+    /**
+     * @return No data alert level (critical, warning, notice)
+     * 
+     */
+    public Optional<Output<String>> level() {
+        return Optional.ofNullable(this.level);
+    }
+
     private RuleNoDataArgs() {}
 
     private RuleNoDataArgs(RuleNoDataArgs $) {
         this.enable = $.enable;
         this.evaluationCount = $.evaluationCount;
+        this.level = $.level;
     }
 
     public static Builder builder() {
@@ -111,6 +128,27 @@ public final class RuleNoDataArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder evaluationCount(Integer evaluationCount) {
             return evaluationCount(Output.of(evaluationCount));
+        }
+
+        /**
+         * @param level No data alert level (critical, warning, notice)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder level(@Nullable Output<String> level) {
+            $.level = level;
+            return this;
+        }
+
+        /**
+         * @param level No data alert level (critical, warning, notice)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder level(String level) {
+            return level(Output.of(level));
         }
 
         public RuleNoDataArgs build() {

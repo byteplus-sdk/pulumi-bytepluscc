@@ -3098,9 +3098,64 @@ export namespace cdn {
 
     export interface DomainOriginCertCheck {
         /**
+         * Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        certInfoLists?: pulumi.Input<pulumi.Input<inputs.cdn.DomainOriginCertCheckCertInfoList>[] | undefined>;
+        /**
          * Switch
          */
         switch?: pulumi.Input<boolean | undefined>;
+    }
+
+    export interface DomainOriginCertCheckCertInfoList {
+        /**
+         * Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+         */
+        certId?: pulumi.Input<string | undefined>;
+        /**
+         * Represents the content of the Common Name (CN) field in the CA certificate.
+         */
+        certName?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+         */
+        certificate?: pulumi.Input<inputs.cdn.DomainOriginCertCheckCertInfoListCertificate | undefined>;
+        /**
+         * Indicates the issuance time of the certificate, in Unix timestamp.
+         */
+        effectiveTime?: pulumi.Input<number | undefined>;
+        /**
+         * Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+         */
+        encryType?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates the expiration time of the certificate, as a Unix timestamp.
+         */
+        expireTime?: pulumi.Input<number | undefined>;
+        /**
+         * Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+         */
+        source?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DomainOriginCertCheckCertInfoListCertificate {
+        /**
+         * Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+         */
+        certificate?: pulumi.Input<string | undefined>;
+        /**
+         * Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+         */
+        encryptionCert?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+         */
+        encryptionKey?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+         */
+        privateKey?: pulumi.Input<string | undefined>;
     }
 
     export interface DomainOriginCondition {
@@ -3951,6 +4006,41 @@ export namespace cdn {
          * Indicates whether this feature is enabled. This parameter has the following options: true: Enable this feature. false: Disable this feature. The default value for this parameter is false.
          */
         switch?: pulumi.Input<boolean | undefined>;
+    }
+
+    export interface DomainRuleEngine {
+        /**
+         * Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        rules?: pulumi.Input<pulumi.Input<inputs.cdn.DomainRuleEngineRule>[] | undefined>;
+        /**
+         * Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+         */
+        switch?: pulumi.Input<boolean | undefined>;
+    }
+
+    export interface DomainRuleEngineRule {
+        /**
+         * Indicates the DSL description of the rule.
+         */
+        dslRule?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates the unique ID of the rule.
+         */
+        id?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+         */
+        locked?: pulumi.Input<boolean | undefined>;
+        /**
+         * Indicates the name of the rule.
+         */
+        name?: pulumi.Input<string | undefined>;
+        /**
+         * Indicates the detailed content of the rule.
+         */
+        rule?: pulumi.Input<string | undefined>;
     }
 
     export interface DomainSignedUrlAuth {
@@ -5273,6 +5363,10 @@ export namespace cloudmonitor {
          */
         comparisonOperator?: pulumi.Input<string | undefined>;
         /**
+         * Evaluation window (minutes)
+         */
+        evaluationWindow?: pulumi.Input<number | undefined>;
+        /**
          * Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
          */
         metricName?: pulumi.Input<string | undefined>;
@@ -5288,6 +5382,10 @@ export namespace cloudmonitor {
          * Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
          */
         statistics?: pulumi.Input<string | undefined>;
+        /**
+         * Sub-namespace
+         */
+        subNamespace?: pulumi.Input<string | undefined>;
         /**
          * Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
          */
@@ -5396,9 +5494,9 @@ export namespace cloudmonitor {
          */
         comparisonOperator?: pulumi.Input<string | undefined>;
         /**
-         * Metric display name.
+         * Evaluation window (minutes)
          */
-        displayName?: pulumi.Input<string | undefined>;
+        evaluationWindow?: pulumi.Input<number | undefined>;
         /**
          * Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
          */
@@ -5416,6 +5514,10 @@ export namespace cloudmonitor {
          */
         statistics?: pulumi.Input<string | undefined>;
         /**
+         * Sub-namespace
+         */
+        subNamespace?: pulumi.Input<string | undefined>;
+        /**
          * Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
          */
         threshold?: pulumi.Input<string | undefined>;
@@ -5430,6 +5532,10 @@ export namespace cloudmonitor {
          * No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
          */
         evaluationCount?: pulumi.Input<number | undefined>;
+        /**
+         * No data alert level (critical, warning, notice)
+         */
+        level?: pulumi.Input<string | undefined>;
     }
 
     export interface RuleNotifyTemplate {

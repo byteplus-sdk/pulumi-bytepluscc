@@ -701,6 +701,10 @@ export class Domain extends pulumi.CustomResource {
      */
     declare public readonly rewriteHls: pulumi.Output<outputs.cdn.DomainRewriteHls>;
     /**
+     * Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+     */
+    declare public readonly ruleEngine: pulumi.Output<outputs.cdn.DomainRuleEngine>;
+    /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      */
     declare public readonly serviceRegion: pulumi.Output<string>;
@@ -805,6 +809,7 @@ export class Domain extends pulumi.CustomResource {
             resourceInputs["requestHeaders"] = state?.requestHeaders;
             resourceInputs["responseHeaders"] = state?.responseHeaders;
             resourceInputs["rewriteHls"] = state?.rewriteHls;
+            resourceInputs["ruleEngine"] = state?.ruleEngine;
             resourceInputs["serviceRegion"] = state?.serviceRegion;
             resourceInputs["serviceType"] = state?.serviceType;
             resourceInputs["signedUrlAuth"] = state?.signedUrlAuth;
@@ -867,6 +872,7 @@ export class Domain extends pulumi.CustomResource {
             resourceInputs["requestHeaders"] = args?.requestHeaders;
             resourceInputs["responseHeaders"] = args?.responseHeaders;
             resourceInputs["rewriteHls"] = args?.rewriteHls;
+            resourceInputs["ruleEngine"] = args?.ruleEngine;
             resourceInputs["serviceRegion"] = args?.serviceRegion;
             resourceInputs["serviceType"] = args?.serviceType;
             resourceInputs["signedUrlAuth"] = args?.signedUrlAuth;
@@ -1105,6 +1111,10 @@ export interface DomainState {
      */
     rewriteHls?: pulumi.Input<inputs.cdn.DomainRewriteHls | undefined>;
     /**
+     * Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+     */
+    ruleEngine?: pulumi.Input<inputs.cdn.DomainRuleEngine | undefined>;
+    /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      */
     serviceRegion?: pulumi.Input<string | undefined>;
@@ -1323,6 +1333,10 @@ export interface DomainArgs {
      * Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
      */
     rewriteHls?: pulumi.Input<inputs.cdn.DomainRewriteHls | undefined>;
+    /**
+     * Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+     */
+    ruleEngine?: pulumi.Input<inputs.cdn.DomainRuleEngine | undefined>;
     /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      */

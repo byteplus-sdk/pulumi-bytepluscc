@@ -124,6 +124,8 @@ type Listener struct {
 	Enabled pulumi.StringOutput `pulumi:"enabled"`
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
 	EndPort pulumi.IntOutput `pulumi:"endPort"`
+	// Enable weighted extension for the scheduling algorithm?
+	EnhancedSchedulerEnable pulumi.StringOutput `pulumi:"enhancedSchedulerEnable"`
 	// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 	EstablishedTimeout pulumi.IntOutput `pulumi:"establishedTimeout"`
 	// Health check information.
@@ -156,6 +158,8 @@ type Listener struct {
 	ProxyReadTimeout pulumi.IntOutput `pulumi:"proxyReadTimeout"`
 	// Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ProxySendTimeout pulumi.IntOutput `pulumi:"proxySendTimeout"`
+	// Enable response validation?
+	ResponseCheckEnabled pulumi.StringOutput `pulumi:"responseCheckEnabled"`
 	// List of rule IDs bound to the listener.
 	RuleIds pulumi.StringArrayOutput `pulumi:"ruleIds"`
 	// Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
@@ -262,6 +266,8 @@ type listenerState struct {
 	Enabled *string `pulumi:"enabled"`
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
 	EndPort *int `pulumi:"endPort"`
+	// Enable weighted extension for the scheduling algorithm?
+	EnhancedSchedulerEnable *string `pulumi:"enhancedSchedulerEnable"`
 	// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 	EstablishedTimeout *int `pulumi:"establishedTimeout"`
 	// Health check information.
@@ -294,6 +300,8 @@ type listenerState struct {
 	ProxyReadTimeout *int `pulumi:"proxyReadTimeout"`
 	// Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ProxySendTimeout *int `pulumi:"proxySendTimeout"`
+	// Enable response validation?
+	ResponseCheckEnabled *string `pulumi:"responseCheckEnabled"`
 	// List of rule IDs bound to the listener.
 	RuleIds []string `pulumi:"ruleIds"`
 	// Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
@@ -359,6 +367,8 @@ type ListenerState struct {
 	Enabled pulumi.StringPtrInput
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
 	EndPort pulumi.IntPtrInput
+	// Enable weighted extension for the scheduling algorithm?
+	EnhancedSchedulerEnable pulumi.StringPtrInput
 	// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 	EstablishedTimeout pulumi.IntPtrInput
 	// Health check information.
@@ -391,6 +401,8 @@ type ListenerState struct {
 	ProxyReadTimeout pulumi.IntPtrInput
 	// Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ProxySendTimeout pulumi.IntPtrInput
+	// Enable response validation?
+	ResponseCheckEnabled pulumi.StringPtrInput
 	// List of rule IDs bound to the listener.
 	RuleIds pulumi.StringArrayInput
 	// Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
@@ -427,16 +439,8 @@ type listenerArgs struct {
 	AclType *string `pulumi:"aclType"`
 	// Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
 	Bandwidth *int `pulumi:"bandwidth"`
-	// CA certificate for mutual authentication.
-	CaCertificateId *string `pulumi:"caCertificateId"`
 	// Enable mutual authentication. on: enabled. off (default): disabled.
 	CaEnabled *string `pulumi:"caEnabled"`
-	// Certificate ID from Certificate Center.
-	CertCenterCertificateId *string `pulumi:"certCenterCertificateId"`
-	// Certificate ID from the CLB certificate management module.
-	CertificateId *string `pulumi:"certificateId"`
-	// Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-	CertificateSource *string `pulumi:"certificateSource"`
 	// Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ClientBodyTimeout *int `pulumi:"clientBodyTimeout"`
 	// Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
@@ -458,6 +462,8 @@ type listenerArgs struct {
 	Enabled *string `pulumi:"enabled"`
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
 	EndPort *int `pulumi:"endPort"`
+	// Enable weighted extension for the scheduling algorithm?
+	EnhancedSchedulerEnable *string `pulumi:"enhancedSchedulerEnable"`
 	// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 	EstablishedTimeout *int `pulumi:"establishedTimeout"`
 	// Health check information.
@@ -513,16 +519,8 @@ type ListenerArgs struct {
 	AclType pulumi.StringPtrInput
 	// Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
 	Bandwidth pulumi.IntPtrInput
-	// CA certificate for mutual authentication.
-	CaCertificateId pulumi.StringPtrInput
 	// Enable mutual authentication. on: enabled. off (default): disabled.
 	CaEnabled pulumi.StringPtrInput
-	// Certificate ID from Certificate Center.
-	CertCenterCertificateId pulumi.StringPtrInput
-	// Certificate ID from the CLB certificate management module.
-	CertificateId pulumi.StringPtrInput
-	// Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-	CertificateSource pulumi.StringPtrInput
 	// Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ClientBodyTimeout pulumi.IntPtrInput
 	// Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
@@ -544,6 +542,8 @@ type ListenerArgs struct {
 	Enabled pulumi.StringPtrInput
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
 	EndPort pulumi.IntPtrInput
+	// Enable weighted extension for the scheduling algorithm?
+	EnhancedSchedulerEnable pulumi.StringPtrInput
 	// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 	EstablishedTimeout pulumi.IntPtrInput
 	// Health check information.
@@ -777,6 +777,11 @@ func (o ListenerOutput) EndPort() pulumi.IntOutput {
 	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.EndPort }).(pulumi.IntOutput)
 }
 
+// Enable weighted extension for the scheduling algorithm?
+func (o ListenerOutput) EnhancedSchedulerEnable() pulumi.StringOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.EnhancedSchedulerEnable }).(pulumi.StringOutput)
+}
+
 // Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 func (o ListenerOutput) EstablishedTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.EstablishedTimeout }).(pulumi.IntOutput)
@@ -855,6 +860,11 @@ func (o ListenerOutput) ProxyReadTimeout() pulumi.IntOutput {
 // Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o ListenerOutput) ProxySendTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v *Listener) pulumi.IntOutput { return v.ProxySendTimeout }).(pulumi.IntOutput)
+}
+
+// Enable response validation?
+func (o ListenerOutput) ResponseCheckEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v *Listener) pulumi.StringOutput { return v.ResponseCheckEnabled }).(pulumi.StringOutput)
 }
 
 // List of rule IDs bound to the listener.

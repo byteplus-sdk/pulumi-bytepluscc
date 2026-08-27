@@ -180,6 +180,21 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Evaluation interval (minutes)
+     * 
+     */
+    @Import(name="evaluationInterval")
+    private @Nullable Output<Integer> evaluationInterval;
+
+    /**
+     * @return Evaluation interval (minutes)
+     * 
+     */
+    public Optional<Output<Integer>> evaluationInterval() {
+        return Optional.ofNullable(this.evaluationInterval);
+    }
+
+    /**
      * Alert level. critical: critical, warning: warning, notice: notification
      * 
      */
@@ -286,6 +301,21 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<List<RuleNotifyTemplateArgs>>> notifyTemplates() {
         return Optional.ofNullable(this.notifyTemplates);
+    }
+
+    /**
+     * Object group ID
+     * 
+     */
+    @Import(name="objectGroupId")
+    private @Nullable Output<String> objectGroupId;
+
+    /**
+     * @return Object group ID
+     * 
+     */
+    public Optional<Output<String>> objectGroupId() {
+        return Optional.ofNullable(this.objectGroupId);
     }
 
     /**
@@ -468,6 +498,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         this.effectStartAt = $.effectStartAt;
         this.enableState = $.enableState;
         this.evaluationCount = $.evaluationCount;
+        this.evaluationInterval = $.evaluationInterval;
         this.level = $.level;
         this.levelConditions = $.levelConditions;
         this.multipleConditions = $.multipleConditions;
@@ -475,6 +506,7 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         this.noData = $.noData;
         this.notificationId = $.notificationId;
         this.notifyTemplates = $.notifyTemplates;
+        this.objectGroupId = $.objectGroupId;
         this.originalDimensions = $.originalDimensions;
         this.projectName = $.projectName;
         this.recoveryNotify = $.recoveryNotify;
@@ -750,6 +782,27 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param evaluationInterval Evaluation interval (minutes)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder evaluationInterval(@Nullable Output<Integer> evaluationInterval) {
+            $.evaluationInterval = evaluationInterval;
+            return this;
+        }
+
+        /**
+         * @param evaluationInterval Evaluation interval (minutes)
+         * 
+         * @return builder
+         * 
+         */
+        public Builder evaluationInterval(Integer evaluationInterval) {
+            return evaluationInterval(Output.of(evaluationInterval));
+        }
+
+        /**
          * @param level Alert level. critical: critical, warning: warning, notice: notification
          * 
          * @return builder
@@ -920,6 +973,27 @@ public final class RuleArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder notifyTemplates(RuleNotifyTemplateArgs... notifyTemplates) {
             return notifyTemplates(List.of(notifyTemplates));
+        }
+
+        /**
+         * @param objectGroupId Object group ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder objectGroupId(@Nullable Output<String> objectGroupId) {
+            $.objectGroupId = objectGroupId;
+            return this;
+        }
+
+        /**
+         * @param objectGroupId Object group ID
+         * 
+         * @return builder
+         * 
+         */
+        public Builder objectGroupId(String objectGroupId) {
+            return objectGroupId(Output.of(objectGroupId));
         }
 
         /**

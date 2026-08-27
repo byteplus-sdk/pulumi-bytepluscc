@@ -70,6 +70,8 @@ type LookupListenerResult struct {
 	Enabled string `pulumi:"enabled"`
 	// End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
 	EndPort int `pulumi:"endPort"`
+	// Enable weighted extension for the scheduling algorithm?
+	EnhancedSchedulerEnable string `pulumi:"enhancedSchedulerEnable"`
 	// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 	EstablishedTimeout int `pulumi:"establishedTimeout"`
 	// Health check information.
@@ -104,6 +106,8 @@ type LookupListenerResult struct {
 	ProxyReadTimeout int `pulumi:"proxyReadTimeout"`
 	// Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 	ProxySendTimeout int `pulumi:"proxySendTimeout"`
+	// Enable response validation?
+	ResponseCheckEnabled string `pulumi:"responseCheckEnabled"`
 	// List of rule IDs bound to the listener.
 	RuleIds []string `pulumi:"ruleIds"`
 	// Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
@@ -260,6 +264,11 @@ func (o LookupListenerResultOutput) EndPort() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.EndPort }).(pulumi.IntOutput)
 }
 
+// Enable weighted extension for the scheduling algorithm?
+func (o LookupListenerResultOutput) EnhancedSchedulerEnable() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupListenerResult) string { return v.EnhancedSchedulerEnable }).(pulumi.StringOutput)
+}
+
 // Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
 func (o LookupListenerResultOutput) EstablishedTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.EstablishedTimeout }).(pulumi.IntOutput)
@@ -343,6 +352,11 @@ func (o LookupListenerResultOutput) ProxyReadTimeout() pulumi.IntOutput {
 // Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
 func (o LookupListenerResultOutput) ProxySendTimeout() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupListenerResult) int { return v.ProxySendTimeout }).(pulumi.IntOutput)
+}
+
+// Enable response validation?
+func (o LookupListenerResultOutput) ResponseCheckEnabled() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupListenerResult) string { return v.ResponseCheckEnabled }).(pulumi.StringOutput)
 }
 
 // List of rule IDs bound to the listener.

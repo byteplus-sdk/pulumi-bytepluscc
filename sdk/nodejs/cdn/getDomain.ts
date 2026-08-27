@@ -235,6 +235,10 @@ export interface GetDomainResult {
      */
     readonly rewriteHls: outputs.cdn.GetDomainRewriteHls;
     /**
+     * Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+     */
+    readonly ruleEngine: outputs.cdn.GetDomainRuleEngine;
+    /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      */
     readonly serviceRegion: string;

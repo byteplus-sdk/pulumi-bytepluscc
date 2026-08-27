@@ -167,6 +167,10 @@ __all__ = [
     'DomainOriginArgOriginArgActionOriginArgComponentArgsDict',
     'DomainOriginCertCheckArgs',
     'DomainOriginCertCheckArgsDict',
+    'DomainOriginCertCheckCertInfoListArgs',
+    'DomainOriginCertCheckCertInfoListArgsDict',
+    'DomainOriginCertCheckCertInfoListCertificateArgs',
+    'DomainOriginCertCheckCertInfoListCertificateArgsDict',
     'DomainOriginConditionArgs',
     'DomainOriginConditionArgsDict',
     'DomainOriginConditionConditionRuleArgs',
@@ -281,6 +285,10 @@ __all__ = [
     'DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgsDict',
     'DomainRewriteHlsArgs',
     'DomainRewriteHlsArgsDict',
+    'DomainRuleEngineArgs',
+    'DomainRuleEngineArgsDict',
+    'DomainRuleEngineRuleArgs',
+    'DomainRuleEngineRuleArgsDict',
     'DomainSignedUrlAuthArgs',
     'DomainSignedUrlAuthArgsDict',
     'DomainSignedUrlAuthSignedUrlAuthRuleArgs',
@@ -5608,6 +5616,11 @@ class DomainOriginArgOriginArgActionOriginArgComponentArgs:
 
 
 class DomainOriginCertCheckArgsDict(TypedDict):
+    cert_info_lists: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainOriginCertCheckCertInfoListArgsDict']]]]]
+    """
+    Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+    Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
     switch: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
     """
     Switch
@@ -5616,12 +5629,30 @@ class DomainOriginCertCheckArgsDict(TypedDict):
 @pulumi.input_type
 class DomainOriginCertCheckArgs:
     def __init__(__self__, *,
+                 cert_info_lists: pulumi.Input[Optional[Sequence[pulumi.Input['DomainOriginCertCheckCertInfoListArgs']]]] = None,
                  switch: pulumi.Input[Optional[_builtins.bool]] = None):
         """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainOriginCertCheckCertInfoListArgs']]] cert_info_lists: Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.bool] switch: Switch
         """
+        if cert_info_lists is not None:
+            pulumi.set(__self__, "cert_info_lists", cert_info_lists)
         if switch is not None:
             pulumi.set(__self__, "switch", switch)
+
+    @_builtins.property
+    @pulumi.getter(name="certInfoLists")
+    def cert_info_lists(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainOriginCertCheckCertInfoListArgs']]]]:
+        """
+        Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "cert_info_lists")
+
+    @cert_info_lists.setter
+    def cert_info_lists(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainOriginCertCheckCertInfoListArgs']]]]):
+        pulumi.set(self, "cert_info_lists", value)
 
     @_builtins.property
     @pulumi.getter
@@ -5634,6 +5665,244 @@ class DomainOriginCertCheckArgs:
     @switch.setter
     def switch(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "switch", value)
+
+
+class DomainOriginCertCheckCertInfoListArgsDict(TypedDict):
+    cert_id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+    """
+    cert_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Represents the content of the Common Name (CN) field in the CA certificate.
+    """
+    certificate: NotRequired[pulumi.Input[Optional['DomainOriginCertCheckCertInfoListCertificateArgsDict']]]
+    """
+    Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+    """
+    effective_time: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Indicates the issuance time of the certificate, in Unix timestamp.
+    """
+    encry_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+    """
+    expire_time: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Indicates the expiration time of the certificate, as a Unix timestamp.
+    """
+    source: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+    """
+
+@pulumi.input_type
+class DomainOriginCertCheckCertInfoListArgs:
+    def __init__(__self__, *,
+                 cert_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 cert_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 certificate: pulumi.Input[Optional['DomainOriginCertCheckCertInfoListCertificateArgs']] = None,
+                 effective_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 encry_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expire_time: pulumi.Input[Optional[_builtins.int]] = None,
+                 source: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] cert_id: Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+        :param pulumi.Input[_builtins.str] cert_name: Represents the content of the Common Name (CN) field in the CA certificate.
+        :param pulumi.Input['DomainOriginCertCheckCertInfoListCertificateArgs'] certificate: Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+        :param pulumi.Input[_builtins.int] effective_time: Indicates the issuance time of the certificate, in Unix timestamp.
+        :param pulumi.Input[_builtins.str] encry_type: Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+        :param pulumi.Input[_builtins.int] expire_time: Indicates the expiration time of the certificate, as a Unix timestamp.
+        :param pulumi.Input[_builtins.str] source: Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+        """
+        if cert_id is not None:
+            pulumi.set(__self__, "cert_id", cert_id)
+        if cert_name is not None:
+            pulumi.set(__self__, "cert_name", cert_name)
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if effective_time is not None:
+            pulumi.set(__self__, "effective_time", effective_time)
+        if encry_type is not None:
+            pulumi.set(__self__, "encry_type", encry_type)
+        if expire_time is not None:
+            pulumi.set(__self__, "expire_time", expire_time)
+        if source is not None:
+            pulumi.set(__self__, "source", source)
+
+    @_builtins.property
+    @pulumi.getter(name="certId")
+    def cert_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+        """
+        return pulumi.get(self, "cert_id")
+
+    @cert_id.setter
+    def cert_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cert_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="certName")
+    def cert_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Represents the content of the Common Name (CN) field in the CA certificate.
+        """
+        return pulumi.get(self, "cert_name")
+
+    @cert_name.setter
+    def cert_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cert_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> pulumi.Input[Optional['DomainOriginCertCheckCertInfoListCertificateArgs']]:
+        """
+        Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: pulumi.Input[Optional['DomainOriginCertCheckCertInfoListCertificateArgs']]):
+        pulumi.set(self, "certificate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="effectiveTime")
+    def effective_time(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Indicates the issuance time of the certificate, in Unix timestamp.
+        """
+        return pulumi.get(self, "effective_time")
+
+    @effective_time.setter
+    def effective_time(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "effective_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryType")
+    def encry_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+        """
+        return pulumi.get(self, "encry_type")
+
+    @encry_type.setter
+    def encry_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "encry_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="expireTime")
+    def expire_time(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Indicates the expiration time of the certificate, as a Unix timestamp.
+        """
+        return pulumi.get(self, "expire_time")
+
+    @expire_time.setter
+    def expire_time(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "expire_time", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def source(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+        """
+        return pulumi.get(self, "source")
+
+    @source.setter
+    def source(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "source", value)
+
+
+class DomainOriginCertCheckCertInfoListCertificateArgsDict(TypedDict):
+    certificate: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+    """
+    encryption_cert: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+    """
+    encryption_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+    """
+    private_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+    """
+
+@pulumi.input_type
+class DomainOriginCertCheckCertInfoListCertificateArgs:
+    def __init__(__self__, *,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_cert: pulumi.Input[Optional[_builtins.str]] = None,
+                 encryption_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] certificate: Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+        :param pulumi.Input[_builtins.str] encryption_cert: Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+        :param pulumi.Input[_builtins.str] encryption_key: Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+        :param pulumi.Input[_builtins.str] private_key: Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if encryption_cert is not None:
+            pulumi.set(__self__, "encryption_cert", encryption_cert)
+        if encryption_key is not None:
+            pulumi.set(__self__, "encryption_key", encryption_key)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionCert")
+    def encryption_cert(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+        """
+        return pulumi.get(self, "encryption_cert")
+
+    @encryption_cert.setter
+    def encryption_cert(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "encryption_cert", value)
+
+    @_builtins.property
+    @pulumi.getter(name="encryptionKey")
+    def encryption_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+        """
+        return pulumi.get(self, "encryption_key")
+
+    @encryption_key.setter
+    def encryption_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "encryption_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key", value)
 
 
 class DomainOriginConditionArgsDict(TypedDict):
@@ -9508,6 +9777,167 @@ class DomainRewriteHlsArgs:
     @switch.setter
     def switch(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "switch", value)
+
+
+class DomainRuleEngineArgsDict(TypedDict):
+    rules: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DomainRuleEngineRuleArgsDict']]]]]
+    """
+    Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+    Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
+    switch: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+    """
+
+@pulumi.input_type
+class DomainRuleEngineArgs:
+    def __init__(__self__, *,
+                 rules: pulumi.Input[Optional[Sequence[pulumi.Input['DomainRuleEngineRuleArgs']]]] = None,
+                 switch: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DomainRuleEngineRuleArgs']]] rules: Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.bool] switch: Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+        """
+        if rules is not None:
+            pulumi.set(__self__, "rules", rules)
+        if switch is not None:
+            pulumi.set(__self__, "switch", switch)
+
+    @_builtins.property
+    @pulumi.getter
+    def rules(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DomainRuleEngineRuleArgs']]]]:
+        """
+        Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "rules")
+
+    @rules.setter
+    def rules(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DomainRuleEngineRuleArgs']]]]):
+        pulumi.set(self, "rules", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def switch(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+        """
+        return pulumi.get(self, "switch")
+
+    @switch.setter
+    def switch(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "switch", value)
+
+
+class DomainRuleEngineRuleArgsDict(TypedDict):
+    dsl_rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the DSL description of the rule.
+    """
+    id: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the unique ID of the rule.
+    """
+    locked: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+    """
+    name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the name of the rule.
+    """
+    rule: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Indicates the detailed content of the rule.
+    """
+
+@pulumi.input_type
+class DomainRuleEngineRuleArgs:
+    def __init__(__self__, *,
+                 dsl_rule: pulumi.Input[Optional[_builtins.str]] = None,
+                 id: pulumi.Input[Optional[_builtins.str]] = None,
+                 locked: pulumi.Input[Optional[_builtins.bool]] = None,
+                 name: pulumi.Input[Optional[_builtins.str]] = None,
+                 rule: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] dsl_rule: Indicates the DSL description of the rule.
+        :param pulumi.Input[_builtins.str] id: Indicates the unique ID of the rule.
+        :param pulumi.Input[_builtins.bool] locked: Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+        :param pulumi.Input[_builtins.str] name: Indicates the name of the rule.
+        :param pulumi.Input[_builtins.str] rule: Indicates the detailed content of the rule.
+        """
+        if dsl_rule is not None:
+            pulumi.set(__self__, "dsl_rule", dsl_rule)
+        if id is not None:
+            pulumi.set(__self__, "id", id)
+        if locked is not None:
+            pulumi.set(__self__, "locked", locked)
+        if name is not None:
+            pulumi.set(__self__, "name", name)
+        if rule is not None:
+            pulumi.set(__self__, "rule", rule)
+
+    @_builtins.property
+    @pulumi.getter(name="dslRule")
+    def dsl_rule(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the DSL description of the rule.
+        """
+        return pulumi.get(self, "dsl_rule")
+
+    @dsl_rule.setter
+    def dsl_rule(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "dsl_rule", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the unique ID of the rule.
+        """
+        return pulumi.get(self, "id")
+
+    @id.setter
+    def id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "id", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def locked(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+        """
+        return pulumi.get(self, "locked")
+
+    @locked.setter
+    def locked(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "locked", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the name of the rule.
+        """
+        return pulumi.get(self, "name")
+
+    @name.setter
+    def name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def rule(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Indicates the detailed content of the rule.
+        """
+        return pulumi.get(self, "rule")
+
+    @rule.setter
+    def rule(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "rule", value)
 
 
 class DomainSignedUrlAuthArgsDict(TypedDict):

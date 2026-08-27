@@ -11583,6 +11583,9 @@ func (o DomainOriginArgOriginArgActionOriginArgComponentArrayOutput) Index(i pul
 }
 
 type DomainOriginCertCheck struct {
+	// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	CertInfoLists []DomainOriginCertCheckCertInfoList `pulumi:"certInfoLists"`
 	// Switch
 	Switch *bool `pulumi:"switch"`
 }
@@ -11599,6 +11602,9 @@ type DomainOriginCertCheckInput interface {
 }
 
 type DomainOriginCertCheckArgs struct {
+	// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	CertInfoLists DomainOriginCertCheckCertInfoListArrayInput `pulumi:"certInfoLists"`
 	// Switch
 	Switch pulumi.BoolPtrInput `pulumi:"switch"`
 }
@@ -11680,6 +11686,12 @@ func (o DomainOriginCertCheckOutput) ToDomainOriginCertCheckPtrOutputWithContext
 	}).(DomainOriginCertCheckPtrOutput)
 }
 
+// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o DomainOriginCertCheckOutput) CertInfoLists() DomainOriginCertCheckCertInfoListArrayOutput {
+	return o.ApplyT(func(v DomainOriginCertCheck) []DomainOriginCertCheckCertInfoList { return v.CertInfoLists }).(DomainOriginCertCheckCertInfoListArrayOutput)
+}
+
 // Switch
 func (o DomainOriginCertCheckOutput) Switch() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v DomainOriginCertCheck) *bool { return v.Switch }).(pulumi.BoolPtrOutput)
@@ -11709,6 +11721,17 @@ func (o DomainOriginCertCheckPtrOutput) Elem() DomainOriginCertCheckOutput {
 	}).(DomainOriginCertCheckOutput)
 }
 
+// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o DomainOriginCertCheckPtrOutput) CertInfoLists() DomainOriginCertCheckCertInfoListArrayOutput {
+	return o.ApplyT(func(v *DomainOriginCertCheck) []DomainOriginCertCheckCertInfoList {
+		if v == nil {
+			return nil
+		}
+		return v.CertInfoLists
+	}).(DomainOriginCertCheckCertInfoListArrayOutput)
+}
+
 // Switch
 func (o DomainOriginCertCheckPtrOutput) Switch() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *DomainOriginCertCheck) *bool {
@@ -11717,6 +11740,353 @@ func (o DomainOriginCertCheckPtrOutput) Switch() pulumi.BoolPtrOutput {
 		}
 		return v.Switch
 	}).(pulumi.BoolPtrOutput)
+}
+
+type DomainOriginCertCheckCertInfoList struct {
+	// Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+	CertId *string `pulumi:"certId"`
+	// Represents the content of the Common Name (CN) field in the CA certificate.
+	CertName *string `pulumi:"certName"`
+	// Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+	Certificate *DomainOriginCertCheckCertInfoListCertificate `pulumi:"certificate"`
+	// Indicates the issuance time of the certificate, in Unix timestamp.
+	EffectiveTime *int `pulumi:"effectiveTime"`
+	// Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+	EncryType *string `pulumi:"encryType"`
+	// Indicates the expiration time of the certificate, as a Unix timestamp.
+	ExpireTime *int `pulumi:"expireTime"`
+	// Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+	Source *string `pulumi:"source"`
+}
+
+// DomainOriginCertCheckCertInfoListInput is an input type that accepts DomainOriginCertCheckCertInfoListArgs and DomainOriginCertCheckCertInfoListOutput values.
+// You can construct a concrete instance of `DomainOriginCertCheckCertInfoListInput` via:
+//
+//	DomainOriginCertCheckCertInfoListArgs{...}
+type DomainOriginCertCheckCertInfoListInput interface {
+	pulumi.Input
+
+	ToDomainOriginCertCheckCertInfoListOutput() DomainOriginCertCheckCertInfoListOutput
+	ToDomainOriginCertCheckCertInfoListOutputWithContext(context.Context) DomainOriginCertCheckCertInfoListOutput
+}
+
+type DomainOriginCertCheckCertInfoListArgs struct {
+	// Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+	CertId pulumi.StringPtrInput `pulumi:"certId"`
+	// Represents the content of the Common Name (CN) field in the CA certificate.
+	CertName pulumi.StringPtrInput `pulumi:"certName"`
+	// Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+	Certificate DomainOriginCertCheckCertInfoListCertificatePtrInput `pulumi:"certificate"`
+	// Indicates the issuance time of the certificate, in Unix timestamp.
+	EffectiveTime pulumi.IntPtrInput `pulumi:"effectiveTime"`
+	// Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+	EncryType pulumi.StringPtrInput `pulumi:"encryType"`
+	// Indicates the expiration time of the certificate, as a Unix timestamp.
+	ExpireTime pulumi.IntPtrInput `pulumi:"expireTime"`
+	// Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+	Source pulumi.StringPtrInput `pulumi:"source"`
+}
+
+func (DomainOriginCertCheckCertInfoListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DomainOriginCertCheckCertInfoList)(nil)).Elem()
+}
+
+func (i DomainOriginCertCheckCertInfoListArgs) ToDomainOriginCertCheckCertInfoListOutput() DomainOriginCertCheckCertInfoListOutput {
+	return i.ToDomainOriginCertCheckCertInfoListOutputWithContext(context.Background())
+}
+
+func (i DomainOriginCertCheckCertInfoListArgs) ToDomainOriginCertCheckCertInfoListOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainOriginCertCheckCertInfoListOutput)
+}
+
+// DomainOriginCertCheckCertInfoListArrayInput is an input type that accepts DomainOriginCertCheckCertInfoListArray and DomainOriginCertCheckCertInfoListArrayOutput values.
+// You can construct a concrete instance of `DomainOriginCertCheckCertInfoListArrayInput` via:
+//
+//	DomainOriginCertCheckCertInfoListArray{ DomainOriginCertCheckCertInfoListArgs{...} }
+type DomainOriginCertCheckCertInfoListArrayInput interface {
+	pulumi.Input
+
+	ToDomainOriginCertCheckCertInfoListArrayOutput() DomainOriginCertCheckCertInfoListArrayOutput
+	ToDomainOriginCertCheckCertInfoListArrayOutputWithContext(context.Context) DomainOriginCertCheckCertInfoListArrayOutput
+}
+
+type DomainOriginCertCheckCertInfoListArray []DomainOriginCertCheckCertInfoListInput
+
+func (DomainOriginCertCheckCertInfoListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DomainOriginCertCheckCertInfoList)(nil)).Elem()
+}
+
+func (i DomainOriginCertCheckCertInfoListArray) ToDomainOriginCertCheckCertInfoListArrayOutput() DomainOriginCertCheckCertInfoListArrayOutput {
+	return i.ToDomainOriginCertCheckCertInfoListArrayOutputWithContext(context.Background())
+}
+
+func (i DomainOriginCertCheckCertInfoListArray) ToDomainOriginCertCheckCertInfoListArrayOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainOriginCertCheckCertInfoListArrayOutput)
+}
+
+type DomainOriginCertCheckCertInfoListOutput struct{ *pulumi.OutputState }
+
+func (DomainOriginCertCheckCertInfoListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DomainOriginCertCheckCertInfoList)(nil)).Elem()
+}
+
+func (o DomainOriginCertCheckCertInfoListOutput) ToDomainOriginCertCheckCertInfoListOutput() DomainOriginCertCheckCertInfoListOutput {
+	return o
+}
+
+func (o DomainOriginCertCheckCertInfoListOutput) ToDomainOriginCertCheckCertInfoListOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListOutput {
+	return o
+}
+
+// Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+func (o DomainOriginCertCheckCertInfoListOutput) CertId() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoList) *string { return v.CertId }).(pulumi.StringPtrOutput)
+}
+
+// Represents the content of the Common Name (CN) field in the CA certificate.
+func (o DomainOriginCertCheckCertInfoListOutput) CertName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoList) *string { return v.CertName }).(pulumi.StringPtrOutput)
+}
+
+// Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+func (o DomainOriginCertCheckCertInfoListOutput) Certificate() DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoList) *DomainOriginCertCheckCertInfoListCertificate {
+		return v.Certificate
+	}).(DomainOriginCertCheckCertInfoListCertificatePtrOutput)
+}
+
+// Indicates the issuance time of the certificate, in Unix timestamp.
+func (o DomainOriginCertCheckCertInfoListOutput) EffectiveTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoList) *int { return v.EffectiveTime }).(pulumi.IntPtrOutput)
+}
+
+// Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+func (o DomainOriginCertCheckCertInfoListOutput) EncryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoList) *string { return v.EncryType }).(pulumi.StringPtrOutput)
+}
+
+// Indicates the expiration time of the certificate, as a Unix timestamp.
+func (o DomainOriginCertCheckCertInfoListOutput) ExpireTime() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoList) *int { return v.ExpireTime }).(pulumi.IntPtrOutput)
+}
+
+// Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+func (o DomainOriginCertCheckCertInfoListOutput) Source() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoList) *string { return v.Source }).(pulumi.StringPtrOutput)
+}
+
+type DomainOriginCertCheckCertInfoListArrayOutput struct{ *pulumi.OutputState }
+
+func (DomainOriginCertCheckCertInfoListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DomainOriginCertCheckCertInfoList)(nil)).Elem()
+}
+
+func (o DomainOriginCertCheckCertInfoListArrayOutput) ToDomainOriginCertCheckCertInfoListArrayOutput() DomainOriginCertCheckCertInfoListArrayOutput {
+	return o
+}
+
+func (o DomainOriginCertCheckCertInfoListArrayOutput) ToDomainOriginCertCheckCertInfoListArrayOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListArrayOutput {
+	return o
+}
+
+func (o DomainOriginCertCheckCertInfoListArrayOutput) Index(i pulumi.IntInput) DomainOriginCertCheckCertInfoListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DomainOriginCertCheckCertInfoList {
+		return vs[0].([]DomainOriginCertCheckCertInfoList)[vs[1].(int)]
+	}).(DomainOriginCertCheckCertInfoListOutput)
+}
+
+type DomainOriginCertCheckCertInfoListCertificate struct {
+	// Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+	Certificate *string `pulumi:"certificate"`
+	// Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+	EncryptionCert *string `pulumi:"encryptionCert"`
+	// Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+	EncryptionKey *string `pulumi:"encryptionKey"`
+	// Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+	PrivateKey *string `pulumi:"privateKey"`
+}
+
+// DomainOriginCertCheckCertInfoListCertificateInput is an input type that accepts DomainOriginCertCheckCertInfoListCertificateArgs and DomainOriginCertCheckCertInfoListCertificateOutput values.
+// You can construct a concrete instance of `DomainOriginCertCheckCertInfoListCertificateInput` via:
+//
+//	DomainOriginCertCheckCertInfoListCertificateArgs{...}
+type DomainOriginCertCheckCertInfoListCertificateInput interface {
+	pulumi.Input
+
+	ToDomainOriginCertCheckCertInfoListCertificateOutput() DomainOriginCertCheckCertInfoListCertificateOutput
+	ToDomainOriginCertCheckCertInfoListCertificateOutputWithContext(context.Context) DomainOriginCertCheckCertInfoListCertificateOutput
+}
+
+type DomainOriginCertCheckCertInfoListCertificateArgs struct {
+	// Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
+	// Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+	EncryptionCert pulumi.StringPtrInput `pulumi:"encryptionCert"`
+	// Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+	EncryptionKey pulumi.StringPtrInput `pulumi:"encryptionKey"`
+	// Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+	PrivateKey pulumi.StringPtrInput `pulumi:"privateKey"`
+}
+
+func (DomainOriginCertCheckCertInfoListCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DomainOriginCertCheckCertInfoListCertificate)(nil)).Elem()
+}
+
+func (i DomainOriginCertCheckCertInfoListCertificateArgs) ToDomainOriginCertCheckCertInfoListCertificateOutput() DomainOriginCertCheckCertInfoListCertificateOutput {
+	return i.ToDomainOriginCertCheckCertInfoListCertificateOutputWithContext(context.Background())
+}
+
+func (i DomainOriginCertCheckCertInfoListCertificateArgs) ToDomainOriginCertCheckCertInfoListCertificateOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainOriginCertCheckCertInfoListCertificateOutput)
+}
+
+func (i DomainOriginCertCheckCertInfoListCertificateArgs) ToDomainOriginCertCheckCertInfoListCertificatePtrOutput() DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return i.ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(context.Background())
+}
+
+func (i DomainOriginCertCheckCertInfoListCertificateArgs) ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainOriginCertCheckCertInfoListCertificateOutput).ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(ctx)
+}
+
+// DomainOriginCertCheckCertInfoListCertificatePtrInput is an input type that accepts DomainOriginCertCheckCertInfoListCertificateArgs, DomainOriginCertCheckCertInfoListCertificatePtr and DomainOriginCertCheckCertInfoListCertificatePtrOutput values.
+// You can construct a concrete instance of `DomainOriginCertCheckCertInfoListCertificatePtrInput` via:
+//
+//	        DomainOriginCertCheckCertInfoListCertificateArgs{...}
+//
+//	or:
+//
+//	        nil
+type DomainOriginCertCheckCertInfoListCertificatePtrInput interface {
+	pulumi.Input
+
+	ToDomainOriginCertCheckCertInfoListCertificatePtrOutput() DomainOriginCertCheckCertInfoListCertificatePtrOutput
+	ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(context.Context) DomainOriginCertCheckCertInfoListCertificatePtrOutput
+}
+
+type domainOriginCertCheckCertInfoListCertificatePtrType DomainOriginCertCheckCertInfoListCertificateArgs
+
+func DomainOriginCertCheckCertInfoListCertificatePtr(v *DomainOriginCertCheckCertInfoListCertificateArgs) DomainOriginCertCheckCertInfoListCertificatePtrInput {
+	return (*domainOriginCertCheckCertInfoListCertificatePtrType)(v)
+}
+
+func (*domainOriginCertCheckCertInfoListCertificatePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DomainOriginCertCheckCertInfoListCertificate)(nil)).Elem()
+}
+
+func (i *domainOriginCertCheckCertInfoListCertificatePtrType) ToDomainOriginCertCheckCertInfoListCertificatePtrOutput() DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return i.ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(context.Background())
+}
+
+func (i *domainOriginCertCheckCertInfoListCertificatePtrType) ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainOriginCertCheckCertInfoListCertificatePtrOutput)
+}
+
+type DomainOriginCertCheckCertInfoListCertificateOutput struct{ *pulumi.OutputState }
+
+func (DomainOriginCertCheckCertInfoListCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DomainOriginCertCheckCertInfoListCertificate)(nil)).Elem()
+}
+
+func (o DomainOriginCertCheckCertInfoListCertificateOutput) ToDomainOriginCertCheckCertInfoListCertificateOutput() DomainOriginCertCheckCertInfoListCertificateOutput {
+	return o
+}
+
+func (o DomainOriginCertCheckCertInfoListCertificateOutput) ToDomainOriginCertCheckCertInfoListCertificateOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListCertificateOutput {
+	return o
+}
+
+func (o DomainOriginCertCheckCertInfoListCertificateOutput) ToDomainOriginCertCheckCertInfoListCertificatePtrOutput() DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return o.ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(context.Background())
+}
+
+func (o DomainOriginCertCheckCertInfoListCertificateOutput) ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DomainOriginCertCheckCertInfoListCertificate) *DomainOriginCertCheckCertInfoListCertificate {
+		return &v
+	}).(DomainOriginCertCheckCertInfoListCertificatePtrOutput)
+}
+
+// Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+func (o DomainOriginCertCheckCertInfoListCertificateOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoListCertificate) *string { return v.Certificate }).(pulumi.StringPtrOutput)
+}
+
+// Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+func (o DomainOriginCertCheckCertInfoListCertificateOutput) EncryptionCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoListCertificate) *string { return v.EncryptionCert }).(pulumi.StringPtrOutput)
+}
+
+// Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+func (o DomainOriginCertCheckCertInfoListCertificateOutput) EncryptionKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoListCertificate) *string { return v.EncryptionKey }).(pulumi.StringPtrOutput)
+}
+
+// Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+func (o DomainOriginCertCheckCertInfoListCertificateOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainOriginCertCheckCertInfoListCertificate) *string { return v.PrivateKey }).(pulumi.StringPtrOutput)
+}
+
+type DomainOriginCertCheckCertInfoListCertificatePtrOutput struct{ *pulumi.OutputState }
+
+func (DomainOriginCertCheckCertInfoListCertificatePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DomainOriginCertCheckCertInfoListCertificate)(nil)).Elem()
+}
+
+func (o DomainOriginCertCheckCertInfoListCertificatePtrOutput) ToDomainOriginCertCheckCertInfoListCertificatePtrOutput() DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return o
+}
+
+func (o DomainOriginCertCheckCertInfoListCertificatePtrOutput) ToDomainOriginCertCheckCertInfoListCertificatePtrOutputWithContext(ctx context.Context) DomainOriginCertCheckCertInfoListCertificatePtrOutput {
+	return o
+}
+
+func (o DomainOriginCertCheckCertInfoListCertificatePtrOutput) Elem() DomainOriginCertCheckCertInfoListCertificateOutput {
+	return o.ApplyT(func(v *DomainOriginCertCheckCertInfoListCertificate) DomainOriginCertCheckCertInfoListCertificate {
+		if v != nil {
+			return *v
+		}
+		var ret DomainOriginCertCheckCertInfoListCertificate
+		return ret
+	}).(DomainOriginCertCheckCertInfoListCertificateOutput)
+}
+
+// Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+func (o DomainOriginCertCheckCertInfoListCertificatePtrOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainOriginCertCheckCertInfoListCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Certificate
+	}).(pulumi.StringPtrOutput)
+}
+
+// Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+func (o DomainOriginCertCheckCertInfoListCertificatePtrOutput) EncryptionCert() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainOriginCertCheckCertInfoListCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncryptionCert
+	}).(pulumi.StringPtrOutput)
+}
+
+// Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+func (o DomainOriginCertCheckCertInfoListCertificatePtrOutput) EncryptionKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainOriginCertCheckCertInfoListCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EncryptionKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+func (o DomainOriginCertCheckCertInfoListCertificatePtrOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *DomainOriginCertCheckCertInfoListCertificate) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateKey
+	}).(pulumi.StringPtrOutput)
 }
 
 type DomainOriginCondition struct {
@@ -20489,6 +20859,299 @@ func (o DomainRewriteHlsPtrOutput) Switch() pulumi.BoolPtrOutput {
 		}
 		return v.Switch
 	}).(pulumi.BoolPtrOutput)
+}
+
+type DomainRuleEngine struct {
+	// Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Rules []DomainRuleEngineRule `pulumi:"rules"`
+	// Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+	Switch *bool `pulumi:"switch"`
+}
+
+// DomainRuleEngineInput is an input type that accepts DomainRuleEngineArgs and DomainRuleEngineOutput values.
+// You can construct a concrete instance of `DomainRuleEngineInput` via:
+//
+//	DomainRuleEngineArgs{...}
+type DomainRuleEngineInput interface {
+	pulumi.Input
+
+	ToDomainRuleEngineOutput() DomainRuleEngineOutput
+	ToDomainRuleEngineOutputWithContext(context.Context) DomainRuleEngineOutput
+}
+
+type DomainRuleEngineArgs struct {
+	// Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	Rules DomainRuleEngineRuleArrayInput `pulumi:"rules"`
+	// Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+	Switch pulumi.BoolPtrInput `pulumi:"switch"`
+}
+
+func (DomainRuleEngineArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DomainRuleEngine)(nil)).Elem()
+}
+
+func (i DomainRuleEngineArgs) ToDomainRuleEngineOutput() DomainRuleEngineOutput {
+	return i.ToDomainRuleEngineOutputWithContext(context.Background())
+}
+
+func (i DomainRuleEngineArgs) ToDomainRuleEngineOutputWithContext(ctx context.Context) DomainRuleEngineOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainRuleEngineOutput)
+}
+
+func (i DomainRuleEngineArgs) ToDomainRuleEnginePtrOutput() DomainRuleEnginePtrOutput {
+	return i.ToDomainRuleEnginePtrOutputWithContext(context.Background())
+}
+
+func (i DomainRuleEngineArgs) ToDomainRuleEnginePtrOutputWithContext(ctx context.Context) DomainRuleEnginePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainRuleEngineOutput).ToDomainRuleEnginePtrOutputWithContext(ctx)
+}
+
+// DomainRuleEnginePtrInput is an input type that accepts DomainRuleEngineArgs, DomainRuleEnginePtr and DomainRuleEnginePtrOutput values.
+// You can construct a concrete instance of `DomainRuleEnginePtrInput` via:
+//
+//	        DomainRuleEngineArgs{...}
+//
+//	or:
+//
+//	        nil
+type DomainRuleEnginePtrInput interface {
+	pulumi.Input
+
+	ToDomainRuleEnginePtrOutput() DomainRuleEnginePtrOutput
+	ToDomainRuleEnginePtrOutputWithContext(context.Context) DomainRuleEnginePtrOutput
+}
+
+type domainRuleEnginePtrType DomainRuleEngineArgs
+
+func DomainRuleEnginePtr(v *DomainRuleEngineArgs) DomainRuleEnginePtrInput {
+	return (*domainRuleEnginePtrType)(v)
+}
+
+func (*domainRuleEnginePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DomainRuleEngine)(nil)).Elem()
+}
+
+func (i *domainRuleEnginePtrType) ToDomainRuleEnginePtrOutput() DomainRuleEnginePtrOutput {
+	return i.ToDomainRuleEnginePtrOutputWithContext(context.Background())
+}
+
+func (i *domainRuleEnginePtrType) ToDomainRuleEnginePtrOutputWithContext(ctx context.Context) DomainRuleEnginePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainRuleEnginePtrOutput)
+}
+
+type DomainRuleEngineOutput struct{ *pulumi.OutputState }
+
+func (DomainRuleEngineOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DomainRuleEngine)(nil)).Elem()
+}
+
+func (o DomainRuleEngineOutput) ToDomainRuleEngineOutput() DomainRuleEngineOutput {
+	return o
+}
+
+func (o DomainRuleEngineOutput) ToDomainRuleEngineOutputWithContext(ctx context.Context) DomainRuleEngineOutput {
+	return o
+}
+
+func (o DomainRuleEngineOutput) ToDomainRuleEnginePtrOutput() DomainRuleEnginePtrOutput {
+	return o.ToDomainRuleEnginePtrOutputWithContext(context.Background())
+}
+
+func (o DomainRuleEngineOutput) ToDomainRuleEnginePtrOutputWithContext(ctx context.Context) DomainRuleEnginePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DomainRuleEngine) *DomainRuleEngine {
+		return &v
+	}).(DomainRuleEnginePtrOutput)
+}
+
+// Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o DomainRuleEngineOutput) Rules() DomainRuleEngineRuleArrayOutput {
+	return o.ApplyT(func(v DomainRuleEngine) []DomainRuleEngineRule { return v.Rules }).(DomainRuleEngineRuleArrayOutput)
+}
+
+// Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+func (o DomainRuleEngineOutput) Switch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DomainRuleEngine) *bool { return v.Switch }).(pulumi.BoolPtrOutput)
+}
+
+type DomainRuleEnginePtrOutput struct{ *pulumi.OutputState }
+
+func (DomainRuleEnginePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DomainRuleEngine)(nil)).Elem()
+}
+
+func (o DomainRuleEnginePtrOutput) ToDomainRuleEnginePtrOutput() DomainRuleEnginePtrOutput {
+	return o
+}
+
+func (o DomainRuleEnginePtrOutput) ToDomainRuleEnginePtrOutputWithContext(ctx context.Context) DomainRuleEnginePtrOutput {
+	return o
+}
+
+func (o DomainRuleEnginePtrOutput) Elem() DomainRuleEngineOutput {
+	return o.ApplyT(func(v *DomainRuleEngine) DomainRuleEngine {
+		if v != nil {
+			return *v
+		}
+		var ret DomainRuleEngine
+		return ret
+	}).(DomainRuleEngineOutput)
+}
+
+// Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o DomainRuleEnginePtrOutput) Rules() DomainRuleEngineRuleArrayOutput {
+	return o.ApplyT(func(v *DomainRuleEngine) []DomainRuleEngineRule {
+		if v == nil {
+			return nil
+		}
+		return v.Rules
+	}).(DomainRuleEngineRuleArrayOutput)
+}
+
+// Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+func (o DomainRuleEnginePtrOutput) Switch() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *DomainRuleEngine) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.Switch
+	}).(pulumi.BoolPtrOutput)
+}
+
+type DomainRuleEngineRule struct {
+	// Indicates the DSL description of the rule.
+	DslRule *string `pulumi:"dslRule"`
+	// Indicates the unique ID of the rule.
+	Id *string `pulumi:"id"`
+	// Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+	Locked *bool `pulumi:"locked"`
+	// Indicates the name of the rule.
+	Name *string `pulumi:"name"`
+	// Indicates the detailed content of the rule.
+	Rule *string `pulumi:"rule"`
+}
+
+// DomainRuleEngineRuleInput is an input type that accepts DomainRuleEngineRuleArgs and DomainRuleEngineRuleOutput values.
+// You can construct a concrete instance of `DomainRuleEngineRuleInput` via:
+//
+//	DomainRuleEngineRuleArgs{...}
+type DomainRuleEngineRuleInput interface {
+	pulumi.Input
+
+	ToDomainRuleEngineRuleOutput() DomainRuleEngineRuleOutput
+	ToDomainRuleEngineRuleOutputWithContext(context.Context) DomainRuleEngineRuleOutput
+}
+
+type DomainRuleEngineRuleArgs struct {
+	// Indicates the DSL description of the rule.
+	DslRule pulumi.StringPtrInput `pulumi:"dslRule"`
+	// Indicates the unique ID of the rule.
+	Id pulumi.StringPtrInput `pulumi:"id"`
+	// Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+	Locked pulumi.BoolPtrInput `pulumi:"locked"`
+	// Indicates the name of the rule.
+	Name pulumi.StringPtrInput `pulumi:"name"`
+	// Indicates the detailed content of the rule.
+	Rule pulumi.StringPtrInput `pulumi:"rule"`
+}
+
+func (DomainRuleEngineRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DomainRuleEngineRule)(nil)).Elem()
+}
+
+func (i DomainRuleEngineRuleArgs) ToDomainRuleEngineRuleOutput() DomainRuleEngineRuleOutput {
+	return i.ToDomainRuleEngineRuleOutputWithContext(context.Background())
+}
+
+func (i DomainRuleEngineRuleArgs) ToDomainRuleEngineRuleOutputWithContext(ctx context.Context) DomainRuleEngineRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainRuleEngineRuleOutput)
+}
+
+// DomainRuleEngineRuleArrayInput is an input type that accepts DomainRuleEngineRuleArray and DomainRuleEngineRuleArrayOutput values.
+// You can construct a concrete instance of `DomainRuleEngineRuleArrayInput` via:
+//
+//	DomainRuleEngineRuleArray{ DomainRuleEngineRuleArgs{...} }
+type DomainRuleEngineRuleArrayInput interface {
+	pulumi.Input
+
+	ToDomainRuleEngineRuleArrayOutput() DomainRuleEngineRuleArrayOutput
+	ToDomainRuleEngineRuleArrayOutputWithContext(context.Context) DomainRuleEngineRuleArrayOutput
+}
+
+type DomainRuleEngineRuleArray []DomainRuleEngineRuleInput
+
+func (DomainRuleEngineRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DomainRuleEngineRule)(nil)).Elem()
+}
+
+func (i DomainRuleEngineRuleArray) ToDomainRuleEngineRuleArrayOutput() DomainRuleEngineRuleArrayOutput {
+	return i.ToDomainRuleEngineRuleArrayOutputWithContext(context.Background())
+}
+
+func (i DomainRuleEngineRuleArray) ToDomainRuleEngineRuleArrayOutputWithContext(ctx context.Context) DomainRuleEngineRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DomainRuleEngineRuleArrayOutput)
+}
+
+type DomainRuleEngineRuleOutput struct{ *pulumi.OutputState }
+
+func (DomainRuleEngineRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DomainRuleEngineRule)(nil)).Elem()
+}
+
+func (o DomainRuleEngineRuleOutput) ToDomainRuleEngineRuleOutput() DomainRuleEngineRuleOutput {
+	return o
+}
+
+func (o DomainRuleEngineRuleOutput) ToDomainRuleEngineRuleOutputWithContext(ctx context.Context) DomainRuleEngineRuleOutput {
+	return o
+}
+
+// Indicates the DSL description of the rule.
+func (o DomainRuleEngineRuleOutput) DslRule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainRuleEngineRule) *string { return v.DslRule }).(pulumi.StringPtrOutput)
+}
+
+// Indicates the unique ID of the rule.
+func (o DomainRuleEngineRuleOutput) Id() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainRuleEngineRule) *string { return v.Id }).(pulumi.StringPtrOutput)
+}
+
+// Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+func (o DomainRuleEngineRuleOutput) Locked() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v DomainRuleEngineRule) *bool { return v.Locked }).(pulumi.BoolPtrOutput)
+}
+
+// Indicates the name of the rule.
+func (o DomainRuleEngineRuleOutput) Name() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainRuleEngineRule) *string { return v.Name }).(pulumi.StringPtrOutput)
+}
+
+// Indicates the detailed content of the rule.
+func (o DomainRuleEngineRuleOutput) Rule() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DomainRuleEngineRule) *string { return v.Rule }).(pulumi.StringPtrOutput)
+}
+
+type DomainRuleEngineRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (DomainRuleEngineRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DomainRuleEngineRule)(nil)).Elem()
+}
+
+func (o DomainRuleEngineRuleArrayOutput) ToDomainRuleEngineRuleArrayOutput() DomainRuleEngineRuleArrayOutput {
+	return o
+}
+
+func (o DomainRuleEngineRuleArrayOutput) ToDomainRuleEngineRuleArrayOutputWithContext(ctx context.Context) DomainRuleEngineRuleArrayOutput {
+	return o
+}
+
+func (o DomainRuleEngineRuleArrayOutput) Index(i pulumi.IntInput) DomainRuleEngineRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DomainRuleEngineRule {
+		return vs[0].([]DomainRuleEngineRule)[vs[1].(int)]
+	}).(DomainRuleEngineRuleOutput)
 }
 
 type DomainSignedUrlAuth struct {
@@ -30945,6 +31608,8 @@ func (o GetDomainOriginArgOriginArgActionOriginArgComponentArrayOutput) Index(i 
 }
 
 type GetDomainOriginCertCheck struct {
+	// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+	CertInfoLists []GetDomainOriginCertCheckCertInfoList `pulumi:"certInfoLists"`
 	// Switch
 	Switch bool `pulumi:"switch"`
 }
@@ -30961,6 +31626,8 @@ type GetDomainOriginCertCheckInput interface {
 }
 
 type GetDomainOriginCertCheckArgs struct {
+	// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+	CertInfoLists GetDomainOriginCertCheckCertInfoListArrayInput `pulumi:"certInfoLists"`
 	// Switch
 	Switch pulumi.BoolInput `pulumi:"switch"`
 }
@@ -30991,9 +31658,246 @@ func (o GetDomainOriginCertCheckOutput) ToGetDomainOriginCertCheckOutputWithCont
 	return o
 }
 
+// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+func (o GetDomainOriginCertCheckOutput) CertInfoLists() GetDomainOriginCertCheckCertInfoListArrayOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheck) []GetDomainOriginCertCheckCertInfoList { return v.CertInfoLists }).(GetDomainOriginCertCheckCertInfoListArrayOutput)
+}
+
 // Switch
 func (o GetDomainOriginCertCheckOutput) Switch() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDomainOriginCertCheck) bool { return v.Switch }).(pulumi.BoolOutput)
+}
+
+type GetDomainOriginCertCheckCertInfoList struct {
+	// Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+	CertId string `pulumi:"certId"`
+	// Represents the content of the Common Name (CN) field in the CA certificate.
+	CertName string `pulumi:"certName"`
+	// Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+	Certificate GetDomainOriginCertCheckCertInfoListCertificate `pulumi:"certificate"`
+	// Indicates the issuance time of the certificate, in Unix timestamp.
+	EffectiveTime int `pulumi:"effectiveTime"`
+	// Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+	EncryType string `pulumi:"encryType"`
+	// Indicates the expiration time of the certificate, as a Unix timestamp.
+	ExpireTime int `pulumi:"expireTime"`
+	// Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+	Source string `pulumi:"source"`
+}
+
+// GetDomainOriginCertCheckCertInfoListInput is an input type that accepts GetDomainOriginCertCheckCertInfoListArgs and GetDomainOriginCertCheckCertInfoListOutput values.
+// You can construct a concrete instance of `GetDomainOriginCertCheckCertInfoListInput` via:
+//
+//	GetDomainOriginCertCheckCertInfoListArgs{...}
+type GetDomainOriginCertCheckCertInfoListInput interface {
+	pulumi.Input
+
+	ToGetDomainOriginCertCheckCertInfoListOutput() GetDomainOriginCertCheckCertInfoListOutput
+	ToGetDomainOriginCertCheckCertInfoListOutputWithContext(context.Context) GetDomainOriginCertCheckCertInfoListOutput
+}
+
+type GetDomainOriginCertCheckCertInfoListArgs struct {
+	// Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+	CertId pulumi.StringInput `pulumi:"certId"`
+	// Represents the content of the Common Name (CN) field in the CA certificate.
+	CertName pulumi.StringInput `pulumi:"certName"`
+	// Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+	Certificate GetDomainOriginCertCheckCertInfoListCertificateInput `pulumi:"certificate"`
+	// Indicates the issuance time of the certificate, in Unix timestamp.
+	EffectiveTime pulumi.IntInput `pulumi:"effectiveTime"`
+	// Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+	EncryType pulumi.StringInput `pulumi:"encryType"`
+	// Indicates the expiration time of the certificate, as a Unix timestamp.
+	ExpireTime pulumi.IntInput `pulumi:"expireTime"`
+	// Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+	Source pulumi.StringInput `pulumi:"source"`
+}
+
+func (GetDomainOriginCertCheckCertInfoListArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainOriginCertCheckCertInfoList)(nil)).Elem()
+}
+
+func (i GetDomainOriginCertCheckCertInfoListArgs) ToGetDomainOriginCertCheckCertInfoListOutput() GetDomainOriginCertCheckCertInfoListOutput {
+	return i.ToGetDomainOriginCertCheckCertInfoListOutputWithContext(context.Background())
+}
+
+func (i GetDomainOriginCertCheckCertInfoListArgs) ToGetDomainOriginCertCheckCertInfoListOutputWithContext(ctx context.Context) GetDomainOriginCertCheckCertInfoListOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainOriginCertCheckCertInfoListOutput)
+}
+
+// GetDomainOriginCertCheckCertInfoListArrayInput is an input type that accepts GetDomainOriginCertCheckCertInfoListArray and GetDomainOriginCertCheckCertInfoListArrayOutput values.
+// You can construct a concrete instance of `GetDomainOriginCertCheckCertInfoListArrayInput` via:
+//
+//	GetDomainOriginCertCheckCertInfoListArray{ GetDomainOriginCertCheckCertInfoListArgs{...} }
+type GetDomainOriginCertCheckCertInfoListArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainOriginCertCheckCertInfoListArrayOutput() GetDomainOriginCertCheckCertInfoListArrayOutput
+	ToGetDomainOriginCertCheckCertInfoListArrayOutputWithContext(context.Context) GetDomainOriginCertCheckCertInfoListArrayOutput
+}
+
+type GetDomainOriginCertCheckCertInfoListArray []GetDomainOriginCertCheckCertInfoListInput
+
+func (GetDomainOriginCertCheckCertInfoListArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainOriginCertCheckCertInfoList)(nil)).Elem()
+}
+
+func (i GetDomainOriginCertCheckCertInfoListArray) ToGetDomainOriginCertCheckCertInfoListArrayOutput() GetDomainOriginCertCheckCertInfoListArrayOutput {
+	return i.ToGetDomainOriginCertCheckCertInfoListArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainOriginCertCheckCertInfoListArray) ToGetDomainOriginCertCheckCertInfoListArrayOutputWithContext(ctx context.Context) GetDomainOriginCertCheckCertInfoListArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainOriginCertCheckCertInfoListArrayOutput)
+}
+
+type GetDomainOriginCertCheckCertInfoListOutput struct{ *pulumi.OutputState }
+
+func (GetDomainOriginCertCheckCertInfoListOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainOriginCertCheckCertInfoList)(nil)).Elem()
+}
+
+func (o GetDomainOriginCertCheckCertInfoListOutput) ToGetDomainOriginCertCheckCertInfoListOutput() GetDomainOriginCertCheckCertInfoListOutput {
+	return o
+}
+
+func (o GetDomainOriginCertCheckCertInfoListOutput) ToGetDomainOriginCertCheckCertInfoListOutputWithContext(ctx context.Context) GetDomainOriginCertCheckCertInfoListOutput {
+	return o
+}
+
+// Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.
+func (o GetDomainOriginCertCheckCertInfoListOutput) CertId() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoList) string { return v.CertId }).(pulumi.StringOutput)
+}
+
+// Represents the content of the Common Name (CN) field in the CA certificate.
+func (o GetDomainOriginCertCheckCertInfoListOutput) CertName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoList) string { return v.CertName }).(pulumi.StringOutput)
+}
+
+// Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.
+func (o GetDomainOriginCertCheckCertInfoListOutput) Certificate() GetDomainOriginCertCheckCertInfoListCertificateOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoList) GetDomainOriginCertCheckCertInfoListCertificate {
+		return v.Certificate
+	}).(GetDomainOriginCertCheckCertInfoListCertificateOutput)
+}
+
+// Indicates the issuance time of the certificate, in Unix timestamp.
+func (o GetDomainOriginCertCheckCertInfoListOutput) EffectiveTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoList) int { return v.EffectiveTime }).(pulumi.IntOutput)
+}
+
+// Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.
+func (o GetDomainOriginCertCheckCertInfoListOutput) EncryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoList) string { return v.EncryType }).(pulumi.StringOutput)
+}
+
+// Indicates the expiration time of the certificate, as a Unix timestamp.
+func (o GetDomainOriginCertCheckCertInfoListOutput) ExpireTime() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoList) int { return v.ExpireTime }).(pulumi.IntOutput)
+}
+
+// Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.
+func (o GetDomainOriginCertCheckCertInfoListOutput) Source() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoList) string { return v.Source }).(pulumi.StringOutput)
+}
+
+type GetDomainOriginCertCheckCertInfoListArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainOriginCertCheckCertInfoListArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainOriginCertCheckCertInfoList)(nil)).Elem()
+}
+
+func (o GetDomainOriginCertCheckCertInfoListArrayOutput) ToGetDomainOriginCertCheckCertInfoListArrayOutput() GetDomainOriginCertCheckCertInfoListArrayOutput {
+	return o
+}
+
+func (o GetDomainOriginCertCheckCertInfoListArrayOutput) ToGetDomainOriginCertCheckCertInfoListArrayOutputWithContext(ctx context.Context) GetDomainOriginCertCheckCertInfoListArrayOutput {
+	return o
+}
+
+func (o GetDomainOriginCertCheckCertInfoListArrayOutput) Index(i pulumi.IntInput) GetDomainOriginCertCheckCertInfoListOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainOriginCertCheckCertInfoList {
+		return vs[0].([]GetDomainOriginCertCheckCertInfoList)[vs[1].(int)]
+	}).(GetDomainOriginCertCheckCertInfoListOutput)
+}
+
+type GetDomainOriginCertCheckCertInfoListCertificate struct {
+	// Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+	Certificate string `pulumi:"certificate"`
+	// Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+	EncryptionCert string `pulumi:"encryptionCert"`
+	// Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+	EncryptionKey string `pulumi:"encryptionKey"`
+	// Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+	PrivateKey string `pulumi:"privateKey"`
+}
+
+// GetDomainOriginCertCheckCertInfoListCertificateInput is an input type that accepts GetDomainOriginCertCheckCertInfoListCertificateArgs and GetDomainOriginCertCheckCertInfoListCertificateOutput values.
+// You can construct a concrete instance of `GetDomainOriginCertCheckCertInfoListCertificateInput` via:
+//
+//	GetDomainOriginCertCheckCertInfoListCertificateArgs{...}
+type GetDomainOriginCertCheckCertInfoListCertificateInput interface {
+	pulumi.Input
+
+	ToGetDomainOriginCertCheckCertInfoListCertificateOutput() GetDomainOriginCertCheckCertInfoListCertificateOutput
+	ToGetDomainOriginCertCheckCertInfoListCertificateOutputWithContext(context.Context) GetDomainOriginCertCheckCertInfoListCertificateOutput
+}
+
+type GetDomainOriginCertCheckCertInfoListCertificateArgs struct {
+	// Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+	EncryptionCert pulumi.StringInput `pulumi:"encryptionCert"`
+	// Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+	EncryptionKey pulumi.StringInput `pulumi:"encryptionKey"`
+	// Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+	PrivateKey pulumi.StringInput `pulumi:"privateKey"`
+}
+
+func (GetDomainOriginCertCheckCertInfoListCertificateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainOriginCertCheckCertInfoListCertificate)(nil)).Elem()
+}
+
+func (i GetDomainOriginCertCheckCertInfoListCertificateArgs) ToGetDomainOriginCertCheckCertInfoListCertificateOutput() GetDomainOriginCertCheckCertInfoListCertificateOutput {
+	return i.ToGetDomainOriginCertCheckCertInfoListCertificateOutputWithContext(context.Background())
+}
+
+func (i GetDomainOriginCertCheckCertInfoListCertificateArgs) ToGetDomainOriginCertCheckCertInfoListCertificateOutputWithContext(ctx context.Context) GetDomainOriginCertCheckCertInfoListCertificateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainOriginCertCheckCertInfoListCertificateOutput)
+}
+
+type GetDomainOriginCertCheckCertInfoListCertificateOutput struct{ *pulumi.OutputState }
+
+func (GetDomainOriginCertCheckCertInfoListCertificateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainOriginCertCheckCertInfoListCertificate)(nil)).Elem()
+}
+
+func (o GetDomainOriginCertCheckCertInfoListCertificateOutput) ToGetDomainOriginCertCheckCertInfoListCertificateOutput() GetDomainOriginCertCheckCertInfoListCertificateOutput {
+	return o
+}
+
+func (o GetDomainOriginCertCheckCertInfoListCertificateOutput) ToGetDomainOriginCertCheckCertInfoListCertificateOutputWithContext(ctx context.Context) GetDomainOriginCertCheckCertInfoListCertificateOutput {
+	return o
+}
+
+// Indicates the content of the certificate file. Line breaks in the content must be replaced with \r\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.
+func (o GetDomainOriginCertCheckCertInfoListCertificateOutput) Certificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoListCertificate) string { return v.Certificate }).(pulumi.StringOutput)
+}
+
+// Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \r\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid
+func (o GetDomainOriginCertCheckCertInfoListCertificateOutput) EncryptionCert() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoListCertificate) string { return v.EncryptionCert }).(pulumi.StringOutput)
+}
+
+// Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \r\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to <domain>_encrypt.key.
+func (o GetDomainOriginCertCheckCertInfoListCertificateOutput) EncryptionKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoListCertificate) string { return v.EncryptionKey }).(pulumi.StringOutput)
+}
+
+// Indicates the content of the private key file. Line breaks in the content must be replaced with \r\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to <domain>.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to <domain>_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.
+func (o GetDomainOriginCertCheckCertInfoListCertificateOutput) PrivateKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainOriginCertCheckCertInfoListCertificate) string { return v.PrivateKey }).(pulumi.StringOutput)
 }
 
 type GetDomainOriginCondition struct {
@@ -35832,6 +36736,200 @@ func (o GetDomainRewriteHlsOutput) Switch() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetDomainRewriteHls) bool { return v.Switch }).(pulumi.BoolOutput)
 }
 
+type GetDomainRuleEngine struct {
+	// Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+	Rules []GetDomainRuleEngineRule `pulumi:"rules"`
+	// Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+	Switch bool `pulumi:"switch"`
+}
+
+// GetDomainRuleEngineInput is an input type that accepts GetDomainRuleEngineArgs and GetDomainRuleEngineOutput values.
+// You can construct a concrete instance of `GetDomainRuleEngineInput` via:
+//
+//	GetDomainRuleEngineArgs{...}
+type GetDomainRuleEngineInput interface {
+	pulumi.Input
+
+	ToGetDomainRuleEngineOutput() GetDomainRuleEngineOutput
+	ToGetDomainRuleEngineOutputWithContext(context.Context) GetDomainRuleEngineOutput
+}
+
+type GetDomainRuleEngineArgs struct {
+	// Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+	Rules GetDomainRuleEngineRuleArrayInput `pulumi:"rules"`
+	// Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+	Switch pulumi.BoolInput `pulumi:"switch"`
+}
+
+func (GetDomainRuleEngineArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainRuleEngine)(nil)).Elem()
+}
+
+func (i GetDomainRuleEngineArgs) ToGetDomainRuleEngineOutput() GetDomainRuleEngineOutput {
+	return i.ToGetDomainRuleEngineOutputWithContext(context.Background())
+}
+
+func (i GetDomainRuleEngineArgs) ToGetDomainRuleEngineOutputWithContext(ctx context.Context) GetDomainRuleEngineOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainRuleEngineOutput)
+}
+
+type GetDomainRuleEngineOutput struct{ *pulumi.OutputState }
+
+func (GetDomainRuleEngineOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainRuleEngine)(nil)).Elem()
+}
+
+func (o GetDomainRuleEngineOutput) ToGetDomainRuleEngineOutput() GetDomainRuleEngineOutput {
+	return o
+}
+
+func (o GetDomainRuleEngineOutput) ToGetDomainRuleEngineOutputWithContext(ctx context.Context) GetDomainRuleEngineOutput {
+	return o
+}
+
+// Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.
+func (o GetDomainRuleEngineOutput) Rules() GetDomainRuleEngineRuleArrayOutput {
+	return o.ApplyT(func(v GetDomainRuleEngine) []GetDomainRuleEngineRule { return v.Rules }).(GetDomainRuleEngineRuleArrayOutput)
+}
+
+// Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.
+func (o GetDomainRuleEngineOutput) Switch() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainRuleEngine) bool { return v.Switch }).(pulumi.BoolOutput)
+}
+
+type GetDomainRuleEngineRule struct {
+	// Indicates the DSL description of the rule.
+	DslRule string `pulumi:"dslRule"`
+	// Indicates the unique ID of the rule.
+	Id string `pulumi:"id"`
+	// Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+	Locked bool `pulumi:"locked"`
+	// Indicates the name of the rule.
+	Name string `pulumi:"name"`
+	// Indicates the detailed content of the rule.
+	Rule string `pulumi:"rule"`
+}
+
+// GetDomainRuleEngineRuleInput is an input type that accepts GetDomainRuleEngineRuleArgs and GetDomainRuleEngineRuleOutput values.
+// You can construct a concrete instance of `GetDomainRuleEngineRuleInput` via:
+//
+//	GetDomainRuleEngineRuleArgs{...}
+type GetDomainRuleEngineRuleInput interface {
+	pulumi.Input
+
+	ToGetDomainRuleEngineRuleOutput() GetDomainRuleEngineRuleOutput
+	ToGetDomainRuleEngineRuleOutputWithContext(context.Context) GetDomainRuleEngineRuleOutput
+}
+
+type GetDomainRuleEngineRuleArgs struct {
+	// Indicates the DSL description of the rule.
+	DslRule pulumi.StringInput `pulumi:"dslRule"`
+	// Indicates the unique ID of the rule.
+	Id pulumi.StringInput `pulumi:"id"`
+	// Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+	Locked pulumi.BoolInput `pulumi:"locked"`
+	// Indicates the name of the rule.
+	Name pulumi.StringInput `pulumi:"name"`
+	// Indicates the detailed content of the rule.
+	Rule pulumi.StringInput `pulumi:"rule"`
+}
+
+func (GetDomainRuleEngineRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainRuleEngineRule)(nil)).Elem()
+}
+
+func (i GetDomainRuleEngineRuleArgs) ToGetDomainRuleEngineRuleOutput() GetDomainRuleEngineRuleOutput {
+	return i.ToGetDomainRuleEngineRuleOutputWithContext(context.Background())
+}
+
+func (i GetDomainRuleEngineRuleArgs) ToGetDomainRuleEngineRuleOutputWithContext(ctx context.Context) GetDomainRuleEngineRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainRuleEngineRuleOutput)
+}
+
+// GetDomainRuleEngineRuleArrayInput is an input type that accepts GetDomainRuleEngineRuleArray and GetDomainRuleEngineRuleArrayOutput values.
+// You can construct a concrete instance of `GetDomainRuleEngineRuleArrayInput` via:
+//
+//	GetDomainRuleEngineRuleArray{ GetDomainRuleEngineRuleArgs{...} }
+type GetDomainRuleEngineRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetDomainRuleEngineRuleArrayOutput() GetDomainRuleEngineRuleArrayOutput
+	ToGetDomainRuleEngineRuleArrayOutputWithContext(context.Context) GetDomainRuleEngineRuleArrayOutput
+}
+
+type GetDomainRuleEngineRuleArray []GetDomainRuleEngineRuleInput
+
+func (GetDomainRuleEngineRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainRuleEngineRule)(nil)).Elem()
+}
+
+func (i GetDomainRuleEngineRuleArray) ToGetDomainRuleEngineRuleArrayOutput() GetDomainRuleEngineRuleArrayOutput {
+	return i.ToGetDomainRuleEngineRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetDomainRuleEngineRuleArray) ToGetDomainRuleEngineRuleArrayOutputWithContext(ctx context.Context) GetDomainRuleEngineRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDomainRuleEngineRuleArrayOutput)
+}
+
+type GetDomainRuleEngineRuleOutput struct{ *pulumi.OutputState }
+
+func (GetDomainRuleEngineRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDomainRuleEngineRule)(nil)).Elem()
+}
+
+func (o GetDomainRuleEngineRuleOutput) ToGetDomainRuleEngineRuleOutput() GetDomainRuleEngineRuleOutput {
+	return o
+}
+
+func (o GetDomainRuleEngineRuleOutput) ToGetDomainRuleEngineRuleOutputWithContext(ctx context.Context) GetDomainRuleEngineRuleOutput {
+	return o
+}
+
+// Indicates the DSL description of the rule.
+func (o GetDomainRuleEngineRuleOutput) DslRule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainRuleEngineRule) string { return v.DslRule }).(pulumi.StringOutput)
+}
+
+// Indicates the unique ID of the rule.
+func (o GetDomainRuleEngineRuleOutput) Id() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainRuleEngineRule) string { return v.Id }).(pulumi.StringOutput)
+}
+
+// Indicates whether the rule is locked. Once locked, the rule cannot be modified.
+func (o GetDomainRuleEngineRuleOutput) Locked() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetDomainRuleEngineRule) bool { return v.Locked }).(pulumi.BoolOutput)
+}
+
+// Indicates the name of the rule.
+func (o GetDomainRuleEngineRuleOutput) Name() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainRuleEngineRule) string { return v.Name }).(pulumi.StringOutput)
+}
+
+// Indicates the detailed content of the rule.
+func (o GetDomainRuleEngineRuleOutput) Rule() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDomainRuleEngineRule) string { return v.Rule }).(pulumi.StringOutput)
+}
+
+type GetDomainRuleEngineRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDomainRuleEngineRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDomainRuleEngineRule)(nil)).Elem()
+}
+
+func (o GetDomainRuleEngineRuleArrayOutput) ToGetDomainRuleEngineRuleArrayOutput() GetDomainRuleEngineRuleArrayOutput {
+	return o
+}
+
+func (o GetDomainRuleEngineRuleArrayOutput) ToGetDomainRuleEngineRuleArrayOutputWithContext(ctx context.Context) GetDomainRuleEngineRuleArrayOutput {
+	return o
+}
+
+func (o GetDomainRuleEngineRuleArrayOutput) Index(i pulumi.IntInput) GetDomainRuleEngineRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDomainRuleEngineRule {
+		return vs[0].([]GetDomainRuleEngineRule)[vs[1].(int)]
+	}).(GetDomainRuleEngineRuleOutput)
+}
+
 type GetDomainSignedUrlAuth struct {
 	// Represents the configuration module for the 'URL authentication' feature. This feature is disabled by default.
 	SignedUrlAuthRules []GetDomainSignedUrlAuthSignedUrlAuthRule `pulumi:"signedUrlAuthRules"`
@@ -37952,6 +39050,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginArgOriginArgActionOriginArgComponentArrayInput)(nil)).Elem(), DomainOriginArgOriginArgActionOriginArgComponentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginCertCheckInput)(nil)).Elem(), DomainOriginCertCheckArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginCertCheckPtrInput)(nil)).Elem(), DomainOriginCertCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginCertCheckCertInfoListInput)(nil)).Elem(), DomainOriginCertCheckCertInfoListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginCertCheckCertInfoListArrayInput)(nil)).Elem(), DomainOriginCertCheckCertInfoListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginCertCheckCertInfoListCertificateInput)(nil)).Elem(), DomainOriginCertCheckCertInfoListCertificateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginCertCheckCertInfoListCertificatePtrInput)(nil)).Elem(), DomainOriginCertCheckCertInfoListCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginConditionInput)(nil)).Elem(), DomainOriginConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginConditionPtrInput)(nil)).Elem(), DomainOriginConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainOriginConditionConditionRuleInput)(nil)).Elem(), DomainOriginConditionConditionRuleArgs{})
@@ -38065,6 +39167,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArrayInput)(nil)).Elem(), DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainRewriteHlsInput)(nil)).Elem(), DomainRewriteHlsArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainRewriteHlsPtrInput)(nil)).Elem(), DomainRewriteHlsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DomainRuleEngineInput)(nil)).Elem(), DomainRuleEngineArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DomainRuleEnginePtrInput)(nil)).Elem(), DomainRuleEngineArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DomainRuleEngineRuleInput)(nil)).Elem(), DomainRuleEngineRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DomainRuleEngineRuleArrayInput)(nil)).Elem(), DomainRuleEngineRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainSignedUrlAuthInput)(nil)).Elem(), DomainSignedUrlAuthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainSignedUrlAuthPtrInput)(nil)).Elem(), DomainSignedUrlAuthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainSignedUrlAuthSignedUrlAuthRuleInput)(nil)).Elem(), DomainSignedUrlAuthSignedUrlAuthRuleArgs{})
@@ -38218,6 +39324,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginArgOriginArgActionOriginArgComponentInput)(nil)).Elem(), GetDomainOriginArgOriginArgActionOriginArgComponentArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginArgOriginArgActionOriginArgComponentArrayInput)(nil)).Elem(), GetDomainOriginArgOriginArgActionOriginArgComponentArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginCertCheckInput)(nil)).Elem(), GetDomainOriginCertCheckArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginCertCheckCertInfoListInput)(nil)).Elem(), GetDomainOriginCertCheckCertInfoListArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginCertCheckCertInfoListArrayInput)(nil)).Elem(), GetDomainOriginCertCheckCertInfoListArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginCertCheckCertInfoListCertificateInput)(nil)).Elem(), GetDomainOriginCertCheckCertInfoListCertificateArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginConditionInput)(nil)).Elem(), GetDomainOriginConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginConditionConditionRuleInput)(nil)).Elem(), GetDomainOriginConditionConditionRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainOriginConditionConditionRuleArrayInput)(nil)).Elem(), GetDomainOriginConditionConditionRuleArray{})
@@ -38292,6 +39401,9 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceInput)(nil)).Elem(), GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArrayInput)(nil)).Elem(), GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainRewriteHlsInput)(nil)).Elem(), GetDomainRewriteHlsArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainRuleEngineInput)(nil)).Elem(), GetDomainRuleEngineArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainRuleEngineRuleInput)(nil)).Elem(), GetDomainRuleEngineRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainRuleEngineRuleArrayInput)(nil)).Elem(), GetDomainRuleEngineRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainSignedUrlAuthInput)(nil)).Elem(), GetDomainSignedUrlAuthArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainSignedUrlAuthSignedUrlAuthRuleInput)(nil)).Elem(), GetDomainSignedUrlAuthSignedUrlAuthRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainSignedUrlAuthSignedUrlAuthRuleArrayInput)(nil)).Elem(), GetDomainSignedUrlAuthSignedUrlAuthRuleArray{})
@@ -38475,6 +39587,10 @@ func init() {
 	pulumi.RegisterOutputType(DomainOriginArgOriginArgActionOriginArgComponentArrayOutput{})
 	pulumi.RegisterOutputType(DomainOriginCertCheckOutput{})
 	pulumi.RegisterOutputType(DomainOriginCertCheckPtrOutput{})
+	pulumi.RegisterOutputType(DomainOriginCertCheckCertInfoListOutput{})
+	pulumi.RegisterOutputType(DomainOriginCertCheckCertInfoListArrayOutput{})
+	pulumi.RegisterOutputType(DomainOriginCertCheckCertInfoListCertificateOutput{})
+	pulumi.RegisterOutputType(DomainOriginCertCheckCertInfoListCertificatePtrOutput{})
 	pulumi.RegisterOutputType(DomainOriginConditionOutput{})
 	pulumi.RegisterOutputType(DomainOriginConditionPtrOutput{})
 	pulumi.RegisterOutputType(DomainOriginConditionConditionRuleOutput{})
@@ -38588,6 +39704,10 @@ func init() {
 	pulumi.RegisterOutputType(DomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArrayOutput{})
 	pulumi.RegisterOutputType(DomainRewriteHlsOutput{})
 	pulumi.RegisterOutputType(DomainRewriteHlsPtrOutput{})
+	pulumi.RegisterOutputType(DomainRuleEngineOutput{})
+	pulumi.RegisterOutputType(DomainRuleEnginePtrOutput{})
+	pulumi.RegisterOutputType(DomainRuleEngineRuleOutput{})
+	pulumi.RegisterOutputType(DomainRuleEngineRuleArrayOutput{})
 	pulumi.RegisterOutputType(DomainSignedUrlAuthOutput{})
 	pulumi.RegisterOutputType(DomainSignedUrlAuthPtrOutput{})
 	pulumi.RegisterOutputType(DomainSignedUrlAuthSignedUrlAuthRuleOutput{})
@@ -38741,6 +39861,9 @@ func init() {
 	pulumi.RegisterOutputType(GetDomainOriginArgOriginArgActionOriginArgComponentOutput{})
 	pulumi.RegisterOutputType(GetDomainOriginArgOriginArgActionOriginArgComponentArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainOriginCertCheckOutput{})
+	pulumi.RegisterOutputType(GetDomainOriginCertCheckCertInfoListOutput{})
+	pulumi.RegisterOutputType(GetDomainOriginCertCheckCertInfoListArrayOutput{})
+	pulumi.RegisterOutputType(GetDomainOriginCertCheckCertInfoListCertificateOutput{})
 	pulumi.RegisterOutputType(GetDomainOriginConditionOutput{})
 	pulumi.RegisterOutputType(GetDomainOriginConditionConditionRuleOutput{})
 	pulumi.RegisterOutputType(GetDomainOriginConditionConditionRuleArrayOutput{})
@@ -38815,6 +39938,9 @@ func init() {
 	pulumi.RegisterOutputType(GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceOutput{})
 	pulumi.RegisterOutputType(GetDomainResponseHeaderResponseHeaderActionResponseHeaderInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainRewriteHlsOutput{})
+	pulumi.RegisterOutputType(GetDomainRuleEngineOutput{})
+	pulumi.RegisterOutputType(GetDomainRuleEngineRuleOutput{})
+	pulumi.RegisterOutputType(GetDomainRuleEngineRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainSignedUrlAuthOutput{})
 	pulumi.RegisterOutputType(GetDomainSignedUrlAuthSignedUrlAuthRuleOutput{})
 	pulumi.RegisterOutputType(GetDomainSignedUrlAuthSignedUrlAuthRuleArrayOutput{})

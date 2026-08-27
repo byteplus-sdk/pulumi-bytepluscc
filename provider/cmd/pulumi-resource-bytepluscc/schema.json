@@ -9049,6 +9049,13 @@
         },
         "bytepluscc:cdn/DomainOriginCertCheck:DomainOriginCertCheck": {
             "properties": {
+                "certInfoLists": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cdn/DomainOriginCertCheckCertInfoList:DomainOriginCertCheckCertInfoList"
+                    },
+                    "description": "Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
                 "switch": {
                     "type": "boolean",
                     "description": "Switch\n"
@@ -9058,7 +9065,85 @@
             "language": {
                 "nodejs": {
                     "requiredOutputs": [
+                        "certInfoLists",
                         "switch"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cdn/DomainOriginCertCheckCertInfoList:DomainOriginCertCheckCertInfoList": {
+            "properties": {
+                "certId": {
+                    "type": "string",
+                    "description": "Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.\n"
+                },
+                "certName": {
+                    "type": "string",
+                    "description": "Represents the content of the Common Name (CN) field in the CA certificate.\n"
+                },
+                "certificate": {
+                    "$ref": "#/types/bytepluscc:cdn/DomainOriginCertCheckCertInfoListCertificate:DomainOriginCertCheckCertInfoListCertificate",
+                    "description": "Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.\n"
+                },
+                "effectiveTime": {
+                    "type": "integer",
+                    "description": "Indicates the issuance time of the certificate, in Unix timestamp.\n"
+                },
+                "encryType": {
+                    "type": "string",
+                    "description": "Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.\n"
+                },
+                "expireTime": {
+                    "type": "integer",
+                    "description": "Indicates the expiration time of the certificate, as a Unix timestamp.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certId",
+                        "certName",
+                        "certificate",
+                        "effectiveTime",
+                        "encryType",
+                        "expireTime",
+                        "source"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cdn/DomainOriginCertCheckCertInfoListCertificate:DomainOriginCertCheckCertInfoListCertificate": {
+            "properties": {
+                "certificate": {
+                    "type": "string",
+                    "description": "Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.\n"
+                },
+                "encryptionCert": {
+                    "type": "string",
+                    "description": "Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid\n"
+                },
+                "encryptionKey": {
+                    "type": "string",
+                    "description": "Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to \u003cdomain\u003e_encrypt.key.\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to \u003cdomain\u003e.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to \u003cdomain\u003e_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "certificate",
+                        "encryptionCert",
+                        "encryptionKey",
+                        "privateKey"
                     ]
                 }
             }
@@ -10577,6 +10662,66 @@
                     "requiredOutputs": [
                         "signName",
                         "switch"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cdn/DomainRuleEngine:DomainRuleEngine": {
+            "properties": {
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cdn/DomainRuleEngineRule:DomainRuleEngineRule"
+                    },
+                    "description": "Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "switch": {
+                    "type": "boolean",
+                    "description": "Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "rules",
+                        "switch"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:cdn/DomainRuleEngineRule:DomainRuleEngineRule": {
+            "properties": {
+                "dslRule": {
+                    "type": "string",
+                    "description": "Indicates the DSL description of the rule.\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Indicates the unique ID of the rule.\n"
+                },
+                "locked": {
+                    "type": "boolean",
+                    "description": "Indicates whether the rule is locked. Once locked, the rule cannot be modified.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Indicates the name of the rule.\n"
+                },
+                "rule": {
+                    "type": "string",
+                    "description": "Indicates the detailed content of the rule.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "dslRule",
+                        "id",
+                        "locked",
+                        "name",
+                        "rule"
                     ]
                 }
             }
@@ -13346,6 +13491,13 @@
         },
         "bytepluscc:cdn/getDomainOriginCertCheck:getDomainOriginCertCheck": {
             "properties": {
+                "certInfoLists": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cdn/getDomainOriginCertCheckCertInfoList:getDomainOriginCertCheckCertInfoList"
+                    },
+                    "description": "Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.\n"
+                },
                 "switch": {
                     "type": "boolean",
                     "description": "Switch\n"
@@ -13353,7 +13505,87 @@
             },
             "type": "object",
             "required": [
+                "certInfoLists",
                 "switch"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cdn/getDomainOriginCertCheckCertInfoList:getDomainOriginCertCheckCertInfoList": {
+            "properties": {
+                "certId": {
+                    "type": "string",
+                    "description": "Indicates the ID of a CA certificate hosted on the content delivery network. The ID starts with cert_hosting-.\n"
+                },
+                "certName": {
+                    "type": "string",
+                    "description": "Represents the content of the Common Name (CN) field in the CA certificate.\n"
+                },
+                "certificate": {
+                    "$ref": "#/types/bytepluscc:cdn/getDomainOriginCertCheckCertInfoListCertificate:getDomainOriginCertCheckCertInfoListCertificate",
+                    "description": "Indicates a CA certificate to be uploaded. The uploaded certificate is hosted on the content delivery network.\n"
+                },
+                "effectiveTime": {
+                    "type": "integer",
+                    "description": "Indicates the issuance time of the certificate, in Unix timestamp.\n"
+                },
+                "encryType": {
+                    "type": "string",
+                    "description": "Indicates the encryption algorithm used by the certificate. The parameter has the following values: inter*cert: RSA or ECC encryption algorithm. sm*cert: SM2 encryption algorithm.\n"
+                },
+                "expireTime": {
+                    "type": "integer",
+                    "description": "Indicates the expiration time of the certificate, as a Unix timestamp.\n"
+                },
+                "source": {
+                    "type": "string",
+                    "description": "Specifies the certificate hosting location. The parameter values are: volc*cert*center: certificate center; cdn*cert*hosting: content delivery network.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certId",
+                "certName",
+                "certificate",
+                "effectiveTime",
+                "encryType",
+                "expireTime",
+                "source"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cdn/getDomainOriginCertCheckCertInfoListCertificate:getDomainOriginCertCheckCertInfoListCertificate": {
+            "properties": {
+                "certificate": {
+                    "type": "string",
+                    "description": "Indicates the content of the certificate file. Line breaks in the content must be replaced with \\r\\n. The certificate file extension is .crt or .pem, and the certificate file must include the complete certificate chain.\n"
+                },
+                "encryptionCert": {
+                    "type": "string",
+                    "description": "Specifies the content of the certificate file for the SM certificate Line breaks in the content must be replaced with \\r\\n The public key contained in this file is used to encrypt the session key The file extension must be .crt or .pem, and the certificate file must include the complete certificate chain If the certificate to be uploaded is not an SM certificate, this parameter is invalid\n"
+                },
+                "encryptionKey": {
+                    "type": "string",
+                    "description": "Indicates the content of the private key file for the SM certificate. Line breaks in the content must be replaced with \\r\\n. This file is used for decryption and has an extension of .key or .pem. The file name is similar to \u003cdomain\u003e_encrypt.key.\n"
+                },
+                "privateKey": {
+                    "type": "string",
+                    "description": "Indicates the content of the private key file. Line breaks in the content must be replaced with \\r\\n. The private key file extension is .key or .pem. If the certificate uses the RSA or ECC encryption algorithm, this file is the private key file for the server certificate you want to upload. The file name is similar to \u003cdomain\u003e.key. The private key contained in this file is used to verify the server's signature and encrypt session keys. If the certificate uses the SM2 encryption algorithm, this file is the private key file for the national cryptography certificate you want to upload. The file name is similar to \u003cdomain\u003e_sign.key. The private key contained in this file is used to verify the server's signature. For certificates to be uploaded, this parameter is required.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "certificate",
+                "encryptionCert",
+                "encryptionKey",
+                "privateKey"
             ],
             "language": {
                 "nodejs": {
@@ -14928,6 +15160,68 @@
             "required": [
                 "signName",
                 "switch"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cdn/getDomainRuleEngine:getDomainRuleEngine": {
+            "properties": {
+                "rules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cdn/getDomainRuleEngineRule:getDomainRuleEngineRule"
+                    },
+                    "description": "Indicates the list of rules in the rule engine. The order of rules in the list determines their priority.\n"
+                },
+                "switch": {
+                    "type": "boolean",
+                    "description": "Indicates whether this feature is enabled. Valid values: true: Enable this feature. false: Disable this feature. The default value is false.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "rules",
+                "switch"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cdn/getDomainRuleEngineRule:getDomainRuleEngineRule": {
+            "properties": {
+                "dslRule": {
+                    "type": "string",
+                    "description": "Indicates the DSL description of the rule.\n"
+                },
+                "id": {
+                    "type": "string",
+                    "description": "Indicates the unique ID of the rule.\n"
+                },
+                "locked": {
+                    "type": "boolean",
+                    "description": "Indicates whether the rule is locked. Once locked, the rule cannot be modified.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Indicates the name of the rule.\n"
+                },
+                "rule": {
+                    "type": "string",
+                    "description": "Indicates the detailed content of the rule.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "dslRule",
+                "id",
+                "locked",
+                "name",
+                "rule"
             ],
             "language": {
                 "nodejs": {
@@ -18842,6 +19136,10 @@
                     "type": "string",
                     "description": "Comparison operators. Supports standard threshold alerting: \u003e, \u003e=, \u003c, \u003c=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.\n"
                 },
+                "evaluationWindow": {
+                    "type": "integer",
+                    "description": "Evaluation window (minutes)\n"
+                },
                 "metricName": {
                     "type": "string",
                     "description": "Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.\n"
@@ -18858,6 +19156,10 @@
                     "type": "string",
                     "description": "Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.\n"
                 },
+                "subNamespace": {
+                    "type": "string",
+                    "description": "Sub-namespace\n"
+                },
                 "threshold": {
                     "type": "string",
                     "description": "Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.\n"
@@ -18868,10 +19170,12 @@
                 "nodejs": {
                     "requiredOutputs": [
                         "comparisonOperator",
+                        "evaluationWindow",
                         "metricName",
                         "metricUnit",
                         "period",
                         "statistics",
+                        "subNamespace",
                         "threshold"
                     ]
                 }
@@ -19068,9 +19372,9 @@
                     "type": "string",
                     "description": "Comparison operators. Supports standard threshold alerting: \u003e, \u003e=, \u003c, \u003c=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.\n"
                 },
-                "displayName": {
-                    "type": "string",
-                    "description": "Metric display name.\n"
+                "evaluationWindow": {
+                    "type": "integer",
+                    "description": "Evaluation window (minutes)\n"
                 },
                 "metricName": {
                     "type": "string",
@@ -19088,6 +19392,10 @@
                     "type": "string",
                     "description": "Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.\n"
                 },
+                "subNamespace": {
+                    "type": "string",
+                    "description": "Sub-namespace\n"
+                },
                 "threshold": {
                     "type": "string",
                     "description": "Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.\n"
@@ -19098,11 +19406,12 @@
                 "nodejs": {
                     "requiredOutputs": [
                         "comparisonOperator",
-                        "displayName",
+                        "evaluationWindow",
                         "metricName",
                         "metricUnit",
                         "period",
                         "statistics",
+                        "subNamespace",
                         "threshold"
                     ]
                 }
@@ -19117,6 +19426,10 @@
                 "evaluationCount": {
                     "type": "integer",
                     "description": "No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.\n"
+                },
+                "level": {
+                    "type": "string",
+                    "description": "No data alert level (critical, warning, notice)\n"
                 }
             },
             "type": "object",
@@ -19124,7 +19437,8 @@
                 "nodejs": {
                     "requiredOutputs": [
                         "enable",
-                        "evaluationCount"
+                        "evaluationCount",
+                        "level"
                     ]
                 }
             }
@@ -19253,6 +19567,10 @@
                     "type": "string",
                     "description": "Metric display name.\n"
                 },
+                "evaluationWindow": {
+                    "type": "integer",
+                    "description": "Evaluation window (minutes)\n"
+                },
                 "metricName": {
                     "type": "string",
                     "description": "Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.\n"
@@ -19269,6 +19587,10 @@
                     "type": "string",
                     "description": "Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.\n"
                 },
+                "subNamespace": {
+                    "type": "string",
+                    "description": "Sub-namespace\n"
+                },
                 "threshold": {
                     "type": "string",
                     "description": "Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.\n"
@@ -19278,10 +19600,12 @@
             "required": [
                 "comparisonOperator",
                 "displayName",
+                "evaluationWindow",
                 "metricName",
                 "metricUnit",
                 "period",
                 "statistics",
+                "subNamespace",
                 "threshold"
             ],
             "language": {
@@ -19492,6 +19816,10 @@
                     "type": "string",
                     "description": "Metric display name.\n"
                 },
+                "evaluationWindow": {
+                    "type": "integer",
+                    "description": "Evaluation window (minutes)\n"
+                },
                 "metricName": {
                     "type": "string",
                     "description": "Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.\n"
@@ -19508,6 +19836,10 @@
                     "type": "string",
                     "description": "Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.\n"
                 },
+                "subNamespace": {
+                    "type": "string",
+                    "description": "Sub-namespace\n"
+                },
                 "threshold": {
                     "type": "string",
                     "description": "Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.\n"
@@ -19517,10 +19849,12 @@
             "required": [
                 "comparisonOperator",
                 "displayName",
+                "evaluationWindow",
                 "metricName",
                 "metricUnit",
                 "period",
                 "statistics",
+                "subNamespace",
                 "threshold"
             ],
             "language": {
@@ -19538,12 +19872,17 @@
                 "evaluationCount": {
                     "type": "integer",
                     "description": "No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.\n"
+                },
+                "level": {
+                    "type": "string",
+                    "description": "No data alert level (critical, warning, notice)\n"
                 }
             },
             "type": "object",
             "required": [
                 "enable",
-                "evaluationCount"
+                "evaluationCount",
+                "level"
             ],
             "language": {
                 "nodejs": {
@@ -69009,6 +69348,10 @@
                     "$ref": "#/types/bytepluscc:cdn/DomainRewriteHls:DomainRewriteHls",
                     "description": "Indicates the configuration module for the \"Standard HLS Encryption Rewrite\" feature. This feature is disabled by default.\n"
                 },
+                "ruleEngine": {
+                    "$ref": "#/types/bytepluscc:cdn/DomainRuleEngine:DomainRuleEngine",
+                    "description": "Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.\n"
+                },
                 "serviceRegion": {
                     "type": "string",
                     "description": "Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).\n"
@@ -69104,6 +69447,7 @@
                 "requestHeaders",
                 "responseHeaders",
                 "rewriteHls",
+                "ruleEngine",
                 "serviceRegion",
                 "serviceType",
                 "signedUrlAuth",
@@ -69308,6 +69652,10 @@
                 "rewriteHls": {
                     "$ref": "#/types/bytepluscc:cdn/DomainRewriteHls:DomainRewriteHls",
                     "description": "Indicates the configuration module for the \"Standard HLS Encryption Rewrite\" feature. This feature is disabled by default.\n"
+                },
+                "ruleEngine": {
+                    "$ref": "#/types/bytepluscc:cdn/DomainRuleEngine:DomainRuleEngine",
+                    "description": "Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.\n"
                 },
                 "serviceRegion": {
                     "type": "string",
@@ -69587,6 +69935,10 @@
                     "rewriteHls": {
                         "$ref": "#/types/bytepluscc:cdn/DomainRewriteHls:DomainRewriteHls",
                         "description": "Indicates the configuration module for the \"Standard HLS Encryption Rewrite\" feature. This feature is disabled by default.\n"
+                    },
+                    "ruleEngine": {
+                        "$ref": "#/types/bytepluscc:cdn/DomainRuleEngine:DomainRuleEngine",
+                        "description": "Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.\n"
                     },
                     "serviceRegion": {
                         "type": "string",
@@ -72490,6 +72842,10 @@
                     "type": "integer",
                     "description": "End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.\n"
                 },
+                "enhancedSchedulerEnable": {
+                    "type": "string",
+                    "description": "Enable weighted extension for the scheduling algorithm?\n"
+                },
                 "establishedTimeout": {
                     "type": "integer",
                     "description": "Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.\n"
@@ -72553,6 +72909,10 @@
                 "proxySendTimeout": {
                     "type": "integer",
                     "description": "Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.\n"
+                },
+                "responseCheckEnabled": {
+                    "type": "string",
+                    "description": "Enable response validation?\n"
                 },
                 "ruleIds": {
                     "type": "array",
@@ -72622,6 +72982,7 @@
                 "domainExtensions",
                 "enabled",
                 "endPort",
+                "enhancedSchedulerEnable",
                 "establishedTimeout",
                 "healthCheck",
                 "http2Enabled",
@@ -72638,6 +72999,7 @@
                 "proxyProtocolType",
                 "proxyReadTimeout",
                 "proxySendTimeout",
+                "responseCheckEnabled",
                 "ruleIds",
                 "scheduler",
                 "securityPolicyId",
@@ -72669,25 +73031,9 @@
                     "type": "integer",
                     "description": "Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.\n"
                 },
-                "caCertificateId": {
-                    "type": "string",
-                    "description": "CA certificate for mutual authentication.\n"
-                },
                 "caEnabled": {
                     "type": "string",
                     "description": "Enable mutual authentication. on: enabled. off (default): disabled.\n"
-                },
-                "certCenterCertificateId": {
-                    "type": "string",
-                    "description": "Certificate ID from Certificate Center.\n"
-                },
-                "certificateId": {
-                    "type": "string",
-                    "description": "Certificate ID from the CLB certificate management module.\n"
-                },
-                "certificateSource": {
-                    "type": "string",
-                    "description": "Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.\n"
                 },
                 "clientBodyTimeout": {
                     "type": "integer",
@@ -72731,6 +73077,10 @@
                 "endPort": {
                     "type": "integer",
                     "description": "End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.\n"
+                },
+                "enhancedSchedulerEnable": {
+                    "type": "string",
+                    "description": "Enable weighted extension for the scheduling algorithm?\n"
                 },
                 "establishedTimeout": {
                     "type": "integer",
@@ -72915,6 +73265,10 @@
                         "type": "integer",
                         "description": "End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.\n"
                     },
+                    "enhancedSchedulerEnable": {
+                        "type": "string",
+                        "description": "Enable weighted extension for the scheduling algorithm?\n"
+                    },
                     "establishedTimeout": {
                         "type": "integer",
                         "description": "Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.\n"
@@ -72978,6 +73332,10 @@
                     "proxySendTimeout": {
                         "type": "integer",
                         "description": "Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.\n"
+                    },
+                    "responseCheckEnabled": {
+                        "type": "string",
+                        "description": "Enable response validation?\n"
                     },
                     "ruleIds": {
                         "type": "array",
@@ -75725,6 +76083,10 @@
                     "type": "integer",
                     "description": "Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.\n"
                 },
+                "evaluationInterval": {
+                    "type": "integer",
+                    "description": "Evaluation interval (minutes)\n"
+                },
                 "level": {
                     "type": "string",
                     "description": "Alert level. critical: critical, warning: warning, notice: notification\n"
@@ -75758,6 +76120,10 @@
                         "$ref": "#/types/bytepluscc:cloudmonitor/RuleNotifyTemplate:RuleNotifyTemplate"
                     },
                     "description": "Notification template configuration.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "objectGroupId": {
+                    "type": "string",
+                    "description": "Object group ID\n"
                 },
                 "originalDimensions": {
                     "$ref": "#/types/bytepluscc:cloudmonitor/RuleOriginalDimensions:RuleOriginalDimensions",
@@ -75838,6 +76204,7 @@
                 "effectStartAt",
                 "enableState",
                 "evaluationCount",
+                "evaluationInterval",
                 "level",
                 "levelConditions",
                 "multipleConditions",
@@ -75845,6 +76212,7 @@
                 "noData",
                 "notificationId",
                 "notifyTemplates",
+                "objectGroupId",
                 "originalDimensions",
                 "projectName",
                 "recoveryNotify",
@@ -75910,6 +76278,10 @@
                     "type": "integer",
                     "description": "Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.\n"
                 },
+                "evaluationInterval": {
+                    "type": "integer",
+                    "description": "Evaluation interval (minutes)\n"
+                },
                 "level": {
                     "type": "string",
                     "description": "Alert level. critical: critical, warning: warning, notice: notification\n"
@@ -75943,6 +76315,10 @@
                         "$ref": "#/types/bytepluscc:cloudmonitor/RuleNotifyTemplate:RuleNotifyTemplate"
                     },
                     "description": "Notification template configuration.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "objectGroupId": {
+                    "type": "string",
+                    "description": "Object group ID\n"
                 },
                 "originalDimensions": {
                     "$ref": "#/types/bytepluscc:cloudmonitor/RuleOriginalDimensions:RuleOriginalDimensions",
@@ -76070,6 +76446,10 @@
                         "type": "integer",
                         "description": "Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.\n"
                     },
+                    "evaluationInterval": {
+                        "type": "integer",
+                        "description": "Evaluation interval (minutes)\n"
+                    },
                     "level": {
                         "type": "string",
                         "description": "Alert level. critical: critical, warning: warning, notice: notification\n"
@@ -76103,6 +76483,10 @@
                             "$ref": "#/types/bytepluscc:cloudmonitor/RuleNotifyTemplate:RuleNotifyTemplate"
                         },
                         "description": "Notification template configuration.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "objectGroupId": {
+                        "type": "string",
+                        "description": "Object group ID\n"
                     },
                     "originalDimensions": {
                         "$ref": "#/types/bytepluscc:cloudmonitor/RuleOriginalDimensions:RuleOriginalDimensions",
@@ -127486,6 +127870,10 @@
                         "$ref": "#/types/bytepluscc:cdn/getDomainRewriteHls:getDomainRewriteHls",
                         "description": "Indicates the configuration module for the \"Standard HLS Encryption Rewrite\" feature. This feature is disabled by default.\n"
                     },
+                    "ruleEngine": {
+                        "$ref": "#/types/bytepluscc:cdn/getDomainRuleEngine:getDomainRuleEngine",
+                        "description": "Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.\n"
+                    },
                     "serviceRegion": {
                         "description": "Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).\n",
                         "type": "string"
@@ -127582,6 +127970,7 @@
                     "requestHeaders",
                     "responseHeaders",
                     "rewriteHls",
+                    "ruleEngine",
                     "serviceRegion",
                     "serviceType",
                     "signedUrlAuth",
@@ -129561,6 +129950,10 @@
                         "description": "End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.\n",
                         "type": "integer"
                     },
+                    "enhancedSchedulerEnable": {
+                        "description": "Enable weighted extension for the scheduling algorithm?\n",
+                        "type": "string"
+                    },
                     "establishedTimeout": {
                         "description": "Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.\n",
                         "type": "integer"
@@ -129628,6 +130021,10 @@
                     "proxySendTimeout": {
                         "description": "Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.\n",
                         "type": "integer"
+                    },
+                    "responseCheckEnabled": {
+                        "description": "Enable response validation?\n",
+                        "type": "string"
                     },
                     "ruleIds": {
                         "description": "List of rule IDs bound to the listener.\n",
@@ -129697,6 +130094,7 @@
                     "domainExtensions",
                     "enabled",
                     "endPort",
+                    "enhancedSchedulerEnable",
                     "establishedTimeout",
                     "healthCheck",
                     "http2Enabled",
@@ -129714,6 +130112,7 @@
                     "proxyProtocolType",
                     "proxyReadTimeout",
                     "proxySendTimeout",
+                    "responseCheckEnabled",
                     "ruleIds",
                     "scheduler",
                     "securityPolicyId",
@@ -131618,6 +132017,10 @@
                         "description": "Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.\n",
                         "type": "integer"
                     },
+                    "evaluationInterval": {
+                        "description": "Evaluation interval (minutes)\n",
+                        "type": "integer"
+                    },
                     "id": {
                         "description": "Uniquely identifies the resource.\n",
                         "type": "string"
@@ -131655,6 +132058,10 @@
                             "$ref": "#/types/bytepluscc:cloudmonitor/getRuleNotifyTemplate:getRuleNotifyTemplate"
                         },
                         "type": "array"
+                    },
+                    "objectGroupId": {
+                        "description": "Object group ID\n",
+                        "type": "string"
                     },
                     "originalDimensions": {
                         "$ref": "#/types/bytepluscc:cloudmonitor/getRuleOriginalDimensions:getRuleOriginalDimensions",
@@ -131735,6 +132142,7 @@
                     "effectStartAt",
                     "enableState",
                     "evaluationCount",
+                    "evaluationInterval",
                     "id",
                     "level",
                     "levelConditions",
@@ -131743,6 +132151,7 @@
                     "noData",
                     "notificationId",
                     "notifyTemplates",
+                    "objectGroupId",
                     "originalDimensions",
                     "projectName",
                     "recoveryNotify",

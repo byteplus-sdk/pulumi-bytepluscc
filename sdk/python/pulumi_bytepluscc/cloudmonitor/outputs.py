@@ -91,10 +91,14 @@ class RuleCondition(dict):
         suggest = None
         if key == "comparisonOperator":
             suggest = "comparison_operator"
+        elif key == "evaluationWindow":
+            suggest = "evaluation_window"
         elif key == "metricName":
             suggest = "metric_name"
         elif key == "metricUnit":
             suggest = "metric_unit"
+        elif key == "subNamespace":
+            suggest = "sub_namespace"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in RuleCondition. Access the value via the '{suggest}' property getter instead.")
@@ -109,21 +113,27 @@ class RuleCondition(dict):
 
     def __init__(__self__, *,
                  comparison_operator: Optional[_builtins.str] = None,
+                 evaluation_window: Optional[_builtins.int] = None,
                  metric_name: Optional[_builtins.str] = None,
                  metric_unit: Optional[_builtins.str] = None,
                  period: Optional[_builtins.str] = None,
                  statistics: Optional[_builtins.str] = None,
+                 sub_namespace: Optional[_builtins.str] = None,
                  threshold: Optional[_builtins.str] = None):
         """
         :param _builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
+        :param _builtins.int evaluation_window: Evaluation window (minutes)
         :param _builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         :param _builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         :param _builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         :param _builtins.str statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param _builtins.str sub_namespace: Sub-namespace
         :param _builtins.str threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
+        if evaluation_window is not None:
+            pulumi.set(__self__, "evaluation_window", evaluation_window)
         if metric_name is not None:
             pulumi.set(__self__, "metric_name", metric_name)
         if metric_unit is not None:
@@ -132,6 +142,8 @@ class RuleCondition(dict):
             pulumi.set(__self__, "period", period)
         if statistics is not None:
             pulumi.set(__self__, "statistics", statistics)
+        if sub_namespace is not None:
+            pulumi.set(__self__, "sub_namespace", sub_namespace)
         if threshold is not None:
             pulumi.set(__self__, "threshold", threshold)
 
@@ -142,6 +154,14 @@ class RuleCondition(dict):
         Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         """
         return pulumi.get(self, "comparison_operator")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationWindow")
+    def evaluation_window(self) -> Optional[_builtins.int]:
+        """
+        Evaluation window (minutes)
+        """
+        return pulumi.get(self, "evaluation_window")
 
     @_builtins.property
     @pulumi.getter(name="metricName")
@@ -174,6 +194,14 @@ class RuleCondition(dict):
         Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
         """
         return pulumi.get(self, "statistics")
+
+    @_builtins.property
+    @pulumi.getter(name="subNamespace")
+    def sub_namespace(self) -> Optional[_builtins.str]:
+        """
+        Sub-namespace
+        """
+        return pulumi.get(self, "sub_namespace")
 
     @_builtins.property
     @pulumi.getter
@@ -500,12 +528,14 @@ class RuleLevelConditionCondition(dict):
         suggest = None
         if key == "comparisonOperator":
             suggest = "comparison_operator"
-        elif key == "displayName":
-            suggest = "display_name"
+        elif key == "evaluationWindow":
+            suggest = "evaluation_window"
         elif key == "metricName":
             suggest = "metric_name"
         elif key == "metricUnit":
             suggest = "metric_unit"
+        elif key == "subNamespace":
+            suggest = "sub_namespace"
 
         if suggest:
             pulumi.log.warn(f"Key '{key}' not found in RuleLevelConditionCondition. Access the value via the '{suggest}' property getter instead.")
@@ -520,25 +550,27 @@ class RuleLevelConditionCondition(dict):
 
     def __init__(__self__, *,
                  comparison_operator: Optional[_builtins.str] = None,
-                 display_name: Optional[_builtins.str] = None,
+                 evaluation_window: Optional[_builtins.int] = None,
                  metric_name: Optional[_builtins.str] = None,
                  metric_unit: Optional[_builtins.str] = None,
                  period: Optional[_builtins.str] = None,
                  statistics: Optional[_builtins.str] = None,
+                 sub_namespace: Optional[_builtins.str] = None,
                  threshold: Optional[_builtins.str] = None):
         """
         :param _builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
-        :param _builtins.str display_name: Metric display name.
+        :param _builtins.int evaluation_window: Evaluation window (minutes)
         :param _builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         :param _builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         :param _builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         :param _builtins.str statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param _builtins.str sub_namespace: Sub-namespace
         :param _builtins.str threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
-        if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+        if evaluation_window is not None:
+            pulumi.set(__self__, "evaluation_window", evaluation_window)
         if metric_name is not None:
             pulumi.set(__self__, "metric_name", metric_name)
         if metric_unit is not None:
@@ -547,6 +579,8 @@ class RuleLevelConditionCondition(dict):
             pulumi.set(__self__, "period", period)
         if statistics is not None:
             pulumi.set(__self__, "statistics", statistics)
+        if sub_namespace is not None:
+            pulumi.set(__self__, "sub_namespace", sub_namespace)
         if threshold is not None:
             pulumi.set(__self__, "threshold", threshold)
 
@@ -559,12 +593,12 @@ class RuleLevelConditionCondition(dict):
         return pulumi.get(self, "comparison_operator")
 
     @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> Optional[_builtins.str]:
+    @pulumi.getter(name="evaluationWindow")
+    def evaluation_window(self) -> Optional[_builtins.int]:
         """
-        Metric display name.
+        Evaluation window (minutes)
         """
-        return pulumi.get(self, "display_name")
+        return pulumi.get(self, "evaluation_window")
 
     @_builtins.property
     @pulumi.getter(name="metricName")
@@ -599,6 +633,14 @@ class RuleLevelConditionCondition(dict):
         return pulumi.get(self, "statistics")
 
     @_builtins.property
+    @pulumi.getter(name="subNamespace")
+    def sub_namespace(self) -> Optional[_builtins.str]:
+        """
+        Sub-namespace
+        """
+        return pulumi.get(self, "sub_namespace")
+
+    @_builtins.property
     @pulumi.getter
     def threshold(self) -> Optional[_builtins.str]:
         """
@@ -628,15 +670,19 @@ class RuleNoData(dict):
 
     def __init__(__self__, *,
                  enable: Optional[_builtins.bool] = None,
-                 evaluation_count: Optional[_builtins.int] = None):
+                 evaluation_count: Optional[_builtins.int] = None,
+                 level: Optional[_builtins.str] = None):
         """
         :param _builtins.bool enable: Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
         :param _builtins.int evaluation_count: No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
+        :param _builtins.str level: No data alert level (critical, warning, notice)
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
         if evaluation_count is not None:
             pulumi.set(__self__, "evaluation_count", evaluation_count)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
 
     @_builtins.property
     @pulumi.getter
@@ -653,6 +699,14 @@ class RuleNoData(dict):
         No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
         """
         return pulumi.get(self, "evaluation_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> Optional[_builtins.str]:
+        """
+        No data alert level (critical, warning, notice)
+        """
+        return pulumi.get(self, "level")
 
 
 @pulumi.output_type
@@ -840,26 +894,32 @@ class GetRuleConditionResult(dict):
     def __init__(__self__, *,
                  comparison_operator: _builtins.str,
                  display_name: _builtins.str,
+                 evaluation_window: _builtins.int,
                  metric_name: _builtins.str,
                  metric_unit: _builtins.str,
                  period: _builtins.str,
                  statistics: _builtins.str,
+                 sub_namespace: _builtins.str,
                  threshold: _builtins.str):
         """
         :param _builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         :param _builtins.str display_name: Metric display name.
+        :param _builtins.int evaluation_window: Evaluation window (minutes)
         :param _builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         :param _builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         :param _builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         :param _builtins.str statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param _builtins.str sub_namespace: Sub-namespace
         :param _builtins.str threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         pulumi.set(__self__, "comparison_operator", comparison_operator)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "evaluation_window", evaluation_window)
         pulumi.set(__self__, "metric_name", metric_name)
         pulumi.set(__self__, "metric_unit", metric_unit)
         pulumi.set(__self__, "period", period)
         pulumi.set(__self__, "statistics", statistics)
+        pulumi.set(__self__, "sub_namespace", sub_namespace)
         pulumi.set(__self__, "threshold", threshold)
 
     @_builtins.property
@@ -877,6 +937,14 @@ class GetRuleConditionResult(dict):
         Metric display name.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationWindow")
+    def evaluation_window(self) -> _builtins.int:
+        """
+        Evaluation window (minutes)
+        """
+        return pulumi.get(self, "evaluation_window")
 
     @_builtins.property
     @pulumi.getter(name="metricName")
@@ -909,6 +977,14 @@ class GetRuleConditionResult(dict):
         Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
         """
         return pulumi.get(self, "statistics")
+
+    @_builtins.property
+    @pulumi.getter(name="subNamespace")
+    def sub_namespace(self) -> _builtins.str:
+        """
+        Sub-namespace
+        """
+        return pulumi.get(self, "sub_namespace")
 
     @_builtins.property
     @pulumi.getter
@@ -1171,26 +1247,32 @@ class GetRuleLevelConditionConditionResult(dict):
     def __init__(__self__, *,
                  comparison_operator: _builtins.str,
                  display_name: _builtins.str,
+                 evaluation_window: _builtins.int,
                  metric_name: _builtins.str,
                  metric_unit: _builtins.str,
                  period: _builtins.str,
                  statistics: _builtins.str,
+                 sub_namespace: _builtins.str,
                  threshold: _builtins.str):
         """
         :param _builtins.str comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
         :param _builtins.str display_name: Metric display name.
+        :param _builtins.int evaluation_window: Evaluation window (minutes)
         :param _builtins.str metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         :param _builtins.str metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         :param _builtins.str period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         :param _builtins.str statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param _builtins.str sub_namespace: Sub-namespace
         :param _builtins.str threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         pulumi.set(__self__, "comparison_operator", comparison_operator)
         pulumi.set(__self__, "display_name", display_name)
+        pulumi.set(__self__, "evaluation_window", evaluation_window)
         pulumi.set(__self__, "metric_name", metric_name)
         pulumi.set(__self__, "metric_unit", metric_unit)
         pulumi.set(__self__, "period", period)
         pulumi.set(__self__, "statistics", statistics)
+        pulumi.set(__self__, "sub_namespace", sub_namespace)
         pulumi.set(__self__, "threshold", threshold)
 
     @_builtins.property
@@ -1208,6 +1290,14 @@ class GetRuleLevelConditionConditionResult(dict):
         Metric display name.
         """
         return pulumi.get(self, "display_name")
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationWindow")
+    def evaluation_window(self) -> _builtins.int:
+        """
+        Evaluation window (minutes)
+        """
+        return pulumi.get(self, "evaluation_window")
 
     @_builtins.property
     @pulumi.getter(name="metricName")
@@ -1242,6 +1332,14 @@ class GetRuleLevelConditionConditionResult(dict):
         return pulumi.get(self, "statistics")
 
     @_builtins.property
+    @pulumi.getter(name="subNamespace")
+    def sub_namespace(self) -> _builtins.str:
+        """
+        Sub-namespace
+        """
+        return pulumi.get(self, "sub_namespace")
+
+    @_builtins.property
     @pulumi.getter
     def threshold(self) -> _builtins.str:
         """
@@ -1254,13 +1352,16 @@ class GetRuleLevelConditionConditionResult(dict):
 class GetRuleNoDataResult(dict):
     def __init__(__self__, *,
                  enable: _builtins.bool,
-                 evaluation_count: _builtins.int):
+                 evaluation_count: _builtins.int,
+                 level: _builtins.str):
         """
         :param _builtins.bool enable: Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
         :param _builtins.int evaluation_count: No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
+        :param _builtins.str level: No data alert level (critical, warning, notice)
         """
         pulumi.set(__self__, "enable", enable)
         pulumi.set(__self__, "evaluation_count", evaluation_count)
+        pulumi.set(__self__, "level", level)
 
     @_builtins.property
     @pulumi.getter
@@ -1277,6 +1378,14 @@ class GetRuleNoDataResult(dict):
         No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
         """
         return pulumi.get(self, "evaluation_count")
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> _builtins.str:
+        """
+        No data alert level (critical, warning, notice)
+        """
+        return pulumi.get(self, "level")
 
 
 @pulumi.output_type

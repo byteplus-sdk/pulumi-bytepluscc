@@ -79,6 +79,10 @@ export interface GetRuleResult {
      */
     readonly evaluationCount: number;
     /**
+     * Evaluation interval (minutes)
+     */
+    readonly evaluationInterval: number;
+    /**
      * Uniquely identifies the resource.
      */
     readonly id: string;
@@ -110,6 +114,10 @@ export interface GetRuleResult {
      * Notification template configuration.
      */
     readonly notifyTemplates: outputs.cloudmonitor.GetRuleNotifyTemplate[];
+    /**
+     * Object group ID
+     */
+    readonly objectGroupId: string;
     /**
      * Resource ID detected by the alert policy.
      */

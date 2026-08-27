@@ -381,6 +381,20 @@ public class Listener extends com.pulumi.resources.CustomResource {
         return this.endPort;
     }
     /**
+     * Enable weighted extension for the scheduling algorithm?
+     * 
+     */
+    @Export(name="enhancedSchedulerEnable", refs={String.class}, tree="[0]")
+    private Output<String> enhancedSchedulerEnable;
+
+    /**
+     * @return Enable weighted extension for the scheduling algorithm?
+     * 
+     */
+    public Output<String> enhancedSchedulerEnable() {
+        return this.enhancedSchedulerEnable;
+    }
+    /**
      * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      * 
      */
@@ -603,6 +617,20 @@ public class Listener extends com.pulumi.resources.CustomResource {
      */
     public Output<Integer> proxySendTimeout() {
         return this.proxySendTimeout;
+    }
+    /**
+     * Enable response validation?
+     * 
+     */
+    @Export(name="responseCheckEnabled", refs={String.class}, tree="[0]")
+    private Output<String> responseCheckEnabled;
+
+    /**
+     * @return Enable response validation?
+     * 
+     */
+    public Output<String> responseCheckEnabled() {
+        return this.responseCheckEnabled;
     }
     /**
      * List of rule IDs bound to the listener.

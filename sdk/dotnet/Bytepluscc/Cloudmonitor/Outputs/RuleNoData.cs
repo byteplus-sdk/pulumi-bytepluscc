@@ -22,15 +22,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Outputs
         /// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
         /// </summary>
         public readonly int? EvaluationCount;
+        /// <summary>
+        /// No data alert level (critical, warning, notice)
+        /// </summary>
+        public readonly string? Level;
 
         [OutputConstructor]
         private RuleNoData(
             bool? enable,
 
-            int? evaluationCount)
+            int? evaluationCount,
+
+            string? level)
         {
             Enable = enable;
             EvaluationCount = evaluationCount;
+            Level = level;
         }
     }
 }

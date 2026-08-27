@@ -29,11 +29,7 @@ class ListenerArgs:
                  acl_status: pulumi.Input[Optional[_builtins.str]] = None,
                  acl_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
-                 ca_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ca_enabled: pulumi.Input[Optional[_builtins.str]] = None,
-                 cert_center_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 certificate_source: pulumi.Input[Optional[_builtins.str]] = None,
                  client_body_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  client_header_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  connection_drain_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -44,6 +40,7 @@ class ListenerArgs:
                  domain_extensions: pulumi.Input[Optional[Sequence[pulumi.Input['ListenerDomainExtensionArgs']]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  end_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 enhanced_scheduler_enable: pulumi.Input[Optional[_builtins.str]] = None,
                  established_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  health_check: pulumi.Input[Optional['ListenerHealthCheckArgs']] = None,
                  http2_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -72,11 +69,7 @@ class ListenerArgs:
         :param pulumi.Input[_builtins.str] acl_status: Enable access control. Values: on: enabled. off (default): disabled.
         :param pulumi.Input[_builtins.str] acl_type: Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
         :param pulumi.Input[_builtins.int] bandwidth: Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
-        :param pulumi.Input[_builtins.str] ca_certificate_id: CA certificate for mutual authentication.
         :param pulumi.Input[_builtins.str] ca_enabled: Enable mutual authentication. on: enabled. off (default): disabled.
-        :param pulumi.Input[_builtins.str] cert_center_certificate_id: Certificate ID from Certificate Center.
-        :param pulumi.Input[_builtins.str] certificate_id: Certificate ID from the CLB certificate management module.
-        :param pulumi.Input[_builtins.str] certificate_source: Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
         :param pulumi.Input[_builtins.int] client_body_timeout: Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.int] client_header_timeout: Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.str] connection_drain_enabled: Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
@@ -88,6 +81,7 @@ class ListenerArgs:
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] enabled: Enable listener. on (default): enabled. off: disabled.
         :param pulumi.Input[_builtins.int] end_port: End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
+        :param pulumi.Input[_builtins.str] enhanced_scheduler_enable: Enable weighted extension for the scheduling algorithm?
         :param pulumi.Input[_builtins.int] established_timeout: Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         :param pulumi.Input['ListenerHealthCheckArgs'] health_check: Health check information.
         :param pulumi.Input[_builtins.str] http2_enabled: Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
@@ -119,16 +113,8 @@ class ListenerArgs:
             pulumi.set(__self__, "acl_type", acl_type)
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
-        if ca_certificate_id is not None:
-            pulumi.set(__self__, "ca_certificate_id", ca_certificate_id)
         if ca_enabled is not None:
             pulumi.set(__self__, "ca_enabled", ca_enabled)
-        if cert_center_certificate_id is not None:
-            pulumi.set(__self__, "cert_center_certificate_id", cert_center_certificate_id)
-        if certificate_id is not None:
-            pulumi.set(__self__, "certificate_id", certificate_id)
-        if certificate_source is not None:
-            pulumi.set(__self__, "certificate_source", certificate_source)
         if client_body_timeout is not None:
             pulumi.set(__self__, "client_body_timeout", client_body_timeout)
         if client_header_timeout is not None:
@@ -149,6 +135,8 @@ class ListenerArgs:
             pulumi.set(__self__, "enabled", enabled)
         if end_port is not None:
             pulumi.set(__self__, "end_port", end_port)
+        if enhanced_scheduler_enable is not None:
+            pulumi.set(__self__, "enhanced_scheduler_enable", enhanced_scheduler_enable)
         if established_timeout is not None:
             pulumi.set(__self__, "established_timeout", established_timeout)
         if health_check is not None:
@@ -281,18 +269,6 @@ class ListenerArgs:
         pulumi.set(self, "bandwidth", value)
 
     @_builtins.property
-    @pulumi.getter(name="caCertificateId")
-    def ca_certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        CA certificate for mutual authentication.
-        """
-        return pulumi.get(self, "ca_certificate_id")
-
-    @ca_certificate_id.setter
-    def ca_certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "ca_certificate_id", value)
-
-    @_builtins.property
     @pulumi.getter(name="caEnabled")
     def ca_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -303,42 +279,6 @@ class ListenerArgs:
     @ca_enabled.setter
     def ca_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "ca_enabled", value)
-
-    @_builtins.property
-    @pulumi.getter(name="certCenterCertificateId")
-    def cert_center_certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Certificate ID from Certificate Center.
-        """
-        return pulumi.get(self, "cert_center_certificate_id")
-
-    @cert_center_certificate_id.setter
-    def cert_center_certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "cert_center_certificate_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="certificateId")
-    def certificate_id(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Certificate ID from the CLB certificate management module.
-        """
-        return pulumi.get(self, "certificate_id")
-
-    @certificate_id.setter
-    def certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "certificate_id", value)
-
-    @_builtins.property
-    @pulumi.getter(name="certificateSource")
-    def certificate_source(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-        """
-        return pulumi.get(self, "certificate_source")
-
-    @certificate_source.setter
-    def certificate_source(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "certificate_source", value)
 
     @_builtins.property
     @pulumi.getter(name="clientBodyTimeout")
@@ -460,6 +400,18 @@ class ListenerArgs:
     @end_port.setter
     def end_port(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "end_port", value)
+
+    @_builtins.property
+    @pulumi.getter(name="enhancedSchedulerEnable")
+    def enhanced_scheduler_enable(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Enable weighted extension for the scheduling algorithm?
+        """
+        return pulumi.get(self, "enhanced_scheduler_enable")
+
+    @enhanced_scheduler_enable.setter
+    def enhanced_scheduler_enable(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "enhanced_scheduler_enable", value)
 
     @_builtins.property
     @pulumi.getter(name="establishedTimeout")
@@ -690,6 +642,7 @@ class _ListenerState:
                  domain_extensions: pulumi.Input[Optional[Sequence[pulumi.Input['ListenerDomainExtensionArgs']]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  end_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 enhanced_scheduler_enable: pulumi.Input[Optional[_builtins.str]] = None,
                  established_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  health_check: pulumi.Input[Optional['ListenerHealthCheckArgs']] = None,
                  http2_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -706,6 +659,7 @@ class _ListenerState:
                  proxy_protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
                  proxy_read_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  proxy_send_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+                 response_check_enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  scheduler: pulumi.Input[Optional[_builtins.str]] = None,
                  security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -740,6 +694,7 @@ class _ListenerState:
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] enabled: Enable listener. on (default): enabled. off: disabled.
         :param pulumi.Input[_builtins.int] end_port: End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
+        :param pulumi.Input[_builtins.str] enhanced_scheduler_enable: Enable weighted extension for the scheduling algorithm?
         :param pulumi.Input[_builtins.int] established_timeout: Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         :param pulumi.Input['ListenerHealthCheckArgs'] health_check: Health check information.
         :param pulumi.Input[_builtins.str] http2_enabled: Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
@@ -756,6 +711,7 @@ class _ListenerState:
         :param pulumi.Input[_builtins.str] proxy_protocol_type: Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
         :param pulumi.Input[_builtins.int] proxy_read_timeout: Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.int] proxy_send_timeout: Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[_builtins.str] response_check_enabled: Enable response validation?
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] rule_ids: List of rule IDs bound to the listener.
         :param pulumi.Input[_builtins.str] scheduler: Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
         :param pulumi.Input[_builtins.str] security_policy_id: TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
@@ -808,6 +764,8 @@ class _ListenerState:
             pulumi.set(__self__, "enabled", enabled)
         if end_port is not None:
             pulumi.set(__self__, "end_port", end_port)
+        if enhanced_scheduler_enable is not None:
+            pulumi.set(__self__, "enhanced_scheduler_enable", enhanced_scheduler_enable)
         if established_timeout is not None:
             pulumi.set(__self__, "established_timeout", established_timeout)
         if health_check is not None:
@@ -840,6 +798,8 @@ class _ListenerState:
             pulumi.set(__self__, "proxy_read_timeout", proxy_read_timeout)
         if proxy_send_timeout is not None:
             pulumi.set(__self__, "proxy_send_timeout", proxy_send_timeout)
+        if response_check_enabled is not None:
+            pulumi.set(__self__, "response_check_enabled", response_check_enabled)
         if rule_ids is not None:
             pulumi.set(__self__, "rule_ids", rule_ids)
         if scheduler is not None:
@@ -1103,6 +1063,18 @@ class _ListenerState:
         pulumi.set(self, "end_port", value)
 
     @_builtins.property
+    @pulumi.getter(name="enhancedSchedulerEnable")
+    def enhanced_scheduler_enable(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Enable weighted extension for the scheduling algorithm?
+        """
+        return pulumi.get(self, "enhanced_scheduler_enable")
+
+    @enhanced_scheduler_enable.setter
+    def enhanced_scheduler_enable(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "enhanced_scheduler_enable", value)
+
+    @_builtins.property
     @pulumi.getter(name="establishedTimeout")
     def established_timeout(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -1295,6 +1267,18 @@ class _ListenerState:
         pulumi.set(self, "proxy_send_timeout", value)
 
     @_builtins.property
+    @pulumi.getter(name="responseCheckEnabled")
+    def response_check_enabled(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Enable response validation?
+        """
+        return pulumi.get(self, "response_check_enabled")
+
+    @response_check_enabled.setter
+    def response_check_enabled(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "response_check_enabled", value)
+
+    @_builtins.property
     @pulumi.getter(name="ruleIds")
     def rule_ids(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]]:
         """
@@ -1426,11 +1410,7 @@ class Listener(pulumi.CustomResource):
                  acl_status: pulumi.Input[Optional[_builtins.str]] = None,
                  acl_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
-                 ca_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ca_enabled: pulumi.Input[Optional[_builtins.str]] = None,
-                 cert_center_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 certificate_source: pulumi.Input[Optional[_builtins.str]] = None,
                  client_body_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  client_header_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  connection_drain_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1441,6 +1421,7 @@ class Listener(pulumi.CustomResource):
                  domain_extensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ListenerDomainExtensionArgs', 'ListenerDomainExtensionArgsDict']]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  end_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 enhanced_scheduler_enable: pulumi.Input[Optional[_builtins.str]] = None,
                  established_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  health_check: pulumi.Input[Optional[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']]] = None,
                  http2_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1520,11 +1501,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] acl_status: Enable access control. Values: on: enabled. off (default): disabled.
         :param pulumi.Input[_builtins.str] acl_type: Access control mode. white: Allowlist. black: Denylist. This parameter is valid only when the AclStatus parameter is on.
         :param pulumi.Input[_builtins.int] bandwidth: Bandwidth limit for the listener, which means this listener exclusively uses the bandwidth of the CLB instance. Unit: Mbps. -1 (default): This listener does not exclusively use CLB bandwidth and shares the non-exclusive bandwidth of the CLB instance with other listeners. Value range: 1 to the non-exclusive bandwidth of the CLB instance.
-        :param pulumi.Input[_builtins.str] ca_certificate_id: CA certificate for mutual authentication.
         :param pulumi.Input[_builtins.str] ca_enabled: Enable mutual authentication. on: enabled. off (default): disabled.
-        :param pulumi.Input[_builtins.str] cert_center_certificate_id: Certificate ID from Certificate Center.
-        :param pulumi.Input[_builtins.str] certificate_id: Certificate ID from the CLB certificate management module.
-        :param pulumi.Input[_builtins.str] certificate_source: Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
         :param pulumi.Input[_builtins.int] client_body_timeout: Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.int] client_header_timeout: Timeout for reading the client request header. Value range: 30–120 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.str] connection_drain_enabled: Whether the listener enables graceful connection termination. on: enabled. off: not enabled. When Protocol returns HTTP or HTTPS, this parameter always returns off.
@@ -1536,6 +1513,7 @@ class Listener(pulumi.CustomResource):
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] enabled: Enable listener. on (default): enabled. off: disabled.
         :param pulumi.Input[_builtins.int] end_port: End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
+        :param pulumi.Input[_builtins.str] enhanced_scheduler_enable: Enable weighted extension for the scheduling algorithm?
         :param pulumi.Input[_builtins.int] established_timeout: Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         :param pulumi.Input[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']] health_check: Health check information.
         :param pulumi.Input[_builtins.str] http2_enabled: Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
@@ -1635,11 +1613,7 @@ class Listener(pulumi.CustomResource):
                  acl_status: pulumi.Input[Optional[_builtins.str]] = None,
                  acl_type: pulumi.Input[Optional[_builtins.str]] = None,
                  bandwidth: pulumi.Input[Optional[_builtins.int]] = None,
-                 ca_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  ca_enabled: pulumi.Input[Optional[_builtins.str]] = None,
-                 cert_center_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 certificate_source: pulumi.Input[Optional[_builtins.str]] = None,
                  client_body_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  client_header_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  connection_drain_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1650,6 +1624,7 @@ class Listener(pulumi.CustomResource):
                  domain_extensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ListenerDomainExtensionArgs', 'ListenerDomainExtensionArgsDict']]]]] = None,
                  enabled: pulumi.Input[Optional[_builtins.str]] = None,
                  end_port: pulumi.Input[Optional[_builtins.int]] = None,
+                 enhanced_scheduler_enable: pulumi.Input[Optional[_builtins.str]] = None,
                  established_timeout: pulumi.Input[Optional[_builtins.int]] = None,
                  health_check: pulumi.Input[Optional[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']]] = None,
                  http2_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1684,11 +1659,7 @@ class Listener(pulumi.CustomResource):
             __props__.__dict__["acl_status"] = acl_status
             __props__.__dict__["acl_type"] = acl_type
             __props__.__dict__["bandwidth"] = bandwidth
-            __props__.__dict__["ca_certificate_id"] = ca_certificate_id
             __props__.__dict__["ca_enabled"] = ca_enabled
-            __props__.__dict__["cert_center_certificate_id"] = cert_center_certificate_id
-            __props__.__dict__["certificate_id"] = certificate_id
-            __props__.__dict__["certificate_source"] = certificate_source
             __props__.__dict__["client_body_timeout"] = client_body_timeout
             __props__.__dict__["client_header_timeout"] = client_header_timeout
             __props__.__dict__["connection_drain_enabled"] = connection_drain_enabled
@@ -1699,6 +1670,7 @@ class Listener(pulumi.CustomResource):
             __props__.__dict__["domain_extensions"] = domain_extensions
             __props__.__dict__["enabled"] = enabled
             __props__.__dict__["end_port"] = end_port
+            __props__.__dict__["enhanced_scheduler_enable"] = enhanced_scheduler_enable
             __props__.__dict__["established_timeout"] = established_timeout
             __props__.__dict__["health_check"] = health_check
             __props__.__dict__["http2_enabled"] = http2_enabled
@@ -1728,8 +1700,13 @@ class Listener(pulumi.CustomResource):
             __props__.__dict__["server_group_id"] = server_group_id
             __props__.__dict__["start_port"] = start_port
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["ca_certificate_id"] = None
+            __props__.__dict__["cert_center_certificate_id"] = None
+            __props__.__dict__["certificate_id"] = None
+            __props__.__dict__["certificate_source"] = None
             __props__.__dict__["created_time"] = None
             __props__.__dict__["listener_id"] = None
+            __props__.__dict__["response_check_enabled"] = None
             __props__.__dict__["rule_ids"] = None
             __props__.__dict__["status"] = None
             __props__.__dict__["updated_time"] = None
@@ -1764,6 +1741,7 @@ class Listener(pulumi.CustomResource):
             domain_extensions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['ListenerDomainExtensionArgs', 'ListenerDomainExtensionArgsDict']]]]] = None,
             enabled: pulumi.Input[Optional[_builtins.str]] = None,
             end_port: pulumi.Input[Optional[_builtins.int]] = None,
+            enhanced_scheduler_enable: pulumi.Input[Optional[_builtins.str]] = None,
             established_timeout: pulumi.Input[Optional[_builtins.int]] = None,
             health_check: pulumi.Input[Optional[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']]] = None,
             http2_enabled: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1780,6 +1758,7 @@ class Listener(pulumi.CustomResource):
             proxy_protocol_type: pulumi.Input[Optional[_builtins.str]] = None,
             proxy_read_timeout: pulumi.Input[Optional[_builtins.int]] = None,
             proxy_send_timeout: pulumi.Input[Optional[_builtins.int]] = None,
+            response_check_enabled: pulumi.Input[Optional[_builtins.str]] = None,
             rule_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             scheduler: pulumi.Input[Optional[_builtins.str]] = None,
             security_policy_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1818,6 +1797,7 @@ class Listener(pulumi.CustomResource):
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] enabled: Enable listener. on (default): enabled. off: disabled.
         :param pulumi.Input[_builtins.int] end_port: End port for all-port listening. Range: 1–65535. When Port is '0', this parameter is required and must be greater than startPort.
+        :param pulumi.Input[_builtins.str] enhanced_scheduler_enable: Enable weighted extension for the scheduling algorithm?
         :param pulumi.Input[_builtins.int] established_timeout: Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         :param pulumi.Input[Union['ListenerHealthCheckArgs', 'ListenerHealthCheckArgsDict']] health_check: Health check information.
         :param pulumi.Input[_builtins.str] http2_enabled: Whether the listener enables frontend HTTP 2.0 protocol. This parameter is valid only when Protocol is set to HTTPS. Values: on: enabled. off (default): disabled.
@@ -1834,6 +1814,7 @@ class Listener(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] proxy_protocol_type: Enable Proxy-Protocol. This parameter is valid only when Protocol is TCP or UDP. Values: off (default): disabled. standard: enabled.
         :param pulumi.Input[_builtins.int] proxy_read_timeout: Timeout for CLB to read responses from backend servers. This timeout applies only between two consecutive read operations, not for the entire response transmission. Value range: 30–3600 seconds. Default: 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         :param pulumi.Input[_builtins.int] proxy_send_timeout: Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
+        :param pulumi.Input[_builtins.str] response_check_enabled: Enable response validation?
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] rule_ids: List of rule IDs bound to the listener.
         :param pulumi.Input[_builtins.str] scheduler: Scheduling algorithm used by the listener. wrr (default): Weighted round robin. wlc: Weighted least connections. sh: Source address hash.
         :param pulumi.Input[_builtins.str] security_policy_id: TLS security policy for HTTPS listeners. This parameter is valid only when Protocol is set to HTTPS. Values: default*policy (default): supports SSL v3, TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*0: supports TLS v1.0, TLS v1.1, TLS v1.2. tls*cipher*policy*1*1: supports TLS v1.1, TLS v1.2. tls*cipher*policy*1*2: supports TLS v1.2. tls*cipher*policy*1*2*strict: supports TLS v1.2.
@@ -1870,6 +1851,7 @@ class Listener(pulumi.CustomResource):
         __props__.__dict__["domain_extensions"] = domain_extensions
         __props__.__dict__["enabled"] = enabled
         __props__.__dict__["end_port"] = end_port
+        __props__.__dict__["enhanced_scheduler_enable"] = enhanced_scheduler_enable
         __props__.__dict__["established_timeout"] = established_timeout
         __props__.__dict__["health_check"] = health_check
         __props__.__dict__["http2_enabled"] = http2_enabled
@@ -1886,6 +1868,7 @@ class Listener(pulumi.CustomResource):
         __props__.__dict__["proxy_protocol_type"] = proxy_protocol_type
         __props__.__dict__["proxy_read_timeout"] = proxy_read_timeout
         __props__.__dict__["proxy_send_timeout"] = proxy_send_timeout
+        __props__.__dict__["response_check_enabled"] = response_check_enabled
         __props__.__dict__["rule_ids"] = rule_ids
         __props__.__dict__["scheduler"] = scheduler
         __props__.__dict__["security_policy_id"] = security_policy_id
@@ -2060,6 +2043,14 @@ class Listener(pulumi.CustomResource):
         return pulumi.get(self, "end_port")
 
     @_builtins.property
+    @pulumi.getter(name="enhancedSchedulerEnable")
+    def enhanced_scheduler_enable(self) -> pulumi.Output[_builtins.str]:
+        """
+        Enable weighted extension for the scheduling algorithm?
+        """
+        return pulumi.get(self, "enhanced_scheduler_enable")
+
+    @_builtins.property
     @pulumi.getter(name="establishedTimeout")
     def established_timeout(self) -> pulumi.Output[_builtins.int]:
         """
@@ -2186,6 +2177,14 @@ class Listener(pulumi.CustomResource):
         Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         """
         return pulumi.get(self, "proxy_send_timeout")
+
+    @_builtins.property
+    @pulumi.getter(name="responseCheckEnabled")
+    def response_check_enabled(self) -> pulumi.Output[_builtins.str]:
+        """
+        Enable response validation?
+        """
+        return pulumi.get(self, "response_check_enabled")
 
     @_builtins.property
     @pulumi.getter(name="ruleIds")

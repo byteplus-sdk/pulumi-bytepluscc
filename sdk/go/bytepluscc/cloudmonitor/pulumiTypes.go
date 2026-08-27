@@ -113,6 +113,8 @@ func (o ContactGroupContactArrayOutput) Index(i pulumi.IntInput) ContactGroupCon
 type RuleCondition struct {
 	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator *string `pulumi:"comparisonOperator"`
+	// Evaluation window (minutes)
+	EvaluationWindow *int `pulumi:"evaluationWindow"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName *string `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -121,6 +123,8 @@ type RuleCondition struct {
 	Period *string `pulumi:"period"`
 	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics *string `pulumi:"statistics"`
+	// Sub-namespace
+	SubNamespace *string `pulumi:"subNamespace"`
 	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold *string `pulumi:"threshold"`
 }
@@ -139,6 +143,8 @@ type RuleConditionInput interface {
 type RuleConditionArgs struct {
 	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator pulumi.StringPtrInput `pulumi:"comparisonOperator"`
+	// Evaluation window (minutes)
+	EvaluationWindow pulumi.IntPtrInput `pulumi:"evaluationWindow"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -147,6 +153,8 @@ type RuleConditionArgs struct {
 	Period pulumi.StringPtrInput `pulumi:"period"`
 	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics pulumi.StringPtrInput `pulumi:"statistics"`
+	// Sub-namespace
+	SubNamespace pulumi.StringPtrInput `pulumi:"subNamespace"`
 	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold pulumi.StringPtrInput `pulumi:"threshold"`
 }
@@ -207,6 +215,11 @@ func (o RuleConditionOutput) ComparisonOperator() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.ComparisonOperator }).(pulumi.StringPtrOutput)
 }
 
+// Evaluation window (minutes)
+func (o RuleConditionOutput) EvaluationWindow() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleCondition) *int { return v.EvaluationWindow }).(pulumi.IntPtrOutput)
+}
+
 // Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 func (o RuleConditionOutput) MetricName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.MetricName }).(pulumi.StringPtrOutput)
@@ -225,6 +238,11 @@ func (o RuleConditionOutput) Period() pulumi.StringPtrOutput {
 // Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 func (o RuleConditionOutput) Statistics() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleCondition) *string { return v.Statistics }).(pulumi.StringPtrOutput)
+}
+
+// Sub-namespace
+func (o RuleConditionOutput) SubNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleCondition) *string { return v.SubNamespace }).(pulumi.StringPtrOutput)
 }
 
 // Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
@@ -1266,8 +1284,8 @@ func (o RuleLevelConditionArrayOutput) Index(i pulumi.IntInput) RuleLevelConditi
 type RuleLevelConditionCondition struct {
 	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator *string `pulumi:"comparisonOperator"`
-	// Metric display name.
-	DisplayName *string `pulumi:"displayName"`
+	// Evaluation window (minutes)
+	EvaluationWindow *int `pulumi:"evaluationWindow"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName *string `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -1276,6 +1294,8 @@ type RuleLevelConditionCondition struct {
 	Period *string `pulumi:"period"`
 	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics *string `pulumi:"statistics"`
+	// Sub-namespace
+	SubNamespace *string `pulumi:"subNamespace"`
 	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold *string `pulumi:"threshold"`
 }
@@ -1294,8 +1314,8 @@ type RuleLevelConditionConditionInput interface {
 type RuleLevelConditionConditionArgs struct {
 	// Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
 	ComparisonOperator pulumi.StringPtrInput `pulumi:"comparisonOperator"`
-	// Metric display name.
-	DisplayName pulumi.StringPtrInput `pulumi:"displayName"`
+	// Evaluation window (minutes)
+	EvaluationWindow pulumi.IntPtrInput `pulumi:"evaluationWindow"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringPtrInput `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -1304,6 +1324,8 @@ type RuleLevelConditionConditionArgs struct {
 	Period pulumi.StringPtrInput `pulumi:"period"`
 	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics pulumi.StringPtrInput `pulumi:"statistics"`
+	// Sub-namespace
+	SubNamespace pulumi.StringPtrInput `pulumi:"subNamespace"`
 	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold pulumi.StringPtrInput `pulumi:"threshold"`
 }
@@ -1364,9 +1386,9 @@ func (o RuleLevelConditionConditionOutput) ComparisonOperator() pulumi.StringPtr
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.ComparisonOperator }).(pulumi.StringPtrOutput)
 }
 
-// Metric display name.
-func (o RuleLevelConditionConditionOutput) DisplayName() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.DisplayName }).(pulumi.StringPtrOutput)
+// Evaluation window (minutes)
+func (o RuleLevelConditionConditionOutput) EvaluationWindow() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v RuleLevelConditionCondition) *int { return v.EvaluationWindow }).(pulumi.IntPtrOutput)
 }
 
 // Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
@@ -1387,6 +1409,11 @@ func (o RuleLevelConditionConditionOutput) Period() pulumi.StringPtrOutput {
 // Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 func (o RuleLevelConditionConditionOutput) Statistics() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.Statistics }).(pulumi.StringPtrOutput)
+}
+
+// Sub-namespace
+func (o RuleLevelConditionConditionOutput) SubNamespace() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleLevelConditionCondition) *string { return v.SubNamespace }).(pulumi.StringPtrOutput)
 }
 
 // Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
@@ -1419,6 +1446,8 @@ type RuleNoData struct {
 	Enable *bool `pulumi:"enable"`
 	// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 	EvaluationCount *int `pulumi:"evaluationCount"`
+	// No data alert level (critical, warning, notice)
+	Level *string `pulumi:"level"`
 }
 
 // RuleNoDataInput is an input type that accepts RuleNoDataArgs and RuleNoDataOutput values.
@@ -1437,6 +1466,8 @@ type RuleNoDataArgs struct {
 	Enable pulumi.BoolPtrInput `pulumi:"enable"`
 	// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 	EvaluationCount pulumi.IntPtrInput `pulumi:"evaluationCount"`
+	// No data alert level (critical, warning, notice)
+	Level pulumi.StringPtrInput `pulumi:"level"`
 }
 
 func (RuleNoDataArgs) ElementType() reflect.Type {
@@ -1526,6 +1557,11 @@ func (o RuleNoDataOutput) EvaluationCount() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v RuleNoData) *int { return v.EvaluationCount }).(pulumi.IntPtrOutput)
 }
 
+// No data alert level (critical, warning, notice)
+func (o RuleNoDataOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v RuleNoData) *string { return v.Level }).(pulumi.StringPtrOutput)
+}
+
 type RuleNoDataPtrOutput struct{ *pulumi.OutputState }
 
 func (RuleNoDataPtrOutput) ElementType() reflect.Type {
@@ -1568,6 +1604,16 @@ func (o RuleNoDataPtrOutput) EvaluationCount() pulumi.IntPtrOutput {
 		}
 		return v.EvaluationCount
 	}).(pulumi.IntPtrOutput)
+}
+
+// No data alert level (critical, warning, notice)
+func (o RuleNoDataPtrOutput) Level() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *RuleNoData) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Level
+	}).(pulumi.StringPtrOutput)
 }
 
 type RuleNotifyTemplate struct {
@@ -2204,6 +2250,8 @@ type GetRuleCondition struct {
 	ComparisonOperator string `pulumi:"comparisonOperator"`
 	// Metric display name.
 	DisplayName string `pulumi:"displayName"`
+	// Evaluation window (minutes)
+	EvaluationWindow int `pulumi:"evaluationWindow"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName string `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -2212,6 +2260,8 @@ type GetRuleCondition struct {
 	Period string `pulumi:"period"`
 	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics string `pulumi:"statistics"`
+	// Sub-namespace
+	SubNamespace string `pulumi:"subNamespace"`
 	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold string `pulumi:"threshold"`
 }
@@ -2232,6 +2282,8 @@ type GetRuleConditionArgs struct {
 	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
 	// Metric display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Evaluation window (minutes)
+	EvaluationWindow pulumi.IntInput `pulumi:"evaluationWindow"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringInput `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -2240,6 +2292,8 @@ type GetRuleConditionArgs struct {
 	Period pulumi.StringInput `pulumi:"period"`
 	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics pulumi.StringInput `pulumi:"statistics"`
+	// Sub-namespace
+	SubNamespace pulumi.StringInput `pulumi:"subNamespace"`
 	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold pulumi.StringInput `pulumi:"threshold"`
 }
@@ -2305,6 +2359,11 @@ func (o GetRuleConditionOutput) DisplayName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Evaluation window (minutes)
+func (o GetRuleConditionOutput) EvaluationWindow() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleCondition) int { return v.EvaluationWindow }).(pulumi.IntOutput)
+}
+
 // Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 func (o GetRuleConditionOutput) MetricName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.MetricName }).(pulumi.StringOutput)
@@ -2323,6 +2382,11 @@ func (o GetRuleConditionOutput) Period() pulumi.StringOutput {
 // Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 func (o GetRuleConditionOutput) Statistics() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleCondition) string { return v.Statistics }).(pulumi.StringOutput)
+}
+
+// Sub-namespace
+func (o GetRuleConditionOutput) SubNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleCondition) string { return v.SubNamespace }).(pulumi.StringOutput)
 }
 
 // Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
@@ -2959,6 +3023,8 @@ type GetRuleLevelConditionCondition struct {
 	ComparisonOperator string `pulumi:"comparisonOperator"`
 	// Metric display name.
 	DisplayName string `pulumi:"displayName"`
+	// Evaluation window (minutes)
+	EvaluationWindow int `pulumi:"evaluationWindow"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName string `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -2967,6 +3033,8 @@ type GetRuleLevelConditionCondition struct {
 	Period string `pulumi:"period"`
 	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics string `pulumi:"statistics"`
+	// Sub-namespace
+	SubNamespace string `pulumi:"subNamespace"`
 	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold string `pulumi:"threshold"`
 }
@@ -2987,6 +3055,8 @@ type GetRuleLevelConditionConditionArgs struct {
 	ComparisonOperator pulumi.StringInput `pulumi:"comparisonOperator"`
 	// Metric display name.
 	DisplayName pulumi.StringInput `pulumi:"displayName"`
+	// Evaluation window (minutes)
+	EvaluationWindow pulumi.IntInput `pulumi:"evaluationWindow"`
 	// Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 	MetricName pulumi.StringInput `pulumi:"metricName"`
 	// Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
@@ -2995,6 +3065,8 @@ type GetRuleLevelConditionConditionArgs struct {
 	Period pulumi.StringInput `pulumi:"period"`
 	// Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 	Statistics pulumi.StringInput `pulumi:"statistics"`
+	// Sub-namespace
+	SubNamespace pulumi.StringInput `pulumi:"subNamespace"`
 	// Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
 	Threshold pulumi.StringInput `pulumi:"threshold"`
 }
@@ -3060,6 +3132,11 @@ func (o GetRuleLevelConditionConditionOutput) DisplayName() pulumi.StringOutput 
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.DisplayName }).(pulumi.StringOutput)
 }
 
+// Evaluation window (minutes)
+func (o GetRuleLevelConditionConditionOutput) EvaluationWindow() pulumi.IntOutput {
+	return o.ApplyT(func(v GetRuleLevelConditionCondition) int { return v.EvaluationWindow }).(pulumi.IntOutput)
+}
+
 // Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
 func (o GetRuleLevelConditionConditionOutput) MetricName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.MetricName }).(pulumi.StringOutput)
@@ -3078,6 +3155,11 @@ func (o GetRuleLevelConditionConditionOutput) Period() pulumi.StringOutput {
 // Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
 func (o GetRuleLevelConditionConditionOutput) Statistics() pulumi.StringOutput {
 	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.Statistics }).(pulumi.StringOutput)
+}
+
+// Sub-namespace
+func (o GetRuleLevelConditionConditionOutput) SubNamespace() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleLevelConditionCondition) string { return v.SubNamespace }).(pulumi.StringOutput)
 }
 
 // Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
@@ -3110,6 +3192,8 @@ type GetRuleNoData struct {
 	Enable bool `pulumi:"enable"`
 	// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 	EvaluationCount int `pulumi:"evaluationCount"`
+	// No data alert level (critical, warning, notice)
+	Level string `pulumi:"level"`
 }
 
 // GetRuleNoDataInput is an input type that accepts GetRuleNoDataArgs and GetRuleNoDataOutput values.
@@ -3128,6 +3212,8 @@ type GetRuleNoDataArgs struct {
 	Enable pulumi.BoolInput `pulumi:"enable"`
 	// No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 	EvaluationCount pulumi.IntInput `pulumi:"evaluationCount"`
+	// No data alert level (critical, warning, notice)
+	Level pulumi.StringInput `pulumi:"level"`
 }
 
 func (GetRuleNoDataArgs) ElementType() reflect.Type {
@@ -3164,6 +3250,11 @@ func (o GetRuleNoDataOutput) Enable() pulumi.BoolOutput {
 // No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
 func (o GetRuleNoDataOutput) EvaluationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v GetRuleNoData) int { return v.EvaluationCount }).(pulumi.IntOutput)
+}
+
+// No data alert level (critical, warning, notice)
+func (o GetRuleNoDataOutput) Level() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRuleNoData) string { return v.Level }).(pulumi.StringOutput)
 }
 
 type GetRuleNotifyTemplate struct {

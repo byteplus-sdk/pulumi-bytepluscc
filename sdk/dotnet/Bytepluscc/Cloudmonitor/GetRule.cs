@@ -113,6 +113,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         public readonly int EvaluationCount;
         /// <summary>
+        /// Evaluation interval (minutes)
+        /// </summary>
+        public readonly int EvaluationInterval;
+        /// <summary>
         /// Uniquely identifies the resource.
         /// </summary>
         public readonly string Id;
@@ -144,6 +148,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// Notification template configuration.
         /// </summary>
         public readonly ImmutableArray<Outputs.GetRuleNotifyTemplateResult> NotifyTemplates;
+        /// <summary>
+        /// Object group ID
+        /// </summary>
+        public readonly string ObjectGroupId;
         /// <summary>
         /// Resource ID detected by the alert policy.
         /// </summary>
@@ -227,6 +235,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
 
             int evaluationCount,
 
+            int evaluationInterval,
+
             string id,
 
             string level,
@@ -242,6 +252,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
             string notificationId,
 
             ImmutableArray<Outputs.GetRuleNotifyTemplateResult> notifyTemplates,
+
+            string objectGroupId,
 
             Outputs.GetRuleOriginalDimensionsResult originalDimensions,
 
@@ -283,6 +295,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
             EffectStartAt = effectStartAt;
             EnableState = enableState;
             EvaluationCount = evaluationCount;
+            EvaluationInterval = evaluationInterval;
             Id = id;
             Level = level;
             LevelConditions = levelConditions;
@@ -291,6 +304,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
             NoData = noData;
             NotificationId = notificationId;
             NotifyTemplates = notifyTemplates;
+            ObjectGroupId = objectGroupId;
             OriginalDimensions = originalDimensions;
             ProjectName = projectName;
             RecoveryNotify = recoveryNotify;

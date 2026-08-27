@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.cloudmonitor.outputs;
 
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 
@@ -20,6 +21,11 @@ public final class GetRuleLevelConditionCondition {
      * 
      */
     private String displayName;
+    /**
+     * @return Evaluation window (minutes)
+     * 
+     */
+    private Integer evaluationWindow;
     /**
      * @return Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
      * 
@@ -41,6 +47,11 @@ public final class GetRuleLevelConditionCondition {
      */
     private String statistics;
     /**
+     * @return Sub-namespace
+     * 
+     */
+    private String subNamespace;
+    /**
      * @return Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
      * 
      */
@@ -60,6 +71,13 @@ public final class GetRuleLevelConditionCondition {
      */
     public String displayName() {
         return this.displayName;
+    }
+    /**
+     * @return Evaluation window (minutes)
+     * 
+     */
+    public Integer evaluationWindow() {
+        return this.evaluationWindow;
     }
     /**
      * @return Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
@@ -90,6 +108,13 @@ public final class GetRuleLevelConditionCondition {
         return this.statistics;
     }
     /**
+     * @return Sub-namespace
+     * 
+     */
+    public String subNamespace() {
+        return this.subNamespace;
+    }
+    /**
      * @return Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
      * 
      */
@@ -108,20 +133,24 @@ public final class GetRuleLevelConditionCondition {
     public static final class Builder {
         private String comparisonOperator;
         private String displayName;
+        private Integer evaluationWindow;
         private String metricName;
         private String metricUnit;
         private String period;
         private String statistics;
+        private String subNamespace;
         private String threshold;
         public Builder() {}
         public Builder(GetRuleLevelConditionCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.comparisonOperator = defaults.comparisonOperator;
     	      this.displayName = defaults.displayName;
+    	      this.evaluationWindow = defaults.evaluationWindow;
     	      this.metricName = defaults.metricName;
     	      this.metricUnit = defaults.metricUnit;
     	      this.period = defaults.period;
     	      this.statistics = defaults.statistics;
+    	      this.subNamespace = defaults.subNamespace;
     	      this.threshold = defaults.threshold;
         }
 
@@ -139,6 +168,14 @@ public final class GetRuleLevelConditionCondition {
               throw new MissingRequiredPropertyException("GetRuleLevelConditionCondition", "displayName");
             }
             this.displayName = displayName;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder evaluationWindow(Integer evaluationWindow) {
+            if (evaluationWindow == null) {
+              throw new MissingRequiredPropertyException("GetRuleLevelConditionCondition", "evaluationWindow");
+            }
+            this.evaluationWindow = evaluationWindow;
             return this;
         }
         @CustomType.Setter
@@ -174,6 +211,14 @@ public final class GetRuleLevelConditionCondition {
             return this;
         }
         @CustomType.Setter
+        public Builder subNamespace(String subNamespace) {
+            if (subNamespace == null) {
+              throw new MissingRequiredPropertyException("GetRuleLevelConditionCondition", "subNamespace");
+            }
+            this.subNamespace = subNamespace;
+            return this;
+        }
+        @CustomType.Setter
         public Builder threshold(String threshold) {
             if (threshold == null) {
               throw new MissingRequiredPropertyException("GetRuleLevelConditionCondition", "threshold");
@@ -185,10 +230,12 @@ public final class GetRuleLevelConditionCondition {
             final var _resultValue = new GetRuleLevelConditionCondition();
             _resultValue.comparisonOperator = comparisonOperator;
             _resultValue.displayName = displayName;
+            _resultValue.evaluationWindow = evaluationWindow;
             _resultValue.metricName = metricName;
             _resultValue.metricUnit = metricUnit;
             _resultValue.period = period;
             _resultValue.statistics = statistics;
+            _resultValue.subNamespace = subNamespace;
             _resultValue.threshold = threshold;
             return _resultValue;
         }

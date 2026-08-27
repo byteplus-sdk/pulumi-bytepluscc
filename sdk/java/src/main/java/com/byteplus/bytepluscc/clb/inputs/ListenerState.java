@@ -323,6 +323,21 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Enable weighted extension for the scheduling algorithm?
+     * 
+     */
+    @Import(name="enhancedSchedulerEnable")
+    private @Nullable Output<String> enhancedSchedulerEnable;
+
+    /**
+     * @return Enable weighted extension for the scheduling algorithm?
+     * 
+     */
+    public Optional<Output<String>> enhancedSchedulerEnable() {
+        return Optional.ofNullable(this.enhancedSchedulerEnable);
+    }
+
+    /**
      * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      * 
      */
@@ -563,6 +578,21 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Enable response validation?
+     * 
+     */
+    @Import(name="responseCheckEnabled")
+    private @Nullable Output<String> responseCheckEnabled;
+
+    /**
+     * @return Enable response validation?
+     * 
+     */
+    public Optional<Output<String>> responseCheckEnabled() {
+        return Optional.ofNullable(this.responseCheckEnabled);
+    }
+
+    /**
      * List of rule IDs bound to the listener.
      * 
      */
@@ -737,6 +767,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         this.domainExtensions = $.domainExtensions;
         this.enabled = $.enabled;
         this.endPort = $.endPort;
+        this.enhancedSchedulerEnable = $.enhancedSchedulerEnable;
         this.establishedTimeout = $.establishedTimeout;
         this.healthCheck = $.healthCheck;
         this.http2Enabled = $.http2Enabled;
@@ -753,6 +784,7 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         this.proxyProtocolType = $.proxyProtocolType;
         this.proxyReadTimeout = $.proxyReadTimeout;
         this.proxySendTimeout = $.proxySendTimeout;
+        this.responseCheckEnabled = $.responseCheckEnabled;
         this.ruleIds = $.ruleIds;
         this.scheduler = $.scheduler;
         this.securityPolicyId = $.securityPolicyId;
@@ -1227,6 +1259,27 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param enhancedSchedulerEnable Enable weighted extension for the scheduling algorithm?
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enhancedSchedulerEnable(@Nullable Output<String> enhancedSchedulerEnable) {
+            $.enhancedSchedulerEnable = enhancedSchedulerEnable;
+            return this;
+        }
+
+        /**
+         * @param enhancedSchedulerEnable Enable weighted extension for the scheduling algorithm?
+         * 
+         * @return builder
+         * 
+         */
+        public Builder enhancedSchedulerEnable(String enhancedSchedulerEnable) {
+            return enhancedSchedulerEnable(Output.of(enhancedSchedulerEnable));
+        }
+
+        /**
          * @param establishedTimeout Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
          * 
          * @return builder
@@ -1560,6 +1613,27 @@ public final class ListenerState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder proxySendTimeout(Integer proxySendTimeout) {
             return proxySendTimeout(Output.of(proxySendTimeout));
+        }
+
+        /**
+         * @param responseCheckEnabled Enable response validation?
+         * 
+         * @return builder
+         * 
+         */
+        public Builder responseCheckEnabled(@Nullable Output<String> responseCheckEnabled) {
+            $.responseCheckEnabled = responseCheckEnabled;
+            return this;
+        }
+
+        /**
+         * @param responseCheckEnabled Enable response validation?
+         * 
+         * @return builder
+         * 
+         */
+        public Builder responseCheckEnabled(String responseCheckEnabled) {
+            return responseCheckEnabled(Output.of(responseCheckEnabled));
         }
 
         /**

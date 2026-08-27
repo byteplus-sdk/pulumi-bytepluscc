@@ -37,11 +37,13 @@ class RuleArgs:
                  contact_group_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  dimension_conditions: pulumi.Input[Optional['RuleDimensionConditionsArgs']] = None,
+                 evaluation_interval: pulumi.Input[Optional[_builtins.int]] = None,
                  level_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['RuleLevelConditionArgs']]]] = None,
                  multiple_conditions: pulumi.Input[Optional[_builtins.bool]] = None,
                  no_data: pulumi.Input[Optional['RuleNoDataArgs']] = None,
                  notification_id: pulumi.Input[Optional[_builtins.str]] = None,
                  notify_templates: pulumi.Input[Optional[Sequence[pulumi.Input['RuleNotifyTemplateArgs']]]] = None,
+                 object_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  original_dimensions: pulumi.Input[Optional['RuleOriginalDimensionsArgs']] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_notify: pulumi.Input[Optional['RuleRecoveryNotifyArgs']] = None,
@@ -69,6 +71,7 @@ class RuleArgs:
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] contact_group_ids: When AlertMethods is set to Email, Phone, or SMS, specify the alert contact group ID. You can call the ListContactGroups API to obtain the contact group ID. Note: Up to 5 contact groups can be configured.
         :param pulumi.Input[_builtins.str] description: Alert policy description information. Cannot start with a digit, hyphen, or Chinese symbol. Only Chinese characters, letters, digits, underscore _, hyphen -, and Chinese symbols are allowed. Length must be between 0 and 255 characters.
         :param pulumi.Input['RuleDimensionConditionsArgs'] dimension_conditions: Dimension configuration. Only valid when RuleType is set to dynamic. Supports three matching methods: project, tag, and meta.
+        :param pulumi.Input[_builtins.int] evaluation_interval: Evaluation interval (minutes)
         :param pulumi.Input[Sequence[pulumi.Input['RuleLevelConditionArgs']]] level_conditions: Alert severity configuration.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.bool] multiple_conditions: Does the alert policy use multiple metrics? true: multiple metrics, false: single metric (default).
@@ -76,6 +79,7 @@ class RuleArgs:
         :param pulumi.Input[_builtins.str] notification_id: Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
         :param pulumi.Input[Sequence[pulumi.Input['RuleNotifyTemplateArgs']]] notify_templates: Notification template configuration.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] object_group_id: Object group ID
         :param pulumi.Input['RuleOriginalDimensionsArgs'] original_dimensions: Resource ID detected by the alert policy.
         :param pulumi.Input[_builtins.str] project_name: Project name to which the alert policy belongs. If not specified, it defaults to the default project.
         :param pulumi.Input['RuleRecoveryNotifyArgs'] recovery_notify: Alert recovery notification.
@@ -107,6 +111,8 @@ class RuleArgs:
             pulumi.set(__self__, "description", description)
         if dimension_conditions is not None:
             pulumi.set(__self__, "dimension_conditions", dimension_conditions)
+        if evaluation_interval is not None:
+            pulumi.set(__self__, "evaluation_interval", evaluation_interval)
         if level_conditions is not None:
             pulumi.set(__self__, "level_conditions", level_conditions)
         if multiple_conditions is not None:
@@ -117,6 +123,8 @@ class RuleArgs:
             pulumi.set(__self__, "notification_id", notification_id)
         if notify_templates is not None:
             pulumi.set(__self__, "notify_templates", notify_templates)
+        if object_group_id is not None:
+            pulumi.set(__self__, "object_group_id", object_group_id)
         if original_dimensions is not None:
             pulumi.set(__self__, "original_dimensions", original_dimensions)
         if project_name is not None:
@@ -326,6 +334,18 @@ class RuleArgs:
         pulumi.set(self, "dimension_conditions", value)
 
     @_builtins.property
+    @pulumi.getter(name="evaluationInterval")
+    def evaluation_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Evaluation interval (minutes)
+        """
+        return pulumi.get(self, "evaluation_interval")
+
+    @evaluation_interval.setter
+    def evaluation_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "evaluation_interval", value)
+
+    @_builtins.property
     @pulumi.getter(name="levelConditions")
     def level_conditions(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['RuleLevelConditionArgs']]]]:
         """
@@ -386,6 +406,18 @@ class RuleArgs:
     @notify_templates.setter
     def notify_templates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RuleNotifyTemplateArgs']]]]):
         pulumi.set(self, "notify_templates", value)
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupId")
+    def object_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Object group ID
+        """
+        return pulumi.get(self, "object_group_id")
+
+    @object_group_id.setter
+    def object_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "object_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="originalDimensions")
@@ -488,6 +520,7 @@ class _RuleState:
                  effect_start_at: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_state: pulumi.Input[Optional[_builtins.str]] = None,
                  evaluation_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 evaluation_interval: pulumi.Input[Optional[_builtins.int]] = None,
                  level: pulumi.Input[Optional[_builtins.str]] = None,
                  level_conditions: pulumi.Input[Optional[Sequence[pulumi.Input['RuleLevelConditionArgs']]]] = None,
                  multiple_conditions: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -495,6 +528,7 @@ class _RuleState:
                  no_data: pulumi.Input[Optional['RuleNoDataArgs']] = None,
                  notification_id: pulumi.Input[Optional[_builtins.str]] = None,
                  notify_templates: pulumi.Input[Optional[Sequence[pulumi.Input['RuleNotifyTemplateArgs']]]] = None,
+                 object_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  original_dimensions: pulumi.Input[Optional['RuleOriginalDimensionsArgs']] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_notify: pulumi.Input[Optional['RuleRecoveryNotifyArgs']] = None,
@@ -525,6 +559,7 @@ class _RuleState:
         :param pulumi.Input[_builtins.str] effect_start_at: Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
         :param pulumi.Input[_builtins.str] enable_state: Alert policy status. enable: enabled, disable: disabled
         :param pulumi.Input[_builtins.int] evaluation_count: Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
+        :param pulumi.Input[_builtins.int] evaluation_interval: Evaluation interval (minutes)
         :param pulumi.Input[_builtins.str] level: Alert level. critical: critical, warning: warning, notice: notification
         :param pulumi.Input[Sequence[pulumi.Input['RuleLevelConditionArgs']]] level_conditions: Alert severity configuration.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
@@ -534,6 +569,7 @@ class _RuleState:
         :param pulumi.Input[_builtins.str] notification_id: Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
         :param pulumi.Input[Sequence[pulumi.Input['RuleNotifyTemplateArgs']]] notify_templates: Notification template configuration.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] object_group_id: Object group ID
         :param pulumi.Input['RuleOriginalDimensionsArgs'] original_dimensions: Resource ID detected by the alert policy.
         :param pulumi.Input[_builtins.str] project_name: Project name to which the alert policy belongs. If not specified, it defaults to the default project.
         :param pulumi.Input['RuleRecoveryNotifyArgs'] recovery_notify: Alert recovery notification.
@@ -574,6 +610,8 @@ class _RuleState:
             pulumi.set(__self__, "enable_state", enable_state)
         if evaluation_count is not None:
             pulumi.set(__self__, "evaluation_count", evaluation_count)
+        if evaluation_interval is not None:
+            pulumi.set(__self__, "evaluation_interval", evaluation_interval)
         if level is not None:
             pulumi.set(__self__, "level", level)
         if level_conditions is not None:
@@ -588,6 +626,8 @@ class _RuleState:
             pulumi.set(__self__, "notification_id", notification_id)
         if notify_templates is not None:
             pulumi.set(__self__, "notify_templates", notify_templates)
+        if object_group_id is not None:
+            pulumi.set(__self__, "object_group_id", object_group_id)
         if original_dimensions is not None:
             pulumi.set(__self__, "original_dimensions", original_dimensions)
         if project_name is not None:
@@ -763,6 +803,18 @@ class _RuleState:
         pulumi.set(self, "evaluation_count", value)
 
     @_builtins.property
+    @pulumi.getter(name="evaluationInterval")
+    def evaluation_interval(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Evaluation interval (minutes)
+        """
+        return pulumi.get(self, "evaluation_interval")
+
+    @evaluation_interval.setter
+    def evaluation_interval(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "evaluation_interval", value)
+
+    @_builtins.property
     @pulumi.getter
     def level(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -847,6 +899,18 @@ class _RuleState:
     @notify_templates.setter
     def notify_templates(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['RuleNotifyTemplateArgs']]]]):
         pulumi.set(self, "notify_templates", value)
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupId")
+    def object_group_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Object group ID
+        """
+        return pulumi.get(self, "object_group_id")
+
+    @object_group_id.setter
+    def object_group_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "object_group_id", value)
 
     @_builtins.property
     @pulumi.getter(name="originalDimensions")
@@ -1034,6 +1098,7 @@ class Rule(pulumi.CustomResource):
                  effect_start_at: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_state: pulumi.Input[Optional[_builtins.str]] = None,
                  evaluation_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 evaluation_interval: pulumi.Input[Optional[_builtins.int]] = None,
                  level: pulumi.Input[Optional[_builtins.str]] = None,
                  level_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleLevelConditionArgs', 'RuleLevelConditionArgsDict']]]]] = None,
                  multiple_conditions: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1041,6 +1106,7 @@ class Rule(pulumi.CustomResource):
                  no_data: pulumi.Input[Optional[Union['RuleNoDataArgs', 'RuleNoDataArgsDict']]] = None,
                  notification_id: pulumi.Input[Optional[_builtins.str]] = None,
                  notify_templates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleNotifyTemplateArgs', 'RuleNotifyTemplateArgsDict']]]]] = None,
+                 object_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  original_dimensions: pulumi.Input[Optional[Union['RuleOriginalDimensionsArgs', 'RuleOriginalDimensionsArgsDict']]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_notify: pulumi.Input[Optional[Union['RuleRecoveryNotifyArgs', 'RuleRecoveryNotifyArgsDict']]] = None,
@@ -1138,6 +1204,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] effect_start_at: Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
         :param pulumi.Input[_builtins.str] enable_state: Alert policy status. enable: enabled, disable: disabled
         :param pulumi.Input[_builtins.int] evaluation_count: Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
+        :param pulumi.Input[_builtins.int] evaluation_interval: Evaluation interval (minutes)
         :param pulumi.Input[_builtins.str] level: Alert level. critical: critical, warning: warning, notice: notification
         :param pulumi.Input[Sequence[pulumi.Input[Union['RuleLevelConditionArgs', 'RuleLevelConditionArgsDict']]]] level_conditions: Alert severity configuration.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
@@ -1147,6 +1214,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] notification_id: Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
         :param pulumi.Input[Sequence[pulumi.Input[Union['RuleNotifyTemplateArgs', 'RuleNotifyTemplateArgsDict']]]] notify_templates: Notification template configuration.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] object_group_id: Object group ID
         :param pulumi.Input[Union['RuleOriginalDimensionsArgs', 'RuleOriginalDimensionsArgsDict']] original_dimensions: Resource ID detected by the alert policy.
         :param pulumi.Input[_builtins.str] project_name: Project name to which the alert policy belongs. If not specified, it defaults to the default project.
         :param pulumi.Input[Union['RuleRecoveryNotifyArgs', 'RuleRecoveryNotifyArgsDict']] recovery_notify: Alert recovery notification.
@@ -1263,6 +1331,7 @@ class Rule(pulumi.CustomResource):
                  effect_start_at: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_state: pulumi.Input[Optional[_builtins.str]] = None,
                  evaluation_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 evaluation_interval: pulumi.Input[Optional[_builtins.int]] = None,
                  level: pulumi.Input[Optional[_builtins.str]] = None,
                  level_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleLevelConditionArgs', 'RuleLevelConditionArgsDict']]]]] = None,
                  multiple_conditions: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1270,6 +1339,7 @@ class Rule(pulumi.CustomResource):
                  no_data: pulumi.Input[Optional[Union['RuleNoDataArgs', 'RuleNoDataArgsDict']]] = None,
                  notification_id: pulumi.Input[Optional[_builtins.str]] = None,
                  notify_templates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleNotifyTemplateArgs', 'RuleNotifyTemplateArgsDict']]]]] = None,
+                 object_group_id: pulumi.Input[Optional[_builtins.str]] = None,
                  original_dimensions: pulumi.Input[Optional[Union['RuleOriginalDimensionsArgs', 'RuleOriginalDimensionsArgsDict']]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  recovery_notify: pulumi.Input[Optional[Union['RuleRecoveryNotifyArgs', 'RuleRecoveryNotifyArgsDict']]] = None,
@@ -1308,6 +1378,7 @@ class Rule(pulumi.CustomResource):
             if evaluation_count is None and not opts.urn:
                 raise TypeError("Missing required property 'evaluation_count'")
             __props__.__dict__["evaluation_count"] = evaluation_count
+            __props__.__dict__["evaluation_interval"] = evaluation_interval
             if level is None and not opts.urn:
                 raise TypeError("Missing required property 'level'")
             __props__.__dict__["level"] = level
@@ -1319,6 +1390,7 @@ class Rule(pulumi.CustomResource):
             __props__.__dict__["no_data"] = no_data
             __props__.__dict__["notification_id"] = notification_id
             __props__.__dict__["notify_templates"] = notify_templates
+            __props__.__dict__["object_group_id"] = object_group_id
             __props__.__dict__["original_dimensions"] = original_dimensions
             __props__.__dict__["project_name"] = project_name
             __props__.__dict__["recovery_notify"] = recovery_notify
@@ -1365,6 +1437,7 @@ class Rule(pulumi.CustomResource):
             effect_start_at: pulumi.Input[Optional[_builtins.str]] = None,
             enable_state: pulumi.Input[Optional[_builtins.str]] = None,
             evaluation_count: pulumi.Input[Optional[_builtins.int]] = None,
+            evaluation_interval: pulumi.Input[Optional[_builtins.int]] = None,
             level: pulumi.Input[Optional[_builtins.str]] = None,
             level_conditions: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleLevelConditionArgs', 'RuleLevelConditionArgsDict']]]]] = None,
             multiple_conditions: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -1372,6 +1445,7 @@ class Rule(pulumi.CustomResource):
             no_data: pulumi.Input[Optional[Union['RuleNoDataArgs', 'RuleNoDataArgsDict']]] = None,
             notification_id: pulumi.Input[Optional[_builtins.str]] = None,
             notify_templates: pulumi.Input[Optional[Sequence[pulumi.Input[Union['RuleNotifyTemplateArgs', 'RuleNotifyTemplateArgsDict']]]]] = None,
+            object_group_id: pulumi.Input[Optional[_builtins.str]] = None,
             original_dimensions: pulumi.Input[Optional[Union['RuleOriginalDimensionsArgs', 'RuleOriginalDimensionsArgsDict']]] = None,
             project_name: pulumi.Input[Optional[_builtins.str]] = None,
             recovery_notify: pulumi.Input[Optional[Union['RuleRecoveryNotifyArgs', 'RuleRecoveryNotifyArgsDict']]] = None,
@@ -1406,6 +1480,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] effect_start_at: Start time for the alert policy to take effect, in HH:MM format, for example: 00:00.
         :param pulumi.Input[_builtins.str] enable_state: Alert policy status. enable: enabled, disable: disabled
         :param pulumi.Input[_builtins.int] evaluation_count: Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
+        :param pulumi.Input[_builtins.int] evaluation_interval: Evaluation interval (minutes)
         :param pulumi.Input[_builtins.str] level: Alert level. critical: critical, warning: warning, notice: notification
         :param pulumi.Input[Sequence[pulumi.Input[Union['RuleLevelConditionArgs', 'RuleLevelConditionArgsDict']]]] level_conditions: Alert severity configuration.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
@@ -1415,6 +1490,7 @@ class Rule(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] notification_id: Notification policy ID. You can call the ListNotifications API to obtain the notification policy ID. Note: This parameter has higher priority than AlertMethods. When you specify the alert notification policy ID using this parameter, other alert notification configurations (AlertMethods, ContactGroupIds, WebhookIds, EffectStartAt, EffectEndAt, etc.) will become invalid.
         :param pulumi.Input[Sequence[pulumi.Input[Union['RuleNotifyTemplateArgs', 'RuleNotifyTemplateArgsDict']]]] notify_templates: Notification template configuration.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] object_group_id: Object group ID
         :param pulumi.Input[Union['RuleOriginalDimensionsArgs', 'RuleOriginalDimensionsArgsDict']] original_dimensions: Resource ID detected by the alert policy.
         :param pulumi.Input[_builtins.str] project_name: Project name to which the alert policy belongs. If not specified, it defaults to the default project.
         :param pulumi.Input[Union['RuleRecoveryNotifyArgs', 'RuleRecoveryNotifyArgsDict']] recovery_notify: Alert recovery notification.
@@ -1447,6 +1523,7 @@ class Rule(pulumi.CustomResource):
         __props__.__dict__["effect_start_at"] = effect_start_at
         __props__.__dict__["enable_state"] = enable_state
         __props__.__dict__["evaluation_count"] = evaluation_count
+        __props__.__dict__["evaluation_interval"] = evaluation_interval
         __props__.__dict__["level"] = level
         __props__.__dict__["level_conditions"] = level_conditions
         __props__.__dict__["multiple_conditions"] = multiple_conditions
@@ -1454,6 +1531,7 @@ class Rule(pulumi.CustomResource):
         __props__.__dict__["no_data"] = no_data
         __props__.__dict__["notification_id"] = notification_id
         __props__.__dict__["notify_templates"] = notify_templates
+        __props__.__dict__["object_group_id"] = object_group_id
         __props__.__dict__["original_dimensions"] = original_dimensions
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["recovery_notify"] = recovery_notify
@@ -1568,6 +1646,14 @@ class Rule(pulumi.CustomResource):
         return pulumi.get(self, "evaluation_count")
 
     @_builtins.property
+    @pulumi.getter(name="evaluationInterval")
+    def evaluation_interval(self) -> pulumi.Output[_builtins.int]:
+        """
+        Evaluation interval (minutes)
+        """
+        return pulumi.get(self, "evaluation_interval")
+
+    @_builtins.property
     @pulumi.getter
     def level(self) -> pulumi.Output[_builtins.str]:
         """
@@ -1624,6 +1710,14 @@ class Rule(pulumi.CustomResource):
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "notify_templates")
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupId")
+    def object_group_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        Object group ID
+        """
+        return pulumi.get(self, "object_group_id")
 
     @_builtins.property
     @pulumi.getter(name="originalDimensions")

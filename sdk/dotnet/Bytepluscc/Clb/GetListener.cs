@@ -145,6 +145,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         public readonly int EndPort;
         /// <summary>
+        /// Enable weighted extension for the scheduling algorithm?
+        /// </summary>
+        public readonly string EnhancedSchedulerEnable;
+        /// <summary>
         /// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         /// </summary>
         public readonly int EstablishedTimeout;
@@ -212,6 +216,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
         /// </summary>
         public readonly int ProxySendTimeout;
+        /// <summary>
+        /// Enable response validation?
+        /// </summary>
+        public readonly string ResponseCheckEnabled;
         /// <summary>
         /// List of rule IDs bound to the listener.
         /// </summary>
@@ -295,6 +303,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
 
             int endPort,
 
+            string enhancedSchedulerEnable,
+
             int establishedTimeout,
 
             Outputs.GetListenerHealthCheckResult healthCheck,
@@ -328,6 +338,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
             int proxyReadTimeout,
 
             int proxySendTimeout,
+
+            string responseCheckEnabled,
 
             ImmutableArray<string> ruleIds,
 
@@ -369,6 +381,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
             DomainExtensions = domainExtensions;
             Enabled = enabled;
             EndPort = endPort;
+            EnhancedSchedulerEnable = enhancedSchedulerEnable;
             EstablishedTimeout = establishedTimeout;
             HealthCheck = healthCheck;
             Http2Enabled = http2Enabled;
@@ -386,6 +399,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
             ProxyProtocolType = proxyProtocolType;
             ProxyReadTimeout = proxyReadTimeout;
             ProxySendTimeout = proxySendTimeout;
+            ResponseCheckEnabled = responseCheckEnabled;
             RuleIds = ruleIds;
             Scheduler = scheduler;
             SecurityPolicyId = securityPolicyId;

@@ -269,6 +269,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         /// </summary>
         public readonly Outputs.GetDomainRewriteHlsResult RewriteHls;
         /// <summary>
+        /// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+        /// </summary>
+        public readonly Outputs.GetDomainRuleEngineResult RuleEngine;
+        /// <summary>
         /// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         /// </summary>
         public readonly string ServiceRegion;
@@ -413,6 +417,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
 
             Outputs.GetDomainRewriteHlsResult rewriteHls,
 
+            Outputs.GetDomainRuleEngineResult ruleEngine,
+
             string serviceRegion,
 
             string serviceType,
@@ -484,6 +490,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
             RequestHeaders = requestHeaders;
             ResponseHeaders = responseHeaders;
             RewriteHls = rewriteHls;
+            RuleEngine = ruleEngine;
             ServiceRegion = serviceRegion;
             ServiceType = serviceType;
             SignedUrlAuth = signedUrlAuth;

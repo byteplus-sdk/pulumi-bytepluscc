@@ -13,6 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Inputs
 
     public sealed class DomainOriginCertCheckArgs : global::Pulumi.ResourceArgs
     {
+        [Input("certInfoLists")]
+        private InputList<Inputs.DomainOriginCertCheckCertInfoListArgs>? _certInfoLists;
+
+        /// <summary>
+        /// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public InputList<Inputs.DomainOriginCertCheckCertInfoListArgs> CertInfoLists
+        {
+            get => _certInfoLists ?? (_certInfoLists = new InputList<Inputs.DomainOriginCertCheckCertInfoListArgs>());
+            set => _certInfoLists = value;
+        }
+
         /// <summary>
         /// Switch
         /// </summary>
