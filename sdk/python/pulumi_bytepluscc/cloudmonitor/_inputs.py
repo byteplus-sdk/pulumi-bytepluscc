@@ -81,6 +81,10 @@ class RuleConditionArgsDict(TypedDict):
     """
     Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
     """
+    evaluation_window: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Evaluation window (minutes)
+    """
     metric_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
@@ -97,6 +101,10 @@ class RuleConditionArgsDict(TypedDict):
     """
     Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
     """
+    sub_namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Sub-namespace
+    """
     threshold: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
@@ -106,21 +114,27 @@ class RuleConditionArgsDict(TypedDict):
 class RuleConditionArgs:
     def __init__(__self__, *,
                  comparison_operator: pulumi.Input[Optional[_builtins.str]] = None,
+                 evaluation_window: pulumi.Input[Optional[_builtins.int]] = None,
                  metric_name: pulumi.Input[Optional[_builtins.str]] = None,
                  metric_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  period: pulumi.Input[Optional[_builtins.str]] = None,
                  statistics: pulumi.Input[Optional[_builtins.str]] = None,
+                 sub_namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  threshold: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
+        :param pulumi.Input[_builtins.int] evaluation_window: Evaluation window (minutes)
         :param pulumi.Input[_builtins.str] metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         :param pulumi.Input[_builtins.str] metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         :param pulumi.Input[_builtins.str] period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         :param pulumi.Input[_builtins.str] statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param pulumi.Input[_builtins.str] sub_namespace: Sub-namespace
         :param pulumi.Input[_builtins.str] threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
+        if evaluation_window is not None:
+            pulumi.set(__self__, "evaluation_window", evaluation_window)
         if metric_name is not None:
             pulumi.set(__self__, "metric_name", metric_name)
         if metric_unit is not None:
@@ -129,6 +143,8 @@ class RuleConditionArgs:
             pulumi.set(__self__, "period", period)
         if statistics is not None:
             pulumi.set(__self__, "statistics", statistics)
+        if sub_namespace is not None:
+            pulumi.set(__self__, "sub_namespace", sub_namespace)
         if threshold is not None:
             pulumi.set(__self__, "threshold", threshold)
 
@@ -143,6 +159,18 @@ class RuleConditionArgs:
     @comparison_operator.setter
     def comparison_operator(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "comparison_operator", value)
+
+    @_builtins.property
+    @pulumi.getter(name="evaluationWindow")
+    def evaluation_window(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Evaluation window (minutes)
+        """
+        return pulumi.get(self, "evaluation_window")
+
+    @evaluation_window.setter
+    def evaluation_window(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "evaluation_window", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
@@ -191,6 +219,18 @@ class RuleConditionArgs:
     @statistics.setter
     def statistics(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "statistics", value)
+
+    @_builtins.property
+    @pulumi.getter(name="subNamespace")
+    def sub_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Sub-namespace
+        """
+        return pulumi.get(self, "sub_namespace")
+
+    @sub_namespace.setter
+    def sub_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "sub_namespace", value)
 
     @_builtins.property
     @pulumi.getter
@@ -642,9 +682,9 @@ class RuleLevelConditionConditionArgsDict(TypedDict):
     """
     Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
     """
-    display_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    evaluation_window: NotRequired[pulumi.Input[Optional[_builtins.int]]]
     """
-    Metric display name.
+    Evaluation window (minutes)
     """
     metric_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -662,6 +702,10 @@ class RuleLevelConditionConditionArgsDict(TypedDict):
     """
     Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
     """
+    sub_namespace: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Sub-namespace
+    """
     threshold: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
     Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
@@ -671,25 +715,27 @@ class RuleLevelConditionConditionArgsDict(TypedDict):
 class RuleLevelConditionConditionArgs:
     def __init__(__self__, *,
                  comparison_operator: pulumi.Input[Optional[_builtins.str]] = None,
-                 display_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 evaluation_window: pulumi.Input[Optional[_builtins.int]] = None,
                  metric_name: pulumi.Input[Optional[_builtins.str]] = None,
                  metric_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  period: pulumi.Input[Optional[_builtins.str]] = None,
                  statistics: pulumi.Input[Optional[_builtins.str]] = None,
+                 sub_namespace: pulumi.Input[Optional[_builtins.str]] = None,
                  threshold: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] comparison_operator: Comparison operators. Supports standard threshold alerting: >, >=, <, <=, !=, =, as well as the following period-over-period alerting: last*period*increase*pct: Increased compared to last period. last*period*decrease*pct: Decreased compared to last period. last*period*abs*pct: Increased or decreased compared to last period. last*day*increase*pct: Increased compared to the same period yesterday. last*day*decrease*pct: Decreased compared to the same period yesterday. last*day*abs*pct: Increased or decreased compared to the same period yesterday. last*week*increase*pct: Increased compared to the same period last week. last*week*decrease*pct: Decreased compared to the same period last week. last*week*abs_pct: Increased or decreased compared to the same period last week.
-        :param pulumi.Input[_builtins.str] display_name: Metric display name.
+        :param pulumi.Input[_builtins.int] evaluation_window: Evaluation window (minutes)
         :param pulumi.Input[_builtins.str] metric_name: Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
         :param pulumi.Input[_builtins.str] metric_unit: Unit of the monitoring metric. For details, see MetricUnit for each product in Cloud Monitoring Metric Query. For period-over-period alerting, MetricUnit must be set to "Percent." Whether IEC is included in MetricUnit indicates different base values: With IEC: base is 1024; Without IEC: base is 1000.
         :param pulumi.Input[_builtins.str] period: Statistical period for monitoring metrics. For details, see Period for each product in Cloud Monitoring Metric Query.
         :param pulumi.Input[_builtins.str] statistics: Statistical method. Options: avg: average, max: maximum, min: minimum. The statistical method is applied to data within the detection time period. For example, the default detection time span is 1 minute. If the statistical method is avg, the average value of data within 1 minute is used.
+        :param pulumi.Input[_builtins.str] sub_namespace: Sub-namespace
         :param pulumi.Input[_builtins.str] threshold: Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
         """
         if comparison_operator is not None:
             pulumi.set(__self__, "comparison_operator", comparison_operator)
-        if display_name is not None:
-            pulumi.set(__self__, "display_name", display_name)
+        if evaluation_window is not None:
+            pulumi.set(__self__, "evaluation_window", evaluation_window)
         if metric_name is not None:
             pulumi.set(__self__, "metric_name", metric_name)
         if metric_unit is not None:
@@ -698,6 +744,8 @@ class RuleLevelConditionConditionArgs:
             pulumi.set(__self__, "period", period)
         if statistics is not None:
             pulumi.set(__self__, "statistics", statistics)
+        if sub_namespace is not None:
+            pulumi.set(__self__, "sub_namespace", sub_namespace)
         if threshold is not None:
             pulumi.set(__self__, "threshold", threshold)
 
@@ -714,16 +762,16 @@ class RuleLevelConditionConditionArgs:
         pulumi.set(self, "comparison_operator", value)
 
     @_builtins.property
-    @pulumi.getter(name="displayName")
-    def display_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+    @pulumi.getter(name="evaluationWindow")
+    def evaluation_window(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
-        Metric display name.
+        Evaluation window (minutes)
         """
-        return pulumi.get(self, "display_name")
+        return pulumi.get(self, "evaluation_window")
 
-    @display_name.setter
-    def display_name(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "display_name", value)
+    @evaluation_window.setter
+    def evaluation_window(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "evaluation_window", value)
 
     @_builtins.property
     @pulumi.getter(name="metricName")
@@ -774,6 +822,18 @@ class RuleLevelConditionConditionArgs:
         pulumi.set(self, "statistics", value)
 
     @_builtins.property
+    @pulumi.getter(name="subNamespace")
+    def sub_namespace(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Sub-namespace
+        """
+        return pulumi.get(self, "sub_namespace")
+
+    @sub_namespace.setter
+    def sub_namespace(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "sub_namespace", value)
+
+    @_builtins.property
     @pulumi.getter
     def threshold(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -795,20 +855,28 @@ class RuleNoDataArgsDict(TypedDict):
     """
     No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
     """
+    level: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    No data alert level (critical, warning, notice)
+    """
 
 @pulumi.input_type
 class RuleNoDataArgs:
     def __init__(__self__, *,
                  enable: pulumi.Input[Optional[_builtins.bool]] = None,
-                 evaluation_count: pulumi.Input[Optional[_builtins.int]] = None):
+                 evaluation_count: pulumi.Input[Optional[_builtins.int]] = None,
+                 level: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.bool] enable: Enable no data alert. Values: true: enable no data alert. false (default): disable no data alert.
         :param pulumi.Input[_builtins.int] evaluation_count: No data alert trigger threshold. If no data is reported within the configured threshold period, a no data alert will be triggered. When Enable is set to true, this field is required. Integer format; value range is 3–20.
+        :param pulumi.Input[_builtins.str] level: No data alert level (critical, warning, notice)
         """
         if enable is not None:
             pulumi.set(__self__, "enable", enable)
         if evaluation_count is not None:
             pulumi.set(__self__, "evaluation_count", evaluation_count)
+        if level is not None:
+            pulumi.set(__self__, "level", level)
 
     @_builtins.property
     @pulumi.getter
@@ -833,6 +901,18 @@ class RuleNoDataArgs:
     @evaluation_count.setter
     def evaluation_count(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "evaluation_count", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def level(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        No data alert level (critical, warning, notice)
+        """
+        return pulumi.get(self, "level")
+
+    @level.setter
+    def level(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "level", value)
 
 
 class RuleNotifyTemplateArgsDict(TypedDict):

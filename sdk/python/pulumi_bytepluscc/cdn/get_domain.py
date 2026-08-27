@@ -27,7 +27,7 @@ class GetDomainResult:
     """
     A collection of values returned by getDomain.
     """
-    def __init__(__self__, area_access_rule=None, backup_origins=None, browser_caches=None, cache_host=None, cache_keys=None, cache_shared=None, cache_shared_target_host=None, caches=None, cname=None, compression=None, conditional_origin=None, created_time=None, custom_error_page=None, customize_access_rule=None, domain=None, domain_lock=None, download_speed_limit=None, follow_redirect=None, http_forced_redirect=None, https=None, i_pv6=None, id=None, ip_access_rule=None, is_conflict_domain=None, lock_status=None, method_denied_rule=None, multi_range=None, negative_caches=None, offline_cache=None, origin_access_rule=None, origin_args=None, origin_cert_check=None, origin_host=None, origin_i_pv6=None, origin_protocol=None, origin_range=None, origin_retry=None, origin_rewrite=None, origin_sni=None, origins=None, page_optimization=None, primary_origins=None, project=None, quic=None, redirection_rewrite=None, referer_access_rule=None, remote_auth=None, request_block_rule=None, request_headers=None, response_headers=None, rewrite_hls=None, service_region=None, service_type=None, signed_url_auth=None, status=None, tags=None, timeout=None, ua_access_rule=None, updated_time=None, url_normalize=None, video_drag=None):
+    def __init__(__self__, area_access_rule=None, backup_origins=None, browser_caches=None, cache_host=None, cache_keys=None, cache_shared=None, cache_shared_target_host=None, caches=None, cname=None, compression=None, conditional_origin=None, created_time=None, custom_error_page=None, customize_access_rule=None, domain=None, domain_lock=None, download_speed_limit=None, follow_redirect=None, http_forced_redirect=None, https=None, i_pv6=None, id=None, ip_access_rule=None, is_conflict_domain=None, lock_status=None, method_denied_rule=None, multi_range=None, negative_caches=None, offline_cache=None, origin_access_rule=None, origin_args=None, origin_cert_check=None, origin_host=None, origin_i_pv6=None, origin_protocol=None, origin_range=None, origin_retry=None, origin_rewrite=None, origin_sni=None, origins=None, page_optimization=None, primary_origins=None, project=None, quic=None, redirection_rewrite=None, referer_access_rule=None, remote_auth=None, request_block_rule=None, request_headers=None, response_headers=None, rewrite_hls=None, rule_engine=None, service_region=None, service_type=None, signed_url_auth=None, status=None, tags=None, timeout=None, ua_access_rule=None, updated_time=None, url_normalize=None, video_drag=None):
         if area_access_rule and not isinstance(area_access_rule, dict):
             raise TypeError("Expected argument 'area_access_rule' to be a dict")
         pulumi.set(__self__, "area_access_rule", area_access_rule)
@@ -181,6 +181,9 @@ class GetDomainResult:
         if rewrite_hls and not isinstance(rewrite_hls, dict):
             raise TypeError("Expected argument 'rewrite_hls' to be a dict")
         pulumi.set(__self__, "rewrite_hls", rewrite_hls)
+        if rule_engine and not isinstance(rule_engine, dict):
+            raise TypeError("Expected argument 'rule_engine' to be a dict")
+        pulumi.set(__self__, "rule_engine", rule_engine)
         if service_region and not isinstance(service_region, str):
             raise TypeError("Expected argument 'service_region' to be a str")
         pulumi.set(__self__, "service_region", service_region)
@@ -621,6 +624,14 @@ class GetDomainResult:
         return pulumi.get(self, "rewrite_hls")
 
     @_builtins.property
+    @pulumi.getter(name="ruleEngine")
+    def rule_engine(self) -> 'outputs.GetDomainRuleEngineResult':
+        """
+        Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+        """
+        return pulumi.get(self, "rule_engine")
+
+    @_builtins.property
     @pulumi.getter(name="serviceRegion")
     def service_region(self) -> _builtins.str:
         """
@@ -758,6 +769,7 @@ class AwaitableGetDomainResult(GetDomainResult):
             request_headers=self.request_headers,
             response_headers=self.response_headers,
             rewrite_hls=self.rewrite_hls,
+            rule_engine=self.rule_engine,
             service_region=self.service_region,
             service_type=self.service_type,
             signed_url_auth=self.signed_url_auth,
@@ -835,6 +847,7 @@ def get_domain(id: Optional[_builtins.str] = None,
         request_headers=pulumi.get(__ret__, 'request_headers'),
         response_headers=pulumi.get(__ret__, 'response_headers'),
         rewrite_hls=pulumi.get(__ret__, 'rewrite_hls'),
+        rule_engine=pulumi.get(__ret__, 'rule_engine'),
         service_region=pulumi.get(__ret__, 'service_region'),
         service_type=pulumi.get(__ret__, 'service_type'),
         signed_url_auth=pulumi.get(__ret__, 'signed_url_auth'),
@@ -909,6 +922,7 @@ def get_domain_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         request_headers=pulumi.get(__response__, 'request_headers'),
         response_headers=pulumi.get(__response__, 'response_headers'),
         rewrite_hls=pulumi.get(__response__, 'rewrite_hls'),
+        rule_engine=pulumi.get(__response__, 'rule_engine'),
         service_region=pulumi.get(__response__, 'service_region'),
         service_type=pulumi.get(__response__, 'service_type'),
         signed_url_auth=pulumi.get(__response__, 'signed_url_auth'),

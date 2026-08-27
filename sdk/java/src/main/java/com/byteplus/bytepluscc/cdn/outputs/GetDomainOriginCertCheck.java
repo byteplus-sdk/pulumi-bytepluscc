@@ -3,13 +3,20 @@
 
 package com.byteplus.bytepluscc.cdn.outputs;
 
+import com.byteplus.bytepluscc.cdn.outputs.GetDomainOriginCertCheckCertInfoList;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
+import java.util.List;
 import java.util.Objects;
 
 @CustomType
 public final class GetDomainOriginCertCheck {
+    /**
+     * @return Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+     * 
+     */
+    private List<GetDomainOriginCertCheckCertInfoList> certInfoLists;
     /**
      * @return Switch
      * 
@@ -17,6 +24,13 @@ public final class GetDomainOriginCertCheck {
     private Boolean switch_;
 
     private GetDomainOriginCertCheck() {}
+    /**
+     * @return Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+     * 
+     */
+    public List<GetDomainOriginCertCheckCertInfoList> certInfoLists() {
+        return this.certInfoLists;
+    }
     /**
      * @return Switch
      * 
@@ -34,13 +48,26 @@ public final class GetDomainOriginCertCheck {
     }
     @CustomType.Builder
     public static final class Builder {
+        private List<GetDomainOriginCertCheckCertInfoList> certInfoLists;
         private Boolean switch_;
         public Builder() {}
         public Builder(GetDomainOriginCertCheck defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.certInfoLists = defaults.certInfoLists;
     	      this.switch_ = defaults.switch_;
         }
 
+        @CustomType.Setter
+        public Builder certInfoLists(List<GetDomainOriginCertCheckCertInfoList> certInfoLists) {
+            if (certInfoLists == null) {
+              throw new MissingRequiredPropertyException("GetDomainOriginCertCheck", "certInfoLists");
+            }
+            this.certInfoLists = certInfoLists;
+            return this;
+        }
+        public Builder certInfoLists(GetDomainOriginCertCheckCertInfoList... certInfoLists) {
+            return certInfoLists(List.of(certInfoLists));
+        }
         @CustomType.Setter("switch")
         public Builder switch_(Boolean switch_) {
             if (switch_ == null) {
@@ -51,6 +78,7 @@ public final class GetDomainOriginCertCheck {
         }
         public GetDomainOriginCertCheck build() {
             final var _resultValue = new GetDomainOriginCertCheck();
+            _resultValue.certInfoLists = certInfoLists;
             _resultValue.switch_ = switch_;
             return _resultValue;
         }

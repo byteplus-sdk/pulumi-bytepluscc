@@ -6,6 +6,7 @@ package com.byteplus.bytepluscc.cloudmonitor.outputs;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -22,6 +23,11 @@ public final class RuleNoData {
      * 
      */
     private @Nullable Integer evaluationCount;
+    /**
+     * @return No data alert level (critical, warning, notice)
+     * 
+     */
+    private @Nullable String level;
 
     private RuleNoData() {}
     /**
@@ -38,6 +44,13 @@ public final class RuleNoData {
     public Optional<Integer> evaluationCount() {
         return Optional.ofNullable(this.evaluationCount);
     }
+    /**
+     * @return No data alert level (critical, warning, notice)
+     * 
+     */
+    public Optional<String> level() {
+        return Optional.ofNullable(this.level);
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -50,11 +63,13 @@ public final class RuleNoData {
     public static final class Builder {
         private @Nullable Boolean enable;
         private @Nullable Integer evaluationCount;
+        private @Nullable String level;
         public Builder() {}
         public Builder(RuleNoData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.enable = defaults.enable;
     	      this.evaluationCount = defaults.evaluationCount;
+    	      this.level = defaults.level;
         }
 
         @CustomType.Setter
@@ -69,10 +84,17 @@ public final class RuleNoData {
             this.evaluationCount = evaluationCount;
             return this;
         }
+        @CustomType.Setter
+        public Builder level(@Nullable String level) {
+
+            this.level = level;
+            return this;
+        }
         public RuleNoData build() {
             final var _resultValue = new RuleNoData();
             _resultValue.enable = enable;
             _resultValue.evaluationCount = evaluationCount;
+            _resultValue.level = level;
             return _resultValue;
         }
     }

@@ -27,7 +27,7 @@ class GetRuleResult:
     """
     A collection of values returned by getRule.
     """
-    def __init__(__self__, alert_methods=None, alert_state=None, condition_operator=None, conditions=None, contact_group_ids=None, created_at=None, description=None, dimension_conditions=None, effect_end_at=None, effect_start_at=None, enable_state=None, evaluation_count=None, id=None, level=None, level_conditions=None, multiple_conditions=None, namespace=None, no_data=None, notification_id=None, notify_templates=None, original_dimensions=None, project_name=None, recovery_notify=None, regions=None, resource_type=None, rule_id=None, rule_name=None, rule_type=None, silence_time=None, sub_namespace=None, tags=None, updated_at=None, webhook=None, webhook_ids=None):
+    def __init__(__self__, alert_methods=None, alert_state=None, condition_operator=None, conditions=None, contact_group_ids=None, created_at=None, description=None, dimension_conditions=None, effect_end_at=None, effect_start_at=None, enable_state=None, evaluation_count=None, evaluation_interval=None, id=None, level=None, level_conditions=None, multiple_conditions=None, namespace=None, no_data=None, notification_id=None, notify_templates=None, object_group_id=None, original_dimensions=None, project_name=None, recovery_notify=None, regions=None, resource_type=None, rule_id=None, rule_name=None, rule_type=None, silence_time=None, sub_namespace=None, tags=None, updated_at=None, webhook=None, webhook_ids=None):
         if alert_methods and not isinstance(alert_methods, list):
             raise TypeError("Expected argument 'alert_methods' to be a list")
         pulumi.set(__self__, "alert_methods", alert_methods)
@@ -64,6 +64,9 @@ class GetRuleResult:
         if evaluation_count and not isinstance(evaluation_count, int):
             raise TypeError("Expected argument 'evaluation_count' to be a int")
         pulumi.set(__self__, "evaluation_count", evaluation_count)
+        if evaluation_interval and not isinstance(evaluation_interval, int):
+            raise TypeError("Expected argument 'evaluation_interval' to be a int")
+        pulumi.set(__self__, "evaluation_interval", evaluation_interval)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -88,6 +91,9 @@ class GetRuleResult:
         if notify_templates and not isinstance(notify_templates, list):
             raise TypeError("Expected argument 'notify_templates' to be a list")
         pulumi.set(__self__, "notify_templates", notify_templates)
+        if object_group_id and not isinstance(object_group_id, str):
+            raise TypeError("Expected argument 'object_group_id' to be a str")
+        pulumi.set(__self__, "object_group_id", object_group_id)
         if original_dimensions and not isinstance(original_dimensions, dict):
             raise TypeError("Expected argument 'original_dimensions' to be a dict")
         pulumi.set(__self__, "original_dimensions", original_dimensions)
@@ -228,6 +234,14 @@ class GetRuleResult:
         return pulumi.get(self, "evaluation_count")
 
     @_builtins.property
+    @pulumi.getter(name="evaluationInterval")
+    def evaluation_interval(self) -> _builtins.int:
+        """
+        Evaluation interval (minutes)
+        """
+        return pulumi.get(self, "evaluation_interval")
+
+    @_builtins.property
     @pulumi.getter
     def id(self) -> _builtins.str:
         """
@@ -290,6 +304,14 @@ class GetRuleResult:
         Notification template configuration.
         """
         return pulumi.get(self, "notify_templates")
+
+    @_builtins.property
+    @pulumi.getter(name="objectGroupId")
+    def object_group_id(self) -> _builtins.str:
+        """
+        Object group ID
+        """
+        return pulumi.get(self, "object_group_id")
 
     @_builtins.property
     @pulumi.getter(name="originalDimensions")
@@ -422,6 +444,7 @@ class AwaitableGetRuleResult(GetRuleResult):
             effect_start_at=self.effect_start_at,
             enable_state=self.enable_state,
             evaluation_count=self.evaluation_count,
+            evaluation_interval=self.evaluation_interval,
             id=self.id,
             level=self.level,
             level_conditions=self.level_conditions,
@@ -430,6 +453,7 @@ class AwaitableGetRuleResult(GetRuleResult):
             no_data=self.no_data,
             notification_id=self.notification_id,
             notify_templates=self.notify_templates,
+            object_group_id=self.object_group_id,
             original_dimensions=self.original_dimensions,
             project_name=self.project_name,
             recovery_notify=self.recovery_notify,
@@ -472,6 +496,7 @@ def get_rule(id: Optional[_builtins.str] = None,
         effect_start_at=pulumi.get(__ret__, 'effect_start_at'),
         enable_state=pulumi.get(__ret__, 'enable_state'),
         evaluation_count=pulumi.get(__ret__, 'evaluation_count'),
+        evaluation_interval=pulumi.get(__ret__, 'evaluation_interval'),
         id=pulumi.get(__ret__, 'id'),
         level=pulumi.get(__ret__, 'level'),
         level_conditions=pulumi.get(__ret__, 'level_conditions'),
@@ -480,6 +505,7 @@ def get_rule(id: Optional[_builtins.str] = None,
         no_data=pulumi.get(__ret__, 'no_data'),
         notification_id=pulumi.get(__ret__, 'notification_id'),
         notify_templates=pulumi.get(__ret__, 'notify_templates'),
+        object_group_id=pulumi.get(__ret__, 'object_group_id'),
         original_dimensions=pulumi.get(__ret__, 'original_dimensions'),
         project_name=pulumi.get(__ret__, 'project_name'),
         recovery_notify=pulumi.get(__ret__, 'recovery_notify'),
@@ -519,6 +545,7 @@ def get_rule_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         effect_start_at=pulumi.get(__response__, 'effect_start_at'),
         enable_state=pulumi.get(__response__, 'enable_state'),
         evaluation_count=pulumi.get(__response__, 'evaluation_count'),
+        evaluation_interval=pulumi.get(__response__, 'evaluation_interval'),
         id=pulumi.get(__response__, 'id'),
         level=pulumi.get(__response__, 'level'),
         level_conditions=pulumi.get(__response__, 'level_conditions'),
@@ -527,6 +554,7 @@ def get_rule_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         no_data=pulumi.get(__response__, 'no_data'),
         notification_id=pulumi.get(__response__, 'notification_id'),
         notify_templates=pulumi.get(__response__, 'notify_templates'),
+        object_group_id=pulumi.get(__response__, 'object_group_id'),
         original_dimensions=pulumi.get(__response__, 'original_dimensions'),
         project_name=pulumi.get(__response__, 'project_name'),
         recovery_notify=pulumi.get(__response__, 'recovery_notify'),

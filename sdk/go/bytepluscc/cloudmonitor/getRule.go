@@ -54,6 +54,8 @@ type LookupRuleResult struct {
 	EnableState string `pulumi:"enableState"`
 	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount int `pulumi:"evaluationCount"`
+	// Evaluation interval (minutes)
+	EvaluationInterval int `pulumi:"evaluationInterval"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
 	// Alert level. critical: critical, warning: warning, notice: notification
@@ -70,6 +72,8 @@ type LookupRuleResult struct {
 	NotificationId string `pulumi:"notificationId"`
 	// Notification template configuration.
 	NotifyTemplates []GetRuleNotifyTemplate `pulumi:"notifyTemplates"`
+	// Object group ID
+	ObjectGroupId string `pulumi:"objectGroupId"`
 	// Resource ID detected by the alert policy.
 	OriginalDimensions GetRuleOriginalDimensions `pulumi:"originalDimensions"`
 	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
@@ -194,6 +198,11 @@ func (o LookupRuleResultOutput) EvaluationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v LookupRuleResult) int { return v.EvaluationCount }).(pulumi.IntOutput)
 }
 
+// Evaluation interval (minutes)
+func (o LookupRuleResultOutput) EvaluationInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v LookupRuleResult) int { return v.EvaluationInterval }).(pulumi.IntOutput)
+}
+
 // Uniquely identifies the resource.
 func (o LookupRuleResultOutput) Id() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupRuleResult) string { return v.Id }).(pulumi.StringOutput)
@@ -232,6 +241,11 @@ func (o LookupRuleResultOutput) NotificationId() pulumi.StringOutput {
 // Notification template configuration.
 func (o LookupRuleResultOutput) NotifyTemplates() GetRuleNotifyTemplateArrayOutput {
 	return o.ApplyT(func(v LookupRuleResult) []GetRuleNotifyTemplate { return v.NotifyTemplates }).(GetRuleNotifyTemplateArrayOutput)
+}
+
+// Object group ID
+func (o LookupRuleResultOutput) ObjectGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupRuleResult) string { return v.ObjectGroupId }).(pulumi.StringOutput)
 }
 
 // Resource ID detected by the alert policy.

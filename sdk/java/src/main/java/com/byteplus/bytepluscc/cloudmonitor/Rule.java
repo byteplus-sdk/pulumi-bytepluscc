@@ -300,6 +300,20 @@ public class Rule extends com.pulumi.resources.CustomResource {
         return this.evaluationCount;
     }
     /**
+     * Evaluation interval (minutes)
+     * 
+     */
+    @Export(name="evaluationInterval", refs={Integer.class}, tree="[0]")
+    private Output<Integer> evaluationInterval;
+
+    /**
+     * @return Evaluation interval (minutes)
+     * 
+     */
+    public Output<Integer> evaluationInterval() {
+        return this.evaluationInterval;
+    }
+    /**
      * Alert level. critical: critical, warning: warning, notice: notification
      * 
      */
@@ -400,6 +414,20 @@ public class Rule extends com.pulumi.resources.CustomResource {
      */
     public Output<List<RuleNotifyTemplate>> notifyTemplates() {
         return this.notifyTemplates;
+    }
+    /**
+     * Object group ID
+     * 
+     */
+    @Export(name="objectGroupId", refs={String.class}, tree="[0]")
+    private Output<String> objectGroupId;
+
+    /**
+     * @return Object group ID
+     * 
+     */
+    public Output<String> objectGroupId() {
+        return this.objectGroupId;
     }
     /**
      * Resource ID detected by the alert policy.

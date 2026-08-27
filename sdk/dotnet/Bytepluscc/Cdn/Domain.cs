@@ -962,6 +962,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         public Output<Outputs.DomainRewriteHls> RewriteHls { get; private set; } = null!;
 
         /// <summary>
+        /// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+        /// </summary>
+        [Output("ruleEngine")]
+        public Output<Outputs.DomainRuleEngine> RuleEngine { get; private set; } = null!;
+
+        /// <summary>
         /// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         /// </summary>
         [Output("serviceRegion")]
@@ -1370,6 +1376,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         /// </summary>
         [Input("rewriteHls")]
         public Input<Inputs.DomainRewriteHlsArgs>? RewriteHls { get; set; }
+
+        /// <summary>
+        /// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+        /// </summary>
+        [Input("ruleEngine")]
+        public Input<Inputs.DomainRuleEngineArgs>? RuleEngine { get; set; }
 
         /// <summary>
         /// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
@@ -1801,6 +1813,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn
         /// </summary>
         [Input("rewriteHls")]
         public Input<Inputs.DomainRewriteHlsGetArgs>? RewriteHls { get; set; }
+
+        /// <summary>
+        /// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+        /// </summary>
+        [Input("ruleEngine")]
+        public Input<Inputs.DomainRuleEngineGetArgs>? RuleEngine { get; set; }
 
         /// <summary>
         /// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).

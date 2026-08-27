@@ -25,6 +25,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor.Inputs
         [Input("evaluationCount")]
         public Input<int>? EvaluationCount { get; set; }
 
+        /// <summary>
+        /// No data alert level (critical, warning, notice)
+        /// </summary>
+        [Input("level")]
+        public Input<string>? Level { get; set; }
+
         public RuleNoDataGetArgs()
         {
         }

@@ -111,6 +111,10 @@ export interface GetListenerResult {
      */
     readonly endPort: number;
     /**
+     * Enable weighted extension for the scheduling algorithm?
+     */
+    readonly enhancedSchedulerEnable: string;
+    /**
      * Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
      */
     readonly establishedTimeout: number;
@@ -178,6 +182,10 @@ export interface GetListenerResult {
      * Timeout for CLB to transmit requests to backend servers. This timeout applies only between two consecutive write operations, not the entire request transmission process. Value range: 30–3600 seconds. Default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
      */
     readonly proxySendTimeout: number;
+    /**
+     * Enable response validation?
+     */
+    readonly responseCheckEnabled: string;
     /**
      * List of rule IDs bound to the listener.
      */

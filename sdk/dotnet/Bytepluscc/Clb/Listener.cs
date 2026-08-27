@@ -201,6 +201,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Output<int> EndPort { get; private set; } = null!;
 
         /// <summary>
+        /// Enable weighted extension for the scheduling algorithm?
+        /// </summary>
+        [Output("enhancedSchedulerEnable")]
+        public Output<string> EnhancedSchedulerEnable { get; private set; } = null!;
+
+        /// <summary>
         /// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         /// </summary>
         [Output("establishedTimeout")]
@@ -295,6 +301,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         [Output("proxySendTimeout")]
         public Output<int> ProxySendTimeout { get; private set; } = null!;
+
+        /// <summary>
+        /// Enable response validation?
+        /// </summary>
+        [Output("responseCheckEnabled")]
+        public Output<string> ResponseCheckEnabled { get; private set; } = null!;
 
         /// <summary>
         /// List of rule IDs bound to the listener.
@@ -435,34 +447,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Input<int>? Bandwidth { get; set; }
 
         /// <summary>
-        /// CA certificate for mutual authentication.
-        /// </summary>
-        [Input("caCertificateId")]
-        public Input<string>? CaCertificateId { get; set; }
-
-        /// <summary>
         /// Enable mutual authentication. on: enabled. off (default): disabled.
         /// </summary>
         [Input("caEnabled")]
         public Input<string>? CaEnabled { get; set; }
-
-        /// <summary>
-        /// Certificate ID from Certificate Center.
-        /// </summary>
-        [Input("certCenterCertificateId")]
-        public Input<string>? CertCenterCertificateId { get; set; }
-
-        /// <summary>
-        /// Certificate ID from the CLB certificate management module.
-        /// </summary>
-        [Input("certificateId")]
-        public Input<string>? CertificateId { get; set; }
-
-        /// <summary>
-        /// Certificate source. clb (default): certificate uploaded to CLB. cert_center: certificate uploaded to Certificate Center. user: certificate uploaded by user.
-        /// </summary>
-        [Input("certificateSource")]
-        public Input<string>? CertificateSource { get; set; }
 
         /// <summary>
         /// Timeout for reading the client request body. This timeout applies only between two consecutive read operations, not the entire request transmission. Range: 30–120 seconds, default is 60 seconds. This parameter is valid only when Protocol is set to HTTP or HTTPS.
@@ -530,6 +518,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         [Input("endPort")]
         public Input<int>? EndPort { get; set; }
+
+        /// <summary>
+        /// Enable weighted extension for the scheduling algorithm?
+        /// </summary>
+        [Input("enhancedSchedulerEnable")]
+        public Input<string>? EnhancedSchedulerEnable { get; set; }
 
         /// <summary>
         /// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
@@ -806,6 +800,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         public Input<int>? EndPort { get; set; }
 
         /// <summary>
+        /// Enable weighted extension for the scheduling algorithm?
+        /// </summary>
+        [Input("enhancedSchedulerEnable")]
+        public Input<string>? EnhancedSchedulerEnable { get; set; }
+
+        /// <summary>
         /// Listener connection timeout. This parameter is valid only when Protocol is set to TCP or UDP. Values: TCP protocol: 10–900 seconds, default is 900 seconds. UDP protocol: 1–300 seconds, default is 90 seconds.
         /// </summary>
         [Input("establishedTimeout")]
@@ -900,6 +900,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Clb
         /// </summary>
         [Input("proxySendTimeout")]
         public Input<int>? ProxySendTimeout { get; set; }
+
+        /// <summary>
+        /// Enable response validation?
+        /// </summary>
+        [Input("responseCheckEnabled")]
+        public Input<string>? ResponseCheckEnabled { get; set; }
 
         [Input("ruleIds")]
         private InputList<string>? _ruleIds;

@@ -15,13 +15,22 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class DomainOriginCertCheck
     {
         /// <summary>
+        /// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+        /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.DomainOriginCertCheckCertInfoList> CertInfoLists;
+        /// <summary>
         /// Switch
         /// </summary>
         public readonly bool? Switch;
 
         [OutputConstructor]
-        private DomainOriginCertCheck(bool? @switch)
+        private DomainOriginCertCheck(
+            ImmutableArray<Outputs.DomainOriginCertCheckCertInfoList> certInfoLists,
+
+            bool? @switch)
         {
+            CertInfoLists = certInfoLists;
             Switch = @switch;
         }
     }

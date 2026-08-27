@@ -3,8 +3,10 @@
 
 package com.byteplus.bytepluscc.cdn.outputs;
 
+import com.byteplus.bytepluscc.cdn.outputs.DomainOriginCertCheckCertInfoList;
 import com.pulumi.core.annotations.CustomType;
 import java.lang.Boolean;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -12,12 +14,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class DomainOriginCertCheck {
     /**
+     * @return Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    private @Nullable List<DomainOriginCertCheckCertInfoList> certInfoLists;
+    /**
      * @return Switch
      * 
      */
     private @Nullable Boolean switch_;
 
     private DomainOriginCertCheck() {}
+    /**
+     * @return Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public List<DomainOriginCertCheckCertInfoList> certInfoLists() {
+        return this.certInfoLists == null ? List.of() : this.certInfoLists;
+    }
     /**
      * @return Switch
      * 
@@ -35,13 +51,24 @@ public final class DomainOriginCertCheck {
     }
     @CustomType.Builder
     public static final class Builder {
+        private @Nullable List<DomainOriginCertCheckCertInfoList> certInfoLists;
         private @Nullable Boolean switch_;
         public Builder() {}
         public Builder(DomainOriginCertCheck defaults) {
     	      Objects.requireNonNull(defaults);
+    	      this.certInfoLists = defaults.certInfoLists;
     	      this.switch_ = defaults.switch_;
         }
 
+        @CustomType.Setter
+        public Builder certInfoLists(@Nullable List<DomainOriginCertCheckCertInfoList> certInfoLists) {
+
+            this.certInfoLists = certInfoLists;
+            return this;
+        }
+        public Builder certInfoLists(DomainOriginCertCheckCertInfoList... certInfoLists) {
+            return certInfoLists(List.of(certInfoLists));
+        }
         @CustomType.Setter("switch")
         public Builder switch_(@Nullable Boolean switch_) {
 
@@ -50,6 +77,7 @@ public final class DomainOriginCertCheck {
         }
         public DomainOriginCertCheck build() {
             final var _resultValue = new DomainOriginCertCheck();
+            _resultValue.certInfoLists = certInfoLists;
             _resultValue.switch_ = switch_;
             return _resultValue;
         }

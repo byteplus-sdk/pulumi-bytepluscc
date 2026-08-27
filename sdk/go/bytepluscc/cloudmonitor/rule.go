@@ -141,6 +141,8 @@ type Rule struct {
 	EnableState pulumi.StringOutput `pulumi:"enableState"`
 	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount pulumi.IntOutput `pulumi:"evaluationCount"`
+	// Evaluation interval (minutes)
+	EvaluationInterval pulumi.IntOutput `pulumi:"evaluationInterval"`
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level pulumi.StringOutput `pulumi:"level"`
 	// Alert severity configuration.
@@ -157,6 +159,8 @@ type Rule struct {
 	// Notification template configuration.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	NotifyTemplates RuleNotifyTemplateArrayOutput `pulumi:"notifyTemplates"`
+	// Object group ID
+	ObjectGroupId pulumi.StringOutput `pulumi:"objectGroupId"`
 	// Resource ID detected by the alert policy.
 	OriginalDimensions RuleOriginalDimensionsOutput `pulumi:"originalDimensions"`
 	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
@@ -273,6 +277,8 @@ type ruleState struct {
 	EnableState *string `pulumi:"enableState"`
 	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount *int `pulumi:"evaluationCount"`
+	// Evaluation interval (minutes)
+	EvaluationInterval *int `pulumi:"evaluationInterval"`
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level *string `pulumi:"level"`
 	// Alert severity configuration.
@@ -289,6 +295,8 @@ type ruleState struct {
 	// Notification template configuration.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	NotifyTemplates []RuleNotifyTemplate `pulumi:"notifyTemplates"`
+	// Object group ID
+	ObjectGroupId *string `pulumi:"objectGroupId"`
 	// Resource ID detected by the alert policy.
 	OriginalDimensions *RuleOriginalDimensions `pulumi:"originalDimensions"`
 	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
@@ -346,6 +354,8 @@ type RuleState struct {
 	EnableState pulumi.StringPtrInput
 	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount pulumi.IntPtrInput
+	// Evaluation interval (minutes)
+	EvaluationInterval pulumi.IntPtrInput
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level pulumi.StringPtrInput
 	// Alert severity configuration.
@@ -362,6 +372,8 @@ type RuleState struct {
 	// Notification template configuration.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	NotifyTemplates RuleNotifyTemplateArrayInput
+	// Object group ID
+	ObjectGroupId pulumi.StringPtrInput
 	// Resource ID detected by the alert policy.
 	OriginalDimensions RuleOriginalDimensionsPtrInput
 	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
@@ -419,6 +431,8 @@ type ruleArgs struct {
 	EnableState string `pulumi:"enableState"`
 	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount int `pulumi:"evaluationCount"`
+	// Evaluation interval (minutes)
+	EvaluationInterval *int `pulumi:"evaluationInterval"`
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level string `pulumi:"level"`
 	// Alert severity configuration.
@@ -435,6 +449,8 @@ type ruleArgs struct {
 	// Notification template configuration.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	NotifyTemplates []RuleNotifyTemplate `pulumi:"notifyTemplates"`
+	// Object group ID
+	ObjectGroupId *string `pulumi:"objectGroupId"`
 	// Resource ID detected by the alert policy.
 	OriginalDimensions *RuleOriginalDimensions `pulumi:"originalDimensions"`
 	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
@@ -483,6 +499,8 @@ type RuleArgs struct {
 	EnableState pulumi.StringInput
 	// Duration required to trigger an alert. Unit: minutes. Supported values: 1, 3, 5, 10, 15, 30, 60, 120.
 	EvaluationCount pulumi.IntInput
+	// Evaluation interval (minutes)
+	EvaluationInterval pulumi.IntPtrInput
 	// Alert level. critical: critical, warning: warning, notice: notification
 	Level pulumi.StringInput
 	// Alert severity configuration.
@@ -499,6 +517,8 @@ type RuleArgs struct {
 	// Notification template configuration.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	NotifyTemplates RuleNotifyTemplateArrayInput
+	// Object group ID
+	ObjectGroupId pulumi.StringPtrInput
 	// Resource ID detected by the alert policy.
 	OriginalDimensions RuleOriginalDimensionsPtrInput
 	// Project name to which the alert policy belongs. If not specified, it defaults to the default project.
@@ -672,6 +692,11 @@ func (o RuleOutput) EvaluationCount() pulumi.IntOutput {
 	return o.ApplyT(func(v *Rule) pulumi.IntOutput { return v.EvaluationCount }).(pulumi.IntOutput)
 }
 
+// Evaluation interval (minutes)
+func (o RuleOutput) EvaluationInterval() pulumi.IntOutput {
+	return o.ApplyT(func(v *Rule) pulumi.IntOutput { return v.EvaluationInterval }).(pulumi.IntOutput)
+}
+
 // Alert level. critical: critical, warning: warning, notice: notification
 func (o RuleOutput) Level() pulumi.StringOutput {
 	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.Level }).(pulumi.StringOutput)
@@ -707,6 +732,11 @@ func (o RuleOutput) NotificationId() pulumi.StringOutput {
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o RuleOutput) NotifyTemplates() RuleNotifyTemplateArrayOutput {
 	return o.ApplyT(func(v *Rule) RuleNotifyTemplateArrayOutput { return v.NotifyTemplates }).(RuleNotifyTemplateArrayOutput)
+}
+
+// Object group ID
+func (o RuleOutput) ObjectGroupId() pulumi.StringOutput {
+	return o.ApplyT(func(v *Rule) pulumi.StringOutput { return v.ObjectGroupId }).(pulumi.StringOutput)
 }
 
 // Resource ID detected by the alert policy.

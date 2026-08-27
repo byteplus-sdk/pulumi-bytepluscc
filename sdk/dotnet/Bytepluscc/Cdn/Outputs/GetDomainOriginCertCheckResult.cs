@@ -15,13 +15,21 @@ namespace Byteplus.Pulumi.Bytepluscc.Cdn.Outputs
     public sealed class GetDomainOriginCertCheckResult
     {
         /// <summary>
+        /// Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetDomainOriginCertCheckCertInfoListResult> CertInfoLists;
+        /// <summary>
         /// Switch
         /// </summary>
         public readonly bool Switch;
 
         [OutputConstructor]
-        private GetDomainOriginCertCheckResult(bool @switch)
+        private GetDomainOriginCertCheckResult(
+            ImmutableArray<Outputs.GetDomainOriginCertCheckCertInfoListResult> certInfoLists,
+
+            bool @switch)
         {
+            CertInfoLists = certInfoLists;
             Switch = @switch;
         }
     }

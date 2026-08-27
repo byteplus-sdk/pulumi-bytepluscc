@@ -640,6 +640,8 @@ type Domain struct {
 	ResponseHeaders DomainResponseHeaderArrayOutput `pulumi:"responseHeaders"`
 	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls DomainRewriteHlsOutput `pulumi:"rewriteHls"`
+	// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+	RuleEngine DomainRuleEngineOutput `pulumi:"ruleEngine"`
 	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion pulumi.StringOutput `pulumi:"serviceRegion"`
 	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
@@ -810,6 +812,8 @@ type domainState struct {
 	ResponseHeaders []DomainResponseHeader `pulumi:"responseHeaders"`
 	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls *DomainRewriteHls `pulumi:"rewriteHls"`
+	// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+	RuleEngine *DomainRuleEngine `pulumi:"ruleEngine"`
 	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion *string `pulumi:"serviceRegion"`
 	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
@@ -942,6 +946,8 @@ type DomainState struct {
 	ResponseHeaders DomainResponseHeaderArrayInput
 	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls DomainRewriteHlsPtrInput
+	// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+	RuleEngine DomainRuleEnginePtrInput
 	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion pulumi.StringPtrInput
 	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
@@ -1060,6 +1066,8 @@ type domainArgs struct {
 	ResponseHeaders []DomainResponseHeader `pulumi:"responseHeaders"`
 	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls *DomainRewriteHls `pulumi:"rewriteHls"`
+	// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+	RuleEngine *DomainRuleEngine `pulumi:"ruleEngine"`
 	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion *string `pulumi:"serviceRegion"`
 	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
@@ -1171,6 +1179,8 @@ type DomainArgs struct {
 	ResponseHeaders DomainResponseHeaderArrayInput
 	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls DomainRewriteHlsPtrInput
+	// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+	RuleEngine DomainRuleEnginePtrInput
 	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion pulumi.StringPtrInput
 	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
@@ -1533,6 +1543,11 @@ func (o DomainOutput) ResponseHeaders() DomainResponseHeaderArrayOutput {
 // Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 func (o DomainOutput) RewriteHls() DomainRewriteHlsOutput {
 	return o.ApplyT(func(v *Domain) DomainRewriteHlsOutput { return v.RewriteHls }).(DomainRewriteHlsOutput)
+}
+
+// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+func (o DomainOutput) RuleEngine() DomainRuleEngineOutput {
+	return o.ApplyT(func(v *Domain) DomainRuleEngineOutput { return v.RuleEngine }).(DomainRuleEngineOutput)
 }
 
 // Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).

@@ -198,6 +198,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Output<int> EvaluationCount { get; private set; } = null!;
 
         /// <summary>
+        /// Evaluation interval (minutes)
+        /// </summary>
+        [Output("evaluationInterval")]
+        public Output<int> EvaluationInterval { get; private set; } = null!;
+
+        /// <summary>
         /// Alert level. critical: critical, warning: warning, notice: notification
         /// </summary>
         [Output("level")]
@@ -240,6 +246,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         /// </summary>
         [Output("notifyTemplates")]
         public Output<ImmutableArray<Outputs.RuleNotifyTemplate>> NotifyTemplates { get; private set; } = null!;
+
+        /// <summary>
+        /// Object group ID
+        /// </summary>
+        [Output("objectGroupId")]
+        public Output<string> ObjectGroupId { get; private set; } = null!;
 
         /// <summary>
         /// Resource ID detected by the alert policy.
@@ -453,6 +465,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Input<int> EvaluationCount { get; set; } = null!;
 
         /// <summary>
+        /// Evaluation interval (minutes)
+        /// </summary>
+        [Input("evaluationInterval")]
+        public Input<int>? EvaluationInterval { get; set; }
+
+        /// <summary>
         /// Alert level. critical: critical, warning: warning, notice: notification
         /// </summary>
         [Input("level", required: true)]
@@ -507,6 +525,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
             get => _notifyTemplates ?? (_notifyTemplates = new InputList<Inputs.RuleNotifyTemplateArgs>());
             set => _notifyTemplates = value;
         }
+
+        /// <summary>
+        /// Object group ID
+        /// </summary>
+        [Input("objectGroupId")]
+        public Input<string>? ObjectGroupId { get; set; }
 
         /// <summary>
         /// Resource ID detected by the alert policy.
@@ -693,6 +717,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
         public Input<int>? EvaluationCount { get; set; }
 
         /// <summary>
+        /// Evaluation interval (minutes)
+        /// </summary>
+        [Input("evaluationInterval")]
+        public Input<int>? EvaluationInterval { get; set; }
+
+        /// <summary>
         /// Alert level. critical: critical, warning: warning, notice: notification
         /// </summary>
         [Input("level")]
@@ -747,6 +777,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudmonitor
             get => _notifyTemplates ?? (_notifyTemplates = new InputList<Inputs.RuleNotifyTemplateGetArgs>());
             set => _notifyTemplates = value;
         }
+
+        /// <summary>
+        /// Object group ID
+        /// </summary>
+        [Input("objectGroupId")]
+        public Input<string>? ObjectGroupId { get; set; }
 
         /// <summary>
         /// Resource ID detected by the alert policy.

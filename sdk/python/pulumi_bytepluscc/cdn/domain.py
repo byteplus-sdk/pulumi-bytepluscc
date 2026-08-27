@@ -63,6 +63,7 @@ class DomainArgs:
                  request_headers: pulumi.Input[Optional[Sequence[pulumi.Input['DomainRequestHeaderArgs']]]] = None,
                  response_headers: pulumi.Input[Optional[Sequence[pulumi.Input['DomainResponseHeaderArgs']]]] = None,
                  rewrite_hls: pulumi.Input[Optional['DomainRewriteHlsArgs']] = None,
+                 rule_engine: pulumi.Input[Optional['DomainRuleEngineArgs']] = None,
                  service_region: pulumi.Input[Optional[_builtins.str]] = None,
                  signed_url_auth: pulumi.Input[Optional['DomainSignedUrlAuthArgs']] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input['DomainTagArgs']]]] = None,
@@ -123,6 +124,7 @@ class DomainArgs:
         :param pulumi.Input[Sequence[pulumi.Input['DomainResponseHeaderArgs']]] response_headers: Indicates the configuration module for the 'HTTP response header' feature. This feature is disabled by default.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input['DomainRewriteHlsArgs'] rewrite_hls: Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRuleEngineArgs'] rule_engine: Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
         :param pulumi.Input[_builtins.str] service_region: Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         :param pulumi.Input['DomainSignedUrlAuthArgs'] signed_url_auth: Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
         :param pulumi.Input[Sequence[pulumi.Input['DomainTagArgs']]] tags: Tag information
@@ -213,6 +215,8 @@ class DomainArgs:
             pulumi.set(__self__, "response_headers", response_headers)
         if rewrite_hls is not None:
             pulumi.set(__self__, "rewrite_hls", rewrite_hls)
+        if rule_engine is not None:
+            pulumi.set(__self__, "rule_engine", rule_engine)
         if service_region is not None:
             pulumi.set(__self__, "service_region", service_region)
         if signed_url_auth is not None:
@@ -741,6 +745,18 @@ class DomainArgs:
         pulumi.set(self, "rewrite_hls", value)
 
     @_builtins.property
+    @pulumi.getter(name="ruleEngine")
+    def rule_engine(self) -> pulumi.Input[Optional['DomainRuleEngineArgs']]:
+        """
+        Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+        """
+        return pulumi.get(self, "rule_engine")
+
+    @rule_engine.setter
+    def rule_engine(self, value: pulumi.Input[Optional['DomainRuleEngineArgs']]):
+        pulumi.set(self, "rule_engine", value)
+
+    @_builtins.property
     @pulumi.getter(name="serviceRegion")
     def service_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -879,6 +895,7 @@ class _DomainState:
                  request_headers: pulumi.Input[Optional[Sequence[pulumi.Input['DomainRequestHeaderArgs']]]] = None,
                  response_headers: pulumi.Input[Optional[Sequence[pulumi.Input['DomainResponseHeaderArgs']]]] = None,
                  rewrite_hls: pulumi.Input[Optional['DomainRewriteHlsArgs']] = None,
+                 rule_engine: pulumi.Input[Optional['DomainRuleEngineArgs']] = None,
                  service_region: pulumi.Input[Optional[_builtins.str]] = None,
                  service_type: pulumi.Input[Optional[_builtins.str]] = None,
                  signed_url_auth: pulumi.Input[Optional['DomainSignedUrlAuthArgs']] = None,
@@ -950,6 +967,7 @@ class _DomainState:
         :param pulumi.Input[Sequence[pulumi.Input['DomainResponseHeaderArgs']]] response_headers: Indicates the configuration module for the 'HTTP response header' feature. This feature is disabled by default.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input['DomainRewriteHlsArgs'] rewrite_hls: Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
+        :param pulumi.Input['DomainRuleEngineArgs'] rule_engine: Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
         :param pulumi.Input[_builtins.str] service_region: Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         :param pulumi.Input[_builtins.str] service_type: Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         :param pulumi.Input['DomainSignedUrlAuthArgs'] signed_url_auth: Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
@@ -1062,6 +1080,8 @@ class _DomainState:
             pulumi.set(__self__, "response_headers", response_headers)
         if rewrite_hls is not None:
             pulumi.set(__self__, "rewrite_hls", rewrite_hls)
+        if rule_engine is not None:
+            pulumi.set(__self__, "rule_engine", rule_engine)
         if service_region is not None:
             pulumi.set(__self__, "service_region", service_region)
         if service_type is not None:
@@ -1692,6 +1712,18 @@ class _DomainState:
         pulumi.set(self, "rewrite_hls", value)
 
     @_builtins.property
+    @pulumi.getter(name="ruleEngine")
+    def rule_engine(self) -> pulumi.Input[Optional['DomainRuleEngineArgs']]:
+        """
+        Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+        """
+        return pulumi.get(self, "rule_engine")
+
+    @rule_engine.setter
+    def rule_engine(self, value: pulumi.Input[Optional['DomainRuleEngineArgs']]):
+        pulumi.set(self, "rule_engine", value)
+
+    @_builtins.property
     @pulumi.getter(name="serviceRegion")
     def service_region(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -1860,6 +1892,7 @@ class Domain(pulumi.CustomResource):
                  request_headers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainRequestHeaderArgs', 'DomainRequestHeaderArgsDict']]]]] = None,
                  response_headers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainResponseHeaderArgs', 'DomainResponseHeaderArgsDict']]]]] = None,
                  rewrite_hls: pulumi.Input[Optional[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']]] = None,
+                 rule_engine: pulumi.Input[Optional[Union['DomainRuleEngineArgs', 'DomainRuleEngineArgsDict']]] = None,
                  service_region: pulumi.Input[Optional[_builtins.str]] = None,
                  service_type: pulumi.Input[Optional[_builtins.str]] = None,
                  signed_url_auth: pulumi.Input[Optional[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']]] = None,
@@ -2378,6 +2411,7 @@ class Domain(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainResponseHeaderArgs', 'DomainResponseHeaderArgsDict']]]] response_headers: Indicates the configuration module for the 'HTTP response header' feature. This feature is disabled by default.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']] rewrite_hls: Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRuleEngineArgs', 'DomainRuleEngineArgsDict']] rule_engine: Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
         :param pulumi.Input[_builtins.str] service_region: Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         :param pulumi.Input[_builtins.str] service_type: Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         :param pulumi.Input[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']] signed_url_auth: Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
@@ -2908,6 +2942,7 @@ class Domain(pulumi.CustomResource):
                  request_headers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainRequestHeaderArgs', 'DomainRequestHeaderArgsDict']]]]] = None,
                  response_headers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainResponseHeaderArgs', 'DomainResponseHeaderArgsDict']]]]] = None,
                  rewrite_hls: pulumi.Input[Optional[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']]] = None,
+                 rule_engine: pulumi.Input[Optional[Union['DomainRuleEngineArgs', 'DomainRuleEngineArgsDict']]] = None,
                  service_region: pulumi.Input[Optional[_builtins.str]] = None,
                  service_type: pulumi.Input[Optional[_builtins.str]] = None,
                  signed_url_auth: pulumi.Input[Optional[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']]] = None,
@@ -2970,6 +3005,7 @@ class Domain(pulumi.CustomResource):
             __props__.__dict__["request_headers"] = request_headers
             __props__.__dict__["response_headers"] = response_headers
             __props__.__dict__["rewrite_hls"] = rewrite_hls
+            __props__.__dict__["rule_engine"] = rule_engine
             __props__.__dict__["service_region"] = service_region
             if service_type is None and not opts.urn:
                 raise TypeError("Missing required property 'service_type'")
@@ -3051,6 +3087,7 @@ class Domain(pulumi.CustomResource):
             request_headers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainRequestHeaderArgs', 'DomainRequestHeaderArgsDict']]]]] = None,
             response_headers: pulumi.Input[Optional[Sequence[pulumi.Input[Union['DomainResponseHeaderArgs', 'DomainResponseHeaderArgsDict']]]]] = None,
             rewrite_hls: pulumi.Input[Optional[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']]] = None,
+            rule_engine: pulumi.Input[Optional[Union['DomainRuleEngineArgs', 'DomainRuleEngineArgsDict']]] = None,
             service_region: pulumi.Input[Optional[_builtins.str]] = None,
             service_type: pulumi.Input[Optional[_builtins.str]] = None,
             signed_url_auth: pulumi.Input[Optional[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']]] = None,
@@ -3126,6 +3163,7 @@ class Domain(pulumi.CustomResource):
         :param pulumi.Input[Sequence[pulumi.Input[Union['DomainResponseHeaderArgs', 'DomainResponseHeaderArgsDict']]]] response_headers: Indicates the configuration module for the 'HTTP response header' feature. This feature is disabled by default.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[Union['DomainRewriteHlsArgs', 'DomainRewriteHlsArgsDict']] rewrite_hls: Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
+        :param pulumi.Input[Union['DomainRuleEngineArgs', 'DomainRuleEngineArgsDict']] rule_engine: Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
         :param pulumi.Input[_builtins.str] service_region: Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
         :param pulumi.Input[_builtins.str] service_type: Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
         :param pulumi.Input[Union['DomainSignedUrlAuthArgs', 'DomainSignedUrlAuthArgsDict']] signed_url_auth: Indicates the configuration module for the 'URL Authentication' feature. This feature is disabled by default
@@ -3192,6 +3230,7 @@ class Domain(pulumi.CustomResource):
         __props__.__dict__["request_headers"] = request_headers
         __props__.__dict__["response_headers"] = response_headers
         __props__.__dict__["rewrite_hls"] = rewrite_hls
+        __props__.__dict__["rule_engine"] = rule_engine
         __props__.__dict__["service_region"] = service_region
         __props__.__dict__["service_type"] = service_type
         __props__.__dict__["signed_url_auth"] = signed_url_auth
@@ -3611,6 +3650,14 @@ class Domain(pulumi.CustomResource):
         Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
         """
         return pulumi.get(self, "rewrite_hls")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleEngine")
+    def rule_engine(self) -> pulumi.Output['outputs.DomainRuleEngine']:
+        """
+        Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+        """
+        return pulumi.get(self, "rule_engine")
 
     @_builtins.property
     @pulumi.getter(name="serviceRegion")

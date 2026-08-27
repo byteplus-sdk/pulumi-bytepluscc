@@ -5,6 +5,7 @@ package com.byteplus.bytepluscc.cloudmonitor.inputs;
 
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -31,18 +32,18 @@ public final class RuleLevelConditionConditionArgs extends com.pulumi.resources.
     }
 
     /**
-     * Metric display name.
+     * Evaluation window (minutes)
      * 
      */
-    @Import(name="displayName")
-    private @Nullable Output<String> displayName;
+    @Import(name="evaluationWindow")
+    private @Nullable Output<Integer> evaluationWindow;
 
     /**
-     * @return Metric display name.
+     * @return Evaluation window (minutes)
      * 
      */
-    public Optional<Output<String>> displayName() {
-        return Optional.ofNullable(this.displayName);
+    public Optional<Output<Integer>> evaluationWindow() {
+        return Optional.ofNullable(this.evaluationWindow);
     }
 
     /**
@@ -106,6 +107,21 @@ public final class RuleLevelConditionConditionArgs extends com.pulumi.resources.
     }
 
     /**
+     * Sub-namespace
+     * 
+     */
+    @Import(name="subNamespace")
+    private @Nullable Output<String> subNamespace;
+
+    /**
+     * @return Sub-namespace
+     * 
+     */
+    public Optional<Output<String>> subNamespace() {
+        return Optional.ofNullable(this.subNamespace);
+    }
+
+    /**
      * Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
      * 
      */
@@ -124,11 +140,12 @@ public final class RuleLevelConditionConditionArgs extends com.pulumi.resources.
 
     private RuleLevelConditionConditionArgs(RuleLevelConditionConditionArgs $) {
         this.comparisonOperator = $.comparisonOperator;
-        this.displayName = $.displayName;
+        this.evaluationWindow = $.evaluationWindow;
         this.metricName = $.metricName;
         this.metricUnit = $.metricUnit;
         this.period = $.period;
         this.statistics = $.statistics;
+        this.subNamespace = $.subNamespace;
         this.threshold = $.threshold;
     }
 
@@ -172,24 +189,24 @@ public final class RuleLevelConditionConditionArgs extends com.pulumi.resources.
         }
 
         /**
-         * @param displayName Metric display name.
+         * @param evaluationWindow Evaluation window (minutes)
          * 
          * @return builder
          * 
          */
-        public Builder displayName(@Nullable Output<String> displayName) {
-            $.displayName = displayName;
+        public Builder evaluationWindow(@Nullable Output<Integer> evaluationWindow) {
+            $.evaluationWindow = evaluationWindow;
             return this;
         }
 
         /**
-         * @param displayName Metric display name.
+         * @param evaluationWindow Evaluation window (minutes)
          * 
          * @return builder
          * 
          */
-        public Builder displayName(String displayName) {
-            return displayName(Output.of(displayName));
+        public Builder evaluationWindow(Integer evaluationWindow) {
+            return evaluationWindow(Output.of(evaluationWindow));
         }
 
         /**
@@ -274,6 +291,27 @@ public final class RuleLevelConditionConditionArgs extends com.pulumi.resources.
          */
         public Builder statistics(String statistics) {
             return statistics(Output.of(statistics));
+        }
+
+        /**
+         * @param subNamespace Sub-namespace
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subNamespace(@Nullable Output<String> subNamespace) {
+            $.subNamespace = subNamespace;
+            return this;
+        }
+
+        /**
+         * @param subNamespace Sub-namespace
+         * 
+         * @return builder
+         * 
+         */
+        public Builder subNamespace(String subNamespace) {
+            return subNamespace(Output.of(subNamespace));
         }
 
         /**

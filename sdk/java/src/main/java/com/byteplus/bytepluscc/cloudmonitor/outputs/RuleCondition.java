@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.cloudmonitor.outputs;
 
 import com.pulumi.core.annotations.CustomType;
+import java.lang.Integer;
 import java.lang.String;
 import java.util.Objects;
 import java.util.Optional;
@@ -16,6 +17,11 @@ public final class RuleCondition {
      * 
      */
     private @Nullable String comparisonOperator;
+    /**
+     * @return Evaluation window (minutes)
+     * 
+     */
+    private @Nullable Integer evaluationWindow;
     /**
      * @return Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
      * 
@@ -37,6 +43,11 @@ public final class RuleCondition {
      */
     private @Nullable String statistics;
     /**
+     * @return Sub-namespace
+     * 
+     */
+    private @Nullable String subNamespace;
+    /**
      * @return Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
      * 
      */
@@ -49,6 +60,13 @@ public final class RuleCondition {
      */
     public Optional<String> comparisonOperator() {
         return Optional.ofNullable(this.comparisonOperator);
+    }
+    /**
+     * @return Evaluation window (minutes)
+     * 
+     */
+    public Optional<Integer> evaluationWindow() {
+        return Optional.ofNullable(this.evaluationWindow);
     }
     /**
      * @return Monitoring metric name. For details, see MetricName for each product in Cloud Monitoring Metric Query.
@@ -79,6 +97,13 @@ public final class RuleCondition {
         return Optional.ofNullable(this.statistics);
     }
     /**
+     * @return Sub-namespace
+     * 
+     */
+    public Optional<String> subNamespace() {
+        return Optional.ofNullable(this.subNamespace);
+    }
+    /**
      * @return Metric threshold. Supports positive numbers or 0. Up to three decimal places allowed.
      * 
      */
@@ -96,19 +121,23 @@ public final class RuleCondition {
     @CustomType.Builder
     public static final class Builder {
         private @Nullable String comparisonOperator;
+        private @Nullable Integer evaluationWindow;
         private @Nullable String metricName;
         private @Nullable String metricUnit;
         private @Nullable String period;
         private @Nullable String statistics;
+        private @Nullable String subNamespace;
         private @Nullable String threshold;
         public Builder() {}
         public Builder(RuleCondition defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.comparisonOperator = defaults.comparisonOperator;
+    	      this.evaluationWindow = defaults.evaluationWindow;
     	      this.metricName = defaults.metricName;
     	      this.metricUnit = defaults.metricUnit;
     	      this.period = defaults.period;
     	      this.statistics = defaults.statistics;
+    	      this.subNamespace = defaults.subNamespace;
     	      this.threshold = defaults.threshold;
         }
 
@@ -116,6 +145,12 @@ public final class RuleCondition {
         public Builder comparisonOperator(@Nullable String comparisonOperator) {
 
             this.comparisonOperator = comparisonOperator;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder evaluationWindow(@Nullable Integer evaluationWindow) {
+
+            this.evaluationWindow = evaluationWindow;
             return this;
         }
         @CustomType.Setter
@@ -143,6 +178,12 @@ public final class RuleCondition {
             return this;
         }
         @CustomType.Setter
+        public Builder subNamespace(@Nullable String subNamespace) {
+
+            this.subNamespace = subNamespace;
+            return this;
+        }
+        @CustomType.Setter
         public Builder threshold(@Nullable String threshold) {
 
             this.threshold = threshold;
@@ -151,10 +192,12 @@ public final class RuleCondition {
         public RuleCondition build() {
             final var _resultValue = new RuleCondition();
             _resultValue.comparisonOperator = comparisonOperator;
+            _resultValue.evaluationWindow = evaluationWindow;
             _resultValue.metricName = metricName;
             _resultValue.metricUnit = metricUnit;
             _resultValue.period = period;
             _resultValue.statistics = statistics;
+            _resultValue.subNamespace = subNamespace;
             _resultValue.threshold = threshold;
             return _resultValue;
         }

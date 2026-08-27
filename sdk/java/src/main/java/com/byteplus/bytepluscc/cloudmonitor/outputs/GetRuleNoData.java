@@ -7,6 +7,7 @@ import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
 import java.lang.Integer;
+import java.lang.String;
 import java.util.Objects;
 
 @CustomType
@@ -21,6 +22,11 @@ public final class GetRuleNoData {
      * 
      */
     private Integer evaluationCount;
+    /**
+     * @return No data alert level (critical, warning, notice)
+     * 
+     */
+    private String level;
 
     private GetRuleNoData() {}
     /**
@@ -37,6 +43,13 @@ public final class GetRuleNoData {
     public Integer evaluationCount() {
         return this.evaluationCount;
     }
+    /**
+     * @return No data alert level (critical, warning, notice)
+     * 
+     */
+    public String level() {
+        return this.level;
+    }
 
     public static Builder builder() {
         return new Builder();
@@ -49,11 +62,13 @@ public final class GetRuleNoData {
     public static final class Builder {
         private Boolean enable;
         private Integer evaluationCount;
+        private String level;
         public Builder() {}
         public Builder(GetRuleNoData defaults) {
     	      Objects.requireNonNull(defaults);
     	      this.enable = defaults.enable;
     	      this.evaluationCount = defaults.evaluationCount;
+    	      this.level = defaults.level;
         }
 
         @CustomType.Setter
@@ -72,10 +87,19 @@ public final class GetRuleNoData {
             this.evaluationCount = evaluationCount;
             return this;
         }
+        @CustomType.Setter
+        public Builder level(String level) {
+            if (level == null) {
+              throw new MissingRequiredPropertyException("GetRuleNoData", "level");
+            }
+            this.level = level;
+            return this;
+        }
         public GetRuleNoData build() {
             final var _resultValue = new GetRuleNoData();
             _resultValue.enable = enable;
             _resultValue.evaluationCount = evaluationCount;
+            _resultValue.level = level;
             return _resultValue;
         }
     }

@@ -132,6 +132,8 @@ type LookupDomainResult struct {
 	ResponseHeaders []GetDomainResponseHeader `pulumi:"responseHeaders"`
 	// Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 	RewriteHls GetDomainRewriteHls `pulumi:"rewriteHls"`
+	// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+	RuleEngine GetDomainRuleEngine `pulumi:"ruleEngine"`
 	// Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
 	ServiceRegion string `pulumi:"serviceRegion"`
 	// Indicates the business type of the domain name. This parameter has the following options: download: File download. web: Web page. video: Audio and video on demand.
@@ -441,6 +443,11 @@ func (o LookupDomainResultOutput) ResponseHeaders() GetDomainResponseHeaderArray
 // Indicates the configuration module for the "Standard HLS Encryption Rewrite" feature. This feature is disabled by default.
 func (o LookupDomainResultOutput) RewriteHls() GetDomainRewriteHlsOutput {
 	return o.ApplyT(func(v LookupDomainResult) GetDomainRewriteHls { return v.RewriteHls }).(GetDomainRewriteHlsOutput)
+}
+
+// Indicates the configuration module for the 'Rule Engine' feature. This feature is disabled by default.
+func (o LookupDomainResultOutput) RuleEngine() GetDomainRuleEngineOutput {
+	return o.ApplyT(func(v LookupDomainResult) GetDomainRuleEngine { return v.RuleEngine }).(GetDomainRuleEngineOutput)
 }
 
 // Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).

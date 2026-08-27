@@ -3,9 +3,11 @@
 
 package com.byteplus.bytepluscc.cdn.inputs;
 
+import com.byteplus.bytepluscc.cdn.inputs.DomainOriginCertCheckCertInfoListArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
 import java.lang.Boolean;
+import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
 import javax.annotation.Nullable;
@@ -14,6 +16,23 @@ import javax.annotation.Nullable;
 public final class DomainOriginCertCheckArgs extends com.pulumi.resources.ResourceArgs {
 
     public static final DomainOriginCertCheckArgs Empty = new DomainOriginCertCheckArgs();
+
+    /**
+     * Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    @Import(name="certInfoLists")
+    private @Nullable Output<List<DomainOriginCertCheckCertInfoListArgs>> certInfoLists;
+
+    /**
+     * @return Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+     * 
+     */
+    public Optional<Output<List<DomainOriginCertCheckCertInfoListArgs>>> certInfoLists() {
+        return Optional.ofNullable(this.certInfoLists);
+    }
 
     /**
      * Switch
@@ -33,6 +52,7 @@ public final class DomainOriginCertCheckArgs extends com.pulumi.resources.Resour
     private DomainOriginCertCheckArgs() {}
 
     private DomainOriginCertCheckArgs(DomainOriginCertCheckArgs $) {
+        this.certInfoLists = $.certInfoLists;
         this.switch_ = $.switch_;
     }
 
@@ -52,6 +72,40 @@ public final class DomainOriginCertCheckArgs extends com.pulumi.resources.Resour
 
         public Builder(DomainOriginCertCheckArgs defaults) {
             $ = new DomainOriginCertCheckArgs(Objects.requireNonNull(defaults));
+        }
+
+        /**
+         * @param certInfoLists Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certInfoLists(@Nullable Output<List<DomainOriginCertCheckCertInfoListArgs>> certInfoLists) {
+            $.certInfoLists = certInfoLists;
+            return this;
+        }
+
+        /**
+         * @param certInfoLists Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certInfoLists(List<DomainOriginCertCheckCertInfoListArgs> certInfoLists) {
+            return certInfoLists(Output.of(certInfoLists));
+        }
+
+        /**
+         * @param certInfoLists Indicates the list of certificates used for origin certificate validation. The list can contain up to 20 certificates.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder certInfoLists(DomainOriginCertCheckCertInfoListArgs... certInfoLists) {
+            return certInfoLists(List.of(certInfoLists));
         }
 
         /**

@@ -37,6 +37,7 @@ import com.byteplus.bytepluscc.cdn.inputs.DomainRequestBlockRuleArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainRequestHeaderArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainResponseHeaderArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainRewriteHlsArgs;
+import com.byteplus.bytepluscc.cdn.inputs.DomainRuleEngineArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainSignedUrlAuthArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainTagArgs;
 import com.byteplus.bytepluscc.cdn.inputs.DomainTimeoutArgs;
@@ -690,6 +691,21 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+     * 
+     */
+    @Import(name="ruleEngine")
+    private @Nullable Output<DomainRuleEngineArgs> ruleEngine;
+
+    /**
+     * @return Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+     * 
+     */
+    public Optional<Output<DomainRuleEngineArgs>> ruleEngine() {
+        return Optional.ofNullable(this.ruleEngine);
+    }
+
+    /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
      * 
      */
@@ -855,6 +871,7 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
         this.requestHeaders = $.requestHeaders;
         this.responseHeaders = $.responseHeaders;
         this.rewriteHls = $.rewriteHls;
+        this.ruleEngine = $.ruleEngine;
         this.serviceRegion = $.serviceRegion;
         this.serviceType = $.serviceType;
         this.signedUrlAuth = $.signedUrlAuth;
@@ -1846,6 +1863,27 @@ public final class DomainArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder rewriteHls(DomainRewriteHlsArgs rewriteHls) {
             return rewriteHls(Output.of(rewriteHls));
+        }
+
+        /**
+         * @param ruleEngine Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleEngine(@Nullable Output<DomainRuleEngineArgs> ruleEngine) {
+            $.ruleEngine = ruleEngine;
+            return this;
+        }
+
+        /**
+         * @param ruleEngine Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder ruleEngine(DomainRuleEngineArgs ruleEngine) {
+            return ruleEngine(Output.of(ruleEngine));
         }
 
         /**

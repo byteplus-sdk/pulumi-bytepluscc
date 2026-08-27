@@ -41,6 +41,7 @@ import com.byteplus.bytepluscc.cdn.outputs.DomainRequestBlockRule;
 import com.byteplus.bytepluscc.cdn.outputs.DomainRequestHeader;
 import com.byteplus.bytepluscc.cdn.outputs.DomainResponseHeader;
 import com.byteplus.bytepluscc.cdn.outputs.DomainRewriteHls;
+import com.byteplus.bytepluscc.cdn.outputs.DomainRuleEngine;
 import com.byteplus.bytepluscc.cdn.outputs.DomainSignedUrlAuth;
 import com.byteplus.bytepluscc.cdn.outputs.DomainTag;
 import com.byteplus.bytepluscc.cdn.outputs.DomainTimeout;
@@ -1255,6 +1256,20 @@ public class Domain extends com.pulumi.resources.CustomResource {
      */
     public Output<DomainRewriteHls> rewriteHls() {
         return this.rewriteHls;
+    }
+    /**
+     * Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+     * 
+     */
+    @Export(name="ruleEngine", refs={DomainRuleEngine.class}, tree="[0]")
+    private Output<DomainRuleEngine> ruleEngine;
+
+    /**
+     * @return Indicates the configuration module for the &#39;Rule Engine&#39; feature. This feature is disabled by default.
+     * 
+     */
+    public Output<DomainRuleEngine> ruleEngine() {
+        return this.ruleEngine;
     }
     /**
      * Indicates the acceleration region for this accelerated domain name. The parameter values are: chinese*mainland: Chinese Mainland. global: Global. outside*chinese_mainland: Global (excluding Chinese Mainland).
