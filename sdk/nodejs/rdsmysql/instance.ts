@@ -263,7 +263,7 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly instanceStatus: pulumi.Output<string>;
     /**
-     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      */
     declare public readonly instanceType: pulumi.Output<string>;
     /**
@@ -759,7 +759,7 @@ export interface InstanceState {
      */
     instanceStatus?: pulumi.Input<string | undefined>;
     /**
-     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      */
     instanceType?: pulumi.Input<string | undefined>;
     /**
@@ -967,7 +967,7 @@ export interface InstanceArgs {
      */
     instanceName?: pulumi.Input<string | undefined>;
     /**
-     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      */
     instanceType?: pulumi.Input<string | undefined>;
     /**

@@ -642,6 +642,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cr/robotAccount",
+  "fqn": "pulumi_bytepluscc.cr",
+  "classes": {
+   "bytepluscc:cr/robotAccount:RobotAccount": "RobotAccount"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cr/vpcEndpoint",
   "fqn": "pulumi_bytepluscc.cr",
   "classes": {
@@ -726,6 +734,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.ecs",
   "classes": {
    "bytepluscc:ecs/command:Command": "Command"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "ecs/dedicatedHostCluster",
+  "fqn": "pulumi_bytepluscc.ecs",
+  "classes": {
+   "bytepluscc:ecs/dedicatedHostCluster:DedicatedHostCluster": "DedicatedHostCluster"
   }
  },
  {
@@ -982,6 +998,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.iam",
   "classes": {
    "bytepluscc:iam/allowedIpAddress:AllowedIpAddress": "AllowedIpAddress"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "iam/apiKey",
+  "fqn": "pulumi_bytepluscc.iam",
+  "classes": {
+   "bytepluscc:iam/apiKey:ApiKey": "ApiKey"
   }
  },
  {
@@ -1594,6 +1618,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "redis/keyScanJob",
+  "fqn": "pulumi_bytepluscc.redis",
+  "classes": {
+   "bytepluscc:redis/keyScanJob:KeyScanJob": "KeyScanJob"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "redis/parameterGroup",
   "fqn": "pulumi_bytepluscc.redis",
   "classes": {
@@ -2202,6 +2234,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vpc/ipv4Gateway",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipv4Gateway:Ipv4Gateway": "Ipv4Gateway"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vpc/ipv6AddressBandwidth",
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
@@ -2354,6 +2394,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "waf/customPage",
+  "fqn": "pulumi_bytepluscc.waf",
+  "classes": {
+   "bytepluscc:waf/customPage:CustomPage": "CustomPage"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "waf/domain",
   "fqn": "pulumi_bytepluscc.waf",
   "classes": {
@@ -2366,6 +2414,22 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.waf",
   "classes": {
    "bytepluscc:waf/hostGroup:HostGroup": "HostGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "waf/ipGroup",
+  "fqn": "pulumi_bytepluscc.waf",
+  "classes": {
+   "bytepluscc:waf/ipGroup:IpGroup": "IpGroup"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "waf/systemBot",
+  "fqn": "pulumi_bytepluscc.waf",
+  "classes": {
+   "bytepluscc:waf/systemBot:SystemBot": "SystemBot"
   }
  }
 ]

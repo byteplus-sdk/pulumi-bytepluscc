@@ -761,6 +761,112 @@ func (o RegistryTagArrayOutput) Index(i pulumi.IntInput) RegistryTagOutput {
 	}).(RegistryTagOutput)
 }
 
+type RobotAccountPermission struct {
+	// Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+	Actions []string `pulumi:"actions"`
+	// Resource object to operate on.
+	Resource string `pulumi:"resource"`
+}
+
+// RobotAccountPermissionInput is an input type that accepts RobotAccountPermissionArgs and RobotAccountPermissionOutput values.
+// You can construct a concrete instance of `RobotAccountPermissionInput` via:
+//
+//	RobotAccountPermissionArgs{...}
+type RobotAccountPermissionInput interface {
+	pulumi.Input
+
+	ToRobotAccountPermissionOutput() RobotAccountPermissionOutput
+	ToRobotAccountPermissionOutputWithContext(context.Context) RobotAccountPermissionOutput
+}
+
+type RobotAccountPermissionArgs struct {
+	// Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+	Actions pulumi.StringArrayInput `pulumi:"actions"`
+	// Resource object to operate on.
+	Resource pulumi.StringInput `pulumi:"resource"`
+}
+
+func (RobotAccountPermissionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*RobotAccountPermission)(nil)).Elem()
+}
+
+func (i RobotAccountPermissionArgs) ToRobotAccountPermissionOutput() RobotAccountPermissionOutput {
+	return i.ToRobotAccountPermissionOutputWithContext(context.Background())
+}
+
+func (i RobotAccountPermissionArgs) ToRobotAccountPermissionOutputWithContext(ctx context.Context) RobotAccountPermissionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RobotAccountPermissionOutput)
+}
+
+// RobotAccountPermissionArrayInput is an input type that accepts RobotAccountPermissionArray and RobotAccountPermissionArrayOutput values.
+// You can construct a concrete instance of `RobotAccountPermissionArrayInput` via:
+//
+//	RobotAccountPermissionArray{ RobotAccountPermissionArgs{...} }
+type RobotAccountPermissionArrayInput interface {
+	pulumi.Input
+
+	ToRobotAccountPermissionArrayOutput() RobotAccountPermissionArrayOutput
+	ToRobotAccountPermissionArrayOutputWithContext(context.Context) RobotAccountPermissionArrayOutput
+}
+
+type RobotAccountPermissionArray []RobotAccountPermissionInput
+
+func (RobotAccountPermissionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RobotAccountPermission)(nil)).Elem()
+}
+
+func (i RobotAccountPermissionArray) ToRobotAccountPermissionArrayOutput() RobotAccountPermissionArrayOutput {
+	return i.ToRobotAccountPermissionArrayOutputWithContext(context.Background())
+}
+
+func (i RobotAccountPermissionArray) ToRobotAccountPermissionArrayOutputWithContext(ctx context.Context) RobotAccountPermissionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(RobotAccountPermissionArrayOutput)
+}
+
+type RobotAccountPermissionOutput struct{ *pulumi.OutputState }
+
+func (RobotAccountPermissionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*RobotAccountPermission)(nil)).Elem()
+}
+
+func (o RobotAccountPermissionOutput) ToRobotAccountPermissionOutput() RobotAccountPermissionOutput {
+	return o
+}
+
+func (o RobotAccountPermissionOutput) ToRobotAccountPermissionOutputWithContext(ctx context.Context) RobotAccountPermissionOutput {
+	return o
+}
+
+// Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+func (o RobotAccountPermissionOutput) Actions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v RobotAccountPermission) []string { return v.Actions }).(pulumi.StringArrayOutput)
+}
+
+// Resource object to operate on.
+func (o RobotAccountPermissionOutput) Resource() pulumi.StringOutput {
+	return o.ApplyT(func(v RobotAccountPermission) string { return v.Resource }).(pulumi.StringOutput)
+}
+
+type RobotAccountPermissionArrayOutput struct{ *pulumi.OutputState }
+
+func (RobotAccountPermissionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]RobotAccountPermission)(nil)).Elem()
+}
+
+func (o RobotAccountPermissionArrayOutput) ToRobotAccountPermissionArrayOutput() RobotAccountPermissionArrayOutput {
+	return o
+}
+
+func (o RobotAccountPermissionArrayOutput) ToRobotAccountPermissionArrayOutputWithContext(ctx context.Context) RobotAccountPermissionArrayOutput {
+	return o
+}
+
+func (o RobotAccountPermissionArrayOutput) Index(i pulumi.IntInput) RobotAccountPermissionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) RobotAccountPermission {
+		return vs[0].([]RobotAccountPermission)[vs[1].(int)]
+	}).(RobotAccountPermissionOutput)
+}
+
 type VpcEndpointVpc struct {
 	// Primary account ID for the VPC
 	AccountId *int `pulumi:"accountId"`
@@ -1319,6 +1425,112 @@ func (o GetRegistryTagArrayOutput) Index(i pulumi.IntInput) GetRegistryTagOutput
 	}).(GetRegistryTagOutput)
 }
 
+type GetRobotAccountPermission struct {
+	// Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+	Actions []string `pulumi:"actions"`
+	// Resource object to operate on.
+	Resource string `pulumi:"resource"`
+}
+
+// GetRobotAccountPermissionInput is an input type that accepts GetRobotAccountPermissionArgs and GetRobotAccountPermissionOutput values.
+// You can construct a concrete instance of `GetRobotAccountPermissionInput` via:
+//
+//	GetRobotAccountPermissionArgs{...}
+type GetRobotAccountPermissionInput interface {
+	pulumi.Input
+
+	ToGetRobotAccountPermissionOutput() GetRobotAccountPermissionOutput
+	ToGetRobotAccountPermissionOutputWithContext(context.Context) GetRobotAccountPermissionOutput
+}
+
+type GetRobotAccountPermissionArgs struct {
+	// Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+	Actions pulumi.StringArrayInput `pulumi:"actions"`
+	// Resource object to operate on.
+	Resource pulumi.StringInput `pulumi:"resource"`
+}
+
+func (GetRobotAccountPermissionArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRobotAccountPermission)(nil)).Elem()
+}
+
+func (i GetRobotAccountPermissionArgs) ToGetRobotAccountPermissionOutput() GetRobotAccountPermissionOutput {
+	return i.ToGetRobotAccountPermissionOutputWithContext(context.Background())
+}
+
+func (i GetRobotAccountPermissionArgs) ToGetRobotAccountPermissionOutputWithContext(ctx context.Context) GetRobotAccountPermissionOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRobotAccountPermissionOutput)
+}
+
+// GetRobotAccountPermissionArrayInput is an input type that accepts GetRobotAccountPermissionArray and GetRobotAccountPermissionArrayOutput values.
+// You can construct a concrete instance of `GetRobotAccountPermissionArrayInput` via:
+//
+//	GetRobotAccountPermissionArray{ GetRobotAccountPermissionArgs{...} }
+type GetRobotAccountPermissionArrayInput interface {
+	pulumi.Input
+
+	ToGetRobotAccountPermissionArrayOutput() GetRobotAccountPermissionArrayOutput
+	ToGetRobotAccountPermissionArrayOutputWithContext(context.Context) GetRobotAccountPermissionArrayOutput
+}
+
+type GetRobotAccountPermissionArray []GetRobotAccountPermissionInput
+
+func (GetRobotAccountPermissionArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRobotAccountPermission)(nil)).Elem()
+}
+
+func (i GetRobotAccountPermissionArray) ToGetRobotAccountPermissionArrayOutput() GetRobotAccountPermissionArrayOutput {
+	return i.ToGetRobotAccountPermissionArrayOutputWithContext(context.Background())
+}
+
+func (i GetRobotAccountPermissionArray) ToGetRobotAccountPermissionArrayOutputWithContext(ctx context.Context) GetRobotAccountPermissionArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetRobotAccountPermissionArrayOutput)
+}
+
+type GetRobotAccountPermissionOutput struct{ *pulumi.OutputState }
+
+func (GetRobotAccountPermissionOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetRobotAccountPermission)(nil)).Elem()
+}
+
+func (o GetRobotAccountPermissionOutput) ToGetRobotAccountPermissionOutput() GetRobotAccountPermissionOutput {
+	return o
+}
+
+func (o GetRobotAccountPermissionOutput) ToGetRobotAccountPermissionOutputWithContext(ctx context.Context) GetRobotAccountPermissionOutput {
+	return o
+}
+
+// Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+func (o GetRobotAccountPermissionOutput) Actions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v GetRobotAccountPermission) []string { return v.Actions }).(pulumi.StringArrayOutput)
+}
+
+// Resource object to operate on.
+func (o GetRobotAccountPermissionOutput) Resource() pulumi.StringOutput {
+	return o.ApplyT(func(v GetRobotAccountPermission) string { return v.Resource }).(pulumi.StringOutput)
+}
+
+type GetRobotAccountPermissionArrayOutput struct{ *pulumi.OutputState }
+
+func (GetRobotAccountPermissionArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetRobotAccountPermission)(nil)).Elem()
+}
+
+func (o GetRobotAccountPermissionArrayOutput) ToGetRobotAccountPermissionArrayOutput() GetRobotAccountPermissionArrayOutput {
+	return o
+}
+
+func (o GetRobotAccountPermissionArrayOutput) ToGetRobotAccountPermissionArrayOutputWithContext(ctx context.Context) GetRobotAccountPermissionArrayOutput {
+	return o
+}
+
+func (o GetRobotAccountPermissionArrayOutput) Index(i pulumi.IntInput) GetRobotAccountPermissionOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetRobotAccountPermission {
+		return vs[0].([]GetRobotAccountPermission)[vs[1].(int)]
+	}).(GetRobotAccountPermissionOutput)
+}
+
 type GetVpcEndpointVpc struct {
 	// Primary account ID for the VPC
 	AccountId int `pulumi:"accountId"`
@@ -1481,6 +1693,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryStatusPtrInput)(nil)).Elem(), RegistryStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryTagInput)(nil)).Elem(), RegistryTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*RegistryTagArrayInput)(nil)).Elem(), RegistryTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RobotAccountPermissionInput)(nil)).Elem(), RobotAccountPermissionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*RobotAccountPermissionArrayInput)(nil)).Elem(), RobotAccountPermissionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointVpcInput)(nil)).Elem(), VpcEndpointVpcArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*VpcEndpointVpcArrayInput)(nil)).Elem(), VpcEndpointVpcArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryEndpointInput)(nil)).Elem(), GetRegistryEndpointArgs{})
@@ -1490,6 +1704,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryStatusInput)(nil)).Elem(), GetRegistryStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryTagInput)(nil)).Elem(), GetRegistryTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetRegistryTagArrayInput)(nil)).Elem(), GetRegistryTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRobotAccountPermissionInput)(nil)).Elem(), GetRobotAccountPermissionArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetRobotAccountPermissionArrayInput)(nil)).Elem(), GetRobotAccountPermissionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointVpcInput)(nil)).Elem(), GetVpcEndpointVpcArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetVpcEndpointVpcArrayInput)(nil)).Elem(), GetVpcEndpointVpcArray{})
 	pulumi.RegisterOutputType(RegistryEndpointOutput{})
@@ -1502,6 +1718,8 @@ func init() {
 	pulumi.RegisterOutputType(RegistryStatusPtrOutput{})
 	pulumi.RegisterOutputType(RegistryTagOutput{})
 	pulumi.RegisterOutputType(RegistryTagArrayOutput{})
+	pulumi.RegisterOutputType(RobotAccountPermissionOutput{})
+	pulumi.RegisterOutputType(RobotAccountPermissionArrayOutput{})
 	pulumi.RegisterOutputType(VpcEndpointVpcOutput{})
 	pulumi.RegisterOutputType(VpcEndpointVpcArrayOutput{})
 	pulumi.RegisterOutputType(GetRegistryEndpointOutput{})
@@ -1511,6 +1729,8 @@ func init() {
 	pulumi.RegisterOutputType(GetRegistryStatusOutput{})
 	pulumi.RegisterOutputType(GetRegistryTagOutput{})
 	pulumi.RegisterOutputType(GetRegistryTagArrayOutput{})
+	pulumi.RegisterOutputType(GetRobotAccountPermissionOutput{})
+	pulumi.RegisterOutputType(GetRobotAccountPermissionArrayOutput{})
 	pulumi.RegisterOutputType(GetVpcEndpointVpcOutput{})
 	pulumi.RegisterOutputType(GetVpcEndpointVpcArrayOutput{})
 }

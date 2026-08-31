@@ -125,6 +125,16 @@ export const getIpams: typeof import("./getIpams").getIpams = null as any;
 export const getIpamsOutput: typeof import("./getIpams").getIpamsOutput = null as any;
 utilities.lazyLoad(exports, ["getIpams","getIpamsOutput"], () => require("./getIpams"));
 
+export { GetIpv4GatewayArgs, GetIpv4GatewayResult, GetIpv4GatewayOutputArgs } from "./getIpv4Gateway";
+export const getIpv4Gateway: typeof import("./getIpv4Gateway").getIpv4Gateway = null as any;
+export const getIpv4GatewayOutput: typeof import("./getIpv4Gateway").getIpv4GatewayOutput = null as any;
+utilities.lazyLoad(exports, ["getIpv4Gateway","getIpv4GatewayOutput"], () => require("./getIpv4Gateway"));
+
+export { GetIpv4GatewaysResult } from "./getIpv4Gateways";
+export const getIpv4Gateways: typeof import("./getIpv4Gateways").getIpv4Gateways = null as any;
+export const getIpv4GatewaysOutput: typeof import("./getIpv4Gateways").getIpv4GatewaysOutput = null as any;
+utilities.lazyLoad(exports, ["getIpv4Gateways","getIpv4GatewaysOutput"], () => require("./getIpv4Gateways"));
+
 export { GetIpv6AddressBandwidthArgs, GetIpv6AddressBandwidthResult, GetIpv6AddressBandwidthOutputArgs } from "./getIpv6AddressBandwidth";
 export const getIpv6AddressBandwidth: typeof import("./getIpv6AddressBandwidth").getIpv6AddressBandwidth = null as any;
 export const getIpv6AddressBandwidthOutput: typeof import("./getIpv6AddressBandwidth").getIpv6AddressBandwidthOutput = null as any;
@@ -275,6 +285,11 @@ export type IpamScope = import("./ipamScope").IpamScope;
 export const IpamScope: typeof import("./ipamScope").IpamScope = null as any;
 utilities.lazyLoad(exports, ["IpamScope"], () => require("./ipamScope"));
 
+export { Ipv4GatewayArgs, Ipv4GatewayState } from "./ipv4Gateway";
+export type Ipv4Gateway = import("./ipv4Gateway").Ipv4Gateway;
+export const Ipv4Gateway: typeof import("./ipv4Gateway").Ipv4Gateway = null as any;
+utilities.lazyLoad(exports, ["Ipv4Gateway"], () => require("./ipv4Gateway"));
+
 export { Ipv6AddressBandwidthArgs, Ipv6AddressBandwidthState } from "./ipv6AddressBandwidth";
 export type Ipv6AddressBandwidth = import("./ipv6AddressBandwidth").Ipv6AddressBandwidth;
 export const Ipv6AddressBandwidth: typeof import("./ipv6AddressBandwidth").Ipv6AddressBandwidth = null as any;
@@ -360,6 +375,8 @@ const _module = {
                 return new IpamPool(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipamScope:IpamScope":
                 return new IpamScope(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/ipv4Gateway:Ipv4Gateway":
+                return new Ipv4Gateway(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth":
                 return new Ipv6AddressBandwidth(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipv6Gateway:Ipv6Gateway":
@@ -399,6 +416,7 @@ pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipPoolCidrBlock", _modu
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipam", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipamPool", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipamScope", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv4Gateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv6AddressBandwidth", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv6Gateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/networkAcl", _module)

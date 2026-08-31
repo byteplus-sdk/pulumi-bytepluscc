@@ -5880,6 +5880,17 @@ export namespace cr {
         value?: pulumi.Input<string | undefined>;
     }
 
+    export interface RobotAccountPermission {
+        /**
+         * Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+         */
+        actions: pulumi.Input<pulumi.Input<string>[]>;
+        /**
+         * Resource object to operate on.
+         */
+        resource: pulumi.Input<string>;
+    }
+
     export interface VpcEndpointVpc {
         /**
          * Primary account ID for the VPC
@@ -6023,6 +6034,61 @@ export namespace ecs {
          * User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
          */
         value?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DedicatedHostClusterDedicatedHostClusterCapacity {
+        /**
+         * Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        availableInstanceTypes?: pulumi.Input<pulumi.Input<inputs.ecs.DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType>[] | undefined>;
+        /**
+         * Total remaining available memory in this dedicated host cluster, measured in GiB.
+         */
+        availableMemory?: pulumi.Input<number | undefined>;
+        /**
+         * Total remaining available vCPU count in this dedicated host cluster.
+         */
+        availableVcpus?: pulumi.Input<number | undefined>;
+        /**
+         * Available and total capacity of each type of local disk in this dedicated host cluster.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        localVolumeCapacities?: pulumi.Input<pulumi.Input<inputs.ecs.DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity>[] | undefined>;
+        /**
+         * Total memory of this dedicated host cluster, measured in GiB.
+         */
+        totalMemory?: pulumi.Input<number | undefined>;
+        /**
+         * Total vCPU count of this dedicated host cluster.
+         */
+        totalVcpus?: pulumi.Input<number | undefined>;
+    }
+
+    export interface DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType {
+        /**
+         * Number of instances of this type that can still be created in the dedicated host cluster.
+         */
+        availableCapacity?: pulumi.Input<number | undefined>;
+        /**
+         * Instance type.
+         */
+        instanceType?: pulumi.Input<string | undefined>;
+    }
+
+    export interface DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity {
+        /**
+         * Remaining available capacity of this type of local disk, measured in GiB.
+         */
+        availableSize?: pulumi.Input<number | undefined>;
+        /**
+         * Total capacity of this type of local disk, measured in GiB.
+         */
+        totalSize?: pulumi.Input<number | undefined>;
+        /**
+         * Local disk type.
+         */
+        volumeType?: pulumi.Input<string | undefined>;
     }
 
     export interface DeploymentSetCapacity {
@@ -18329,6 +18395,41 @@ export namespace waf {
         singleThreshold?: pulumi.Input<number | undefined>;
     }
 
+    export interface CustomPageAccurate {
+        /**
+         * Sub-rule list in advanced conditions.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        accurateRules?: pulumi.Input<pulumi.Input<inputs.waf.CustomPageAccurateAccurateRule>[] | undefined>;
+        /**
+         * Logical relationship between sub-rules. 0: OR; 1: AND.
+         */
+        logic?: pulumi.Input<number | undefined>;
+    }
+
+    export interface CustomPageAccurateAccurateRule {
+        /**
+         * Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+         */
+        httpObj?: pulumi.Input<string | undefined>;
+        /**
+         * Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+         */
+        objType?: pulumi.Input<number | undefined>;
+        /**
+         * Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+         */
+        opretar?: pulumi.Input<number | undefined>;
+        /**
+         * Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+         */
+        property?: pulumi.Input<number | undefined>;
+        /**
+         * Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+         */
+        valueString?: pulumi.Input<string | undefined>;
+    }
+
     export interface DomainBackendGroup {
         /**
          * Access port number.
@@ -18475,6 +18576,21 @@ export namespace waf {
         ruleTag?: pulumi.Input<string | undefined>;
         /**
          * Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+         */
+        ruleType?: pulumi.Input<string | undefined>;
+    }
+
+    export interface IpGroupRelatedRule {
+        /**
+         * Rule Name
+         */
+        ruleName?: pulumi.Input<string | undefined>;
+        /**
+         * Rule ID
+         */
+        ruleTag?: pulumi.Input<string | undefined>;
+        /**
+         * Rule type. Allow indicates an allowlist; Block indicates a blocklist.
          */
         ruleType?: pulumi.Input<string | undefined>;
     }

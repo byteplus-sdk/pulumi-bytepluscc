@@ -184,7 +184,7 @@ type Instance struct {
 	InstanceName pulumi.StringOutput `pulumi:"instanceName"`
 	// Instance status.
 	InstanceStatus pulumi.StringOutput `pulumi:"instanceStatus"`
-	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+	// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
 	InstanceType pulumi.StringOutput `pulumi:"instanceType"`
 	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames pulumi.StringOutput `pulumi:"lowerCaseTableNames"`
@@ -390,7 +390,7 @@ type instanceState struct {
 	InstanceName *string `pulumi:"instanceName"`
 	// Instance status.
 	InstanceStatus *string `pulumi:"instanceStatus"`
-	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+	// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
 	InstanceType *string `pulumi:"instanceType"`
 	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
@@ -546,7 +546,7 @@ type InstanceState struct {
 	InstanceName pulumi.StringPtrInput
 	// Instance status.
 	InstanceStatus pulumi.StringPtrInput
-	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+	// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
 	InstanceType pulumi.StringPtrInput
 	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames pulumi.StringPtrInput
@@ -655,7 +655,7 @@ type instanceArgs struct {
 	GlobalReadOnly *bool `pulumi:"globalReadOnly"`
 	// Instance name.
 	InstanceName *string `pulumi:"instanceName"`
-	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+	// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
 	InstanceType *string `pulumi:"instanceType"`
 	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames *string `pulumi:"lowerCaseTableNames"`
@@ -721,7 +721,7 @@ type InstanceArgs struct {
 	GlobalReadOnly pulumi.BoolPtrInput
 	// Instance name.
 	InstanceName pulumi.StringPtrInput
-	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+	// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
 	InstanceType pulumi.StringPtrInput
 	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames pulumi.StringPtrInput
@@ -1037,7 +1037,7 @@ func (o InstanceOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
 func (o InstanceOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.InstanceType }).(pulumi.StringOutput)
 }

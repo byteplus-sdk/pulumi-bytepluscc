@@ -12,6 +12,8 @@ import com.byteplus.bytepluscc.redis.inputs.GetEndpointPublicAddressArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetEndpointPublicAddressPlainArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetInstanceArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetInstancePlainArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetKeyScanJobArgs;
+import com.byteplus.bytepluscc.redis.inputs.GetKeyScanJobPlainArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetParameterGroupArgs;
 import com.byteplus.bytepluscc.redis.inputs.GetParameterGroupPlainArgs;
 import com.byteplus.bytepluscc.redis.outputs.GetAccountResult;
@@ -22,6 +24,8 @@ import com.byteplus.bytepluscc.redis.outputs.GetEndpointPublicAddressResult;
 import com.byteplus.bytepluscc.redis.outputs.GetEndpointPublicAddressesResult;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceResult;
 import com.byteplus.bytepluscc.redis.outputs.GetInstancesResult;
+import com.byteplus.bytepluscc.redis.outputs.GetKeyScanJobResult;
+import com.byteplus.bytepluscc.redis.outputs.GetKeyScanJobsResult;
 import com.byteplus.bytepluscc.redis.outputs.GetParameterGroupResult;
 import com.byteplus.bytepluscc.redis.outputs.GetParameterGroupsResult;
 import com.pulumi.core.Output;
@@ -368,6 +372,90 @@ public final class RedisFunctions {
      */
     public static CompletableFuture<GetInstancesResult> getInstancesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:redis/getInstances:getInstances", TypeShape.of(GetInstancesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobResult> getKeyScanJob(GetKeyScanJobArgs args) {
+        return getKeyScanJob(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobResult> getKeyScanJobPlain(GetKeyScanJobPlainArgs args) {
+        return getKeyScanJobPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobResult> getKeyScanJob(GetKeyScanJobArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getKeyScanJob:getKeyScanJob", TypeShape.of(GetKeyScanJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobResult> getKeyScanJob(GetKeyScanJobArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getKeyScanJob:getKeyScanJob", TypeShape.of(GetKeyScanJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobResult> getKeyScanJobPlain(GetKeyScanJobPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getKeyScanJob:getKeyScanJob", TypeShape.of(GetKeyScanJobResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobsResult> getKeyScanJobs() {
+        return getKeyScanJobs(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobsResult> getKeyScanJobsPlain() {
+        return getKeyScanJobsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobsResult> getKeyScanJobs(InvokeArgs args) {
+        return getKeyScanJobs(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobsResult> getKeyScanJobsPlain(InvokeArgs args) {
+        return getKeyScanJobsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobsResult> getKeyScanJobs(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getKeyScanJobs:getKeyScanJobs", TypeShape.of(GetKeyScanJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static Output<GetKeyScanJobsResult> getKeyScanJobs(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:redis/getKeyScanJobs:getKeyScanJobs", TypeShape.of(GetKeyScanJobsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::Redis::KeyScanJob
+     * 
+     */
+    public static CompletableFuture<GetKeyScanJobsResult> getKeyScanJobsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:redis/getKeyScanJobs:getKeyScanJobs", TypeShape.of(GetKeyScanJobsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::Redis::ParameterGroup

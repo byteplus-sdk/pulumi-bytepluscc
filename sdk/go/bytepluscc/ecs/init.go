@@ -23,6 +23,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:ecs/command:Command":
 		r = &Command{}
+	case "bytepluscc:ecs/dedicatedHostCluster:DedicatedHostCluster":
+		r = &DedicatedHostCluster{}
 	case "bytepluscc:ecs/deploymentSet:DeploymentSet":
 		r = &DeploymentSet{}
 	case "bytepluscc:ecs/hpcCluster:HpcCluster":
@@ -57,6 +59,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"ecs/command",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"ecs/dedicatedHostCluster",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

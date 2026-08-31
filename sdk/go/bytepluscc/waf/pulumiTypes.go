@@ -459,6 +459,299 @@ func (o CcRuleCronConfArrayOutput) Index(i pulumi.IntInput) CcRuleCronConfOutput
 	}).(CcRuleCronConfOutput)
 }
 
+type CustomPageAccurate struct {
+	// Sub-rule list in advanced conditions.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AccurateRules []CustomPageAccurateAccurateRule `pulumi:"accurateRules"`
+	// Logical relationship between sub-rules. 0: OR; 1: AND.
+	Logic *int `pulumi:"logic"`
+}
+
+// CustomPageAccurateInput is an input type that accepts CustomPageAccurateArgs and CustomPageAccurateOutput values.
+// You can construct a concrete instance of `CustomPageAccurateInput` via:
+//
+//	CustomPageAccurateArgs{...}
+type CustomPageAccurateInput interface {
+	pulumi.Input
+
+	ToCustomPageAccurateOutput() CustomPageAccurateOutput
+	ToCustomPageAccurateOutputWithContext(context.Context) CustomPageAccurateOutput
+}
+
+type CustomPageAccurateArgs struct {
+	// Sub-rule list in advanced conditions.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AccurateRules CustomPageAccurateAccurateRuleArrayInput `pulumi:"accurateRules"`
+	// Logical relationship between sub-rules. 0: OR; 1: AND.
+	Logic pulumi.IntPtrInput `pulumi:"logic"`
+}
+
+func (CustomPageAccurateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomPageAccurate)(nil)).Elem()
+}
+
+func (i CustomPageAccurateArgs) ToCustomPageAccurateOutput() CustomPageAccurateOutput {
+	return i.ToCustomPageAccurateOutputWithContext(context.Background())
+}
+
+func (i CustomPageAccurateArgs) ToCustomPageAccurateOutputWithContext(ctx context.Context) CustomPageAccurateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomPageAccurateOutput)
+}
+
+func (i CustomPageAccurateArgs) ToCustomPageAccuratePtrOutput() CustomPageAccuratePtrOutput {
+	return i.ToCustomPageAccuratePtrOutputWithContext(context.Background())
+}
+
+func (i CustomPageAccurateArgs) ToCustomPageAccuratePtrOutputWithContext(ctx context.Context) CustomPageAccuratePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomPageAccurateOutput).ToCustomPageAccuratePtrOutputWithContext(ctx)
+}
+
+// CustomPageAccuratePtrInput is an input type that accepts CustomPageAccurateArgs, CustomPageAccuratePtr and CustomPageAccuratePtrOutput values.
+// You can construct a concrete instance of `CustomPageAccuratePtrInput` via:
+//
+//	        CustomPageAccurateArgs{...}
+//
+//	or:
+//
+//	        nil
+type CustomPageAccuratePtrInput interface {
+	pulumi.Input
+
+	ToCustomPageAccuratePtrOutput() CustomPageAccuratePtrOutput
+	ToCustomPageAccuratePtrOutputWithContext(context.Context) CustomPageAccuratePtrOutput
+}
+
+type customPageAccuratePtrType CustomPageAccurateArgs
+
+func CustomPageAccuratePtr(v *CustomPageAccurateArgs) CustomPageAccuratePtrInput {
+	return (*customPageAccuratePtrType)(v)
+}
+
+func (*customPageAccuratePtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**CustomPageAccurate)(nil)).Elem()
+}
+
+func (i *customPageAccuratePtrType) ToCustomPageAccuratePtrOutput() CustomPageAccuratePtrOutput {
+	return i.ToCustomPageAccuratePtrOutputWithContext(context.Background())
+}
+
+func (i *customPageAccuratePtrType) ToCustomPageAccuratePtrOutputWithContext(ctx context.Context) CustomPageAccuratePtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomPageAccuratePtrOutput)
+}
+
+type CustomPageAccurateOutput struct{ *pulumi.OutputState }
+
+func (CustomPageAccurateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomPageAccurate)(nil)).Elem()
+}
+
+func (o CustomPageAccurateOutput) ToCustomPageAccurateOutput() CustomPageAccurateOutput {
+	return o
+}
+
+func (o CustomPageAccurateOutput) ToCustomPageAccurateOutputWithContext(ctx context.Context) CustomPageAccurateOutput {
+	return o
+}
+
+func (o CustomPageAccurateOutput) ToCustomPageAccuratePtrOutput() CustomPageAccuratePtrOutput {
+	return o.ToCustomPageAccuratePtrOutputWithContext(context.Background())
+}
+
+func (o CustomPageAccurateOutput) ToCustomPageAccuratePtrOutputWithContext(ctx context.Context) CustomPageAccuratePtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v CustomPageAccurate) *CustomPageAccurate {
+		return &v
+	}).(CustomPageAccuratePtrOutput)
+}
+
+// Sub-rule list in advanced conditions.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o CustomPageAccurateOutput) AccurateRules() CustomPageAccurateAccurateRuleArrayOutput {
+	return o.ApplyT(func(v CustomPageAccurate) []CustomPageAccurateAccurateRule { return v.AccurateRules }).(CustomPageAccurateAccurateRuleArrayOutput)
+}
+
+// Logical relationship between sub-rules. 0: OR; 1: AND.
+func (o CustomPageAccurateOutput) Logic() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomPageAccurate) *int { return v.Logic }).(pulumi.IntPtrOutput)
+}
+
+type CustomPageAccuratePtrOutput struct{ *pulumi.OutputState }
+
+func (CustomPageAccuratePtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**CustomPageAccurate)(nil)).Elem()
+}
+
+func (o CustomPageAccuratePtrOutput) ToCustomPageAccuratePtrOutput() CustomPageAccuratePtrOutput {
+	return o
+}
+
+func (o CustomPageAccuratePtrOutput) ToCustomPageAccuratePtrOutputWithContext(ctx context.Context) CustomPageAccuratePtrOutput {
+	return o
+}
+
+func (o CustomPageAccuratePtrOutput) Elem() CustomPageAccurateOutput {
+	return o.ApplyT(func(v *CustomPageAccurate) CustomPageAccurate {
+		if v != nil {
+			return *v
+		}
+		var ret CustomPageAccurate
+		return ret
+	}).(CustomPageAccurateOutput)
+}
+
+// Sub-rule list in advanced conditions.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o CustomPageAccuratePtrOutput) AccurateRules() CustomPageAccurateAccurateRuleArrayOutput {
+	return o.ApplyT(func(v *CustomPageAccurate) []CustomPageAccurateAccurateRule {
+		if v == nil {
+			return nil
+		}
+		return v.AccurateRules
+	}).(CustomPageAccurateAccurateRuleArrayOutput)
+}
+
+// Logical relationship between sub-rules. 0: OR; 1: AND.
+func (o CustomPageAccuratePtrOutput) Logic() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *CustomPageAccurate) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Logic
+	}).(pulumi.IntPtrOutput)
+}
+
+type CustomPageAccurateAccurateRule struct {
+	// Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+	HttpObj *string `pulumi:"httpObj"`
+	// Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+	ObjType *int `pulumi:"objType"`
+	// Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+	Opretar *int `pulumi:"opretar"`
+	// Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+	Property *int `pulumi:"property"`
+	// Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+	ValueString *string `pulumi:"valueString"`
+}
+
+// CustomPageAccurateAccurateRuleInput is an input type that accepts CustomPageAccurateAccurateRuleArgs and CustomPageAccurateAccurateRuleOutput values.
+// You can construct a concrete instance of `CustomPageAccurateAccurateRuleInput` via:
+//
+//	CustomPageAccurateAccurateRuleArgs{...}
+type CustomPageAccurateAccurateRuleInput interface {
+	pulumi.Input
+
+	ToCustomPageAccurateAccurateRuleOutput() CustomPageAccurateAccurateRuleOutput
+	ToCustomPageAccurateAccurateRuleOutputWithContext(context.Context) CustomPageAccurateAccurateRuleOutput
+}
+
+type CustomPageAccurateAccurateRuleArgs struct {
+	// Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+	HttpObj pulumi.StringPtrInput `pulumi:"httpObj"`
+	// Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+	ObjType pulumi.IntPtrInput `pulumi:"objType"`
+	// Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+	Opretar pulumi.IntPtrInput `pulumi:"opretar"`
+	// Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+	Property pulumi.IntPtrInput `pulumi:"property"`
+	// Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+	ValueString pulumi.StringPtrInput `pulumi:"valueString"`
+}
+
+func (CustomPageAccurateAccurateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomPageAccurateAccurateRule)(nil)).Elem()
+}
+
+func (i CustomPageAccurateAccurateRuleArgs) ToCustomPageAccurateAccurateRuleOutput() CustomPageAccurateAccurateRuleOutput {
+	return i.ToCustomPageAccurateAccurateRuleOutputWithContext(context.Background())
+}
+
+func (i CustomPageAccurateAccurateRuleArgs) ToCustomPageAccurateAccurateRuleOutputWithContext(ctx context.Context) CustomPageAccurateAccurateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomPageAccurateAccurateRuleOutput)
+}
+
+// CustomPageAccurateAccurateRuleArrayInput is an input type that accepts CustomPageAccurateAccurateRuleArray and CustomPageAccurateAccurateRuleArrayOutput values.
+// You can construct a concrete instance of `CustomPageAccurateAccurateRuleArrayInput` via:
+//
+//	CustomPageAccurateAccurateRuleArray{ CustomPageAccurateAccurateRuleArgs{...} }
+type CustomPageAccurateAccurateRuleArrayInput interface {
+	pulumi.Input
+
+	ToCustomPageAccurateAccurateRuleArrayOutput() CustomPageAccurateAccurateRuleArrayOutput
+	ToCustomPageAccurateAccurateRuleArrayOutputWithContext(context.Context) CustomPageAccurateAccurateRuleArrayOutput
+}
+
+type CustomPageAccurateAccurateRuleArray []CustomPageAccurateAccurateRuleInput
+
+func (CustomPageAccurateAccurateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomPageAccurateAccurateRule)(nil)).Elem()
+}
+
+func (i CustomPageAccurateAccurateRuleArray) ToCustomPageAccurateAccurateRuleArrayOutput() CustomPageAccurateAccurateRuleArrayOutput {
+	return i.ToCustomPageAccurateAccurateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i CustomPageAccurateAccurateRuleArray) ToCustomPageAccurateAccurateRuleArrayOutputWithContext(ctx context.Context) CustomPageAccurateAccurateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(CustomPageAccurateAccurateRuleArrayOutput)
+}
+
+type CustomPageAccurateAccurateRuleOutput struct{ *pulumi.OutputState }
+
+func (CustomPageAccurateAccurateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*CustomPageAccurateAccurateRule)(nil)).Elem()
+}
+
+func (o CustomPageAccurateAccurateRuleOutput) ToCustomPageAccurateAccurateRuleOutput() CustomPageAccurateAccurateRuleOutput {
+	return o
+}
+
+func (o CustomPageAccurateAccurateRuleOutput) ToCustomPageAccurateAccurateRuleOutputWithContext(ctx context.Context) CustomPageAccurateAccurateRuleOutput {
+	return o
+}
+
+// Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+func (o CustomPageAccurateAccurateRuleOutput) HttpObj() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomPageAccurateAccurateRule) *string { return v.HttpObj }).(pulumi.StringPtrOutput)
+}
+
+// Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+func (o CustomPageAccurateAccurateRuleOutput) ObjType() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomPageAccurateAccurateRule) *int { return v.ObjType }).(pulumi.IntPtrOutput)
+}
+
+// Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+func (o CustomPageAccurateAccurateRuleOutput) Opretar() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomPageAccurateAccurateRule) *int { return v.Opretar }).(pulumi.IntPtrOutput)
+}
+
+// Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+func (o CustomPageAccurateAccurateRuleOutput) Property() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v CustomPageAccurateAccurateRule) *int { return v.Property }).(pulumi.IntPtrOutput)
+}
+
+// Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+func (o CustomPageAccurateAccurateRuleOutput) ValueString() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v CustomPageAccurateAccurateRule) *string { return v.ValueString }).(pulumi.StringPtrOutput)
+}
+
+type CustomPageAccurateAccurateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (CustomPageAccurateAccurateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]CustomPageAccurateAccurateRule)(nil)).Elem()
+}
+
+func (o CustomPageAccurateAccurateRuleArrayOutput) ToCustomPageAccurateAccurateRuleArrayOutput() CustomPageAccurateAccurateRuleArrayOutput {
+	return o
+}
+
+func (o CustomPageAccurateAccurateRuleArrayOutput) ToCustomPageAccurateAccurateRuleArrayOutputWithContext(ctx context.Context) CustomPageAccurateAccurateRuleArrayOutput {
+	return o
+}
+
+func (o CustomPageAccurateAccurateRuleArrayOutput) Index(i pulumi.IntInput) CustomPageAccurateAccurateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) CustomPageAccurateAccurateRule {
+		return vs[0].([]CustomPageAccurateAccurateRule)[vs[1].(int)]
+	}).(CustomPageAccurateAccurateRuleOutput)
+}
+
 type DomainBackendGroup struct {
 	// Access port number.
 	AccessPorts []int `pulumi:"accessPorts"`
@@ -1600,6 +1893,121 @@ func (o HostGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) HostGroupRelat
 	}).(HostGroupRelatedRuleOutput)
 }
 
+type IpGroupRelatedRule struct {
+	// Rule Name
+	RuleName *string `pulumi:"ruleName"`
+	// Rule ID
+	RuleTag *string `pulumi:"ruleTag"`
+	// Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+	RuleType *string `pulumi:"ruleType"`
+}
+
+// IpGroupRelatedRuleInput is an input type that accepts IpGroupRelatedRuleArgs and IpGroupRelatedRuleOutput values.
+// You can construct a concrete instance of `IpGroupRelatedRuleInput` via:
+//
+//	IpGroupRelatedRuleArgs{...}
+type IpGroupRelatedRuleInput interface {
+	pulumi.Input
+
+	ToIpGroupRelatedRuleOutput() IpGroupRelatedRuleOutput
+	ToIpGroupRelatedRuleOutputWithContext(context.Context) IpGroupRelatedRuleOutput
+}
+
+type IpGroupRelatedRuleArgs struct {
+	// Rule Name
+	RuleName pulumi.StringPtrInput `pulumi:"ruleName"`
+	// Rule ID
+	RuleTag pulumi.StringPtrInput `pulumi:"ruleTag"`
+	// Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+	RuleType pulumi.StringPtrInput `pulumi:"ruleType"`
+}
+
+func (IpGroupRelatedRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpGroupRelatedRule)(nil)).Elem()
+}
+
+func (i IpGroupRelatedRuleArgs) ToIpGroupRelatedRuleOutput() IpGroupRelatedRuleOutput {
+	return i.ToIpGroupRelatedRuleOutputWithContext(context.Background())
+}
+
+func (i IpGroupRelatedRuleArgs) ToIpGroupRelatedRuleOutputWithContext(ctx context.Context) IpGroupRelatedRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpGroupRelatedRuleOutput)
+}
+
+// IpGroupRelatedRuleArrayInput is an input type that accepts IpGroupRelatedRuleArray and IpGroupRelatedRuleArrayOutput values.
+// You can construct a concrete instance of `IpGroupRelatedRuleArrayInput` via:
+//
+//	IpGroupRelatedRuleArray{ IpGroupRelatedRuleArgs{...} }
+type IpGroupRelatedRuleArrayInput interface {
+	pulumi.Input
+
+	ToIpGroupRelatedRuleArrayOutput() IpGroupRelatedRuleArrayOutput
+	ToIpGroupRelatedRuleArrayOutputWithContext(context.Context) IpGroupRelatedRuleArrayOutput
+}
+
+type IpGroupRelatedRuleArray []IpGroupRelatedRuleInput
+
+func (IpGroupRelatedRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpGroupRelatedRule)(nil)).Elem()
+}
+
+func (i IpGroupRelatedRuleArray) ToIpGroupRelatedRuleArrayOutput() IpGroupRelatedRuleArrayOutput {
+	return i.ToIpGroupRelatedRuleArrayOutputWithContext(context.Background())
+}
+
+func (i IpGroupRelatedRuleArray) ToIpGroupRelatedRuleArrayOutputWithContext(ctx context.Context) IpGroupRelatedRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(IpGroupRelatedRuleArrayOutput)
+}
+
+type IpGroupRelatedRuleOutput struct{ *pulumi.OutputState }
+
+func (IpGroupRelatedRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*IpGroupRelatedRule)(nil)).Elem()
+}
+
+func (o IpGroupRelatedRuleOutput) ToIpGroupRelatedRuleOutput() IpGroupRelatedRuleOutput {
+	return o
+}
+
+func (o IpGroupRelatedRuleOutput) ToIpGroupRelatedRuleOutputWithContext(ctx context.Context) IpGroupRelatedRuleOutput {
+	return o
+}
+
+// Rule Name
+func (o IpGroupRelatedRuleOutput) RuleName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpGroupRelatedRule) *string { return v.RuleName }).(pulumi.StringPtrOutput)
+}
+
+// Rule ID
+func (o IpGroupRelatedRuleOutput) RuleTag() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpGroupRelatedRule) *string { return v.RuleTag }).(pulumi.StringPtrOutput)
+}
+
+// Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+func (o IpGroupRelatedRuleOutput) RuleType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v IpGroupRelatedRule) *string { return v.RuleType }).(pulumi.StringPtrOutput)
+}
+
+type IpGroupRelatedRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (IpGroupRelatedRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]IpGroupRelatedRule)(nil)).Elem()
+}
+
+func (o IpGroupRelatedRuleArrayOutput) ToIpGroupRelatedRuleArrayOutput() IpGroupRelatedRuleArrayOutput {
+	return o
+}
+
+func (o IpGroupRelatedRuleArrayOutput) ToIpGroupRelatedRuleArrayOutputWithContext(ctx context.Context) IpGroupRelatedRuleArrayOutput {
+	return o
+}
+
+func (o IpGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) IpGroupRelatedRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) IpGroupRelatedRule {
+		return vs[0].([]IpGroupRelatedRule)[vs[1].(int)]
+	}).(IpGroupRelatedRuleOutput)
+}
+
 type GetCcRuleAccurateGroup struct {
 	// Advanced condition group priority. Not required when creating/updating, used only for list display.
 	AccurateGroupPriority int `pulumi:"accurateGroupPriority"`
@@ -1925,6 +2333,200 @@ func (o GetCcRuleCronConfArrayOutput) Index(i pulumi.IntInput) GetCcRuleCronConf
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCcRuleCronConf {
 		return vs[0].([]GetCcRuleCronConf)[vs[1].(int)]
 	}).(GetCcRuleCronConfOutput)
+}
+
+type GetCustomPageAccurate struct {
+	// Sub-rule list in advanced conditions.
+	AccurateRules []GetCustomPageAccurateAccurateRule `pulumi:"accurateRules"`
+	// Logical relationship between sub-rules. 0: OR; 1: AND.
+	Logic int `pulumi:"logic"`
+}
+
+// GetCustomPageAccurateInput is an input type that accepts GetCustomPageAccurateArgs and GetCustomPageAccurateOutput values.
+// You can construct a concrete instance of `GetCustomPageAccurateInput` via:
+//
+//	GetCustomPageAccurateArgs{...}
+type GetCustomPageAccurateInput interface {
+	pulumi.Input
+
+	ToGetCustomPageAccurateOutput() GetCustomPageAccurateOutput
+	ToGetCustomPageAccurateOutputWithContext(context.Context) GetCustomPageAccurateOutput
+}
+
+type GetCustomPageAccurateArgs struct {
+	// Sub-rule list in advanced conditions.
+	AccurateRules GetCustomPageAccurateAccurateRuleArrayInput `pulumi:"accurateRules"`
+	// Logical relationship between sub-rules. 0: OR; 1: AND.
+	Logic pulumi.IntInput `pulumi:"logic"`
+}
+
+func (GetCustomPageAccurateArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomPageAccurate)(nil)).Elem()
+}
+
+func (i GetCustomPageAccurateArgs) ToGetCustomPageAccurateOutput() GetCustomPageAccurateOutput {
+	return i.ToGetCustomPageAccurateOutputWithContext(context.Background())
+}
+
+func (i GetCustomPageAccurateArgs) ToGetCustomPageAccurateOutputWithContext(ctx context.Context) GetCustomPageAccurateOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomPageAccurateOutput)
+}
+
+type GetCustomPageAccurateOutput struct{ *pulumi.OutputState }
+
+func (GetCustomPageAccurateOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomPageAccurate)(nil)).Elem()
+}
+
+func (o GetCustomPageAccurateOutput) ToGetCustomPageAccurateOutput() GetCustomPageAccurateOutput {
+	return o
+}
+
+func (o GetCustomPageAccurateOutput) ToGetCustomPageAccurateOutputWithContext(ctx context.Context) GetCustomPageAccurateOutput {
+	return o
+}
+
+// Sub-rule list in advanced conditions.
+func (o GetCustomPageAccurateOutput) AccurateRules() GetCustomPageAccurateAccurateRuleArrayOutput {
+	return o.ApplyT(func(v GetCustomPageAccurate) []GetCustomPageAccurateAccurateRule { return v.AccurateRules }).(GetCustomPageAccurateAccurateRuleArrayOutput)
+}
+
+// Logical relationship between sub-rules. 0: OR; 1: AND.
+func (o GetCustomPageAccurateOutput) Logic() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomPageAccurate) int { return v.Logic }).(pulumi.IntOutput)
+}
+
+type GetCustomPageAccurateAccurateRule struct {
+	// Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+	HttpObj string `pulumi:"httpObj"`
+	// Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+	ObjType int `pulumi:"objType"`
+	// Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+	Opretar int `pulumi:"opretar"`
+	// Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+	Property int `pulumi:"property"`
+	// Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+	ValueString string `pulumi:"valueString"`
+}
+
+// GetCustomPageAccurateAccurateRuleInput is an input type that accepts GetCustomPageAccurateAccurateRuleArgs and GetCustomPageAccurateAccurateRuleOutput values.
+// You can construct a concrete instance of `GetCustomPageAccurateAccurateRuleInput` via:
+//
+//	GetCustomPageAccurateAccurateRuleArgs{...}
+type GetCustomPageAccurateAccurateRuleInput interface {
+	pulumi.Input
+
+	ToGetCustomPageAccurateAccurateRuleOutput() GetCustomPageAccurateAccurateRuleOutput
+	ToGetCustomPageAccurateAccurateRuleOutputWithContext(context.Context) GetCustomPageAccurateAccurateRuleOutput
+}
+
+type GetCustomPageAccurateAccurateRuleArgs struct {
+	// Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+	HttpObj pulumi.StringInput `pulumi:"httpObj"`
+	// Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+	ObjType pulumi.IntInput `pulumi:"objType"`
+	// Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+	Opretar pulumi.IntInput `pulumi:"opretar"`
+	// Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+	Property pulumi.IntInput `pulumi:"property"`
+	// Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+	ValueString pulumi.StringInput `pulumi:"valueString"`
+}
+
+func (GetCustomPageAccurateAccurateRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomPageAccurateAccurateRule)(nil)).Elem()
+}
+
+func (i GetCustomPageAccurateAccurateRuleArgs) ToGetCustomPageAccurateAccurateRuleOutput() GetCustomPageAccurateAccurateRuleOutput {
+	return i.ToGetCustomPageAccurateAccurateRuleOutputWithContext(context.Background())
+}
+
+func (i GetCustomPageAccurateAccurateRuleArgs) ToGetCustomPageAccurateAccurateRuleOutputWithContext(ctx context.Context) GetCustomPageAccurateAccurateRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomPageAccurateAccurateRuleOutput)
+}
+
+// GetCustomPageAccurateAccurateRuleArrayInput is an input type that accepts GetCustomPageAccurateAccurateRuleArray and GetCustomPageAccurateAccurateRuleArrayOutput values.
+// You can construct a concrete instance of `GetCustomPageAccurateAccurateRuleArrayInput` via:
+//
+//	GetCustomPageAccurateAccurateRuleArray{ GetCustomPageAccurateAccurateRuleArgs{...} }
+type GetCustomPageAccurateAccurateRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetCustomPageAccurateAccurateRuleArrayOutput() GetCustomPageAccurateAccurateRuleArrayOutput
+	ToGetCustomPageAccurateAccurateRuleArrayOutputWithContext(context.Context) GetCustomPageAccurateAccurateRuleArrayOutput
+}
+
+type GetCustomPageAccurateAccurateRuleArray []GetCustomPageAccurateAccurateRuleInput
+
+func (GetCustomPageAccurateAccurateRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomPageAccurateAccurateRule)(nil)).Elem()
+}
+
+func (i GetCustomPageAccurateAccurateRuleArray) ToGetCustomPageAccurateAccurateRuleArrayOutput() GetCustomPageAccurateAccurateRuleArrayOutput {
+	return i.ToGetCustomPageAccurateAccurateRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetCustomPageAccurateAccurateRuleArray) ToGetCustomPageAccurateAccurateRuleArrayOutputWithContext(ctx context.Context) GetCustomPageAccurateAccurateRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetCustomPageAccurateAccurateRuleArrayOutput)
+}
+
+type GetCustomPageAccurateAccurateRuleOutput struct{ *pulumi.OutputState }
+
+func (GetCustomPageAccurateAccurateRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetCustomPageAccurateAccurateRule)(nil)).Elem()
+}
+
+func (o GetCustomPageAccurateAccurateRuleOutput) ToGetCustomPageAccurateAccurateRuleOutput() GetCustomPageAccurateAccurateRuleOutput {
+	return o
+}
+
+func (o GetCustomPageAccurateAccurateRuleOutput) ToGetCustomPageAccurateAccurateRuleOutputWithContext(ctx context.Context) GetCustomPageAccurateAccurateRuleOutput {
+	return o
+}
+
+// Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+func (o GetCustomPageAccurateAccurateRuleOutput) HttpObj() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomPageAccurateAccurateRule) string { return v.HttpObj }).(pulumi.StringOutput)
+}
+
+// Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+func (o GetCustomPageAccurateAccurateRuleOutput) ObjType() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomPageAccurateAccurateRule) int { return v.ObjType }).(pulumi.IntOutput)
+}
+
+// Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+func (o GetCustomPageAccurateAccurateRuleOutput) Opretar() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomPageAccurateAccurateRule) int { return v.Opretar }).(pulumi.IntOutput)
+}
+
+// Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+func (o GetCustomPageAccurateAccurateRuleOutput) Property() pulumi.IntOutput {
+	return o.ApplyT(func(v GetCustomPageAccurateAccurateRule) int { return v.Property }).(pulumi.IntOutput)
+}
+
+// Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+func (o GetCustomPageAccurateAccurateRuleOutput) ValueString() pulumi.StringOutput {
+	return o.ApplyT(func(v GetCustomPageAccurateAccurateRule) string { return v.ValueString }).(pulumi.StringOutput)
+}
+
+type GetCustomPageAccurateAccurateRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetCustomPageAccurateAccurateRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetCustomPageAccurateAccurateRule)(nil)).Elem()
+}
+
+func (o GetCustomPageAccurateAccurateRuleArrayOutput) ToGetCustomPageAccurateAccurateRuleArrayOutput() GetCustomPageAccurateAccurateRuleArrayOutput {
+	return o
+}
+
+func (o GetCustomPageAccurateAccurateRuleArrayOutput) ToGetCustomPageAccurateAccurateRuleArrayOutputWithContext(ctx context.Context) GetCustomPageAccurateAccurateRuleArrayOutput {
+	return o
+}
+
+func (o GetCustomPageAccurateAccurateRuleArrayOutput) Index(i pulumi.IntInput) GetCustomPageAccurateAccurateRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetCustomPageAccurateAccurateRule {
+		return vs[0].([]GetCustomPageAccurateAccurateRule)[vs[1].(int)]
+	}).(GetCustomPageAccurateAccurateRuleOutput)
 }
 
 type GetDomainBackendGroup struct {
@@ -2781,6 +3383,121 @@ func (o GetHostGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) GetHostGrou
 	}).(GetHostGroupRelatedRuleOutput)
 }
 
+type GetIpGroupRelatedRule struct {
+	// Rule Name
+	RuleName string `pulumi:"ruleName"`
+	// Rule ID
+	RuleTag string `pulumi:"ruleTag"`
+	// Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+	RuleType string `pulumi:"ruleType"`
+}
+
+// GetIpGroupRelatedRuleInput is an input type that accepts GetIpGroupRelatedRuleArgs and GetIpGroupRelatedRuleOutput values.
+// You can construct a concrete instance of `GetIpGroupRelatedRuleInput` via:
+//
+//	GetIpGroupRelatedRuleArgs{...}
+type GetIpGroupRelatedRuleInput interface {
+	pulumi.Input
+
+	ToGetIpGroupRelatedRuleOutput() GetIpGroupRelatedRuleOutput
+	ToGetIpGroupRelatedRuleOutputWithContext(context.Context) GetIpGroupRelatedRuleOutput
+}
+
+type GetIpGroupRelatedRuleArgs struct {
+	// Rule Name
+	RuleName pulumi.StringInput `pulumi:"ruleName"`
+	// Rule ID
+	RuleTag pulumi.StringInput `pulumi:"ruleTag"`
+	// Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+	RuleType pulumi.StringInput `pulumi:"ruleType"`
+}
+
+func (GetIpGroupRelatedRuleArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpGroupRelatedRule)(nil)).Elem()
+}
+
+func (i GetIpGroupRelatedRuleArgs) ToGetIpGroupRelatedRuleOutput() GetIpGroupRelatedRuleOutput {
+	return i.ToGetIpGroupRelatedRuleOutputWithContext(context.Background())
+}
+
+func (i GetIpGroupRelatedRuleArgs) ToGetIpGroupRelatedRuleOutputWithContext(ctx context.Context) GetIpGroupRelatedRuleOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpGroupRelatedRuleOutput)
+}
+
+// GetIpGroupRelatedRuleArrayInput is an input type that accepts GetIpGroupRelatedRuleArray and GetIpGroupRelatedRuleArrayOutput values.
+// You can construct a concrete instance of `GetIpGroupRelatedRuleArrayInput` via:
+//
+//	GetIpGroupRelatedRuleArray{ GetIpGroupRelatedRuleArgs{...} }
+type GetIpGroupRelatedRuleArrayInput interface {
+	pulumi.Input
+
+	ToGetIpGroupRelatedRuleArrayOutput() GetIpGroupRelatedRuleArrayOutput
+	ToGetIpGroupRelatedRuleArrayOutputWithContext(context.Context) GetIpGroupRelatedRuleArrayOutput
+}
+
+type GetIpGroupRelatedRuleArray []GetIpGroupRelatedRuleInput
+
+func (GetIpGroupRelatedRuleArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpGroupRelatedRule)(nil)).Elem()
+}
+
+func (i GetIpGroupRelatedRuleArray) ToGetIpGroupRelatedRuleArrayOutput() GetIpGroupRelatedRuleArrayOutput {
+	return i.ToGetIpGroupRelatedRuleArrayOutputWithContext(context.Background())
+}
+
+func (i GetIpGroupRelatedRuleArray) ToGetIpGroupRelatedRuleArrayOutputWithContext(ctx context.Context) GetIpGroupRelatedRuleArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetIpGroupRelatedRuleArrayOutput)
+}
+
+type GetIpGroupRelatedRuleOutput struct{ *pulumi.OutputState }
+
+func (GetIpGroupRelatedRuleOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetIpGroupRelatedRule)(nil)).Elem()
+}
+
+func (o GetIpGroupRelatedRuleOutput) ToGetIpGroupRelatedRuleOutput() GetIpGroupRelatedRuleOutput {
+	return o
+}
+
+func (o GetIpGroupRelatedRuleOutput) ToGetIpGroupRelatedRuleOutputWithContext(ctx context.Context) GetIpGroupRelatedRuleOutput {
+	return o
+}
+
+// Rule Name
+func (o GetIpGroupRelatedRuleOutput) RuleName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpGroupRelatedRule) string { return v.RuleName }).(pulumi.StringOutput)
+}
+
+// Rule ID
+func (o GetIpGroupRelatedRuleOutput) RuleTag() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpGroupRelatedRule) string { return v.RuleTag }).(pulumi.StringOutput)
+}
+
+// Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+func (o GetIpGroupRelatedRuleOutput) RuleType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetIpGroupRelatedRule) string { return v.RuleType }).(pulumi.StringOutput)
+}
+
+type GetIpGroupRelatedRuleArrayOutput struct{ *pulumi.OutputState }
+
+func (GetIpGroupRelatedRuleArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetIpGroupRelatedRule)(nil)).Elem()
+}
+
+func (o GetIpGroupRelatedRuleArrayOutput) ToGetIpGroupRelatedRuleArrayOutput() GetIpGroupRelatedRuleArrayOutput {
+	return o
+}
+
+func (o GetIpGroupRelatedRuleArrayOutput) ToGetIpGroupRelatedRuleArrayOutputWithContext(ctx context.Context) GetIpGroupRelatedRuleArrayOutput {
+	return o
+}
+
+func (o GetIpGroupRelatedRuleArrayOutput) Index(i pulumi.IntInput) GetIpGroupRelatedRuleOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetIpGroupRelatedRule {
+		return vs[0].([]GetIpGroupRelatedRule)[vs[1].(int)]
+	}).(GetIpGroupRelatedRuleOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupInput)(nil)).Elem(), CcRuleAccurateGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupPtrInput)(nil)).Elem(), CcRuleAccurateGroupArgs{})
@@ -2788,6 +3505,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleAccurateGroupAccurateRuleArrayInput)(nil)).Elem(), CcRuleAccurateGroupAccurateRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleCronConfInput)(nil)).Elem(), CcRuleCronConfArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CcRuleCronConfArrayInput)(nil)).Elem(), CcRuleCronConfArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomPageAccurateInput)(nil)).Elem(), CustomPageAccurateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomPageAccuratePtrInput)(nil)).Elem(), CustomPageAccurateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomPageAccurateAccurateRuleInput)(nil)).Elem(), CustomPageAccurateAccurateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*CustomPageAccurateAccurateRuleArrayInput)(nil)).Elem(), CustomPageAccurateAccurateRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainBackendGroupInput)(nil)).Elem(), DomainBackendGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainBackendGroupArrayInput)(nil)).Elem(), DomainBackendGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainBackendGroupBackendInput)(nil)).Elem(), DomainBackendGroupBackendArgs{})
@@ -2804,11 +3525,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*DomainTlsFieldsConfigHeadersConfigPtrInput)(nil)).Elem(), DomainTlsFieldsConfigHeadersConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRelatedRuleInput)(nil)).Elem(), HostGroupRelatedRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HostGroupRelatedRuleArrayInput)(nil)).Elem(), HostGroupRelatedRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpGroupRelatedRuleInput)(nil)).Elem(), IpGroupRelatedRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*IpGroupRelatedRuleArrayInput)(nil)).Elem(), IpGroupRelatedRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupInput)(nil)).Elem(), GetCcRuleAccurateGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupAccurateRuleInput)(nil)).Elem(), GetCcRuleAccurateGroupAccurateRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleAccurateGroupAccurateRuleArrayInput)(nil)).Elem(), GetCcRuleAccurateGroupAccurateRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleCronConfInput)(nil)).Elem(), GetCcRuleCronConfArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCcRuleCronConfArrayInput)(nil)).Elem(), GetCcRuleCronConfArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomPageAccurateInput)(nil)).Elem(), GetCustomPageAccurateArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomPageAccurateAccurateRuleInput)(nil)).Elem(), GetCustomPageAccurateAccurateRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetCustomPageAccurateAccurateRuleArrayInput)(nil)).Elem(), GetCustomPageAccurateAccurateRuleArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupInput)(nil)).Elem(), GetDomainBackendGroupArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupArrayInput)(nil)).Elem(), GetDomainBackendGroupArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainBackendGroupBackendInput)(nil)).Elem(), GetDomainBackendGroupBackendArgs{})
@@ -2822,12 +3548,18 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDomainTlsFieldsConfigHeadersConfigInput)(nil)).Elem(), GetDomainTlsFieldsConfigHeadersConfigArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRelatedRuleInput)(nil)).Elem(), GetHostGroupRelatedRuleArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHostGroupRelatedRuleArrayInput)(nil)).Elem(), GetHostGroupRelatedRuleArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpGroupRelatedRuleInput)(nil)).Elem(), GetIpGroupRelatedRuleArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetIpGroupRelatedRuleArrayInput)(nil)).Elem(), GetIpGroupRelatedRuleArray{})
 	pulumi.RegisterOutputType(CcRuleAccurateGroupOutput{})
 	pulumi.RegisterOutputType(CcRuleAccurateGroupPtrOutput{})
 	pulumi.RegisterOutputType(CcRuleAccurateGroupAccurateRuleOutput{})
 	pulumi.RegisterOutputType(CcRuleAccurateGroupAccurateRuleArrayOutput{})
 	pulumi.RegisterOutputType(CcRuleCronConfOutput{})
 	pulumi.RegisterOutputType(CcRuleCronConfArrayOutput{})
+	pulumi.RegisterOutputType(CustomPageAccurateOutput{})
+	pulumi.RegisterOutputType(CustomPageAccuratePtrOutput{})
+	pulumi.RegisterOutputType(CustomPageAccurateAccurateRuleOutput{})
+	pulumi.RegisterOutputType(CustomPageAccurateAccurateRuleArrayOutput{})
 	pulumi.RegisterOutputType(DomainBackendGroupOutput{})
 	pulumi.RegisterOutputType(DomainBackendGroupArrayOutput{})
 	pulumi.RegisterOutputType(DomainBackendGroupBackendOutput{})
@@ -2844,11 +3576,16 @@ func init() {
 	pulumi.RegisterOutputType(DomainTlsFieldsConfigHeadersConfigPtrOutput{})
 	pulumi.RegisterOutputType(HostGroupRelatedRuleOutput{})
 	pulumi.RegisterOutputType(HostGroupRelatedRuleArrayOutput{})
+	pulumi.RegisterOutputType(IpGroupRelatedRuleOutput{})
+	pulumi.RegisterOutputType(IpGroupRelatedRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetCcRuleAccurateGroupOutput{})
 	pulumi.RegisterOutputType(GetCcRuleAccurateGroupAccurateRuleOutput{})
 	pulumi.RegisterOutputType(GetCcRuleAccurateGroupAccurateRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetCcRuleCronConfOutput{})
 	pulumi.RegisterOutputType(GetCcRuleCronConfArrayOutput{})
+	pulumi.RegisterOutputType(GetCustomPageAccurateOutput{})
+	pulumi.RegisterOutputType(GetCustomPageAccurateAccurateRuleOutput{})
+	pulumi.RegisterOutputType(GetCustomPageAccurateAccurateRuleArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupArrayOutput{})
 	pulumi.RegisterOutputType(GetDomainBackendGroupBackendOutput{})
@@ -2862,4 +3599,6 @@ func init() {
 	pulumi.RegisterOutputType(GetDomainTlsFieldsConfigHeadersConfigOutput{})
 	pulumi.RegisterOutputType(GetHostGroupRelatedRuleOutput{})
 	pulumi.RegisterOutputType(GetHostGroupRelatedRuleArrayOutput{})
+	pulumi.RegisterOutputType(GetIpGroupRelatedRuleOutput{})
+	pulumi.RegisterOutputType(GetIpGroupRelatedRuleArrayOutput{})
 }

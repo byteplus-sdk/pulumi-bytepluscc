@@ -606,14 +606,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      * 
      */
     @Import(name="instanceType")
     private @Nullable Output<String> instanceType;
 
     /**
-     * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * @return Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      * 
      */
     public Optional<Output<String>> instanceType() {
@@ -2094,7 +2094,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+         * @param instanceType Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
          * 
          * @return builder
          * 
@@ -2105,7 +2105,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param instanceType Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+         * @param instanceType Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
          * 
          * @return builder
          * 

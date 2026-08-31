@@ -23,10 +23,16 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 	switch typ {
 	case "bytepluscc:waf/ccRule:CcRule":
 		r = &CcRule{}
+	case "bytepluscc:waf/customPage:CustomPage":
+		r = &CustomPage{}
 	case "bytepluscc:waf/domain:Domain":
 		r = &Domain{}
 	case "bytepluscc:waf/hostGroup:HostGroup":
 		r = &HostGroup{}
+	case "bytepluscc:waf/ipGroup:IpGroup":
+		r = &IpGroup{}
+	case "bytepluscc:waf/systemBot:SystemBot":
+		r = &SystemBot{}
 	default:
 		return nil, fmt.Errorf("unknown resource type: %s", typ)
 	}
@@ -47,12 +53,27 @@ func init() {
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
+		"waf/customPage",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
 		"waf/domain",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"waf/hostGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"waf/ipGroup",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"waf/systemBot",
 		&module{version},
 	)
 }

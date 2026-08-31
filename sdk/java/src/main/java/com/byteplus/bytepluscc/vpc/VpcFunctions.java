@@ -24,6 +24,8 @@ import com.byteplus.bytepluscc.vpc.inputs.GetIpamPoolArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpamPoolPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpamScopeArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpamScopePlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpv4GatewayArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpv4GatewayPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpv6AddressBandwidthArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpv6AddressBandwidthPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpv6GatewayArgs;
@@ -68,6 +70,8 @@ import com.byteplus.bytepluscc.vpc.outputs.GetIpamResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpamScopeResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpamScopesResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpamsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpv4GatewayResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpv4GatewaysResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpv6AddressBandwidthResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpv6AddressBandwidthsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpv6GatewayResult;
@@ -940,6 +944,90 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetIpamsResult> getIpamsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpams:getIpams", TypeShape.of(GetIpamsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewayResult> getIpv4Gateway(GetIpv4GatewayArgs args) {
+        return getIpv4Gateway(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewayResult> getIpv4GatewayPlain(GetIpv4GatewayPlainArgs args) {
+        return getIpv4GatewayPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewayResult> getIpv4Gateway(GetIpv4GatewayArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv4Gateway:getIpv4Gateway", TypeShape.of(GetIpv4GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewayResult> getIpv4Gateway(GetIpv4GatewayArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv4Gateway:getIpv4Gateway", TypeShape.of(GetIpv4GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewayResult> getIpv4GatewayPlain(GetIpv4GatewayPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpv4Gateway:getIpv4Gateway", TypeShape.of(GetIpv4GatewayResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewaysResult> getIpv4Gateways() {
+        return getIpv4Gateways(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewaysResult> getIpv4GatewaysPlain() {
+        return getIpv4GatewaysPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewaysResult> getIpv4Gateways(InvokeArgs args) {
+        return getIpv4Gateways(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewaysResult> getIpv4GatewaysPlain(InvokeArgs args) {
+        return getIpv4GatewaysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewaysResult> getIpv4Gateways(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv4Gateways:getIpv4Gateways", TypeShape.of(GetIpv4GatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static Output<GetIpv4GatewaysResult> getIpv4Gateways(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpv4Gateways:getIpv4Gateways", TypeShape.of(GetIpv4GatewaysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::Ipv4Gateway
+     * 
+     */
+    public static CompletableFuture<GetIpv4GatewaysResult> getIpv4GatewaysPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpv4Gateways:getIpv4Gateways", TypeShape.of(GetIpv4GatewaysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth

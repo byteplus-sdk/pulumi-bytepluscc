@@ -10,6 +10,11 @@ export type CcRule = import("./ccRule").CcRule;
 export const CcRule: typeof import("./ccRule").CcRule = null as any;
 utilities.lazyLoad(exports, ["CcRule"], () => require("./ccRule"));
 
+export { CustomPageArgs, CustomPageState } from "./customPage";
+export type CustomPage = import("./customPage").CustomPage;
+export const CustomPage: typeof import("./customPage").CustomPage = null as any;
+utilities.lazyLoad(exports, ["CustomPage"], () => require("./customPage"));
+
 export { DomainArgs, DomainState } from "./domain";
 export type Domain = import("./domain").Domain;
 export const Domain: typeof import("./domain").Domain = null as any;
@@ -24,6 +29,16 @@ export { GetCcRulesResult } from "./getCcRules";
 export const getCcRules: typeof import("./getCcRules").getCcRules = null as any;
 export const getCcRulesOutput: typeof import("./getCcRules").getCcRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getCcRules","getCcRulesOutput"], () => require("./getCcRules"));
+
+export { GetCustomPageArgs, GetCustomPageResult, GetCustomPageOutputArgs } from "./getCustomPage";
+export const getCustomPage: typeof import("./getCustomPage").getCustomPage = null as any;
+export const getCustomPageOutput: typeof import("./getCustomPage").getCustomPageOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomPage","getCustomPageOutput"], () => require("./getCustomPage"));
+
+export { GetCustomPagesResult } from "./getCustomPages";
+export const getCustomPages: typeof import("./getCustomPages").getCustomPages = null as any;
+export const getCustomPagesOutput: typeof import("./getCustomPages").getCustomPagesOutput = null as any;
+utilities.lazyLoad(exports, ["getCustomPages","getCustomPagesOutput"], () => require("./getCustomPages"));
 
 export { GetDomainArgs, GetDomainResult, GetDomainOutputArgs } from "./getDomain";
 export const getDomain: typeof import("./getDomain").getDomain = null as any;
@@ -45,10 +60,40 @@ export const getHostGroups: typeof import("./getHostGroups").getHostGroups = nul
 export const getHostGroupsOutput: typeof import("./getHostGroups").getHostGroupsOutput = null as any;
 utilities.lazyLoad(exports, ["getHostGroups","getHostGroupsOutput"], () => require("./getHostGroups"));
 
+export { GetIpGroupArgs, GetIpGroupResult, GetIpGroupOutputArgs } from "./getIpGroup";
+export const getIpGroup: typeof import("./getIpGroup").getIpGroup = null as any;
+export const getIpGroupOutput: typeof import("./getIpGroup").getIpGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getIpGroup","getIpGroupOutput"], () => require("./getIpGroup"));
+
+export { GetIpGroupsResult } from "./getIpGroups";
+export const getIpGroups: typeof import("./getIpGroups").getIpGroups = null as any;
+export const getIpGroupsOutput: typeof import("./getIpGroups").getIpGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getIpGroups","getIpGroupsOutput"], () => require("./getIpGroups"));
+
+export { GetSystemBotArgs, GetSystemBotResult, GetSystemBotOutputArgs } from "./getSystemBot";
+export const getSystemBot: typeof import("./getSystemBot").getSystemBot = null as any;
+export const getSystemBotOutput: typeof import("./getSystemBot").getSystemBotOutput = null as any;
+utilities.lazyLoad(exports, ["getSystemBot","getSystemBotOutput"], () => require("./getSystemBot"));
+
+export { GetSystemBotsResult } from "./getSystemBots";
+export const getSystemBots: typeof import("./getSystemBots").getSystemBots = null as any;
+export const getSystemBotsOutput: typeof import("./getSystemBots").getSystemBotsOutput = null as any;
+utilities.lazyLoad(exports, ["getSystemBots","getSystemBotsOutput"], () => require("./getSystemBots"));
+
 export { HostGroupArgs, HostGroupState } from "./hostGroup";
 export type HostGroup = import("./hostGroup").HostGroup;
 export const HostGroup: typeof import("./hostGroup").HostGroup = null as any;
 utilities.lazyLoad(exports, ["HostGroup"], () => require("./hostGroup"));
+
+export { IpGroupArgs, IpGroupState } from "./ipGroup";
+export type IpGroup = import("./ipGroup").IpGroup;
+export const IpGroup: typeof import("./ipGroup").IpGroup = null as any;
+utilities.lazyLoad(exports, ["IpGroup"], () => require("./ipGroup"));
+
+export { SystemBotArgs, SystemBotState } from "./systemBot";
+export type SystemBot = import("./systemBot").SystemBot;
+export const SystemBot: typeof import("./systemBot").SystemBot = null as any;
+utilities.lazyLoad(exports, ["SystemBot"], () => require("./systemBot"));
 
 
 const _module = {
@@ -57,15 +102,24 @@ const _module = {
         switch (type) {
             case "bytepluscc:waf/ccRule:CcRule":
                 return new CcRule(name, <any>undefined, { urn })
+            case "bytepluscc:waf/customPage:CustomPage":
+                return new CustomPage(name, <any>undefined, { urn })
             case "bytepluscc:waf/domain:Domain":
                 return new Domain(name, <any>undefined, { urn })
             case "bytepluscc:waf/hostGroup:HostGroup":
                 return new HostGroup(name, <any>undefined, { urn })
+            case "bytepluscc:waf/ipGroup:IpGroup":
+                return new IpGroup(name, <any>undefined, { urn })
+            case "bytepluscc:waf/systemBot:SystemBot":
+                return new SystemBot(name, <any>undefined, { urn })
             default:
                 throw new Error(`unknown resource type ${type}`);
         }
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/ccRule", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "waf/customPage", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/domain", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "waf/hostGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "waf/ipGroup", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "waf/systemBot", _module)

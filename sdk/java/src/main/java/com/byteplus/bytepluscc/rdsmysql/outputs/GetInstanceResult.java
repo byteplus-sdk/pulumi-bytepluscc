@@ -220,7 +220,7 @@ public final class GetInstanceResult {
      */
     private String instanceStatus;
     /**
-     * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * @return Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      * 
      */
     private String instanceType;
@@ -675,7 +675,7 @@ public final class GetInstanceResult {
         return this.instanceStatus;
     }
     /**
-     * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * @return Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      * 
      */
     public String instanceType() {

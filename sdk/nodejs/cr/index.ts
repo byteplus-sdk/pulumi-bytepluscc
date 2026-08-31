@@ -50,6 +50,16 @@ export const getRepository: typeof import("./getRepository").getRepository = nul
 export const getRepositoryOutput: typeof import("./getRepository").getRepositoryOutput = null as any;
 utilities.lazyLoad(exports, ["getRepository","getRepositoryOutput"], () => require("./getRepository"));
 
+export { GetRobotAccountArgs, GetRobotAccountResult, GetRobotAccountOutputArgs } from "./getRobotAccount";
+export const getRobotAccount: typeof import("./getRobotAccount").getRobotAccount = null as any;
+export const getRobotAccountOutput: typeof import("./getRobotAccount").getRobotAccountOutput = null as any;
+utilities.lazyLoad(exports, ["getRobotAccount","getRobotAccountOutput"], () => require("./getRobotAccount"));
+
+export { GetRobotAccountsResult } from "./getRobotAccounts";
+export const getRobotAccounts: typeof import("./getRobotAccounts").getRobotAccounts = null as any;
+export const getRobotAccountsOutput: typeof import("./getRobotAccounts").getRobotAccountsOutput = null as any;
+utilities.lazyLoad(exports, ["getRobotAccounts","getRobotAccountsOutput"], () => require("./getRobotAccounts"));
+
 export { GetVpcEndpointArgs, GetVpcEndpointResult, GetVpcEndpointOutputArgs } from "./getVpcEndpoint";
 export const getVpcEndpoint: typeof import("./getVpcEndpoint").getVpcEndpoint = null as any;
 export const getVpcEndpointOutput: typeof import("./getVpcEndpoint").getVpcEndpointOutput = null as any;
@@ -75,6 +85,11 @@ export type Repository = import("./repository").Repository;
 export const Repository: typeof import("./repository").Repository = null as any;
 utilities.lazyLoad(exports, ["Repository"], () => require("./repository"));
 
+export { RobotAccountArgs, RobotAccountState } from "./robotAccount";
+export type RobotAccount = import("./robotAccount").RobotAccount;
+export const RobotAccount: typeof import("./robotAccount").RobotAccount = null as any;
+utilities.lazyLoad(exports, ["RobotAccount"], () => require("./robotAccount"));
+
 export { VpcEndpointArgs, VpcEndpointState } from "./vpcEndpoint";
 export type VpcEndpoint = import("./vpcEndpoint").VpcEndpoint;
 export const VpcEndpoint: typeof import("./vpcEndpoint").VpcEndpoint = null as any;
@@ -93,6 +108,8 @@ const _module = {
                 return new Registry(name, <any>undefined, { urn })
             case "bytepluscc:cr/repository:Repository":
                 return new Repository(name, <any>undefined, { urn })
+            case "bytepluscc:cr/robotAccount:RobotAccount":
+                return new RobotAccount(name, <any>undefined, { urn })
             case "bytepluscc:cr/vpcEndpoint:VpcEndpoint":
                 return new VpcEndpoint(name, <any>undefined, { urn })
             default:
@@ -104,4 +121,5 @@ pulumi.runtime.registerResourceModule("bytepluscc", "cr/endpointAclPolicy", _mod
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/nameSpace", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/registry", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/repository", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cr/robotAccount", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cr/vpcEndpoint", _module)

@@ -187,7 +187,7 @@ export interface GetInstanceResult {
      */
     readonly instanceStatus: string;
     /**
-     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      */
     readonly instanceType: string;
     /**

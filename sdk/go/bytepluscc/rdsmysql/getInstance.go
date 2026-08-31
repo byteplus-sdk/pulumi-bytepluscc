@@ -108,7 +108,7 @@ type LookupInstanceResult struct {
 	InstanceName string `pulumi:"instanceName"`
 	// Instance status.
 	InstanceStatus string `pulumi:"instanceStatus"`
-	// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+	// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
 	InstanceType string `pulumi:"instanceType"`
 	// Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
 	LowerCaseTableNames string `pulumi:"lowerCaseTableNames"`
@@ -411,7 +411,7 @@ func (o LookupInstanceResultOutput) InstanceStatus() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceStatus }).(pulumi.StringOutput)
 }
 
-// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
 func (o LookupInstanceResultOutput) InstanceType() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.InstanceType }).(pulumi.StringOutput)
 }

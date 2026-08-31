@@ -19,6 +19,12 @@ __all__ = [
     'CommandParameterDefinitionArgsDict',
     'CommandTagArgs',
     'CommandTagArgsDict',
+    'DedicatedHostClusterDedicatedHostClusterCapacityArgs',
+    'DedicatedHostClusterDedicatedHostClusterCapacityArgsDict',
+    'DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs',
+    'DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgsDict',
+    'DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs',
+    'DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgsDict',
     'DeploymentSetCapacityArgs',
     'DeploymentSetCapacityArgsDict',
     'HpcClusterTagArgs',
@@ -351,6 +357,259 @@ class CommandTagArgs:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class DedicatedHostClusterDedicatedHostClusterCapacityArgsDict(TypedDict):
+    available_instance_types: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgsDict']]]]]
+    """
+    Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+    Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
+    available_memory: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total remaining available memory in this dedicated host cluster, measured in GiB.
+    """
+    available_vcpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total remaining available vCPU count in this dedicated host cluster.
+    """
+    local_volume_capacities: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgsDict']]]]]
+    """
+    Available and total capacity of each type of local disk in this dedicated host cluster.
+    Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
+    total_memory: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total memory of this dedicated host cluster, measured in GiB.
+    """
+    total_vcpus: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total vCPU count of this dedicated host cluster.
+    """
+
+@pulumi.input_type
+class DedicatedHostClusterDedicatedHostClusterCapacityArgs:
+    def __init__(__self__, *,
+                 available_instance_types: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs']]]] = None,
+                 available_memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 available_vcpus: pulumi.Input[Optional[_builtins.int]] = None,
+                 local_volume_capacities: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs']]]] = None,
+                 total_memory: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_vcpus: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs']]] available_instance_types: Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.int] available_memory: Total remaining available memory in this dedicated host cluster, measured in GiB.
+        :param pulumi.Input[_builtins.int] available_vcpus: Total remaining available vCPU count in this dedicated host cluster.
+        :param pulumi.Input[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs']]] local_volume_capacities: Available and total capacity of each type of local disk in this dedicated host cluster.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.int] total_memory: Total memory of this dedicated host cluster, measured in GiB.
+        :param pulumi.Input[_builtins.int] total_vcpus: Total vCPU count of this dedicated host cluster.
+        """
+        if available_instance_types is not None:
+            pulumi.set(__self__, "available_instance_types", available_instance_types)
+        if available_memory is not None:
+            pulumi.set(__self__, "available_memory", available_memory)
+        if available_vcpus is not None:
+            pulumi.set(__self__, "available_vcpus", available_vcpus)
+        if local_volume_capacities is not None:
+            pulumi.set(__self__, "local_volume_capacities", local_volume_capacities)
+        if total_memory is not None:
+            pulumi.set(__self__, "total_memory", total_memory)
+        if total_vcpus is not None:
+            pulumi.set(__self__, "total_vcpus", total_vcpus)
+
+    @_builtins.property
+    @pulumi.getter(name="availableInstanceTypes")
+    def available_instance_types(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs']]]]:
+        """
+        Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "available_instance_types")
+
+    @available_instance_types.setter
+    def available_instance_types(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs']]]]):
+        pulumi.set(self, "available_instance_types", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableMemory")
+    def available_memory(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total remaining available memory in this dedicated host cluster, measured in GiB.
+        """
+        return pulumi.get(self, "available_memory")
+
+    @available_memory.setter
+    def available_memory(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "available_memory", value)
+
+    @_builtins.property
+    @pulumi.getter(name="availableVcpus")
+    def available_vcpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total remaining available vCPU count in this dedicated host cluster.
+        """
+        return pulumi.get(self, "available_vcpus")
+
+    @available_vcpus.setter
+    def available_vcpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "available_vcpus", value)
+
+    @_builtins.property
+    @pulumi.getter(name="localVolumeCapacities")
+    def local_volume_capacities(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs']]]]:
+        """
+        Available and total capacity of each type of local disk in this dedicated host cluster.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "local_volume_capacities")
+
+    @local_volume_capacities.setter
+    def local_volume_capacities(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs']]]]):
+        pulumi.set(self, "local_volume_capacities", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalMemory")
+    def total_memory(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total memory of this dedicated host cluster, measured in GiB.
+        """
+        return pulumi.get(self, "total_memory")
+
+    @total_memory.setter
+    def total_memory(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_memory", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalVcpus")
+    def total_vcpus(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total vCPU count of this dedicated host cluster.
+        """
+        return pulumi.get(self, "total_vcpus")
+
+    @total_vcpus.setter
+    def total_vcpus(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_vcpus", value)
+
+
+class DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgsDict(TypedDict):
+    available_capacity: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Number of instances of this type that can still be created in the dedicated host cluster.
+    """
+    instance_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instance type.
+    """
+
+@pulumi.input_type
+class DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs:
+    def __init__(__self__, *,
+                 available_capacity: pulumi.Input[Optional[_builtins.int]] = None,
+                 instance_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] available_capacity: Number of instances of this type that can still be created in the dedicated host cluster.
+        :param pulumi.Input[_builtins.str] instance_type: Instance type.
+        """
+        if available_capacity is not None:
+            pulumi.set(__self__, "available_capacity", available_capacity)
+        if instance_type is not None:
+            pulumi.set(__self__, "instance_type", instance_type)
+
+    @_builtins.property
+    @pulumi.getter(name="availableCapacity")
+    def available_capacity(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of instances of this type that can still be created in the dedicated host cluster.
+        """
+        return pulumi.get(self, "available_capacity")
+
+    @available_capacity.setter
+    def available_capacity(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "available_capacity", value)
+
+    @_builtins.property
+    @pulumi.getter(name="instanceType")
+    def instance_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instance type.
+        """
+        return pulumi.get(self, "instance_type")
+
+    @instance_type.setter
+    def instance_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "instance_type", value)
+
+
+class DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgsDict(TypedDict):
+    available_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Remaining available capacity of this type of local disk, measured in GiB.
+    """
+    total_size: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Total capacity of this type of local disk, measured in GiB.
+    """
+    volume_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Local disk type.
+    """
+
+@pulumi.input_type
+class DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs:
+    def __init__(__self__, *,
+                 available_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 total_size: pulumi.Input[Optional[_builtins.int]] = None,
+                 volume_type: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.int] available_size: Remaining available capacity of this type of local disk, measured in GiB.
+        :param pulumi.Input[_builtins.int] total_size: Total capacity of this type of local disk, measured in GiB.
+        :param pulumi.Input[_builtins.str] volume_type: Local disk type.
+        """
+        if available_size is not None:
+            pulumi.set(__self__, "available_size", available_size)
+        if total_size is not None:
+            pulumi.set(__self__, "total_size", total_size)
+        if volume_type is not None:
+            pulumi.set(__self__, "volume_type", volume_type)
+
+    @_builtins.property
+    @pulumi.getter(name="availableSize")
+    def available_size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Remaining available capacity of this type of local disk, measured in GiB.
+        """
+        return pulumi.get(self, "available_size")
+
+    @available_size.setter
+    def available_size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "available_size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="totalSize")
+    def total_size(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Total capacity of this type of local disk, measured in GiB.
+        """
+        return pulumi.get(self, "total_size")
+
+    @total_size.setter
+    def total_size(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "total_size", value)
+
+    @_builtins.property
+    @pulumi.getter(name="volumeType")
+    def volume_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Local disk type.
+        """
+        return pulumi.get(self, "volume_type")
+
+    @volume_type.setter
+    def volume_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "volume_type", value)
 
 
 class DeploymentSetCapacityArgsDict(TypedDict):

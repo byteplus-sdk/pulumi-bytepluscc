@@ -29,6 +29,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &EndpointPublicAddress{}
 	case "bytepluscc:redis/instance:Instance":
 		r = &Instance{}
+	case "bytepluscc:redis/keyScanJob:KeyScanJob":
+		r = &KeyScanJob{}
 	case "bytepluscc:redis/parameterGroup:ParameterGroup":
 		r = &ParameterGroup{}
 	default:
@@ -62,6 +64,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"redis/instance",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"redis/keyScanJob",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

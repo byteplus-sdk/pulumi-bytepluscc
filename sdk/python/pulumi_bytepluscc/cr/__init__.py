@@ -15,11 +15,14 @@ from .get_registries import *
 from .get_registry import *
 from .get_repositories import *
 from .get_repository import *
+from .get_robot_account import *
+from .get_robot_accounts import *
 from .get_vpc_endpoint import *
 from .get_vpc_endpoints import *
 from .name_space import *
 from .registry import *
 from .repository import *
+from .robot_account import *
 from .vpc_endpoint import *
 from ._inputs import *
 from . import outputs
