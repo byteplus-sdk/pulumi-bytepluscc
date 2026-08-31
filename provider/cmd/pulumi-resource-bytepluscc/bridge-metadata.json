@@ -1532,6 +1532,21 @@
             "bytepluscc_cr_repository": {
                 "current": "bytepluscc:cr/repository:Repository"
             },
+            "bytepluscc_cr_robot_account": {
+                "current": "bytepluscc:cr/robotAccount:RobotAccount",
+                "fields": {
+                    "permissions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "actions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_cr_vpc_endpoint": {
                 "current": "bytepluscc:cr/vpcEndpoint:VpcEndpoint",
                 "fields": {
@@ -1611,6 +1626,24 @@
                         "maxItemsOne": false
                     },
                     "tags": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_ecs_dedicated_host_cluster": {
+                "current": "bytepluscc:ecs/dedicatedHostCluster:DedicatedHostCluster",
+                "fields": {
+                    "dedicated_host_cluster_capacity": {
+                        "fields": {
+                            "available_instance_types": {
+                                "maxItemsOne": false
+                            },
+                            "local_volume_capacities": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "dedicated_host_ids": {
                         "maxItemsOne": false
                     }
                 }
@@ -2357,6 +2390,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_iam_api_key": {
+                "current": "bytepluscc:iam/apiKey:ApiKey"
             },
             "bytepluscc_iam_group": {
                 "current": "bytepluscc:iam/group:Group",
@@ -3370,6 +3406,9 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_redis_key_scan_job": {
+                "current": "bytepluscc:redis/keyScanJob:KeyScanJob"
             },
             "bytepluscc_redis_parameter_group": {
                 "current": "bytepluscc:redis/parameterGroup:ParameterGroup",
@@ -4526,6 +4565,9 @@
                     }
                 }
             },
+            "bytepluscc_vpc_ipv4_gateway": {
+                "current": "bytepluscc:vpc/ipv4Gateway:Ipv4Gateway"
+            },
             "bytepluscc_vpc_ipv6_address_bandwidth": {
                 "current": "bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth",
                 "fields": {
@@ -4781,6 +4823,18 @@
                     }
                 }
             },
+            "bytepluscc_waf_custom_page": {
+                "current": "bytepluscc:waf/customPage:CustomPage",
+                "fields": {
+                    "accurate": {
+                        "fields": {
+                            "accurate_rules": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
             "bytepluscc_waf_domain": {
                 "current": "bytepluscc:waf/domain:Domain",
                 "fields": {
@@ -4851,6 +4905,20 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_waf_ip_group": {
+                "current": "bytepluscc:waf/ipGroup:IpGroup",
+                "fields": {
+                    "ip_list": {
+                        "maxItemsOne": false
+                    },
+                    "related_rules": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_waf_system_bot": {
+                "current": "bytepluscc:waf/systemBot:SystemBot"
             }
         },
         "datasources": {
@@ -6883,6 +6951,29 @@
             "bytepluscc_cr_repository": {
                 "current": "bytepluscc:cr/getRepository:getRepository"
             },
+            "bytepluscc_cr_robot_account": {
+                "current": "bytepluscc:cr/getRobotAccount:getRobotAccount",
+                "fields": {
+                    "permissions": {
+                        "maxItemsOne": false,
+                        "elem": {
+                            "fields": {
+                                "actions": {
+                                    "maxItemsOne": false
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_cr_robot_accounts": {
+                "current": "bytepluscc:cr/getRobotAccounts:getRobotAccounts",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_cr_vpc_endpoint": {
                 "current": "bytepluscc:cr/getVpcEndpoint:getVpcEndpoint",
                 "fields": {
@@ -7048,6 +7139,32 @@
             },
             "bytepluscc_ecs_commands": {
                 "current": "bytepluscc:ecs/getCommands:getCommands",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_ecs_dedicated_host_cluster": {
+                "current": "bytepluscc:ecs/getDedicatedHostCluster:getDedicatedHostCluster",
+                "fields": {
+                    "dedicated_host_cluster_capacity": {
+                        "fields": {
+                            "available_instance_types": {
+                                "maxItemsOne": false
+                            },
+                            "local_volume_capacities": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    },
+                    "dedicated_host_ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_ecs_dedicated_host_clusters": {
+                "current": "bytepluscc:ecs/getDedicatedHostClusters:getDedicatedHostClusters",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -8050,6 +8167,17 @@
             },
             "bytepluscc_iam_allowed_ip_addresses": {
                 "current": "bytepluscc:iam/getAllowedIpAddresses:getAllowedIpAddresses",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_iam_api_key": {
+                "current": "bytepluscc:iam/getApiKey:getApiKey"
+            },
+            "bytepluscc_iam_api_keys": {
+                "current": "bytepluscc:iam/getApiKeys:getApiKeys",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -9692,6 +9820,17 @@
             },
             "bytepluscc_redis_instances": {
                 "current": "bytepluscc:redis/getInstances:getInstances",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_redis_key_scan_job": {
+                "current": "bytepluscc:redis/getKeyScanJob:getKeyScanJob"
+            },
+            "bytepluscc_redis_key_scan_jobs": {
+                "current": "bytepluscc:redis/getKeyScanJobs:getKeyScanJobs",
                 "fields": {
                     "ids": {
                         "maxItemsOne": false
@@ -11519,6 +11658,17 @@
                     }
                 }
             },
+            "bytepluscc_vpc_ipv4_gateway": {
+                "current": "bytepluscc:vpc/getIpv4Gateway:getIpv4Gateway"
+            },
+            "bytepluscc_vpc_ipv4_gateways": {
+                "current": "bytepluscc:vpc/getIpv4Gateways:getIpv4Gateways",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_vpc_ipv6_address_bandwidth": {
                 "current": "bytepluscc:vpc/getIpv6AddressBandwidth:getIpv6AddressBandwidth",
                 "fields": {
@@ -11947,6 +12097,26 @@
                     }
                 }
             },
+            "bytepluscc_waf_custom_page": {
+                "current": "bytepluscc:waf/getCustomPage:getCustomPage",
+                "fields": {
+                    "accurate": {
+                        "fields": {
+                            "accurate_rules": {
+                                "maxItemsOne": false
+                            }
+                        }
+                    }
+                }
+            },
+            "bytepluscc_waf_custom_pages": {
+                "current": "bytepluscc:waf/getCustomPages:getCustomPages",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
             "bytepluscc_waf_domain": {
                 "current": "bytepluscc:waf/getDomain:getDomain",
                 "fields": {
@@ -12033,6 +12203,36 @@
                         "maxItemsOne": false
                     }
                 }
+            },
+            "bytepluscc_waf_ip_group": {
+                "current": "bytepluscc:waf/getIpGroup:getIpGroup",
+                "fields": {
+                    "ip_list": {
+                        "maxItemsOne": false
+                    },
+                    "related_rules": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_waf_ip_groups": {
+                "current": "bytepluscc:waf/getIpGroups:getIpGroups",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
+            },
+            "bytepluscc_waf_system_bot": {
+                "current": "bytepluscc:waf/getSystemBot:getSystemBot"
+            },
+            "bytepluscc_waf_system_bots": {
+                "current": "bytepluscc:waf/getSystemBots:getSystemBots",
+                "fields": {
+                    "ids": {
+                        "maxItemsOne": false
+                    }
+                }
             }
         }
     },
@@ -12099,6 +12299,7 @@
             "bytepluscc_cr_name_space": {},
             "bytepluscc_cr_registry": {},
             "bytepluscc_cr_repository": {},
+            "bytepluscc_cr_robot_account": {},
             "bytepluscc_cr_vpc_endpoint": {},
             "bytepluscc_directconnect_bgp_peer": {},
             "bytepluscc_directconnect_connection": {},
@@ -12110,6 +12311,7 @@
             "bytepluscc_dns_record": {},
             "bytepluscc_dns_zone": {},
             "bytepluscc_ecs_command": {},
+            "bytepluscc_ecs_dedicated_host_cluster": {},
             "bytepluscc_ecs_deployment_set": {},
             "bytepluscc_ecs_hpc_cluster": {},
             "bytepluscc_ecs_image": {},
@@ -12142,6 +12344,7 @@
             "bytepluscc_hbase_instance": {},
             "bytepluscc_iam_accesskey": {},
             "bytepluscc_iam_allowed_ip_address": {},
+            "bytepluscc_iam_api_key": {},
             "bytepluscc_iam_group": {},
             "bytepluscc_iam_oidc_provider": {},
             "bytepluscc_iam_policy": {},
@@ -12218,6 +12421,7 @@
             "bytepluscc_redis_allow_list": {},
             "bytepluscc_redis_endpoint_public_address": {},
             "bytepluscc_redis_instance": {},
+            "bytepluscc_redis_key_scan_job": {},
             "bytepluscc_redis_parameter_group": {},
             "bytepluscc_resourceshare_resource_share": {},
             "bytepluscc_storageebs_snapshot": {},
@@ -12294,6 +12498,7 @@
             "bytepluscc_vpc_ipam": {},
             "bytepluscc_vpc_ipam_pool": {},
             "bytepluscc_vpc_ipam_scope": {},
+            "bytepluscc_vpc_ipv4_gateway": {},
             "bytepluscc_vpc_ipv6_address_bandwidth": {},
             "bytepluscc_vpc_ipv6_gateway": {},
             "bytepluscc_vpc_network_acl": {},
@@ -12313,8 +12518,11 @@
             "bytepluscc_vpn_vpn_gateway": {},
             "bytepluscc_vpn_vpn_gateway_route": {},
             "bytepluscc_waf_cc_rule": {},
+            "bytepluscc_waf_custom_page": {},
             "bytepluscc_waf_domain": {},
-            "bytepluscc_waf_host_group": {}
+            "bytepluscc_waf_host_group": {},
+            "bytepluscc_waf_ip_group": {},
+            "bytepluscc_waf_system_bot": {}
         }
     }
 }

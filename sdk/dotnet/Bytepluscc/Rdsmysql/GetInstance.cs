@@ -221,7 +221,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         /// </summary>
         public readonly string InstanceStatus;
         /// <summary>
-        /// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        /// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         /// </summary>
         public readonly string InstanceType;
         /// <summary>

@@ -30,6 +30,8 @@ from .get_ipam_pools import *
 from .get_ipam_scope import *
 from .get_ipam_scopes import *
 from .get_ipams import *
+from .get_ipv4_gateway import *
+from .get_ipv4_gateways import *
 from .get_ipv6_address_bandwidth import *
 from .get_ipv6_address_bandwidths import *
 from .get_ipv6_gateway import *
@@ -60,6 +62,7 @@ from .ip_pool_cidr_block import *
 from .ipam import *
 from .ipam_pool import *
 from .ipam_scope import *
+from .ipv4_gateway import *
 from .ipv6_address_bandwidth import *
 from .ipv6_gateway import *
 from .network_acl import *

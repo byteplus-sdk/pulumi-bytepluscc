@@ -6,16 +6,28 @@ package com.byteplus.bytepluscc.waf;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.waf.inputs.GetCcRuleArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetCcRulePlainArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetCustomPageArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetCustomPagePlainArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetDomainArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetDomainPlainArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetHostGroupArgs;
 import com.byteplus.bytepluscc.waf.inputs.GetHostGroupPlainArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetIpGroupArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetIpGroupPlainArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetSystemBotArgs;
+import com.byteplus.bytepluscc.waf.inputs.GetSystemBotPlainArgs;
 import com.byteplus.bytepluscc.waf.outputs.GetCcRuleResult;
 import com.byteplus.bytepluscc.waf.outputs.GetCcRulesResult;
+import com.byteplus.bytepluscc.waf.outputs.GetCustomPageResult;
+import com.byteplus.bytepluscc.waf.outputs.GetCustomPagesResult;
 import com.byteplus.bytepluscc.waf.outputs.GetDomainResult;
 import com.byteplus.bytepluscc.waf.outputs.GetDomainsResult;
 import com.byteplus.bytepluscc.waf.outputs.GetHostGroupResult;
 import com.byteplus.bytepluscc.waf.outputs.GetHostGroupsResult;
+import com.byteplus.bytepluscc.waf.outputs.GetIpGroupResult;
+import com.byteplus.bytepluscc.waf.outputs.GetIpGroupsResult;
+import com.byteplus.bytepluscc.waf.outputs.GetSystemBotResult;
+import com.byteplus.bytepluscc.waf.outputs.GetSystemBotsResult;
 import com.pulumi.core.Output;
 import com.pulumi.core.TypeShape;
 import com.pulumi.deployment.Deployment;
@@ -108,6 +120,90 @@ public final class WafFunctions {
      */
     public static CompletableFuture<GetCcRulesResult> getCcRulesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getCcRules:getCcRules", TypeShape.of(GetCcRulesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPageResult> getCustomPage(GetCustomPageArgs args) {
+        return getCustomPage(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPageResult> getCustomPagePlain(GetCustomPagePlainArgs args) {
+        return getCustomPagePlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPageResult> getCustomPage(GetCustomPageArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getCustomPage:getCustomPage", TypeShape.of(GetCustomPageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPageResult> getCustomPage(GetCustomPageArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getCustomPage:getCustomPage", TypeShape.of(GetCustomPageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPageResult> getCustomPagePlain(GetCustomPagePlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getCustomPage:getCustomPage", TypeShape.of(GetCustomPageResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPagesResult> getCustomPages() {
+        return getCustomPages(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPagesResult> getCustomPagesPlain() {
+        return getCustomPagesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPagesResult> getCustomPages(InvokeArgs args) {
+        return getCustomPages(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPagesResult> getCustomPagesPlain(InvokeArgs args) {
+        return getCustomPagesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPagesResult> getCustomPages(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getCustomPages:getCustomPages", TypeShape.of(GetCustomPagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static Output<GetCustomPagesResult> getCustomPages(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getCustomPages:getCustomPages", TypeShape.of(GetCustomPagesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::CustomPage
+     * 
+     */
+    public static CompletableFuture<GetCustomPagesResult> getCustomPagesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getCustomPages:getCustomPages", TypeShape.of(GetCustomPagesResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::WAF::Domain
@@ -276,5 +372,173 @@ public final class WafFunctions {
      */
     public static CompletableFuture<GetHostGroupsResult> getHostGroupsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:waf/getHostGroups:getHostGroups", TypeShape.of(GetHostGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupResult> getIpGroup(GetIpGroupArgs args) {
+        return getIpGroup(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupResult> getIpGroupPlain(GetIpGroupPlainArgs args) {
+        return getIpGroupPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupResult> getIpGroup(GetIpGroupArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getIpGroup:getIpGroup", TypeShape.of(GetIpGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupResult> getIpGroup(GetIpGroupArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getIpGroup:getIpGroup", TypeShape.of(GetIpGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupResult> getIpGroupPlain(GetIpGroupPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getIpGroup:getIpGroup", TypeShape.of(GetIpGroupResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupsResult> getIpGroups() {
+        return getIpGroups(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupsResult> getIpGroupsPlain() {
+        return getIpGroupsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupsResult> getIpGroups(InvokeArgs args) {
+        return getIpGroups(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupsResult> getIpGroupsPlain(InvokeArgs args) {
+        return getIpGroupsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupsResult> getIpGroups(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getIpGroups:getIpGroups", TypeShape.of(GetIpGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static Output<GetIpGroupsResult> getIpGroups(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getIpGroups:getIpGroups", TypeShape.of(GetIpGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::IpGroup
+     * 
+     */
+    public static CompletableFuture<GetIpGroupsResult> getIpGroupsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getIpGroups:getIpGroups", TypeShape.of(GetIpGroupsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotResult> getSystemBot(GetSystemBotArgs args) {
+        return getSystemBot(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotResult> getSystemBotPlain(GetSystemBotPlainArgs args) {
+        return getSystemBotPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotResult> getSystemBot(GetSystemBotArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getSystemBot:getSystemBot", TypeShape.of(GetSystemBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotResult> getSystemBot(GetSystemBotArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getSystemBot:getSystemBot", TypeShape.of(GetSystemBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotResult> getSystemBotPlain(GetSystemBotPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getSystemBot:getSystemBot", TypeShape.of(GetSystemBotResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotsResult> getSystemBots() {
+        return getSystemBots(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotsResult> getSystemBotsPlain() {
+        return getSystemBotsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotsResult> getSystemBots(InvokeArgs args) {
+        return getSystemBots(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotsResult> getSystemBotsPlain(InvokeArgs args) {
+        return getSystemBotsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotsResult> getSystemBots(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getSystemBots:getSystemBots", TypeShape.of(GetSystemBotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static Output<GetSystemBotsResult> getSystemBots(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:waf/getSystemBots:getSystemBots", TypeShape.of(GetSystemBotsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::WAF::SystemBot
+     * 
+     */
+    public static CompletableFuture<GetSystemBotsResult> getSystemBotsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:waf/getSystemBots:getSystemBots", TypeShape.of(GetSystemBotsResult.class), args, Utilities.withVersion(options));
     }
 }

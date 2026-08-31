@@ -21079,6 +21079,26 @@
                 }
             }
         },
+        "bytepluscc:cr/RobotAccountPermission:RobotAccountPermission": {
+            "properties": {
+                "actions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.\n"
+                },
+                "resource": {
+                    "type": "string",
+                    "description": "Resource object to operate on.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "actions",
+                "resource"
+            ]
+        },
         "bytepluscc:cr/VpcEndpointVpc:VpcEndpointVpc": {
             "properties": {
                 "accountId": {
@@ -21214,6 +21234,31 @@
             "required": [
                 "key",
                 "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:cr/getRobotAccountPermission:getRobotAccountPermission": {
+            "properties": {
+                "actions": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.\n"
+                },
+                "resource": {
+                    "type": "string",
+                    "description": "Resource object to operate on.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "actions",
+                "resource"
             ],
             "language": {
                 "nodejs": {
@@ -21619,6 +21664,100 @@
                     "requiredOutputs": [
                         "key",
                         "value"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:ecs/DedicatedHostClusterDedicatedHostClusterCapacity:DedicatedHostClusterDedicatedHostClusterCapacity": {
+            "properties": {
+                "availableInstanceTypes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType:DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType"
+                    },
+                    "description": "Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "availableMemory": {
+                    "type": "integer",
+                    "description": "Total remaining available memory in this dedicated host cluster, measured in GiB.\n"
+                },
+                "availableVcpus": {
+                    "type": "integer",
+                    "description": "Total remaining available vCPU count in this dedicated host cluster.\n"
+                },
+                "localVolumeCapacities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity:DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity"
+                    },
+                    "description": "Available and total capacity of each type of local disk in this dedicated host cluster.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "totalMemory": {
+                    "type": "integer",
+                    "description": "Total memory of this dedicated host cluster, measured in GiB.\n"
+                },
+                "totalVcpus": {
+                    "type": "integer",
+                    "description": "Total vCPU count of this dedicated host cluster.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "availableInstanceTypes",
+                        "availableMemory",
+                        "availableVcpus",
+                        "localVolumeCapacities",
+                        "totalMemory",
+                        "totalVcpus"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:ecs/DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType:DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType": {
+            "properties": {
+                "availableCapacity": {
+                    "type": "integer",
+                    "description": "Number of instances of this type that can still be created in the dedicated host cluster.\n"
+                },
+                "instanceType": {
+                    "type": "string",
+                    "description": "Instance type.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "availableCapacity",
+                        "instanceType"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:ecs/DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity:DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity": {
+            "properties": {
+                "availableSize": {
+                    "type": "integer",
+                    "description": "Remaining available capacity of this type of local disk, measured in GiB.\n"
+                },
+                "totalSize": {
+                    "type": "integer",
+                    "description": "Total capacity of this type of local disk, measured in GiB.\n"
+                },
+                "volumeType": {
+                    "type": "string",
+                    "description": "Local disk type.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "availableSize",
+                        "totalSize",
+                        "volumeType"
                     ]
                 }
             }
@@ -23447,6 +23586,103 @@
             "required": [
                 "key",
                 "value"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:ecs/getDedicatedHostClusterDedicatedHostClusterCapacity:getDedicatedHostClusterDedicatedHostClusterCapacity": {
+            "properties": {
+                "availableInstanceTypes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/getDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType:getDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType"
+                    },
+                    "description": "Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.\n"
+                },
+                "availableMemory": {
+                    "type": "integer",
+                    "description": "Total remaining available memory in this dedicated host cluster, measured in GiB.\n"
+                },
+                "availableVcpus": {
+                    "type": "integer",
+                    "description": "Total remaining available vCPU count in this dedicated host cluster.\n"
+                },
+                "localVolumeCapacities": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:ecs/getDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity:getDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity"
+                    },
+                    "description": "Available and total capacity of each type of local disk in this dedicated host cluster.\n"
+                },
+                "totalMemory": {
+                    "type": "integer",
+                    "description": "Total memory of this dedicated host cluster, measured in GiB.\n"
+                },
+                "totalVcpus": {
+                    "type": "integer",
+                    "description": "Total vCPU count of this dedicated host cluster.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "availableInstanceTypes",
+                "availableMemory",
+                "availableVcpus",
+                "localVolumeCapacities",
+                "totalMemory",
+                "totalVcpus"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:ecs/getDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType:getDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType": {
+            "properties": {
+                "availableCapacity": {
+                    "type": "integer",
+                    "description": "Number of instances of this type that can still be created in the dedicated host cluster.\n"
+                },
+                "instanceType": {
+                    "type": "string",
+                    "description": "Instance type.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "availableCapacity",
+                "instanceType"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:ecs/getDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity:getDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity": {
+            "properties": {
+                "availableSize": {
+                    "type": "integer",
+                    "description": "Remaining available capacity of this type of local disk, measured in GiB.\n"
+                },
+                "totalSize": {
+                    "type": "integer",
+                    "description": "Total capacity of this type of local disk, measured in GiB.\n"
+                },
+                "volumeType": {
+                    "type": "string",
+                    "description": "Local disk type.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "availableSize",
+                "totalSize",
+                "volumeType"
             ],
             "language": {
                 "nodejs": {
@@ -63287,6 +63523,66 @@
                 }
             }
         },
+        "bytepluscc:waf/CustomPageAccurate:CustomPageAccurate": {
+            "properties": {
+                "accurateRules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:waf/CustomPageAccurateAccurateRule:CustomPageAccurateAccurateRule"
+                    },
+                    "description": "Sub-rule list in advanced conditions.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "logic": {
+                    "type": "integer",
+                    "description": "Logical relationship between sub-rules. 0: OR; 1: AND.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "accurateRules",
+                        "logic"
+                    ]
+                }
+            }
+        },
+        "bytepluscc:waf/CustomPageAccurateAccurateRule:CustomPageAccurateAccurateRule": {
+            "properties": {
+                "httpObj": {
+                    "type": "string",
+                    "description": "Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.\n"
+                },
+                "objType": {
+                    "type": "integer",
+                    "description": "Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.\n"
+                },
+                "opretar": {
+                    "type": "integer",
+                    "description": "Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).\n"
+                },
+                "property": {
+                    "type": "integer",
+                    "description": "Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).\n"
+                },
+                "valueString": {
+                    "type": "string",
+                    "description": "Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "httpObj",
+                        "objType",
+                        "opretar",
+                        "property",
+                        "valueString"
+                    ]
+                }
+            }
+        },
         "bytepluscc:waf/DomainBackendGroup:DomainBackendGroup": {
             "properties": {
                 "accessPorts": {
@@ -63552,6 +63848,32 @@
                 }
             }
         },
+        "bytepluscc:waf/IpGroupRelatedRule:IpGroupRelatedRule": {
+            "properties": {
+                "ruleName": {
+                    "type": "string",
+                    "description": "Rule Name\n"
+                },
+                "ruleTag": {
+                    "type": "string",
+                    "description": "Rule ID\n"
+                },
+                "ruleType": {
+                    "type": "string",
+                    "description": "Rule type. Allow indicates an allowlist; Block indicates a blocklist.\n"
+                }
+            },
+            "type": "object",
+            "language": {
+                "nodejs": {
+                    "requiredOutputs": [
+                        "ruleName",
+                        "ruleTag",
+                        "ruleType"
+                    ]
+                }
+            }
+        },
         "bytepluscc:waf/getCcRuleAccurateGroup:getCcRuleAccurateGroup": {
             "properties": {
                 "accurateGroupPriority": {
@@ -63644,6 +63966,68 @@
                 "crontab",
                 "pathThreshold",
                 "singleThreshold"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:waf/getCustomPageAccurate:getCustomPageAccurate": {
+            "properties": {
+                "accurateRules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:waf/getCustomPageAccurateAccurateRule:getCustomPageAccurateAccurateRule"
+                    },
+                    "description": "Sub-rule list in advanced conditions.\n"
+                },
+                "logic": {
+                    "type": "integer",
+                    "description": "Logical relationship between sub-rules. 0: OR; 1: AND.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "accurateRules",
+                "logic"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:waf/getCustomPageAccurateAccurateRule:getCustomPageAccurateAccurateRule": {
+            "properties": {
+                "httpObj": {
+                    "type": "string",
+                    "description": "Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.\n"
+                },
+                "objType": {
+                    "type": "integer",
+                    "description": "Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.\n"
+                },
+                "opretar": {
+                    "type": "integer",
+                    "description": "Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).\n"
+                },
+                "property": {
+                    "type": "integer",
+                    "description": "Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).\n"
+                },
+                "valueString": {
+                    "type": "string",
+                    "description": "Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "httpObj",
+                "objType",
+                "opretar",
+                "property",
+                "valueString"
             ],
             "language": {
                 "nodejs": {
@@ -63910,6 +64294,33 @@
                 "ruleType": {
                     "type": "string",
                     "description": "Rule type. Allow indicates an allowlist, Block indicates a blocklist.\n"
+                }
+            },
+            "type": "object",
+            "required": [
+                "ruleName",
+                "ruleTag",
+                "ruleType"
+            ],
+            "language": {
+                "nodejs": {
+                    "requiredInputs": []
+                }
+            }
+        },
+        "bytepluscc:waf/getIpGroupRelatedRule:getIpGroupRelatedRule": {
+            "properties": {
+                "ruleName": {
+                    "type": "string",
+                    "description": "Rule Name\n"
+                },
+                "ruleTag": {
+                    "type": "string",
+                    "description": "Rule ID\n"
+                },
+                "ruleType": {
+                    "type": "string",
+                    "description": "Rule type. Allow indicates an allowlist; Block indicates a blocklist.\n"
                 }
             },
             "type": "object",
@@ -77408,6 +77819,167 @@
                 "type": "object"
             }
         },
+        "bytepluscc:cr/robotAccount:RobotAccount": {
+            "description": "Container image repository robot account, used to access the image repository with a robot account in the format crrobot@****.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.cr.RobotAccount(\"example\", {\n    registry: \"cr_instance.id\",\n    username: \"crrobot@ccapi-full\",\n    description: \"ccapi robotaccount full\",\n    duration: 90,\n    permissions: [\n        {\n            resource: \"namespace-xx\",\n            actions: [\n                \"PullRepository\",\n                \"PushRepository\",\n            ],\n        },\n        {\n            resource: \"project-xxx\",\n            actions: [\n                \"CreateRepository\",\n                \"PullRepository\",\n            ],\n        },\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.cr.RobotAccount(\"example\",\n    registry=\"cr_instance.id\",\n    username=\"crrobot@ccapi-full\",\n    description=\"ccapi robotaccount full\",\n    duration=90,\n    permissions=[\n        {\n            \"resource\": \"namespace-xx\",\n            \"actions\": [\n                \"PullRepository\",\n                \"PushRepository\",\n            ],\n        },\n        {\n            \"resource\": \"project-xxx\",\n            \"actions\": [\n                \"CreateRepository\",\n                \"PullRepository\",\n            ],\n        },\n    ])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Cr.RobotAccount(\"example\", new()\n    {\n        Registry = \"cr_instance.id\",\n        Username = \"crrobot@ccapi-full\",\n        Description = \"ccapi robotaccount full\",\n        Duration = 90,\n        Permissions = new[]\n        {\n            new Bytepluscc.Cr.Inputs.RobotAccountPermissionArgs\n            {\n                Resource = \"namespace-xx\",\n                Actions = new[]\n                {\n                    \"PullRepository\",\n                    \"PushRepository\",\n                },\n            },\n            new Bytepluscc.Cr.Inputs.RobotAccountPermissionArgs\n            {\n                Resource = \"project-xxx\",\n                Actions = new[]\n                {\n                    \"CreateRepository\",\n                    \"PullRepository\",\n                },\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/cr\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := cr.NewRobotAccount(ctx, \"example\", \u0026cr.RobotAccountArgs{\n\t\t\tRegistry:    pulumi.String(\"cr_instance.id\"),\n\t\t\tUsername:    pulumi.String(\"crrobot@ccapi-full\"),\n\t\t\tDescription: pulumi.String(\"ccapi robotaccount full\"),\n\t\t\tDuration:    pulumi.Int(90),\n\t\t\tPermissions: cr.RobotAccountPermissionArray{\n\t\t\t\t\u0026cr.RobotAccountPermissionArgs{\n\t\t\t\t\tResource: pulumi.String(\"namespace-xx\"),\n\t\t\t\t\tActions: pulumi.StringArray{\n\t\t\t\t\t\tpulumi.String(\"PullRepository\"),\n\t\t\t\t\t\tpulumi.String(\"PushRepository\"),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t\t\u0026cr.RobotAccountPermissionArgs{\n\t\t\t\t\tResource: pulumi.String(\"project-xxx\"),\n\t\t\t\t\tActions: pulumi.StringArray{\n\t\t\t\t\t\tpulumi.String(\"CreateRepository\"),\n\t\t\t\t\t\tpulumi.String(\"PullRepository\"),\n\t\t\t\t\t},\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_cr_robotaccount\" \"example\" {\n  registry    = \"cr_instance.id\"\n  username    = \"crrobot@ccapi-full\"\n  description = \"ccapi robotaccount full\"\n  duration    = 90\n  permissions {\n    resource = \"namespace-xx\"\n    actions  = [\"PullRepository\", \"PushRepository\"]\n  }\n  permissions {\n    resource = \"project-xxx\"\n    actions  = [\"CreateRepository\", \"PullRepository\"]\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.cr.RobotAccount;\nimport com.byteplus.bytepluscc.cr.RobotAccountArgs;\nimport com.pulumi.bytepluscc.cr.inputs.RobotAccountPermissionArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new RobotAccount(\"example\", RobotAccountArgs.builder()\n            .registry(\"cr_instance.id\")\n            .username(\"crrobot@ccapi-full\")\n            .description(\"ccapi robotaccount full\")\n            .duration(90)\n            .permissions(            \n                RobotAccountPermissionArgs.builder()\n                    .resource(\"namespace-xx\")\n                    .actions(                    \n                        \"PullRepository\",\n                        \"PushRepository\")\n                    .build(),\n                RobotAccountPermissionArgs.builder()\n                    .resource(\"project-xxx\")\n                    .actions(                    \n                        \"CreateRepository\",\n                        \"PullRepository\")\n                    .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:cr:RobotAccount\n    properties:\n      registry: cr_instance.id\n      username: crrobot@ccapi-full\n      description: ccapi robotaccount full\n      duration: 90\n      permissions:\n        - resource: namespace-xx\n          actions:\n            - PullRepository\n            - PushRepository\n        - resource: project-xxx\n          actions:\n            - CreateRepository\n            - PullRepository\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:cr/robotAccount:RobotAccount example \"registry|username\"\n```\n\n",
+            "properties": {
+                "createTime": {
+                    "type": "string",
+                    "description": "Creation timestamp.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the robot account.\n"
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "description": "Disable status of the robot account. false means the account is enabled; true means the account is disabled.\n"
+                },
+                "duration": {
+                    "type": "integer",
+                    "description": "Effective period, in days, with a maximum of 366. Enter -1 for unlimited.\n"
+                },
+                "expiresAt": {
+                    "type": "integer",
+                    "description": "Expiration timestamp.\n"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "Login password for the robot account. If not specified during creation, a random password will be generated; when updating the password, this field is required if Random is false.\n"
+                },
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cr/RobotAccountPermission:RobotAccountPermission"
+                    },
+                    "description": "Operation permissions for the robot account.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "random": {
+                    "type": "boolean",
+                    "description": "Whether to automatically generate a random password. false means a random string is not used and you must enter a password manually; true means a random password is generated automatically.\n"
+                },
+                "registry": {
+                    "type": "string",
+                    "description": "Instance name where the robot account resides.\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Update timestamp.\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "Name of the robot account, in the format crrobot@****.\n"
+                }
+            },
+            "required": [
+                "createTime",
+                "description",
+                "disabled",
+                "duration",
+                "expiresAt",
+                "password",
+                "permissions",
+                "random",
+                "registry",
+                "updateTime",
+                "username"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the robot account.\n"
+                },
+                "disabled": {
+                    "type": "boolean",
+                    "description": "Disable status of the robot account. false means the account is enabled; true means the account is disabled.\n"
+                },
+                "duration": {
+                    "type": "integer",
+                    "description": "Effective period, in days, with a maximum of 366. Enter -1 for unlimited.\n"
+                },
+                "password": {
+                    "type": "string",
+                    "description": "Login password for the robot account. If not specified during creation, a random password will be generated; when updating the password, this field is required if Random is false.\n"
+                },
+                "permissions": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:cr/RobotAccountPermission:RobotAccountPermission"
+                    },
+                    "description": "Operation permissions for the robot account.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "random": {
+                    "type": "boolean",
+                    "description": "Whether to automatically generate a random password. false means a random string is not used and you must enter a password manually; true means a random password is generated automatically.\n"
+                },
+                "registry": {
+                    "type": "string",
+                    "description": "Instance name where the robot account resides.\n"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "Name of the robot account, in the format crrobot@****.\n"
+                }
+            },
+            "requiredInputs": [
+                "duration",
+                "permissions",
+                "registry",
+                "username"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering RobotAccount resources.\n",
+                "properties": {
+                    "createTime": {
+                        "type": "string",
+                        "description": "Creation timestamp.\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the robot account.\n"
+                    },
+                    "disabled": {
+                        "type": "boolean",
+                        "description": "Disable status of the robot account. false means the account is enabled; true means the account is disabled.\n"
+                    },
+                    "duration": {
+                        "type": "integer",
+                        "description": "Effective period, in days, with a maximum of 366. Enter -1 for unlimited.\n"
+                    },
+                    "expiresAt": {
+                        "type": "integer",
+                        "description": "Expiration timestamp.\n"
+                    },
+                    "password": {
+                        "type": "string",
+                        "description": "Login password for the robot account. If not specified during creation, a random password will be generated; when updating the password, this field is required if Random is false.\n"
+                    },
+                    "permissions": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cr/RobotAccountPermission:RobotAccountPermission"
+                        },
+                        "description": "Operation permissions for the robot account.\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "random": {
+                        "type": "boolean",
+                        "description": "Whether to automatically generate a random password. false means a random string is not used and you must enter a password manually; true means a random password is generated automatically.\n"
+                    },
+                    "registry": {
+                        "type": "string",
+                        "description": "Instance name where the robot account resides.\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Update timestamp.\n"
+                    },
+                    "username": {
+                        "type": "string",
+                        "description": "Name of the robot account, in the format crrobot@****.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:cr/vpcEndpoint:VpcEndpoint": {
             "description": "VPC access endpoint\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst cRVpcEndpointDemo = new bytepluscc.cr.VpcEndpoint(\"CRVpcEndpointDemo\", {\n    registry: \"registry_xxxxxx\",\n    vpcs: [{\n        account_id: 21000000000000,\n        subnet_id: \"subnet_id_xxxx\",\n        vpc_id: \"vpc_id_xxxx\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nc_r_vpc_endpoint_demo = bytepluscc.cr.VpcEndpoint(\"CRVpcEndpointDemo\",\n    registry=\"registry_xxxxxx\",\n    vpcs=[{\n        \"account_id\": 21000000000000,\n        \"subnet_id\": \"subnet_id_xxxx\",\n        \"vpc_id\": \"vpc_id_xxxx\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var cRVpcEndpointDemo = new Bytepluscc.Cr.VpcEndpoint(\"CRVpcEndpointDemo\", new()\n    {\n        Registry = \"registry_xxxxxx\",\n        Vpcs = new[]\n        {\n            new Bytepluscc.Cr.Inputs.VpcEndpointVpcArgs\n            {\n                Account_id = 21000000000000,\n                Subnet_id = \"subnet_id_xxxx\",\n                Vpc_id = \"vpc_id_xxxx\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/cr\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := cr.NewVpcEndpoint(ctx, \"CRVpcEndpointDemo\", \u0026cr.VpcEndpointArgs{\n\t\t\tRegistry: pulumi.String(\"registry_xxxxxx\"),\n\t\t\tVpcs: cr.VpcEndpointVpcArray{\n\t\t\t\t\u0026cr.VpcEndpointVpcArgs{\n\t\t\t\t\tAccount_id: 21000000000000,\n\t\t\t\t\tSubnet_id:  \"subnet_id_xxxx\",\n\t\t\t\t\tVpc_id:     \"vpc_id_xxxx\",\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_cr_vpcendpoint\" \"CRVpcEndpointDemo\" {\n  registry = \"registry_xxxxxx\"\n  vpcs {\n    account_id = 21000000000000\n    subnet_id  = \"subnet_id_xxxx\"\n    vpc_id     = \"vpc_id_xxxx\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.cr.VpcEndpoint;\nimport com.byteplus.bytepluscc.cr.VpcEndpointArgs;\nimport com.pulumi.bytepluscc.cr.inputs.VpcEndpointVpcArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var cRVpcEndpointDemo = new VpcEndpoint(\"cRVpcEndpointDemo\", VpcEndpointArgs.builder()\n            .registry(\"registry_xxxxxx\")\n            .vpcs(VpcEndpointVpcArgs.builder()\n                .account_id(21000000000000)\n                .subnet_id(\"subnet_id_xxxx\")\n                .vpc_id(\"vpc_id_xxxx\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  cRVpcEndpointDemo:\n    type: bytepluscc:cr:VpcEndpoint\n    name: CRVpcEndpointDemo\n    properties:\n      registry: registry_xxxxxx\n      vpcs:\n        - account_id: 2.1e+13\n          subnet_id: subnet_id_xxxx\n          vpc_id: vpc_id_xxxx\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:cr/vpcEndpoint:VpcEndpoint example \"registry\"\n```\n\n",
             "properties": {
@@ -79416,6 +79988,115 @@
                     "workingDir": {
                         "type": "string",
                         "description": "Directory where the created command runs on ECS instances.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:ecs/dedicatedHostCluster:DedicatedHostCluster": {
+            "description": "The dedicated host cluster is a logical collection at the availability zone level. You can use dedicated host clusters to group and manage dedicated hosts, or create instances in a specified cluster.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.ecs.DedicatedHostCluster(\"example\", {\n    dedicatedHostClusterName: \"ccapi-ddhc-full\",\n    description: \"ccapi dedicated host cluster full\",\n    zoneId: \"cn-beijing-a\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.ecs.DedicatedHostCluster(\"example\",\n    dedicated_host_cluster_name=\"ccapi-ddhc-full\",\n    description=\"ccapi dedicated host cluster full\",\n    zone_id=\"cn-beijing-a\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Ecs.DedicatedHostCluster(\"example\", new()\n    {\n        DedicatedHostClusterName = \"ccapi-ddhc-full\",\n        Description = \"ccapi dedicated host cluster full\",\n        ZoneId = \"cn-beijing-a\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/ecs\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := ecs.NewDedicatedHostCluster(ctx, \"example\", \u0026ecs.DedicatedHostClusterArgs{\n\t\t\tDedicatedHostClusterName: pulumi.String(\"ccapi-ddhc-full\"),\n\t\t\tDescription:              pulumi.String(\"ccapi dedicated host cluster full\"),\n\t\t\tZoneId:                   pulumi.String(\"cn-beijing-a\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_ecs_dedicatedhostcluster\" \"example\" {\n  dedicated_host_cluster_name = \"ccapi-ddhc-full\"\n  description                 = \"ccapi dedicated host cluster full\"\n  zone_id                     = \"cn-beijing-a\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.ecs.DedicatedHostCluster;\nimport com.byteplus.bytepluscc.ecs.DedicatedHostClusterArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new DedicatedHostCluster(\"example\", DedicatedHostClusterArgs.builder()\n            .dedicatedHostClusterName(\"ccapi-ddhc-full\")\n            .description(\"ccapi dedicated host cluster full\")\n            .zoneId(\"cn-beijing-a\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:ecs:DedicatedHostCluster\n    properties:\n      dedicatedHostClusterName: ccapi-ddhc-full\n      description: ccapi dedicated host cluster full\n      zoneId: cn-beijing-a\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:ecs/dedicatedHostCluster:DedicatedHostCluster example \"dedicated_host_cluster_id\"\n```\n\n",
+            "properties": {
+                "createdAt": {
+                    "type": "string",
+                    "description": "Creation time of the dedicated host cluster.\n"
+                },
+                "dedicatedHostClusterCapacity": {
+                    "$ref": "#/types/bytepluscc:ecs/DedicatedHostClusterDedicatedHostClusterCapacity:DedicatedHostClusterDedicatedHostClusterCapacity",
+                    "description": "Capacity information of the dedicated host cluster, including available memory, available vCPU, supported instance types, and more.\n"
+                },
+                "dedicatedHostClusterId": {
+                    "type": "string",
+                    "description": "ID of the dedicated host cluster.\n"
+                },
+                "dedicatedHostClusterName": {
+                    "type": "string",
+                    "description": "Name of the dedicated host cluster. Length limit: 1–128 characters. Can include Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.), and must start with a letter, number, or Chinese character.\n"
+                },
+                "dedicatedHostIds": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "List of IDs for all dedicated hosts contained in this dedicated host cluster.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the dedicated host cluster. Length limit: 0–256 characters.\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "Last update time of the dedicated host cluster.\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "Availability zone ID to which the dedicated host cluster belongs. Cannot be modified after creation.\n"
+                }
+            },
+            "required": [
+                "createdAt",
+                "dedicatedHostClusterCapacity",
+                "dedicatedHostClusterId",
+                "dedicatedHostClusterName",
+                "dedicatedHostIds",
+                "description",
+                "updatedAt",
+                "zoneId"
+            ],
+            "inputProperties": {
+                "dedicatedHostClusterName": {
+                    "type": "string",
+                    "description": "Name of the dedicated host cluster. Length limit: 1–128 characters. Can include Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.), and must start with a letter, number, or Chinese character.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the dedicated host cluster. Length limit: 0–256 characters.\n"
+                },
+                "zoneId": {
+                    "type": "string",
+                    "description": "Availability zone ID to which the dedicated host cluster belongs. Cannot be modified after creation.\n"
+                }
+            },
+            "requiredInputs": [
+                "dedicatedHostClusterName",
+                "zoneId"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering DedicatedHostCluster resources.\n",
+                "properties": {
+                    "createdAt": {
+                        "type": "string",
+                        "description": "Creation time of the dedicated host cluster.\n"
+                    },
+                    "dedicatedHostClusterCapacity": {
+                        "$ref": "#/types/bytepluscc:ecs/DedicatedHostClusterDedicatedHostClusterCapacity:DedicatedHostClusterDedicatedHostClusterCapacity",
+                        "description": "Capacity information of the dedicated host cluster, including available memory, available vCPU, supported instance types, and more.\n"
+                    },
+                    "dedicatedHostClusterId": {
+                        "type": "string",
+                        "description": "ID of the dedicated host cluster.\n"
+                    },
+                    "dedicatedHostClusterName": {
+                        "type": "string",
+                        "description": "Name of the dedicated host cluster. Length limit: 1–128 characters. Can include Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.), and must start with a letter, number, or Chinese character.\n"
+                    },
+                    "dedicatedHostIds": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "List of IDs for all dedicated hosts contained in this dedicated host cluster.\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the dedicated host cluster. Length limit: 0–256 characters.\n"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Last update time of the dedicated host cluster.\n"
+                    },
+                    "zoneId": {
+                        "type": "string",
+                        "description": "Availability zone ID to which the dedicated host cluster belongs. Cannot be modified after creation.\n"
                     }
                 },
                 "type": "object"
@@ -88027,6 +88708,113 @@
                     "userId": {
                         "type": "string",
                         "description": "Sub-user ID\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:iam/apiKey:ApiKey": {
+            "description": "IAM API Key。\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.iam.ApiKey(\"example\", {\n    userName: \"user-xxxx\",\n    name: \"ccapi-apikey-full\",\n    permissionsBoundary: \"{\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Action\\\":[\\\"iam:*\\\"],\\\"Resource\\\":[\\\"*\\\"]}]}\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.iam.ApiKey(\"example\",\n    user_name=\"user-xxxx\",\n    name=\"ccapi-apikey-full\",\n    permissions_boundary=\"{\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Action\\\":[\\\"iam:*\\\"],\\\"Resource\\\":[\\\"*\\\"]}]}\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Iam.ApiKey(\"example\", new()\n    {\n        UserName = \"user-xxxx\",\n        Name = \"ccapi-apikey-full\",\n        PermissionsBoundary = \"{\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Action\\\":[\\\"iam:*\\\"],\\\"Resource\\\":[\\\"*\\\"]}]}\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/iam\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := iam.NewApiKey(ctx, \"example\", \u0026iam.ApiKeyArgs{\n\t\t\tUserName:            pulumi.String(\"user-xxxx\"),\n\t\t\tName:                pulumi.String(\"ccapi-apikey-full\"),\n\t\t\tPermissionsBoundary: pulumi.String(\"{\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Action\\\":[\\\"iam:*\\\"],\\\"Resource\\\":[\\\"*\\\"]}]}\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_iam_apikey\" \"example\" {\n  user_name            = \"user-xxxx\"\n  name                 = \"ccapi-apikey-full\"\n  permissions_boundary = \"{\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Action\\\":[\\\"iam:*\\\"],\\\"Resource\\\":[\\\"*\\\"]}]}\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.iam.ApiKey;\nimport com.byteplus.bytepluscc.iam.ApiKeyArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new ApiKey(\"example\", ApiKeyArgs.builder()\n            .userName(\"user-xxxx\")\n            .name(\"ccapi-apikey-full\")\n            .permissionsBoundary(\"{\\\"Statement\\\":[{\\\"Effect\\\":\\\"Allow\\\",\\\"Action\\\":[\\\"iam:*\\\"],\\\"Resource\\\":[\\\"*\\\"]}]}\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:iam:ApiKey\n    properties:\n      userName: user-xxxx\n      name: ccapi-apikey-full\n      permissionsBoundary: '{\"Statement\":[{\"Effect\":\"Allow\",\"Action\":[\"iam:*\"],\"Resource\":[\"*\"]}]}'\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:iam/apiKey:ApiKey example \"user_name|api_key_id\"\n```\n\n",
+            "properties": {
+                "apiKeyId": {
+                    "type": "string",
+                    "description": "API Key ID。\n"
+                },
+                "createDate": {
+                    "type": "string",
+                    "description": "Created At\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "API Key Name\n"
+                },
+                "permissionsBoundary": {
+                    "type": "string",
+                    "description": "Permission Boundary\n"
+                },
+                "secret": {
+                    "type": "string",
+                    "description": "API Key Secret\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "API Key Status\n"
+                },
+                "updateDate": {
+                    "type": "string",
+                    "description": "Last Updated\n"
+                },
+                "userName": {
+                    "type": "string",
+                    "description": "Username\n"
+                }
+            },
+            "required": [
+                "apiKeyId",
+                "createDate",
+                "name",
+                "permissionsBoundary",
+                "secret",
+                "status",
+                "updateDate",
+                "userName"
+            ],
+            "inputProperties": {
+                "name": {
+                    "type": "string",
+                    "description": "API Key Name\n"
+                },
+                "permissionsBoundary": {
+                    "type": "string",
+                    "description": "Permission Boundary\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "API Key Status\n"
+                },
+                "userName": {
+                    "type": "string",
+                    "description": "Username\n"
+                }
+            },
+            "requiredInputs": [
+                "name",
+                "userName"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering ApiKey resources.\n",
+                "properties": {
+                    "apiKeyId": {
+                        "type": "string",
+                        "description": "API Key ID。\n"
+                    },
+                    "createDate": {
+                        "type": "string",
+                        "description": "Created At\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "API Key Name\n"
+                    },
+                    "permissionsBoundary": {
+                        "type": "string",
+                        "description": "Permission Boundary\n"
+                    },
+                    "secret": {
+                        "type": "string",
+                        "description": "API Key Secret\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "API Key Status\n"
+                    },
+                    "updateDate": {
+                        "type": "string",
+                        "description": "Last Updated\n"
+                    },
+                    "userName": {
+                        "type": "string",
+                        "description": "Username\n"
                     }
                 },
                 "type": "object"
@@ -100059,7 +100847,7 @@
                 },
                 "instanceType": {
                     "type": "string",
-                    "description": "Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type\n"
+                    "description": "Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.\n"
                 },
                 "lowerCaseTableNames": {
                     "type": "string",
@@ -100349,7 +101137,7 @@
                 },
                 "instanceType": {
                     "type": "string",
-                    "description": "Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type\n"
+                    "description": "Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.\n"
                 },
                 "lowerCaseTableNames": {
                     "type": "string",
@@ -100596,7 +101384,7 @@
                     },
                     "instanceType": {
                         "type": "string",
-                        "description": "Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type\n"
+                        "description": "Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.\n"
                     },
                     "lowerCaseTableNames": {
                         "type": "string",
@@ -103913,6 +104701,128 @@
                             "type": "string"
                         },
                         "description": "List of available zones where the instance is located.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:redis/keyScanJob:KeyScanJob": {
+            "description": "Volcengine Redis expired key scan/cleanup task (KeyScanJob). Refers to a one-time expired key scan and cleanup job initiated for the target Redis instance. You can create, query, or cancel (interrupt) the job. The task is one-time and does not support updates. Finished/Failed/Interrupted are terminal states; canceled and failed tasks are considered nonexistent resources when queried.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.redis.KeyScanJob(\"example\", {\n    instanceId: \"redis-xxxx\",\n    scanKeyNumPerSecond: 3000,\n    timeoutMinutes: 60,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.redis.KeyScanJob(\"example\",\n    instance_id=\"redis-xxxx\",\n    scan_key_num_per_second=3000,\n    timeout_minutes=60)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Redis.KeyScanJob(\"example\", new()\n    {\n        InstanceId = \"redis-xxxx\",\n        ScanKeyNumPerSecond = 3000,\n        TimeoutMinutes = 60,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/redis\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := redis.NewKeyScanJob(ctx, \"example\", \u0026redis.KeyScanJobArgs{\n\t\t\tInstanceId:          pulumi.String(\"redis-xxxx\"),\n\t\t\tScanKeyNumPerSecond: pulumi.Int(3000),\n\t\t\tTimeoutMinutes:      pulumi.Int(60),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_redis_keyscanjob\" \"example\" {\n  instance_id             = \"redis-xxxx\"\n  scan_key_num_per_second = 3000\n  timeout_minutes         = 60\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.redis.KeyScanJob;\nimport com.byteplus.bytepluscc.redis.KeyScanJobArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new KeyScanJob(\"example\", KeyScanJobArgs.builder()\n            .instanceId(\"redis-xxxx\")\n            .scanKeyNumPerSecond(3000)\n            .timeoutMinutes(60)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:redis:KeyScanJob\n    properties:\n      instanceId: redis-xxxx\n      scanKeyNumPerSecond: 3000\n      timeoutMinutes: 60\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:redis/keyScanJob:KeyScanJob example \"instance_id|job_id\"\n```\n\n",
+            "properties": {
+                "completedCount": {
+                    "type": "integer",
+                    "description": "Number of shards analyzed.\n"
+                },
+                "createTime": {
+                    "type": "string",
+                    "description": "Task creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n"
+                },
+                "finishTime": {
+                    "type": "string",
+                    "description": "Task end time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n"
+                },
+                "instanceId": {
+                    "type": "string",
+                    "description": "Instance ID. You can call the DescribeDBInstances API to query basic information for all Redis instances in the target region, including the instance ID.\n"
+                },
+                "jobId": {
+                    "type": "string",
+                    "description": "Task ID of the scan job.\n"
+                },
+                "scanKeyNumPerSecond": {
+                    "type": "integer",
+                    "description": "Number of expired keys scanned per second. Value range: integer between 2000 and 100000.\n"
+                },
+                "startTime": {
+                    "type": "string",
+                    "description": "Task start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Task status. Values: Created, Running, Finished, Failed, Interrupted.\n"
+                },
+                "timeoutMinutes": {
+                    "type": "integer",
+                    "description": "Scan timeout. Value range: integer between 30 and 1440, unit: minutes.\n"
+                },
+                "totalCount": {
+                    "type": "integer",
+                    "description": "Total number of shards to analyze.\n"
+                }
+            },
+            "required": [
+                "completedCount",
+                "createTime",
+                "finishTime",
+                "instanceId",
+                "jobId",
+                "scanKeyNumPerSecond",
+                "startTime",
+                "status",
+                "timeoutMinutes",
+                "totalCount"
+            ],
+            "inputProperties": {
+                "instanceId": {
+                    "type": "string",
+                    "description": "Instance ID. You can call the DescribeDBInstances API to query basic information for all Redis instances in the target region, including the instance ID.\n"
+                },
+                "scanKeyNumPerSecond": {
+                    "type": "integer",
+                    "description": "Number of expired keys scanned per second. Value range: integer between 2000 and 100000.\n"
+                },
+                "timeoutMinutes": {
+                    "type": "integer",
+                    "description": "Scan timeout. Value range: integer between 30 and 1440, unit: minutes.\n"
+                }
+            },
+            "requiredInputs": [
+                "instanceId",
+                "scanKeyNumPerSecond",
+                "timeoutMinutes"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering KeyScanJob resources.\n",
+                "properties": {
+                    "completedCount": {
+                        "type": "integer",
+                        "description": "Number of shards analyzed.\n"
+                    },
+                    "createTime": {
+                        "type": "string",
+                        "description": "Task creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n"
+                    },
+                    "finishTime": {
+                        "type": "string",
+                        "description": "Task end time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n"
+                    },
+                    "instanceId": {
+                        "type": "string",
+                        "description": "Instance ID. You can call the DescribeDBInstances API to query basic information for all Redis instances in the target region, including the instance ID.\n"
+                    },
+                    "jobId": {
+                        "type": "string",
+                        "description": "Task ID of the scan job.\n"
+                    },
+                    "scanKeyNumPerSecond": {
+                        "type": "integer",
+                        "description": "Number of expired keys scanned per second. Value range: integer between 2000 and 100000.\n"
+                    },
+                    "startTime": {
+                        "type": "string",
+                        "description": "Task start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Task status. Values: Created, Running, Finished, Failed, Interrupted.\n"
+                    },
+                    "timeoutMinutes": {
+                        "type": "integer",
+                        "description": "Scan timeout. Value range: integer between 30 and 1440, unit: minutes.\n"
+                    },
+                    "totalCount": {
+                        "type": "integer",
+                        "description": "Total number of shards to analyze.\n"
                     }
                 },
                 "type": "object"
@@ -119093,6 +120003,127 @@
                 "type": "object"
             }
         },
+        "bytepluscc:vpc/ipv4Gateway:Ipv4Gateway": {
+            "description": "Volcengine VPC IPv4 gateway resource. The IPv4 gateway serves as the unified exit for private VPCs to access the public network. After creation, it can be associated with a specified VPC to enable public network access. This resource only manages the lifecycle of the gateway itself (create, query, modify, delete, list). Association between the gateway and VPC (Attach/Detach), and enabling/disabling (Enable/Disable) are managed by separate association operations.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.vpc.Ipv4Gateway(\"example\", {\n    ipv4GatewayName: \"ccapi-ipv4-gw-full\",\n    description: \"ccapi ipv4 gateway full case\",\n    vpcId: \"vpc-xxxxx\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.vpc.Ipv4Gateway(\"example\",\n    ipv4_gateway_name=\"ccapi-ipv4-gw-full\",\n    description=\"ccapi ipv4 gateway full case\",\n    vpc_id=\"vpc-xxxxx\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Vpc.Ipv4Gateway(\"example\", new()\n    {\n        Ipv4GatewayName = \"ccapi-ipv4-gw-full\",\n        Description = \"ccapi ipv4 gateway full case\",\n        VpcId = \"vpc-xxxxx\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/vpc\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := vpc.NewIpv4Gateway(ctx, \"example\", \u0026vpc.Ipv4GatewayArgs{\n\t\t\tIpv4GatewayName: pulumi.String(\"ccapi-ipv4-gw-full\"),\n\t\t\tDescription:     pulumi.String(\"ccapi ipv4 gateway full case\"),\n\t\t\tVpcId:           pulumi.String(\"vpc-xxxxx\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_vpc_ipv4gateway\" \"example\" {\n  ipv4_gateway_name = \"ccapi-ipv4-gw-full\"\n  description       = \"ccapi ipv4 gateway full case\"\n  vpc_id            = \"vpc-xxxxx\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.vpc.Ipv4Gateway;\nimport com.byteplus.bytepluscc.vpc.Ipv4GatewayArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new Ipv4Gateway(\"example\", Ipv4GatewayArgs.builder()\n            .ipv4GatewayName(\"ccapi-ipv4-gw-full\")\n            .description(\"ccapi ipv4 gateway full case\")\n            .vpcId(\"vpc-xxxxx\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:vpc:Ipv4Gateway\n    properties:\n      ipv4GatewayName: ccapi-ipv4-gw-full\n      description: ccapi ipv4 gateway full case\n      vpcId: vpc-xxxxx\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:vpc/ipv4Gateway:Ipv4Gateway example \"ipv4_gateway_id\"\n```\n\n",
+            "properties": {
+                "accountId": {
+                    "type": "string",
+                    "description": "ID of the account to which the IPv4 gateway belongs.\n"
+                },
+                "creationTime": {
+                    "type": "string",
+                    "description": "Creation time of the IPv4 gateway.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the IPv4 gateway. Length must be between 0 and 255 characters. Must start with a letter, Chinese character, or number, and can include English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).\n"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the IPv4 gateway is enabled.\n"
+                },
+                "ipv4GatewayId": {
+                    "type": "string",
+                    "description": "ID of the IPv4 gateway.\n"
+                },
+                "ipv4GatewayName": {
+                    "type": "string",
+                    "description": "Name of the IPv4 gateway. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the IPv4 gateway ID.\n"
+                },
+                "routeTableId": {
+                    "type": "string",
+                    "description": "ID of the route table associated with the IPv4 gateway.\n"
+                },
+                "status": {
+                    "type": "string",
+                    "description": "Status of the IPv4 gateway. Available: available. Creating: creating. Pending: configuring. Deleting: deleting.\n"
+                },
+                "updatedAt": {
+                    "type": "string",
+                    "description": "Last modification time of the IPv4 gateway.\n"
+                },
+                "vpcId": {
+                    "type": "string",
+                    "description": "ID of the VPC associated with the IPv4 gateway. If not associated, this field is empty.\n"
+                }
+            },
+            "required": [
+                "accountId",
+                "creationTime",
+                "description",
+                "enabled",
+                "ipv4GatewayId",
+                "ipv4GatewayName",
+                "routeTableId",
+                "status",
+                "updatedAt",
+                "vpcId"
+            ],
+            "inputProperties": {
+                "description": {
+                    "type": "string",
+                    "description": "Description of the IPv4 gateway. Length must be between 0 and 255 characters. Must start with a letter, Chinese character, or number, and can include English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).\n"
+                },
+                "enabled": {
+                    "type": "boolean",
+                    "description": "Whether the IPv4 gateway is enabled.\n"
+                },
+                "ipv4GatewayName": {
+                    "type": "string",
+                    "description": "Name of the IPv4 gateway. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the IPv4 gateway ID.\n"
+                },
+                "vpcId": {
+                    "type": "string",
+                    "description": "ID of the VPC associated with the IPv4 gateway. If not associated, this field is empty.\n"
+                }
+            },
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering Ipv4Gateway resources.\n",
+                "properties": {
+                    "accountId": {
+                        "type": "string",
+                        "description": "ID of the account to which the IPv4 gateway belongs.\n"
+                    },
+                    "creationTime": {
+                        "type": "string",
+                        "description": "Creation time of the IPv4 gateway.\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the IPv4 gateway. Length must be between 0 and 255 characters. Must start with a letter, Chinese character, or number, and can include English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).\n"
+                    },
+                    "enabled": {
+                        "type": "boolean",
+                        "description": "Whether the IPv4 gateway is enabled.\n"
+                    },
+                    "ipv4GatewayId": {
+                        "type": "string",
+                        "description": "ID of the IPv4 gateway.\n"
+                    },
+                    "ipv4GatewayName": {
+                        "type": "string",
+                        "description": "Name of the IPv4 gateway. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the IPv4 gateway ID.\n"
+                    },
+                    "routeTableId": {
+                        "type": "string",
+                        "description": "ID of the route table associated with the IPv4 gateway.\n"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Status of the IPv4 gateway. Available: available. Creating: creating. Pending: configuring. Deleting: deleting.\n"
+                    },
+                    "updatedAt": {
+                        "type": "string",
+                        "description": "Last modification time of the IPv4 gateway.\n"
+                    },
+                    "vpcId": {
+                        "type": "string",
+                        "description": "ID of the VPC associated with the IPv4 gateway. If not associated, this field is empty.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth": {
             "description": "IPv6 public traffic bandwidth determines the public communication capability of the IPv6 address. If the IPv6 address does not have IPv6 public bandwidth enabled, it only supports private network communication. You can enable IPv6 public bandwidth for the IPv6 address as needed to allow public network communication.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst vPCIpv6AddressBandwidthDemo = new bytepluscc.vpc.Ipv6AddressBandwidth(\"VPCIpv6AddressBandwidthDemo\", {\n    bandwidth: 200,\n    billingType: 2,\n    ipv6Address: \"2406:d440:10a:****:92b:****:90b6:4f09\",\n    projectName: \"default\",\n    bandwidthPackageId: \"bwp-1vm41dmikjr451j8exxxxx\",\n    tags: [{\n        key: \"env\",\n        value: \"test\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nv_pc_ipv6_address_bandwidth_demo = bytepluscc.vpc.Ipv6AddressBandwidth(\"VPCIpv6AddressBandwidthDemo\",\n    bandwidth=200,\n    billing_type=2,\n    ipv6_address=\"2406:d440:10a:****:92b:****:90b6:4f09\",\n    project_name=\"default\",\n    bandwidth_package_id=\"bwp-1vm41dmikjr451j8exxxxx\",\n    tags=[{\n        \"key\": \"env\",\n        \"value\": \"test\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var vPCIpv6AddressBandwidthDemo = new Bytepluscc.Vpc.Ipv6AddressBandwidth(\"VPCIpv6AddressBandwidthDemo\", new()\n    {\n        Bandwidth = 200,\n        BillingType = 2,\n        Ipv6Address = \"2406:d440:10a:****:92b:****:90b6:4f09\",\n        ProjectName = \"default\",\n        BandwidthPackageId = \"bwp-1vm41dmikjr451j8exxxxx\",\n        Tags = new[]\n        {\n            new Bytepluscc.Vpc.Inputs.Ipv6AddressBandwidthTagArgs\n            {\n                Key = \"env\",\n                Value = \"test\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/vpc\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := vpc.NewIpv6AddressBandwidth(ctx, \"VPCIpv6AddressBandwidthDemo\", \u0026vpc.Ipv6AddressBandwidthArgs{\n\t\t\tBandwidth:          pulumi.Int(200),\n\t\t\tBillingType:        pulumi.Int(2),\n\t\t\tIpv6Address:        pulumi.String(\"2406:d440:10a:****:92b:****:90b6:4f09\"),\n\t\t\tProjectName:        pulumi.String(\"default\"),\n\t\t\tBandwidthPackageId: pulumi.String(\"bwp-1vm41dmikjr451j8exxxxx\"),\n\t\t\tTags: vpc.Ipv6AddressBandwidthTagArray{\n\t\t\t\t\u0026vpc.Ipv6AddressBandwidthTagArgs{\n\t\t\t\t\tKey:   pulumi.String(\"env\"),\n\t\t\t\t\tValue: pulumi.String(\"test\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_vpc_ipv6addressbandwidth\" \"VPCIpv6AddressBandwidthDemo\" {\n  bandwidth            = 200\n  billing_type         = 2\n  ipv6_address         = \"2406:d440:10a:****:92b:****:90b6:4f09\"\n  project_name         = \"default\"\n  bandwidth_package_id = \"bwp-1vm41dmikjr451j8exxxxx\"\n  tags {\n    key   = \"env\"\n    value = \"test\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.vpc.Ipv6AddressBandwidth;\nimport com.byteplus.bytepluscc.vpc.Ipv6AddressBandwidthArgs;\nimport com.pulumi.bytepluscc.vpc.inputs.Ipv6AddressBandwidthTagArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var vPCIpv6AddressBandwidthDemo = new Ipv6AddressBandwidth(\"vPCIpv6AddressBandwidthDemo\", Ipv6AddressBandwidthArgs.builder()\n            .bandwidth(200)\n            .billingType(2)\n            .ipv6Address(\"2406:d440:10a:****:92b:****:90b6:4f09\")\n            .projectName(\"default\")\n            .bandwidthPackageId(\"bwp-1vm41dmikjr451j8exxxxx\")\n            .tags(Ipv6AddressBandwidthTagArgs.builder()\n                .key(\"env\")\n                .value(\"test\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  vPCIpv6AddressBandwidthDemo:\n    type: bytepluscc:vpc:Ipv6AddressBandwidth\n    name: VPCIpv6AddressBandwidthDemo\n    properties:\n      bandwidth: 200\n      billingType: 2\n      ipv6Address: 2406:d440:10a:****:92b:****:90b6:4f09\n      projectName: default\n      bandwidthPackageId: bwp-1vm41dmikjr451j8exxxxx\n      tags:\n        - key: env\n          value: test\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:vpc/ipv6AddressBandwidth:Ipv6AddressBandwidth example \"allocation_id\"\n```\n\n",
             "properties": {
@@ -123486,6 +124517,252 @@
                 "type": "object"
             }
         },
+        "bytepluscc:waf/customPage:CustomPage": {
+            "description": "WAF custom block response rule. When block conditions are met, WAF returns a custom response code, page, or redirects to the specified URL according to this rule.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.waf.CustomPage(\"example\", {\n    clientIp: \"ALL\",\n    description: \"ccapi custom page required\",\n    host: \"www.testwaf.com\",\n    name: \"ccapi-custompage-required\",\n    pageMode: 0,\n    policy: 8,\n    url: \"/ccapi-required\",\n    body: \"blocked by ccapi required page\",\n    code: \"403\",\n    contentType: \"text/html\",\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.waf.CustomPage(\"example\",\n    client_ip=\"ALL\",\n    description=\"ccapi custom page required\",\n    host=\"www.testwaf.com\",\n    name=\"ccapi-custompage-required\",\n    page_mode=0,\n    policy=8,\n    url=\"/ccapi-required\",\n    body=\"blocked by ccapi required page\",\n    code=\"403\",\n    content_type=\"text/html\")\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Waf.CustomPage(\"example\", new()\n    {\n        ClientIp = \"ALL\",\n        Description = \"ccapi custom page required\",\n        Host = \"www.testwaf.com\",\n        Name = \"ccapi-custompage-required\",\n        PageMode = 0,\n        Policy = 8,\n        Url = \"/ccapi-required\",\n        Body = \"blocked by ccapi required page\",\n        Code = \"403\",\n        ContentType = \"text/html\",\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/waf\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := waf.NewCustomPage(ctx, \"example\", \u0026waf.CustomPageArgs{\n\t\t\tClientIp:    pulumi.String(\"ALL\"),\n\t\t\tDescription: pulumi.String(\"ccapi custom page required\"),\n\t\t\tHost:        pulumi.String(\"www.testwaf.com\"),\n\t\t\tName:        pulumi.String(\"ccapi-custompage-required\"),\n\t\t\tPageMode:    pulumi.Int(0),\n\t\t\tPolicy:      pulumi.Int(8),\n\t\t\tUrl:         pulumi.String(\"/ccapi-required\"),\n\t\t\tBody:        pulumi.String(\"blocked by ccapi required page\"),\n\t\t\tCode:        pulumi.String(\"403\"),\n\t\t\tContentType: pulumi.String(\"text/html\"),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_waf_custompage\" \"example\" {\n  client_ip    = \"ALL\"\n  description  = \"ccapi custom page required\"\n  host         = \"www.testwaf.com\"\n  name         = \"ccapi-custompage-required\"\n  page_mode    = 0\n  policy       = 8\n  url          = \"/ccapi-required\"\n  body         = \"blocked by ccapi required page\"\n  code         = \"403\"\n  content_type = \"text/html\"\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.waf.CustomPage;\nimport com.byteplus.bytepluscc.waf.CustomPageArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new CustomPage(\"example\", CustomPageArgs.builder()\n            .clientIp(\"ALL\")\n            .description(\"ccapi custom page required\")\n            .host(\"www.testwaf.com\")\n            .name(\"ccapi-custompage-required\")\n            .pageMode(0)\n            .policy(8)\n            .url(\"/ccapi-required\")\n            .body(\"blocked by ccapi required page\")\n            .code(\"403\")\n            .contentType(\"text/html\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:waf:CustomPage\n    properties:\n      clientIp: ALL\n      description: ccapi custom page required\n      host: www.testwaf.com\n      name: ccapi-custompage-required\n      pageMode: 0\n      policy: 8\n      url: /ccapi-required\n      body: blocked by ccapi required page\n      code: '403'\n      contentType: text/html\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:waf/customPage:CustomPage example \"host|rule_id\"\n```\n\n",
+            "properties": {
+                "accurate": {
+                    "$ref": "#/types/bytepluscc:waf/CustomPageAccurate:CustomPageAccurate",
+                    "description": "Advanced condition configuration. Only takes effect when Advanced=1.\n"
+                },
+                "advanced": {
+                    "type": "integer",
+                    "description": "Enable advanced conditions. 0: Off (default); 1: On. If enabled, Accurate must also be configured.\n"
+                },
+                "body": {
+                    "type": "string",
+                    "description": "Custom response page content. Maximum length: 4096 bytes. Only effective when PageMode=0.\n"
+                },
+                "clientIp": {
+                    "type": "string",
+                    "description": "Client IP. Value is fixed as ALL, meaning it applies to all source IPs.\n"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Custom response status code, such as 403, 405, 503. Only effective when PageMode=0.\n"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "Custom response Content-Type response header. For example: text/html, application/json, etc. Only effective when PageMode=0.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Rule description.\n"
+                },
+                "enable": {
+                    "type": "integer",
+                    "description": "Rule switch. 0: Off; 1: On.\n"
+                },
+                "host": {
+                    "type": "string",
+                    "description": "Domain name. The website domain name to be protected. Before calling, make sure the domain name has been added to the current WAF instance.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1–128 characters.\n"
+                },
+                "pageMode": {
+                    "type": "integer",
+                    "description": "Response page mode. 0: Custom response body; 2: Redirect URL.\n"
+                },
+                "policy": {
+                    "type": "integer",
+                    "description": "Associated protection policy. 1: Observe; 8: Block.\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated. Default is default.\n"
+                },
+                "redirectUrl": {
+                    "type": "string",
+                    "description": "Redirect target URL. Only effective when PageMode=2.\n"
+                },
+                "ruleId": {
+                    "type": "string",
+                    "description": "Custom block response rule ID.\n"
+                },
+                "ruleTag": {
+                    "type": "string",
+                    "description": "Rule display ID. The RuleTag prefix for custom interception response rules is always B, consisting of the prefix B and a 12-digit RuleId (zero-padded in the middle if fewer than 12 digits). For example, RuleId=116869 corresponds to RuleTag=B000000116869.\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Last updated time of the rule.\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL path where the rule takes effect.\n"
+                }
+            },
+            "required": [
+                "accurate",
+                "advanced",
+                "body",
+                "clientIp",
+                "code",
+                "contentType",
+                "description",
+                "enable",
+                "host",
+                "name",
+                "pageMode",
+                "policy",
+                "projectName",
+                "redirectUrl",
+                "ruleId",
+                "ruleTag",
+                "updateTime",
+                "url"
+            ],
+            "inputProperties": {
+                "accurate": {
+                    "$ref": "#/types/bytepluscc:waf/CustomPageAccurate:CustomPageAccurate",
+                    "description": "Advanced condition configuration. Only takes effect when Advanced=1.\n"
+                },
+                "advanced": {
+                    "type": "integer",
+                    "description": "Enable advanced conditions. 0: Off (default); 1: On. If enabled, Accurate must also be configured.\n"
+                },
+                "body": {
+                    "type": "string",
+                    "description": "Custom response page content. Maximum length: 4096 bytes. Only effective when PageMode=0.\n"
+                },
+                "clientIp": {
+                    "type": "string",
+                    "description": "Client IP. Value is fixed as ALL, meaning it applies to all source IPs.\n"
+                },
+                "code": {
+                    "type": "string",
+                    "description": "Custom response status code, such as 403, 405, 503. Only effective when PageMode=0.\n"
+                },
+                "contentType": {
+                    "type": "string",
+                    "description": "Custom response Content-Type response header. For example: text/html, application/json, etc. Only effective when PageMode=0.\n"
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Rule description.\n"
+                },
+                "enable": {
+                    "type": "integer",
+                    "description": "Rule switch. 0: Off; 1: On.\n"
+                },
+                "host": {
+                    "type": "string",
+                    "description": "Domain name. The website domain name to be protected. Before calling, make sure the domain name has been added to the current WAF instance.\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1–128 characters.\n"
+                },
+                "pageMode": {
+                    "type": "integer",
+                    "description": "Response page mode. 0: Custom response body; 2: Redirect URL.\n"
+                },
+                "policy": {
+                    "type": "integer",
+                    "description": "Associated protection policy. 1: Observe; 8: Block.\n"
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated. Default is default.\n"
+                },
+                "redirectUrl": {
+                    "type": "string",
+                    "description": "Redirect target URL. Only effective when PageMode=2.\n"
+                },
+                "url": {
+                    "type": "string",
+                    "description": "URL path where the rule takes effect.\n"
+                }
+            },
+            "requiredInputs": [
+                "clientIp",
+                "description",
+                "host",
+                "name",
+                "pageMode",
+                "policy",
+                "url"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering CustomPage resources.\n",
+                "properties": {
+                    "accurate": {
+                        "$ref": "#/types/bytepluscc:waf/CustomPageAccurate:CustomPageAccurate",
+                        "description": "Advanced condition configuration. Only takes effect when Advanced=1.\n"
+                    },
+                    "advanced": {
+                        "type": "integer",
+                        "description": "Enable advanced conditions. 0: Off (default); 1: On. If enabled, Accurate must also be configured.\n"
+                    },
+                    "body": {
+                        "type": "string",
+                        "description": "Custom response page content. Maximum length: 4096 bytes. Only effective when PageMode=0.\n"
+                    },
+                    "clientIp": {
+                        "type": "string",
+                        "description": "Client IP. Value is fixed as ALL, meaning it applies to all source IPs.\n"
+                    },
+                    "code": {
+                        "type": "string",
+                        "description": "Custom response status code, such as 403, 405, 503. Only effective when PageMode=0.\n"
+                    },
+                    "contentType": {
+                        "type": "string",
+                        "description": "Custom response Content-Type response header. For example: text/html, application/json, etc. Only effective when PageMode=0.\n"
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Rule description.\n"
+                    },
+                    "enable": {
+                        "type": "integer",
+                        "description": "Rule switch. 0: Off; 1: On.\n"
+                    },
+                    "host": {
+                        "type": "string",
+                        "description": "Domain name. The website domain name to be protected. Before calling, make sure the domain name has been added to the current WAF instance.\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1–128 characters.\n"
+                    },
+                    "pageMode": {
+                        "type": "integer",
+                        "description": "Response page mode. 0: Custom response body; 2: Redirect URL.\n"
+                    },
+                    "policy": {
+                        "type": "integer",
+                        "description": "Associated protection policy. 1: Observe; 8: Block.\n"
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated. Default is default.\n"
+                    },
+                    "redirectUrl": {
+                        "type": "string",
+                        "description": "Redirect target URL. Only effective when PageMode=2.\n"
+                    },
+                    "ruleId": {
+                        "type": "string",
+                        "description": "Custom block response rule ID.\n"
+                    },
+                    "ruleTag": {
+                        "type": "string",
+                        "description": "Rule display ID. The RuleTag prefix for custom interception response rules is always B, consisting of the prefix B and a 12-digit RuleId (zero-padded in the middle if fewer than 12 digits). For example, RuleId=116869 corresponds to RuleTag=B000000116869.\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Last updated time of the rule.\n"
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "URL path where the rule takes effect.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
         "bytepluscc:waf/domain:Domain": {
             "description": "Connect the protected site via CNAME or load balancing, configure access and origin capabilities, and route business traffic to the WAF instance for protection\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst wafDomainDemo = new bytepluscc.waf.Domain(\"WafDomainDemo\", {\n    accessMode: 10,\n    domain: \"www.test.com\",\n    lbAlgorithm: \"wrr\",\n    publicRealServer: 1,\n    vpcId: \"\",\n    protocolPorts: {\n        http: [80],\n    },\n    protocols: [\"HTTP\"],\n    backendGroups: [{\n        access_port: [80],\n        backends: [{\n            protocol: \"HTTP\",\n            port: 80,\n            ip: \"1.1.1.1\",\n            weight: 50,\n        }],\n        name: \"default\",\n    }],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nwaf_domain_demo = bytepluscc.waf.Domain(\"WafDomainDemo\",\n    access_mode=10,\n    domain=\"www.test.com\",\n    lb_algorithm=\"wrr\",\n    public_real_server=1,\n    vpc_id=\"\",\n    protocol_ports={\n        \"http\": [80],\n    },\n    protocols=[\"HTTP\"],\n    backend_groups=[{\n        \"access_port\": [80],\n        \"backends\": [{\n            \"protocol\": \"HTTP\",\n            \"port\": 80,\n            \"ip\": \"1.1.1.1\",\n            \"weight\": 50,\n        }],\n        \"name\": \"default\",\n    }])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var wafDomainDemo = new Bytepluscc.Waf.Domain(\"WafDomainDemo\", new()\n    {\n        AccessMode = 10,\n        DomainValue = \"www.test.com\",\n        LbAlgorithm = \"wrr\",\n        PublicRealServer = 1,\n        VpcId = \"\",\n        ProtocolPorts = new Bytepluscc.Waf.Inputs.DomainProtocolPortsArgs\n        {\n            Http = new[]\n            {\n                80,\n            },\n        },\n        Protocols = new[]\n        {\n            \"HTTP\",\n        },\n        BackendGroups = new[]\n        {\n            new Bytepluscc.Waf.Inputs.DomainBackendGroupArgs\n            {\n                Access_port = new[]\n                {\n                    80,\n                },\n                Backends = new[]\n                {\n                    new Bytepluscc.Waf.Inputs.DomainBackendGroupBackendArgs\n                    {\n                        Protocol = \"HTTP\",\n                        Port = 80,\n                        Ip = \"1.1.1.1\",\n                        Weight = 50,\n                    },\n                },\n                Name = \"default\",\n            },\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/waf\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := waf.NewDomain(ctx, \"WafDomainDemo\", \u0026waf.DomainArgs{\n\t\t\tAccessMode:       pulumi.Int(10),\n\t\t\tDomain:           pulumi.String(\"www.test.com\"),\n\t\t\tLbAlgorithm:      pulumi.String(\"wrr\"),\n\t\t\tPublicRealServer: pulumi.Int(1),\n\t\t\tVpcId:            pulumi.String(\"\"),\n\t\t\tProtocolPorts: \u0026waf.DomainProtocolPortsArgs{\n\t\t\t\tHttp: pulumi.IntArray{\n\t\t\t\t\tpulumi.Int(80),\n\t\t\t\t},\n\t\t\t},\n\t\t\tProtocols: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"HTTP\"),\n\t\t\t},\n\t\t\tBackendGroups: waf.DomainBackendGroupArray{\n\t\t\t\t\u0026waf.DomainBackendGroupArgs{\n\t\t\t\t\tAccess_port: []int{\n\t\t\t\t\t\t80,\n\t\t\t\t\t},\n\t\t\t\t\tBackends: waf.DomainBackendGroupBackendArray{\n\t\t\t\t\t\t\u0026waf.DomainBackendGroupBackendArgs{\n\t\t\t\t\t\t\tProtocol: pulumi.String(\"HTTP\"),\n\t\t\t\t\t\t\tPort:     pulumi.Int(80),\n\t\t\t\t\t\t\tIp:       pulumi.String(\"1.1.1.1\"),\n\t\t\t\t\t\t\tWeight:   pulumi.Int(50),\n\t\t\t\t\t\t},\n\t\t\t\t\t},\n\t\t\t\t\tName: pulumi.String(\"default\"),\n\t\t\t\t},\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_waf_domain\" \"WafDomainDemo\" {\n  access_mode        = 10\n  domain             = \"www.test.com\"\n  lb_algorithm       = \"wrr\"\n  public_real_server = 1\n  vpc_id             = \"\"\n  protocol_ports = {\n    http = [80]\n  }\n  protocols = [\"HTTP\"]\n  backend_groups {\n    access_port = [80]\n    backends {\n      protocol = \"HTTP\"\n      port     = 80\n      ip       = \"1.1.1.1\"\n      weight   = 50\n    }\n    name = \"default\"\n  }\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.waf.Domain;\nimport com.byteplus.bytepluscc.waf.DomainArgs;\nimport com.pulumi.bytepluscc.waf.inputs.DomainProtocolPortsArgs;\nimport com.pulumi.bytepluscc.waf.inputs.DomainBackendGroupArgs;\nimport com.pulumi.bytepluscc.waf.inputs.DomainBackendGroupBackendArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var wafDomainDemo = new Domain(\"wafDomainDemo\", DomainArgs.builder()\n            .accessMode(10)\n            .domain(\"www.test.com\")\n            .lbAlgorithm(\"wrr\")\n            .publicRealServer(1)\n            .vpcId(\"\")\n            .protocolPorts(DomainProtocolPortsArgs.builder()\n                .http(80)\n                .build())\n            .protocols(\"HTTP\")\n            .backendGroups(DomainBackendGroupArgs.builder()\n                .access_port(Arrays.asList(80))\n                .backends(DomainBackendGroupBackendArgs.builder()\n                    .protocol(\"HTTP\")\n                    .port(80)\n                    .ip(\"1.1.1.1\")\n                    .weight(50)\n                    .build())\n                .name(\"default\")\n                .build())\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  wafDomainDemo:\n    type: bytepluscc:waf:Domain\n    name: WafDomainDemo\n    properties:\n      accessMode: 10\n      domain: www.test.com\n      lbAlgorithm: wrr\n      publicRealServer: 1\n      vpcId: \"\"\n      protocolPorts:\n        http:\n          - 80\n      protocols:\n        - HTTP\n      backendGroups:\n        - access_port:\n            - 80\n          backends:\n            - protocol: HTTP\n              port: 80\n              ip: 1.1.1.1\n              weight: 50\n          name: default\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:waf/domain:Domain example \"domain\"\n```\n\n",
             "properties": {
@@ -124561,6 +125838,235 @@
                     "updateTime": {
                         "type": "string",
                         "description": "Domain group update time.\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/ipGroup:IpGroup": {
+            "description": "WAF IP Address Group\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.waf.IpGroup(\"example\", {\n    name: \"ccapi-ipgroup-full\",\n    ipLists: [\n        \"2.2.2.2\",\n        \"10.0.0.0/8\",\n    ],\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.waf.IpGroup(\"example\",\n    name=\"ccapi-ipgroup-full\",\n    ip_lists=[\n        \"2.2.2.2\",\n        \"10.0.0.0/8\",\n    ])\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Waf.IpGroup(\"example\", new()\n    {\n        Name = \"ccapi-ipgroup-full\",\n        IpLists = new[]\n        {\n            \"2.2.2.2\",\n            \"10.0.0.0/8\",\n        },\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/waf\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := waf.NewIpGroup(ctx, \"example\", \u0026waf.IpGroupArgs{\n\t\t\tName: pulumi.String(\"ccapi-ipgroup-full\"),\n\t\t\tIpLists: pulumi.StringArray{\n\t\t\t\tpulumi.String(\"2.2.2.2\"),\n\t\t\t\tpulumi.String(\"10.0.0.0/8\"),\n\t\t\t},\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_waf_ipgroup\" \"example\" {\n  name     = \"ccapi-ipgroup-full\"\n  ip_lists = [\"2.2.2.2\", \"10.0.0.0/8\"]\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.waf.IpGroup;\nimport com.byteplus.bytepluscc.waf.IpGroupArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new IpGroup(\"example\", IpGroupArgs.builder()\n            .name(\"ccapi-ipgroup-full\")\n            .ipLists(            \n                \"2.2.2.2\",\n                \"10.0.0.0/8\")\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:waf:IpGroup\n    properties:\n      name: ccapi-ipgroup-full\n      ipLists:\n        - 2.2.2.2\n        - 10.0.0.0/8\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:waf/ipGroup:IpGroup example \"ip_group_id\"\n```\n\n",
+            "properties": {
+                "ipCount": {
+                    "type": "integer",
+                    "description": "Number of IPs in the IP Address Group\n"
+                },
+                "ipGroupId": {
+                    "type": "string",
+                    "description": "IP Address Group ID\n"
+                },
+                "ipLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IP Address or Address Range List\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "IP Address Group Name\n"
+                },
+                "relatedRules": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/types/bytepluscc:waf/IpGroupRelatedRule:IpGroupRelatedRule"
+                    },
+                    "description": "Associated Rule\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                },
+                "updateTime": {
+                    "type": "string",
+                    "description": "Last Updated\n"
+                }
+            },
+            "required": [
+                "ipCount",
+                "ipGroupId",
+                "ipLists",
+                "name",
+                "relatedRules",
+                "updateTime"
+            ],
+            "inputProperties": {
+                "ipLists": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "description": "IP Address or Address Range List\n"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "IP Address Group Name\n"
+                }
+            },
+            "requiredInputs": [
+                "ipLists",
+                "name"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering IpGroup resources.\n",
+                "properties": {
+                    "ipCount": {
+                        "type": "integer",
+                        "description": "Number of IPs in the IP Address Group\n"
+                    },
+                    "ipGroupId": {
+                        "type": "string",
+                        "description": "IP Address Group ID\n"
+                    },
+                    "ipLists": {
+                        "type": "array",
+                        "items": {
+                            "type": "string"
+                        },
+                        "description": "IP Address or Address Range List\n"
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "IP Address Group Name\n"
+                    },
+                    "relatedRules": {
+                        "type": "array",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:waf/IpGroupRelatedRule:IpGroupRelatedRule"
+                        },
+                        "description": "Associated Rule\nImportant Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.\n"
+                    },
+                    "updateTime": {
+                        "type": "string",
+                        "description": "Last Updated\n"
+                    }
+                },
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/systemBot:SystemBot": {
+            "description": "Volcengine WAF system Bot rule configuration. System Bot rules are built-in bot detection rules in WAF, categorized by BotType. Each category contains several independently configurable sub-rules (SubRule), each uniquely identified by a RuleTag. Use UpdateSystemBotConfig to set the action and switch for a sub-rule (RuleTag) under a specified domain (Host) (Enable=1 means enabled and considered created, Enable=0 means disabled and considered deleted), and use ListSystemBotConfig to query the current configuration of each sub-rule. Resource granularity is 'domain name + sub-rule tag'.\n\n## Example Usage\n\n\u003c!--Start PulumiCodeChooser --\u003e\n```typescript\nimport * as pulumi from \"@pulumi/pulumi\";\nimport * as bytepluscc from \"@byteplus/pulumi-bytepluscc\";\n\nconst example = new bytepluscc.waf.SystemBot(\"example\", {\n    host: \"www.testwaf.com\",\n    ruleTag: \"J000000000025\",\n    botType: \"search_engine_bot\",\n    action: \"js\",\n    projectName: \"default\",\n    verificationExemptionTime: 300,\n});\n```\n```python\nimport pulumi\nimport pulumi_bytepluscc as bytepluscc\n\nexample = bytepluscc.waf.SystemBot(\"example\",\n    host=\"www.testwaf.com\",\n    rule_tag=\"J000000000025\",\n    bot_type=\"search_engine_bot\",\n    action=\"js\",\n    project_name=\"default\",\n    verification_exemption_time=300)\n```\n```csharp\nusing System.Collections.Generic;\nusing System.Linq;\nusing Pulumi;\nusing Bytepluscc = Byteplus.Pulumi.Bytepluscc;\n\nreturn await Deployment.RunAsync(() =\u003e \n{\n    var example = new Bytepluscc.Waf.SystemBot(\"example\", new()\n    {\n        Host = \"www.testwaf.com\",\n        RuleTag = \"J000000000025\",\n        BotType = \"search_engine_bot\",\n        Action = \"js\",\n        ProjectName = \"default\",\n        VerificationExemptionTime = 300,\n    });\n\n});\n```\n```go\npackage main\n\nimport (\n\t\"github.com/byteplus-sdk/pulumi-bytepluscc/sdk/go/bytepluscc/waf\"\n\t\"github.com/pulumi/pulumi/sdk/v3/go/pulumi\"\n)\n\nfunc main() {\n\tpulumi.Run(func(ctx *pulumi.Context) error {\n\t\t_, err := waf.NewSystemBot(ctx, \"example\", \u0026waf.SystemBotArgs{\n\t\t\tHost:                      pulumi.String(\"www.testwaf.com\"),\n\t\t\tRuleTag:                   pulumi.String(\"J000000000025\"),\n\t\t\tBotType:                   pulumi.String(\"search_engine_bot\"),\n\t\t\tAction:                    pulumi.String(\"js\"),\n\t\t\tProjectName:               pulumi.String(\"default\"),\n\t\t\tVerificationExemptionTime: pulumi.Int(300),\n\t\t})\n\t\tif err != nil {\n\t\t\treturn err\n\t\t}\n\t\treturn nil\n\t})\n}\n```\n```hcl\npulumi {\n  required_providers {\n    bytepluscc = {\n      source = \"pulumi/bytepluscc\"\n    }\n  }\n}\n\nresource \"bytepluscc_waf_systembot\" \"example\" {\n  host                        = \"www.testwaf.com\"\n  rule_tag                    = \"J000000000025\"\n  bot_type                    = \"search_engine_bot\"\n  action                      = \"js\"\n  project_name                = \"default\"\n  verification_exemption_time = 300\n}\n```\n```java\npackage generated_program;\n\nimport com.pulumi.Context;\nimport com.pulumi.Pulumi;\nimport com.pulumi.core.Output;\nimport com.byteplus.bytepluscc.waf.SystemBot;\nimport com.byteplus.bytepluscc.waf.SystemBotArgs;\nimport java.util.ArrayList;\nimport java.util.Arrays;\nimport java.util.Map;\nimport java.io.File;\nimport java.nio.file.Files;\nimport java.nio.file.Paths;\n\npublic class App {\n    public static void main(String[] args) {\n        Pulumi.run(App::stack);\n    }\n\n    public static void stack(Context ctx) {\n        var example = new SystemBot(\"example\", SystemBotArgs.builder()\n            .host(\"www.testwaf.com\")\n            .ruleTag(\"J000000000025\")\n            .botType(\"search_engine_bot\")\n            .action(\"js\")\n            .projectName(\"default\")\n            .verificationExemptionTime(300)\n            .build());\n\n    }\n}\n```\n```yaml\nresources:\n  example:\n    type: bytepluscc:waf:SystemBot\n    properties:\n      host: www.testwaf.com\n      ruleTag: J000000000025\n      botType: search_engine_bot\n      action: js\n      projectName: default\n      verificationExemptionTime: 300\n```\n\u003c!--End PulumiCodeChooser --\u003e\n\n## Import\n\n```sh\n$ pulumi import bytepluscc:waf/systemBot:SystemBot example \"host|rule_tag\"\n```\n\n",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action taken when this sub-rule is triggered. Values: observe, block, etc."
+                },
+                "botType": {
+                    "type": "string",
+                    "description": "Category of the system Bot rule, such as\u003cspan pulumi-lang-nodejs=\" llmCrawlerBot \" pulumi-lang-dotnet=\" LlmCrawlerBot \" pulumi-lang-go=\" llmCrawlerBot \" pulumi-lang-python=\" llm_crawler_bot \" pulumi-lang-yaml=\" llmCrawlerBot \" pulumi-lang-java=\" llmCrawlerBot \" pulumi-lang-hcl=\" llm_crawler_bot \"\u003e llmCrawlerBot \u003c/span\u003e(large model crawler),\u003cspan pulumi-lang-nodejs=\" userBot \" pulumi-lang-dotnet=\" UserBot \" pulumi-lang-go=\" userBot \" pulumi-lang-python=\" user_bot \" pulumi-lang-yaml=\" userBot \" pulumi-lang-java=\" userBot \" pulumi-lang-hcl=\" user_bot \"\u003e userBot \u003c/span\u003e(user-triggered crawling),\u003cspan pulumi-lang-nodejs=\" searchEngineBot \" pulumi-lang-dotnet=\" SearchEngineBot \" pulumi-lang-go=\" searchEngineBot \" pulumi-lang-python=\" search_engine_bot \" pulumi-lang-yaml=\" searchEngineBot \" pulumi-lang-java=\" searchEngineBot \" pulumi-lang-hcl=\" search_engine_bot \"\u003e searchEngineBot \u003c/span\u003e(search engine), marketing (marketing tool), etc."
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Description of the sub-rule."
+                },
+                "enable": {
+                    "type": "integer",
+                    "description": "Sub-rule switch. Values:\n  \n    - 1: Enabled (fixed as 1 when created)\n    - 0: Disabled (fixed as 0 when deleted)"
+                },
+                "host": {
+                    "type": "string",
+                    "description": "Domain name to be protected by the system Bot rule."
+                },
+                "ipMatch": {
+                    "type": "boolean",
+                    "description": "Whether this sub-rule supports IP-based matching."
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Sub-rule name."
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name to which the resource belongs."
+                },
+                "ruleTag": {
+                    "type": "string",
+                    "description": "Unique tag for the system Bot sub-rule, such as J000000001026. Used to uniquely identify a sub-rule within a BotType category."
+                },
+                "verificationExemptionTime": {
+                    "type": "integer",
+                    "description": "Verification exemption duration, in seconds. The period during which verification is not required after a hit and successful verification."
+                }
+            },
+            "required": [
+                "action",
+                "botType",
+                "description",
+                "enable",
+                "host",
+                "ipMatch",
+                "name",
+                "projectName",
+                "ruleTag",
+                "verificationExemptionTime"
+            ],
+            "inputProperties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action taken when this sub-rule is triggered. Values: observe, block, etc."
+                },
+                "botType": {
+                    "type": "string",
+                    "description": "Category of the system Bot rule, such as\u003cspan pulumi-lang-nodejs=\" llmCrawlerBot \" pulumi-lang-dotnet=\" LlmCrawlerBot \" pulumi-lang-go=\" llmCrawlerBot \" pulumi-lang-python=\" llm_crawler_bot \" pulumi-lang-yaml=\" llmCrawlerBot \" pulumi-lang-java=\" llmCrawlerBot \" pulumi-lang-hcl=\" llm_crawler_bot \"\u003e llmCrawlerBot \u003c/span\u003e(large model crawler),\u003cspan pulumi-lang-nodejs=\" userBot \" pulumi-lang-dotnet=\" UserBot \" pulumi-lang-go=\" userBot \" pulumi-lang-python=\" user_bot \" pulumi-lang-yaml=\" userBot \" pulumi-lang-java=\" userBot \" pulumi-lang-hcl=\" user_bot \"\u003e userBot \u003c/span\u003e(user-triggered crawling),\u003cspan pulumi-lang-nodejs=\" searchEngineBot \" pulumi-lang-dotnet=\" SearchEngineBot \" pulumi-lang-go=\" searchEngineBot \" pulumi-lang-python=\" search_engine_bot \" pulumi-lang-yaml=\" searchEngineBot \" pulumi-lang-java=\" searchEngineBot \" pulumi-lang-hcl=\" search_engine_bot \"\u003e searchEngineBot \u003c/span\u003e(search engine), marketing (marketing tool), etc."
+                },
+                "host": {
+                    "type": "string",
+                    "description": "Domain name to be protected by the system Bot rule."
+                },
+                "projectName": {
+                    "type": "string",
+                    "description": "Project name to which the resource belongs."
+                },
+                "ruleTag": {
+                    "type": "string",
+                    "description": "Unique tag for the system Bot sub-rule, such as J000000001026. Used to uniquely identify a sub-rule within a BotType category."
+                },
+                "verificationExemptionTime": {
+                    "type": "integer",
+                    "description": "Verification exemption duration, in seconds. The period during which verification is not required after a hit and successful verification."
+                }
+            },
+            "requiredInputs": [
+                "host",
+                "ruleTag"
+            ],
+            "stateInputs": {
+                "description": "Input properties used for looking up and filtering SystemBot resources.\n",
+                "properties": {
+                    "action": {
+                        "type": "string",
+                        "description": "Action taken when this sub-rule is triggered. Values: observe, block, etc."
+                    },
+                    "botType": {
+                        "type": "string",
+                        "description": "Category of the system Bot rule, such as\u003cspan pulumi-lang-nodejs=\" llmCrawlerBot \" pulumi-lang-dotnet=\" LlmCrawlerBot \" pulumi-lang-go=\" llmCrawlerBot \" pulumi-lang-python=\" llm_crawler_bot \" pulumi-lang-yaml=\" llmCrawlerBot \" pulumi-lang-java=\" llmCrawlerBot \" pulumi-lang-hcl=\" llm_crawler_bot \"\u003e llmCrawlerBot \u003c/span\u003e(large model crawler),\u003cspan pulumi-lang-nodejs=\" userBot \" pulumi-lang-dotnet=\" UserBot \" pulumi-lang-go=\" userBot \" pulumi-lang-python=\" user_bot \" pulumi-lang-yaml=\" userBot \" pulumi-lang-java=\" userBot \" pulumi-lang-hcl=\" user_bot \"\u003e userBot \u003c/span\u003e(user-triggered crawling),\u003cspan pulumi-lang-nodejs=\" searchEngineBot \" pulumi-lang-dotnet=\" SearchEngineBot \" pulumi-lang-go=\" searchEngineBot \" pulumi-lang-python=\" search_engine_bot \" pulumi-lang-yaml=\" searchEngineBot \" pulumi-lang-java=\" searchEngineBot \" pulumi-lang-hcl=\" search_engine_bot \"\u003e searchEngineBot \u003c/span\u003e(search engine), marketing (marketing tool), etc."
+                    },
+                    "description": {
+                        "type": "string",
+                        "description": "Description of the sub-rule."
+                    },
+                    "enable": {
+                        "type": "integer",
+                        "description": "Sub-rule switch. Values:\n  \n    - 1: Enabled (fixed as 1 when created)\n    - 0: Disabled (fixed as 0 when deleted)"
+                    },
+                    "host": {
+                        "type": "string",
+                        "description": "Domain name to be protected by the system Bot rule."
+                    },
+                    "ipMatch": {
+                        "type": "boolean",
+                        "description": "Whether this sub-rule supports IP-based matching."
+                    },
+                    "name": {
+                        "type": "string",
+                        "description": "Sub-rule name."
+                    },
+                    "projectName": {
+                        "type": "string",
+                        "description": "Project name to which the resource belongs."
+                    },
+                    "ruleTag": {
+                        "type": "string",
+                        "description": "Unique tag for the system Bot sub-rule, such as J000000001026. Used to uniquely identify a sub-rule within a BotType category."
+                    },
+                    "verificationExemptionTime": {
+                        "type": "integer",
+                        "description": "Verification exemption duration, in seconds. The period during which verification is not required after a hit and successful verification."
                     }
                 },
                 "type": "object"
@@ -132862,6 +134368,117 @@
                 "type": "object"
             }
         },
+        "bytepluscc:cr/getRobotAccount:getRobotAccount": {
+            "description": "Data Source schema for Byteplus::CR::RobotAccount\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getRobotAccount.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getRobotAccount.\n",
+                "properties": {
+                    "createTime": {
+                        "description": "Creation timestamp.\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the robot account.\n",
+                        "type": "string"
+                    },
+                    "disabled": {
+                        "description": "Disable status of the robot account. false means the account is enabled; true means the account is disabled.\n",
+                        "type": "boolean"
+                    },
+                    "duration": {
+                        "description": "Effective period, in days, with a maximum of 366. Enter -1 for unlimited.\n",
+                        "type": "integer"
+                    },
+                    "expiresAt": {
+                        "description": "Expiration timestamp.\n",
+                        "type": "integer"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "password": {
+                        "description": "Login password for the robot account. If not specified during creation, a random password will be generated; when updating the password, this field is required if Random is false.\n",
+                        "type": "string"
+                    },
+                    "permissions": {
+                        "description": "Operation permissions for the robot account.\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:cr/getRobotAccountPermission:getRobotAccountPermission"
+                        },
+                        "type": "array"
+                    },
+                    "random": {
+                        "description": "Whether to automatically generate a random password. false means a random string is not used and you must enter a password manually; true means a random password is generated automatically.\n",
+                        "type": "boolean"
+                    },
+                    "registry": {
+                        "description": "Instance name where the robot account resides.\n",
+                        "type": "string"
+                    },
+                    "updateTime": {
+                        "description": "Update timestamp.\n",
+                        "type": "string"
+                    },
+                    "username": {
+                        "description": "Name of the robot account, in the format crrobot@****.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "createTime",
+                    "description",
+                    "disabled",
+                    "duration",
+                    "expiresAt",
+                    "id",
+                    "password",
+                    "permissions",
+                    "random",
+                    "registry",
+                    "updateTime",
+                    "username"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:cr/getRobotAccounts:getRobotAccounts": {
+            "description": "Plural Data Source schema for Byteplus::CR::RobotAccount\n",
+            "outputs": {
+                "description": "A collection of values returned by getRobotAccounts.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:cr/getVpcEndpoint:getVpcEndpoint": {
             "description": "Data Source schema for Byteplus::CR::VpcEndpoint\n",
             "inputs": {
@@ -134236,6 +135853,102 @@
             "description": "Plural Data Source schema for Byteplus::ECS::Command\n",
             "outputs": {
                 "description": "A collection of values returned by getCommands.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:ecs/getDedicatedHostCluster:getDedicatedHostCluster": {
+            "description": "Data Source schema for Byteplus::ECS::DedicatedHostCluster\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getDedicatedHostCluster.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getDedicatedHostCluster.\n",
+                "properties": {
+                    "createdAt": {
+                        "description": "Creation time of the dedicated host cluster.\n",
+                        "type": "string"
+                    },
+                    "dedicatedHostClusterCapacity": {
+                        "$ref": "#/types/bytepluscc:ecs/getDedicatedHostClusterDedicatedHostClusterCapacity:getDedicatedHostClusterDedicatedHostClusterCapacity",
+                        "description": "Capacity information of the dedicated host cluster, including available memory, available vCPU, supported instance types, and more.\n"
+                    },
+                    "dedicatedHostClusterId": {
+                        "description": "ID of the dedicated host cluster.\n",
+                        "type": "string"
+                    },
+                    "dedicatedHostClusterName": {
+                        "description": "Name of the dedicated host cluster. Length limit: 1–128 characters. Can include Chinese characters, letters, numbers, underscores (_), hyphens (-), and periods (.), and must start with a letter, number, or Chinese character.\n",
+                        "type": "string"
+                    },
+                    "dedicatedHostIds": {
+                        "description": "List of IDs for all dedicated hosts contained in this dedicated host cluster.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "description": {
+                        "description": "Description of the dedicated host cluster. Length limit: 0–256 characters.\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "description": "Last update time of the dedicated host cluster.\n",
+                        "type": "string"
+                    },
+                    "zoneId": {
+                        "description": "Availability zone ID to which the dedicated host cluster belongs. Cannot be modified after creation.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "createdAt",
+                    "dedicatedHostClusterCapacity",
+                    "dedicatedHostClusterId",
+                    "dedicatedHostClusterName",
+                    "dedicatedHostIds",
+                    "description",
+                    "id",
+                    "updatedAt",
+                    "zoneId"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:ecs/getDedicatedHostClusters:getDedicatedHostClusters": {
+            "description": "Plural Data Source schema for Byteplus::ECS::DedicatedHostCluster\n",
+            "outputs": {
+                "description": "A collection of values returned by getDedicatedHostClusters.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -139315,6 +141028,99 @@
             "description": "Plural Data Source schema for Byteplus::IAM::AllowedIpAddress\n",
             "outputs": {
                 "description": "A collection of values returned by getAllowedIpAddresses.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:iam/getApiKey:getApiKey": {
+            "description": "Data Source schema for Byteplus::IAM::ApiKey\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getApiKey.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getApiKey.\n",
+                "properties": {
+                    "apiKeyId": {
+                        "description": "API Key ID。\n",
+                        "type": "string"
+                    },
+                    "createDate": {
+                        "description": "Created At\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "API Key Name\n",
+                        "type": "string"
+                    },
+                    "permissionsBoundary": {
+                        "description": "Permission Boundary\n",
+                        "type": "string"
+                    },
+                    "secret": {
+                        "description": "API Key Secret\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "API Key Status\n",
+                        "type": "string"
+                    },
+                    "updateDate": {
+                        "description": "Last Updated\n",
+                        "type": "string"
+                    },
+                    "userName": {
+                        "description": "Username\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "apiKeyId",
+                    "createDate",
+                    "id",
+                    "name",
+                    "permissionsBoundary",
+                    "secret",
+                    "status",
+                    "updateDate",
+                    "userName"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:iam/getApiKeys:getApiKeys": {
+            "description": "Plural Data Source schema for Byteplus::IAM::ApiKey\n",
+            "outputs": {
+                "description": "A collection of values returned by getApiKeys.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -147278,7 +149084,7 @@
                         "type": "string"
                     },
                     "instanceType": {
-                        "description": "Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type\n",
+                        "description": "Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.\n",
                         "type": "string"
                     },
                     "lowerCaseTableNames": {
@@ -149595,6 +151401,109 @@
             "description": "Plural Data Source schema for Byteplus::Redis::Instance\n",
             "outputs": {
                 "description": "A collection of values returned by getInstances.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:redis/getKeyScanJob:getKeyScanJob": {
+            "description": "Data Source schema for Byteplus::Redis::KeyScanJob\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getKeyScanJob.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getKeyScanJob.\n",
+                "properties": {
+                    "completedCount": {
+                        "description": "Number of shards analyzed.\n",
+                        "type": "integer"
+                    },
+                    "createTime": {
+                        "description": "Task creation time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n",
+                        "type": "string"
+                    },
+                    "finishTime": {
+                        "description": "Task end time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "instanceId": {
+                        "description": "Instance ID. You can call the DescribeDBInstances API to query basic information for all Redis instances in the target region, including the instance ID.\n",
+                        "type": "string"
+                    },
+                    "jobId": {
+                        "description": "Task ID of the scan job.\n",
+                        "type": "string"
+                    },
+                    "scanKeyNumPerSecond": {
+                        "description": "Number of expired keys scanned per second. Value range: integer between 2000 and 100000.\n",
+                        "type": "integer"
+                    },
+                    "startTime": {
+                        "description": "Task start time. Format: yyyy-MM-ddTHH:mm:ssZ (UTC).\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Task status. Values: Created, Running, Finished, Failed, Interrupted.\n",
+                        "type": "string"
+                    },
+                    "timeoutMinutes": {
+                        "description": "Scan timeout. Value range: integer between 30 and 1440, unit: minutes.\n",
+                        "type": "integer"
+                    },
+                    "totalCount": {
+                        "description": "Total number of shards to analyze.\n",
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "completedCount",
+                    "createTime",
+                    "finishTime",
+                    "id",
+                    "instanceId",
+                    "jobId",
+                    "scanKeyNumPerSecond",
+                    "startTime",
+                    "status",
+                    "timeoutMinutes",
+                    "totalCount"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:redis/getKeyScanJobs:getKeyScanJobs": {
+            "description": "Plural Data Source schema for Byteplus::Redis::KeyScanJob\n",
+            "outputs": {
+                "description": "A collection of values returned by getKeyScanJobs.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",
@@ -159615,6 +161524,109 @@
                 "type": "object"
             }
         },
+        "bytepluscc:vpc/getIpv4Gateway:getIpv4Gateway": {
+            "description": "Data Source schema for Byteplus::VPC::Ipv4Gateway\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getIpv4Gateway.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getIpv4Gateway.\n",
+                "properties": {
+                    "accountId": {
+                        "description": "ID of the account to which the IPv4 gateway belongs.\n",
+                        "type": "string"
+                    },
+                    "creationTime": {
+                        "description": "Creation time of the IPv4 gateway.\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Description of the IPv4 gateway. Length must be between 0 and 255 characters. Must start with a letter, Chinese character, or number, and can include English commas (,), periods (.), underscores (_), spaces, equals signs (=), hyphens (-), Chinese commas (，), and Chinese periods (。).\n",
+                        "type": "string"
+                    },
+                    "enabled": {
+                        "description": "Whether the IPv4 gateway is enabled.\n",
+                        "type": "boolean"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "ipv4GatewayId": {
+                        "description": "ID of the IPv4 gateway.\n",
+                        "type": "string"
+                    },
+                    "ipv4GatewayName": {
+                        "description": "Name of the IPv4 gateway. Length must be between 1 and 128 characters. Must start with a letter, Chinese character, or number, and can include periods (.), underscores (_), and hyphens (-). If not specified, defaults to the IPv4 gateway ID.\n",
+                        "type": "string"
+                    },
+                    "routeTableId": {
+                        "description": "ID of the route table associated with the IPv4 gateway.\n",
+                        "type": "string"
+                    },
+                    "status": {
+                        "description": "Status of the IPv4 gateway. Available: available. Creating: creating. Pending: configuring. Deleting: deleting.\n",
+                        "type": "string"
+                    },
+                    "updatedAt": {
+                        "description": "Last modification time of the IPv4 gateway.\n",
+                        "type": "string"
+                    },
+                    "vpcId": {
+                        "description": "ID of the VPC associated with the IPv4 gateway. If not associated, this field is empty.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accountId",
+                    "creationTime",
+                    "description",
+                    "enabled",
+                    "id",
+                    "ipv4GatewayId",
+                    "ipv4GatewayName",
+                    "routeTableId",
+                    "status",
+                    "updatedAt",
+                    "vpcId"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:vpc/getIpv4Gateways:getIpv4Gateways": {
+            "description": "Plural Data Source schema for Byteplus::VPC::Ipv4Gateway\n",
+            "outputs": {
+                "description": "A collection of values returned by getIpv4Gateways.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:vpc/getIpv6AddressBandwidth:getIpv6AddressBandwidth": {
             "description": "Data Source schema for Byteplus::VPC::Ipv6AddressBandwidth\n",
             "inputs": {
@@ -162388,6 +164400,149 @@
                 "type": "object"
             }
         },
+        "bytepluscc:waf/getCustomPage:getCustomPage": {
+            "description": "Data Source schema for Byteplus::WAF::CustomPage\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getCustomPage.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getCustomPage.\n",
+                "properties": {
+                    "accurate": {
+                        "$ref": "#/types/bytepluscc:waf/getCustomPageAccurate:getCustomPageAccurate",
+                        "description": "Advanced condition configuration. Only takes effect when Advanced=1.\n"
+                    },
+                    "advanced": {
+                        "description": "Enable advanced conditions. 0: Off (default); 1: On. If enabled, Accurate must also be configured.\n",
+                        "type": "integer"
+                    },
+                    "body": {
+                        "description": "Custom response page content. Maximum length: 4096 bytes. Only effective when PageMode=0.\n",
+                        "type": "string"
+                    },
+                    "clientIp": {
+                        "description": "Client IP. Value is fixed as ALL, meaning it applies to all source IPs.\n",
+                        "type": "string"
+                    },
+                    "code": {
+                        "description": "Custom response status code, such as 403, 405, 503. Only effective when PageMode=0.\n",
+                        "type": "string"
+                    },
+                    "contentType": {
+                        "description": "Custom response Content-Type response header. For example: text/html, application/json, etc. Only effective when PageMode=0.\n",
+                        "type": "string"
+                    },
+                    "description": {
+                        "description": "Rule description.\n",
+                        "type": "string"
+                    },
+                    "enable": {
+                        "description": "Rule switch. 0: Off; 1: On.\n",
+                        "type": "integer"
+                    },
+                    "host": {
+                        "description": "Domain name. The website domain name to be protected. Before calling, make sure the domain name has been added to the current WAF instance.\n",
+                        "type": "string"
+                    },
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "name": {
+                        "description": "Rule name. Must start with a Chinese character, letter, or number. Allows Chinese characters, letters, numbers, periods (.), underscores (_), and hyphens (-). Length: 1–128 characters.\n",
+                        "type": "string"
+                    },
+                    "pageMode": {
+                        "description": "Response page mode. 0: Custom response body; 2: Redirect URL.\n",
+                        "type": "integer"
+                    },
+                    "policy": {
+                        "description": "Associated protection policy. 1: Observe; 8: Block.\n",
+                        "type": "integer"
+                    },
+                    "projectName": {
+                        "description": "Project name, which is the project associated with the current resource. Only projects with permissions under the current identity can be associated. Default is default.\n",
+                        "type": "string"
+                    },
+                    "redirectUrl": {
+                        "description": "Redirect target URL. Only effective when PageMode=2.\n",
+                        "type": "string"
+                    },
+                    "ruleId": {
+                        "description": "Custom block response rule ID.\n",
+                        "type": "string"
+                    },
+                    "ruleTag": {
+                        "description": "Rule display ID. The RuleTag prefix for custom interception response rules is always B, consisting of the prefix B and a 12-digit RuleId (zero-padded in the middle if fewer than 12 digits). For example, RuleId=116869 corresponds to RuleTag=B000000116869.\n",
+                        "type": "string"
+                    },
+                    "updateTime": {
+                        "description": "Last updated time of the rule.\n",
+                        "type": "string"
+                    },
+                    "url": {
+                        "description": "URL path where the rule takes effect.\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "accurate",
+                    "advanced",
+                    "body",
+                    "clientIp",
+                    "code",
+                    "contentType",
+                    "description",
+                    "enable",
+                    "host",
+                    "id",
+                    "name",
+                    "pageMode",
+                    "policy",
+                    "projectName",
+                    "redirectUrl",
+                    "ruleId",
+                    "ruleTag",
+                    "updateTime",
+                    "url"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/getCustomPages:getCustomPages": {
+            "description": "Plural Data Source schema for Byteplus::WAF::CustomPage\n",
+            "outputs": {
+                "description": "A collection of values returned by getCustomPages.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
         "bytepluscc:waf/getDomain:getDomain": {
             "description": "Data Source schema for Byteplus::WAF::Domain\n",
             "inputs": {
@@ -162901,6 +165056,186 @@
             "description": "Plural Data Source schema for Byteplus::WAF::HostGroup\n",
             "outputs": {
                 "description": "A collection of values returned by getHostGroups.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/getIpGroup:getIpGroup": {
+            "description": "Data Source schema for Byteplus::WAF::IpGroup\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getIpGroup.\n",
+                "properties": {
+                    "id": {
+                        "type": "string",
+                        "description": "Uniquely identifies the resource.\n"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getIpGroup.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the resource.\n",
+                        "type": "string"
+                    },
+                    "ipCount": {
+                        "description": "Number of IPs in the IP Address Group\n",
+                        "type": "integer"
+                    },
+                    "ipGroupId": {
+                        "description": "IP Address Group ID\n",
+                        "type": "string"
+                    },
+                    "ipLists": {
+                        "description": "IP Address or Address Range List\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    },
+                    "name": {
+                        "description": "IP Address Group Name\n",
+                        "type": "string"
+                    },
+                    "relatedRules": {
+                        "description": "Associated Rule\n",
+                        "items": {
+                            "$ref": "#/types/bytepluscc:waf/getIpGroupRelatedRule:getIpGroupRelatedRule"
+                        },
+                        "type": "array"
+                    },
+                    "updateTime": {
+                        "description": "Last Updated\n",
+                        "type": "string"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ipCount",
+                    "ipGroupId",
+                    "ipLists",
+                    "name",
+                    "relatedRules",
+                    "updateTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/getIpGroups:getIpGroups": {
+            "description": "Plural Data Source schema for Byteplus::WAF::IpGroup\n",
+            "outputs": {
+                "description": "A collection of values returned by getIpGroups.\n",
+                "properties": {
+                    "id": {
+                        "description": "Uniquely identifies the data source.\n",
+                        "type": "string"
+                    },
+                    "ids": {
+                        "description": "Set of Resource Identifiers.\n",
+                        "items": {
+                            "type": "string"
+                        },
+                        "type": "array"
+                    }
+                },
+                "required": [
+                    "id",
+                    "ids"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/getSystemBot:getSystemBot": {
+            "description": "Data Source schema for Byteplus::WAF::SystemBot\n",
+            "inputs": {
+                "description": "A collection of arguments for invoking getSystemBot.\n",
+                "properties": {
+                    "id": {
+                        "type": "string"
+                    }
+                },
+                "type": "object",
+                "required": [
+                    "id"
+                ]
+            },
+            "outputs": {
+                "description": "A collection of values returned by getSystemBot.\n",
+                "properties": {
+                    "action": {
+                        "type": "string"
+                    },
+                    "botType": {
+                        "type": "string"
+                    },
+                    "description": {
+                        "type": "string"
+                    },
+                    "enable": {
+                        "type": "integer"
+                    },
+                    "host": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "string"
+                    },
+                    "ipMatch": {
+                        "type": "boolean"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "projectName": {
+                        "type": "string"
+                    },
+                    "ruleTag": {
+                        "type": "string"
+                    },
+                    "verificationExemptionTime": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "action",
+                    "botType",
+                    "description",
+                    "enable",
+                    "host",
+                    "id",
+                    "ipMatch",
+                    "name",
+                    "projectName",
+                    "ruleTag",
+                    "verificationExemptionTime"
+                ],
+                "type": "object"
+            }
+        },
+        "bytepluscc:waf/getSystemBots:getSystemBots": {
+            "description": "Plural Data Source schema for Byteplus::WAF::SystemBot\n",
+            "outputs": {
+                "description": "A collection of values returned by getSystemBots.\n",
                 "properties": {
                     "id": {
                         "description": "Uniquely identifies the data source.\n",

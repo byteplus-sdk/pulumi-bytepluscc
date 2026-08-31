@@ -6,6 +6,8 @@ package com.byteplus.bytepluscc.ecs;
 import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.ecs.inputs.GetCommandArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetCommandPlainArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetDedicatedHostClusterArgs;
+import com.byteplus.bytepluscc.ecs.inputs.GetDedicatedHostClusterPlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetDeploymentSetArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetDeploymentSetPlainArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetHpcClusterArgs;
@@ -26,6 +28,8 @@ import com.byteplus.bytepluscc.ecs.inputs.GetScheduledInstanceArgs;
 import com.byteplus.bytepluscc.ecs.inputs.GetScheduledInstancePlainArgs;
 import com.byteplus.bytepluscc.ecs.outputs.GetCommandResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetCommandsResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetDedicatedHostClusterResult;
+import com.byteplus.bytepluscc.ecs.outputs.GetDedicatedHostClustersResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetDeploymentSetResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetDeploymentSetsResult;
 import com.byteplus.bytepluscc.ecs.outputs.GetHpcClusterResult;
@@ -136,6 +140,90 @@ public final class EcsFunctions {
      */
     public static CompletableFuture<GetCommandsResult> getCommandsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getCommands:getCommands", TypeShape.of(GetCommandsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClusterResult> getDedicatedHostCluster(GetDedicatedHostClusterArgs args) {
+        return getDedicatedHostCluster(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClusterResult> getDedicatedHostClusterPlain(GetDedicatedHostClusterPlainArgs args) {
+        return getDedicatedHostClusterPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClusterResult> getDedicatedHostCluster(GetDedicatedHostClusterArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getDedicatedHostCluster:getDedicatedHostCluster", TypeShape.of(GetDedicatedHostClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClusterResult> getDedicatedHostCluster(GetDedicatedHostClusterArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getDedicatedHostCluster:getDedicatedHostCluster", TypeShape.of(GetDedicatedHostClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClusterResult> getDedicatedHostClusterPlain(GetDedicatedHostClusterPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getDedicatedHostCluster:getDedicatedHostCluster", TypeShape.of(GetDedicatedHostClusterResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClustersResult> getDedicatedHostClusters() {
+        return getDedicatedHostClusters(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClustersResult> getDedicatedHostClustersPlain() {
+        return getDedicatedHostClustersPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClustersResult> getDedicatedHostClusters(InvokeArgs args) {
+        return getDedicatedHostClusters(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClustersResult> getDedicatedHostClustersPlain(InvokeArgs args) {
+        return getDedicatedHostClustersPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClustersResult> getDedicatedHostClusters(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getDedicatedHostClusters:getDedicatedHostClusters", TypeShape.of(GetDedicatedHostClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static Output<GetDedicatedHostClustersResult> getDedicatedHostClusters(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:ecs/getDedicatedHostClusters:getDedicatedHostClusters", TypeShape.of(GetDedicatedHostClustersResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::ECS::DedicatedHostCluster
+     * 
+     */
+    public static CompletableFuture<GetDedicatedHostClustersResult> getDedicatedHostClustersPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:ecs/getDedicatedHostClusters:getDedicatedHostClusters", TypeShape.of(GetDedicatedHostClustersResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::ECS::DeploymentSet

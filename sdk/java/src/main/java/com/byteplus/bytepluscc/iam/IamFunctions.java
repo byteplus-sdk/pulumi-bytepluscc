@@ -8,6 +8,8 @@ import com.byteplus.bytepluscc.iam.inputs.GetAccesskeyArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetAccesskeyPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetAllowedIpAddressArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetAllowedIpAddressPlainArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetApiKeyArgs;
+import com.byteplus.bytepluscc.iam.inputs.GetApiKeyPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetGroupArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetGroupPlainArgs;
 import com.byteplus.bytepluscc.iam.inputs.GetOidcProviderArgs;
@@ -26,6 +28,8 @@ import com.byteplus.bytepluscc.iam.outputs.GetAccesskeyResult;
 import com.byteplus.bytepluscc.iam.outputs.GetAccesskeysResult;
 import com.byteplus.bytepluscc.iam.outputs.GetAllowedIpAddressResult;
 import com.byteplus.bytepluscc.iam.outputs.GetAllowedIpAddressesResult;
+import com.byteplus.bytepluscc.iam.outputs.GetApiKeyResult;
+import com.byteplus.bytepluscc.iam.outputs.GetApiKeysResult;
 import com.byteplus.bytepluscc.iam.outputs.GetGroupResult;
 import com.byteplus.bytepluscc.iam.outputs.GetGroupsResult;
 import com.byteplus.bytepluscc.iam.outputs.GetOidcProviderResult;
@@ -216,6 +220,90 @@ public final class IamFunctions {
      */
     public static CompletableFuture<GetAllowedIpAddressesResult> getAllowedIpAddressesPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:iam/getAllowedIpAddresses:getAllowedIpAddresses", TypeShape.of(GetAllowedIpAddressesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeyResult> getApiKey(GetApiKeyArgs args) {
+        return getApiKey(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeyResult> getApiKeyPlain(GetApiKeyPlainArgs args) {
+        return getApiKeyPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeyResult> getApiKey(GetApiKeyArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getApiKey:getApiKey", TypeShape.of(GetApiKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeyResult> getApiKey(GetApiKeyArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getApiKey:getApiKey", TypeShape.of(GetApiKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeyResult> getApiKeyPlain(GetApiKeyPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getApiKey:getApiKey", TypeShape.of(GetApiKeyResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeysResult> getApiKeys() {
+        return getApiKeys(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeysResult> getApiKeysPlain() {
+        return getApiKeysPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeysResult> getApiKeys(InvokeArgs args) {
+        return getApiKeys(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeysResult> getApiKeysPlain(InvokeArgs args) {
+        return getApiKeysPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeysResult> getApiKeys(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getApiKeys:getApiKeys", TypeShape.of(GetApiKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static Output<GetApiKeysResult> getApiKeys(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:iam/getApiKeys:getApiKeys", TypeShape.of(GetApiKeysResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::IAM::ApiKey
+     * 
+     */
+    public static CompletableFuture<GetApiKeysResult> getApiKeysPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:iam/getApiKeys:getApiKeys", TypeShape.of(GetApiKeysResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::IAM::Group

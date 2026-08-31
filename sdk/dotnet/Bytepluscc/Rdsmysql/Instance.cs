@@ -340,7 +340,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Output<string> InstanceStatus { get; private set; } = null!;
 
         /// <summary>
-        /// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        /// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         /// </summary>
         [Output("instanceType")]
         public Output<string> InstanceType { get; private set; } = null!;
@@ -695,7 +695,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Input<string>? InstanceName { get; set; }
 
         /// <summary>
-        /// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        /// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }
@@ -1068,7 +1068,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmysql
         public Input<string>? InstanceStatus { get; set; }
 
         /// <summary>
-        /// Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        /// Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         /// </summary>
         [Input("instanceType")]
         public Input<string>? InstanceType { get; set; }

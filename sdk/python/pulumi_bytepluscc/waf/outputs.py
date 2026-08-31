@@ -19,6 +19,8 @@ __all__ = [
     'CcRuleAccurateGroup',
     'CcRuleAccurateGroupAccurateRule',
     'CcRuleCronConf',
+    'CustomPageAccurate',
+    'CustomPageAccurateAccurateRule',
     'DomainBackendGroup',
     'DomainBackendGroupBackend',
     'DomainCloudAccessConfig',
@@ -27,9 +29,12 @@ __all__ = [
     'DomainTlsFieldsConfig',
     'DomainTlsFieldsConfigHeadersConfig',
     'HostGroupRelatedRule',
+    'IpGroupRelatedRule',
     'GetCcRuleAccurateGroupResult',
     'GetCcRuleAccurateGroupAccurateRuleResult',
     'GetCcRuleCronConfResult',
+    'GetCustomPageAccurateResult',
+    'GetCustomPageAccurateAccurateRuleResult',
     'GetDomainBackendGroupResult',
     'GetDomainBackendGroupBackendResult',
     'GetDomainCloudAccessConfigResult',
@@ -38,6 +43,7 @@ __all__ = [
     'GetDomainTlsFieldsConfigResult',
     'GetDomainTlsFieldsConfigHeadersConfigResult',
     'GetHostGroupRelatedRuleResult',
+    'GetIpGroupRelatedRuleResult',
 ]
 
 @pulumi.output_type
@@ -264,6 +270,144 @@ class CcRuleCronConf(dict):
         Threshold for a single object during this time period. Range: 1–300000.
         """
         return pulumi.get(self, "single_threshold")
+
+
+@pulumi.output_type
+class CustomPageAccurate(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "accurateRules":
+            suggest = "accurate_rules"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomPageAccurate. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomPageAccurate.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomPageAccurate.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 accurate_rules: Optional[Sequence['outputs.CustomPageAccurateAccurateRule']] = None,
+                 logic: Optional[_builtins.int] = None):
+        """
+        :param Sequence['CustomPageAccurateAccurateRuleArgs'] accurate_rules: Sub-rule list in advanced conditions.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param _builtins.int logic: Logical relationship between sub-rules. 0: OR; 1: AND.
+        """
+        if accurate_rules is not None:
+            pulumi.set(__self__, "accurate_rules", accurate_rules)
+        if logic is not None:
+            pulumi.set(__self__, "logic", logic)
+
+    @_builtins.property
+    @pulumi.getter(name="accurateRules")
+    def accurate_rules(self) -> Optional[Sequence['outputs.CustomPageAccurateAccurateRule']]:
+        """
+        Sub-rule list in advanced conditions.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "accurate_rules")
+
+    @_builtins.property
+    @pulumi.getter
+    def logic(self) -> Optional[_builtins.int]:
+        """
+        Logical relationship between sub-rules. 0: OR; 1: AND.
+        """
+        return pulumi.get(self, "logic")
+
+
+@pulumi.output_type
+class CustomPageAccurateAccurateRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "httpObj":
+            suggest = "http_obj"
+        elif key == "objType":
+            suggest = "obj_type"
+        elif key == "valueString":
+            suggest = "value_string"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in CustomPageAccurateAccurateRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        CustomPageAccurateAccurateRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        CustomPageAccurateAccurateRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 http_obj: Optional[_builtins.str] = None,
+                 obj_type: Optional[_builtins.int] = None,
+                 opretar: Optional[_builtins.int] = None,
+                 property: Optional[_builtins.int] = None,
+                 value_string: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str http_obj: Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+        :param _builtins.int obj_type: Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+        :param _builtins.int opretar: Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+        :param _builtins.int property: Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+        :param _builtins.str value_string: Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+        """
+        if http_obj is not None:
+            pulumi.set(__self__, "http_obj", http_obj)
+        if obj_type is not None:
+            pulumi.set(__self__, "obj_type", obj_type)
+        if opretar is not None:
+            pulumi.set(__self__, "opretar", opretar)
+        if property is not None:
+            pulumi.set(__self__, "property", property)
+        if value_string is not None:
+            pulumi.set(__self__, "value_string", value_string)
+
+    @_builtins.property
+    @pulumi.getter(name="httpObj")
+    def http_obj(self) -> Optional[_builtins.str]:
+        """
+        Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+        """
+        return pulumi.get(self, "http_obj")
+
+    @_builtins.property
+    @pulumi.getter(name="objType")
+    def obj_type(self) -> Optional[_builtins.int]:
+        """
+        Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+        """
+        return pulumi.get(self, "obj_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def opretar(self) -> Optional[_builtins.int]:
+        """
+        Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+        """
+        return pulumi.get(self, "opretar")
+
+    @_builtins.property
+    @pulumi.getter
+    def property(self) -> Optional[_builtins.int]:
+        """
+        Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+        """
+        return pulumi.get(self, "property")
+
+    @_builtins.property
+    @pulumi.getter(name="valueString")
+    def value_string(self) -> Optional[_builtins.str]:
+        """
+        Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+        """
+        return pulumi.get(self, "value_string")
 
 
 @pulumi.output_type
@@ -831,6 +975,70 @@ class HostGroupRelatedRule(dict):
 
 
 @pulumi.output_type
+class IpGroupRelatedRule(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "ruleName":
+            suggest = "rule_name"
+        elif key == "ruleTag":
+            suggest = "rule_tag"
+        elif key == "ruleType":
+            suggest = "rule_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in IpGroupRelatedRule. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        IpGroupRelatedRule.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        IpGroupRelatedRule.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 rule_name: Optional[_builtins.str] = None,
+                 rule_tag: Optional[_builtins.str] = None,
+                 rule_type: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str rule_name: Rule Name
+        :param _builtins.str rule_tag: Rule ID
+        :param _builtins.str rule_type: Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+        """
+        if rule_name is not None:
+            pulumi.set(__self__, "rule_name", rule_name)
+        if rule_tag is not None:
+            pulumi.set(__self__, "rule_tag", rule_tag)
+        if rule_type is not None:
+            pulumi.set(__self__, "rule_type", rule_type)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> Optional[_builtins.str]:
+        """
+        Rule Name
+        """
+        return pulumi.get(self, "rule_name")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTag")
+    def rule_tag(self) -> Optional[_builtins.str]:
+        """
+        Rule ID
+        """
+        return pulumi.get(self, "rule_tag")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> Optional[_builtins.str]:
+        """
+        Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+        """
+        return pulumi.get(self, "rule_type")
+
+
+@pulumi.output_type
 class GetCcRuleAccurateGroupResult(dict):
     def __init__(__self__, *,
                  accurate_group_priority: _builtins.int,
@@ -981,6 +1189,97 @@ class GetCcRuleCronConfResult(dict):
         Threshold for a single object during this time period. Range: 1–300000.
         """
         return pulumi.get(self, "single_threshold")
+
+
+@pulumi.output_type
+class GetCustomPageAccurateResult(dict):
+    def __init__(__self__, *,
+                 accurate_rules: Sequence['outputs.GetCustomPageAccurateAccurateRuleResult'],
+                 logic: _builtins.int):
+        """
+        :param Sequence['GetCustomPageAccurateAccurateRuleArgs'] accurate_rules: Sub-rule list in advanced conditions.
+        :param _builtins.int logic: Logical relationship between sub-rules. 0: OR; 1: AND.
+        """
+        pulumi.set(__self__, "accurate_rules", accurate_rules)
+        pulumi.set(__self__, "logic", logic)
+
+    @_builtins.property
+    @pulumi.getter(name="accurateRules")
+    def accurate_rules(self) -> Sequence['outputs.GetCustomPageAccurateAccurateRuleResult']:
+        """
+        Sub-rule list in advanced conditions.
+        """
+        return pulumi.get(self, "accurate_rules")
+
+    @_builtins.property
+    @pulumi.getter
+    def logic(self) -> _builtins.int:
+        """
+        Logical relationship between sub-rules. 0: OR; 1: AND.
+        """
+        return pulumi.get(self, "logic")
+
+
+@pulumi.output_type
+class GetCustomPageAccurateAccurateRuleResult(dict):
+    def __init__(__self__, *,
+                 http_obj: _builtins.str,
+                 obj_type: _builtins.int,
+                 opretar: _builtins.int,
+                 property: _builtins.int,
+                 value_string: _builtins.str):
+        """
+        :param _builtins.str http_obj: Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+        :param _builtins.int obj_type: Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+        :param _builtins.int opretar: Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+        :param _builtins.int property: Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+        :param _builtins.str value_string: Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+        """
+        pulumi.set(__self__, "http_obj", http_obj)
+        pulumi.set(__self__, "obj_type", obj_type)
+        pulumi.set(__self__, "opretar", opretar)
+        pulumi.set(__self__, "property", property)
+        pulumi.set(__self__, "value_string", value_string)
+
+    @_builtins.property
+    @pulumi.getter(name="httpObj")
+    def http_obj(self) -> _builtins.str:
+        """
+        Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+        """
+        return pulumi.get(self, "http_obj")
+
+    @_builtins.property
+    @pulumi.getter(name="objType")
+    def obj_type(self) -> _builtins.int:
+        """
+        Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+        """
+        return pulumi.get(self, "obj_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def opretar(self) -> _builtins.int:
+        """
+        Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+        """
+        return pulumi.get(self, "opretar")
+
+    @_builtins.property
+    @pulumi.getter
+    def property(self) -> _builtins.int:
+        """
+        Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+        """
+        return pulumi.get(self, "property")
+
+    @_builtins.property
+    @pulumi.getter(name="valueString")
+    def value_string(self) -> _builtins.str:
+        """
+        Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+        """
+        return pulumi.get(self, "value_string")
 
 
 @pulumi.output_type
@@ -1381,6 +1680,46 @@ class GetHostGroupRelatedRuleResult(dict):
     def rule_type(self) -> _builtins.str:
         """
         Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+        """
+        return pulumi.get(self, "rule_type")
+
+
+@pulumi.output_type
+class GetIpGroupRelatedRuleResult(dict):
+    def __init__(__self__, *,
+                 rule_name: _builtins.str,
+                 rule_tag: _builtins.str,
+                 rule_type: _builtins.str):
+        """
+        :param _builtins.str rule_name: Rule Name
+        :param _builtins.str rule_tag: Rule ID
+        :param _builtins.str rule_type: Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+        """
+        pulumi.set(__self__, "rule_name", rule_name)
+        pulumi.set(__self__, "rule_tag", rule_tag)
+        pulumi.set(__self__, "rule_type", rule_type)
+
+    @_builtins.property
+    @pulumi.getter(name="ruleName")
+    def rule_name(self) -> _builtins.str:
+        """
+        Rule Name
+        """
+        return pulumi.get(self, "rule_name")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleTag")
+    def rule_tag(self) -> _builtins.str:
+        """
+        Rule ID
+        """
+        return pulumi.get(self, "rule_tag")
+
+    @_builtins.property
+    @pulumi.getter(name="ruleType")
+    def rule_type(self) -> _builtins.str:
+        """
+        Rule type. Allow indicates an allowlist; Block indicates a blocklist.
         """
         return pulumi.get(self, "rule_type")
 

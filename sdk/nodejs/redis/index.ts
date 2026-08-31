@@ -60,6 +60,16 @@ export const getInstances: typeof import("./getInstances").getInstances = null a
 export const getInstancesOutput: typeof import("./getInstances").getInstancesOutput = null as any;
 utilities.lazyLoad(exports, ["getInstances","getInstancesOutput"], () => require("./getInstances"));
 
+export { GetKeyScanJobArgs, GetKeyScanJobResult, GetKeyScanJobOutputArgs } from "./getKeyScanJob";
+export const getKeyScanJob: typeof import("./getKeyScanJob").getKeyScanJob = null as any;
+export const getKeyScanJobOutput: typeof import("./getKeyScanJob").getKeyScanJobOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyScanJob","getKeyScanJobOutput"], () => require("./getKeyScanJob"));
+
+export { GetKeyScanJobsResult } from "./getKeyScanJobs";
+export const getKeyScanJobs: typeof import("./getKeyScanJobs").getKeyScanJobs = null as any;
+export const getKeyScanJobsOutput: typeof import("./getKeyScanJobs").getKeyScanJobsOutput = null as any;
+utilities.lazyLoad(exports, ["getKeyScanJobs","getKeyScanJobsOutput"], () => require("./getKeyScanJobs"));
+
 export { GetParameterGroupArgs, GetParameterGroupResult, GetParameterGroupOutputArgs } from "./getParameterGroup";
 export const getParameterGroup: typeof import("./getParameterGroup").getParameterGroup = null as any;
 export const getParameterGroupOutput: typeof import("./getParameterGroup").getParameterGroupOutput = null as any;
@@ -74,6 +84,11 @@ export { InstanceArgs, InstanceState } from "./instance";
 export type Instance = import("./instance").Instance;
 export const Instance: typeof import("./instance").Instance = null as any;
 utilities.lazyLoad(exports, ["Instance"], () => require("./instance"));
+
+export { KeyScanJobArgs, KeyScanJobState } from "./keyScanJob";
+export type KeyScanJob = import("./keyScanJob").KeyScanJob;
+export const KeyScanJob: typeof import("./keyScanJob").KeyScanJob = null as any;
+utilities.lazyLoad(exports, ["KeyScanJob"], () => require("./keyScanJob"));
 
 export { ParameterGroupArgs, ParameterGroupState } from "./parameterGroup";
 export type ParameterGroup = import("./parameterGroup").ParameterGroup;
@@ -93,6 +108,8 @@ const _module = {
                 return new EndpointPublicAddress(name, <any>undefined, { urn })
             case "bytepluscc:redis/instance:Instance":
                 return new Instance(name, <any>undefined, { urn })
+            case "bytepluscc:redis/keyScanJob:KeyScanJob":
+                return new KeyScanJob(name, <any>undefined, { urn })
             case "bytepluscc:redis/parameterGroup:ParameterGroup":
                 return new ParameterGroup(name, <any>undefined, { urn })
             default:
@@ -104,4 +121,5 @@ pulumi.runtime.registerResourceModule("bytepluscc", "redis/account", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/allowList", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/endpointPublicAddress", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/instance", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "redis/keyScanJob", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "redis/parameterGroup", _module)

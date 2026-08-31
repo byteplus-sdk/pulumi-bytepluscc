@@ -570,7 +570,7 @@ class GetInstanceResult:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> _builtins.str:
         """
-        Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         """
         return pulumi.get(self, "instance_type")
 

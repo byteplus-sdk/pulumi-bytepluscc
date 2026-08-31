@@ -288,6 +288,479 @@ func (o CommandTagArrayOutput) Index(i pulumi.IntInput) CommandTagOutput {
 	}).(CommandTagOutput)
 }
 
+type DedicatedHostClusterDedicatedHostClusterCapacity struct {
+	// Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AvailableInstanceTypes []DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType `pulumi:"availableInstanceTypes"`
+	// Total remaining available memory in this dedicated host cluster, measured in GiB.
+	AvailableMemory *int `pulumi:"availableMemory"`
+	// Total remaining available vCPU count in this dedicated host cluster.
+	AvailableVcpus *int `pulumi:"availableVcpus"`
+	// Available and total capacity of each type of local disk in this dedicated host cluster.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	LocalVolumeCapacities []DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity `pulumi:"localVolumeCapacities"`
+	// Total memory of this dedicated host cluster, measured in GiB.
+	TotalMemory *int `pulumi:"totalMemory"`
+	// Total vCPU count of this dedicated host cluster.
+	TotalVcpus *int `pulumi:"totalVcpus"`
+}
+
+// DedicatedHostClusterDedicatedHostClusterCapacityInput is an input type that accepts DedicatedHostClusterDedicatedHostClusterCapacityArgs and DedicatedHostClusterDedicatedHostClusterCapacityOutput values.
+// You can construct a concrete instance of `DedicatedHostClusterDedicatedHostClusterCapacityInput` via:
+//
+//	DedicatedHostClusterDedicatedHostClusterCapacityArgs{...}
+type DedicatedHostClusterDedicatedHostClusterCapacityInput interface {
+	pulumi.Input
+
+	ToDedicatedHostClusterDedicatedHostClusterCapacityOutput() DedicatedHostClusterDedicatedHostClusterCapacityOutput
+	ToDedicatedHostClusterDedicatedHostClusterCapacityOutputWithContext(context.Context) DedicatedHostClusterDedicatedHostClusterCapacityOutput
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityArgs struct {
+	// Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	AvailableInstanceTypes DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput `pulumi:"availableInstanceTypes"`
+	// Total remaining available memory in this dedicated host cluster, measured in GiB.
+	AvailableMemory pulumi.IntPtrInput `pulumi:"availableMemory"`
+	// Total remaining available vCPU count in this dedicated host cluster.
+	AvailableVcpus pulumi.IntPtrInput `pulumi:"availableVcpus"`
+	// Available and total capacity of each type of local disk in this dedicated host cluster.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	LocalVolumeCapacities DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput `pulumi:"localVolumeCapacities"`
+	// Total memory of this dedicated host cluster, measured in GiB.
+	TotalMemory pulumi.IntPtrInput `pulumi:"totalMemory"`
+	// Total vCPU count of this dedicated host cluster.
+	TotalVcpus pulumi.IntPtrInput `pulumi:"totalVcpus"`
+}
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacity)(nil)).Elem()
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityArgs) ToDedicatedHostClusterDedicatedHostClusterCapacityOutput() DedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return i.ToDedicatedHostClusterDedicatedHostClusterCapacityOutputWithContext(context.Background())
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityArgs) ToDedicatedHostClusterDedicatedHostClusterCapacityOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedHostClusterDedicatedHostClusterCapacityOutput)
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityArgs) ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutput() DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput {
+	return i.ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(context.Background())
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityArgs) ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedHostClusterDedicatedHostClusterCapacityOutput).ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(ctx)
+}
+
+// DedicatedHostClusterDedicatedHostClusterCapacityPtrInput is an input type that accepts DedicatedHostClusterDedicatedHostClusterCapacityArgs, DedicatedHostClusterDedicatedHostClusterCapacityPtr and DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput values.
+// You can construct a concrete instance of `DedicatedHostClusterDedicatedHostClusterCapacityPtrInput` via:
+//
+//	        DedicatedHostClusterDedicatedHostClusterCapacityArgs{...}
+//
+//	or:
+//
+//	        nil
+type DedicatedHostClusterDedicatedHostClusterCapacityPtrInput interface {
+	pulumi.Input
+
+	ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutput() DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput
+	ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(context.Context) DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput
+}
+
+type dedicatedHostClusterDedicatedHostClusterCapacityPtrType DedicatedHostClusterDedicatedHostClusterCapacityArgs
+
+func DedicatedHostClusterDedicatedHostClusterCapacityPtr(v *DedicatedHostClusterDedicatedHostClusterCapacityArgs) DedicatedHostClusterDedicatedHostClusterCapacityPtrInput {
+	return (*dedicatedHostClusterDedicatedHostClusterCapacityPtrType)(v)
+}
+
+func (*dedicatedHostClusterDedicatedHostClusterCapacityPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**DedicatedHostClusterDedicatedHostClusterCapacity)(nil)).Elem()
+}
+
+func (i *dedicatedHostClusterDedicatedHostClusterCapacityPtrType) ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutput() DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput {
+	return i.ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(context.Background())
+}
+
+func (i *dedicatedHostClusterDedicatedHostClusterCapacityPtrType) ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput)
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityOutput struct{ *pulumi.OutputState }
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacity)(nil)).Elem()
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityOutput() DedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutput() DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput {
+	return o.ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(context.Background())
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v DedicatedHostClusterDedicatedHostClusterCapacity) *DedicatedHostClusterDedicatedHostClusterCapacity {
+		return &v
+	}).(DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput)
+}
+
+// Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) AvailableInstanceTypes() DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacity) []DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType {
+		return v.AvailableInstanceTypes
+	}).(DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput)
+}
+
+// Total remaining available memory in this dedicated host cluster, measured in GiB.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) AvailableMemory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacity) *int { return v.AvailableMemory }).(pulumi.IntPtrOutput)
+}
+
+// Total remaining available vCPU count in this dedicated host cluster.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) AvailableVcpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacity) *int { return v.AvailableVcpus }).(pulumi.IntPtrOutput)
+}
+
+// Available and total capacity of each type of local disk in this dedicated host cluster.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) LocalVolumeCapacities() DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacity) []DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity {
+		return v.LocalVolumeCapacities
+	}).(DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput)
+}
+
+// Total memory of this dedicated host cluster, measured in GiB.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) TotalMemory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacity) *int { return v.TotalMemory }).(pulumi.IntPtrOutput)
+}
+
+// Total vCPU count of this dedicated host cluster.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityOutput) TotalVcpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacity) *int { return v.TotalVcpus }).(pulumi.IntPtrOutput)
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput struct{ *pulumi.OutputState }
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**DedicatedHostClusterDedicatedHostClusterCapacity)(nil)).Elem()
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutput() DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityPtrOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) Elem() DedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return o.ApplyT(func(v *DedicatedHostClusterDedicatedHostClusterCapacity) DedicatedHostClusterDedicatedHostClusterCapacity {
+		if v != nil {
+			return *v
+		}
+		var ret DedicatedHostClusterDedicatedHostClusterCapacity
+		return ret
+	}).(DedicatedHostClusterDedicatedHostClusterCapacityOutput)
+}
+
+// Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) AvailableInstanceTypes() DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return o.ApplyT(func(v *DedicatedHostClusterDedicatedHostClusterCapacity) []DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType {
+		if v == nil {
+			return nil
+		}
+		return v.AvailableInstanceTypes
+	}).(DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput)
+}
+
+// Total remaining available memory in this dedicated host cluster, measured in GiB.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) AvailableMemory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DedicatedHostClusterDedicatedHostClusterCapacity) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AvailableMemory
+	}).(pulumi.IntPtrOutput)
+}
+
+// Total remaining available vCPU count in this dedicated host cluster.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) AvailableVcpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DedicatedHostClusterDedicatedHostClusterCapacity) *int {
+		if v == nil {
+			return nil
+		}
+		return v.AvailableVcpus
+	}).(pulumi.IntPtrOutput)
+}
+
+// Available and total capacity of each type of local disk in this dedicated host cluster.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) LocalVolumeCapacities() DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return o.ApplyT(func(v *DedicatedHostClusterDedicatedHostClusterCapacity) []DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity {
+		if v == nil {
+			return nil
+		}
+		return v.LocalVolumeCapacities
+	}).(DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput)
+}
+
+// Total memory of this dedicated host cluster, measured in GiB.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) TotalMemory() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DedicatedHostClusterDedicatedHostClusterCapacity) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TotalMemory
+	}).(pulumi.IntPtrOutput)
+}
+
+// Total vCPU count of this dedicated host cluster.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput) TotalVcpus() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *DedicatedHostClusterDedicatedHostClusterCapacity) *int {
+		if v == nil {
+			return nil
+		}
+		return v.TotalVcpus
+	}).(pulumi.IntPtrOutput)
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType struct {
+	// Number of instances of this type that can still be created in the dedicated host cluster.
+	AvailableCapacity *int `pulumi:"availableCapacity"`
+	// Instance type.
+	InstanceType *string `pulumi:"instanceType"`
+}
+
+// DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput is an input type that accepts DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs and DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput values.
+// You can construct a concrete instance of `DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput` via:
+//
+//	DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs{...}
+type DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput interface {
+	pulumi.Input
+
+	ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput() DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput
+	ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutputWithContext(context.Context) DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs struct {
+	// Number of instances of this type that can still be created in the dedicated host cluster.
+	AvailableCapacity pulumi.IntPtrInput `pulumi:"availableCapacity"`
+	// Instance type.
+	InstanceType pulumi.StringPtrInput `pulumi:"instanceType"`
+}
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)(nil)).Elem()
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs) ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput() DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return i.ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutputWithContext(context.Background())
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs) ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput)
+}
+
+// DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput is an input type that accepts DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray and DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput values.
+// You can construct a concrete instance of `DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput` via:
+//
+//	DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray{ DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs{...} }
+type DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput interface {
+	pulumi.Input
+
+	ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput() DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput
+	ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutputWithContext(context.Context) DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray []DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)(nil)).Elem()
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray) ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput() DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return i.ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutputWithContext(context.Background())
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray) ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput)
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput struct{ *pulumi.OutputState }
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)(nil)).Elem()
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput() DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return o
+}
+
+// Number of instances of this type that can still be created in the dedicated host cluster.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) AvailableCapacity() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType) *int {
+		return v.AvailableCapacity
+	}).(pulumi.IntPtrOutput)
+}
+
+// Instance type.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) InstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType) *string {
+		return v.InstanceType
+	}).(pulumi.StringPtrOutput)
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)(nil)).Elem()
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput() DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput) Index(i pulumi.IntInput) DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType {
+		return vs[0].([]DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)[vs[1].(int)]
+	}).(DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput)
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity struct {
+	// Remaining available capacity of this type of local disk, measured in GiB.
+	AvailableSize *int `pulumi:"availableSize"`
+	// Total capacity of this type of local disk, measured in GiB.
+	TotalSize *int `pulumi:"totalSize"`
+	// Local disk type.
+	VolumeType *string `pulumi:"volumeType"`
+}
+
+// DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput is an input type that accepts DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs and DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput values.
+// You can construct a concrete instance of `DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput` via:
+//
+//	DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs{...}
+type DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput interface {
+	pulumi.Input
+
+	ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput() DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput
+	ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutputWithContext(context.Context) DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs struct {
+	// Remaining available capacity of this type of local disk, measured in GiB.
+	AvailableSize pulumi.IntPtrInput `pulumi:"availableSize"`
+	// Total capacity of this type of local disk, measured in GiB.
+	TotalSize pulumi.IntPtrInput `pulumi:"totalSize"`
+	// Local disk type.
+	VolumeType pulumi.StringPtrInput `pulumi:"volumeType"`
+}
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)(nil)).Elem()
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs) ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput() DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return i.ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutputWithContext(context.Background())
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs) ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput)
+}
+
+// DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput is an input type that accepts DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray and DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput values.
+// You can construct a concrete instance of `DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput` via:
+//
+//	DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray{ DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs{...} }
+type DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput interface {
+	pulumi.Input
+
+	ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput() DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput
+	ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutputWithContext(context.Context) DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray []DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)(nil)).Elem()
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray) ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput() DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return i.ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutputWithContext(context.Background())
+}
+
+func (i DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray) ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput)
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput struct{ *pulumi.OutputState }
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)(nil)).Elem()
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput() DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return o
+}
+
+// Remaining available capacity of this type of local disk, measured in GiB.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) AvailableSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity) *int {
+		return v.AvailableSize
+	}).(pulumi.IntPtrOutput)
+}
+
+// Total capacity of this type of local disk, measured in GiB.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) TotalSize() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity) *int { return v.TotalSize }).(pulumi.IntPtrOutput)
+}
+
+// Local disk type.
+func (o DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) VolumeType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity) *string {
+		return v.VolumeType
+	}).(pulumi.StringPtrOutput)
+}
+
+type DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput struct{ *pulumi.OutputState }
+
+func (DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)(nil)).Elem()
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput() DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput) ToDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutputWithContext(ctx context.Context) DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return o
+}
+
+func (o DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput) Index(i pulumi.IntInput) DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity {
+		return vs[0].([]DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)[vs[1].(int)]
+	}).(DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput)
+}
+
 type DeploymentSetCapacity struct {
 	// You can also include the number of ECS instances in the current deployment set within this availability zone.
 	AvailableCount *int `pulumi:"availableCount"`
@@ -9032,6 +9505,336 @@ func (o GetCommandTagArrayOutput) Index(i pulumi.IntInput) GetCommandTagOutput {
 	}).(GetCommandTagOutput)
 }
 
+type GetDedicatedHostClusterDedicatedHostClusterCapacity struct {
+	// Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+	AvailableInstanceTypes []GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType `pulumi:"availableInstanceTypes"`
+	// Total remaining available memory in this dedicated host cluster, measured in GiB.
+	AvailableMemory int `pulumi:"availableMemory"`
+	// Total remaining available vCPU count in this dedicated host cluster.
+	AvailableVcpus int `pulumi:"availableVcpus"`
+	// Available and total capacity of each type of local disk in this dedicated host cluster.
+	LocalVolumeCapacities []GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity `pulumi:"localVolumeCapacities"`
+	// Total memory of this dedicated host cluster, measured in GiB.
+	TotalMemory int `pulumi:"totalMemory"`
+	// Total vCPU count of this dedicated host cluster.
+	TotalVcpus int `pulumi:"totalVcpus"`
+}
+
+// GetDedicatedHostClusterDedicatedHostClusterCapacityInput is an input type that accepts GetDedicatedHostClusterDedicatedHostClusterCapacityArgs and GetDedicatedHostClusterDedicatedHostClusterCapacityOutput values.
+// You can construct a concrete instance of `GetDedicatedHostClusterDedicatedHostClusterCapacityInput` via:
+//
+//	GetDedicatedHostClusterDedicatedHostClusterCapacityArgs{...}
+type GetDedicatedHostClusterDedicatedHostClusterCapacityInput interface {
+	pulumi.Input
+
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityOutput
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityOutputWithContext(context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityOutput
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityArgs struct {
+	// Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+	AvailableInstanceTypes GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput `pulumi:"availableInstanceTypes"`
+	// Total remaining available memory in this dedicated host cluster, measured in GiB.
+	AvailableMemory pulumi.IntInput `pulumi:"availableMemory"`
+	// Total remaining available vCPU count in this dedicated host cluster.
+	AvailableVcpus pulumi.IntInput `pulumi:"availableVcpus"`
+	// Available and total capacity of each type of local disk in this dedicated host cluster.
+	LocalVolumeCapacities GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput `pulumi:"localVolumeCapacities"`
+	// Total memory of this dedicated host cluster, measured in GiB.
+	TotalMemory pulumi.IntInput `pulumi:"totalMemory"`
+	// Total vCPU count of this dedicated host cluster.
+	TotalVcpus pulumi.IntInput `pulumi:"totalVcpus"`
+}
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacity)(nil)).Elem()
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityArgs) ToGetDedicatedHostClusterDedicatedHostClusterCapacityOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return i.ToGetDedicatedHostClusterDedicatedHostClusterCapacityOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityArgs) ToGetDedicatedHostClusterDedicatedHostClusterCapacityOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedHostClusterDedicatedHostClusterCapacityOutput)
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacity)(nil)).Elem()
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return o
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityOutput {
+	return o
+}
+
+// Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) AvailableInstanceTypes() GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacity) []GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType {
+		return v.AvailableInstanceTypes
+	}).(GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput)
+}
+
+// Total remaining available memory in this dedicated host cluster, measured in GiB.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) AvailableMemory() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacity) int { return v.AvailableMemory }).(pulumi.IntOutput)
+}
+
+// Total remaining available vCPU count in this dedicated host cluster.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) AvailableVcpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacity) int { return v.AvailableVcpus }).(pulumi.IntOutput)
+}
+
+// Available and total capacity of each type of local disk in this dedicated host cluster.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) LocalVolumeCapacities() GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacity) []GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity {
+		return v.LocalVolumeCapacities
+	}).(GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput)
+}
+
+// Total memory of this dedicated host cluster, measured in GiB.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) TotalMemory() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacity) int { return v.TotalMemory }).(pulumi.IntOutput)
+}
+
+// Total vCPU count of this dedicated host cluster.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityOutput) TotalVcpus() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacity) int { return v.TotalVcpus }).(pulumi.IntOutput)
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType struct {
+	// Number of instances of this type that can still be created in the dedicated host cluster.
+	AvailableCapacity int `pulumi:"availableCapacity"`
+	// Instance type.
+	InstanceType string `pulumi:"instanceType"`
+}
+
+// GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput is an input type that accepts GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs and GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput values.
+// You can construct a concrete instance of `GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput` via:
+//
+//	GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs{...}
+type GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput interface {
+	pulumi.Input
+
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutputWithContext(context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs struct {
+	// Number of instances of this type that can still be created in the dedicated host cluster.
+	AvailableCapacity pulumi.IntInput `pulumi:"availableCapacity"`
+	// Instance type.
+	InstanceType pulumi.StringInput `pulumi:"instanceType"`
+}
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)(nil)).Elem()
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs) ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return i.ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs) ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput)
+}
+
+// GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput is an input type that accepts GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray and GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput` via:
+//
+//	GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray{ GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs{...} }
+type GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutputWithContext(context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray []GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)(nil)).Elem()
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray) ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return i.ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray) ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput)
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)(nil)).Elem()
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return o
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return o
+}
+
+// Number of instances of this type that can still be created in the dedicated host cluster.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) AvailableCapacity() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType) int {
+		return v.AvailableCapacity
+	}).(pulumi.IntOutput)
+}
+
+// Instance type.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput) InstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType) string {
+		return v.InstanceType
+	}).(pulumi.StringOutput)
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)(nil)).Elem()
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return o
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput {
+	return o
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput) Index(i pulumi.IntInput) GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType {
+		return vs[0].([]GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType)[vs[1].(int)]
+	}).(GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput)
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity struct {
+	// Remaining available capacity of this type of local disk, measured in GiB.
+	AvailableSize int `pulumi:"availableSize"`
+	// Total capacity of this type of local disk, measured in GiB.
+	TotalSize int `pulumi:"totalSize"`
+	// Local disk type.
+	VolumeType string `pulumi:"volumeType"`
+}
+
+// GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput is an input type that accepts GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs and GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput values.
+// You can construct a concrete instance of `GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput` via:
+//
+//	GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs{...}
+type GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput interface {
+	pulumi.Input
+
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutputWithContext(context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs struct {
+	// Remaining available capacity of this type of local disk, measured in GiB.
+	AvailableSize pulumi.IntInput `pulumi:"availableSize"`
+	// Total capacity of this type of local disk, measured in GiB.
+	TotalSize pulumi.IntInput `pulumi:"totalSize"`
+	// Local disk type.
+	VolumeType pulumi.StringInput `pulumi:"volumeType"`
+}
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)(nil)).Elem()
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs) ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return i.ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs) ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput)
+}
+
+// GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput is an input type that accepts GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray and GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput values.
+// You can construct a concrete instance of `GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput` via:
+//
+//	GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray{ GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs{...} }
+type GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput interface {
+	pulumi.Input
+
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput
+	ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutputWithContext(context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray []GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)(nil)).Elem()
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray) ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return i.ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutputWithContext(context.Background())
+}
+
+func (i GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray) ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput)
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)(nil)).Elem()
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return o
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return o
+}
+
+// Remaining available capacity of this type of local disk, measured in GiB.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) AvailableSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity) int {
+		return v.AvailableSize
+	}).(pulumi.IntOutput)
+}
+
+// Total capacity of this type of local disk, measured in GiB.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) TotalSize() pulumi.IntOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity) int { return v.TotalSize }).(pulumi.IntOutput)
+}
+
+// Local disk type.
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput) VolumeType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity) string {
+		return v.VolumeType
+	}).(pulumi.StringOutput)
+}
+
+type GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput struct{ *pulumi.OutputState }
+
+func (GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)(nil)).Elem()
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput() GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return o
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput) ToGetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutputWithContext(ctx context.Context) GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput {
+	return o
+}
+
+func (o GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput) Index(i pulumi.IntInput) GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity {
+		return vs[0].([]GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity)[vs[1].(int)]
+	}).(GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput)
+}
+
 type GetDeploymentSetCapacity struct {
 	// You can also include the number of ECS instances in the current deployment set within this availability zone.
 	AvailableCount int `pulumi:"availableCount"`
@@ -14701,6 +15504,12 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandParameterDefinitionArrayInput)(nil)).Elem(), CommandParameterDefinitionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandTagInput)(nil)).Elem(), CommandTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*CommandTagArrayInput)(nil)).Elem(), CommandTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityInput)(nil)).Elem(), DedicatedHostClusterDedicatedHostClusterCapacityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityPtrInput)(nil)).Elem(), DedicatedHostClusterDedicatedHostClusterCapacityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput)(nil)).Elem(), DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput)(nil)).Elem(), DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput)(nil)).Elem(), DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput)(nil)).Elem(), DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSetCapacityInput)(nil)).Elem(), DeploymentSetCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*DeploymentSetCapacityArrayInput)(nil)).Elem(), DeploymentSetCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*HpcClusterTagInput)(nil)).Elem(), HpcClusterTagArgs{})
@@ -14799,6 +15608,11 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandParameterDefinitionArrayInput)(nil)).Elem(), GetCommandParameterDefinitionArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandTagInput)(nil)).Elem(), GetCommandTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetCommandTagArrayInput)(nil)).Elem(), GetCommandTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityInput)(nil)).Elem(), GetDedicatedHostClusterDedicatedHostClusterCapacityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeInput)(nil)).Elem(), GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayInput)(nil)).Elem(), GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityInput)(nil)).Elem(), GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayInput)(nil)).Elem(), GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSetCapacityInput)(nil)).Elem(), GetDeploymentSetCapacityArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetDeploymentSetCapacityArrayInput)(nil)).Elem(), GetDeploymentSetCapacityArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetHpcClusterTagInput)(nil)).Elem(), GetHpcClusterTagArgs{})
@@ -14877,6 +15691,12 @@ func init() {
 	pulumi.RegisterOutputType(CommandParameterDefinitionArrayOutput{})
 	pulumi.RegisterOutputType(CommandTagOutput{})
 	pulumi.RegisterOutputType(CommandTagArrayOutput{})
+	pulumi.RegisterOutputType(DedicatedHostClusterDedicatedHostClusterCapacityOutput{})
+	pulumi.RegisterOutputType(DedicatedHostClusterDedicatedHostClusterCapacityPtrOutput{})
+	pulumi.RegisterOutputType(DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput{})
+	pulumi.RegisterOutputType(DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput{})
+	pulumi.RegisterOutputType(DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput{})
+	pulumi.RegisterOutputType(DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput{})
 	pulumi.RegisterOutputType(DeploymentSetCapacityOutput{})
 	pulumi.RegisterOutputType(DeploymentSetCapacityArrayOutput{})
 	pulumi.RegisterOutputType(HpcClusterTagOutput{})
@@ -14975,6 +15795,11 @@ func init() {
 	pulumi.RegisterOutputType(GetCommandParameterDefinitionArrayOutput{})
 	pulumi.RegisterOutputType(GetCommandTagOutput{})
 	pulumi.RegisterOutputType(GetCommandTagArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedHostClusterDedicatedHostClusterCapacityOutput{})
+	pulumi.RegisterOutputType(GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeOutput{})
+	pulumi.RegisterOutputType(GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceTypeArrayOutput{})
+	pulumi.RegisterOutputType(GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityOutput{})
+	pulumi.RegisterOutputType(GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSetCapacityOutput{})
 	pulumi.RegisterOutputType(GetDeploymentSetCapacityArrayOutput{})
 	pulumi.RegisterOutputType(GetHpcClusterTagOutput{})

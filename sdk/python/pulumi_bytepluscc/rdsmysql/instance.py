@@ -74,7 +74,7 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
         :param pulumi.Input[_builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         :param pulumi.Input[_builtins.str] instance_name: Instance name.
-        :param pulumi.Input[_builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        :param pulumi.Input[_builtins.str] instance_type: Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         :param pulumi.Input[_builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         :param pulumi.Input[_builtins.str] node_spec: Node specifications.
@@ -374,7 +374,7 @@ class InstanceArgs:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         """
         return pulumi.get(self, "instance_type")
 
@@ -625,7 +625,7 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] instance_id: Instance ID.
         :param pulumi.Input[_builtins.str] instance_name: Instance name.
         :param pulumi.Input[_builtins.str] instance_status: Instance status.
-        :param pulumi.Input[_builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        :param pulumi.Input[_builtins.str] instance_type: Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         :param pulumi.Input[_builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         :param pulumi.Input['InstanceMaintenanceWindowArgs'] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         :param pulumi.Input[_builtins.str] master_instance_id: Primary instance ID
@@ -1276,7 +1276,7 @@ class _InstanceState:
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         """
         return pulumi.get(self, "instance_type")
 
@@ -1833,7 +1833,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] engine_type: Database engine type. Values: InnoDB: InnoDB engine. RocksDB: RocksDB engine.
         :param pulumi.Input[_builtins.bool] global_read_only: Enable global read-only mode. Values: true: enabled. false: disabled (default is false)
         :param pulumi.Input[_builtins.str] instance_name: Instance name.
-        :param pulumi.Input[_builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        :param pulumi.Input[_builtins.str] instance_type: Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         :param pulumi.Input[_builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         :param pulumi.Input[_builtins.str] node_spec: Node specifications.
@@ -2205,7 +2205,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] instance_id: Instance ID.
         :param pulumi.Input[_builtins.str] instance_name: Instance name.
         :param pulumi.Input[_builtins.str] instance_status: Instance status.
-        :param pulumi.Input[_builtins.str] instance_type: Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        :param pulumi.Input[_builtins.str] instance_type: Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         :param pulumi.Input[_builtins.str] lower_case_table_names: Whether table names are case-sensitive. Default value is true. Values: false: Table names are stored as fixed and are case-sensitive. true: Table names are stored in lowercase and are case-insensitive.
         :param pulumi.Input[Union['InstanceMaintenanceWindowArgs', 'InstanceMaintenanceWindowArgsDict']] maintenance_window: Specify the maintenance window for the instance when creating it. This field is optional. If not set, the default is UTC18:00Z-21:59Z every day of the week (Beijing time 02:00-05:59).
         :param pulumi.Input[_builtins.str] master_instance_id: Primary instance ID
@@ -2635,7 +2635,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="instanceType")
     def instance_type(self) -> pulumi.Output[_builtins.str]:
         """
-        Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+        Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
         """
         return pulumi.get(self, "instance_type")
 

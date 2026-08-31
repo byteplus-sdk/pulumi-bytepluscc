@@ -25,6 +25,8 @@ __all__ = [
     'RegistryStatusArgsDict',
     'RegistryTagArgs',
     'RegistryTagArgsDict',
+    'RobotAccountPermissionArgs',
+    'RobotAccountPermissionArgsDict',
     'VpcEndpointVpcArgs',
     'VpcEndpointVpcArgsDict',
 ]
@@ -323,6 +325,53 @@ class RegistryTagArgs:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class RobotAccountPermissionArgsDict(TypedDict):
+    actions: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]
+    """
+    Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+    """
+    resource: pulumi.Input[_builtins.str]
+    """
+    Resource object to operate on.
+    """
+
+@pulumi.input_type
+class RobotAccountPermissionArgs:
+    def __init__(__self__, *,
+                 actions: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]],
+                 resource: pulumi.Input[_builtins.str]):
+        """
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] actions: Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+        :param pulumi.Input[_builtins.str] resource: Resource object to operate on.
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "resource", resource)
+
+    @_builtins.property
+    @pulumi.getter
+    def actions(self) -> pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]:
+        """
+        Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+        """
+        return pulumi.get(self, "actions")
+
+    @actions.setter
+    def actions(self, value: pulumi.Input[Sequence[pulumi.Input[_builtins.str]]]):
+        pulumi.set(self, "actions", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def resource(self) -> pulumi.Input[_builtins.str]:
+        """
+        Resource object to operate on.
+        """
+        return pulumi.get(self, "resource")
+
+    @resource.setter
+    def resource(self, value: pulumi.Input[_builtins.str]):
+        pulumi.set(self, "resource", value)
 
 
 class VpcEndpointVpcArgsDict(TypedDict):

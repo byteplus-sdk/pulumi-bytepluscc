@@ -12,6 +12,8 @@ import com.byteplus.bytepluscc.cr.inputs.GetRegistryArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRegistryPlainArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRepositoryArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetRepositoryPlainArgs;
+import com.byteplus.bytepluscc.cr.inputs.GetRobotAccountArgs;
+import com.byteplus.bytepluscc.cr.inputs.GetRobotAccountPlainArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetVpcEndpointArgs;
 import com.byteplus.bytepluscc.cr.inputs.GetVpcEndpointPlainArgs;
 import com.byteplus.bytepluscc.cr.outputs.GetEndpointAclPoliciesResult;
@@ -22,6 +24,8 @@ import com.byteplus.bytepluscc.cr.outputs.GetRegistriesResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRegistryResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRepositoriesResult;
 import com.byteplus.bytepluscc.cr.outputs.GetRepositoryResult;
+import com.byteplus.bytepluscc.cr.outputs.GetRobotAccountResult;
+import com.byteplus.bytepluscc.cr.outputs.GetRobotAccountsResult;
 import com.byteplus.bytepluscc.cr.outputs.GetVpcEndpointResult;
 import com.byteplus.bytepluscc.cr.outputs.GetVpcEndpointsResult;
 import com.pulumi.core.Output;
@@ -368,6 +372,90 @@ public final class CrFunctions {
      */
     public static CompletableFuture<GetRepositoryResult> getRepositoryPlain(GetRepositoryPlainArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:cr/getRepository:getRepository", TypeShape.of(GetRepositoryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static Output<GetRobotAccountResult> getRobotAccount(GetRobotAccountArgs args) {
+        return getRobotAccount(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static CompletableFuture<GetRobotAccountResult> getRobotAccountPlain(GetRobotAccountPlainArgs args) {
+        return getRobotAccountPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static Output<GetRobotAccountResult> getRobotAccount(GetRobotAccountArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getRobotAccount:getRobotAccount", TypeShape.of(GetRobotAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static Output<GetRobotAccountResult> getRobotAccount(GetRobotAccountArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getRobotAccount:getRobotAccount", TypeShape.of(GetRobotAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static CompletableFuture<GetRobotAccountResult> getRobotAccountPlain(GetRobotAccountPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getRobotAccount:getRobotAccount", TypeShape.of(GetRobotAccountResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static Output<GetRobotAccountsResult> getRobotAccounts() {
+        return getRobotAccounts(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static CompletableFuture<GetRobotAccountsResult> getRobotAccountsPlain() {
+        return getRobotAccountsPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static Output<GetRobotAccountsResult> getRobotAccounts(InvokeArgs args) {
+        return getRobotAccounts(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static CompletableFuture<GetRobotAccountsResult> getRobotAccountsPlain(InvokeArgs args) {
+        return getRobotAccountsPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static Output<GetRobotAccountsResult> getRobotAccounts(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getRobotAccounts:getRobotAccounts", TypeShape.of(GetRobotAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static Output<GetRobotAccountsResult> getRobotAccounts(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:cr/getRobotAccounts:getRobotAccounts", TypeShape.of(GetRobotAccountsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::CR::RobotAccount
+     * 
+     */
+    public static CompletableFuture<GetRobotAccountsResult> getRobotAccountsPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:cr/getRobotAccounts:getRobotAccounts", TypeShape.of(GetRobotAccountsResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::CR::VpcEndpoint

@@ -21,12 +21,14 @@ __all__ = [
     'RegistryProxyCache',
     'RegistryStatus',
     'RegistryTag',
+    'RobotAccountPermission',
     'VpcEndpointVpc',
     'GetRegistryEndpointResult',
     'GetRegistryEndpointAclPolicyResult',
     'GetRegistryProxyCacheResult',
     'GetRegistryStatusResult',
     'GetRegistryTagResult',
+    'GetRobotAccountPermissionResult',
     'GetVpcEndpointVpcResult',
 ]
 
@@ -234,6 +236,35 @@ class RegistryTag(dict):
         List of tag values
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class RobotAccountPermission(dict):
+    def __init__(__self__, *,
+                 actions: Sequence[_builtins.str],
+                 resource: _builtins.str):
+        """
+        :param Sequence[_builtins.str] actions: Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+        :param _builtins.str resource: Resource object to operate on.
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "resource", resource)
+
+    @_builtins.property
+    @pulumi.getter
+    def actions(self) -> Sequence[_builtins.str]:
+        """
+        Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+        """
+        return pulumi.get(self, "actions")
+
+    @_builtins.property
+    @pulumi.getter
+    def resource(self) -> _builtins.str:
+        """
+        Resource object to operate on.
+        """
+        return pulumi.get(self, "resource")
 
 
 @pulumi.output_type
@@ -475,6 +506,35 @@ class GetRegistryTagResult(dict):
         List of tag values
         """
         return pulumi.get(self, "value")
+
+
+@pulumi.output_type
+class GetRobotAccountPermissionResult(dict):
+    def __init__(__self__, *,
+                 actions: Sequence[_builtins.str],
+                 resource: _builtins.str):
+        """
+        :param Sequence[_builtins.str] actions: Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+        :param _builtins.str resource: Resource object to operate on.
+        """
+        pulumi.set(__self__, "actions", actions)
+        pulumi.set(__self__, "resource", resource)
+
+    @_builtins.property
+    @pulumi.getter
+    def actions(self) -> Sequence[_builtins.str]:
+        """
+        Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+        """
+        return pulumi.get(self, "actions")
+
+    @_builtins.property
+    @pulumi.getter
+    def resource(self) -> _builtins.str:
+        """
+        Resource object to operate on.
+        """
+        return pulumi.get(self, "resource")
 
 
 @pulumi.output_type

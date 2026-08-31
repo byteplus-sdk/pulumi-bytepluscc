@@ -11785,6 +11785,17 @@ export namespace cr {
         value: string;
     }
 
+    export interface GetRobotAccountPermission {
+        /**
+         * Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+         */
+        actions: string[];
+        /**
+         * Resource object to operate on.
+         */
+        resource: string;
+    }
+
     export interface GetVpcEndpointVpc {
         /**
          * Primary account ID for the VPC
@@ -11886,6 +11897,17 @@ export namespace cr {
          * List of tag values
          */
         value: string;
+    }
+
+    export interface RobotAccountPermission {
+        /**
+         * Supported operation permissions: CreateRepository for creating image repositories, PullRepository for pulling images, PushRepository for pushing images.
+         */
+        actions: string[];
+        /**
+         * Resource object to operate on.
+         */
+        resource: string;
     }
 
     export interface VpcEndpointVpc {
@@ -12110,6 +12132,61 @@ export namespace ecs {
         value: string;
     }
 
+    export interface DedicatedHostClusterDedicatedHostClusterCapacity {
+        /**
+         * Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        availableInstanceTypes: outputs.ecs.DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType[];
+        /**
+         * Total remaining available memory in this dedicated host cluster, measured in GiB.
+         */
+        availableMemory: number;
+        /**
+         * Total remaining available vCPU count in this dedicated host cluster.
+         */
+        availableVcpus: number;
+        /**
+         * Available and total capacity of each type of local disk in this dedicated host cluster.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        localVolumeCapacities: outputs.ecs.DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity[];
+        /**
+         * Total memory of this dedicated host cluster, measured in GiB.
+         */
+        totalMemory: number;
+        /**
+         * Total vCPU count of this dedicated host cluster.
+         */
+        totalVcpus: number;
+    }
+
+    export interface DedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType {
+        /**
+         * Number of instances of this type that can still be created in the dedicated host cluster.
+         */
+        availableCapacity: number;
+        /**
+         * Instance type.
+         */
+        instanceType: string;
+    }
+
+    export interface DedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity {
+        /**
+         * Remaining available capacity of this type of local disk, measured in GiB.
+         */
+        availableSize: number;
+        /**
+         * Total capacity of this type of local disk, measured in GiB.
+         */
+        totalSize: number;
+        /**
+         * Local disk type.
+         */
+        volumeType: string;
+    }
+
     export interface DeploymentSetCapacity {
         /**
          * You can also include the number of ECS instances in the current deployment set within this availability zone.
@@ -12173,6 +12250,59 @@ export namespace ecs {
          * User tag value. Naming rules: only language characters, digits, spaces, and the following English symbols are allowed: '_', '.', ':', '/', '=', '+', '-', '@'. Can be empty. Length must be between 0 and 256 characters.
          */
         value: string;
+    }
+
+    export interface GetDedicatedHostClusterDedicatedHostClusterCapacity {
+        /**
+         * Supported instance types and the remaining number of instances that can be created for each type in this dedicated host cluster.
+         */
+        availableInstanceTypes: outputs.ecs.GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType[];
+        /**
+         * Total remaining available memory in this dedicated host cluster, measured in GiB.
+         */
+        availableMemory: number;
+        /**
+         * Total remaining available vCPU count in this dedicated host cluster.
+         */
+        availableVcpus: number;
+        /**
+         * Available and total capacity of each type of local disk in this dedicated host cluster.
+         */
+        localVolumeCapacities: outputs.ecs.GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity[];
+        /**
+         * Total memory of this dedicated host cluster, measured in GiB.
+         */
+        totalMemory: number;
+        /**
+         * Total vCPU count of this dedicated host cluster.
+         */
+        totalVcpus: number;
+    }
+
+    export interface GetDedicatedHostClusterDedicatedHostClusterCapacityAvailableInstanceType {
+        /**
+         * Number of instances of this type that can still be created in the dedicated host cluster.
+         */
+        availableCapacity: number;
+        /**
+         * Instance type.
+         */
+        instanceType: string;
+    }
+
+    export interface GetDedicatedHostClusterDedicatedHostClusterCapacityLocalVolumeCapacity {
+        /**
+         * Remaining available capacity of this type of local disk, measured in GiB.
+         */
+        availableSize: number;
+        /**
+         * Total capacity of this type of local disk, measured in GiB.
+         */
+        totalSize: number;
+        /**
+         * Local disk type.
+         */
+        volumeType: string;
     }
 
     export interface GetDeploymentSetCapacity {
@@ -37361,6 +37491,41 @@ export namespace waf {
         singleThreshold: number;
     }
 
+    export interface CustomPageAccurate {
+        /**
+         * Sub-rule list in advanced conditions.
+         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+         */
+        accurateRules: outputs.waf.CustomPageAccurateAccurateRule[];
+        /**
+         * Logical relationship between sub-rules. 0: OR; 1: AND.
+         */
+        logic: number;
+    }
+
+    export interface CustomPageAccurateAccurateRule {
+        /**
+         * Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+         */
+        httpObj: string;
+        /**
+         * Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+         */
+        objType: number;
+        /**
+         * Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+         */
+        opretar: number;
+        /**
+         * Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+         */
+        property: number;
+        /**
+         * Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+         */
+        valueString: string;
+    }
+
     export interface DomainBackendGroup {
         /**
          * Access port number.
@@ -37553,6 +37718,40 @@ export namespace waf {
         singleThreshold: number;
     }
 
+    export interface GetCustomPageAccurate {
+        /**
+         * Sub-rule list in advanced conditions.
+         */
+        accurateRules: outputs.waf.GetCustomPageAccurateAccurateRule[];
+        /**
+         * Logical relationship between sub-rules. 0: OR; 1: AND.
+         */
+        logic: number;
+    }
+
+    export interface GetCustomPageAccurateAccurateRule {
+        /**
+         * Matching object. For example: request.uri, request.header, request.header.clientip, request.queryargs.abc, request.header.custom-header, request.cookie.custom-cookie, etc.
+         */
+        httpObj: string;
+        /**
+         * Matching object type enumeration. 0: Request protocol; 1: Request URI; 2: Request method; 3: Request path; 4: Request parameter; 5: Request header; 6: User-Agent; 7: Referer; 8: Cookie; 9: Request body length; 10: Request body format; 11: X-Forwarded-For; 12: Client IP; 13: Custom Args; 14: Custom Header; 15: Custom Cookie.
+         */
+        objType: number;
+        /**
+         * Matching operator enumeration. 0–5: numerical comparison; 6–11: substring match; 12–15: set match; 16: regex; 17–21: IP recognition (only for request.header.clientip or custom objects).
+         */
+        opretar: number;
+        /**
+         * Matching attribute type enumeration. 0: Value; 5: IP (used only when Operator=17~21).
+         */
+        property: number;
+        /**
+         * Matching value. For IP recognition operations with Operator=17~21, no matching content is involved and this can be an empty string; for other operators, enter the actual matching value.
+         */
+        valueString: string;
+    }
+
     export interface GetDomainBackendGroup {
         /**
          * Access port number.
@@ -37702,6 +37901,21 @@ export namespace waf {
         ruleType: string;
     }
 
+    export interface GetIpGroupRelatedRule {
+        /**
+         * Rule Name
+         */
+        ruleName: string;
+        /**
+         * Rule ID
+         */
+        ruleTag: string;
+        /**
+         * Rule type. Allow indicates an allowlist; Block indicates a blocklist.
+         */
+        ruleType: string;
+    }
+
     export interface HostGroupRelatedRule {
         /**
          * Rule name.
@@ -37713,6 +37927,21 @@ export namespace waf {
         ruleTag: string;
         /**
          * Rule type. Allow indicates an allowlist, Block indicates a blocklist.
+         */
+        ruleType: string;
+    }
+
+    export interface IpGroupRelatedRule {
+        /**
+         * Rule Name
+         */
+        ruleName: string;
+        /**
+         * Rule ID
+         */
+        ruleTag: string;
+        /**
+         * Rule type. Allow indicates an allowlist; Block indicates a blocklist.
          */
         ruleType: string;
     }

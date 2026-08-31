@@ -7,9 +7,12 @@ from .. import _utilities
 import typing
 # Export this package's modules as members:
 from .command import *
+from .dedicated_host_cluster import *
 from .deployment_set import *
 from .get_command import *
 from .get_commands import *
+from .get_dedicated_host_cluster import *
+from .get_dedicated_host_clusters import *
 from .get_deployment_set import *
 from .get_deployment_sets import *
 from .get_hpc_cluster import *

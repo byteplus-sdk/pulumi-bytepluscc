@@ -10,6 +10,11 @@ export type Command = import("./command").Command;
 export const Command: typeof import("./command").Command = null as any;
 utilities.lazyLoad(exports, ["Command"], () => require("./command"));
 
+export { DedicatedHostClusterArgs, DedicatedHostClusterState } from "./dedicatedHostCluster";
+export type DedicatedHostCluster = import("./dedicatedHostCluster").DedicatedHostCluster;
+export const DedicatedHostCluster: typeof import("./dedicatedHostCluster").DedicatedHostCluster = null as any;
+utilities.lazyLoad(exports, ["DedicatedHostCluster"], () => require("./dedicatedHostCluster"));
+
 export { DeploymentSetArgs, DeploymentSetState } from "./deploymentSet";
 export type DeploymentSet = import("./deploymentSet").DeploymentSet;
 export const DeploymentSet: typeof import("./deploymentSet").DeploymentSet = null as any;
@@ -24,6 +29,16 @@ export { GetCommandsResult } from "./getCommands";
 export const getCommands: typeof import("./getCommands").getCommands = null as any;
 export const getCommandsOutput: typeof import("./getCommands").getCommandsOutput = null as any;
 utilities.lazyLoad(exports, ["getCommands","getCommandsOutput"], () => require("./getCommands"));
+
+export { GetDedicatedHostClusterArgs, GetDedicatedHostClusterResult, GetDedicatedHostClusterOutputArgs } from "./getDedicatedHostCluster";
+export const getDedicatedHostCluster: typeof import("./getDedicatedHostCluster").getDedicatedHostCluster = null as any;
+export const getDedicatedHostClusterOutput: typeof import("./getDedicatedHostCluster").getDedicatedHostClusterOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedHostCluster","getDedicatedHostClusterOutput"], () => require("./getDedicatedHostCluster"));
+
+export { GetDedicatedHostClustersResult } from "./getDedicatedHostClusters";
+export const getDedicatedHostClusters: typeof import("./getDedicatedHostClusters").getDedicatedHostClusters = null as any;
+export const getDedicatedHostClustersOutput: typeof import("./getDedicatedHostClusters").getDedicatedHostClustersOutput = null as any;
+utilities.lazyLoad(exports, ["getDedicatedHostClusters","getDedicatedHostClustersOutput"], () => require("./getDedicatedHostClusters"));
 
 export { GetDeploymentSetArgs, GetDeploymentSetResult, GetDeploymentSetOutputArgs } from "./getDeploymentSet";
 export const getDeploymentSet: typeof import("./getDeploymentSet").getDeploymentSet = null as any;
@@ -162,6 +177,8 @@ const _module = {
         switch (type) {
             case "bytepluscc:ecs/command:Command":
                 return new Command(name, <any>undefined, { urn })
+            case "bytepluscc:ecs/dedicatedHostCluster:DedicatedHostCluster":
+                return new DedicatedHostCluster(name, <any>undefined, { urn })
             case "bytepluscc:ecs/deploymentSet:DeploymentSet":
                 return new DeploymentSet(name, <any>undefined, { urn })
             case "bytepluscc:ecs/hpcCluster:HpcCluster":
@@ -186,6 +203,7 @@ const _module = {
     },
 };
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/command", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "ecs/dedicatedHostCluster", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/deploymentSet", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/hpcCluster", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "ecs/image", _module)

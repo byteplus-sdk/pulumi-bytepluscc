@@ -669,14 +669,14 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.instanceStatus;
     }
     /**
-     * Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      * 
      */
     @Export(name="instanceType", refs={String.class}, tree="[0]")
     private Output<String> instanceType;
 
     /**
-     * @return Instance type. Values: DoubleNode: dual-node type. MultiNode: multi-node type
+     * @return Instance types. Values: DoubleNode, dual-node type; MultiNode, multi-node type; SingleNode, single-node type.
      * 
      */
     public Output<String> instanceType() {
