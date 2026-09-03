@@ -46,7 +46,7 @@ public final class GetListenerDomainExtension {
      */
     private String pcaLeafCertificateId;
     /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+     * @return Separate the certificate&#39;s CommonName, extended domain names, and IP addresses with commas.
      * 
      */
     private String san;
@@ -102,7 +102,7 @@ public final class GetListenerDomainExtension {
         return this.pcaLeafCertificateId;
     }
     /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+     * @return Separate the certificate&#39;s CommonName, extended domain names, and IP addresses with commas.
      * 
      */
     public String san() {

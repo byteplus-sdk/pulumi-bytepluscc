@@ -13,19 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public static class GetIpamPool
     {
         /// <summary>
-        /// Data Source schema for Byteplus::VPC::IpamPool
+        /// Data Source schema for Byteplus::VPC::IPAMPool
         /// </summary>
         public static Task<GetIpamPoolResult> InvokeAsync(GetIpamPoolArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpamPoolResult>("bytepluscc:vpc/getIpamPool:getIpamPool", args ?? new GetIpamPoolArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::VPC::IpamPool
+        /// Data Source schema for Byteplus::VPC::IPAMPool
         /// </summary>
         public static Output<GetIpamPoolResult> Invoke(GetIpamPoolInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpamPoolResult>("bytepluscc:vpc/getIpamPool:getIpamPool", args ?? new GetIpamPoolInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::VPC::IpamPool
+        /// Data Source schema for Byteplus::VPC::IPAMPool
         /// </summary>
         public static Output<GetIpamPoolResult> Invoke(GetIpamPoolInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpamPoolResult>("bytepluscc:vpc/getIpamPool:getIpamPool", args ?? new GetIpamPoolInvokeArgs(), options.WithDefaults());

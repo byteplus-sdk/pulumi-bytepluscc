@@ -811,8 +811,6 @@ type ListenerDomainExtension struct {
 	Domain *string `pulumi:"domain"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId *string `pulumi:"pcaLeafCertificateId"`
-	// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-	San *string `pulumi:"san"`
 }
 
 // ListenerDomainExtensionInput is an input type that accepts ListenerDomainExtensionArgs and ListenerDomainExtensionOutput values.
@@ -837,8 +835,6 @@ type ListenerDomainExtensionArgs struct {
 	Domain pulumi.StringPtrInput `pulumi:"domain"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId pulumi.StringPtrInput `pulumi:"pcaLeafCertificateId"`
-	// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-	San pulumi.StringPtrInput `pulumi:"san"`
 }
 
 func (ListenerDomainExtensionArgs) ElementType() reflect.Type {
@@ -915,11 +911,6 @@ func (o ListenerDomainExtensionOutput) Domain() pulumi.StringPtrOutput {
 // Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 func (o ListenerDomainExtensionOutput) PcaLeafCertificateId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.PcaLeafCertificateId }).(pulumi.StringPtrOutput)
-}
-
-// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-func (o ListenerDomainExtensionOutput) San() pulumi.StringPtrOutput {
-	return o.ApplyT(func(v ListenerDomainExtension) *string { return v.San }).(pulumi.StringPtrOutput)
 }
 
 type ListenerDomainExtensionArrayOutput struct{ *pulumi.OutputState }
@@ -6824,7 +6815,7 @@ type GetListenerDomainExtension struct {
 	ListenerId string `pulumi:"listenerId"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId string `pulumi:"pcaLeafCertificateId"`
-	// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+	// Separate the certificate's CommonName, extended domain names, and IP addresses with commas.
 	San string `pulumi:"san"`
 }
 
@@ -6854,7 +6845,7 @@ type GetListenerDomainExtensionArgs struct {
 	ListenerId pulumi.StringInput `pulumi:"listenerId"`
 	// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
 	PcaLeafCertificateId pulumi.StringInput `pulumi:"pcaLeafCertificateId"`
-	// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+	// Separate the certificate's CommonName, extended domain names, and IP addresses with commas.
 	San pulumi.StringInput `pulumi:"san"`
 }
 
@@ -6944,7 +6935,7 @@ func (o GetListenerDomainExtensionOutput) PcaLeafCertificateId() pulumi.StringOu
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.PcaLeafCertificateId }).(pulumi.StringOutput)
 }
 
-// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+// Separate the certificate's CommonName, extended domain names, and IP addresses with commas.
 func (o GetListenerDomainExtensionOutput) San() pulumi.StringOutput {
 	return o.ApplyT(func(v GetListenerDomainExtension) string { return v.San }).(pulumi.StringOutput)
 }

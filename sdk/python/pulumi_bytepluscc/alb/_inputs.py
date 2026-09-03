@@ -563,10 +563,6 @@ class ListenerDomainExtensionArgsDict(TypedDict):
     """
     Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
     """
-    san: NotRequired[pulumi.Input[Optional[_builtins.str]]]
-    """
-    If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-    """
 
 @pulumi.input_type
 class ListenerDomainExtensionArgs:
@@ -575,15 +571,13 @@ class ListenerDomainExtensionArgs:
                  certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
                  certificate_source: pulumi.Input[Optional[_builtins.str]] = None,
                  domain: pulumi.Input[Optional[_builtins.str]] = None,
-                 pca_leaf_certificate_id: pulumi.Input[Optional[_builtins.str]] = None,
-                 san: pulumi.Input[Optional[_builtins.str]] = None):
+                 pca_leaf_certificate_id: pulumi.Input[Optional[_builtins.str]] = None):
         """
         :param pulumi.Input[_builtins.str] cert_center_certificate_id: Server certificate ID used by the domain. Effective when the certificate source is cert_center.
         :param pulumi.Input[_builtins.str] certificate_id: Server certificate ID used by the domain. Effective when the certificate source is alb.
         :param pulumi.Input[_builtins.str] certificate_source: Source of the server certificate used by the domain. Values: alb: certificate uploaded via ALB. cert_center: SSL certificate purchased or uploaded through Volcano Engine Certificate Center.
         :param pulumi.Input[_builtins.str] domain: Domain name. Usually cannot be empty. If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain must be an empty string. Must contain at least one '.' and cannot start or end with '.'. Only lowercase letters, digits, '.', '-', and '*' are allowed. Length must be between 1 and 128 characters. Wildcard domain: use '*' to replace one or more characters. '*' must be at the beginning or end of the domain name. '*' cannot appear twice in the same domain name. No characters except '.' can be before or after '*'. Exact domain: a domain name that meets domain name specifications. Domain names under the same HTTPS listener cannot be duplicated. Domain matching is case-insensitive.
         :param pulumi.Input[_builtins.str] pca_leaf_certificate_id: Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
-        :param pulumi.Input[_builtins.str] san: If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
         """
         if cert_center_certificate_id is not None:
             pulumi.set(__self__, "cert_center_certificate_id", cert_center_certificate_id)
@@ -595,8 +589,6 @@ class ListenerDomainExtensionArgs:
             pulumi.set(__self__, "domain", domain)
         if pca_leaf_certificate_id is not None:
             pulumi.set(__self__, "pca_leaf_certificate_id", pca_leaf_certificate_id)
-        if san is not None:
-            pulumi.set(__self__, "san", san)
 
     @_builtins.property
     @pulumi.getter(name="certCenterCertificateId")
@@ -657,18 +649,6 @@ class ListenerDomainExtensionArgs:
     @pca_leaf_certificate_id.setter
     def pca_leaf_certificate_id(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "pca_leaf_certificate_id", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def san(self) -> pulumi.Input[Optional[_builtins.str]]:
-        """
-        If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-        """
-        return pulumi.get(self, "san")
-
-    @san.setter
-    def san(self, value: pulumi.Input[Optional[_builtins.str]]):
-        pulumi.set(self, "san", value)
 
 
 class ListenerServerGroupArgsDict(TypedDict):

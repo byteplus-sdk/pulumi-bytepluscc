@@ -81,6 +81,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         /// </summary>
         public readonly string Email;
         /// <summary>
+        /// Generated Password
+        /// </summary>
+        public readonly string GeneratePassword;
+        /// <summary>
+        /// Auto Generate Password
+        /// </summary>
+        public readonly bool GenerateRandomPassword;
+        /// <summary>
         /// Uniquely identifies the resource.
         /// </summary>
         public readonly string Id;
@@ -127,6 +135,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
 
             string email,
 
+            string generatePassword,
+
+            bool generateRandomPassword,
+
             string id,
 
             string identityType,
@@ -149,6 +161,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
             Description = description;
             DisplayName = displayName;
             Email = email;
+            GeneratePassword = generatePassword;
+            GenerateRandomPassword = generateRandomPassword;
             Id = id;
             IdentityType = identityType;
             Password = password;

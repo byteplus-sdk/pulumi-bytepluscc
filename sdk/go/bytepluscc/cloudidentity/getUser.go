@@ -38,6 +38,10 @@ type LookupUserResult struct {
 	DisplayName string `pulumi:"displayName"`
 	// Email.
 	Email string `pulumi:"email"`
+	// Generated Password
+	GeneratePassword string `pulumi:"generatePassword"`
+	// Auto Generate Password
+	GenerateRandomPassword bool `pulumi:"generateRandomPassword"`
 	// Uniquely identifies the resource.
 	Id string `pulumi:"id"`
 	// Identity Type.
@@ -110,6 +114,16 @@ func (o LookupUserResultOutput) DisplayName() pulumi.StringOutput {
 // Email.
 func (o LookupUserResultOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupUserResult) string { return v.Email }).(pulumi.StringOutput)
+}
+
+// Generated Password
+func (o LookupUserResultOutput) GeneratePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v LookupUserResult) string { return v.GeneratePassword }).(pulumi.StringOutput)
+}
+
+// Auto Generate Password
+func (o LookupUserResultOutput) GenerateRandomPassword() pulumi.BoolOutput {
+	return o.ApplyT(func(v LookupUserResult) bool { return v.GenerateRandomPassword }).(pulumi.BoolOutput)
 }
 
 // Uniquely identifies the resource.

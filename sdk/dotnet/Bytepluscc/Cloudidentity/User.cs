@@ -71,6 +71,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         public Output<string> Email { get; private set; } = null!;
 
         /// <summary>
+        /// Generated Password
+        /// </summary>
+        [Output("generatePassword")]
+        public Output<string> GeneratePassword { get; private set; } = null!;
+
+        /// <summary>
+        /// Auto Generate Password
+        /// </summary>
+        [Output("generateRandomPassword")]
+        public Output<bool> GenerateRandomPassword { get; private set; } = null!;
+
+        /// <summary>
         /// Identity Type.
         /// </summary>
         [Output("identityType")]
@@ -184,6 +196,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         public Input<string>? Email { get; set; }
 
         /// <summary>
+        /// Auto Generate Password
+        /// </summary>
+        [Input("generateRandomPassword")]
+        public Input<bool>? GenerateRandomPassword { get; set; }
+
+        /// <summary>
         /// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         /// </summary>
         [Input("password")]
@@ -238,6 +256,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Cloudidentity
         /// </summary>
         [Input("email")]
         public Input<string>? Email { get; set; }
+
+        /// <summary>
+        /// Generated Password
+        /// </summary>
+        [Input("generatePassword")]
+        public Input<string>? GeneratePassword { get; set; }
+
+        /// <summary>
+        /// Auto Generate Password
+        /// </summary>
+        [Input("generateRandomPassword")]
+        public Input<bool>? GenerateRandomPassword { get; set; }
 
         /// <summary>
         /// Identity Type.

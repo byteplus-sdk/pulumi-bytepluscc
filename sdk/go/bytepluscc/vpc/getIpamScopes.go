@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Plural Data Source schema for Byteplus::VPC::IpamScope
+// Plural Data Source schema for Byteplus::VPC::IPAMScope
 func GetIpamScopes(ctx *pulumi.Context, opts ...pulumi.InvokeOption) (*GetIpamScopesResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv GetIpamScopesResult

@@ -90,21 +90,6 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         return Optional.ofNullable(this.pcaLeafCertificateId);
     }
 
-    /**
-     * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-     * 
-     */
-    @Import(name="san")
-    private @Nullable Output<String> san;
-
-    /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-     * 
-     */
-    public Optional<Output<String>> san() {
-        return Optional.ofNullable(this.san);
-    }
-
     private ListenerDomainExtensionArgs() {}
 
     private ListenerDomainExtensionArgs(ListenerDomainExtensionArgs $) {
@@ -113,7 +98,6 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
         this.certificateSource = $.certificateSource;
         this.domain = $.domain;
         this.pcaLeafCertificateId = $.pcaLeafCertificateId;
-        this.san = $.san;
     }
 
     public static Builder builder() {
@@ -237,27 +221,6 @@ public final class ListenerDomainExtensionArgs extends com.pulumi.resources.Reso
          */
         public Builder pcaLeafCertificateId(String pcaLeafCertificateId) {
             return pcaLeafCertificateId(Output.of(pcaLeafCertificateId));
-        }
-
-        /**
-         * @param san If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder san(@Nullable Output<String> san) {
-            $.san = san;
-            return this;
-        }
-
-        /**
-         * @param san If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder san(String san) {
-            return san(Output.of(san));
         }
 
         public ListenerDomainExtensionArgs build() {

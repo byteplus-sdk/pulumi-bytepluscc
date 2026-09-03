@@ -75,6 +75,14 @@ export class User extends pulumi.CustomResource {
      */
     declare public readonly email: pulumi.Output<string>;
     /**
+     * Generated Password
+     */
+    declare public /*out*/ readonly generatePassword: pulumi.Output<string>;
+    /**
+     * Auto Generate Password
+     */
+    declare public readonly generateRandomPassword: pulumi.Output<boolean>;
+    /**
      * Identity Type.
      */
     declare public /*out*/ readonly identityType: pulumi.Output<string>;
@@ -124,6 +132,8 @@ export class User extends pulumi.CustomResource {
             resourceInputs["description"] = state?.description;
             resourceInputs["displayName"] = state?.displayName;
             resourceInputs["email"] = state?.email;
+            resourceInputs["generatePassword"] = state?.generatePassword;
+            resourceInputs["generateRandomPassword"] = state?.generateRandomPassword;
             resourceInputs["identityType"] = state?.identityType;
             resourceInputs["password"] = state?.password;
             resourceInputs["passwordResetRequired"] = state?.passwordResetRequired;
@@ -137,11 +147,13 @@ export class User extends pulumi.CustomResource {
             resourceInputs["description"] = args?.description;
             resourceInputs["displayName"] = args?.displayName;
             resourceInputs["email"] = args?.email;
+            resourceInputs["generateRandomPassword"] = args?.generateRandomPassword;
             resourceInputs["password"] = args?.password;
             resourceInputs["passwordResetRequired"] = args?.passwordResetRequired;
             resourceInputs["phone"] = args?.phone;
             resourceInputs["userName"] = args?.userName;
             resourceInputs["createdTime"] = undefined /*out*/;
+            resourceInputs["generatePassword"] = undefined /*out*/;
             resourceInputs["identityType"] = undefined /*out*/;
             resourceInputs["source"] = undefined /*out*/;
             resourceInputs["updatedTime"] = undefined /*out*/;
@@ -172,6 +184,14 @@ export interface UserState {
      * Email.
      */
     email?: pulumi.Input<string | undefined>;
+    /**
+     * Generated Password
+     */
+    generatePassword?: pulumi.Input<string | undefined>;
+    /**
+     * Auto Generate Password
+     */
+    generateRandomPassword?: pulumi.Input<boolean | undefined>;
     /**
      * Identity Type.
      */
@@ -222,6 +242,10 @@ export interface UserArgs {
      * Email.
      */
     email?: pulumi.Input<string | undefined>;
+    /**
+     * Auto Generate Password
+     */
+    generateRandomPassword?: pulumi.Input<boolean | undefined>;
     /**
      * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      */

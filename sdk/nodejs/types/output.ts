@@ -219,7 +219,7 @@ export namespace alb {
          */
         pcaLeafCertificateId: string;
         /**
-         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+         * Separate the certificate's CommonName, extended domain names, and IP addresses with commas.
          */
         san: string;
     }
@@ -851,10 +851,6 @@ export namespace alb {
          * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
          */
         pcaLeafCertificateId: string;
-        /**
-         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-         */
-        san: string;
     }
 
     export interface ListenerServerGroup {

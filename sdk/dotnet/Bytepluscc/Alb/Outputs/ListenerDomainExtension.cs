@@ -34,10 +34,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
         /// </summary>
         public readonly string? PcaLeafCertificateId;
-        /// <summary>
-        /// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-        /// </summary>
-        public readonly string? San;
 
         [OutputConstructor]
         private ListenerDomainExtension(
@@ -49,16 +45,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
 
             string? domain,
 
-            string? pcaLeafCertificateId,
-
-            string? san)
+            string? pcaLeafCertificateId)
         {
             CertCenterCertificateId = certCenterCertificateId;
             CertificateId = certificateId;
             CertificateSource = certificateSource;
             Domain = domain;
             PcaLeafCertificateId = pcaLeafCertificateId;
-            San = san;
         }
     }
 }

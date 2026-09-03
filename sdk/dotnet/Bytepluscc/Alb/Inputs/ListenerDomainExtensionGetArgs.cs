@@ -43,12 +43,6 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Inputs
         [Input("pcaLeafCertificateId")]
         public Input<string>? PcaLeafCertificateId { get; set; }
 
-        /// <summary>
-        /// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-        /// </summary>
-        [Input("san")]
-        public Input<string>? San { get; set; }
-
         public ListenerDomainExtensionGetArgs()
         {
         }

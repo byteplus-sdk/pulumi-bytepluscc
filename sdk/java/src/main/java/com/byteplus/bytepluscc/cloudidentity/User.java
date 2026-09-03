@@ -124,6 +124,34 @@ public class User extends com.pulumi.resources.CustomResource {
         return this.email;
     }
     /**
+     * Generated Password
+     * 
+     */
+    @Export(name="generatePassword", refs={String.class}, tree="[0]")
+    private Output<String> generatePassword;
+
+    /**
+     * @return Generated Password
+     * 
+     */
+    public Output<String> generatePassword() {
+        return this.generatePassword;
+    }
+    /**
+     * Auto Generate Password
+     * 
+     */
+    @Export(name="generateRandomPassword", refs={Boolean.class}, tree="[0]")
+    private Output<Boolean> generateRandomPassword;
+
+    /**
+     * @return Auto Generate Password
+     * 
+     */
+    public Output<Boolean> generateRandomPassword() {
+        return this.generateRandomPassword;
+    }
+    /**
      * Identity Type.
      * 
      */

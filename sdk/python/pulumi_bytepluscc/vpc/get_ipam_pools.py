@@ -63,7 +63,7 @@ class AwaitableGetIpamPoolsResult(GetIpamPoolsResult):
 
 def get_ipam_pools(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpamPoolsResult:
     """
-    Plural Data Source schema for Byteplus::VPC::IpamPool
+    Plural Data Source schema for Byteplus::VPC::IPAMPool
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -74,7 +74,7 @@ def get_ipam_pools(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetI
         ids=pulumi.get(__ret__, 'ids'))
 def get_ipam_pools_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpamPoolsResult]:
     """
-    Plural Data Source schema for Byteplus::VPC::IpamPool
+    Plural Data Source schema for Byteplus::VPC::IPAMPool
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

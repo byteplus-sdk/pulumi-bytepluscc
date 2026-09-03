@@ -61,6 +61,10 @@ type User struct {
 	DisplayName pulumi.StringOutput `pulumi:"displayName"`
 	// Email.
 	Email pulumi.StringOutput `pulumi:"email"`
+	// Generated Password
+	GeneratePassword pulumi.StringOutput `pulumi:"generatePassword"`
+	// Auto Generate Password
+	GenerateRandomPassword pulumi.BoolOutput `pulumi:"generateRandomPassword"`
 	// Identity Type.
 	IdentityType pulumi.StringOutput `pulumi:"identityType"`
 	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
@@ -117,6 +121,10 @@ type userState struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Email.
 	Email *string `pulumi:"email"`
+	// Generated Password
+	GeneratePassword *string `pulumi:"generatePassword"`
+	// Auto Generate Password
+	GenerateRandomPassword *bool `pulumi:"generateRandomPassword"`
 	// Identity Type.
 	IdentityType *string `pulumi:"identityType"`
 	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
@@ -144,6 +152,10 @@ type UserState struct {
 	DisplayName pulumi.StringPtrInput
 	// Email.
 	Email pulumi.StringPtrInput
+	// Generated Password
+	GeneratePassword pulumi.StringPtrInput
+	// Auto Generate Password
+	GenerateRandomPassword pulumi.BoolPtrInput
 	// Identity Type.
 	IdentityType pulumi.StringPtrInput
 	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
@@ -173,6 +185,8 @@ type userArgs struct {
 	DisplayName *string `pulumi:"displayName"`
 	// Email.
 	Email *string `pulumi:"email"`
+	// Auto Generate Password
+	GenerateRandomPassword *bool `pulumi:"generateRandomPassword"`
 	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 	Password *string `pulumi:"password"`
 	// Is password reset required on first login?
@@ -191,6 +205,8 @@ type UserArgs struct {
 	DisplayName pulumi.StringPtrInput
 	// Email.
 	Email pulumi.StringPtrInput
+	// Auto Generate Password
+	GenerateRandomPassword pulumi.BoolPtrInput
 	// Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
 	Password pulumi.StringPtrInput
 	// Is password reset required on first login?
@@ -306,6 +322,16 @@ func (o UserOutput) DisplayName() pulumi.StringOutput {
 // Email.
 func (o UserOutput) Email() pulumi.StringOutput {
 	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.Email }).(pulumi.StringOutput)
+}
+
+// Generated Password
+func (o UserOutput) GeneratePassword() pulumi.StringOutput {
+	return o.ApplyT(func(v *User) pulumi.StringOutput { return v.GeneratePassword }).(pulumi.StringOutput)
+}
+
+// Auto Generate Password
+func (o UserOutput) GenerateRandomPassword() pulumi.BoolOutput {
+	return o.ApplyT(func(v *User) pulumi.BoolOutput { return v.GenerateRandomPassword }).(pulumi.BoolOutput)
 }
 
 // Identity Type.

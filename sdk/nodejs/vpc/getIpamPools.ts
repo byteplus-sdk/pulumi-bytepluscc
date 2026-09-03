@@ -5,7 +5,7 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 /**
- * Plural Data Source schema for Byteplus::VPC::IpamPool
+ * Plural Data Source schema for Byteplus::VPC::IPAMPool
  */
 export function getIpamPools(opts?: pulumi.InvokeOptions): Promise<GetIpamPoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
@@ -27,7 +27,7 @@ export interface GetIpamPoolsResult {
     readonly ids: string[];
 }
 /**
- * Plural Data Source schema for Byteplus::VPC::IpamPool
+ * Plural Data Source schema for Byteplus::VPC::IPAMPool
  */
 export function getIpamPoolsOutput(opts?: pulumi.InvokeOutputOptions): pulumi.Output<GetIpamPoolsResult> {
     opts = pulumi.mergeOptions(utilities.resourceOptsDefaults(), opts || {});
