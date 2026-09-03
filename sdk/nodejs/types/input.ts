@@ -149,10 +149,6 @@ export namespace alb {
          * Private leaf certificate ID associated with the HTTPS listener. Required when creating an HTTPS listener and the certificate source is pca_leaf.
          */
         pcaLeafCertificateId?: pulumi.Input<string | undefined>;
-        /**
-         * If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-         */
-        san?: pulumi.Input<string | undefined>;
     }
 
     export interface ListenerServerGroup {

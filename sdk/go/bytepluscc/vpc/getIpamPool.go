@@ -11,7 +11,7 @@ import (
 	"github.com/pulumi/pulumi/sdk/v3/go/pulumi"
 )
 
-// Data Source schema for Byteplus::VPC::IpamPool
+// Data Source schema for Byteplus::VPC::IPAMPool
 func LookupIpamPool(ctx *pulumi.Context, args *LookupIpamPoolArgs, opts ...pulumi.InvokeOption) (*LookupIpamPoolResult, error) {
 	opts = internal.PkgInvokeDefaultOpts(opts)
 	var rv LookupIpamPoolResult

@@ -13,19 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public static class GetIpamPools
     {
         /// <summary>
-        /// Plural Data Source schema for Byteplus::VPC::IpamPool
+        /// Plural Data Source schema for Byteplus::VPC::IPAMPool
         /// </summary>
         public static Task<GetIpamPoolsResult> InvokeAsync(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpamPoolsResult>("bytepluscc:vpc/getIpamPools:getIpamPools", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
-        /// Plural Data Source schema for Byteplus::VPC::IpamPool
+        /// Plural Data Source schema for Byteplus::VPC::IPAMPool
         /// </summary>
         public static Output<GetIpamPoolsResult> Invoke(InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpamPoolsResult>("bytepluscc:vpc/getIpamPools:getIpamPools", InvokeArgs.Empty, options.WithDefaults());
 
         /// <summary>
-        /// Plural Data Source schema for Byteplus::VPC::IpamPool
+        /// Plural Data Source schema for Byteplus::VPC::IPAMPool
         /// </summary>
         public static Output<GetIpamPoolsResult> Invoke(InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpamPoolsResult>("bytepluscc:vpc/getIpamPools:getIpamPools", InvokeArgs.Empty, options.WithDefaults());

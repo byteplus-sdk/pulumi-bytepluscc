@@ -45,6 +45,14 @@ export interface GetUserResult {
      */
     readonly email: string;
     /**
+     * Generated Password
+     */
+    readonly generatePassword: string;
+    /**
+     * Auto Generate Password
+     */
+    readonly generateRandomPassword: boolean;
+    /**
      * Uniquely identifies the resource.
      */
     readonly id: string;

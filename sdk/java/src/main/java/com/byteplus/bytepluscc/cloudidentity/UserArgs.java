@@ -62,6 +62,21 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Auto Generate Password
+     * 
+     */
+    @Import(name="generateRandomPassword")
+    private @Nullable Output<Boolean> generateRandomPassword;
+
+    /**
+     * @return Auto Generate Password
+     * 
+     */
+    public Optional<Output<Boolean>> generateRandomPassword() {
+        return Optional.ofNullable(this.generateRandomPassword);
+    }
+
+    /**
      * Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
      * 
      */
@@ -127,6 +142,7 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.email = $.email;
+        this.generateRandomPassword = $.generateRandomPassword;
         this.password = $.password;
         this.passwordResetRequired = $.passwordResetRequired;
         this.phone = $.phone;
@@ -212,6 +228,27 @@ public final class UserArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder email(String email) {
             return email(Output.of(email));
+        }
+
+        /**
+         * @param generateRandomPassword Auto Generate Password
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generateRandomPassword(@Nullable Output<Boolean> generateRandomPassword) {
+            $.generateRandomPassword = generateRandomPassword;
+            return this;
+        }
+
+        /**
+         * @param generateRandomPassword Auto Generate Password
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generateRandomPassword(Boolean generateRandomPassword) {
+            return generateRandomPassword(Output.of(generateRandomPassword));
         }
 
         /**

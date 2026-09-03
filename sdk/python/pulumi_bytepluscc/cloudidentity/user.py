@@ -22,6 +22,7 @@ class UserArgs:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  email: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_random_password: pulumi.Input[Optional[_builtins.bool]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  password_reset_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  phone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -32,6 +33,7 @@ class UserArgs:
         :param pulumi.Input[_builtins.str] description: User Description.
         :param pulumi.Input[_builtins.str] display_name: User Display Name.
         :param pulumi.Input[_builtins.str] email: Email.
+        :param pulumi.Input[_builtins.bool] generate_random_password: Auto Generate Password
         :param pulumi.Input[_builtins.str] password: Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         :param pulumi.Input[_builtins.bool] password_reset_required: Is password reset required on first login?
         :param pulumi.Input[_builtins.str] phone: Mobile Number.
@@ -43,6 +45,8 @@ class UserArgs:
             pulumi.set(__self__, "display_name", display_name)
         if email is not None:
             pulumi.set(__self__, "email", email)
+        if generate_random_password is not None:
+            pulumi.set(__self__, "generate_random_password", generate_random_password)
         if password is not None:
             pulumi.set(__self__, "password", password)
         if password_reset_required is not None:
@@ -87,6 +91,18 @@ class UserArgs:
     @email.setter
     def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
+
+    @_builtins.property
+    @pulumi.getter(name="generateRandomPassword")
+    def generate_random_password(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Auto Generate Password
+        """
+        return pulumi.get(self, "generate_random_password")
+
+    @generate_random_password.setter
+    def generate_random_password(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "generate_random_password", value)
 
     @_builtins.property
     @pulumi.getter
@@ -144,6 +160,8 @@ class _UserState:
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  email: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_password: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_random_password: pulumi.Input[Optional[_builtins.bool]] = None,
                  identity_type: pulumi.Input[Optional[_builtins.str]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  password_reset_required: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -159,6 +177,8 @@ class _UserState:
         :param pulumi.Input[_builtins.str] description: User Description.
         :param pulumi.Input[_builtins.str] display_name: User Display Name.
         :param pulumi.Input[_builtins.str] email: Email.
+        :param pulumi.Input[_builtins.str] generate_password: Generated Password
+        :param pulumi.Input[_builtins.bool] generate_random_password: Auto Generate Password
         :param pulumi.Input[_builtins.str] identity_type: Identity Type.
         :param pulumi.Input[_builtins.str] password: Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         :param pulumi.Input[_builtins.bool] password_reset_required: Is password reset required on first login?
@@ -176,6 +196,10 @@ class _UserState:
             pulumi.set(__self__, "display_name", display_name)
         if email is not None:
             pulumi.set(__self__, "email", email)
+        if generate_password is not None:
+            pulumi.set(__self__, "generate_password", generate_password)
+        if generate_random_password is not None:
+            pulumi.set(__self__, "generate_random_password", generate_random_password)
         if identity_type is not None:
             pulumi.set(__self__, "identity_type", identity_type)
         if password is not None:
@@ -240,6 +264,30 @@ class _UserState:
     @email.setter
     def email(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "email", value)
+
+    @_builtins.property
+    @pulumi.getter(name="generatePassword")
+    def generate_password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Generated Password
+        """
+        return pulumi.get(self, "generate_password")
+
+    @generate_password.setter
+    def generate_password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "generate_password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="generateRandomPassword")
+    def generate_random_password(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Auto Generate Password
+        """
+        return pulumi.get(self, "generate_random_password")
+
+    @generate_random_password.setter
+    def generate_random_password(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "generate_random_password", value)
 
     @_builtins.property
     @pulumi.getter(name="identityType")
@@ -347,6 +395,7 @@ class User(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  email: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_random_password: pulumi.Input[Optional[_builtins.bool]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  password_reset_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  phone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -383,6 +432,7 @@ class User(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: User Description.
         :param pulumi.Input[_builtins.str] display_name: User Display Name.
         :param pulumi.Input[_builtins.str] email: Email.
+        :param pulumi.Input[_builtins.bool] generate_random_password: Auto Generate Password
         :param pulumi.Input[_builtins.str] password: Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         :param pulumi.Input[_builtins.bool] password_reset_required: Is password reset required on first login?
         :param pulumi.Input[_builtins.str] phone: Mobile Number.
@@ -438,6 +488,7 @@ class User(pulumi.CustomResource):
                  description: pulumi.Input[Optional[_builtins.str]] = None,
                  display_name: pulumi.Input[Optional[_builtins.str]] = None,
                  email: pulumi.Input[Optional[_builtins.str]] = None,
+                 generate_random_password: pulumi.Input[Optional[_builtins.bool]] = None,
                  password: pulumi.Input[Optional[_builtins.str]] = None,
                  password_reset_required: pulumi.Input[Optional[_builtins.bool]] = None,
                  phone: pulumi.Input[Optional[_builtins.str]] = None,
@@ -454,11 +505,13 @@ class User(pulumi.CustomResource):
             __props__.__dict__["description"] = description
             __props__.__dict__["display_name"] = display_name
             __props__.__dict__["email"] = email
+            __props__.__dict__["generate_random_password"] = generate_random_password
             __props__.__dict__["password"] = password
             __props__.__dict__["password_reset_required"] = password_reset_required
             __props__.__dict__["phone"] = phone
             __props__.__dict__["user_name"] = user_name
             __props__.__dict__["created_time"] = None
+            __props__.__dict__["generate_password"] = None
             __props__.__dict__["identity_type"] = None
             __props__.__dict__["source"] = None
             __props__.__dict__["updated_time"] = None
@@ -477,6 +530,8 @@ class User(pulumi.CustomResource):
             description: pulumi.Input[Optional[_builtins.str]] = None,
             display_name: pulumi.Input[Optional[_builtins.str]] = None,
             email: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_password: pulumi.Input[Optional[_builtins.str]] = None,
+            generate_random_password: pulumi.Input[Optional[_builtins.bool]] = None,
             identity_type: pulumi.Input[Optional[_builtins.str]] = None,
             password: pulumi.Input[Optional[_builtins.str]] = None,
             password_reset_required: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -496,6 +551,8 @@ class User(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] description: User Description.
         :param pulumi.Input[_builtins.str] display_name: User Display Name.
         :param pulumi.Input[_builtins.str] email: Email.
+        :param pulumi.Input[_builtins.str] generate_password: Generated Password
+        :param pulumi.Input[_builtins.bool] generate_random_password: Auto Generate Password
         :param pulumi.Input[_builtins.str] identity_type: Identity Type.
         :param pulumi.Input[_builtins.str] password: Password. Password must be 8–32 characters long and include at least three of the following: uppercase letters, lowercase letters, numbers, and special symbols.
         :param pulumi.Input[_builtins.bool] password_reset_required: Is password reset required on first login?
@@ -513,6 +570,8 @@ class User(pulumi.CustomResource):
         __props__.__dict__["description"] = description
         __props__.__dict__["display_name"] = display_name
         __props__.__dict__["email"] = email
+        __props__.__dict__["generate_password"] = generate_password
+        __props__.__dict__["generate_random_password"] = generate_random_password
         __props__.__dict__["identity_type"] = identity_type
         __props__.__dict__["password"] = password
         __props__.__dict__["password_reset_required"] = password_reset_required
@@ -554,6 +613,22 @@ class User(pulumi.CustomResource):
         Email.
         """
         return pulumi.get(self, "email")
+
+    @_builtins.property
+    @pulumi.getter(name="generatePassword")
+    def generate_password(self) -> pulumi.Output[_builtins.str]:
+        """
+        Generated Password
+        """
+        return pulumi.get(self, "generate_password")
+
+    @_builtins.property
+    @pulumi.getter(name="generateRandomPassword")
+    def generate_random_password(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Auto Generate Password
+        """
+        return pulumi.get(self, "generate_random_password")
 
     @_builtins.property
     @pulumi.getter(name="identityType")

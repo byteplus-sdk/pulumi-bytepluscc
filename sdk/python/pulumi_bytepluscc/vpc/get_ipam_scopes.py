@@ -63,7 +63,7 @@ class AwaitableGetIpamScopesResult(GetIpamScopesResult):
 
 def get_ipam_scopes(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpamScopesResult:
     """
-    Plural Data Source schema for Byteplus::VPC::IpamScope
+    Plural Data Source schema for Byteplus::VPC::IPAMScope
     """
     __args__ = dict()
     opts = pulumi.InvokeOptions.merge(_utilities.get_invoke_opts_defaults(), opts)
@@ -74,7 +74,7 @@ def get_ipam_scopes(opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGet
         ids=pulumi.get(__ret__, 'ids'))
 def get_ipam_scopes_output(opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpamScopesResult]:
     """
-    Plural Data Source schema for Byteplus::VPC::IpamScope
+    Plural Data Source schema for Byteplus::VPC::IPAMScope
     """
     __args__ = dict()
     opts = pulumi.InvokeOutputOptions.merge(_utilities.get_invoke_opts_defaults(), opts)

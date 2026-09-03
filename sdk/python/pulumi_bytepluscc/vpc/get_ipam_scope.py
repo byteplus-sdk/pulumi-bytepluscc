@@ -221,7 +221,7 @@ class AwaitableGetIpamScopeResult(GetIpamScopeResult):
 def get_ipam_scope(id: Optional[_builtins.str] = None,
                    opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpamScopeResult:
     """
-    Data Source schema for Byteplus::VPC::IpamScope
+    Data Source schema for Byteplus::VPC::IPAMScope
 
 
     :param _builtins.str id: Uniquely identifies the resource.
@@ -250,7 +250,7 @@ def get_ipam_scope(id: Optional[_builtins.str] = None,
 def get_ipam_scope_output(id: pulumi.Input[Optional[_builtins.str]] = None,
                           opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpamScopeResult]:
     """
-    Data Source schema for Byteplus::VPC::IpamScope
+    Data Source schema for Byteplus::VPC::IPAMScope
 
 
     :param _builtins.str id: Uniquely identifies the resource.

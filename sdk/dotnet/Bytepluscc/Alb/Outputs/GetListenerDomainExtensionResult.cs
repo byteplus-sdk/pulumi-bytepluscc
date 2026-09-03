@@ -43,7 +43,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Alb.Outputs
         /// </summary>
         public readonly string PcaLeafCertificateId;
         /// <summary>
-        /// If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
+        /// Separate the certificate's CommonName, extended domain names, and IP addresses with commas.
         /// </summary>
         public readonly string San;
 

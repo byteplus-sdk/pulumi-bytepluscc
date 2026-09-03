@@ -13,19 +13,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vpc
     public static class GetIpamScope
     {
         /// <summary>
-        /// Data Source schema for Byteplus::VPC::IpamScope
+        /// Data Source schema for Byteplus::VPC::IPAMScope
         /// </summary>
         public static Task<GetIpamScopeResult> InvokeAsync(GetIpamScopeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.InvokeAsync<GetIpamScopeResult>("bytepluscc:vpc/getIpamScope:getIpamScope", args ?? new GetIpamScopeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::VPC::IpamScope
+        /// Data Source schema for Byteplus::VPC::IPAMScope
         /// </summary>
         public static Output<GetIpamScopeResult> Invoke(GetIpamScopeInvokeArgs args, InvokeOptions? options = null)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpamScopeResult>("bytepluscc:vpc/getIpamScope:getIpamScope", args ?? new GetIpamScopeInvokeArgs(), options.WithDefaults());
 
         /// <summary>
-        /// Data Source schema for Byteplus::VPC::IpamScope
+        /// Data Source schema for Byteplus::VPC::IPAMScope
         /// </summary>
         public static Output<GetIpamScopeResult> Invoke(GetIpamScopeInvokeArgs args, InvokeOutputOptions options)
             => global::Pulumi.Deployment.Instance.Invoke<GetIpamScopeResult>("bytepluscc:vpc/getIpamScope:getIpamScope", args ?? new GetIpamScopeInvokeArgs(), options.WithDefaults());

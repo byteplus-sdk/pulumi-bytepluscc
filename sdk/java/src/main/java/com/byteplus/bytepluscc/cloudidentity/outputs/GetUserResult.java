@@ -32,6 +32,16 @@ public final class GetUserResult {
      */
     private String email;
     /**
+     * @return Generated Password
+     * 
+     */
+    private String generatePassword;
+    /**
+     * @return Auto Generate Password
+     * 
+     */
+    private Boolean generateRandomPassword;
+    /**
      * @return Uniquely identifies the resource.
      * 
      */
@@ -105,6 +115,20 @@ public final class GetUserResult {
      */
     public String email() {
         return this.email;
+    }
+    /**
+     * @return Generated Password
+     * 
+     */
+    public String generatePassword() {
+        return this.generatePassword;
+    }
+    /**
+     * @return Auto Generate Password
+     * 
+     */
+    public Boolean generateRandomPassword() {
+        return this.generateRandomPassword;
     }
     /**
      * @return Uniquely identifies the resource.
@@ -183,6 +207,8 @@ public final class GetUserResult {
         private String description;
         private String displayName;
         private String email;
+        private String generatePassword;
+        private Boolean generateRandomPassword;
         private String id;
         private String identityType;
         private String password;
@@ -199,6 +225,8 @@ public final class GetUserResult {
     	      this.description = defaults.description;
     	      this.displayName = defaults.displayName;
     	      this.email = defaults.email;
+    	      this.generatePassword = defaults.generatePassword;
+    	      this.generateRandomPassword = defaults.generateRandomPassword;
     	      this.id = defaults.id;
     	      this.identityType = defaults.identityType;
     	      this.password = defaults.password;
@@ -240,6 +268,22 @@ public final class GetUserResult {
               throw new MissingRequiredPropertyException("GetUserResult", "email");
             }
             this.email = email;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder generatePassword(String generatePassword) {
+            if (generatePassword == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "generatePassword");
+            }
+            this.generatePassword = generatePassword;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder generateRandomPassword(Boolean generateRandomPassword) {
+            if (generateRandomPassword == null) {
+              throw new MissingRequiredPropertyException("GetUserResult", "generateRandomPassword");
+            }
+            this.generateRandomPassword = generateRandomPassword;
             return this;
         }
         @CustomType.Setter
@@ -320,6 +364,8 @@ public final class GetUserResult {
             _resultValue.description = description;
             _resultValue.displayName = displayName;
             _resultValue.email = email;
+            _resultValue.generatePassword = generatePassword;
+            _resultValue.generateRandomPassword = generateRandomPassword;
             _resultValue.id = id;
             _resultValue.identityType = identityType;
             _resultValue.password = password;

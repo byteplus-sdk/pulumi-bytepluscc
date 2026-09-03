@@ -77,6 +77,36 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Generated Password
+     * 
+     */
+    @Import(name="generatePassword")
+    private @Nullable Output<String> generatePassword;
+
+    /**
+     * @return Generated Password
+     * 
+     */
+    public Optional<Output<String>> generatePassword() {
+        return Optional.ofNullable(this.generatePassword);
+    }
+
+    /**
+     * Auto Generate Password
+     * 
+     */
+    @Import(name="generateRandomPassword")
+    private @Nullable Output<Boolean> generateRandomPassword;
+
+    /**
+     * @return Auto Generate Password
+     * 
+     */
+    public Optional<Output<Boolean>> generateRandomPassword() {
+        return Optional.ofNullable(this.generateRandomPassword);
+    }
+
+    /**
      * Identity Type.
      * 
      */
@@ -203,6 +233,8 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
         this.description = $.description;
         this.displayName = $.displayName;
         this.email = $.email;
+        this.generatePassword = $.generatePassword;
+        this.generateRandomPassword = $.generateRandomPassword;
         this.identityType = $.identityType;
         this.password = $.password;
         this.passwordResetRequired = $.passwordResetRequired;
@@ -313,6 +345,48 @@ public final class UserState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder email(String email) {
             return email(Output.of(email));
+        }
+
+        /**
+         * @param generatePassword Generated Password
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generatePassword(@Nullable Output<String> generatePassword) {
+            $.generatePassword = generatePassword;
+            return this;
+        }
+
+        /**
+         * @param generatePassword Generated Password
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generatePassword(String generatePassword) {
+            return generatePassword(Output.of(generatePassword));
+        }
+
+        /**
+         * @param generateRandomPassword Auto Generate Password
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generateRandomPassword(@Nullable Output<Boolean> generateRandomPassword) {
+            $.generateRandomPassword = generateRandomPassword;
+            return this;
+        }
+
+        /**
+         * @param generateRandomPassword Auto Generate Password
+         * 
+         * @return builder
+         * 
+         */
+        public Builder generateRandomPassword(Boolean generateRandomPassword) {
+            return generateRandomPassword(Output.of(generateRandomPassword));
         }
 
         /**

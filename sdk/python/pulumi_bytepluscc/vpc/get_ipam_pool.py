@@ -329,7 +329,7 @@ class AwaitableGetIpamPoolResult(GetIpamPoolResult):
 def get_ipam_pool(id: Optional[_builtins.str] = None,
                   opts: Optional[pulumi.InvokeOptions] = None) -> AwaitableGetIpamPoolResult:
     """
-    Data Source schema for Byteplus::VPC::IpamPool
+    Data Source schema for Byteplus::VPC::IPAMPool
 
 
     :param _builtins.str id: Uniquely identifies the resource.
@@ -367,7 +367,7 @@ def get_ipam_pool(id: Optional[_builtins.str] = None,
 def get_ipam_pool_output(id: pulumi.Input[Optional[_builtins.str]] = None,
                          opts: Optional[Union[pulumi.InvokeOptions, pulumi.InvokeOutputOptions]] = None) -> pulumi.Output[GetIpamPoolResult]:
     """
-    Data Source schema for Byteplus::VPC::IpamPool
+    Data Source schema for Byteplus::VPC::IPAMPool
 
 
     :param _builtins.str id: Uniquely identifies the resource.

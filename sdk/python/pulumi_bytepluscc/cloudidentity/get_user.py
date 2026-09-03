@@ -26,7 +26,7 @@ class GetUserResult:
     """
     A collection of values returned by getUser.
     """
-    def __init__(__self__, created_time=None, description=None, display_name=None, email=None, id=None, identity_type=None, password=None, password_reset_required=None, phone=None, source=None, updated_time=None, user_id=None, user_name=None):
+    def __init__(__self__, created_time=None, description=None, display_name=None, email=None, generate_password=None, generate_random_password=None, id=None, identity_type=None, password=None, password_reset_required=None, phone=None, source=None, updated_time=None, user_id=None, user_name=None):
         if created_time and not isinstance(created_time, str):
             raise TypeError("Expected argument 'created_time' to be a str")
         pulumi.set(__self__, "created_time", created_time)
@@ -39,6 +39,12 @@ class GetUserResult:
         if email and not isinstance(email, str):
             raise TypeError("Expected argument 'email' to be a str")
         pulumi.set(__self__, "email", email)
+        if generate_password and not isinstance(generate_password, str):
+            raise TypeError("Expected argument 'generate_password' to be a str")
+        pulumi.set(__self__, "generate_password", generate_password)
+        if generate_random_password and not isinstance(generate_random_password, bool):
+            raise TypeError("Expected argument 'generate_random_password' to be a bool")
+        pulumi.set(__self__, "generate_random_password", generate_random_password)
         if id and not isinstance(id, str):
             raise TypeError("Expected argument 'id' to be a str")
         pulumi.set(__self__, "id", id)
@@ -98,6 +104,22 @@ class GetUserResult:
         Email.
         """
         return pulumi.get(self, "email")
+
+    @_builtins.property
+    @pulumi.getter(name="generatePassword")
+    def generate_password(self) -> _builtins.str:
+        """
+        Generated Password
+        """
+        return pulumi.get(self, "generate_password")
+
+    @_builtins.property
+    @pulumi.getter(name="generateRandomPassword")
+    def generate_random_password(self) -> _builtins.bool:
+        """
+        Auto Generate Password
+        """
+        return pulumi.get(self, "generate_random_password")
 
     @_builtins.property
     @pulumi.getter
@@ -182,6 +204,8 @@ class AwaitableGetUserResult(GetUserResult):
             description=self.description,
             display_name=self.display_name,
             email=self.email,
+            generate_password=self.generate_password,
+            generate_random_password=self.generate_random_password,
             id=self.id,
             identity_type=self.identity_type,
             password=self.password,
@@ -211,6 +235,8 @@ def get_user(id: Optional[_builtins.str] = None,
         description=pulumi.get(__ret__, 'description'),
         display_name=pulumi.get(__ret__, 'display_name'),
         email=pulumi.get(__ret__, 'email'),
+        generate_password=pulumi.get(__ret__, 'generate_password'),
+        generate_random_password=pulumi.get(__ret__, 'generate_random_password'),
         id=pulumi.get(__ret__, 'id'),
         identity_type=pulumi.get(__ret__, 'identity_type'),
         password=pulumi.get(__ret__, 'password'),
@@ -237,6 +263,8 @@ def get_user_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         description=pulumi.get(__response__, 'description'),
         display_name=pulumi.get(__response__, 'display_name'),
         email=pulumi.get(__response__, 'email'),
+        generate_password=pulumi.get(__response__, 'generate_password'),
+        generate_random_password=pulumi.get(__response__, 'generate_random_password'),
         id=pulumi.get(__response__, 'id'),
         identity_type=pulumi.get(__response__, 'identity_type'),
         password=pulumi.get(__response__, 'password'),

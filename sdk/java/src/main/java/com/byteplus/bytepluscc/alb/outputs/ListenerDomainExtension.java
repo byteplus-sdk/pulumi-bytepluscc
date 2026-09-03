@@ -36,11 +36,6 @@ public final class ListenerDomainExtension {
      * 
      */
     private @Nullable String pcaLeafCertificateId;
-    /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-     * 
-     */
-    private @Nullable String san;
 
     private ListenerDomainExtension() {}
     /**
@@ -78,13 +73,6 @@ public final class ListenerDomainExtension {
     public Optional<String> pcaLeafCertificateId() {
         return Optional.ofNullable(this.pcaLeafCertificateId);
     }
-    /**
-     * @return If the instance supports automatic selection of extended certificates (SniAutoMatch is on), Domain is an empty string. San refers to the extended domain names of the certificate, separated by commas.
-     * 
-     */
-    public Optional<String> san() {
-        return Optional.ofNullable(this.san);
-    }
 
     public static Builder builder() {
         return new Builder();
@@ -100,7 +88,6 @@ public final class ListenerDomainExtension {
         private @Nullable String certificateSource;
         private @Nullable String domain;
         private @Nullable String pcaLeafCertificateId;
-        private @Nullable String san;
         public Builder() {}
         public Builder(ListenerDomainExtension defaults) {
     	      Objects.requireNonNull(defaults);
@@ -109,7 +96,6 @@ public final class ListenerDomainExtension {
     	      this.certificateSource = defaults.certificateSource;
     	      this.domain = defaults.domain;
     	      this.pcaLeafCertificateId = defaults.pcaLeafCertificateId;
-    	      this.san = defaults.san;
         }
 
         @CustomType.Setter
@@ -142,12 +128,6 @@ public final class ListenerDomainExtension {
             this.pcaLeafCertificateId = pcaLeafCertificateId;
             return this;
         }
-        @CustomType.Setter
-        public Builder san(@Nullable String san) {
-
-            this.san = san;
-            return this;
-        }
         public ListenerDomainExtension build() {
             final var _resultValue = new ListenerDomainExtension();
             _resultValue.certCenterCertificateId = certCenterCertificateId;
@@ -155,7 +135,6 @@ public final class ListenerDomainExtension {
             _resultValue.certificateSource = certificateSource;
             _resultValue.domain = domain;
             _resultValue.pcaLeafCertificateId = pcaLeafCertificateId;
-            _resultValue.san = san;
             return _resultValue;
         }
     }
