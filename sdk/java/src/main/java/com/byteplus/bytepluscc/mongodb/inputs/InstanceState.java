@@ -193,14 +193,14 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+     * Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
      * 
      */
     @Import(name="dbEngineVersion")
     private @Nullable Output<String> dbEngineVersion;
 
     /**
-     * @return Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+     * @return Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
      * 
      */
     public Optional<Output<String>> dbEngineVersion() {
@@ -1037,7 +1037,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+         * @param dbEngineVersion Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
          * 
          * @return builder
          * 
@@ -1048,7 +1048,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param dbEngineVersion Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+         * @param dbEngineVersion Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
          * 
          * @return builder
          * 
