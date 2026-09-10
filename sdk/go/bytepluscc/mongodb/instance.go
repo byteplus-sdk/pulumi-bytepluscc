@@ -100,7 +100,7 @@ type Instance struct {
 	CreatedTime pulumi.StringOutput `pulumi:"createdTime"`
 	// Database engine. The value is fixed as MongoDB
 	DbEngine pulumi.StringOutput `pulumi:"dbEngine"`
-	// Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+	// Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
 	DbEngineVersion pulumi.StringOutput `pulumi:"dbEngineVersion"`
 	// Database engine version string
 	DbEngineVersionStr pulumi.StringOutput `pulumi:"dbEngineVersionStr"`
@@ -244,7 +244,7 @@ type instanceState struct {
 	CreatedTime *string `pulumi:"createdTime"`
 	// Database engine. The value is fixed as MongoDB
 	DbEngine *string `pulumi:"dbEngine"`
-	// Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+	// Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
 	DbEngineVersion *string `pulumi:"dbEngineVersion"`
 	// Database engine version string
 	DbEngineVersionStr *string `pulumi:"dbEngineVersionStr"`
@@ -344,7 +344,7 @@ type InstanceState struct {
 	CreatedTime pulumi.StringPtrInput
 	// Database engine. The value is fixed as MongoDB
 	DbEngine pulumi.StringPtrInput
-	// Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+	// Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
 	DbEngineVersion pulumi.StringPtrInput
 	// Database engine version string
 	DbEngineVersionStr pulumi.StringPtrInput
@@ -437,7 +437,7 @@ type instanceArgs struct {
 	ConfigServerStorageSpaceGb *int `pulumi:"configServerStorageSpaceGb"`
 	// Database engine. The value is fixed as MongoDB
 	DbEngine *string `pulumi:"dbEngine"`
-	// Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+	// Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
 	DbEngineVersion *string `pulumi:"dbEngineVersion"`
 	// Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
 	InstanceCount *int `pulumi:"instanceCount"`
@@ -498,7 +498,7 @@ type InstanceArgs struct {
 	ConfigServerStorageSpaceGb pulumi.IntPtrInput
 	// Database engine. The value is fixed as MongoDB
 	DbEngine pulumi.StringPtrInput
-	// Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+	// Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
 	DbEngineVersion pulumi.StringPtrInput
 	// Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
 	InstanceCount pulumi.IntPtrInput
@@ -688,7 +688,7 @@ func (o InstanceOutput) DbEngine() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbEngine }).(pulumi.StringOutput)
 }
 
-// Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+// Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
 func (o InstanceOutput) DbEngineVersion() pulumi.StringOutput {
 	return o.ApplyT(func(v *Instance) pulumi.StringOutput { return v.DbEngineVersion }).(pulumi.StringOutput)
 }

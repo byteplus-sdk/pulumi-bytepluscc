@@ -62,7 +62,7 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] config_server_node_spec: ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
         :param pulumi.Input[_builtins.int] config_server_storage_space_gb: ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
         :param pulumi.Input[_builtins.str] db_engine: Database engine. The value is fixed as MongoDB
-        :param pulumi.Input[_builtins.str] db_engine_version: Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        :param pulumi.Input[_builtins.str] db_engine_version: Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
         :param pulumi.Input[_builtins.int] instance_count: Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
         :param pulumi.Input[_builtins.str] instance_name: Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceInstanceParameterArgs']]] instance_parameters: Instance parameter list
@@ -268,7 +268,7 @@ class InstanceArgs:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -523,7 +523,7 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] config_servers_id: ConfigServer ID
         :param pulumi.Input[_builtins.str] created_time: Instance creation time (UTC).
         :param pulumi.Input[_builtins.str] db_engine: Database engine. The value is fixed as MongoDB
-        :param pulumi.Input[_builtins.str] db_engine_version: Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        :param pulumi.Input[_builtins.str] db_engine_version: Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
         :param pulumi.Input[_builtins.str] db_engine_version_str: Database engine version string
         :param pulumi.Input[_builtins.str] expired_time: Instance expiration time (UTC).
         :param pulumi.Input[_builtins.int] instance_count: Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
@@ -792,7 +792,7 @@ class _InstanceState:
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
-        Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
         """
         return pulumi.get(self, "db_engine_version")
 
@@ -1292,7 +1292,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] config_server_node_spec: ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
         :param pulumi.Input[_builtins.int] config_server_storage_space_gb: ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
         :param pulumi.Input[_builtins.str] db_engine: Database engine. The value is fixed as MongoDB
-        :param pulumi.Input[_builtins.str] db_engine_version: Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        :param pulumi.Input[_builtins.str] db_engine_version: Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
         :param pulumi.Input[_builtins.int] instance_count: Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
         :param pulumi.Input[_builtins.str] instance_name: Instance name. The name must meet the following requirements: Cannot start with a digit or hyphen (-). Can only contain Chinese characters, letters, digits, underscores (_), and hyphens (-). Length must be 2–64 characters.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceInstanceParameterArgs', 'InstanceInstanceParameterArgsDict']]]] instance_parameters: Instance parameter list
@@ -1550,7 +1550,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] config_servers_id: ConfigServer ID
         :param pulumi.Input[_builtins.str] created_time: Instance creation time (UTC).
         :param pulumi.Input[_builtins.str] db_engine: Database engine. The value is fixed as MongoDB
-        :param pulumi.Input[_builtins.str] db_engine_version: Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        :param pulumi.Input[_builtins.str] db_engine_version: Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
         :param pulumi.Input[_builtins.str] db_engine_version_str: Database engine version string
         :param pulumi.Input[_builtins.str] expired_time: Instance expiration time (UTC).
         :param pulumi.Input[_builtins.int] instance_count: Number of instances to create. Must be a positive integer greater than or equal to 1. Default is 1.
@@ -1735,7 +1735,7 @@ class Instance(pulumi.CustomResource):
     @pulumi.getter(name="dbEngineVersion")
     def db_engine_version(self) -> pulumi.Output[_builtins.str]:
         """
-        Database engine version. Options: MongoDB*4*0 (default): MongoDB 4.0. MongoDB*4*2: MongoDB 4.2. MongoDB*4*4: MongoDB 4.4. MongoDB*5*0: MongoDB 5.0. MongoDB*6*0: MongoDB 6.0. MongoDB*7*0: MongoDB 7.0.
+        Database engine version. Available values are as follows: MongoDB*4*0 (default): MongoDB version 4.0. MongoDB*4*2: MongoDB version 4.2. MongoDB*4*4: MongoDB version 4.4. MongoDB*5*0: MongoDB version 5.0. MongoDB*6*0: MongoDB version 6.0. MongoDB*7*0: MongoDB version 7.0. MongoDB*8*0: MongoDB version 8.0. MongoDB*8*3: MongoDB version 8.3. Note: For more details about MongoDB versions, see Version Introduction.
         """
         return pulumi.get(self, "db_engine_version")
 
