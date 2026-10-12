@@ -19,6 +19,8 @@ if typing.TYPE_CHECKING:
     ark = __ark
     import pulumi_bytepluscc.autoscaling as __autoscaling
     autoscaling = __autoscaling
+    import pulumi_bytepluscc.billing as __billing
+    billing = __billing
     import pulumi_bytepluscc.bmq as __bmq
     bmq = __bmq
     import pulumi_bytepluscc.cdn as __cdn
@@ -85,6 +87,8 @@ if typing.TYPE_CHECKING:
     redis = __redis
     import pulumi_bytepluscc.resourceshare as __resourceshare
     resourceshare = __resourceshare
+    import pulumi_bytepluscc.securitycenter as __securitycenter
+    securitycenter = __securitycenter
     import pulumi_bytepluscc.storageebs as __storageebs
     storageebs = __storageebs
     import pulumi_bytepluscc.tls as __tls
@@ -112,6 +116,7 @@ else:
     apig = _utilities.lazy_import('pulumi_bytepluscc.apig')
     ark = _utilities.lazy_import('pulumi_bytepluscc.ark')
     autoscaling = _utilities.lazy_import('pulumi_bytepluscc.autoscaling')
+    billing = _utilities.lazy_import('pulumi_bytepluscc.billing')
     bmq = _utilities.lazy_import('pulumi_bytepluscc.bmq')
     cdn = _utilities.lazy_import('pulumi_bytepluscc.cdn')
     cen = _utilities.lazy_import('pulumi_bytepluscc.cen')
@@ -145,6 +150,7 @@ else:
     rdspostgresql = _utilities.lazy_import('pulumi_bytepluscc.rdspostgresql')
     redis = _utilities.lazy_import('pulumi_bytepluscc.redis')
     resourceshare = _utilities.lazy_import('pulumi_bytepluscc.resourceshare')
+    securitycenter = _utilities.lazy_import('pulumi_bytepluscc.securitycenter')
     storageebs = _utilities.lazy_import('pulumi_bytepluscc.storageebs')
     tls = _utilities.lazy_import('pulumi_bytepluscc.tls')
     transitrouter = _utilities.lazy_import('pulumi_bytepluscc.transitrouter')
@@ -310,6 +316,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.autoscaling",
   "classes": {
    "bytepluscc:autoscaling/scalingPolicy:ScalingPolicy": "ScalingPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "billing/financialRelation",
+  "fqn": "pulumi_bytepluscc.billing",
+  "classes": {
+   "bytepluscc:billing/financialRelation:FinancialRelation": "FinancialRelation"
   }
  },
  {
@@ -554,6 +568,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "cloudmonitor/alertTemplate",
+  "fqn": "pulumi_bytepluscc.cloudmonitor",
+  "classes": {
+   "bytepluscc:cloudmonitor/alertTemplate:AlertTemplate": "AlertTemplate"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "cloudmonitor/contact",
   "fqn": "pulumi_bytepluscc.cloudmonitor",
   "classes": {
@@ -574,6 +596,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.cloudmonitor",
   "classes": {
    "bytepluscc:cloudmonitor/eventRule:EventRule": "EventRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "cloudmonitor/objectGroup",
+  "fqn": "pulumi_bytepluscc.cloudmonitor",
+  "classes": {
+   "bytepluscc:cloudmonitor/objectGroup:ObjectGroup": "ObjectGroup"
   }
  },
  {
@@ -1642,6 +1672,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "securitycenter/agent",
+  "fqn": "pulumi_bytepluscc.securitycenter",
+  "classes": {
+   "bytepluscc:securitycenter/agent:Agent": "Agent"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "storageebs/snapshot",
   "fqn": "pulumi_bytepluscc.storageebs",
   "classes": {
@@ -1858,6 +1896,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterForwardPolicyEntry",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterForwardPolicyEntry:TransitRouterForwardPolicyEntry": "TransitRouterForwardPolicyEntry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "transitrouter/transitRouterForwardPolicyTable",
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
@@ -1878,6 +1924,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.transitrouter",
   "classes": {
    "bytepluscc:transitrouter/transitRouterRouteEntry:TransitRouterRouteEntry": "TransitRouterRouteEntry"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "transitrouter/transitRouterRoutePolicyTable",
+  "fqn": "pulumi_bytepluscc.transitrouter",
+  "classes": {
+   "bytepluscc:transitrouter/transitRouterRoutePolicyTable:TransitRouterRoutePolicyTable": "TransitRouterRoutePolicyTable"
   }
  },
  {
@@ -2114,6 +2168,14 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "vke/nodepoolScalingPolicy",
+  "fqn": "pulumi_bytepluscc.vke",
+  "classes": {
+   "bytepluscc:vke/nodepoolScalingPolicy:NodepoolScalingPolicy": "NodepoolScalingPolicy"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "vke/permission",
   "fqn": "pulumi_bytepluscc.vke",
   "classes": {
@@ -2222,6 +2284,14 @@ _utilities.register(
   "fqn": "pulumi_bytepluscc.vpc",
   "classes": {
    "bytepluscc:vpc/ipamPool:IpamPool": "IpamPool"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "vpc/ipamResourceDiscovery",
+  "fqn": "pulumi_bytepluscc.vpc",
+  "classes": {
+   "bytepluscc:vpc/ipamResourceDiscovery:IpamResourceDiscovery": "IpamResourceDiscovery"
   }
  },
  {
@@ -2386,10 +2456,26 @@ _utilities.register(
  },
  {
   "pkg": "bytepluscc",
+  "mod": "waf/botAnalyseProtectRule",
+  "fqn": "pulumi_bytepluscc.waf",
+  "classes": {
+   "bytepluscc:waf/botAnalyseProtectRule:BotAnalyseProtectRule": "BotAnalyseProtectRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
   "mod": "waf/ccRule",
   "fqn": "pulumi_bytepluscc.waf",
   "classes": {
    "bytepluscc:waf/ccRule:CcRule": "CcRule"
+  }
+ },
+ {
+  "pkg": "bytepluscc",
+  "mod": "waf/customBot",
+  "fqn": "pulumi_bytepluscc.waf",
+  "classes": {
+   "bytepluscc:waf/customBot:CustomBot": "CustomBot"
   }
  },
  {

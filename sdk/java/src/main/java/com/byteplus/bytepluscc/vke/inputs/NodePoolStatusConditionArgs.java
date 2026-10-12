@@ -16,14 +16,14 @@ public final class NodePoolStatusConditionArgs extends com.pulumi.resources.Reso
     public static final NodePoolStatusConditionArgs Empty = new NodePoolStatusConditionArgs();
 
     /**
-     * Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+     * Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
      * 
      */
     @Import(name="type")
     private @Nullable Output<String> type;
 
     /**
-     * @return Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+     * @return Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
      * 
      */
     public Optional<Output<String>> type() {
@@ -55,7 +55,7 @@ public final class NodePoolStatusConditionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+         * @param type Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
          * 
          * @return builder
          * 
@@ -66,7 +66,7 @@ public final class NodePoolStatusConditionArgs extends com.pulumi.resources.Reso
         }
 
         /**
-         * @param type Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+         * @param type Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
          * 
          * @return builder
          * 

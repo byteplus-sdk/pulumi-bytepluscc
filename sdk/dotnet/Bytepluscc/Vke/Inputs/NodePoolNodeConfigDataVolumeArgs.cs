@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolNodeConfigDataVolumeArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// File system. Options:   - Ext4 (default)   - Xfs
+        /// [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
         /// </summary>
         [Input("fileSystem")]
         public Input<string>? FileSystem { get; set; }
@@ -26,7 +26,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         public Input<string>? MountPoint { get; set; }
 
         /// <summary>
-        /// Placement group ID
+        /// Storage placement group ID to which the data disk belongs.
         /// </summary>
         [Input("placementGroupId")]
         public Input<string>? PlacementGroupId { get; set; }
@@ -38,19 +38,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         public Input<int>? Size { get; set; }
 
         /// <summary>
-        /// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+        /// Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
         /// </summary>
         [Input("snapshotId")]
         public Input<string>? SnapshotId { get; set; }
 
         /// <summary>
-        /// Placement subgroup
+        /// Storage sub-placement group number of the data disk.
         /// </summary>
         [Input("subgroupNumber")]
         public Input<int>? SubgroupNumber { get; set; }
 
         /// <summary>
-        /// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+        /// Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
         /// </summary>
         [Input("type")]
         public Input<string>? Type { get; set; }

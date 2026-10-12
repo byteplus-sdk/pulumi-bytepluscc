@@ -37,7 +37,6 @@ class InstanceArgs:
                  deletion_protection: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_auth: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_cloud_storage: pulumi.Input[Optional[_builtins.bool]] = None,
-                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceEndpointArgs']]]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_type: pulumi.Input[Optional[_builtins.str]] = None,
                  multi_az: pulumi.Input[Optional[_builtins.bool]] = None,
@@ -63,8 +62,6 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] deletion_protection: Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         :param pulumi.Input[_builtins.bool] enable_auth: Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         :param pulumi.Input[_builtins.bool] enable_cloud_storage: Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-        :param pulumi.Input[Sequence[pulumi.Input['InstanceEndpointArgs']]] endpoints: Connection address information list
-               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] instance_name: Instance name
         :param pulumi.Input[_builtins.str] instance_type: Instance type. Currently, only Standard is supported. The default value is Standard
         :param pulumi.Input[_builtins.bool] multi_az: Instance deployment mode. Values: true: multi-availability zone deployment. false: single availability zone deployment. Currently, only single availability zone deployment is supported.
@@ -94,8 +91,6 @@ class InstanceArgs:
             pulumi.set(__self__, "enable_auth", enable_auth)
         if enable_cloud_storage is not None:
             pulumi.set(__self__, "enable_cloud_storage", enable_cloud_storage)
-        if endpoints is not None:
-            pulumi.set(__self__, "endpoints", endpoints)
         if instance_name is not None:
             pulumi.set(__self__, "instance_name", instance_name)
         if instance_type is not None:
@@ -300,19 +295,6 @@ class InstanceArgs:
     @enable_cloud_storage.setter
     def enable_cloud_storage(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "enable_cloud_storage", value)
-
-    @_builtins.property
-    @pulumi.getter
-    def endpoints(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceEndpointArgs']]]]:
-        """
-        Connection address information list
-        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        """
-        return pulumi.get(self, "endpoints")
-
-    @endpoints.setter
-    def endpoints(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceEndpointArgs']]]]):
-        pulumi.set(self, "endpoints", value)
 
     @_builtins.property
     @pulumi.getter(name="instanceName")
@@ -989,7 +971,6 @@ class Instance(pulumi.CustomResource):
                  deletion_protection: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_auth: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_cloud_storage: pulumi.Input[Optional[_builtins.bool]] = None,
-                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceEndpointArgs', 'InstanceEndpointArgsDict']]]]] = None,
                  engine_version: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1058,8 +1039,6 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] deletion_protection: Instance deletion protection switch status. Value range: enabled: enabled. disabled: not enabled. For more information about instance deletion protection, see Instance Deletion Protection.
         :param pulumi.Input[_builtins.bool] enable_auth: Whether login authentication is enabled. Values: true: login authentication enabled. false: login authentication disabled.
         :param pulumi.Input[_builtins.bool] enable_cloud_storage: Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
-        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceEndpointArgs', 'InstanceEndpointArgsDict']]]] endpoints: Connection address information list
-               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] engine_version: HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
         :param pulumi.Input[_builtins.str] instance_name: Instance name
         :param pulumi.Input[_builtins.str] instance_type: Instance type. Currently, only Standard is supported. The default value is Standard
@@ -1148,7 +1127,6 @@ class Instance(pulumi.CustomResource):
                  deletion_protection: pulumi.Input[Optional[_builtins.str]] = None,
                  enable_auth: pulumi.Input[Optional[_builtins.bool]] = None,
                  enable_cloud_storage: pulumi.Input[Optional[_builtins.bool]] = None,
-                 endpoints: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceEndpointArgs', 'InstanceEndpointArgsDict']]]]] = None,
                  engine_version: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_name: pulumi.Input[Optional[_builtins.str]] = None,
                  instance_type: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1182,7 +1160,6 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["deletion_protection"] = deletion_protection
             __props__.__dict__["enable_auth"] = enable_auth
             __props__.__dict__["enable_cloud_storage"] = enable_cloud_storage
-            __props__.__dict__["endpoints"] = endpoints
             if engine_version is None and not opts.urn:
                 raise TypeError("Missing required property 'engine_version'")
             __props__.__dict__["engine_version"] = engine_version
@@ -1221,6 +1198,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["zone_id"] = zone_id
             __props__.__dict__["charge_status"] = None
             __props__.__dict__["create_time"] = None
+            __props__.__dict__["endpoints"] = None
             __props__.__dict__["instance_id"] = None
             __props__.__dict__["master_count"] = None
             __props__.__dict__["primary_subnet_id"] = None

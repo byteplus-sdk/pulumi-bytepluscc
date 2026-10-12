@@ -1015,6 +1015,181 @@ func (o InstanceConnectionInfoAddressArrayOutput) Index(i pulumi.IntInput) Insta
 	}).(InstanceConnectionInfoAddressOutput)
 }
 
+type InstanceCrossBackupPolicy struct {
+	// Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+	BackupEnabled *bool `pulumi:"backupEnabled"`
+	// ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+	CrossBackupRegion *string `pulumi:"crossBackupRegion"`
+	// Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+	Retention *int `pulumi:"retention"`
+}
+
+// InstanceCrossBackupPolicyInput is an input type that accepts InstanceCrossBackupPolicyArgs and InstanceCrossBackupPolicyOutput values.
+// You can construct a concrete instance of `InstanceCrossBackupPolicyInput` via:
+//
+//	InstanceCrossBackupPolicyArgs{...}
+type InstanceCrossBackupPolicyInput interface {
+	pulumi.Input
+
+	ToInstanceCrossBackupPolicyOutput() InstanceCrossBackupPolicyOutput
+	ToInstanceCrossBackupPolicyOutputWithContext(context.Context) InstanceCrossBackupPolicyOutput
+}
+
+type InstanceCrossBackupPolicyArgs struct {
+	// Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+	BackupEnabled pulumi.BoolPtrInput `pulumi:"backupEnabled"`
+	// ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+	CrossBackupRegion pulumi.StringPtrInput `pulumi:"crossBackupRegion"`
+	// Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+	Retention pulumi.IntPtrInput `pulumi:"retention"`
+}
+
+func (InstanceCrossBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceCrossBackupPolicy)(nil)).Elem()
+}
+
+func (i InstanceCrossBackupPolicyArgs) ToInstanceCrossBackupPolicyOutput() InstanceCrossBackupPolicyOutput {
+	return i.ToInstanceCrossBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i InstanceCrossBackupPolicyArgs) ToInstanceCrossBackupPolicyOutputWithContext(ctx context.Context) InstanceCrossBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCrossBackupPolicyOutput)
+}
+
+func (i InstanceCrossBackupPolicyArgs) ToInstanceCrossBackupPolicyPtrOutput() InstanceCrossBackupPolicyPtrOutput {
+	return i.ToInstanceCrossBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceCrossBackupPolicyArgs) ToInstanceCrossBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceCrossBackupPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCrossBackupPolicyOutput).ToInstanceCrossBackupPolicyPtrOutputWithContext(ctx)
+}
+
+// InstanceCrossBackupPolicyPtrInput is an input type that accepts InstanceCrossBackupPolicyArgs, InstanceCrossBackupPolicyPtr and InstanceCrossBackupPolicyPtrOutput values.
+// You can construct a concrete instance of `InstanceCrossBackupPolicyPtrInput` via:
+//
+//	        InstanceCrossBackupPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceCrossBackupPolicyPtrInput interface {
+	pulumi.Input
+
+	ToInstanceCrossBackupPolicyPtrOutput() InstanceCrossBackupPolicyPtrOutput
+	ToInstanceCrossBackupPolicyPtrOutputWithContext(context.Context) InstanceCrossBackupPolicyPtrOutput
+}
+
+type instanceCrossBackupPolicyPtrType InstanceCrossBackupPolicyArgs
+
+func InstanceCrossBackupPolicyPtr(v *InstanceCrossBackupPolicyArgs) InstanceCrossBackupPolicyPtrInput {
+	return (*instanceCrossBackupPolicyPtrType)(v)
+}
+
+func (*instanceCrossBackupPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceCrossBackupPolicy)(nil)).Elem()
+}
+
+func (i *instanceCrossBackupPolicyPtrType) ToInstanceCrossBackupPolicyPtrOutput() InstanceCrossBackupPolicyPtrOutput {
+	return i.ToInstanceCrossBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceCrossBackupPolicyPtrType) ToInstanceCrossBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceCrossBackupPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceCrossBackupPolicyPtrOutput)
+}
+
+type InstanceCrossBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (InstanceCrossBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceCrossBackupPolicy)(nil)).Elem()
+}
+
+func (o InstanceCrossBackupPolicyOutput) ToInstanceCrossBackupPolicyOutput() InstanceCrossBackupPolicyOutput {
+	return o
+}
+
+func (o InstanceCrossBackupPolicyOutput) ToInstanceCrossBackupPolicyOutputWithContext(ctx context.Context) InstanceCrossBackupPolicyOutput {
+	return o
+}
+
+func (o InstanceCrossBackupPolicyOutput) ToInstanceCrossBackupPolicyPtrOutput() InstanceCrossBackupPolicyPtrOutput {
+	return o.ToInstanceCrossBackupPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceCrossBackupPolicyOutput) ToInstanceCrossBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceCrossBackupPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceCrossBackupPolicy) *InstanceCrossBackupPolicy {
+		return &v
+	}).(InstanceCrossBackupPolicyPtrOutput)
+}
+
+// Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+func (o InstanceCrossBackupPolicyOutput) BackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceCrossBackupPolicy) *bool { return v.BackupEnabled }).(pulumi.BoolPtrOutput)
+}
+
+// ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+func (o InstanceCrossBackupPolicyOutput) CrossBackupRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceCrossBackupPolicy) *string { return v.CrossBackupRegion }).(pulumi.StringPtrOutput)
+}
+
+// Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+func (o InstanceCrossBackupPolicyOutput) Retention() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v InstanceCrossBackupPolicy) *int { return v.Retention }).(pulumi.IntPtrOutput)
+}
+
+type InstanceCrossBackupPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceCrossBackupPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceCrossBackupPolicy)(nil)).Elem()
+}
+
+func (o InstanceCrossBackupPolicyPtrOutput) ToInstanceCrossBackupPolicyPtrOutput() InstanceCrossBackupPolicyPtrOutput {
+	return o
+}
+
+func (o InstanceCrossBackupPolicyPtrOutput) ToInstanceCrossBackupPolicyPtrOutputWithContext(ctx context.Context) InstanceCrossBackupPolicyPtrOutput {
+	return o
+}
+
+func (o InstanceCrossBackupPolicyPtrOutput) Elem() InstanceCrossBackupPolicyOutput {
+	return o.ApplyT(func(v *InstanceCrossBackupPolicy) InstanceCrossBackupPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceCrossBackupPolicy
+		return ret
+	}).(InstanceCrossBackupPolicyOutput)
+}
+
+// Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+func (o InstanceCrossBackupPolicyPtrOutput) BackupEnabled() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *InstanceCrossBackupPolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BackupEnabled
+	}).(pulumi.BoolPtrOutput)
+}
+
+// ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+func (o InstanceCrossBackupPolicyPtrOutput) CrossBackupRegion() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceCrossBackupPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.CrossBackupRegion
+	}).(pulumi.StringPtrOutput)
+}
+
+// Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+func (o InstanceCrossBackupPolicyPtrOutput) Retention() pulumi.IntPtrOutput {
+	return o.ApplyT(func(v *InstanceCrossBackupPolicy) *int {
+		if v == nil {
+			return nil
+		}
+		return v.Retention
+	}).(pulumi.IntPtrOutput)
+}
+
 type InstanceNodeDetailInfo struct {
 	// Node creation time.
 	CreateTime *string `pulumi:"createTime"`
@@ -1324,6 +1499,348 @@ func (o InstanceTagArrayOutput) Index(i pulumi.IntInput) InstanceTagOutput {
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceTag {
 		return vs[0].([]InstanceTag)[vs[1].(int)]
 	}).(InstanceTagOutput)
+}
+
+type InstanceTdeConfig struct {
+	// Certificate file used for TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+	Certificate *string `pulumi:"certificate"`
+	// Database encryption status.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	DbStatuses []InstanceTdeConfigDbStatus `pulumi:"dbStatuses"`
+	// Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+	Password *string `pulumi:"password"`
+	// Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+	PrivateKey *string `pulumi:"privateKey"`
+	// Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+	TdeMode *string `pulumi:"tdeMode"`
+	// Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+	TdeStatus *string `pulumi:"tdeStatus"`
+}
+
+// InstanceTdeConfigInput is an input type that accepts InstanceTdeConfigArgs and InstanceTdeConfigOutput values.
+// You can construct a concrete instance of `InstanceTdeConfigInput` via:
+//
+//	InstanceTdeConfigArgs{...}
+type InstanceTdeConfigInput interface {
+	pulumi.Input
+
+	ToInstanceTdeConfigOutput() InstanceTdeConfigOutput
+	ToInstanceTdeConfigOutputWithContext(context.Context) InstanceTdeConfigOutput
+}
+
+type InstanceTdeConfigArgs struct {
+	// Certificate file used for TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+	Certificate pulumi.StringPtrInput `pulumi:"certificate"`
+	// Database encryption status.
+	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+	DbStatuses InstanceTdeConfigDbStatusArrayInput `pulumi:"dbStatuses"`
+	// Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+	Password pulumi.StringPtrInput `pulumi:"password"`
+	// Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+	PrivateKey pulumi.StringPtrInput `pulumi:"privateKey"`
+	// Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+	TdeMode pulumi.StringPtrInput `pulumi:"tdeMode"`
+	// Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+	TdeStatus pulumi.StringPtrInput `pulumi:"tdeStatus"`
+}
+
+func (InstanceTdeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTdeConfig)(nil)).Elem()
+}
+
+func (i InstanceTdeConfigArgs) ToInstanceTdeConfigOutput() InstanceTdeConfigOutput {
+	return i.ToInstanceTdeConfigOutputWithContext(context.Background())
+}
+
+func (i InstanceTdeConfigArgs) ToInstanceTdeConfigOutputWithContext(ctx context.Context) InstanceTdeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTdeConfigOutput)
+}
+
+func (i InstanceTdeConfigArgs) ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput {
+	return i.ToInstanceTdeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i InstanceTdeConfigArgs) ToInstanceTdeConfigPtrOutputWithContext(ctx context.Context) InstanceTdeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTdeConfigOutput).ToInstanceTdeConfigPtrOutputWithContext(ctx)
+}
+
+// InstanceTdeConfigPtrInput is an input type that accepts InstanceTdeConfigArgs, InstanceTdeConfigPtr and InstanceTdeConfigPtrOutput values.
+// You can construct a concrete instance of `InstanceTdeConfigPtrInput` via:
+//
+//	        InstanceTdeConfigArgs{...}
+//
+//	or:
+//
+//	        nil
+type InstanceTdeConfigPtrInput interface {
+	pulumi.Input
+
+	ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput
+	ToInstanceTdeConfigPtrOutputWithContext(context.Context) InstanceTdeConfigPtrOutput
+}
+
+type instanceTdeConfigPtrType InstanceTdeConfigArgs
+
+func InstanceTdeConfigPtr(v *InstanceTdeConfigArgs) InstanceTdeConfigPtrInput {
+	return (*instanceTdeConfigPtrType)(v)
+}
+
+func (*instanceTdeConfigPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceTdeConfig)(nil)).Elem()
+}
+
+func (i *instanceTdeConfigPtrType) ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput {
+	return i.ToInstanceTdeConfigPtrOutputWithContext(context.Background())
+}
+
+func (i *instanceTdeConfigPtrType) ToInstanceTdeConfigPtrOutputWithContext(ctx context.Context) InstanceTdeConfigPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTdeConfigPtrOutput)
+}
+
+type InstanceTdeConfigOutput struct{ *pulumi.OutputState }
+
+func (InstanceTdeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTdeConfig)(nil)).Elem()
+}
+
+func (o InstanceTdeConfigOutput) ToInstanceTdeConfigOutput() InstanceTdeConfigOutput {
+	return o
+}
+
+func (o InstanceTdeConfigOutput) ToInstanceTdeConfigOutputWithContext(ctx context.Context) InstanceTdeConfigOutput {
+	return o
+}
+
+func (o InstanceTdeConfigOutput) ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput {
+	return o.ToInstanceTdeConfigPtrOutputWithContext(context.Background())
+}
+
+func (o InstanceTdeConfigOutput) ToInstanceTdeConfigPtrOutputWithContext(ctx context.Context) InstanceTdeConfigPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v InstanceTdeConfig) *InstanceTdeConfig {
+		return &v
+	}).(InstanceTdeConfigPtrOutput)
+}
+
+// Certificate file used for TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+func (o InstanceTdeConfigOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.Certificate }).(pulumi.StringPtrOutput)
+}
+
+// Database encryption status.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o InstanceTdeConfigOutput) DbStatuses() InstanceTdeConfigDbStatusArrayOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) []InstanceTdeConfigDbStatus { return v.DbStatuses }).(InstanceTdeConfigDbStatusArrayOutput)
+}
+
+// Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+func (o InstanceTdeConfigOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.Password }).(pulumi.StringPtrOutput)
+}
+
+// Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+func (o InstanceTdeConfigOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.PrivateKey }).(pulumi.StringPtrOutput)
+}
+
+// Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+func (o InstanceTdeConfigOutput) TdeMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.TdeMode }).(pulumi.StringPtrOutput)
+}
+
+// Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+func (o InstanceTdeConfigOutput) TdeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfig) *string { return v.TdeStatus }).(pulumi.StringPtrOutput)
+}
+
+type InstanceTdeConfigPtrOutput struct{ *pulumi.OutputState }
+
+func (InstanceTdeConfigPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**InstanceTdeConfig)(nil)).Elem()
+}
+
+func (o InstanceTdeConfigPtrOutput) ToInstanceTdeConfigPtrOutput() InstanceTdeConfigPtrOutput {
+	return o
+}
+
+func (o InstanceTdeConfigPtrOutput) ToInstanceTdeConfigPtrOutputWithContext(ctx context.Context) InstanceTdeConfigPtrOutput {
+	return o
+}
+
+func (o InstanceTdeConfigPtrOutput) Elem() InstanceTdeConfigOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) InstanceTdeConfig {
+		if v != nil {
+			return *v
+		}
+		var ret InstanceTdeConfig
+		return ret
+	}).(InstanceTdeConfigOutput)
+}
+
+// Certificate file used for TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+func (o InstanceTdeConfigPtrOutput) Certificate() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Certificate
+	}).(pulumi.StringPtrOutput)
+}
+
+// Database encryption status.
+// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+func (o InstanceTdeConfigPtrOutput) DbStatuses() InstanceTdeConfigDbStatusArrayOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) []InstanceTdeConfigDbStatus {
+		if v == nil {
+			return nil
+		}
+		return v.DbStatuses
+	}).(InstanceTdeConfigDbStatusArrayOutput)
+}
+
+// Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+func (o InstanceTdeConfigPtrOutput) Password() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.Password
+	}).(pulumi.StringPtrOutput)
+}
+
+// Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+func (o InstanceTdeConfigPtrOutput) PrivateKey() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.PrivateKey
+	}).(pulumi.StringPtrOutput)
+}
+
+// Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+func (o InstanceTdeConfigPtrOutput) TdeMode() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TdeMode
+	}).(pulumi.StringPtrOutput)
+}
+
+// Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+func (o InstanceTdeConfigPtrOutput) TdeStatus() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *InstanceTdeConfig) *string {
+		if v == nil {
+			return nil
+		}
+		return v.TdeStatus
+	}).(pulumi.StringPtrOutput)
+}
+
+type InstanceTdeConfigDbStatus struct {
+	// Database name.
+	DbName *string `pulumi:"dbName"`
+	// Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+	Enable *bool `pulumi:"enable"`
+}
+
+// InstanceTdeConfigDbStatusInput is an input type that accepts InstanceTdeConfigDbStatusArgs and InstanceTdeConfigDbStatusOutput values.
+// You can construct a concrete instance of `InstanceTdeConfigDbStatusInput` via:
+//
+//	InstanceTdeConfigDbStatusArgs{...}
+type InstanceTdeConfigDbStatusInput interface {
+	pulumi.Input
+
+	ToInstanceTdeConfigDbStatusOutput() InstanceTdeConfigDbStatusOutput
+	ToInstanceTdeConfigDbStatusOutputWithContext(context.Context) InstanceTdeConfigDbStatusOutput
+}
+
+type InstanceTdeConfigDbStatusArgs struct {
+	// Database name.
+	DbName pulumi.StringPtrInput `pulumi:"dbName"`
+	// Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+	Enable pulumi.BoolPtrInput `pulumi:"enable"`
+}
+
+func (InstanceTdeConfigDbStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTdeConfigDbStatus)(nil)).Elem()
+}
+
+func (i InstanceTdeConfigDbStatusArgs) ToInstanceTdeConfigDbStatusOutput() InstanceTdeConfigDbStatusOutput {
+	return i.ToInstanceTdeConfigDbStatusOutputWithContext(context.Background())
+}
+
+func (i InstanceTdeConfigDbStatusArgs) ToInstanceTdeConfigDbStatusOutputWithContext(ctx context.Context) InstanceTdeConfigDbStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTdeConfigDbStatusOutput)
+}
+
+// InstanceTdeConfigDbStatusArrayInput is an input type that accepts InstanceTdeConfigDbStatusArray and InstanceTdeConfigDbStatusArrayOutput values.
+// You can construct a concrete instance of `InstanceTdeConfigDbStatusArrayInput` via:
+//
+//	InstanceTdeConfigDbStatusArray{ InstanceTdeConfigDbStatusArgs{...} }
+type InstanceTdeConfigDbStatusArrayInput interface {
+	pulumi.Input
+
+	ToInstanceTdeConfigDbStatusArrayOutput() InstanceTdeConfigDbStatusArrayOutput
+	ToInstanceTdeConfigDbStatusArrayOutputWithContext(context.Context) InstanceTdeConfigDbStatusArrayOutput
+}
+
+type InstanceTdeConfigDbStatusArray []InstanceTdeConfigDbStatusInput
+
+func (InstanceTdeConfigDbStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTdeConfigDbStatus)(nil)).Elem()
+}
+
+func (i InstanceTdeConfigDbStatusArray) ToInstanceTdeConfigDbStatusArrayOutput() InstanceTdeConfigDbStatusArrayOutput {
+	return i.ToInstanceTdeConfigDbStatusArrayOutputWithContext(context.Background())
+}
+
+func (i InstanceTdeConfigDbStatusArray) ToInstanceTdeConfigDbStatusArrayOutputWithContext(ctx context.Context) InstanceTdeConfigDbStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(InstanceTdeConfigDbStatusArrayOutput)
+}
+
+type InstanceTdeConfigDbStatusOutput struct{ *pulumi.OutputState }
+
+func (InstanceTdeConfigDbStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*InstanceTdeConfigDbStatus)(nil)).Elem()
+}
+
+func (o InstanceTdeConfigDbStatusOutput) ToInstanceTdeConfigDbStatusOutput() InstanceTdeConfigDbStatusOutput {
+	return o
+}
+
+func (o InstanceTdeConfigDbStatusOutput) ToInstanceTdeConfigDbStatusOutputWithContext(ctx context.Context) InstanceTdeConfigDbStatusOutput {
+	return o
+}
+
+// Database name.
+func (o InstanceTdeConfigDbStatusOutput) DbName() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfigDbStatus) *string { return v.DbName }).(pulumi.StringPtrOutput)
+}
+
+// Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+func (o InstanceTdeConfigDbStatusOutput) Enable() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v InstanceTdeConfigDbStatus) *bool { return v.Enable }).(pulumi.BoolPtrOutput)
+}
+
+type InstanceTdeConfigDbStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (InstanceTdeConfigDbStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]InstanceTdeConfigDbStatus)(nil)).Elem()
+}
+
+func (o InstanceTdeConfigDbStatusArrayOutput) ToInstanceTdeConfigDbStatusArrayOutput() InstanceTdeConfigDbStatusArrayOutput {
+	return o
+}
+
+func (o InstanceTdeConfigDbStatusArrayOutput) ToInstanceTdeConfigDbStatusArrayOutputWithContext(ctx context.Context) InstanceTdeConfigDbStatusArrayOutput {
+	return o
+}
+
+func (o InstanceTdeConfigDbStatusArrayOutput) Index(i pulumi.IntInput) InstanceTdeConfigDbStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) InstanceTdeConfigDbStatus {
+		return vs[0].([]InstanceTdeConfigDbStatus)[vs[1].(int)]
+	}).(InstanceTdeConfigDbStatusOutput)
 }
 
 type GetAllowListAssociatedInstance struct {
@@ -2160,6 +2677,76 @@ func (o GetInstanceConnectionInfoAddressArrayOutput) Index(i pulumi.IntInput) Ge
 	}).(GetInstanceConnectionInfoAddressOutput)
 }
 
+type GetInstanceCrossBackupPolicy struct {
+	// Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+	BackupEnabled bool `pulumi:"backupEnabled"`
+	// ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+	CrossBackupRegion string `pulumi:"crossBackupRegion"`
+	// Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+	Retention int `pulumi:"retention"`
+}
+
+// GetInstanceCrossBackupPolicyInput is an input type that accepts GetInstanceCrossBackupPolicyArgs and GetInstanceCrossBackupPolicyOutput values.
+// You can construct a concrete instance of `GetInstanceCrossBackupPolicyInput` via:
+//
+//	GetInstanceCrossBackupPolicyArgs{...}
+type GetInstanceCrossBackupPolicyInput interface {
+	pulumi.Input
+
+	ToGetInstanceCrossBackupPolicyOutput() GetInstanceCrossBackupPolicyOutput
+	ToGetInstanceCrossBackupPolicyOutputWithContext(context.Context) GetInstanceCrossBackupPolicyOutput
+}
+
+type GetInstanceCrossBackupPolicyArgs struct {
+	// Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+	BackupEnabled pulumi.BoolInput `pulumi:"backupEnabled"`
+	// ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+	CrossBackupRegion pulumi.StringInput `pulumi:"crossBackupRegion"`
+	// Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+	Retention pulumi.IntInput `pulumi:"retention"`
+}
+
+func (GetInstanceCrossBackupPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceCrossBackupPolicy)(nil)).Elem()
+}
+
+func (i GetInstanceCrossBackupPolicyArgs) ToGetInstanceCrossBackupPolicyOutput() GetInstanceCrossBackupPolicyOutput {
+	return i.ToGetInstanceCrossBackupPolicyOutputWithContext(context.Background())
+}
+
+func (i GetInstanceCrossBackupPolicyArgs) ToGetInstanceCrossBackupPolicyOutputWithContext(ctx context.Context) GetInstanceCrossBackupPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceCrossBackupPolicyOutput)
+}
+
+type GetInstanceCrossBackupPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceCrossBackupPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceCrossBackupPolicy)(nil)).Elem()
+}
+
+func (o GetInstanceCrossBackupPolicyOutput) ToGetInstanceCrossBackupPolicyOutput() GetInstanceCrossBackupPolicyOutput {
+	return o
+}
+
+func (o GetInstanceCrossBackupPolicyOutput) ToGetInstanceCrossBackupPolicyOutputWithContext(ctx context.Context) GetInstanceCrossBackupPolicyOutput {
+	return o
+}
+
+// Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+func (o GetInstanceCrossBackupPolicyOutput) BackupEnabled() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceCrossBackupPolicy) bool { return v.BackupEnabled }).(pulumi.BoolOutput)
+}
+
+// ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+func (o GetInstanceCrossBackupPolicyOutput) CrossBackupRegion() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceCrossBackupPolicy) string { return v.CrossBackupRegion }).(pulumi.StringOutput)
+}
+
+// Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+func (o GetInstanceCrossBackupPolicyOutput) Retention() pulumi.IntOutput {
+	return o.ApplyT(func(v GetInstanceCrossBackupPolicy) int { return v.Retention }).(pulumi.IntOutput)
+}
+
 type GetInstanceNodeDetailInfo struct {
 	// Node creation time.
 	CreateTime string `pulumi:"createTime"`
@@ -2471,6 +3058,209 @@ func (o GetInstanceTagArrayOutput) Index(i pulumi.IntInput) GetInstanceTagOutput
 	}).(GetInstanceTagOutput)
 }
 
+type GetInstanceTdeConfig struct {
+	// Certificate file used for TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+	Certificate string `pulumi:"certificate"`
+	// Database encryption status.
+	DbStatuses []GetInstanceTdeConfigDbStatus `pulumi:"dbStatuses"`
+	// Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+	Password string `pulumi:"password"`
+	// Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+	PrivateKey string `pulumi:"privateKey"`
+	// Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+	TdeMode string `pulumi:"tdeMode"`
+	// Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+	TdeStatus string `pulumi:"tdeStatus"`
+}
+
+// GetInstanceTdeConfigInput is an input type that accepts GetInstanceTdeConfigArgs and GetInstanceTdeConfigOutput values.
+// You can construct a concrete instance of `GetInstanceTdeConfigInput` via:
+//
+//	GetInstanceTdeConfigArgs{...}
+type GetInstanceTdeConfigInput interface {
+	pulumi.Input
+
+	ToGetInstanceTdeConfigOutput() GetInstanceTdeConfigOutput
+	ToGetInstanceTdeConfigOutputWithContext(context.Context) GetInstanceTdeConfigOutput
+}
+
+type GetInstanceTdeConfigArgs struct {
+	// Certificate file used for TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+	Certificate pulumi.StringInput `pulumi:"certificate"`
+	// Database encryption status.
+	DbStatuses GetInstanceTdeConfigDbStatusArrayInput `pulumi:"dbStatuses"`
+	// Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+	Password pulumi.StringInput `pulumi:"password"`
+	// Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+	PrivateKey pulumi.StringInput `pulumi:"privateKey"`
+	// Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+	TdeMode pulumi.StringInput `pulumi:"tdeMode"`
+	// Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+	TdeStatus pulumi.StringInput `pulumi:"tdeStatus"`
+}
+
+func (GetInstanceTdeConfigArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTdeConfig)(nil)).Elem()
+}
+
+func (i GetInstanceTdeConfigArgs) ToGetInstanceTdeConfigOutput() GetInstanceTdeConfigOutput {
+	return i.ToGetInstanceTdeConfigOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTdeConfigArgs) ToGetInstanceTdeConfigOutputWithContext(ctx context.Context) GetInstanceTdeConfigOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTdeConfigOutput)
+}
+
+type GetInstanceTdeConfigOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTdeConfigOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTdeConfig)(nil)).Elem()
+}
+
+func (o GetInstanceTdeConfigOutput) ToGetInstanceTdeConfigOutput() GetInstanceTdeConfigOutput {
+	return o
+}
+
+func (o GetInstanceTdeConfigOutput) ToGetInstanceTdeConfigOutputWithContext(ctx context.Context) GetInstanceTdeConfigOutput {
+	return o
+}
+
+// Certificate file used for TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+func (o GetInstanceTdeConfigOutput) Certificate() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.Certificate }).(pulumi.StringOutput)
+}
+
+// Database encryption status.
+func (o GetInstanceTdeConfigOutput) DbStatuses() GetInstanceTdeConfigDbStatusArrayOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) []GetInstanceTdeConfigDbStatus { return v.DbStatuses }).(GetInstanceTdeConfigDbStatusArrayOutput)
+}
+
+// Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+func (o GetInstanceTdeConfigOutput) Password() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.Password }).(pulumi.StringOutput)
+}
+
+// Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \n\n:\n\n:\n\n. Valid only when TDEMode is set to User_Default.
+func (o GetInstanceTdeConfigOutput) PrivateKey() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.PrivateKey }).(pulumi.StringOutput)
+}
+
+// Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+func (o GetInstanceTdeConfigOutput) TdeMode() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.TdeMode }).(pulumi.StringOutput)
+}
+
+// Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+func (o GetInstanceTdeConfigOutput) TdeStatus() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfig) string { return v.TdeStatus }).(pulumi.StringOutput)
+}
+
+type GetInstanceTdeConfigDbStatus struct {
+	// Database name.
+	DbName string `pulumi:"dbName"`
+	// Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+	Enable bool `pulumi:"enable"`
+}
+
+// GetInstanceTdeConfigDbStatusInput is an input type that accepts GetInstanceTdeConfigDbStatusArgs and GetInstanceTdeConfigDbStatusOutput values.
+// You can construct a concrete instance of `GetInstanceTdeConfigDbStatusInput` via:
+//
+//	GetInstanceTdeConfigDbStatusArgs{...}
+type GetInstanceTdeConfigDbStatusInput interface {
+	pulumi.Input
+
+	ToGetInstanceTdeConfigDbStatusOutput() GetInstanceTdeConfigDbStatusOutput
+	ToGetInstanceTdeConfigDbStatusOutputWithContext(context.Context) GetInstanceTdeConfigDbStatusOutput
+}
+
+type GetInstanceTdeConfigDbStatusArgs struct {
+	// Database name.
+	DbName pulumi.StringInput `pulumi:"dbName"`
+	// Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+	Enable pulumi.BoolInput `pulumi:"enable"`
+}
+
+func (GetInstanceTdeConfigDbStatusArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTdeConfigDbStatus)(nil)).Elem()
+}
+
+func (i GetInstanceTdeConfigDbStatusArgs) ToGetInstanceTdeConfigDbStatusOutput() GetInstanceTdeConfigDbStatusOutput {
+	return i.ToGetInstanceTdeConfigDbStatusOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTdeConfigDbStatusArgs) ToGetInstanceTdeConfigDbStatusOutputWithContext(ctx context.Context) GetInstanceTdeConfigDbStatusOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTdeConfigDbStatusOutput)
+}
+
+// GetInstanceTdeConfigDbStatusArrayInput is an input type that accepts GetInstanceTdeConfigDbStatusArray and GetInstanceTdeConfigDbStatusArrayOutput values.
+// You can construct a concrete instance of `GetInstanceTdeConfigDbStatusArrayInput` via:
+//
+//	GetInstanceTdeConfigDbStatusArray{ GetInstanceTdeConfigDbStatusArgs{...} }
+type GetInstanceTdeConfigDbStatusArrayInput interface {
+	pulumi.Input
+
+	ToGetInstanceTdeConfigDbStatusArrayOutput() GetInstanceTdeConfigDbStatusArrayOutput
+	ToGetInstanceTdeConfigDbStatusArrayOutputWithContext(context.Context) GetInstanceTdeConfigDbStatusArrayOutput
+}
+
+type GetInstanceTdeConfigDbStatusArray []GetInstanceTdeConfigDbStatusInput
+
+func (GetInstanceTdeConfigDbStatusArray) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTdeConfigDbStatus)(nil)).Elem()
+}
+
+func (i GetInstanceTdeConfigDbStatusArray) ToGetInstanceTdeConfigDbStatusArrayOutput() GetInstanceTdeConfigDbStatusArrayOutput {
+	return i.ToGetInstanceTdeConfigDbStatusArrayOutputWithContext(context.Background())
+}
+
+func (i GetInstanceTdeConfigDbStatusArray) ToGetInstanceTdeConfigDbStatusArrayOutputWithContext(ctx context.Context) GetInstanceTdeConfigDbStatusArrayOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetInstanceTdeConfigDbStatusArrayOutput)
+}
+
+type GetInstanceTdeConfigDbStatusOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTdeConfigDbStatusOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetInstanceTdeConfigDbStatus)(nil)).Elem()
+}
+
+func (o GetInstanceTdeConfigDbStatusOutput) ToGetInstanceTdeConfigDbStatusOutput() GetInstanceTdeConfigDbStatusOutput {
+	return o
+}
+
+func (o GetInstanceTdeConfigDbStatusOutput) ToGetInstanceTdeConfigDbStatusOutputWithContext(ctx context.Context) GetInstanceTdeConfigDbStatusOutput {
+	return o
+}
+
+// Database name.
+func (o GetInstanceTdeConfigDbStatusOutput) DbName() pulumi.StringOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfigDbStatus) string { return v.DbName }).(pulumi.StringOutput)
+}
+
+// Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+func (o GetInstanceTdeConfigDbStatusOutput) Enable() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetInstanceTdeConfigDbStatus) bool { return v.Enable }).(pulumi.BoolOutput)
+}
+
+type GetInstanceTdeConfigDbStatusArrayOutput struct{ *pulumi.OutputState }
+
+func (GetInstanceTdeConfigDbStatusArrayOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*[]GetInstanceTdeConfigDbStatus)(nil)).Elem()
+}
+
+func (o GetInstanceTdeConfigDbStatusArrayOutput) ToGetInstanceTdeConfigDbStatusArrayOutput() GetInstanceTdeConfigDbStatusArrayOutput {
+	return o
+}
+
+func (o GetInstanceTdeConfigDbStatusArrayOutput) ToGetInstanceTdeConfigDbStatusArrayOutputWithContext(ctx context.Context) GetInstanceTdeConfigDbStatusArrayOutput {
+	return o
+}
+
+func (o GetInstanceTdeConfigDbStatusArrayOutput) Index(i pulumi.IntInput) GetInstanceTdeConfigDbStatusOutput {
+	return pulumi.All(o, i).ApplyT(func(vs []interface{}) GetInstanceTdeConfigDbStatus {
+		return vs[0].([]GetInstanceTdeConfigDbStatus)[vs[1].(int)]
+	}).(GetInstanceTdeConfigDbStatusOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceInput)(nil)).Elem(), AllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AllowListAssociatedInstanceArrayInput)(nil)).Elem(), AllowListAssociatedInstanceArray{})
@@ -2484,10 +3274,16 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConnectionInfoArrayInput)(nil)).Elem(), InstanceConnectionInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConnectionInfoAddressInput)(nil)).Elem(), InstanceConnectionInfoAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceConnectionInfoAddressArrayInput)(nil)).Elem(), InstanceConnectionInfoAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCrossBackupPolicyInput)(nil)).Elem(), InstanceCrossBackupPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceCrossBackupPolicyPtrInput)(nil)).Elem(), InstanceCrossBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeDetailInfoInput)(nil)).Elem(), InstanceNodeDetailInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceNodeDetailInfoArrayInput)(nil)).Elem(), InstanceNodeDetailInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagInput)(nil)).Elem(), InstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTagArrayInput)(nil)).Elem(), InstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTdeConfigInput)(nil)).Elem(), InstanceTdeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTdeConfigPtrInput)(nil)).Elem(), InstanceTdeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTdeConfigDbStatusInput)(nil)).Elem(), InstanceTdeConfigDbStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*InstanceTdeConfigDbStatusArrayInput)(nil)).Elem(), InstanceTdeConfigDbStatusArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceInput)(nil)).Elem(), GetAllowListAssociatedInstanceArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAllowListAssociatedInstanceArrayInput)(nil)).Elem(), GetAllowListAssociatedInstanceArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetBackupBackupDatabaseDetailInput)(nil)).Elem(), GetBackupBackupDatabaseDetailArgs{})
@@ -2499,10 +3295,14 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoArrayInput)(nil)).Elem(), GetInstanceConnectionInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoAddressInput)(nil)).Elem(), GetInstanceConnectionInfoAddressArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceConnectionInfoAddressArrayInput)(nil)).Elem(), GetInstanceConnectionInfoAddressArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceCrossBackupPolicyInput)(nil)).Elem(), GetInstanceCrossBackupPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeDetailInfoInput)(nil)).Elem(), GetInstanceNodeDetailInfoArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceNodeDetailInfoArrayInput)(nil)).Elem(), GetInstanceNodeDetailInfoArray{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagInput)(nil)).Elem(), GetInstanceTagArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTagArrayInput)(nil)).Elem(), GetInstanceTagArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTdeConfigInput)(nil)).Elem(), GetInstanceTdeConfigArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTdeConfigDbStatusInput)(nil)).Elem(), GetInstanceTdeConfigDbStatusArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetInstanceTdeConfigDbStatusArrayInput)(nil)).Elem(), GetInstanceTdeConfigDbStatusArray{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(AllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(BackupBackupDatabaseDetailOutput{})
@@ -2515,10 +3315,16 @@ func init() {
 	pulumi.RegisterOutputType(InstanceConnectionInfoArrayOutput{})
 	pulumi.RegisterOutputType(InstanceConnectionInfoAddressOutput{})
 	pulumi.RegisterOutputType(InstanceConnectionInfoAddressArrayOutput{})
+	pulumi.RegisterOutputType(InstanceCrossBackupPolicyOutput{})
+	pulumi.RegisterOutputType(InstanceCrossBackupPolicyPtrOutput{})
 	pulumi.RegisterOutputType(InstanceNodeDetailInfoOutput{})
 	pulumi.RegisterOutputType(InstanceNodeDetailInfoArrayOutput{})
 	pulumi.RegisterOutputType(InstanceTagOutput{})
 	pulumi.RegisterOutputType(InstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(InstanceTdeConfigOutput{})
+	pulumi.RegisterOutputType(InstanceTdeConfigPtrOutput{})
+	pulumi.RegisterOutputType(InstanceTdeConfigDbStatusOutput{})
+	pulumi.RegisterOutputType(InstanceTdeConfigDbStatusArrayOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceOutput{})
 	pulumi.RegisterOutputType(GetAllowListAssociatedInstanceArrayOutput{})
 	pulumi.RegisterOutputType(GetBackupBackupDatabaseDetailOutput{})
@@ -2530,8 +3336,12 @@ func init() {
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoAddressOutput{})
 	pulumi.RegisterOutputType(GetInstanceConnectionInfoAddressArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceCrossBackupPolicyOutput{})
 	pulumi.RegisterOutputType(GetInstanceNodeDetailInfoOutput{})
 	pulumi.RegisterOutputType(GetInstanceNodeDetailInfoArrayOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagOutput{})
 	pulumi.RegisterOutputType(GetInstanceTagArrayOutput{})
+	pulumi.RegisterOutputType(GetInstanceTdeConfigOutput{})
+	pulumi.RegisterOutputType(GetInstanceTdeConfigDbStatusOutput{})
+	pulumi.RegisterOutputType(GetInstanceTdeConfigDbStatusArrayOutput{})
 }

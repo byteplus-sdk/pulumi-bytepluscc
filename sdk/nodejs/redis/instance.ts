@@ -94,6 +94,10 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public readonly autoRenew: pulumi.Output<boolean>;
     /**
+     * Automatic backup policy for the instance.
+     */
+    declare public readonly backupPlan: pulumi.Output<outputs.redis.InstanceBackupPlan>;
+    /**
      * Set a backup name for the full backup created before changes.
      */
     declare public readonly backupPointName: pulumi.Output<string>;
@@ -298,6 +302,7 @@ export class Instance extends pulumi.CustomResource {
             const state = argsOrState as InstanceState | undefined;
             resourceInputs["allowListIds"] = state?.allowListIds;
             resourceInputs["autoRenew"] = state?.autoRenew;
+            resourceInputs["backupPlan"] = state?.backupPlan;
             resourceInputs["backupPointName"] = state?.backupPointName;
             resourceInputs["backupRestore"] = state?.backupRestore;
             resourceInputs["backups"] = state?.backups;
@@ -372,6 +377,7 @@ export class Instance extends pulumi.CustomResource {
             }
             resourceInputs["allowListIds"] = args?.allowListIds;
             resourceInputs["autoRenew"] = args?.autoRenew;
+            resourceInputs["backupPlan"] = args?.backupPlan;
             resourceInputs["backupPointName"] = args?.backupPointName;
             resourceInputs["backupRestore"] = args?.backupRestore;
             resourceInputs["chargeType"] = args?.chargeType;
@@ -436,6 +442,10 @@ export interface InstanceState {
      * Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
      */
     autoRenew?: pulumi.Input<boolean | undefined>;
+    /**
+     * Automatic backup policy for the instance.
+     */
+    backupPlan?: pulumi.Input<inputs.redis.InstanceBackupPlan | undefined>;
     /**
      * Set a backup name for the full backup created before changes.
      */
@@ -639,6 +649,10 @@ export interface InstanceArgs {
      * Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
      */
     autoRenew?: pulumi.Input<boolean | undefined>;
+    /**
+     * Automatic backup policy for the instance.
+     */
+    backupPlan?: pulumi.Input<inputs.redis.InstanceBackupPlan | undefined>;
     /**
      * Set a backup name for the full backup created before changes.
      */

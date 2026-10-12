@@ -32,14 +32,14 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
     }
 
     /**
-     * Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+     * Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     @Import(name="billingType")
     private @Nullable Output<Integer> billingType;
 
     /**
-     * @return Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+     * @return Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     public Optional<Output<Integer>> billingType() {
@@ -47,14 +47,14 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
     }
 
     /**
-     * Public IP line type. Parameter description: BGP: BGP (multi-line)
+     * Public IP line type. Parameter value description: BGP: BGP (multi-line).
      * 
      */
     @Import(name="isp")
     private @Nullable Output<String> isp;
 
     /**
-     * @return Public IP line type. Parameter description: BGP: BGP (multi-line)
+     * @return Public IP line type. Parameter value description: BGP: BGP (multi-line).
      * 
      */
     public Optional<Output<String>> isp() {
@@ -109,7 +109,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param billingType Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+         * @param billingType Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param billingType Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+         * @param billingType Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
          * 
          * @return builder
          * 
@@ -130,7 +130,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param isp Public IP line type. Parameter description: BGP: BGP (multi-line)
+         * @param isp Public IP line type. Parameter value description: BGP: BGP (multi-line).
          * 
          * @return builder
          * 
@@ -141,7 +141,7 @@ public final class NodePoolNodeConfigPublicAccessConfigArgs extends com.pulumi.r
         }
 
         /**
-         * @param isp Public IP line type. Parameter description: BGP: BGP (multi-line)
+         * @param isp Public IP line type. Parameter value description: BGP: BGP (multi-line).
          * 
          * @return builder
          * 

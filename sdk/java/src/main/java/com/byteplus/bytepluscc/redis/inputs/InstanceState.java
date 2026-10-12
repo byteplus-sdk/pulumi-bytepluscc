@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.redis.inputs;
 
 import com.byteplus.bytepluscc.redis.inputs.InstanceBackupArgs;
+import com.byteplus.bytepluscc.redis.inputs.InstanceBackupPlanArgs;
 import com.byteplus.bytepluscc.redis.inputs.InstanceBackupRestoreArgs;
 import com.byteplus.bytepluscc.redis.inputs.InstanceCapacityArgs;
 import com.byteplus.bytepluscc.redis.inputs.InstanceConfigureNodeArgs;
@@ -53,6 +54,21 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> autoRenew() {
         return Optional.ofNullable(this.autoRenew);
+    }
+
+    /**
+     * Automatic backup policy for the instance.
+     * 
+     */
+    @Import(name="backupPlan")
+    private @Nullable Output<InstanceBackupPlanArgs> backupPlan;
+
+    /**
+     * @return Automatic backup policy for the instance.
+     * 
+     */
+    public Optional<Output<InstanceBackupPlanArgs>> backupPlan() {
+        return Optional.ofNullable(this.backupPlan);
     }
 
     /**
@@ -760,6 +776,7 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
     private InstanceState(InstanceState $) {
         this.allowListIds = $.allowListIds;
         this.autoRenew = $.autoRenew;
+        this.backupPlan = $.backupPlan;
         this.backupPointName = $.backupPointName;
         this.backupRestore = $.backupRestore;
         this.backups = $.backups;
@@ -876,6 +893,27 @@ public final class InstanceState extends com.pulumi.resources.ResourceArgs {
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
+        }
+
+        /**
+         * @param backupPlan Automatic backup policy for the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupPlan(@Nullable Output<InstanceBackupPlanArgs> backupPlan) {
+            $.backupPlan = backupPlan;
+            return this;
+        }
+
+        /**
+         * @param backupPlan Automatic backup policy for the instance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupPlan(InstanceBackupPlanArgs backupPlan) {
+            return backupPlan(Output.of(backupPlan));
         }
 
         /**

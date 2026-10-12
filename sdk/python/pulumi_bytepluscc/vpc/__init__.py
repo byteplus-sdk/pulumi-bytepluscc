@@ -27,6 +27,8 @@ from .get_ip_pools import *
 from .get_ipam import *
 from .get_ipam_pool import *
 from .get_ipam_pools import *
+from .get_ipam_resource_discoveries import *
+from .get_ipam_resource_discovery import *
 from .get_ipam_scope import *
 from .get_ipam_scopes import *
 from .get_ipams import *
@@ -61,6 +63,7 @@ from .ip_pool import *
 from .ip_pool_cidr_block import *
 from .ipam import *
 from .ipam_pool import *
+from .ipam_resource_discovery import *
 from .ipam_scope import *
 from .ipv4_gateway import *
 from .ipv6_address_bandwidth import *

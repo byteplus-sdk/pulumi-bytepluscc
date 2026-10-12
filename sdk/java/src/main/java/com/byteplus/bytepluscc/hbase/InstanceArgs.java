@@ -3,7 +3,6 @@
 
 package com.byteplus.bytepluscc.hbase;
 
-import com.byteplus.bytepluscc.hbase.inputs.InstanceEndpointArgs;
 import com.byteplus.bytepluscc.hbase.inputs.InstanceTagArgs;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Import;
@@ -109,23 +108,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Boolean>> enableCloudStorage() {
         return Optional.ofNullable(this.enableCloudStorage);
-    }
-
-    /**
-     * Connection address information list
-     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     * 
-     */
-    @Import(name="endpoints")
-    private @Nullable Output<List<InstanceEndpointArgs>> endpoints;
-
-    /**
-     * @return Connection address information list
-     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     * 
-     */
-    public Optional<Output<List<InstanceEndpointArgs>>> endpoints() {
-        return Optional.ofNullable(this.endpoints);
     }
 
     /**
@@ -379,7 +361,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.deletionProtection = $.deletionProtection;
         this.enableAuth = $.enableAuth;
         this.enableCloudStorage = $.enableCloudStorage;
-        this.endpoints = $.endpoints;
         this.engineVersion = $.engineVersion;
         this.instanceName = $.instanceName;
         this.instanceType = $.instanceType;
@@ -540,40 +521,6 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder enableCloudStorage(Boolean enableCloudStorage) {
             return enableCloudStorage(Output.of(enableCloudStorage));
-        }
-
-        /**
-         * @param endpoints Connection address information list
-         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder endpoints(@Nullable Output<List<InstanceEndpointArgs>> endpoints) {
-            $.endpoints = endpoints;
-            return this;
-        }
-
-        /**
-         * @param endpoints Connection address information list
-         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder endpoints(List<InstanceEndpointArgs> endpoints) {
-            return endpoints(Output.of(endpoints));
-        }
-
-        /**
-         * @param endpoints Connection address information list
-         * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-         * 
-         * @return builder
-         * 
-         */
-        public Builder endpoints(InstanceEndpointArgs... endpoints) {
-            return endpoints(List.of(endpoints));
         }
 
         /**

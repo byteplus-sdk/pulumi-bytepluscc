@@ -31,14 +31,14 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
     }
 
     /**
-     * Hard threshold value.
+     * Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return Hard threshold value.
+     * @return Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
      * 
      */
     public Optional<Output<String>> value() {
@@ -92,7 +92,7 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
         }
 
         /**
-         * @param value Hard threshold value.
+         * @param value Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfigKubeletConfigEvictionHardArgs extends
         }
 
         /**
-         * @param value Hard threshold value.
+         * @param value Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
          * 
          * @return builder
          * 

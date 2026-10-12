@@ -19,22 +19,26 @@ __all__ = [
     'AccountAccountPrivilege',
     'AllowListAssociatedInstance',
     'EndpointDbAddress',
+    'InstanceBackup',
     'InstanceConfigServer',
     'InstanceInstanceParameter',
     'InstanceMongo',
     'InstanceNode',
     'InstanceNodeAvailabilityZone',
+    'InstanceRecoverableTime',
     'InstanceShard',
     'InstanceShardNode',
     'InstanceTag',
     'GetAccountAccountPrivilegeResult',
     'GetAllowListAssociatedInstanceResult',
     'GetEndpointDbAddressResult',
+    'GetInstanceBackupResult',
     'GetInstanceConfigServerResult',
     'GetInstanceInstanceParameterResult',
     'GetInstanceMongoResult',
     'GetInstanceNodeResult',
     'GetInstanceNodeAvailabilityZoneResult',
+    'GetInstanceRecoverableTimeResult',
     'GetInstanceShardResult',
     'GetInstanceShardNodeResult',
     'GetInstanceTagResult',
@@ -310,6 +314,166 @@ class EndpointDbAddress(dict):
         AZ of the node; all nodes are consistent for single-AZ instances, while nodes differ for multi-AZ instances
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class InstanceBackup(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "backupDownloadStatus":
+            suggest = "backup_download_status"
+        elif key == "backupEndTime":
+            suggest = "backup_end_time"
+        elif key == "backupFileName":
+            suggest = "backup_file_name"
+        elif key == "backupFileSize":
+            suggest = "backup_file_size"
+        elif key == "backupId":
+            suggest = "backup_id"
+        elif key == "backupObject":
+            suggest = "backup_object"
+        elif key == "backupStartTime":
+            suggest = "backup_start_time"
+        elif key == "backupStatus":
+            suggest = "backup_status"
+        elif key == "backupType":
+            suggest = "backup_type"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceBackup. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceBackup.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceBackup.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 backup_download_status: Optional[_builtins.str] = None,
+                 backup_end_time: Optional[_builtins.str] = None,
+                 backup_file_name: Optional[_builtins.str] = None,
+                 backup_file_size: Optional[_builtins.int] = None,
+                 backup_id: Optional[_builtins.str] = None,
+                 backup_object: Optional[_builtins.str] = None,
+                 backup_start_time: Optional[_builtins.str] = None,
+                 backup_status: Optional[_builtins.str] = None,
+                 backup_type: Optional[_builtins.str] = None,
+                 creator: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str backup_download_status: Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+        :param _builtins.str backup_end_time: Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param _builtins.str backup_file_name: Backup file name.
+        :param _builtins.int backup_file_size: Backup file size, unit: Byte.
+        :param _builtins.str backup_id: Backup ID.
+        :param _builtins.str backup_object: Backup target. Valid values: Data: data backup. Log: log backup.
+        :param _builtins.str backup_start_time: Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param _builtins.str backup_status: Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+        :param _builtins.str backup_type: Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        :param _builtins.str creator: Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+        """
+        if backup_download_status is not None:
+            pulumi.set(__self__, "backup_download_status", backup_download_status)
+        if backup_end_time is not None:
+            pulumi.set(__self__, "backup_end_time", backup_end_time)
+        if backup_file_name is not None:
+            pulumi.set(__self__, "backup_file_name", backup_file_name)
+        if backup_file_size is not None:
+            pulumi.set(__self__, "backup_file_size", backup_file_size)
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
+        if backup_object is not None:
+            pulumi.set(__self__, "backup_object", backup_object)
+        if backup_start_time is not None:
+            pulumi.set(__self__, "backup_start_time", backup_start_time)
+        if backup_status is not None:
+            pulumi.set(__self__, "backup_status", backup_status)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if creator is not None:
+            pulumi.set(__self__, "creator", creator)
+
+    @_builtins.property
+    @pulumi.getter(name="backupDownloadStatus")
+    def backup_download_status(self) -> Optional[_builtins.str]:
+        """
+        Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+        """
+        return pulumi.get(self, "backup_download_status")
+
+    @_builtins.property
+    @pulumi.getter(name="backupEndTime")
+    def backup_end_time(self) -> Optional[_builtins.str]:
+        """
+        Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "backup_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="backupFileName")
+    def backup_file_name(self) -> Optional[_builtins.str]:
+        """
+        Backup file name.
+        """
+        return pulumi.get(self, "backup_file_name")
+
+    @_builtins.property
+    @pulumi.getter(name="backupFileSize")
+    def backup_file_size(self) -> Optional[_builtins.int]:
+        """
+        Backup file size, unit: Byte.
+        """
+        return pulumi.get(self, "backup_file_size")
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> Optional[_builtins.str]:
+        """
+        Backup ID.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="backupObject")
+    def backup_object(self) -> Optional[_builtins.str]:
+        """
+        Backup target. Valid values: Data: data backup. Log: log backup.
+        """
+        return pulumi.get(self, "backup_object")
+
+    @_builtins.property
+    @pulumi.getter(name="backupStartTime")
+    def backup_start_time(self) -> Optional[_builtins.str]:
+        """
+        Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "backup_start_time")
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> Optional[_builtins.str]:
+        """
+        Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+        """
+        return pulumi.get(self, "backup_status")
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> Optional[_builtins.str]:
+        """
+        Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def creator(self) -> Optional[_builtins.str]:
+        """
+        Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+        """
+        return pulumi.get(self, "creator")
 
 
 @pulumi.output_type
@@ -885,6 +1049,56 @@ class InstanceNodeAvailabilityZone(dict):
 
 
 @pulumi.output_type
+class InstanceRecoverableTime(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "earliestRecoverableTime":
+            suggest = "earliest_recoverable_time"
+        elif key == "latestRecoverableTime":
+            suggest = "latest_recoverable_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in InstanceRecoverableTime. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        InstanceRecoverableTime.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        InstanceRecoverableTime.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 earliest_recoverable_time: Optional[_builtins.str] = None,
+                 latest_recoverable_time: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str earliest_recoverable_time: Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param _builtins.str latest_recoverable_time: Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        if earliest_recoverable_time is not None:
+            pulumi.set(__self__, "earliest_recoverable_time", earliest_recoverable_time)
+        if latest_recoverable_time is not None:
+            pulumi.set(__self__, "latest_recoverable_time", latest_recoverable_time)
+
+    @_builtins.property
+    @pulumi.getter(name="earliestRecoverableTime")
+    def earliest_recoverable_time(self) -> Optional[_builtins.str]:
+        """
+        Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "earliest_recoverable_time")
+
+    @_builtins.property
+    @pulumi.getter(name="latestRecoverableTime")
+    def latest_recoverable_time(self) -> Optional[_builtins.str]:
+        """
+        Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "latest_recoverable_time")
+
+
+@pulumi.output_type
 class InstanceShard(dict):
     @staticmethod
     def __key_warning(key: str):
@@ -1354,6 +1568,123 @@ class GetEndpointDbAddressResult(dict):
 
 
 @pulumi.output_type
+class GetInstanceBackupResult(dict):
+    def __init__(__self__, *,
+                 backup_download_status: _builtins.str,
+                 backup_end_time: _builtins.str,
+                 backup_file_name: _builtins.str,
+                 backup_file_size: _builtins.int,
+                 backup_id: _builtins.str,
+                 backup_object: _builtins.str,
+                 backup_start_time: _builtins.str,
+                 backup_status: _builtins.str,
+                 backup_type: _builtins.str,
+                 creator: _builtins.str):
+        """
+        :param _builtins.str backup_download_status: Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+        :param _builtins.str backup_end_time: Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param _builtins.str backup_file_name: Backup file name.
+        :param _builtins.int backup_file_size: Backup file size, unit: Byte.
+        :param _builtins.str backup_id: Backup ID.
+        :param _builtins.str backup_object: Backup target. Valid values: Data: data backup. Log: log backup.
+        :param _builtins.str backup_start_time: Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param _builtins.str backup_status: Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+        :param _builtins.str backup_type: Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        :param _builtins.str creator: Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+        """
+        pulumi.set(__self__, "backup_download_status", backup_download_status)
+        pulumi.set(__self__, "backup_end_time", backup_end_time)
+        pulumi.set(__self__, "backup_file_name", backup_file_name)
+        pulumi.set(__self__, "backup_file_size", backup_file_size)
+        pulumi.set(__self__, "backup_id", backup_id)
+        pulumi.set(__self__, "backup_object", backup_object)
+        pulumi.set(__self__, "backup_start_time", backup_start_time)
+        pulumi.set(__self__, "backup_status", backup_status)
+        pulumi.set(__self__, "backup_type", backup_type)
+        pulumi.set(__self__, "creator", creator)
+
+    @_builtins.property
+    @pulumi.getter(name="backupDownloadStatus")
+    def backup_download_status(self) -> _builtins.str:
+        """
+        Download status of the backup file. Valid values: NotDownLoad: backup file not obtained. Success: backup file available for download. Running: backup file being obtained.
+        """
+        return pulumi.get(self, "backup_download_status")
+
+    @_builtins.property
+    @pulumi.getter(name="backupEndTime")
+    def backup_end_time(self) -> _builtins.str:
+        """
+        Backup end time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "backup_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="backupFileName")
+    def backup_file_name(self) -> _builtins.str:
+        """
+        Backup file name.
+        """
+        return pulumi.get(self, "backup_file_name")
+
+    @_builtins.property
+    @pulumi.getter(name="backupFileSize")
+    def backup_file_size(self) -> _builtins.int:
+        """
+        Backup file size, unit: Byte.
+        """
+        return pulumi.get(self, "backup_file_size")
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> _builtins.str:
+        """
+        Backup ID.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="backupObject")
+    def backup_object(self) -> _builtins.str:
+        """
+        Backup target. Valid values: Data: data backup. Log: log backup.
+        """
+        return pulumi.get(self, "backup_object")
+
+    @_builtins.property
+    @pulumi.getter(name="backupStartTime")
+    def backup_start_time(self) -> _builtins.str:
+        """
+        Backup start time, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "backup_start_time")
+
+    @_builtins.property
+    @pulumi.getter(name="backupStatus")
+    def backup_status(self) -> _builtins.str:
+        """
+        Backup status. Valid values: Success: backup succeeded. Failed: backup failed. Running: backup in progress.
+        """
+        return pulumi.get(self, "backup_status")
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> _builtins.str:
+        """
+        Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def creator(self) -> _builtins.str:
+        """
+        Entity that created the backup. Valid values: System: system automatic backup. User: user manual backup.
+        """
+        return pulumi.get(self, "creator")
+
+
+@pulumi.output_type
 class GetInstanceConfigServerResult(dict):
     def __init__(__self__, *,
                  config_server_node_id: _builtins.str,
@@ -1815,6 +2146,35 @@ class GetInstanceNodeAvailabilityZoneResult(dict):
         Availability zone of the read-only node.
         """
         return pulumi.get(self, "zone_id")
+
+
+@pulumi.output_type
+class GetInstanceRecoverableTimeResult(dict):
+    def __init__(__self__, *,
+                 earliest_recoverable_time: _builtins.str,
+                 latest_recoverable_time: _builtins.str):
+        """
+        :param _builtins.str earliest_recoverable_time: Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param _builtins.str latest_recoverable_time: Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        pulumi.set(__self__, "earliest_recoverable_time", earliest_recoverable_time)
+        pulumi.set(__self__, "latest_recoverable_time", latest_recoverable_time)
+
+    @_builtins.property
+    @pulumi.getter(name="earliestRecoverableTime")
+    def earliest_recoverable_time(self) -> _builtins.str:
+        """
+        Earliest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "earliest_recoverable_time")
+
+    @_builtins.property
+    @pulumi.getter(name="latestRecoverableTime")
+    def latest_recoverable_time(self) -> _builtins.str:
+        """
+        Latest recoverable time point for the instance, format: yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "latest_recoverable_time")
 
 
 @pulumi.output_type

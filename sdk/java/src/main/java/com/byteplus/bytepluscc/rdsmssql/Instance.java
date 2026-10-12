@@ -8,8 +8,10 @@ import com.byteplus.bytepluscc.rdsmssql.InstanceArgs;
 import com.byteplus.bytepluscc.rdsmssql.inputs.InstanceState;
 import com.byteplus.bytepluscc.rdsmssql.outputs.InstanceChargeInfo;
 import com.byteplus.bytepluscc.rdsmssql.outputs.InstanceConnectionInfo;
+import com.byteplus.bytepluscc.rdsmssql.outputs.InstanceCrossBackupPolicy;
 import com.byteplus.bytepluscc.rdsmssql.outputs.InstanceNodeDetailInfo;
 import com.byteplus.bytepluscc.rdsmssql.outputs.InstanceTag;
+import com.byteplus.bytepluscc.rdsmssql.outputs.InstanceTdeConfig;
 import com.pulumi.core.Output;
 import com.pulumi.core.annotations.Export;
 import com.pulumi.core.annotations.ResourceType;
@@ -119,6 +121,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
         return this.allowListIds;
     }
     /**
+     * List of cross-region backup destination regions.
+     * 
+     */
+    @Export(name="availableCrossRegions", refs={List.class,String.class}, tree="[0,1]")
+    private Output<List<String>> availableCrossRegions;
+
+    /**
+     * @return List of cross-region backup destination regions.
+     * 
+     */
+    public Output<List<String>> availableCrossRegions() {
+        return this.availableCrossRegions;
+    }
+    /**
      * Used backup space for the instance, in GiB.
      * 
      */
@@ -175,6 +191,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<String> createdTime() {
         return this.createdTime;
+    }
+    /**
+     * Cross-region backup policy.
+     * 
+     */
+    @Export(name="crossBackupPolicy", refs={InstanceCrossBackupPolicy.class}, tree="[0]")
+    private Output<InstanceCrossBackupPolicy> crossBackupPolicy;
+
+    /**
+     * @return Cross-region backup policy.
+     * 
+     */
+    public Output<InstanceCrossBackupPolicy> crossBackupPolicy() {
+        return this.crossBackupPolicy;
     }
     /**
      * Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
@@ -529,6 +559,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<List<InstanceTag>> tags() {
         return this.tags;
+    }
+    /**
+     * Instance TDE configuration.
+     * 
+     */
+    @Export(name="tdeConfig", refs={InstanceTdeConfig.class}, tree="[0]")
+    private Output<InstanceTdeConfig> tdeConfig;
+
+    /**
+     * @return Instance TDE configuration.
+     * 
+     */
+    public Output<InstanceTdeConfig> tdeConfig() {
+        return this.tdeConfig;
     }
     /**
      * Time zone.

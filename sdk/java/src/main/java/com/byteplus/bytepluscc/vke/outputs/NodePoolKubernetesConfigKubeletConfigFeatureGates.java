@@ -12,26 +12,26 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolKubernetesConfigKubeletConfigFeatureGates {
     /**
-     * @return Enable local vertical Pod autoscaling feature toggle
+     * @return Enable Pod vertical scaling. Options: true: enabled. false: disabled.
      * 
      */
     private @Nullable Boolean inPlacePodVerticalScaling;
     /**
-     * @return Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+     * @return Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
      * 
      */
     private @Nullable Boolean qoSResourceManager;
 
     private NodePoolKubernetesConfigKubeletConfigFeatureGates() {}
     /**
-     * @return Enable local vertical Pod autoscaling feature toggle
+     * @return Enable Pod vertical scaling. Options: true: enabled. false: disabled.
      * 
      */
     public Optional<Boolean> inPlacePodVerticalScaling() {
         return Optional.ofNullable(this.inPlacePodVerticalScaling);
     }
     /**
-     * @return Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+     * @return Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
      * 
      */
     public Optional<Boolean> qoSResourceManager() {

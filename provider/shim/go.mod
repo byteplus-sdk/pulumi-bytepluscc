@@ -3,7 +3,7 @@ module github.com/byteplus-sdk/terraform-provider-bytepluscc/shim
 go 1.25.8
 
 require (
-	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.58
+	github.com/byteplus-sdk/terraform-provider-bytepluscc v0.0.59
 	github.com/hashicorp/terraform-plugin-framework v1.19.0
 )
 

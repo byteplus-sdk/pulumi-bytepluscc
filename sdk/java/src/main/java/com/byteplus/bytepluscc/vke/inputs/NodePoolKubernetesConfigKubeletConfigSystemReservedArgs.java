@@ -31,14 +31,14 @@ public final class NodePoolKubernetesConfigKubeletConfigSystemReservedArgs exten
     }
 
     /**
-     * Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+     * Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
      * 
      */
     @Import(name="quantity")
     private @Nullable Output<String> quantity;
 
     /**
-     * @return Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+     * @return Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
      * 
      */
     public Optional<Output<String>> quantity() {
@@ -92,7 +92,7 @@ public final class NodePoolKubernetesConfigKubeletConfigSystemReservedArgs exten
         }
 
         /**
-         * @param quantity Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+         * @param quantity Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfigKubeletConfigSystemReservedArgs exten
         }
 
         /**
-         * @param quantity Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+         * @param quantity Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
          * 
          * @return builder
          * 

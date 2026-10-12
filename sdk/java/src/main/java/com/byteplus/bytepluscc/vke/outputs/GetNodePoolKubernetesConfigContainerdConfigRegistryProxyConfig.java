@@ -12,26 +12,26 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig {
     /**
-     * @return Proxy address.
+     * @return Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
      * 
      */
     private List<String> proxyEndpoints;
     /**
-     * @return Container image repository address.
+     * @return Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
      * 
      */
     private String registry;
 
     private GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig() {}
     /**
-     * @return Proxy address.
+     * @return Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
      * 
      */
     public List<String> proxyEndpoints() {
         return this.proxyEndpoints;
     }
     /**
-     * @return Container image repository address.
+     * @return Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
      * 
      */
     public String registry() {

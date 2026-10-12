@@ -331,6 +331,10 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public readonly secondaryNetworkInterfaces: pulumi.Output<outputs.ecs.InstanceSecondaryNetworkInterface[]>;
     /**
+     * IAM role name bound to the instance.
+     */
+    declare public /*out*/ readonly showRoleNames: pulumi.Output<string[]>;
+    /**
      * Maximum hourly price for spot instances.
      *     - Supports up to three decimal places.
      *     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
@@ -451,6 +455,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["renewInfo"] = state?.renewInfo;
             resourceInputs["roleNames"] = state?.roleNames;
             resourceInputs["secondaryNetworkInterfaces"] = state?.secondaryNetworkInterfaces;
+            resourceInputs["showRoleNames"] = state?.showRoleNames;
             resourceInputs["spotPriceLimit"] = state?.spotPriceLimit;
             resourceInputs["spotStrategy"] = state?.spotStrategy;
             resourceInputs["status"] = state?.status;
@@ -531,6 +536,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["operationSystem"] = undefined /*out*/;
             resourceInputs["rdmaIpAddresses"] = undefined /*out*/;
             resourceInputs["rdmaNetworkInterfaceDetails"] = undefined /*out*/;
+            resourceInputs["showRoleNames"] = undefined /*out*/;
             resourceInputs["updatedAt"] = undefined /*out*/;
             resourceInputs["vpcId"] = undefined /*out*/;
         }
@@ -774,6 +780,10 @@ export interface InstanceState {
      *  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     secondaryNetworkInterfaces?: pulumi.Input<pulumi.Input<inputs.ecs.InstanceSecondaryNetworkInterface>[] | undefined>;
+    /**
+     * IAM role name bound to the instance.
+     */
+    showRoleNames?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
      * Maximum hourly price for spot instances.
      *     - Supports up to three decimal places.

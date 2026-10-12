@@ -5,6 +5,11 @@ import * as pulumi from "@pulumi/pulumi";
 import * as utilities from "../utilities";
 
 // Export members:
+export { AlertTemplateArgs, AlertTemplateState } from "./alertTemplate";
+export type AlertTemplate = import("./alertTemplate").AlertTemplate;
+export const AlertTemplate: typeof import("./alertTemplate").AlertTemplate = null as any;
+utilities.lazyLoad(exports, ["AlertTemplate"], () => require("./alertTemplate"));
+
 export { ContactArgs, ContactState } from "./contact";
 export type Contact = import("./contact").Contact;
 export const Contact: typeof import("./contact").Contact = null as any;
@@ -19,6 +24,16 @@ export { EventRuleArgs, EventRuleState } from "./eventRule";
 export type EventRule = import("./eventRule").EventRule;
 export const EventRule: typeof import("./eventRule").EventRule = null as any;
 utilities.lazyLoad(exports, ["EventRule"], () => require("./eventRule"));
+
+export { GetAlertTemplateArgs, GetAlertTemplateResult, GetAlertTemplateOutputArgs } from "./getAlertTemplate";
+export const getAlertTemplate: typeof import("./getAlertTemplate").getAlertTemplate = null as any;
+export const getAlertTemplateOutput: typeof import("./getAlertTemplate").getAlertTemplateOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertTemplate","getAlertTemplateOutput"], () => require("./getAlertTemplate"));
+
+export { GetAlertTemplatesResult } from "./getAlertTemplates";
+export const getAlertTemplates: typeof import("./getAlertTemplates").getAlertTemplates = null as any;
+export const getAlertTemplatesOutput: typeof import("./getAlertTemplates").getAlertTemplatesOutput = null as any;
+utilities.lazyLoad(exports, ["getAlertTemplates","getAlertTemplatesOutput"], () => require("./getAlertTemplates"));
 
 export { GetContactArgs, GetContactResult, GetContactOutputArgs } from "./getContact";
 export const getContact: typeof import("./getContact").getContact = null as any;
@@ -50,6 +65,16 @@ export const getEventRules: typeof import("./getEventRules").getEventRules = nul
 export const getEventRulesOutput: typeof import("./getEventRules").getEventRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getEventRules","getEventRulesOutput"], () => require("./getEventRules"));
 
+export { GetObjectGroupArgs, GetObjectGroupResult, GetObjectGroupOutputArgs } from "./getObjectGroup";
+export const getObjectGroup: typeof import("./getObjectGroup").getObjectGroup = null as any;
+export const getObjectGroupOutput: typeof import("./getObjectGroup").getObjectGroupOutput = null as any;
+utilities.lazyLoad(exports, ["getObjectGroup","getObjectGroupOutput"], () => require("./getObjectGroup"));
+
+export { GetObjectGroupsResult } from "./getObjectGroups";
+export const getObjectGroups: typeof import("./getObjectGroups").getObjectGroups = null as any;
+export const getObjectGroupsOutput: typeof import("./getObjectGroups").getObjectGroupsOutput = null as any;
+utilities.lazyLoad(exports, ["getObjectGroups","getObjectGroupsOutput"], () => require("./getObjectGroups"));
+
 export { GetRuleArgs, GetRuleResult, GetRuleOutputArgs } from "./getRule";
 export const getRule: typeof import("./getRule").getRule = null as any;
 export const getRuleOutput: typeof import("./getRule").getRuleOutput = null as any;
@@ -59,6 +84,11 @@ export { GetRulesResult } from "./getRules";
 export const getRules: typeof import("./getRules").getRules = null as any;
 export const getRulesOutput: typeof import("./getRules").getRulesOutput = null as any;
 utilities.lazyLoad(exports, ["getRules","getRulesOutput"], () => require("./getRules"));
+
+export { ObjectGroupArgs, ObjectGroupState } from "./objectGroup";
+export type ObjectGroup = import("./objectGroup").ObjectGroup;
+export const ObjectGroup: typeof import("./objectGroup").ObjectGroup = null as any;
+utilities.lazyLoad(exports, ["ObjectGroup"], () => require("./objectGroup"));
 
 export { RuleArgs, RuleState } from "./rule";
 export type Rule = import("./rule").Rule;
@@ -70,12 +100,16 @@ const _module = {
     version: utilities.getVersion(),
     construct: (name: string, type: string, urn: string): pulumi.Resource => {
         switch (type) {
+            case "bytepluscc:cloudmonitor/alertTemplate:AlertTemplate":
+                return new AlertTemplate(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/contact:Contact":
                 return new Contact(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/contactGroup:ContactGroup":
                 return new ContactGroup(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/eventRule:EventRule":
                 return new EventRule(name, <any>undefined, { urn })
+            case "bytepluscc:cloudmonitor/objectGroup:ObjectGroup":
+                return new ObjectGroup(name, <any>undefined, { urn })
             case "bytepluscc:cloudmonitor/rule:Rule":
                 return new Rule(name, <any>undefined, { urn })
             default:
@@ -83,7 +117,9 @@ const _module = {
         }
     },
 };
+pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/alertTemplate", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/contact", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/contactGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/eventRule", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/objectGroup", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "cloudmonitor/rule", _module)

@@ -22,6 +22,8 @@ import com.byteplus.bytepluscc.vpc.inputs.GetIpamArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpamPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpamPoolArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpamPoolPlainArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpamResourceDiscoveryArgs;
+import com.byteplus.bytepluscc.vpc.inputs.GetIpamResourceDiscoveryPlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpamScopeArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpamScopePlainArgs;
 import com.byteplus.bytepluscc.vpc.inputs.GetIpv4GatewayArgs;
@@ -66,6 +68,8 @@ import com.byteplus.bytepluscc.vpc.outputs.GetIpPoolResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpPoolsResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpamPoolResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpamPoolsResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpamResourceDiscoveriesResult;
+import com.byteplus.bytepluscc.vpc.outputs.GetIpamResourceDiscoveryResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpamResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpamScopeResult;
 import com.byteplus.bytepluscc.vpc.outputs.GetIpamScopesResult;
@@ -811,6 +815,90 @@ public final class VpcFunctions {
      */
     public static CompletableFuture<GetIpamPoolsResult> getIpamPoolsPlain(InvokeArgs args, InvokeOptions options) {
         return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpamPools:getIpamPools", TypeShape.of(GetIpamPoolsResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveries() {
+        return getIpamResourceDiscoveries(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveriesPlain() {
+        return getIpamResourceDiscoveriesPlain(InvokeArgs.Empty, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveries(InvokeArgs args) {
+        return getIpamResourceDiscoveries(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveriesPlain(InvokeArgs args) {
+        return getIpamResourceDiscoveriesPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveries(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpamResourceDiscoveries:getIpamResourceDiscoveries", TypeShape.of(GetIpamResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveries(InvokeArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpamResourceDiscoveries:getIpamResourceDiscoveries", TypeShape.of(GetIpamResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Plural Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveriesResult> getIpamResourceDiscoveriesPlain(InvokeArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpamResourceDiscoveries:getIpamResourceDiscoveries", TypeShape.of(GetIpamResourceDiscoveriesResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveryResult> getIpamResourceDiscovery(GetIpamResourceDiscoveryArgs args) {
+        return getIpamResourceDiscovery(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveryResult> getIpamResourceDiscoveryPlain(GetIpamResourceDiscoveryPlainArgs args) {
+        return getIpamResourceDiscoveryPlain(args, InvokeOptions.Empty);
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveryResult> getIpamResourceDiscovery(GetIpamResourceDiscoveryArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpamResourceDiscovery:getIpamResourceDiscovery", TypeShape.of(GetIpamResourceDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static Output<GetIpamResourceDiscoveryResult> getIpamResourceDiscovery(GetIpamResourceDiscoveryArgs args, InvokeOutputOptions options) {
+        return Deployment.getInstance().invoke("bytepluscc:vpc/getIpamResourceDiscovery:getIpamResourceDiscovery", TypeShape.of(GetIpamResourceDiscoveryResult.class), args, Utilities.withVersion(options));
+    }
+    /**
+     * Data Source schema for Byteplus::VPC::IPAMResourceDiscovery
+     * 
+     */
+    public static CompletableFuture<GetIpamResourceDiscoveryResult> getIpamResourceDiscoveryPlain(GetIpamResourceDiscoveryPlainArgs args, InvokeOptions options) {
+        return Deployment.getInstance().invokeAsync("bytepluscc:vpc/getIpamResourceDiscovery:getIpamResourceDiscovery", TypeShape.of(GetIpamResourceDiscoveryResult.class), args, Utilities.withVersion(options));
     }
     /**
      * Data Source schema for Byteplus::VPC::IPAMScope

@@ -73,6 +73,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         /// </summary>
         public readonly ImmutableArray<string> AllowListIds;
         /// <summary>
+        /// List of cross-region backup destination regions.
+        /// </summary>
+        public readonly ImmutableArray<string> AvailableCrossRegions;
+        /// <summary>
         /// Used backup space for the instance, in GiB.
         /// </summary>
         public readonly double BackupUse;
@@ -88,6 +92,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         /// Creation time.
         /// </summary>
         public readonly string CreatedTime;
+        /// <summary>
+        /// Cross-region backup policy.
+        /// </summary>
+        public readonly Outputs.GetInstanceCrossBackupPolicyResult CrossBackupPolicy;
         /// <summary>
         /// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
         /// </summary>
@@ -193,6 +201,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceTagResult> Tags;
         /// <summary>
+        /// Instance TDE configuration.
+        /// </summary>
+        public readonly Outputs.GetInstanceTdeConfigResult TdeConfig;
+        /// <summary>
         /// Time zone.
         /// </summary>
         public readonly string TimeZone;
@@ -219,6 +231,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
 
             ImmutableArray<string> allowListIds,
 
+            ImmutableArray<string> availableCrossRegions,
+
             double backupUse,
 
             Outputs.GetInstanceChargeInfoResult chargeInfo,
@@ -226,6 +240,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
             ImmutableArray<Outputs.GetInstanceConnectionInfoResult> connectionInfos,
 
             string createdTime,
+
+            Outputs.GetInstanceCrossBackupPolicyResult crossBackupPolicy,
 
             string dbEngineVersion,
 
@@ -279,6 +295,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
 
             ImmutableArray<Outputs.GetInstanceTagResult> tags,
 
+            Outputs.GetInstanceTdeConfigResult tdeConfig,
+
             string timeZone,
 
             string updatedTime,
@@ -291,10 +309,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
         {
             AdvancedFeatures = advancedFeatures;
             AllowListIds = allowListIds;
+            AvailableCrossRegions = availableCrossRegions;
             BackupUse = backupUse;
             ChargeInfo = chargeInfo;
             ConnectionInfos = connectionInfos;
             CreatedTime = createdTime;
+            CrossBackupPolicy = crossBackupPolicy;
             DbEngineVersion = dbEngineVersion;
             Id = id;
             InnerVersion = innerVersion;
@@ -321,6 +341,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdsmssql
             SubnetId = subnetId;
             SuperAccountPassword = superAccountPassword;
             Tags = tags;
+            TdeConfig = tdeConfig;
             TimeZone = timeZone;
             UpdatedTime = updatedTime;
             Vcpu = vcpu;

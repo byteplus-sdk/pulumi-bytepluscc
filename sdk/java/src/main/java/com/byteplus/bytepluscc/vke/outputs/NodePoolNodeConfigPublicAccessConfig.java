@@ -18,12 +18,12 @@ public final class NodePoolNodeConfigPublicAccessConfig {
      */
     private @Nullable Integer bandwidth;
     /**
-     * @return Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+     * @return Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     private @Nullable Integer billingType;
     /**
-     * @return Public IP line type. Parameter description: BGP: BGP (multi-line)
+     * @return Public IP line type. Parameter value description: BGP: BGP (multi-line).
      * 
      */
     private @Nullable String isp;
@@ -37,14 +37,14 @@ public final class NodePoolNodeConfigPublicAccessConfig {
         return Optional.ofNullable(this.bandwidth);
     }
     /**
-     * @return Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+     * @return Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     public Optional<Integer> billingType() {
         return Optional.ofNullable(this.billingType);
     }
     /**
-     * @return Public IP line type. Parameter description: BGP: BGP (multi-line)
+     * @return Public IP line type. Parameter value description: BGP: BGP (multi-line).
      * 
      */
     public Optional<String> isp() {

@@ -113,7 +113,7 @@ export class Instance extends pulumi.CustomResource {
      * Connection address information list
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
-    declare public readonly endpoints: pulumi.Output<outputs.hbase.InstanceEndpoint[]>;
+    declare public /*out*/ readonly endpoints: pulumi.Output<outputs.hbase.InstanceEndpoint[]>;
     /**
      * HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
      */
@@ -314,7 +314,6 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["deletionProtection"] = args?.deletionProtection;
             resourceInputs["enableAuth"] = args?.enableAuth;
             resourceInputs["enableCloudStorage"] = args?.enableCloudStorage;
-            resourceInputs["endpoints"] = args?.endpoints;
             resourceInputs["engineVersion"] = args?.engineVersion;
             resourceInputs["instanceName"] = args?.instanceName;
             resourceInputs["instanceType"] = args?.instanceType;
@@ -333,6 +332,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["zoneId"] = args?.zoneId;
             resourceInputs["chargeStatus"] = undefined /*out*/;
             resourceInputs["createTime"] = undefined /*out*/;
+            resourceInputs["endpoints"] = undefined /*out*/;
             resourceInputs["instanceId"] = undefined /*out*/;
             resourceInputs["masterCount"] = undefined /*out*/;
             resourceInputs["primarySubnetId"] = undefined /*out*/;
@@ -530,11 +530,6 @@ export interface InstanceArgs {
      * Whether capacity-type storage is enabled. Values: true: capacity-type storage enabled. false: capacity-type storage not enabled. For details about capacity-type storage, see Hot and Cold Data Separation. The hot and cold data separation feature is supported only when MultiAZ (deployment mode) is set to false (single availability zone deployment).
      */
     enableCloudStorage?: pulumi.Input<boolean | undefined>;
-    /**
-     * Connection address information list
-     * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-     */
-    endpoints?: pulumi.Input<pulumi.Input<inputs.hbase.InstanceEndpoint>[] | undefined>;
     /**
      * HBase database engine version. Currently, only HBase 2.0 is supported. The default value is HBase_2.0
      */

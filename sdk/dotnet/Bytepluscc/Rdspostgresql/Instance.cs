@@ -229,6 +229,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
         public Output<ImmutableArray<Outputs.InstanceTag>> Tags { get; private set; } = null!;
 
         /// <summary>
+        /// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+        /// </summary>
+        [Output("tdeEnable")]
+        public Output<bool> TdeEnable { get; private set; } = null!;
+
+        /// <summary>
         /// Instance update time
         /// </summary>
         [Output("updateTime")]
@@ -403,6 +409,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             get => _tags ?? (_tags = new InputList<Inputs.InstanceTagArgs>());
             set => _tags = value;
         }
+
+        /// <summary>
+        /// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+        /// </summary>
+        [Input("tdeEnable")]
+        public Input<bool>? TdeEnable { get; set; }
 
         /// <summary>
         /// Use this parameter to specify the private network for the instance
@@ -613,6 +625,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Rdspostgresql
             get => _tags ?? (_tags = new InputList<Inputs.InstanceTagGetArgs>());
             set => _tags = value;
         }
+
+        /// <summary>
+        /// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+        /// </summary>
+        [Input("tdeEnable")]
+        public Input<bool>? TdeEnable { get; set; }
 
         /// <summary>
         /// Instance update time

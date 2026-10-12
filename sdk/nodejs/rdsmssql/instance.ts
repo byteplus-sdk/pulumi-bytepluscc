@@ -83,6 +83,10 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public readonly allowListIds: pulumi.Output<string[]>;
     /**
+     * List of cross-region backup destination regions.
+     */
+    declare public /*out*/ readonly availableCrossRegions: pulumi.Output<string[]>;
+    /**
      * Used backup space for the instance, in GiB.
      */
     declare public /*out*/ readonly backupUse: pulumi.Output<number>;
@@ -99,6 +103,10 @@ export class Instance extends pulumi.CustomResource {
      * Creation time.
      */
     declare public /*out*/ readonly createdTime: pulumi.Output<string>;
+    /**
+     * Cross-region backup policy.
+     */
+    declare public readonly crossBackupPolicy: pulumi.Output<outputs.rdsmssql.InstanceCrossBackupPolicy>;
     /**
      * Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
      */
@@ -202,6 +210,10 @@ export class Instance extends pulumi.CustomResource {
      */
     declare public readonly tags: pulumi.Output<outputs.rdsmssql.InstanceTag[]>;
     /**
+     * Instance TDE configuration.
+     */
+    declare public readonly tdeConfig: pulumi.Output<outputs.rdsmssql.InstanceTdeConfig>;
+    /**
      * Time zone.
      */
     declare public readonly timeZone: pulumi.Output<string>;
@@ -237,10 +249,12 @@ export class Instance extends pulumi.CustomResource {
             const state = argsOrState as InstanceState | undefined;
             resourceInputs["advancedFeatures"] = state?.advancedFeatures;
             resourceInputs["allowListIds"] = state?.allowListIds;
+            resourceInputs["availableCrossRegions"] = state?.availableCrossRegions;
             resourceInputs["backupUse"] = state?.backupUse;
             resourceInputs["chargeInfo"] = state?.chargeInfo;
             resourceInputs["connectionInfos"] = state?.connectionInfos;
             resourceInputs["createdTime"] = state?.createdTime;
+            resourceInputs["crossBackupPolicy"] = state?.crossBackupPolicy;
             resourceInputs["dbEngineVersion"] = state?.dbEngineVersion;
             resourceInputs["innerVersion"] = state?.innerVersion;
             resourceInputs["instanceCategory"] = state?.instanceCategory;
@@ -266,6 +280,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["subnetId"] = state?.subnetId;
             resourceInputs["superAccountPassword"] = state?.superAccountPassword;
             resourceInputs["tags"] = state?.tags;
+            resourceInputs["tdeConfig"] = state?.tdeConfig;
             resourceInputs["timeZone"] = state?.timeZone;
             resourceInputs["updatedTime"] = state?.updatedTime;
             resourceInputs["vcpu"] = state?.vcpu;
@@ -303,6 +318,7 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["advancedFeatures"] = args?.advancedFeatures;
             resourceInputs["allowListIds"] = args?.allowListIds;
             resourceInputs["chargeInfo"] = args?.chargeInfo;
+            resourceInputs["crossBackupPolicy"] = args?.crossBackupPolicy;
             resourceInputs["dbEngineVersion"] = args?.dbEngineVersion;
             resourceInputs["instanceName"] = args?.instanceName;
             resourceInputs["instanceType"] = args?.instanceType;
@@ -315,9 +331,11 @@ export class Instance extends pulumi.CustomResource {
             resourceInputs["subnetId"] = args?.subnetId;
             resourceInputs["superAccountPassword"] = args?.superAccountPassword;
             resourceInputs["tags"] = args?.tags;
+            resourceInputs["tdeConfig"] = args?.tdeConfig;
             resourceInputs["timeZone"] = args?.timeZone;
             resourceInputs["vpcId"] = args?.vpcId;
             resourceInputs["zoneId"] = args?.zoneId;
+            resourceInputs["availableCrossRegions"] = undefined /*out*/;
             resourceInputs["backupUse"] = undefined /*out*/;
             resourceInputs["connectionInfos"] = undefined /*out*/;
             resourceInputs["createdTime"] = undefined /*out*/;
@@ -355,6 +373,10 @@ export interface InstanceState {
      */
     allowListIds?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
+     * List of cross-region backup destination regions.
+     */
+    availableCrossRegions?: pulumi.Input<pulumi.Input<string>[] | undefined>;
+    /**
      * Used backup space for the instance, in GiB.
      */
     backupUse?: pulumi.Input<number | undefined>;
@@ -371,6 +393,10 @@ export interface InstanceState {
      * Creation time.
      */
     createdTime?: pulumi.Input<string | undefined>;
+    /**
+     * Cross-region backup policy.
+     */
+    crossBackupPolicy?: pulumi.Input<inputs.rdsmssql.InstanceCrossBackupPolicy | undefined>;
     /**
      * Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
      */
@@ -474,6 +500,10 @@ export interface InstanceState {
      */
     tags?: pulumi.Input<pulumi.Input<inputs.rdsmssql.InstanceTag>[] | undefined>;
     /**
+     * Instance TDE configuration.
+     */
+    tdeConfig?: pulumi.Input<inputs.rdsmssql.InstanceTdeConfig | undefined>;
+    /**
      * Time zone.
      */
     timeZone?: pulumi.Input<string | undefined>;
@@ -511,6 +541,10 @@ export interface InstanceArgs {
      * Payment method.
      */
     chargeInfo?: pulumi.Input<inputs.rdsmssql.InstanceChargeInfo | undefined>;
+    /**
+     * Cross-region backup policy.
+     */
+    crossBackupPolicy?: pulumi.Input<inputs.rdsmssql.InstanceCrossBackupPolicy | undefined>;
     /**
      * Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
      */
@@ -560,6 +594,10 @@ export interface InstanceArgs {
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.rdsmssql.InstanceTag>[] | undefined>;
+    /**
+     * Instance TDE configuration.
+     */
+    tdeConfig?: pulumi.Input<inputs.rdsmssql.InstanceTdeConfig | undefined>;
     /**
      * Time zone.
      */

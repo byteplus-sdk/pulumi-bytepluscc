@@ -31,14 +31,14 @@ public final class NodePoolKubernetesConfigTaintArgs extends com.pulumi.resource
     }
 
     /**
-     * Taint key.
+     * Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return Taint key.
+     * @return Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
      * 
      */
     public Optional<Output<String>> key() {
@@ -46,14 +46,14 @@ public final class NodePoolKubernetesConfigTaintArgs extends com.pulumi.resource
     }
 
     /**
-     * Taint value
+     * Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return Taint value
+     * @return Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
      * 
      */
     public Optional<Output<String>> value() {
@@ -108,7 +108,7 @@ public final class NodePoolKubernetesConfigTaintArgs extends com.pulumi.resource
         }
 
         /**
-         * @param key Taint key.
+         * @param key Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
          * 
          * @return builder
          * 
@@ -119,7 +119,7 @@ public final class NodePoolKubernetesConfigTaintArgs extends com.pulumi.resource
         }
 
         /**
-         * @param key Taint key.
+         * @param key Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
          * 
          * @return builder
          * 
@@ -129,7 +129,7 @@ public final class NodePoolKubernetesConfigTaintArgs extends com.pulumi.resource
         }
 
         /**
-         * @param value Taint value
+         * @param value Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
          * 
          * @return builder
          * 
@@ -140,7 +140,7 @@ public final class NodePoolKubernetesConfigTaintArgs extends com.pulumi.resource
         }
 
         /**
-         * @param value Taint value
+         * @param value Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
          * 
          * @return builder
          * 

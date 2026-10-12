@@ -39,6 +39,8 @@ func (m *module) Construct(ctx *pulumi.Context, name, typ, urn string) (r pulumi
 		r = &Ipam{}
 	case "bytepluscc:vpc/ipamPool:IpamPool":
 		r = &IpamPool{}
+	case "bytepluscc:vpc/ipamResourceDiscovery:IpamResourceDiscovery":
+		r = &IpamResourceDiscovery{}
 	case "bytepluscc:vpc/ipamScope:IpamScope":
 		r = &IpamScope{}
 	case "bytepluscc:vpc/ipv4Gateway:Ipv4Gateway":
@@ -123,6 +125,11 @@ func init() {
 	pulumi.RegisterResourceModule(
 		"bytepluscc",
 		"vpc/ipamPool",
+		&module{version},
+	)
+	pulumi.RegisterResourceModule(
+		"bytepluscc",
+		"vpc/ipamResourceDiscovery",
 		&module{version},
 	)
 	pulumi.RegisterResourceModule(

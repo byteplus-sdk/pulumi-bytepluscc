@@ -53,6 +53,36 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     * 
+     */
+    @Import(name="backupId")
+    private @Nullable Output<String> backupId;
+
+    /**
+     * @return Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     * 
+     */
+    public Optional<Output<String>> backupId() {
+        return Optional.ofNullable(this.backupId);
+    }
+
+    /**
+     * Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     * 
+     */
+    @Import(name="backupType")
+    private @Nullable Output<String> backupType;
+
+    /**
+     * @return Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     * 
+     */
+    public Optional<Output<String>> backupType() {
+        return Optional.ofNullable(this.backupType);
+    }
+
+    /**
      * Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
      * 
      */
@@ -312,6 +342,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
+     * When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     * 
+     */
+    @Import(name="restoreTime")
+    private @Nullable Output<String> restoreTime;
+
+    /**
+     * @return When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     * 
+     */
+    public Optional<Output<String>> restoreTime() {
+        return Optional.ofNullable(this.restoreTime);
+    }
+
+    /**
      * Number of shards in the sharded cluster. Range: 2–32.
      * 
      */
@@ -324,6 +369,21 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
      */
     public Optional<Output<Integer>> shardNumber() {
         return Optional.ofNullable(this.shardNumber);
+    }
+
+    /**
+     * Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     * 
+     */
+    @Import(name="srcDbInstanceId")
+    private @Nullable Output<String> srcDbInstanceId;
+
+    /**
+     * @return Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     * 
+     */
+    public Optional<Output<String>> srcDbInstanceId() {
+        return Optional.ofNullable(this.srcDbInstanceId);
     }
 
     /**
@@ -438,6 +498,8 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
     private InstanceArgs(InstanceArgs $) {
         this.allowListIds = $.allowListIds;
         this.autoRenew = $.autoRenew;
+        this.backupId = $.backupId;
+        this.backupType = $.backupType;
         this.chargeType = $.chargeType;
         this.configServerNodeSpec = $.configServerNodeSpec;
         this.configServerStorageSpaceGb = $.configServerStorageSpaceGb;
@@ -455,7 +517,9 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         this.period = $.period;
         this.periodUnit = $.periodUnit;
         this.projectName = $.projectName;
+        this.restoreTime = $.restoreTime;
         this.shardNumber = $.shardNumber;
+        this.srcDbInstanceId = $.srcDbInstanceId;
         this.storageSpaceGb = $.storageSpaceGb;
         this.subnetId = $.subnetId;
         this.superAccountName = $.superAccountName;
@@ -533,6 +597,48 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder autoRenew(Boolean autoRenew) {
             return autoRenew(Output.of(autoRenew));
+        }
+
+        /**
+         * @param backupId Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupId(@Nullable Output<String> backupId) {
+            $.backupId = backupId;
+            return this;
+        }
+
+        /**
+         * @param backupId Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupId(String backupId) {
+            return backupId(Output.of(backupId));
+        }
+
+        /**
+         * @param backupType Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupType(@Nullable Output<String> backupType) {
+            $.backupType = backupType;
+            return this;
+        }
+
+        /**
+         * @param backupType Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder backupType(String backupType) {
+            return backupType(Output.of(backupType));
         }
 
         /**
@@ -919,6 +1025,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
+         * @param restoreTime When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restoreTime(@Nullable Output<String> restoreTime) {
+            $.restoreTime = restoreTime;
+            return this;
+        }
+
+        /**
+         * @param restoreTime When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder restoreTime(String restoreTime) {
+            return restoreTime(Output.of(restoreTime));
+        }
+
+        /**
          * @param shardNumber Number of shards in the sharded cluster. Range: 2–32.
          * 
          * @return builder
@@ -937,6 +1064,27 @@ public final class InstanceArgs extends com.pulumi.resources.ResourceArgs {
          */
         public Builder shardNumber(Integer shardNumber) {
             return shardNumber(Output.of(shardNumber));
+        }
+
+        /**
+         * @param srcDbInstanceId Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder srcDbInstanceId(@Nullable Output<String> srcDbInstanceId) {
+            $.srcDbInstanceId = srcDbInstanceId;
+            return this;
+        }
+
+        /**
+         * @param srcDbInstanceId Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+         * 
+         * @return builder
+         * 
+         */
+        public Builder srcDbInstanceId(String srcDbInstanceId) {
+            return srcDbInstanceId(Output.of(srcDbInstanceId));
         }
 
         /**

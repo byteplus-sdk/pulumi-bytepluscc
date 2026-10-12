@@ -14,7 +14,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolKubernetesConfigKubeletConfigGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Configure kubelet CpuManagerPolicy. Supports none and static policies
+        /// CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
         /// </summary>
         [Input("cpuManagerPolicy")]
         public Input<string>? CpuManagerPolicy { get; set; }
@@ -23,7 +23,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<Inputs.NodePoolKubernetesConfigKubeletConfigEvictionHardGetArgs>? _evictionHards;
 
         /// <summary>
-        /// Set of hard thresholds for triggering Pod eviction
+        /// A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
         /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         /// </summary>
         public InputList<Inputs.NodePoolKubernetesConfigKubeletConfigEvictionHardGetArgs> EvictionHards
@@ -33,19 +33,19 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// Feature gate
+        /// Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
         /// </summary>
         [Input("featureGates")]
         public Input<Inputs.NodePoolKubernetesConfigKubeletConfigFeatureGatesGetArgs>? FeatureGates { get; set; }
 
         /// <summary>
-        /// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+        /// Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
         /// </summary>
         [Input("kubeApiBurst")]
         public Input<int>? KubeApiBurst { get; set; }
 
         /// <summary>
-        /// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+        /// Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
         /// </summary>
         [Input("kubeApiQps")]
         public Input<int>? KubeApiQps { get; set; }
@@ -54,7 +54,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<Inputs.NodePoolKubernetesConfigKubeletConfigKubeReservedGetArgs>? _kubeReserveds;
 
         /// <summary>
-        /// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+        /// Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
         /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         /// </summary>
         public InputList<Inputs.NodePoolKubernetesConfigKubeletConfigKubeReservedGetArgs> KubeReserveds
@@ -64,25 +64,25 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// Configure the maximum number of Pods supported by kubelet
+        /// Maximum number of Pods supported by the node. Default is 110.
         /// </summary>
         [Input("maxPods")]
         public Input<int>? MaxPods { get; set; }
 
         /// <summary>
-        /// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+        /// Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
         /// </summary>
         [Input("registryBurst")]
         public Input<int>? RegistryBurst { get; set; }
 
         /// <summary>
-        /// Used to limit the QPS cap for the image repository
+        /// QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
         /// </summary>
         [Input("registryPullQps")]
         public Input<int>? RegistryPullQps { get; set; }
 
         /// <summary>
-        /// Pull images sequentially
+        /// Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
         /// </summary>
         [Input("serializeImagePulls")]
         public Input<bool>? SerializeImagePulls { get; set; }
@@ -91,7 +91,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         private InputList<Inputs.NodePoolKubernetesConfigKubeletConfigSystemReservedGetArgs>? _systemReserveds;
 
         /// <summary>
-        /// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+        /// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
         /// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         /// </summary>
         public InputList<Inputs.NodePoolKubernetesConfigKubeletConfigSystemReservedGetArgs> SystemReserveds

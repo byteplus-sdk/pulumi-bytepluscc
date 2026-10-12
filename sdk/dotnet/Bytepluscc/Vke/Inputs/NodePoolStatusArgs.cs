@@ -27,7 +27,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         }
 
         /// <summary>
-        /// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+        /// Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
         /// </summary>
         [Input("phase")]
         public Input<string>? Phase { get; set; }

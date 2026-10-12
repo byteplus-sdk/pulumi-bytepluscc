@@ -18,7 +18,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolKubernetesConfig {
     /**
-     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
      * 
      */
     private @Nullable Boolean autoSyncDisabled;
@@ -28,23 +28,23 @@ public final class NodePoolKubernetesConfig {
      */
     private @Nullable NodePoolKubernetesConfigContainerdConfig containerdConfig;
     /**
-     * @return Node blocking configuration. Parameter values: false: not blocked; true: blocked
+     * @return Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
      * 
      */
     private @Nullable Boolean cordon;
     /**
-     * @return Kubelet component configuration
+     * @return Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
      * 
      */
     private @Nullable NodePoolKubernetesConfigKubeletConfig kubeletConfig;
     /**
-     * @return Kubernetes label information for node pools/nodes
+     * @return Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
     private @Nullable List<NodePoolKubernetesConfigLabel> labels;
     /**
-     * @return Prefix for node object metadata name in Kubernetes
+     * @return Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
      * 
      */
     private @Nullable String namePrefix;
@@ -54,12 +54,12 @@ public final class NodePoolKubernetesConfig {
      */
     private @Nullable String nameSuffix;
     /**
-     * @return Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+     * @return Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
      * 
      */
     private @Nullable Boolean nameUseHostname;
     /**
-     * @return Kubernetes taint information for node pools/nodes
+     * @return Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -67,7 +67,7 @@ public final class NodePoolKubernetesConfig {
 
     private NodePoolKubernetesConfig() {}
     /**
-     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+     * @return Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
      * 
      */
     public Optional<Boolean> autoSyncDisabled() {
@@ -81,21 +81,21 @@ public final class NodePoolKubernetesConfig {
         return Optional.ofNullable(this.containerdConfig);
     }
     /**
-     * @return Node blocking configuration. Parameter values: false: not blocked; true: blocked
+     * @return Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
      * 
      */
     public Optional<Boolean> cordon() {
         return Optional.ofNullable(this.cordon);
     }
     /**
-     * @return Kubelet component configuration
+     * @return Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
      * 
      */
     public Optional<NodePoolKubernetesConfigKubeletConfig> kubeletConfig() {
         return Optional.ofNullable(this.kubeletConfig);
     }
     /**
-     * @return Kubernetes label information for node pools/nodes
+     * @return Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfig {
         return this.labels == null ? List.of() : this.labels;
     }
     /**
-     * @return Prefix for node object metadata name in Kubernetes
+     * @return Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
      * 
      */
     public Optional<String> namePrefix() {
@@ -117,14 +117,14 @@ public final class NodePoolKubernetesConfig {
         return Optional.ofNullable(this.nameSuffix);
     }
     /**
-     * @return Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+     * @return Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
      * 
      */
     public Optional<Boolean> nameUseHostname() {
         return Optional.ofNullable(this.nameUseHostname);
     }
     /**
-     * @return Kubernetes taint information for node pools/nodes
+     * @return Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */

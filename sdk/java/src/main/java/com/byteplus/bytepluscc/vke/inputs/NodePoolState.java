@@ -39,14 +39,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * ID of the cluster where the node pool is located
+     * ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
      * 
      */
     @Import(name="clusterId")
     private @Nullable Output<String> clusterId;
 
     /**
-     * @return ID of the cluster where the node pool is located
+     * @return ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
      * 
      */
     public Optional<Output<String>> clusterId() {
@@ -99,14 +99,14 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+     * Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
      * 
      */
     @Import(name="name")
     private @Nullable Output<String> name;
 
     /**
-     * @return Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+     * @return Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
      * 
      */
     public Optional<Output<String>> name() {
@@ -189,7 +189,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     }
 
     /**
-     * Node pool tag information
+     * Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -197,7 +197,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
     private @Nullable Output<List<NodePoolTagArgs>> tags;
 
     /**
-     * @return Node pool tag information
+     * @return Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      * 
      */
@@ -278,7 +278,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId ID of the cluster where the node pool is located
+         * @param clusterId ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
          * 
          * @return builder
          * 
@@ -289,7 +289,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param clusterId ID of the cluster where the node pool is located
+         * @param clusterId ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
          * 
          * @return builder
          * 
@@ -362,7 +362,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+         * @param name Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
          * 
          * @return builder
          * 
@@ -373,7 +373,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param name Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+         * @param name Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
          * 
          * @return builder
          * 
@@ -498,7 +498,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tags Node pool tag information
+         * @param tags Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -510,7 +510,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tags Node pool tag information
+         * @param tags Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder
@@ -521,7 +521,7 @@ public final class NodePoolState extends com.pulumi.resources.ResourceArgs {
         }
 
         /**
-         * @param tags Node pool tag information
+         * @param tags Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
          * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
          * 
          * @return builder

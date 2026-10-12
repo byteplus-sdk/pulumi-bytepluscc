@@ -17,14 +17,14 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
     public static final NodePoolManagementRemedyConfigArgs Empty = new NodePoolManagementRemedyConfigArgs();
 
     /**
-     * Enable self-healing check
+     * Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return Enable self-healing check
+     * @return Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -32,14 +32,14 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
     }
 
     /**
-     * Self-healing rule ID
+     * Self-healing rule ID associated after enabling self-healing check for the node pool.
      * 
      */
     @Import(name="remedyId")
     private @Nullable Output<String> remedyId;
 
     /**
-     * @return Self-healing rule ID
+     * @return Self-healing rule ID associated after enabling self-healing check for the node pool.
      * 
      */
     public Optional<Output<String>> remedyId() {
@@ -72,7 +72,7 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enabled Enable self-healing check
+         * @param enabled Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param enabled Enable self-healing check
+         * @param enabled Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param remedyId Self-healing rule ID
+         * @param remedyId Self-healing rule ID associated after enabling self-healing check for the node pool.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class NodePoolManagementRemedyConfigArgs extends com.pulumi.resourc
         }
 
         /**
-         * @param remedyId Self-healing rule ID
+         * @param remedyId Self-healing rule ID associated after enabling self-healing check for the node pool.
          * 
          * @return builder
          * 

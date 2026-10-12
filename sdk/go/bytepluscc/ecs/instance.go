@@ -246,6 +246,8 @@ type Instance struct {
 	// Auxiliary network interface card of the instance.
 	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	SecondaryNetworkInterfaces InstanceSecondaryNetworkInterfaceArrayOutput `pulumi:"secondaryNetworkInterfaces"`
+	// IAM role name bound to the instance.
+	ShowRoleNames pulumi.StringArrayOutput `pulumi:"showRoleNames"`
 	// Maximum hourly price for spot instances.
 	//     - Supports up to three decimal places.
 	//     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
@@ -488,6 +490,8 @@ type instanceState struct {
 	// Auxiliary network interface card of the instance.
 	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	SecondaryNetworkInterfaces []InstanceSecondaryNetworkInterface `pulumi:"secondaryNetworkInterfaces"`
+	// IAM role name bound to the instance.
+	ShowRoleNames []string `pulumi:"showRoleNames"`
 	// Maximum hourly price for spot instances.
 	//     - Supports up to three decimal places.
 	//     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
@@ -683,6 +687,8 @@ type InstanceState struct {
 	// Auxiliary network interface card of the instance.
 	//  Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	SecondaryNetworkInterfaces InstanceSecondaryNetworkInterfaceArrayInput
+	// IAM role name bound to the instance.
+	ShowRoleNames pulumi.StringArrayInput
 	// Maximum hourly price for spot instances.
 	//     - Supports up to three decimal places.
 	//     - Only effective when `SpotStrategy` is set to `SpotWithPriceLimit`.
@@ -1445,6 +1451,11 @@ func (o InstanceOutput) RoleNames() pulumi.StringArrayOutput {
 //	Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o InstanceOutput) SecondaryNetworkInterfaces() InstanceSecondaryNetworkInterfaceArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceSecondaryNetworkInterfaceArrayOutput { return v.SecondaryNetworkInterfaces }).(InstanceSecondaryNetworkInterfaceArrayOutput)
+}
+
+// IAM role name bound to the instance.
+func (o InstanceOutput) ShowRoleNames() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v *Instance) pulumi.StringArrayOutput { return v.ShowRoleNames }).(pulumi.StringArrayOutput)
 }
 
 // Maximum hourly price for spot instances.

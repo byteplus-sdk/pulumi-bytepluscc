@@ -7,6 +7,7 @@ import com.byteplus.bytepluscc.Utilities;
 import com.byteplus.bytepluscc.redis.InstanceArgs;
 import com.byteplus.bytepluscc.redis.inputs.InstanceState;
 import com.byteplus.bytepluscc.redis.outputs.InstanceBackup;
+import com.byteplus.bytepluscc.redis.outputs.InstanceBackupPlan;
 import com.byteplus.bytepluscc.redis.outputs.InstanceBackupRestore;
 import com.byteplus.bytepluscc.redis.outputs.InstanceCapacity;
 import com.byteplus.bytepluscc.redis.outputs.InstanceConfigureNode;
@@ -129,6 +130,20 @@ public class Instance extends com.pulumi.resources.CustomResource {
      */
     public Output<Boolean> autoRenew() {
         return this.autoRenew;
+    }
+    /**
+     * Automatic backup policy for the instance.
+     * 
+     */
+    @Export(name="backupPlan", refs={InstanceBackupPlan.class}, tree="[0]")
+    private Output<InstanceBackupPlan> backupPlan;
+
+    /**
+     * @return Automatic backup policy for the instance.
+     * 
+     */
+    public Output<InstanceBackupPlan> backupPlan() {
+        return this.backupPlan;
     }
     /**
      * Set a backup name for the full backup created before changes.

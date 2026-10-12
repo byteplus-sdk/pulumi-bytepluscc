@@ -73,6 +73,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         public readonly bool AutoRenew;
         /// <summary>
+        /// Automatic backup policy for the instance.
+        /// </summary>
+        public readonly Outputs.GetInstanceBackupPlanResult BackupPlan;
+        /// <summary>
         /// Set a backup name for the full backup created before changes.
         /// </summary>
         public readonly string BackupPointName;
@@ -267,6 +271,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
 
             bool autoRenew,
 
+            Outputs.GetInstanceBackupPlanResult backupPlan,
+
             string backupPointName,
 
             Outputs.GetInstanceBackupRestoreResult backupRestore,
@@ -363,6 +369,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         {
             AllowListIds = allowListIds;
             AutoRenew = autoRenew;
+            BackupPlan = backupPlan;
             BackupPointName = backupPointName;
             BackupRestore = backupRestore;
             Backups = backups;

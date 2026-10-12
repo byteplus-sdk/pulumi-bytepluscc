@@ -20,7 +20,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
         public Input<string>? Name { get; set; }
 
         /// <summary>
-        /// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+        /// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         /// </summary>
         [Input("quantity")]
         public Input<string>? Quantity { get; set; }

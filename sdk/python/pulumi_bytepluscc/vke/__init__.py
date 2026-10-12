@@ -20,12 +20,15 @@ from .get_kubeconfigs import *
 from .get_node import *
 from .get_node_pool import *
 from .get_node_pools import *
+from .get_nodepool_scaling_policies import *
+from .get_nodepool_scaling_policy import *
 from .get_nodes import *
 from .get_permission import *
 from .get_permissions import *
 from .kubeconfig import *
 from .node import *
 from .node_pool import *
+from .nodepool_scaling_policy import *
 from .permission import *
 from ._inputs import *
 from . import outputs

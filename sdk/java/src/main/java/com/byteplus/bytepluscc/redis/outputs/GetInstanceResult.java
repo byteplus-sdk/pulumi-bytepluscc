@@ -4,6 +4,7 @@
 package com.byteplus.bytepluscc.redis.outputs;
 
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceBackup;
+import com.byteplus.bytepluscc.redis.outputs.GetInstanceBackupPlan;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceBackupRestore;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceCapacity;
 import com.byteplus.bytepluscc.redis.outputs.GetInstanceConfigureNode;
@@ -30,6 +31,11 @@ public final class GetInstanceResult {
      * 
      */
     private Boolean autoRenew;
+    /**
+     * @return Automatic backup policy for the instance.
+     * 
+     */
+    private GetInstanceBackupPlan backupPlan;
     /**
      * @return Set a backup name for the full backup created before changes.
      * 
@@ -280,6 +286,13 @@ public final class GetInstanceResult {
      */
     public Boolean autoRenew() {
         return this.autoRenew;
+    }
+    /**
+     * @return Automatic backup policy for the instance.
+     * 
+     */
+    public GetInstanceBackupPlan backupPlan() {
+        return this.backupPlan;
     }
     /**
      * @return Set a backup name for the full backup created before changes.
@@ -622,6 +635,7 @@ public final class GetInstanceResult {
     public static final class Builder {
         private List<String> allowListIds;
         private Boolean autoRenew;
+        private GetInstanceBackupPlan backupPlan;
         private String backupPointName;
         private GetInstanceBackupRestore backupRestore;
         private List<GetInstanceBackup> backups;
@@ -674,6 +688,7 @@ public final class GetInstanceResult {
     	      Objects.requireNonNull(defaults);
     	      this.allowListIds = defaults.allowListIds;
     	      this.autoRenew = defaults.autoRenew;
+    	      this.backupPlan = defaults.backupPlan;
     	      this.backupPointName = defaults.backupPointName;
     	      this.backupRestore = defaults.backupRestore;
     	      this.backups = defaults.backups;
@@ -740,6 +755,14 @@ public final class GetInstanceResult {
               throw new MissingRequiredPropertyException("GetInstanceResult", "autoRenew");
             }
             this.autoRenew = autoRenew;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupPlan(GetInstanceBackupPlan backupPlan) {
+            if (backupPlan == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "backupPlan");
+            }
+            this.backupPlan = backupPlan;
             return this;
         }
         @CustomType.Setter
@@ -1143,6 +1166,7 @@ public final class GetInstanceResult {
             final var _resultValue = new GetInstanceResult();
             _resultValue.allowListIds = allowListIds;
             _resultValue.autoRenew = autoRenew;
+            _resultValue.backupPlan = backupPlan;
             _resultValue.backupPointName = backupPointName;
             _resultValue.backupRestore = backupRestore;
             _resultValue.backups = backups;

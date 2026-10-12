@@ -6,11 +6,17 @@ import builtins as _builtins
 from .. import _utilities
 import typing
 # Export this package's modules as members:
+from .bot_analyse_protect_rule import *
 from .cc_rule import *
+from .custom_bot import *
 from .custom_page import *
 from .domain import *
+from .get_bot_analyse_protect_rule import *
+from .get_bot_analyse_protect_rules import *
 from .get_cc_rule import *
 from .get_cc_rules import *
+from .get_custom_bot import *
+from .get_custom_bots import *
 from .get_custom_page import *
 from .get_custom_pages import *
 from .get_domain import *

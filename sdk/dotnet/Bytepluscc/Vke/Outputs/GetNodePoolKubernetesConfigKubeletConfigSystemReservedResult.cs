@@ -19,7 +19,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
         /// </summary>
         public readonly string Name;
         /// <summary>
-        /// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+        /// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         /// </summary>
         public readonly string Quantity;
 

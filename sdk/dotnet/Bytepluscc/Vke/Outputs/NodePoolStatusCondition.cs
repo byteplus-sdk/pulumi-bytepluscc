@@ -15,7 +15,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolStatusCondition
     {
         /// <summary>
-        /// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+        /// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
         /// </summary>
         public readonly string? Type;
 

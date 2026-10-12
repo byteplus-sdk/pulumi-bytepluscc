@@ -14,6 +14,7 @@ import * as alb from "./alb";
 import * as apig from "./apig";
 import * as ark from "./ark";
 import * as autoscaling from "./autoscaling";
+import * as billing from "./billing";
 import * as bmq from "./bmq";
 import * as cdn from "./cdn";
 import * as cen from "./cen";
@@ -47,6 +48,7 @@ import * as rdsmysql from "./rdsmysql";
 import * as rdspostgresql from "./rdspostgresql";
 import * as redis from "./redis";
 import * as resourceshare from "./resourceshare";
+import * as securitycenter from "./securitycenter";
 import * as storageebs from "./storageebs";
 import * as tls from "./tls";
 import * as transitrouter from "./transitrouter";
@@ -65,6 +67,7 @@ export {
     apig,
     ark,
     autoscaling,
+    billing,
     bmq,
     cdn,
     cen,
@@ -98,6 +101,7 @@ export {
     rdspostgresql,
     redis,
     resourceshare,
+    securitycenter,
     storageebs,
     tls,
     transitrouter,

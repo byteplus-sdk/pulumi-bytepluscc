@@ -87,6 +87,8 @@ type Instance struct {
 	AllowListIds pulumi.StringArrayOutput `pulumi:"allowListIds"`
 	// Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
 	AutoRenew pulumi.BoolOutput `pulumi:"autoRenew"`
+	// Automatic backup policy for the instance.
+	BackupPlan InstanceBackupPlanOutput `pulumi:"backupPlan"`
 	// Set a backup name for the full backup created before changes.
 	BackupPointName pulumi.StringOutput `pulumi:"backupPointName"`
 	// Restore data from the backup set to the original Redis instance.
@@ -244,6 +246,8 @@ type instanceState struct {
 	AllowListIds []string `pulumi:"allowListIds"`
 	// Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
 	AutoRenew *bool `pulumi:"autoRenew"`
+	// Automatic backup policy for the instance.
+	BackupPlan *InstanceBackupPlan `pulumi:"backupPlan"`
 	// Set a backup name for the full backup created before changes.
 	BackupPointName *string `pulumi:"backupPointName"`
 	// Restore data from the backup set to the original Redis instance.
@@ -348,6 +352,8 @@ type InstanceState struct {
 	AllowListIds pulumi.StringArrayInput
 	// Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
 	AutoRenew pulumi.BoolPtrInput
+	// Automatic backup policy for the instance.
+	BackupPlan InstanceBackupPlanPtrInput
 	// Set a backup name for the full backup created before changes.
 	BackupPointName pulumi.StringPtrInput
 	// Restore data from the backup set to the original Redis instance.
@@ -456,6 +462,8 @@ type instanceArgs struct {
 	AllowListIds []string `pulumi:"allowListIds"`
 	// Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
 	AutoRenew *bool `pulumi:"autoRenew"`
+	// Automatic backup policy for the instance.
+	BackupPlan *InstanceBackupPlan `pulumi:"backupPlan"`
 	// Set a backup name for the full backup created before changes.
 	BackupPointName *string `pulumi:"backupPointName"`
 	// Restore data from the backup set to the original Redis instance.
@@ -516,6 +524,8 @@ type InstanceArgs struct {
 	AllowListIds pulumi.StringArrayInput
 	// Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
 	AutoRenew pulumi.BoolPtrInput
+	// Automatic backup policy for the instance.
+	BackupPlan InstanceBackupPlanPtrInput
 	// Set a backup name for the full backup created before changes.
 	BackupPointName pulumi.StringPtrInput
 	// Restore data from the backup set to the original Redis instance.
@@ -665,6 +675,11 @@ func (o InstanceOutput) AllowListIds() pulumi.StringArrayOutput {
 // Whether to enable auto-renewal. Value options: false (default): Disabled; true: Enabled.
 func (o InstanceOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.AutoRenew }).(pulumi.BoolOutput)
+}
+
+// Automatic backup policy for the instance.
+func (o InstanceOutput) BackupPlan() InstanceBackupPlanOutput {
+	return o.ApplyT(func(v *Instance) InstanceBackupPlanOutput { return v.BackupPlan }).(InstanceBackupPlanOutput)
 }
 
 // Set a backup name for the full backup created before changes.

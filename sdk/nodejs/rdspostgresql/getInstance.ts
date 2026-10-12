@@ -143,6 +143,10 @@ export interface GetInstanceResult {
      */
     readonly tags: outputs.rdspostgresql.GetInstanceTag[];
     /**
+     * Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     */
+    readonly tdeEnable: boolean;
+    /**
      * Instance update time
      */
     readonly updateTime: string;

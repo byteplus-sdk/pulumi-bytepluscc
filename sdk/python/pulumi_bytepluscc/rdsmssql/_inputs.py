@@ -27,10 +27,16 @@ __all__ = [
     'InstanceConnectionInfoArgsDict',
     'InstanceConnectionInfoAddressArgs',
     'InstanceConnectionInfoAddressArgsDict',
+    'InstanceCrossBackupPolicyArgs',
+    'InstanceCrossBackupPolicyArgsDict',
     'InstanceNodeDetailInfoArgs',
     'InstanceNodeDetailInfoArgsDict',
     'InstanceTagArgs',
     'InstanceTagArgsDict',
+    'InstanceTdeConfigArgs',
+    'InstanceTdeConfigArgsDict',
+    'InstanceTdeConfigDbStatusArgs',
+    'InstanceTdeConfigDbStatusArgsDict',
 ]
 
 class AllowListAssociatedInstanceArgsDict(TypedDict):
@@ -870,6 +876,75 @@ class InstanceConnectionInfoAddressArgs:
         pulumi.set(self, "subnet_id", value)
 
 
+class InstanceCrossBackupPolicyArgsDict(TypedDict):
+    backup_enabled: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+    """
+    cross_backup_region: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+    """
+    retention: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+    """
+
+@pulumi.input_type
+class InstanceCrossBackupPolicyArgs:
+    def __init__(__self__, *,
+                 backup_enabled: pulumi.Input[Optional[_builtins.bool]] = None,
+                 cross_backup_region: pulumi.Input[Optional[_builtins.str]] = None,
+                 retention: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] backup_enabled: Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+        :param pulumi.Input[_builtins.str] cross_backup_region: ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+        :param pulumi.Input[_builtins.int] retention: Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+        """
+        if backup_enabled is not None:
+            pulumi.set(__self__, "backup_enabled", backup_enabled)
+        if cross_backup_region is not None:
+            pulumi.set(__self__, "cross_backup_region", cross_backup_region)
+        if retention is not None:
+            pulumi.set(__self__, "retention", retention)
+
+    @_builtins.property
+    @pulumi.getter(name="backupEnabled")
+    def backup_enabled(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to enable cross-region backup. The values are as follows: true: Cross-region backup is enabled. false: Cross-region backup is disabled.
+        """
+        return pulumi.get(self, "backup_enabled")
+
+    @backup_enabled.setter
+    def backup_enabled(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "backup_enabled", value)
+
+    @_builtins.property
+    @pulumi.getter(name="crossBackupRegion")
+    def cross_backup_region(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        ID of the cross-region backup destination region. This parameter is required when BackupEnabled is set to true.
+        """
+        return pulumi.get(self, "cross_backup_region")
+
+    @cross_backup_region.setter
+    def cross_backup_region(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "cross_backup_region", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def retention(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Number of days to retain cross-region backups. The valid range is 7–1825 days. The default value is 7.
+        """
+        return pulumi.get(self, "retention")
+
+    @retention.setter
+    def retention(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "retention", value)
+
+
 class InstanceNodeDetailInfoArgsDict(TypedDict):
     create_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
     """
@@ -1186,5 +1261,186 @@ class InstanceTagArgs:
     @value.setter
     def value(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "value", value)
+
+
+class InstanceTdeConfigArgsDict(TypedDict):
+    certificate: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Certificate file used for TDE encryption. You can enter a TOS path in the format \\n\\n:\\n\\n:\\n\\n. Valid only when TDEMode is set to User_Default.
+    """
+    db_statuses: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTdeConfigDbStatusArgsDict']]]]]
+    """
+    Database encryption status.
+    Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+    """
+    password: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+    """
+    private_key: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \\n\\n:\\n\\n:\\n\\n. Valid only when TDEMode is set to User_Default.
+    """
+    tde_mode: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+    """
+    tde_status: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+    """
+
+@pulumi.input_type
+class InstanceTdeConfigArgs:
+    def __init__(__self__, *,
+                 certificate: pulumi.Input[Optional[_builtins.str]] = None,
+                 db_statuses: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTdeConfigDbStatusArgs']]]] = None,
+                 password: pulumi.Input[Optional[_builtins.str]] = None,
+                 private_key: pulumi.Input[Optional[_builtins.str]] = None,
+                 tde_mode: pulumi.Input[Optional[_builtins.str]] = None,
+                 tde_status: pulumi.Input[Optional[_builtins.str]] = None):
+        """
+        :param pulumi.Input[_builtins.str] certificate: Certificate file used for TDE encryption. You can enter a TOS path in the format \\n\\n:\\n\\n:\\n\\n. Valid only when TDEMode is set to User_Default.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceTdeConfigDbStatusArgs']]] db_statuses: Database encryption status.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] password: Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+        :param pulumi.Input[_builtins.str] private_key: Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \\n\\n:\\n\\n:\\n\\n. Valid only when TDEMode is set to User_Default.
+        :param pulumi.Input[_builtins.str] tde_mode: Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+        :param pulumi.Input[_builtins.str] tde_status: Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+        """
+        if certificate is not None:
+            pulumi.set(__self__, "certificate", certificate)
+        if db_statuses is not None:
+            pulumi.set(__self__, "db_statuses", db_statuses)
+        if password is not None:
+            pulumi.set(__self__, "password", password)
+        if private_key is not None:
+            pulumi.set(__self__, "private_key", private_key)
+        if tde_mode is not None:
+            pulumi.set(__self__, "tde_mode", tde_mode)
+        if tde_status is not None:
+            pulumi.set(__self__, "tde_status", tde_status)
+
+    @_builtins.property
+    @pulumi.getter
+    def certificate(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Certificate file used for TDE encryption. You can enter a TOS path in the format \\n\\n:\\n\\n:\\n\\n. Valid only when TDEMode is set to User_Default.
+        """
+        return pulumi.get(self, "certificate")
+
+    @certificate.setter
+    def certificate(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "certificate", value)
+
+    @_builtins.property
+    @pulumi.getter(name="dbStatuses")
+    def db_statuses(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTdeConfigDbStatusArgs']]]]:
+        """
+        Database encryption status.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "db_statuses")
+
+    @db_statuses.setter
+    def db_statuses(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTdeConfigDbStatusArgs']]]]):
+        pulumi.set(self, "db_statuses", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def password(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Password for the private key of the certificate used in TDE encryption. Valid only when TDEMode is set to User*Default. The password must be 8–32 characters long and can only contain uppercase and lowercase letters, numbers, and special characters ~!@#$%^&*()-*+=?. It must include at least three of the following: uppercase letters, lowercase letters, numbers, or special characters. Note: This is only valid when the TDEMode parameter is set to User_Default.
+        """
+        return pulumi.get(self, "password")
+
+    @password.setter
+    def password(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "password", value)
+
+    @_builtins.property
+    @pulumi.getter(name="privateKey")
+    def private_key(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Private key for the certificate used in TDE encryption. You can enter a TOS path in the format \\n\\n:\\n\\n:\\n\\n. Valid only when TDEMode is set to User_Default.
+        """
+        return pulumi.get(self, "private_key")
+
+    @private_key.setter
+    def private_key(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "private_key", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tdeMode")
+    def tde_mode(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instance TDE encryption certificate generation mode. MSSQL*Default: Encryption certificate generated by SQL Server. User*Default: Custom certificate uploaded by the user.
+        """
+        return pulumi.get(self, "tde_mode")
+
+    @tde_mode.setter
+    def tde_mode(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tde_mode", value)
+
+    @_builtins.property
+    @pulumi.getter(name="tdeStatus")
+    def tde_status(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Instance TDE status. Enable: The instance TDE status is enabled. Disable: The instance TDE status is disabled. Currently, only Enable is supported.
+        """
+        return pulumi.get(self, "tde_status")
+
+    @tde_status.setter
+    def tde_status(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "tde_status", value)
+
+
+class InstanceTdeConfigDbStatusArgsDict(TypedDict):
+    db_name: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Database name.
+    """
+    enable: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+    """
+
+@pulumi.input_type
+class InstanceTdeConfigDbStatusArgs:
+    def __init__(__self__, *,
+                 db_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 enable: pulumi.Input[Optional[_builtins.bool]] = None):
+        """
+        :param pulumi.Input[_builtins.str] db_name: Database name.
+        :param pulumi.Input[_builtins.bool] enable: Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+        """
+        if db_name is not None:
+            pulumi.set(__self__, "db_name", db_name)
+        if enable is not None:
+            pulumi.set(__self__, "enable", enable)
+
+    @_builtins.property
+    @pulumi.getter(name="dbName")
+    def db_name(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Database name.
+        """
+        return pulumi.get(self, "db_name")
+
+    @db_name.setter
+    def db_name(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "db_name", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether encryption is enabled. true: The database is encrypted. false: The database is decrypted.
+        """
+        return pulumi.get(self, "enable")
+
+    @enable.setter
+    def enable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "enable", value)
 
 

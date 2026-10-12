@@ -34,6 +34,8 @@ type LookupInstanceResult struct {
 	AdvancedFeatures string `pulumi:"advancedFeatures"`
 	// Allowlist ID list permitted for access.
 	AllowListIds []string `pulumi:"allowListIds"`
+	// List of cross-region backup destination regions.
+	AvailableCrossRegions []string `pulumi:"availableCrossRegions"`
 	// Used backup space for the instance, in GiB.
 	BackupUse float64 `pulumi:"backupUse"`
 	// Payment method.
@@ -42,6 +44,8 @@ type LookupInstanceResult struct {
 	ConnectionInfos []GetInstanceConnectionInfo `pulumi:"connectionInfos"`
 	// Creation time.
 	CreatedTime string `pulumi:"createdTime"`
+	// Cross-region backup policy.
+	CrossBackupPolicy GetInstanceCrossBackupPolicy `pulumi:"crossBackupPolicy"`
 	// Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
 	DbEngineVersion string `pulumi:"dbEngineVersion"`
 	// Uniquely identifies the resource.
@@ -94,6 +98,8 @@ type LookupInstanceResult struct {
 	SuperAccountPassword string `pulumi:"superAccountPassword"`
 	// Tag list.
 	Tags []GetInstanceTag `pulumi:"tags"`
+	// Instance TDE configuration.
+	TdeConfig GetInstanceTdeConfig `pulumi:"tdeConfig"`
 	// Time zone.
 	TimeZone string `pulumi:"timeZone"`
 	// Update time.
@@ -150,6 +156,11 @@ func (o LookupInstanceResultOutput) AllowListIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []string { return v.AllowListIds }).(pulumi.StringArrayOutput)
 }
 
+// List of cross-region backup destination regions.
+func (o LookupInstanceResultOutput) AvailableCrossRegions() pulumi.StringArrayOutput {
+	return o.ApplyT(func(v LookupInstanceResult) []string { return v.AvailableCrossRegions }).(pulumi.StringArrayOutput)
+}
+
 // Used backup space for the instance, in GiB.
 func (o LookupInstanceResultOutput) BackupUse() pulumi.Float64Output {
 	return o.ApplyT(func(v LookupInstanceResult) float64 { return v.BackupUse }).(pulumi.Float64Output)
@@ -168,6 +179,11 @@ func (o LookupInstanceResultOutput) ConnectionInfos() GetInstanceConnectionInfoA
 // Creation time.
 func (o LookupInstanceResultOutput) CreatedTime() pulumi.StringOutput {
 	return o.ApplyT(func(v LookupInstanceResult) string { return v.CreatedTime }).(pulumi.StringOutput)
+}
+
+// Cross-region backup policy.
+func (o LookupInstanceResultOutput) CrossBackupPolicy() GetInstanceCrossBackupPolicyOutput {
+	return o.ApplyT(func(v LookupInstanceResult) GetInstanceCrossBackupPolicy { return v.CrossBackupPolicy }).(GetInstanceCrossBackupPolicyOutput)
 }
 
 // Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
@@ -298,6 +314,11 @@ func (o LookupInstanceResultOutput) SuperAccountPassword() pulumi.StringOutput {
 // Tag list.
 func (o LookupInstanceResultOutput) Tags() GetInstanceTagArrayOutput {
 	return o.ApplyT(func(v LookupInstanceResult) []GetInstanceTag { return v.Tags }).(GetInstanceTagArrayOutput)
+}
+
+// Instance TDE configuration.
+func (o LookupInstanceResultOutput) TdeConfig() GetInstanceTdeConfigOutput {
+	return o.ApplyT(func(v LookupInstanceResult) GetInstanceTdeConfig { return v.TdeConfig }).(GetInstanceTdeConfigOutput)
 }
 
 // Time zone.

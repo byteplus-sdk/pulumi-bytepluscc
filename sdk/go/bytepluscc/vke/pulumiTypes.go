@@ -7924,17 +7924,17 @@ func (o NodeKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) NodeKuber
 }
 
 type NodePoolAutoScaling struct {
-	// Configure the expected number of nodes in the node pool
+	// Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
 	DesiredReplicas *int `pulumi:"desiredReplicas"`
-	// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+	// Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
 	Enabled *bool `pulumi:"enabled"`
-	// Configure the maximum number of nodes in the node pool
+	// Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
 	MaxReplicas *int `pulumi:"maxReplicas"`
-	// Minimum number of nodes configured for the node pool
+	// Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
 	MinReplicas *int `pulumi:"minReplicas"`
-	// Priority
+	// Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
 	Priority *int `pulumi:"priority"`
-	// Scaling group ID
+	// Scaling group ID associated with the node pool.
 	ScalingGroupId *string `pulumi:"scalingGroupId"`
 	// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 	SubnetPolicy *string `pulumi:"subnetPolicy"`
@@ -7952,17 +7952,17 @@ type NodePoolAutoScalingInput interface {
 }
 
 type NodePoolAutoScalingArgs struct {
-	// Configure the expected number of nodes in the node pool
+	// Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
 	DesiredReplicas pulumi.IntPtrInput `pulumi:"desiredReplicas"`
-	// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+	// Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// Configure the maximum number of nodes in the node pool
+	// Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
 	MaxReplicas pulumi.IntPtrInput `pulumi:"maxReplicas"`
-	// Minimum number of nodes configured for the node pool
+	// Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
 	MinReplicas pulumi.IntPtrInput `pulumi:"minReplicas"`
-	// Priority
+	// Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
 	Priority pulumi.IntPtrInput `pulumi:"priority"`
-	// Scaling group ID
+	// Scaling group ID associated with the node pool.
 	ScalingGroupId pulumi.StringPtrInput `pulumi:"scalingGroupId"`
 	// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 	SubnetPolicy pulumi.StringPtrInput `pulumi:"subnetPolicy"`
@@ -8045,32 +8045,32 @@ func (o NodePoolAutoScalingOutput) ToNodePoolAutoScalingPtrOutputWithContext(ctx
 	}).(NodePoolAutoScalingPtrOutput)
 }
 
-// Configure the expected number of nodes in the node pool
+// Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
 func (o NodePoolAutoScalingOutput) DesiredReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *int { return v.DesiredReplicas }).(pulumi.IntPtrOutput)
 }
 
-// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+// Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
 func (o NodePoolAutoScalingOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// Configure the maximum number of nodes in the node pool
+// Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
 func (o NodePoolAutoScalingOutput) MaxReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *int { return v.MaxReplicas }).(pulumi.IntPtrOutput)
 }
 
-// Minimum number of nodes configured for the node pool
+// Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
 func (o NodePoolAutoScalingOutput) MinReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *int { return v.MinReplicas }).(pulumi.IntPtrOutput)
 }
 
-// Priority
+// Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
 func (o NodePoolAutoScalingOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *int { return v.Priority }).(pulumi.IntPtrOutput)
 }
 
-// Scaling group ID
+// Scaling group ID associated with the node pool.
 func (o NodePoolAutoScalingOutput) ScalingGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolAutoScaling) *string { return v.ScalingGroupId }).(pulumi.StringPtrOutput)
 }
@@ -8104,7 +8104,7 @@ func (o NodePoolAutoScalingPtrOutput) Elem() NodePoolAutoScalingOutput {
 	}).(NodePoolAutoScalingOutput)
 }
 
-// Configure the expected number of nodes in the node pool
+// Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
 func (o NodePoolAutoScalingPtrOutput) DesiredReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *int {
 		if v == nil {
@@ -8114,7 +8114,7 @@ func (o NodePoolAutoScalingPtrOutput) DesiredReplicas() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+// Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
 func (o NodePoolAutoScalingPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *bool {
 		if v == nil {
@@ -8124,7 +8124,7 @@ func (o NodePoolAutoScalingPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Configure the maximum number of nodes in the node pool
+// Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
 func (o NodePoolAutoScalingPtrOutput) MaxReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *int {
 		if v == nil {
@@ -8134,7 +8134,7 @@ func (o NodePoolAutoScalingPtrOutput) MaxReplicas() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Minimum number of nodes configured for the node pool
+// Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
 func (o NodePoolAutoScalingPtrOutput) MinReplicas() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *int {
 		if v == nil {
@@ -8144,7 +8144,7 @@ func (o NodePoolAutoScalingPtrOutput) MinReplicas() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Priority
+// Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
 func (o NodePoolAutoScalingPtrOutput) Priority() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *int {
 		if v == nil {
@@ -8154,7 +8154,7 @@ func (o NodePoolAutoScalingPtrOutput) Priority() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Scaling group ID
+// Scaling group ID associated with the node pool.
 func (o NodePoolAutoScalingPtrOutput) ScalingGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolAutoScaling) *string {
 		if v == nil {
@@ -8175,24 +8175,24 @@ func (o NodePoolAutoScalingPtrOutput) SubnetPolicy() pulumi.StringPtrOutput {
 }
 
 type NodePoolKubernetesConfig struct {
-	// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+	// Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
 	AutoSyncDisabled *bool `pulumi:"autoSyncDisabled"`
 	// Node pool Containerd configuration
 	ContainerdConfig *NodePoolKubernetesConfigContainerdConfig `pulumi:"containerdConfig"`
-	// Node blocking configuration. Parameter values: false: not blocked; true: blocked
+	// Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
 	Cordon *bool `pulumi:"cordon"`
-	// Kubelet component configuration
+	// Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
 	KubeletConfig *NodePoolKubernetesConfigKubeletConfig `pulumi:"kubeletConfig"`
-	// Kubernetes label information for node pools/nodes
+	// Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Labels []NodePoolKubernetesConfigLabel `pulumi:"labels"`
-	// Prefix for node object metadata name in Kubernetes
+	// Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
 	NamePrefix *string `pulumi:"namePrefix"`
 	// Suffix for node object metadata name in Kubernetes
 	NameSuffix *string `pulumi:"nameSuffix"`
-	// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+	// Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
 	NameUseHostname *bool `pulumi:"nameUseHostname"`
-	// Kubernetes taint information for node pools/nodes
+	// Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Taints []NodePoolKubernetesConfigTaint `pulumi:"taints"`
 }
@@ -8209,24 +8209,24 @@ type NodePoolKubernetesConfigInput interface {
 }
 
 type NodePoolKubernetesConfigArgs struct {
-	// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+	// Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
 	AutoSyncDisabled pulumi.BoolPtrInput `pulumi:"autoSyncDisabled"`
 	// Node pool Containerd configuration
 	ContainerdConfig NodePoolKubernetesConfigContainerdConfigPtrInput `pulumi:"containerdConfig"`
-	// Node blocking configuration. Parameter values: false: not blocked; true: blocked
+	// Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
 	Cordon pulumi.BoolPtrInput `pulumi:"cordon"`
-	// Kubelet component configuration
+	// Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
 	KubeletConfig NodePoolKubernetesConfigKubeletConfigPtrInput `pulumi:"kubeletConfig"`
-	// Kubernetes label information for node pools/nodes
+	// Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Labels NodePoolKubernetesConfigLabelArrayInput `pulumi:"labels"`
-	// Prefix for node object metadata name in Kubernetes
+	// Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
 	NamePrefix pulumi.StringPtrInput `pulumi:"namePrefix"`
 	// Suffix for node object metadata name in Kubernetes
 	NameSuffix pulumi.StringPtrInput `pulumi:"nameSuffix"`
-	// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+	// Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
 	NameUseHostname pulumi.BoolPtrInput `pulumi:"nameUseHostname"`
-	// Kubernetes taint information for node pools/nodes
+	// Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Taints NodePoolKubernetesConfigTaintArrayInput `pulumi:"taints"`
 }
@@ -8308,7 +8308,7 @@ func (o NodePoolKubernetesConfigOutput) ToNodePoolKubernetesConfigPtrOutputWithC
 	}).(NodePoolKubernetesConfigPtrOutput)
 }
 
-// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+// Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
 func (o NodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *bool { return v.AutoSyncDisabled }).(pulumi.BoolPtrOutput)
 }
@@ -8318,23 +8318,23 @@ func (o NodePoolKubernetesConfigOutput) ContainerdConfig() NodePoolKubernetesCon
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *NodePoolKubernetesConfigContainerdConfig { return v.ContainerdConfig }).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
 }
 
-// Node blocking configuration. Parameter values: false: not blocked; true: blocked
+// Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
 func (o NodePoolKubernetesConfigOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *bool { return v.Cordon }).(pulumi.BoolPtrOutput)
 }
 
-// Kubelet component configuration
+// Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
 func (o NodePoolKubernetesConfigOutput) KubeletConfig() NodePoolKubernetesConfigKubeletConfigPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *NodePoolKubernetesConfigKubeletConfig { return v.KubeletConfig }).(NodePoolKubernetesConfigKubeletConfigPtrOutput)
 }
 
-// Kubernetes label information for node pools/nodes
+// Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigOutput) Labels() NodePoolKubernetesConfigLabelArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) []NodePoolKubernetesConfigLabel { return v.Labels }).(NodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Prefix for node object metadata name in Kubernetes
+// Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
 func (o NodePoolKubernetesConfigOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *string { return v.NamePrefix }).(pulumi.StringPtrOutput)
 }
@@ -8344,12 +8344,12 @@ func (o NodePoolKubernetesConfigOutput) NameSuffix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *string { return v.NameSuffix }).(pulumi.StringPtrOutput)
 }
 
-// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+// Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
 func (o NodePoolKubernetesConfigOutput) NameUseHostname() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) *bool { return v.NameUseHostname }).(pulumi.BoolPtrOutput)
 }
 
-// Kubernetes taint information for node pools/nodes
+// Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigOutput) Taints() NodePoolKubernetesConfigTaintArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfig) []NodePoolKubernetesConfigTaint { return v.Taints }).(NodePoolKubernetesConfigTaintArrayOutput)
@@ -8379,7 +8379,7 @@ func (o NodePoolKubernetesConfigPtrOutput) Elem() NodePoolKubernetesConfigOutput
 	}).(NodePoolKubernetesConfigOutput)
 }
 
-// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+// Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
 func (o NodePoolKubernetesConfigPtrOutput) AutoSyncDisabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -8399,7 +8399,7 @@ func (o NodePoolKubernetesConfigPtrOutput) ContainerdConfig() NodePoolKubernetes
 	}).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
 }
 
-// Node blocking configuration. Parameter values: false: not blocked; true: blocked
+// Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
 func (o NodePoolKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -8409,7 +8409,7 @@ func (o NodePoolKubernetesConfigPtrOutput) Cordon() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Kubelet component configuration
+// Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
 func (o NodePoolKubernetesConfigPtrOutput) KubeletConfig() NodePoolKubernetesConfigKubeletConfigPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *NodePoolKubernetesConfigKubeletConfig {
 		if v == nil {
@@ -8419,7 +8419,7 @@ func (o NodePoolKubernetesConfigPtrOutput) KubeletConfig() NodePoolKubernetesCon
 	}).(NodePoolKubernetesConfigKubeletConfigPtrOutput)
 }
 
-// Kubernetes label information for node pools/nodes
+// Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigPtrOutput) Labels() NodePoolKubernetesConfigLabelArrayOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) []NodePoolKubernetesConfigLabel {
@@ -8430,7 +8430,7 @@ func (o NodePoolKubernetesConfigPtrOutput) Labels() NodePoolKubernetesConfigLabe
 	}).(NodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Prefix for node object metadata name in Kubernetes
+// Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
 func (o NodePoolKubernetesConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *string {
 		if v == nil {
@@ -8450,7 +8450,7 @@ func (o NodePoolKubernetesConfigPtrOutput) NameSuffix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+// Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
 func (o NodePoolKubernetesConfigPtrOutput) NameUseHostname() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) *bool {
 		if v == nil {
@@ -8460,7 +8460,7 @@ func (o NodePoolKubernetesConfigPtrOutput) NameUseHostname() pulumi.BoolPtrOutpu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Kubernetes taint information for node pools/nodes
+// Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigPtrOutput) Taints() NodePoolKubernetesConfigTaintArrayOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfig) []NodePoolKubernetesConfigTaint {
@@ -8472,7 +8472,7 @@ func (o NodePoolKubernetesConfigPtrOutput) Taints() NodePoolKubernetesConfigTain
 }
 
 type NodePoolKubernetesConfigContainerdConfig struct {
-	// Specify the container image repository address to skip certificate verification.
+	// Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
 	InsecureRegistries []string `pulumi:"insecureRegistries"`
 	// Container image repository proxy configuration
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
@@ -8491,7 +8491,7 @@ type NodePoolKubernetesConfigContainerdConfigInput interface {
 }
 
 type NodePoolKubernetesConfigContainerdConfigArgs struct {
-	// Specify the container image repository address to skip certificate verification.
+	// Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
 	InsecureRegistries pulumi.StringArrayInput `pulumi:"insecureRegistries"`
 	// Container image repository proxy configuration
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
@@ -8575,7 +8575,7 @@ func (o NodePoolKubernetesConfigContainerdConfigOutput) ToNodePoolKubernetesConf
 	}).(NodePoolKubernetesConfigContainerdConfigPtrOutput)
 }
 
-// Specify the container image repository address to skip certificate verification.
+// Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
 func (o NodePoolKubernetesConfigContainerdConfigOutput) InsecureRegistries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfig) []string { return v.InsecureRegistries }).(pulumi.StringArrayOutput)
 }
@@ -8612,7 +8612,7 @@ func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) Elem() NodePoolKubern
 	}).(NodePoolKubernetesConfigContainerdConfigOutput)
 }
 
-// Specify the container image repository address to skip certificate verification.
+// Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
 func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) InsecureRegistries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigContainerdConfig) []string {
 		if v == nil {
@@ -8634,9 +8634,9 @@ func (o NodePoolKubernetesConfigContainerdConfigPtrOutput) RegistryProxyConfigs(
 }
 
 type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig struct {
-	// Proxy address.
+	// Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
 	ProxyEndpoints []string `pulumi:"proxyEndpoints"`
-	// Container image repository address.
+	// Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
 	Registry *string `pulumi:"registry"`
 }
 
@@ -8652,9 +8652,9 @@ type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput interface 
 }
 
 type NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs struct {
-	// Proxy address.
+	// Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
 	ProxyEndpoints pulumi.StringArrayInput `pulumi:"proxyEndpoints"`
-	// Container image repository address.
+	// Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
 	Registry pulumi.StringPtrInput `pulumi:"registry"`
 }
 
@@ -8709,12 +8709,12 @@ func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ToNod
 	return o
 }
 
-// Proxy address.
+// Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
 func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ProxyEndpoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) []string { return v.ProxyEndpoints }).(pulumi.StringArrayOutput)
 }
 
-// Container image repository address.
+// Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
 func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) Registry() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) *string { return v.Registry }).(pulumi.StringPtrOutput)
 }
@@ -8740,29 +8740,29 @@ func (o NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutput) 
 }
 
 type NodePoolKubernetesConfigKubeletConfig struct {
-	// Configure kubelet CpuManagerPolicy. Supports none and static policies
+	// CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
 	CpuManagerPolicy *string `pulumi:"cpuManagerPolicy"`
-	// Set of hard thresholds for triggering Pod eviction
+	// A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	EvictionHards []NodePoolKubernetesConfigKubeletConfigEvictionHard `pulumi:"evictionHards"`
-	// Feature gate
+	// Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
 	FeatureGates *NodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
-	// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+	// Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
 	KubeApiBurst *int `pulumi:"kubeApiBurst"`
-	// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+	// Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
 	KubeApiQps *int `pulumi:"kubeApiQps"`
-	// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+	// Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	KubeReserveds []NodePoolKubernetesConfigKubeletConfigKubeReserved `pulumi:"kubeReserveds"`
-	// Configure the maximum number of Pods supported by kubelet
+	// Maximum number of Pods supported by the node. Default is 110.
 	MaxPods *int `pulumi:"maxPods"`
-	// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+	// Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
 	RegistryBurst *int `pulumi:"registryBurst"`
-	// Used to limit the QPS cap for the image repository
+	// QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
 	RegistryPullQps *int `pulumi:"registryPullQps"`
-	// Pull images sequentially
+	// Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
 	SerializeImagePulls *bool `pulumi:"serializeImagePulls"`
-	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	SystemReserveds []NodePoolKubernetesConfigKubeletConfigSystemReserved `pulumi:"systemReserveds"`
 	// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
@@ -8783,29 +8783,29 @@ type NodePoolKubernetesConfigKubeletConfigInput interface {
 }
 
 type NodePoolKubernetesConfigKubeletConfigArgs struct {
-	// Configure kubelet CpuManagerPolicy. Supports none and static policies
+	// CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
 	CpuManagerPolicy pulumi.StringPtrInput `pulumi:"cpuManagerPolicy"`
-	// Set of hard thresholds for triggering Pod eviction
+	// A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	EvictionHards NodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput `pulumi:"evictionHards"`
-	// Feature gate
+	// Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
 	FeatureGates NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrInput `pulumi:"featureGates"`
-	// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+	// Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
 	KubeApiBurst pulumi.IntPtrInput `pulumi:"kubeApiBurst"`
-	// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+	// Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
 	KubeApiQps pulumi.IntPtrInput `pulumi:"kubeApiQps"`
-	// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+	// Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	KubeReserveds NodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput `pulumi:"kubeReserveds"`
-	// Configure the maximum number of Pods supported by kubelet
+	// Maximum number of Pods supported by the node. Default is 110.
 	MaxPods pulumi.IntPtrInput `pulumi:"maxPods"`
-	// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+	// Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
 	RegistryBurst pulumi.IntPtrInput `pulumi:"registryBurst"`
-	// Used to limit the QPS cap for the image repository
+	// QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
 	RegistryPullQps pulumi.IntPtrInput `pulumi:"registryPullQps"`
-	// Pull images sequentially
+	// Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
 	SerializeImagePulls pulumi.BoolPtrInput `pulumi:"serializeImagePulls"`
-	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	SystemReserveds NodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput `pulumi:"systemReserveds"`
 	// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
@@ -8891,12 +8891,12 @@ func (o NodePoolKubernetesConfigKubeletConfigOutput) ToNodePoolKubernetesConfigK
 	}).(NodePoolKubernetesConfigKubeletConfigPtrOutput)
 }
 
-// Configure kubelet CpuManagerPolicy. Supports none and static policies
+// CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *string { return v.CpuManagerPolicy }).(pulumi.StringPtrOutput)
 }
 
-// Set of hard thresholds for triggering Pod eviction
+// A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) EvictionHards() NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) []NodePoolKubernetesConfigKubeletConfigEvictionHard {
@@ -8904,24 +8904,24 @@ func (o NodePoolKubernetesConfigKubeletConfigOutput) EvictionHards() NodePoolKub
 	}).(NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
 }
 
-// Feature gate
+// Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *NodePoolKubernetesConfigKubeletConfigFeatureGates {
 		return v.FeatureGates
 	}).(NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+// Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) KubeApiBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.KubeApiBurst }).(pulumi.IntPtrOutput)
 }
 
-// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+// Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) KubeApiQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.KubeApiQps }).(pulumi.IntPtrOutput)
 }
 
-// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+// Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() NodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) []NodePoolKubernetesConfigKubeletConfigKubeReserved {
@@ -8929,27 +8929,27 @@ func (o NodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() NodePoolKub
 	}).(NodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// Configure the maximum number of Pods supported by kubelet
+// Maximum number of Pods supported by the node. Default is 110.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) MaxPods() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.MaxPods }).(pulumi.IntPtrOutput)
 }
 
-// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+// Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) RegistryBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.RegistryBurst }).(pulumi.IntPtrOutput)
 }
 
-// Used to limit the QPS cap for the image repository
+// QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) RegistryPullQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *int { return v.RegistryPullQps }).(pulumi.IntPtrOutput)
 }
 
-// Pull images sequentially
+// Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) SerializeImagePulls() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) *bool { return v.SerializeImagePulls }).(pulumi.BoolPtrOutput)
 }
 
-// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigKubeletConfigOutput) SystemReserveds() NodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfig) []NodePoolKubernetesConfigKubeletConfigSystemReserved {
@@ -8991,7 +8991,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) Elem() NodePoolKubernete
 	}).(NodePoolKubernetesConfigKubeletConfigOutput)
 }
 
-// Configure kubelet CpuManagerPolicy. Supports none and static policies
+// CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) CpuManagerPolicy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *string {
 		if v == nil {
@@ -9001,7 +9001,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) CpuManagerPolicy() pulum
 	}).(pulumi.StringPtrOutput)
 }
 
-// Set of hard thresholds for triggering Pod eviction
+// A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) EvictionHards() NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) []NodePoolKubernetesConfigKubeletConfigEvictionHard {
@@ -9012,7 +9012,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) EvictionHards() NodePool
 	}).(NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
 }
 
-// Feature gate
+// Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) FeatureGates() NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *NodePoolKubernetesConfigKubeletConfigFeatureGates {
 		if v == nil {
@@ -9022,7 +9022,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) FeatureGates() NodePoolK
 	}).(NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+// Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -9032,7 +9032,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiBurst() pulumi.In
 	}).(pulumi.IntPtrOutput)
 }
 
-// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+// Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -9042,7 +9042,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeApiQps() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+// Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeReserveds() NodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) []NodePoolKubernetesConfigKubeletConfigKubeReserved {
@@ -9053,7 +9053,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) KubeReserveds() NodePool
 	}).(NodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// Configure the maximum number of Pods supported by kubelet
+// Maximum number of Pods supported by the node. Default is 110.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) MaxPods() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -9063,7 +9063,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) MaxPods() pulumi.IntPtrO
 	}).(pulumi.IntPtrOutput)
 }
 
-// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+// Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryBurst() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -9073,7 +9073,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryBurst() pulumi.I
 	}).(pulumi.IntPtrOutput)
 }
 
-// Used to limit the QPS cap for the image repository
+// QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryPullQps() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *int {
 		if v == nil {
@@ -9083,7 +9083,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) RegistryPullQps() pulumi
 	}).(pulumi.IntPtrOutput)
 }
 
-// Pull images sequentially
+// Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) SerializeImagePulls() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) *bool {
 		if v == nil {
@@ -9093,7 +9093,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) SerializeImagePulls() pu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) SystemReserveds() NodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfig) []NodePoolKubernetesConfigKubeletConfigSystemReserved {
@@ -9127,7 +9127,7 @@ func (o NodePoolKubernetesConfigKubeletConfigPtrOutput) TopologyManagerScope() p
 type NodePoolKubernetesConfigKubeletConfigEvictionHard struct {
 	// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 	Key *string `pulumi:"key"`
-	// Hard threshold value.
+	// Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
 	Value *string `pulumi:"value"`
 }
 
@@ -9145,7 +9145,7 @@ type NodePoolKubernetesConfigKubeletConfigEvictionHardInput interface {
 type NodePoolKubernetesConfigKubeletConfigEvictionHardArgs struct {
 	// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Hard threshold value.
+	// Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -9205,7 +9205,7 @@ func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Key() pulumi.St
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigEvictionHard) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// Hard threshold value.
+// Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
 func (o NodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigEvictionHard) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -9231,9 +9231,9 @@ func (o NodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) Index(i pu
 }
 
 type NodePoolKubernetesConfigKubeletConfigFeatureGates struct {
-	// Enable local vertical Pod autoscaling feature toggle
+	// Enable Pod vertical scaling. Options: true: enabled. false: disabled.
 	InPlacePodVerticalScaling *bool `pulumi:"inPlacePodVerticalScaling"`
-	// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+	// Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
 	QoSResourceManager *bool `pulumi:"qoSResourceManager"`
 }
 
@@ -9249,9 +9249,9 @@ type NodePoolKubernetesConfigKubeletConfigFeatureGatesInput interface {
 }
 
 type NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs struct {
-	// Enable local vertical Pod autoscaling feature toggle
+	// Enable Pod vertical scaling. Options: true: enabled. false: disabled.
 	InPlacePodVerticalScaling pulumi.BoolPtrInput `pulumi:"inPlacePodVerticalScaling"`
-	// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+	// Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
 	QoSResourceManager pulumi.BoolPtrInput `pulumi:"qoSResourceManager"`
 }
 
@@ -9332,12 +9332,12 @@ func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToNodePoolKuber
 	}).(NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput)
 }
 
-// Enable local vertical Pod autoscaling feature toggle
+// Enable Pod vertical scaling. Options: true: enabled. false: disabled.
 func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) InPlacePodVerticalScaling() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigFeatureGates) *bool { return v.InPlacePodVerticalScaling }).(pulumi.BoolPtrOutput)
 }
 
-// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+// Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
 func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceManager() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigFeatureGates) *bool { return v.QoSResourceManager }).(pulumi.BoolPtrOutput)
 }
@@ -9366,7 +9366,7 @@ func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) Elem() NodeP
 	}).(NodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
 }
 
-// Enable local vertical Pod autoscaling feature toggle
+// Enable Pod vertical scaling. Options: true: enabled. false: disabled.
 func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) InPlacePodVerticalScaling() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
 		if v == nil {
@@ -9376,7 +9376,7 @@ func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) InPlacePodVe
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+// Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
 func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) QoSResourceManager() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolKubernetesConfigKubeletConfigFeatureGates) *bool {
 		if v == nil {
@@ -9389,7 +9389,7 @@ func (o NodePoolKubernetesConfigKubeletConfigFeatureGatesPtrOutput) QoSResourceM
 type NodePoolKubernetesConfigKubeletConfigKubeReserved struct {
 	// Resource name. Valid values: cpu or memory.
 	Name *string `pulumi:"name"`
-	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+	// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 	Quantity *string `pulumi:"quantity"`
 }
 
@@ -9407,7 +9407,7 @@ type NodePoolKubernetesConfigKubeletConfigKubeReservedInput interface {
 type NodePoolKubernetesConfigKubeletConfigKubeReservedArgs struct {
 	// Resource name. Valid values: cpu or memory.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+	// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 }
 
@@ -9467,7 +9467,7 @@ func (o NodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Name() pulumi.S
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigKubeReserved) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 func (o NodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Quantity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigKubeReserved) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
@@ -9495,7 +9495,7 @@ func (o NodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) Index(i pu
 type NodePoolKubernetesConfigKubeletConfigSystemReserved struct {
 	// Resource name. Valid values: cpu or memory.
 	Name *string `pulumi:"name"`
-	// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+	// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 	Quantity *string `pulumi:"quantity"`
 }
 
@@ -9513,7 +9513,7 @@ type NodePoolKubernetesConfigKubeletConfigSystemReservedInput interface {
 type NodePoolKubernetesConfigKubeletConfigSystemReservedArgs struct {
 	// Resource name. Valid values: cpu or memory.
 	Name pulumi.StringPtrInput `pulumi:"name"`
-	// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+	// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 	Quantity pulumi.StringPtrInput `pulumi:"quantity"`
 }
 
@@ -9573,7 +9573,7 @@ func (o NodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Name() pulumi
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigSystemReserved) *string { return v.Name }).(pulumi.StringPtrOutput)
 }
 
-// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 func (o NodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Quantity() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigKubeletConfigSystemReserved) *string { return v.Quantity }).(pulumi.StringPtrOutput)
 }
@@ -9599,9 +9599,9 @@ func (o NodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) Index(i 
 }
 
 type NodePoolKubernetesConfigLabel struct {
-	// Tag key.
+	// Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 	Key *string `pulumi:"key"`
-	// Label value.
+	// Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
 	Value *string `pulumi:"value"`
 }
 
@@ -9617,9 +9617,9 @@ type NodePoolKubernetesConfigLabelInput interface {
 }
 
 type NodePoolKubernetesConfigLabelArgs struct {
-	// Tag key.
+	// Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Label value.
+	// Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -9674,12 +9674,12 @@ func (o NodePoolKubernetesConfigLabelOutput) ToNodePoolKubernetesConfigLabelOutp
 	return o
 }
 
-// Tag key.
+// Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 func (o NodePoolKubernetesConfigLabelOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigLabel) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// Label value.
+// Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
 func (o NodePoolKubernetesConfigLabelOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigLabel) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -9707,9 +9707,9 @@ func (o NodePoolKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) NodeP
 type NodePoolKubernetesConfigTaint struct {
 	// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 	Effect *string `pulumi:"effect"`
-	// Taint key.
+	// Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 	Key *string `pulumi:"key"`
-	// Taint value
+	// Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
 	Value *string `pulumi:"value"`
 }
 
@@ -9727,9 +9727,9 @@ type NodePoolKubernetesConfigTaintInput interface {
 type NodePoolKubernetesConfigTaintArgs struct {
 	// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 	Effect pulumi.StringPtrInput `pulumi:"effect"`
-	// Taint key.
+	// Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 	Key pulumi.StringPtrInput `pulumi:"key"`
-	// Taint value
+	// Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
 	Value pulumi.StringPtrInput `pulumi:"value"`
 }
 
@@ -9789,12 +9789,12 @@ func (o NodePoolKubernetesConfigTaintOutput) Effect() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigTaint) *string { return v.Effect }).(pulumi.StringPtrOutput)
 }
 
-// Taint key.
+// Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 func (o NodePoolKubernetesConfigTaintOutput) Key() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigTaint) *string { return v.Key }).(pulumi.StringPtrOutput)
 }
 
-// Taint value
+// Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
 func (o NodePoolKubernetesConfigTaintOutput) Value() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolKubernetesConfigTaint) *string { return v.Value }).(pulumi.StringPtrOutput)
 }
@@ -9820,9 +9820,9 @@ func (o NodePoolKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) NodeP
 }
 
 type NodePoolManagement struct {
-	// Enable managed mode for node pool. Options:   - true: on   - false: off
+	// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
 	Enabled *bool `pulumi:"enabled"`
-	// Check self-healing configuration.
+	// Node pool health check and self-healing rule configuration.
 	RemedyConfig *NodePoolManagementRemedyConfig `pulumi:"remedyConfig"`
 }
 
@@ -9838,9 +9838,9 @@ type NodePoolManagementInput interface {
 }
 
 type NodePoolManagementArgs struct {
-	// Enable managed mode for node pool. Options:   - true: on   - false: off
+	// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// Check self-healing configuration.
+	// Node pool health check and self-healing rule configuration.
 	RemedyConfig NodePoolManagementRemedyConfigPtrInput `pulumi:"remedyConfig"`
 }
 
@@ -9921,12 +9921,12 @@ func (o NodePoolManagementOutput) ToNodePoolManagementPtrOutputWithContext(ctx c
 	}).(NodePoolManagementPtrOutput)
 }
 
-// Enable managed mode for node pool. Options:   - true: on   - false: off
+// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
 func (o NodePoolManagementOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolManagement) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// Check self-healing configuration.
+// Node pool health check and self-healing rule configuration.
 func (o NodePoolManagementOutput) RemedyConfig() NodePoolManagementRemedyConfigPtrOutput {
 	return o.ApplyT(func(v NodePoolManagement) *NodePoolManagementRemedyConfig { return v.RemedyConfig }).(NodePoolManagementRemedyConfigPtrOutput)
 }
@@ -9955,7 +9955,7 @@ func (o NodePoolManagementPtrOutput) Elem() NodePoolManagementOutput {
 	}).(NodePoolManagementOutput)
 }
 
-// Enable managed mode for node pool. Options:   - true: on   - false: off
+// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
 func (o NodePoolManagementPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolManagement) *bool {
 		if v == nil {
@@ -9965,7 +9965,7 @@ func (o NodePoolManagementPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Check self-healing configuration.
+// Node pool health check and self-healing rule configuration.
 func (o NodePoolManagementPtrOutput) RemedyConfig() NodePoolManagementRemedyConfigPtrOutput {
 	return o.ApplyT(func(v *NodePoolManagement) *NodePoolManagementRemedyConfig {
 		if v == nil {
@@ -9976,9 +9976,9 @@ func (o NodePoolManagementPtrOutput) RemedyConfig() NodePoolManagementRemedyConf
 }
 
 type NodePoolManagementRemedyConfig struct {
-	// Enable self-healing check
+	// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
 	Enabled *bool `pulumi:"enabled"`
-	// Self-healing rule ID
+	// Self-healing rule ID associated after enabling self-healing check for the node pool.
 	RemedyId *string `pulumi:"remedyId"`
 }
 
@@ -9994,9 +9994,9 @@ type NodePoolManagementRemedyConfigInput interface {
 }
 
 type NodePoolManagementRemedyConfigArgs struct {
-	// Enable self-healing check
+	// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
 	Enabled pulumi.BoolPtrInput `pulumi:"enabled"`
-	// Self-healing rule ID
+	// Self-healing rule ID associated after enabling self-healing check for the node pool.
 	RemedyId pulumi.StringPtrInput `pulumi:"remedyId"`
 }
 
@@ -10077,12 +10077,12 @@ func (o NodePoolManagementRemedyConfigOutput) ToNodePoolManagementRemedyConfigPt
 	}).(NodePoolManagementRemedyConfigPtrOutput)
 }
 
-// Enable self-healing check
+// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
 func (o NodePoolManagementRemedyConfigOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolManagementRemedyConfig) *bool { return v.Enabled }).(pulumi.BoolPtrOutput)
 }
 
-// Self-healing rule ID
+// Self-healing rule ID associated after enabling self-healing check for the node pool.
 func (o NodePoolManagementRemedyConfigOutput) RemedyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolManagementRemedyConfig) *string { return v.RemedyId }).(pulumi.StringPtrOutput)
 }
@@ -10111,7 +10111,7 @@ func (o NodePoolManagementRemedyConfigPtrOutput) Elem() NodePoolManagementRemedy
 	}).(NodePoolManagementRemedyConfigOutput)
 }
 
-// Enable self-healing check
+// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
 func (o NodePoolManagementRemedyConfigPtrOutput) Enabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolManagementRemedyConfig) *bool {
 		if v == nil {
@@ -10121,7 +10121,7 @@ func (o NodePoolManagementRemedyConfigPtrOutput) Enabled() pulumi.BoolPtrOutput 
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Self-healing rule ID
+// Self-healing rule ID associated after enabling self-healing check for the node pool.
 func (o NodePoolManagementRemedyConfigPtrOutput) RemedyId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolManagementRemedyConfig) *string {
 		if v == nil {
@@ -10132,58 +10132,58 @@ func (o NodePoolManagementRemedyConfigPtrOutput) RemedyId() pulumi.StringPtrOutp
 }
 
 type NodePoolNodeConfig struct {
-	// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+	// Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
 	AdditionalContainerStorageEnabled *bool `pulumi:"additionalContainerStorageEnabled"`
-	// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+	// Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
 	AutoRenew *bool `pulumi:"autoRenew"`
-	// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+	// ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
 	AutoRenewPeriod *int `pulumi:"autoRenewPeriod"`
-	// Node data disk configuration.
+	// Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	DataVolumes []NodePoolNodeConfigDataVolume `pulumi:"dataVolumes"`
-	// Group number of the instance in the deployment set; 0 means not set
+	// When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
 	DeploymentSetGroupNumber *int `pulumi:"deploymentSetGroupNumber"`
-	// Deployment Set ID to be added to the instance
+	// Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
 	DeploymentSetId *string `pulumi:"deploymentSetId"`
-	// The host name corresponding to the node.
+	// Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
 	Hostname *string `pulumi:"hostname"`
-	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+	// High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
 	HpcClusterIds []string `pulumi:"hpcClusterIds"`
-	// Image ID used by the cloud server corresponding to the node
+	// The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
 	ImageId *string `pulumi:"imageId"`
-	// Custom script executed after node creation and initialization. Shell script in Base64 encoding
+	// Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 	InitializeScript *string `pulumi:"initializeScript"`
-	// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+	// ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
 	InstanceChargeType *string `pulumi:"instanceChargeType"`
-	// Node (instance) name
+	// Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
 	InstanceName *string `pulumi:"instanceName"`
-	// List of cloud server instance type IDs corresponding to the nodes
+	// List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
 	InstanceTypeIds []string `pulumi:"instanceTypeIds"`
-	// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+	// Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 	InstancesDistribution *NodePoolNodeConfigInstancesDistribution `pulumi:"instancesDistribution"`
-	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+	// Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
 	NamePrefix *string `pulumi:"namePrefix"`
-	// Network communication mode between nodes
+	// Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
 	NetworkTrafficMode *string `pulumi:"networkTrafficMode"`
-	// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+	// ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
 	Period *int `pulumi:"period"`
-	// Script to execute before deploying the node
+	// [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 	PreScript *string `pulumi:"preScript"`
-	// Project to which the ECS belongs. Each ECS can only belong to one project.
+	// Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
 	ProjectName *string `pulumi:"projectName"`
-	// Configuration for automatic public network access for nodes
+	// Configuration information for automatically binding EIP to nodes.
 	PublicAccessConfig *NodePoolNodeConfigPublicAccessConfig `pulumi:"publicAccessConfig"`
-	// Enable public network access for nodes automatically. Options:   - false: off   - true: on
+	// Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
 	PublicAccessEnabled *bool `pulumi:"publicAccessEnabled"`
 	// Node security configuration
 	Security *NodePoolNodeConfigSecurity `pulumi:"security"`
-	// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+	// Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
 	SpotStrategy *string `pulumi:"spotStrategy"`
-	// List of subnet IDs for the node network.
+	// List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// System disk configuration for the node
+	// System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
 	SystemVolume *NodePoolNodeConfigSystemVolume `pulumi:"systemVolume"`
-	// Label information configured for the node pool
+	// Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []NodePoolNodeConfigTag `pulumi:"tags"`
 }
@@ -10200,58 +10200,58 @@ type NodePoolNodeConfigInput interface {
 }
 
 type NodePoolNodeConfigArgs struct {
-	// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+	// Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
 	AdditionalContainerStorageEnabled pulumi.BoolPtrInput `pulumi:"additionalContainerStorageEnabled"`
-	// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+	// Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
 	AutoRenew pulumi.BoolPtrInput `pulumi:"autoRenew"`
-	// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+	// ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
 	AutoRenewPeriod pulumi.IntPtrInput `pulumi:"autoRenewPeriod"`
-	// Node data disk configuration.
+	// Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	DataVolumes NodePoolNodeConfigDataVolumeArrayInput `pulumi:"dataVolumes"`
-	// Group number of the instance in the deployment set; 0 means not set
+	// When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
 	DeploymentSetGroupNumber pulumi.IntPtrInput `pulumi:"deploymentSetGroupNumber"`
-	// Deployment Set ID to be added to the instance
+	// Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
 	DeploymentSetId pulumi.StringPtrInput `pulumi:"deploymentSetId"`
-	// The host name corresponding to the node.
+	// Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
 	Hostname pulumi.StringPtrInput `pulumi:"hostname"`
-	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+	// High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
 	HpcClusterIds pulumi.StringArrayInput `pulumi:"hpcClusterIds"`
-	// Image ID used by the cloud server corresponding to the node
+	// The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
 	ImageId pulumi.StringPtrInput `pulumi:"imageId"`
-	// Custom script executed after node creation and initialization. Shell script in Base64 encoding
+	// Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 	InitializeScript pulumi.StringPtrInput `pulumi:"initializeScript"`
-	// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+	// ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
 	InstanceChargeType pulumi.StringPtrInput `pulumi:"instanceChargeType"`
-	// Node (instance) name
+	// Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
 	InstanceName pulumi.StringPtrInput `pulumi:"instanceName"`
-	// List of cloud server instance type IDs corresponding to the nodes
+	// List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
 	InstanceTypeIds pulumi.StringArrayInput `pulumi:"instanceTypeIds"`
-	// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+	// Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 	InstancesDistribution NodePoolNodeConfigInstancesDistributionPtrInput `pulumi:"instancesDistribution"`
-	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+	// Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
 	NamePrefix pulumi.StringPtrInput `pulumi:"namePrefix"`
-	// Network communication mode between nodes
+	// Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
 	NetworkTrafficMode pulumi.StringPtrInput `pulumi:"networkTrafficMode"`
-	// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+	// ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
 	Period pulumi.IntPtrInput `pulumi:"period"`
-	// Script to execute before deploying the node
+	// [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 	PreScript pulumi.StringPtrInput `pulumi:"preScript"`
-	// Project to which the ECS belongs. Each ECS can only belong to one project.
+	// Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
 	ProjectName pulumi.StringPtrInput `pulumi:"projectName"`
-	// Configuration for automatic public network access for nodes
+	// Configuration information for automatically binding EIP to nodes.
 	PublicAccessConfig NodePoolNodeConfigPublicAccessConfigPtrInput `pulumi:"publicAccessConfig"`
-	// Enable public network access for nodes automatically. Options:   - false: off   - true: on
+	// Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
 	PublicAccessEnabled pulumi.BoolPtrInput `pulumi:"publicAccessEnabled"`
 	// Node security configuration
 	Security NodePoolNodeConfigSecurityPtrInput `pulumi:"security"`
-	// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+	// Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
 	SpotStrategy pulumi.StringPtrInput `pulumi:"spotStrategy"`
-	// List of subnet IDs for the node network.
+	// List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// System disk configuration for the node
+	// System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
 	SystemVolume NodePoolNodeConfigSystemVolumePtrInput `pulumi:"systemVolume"`
-	// Label information configured for the node pool
+	// Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags NodePoolNodeConfigTagArrayInput `pulumi:"tags"`
 }
@@ -10333,108 +10333,108 @@ func (o NodePoolNodeConfigOutput) ToNodePoolNodeConfigPtrOutputWithContext(ctx c
 	}).(NodePoolNodeConfigPtrOutput)
 }
 
-// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+// Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
 func (o NodePoolNodeConfigOutput) AdditionalContainerStorageEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *bool { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolPtrOutput)
 }
 
-// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+// Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
 func (o NodePoolNodeConfigOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *bool { return v.AutoRenew }).(pulumi.BoolPtrOutput)
 }
 
-// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+// ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
 func (o NodePoolNodeConfigOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *int { return v.AutoRenewPeriod }).(pulumi.IntPtrOutput)
 }
 
-// Node data disk configuration.
+// Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolNodeConfigOutput) DataVolumes() NodePoolNodeConfigDataVolumeArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) []NodePoolNodeConfigDataVolume { return v.DataVolumes }).(NodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// Group number of the instance in the deployment set; 0 means not set
+// When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
 func (o NodePoolNodeConfigOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *int { return v.DeploymentSetGroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// Deployment Set ID to be added to the instance
+// Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
 func (o NodePoolNodeConfigOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.DeploymentSetId }).(pulumi.StringPtrOutput)
 }
 
-// The host name corresponding to the node.
+// Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
 func (o NodePoolNodeConfigOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.Hostname }).(pulumi.StringPtrOutput)
 }
 
-// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+// High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
 func (o NodePoolNodeConfigOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) []string { return v.HpcClusterIds }).(pulumi.StringArrayOutput)
 }
 
-// Image ID used by the cloud server corresponding to the node
+// The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
 func (o NodePoolNodeConfigOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.ImageId }).(pulumi.StringPtrOutput)
 }
 
-// Custom script executed after node creation and initialization. Shell script in Base64 encoding
+// Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 func (o NodePoolNodeConfigOutput) InitializeScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.InitializeScript }).(pulumi.StringPtrOutput)
 }
 
-// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+// ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
 func (o NodePoolNodeConfigOutput) InstanceChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.InstanceChargeType }).(pulumi.StringPtrOutput)
 }
 
-// Node (instance) name
+// Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
 func (o NodePoolNodeConfigOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.InstanceName }).(pulumi.StringPtrOutput)
 }
 
-// List of cloud server instance type IDs corresponding to the nodes
+// List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
 func (o NodePoolNodeConfigOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) []string { return v.InstanceTypeIds }).(pulumi.StringArrayOutput)
 }
 
-// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+// Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 func (o NodePoolNodeConfigOutput) InstancesDistribution() NodePoolNodeConfigInstancesDistributionPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *NodePoolNodeConfigInstancesDistribution { return v.InstancesDistribution }).(NodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+// Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
 func (o NodePoolNodeConfigOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.NamePrefix }).(pulumi.StringPtrOutput)
 }
 
-// Network communication mode between nodes
+// Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
 func (o NodePoolNodeConfigOutput) NetworkTrafficMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.NetworkTrafficMode }).(pulumi.StringPtrOutput)
 }
 
-// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+// ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
 func (o NodePoolNodeConfigOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *int { return v.Period }).(pulumi.IntPtrOutput)
 }
 
-// Script to execute before deploying the node
+// [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 func (o NodePoolNodeConfigOutput) PreScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.PreScript }).(pulumi.StringPtrOutput)
 }
 
-// Project to which the ECS belongs. Each ECS can only belong to one project.
+// Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
 func (o NodePoolNodeConfigOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.ProjectName }).(pulumi.StringPtrOutput)
 }
 
-// Configuration for automatic public network access for nodes
+// Configuration information for automatically binding EIP to nodes.
 func (o NodePoolNodeConfigOutput) PublicAccessConfig() NodePoolNodeConfigPublicAccessConfigPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *NodePoolNodeConfigPublicAccessConfig { return v.PublicAccessConfig }).(NodePoolNodeConfigPublicAccessConfigPtrOutput)
 }
 
-// Enable public network access for nodes automatically. Options:   - false: off   - true: on
+// Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
 func (o NodePoolNodeConfigOutput) PublicAccessEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *bool { return v.PublicAccessEnabled }).(pulumi.BoolPtrOutput)
 }
@@ -10444,22 +10444,22 @@ func (o NodePoolNodeConfigOutput) Security() NodePoolNodeConfigSecurityPtrOutput
 	return o.ApplyT(func(v NodePoolNodeConfig) *NodePoolNodeConfigSecurity { return v.Security }).(NodePoolNodeConfigSecurityPtrOutput)
 }
 
-// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+// Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
 func (o NodePoolNodeConfigOutput) SpotStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *string { return v.SpotStrategy }).(pulumi.StringPtrOutput)
 }
 
-// List of subnet IDs for the node network.
+// List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
 func (o NodePoolNodeConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// System disk configuration for the node
+// System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
 func (o NodePoolNodeConfigOutput) SystemVolume() NodePoolNodeConfigSystemVolumePtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) *NodePoolNodeConfigSystemVolume { return v.SystemVolume }).(NodePoolNodeConfigSystemVolumePtrOutput)
 }
 
-// Label information configured for the node pool
+// Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolNodeConfigOutput) Tags() NodePoolNodeConfigTagArrayOutput {
 	return o.ApplyT(func(v NodePoolNodeConfig) []NodePoolNodeConfigTag { return v.Tags }).(NodePoolNodeConfigTagArrayOutput)
@@ -10489,7 +10489,7 @@ func (o NodePoolNodeConfigPtrOutput) Elem() NodePoolNodeConfigOutput {
 	}).(NodePoolNodeConfigOutput)
 }
 
-// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+// Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
 func (o NodePoolNodeConfigPtrOutput) AdditionalContainerStorageEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *bool {
 		if v == nil {
@@ -10499,7 +10499,7 @@ func (o NodePoolNodeConfigPtrOutput) AdditionalContainerStorageEnabled() pulumi.
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+// Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
 func (o NodePoolNodeConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *bool {
 		if v == nil {
@@ -10509,7 +10509,7 @@ func (o NodePoolNodeConfigPtrOutput) AutoRenew() pulumi.BoolPtrOutput {
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+// ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
 func (o NodePoolNodeConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *int {
 		if v == nil {
@@ -10519,7 +10519,7 @@ func (o NodePoolNodeConfigPtrOutput) AutoRenewPeriod() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Node data disk configuration.
+// Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolNodeConfigPtrOutput) DataVolumes() NodePoolNodeConfigDataVolumeArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) []NodePoolNodeConfigDataVolume {
@@ -10530,7 +10530,7 @@ func (o NodePoolNodeConfigPtrOutput) DataVolumes() NodePoolNodeConfigDataVolumeA
 	}).(NodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// Group number of the instance in the deployment set; 0 means not set
+// When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
 func (o NodePoolNodeConfigPtrOutput) DeploymentSetGroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *int {
 		if v == nil {
@@ -10540,7 +10540,7 @@ func (o NodePoolNodeConfigPtrOutput) DeploymentSetGroupNumber() pulumi.IntPtrOut
 	}).(pulumi.IntPtrOutput)
 }
 
-// Deployment Set ID to be added to the instance
+// Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
 func (o NodePoolNodeConfigPtrOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10550,7 +10550,7 @@ func (o NodePoolNodeConfigPtrOutput) DeploymentSetId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// The host name corresponding to the node.
+// Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
 func (o NodePoolNodeConfigPtrOutput) Hostname() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10560,7 +10560,7 @@ func (o NodePoolNodeConfigPtrOutput) Hostname() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+// High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
 func (o NodePoolNodeConfigPtrOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) []string {
 		if v == nil {
@@ -10570,7 +10570,7 @@ func (o NodePoolNodeConfigPtrOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// Image ID used by the cloud server corresponding to the node
+// The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
 func (o NodePoolNodeConfigPtrOutput) ImageId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10580,7 +10580,7 @@ func (o NodePoolNodeConfigPtrOutput) ImageId() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Custom script executed after node creation and initialization. Shell script in Base64 encoding
+// Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 func (o NodePoolNodeConfigPtrOutput) InitializeScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10590,7 +10590,7 @@ func (o NodePoolNodeConfigPtrOutput) InitializeScript() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+// ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
 func (o NodePoolNodeConfigPtrOutput) InstanceChargeType() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10600,7 +10600,7 @@ func (o NodePoolNodeConfigPtrOutput) InstanceChargeType() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// Node (instance) name
+// Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
 func (o NodePoolNodeConfigPtrOutput) InstanceName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10610,7 +10610,7 @@ func (o NodePoolNodeConfigPtrOutput) InstanceName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// List of cloud server instance type IDs corresponding to the nodes
+// List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
 func (o NodePoolNodeConfigPtrOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) []string {
 		if v == nil {
@@ -10620,7 +10620,7 @@ func (o NodePoolNodeConfigPtrOutput) InstanceTypeIds() pulumi.StringArrayOutput 
 	}).(pulumi.StringArrayOutput)
 }
 
-// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+// Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 func (o NodePoolNodeConfigPtrOutput) InstancesDistribution() NodePoolNodeConfigInstancesDistributionPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *NodePoolNodeConfigInstancesDistribution {
 		if v == nil {
@@ -10630,7 +10630,7 @@ func (o NodePoolNodeConfigPtrOutput) InstancesDistribution() NodePoolNodeConfigI
 	}).(NodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+// Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
 func (o NodePoolNodeConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10640,7 +10640,7 @@ func (o NodePoolNodeConfigPtrOutput) NamePrefix() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Network communication mode between nodes
+// Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
 func (o NodePoolNodeConfigPtrOutput) NetworkTrafficMode() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10650,7 +10650,7 @@ func (o NodePoolNodeConfigPtrOutput) NetworkTrafficMode() pulumi.StringPtrOutput
 	}).(pulumi.StringPtrOutput)
 }
 
-// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+// ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
 func (o NodePoolNodeConfigPtrOutput) Period() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *int {
 		if v == nil {
@@ -10660,7 +10660,7 @@ func (o NodePoolNodeConfigPtrOutput) Period() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Script to execute before deploying the node
+// [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 func (o NodePoolNodeConfigPtrOutput) PreScript() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10670,7 +10670,7 @@ func (o NodePoolNodeConfigPtrOutput) PreScript() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Project to which the ECS belongs. Each ECS can only belong to one project.
+// Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
 func (o NodePoolNodeConfigPtrOutput) ProjectName() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10680,7 +10680,7 @@ func (o NodePoolNodeConfigPtrOutput) ProjectName() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// Configuration for automatic public network access for nodes
+// Configuration information for automatically binding EIP to nodes.
 func (o NodePoolNodeConfigPtrOutput) PublicAccessConfig() NodePoolNodeConfigPublicAccessConfigPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *NodePoolNodeConfigPublicAccessConfig {
 		if v == nil {
@@ -10690,7 +10690,7 @@ func (o NodePoolNodeConfigPtrOutput) PublicAccessConfig() NodePoolNodeConfigPubl
 	}).(NodePoolNodeConfigPublicAccessConfigPtrOutput)
 }
 
-// Enable public network access for nodes automatically. Options:   - false: off   - true: on
+// Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
 func (o NodePoolNodeConfigPtrOutput) PublicAccessEnabled() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *bool {
 		if v == nil {
@@ -10710,7 +10710,7 @@ func (o NodePoolNodeConfigPtrOutput) Security() NodePoolNodeConfigSecurityPtrOut
 	}).(NodePoolNodeConfigSecurityPtrOutput)
 }
 
-// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+// Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
 func (o NodePoolNodeConfigPtrOutput) SpotStrategy() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *string {
 		if v == nil {
@@ -10720,7 +10720,7 @@ func (o NodePoolNodeConfigPtrOutput) SpotStrategy() pulumi.StringPtrOutput {
 	}).(pulumi.StringPtrOutput)
 }
 
-// List of subnet IDs for the node network.
+// List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
 func (o NodePoolNodeConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) []string {
 		if v == nil {
@@ -10730,7 +10730,7 @@ func (o NodePoolNodeConfigPtrOutput) SubnetIds() pulumi.StringArrayOutput {
 	}).(pulumi.StringArrayOutput)
 }
 
-// System disk configuration for the node
+// System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
 func (o NodePoolNodeConfigPtrOutput) SystemVolume() NodePoolNodeConfigSystemVolumePtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) *NodePoolNodeConfigSystemVolume {
 		if v == nil {
@@ -10740,7 +10740,7 @@ func (o NodePoolNodeConfigPtrOutput) SystemVolume() NodePoolNodeConfigSystemVolu
 	}).(NodePoolNodeConfigSystemVolumePtrOutput)
 }
 
-// Label information configured for the node pool
+// Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o NodePoolNodeConfigPtrOutput) Tags() NodePoolNodeConfigTagArrayOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfig) []NodePoolNodeConfigTag {
@@ -10752,19 +10752,19 @@ func (o NodePoolNodeConfigPtrOutput) Tags() NodePoolNodeConfigTagArrayOutput {
 }
 
 type NodePoolNodeConfigDataVolume struct {
-	// File system. Options:   - Ext4 (default)   - Xfs
+	// [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
 	FileSystem *string `pulumi:"fileSystem"`
 	// Target mount directory after disk formatting.
 	MountPoint *string `pulumi:"mountPoint"`
-	// Placement group ID
+	// Storage placement group ID to which the data disk belongs.
 	PlacementGroupId *string `pulumi:"placementGroupId"`
 	// Disk capacity, in GiB.
 	Size *int `pulumi:"size"`
-	// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+	// Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
 	SnapshotId *string `pulumi:"snapshotId"`
-	// Placement subgroup
+	// Storage sub-placement group number of the data disk.
 	SubgroupNumber *int `pulumi:"subgroupNumber"`
-	// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+	// Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
 	Type *string `pulumi:"type"`
 }
 
@@ -10780,19 +10780,19 @@ type NodePoolNodeConfigDataVolumeInput interface {
 }
 
 type NodePoolNodeConfigDataVolumeArgs struct {
-	// File system. Options:   - Ext4 (default)   - Xfs
+	// [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
 	FileSystem pulumi.StringPtrInput `pulumi:"fileSystem"`
 	// Target mount directory after disk formatting.
 	MountPoint pulumi.StringPtrInput `pulumi:"mountPoint"`
-	// Placement group ID
+	// Storage placement group ID to which the data disk belongs.
 	PlacementGroupId pulumi.StringPtrInput `pulumi:"placementGroupId"`
 	// Disk capacity, in GiB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+	// Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
 	SnapshotId pulumi.StringPtrInput `pulumi:"snapshotId"`
-	// Placement subgroup
+	// Storage sub-placement group number of the data disk.
 	SubgroupNumber pulumi.IntPtrInput `pulumi:"subgroupNumber"`
-	// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+	// Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -10847,7 +10847,7 @@ func (o NodePoolNodeConfigDataVolumeOutput) ToNodePoolNodeConfigDataVolumeOutput
 	return o
 }
 
-// File system. Options:   - Ext4 (default)   - Xfs
+// [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
 func (o NodePoolNodeConfigDataVolumeOutput) FileSystem() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.FileSystem }).(pulumi.StringPtrOutput)
 }
@@ -10857,7 +10857,7 @@ func (o NodePoolNodeConfigDataVolumeOutput) MountPoint() pulumi.StringPtrOutput 
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.MountPoint }).(pulumi.StringPtrOutput)
 }
 
-// Placement group ID
+// Storage placement group ID to which the data disk belongs.
 func (o NodePoolNodeConfigDataVolumeOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.PlacementGroupId }).(pulumi.StringPtrOutput)
 }
@@ -10867,17 +10867,17 @@ func (o NodePoolNodeConfigDataVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+// Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
 func (o NodePoolNodeConfigDataVolumeOutput) SnapshotId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.SnapshotId }).(pulumi.StringPtrOutput)
 }
 
-// Placement subgroup
+// Storage sub-placement group number of the data disk.
 func (o NodePoolNodeConfigDataVolumeOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *int { return v.SubgroupNumber }).(pulumi.IntPtrOutput)
 }
 
-// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+// Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
 func (o NodePoolNodeConfigDataVolumeOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigDataVolume) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -10903,13 +10903,13 @@ func (o NodePoolNodeConfigDataVolumeArrayOutput) Index(i pulumi.IntInput) NodePo
 }
 
 type NodePoolNodeConfigInstancesDistribution struct {
-	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+	// Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
 	CapacityRebalance *bool `pulumi:"capacityRebalance"`
-	// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+	// Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
 	CompensateWithOnDemand *bool `pulumi:"compensateWithOnDemand"`
-	// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+	// Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
 	OnDemandBaseCapacity *int `pulumi:"onDemandBaseCapacity"`
-	// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+	// Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
 	OnDemandPercentageAboveBaseCapacity *int `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -10925,13 +10925,13 @@ type NodePoolNodeConfigInstancesDistributionInput interface {
 }
 
 type NodePoolNodeConfigInstancesDistributionArgs struct {
-	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+	// Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
 	CapacityRebalance pulumi.BoolPtrInput `pulumi:"capacityRebalance"`
-	// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+	// Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
 	CompensateWithOnDemand pulumi.BoolPtrInput `pulumi:"compensateWithOnDemand"`
-	// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+	// Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
 	OnDemandBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandBaseCapacity"`
-	// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+	// Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
 	OnDemandPercentageAboveBaseCapacity pulumi.IntPtrInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -11012,22 +11012,22 @@ func (o NodePoolNodeConfigInstancesDistributionOutput) ToNodePoolNodeConfigInsta
 	}).(NodePoolNodeConfigInstancesDistributionPtrOutput)
 }
 
-// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+// Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
 func (o NodePoolNodeConfigInstancesDistributionOutput) CapacityRebalance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigInstancesDistribution) *bool { return v.CapacityRebalance }).(pulumi.BoolPtrOutput)
 }
 
-// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+// Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
 func (o NodePoolNodeConfigInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigInstancesDistribution) *bool { return v.CompensateWithOnDemand }).(pulumi.BoolPtrOutput)
 }
 
-// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+// Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
 func (o NodePoolNodeConfigInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigInstancesDistribution) *int { return v.OnDemandBaseCapacity }).(pulumi.IntPtrOutput)
 }
 
-// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+// Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
 func (o NodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigInstancesDistribution) *int { return v.OnDemandPercentageAboveBaseCapacity }).(pulumi.IntPtrOutput)
 }
@@ -11056,7 +11056,7 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) Elem() NodePoolNodeCon
 	}).(NodePoolNodeConfigInstancesDistributionOutput)
 }
 
-// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+// Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
 func (o NodePoolNodeConfigInstancesDistributionPtrOutput) CapacityRebalance() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigInstancesDistribution) *bool {
 		if v == nil {
@@ -11066,7 +11066,7 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) CapacityRebalance() pu
 	}).(pulumi.BoolPtrOutput)
 }
 
-// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+// Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
 func (o NodePoolNodeConfigInstancesDistributionPtrOutput) CompensateWithOnDemand() pulumi.BoolPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigInstancesDistribution) *bool {
 		if v == nil {
@@ -11076,7 +11076,7 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) CompensateWithOnDemand
 	}).(pulumi.BoolPtrOutput)
 }
 
-// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+// Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
 func (o NodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigInstancesDistribution) *int {
 		if v == nil {
@@ -11086,7 +11086,7 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandBaseCapacity()
 	}).(pulumi.IntPtrOutput)
 }
 
-// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+// Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
 func (o NodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigInstancesDistribution) *int {
 		if v == nil {
@@ -11099,9 +11099,9 @@ func (o NodePoolNodeConfigInstancesDistributionPtrOutput) OnDemandPercentageAbov
 type NodePoolNodeConfigPublicAccessConfig struct {
 	// Peak bandwidth for public IP, unit: Mbps
 	Bandwidth *int `pulumi:"bandwidth"`
-	// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+	// Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 	BillingType *int `pulumi:"billingType"`
-	// Public IP line type. Parameter description: BGP: BGP (multi-line)
+	// Public IP line type. Parameter value description: BGP: BGP (multi-line).
 	Isp *string `pulumi:"isp"`
 }
 
@@ -11119,9 +11119,9 @@ type NodePoolNodeConfigPublicAccessConfigInput interface {
 type NodePoolNodeConfigPublicAccessConfigArgs struct {
 	// Peak bandwidth for public IP, unit: Mbps
 	Bandwidth pulumi.IntPtrInput `pulumi:"bandwidth"`
-	// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+	// Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 	BillingType pulumi.IntPtrInput `pulumi:"billingType"`
-	// Public IP line type. Parameter description: BGP: BGP (multi-line)
+	// Public IP line type. Parameter value description: BGP: BGP (multi-line).
 	Isp pulumi.StringPtrInput `pulumi:"isp"`
 }
 
@@ -11207,12 +11207,12 @@ func (o NodePoolNodeConfigPublicAccessConfigOutput) Bandwidth() pulumi.IntPtrOut
 	return o.ApplyT(func(v NodePoolNodeConfigPublicAccessConfig) *int { return v.Bandwidth }).(pulumi.IntPtrOutput)
 }
 
-// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+// Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 func (o NodePoolNodeConfigPublicAccessConfigOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigPublicAccessConfig) *int { return v.BillingType }).(pulumi.IntPtrOutput)
 }
 
-// Public IP line type. Parameter description: BGP: BGP (multi-line)
+// Public IP line type. Parameter value description: BGP: BGP (multi-line).
 func (o NodePoolNodeConfigPublicAccessConfigOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigPublicAccessConfig) *string { return v.Isp }).(pulumi.StringPtrOutput)
 }
@@ -11251,7 +11251,7 @@ func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) Bandwidth() pulumi.IntPtr
 	}).(pulumi.IntPtrOutput)
 }
 
-// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+// Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) BillingType() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigPublicAccessConfig) *int {
 		if v == nil {
@@ -11261,7 +11261,7 @@ func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) BillingType() pulumi.IntP
 	}).(pulumi.IntPtrOutput)
 }
 
-// Public IP line type. Parameter description: BGP: BGP (multi-line)
+// Public IP line type. Parameter value description: BGP: BGP (multi-line).
 func (o NodePoolNodeConfigPublicAccessConfigPtrOutput) Isp() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigPublicAccessConfig) *string {
 		if v == nil {
@@ -11641,11 +11641,11 @@ func (o NodePoolNodeConfigSecurityLoginPtrOutput) Type() pulumi.StringPtrOutput 
 }
 
 type NodePoolNodeConfigSystemVolume struct {
-	// Placement group ID
+	// Storage placement group ID of the system disk.
 	PlacementGroupId *string `pulumi:"placementGroupId"`
-	// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+	// Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
 	Size *int `pulumi:"size"`
-	// Placement subgroup
+	// Storage sub-placement group number for the system disk.
 	SubgroupNumber *int `pulumi:"subgroupNumber"`
 	// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 	Type *string `pulumi:"type"`
@@ -11663,11 +11663,11 @@ type NodePoolNodeConfigSystemVolumeInput interface {
 }
 
 type NodePoolNodeConfigSystemVolumeArgs struct {
-	// Placement group ID
+	// Storage placement group ID of the system disk.
 	PlacementGroupId pulumi.StringPtrInput `pulumi:"placementGroupId"`
-	// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+	// Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
 	Size pulumi.IntPtrInput `pulumi:"size"`
-	// Placement subgroup
+	// Storage sub-placement group number for the system disk.
 	SubgroupNumber pulumi.IntPtrInput `pulumi:"subgroupNumber"`
 	// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 	Type pulumi.StringPtrInput `pulumi:"type"`
@@ -11750,17 +11750,17 @@ func (o NodePoolNodeConfigSystemVolumeOutput) ToNodePoolNodeConfigSystemVolumePt
 	}).(NodePoolNodeConfigSystemVolumePtrOutput)
 }
 
-// Placement group ID
+// Storage placement group ID of the system disk.
 func (o NodePoolNodeConfigSystemVolumeOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSystemVolume) *string { return v.PlacementGroupId }).(pulumi.StringPtrOutput)
 }
 
-// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+// Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
 func (o NodePoolNodeConfigSystemVolumeOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSystemVolume) *int { return v.Size }).(pulumi.IntPtrOutput)
 }
 
-// Placement subgroup
+// Storage sub-placement group number for the system disk.
 func (o NodePoolNodeConfigSystemVolumeOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v NodePoolNodeConfigSystemVolume) *int { return v.SubgroupNumber }).(pulumi.IntPtrOutput)
 }
@@ -11794,7 +11794,7 @@ func (o NodePoolNodeConfigSystemVolumePtrOutput) Elem() NodePoolNodeConfigSystem
 	}).(NodePoolNodeConfigSystemVolumeOutput)
 }
 
-// Placement group ID
+// Storage placement group ID of the system disk.
 func (o NodePoolNodeConfigSystemVolumePtrOutput) PlacementGroupId() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSystemVolume) *string {
 		if v == nil {
@@ -11804,7 +11804,7 @@ func (o NodePoolNodeConfigSystemVolumePtrOutput) PlacementGroupId() pulumi.Strin
 	}).(pulumi.StringPtrOutput)
 }
 
-// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+// Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
 func (o NodePoolNodeConfigSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSystemVolume) *int {
 		if v == nil {
@@ -11814,7 +11814,7 @@ func (o NodePoolNodeConfigSystemVolumePtrOutput) Size() pulumi.IntPtrOutput {
 	}).(pulumi.IntPtrOutput)
 }
 
-// Placement subgroup
+// Storage sub-placement group number for the system disk.
 func (o NodePoolNodeConfigSystemVolumePtrOutput) SubgroupNumber() pulumi.IntPtrOutput {
 	return o.ApplyT(func(v *NodePoolNodeConfigSystemVolume) *int {
 		if v == nil {
@@ -12176,7 +12176,7 @@ type NodePoolStatus struct {
 	// Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Conditions []NodePoolStatusCondition `pulumi:"conditions"`
-	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+	// Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
 	Phase *string `pulumi:"phase"`
 }
 
@@ -12195,7 +12195,7 @@ type NodePoolStatusArgs struct {
 	// Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Conditions NodePoolStatusConditionArrayInput `pulumi:"conditions"`
-	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+	// Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
 	Phase pulumi.StringPtrInput `pulumi:"phase"`
 }
 
@@ -12282,7 +12282,7 @@ func (o NodePoolStatusOutput) Conditions() NodePoolStatusConditionArrayOutput {
 	return o.ApplyT(func(v NodePoolStatus) []NodePoolStatusCondition { return v.Conditions }).(NodePoolStatusConditionArrayOutput)
 }
 
-// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+// Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
 func (o NodePoolStatusOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolStatus) *string { return v.Phase }).(pulumi.StringPtrOutput)
 }
@@ -12322,7 +12322,7 @@ func (o NodePoolStatusPtrOutput) Conditions() NodePoolStatusConditionArrayOutput
 	}).(NodePoolStatusConditionArrayOutput)
 }
 
-// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+// Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
 func (o NodePoolStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v *NodePoolStatus) *string {
 		if v == nil {
@@ -12333,7 +12333,7 @@ func (o NodePoolStatusPtrOutput) Phase() pulumi.StringPtrOutput {
 }
 
 type NodePoolStatusCondition struct {
-	// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+	// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
 	Type *string `pulumi:"type"`
 }
 
@@ -12349,7 +12349,7 @@ type NodePoolStatusConditionInput interface {
 }
 
 type NodePoolStatusConditionArgs struct {
-	// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+	// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
 	Type pulumi.StringPtrInput `pulumi:"type"`
 }
 
@@ -12404,7 +12404,7 @@ func (o NodePoolStatusConditionOutput) ToNodePoolStatusConditionOutputWithContex
 	return o
 }
 
-// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
 func (o NodePoolStatusConditionOutput) Type() pulumi.StringPtrOutput {
 	return o.ApplyT(func(v NodePoolStatusCondition) *string { return v.Type }).(pulumi.StringPtrOutput)
 }
@@ -12790,6 +12790,432 @@ func (o NodeStatusConditionArrayOutput) Index(i pulumi.IntInput) NodeStatusCondi
 	return pulumi.All(o, i).ApplyT(func(vs []interface{}) NodeStatusCondition {
 		return vs[0].([]NodeStatusCondition)[vs[1].(int)]
 	}).(NodeStatusConditionOutput)
+}
+
+type NodepoolScalingPolicyScheduledInstancePolicy struct {
+	// Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+	AutoReleaseTime *string `pulumi:"autoReleaseTime"`
+	// If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+	BestEffort *bool `pulumi:"bestEffort"`
+	// Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+	DeliveryType *string `pulumi:"deliveryType"`
+	// Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+	ElasticScheduledInstanceType *string `pulumi:"elasticScheduledInstanceType"`
+	// End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+	EndDeliveryTime *string `pulumi:"endDeliveryTime"`
+	// Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+	StartDeliveryTime *string `pulumi:"startDeliveryTime"`
+}
+
+// NodepoolScalingPolicyScheduledInstancePolicyInput is an input type that accepts NodepoolScalingPolicyScheduledInstancePolicyArgs and NodepoolScalingPolicyScheduledInstancePolicyOutput values.
+// You can construct a concrete instance of `NodepoolScalingPolicyScheduledInstancePolicyInput` via:
+//
+//	NodepoolScalingPolicyScheduledInstancePolicyArgs{...}
+type NodepoolScalingPolicyScheduledInstancePolicyInput interface {
+	pulumi.Input
+
+	ToNodepoolScalingPolicyScheduledInstancePolicyOutput() NodepoolScalingPolicyScheduledInstancePolicyOutput
+	ToNodepoolScalingPolicyScheduledInstancePolicyOutputWithContext(context.Context) NodepoolScalingPolicyScheduledInstancePolicyOutput
+}
+
+type NodepoolScalingPolicyScheduledInstancePolicyArgs struct {
+	// Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+	AutoReleaseTime pulumi.StringPtrInput `pulumi:"autoReleaseTime"`
+	// If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+	BestEffort pulumi.BoolPtrInput `pulumi:"bestEffort"`
+	// Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+	DeliveryType pulumi.StringPtrInput `pulumi:"deliveryType"`
+	// Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+	ElasticScheduledInstanceType pulumi.StringPtrInput `pulumi:"elasticScheduledInstanceType"`
+	// End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+	EndDeliveryTime pulumi.StringPtrInput `pulumi:"endDeliveryTime"`
+	// Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+	StartDeliveryTime pulumi.StringPtrInput `pulumi:"startDeliveryTime"`
+}
+
+func (NodepoolScalingPolicyScheduledInstancePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodepoolScalingPolicyScheduledInstancePolicy)(nil)).Elem()
+}
+
+func (i NodepoolScalingPolicyScheduledInstancePolicyArgs) ToNodepoolScalingPolicyScheduledInstancePolicyOutput() NodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return i.ToNodepoolScalingPolicyScheduledInstancePolicyOutputWithContext(context.Background())
+}
+
+func (i NodepoolScalingPolicyScheduledInstancePolicyArgs) ToNodepoolScalingPolicyScheduledInstancePolicyOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodepoolScalingPolicyScheduledInstancePolicyOutput)
+}
+
+func (i NodepoolScalingPolicyScheduledInstancePolicyArgs) ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutput() NodepoolScalingPolicyScheduledInstancePolicyPtrOutput {
+	return i.ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(context.Background())
+}
+
+func (i NodepoolScalingPolicyScheduledInstancePolicyArgs) ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledInstancePolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodepoolScalingPolicyScheduledInstancePolicyOutput).ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(ctx)
+}
+
+// NodepoolScalingPolicyScheduledInstancePolicyPtrInput is an input type that accepts NodepoolScalingPolicyScheduledInstancePolicyArgs, NodepoolScalingPolicyScheduledInstancePolicyPtr and NodepoolScalingPolicyScheduledInstancePolicyPtrOutput values.
+// You can construct a concrete instance of `NodepoolScalingPolicyScheduledInstancePolicyPtrInput` via:
+//
+//	        NodepoolScalingPolicyScheduledInstancePolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodepoolScalingPolicyScheduledInstancePolicyPtrInput interface {
+	pulumi.Input
+
+	ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutput() NodepoolScalingPolicyScheduledInstancePolicyPtrOutput
+	ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(context.Context) NodepoolScalingPolicyScheduledInstancePolicyPtrOutput
+}
+
+type nodepoolScalingPolicyScheduledInstancePolicyPtrType NodepoolScalingPolicyScheduledInstancePolicyArgs
+
+func NodepoolScalingPolicyScheduledInstancePolicyPtr(v *NodepoolScalingPolicyScheduledInstancePolicyArgs) NodepoolScalingPolicyScheduledInstancePolicyPtrInput {
+	return (*nodepoolScalingPolicyScheduledInstancePolicyPtrType)(v)
+}
+
+func (*nodepoolScalingPolicyScheduledInstancePolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodepoolScalingPolicyScheduledInstancePolicy)(nil)).Elem()
+}
+
+func (i *nodepoolScalingPolicyScheduledInstancePolicyPtrType) ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutput() NodepoolScalingPolicyScheduledInstancePolicyPtrOutput {
+	return i.ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *nodepoolScalingPolicyScheduledInstancePolicyPtrType) ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledInstancePolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodepoolScalingPolicyScheduledInstancePolicyPtrOutput)
+}
+
+type NodepoolScalingPolicyScheduledInstancePolicyOutput struct{ *pulumi.OutputState }
+
+func (NodepoolScalingPolicyScheduledInstancePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodepoolScalingPolicyScheduledInstancePolicy)(nil)).Elem()
+}
+
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) ToNodepoolScalingPolicyScheduledInstancePolicyOutput() NodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return o
+}
+
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) ToNodepoolScalingPolicyScheduledInstancePolicyOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return o
+}
+
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutput() NodepoolScalingPolicyScheduledInstancePolicyPtrOutput {
+	return o.ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(context.Background())
+}
+
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledInstancePolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodepoolScalingPolicyScheduledInstancePolicy) *NodepoolScalingPolicyScheduledInstancePolicy {
+		return &v
+	}).(NodepoolScalingPolicyScheduledInstancePolicyPtrOutput)
+}
+
+// Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) AutoReleaseTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledInstancePolicy) *string { return v.AutoReleaseTime }).(pulumi.StringPtrOutput)
+}
+
+// If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) BestEffort() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledInstancePolicy) *bool { return v.BestEffort }).(pulumi.BoolPtrOutput)
+}
+
+// Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) DeliveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledInstancePolicy) *string { return v.DeliveryType }).(pulumi.StringPtrOutput)
+}
+
+// Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) ElasticScheduledInstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledInstancePolicy) *string { return v.ElasticScheduledInstanceType }).(pulumi.StringPtrOutput)
+}
+
+// End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) EndDeliveryTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledInstancePolicy) *string { return v.EndDeliveryTime }).(pulumi.StringPtrOutput)
+}
+
+// Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+func (o NodepoolScalingPolicyScheduledInstancePolicyOutput) StartDeliveryTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledInstancePolicy) *string { return v.StartDeliveryTime }).(pulumi.StringPtrOutput)
+}
+
+type NodepoolScalingPolicyScheduledInstancePolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodepoolScalingPolicyScheduledInstancePolicy)(nil)).Elem()
+}
+
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutput() NodepoolScalingPolicyScheduledInstancePolicyPtrOutput {
+	return o
+}
+
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) ToNodepoolScalingPolicyScheduledInstancePolicyPtrOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledInstancePolicyPtrOutput {
+	return o
+}
+
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) Elem() NodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledInstancePolicy) NodepoolScalingPolicyScheduledInstancePolicy {
+		if v != nil {
+			return *v
+		}
+		var ret NodepoolScalingPolicyScheduledInstancePolicy
+		return ret
+	}).(NodepoolScalingPolicyScheduledInstancePolicyOutput)
+}
+
+// Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) AutoReleaseTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledInstancePolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.AutoReleaseTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) BestEffort() pulumi.BoolPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledInstancePolicy) *bool {
+		if v == nil {
+			return nil
+		}
+		return v.BestEffort
+	}).(pulumi.BoolPtrOutput)
+}
+
+// Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) DeliveryType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledInstancePolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.DeliveryType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) ElasticScheduledInstanceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledInstancePolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.ElasticScheduledInstanceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) EndDeliveryTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledInstancePolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.EndDeliveryTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+func (o NodepoolScalingPolicyScheduledInstancePolicyPtrOutput) StartDeliveryTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledInstancePolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.StartDeliveryTime
+	}).(pulumi.StringPtrOutput)
+}
+
+type NodepoolScalingPolicyScheduledPolicy struct {
+	// Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+	LaunchTime *string `pulumi:"launchTime"`
+	// End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+	RecurrenceEndTime *string `pulumi:"recurrenceEndTime"`
+	// Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+	RecurrenceType *string `pulumi:"recurrenceType"`
+	// Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+	RecurrenceValue *string `pulumi:"recurrenceValue"`
+}
+
+// NodepoolScalingPolicyScheduledPolicyInput is an input type that accepts NodepoolScalingPolicyScheduledPolicyArgs and NodepoolScalingPolicyScheduledPolicyOutput values.
+// You can construct a concrete instance of `NodepoolScalingPolicyScheduledPolicyInput` via:
+//
+//	NodepoolScalingPolicyScheduledPolicyArgs{...}
+type NodepoolScalingPolicyScheduledPolicyInput interface {
+	pulumi.Input
+
+	ToNodepoolScalingPolicyScheduledPolicyOutput() NodepoolScalingPolicyScheduledPolicyOutput
+	ToNodepoolScalingPolicyScheduledPolicyOutputWithContext(context.Context) NodepoolScalingPolicyScheduledPolicyOutput
+}
+
+type NodepoolScalingPolicyScheduledPolicyArgs struct {
+	// Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+	LaunchTime pulumi.StringPtrInput `pulumi:"launchTime"`
+	// End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+	RecurrenceEndTime pulumi.StringPtrInput `pulumi:"recurrenceEndTime"`
+	// Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+	RecurrenceType pulumi.StringPtrInput `pulumi:"recurrenceType"`
+	// Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+	RecurrenceValue pulumi.StringPtrInput `pulumi:"recurrenceValue"`
+}
+
+func (NodepoolScalingPolicyScheduledPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodepoolScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (i NodepoolScalingPolicyScheduledPolicyArgs) ToNodepoolScalingPolicyScheduledPolicyOutput() NodepoolScalingPolicyScheduledPolicyOutput {
+	return i.ToNodepoolScalingPolicyScheduledPolicyOutputWithContext(context.Background())
+}
+
+func (i NodepoolScalingPolicyScheduledPolicyArgs) ToNodepoolScalingPolicyScheduledPolicyOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodepoolScalingPolicyScheduledPolicyOutput)
+}
+
+func (i NodepoolScalingPolicyScheduledPolicyArgs) ToNodepoolScalingPolicyScheduledPolicyPtrOutput() NodepoolScalingPolicyScheduledPolicyPtrOutput {
+	return i.ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i NodepoolScalingPolicyScheduledPolicyArgs) ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodepoolScalingPolicyScheduledPolicyOutput).ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(ctx)
+}
+
+// NodepoolScalingPolicyScheduledPolicyPtrInput is an input type that accepts NodepoolScalingPolicyScheduledPolicyArgs, NodepoolScalingPolicyScheduledPolicyPtr and NodepoolScalingPolicyScheduledPolicyPtrOutput values.
+// You can construct a concrete instance of `NodepoolScalingPolicyScheduledPolicyPtrInput` via:
+//
+//	        NodepoolScalingPolicyScheduledPolicyArgs{...}
+//
+//	or:
+//
+//	        nil
+type NodepoolScalingPolicyScheduledPolicyPtrInput interface {
+	pulumi.Input
+
+	ToNodepoolScalingPolicyScheduledPolicyPtrOutput() NodepoolScalingPolicyScheduledPolicyPtrOutput
+	ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(context.Context) NodepoolScalingPolicyScheduledPolicyPtrOutput
+}
+
+type nodepoolScalingPolicyScheduledPolicyPtrType NodepoolScalingPolicyScheduledPolicyArgs
+
+func NodepoolScalingPolicyScheduledPolicyPtr(v *NodepoolScalingPolicyScheduledPolicyArgs) NodepoolScalingPolicyScheduledPolicyPtrInput {
+	return (*nodepoolScalingPolicyScheduledPolicyPtrType)(v)
+}
+
+func (*nodepoolScalingPolicyScheduledPolicyPtrType) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodepoolScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (i *nodepoolScalingPolicyScheduledPolicyPtrType) ToNodepoolScalingPolicyScheduledPolicyPtrOutput() NodepoolScalingPolicyScheduledPolicyPtrOutput {
+	return i.ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(context.Background())
+}
+
+func (i *nodepoolScalingPolicyScheduledPolicyPtrType) ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledPolicyPtrOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(NodepoolScalingPolicyScheduledPolicyPtrOutput)
+}
+
+type NodepoolScalingPolicyScheduledPolicyOutput struct{ *pulumi.OutputState }
+
+func (NodepoolScalingPolicyScheduledPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*NodepoolScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (o NodepoolScalingPolicyScheduledPolicyOutput) ToNodepoolScalingPolicyScheduledPolicyOutput() NodepoolScalingPolicyScheduledPolicyOutput {
+	return o
+}
+
+func (o NodepoolScalingPolicyScheduledPolicyOutput) ToNodepoolScalingPolicyScheduledPolicyOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledPolicyOutput {
+	return o
+}
+
+func (o NodepoolScalingPolicyScheduledPolicyOutput) ToNodepoolScalingPolicyScheduledPolicyPtrOutput() NodepoolScalingPolicyScheduledPolicyPtrOutput {
+	return o.ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(context.Background())
+}
+
+func (o NodepoolScalingPolicyScheduledPolicyOutput) ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledPolicyPtrOutput {
+	return o.ApplyTWithContext(ctx, func(_ context.Context, v NodepoolScalingPolicyScheduledPolicy) *NodepoolScalingPolicyScheduledPolicy {
+		return &v
+	}).(NodepoolScalingPolicyScheduledPolicyPtrOutput)
+}
+
+// Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+func (o NodepoolScalingPolicyScheduledPolicyOutput) LaunchTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledPolicy) *string { return v.LaunchTime }).(pulumi.StringPtrOutput)
+}
+
+// End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+func (o NodepoolScalingPolicyScheduledPolicyOutput) RecurrenceEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledPolicy) *string { return v.RecurrenceEndTime }).(pulumi.StringPtrOutput)
+}
+
+// Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+func (o NodepoolScalingPolicyScheduledPolicyOutput) RecurrenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledPolicy) *string { return v.RecurrenceType }).(pulumi.StringPtrOutput)
+}
+
+// Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+func (o NodepoolScalingPolicyScheduledPolicyOutput) RecurrenceValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v NodepoolScalingPolicyScheduledPolicy) *string { return v.RecurrenceValue }).(pulumi.StringPtrOutput)
+}
+
+type NodepoolScalingPolicyScheduledPolicyPtrOutput struct{ *pulumi.OutputState }
+
+func (NodepoolScalingPolicyScheduledPolicyPtrOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((**NodepoolScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (o NodepoolScalingPolicyScheduledPolicyPtrOutput) ToNodepoolScalingPolicyScheduledPolicyPtrOutput() NodepoolScalingPolicyScheduledPolicyPtrOutput {
+	return o
+}
+
+func (o NodepoolScalingPolicyScheduledPolicyPtrOutput) ToNodepoolScalingPolicyScheduledPolicyPtrOutputWithContext(ctx context.Context) NodepoolScalingPolicyScheduledPolicyPtrOutput {
+	return o
+}
+
+func (o NodepoolScalingPolicyScheduledPolicyPtrOutput) Elem() NodepoolScalingPolicyScheduledPolicyOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledPolicy) NodepoolScalingPolicyScheduledPolicy {
+		if v != nil {
+			return *v
+		}
+		var ret NodepoolScalingPolicyScheduledPolicy
+		return ret
+	}).(NodepoolScalingPolicyScheduledPolicyOutput)
+}
+
+// Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+func (o NodepoolScalingPolicyScheduledPolicyPtrOutput) LaunchTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.LaunchTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+func (o NodepoolScalingPolicyScheduledPolicyPtrOutput) RecurrenceEndTime() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceEndTime
+	}).(pulumi.StringPtrOutput)
+}
+
+// Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+func (o NodepoolScalingPolicyScheduledPolicyPtrOutput) RecurrenceType() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceType
+	}).(pulumi.StringPtrOutput)
+}
+
+// Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+func (o NodepoolScalingPolicyScheduledPolicyPtrOutput) RecurrenceValue() pulumi.StringPtrOutput {
+	return o.ApplyT(func(v *NodepoolScalingPolicyScheduledPolicy) *string {
+		if v == nil {
+			return nil
+		}
+		return v.RecurrenceValue
+	}).(pulumi.StringPtrOutput)
 }
 
 type GetAddonStatus struct {
@@ -17008,17 +17434,17 @@ func (o GetNodeKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) GetNod
 }
 
 type GetNodePoolAutoScaling struct {
-	// Configure the expected number of nodes in the node pool
+	// Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
 	DesiredReplicas int `pulumi:"desiredReplicas"`
-	// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+	// Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
 	Enabled bool `pulumi:"enabled"`
-	// Configure the maximum number of nodes in the node pool
+	// Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
 	MaxReplicas int `pulumi:"maxReplicas"`
-	// Minimum number of nodes configured for the node pool
+	// Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
 	MinReplicas int `pulumi:"minReplicas"`
-	// Priority
+	// Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
 	Priority int `pulumi:"priority"`
-	// Scaling group ID
+	// Scaling group ID associated with the node pool.
 	ScalingGroupId string `pulumi:"scalingGroupId"`
 	// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 	SubnetPolicy string `pulumi:"subnetPolicy"`
@@ -17036,17 +17462,17 @@ type GetNodePoolAutoScalingInput interface {
 }
 
 type GetNodePoolAutoScalingArgs struct {
-	// Configure the expected number of nodes in the node pool
+	// Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
 	DesiredReplicas pulumi.IntInput `pulumi:"desiredReplicas"`
-	// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+	// Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// Configure the maximum number of nodes in the node pool
+	// Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
 	MaxReplicas pulumi.IntInput `pulumi:"maxReplicas"`
-	// Minimum number of nodes configured for the node pool
+	// Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
 	MinReplicas pulumi.IntInput `pulumi:"minReplicas"`
-	// Priority
+	// Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
 	Priority pulumi.IntInput `pulumi:"priority"`
-	// Scaling group ID
+	// Scaling group ID associated with the node pool.
 	ScalingGroupId pulumi.StringInput `pulumi:"scalingGroupId"`
 	// Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
 	SubnetPolicy pulumi.StringInput `pulumi:"subnetPolicy"`
@@ -17078,32 +17504,32 @@ func (o GetNodePoolAutoScalingOutput) ToGetNodePoolAutoScalingOutputWithContext(
 	return o
 }
 
-// Configure the expected number of nodes in the node pool
+// Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
 func (o GetNodePoolAutoScalingOutput) DesiredReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) int { return v.DesiredReplicas }).(pulumi.IntOutput)
 }
 
-// Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+// Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
 func (o GetNodePoolAutoScalingOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Configure the maximum number of nodes in the node pool
+// Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
 func (o GetNodePoolAutoScalingOutput) MaxReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) int { return v.MaxReplicas }).(pulumi.IntOutput)
 }
 
-// Minimum number of nodes configured for the node pool
+// Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
 func (o GetNodePoolAutoScalingOutput) MinReplicas() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) int { return v.MinReplicas }).(pulumi.IntOutput)
 }
 
-// Priority
+// Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
 func (o GetNodePoolAutoScalingOutput) Priority() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) int { return v.Priority }).(pulumi.IntOutput)
 }
 
-// Scaling group ID
+// Scaling group ID associated with the node pool.
 func (o GetNodePoolAutoScalingOutput) ScalingGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolAutoScaling) string { return v.ScalingGroupId }).(pulumi.StringOutput)
 }
@@ -17114,23 +17540,23 @@ func (o GetNodePoolAutoScalingOutput) SubnetPolicy() pulumi.StringOutput {
 }
 
 type GetNodePoolKubernetesConfig struct {
-	// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+	// Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
 	AutoSyncDisabled bool `pulumi:"autoSyncDisabled"`
 	// Node pool Containerd configuration
 	ContainerdConfig GetNodePoolKubernetesConfigContainerdConfig `pulumi:"containerdConfig"`
-	// Node blocking configuration. Parameter values: false: not blocked; true: blocked
+	// Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
 	Cordon bool `pulumi:"cordon"`
-	// Kubelet component configuration
+	// Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
 	KubeletConfig GetNodePoolKubernetesConfigKubeletConfig `pulumi:"kubeletConfig"`
-	// Kubernetes label information for node pools/nodes
+	// Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
 	Labels []GetNodePoolKubernetesConfigLabel `pulumi:"labels"`
-	// Prefix for node object metadata name in Kubernetes
+	// Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
 	NamePrefix string `pulumi:"namePrefix"`
 	// Suffix for node object metadata name in Kubernetes
 	NameSuffix string `pulumi:"nameSuffix"`
-	// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+	// Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
 	NameUseHostname bool `pulumi:"nameUseHostname"`
-	// Kubernetes taint information for node pools/nodes
+	// Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
 	Taints []GetNodePoolKubernetesConfigTaint `pulumi:"taints"`
 }
 
@@ -17146,23 +17572,23 @@ type GetNodePoolKubernetesConfigInput interface {
 }
 
 type GetNodePoolKubernetesConfigArgs struct {
-	// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+	// Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
 	AutoSyncDisabled pulumi.BoolInput `pulumi:"autoSyncDisabled"`
 	// Node pool Containerd configuration
 	ContainerdConfig GetNodePoolKubernetesConfigContainerdConfigInput `pulumi:"containerdConfig"`
-	// Node blocking configuration. Parameter values: false: not blocked; true: blocked
+	// Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
 	Cordon pulumi.BoolInput `pulumi:"cordon"`
-	// Kubelet component configuration
+	// Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
 	KubeletConfig GetNodePoolKubernetesConfigKubeletConfigInput `pulumi:"kubeletConfig"`
-	// Kubernetes label information for node pools/nodes
+	// Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
 	Labels GetNodePoolKubernetesConfigLabelArrayInput `pulumi:"labels"`
-	// Prefix for node object metadata name in Kubernetes
+	// Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
 	NamePrefix pulumi.StringInput `pulumi:"namePrefix"`
 	// Suffix for node object metadata name in Kubernetes
 	NameSuffix pulumi.StringInput `pulumi:"nameSuffix"`
-	// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+	// Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
 	NameUseHostname pulumi.BoolInput `pulumi:"nameUseHostname"`
-	// Kubernetes taint information for node pools/nodes
+	// Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
 	Taints GetNodePoolKubernetesConfigTaintArrayInput `pulumi:"taints"`
 }
 
@@ -17192,7 +17618,7 @@ func (o GetNodePoolKubernetesConfigOutput) ToGetNodePoolKubernetesConfigOutputWi
 	return o
 }
 
-// Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+// Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
 func (o GetNodePoolKubernetesConfigOutput) AutoSyncDisabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) bool { return v.AutoSyncDisabled }).(pulumi.BoolOutput)
 }
@@ -17204,22 +17630,22 @@ func (o GetNodePoolKubernetesConfigOutput) ContainerdConfig() GetNodePoolKuberne
 	}).(GetNodePoolKubernetesConfigContainerdConfigOutput)
 }
 
-// Node blocking configuration. Parameter values: false: not blocked; true: blocked
+// Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
 func (o GetNodePoolKubernetesConfigOutput) Cordon() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) bool { return v.Cordon }).(pulumi.BoolOutput)
 }
 
-// Kubelet component configuration
+// Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
 func (o GetNodePoolKubernetesConfigOutput) KubeletConfig() GetNodePoolKubernetesConfigKubeletConfigOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) GetNodePoolKubernetesConfigKubeletConfig { return v.KubeletConfig }).(GetNodePoolKubernetesConfigKubeletConfigOutput)
 }
 
-// Kubernetes label information for node pools/nodes
+// Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
 func (o GetNodePoolKubernetesConfigOutput) Labels() GetNodePoolKubernetesConfigLabelArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) []GetNodePoolKubernetesConfigLabel { return v.Labels }).(GetNodePoolKubernetesConfigLabelArrayOutput)
 }
 
-// Prefix for node object metadata name in Kubernetes
+// Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
 func (o GetNodePoolKubernetesConfigOutput) NamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) string { return v.NamePrefix }).(pulumi.StringOutput)
 }
@@ -17229,18 +17655,18 @@ func (o GetNodePoolKubernetesConfigOutput) NameSuffix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) string { return v.NameSuffix }).(pulumi.StringOutput)
 }
 
-// Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+// Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
 func (o GetNodePoolKubernetesConfigOutput) NameUseHostname() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) bool { return v.NameUseHostname }).(pulumi.BoolOutput)
 }
 
-// Kubernetes taint information for node pools/nodes
+// Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
 func (o GetNodePoolKubernetesConfigOutput) Taints() GetNodePoolKubernetesConfigTaintArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfig) []GetNodePoolKubernetesConfigTaint { return v.Taints }).(GetNodePoolKubernetesConfigTaintArrayOutput)
 }
 
 type GetNodePoolKubernetesConfigContainerdConfig struct {
-	// Specify the container image repository address to skip certificate verification.
+	// Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
 	InsecureRegistries []string `pulumi:"insecureRegistries"`
 	// Container image repository proxy configuration
 	RegistryProxyConfigs []GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig `pulumi:"registryProxyConfigs"`
@@ -17258,7 +17684,7 @@ type GetNodePoolKubernetesConfigContainerdConfigInput interface {
 }
 
 type GetNodePoolKubernetesConfigContainerdConfigArgs struct {
-	// Specify the container image repository address to skip certificate verification.
+	// Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
 	InsecureRegistries pulumi.StringArrayInput `pulumi:"insecureRegistries"`
 	// Container image repository proxy configuration
 	RegistryProxyConfigs GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayInput `pulumi:"registryProxyConfigs"`
@@ -17290,7 +17716,7 @@ func (o GetNodePoolKubernetesConfigContainerdConfigOutput) ToGetNodePoolKubernet
 	return o
 }
 
-// Specify the container image repository address to skip certificate verification.
+// Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
 func (o GetNodePoolKubernetesConfigContainerdConfigOutput) InsecureRegistries() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfig) []string { return v.InsecureRegistries }).(pulumi.StringArrayOutput)
 }
@@ -17303,9 +17729,9 @@ func (o GetNodePoolKubernetesConfigContainerdConfigOutput) RegistryProxyConfigs(
 }
 
 type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig struct {
-	// Proxy address.
+	// Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
 	ProxyEndpoints []string `pulumi:"proxyEndpoints"`
-	// Container image repository address.
+	// Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
 	Registry string `pulumi:"registry"`
 }
 
@@ -17321,9 +17747,9 @@ type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigInput interfa
 }
 
 type GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs struct {
-	// Proxy address.
+	// Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
 	ProxyEndpoints pulumi.StringArrayInput `pulumi:"proxyEndpoints"`
-	// Container image repository address.
+	// Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
 	Registry pulumi.StringInput `pulumi:"registry"`
 }
 
@@ -17378,14 +17804,14 @@ func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) To
 	return o
 }
 
-// Proxy address.
+// Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
 func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) ProxyEndpoints() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) []string {
 		return v.ProxyEndpoints
 	}).(pulumi.StringArrayOutput)
 }
 
-// Container image repository address.
+// Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
 func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigOutput) Registry() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfig) string { return v.Registry }).(pulumi.StringOutput)
 }
@@ -17411,27 +17837,27 @@ func (o GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArrayOutpu
 }
 
 type GetNodePoolKubernetesConfigKubeletConfig struct {
-	// Configure kubelet CpuManagerPolicy. Supports none and static policies
+	// CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
 	CpuManagerPolicy string `pulumi:"cpuManagerPolicy"`
-	// Set of hard thresholds for triggering Pod eviction
+	// A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
 	EvictionHards []GetNodePoolKubernetesConfigKubeletConfigEvictionHard `pulumi:"evictionHards"`
-	// Feature gate
+	// Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
 	FeatureGates GetNodePoolKubernetesConfigKubeletConfigFeatureGates `pulumi:"featureGates"`
-	// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+	// Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
 	KubeApiBurst int `pulumi:"kubeApiBurst"`
-	// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+	// Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
 	KubeApiQps int `pulumi:"kubeApiQps"`
-	// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+	// Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
 	KubeReserveds []GetNodePoolKubernetesConfigKubeletConfigKubeReserved `pulumi:"kubeReserveds"`
-	// Configure the maximum number of Pods supported by kubelet
+	// Maximum number of Pods supported by the node. Default is 110.
 	MaxPods int `pulumi:"maxPods"`
-	// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+	// Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
 	RegistryBurst int `pulumi:"registryBurst"`
-	// Used to limit the QPS cap for the image repository
+	// QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
 	RegistryPullQps int `pulumi:"registryPullQps"`
-	// Pull images sequentially
+	// Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
 	SerializeImagePulls bool `pulumi:"serializeImagePulls"`
-	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
 	SystemReserveds []GetNodePoolKubernetesConfigKubeletConfigSystemReserved `pulumi:"systemReserveds"`
 	// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 	TopologyManagerPolicy string `pulumi:"topologyManagerPolicy"`
@@ -17451,27 +17877,27 @@ type GetNodePoolKubernetesConfigKubeletConfigInput interface {
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigArgs struct {
-	// Configure kubelet CpuManagerPolicy. Supports none and static policies
+	// CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
 	CpuManagerPolicy pulumi.StringInput `pulumi:"cpuManagerPolicy"`
-	// Set of hard thresholds for triggering Pod eviction
+	// A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
 	EvictionHards GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayInput `pulumi:"evictionHards"`
-	// Feature gate
+	// Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
 	FeatureGates GetNodePoolKubernetesConfigKubeletConfigFeatureGatesInput `pulumi:"featureGates"`
-	// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+	// Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
 	KubeApiBurst pulumi.IntInput `pulumi:"kubeApiBurst"`
-	// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+	// Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
 	KubeApiQps pulumi.IntInput `pulumi:"kubeApiQps"`
-	// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+	// Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
 	KubeReserveds GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayInput `pulumi:"kubeReserveds"`
-	// Configure the maximum number of Pods supported by kubelet
+	// Maximum number of Pods supported by the node. Default is 110.
 	MaxPods pulumi.IntInput `pulumi:"maxPods"`
-	// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+	// Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
 	RegistryBurst pulumi.IntInput `pulumi:"registryBurst"`
-	// Used to limit the QPS cap for the image repository
+	// QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
 	RegistryPullQps pulumi.IntInput `pulumi:"registryPullQps"`
-	// Pull images sequentially
+	// Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
 	SerializeImagePulls pulumi.BoolInput `pulumi:"serializeImagePulls"`
-	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+	// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
 	SystemReserveds GetNodePoolKubernetesConfigKubeletConfigSystemReservedArrayInput `pulumi:"systemReserveds"`
 	// Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
 	TopologyManagerPolicy pulumi.StringInput `pulumi:"topologyManagerPolicy"`
@@ -17505,63 +17931,63 @@ func (o GetNodePoolKubernetesConfigKubeletConfigOutput) ToGetNodePoolKubernetesC
 	return o
 }
 
-// Configure kubelet CpuManagerPolicy. Supports none and static policies
+// CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) CpuManagerPolicy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) string { return v.CpuManagerPolicy }).(pulumi.StringOutput)
 }
 
-// Set of hard thresholds for triggering Pod eviction
+// A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) EvictionHards() GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) []GetNodePoolKubernetesConfigKubeletConfigEvictionHard {
 		return v.EvictionHards
 	}).(GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput)
 }
 
-// Feature gate
+// Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) FeatureGates() GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) GetNodePoolKubernetesConfigKubeletConfigFeatureGates {
 		return v.FeatureGates
 	}).(GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput)
 }
 
-// Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+// Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) KubeApiBurst() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.KubeApiBurst }).(pulumi.IntOutput)
 }
 
-// Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+// Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) KubeApiQps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.KubeApiQps }).(pulumi.IntOutput)
 }
 
-// Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+// Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) KubeReserveds() GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) []GetNodePoolKubernetesConfigKubeletConfigKubeReserved {
 		return v.KubeReserveds
 	}).(GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput)
 }
 
-// Configure the maximum number of Pods supported by kubelet
+// Maximum number of Pods supported by the node. Default is 110.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) MaxPods() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.MaxPods }).(pulumi.IntOutput)
 }
 
-// Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+// Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) RegistryBurst() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.RegistryBurst }).(pulumi.IntOutput)
 }
 
-// Used to limit the QPS cap for the image repository
+// QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) RegistryPullQps() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) int { return v.RegistryPullQps }).(pulumi.IntOutput)
 }
 
-// Pull images sequentially
+// Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) SerializeImagePulls() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) bool { return v.SerializeImagePulls }).(pulumi.BoolOutput)
 }
 
-// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+// Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
 func (o GetNodePoolKubernetesConfigKubeletConfigOutput) SystemReserveds() GetNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfig) []GetNodePoolKubernetesConfigKubeletConfigSystemReserved {
 		return v.SystemReserveds
@@ -17581,7 +18007,7 @@ func (o GetNodePoolKubernetesConfigKubeletConfigOutput) TopologyManagerScope() p
 type GetNodePoolKubernetesConfigKubeletConfigEvictionHard struct {
 	// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 	Key string `pulumi:"key"`
-	// Hard threshold value.
+	// Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
 	Value string `pulumi:"value"`
 }
 
@@ -17599,7 +18025,7 @@ type GetNodePoolKubernetesConfigKubeletConfigEvictionHardInput interface {
 type GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs struct {
 	// Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
 	Key pulumi.StringInput `pulumi:"key"`
-	// Hard threshold value.
+	// Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -17659,7 +18085,7 @@ func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Key() pulumi
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigEvictionHard) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Hard threshold value.
+// Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
 func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigEvictionHard) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -17685,9 +18111,9 @@ func (o GetNodePoolKubernetesConfigKubeletConfigEvictionHardArrayOutput) Index(i
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigFeatureGates struct {
-	// Enable local vertical Pod autoscaling feature toggle
+	// Enable Pod vertical scaling. Options: true: enabled. false: disabled.
 	InPlacePodVerticalScaling bool `pulumi:"inPlacePodVerticalScaling"`
-	// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+	// Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
 	QoSResourceManager bool `pulumi:"qoSResourceManager"`
 }
 
@@ -17703,9 +18129,9 @@ type GetNodePoolKubernetesConfigKubeletConfigFeatureGatesInput interface {
 }
 
 type GetNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs struct {
-	// Enable local vertical Pod autoscaling feature toggle
+	// Enable Pod vertical scaling. Options: true: enabled. false: disabled.
 	InPlacePodVerticalScaling pulumi.BoolInput `pulumi:"inPlacePodVerticalScaling"`
-	// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+	// Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
 	QoSResourceManager pulumi.BoolInput `pulumi:"qoSResourceManager"`
 }
 
@@ -17735,12 +18161,12 @@ func (o GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) ToGetNodePoo
 	return o
 }
 
-// Enable local vertical Pod autoscaling feature toggle
+// Enable Pod vertical scaling. Options: true: enabled. false: disabled.
 func (o GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) InPlacePodVerticalScaling() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigFeatureGates) bool { return v.InPlacePodVerticalScaling }).(pulumi.BoolOutput)
 }
 
-// Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+// Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
 func (o GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceManager() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigFeatureGates) bool { return v.QoSResourceManager }).(pulumi.BoolOutput)
 }
@@ -17748,7 +18174,7 @@ func (o GetNodePoolKubernetesConfigKubeletConfigFeatureGatesOutput) QoSResourceM
 type GetNodePoolKubernetesConfigKubeletConfigKubeReserved struct {
 	// Resource name. Valid values: cpu or memory.
 	Name string `pulumi:"name"`
-	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+	// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 	Quantity string `pulumi:"quantity"`
 }
 
@@ -17766,7 +18192,7 @@ type GetNodePoolKubernetesConfigKubeletConfigKubeReservedInput interface {
 type GetNodePoolKubernetesConfigKubeletConfigKubeReservedArgs struct {
 	// Resource name. Valid values: cpu or memory.
 	Name pulumi.StringInput `pulumi:"name"`
-	// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+	// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 	Quantity pulumi.StringInput `pulumi:"quantity"`
 }
 
@@ -17826,7 +18252,7 @@ func (o GetNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Name() pulum
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigKubeReserved) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 func (o GetNodePoolKubernetesConfigKubeletConfigKubeReservedOutput) Quantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigKubeReserved) string { return v.Quantity }).(pulumi.StringOutput)
 }
@@ -17854,7 +18280,7 @@ func (o GetNodePoolKubernetesConfigKubeletConfigKubeReservedArrayOutput) Index(i
 type GetNodePoolKubernetesConfigKubeletConfigSystemReserved struct {
 	// Resource name. Valid values: cpu or memory.
 	Name string `pulumi:"name"`
-	// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+	// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 	Quantity string `pulumi:"quantity"`
 }
 
@@ -17872,7 +18298,7 @@ type GetNodePoolKubernetesConfigKubeletConfigSystemReservedInput interface {
 type GetNodePoolKubernetesConfigKubeletConfigSystemReservedArgs struct {
 	// Resource name. Valid values: cpu or memory.
 	Name pulumi.StringInput `pulumi:"name"`
-	// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+	// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 	Quantity pulumi.StringInput `pulumi:"quantity"`
 }
 
@@ -17932,7 +18358,7 @@ func (o GetNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Name() pul
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigSystemReserved) string { return v.Name }).(pulumi.StringOutput)
 }
 
-// Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+// Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
 func (o GetNodePoolKubernetesConfigKubeletConfigSystemReservedOutput) Quantity() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigKubeletConfigSystemReserved) string { return v.Quantity }).(pulumi.StringOutput)
 }
@@ -17958,9 +18384,9 @@ func (o GetNodePoolKubernetesConfigKubeletConfigSystemReservedArrayOutput) Index
 }
 
 type GetNodePoolKubernetesConfigLabel struct {
-	// Tag key.
+	// Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 	Key string `pulumi:"key"`
-	// Label value.
+	// Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
 	Value string `pulumi:"value"`
 }
 
@@ -17976,9 +18402,9 @@ type GetNodePoolKubernetesConfigLabelInput interface {
 }
 
 type GetNodePoolKubernetesConfigLabelArgs struct {
-	// Tag key.
+	// Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Label value.
+	// Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -18033,12 +18459,12 @@ func (o GetNodePoolKubernetesConfigLabelOutput) ToGetNodePoolKubernetesConfigLab
 	return o
 }
 
-// Tag key.
+// Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 func (o GetNodePoolKubernetesConfigLabelOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigLabel) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Label value.
+// Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
 func (o GetNodePoolKubernetesConfigLabelOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigLabel) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -18066,9 +18492,9 @@ func (o GetNodePoolKubernetesConfigLabelArrayOutput) Index(i pulumi.IntInput) Ge
 type GetNodePoolKubernetesConfigTaint struct {
 	// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 	Effect string `pulumi:"effect"`
-	// Taint key.
+	// Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 	Key string `pulumi:"key"`
-	// Taint value
+	// Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
 	Value string `pulumi:"value"`
 }
 
@@ -18086,9 +18512,9 @@ type GetNodePoolKubernetesConfigTaintInput interface {
 type GetNodePoolKubernetesConfigTaintArgs struct {
 	// Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
 	Effect pulumi.StringInput `pulumi:"effect"`
-	// Taint key.
+	// Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 	Key pulumi.StringInput `pulumi:"key"`
-	// Taint value
+	// Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
 	Value pulumi.StringInput `pulumi:"value"`
 }
 
@@ -18148,12 +18574,12 @@ func (o GetNodePoolKubernetesConfigTaintOutput) Effect() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigTaint) string { return v.Effect }).(pulumi.StringOutput)
 }
 
-// Taint key.
+// Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
 func (o GetNodePoolKubernetesConfigTaintOutput) Key() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigTaint) string { return v.Key }).(pulumi.StringOutput)
 }
 
-// Taint value
+// Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
 func (o GetNodePoolKubernetesConfigTaintOutput) Value() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolKubernetesConfigTaint) string { return v.Value }).(pulumi.StringOutput)
 }
@@ -18179,9 +18605,9 @@ func (o GetNodePoolKubernetesConfigTaintArrayOutput) Index(i pulumi.IntInput) Ge
 }
 
 type GetNodePoolManagement struct {
-	// Enable managed mode for node pool. Options:   - true: on   - false: off
+	// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
 	Enabled bool `pulumi:"enabled"`
-	// Check self-healing configuration.
+	// Node pool health check and self-healing rule configuration.
 	RemedyConfig GetNodePoolManagementRemedyConfig `pulumi:"remedyConfig"`
 }
 
@@ -18197,9 +18623,9 @@ type GetNodePoolManagementInput interface {
 }
 
 type GetNodePoolManagementArgs struct {
-	// Enable managed mode for node pool. Options:   - true: on   - false: off
+	// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// Check self-healing configuration.
+	// Node pool health check and self-healing rule configuration.
 	RemedyConfig GetNodePoolManagementRemedyConfigInput `pulumi:"remedyConfig"`
 }
 
@@ -18229,20 +18655,20 @@ func (o GetNodePoolManagementOutput) ToGetNodePoolManagementOutputWithContext(ct
 	return o
 }
 
-// Enable managed mode for node pool. Options:   - true: on   - false: off
+// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
 func (o GetNodePoolManagementOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolManagement) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Check self-healing configuration.
+// Node pool health check and self-healing rule configuration.
 func (o GetNodePoolManagementOutput) RemedyConfig() GetNodePoolManagementRemedyConfigOutput {
 	return o.ApplyT(func(v GetNodePoolManagement) GetNodePoolManagementRemedyConfig { return v.RemedyConfig }).(GetNodePoolManagementRemedyConfigOutput)
 }
 
 type GetNodePoolManagementRemedyConfig struct {
-	// Enable self-healing check
+	// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
 	Enabled bool `pulumi:"enabled"`
-	// Self-healing rule ID
+	// Self-healing rule ID associated after enabling self-healing check for the node pool.
 	RemedyId string `pulumi:"remedyId"`
 }
 
@@ -18258,9 +18684,9 @@ type GetNodePoolManagementRemedyConfigInput interface {
 }
 
 type GetNodePoolManagementRemedyConfigArgs struct {
-	// Enable self-healing check
+	// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
 	Enabled pulumi.BoolInput `pulumi:"enabled"`
-	// Self-healing rule ID
+	// Self-healing rule ID associated after enabling self-healing check for the node pool.
 	RemedyId pulumi.StringInput `pulumi:"remedyId"`
 }
 
@@ -18290,68 +18716,68 @@ func (o GetNodePoolManagementRemedyConfigOutput) ToGetNodePoolManagementRemedyCo
 	return o
 }
 
-// Enable self-healing check
+// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
 func (o GetNodePoolManagementRemedyConfigOutput) Enabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolManagementRemedyConfig) bool { return v.Enabled }).(pulumi.BoolOutput)
 }
 
-// Self-healing rule ID
+// Self-healing rule ID associated after enabling self-healing check for the node pool.
 func (o GetNodePoolManagementRemedyConfigOutput) RemedyId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolManagementRemedyConfig) string { return v.RemedyId }).(pulumi.StringOutput)
 }
 
 type GetNodePoolNodeConfig struct {
-	// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+	// Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
 	AdditionalContainerStorageEnabled bool `pulumi:"additionalContainerStorageEnabled"`
-	// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+	// Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
 	AutoRenew bool `pulumi:"autoRenew"`
-	// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+	// ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
 	AutoRenewPeriod int `pulumi:"autoRenewPeriod"`
-	// Node data disk configuration.
+	// Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
 	DataVolumes []GetNodePoolNodeConfigDataVolume `pulumi:"dataVolumes"`
-	// Group number of the instance in the deployment set; 0 means not set
+	// When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
 	DeploymentSetGroupNumber int `pulumi:"deploymentSetGroupNumber"`
-	// Deployment Set ID to be added to the instance
+	// Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
 	DeploymentSetId string `pulumi:"deploymentSetId"`
-	// The host name corresponding to the node.
+	// Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
 	Hostname string `pulumi:"hostname"`
-	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+	// High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
 	HpcClusterIds []string `pulumi:"hpcClusterIds"`
-	// Image ID used by the cloud server corresponding to the node
+	// The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
 	ImageId string `pulumi:"imageId"`
-	// Custom script executed after node creation and initialization. Shell script in Base64 encoding
+	// Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 	InitializeScript string `pulumi:"initializeScript"`
-	// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+	// ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
 	InstanceChargeType string `pulumi:"instanceChargeType"`
-	// Node (instance) name
+	// Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
 	InstanceName string `pulumi:"instanceName"`
-	// List of cloud server instance type IDs corresponding to the nodes
+	// List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
 	InstanceTypeIds []string `pulumi:"instanceTypeIds"`
-	// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+	// Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 	InstancesDistribution GetNodePoolNodeConfigInstancesDistribution `pulumi:"instancesDistribution"`
-	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+	// Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
 	NamePrefix string `pulumi:"namePrefix"`
-	// Network communication mode between nodes
+	// Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
 	NetworkTrafficMode string `pulumi:"networkTrafficMode"`
-	// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+	// ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
 	Period int `pulumi:"period"`
-	// Script to execute before deploying the node
+	// [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 	PreScript string `pulumi:"preScript"`
-	// Project to which the ECS belongs. Each ECS can only belong to one project.
+	// Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
 	ProjectName string `pulumi:"projectName"`
-	// Configuration for automatic public network access for nodes
+	// Configuration information for automatically binding EIP to nodes.
 	PublicAccessConfig GetNodePoolNodeConfigPublicAccessConfig `pulumi:"publicAccessConfig"`
-	// Enable public network access for nodes automatically. Options:   - false: off   - true: on
+	// Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
 	PublicAccessEnabled bool `pulumi:"publicAccessEnabled"`
 	// Node security configuration
 	Security GetNodePoolNodeConfigSecurity `pulumi:"security"`
-	// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+	// Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
 	SpotStrategy string `pulumi:"spotStrategy"`
-	// List of subnet IDs for the node network.
+	// List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
 	SubnetIds []string `pulumi:"subnetIds"`
-	// System disk configuration for the node
+	// System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
 	SystemVolume GetNodePoolNodeConfigSystemVolume `pulumi:"systemVolume"`
-	// Label information configured for the node pool
+	// Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
 	Tags []GetNodePoolNodeConfigTag `pulumi:"tags"`
 }
 
@@ -18367,57 +18793,57 @@ type GetNodePoolNodeConfigInput interface {
 }
 
 type GetNodePoolNodeConfigArgs struct {
-	// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+	// Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
 	AdditionalContainerStorageEnabled pulumi.BoolInput `pulumi:"additionalContainerStorageEnabled"`
-	// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+	// Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
 	AutoRenew pulumi.BoolInput `pulumi:"autoRenew"`
-	// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+	// ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
 	AutoRenewPeriod pulumi.IntInput `pulumi:"autoRenewPeriod"`
-	// Node data disk configuration.
+	// Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
 	DataVolumes GetNodePoolNodeConfigDataVolumeArrayInput `pulumi:"dataVolumes"`
-	// Group number of the instance in the deployment set; 0 means not set
+	// When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
 	DeploymentSetGroupNumber pulumi.IntInput `pulumi:"deploymentSetGroupNumber"`
-	// Deployment Set ID to be added to the instance
+	// Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
 	DeploymentSetId pulumi.StringInput `pulumi:"deploymentSetId"`
-	// The host name corresponding to the node.
+	// Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
 	Hostname pulumi.StringInput `pulumi:"hostname"`
-	// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+	// High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
 	HpcClusterIds pulumi.StringArrayInput `pulumi:"hpcClusterIds"`
-	// Image ID used by the cloud server corresponding to the node
+	// The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
 	ImageId pulumi.StringInput `pulumi:"imageId"`
-	// Custom script executed after node creation and initialization. Shell script in Base64 encoding
+	// Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 	InitializeScript pulumi.StringInput `pulumi:"initializeScript"`
-	// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+	// ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
 	InstanceChargeType pulumi.StringInput `pulumi:"instanceChargeType"`
-	// Node (instance) name
+	// Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
 	InstanceName pulumi.StringInput `pulumi:"instanceName"`
-	// List of cloud server instance type IDs corresponding to the nodes
+	// List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
 	InstanceTypeIds pulumi.StringArrayInput `pulumi:"instanceTypeIds"`
-	// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+	// Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 	InstancesDistribution GetNodePoolNodeConfigInstancesDistributionInput `pulumi:"instancesDistribution"`
-	// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+	// Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
 	NamePrefix pulumi.StringInput `pulumi:"namePrefix"`
-	// Network communication mode between nodes
+	// Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
 	NetworkTrafficMode pulumi.StringInput `pulumi:"networkTrafficMode"`
-	// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+	// ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
 	Period pulumi.IntInput `pulumi:"period"`
-	// Script to execute before deploying the node
+	// [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 	PreScript pulumi.StringInput `pulumi:"preScript"`
-	// Project to which the ECS belongs. Each ECS can only belong to one project.
+	// Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
 	ProjectName pulumi.StringInput `pulumi:"projectName"`
-	// Configuration for automatic public network access for nodes
+	// Configuration information for automatically binding EIP to nodes.
 	PublicAccessConfig GetNodePoolNodeConfigPublicAccessConfigInput `pulumi:"publicAccessConfig"`
-	// Enable public network access for nodes automatically. Options:   - false: off   - true: on
+	// Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
 	PublicAccessEnabled pulumi.BoolInput `pulumi:"publicAccessEnabled"`
 	// Node security configuration
 	Security GetNodePoolNodeConfigSecurityInput `pulumi:"security"`
-	// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+	// Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
 	SpotStrategy pulumi.StringInput `pulumi:"spotStrategy"`
-	// List of subnet IDs for the node network.
+	// List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
 	SubnetIds pulumi.StringArrayInput `pulumi:"subnetIds"`
-	// System disk configuration for the node
+	// System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
 	SystemVolume GetNodePoolNodeConfigSystemVolumeInput `pulumi:"systemVolume"`
-	// Label information configured for the node pool
+	// Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
 	Tags GetNodePoolNodeConfigTagArrayInput `pulumi:"tags"`
 }
 
@@ -18447,109 +18873,109 @@ func (o GetNodePoolNodeConfigOutput) ToGetNodePoolNodeConfigOutputWithContext(ct
 	return o
 }
 
-// Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+// Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
 func (o GetNodePoolNodeConfigOutput) AdditionalContainerStorageEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) bool { return v.AdditionalContainerStorageEnabled }).(pulumi.BoolOutput)
 }
 
-// Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+// Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
 func (o GetNodePoolNodeConfigOutput) AutoRenew() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) bool { return v.AutoRenew }).(pulumi.BoolOutput)
 }
 
-// Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+// ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
 func (o GetNodePoolNodeConfigOutput) AutoRenewPeriod() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) int { return v.AutoRenewPeriod }).(pulumi.IntOutput)
 }
 
-// Node data disk configuration.
+// Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
 func (o GetNodePoolNodeConfigOutput) DataVolumes() GetNodePoolNodeConfigDataVolumeArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []GetNodePoolNodeConfigDataVolume { return v.DataVolumes }).(GetNodePoolNodeConfigDataVolumeArrayOutput)
 }
 
-// Group number of the instance in the deployment set; 0 means not set
+// When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
 func (o GetNodePoolNodeConfigOutput) DeploymentSetGroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) int { return v.DeploymentSetGroupNumber }).(pulumi.IntOutput)
 }
 
-// Deployment Set ID to be added to the instance
+// Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
 func (o GetNodePoolNodeConfigOutput) DeploymentSetId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.DeploymentSetId }).(pulumi.StringOutput)
 }
 
-// The host name corresponding to the node.
+// Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
 func (o GetNodePoolNodeConfigOutput) Hostname() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.Hostname }).(pulumi.StringOutput)
 }
 
-// High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+// High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
 func (o GetNodePoolNodeConfigOutput) HpcClusterIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []string { return v.HpcClusterIds }).(pulumi.StringArrayOutput)
 }
 
-// Image ID used by the cloud server corresponding to the node
+// The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
 func (o GetNodePoolNodeConfigOutput) ImageId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.ImageId }).(pulumi.StringOutput)
 }
 
-// Custom script executed after node creation and initialization. Shell script in Base64 encoding
+// Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 func (o GetNodePoolNodeConfigOutput) InitializeScript() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.InitializeScript }).(pulumi.StringOutput)
 }
 
-// Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+// ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
 func (o GetNodePoolNodeConfigOutput) InstanceChargeType() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.InstanceChargeType }).(pulumi.StringOutput)
 }
 
-// Node (instance) name
+// Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
 func (o GetNodePoolNodeConfigOutput) InstanceName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.InstanceName }).(pulumi.StringOutput)
 }
 
-// List of cloud server instance type IDs corresponding to the nodes
+// List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
 func (o GetNodePoolNodeConfigOutput) InstanceTypeIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []string { return v.InstanceTypeIds }).(pulumi.StringArrayOutput)
 }
 
-// Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+// Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
 func (o GetNodePoolNodeConfigOutput) InstancesDistribution() GetNodePoolNodeConfigInstancesDistributionOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) GetNodePoolNodeConfigInstancesDistribution {
 		return v.InstancesDistribution
 	}).(GetNodePoolNodeConfigInstancesDistributionOutput)
 }
 
-// Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+// Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
 func (o GetNodePoolNodeConfigOutput) NamePrefix() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.NamePrefix }).(pulumi.StringOutput)
 }
 
-// Network communication mode between nodes
+// Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
 func (o GetNodePoolNodeConfigOutput) NetworkTrafficMode() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.NetworkTrafficMode }).(pulumi.StringOutput)
 }
 
-// Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+// ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
 func (o GetNodePoolNodeConfigOutput) Period() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) int { return v.Period }).(pulumi.IntOutput)
 }
 
-// Script to execute before deploying the node
+// [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
 func (o GetNodePoolNodeConfigOutput) PreScript() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.PreScript }).(pulumi.StringOutput)
 }
 
-// Project to which the ECS belongs. Each ECS can only belong to one project.
+// Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
 func (o GetNodePoolNodeConfigOutput) ProjectName() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.ProjectName }).(pulumi.StringOutput)
 }
 
-// Configuration for automatic public network access for nodes
+// Configuration information for automatically binding EIP to nodes.
 func (o GetNodePoolNodeConfigOutput) PublicAccessConfig() GetNodePoolNodeConfigPublicAccessConfigOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) GetNodePoolNodeConfigPublicAccessConfig { return v.PublicAccessConfig }).(GetNodePoolNodeConfigPublicAccessConfigOutput)
 }
 
-// Enable public network access for nodes automatically. Options:   - false: off   - true: on
+// Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
 func (o GetNodePoolNodeConfigOutput) PublicAccessEnabled() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) bool { return v.PublicAccessEnabled }).(pulumi.BoolOutput)
 }
@@ -18559,40 +18985,40 @@ func (o GetNodePoolNodeConfigOutput) Security() GetNodePoolNodeConfigSecurityOut
 	return o.ApplyT(func(v GetNodePoolNodeConfig) GetNodePoolNodeConfigSecurity { return v.Security }).(GetNodePoolNodeConfigSecurityOutput)
 }
 
-// Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+// Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
 func (o GetNodePoolNodeConfigOutput) SpotStrategy() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) string { return v.SpotStrategy }).(pulumi.StringOutput)
 }
 
-// List of subnet IDs for the node network.
+// List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
 func (o GetNodePoolNodeConfigOutput) SubnetIds() pulumi.StringArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []string { return v.SubnetIds }).(pulumi.StringArrayOutput)
 }
 
-// System disk configuration for the node
+// System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
 func (o GetNodePoolNodeConfigOutput) SystemVolume() GetNodePoolNodeConfigSystemVolumeOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) GetNodePoolNodeConfigSystemVolume { return v.SystemVolume }).(GetNodePoolNodeConfigSystemVolumeOutput)
 }
 
-// Label information configured for the node pool
+// Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
 func (o GetNodePoolNodeConfigOutput) Tags() GetNodePoolNodeConfigTagArrayOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfig) []GetNodePoolNodeConfigTag { return v.Tags }).(GetNodePoolNodeConfigTagArrayOutput)
 }
 
 type GetNodePoolNodeConfigDataVolume struct {
-	// File system. Options:   - Ext4 (default)   - Xfs
+	// [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
 	FileSystem string `pulumi:"fileSystem"`
 	// Target mount directory after disk formatting.
 	MountPoint string `pulumi:"mountPoint"`
-	// Placement group ID
+	// Storage placement group ID to which the data disk belongs.
 	PlacementGroupId string `pulumi:"placementGroupId"`
 	// Disk capacity, in GiB.
 	Size int `pulumi:"size"`
-	// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+	// Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
 	SnapshotId string `pulumi:"snapshotId"`
-	// Placement subgroup
+	// Storage sub-placement group number of the data disk.
 	SubgroupNumber int `pulumi:"subgroupNumber"`
-	// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+	// Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
 	Type string `pulumi:"type"`
 }
 
@@ -18608,19 +19034,19 @@ type GetNodePoolNodeConfigDataVolumeInput interface {
 }
 
 type GetNodePoolNodeConfigDataVolumeArgs struct {
-	// File system. Options:   - Ext4 (default)   - Xfs
+	// [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
 	FileSystem pulumi.StringInput `pulumi:"fileSystem"`
 	// Target mount directory after disk formatting.
 	MountPoint pulumi.StringInput `pulumi:"mountPoint"`
-	// Placement group ID
+	// Storage placement group ID to which the data disk belongs.
 	PlacementGroupId pulumi.StringInput `pulumi:"placementGroupId"`
 	// Disk capacity, in GiB.
 	Size pulumi.IntInput `pulumi:"size"`
-	// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+	// Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
 	SnapshotId pulumi.StringInput `pulumi:"snapshotId"`
-	// Placement subgroup
+	// Storage sub-placement group number of the data disk.
 	SubgroupNumber pulumi.IntInput `pulumi:"subgroupNumber"`
-	// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+	// Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -18675,7 +19101,7 @@ func (o GetNodePoolNodeConfigDataVolumeOutput) ToGetNodePoolNodeConfigDataVolume
 	return o
 }
 
-// File system. Options:   - Ext4 (default)   - Xfs
+// [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
 func (o GetNodePoolNodeConfigDataVolumeOutput) FileSystem() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.FileSystem }).(pulumi.StringOutput)
 }
@@ -18685,7 +19111,7 @@ func (o GetNodePoolNodeConfigDataVolumeOutput) MountPoint() pulumi.StringOutput 
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.MountPoint }).(pulumi.StringOutput)
 }
 
-// Placement group ID
+// Storage placement group ID to which the data disk belongs.
 func (o GetNodePoolNodeConfigDataVolumeOutput) PlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.PlacementGroupId }).(pulumi.StringOutput)
 }
@@ -18695,17 +19121,17 @@ func (o GetNodePoolNodeConfigDataVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+// Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
 func (o GetNodePoolNodeConfigDataVolumeOutput) SnapshotId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.SnapshotId }).(pulumi.StringOutput)
 }
 
-// Placement subgroup
+// Storage sub-placement group number of the data disk.
 func (o GetNodePoolNodeConfigDataVolumeOutput) SubgroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) int { return v.SubgroupNumber }).(pulumi.IntOutput)
 }
 
-// Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+// Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
 func (o GetNodePoolNodeConfigDataVolumeOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigDataVolume) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -18731,13 +19157,13 @@ func (o GetNodePoolNodeConfigDataVolumeArrayOutput) Index(i pulumi.IntInput) Get
 }
 
 type GetNodePoolNodeConfigInstancesDistribution struct {
-	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+	// Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
 	CapacityRebalance bool `pulumi:"capacityRebalance"`
-	// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+	// Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
 	CompensateWithOnDemand bool `pulumi:"compensateWithOnDemand"`
-	// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+	// Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
 	OnDemandBaseCapacity int `pulumi:"onDemandBaseCapacity"`
-	// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+	// Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
 	OnDemandPercentageAboveBaseCapacity int `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -18753,13 +19179,13 @@ type GetNodePoolNodeConfigInstancesDistributionInput interface {
 }
 
 type GetNodePoolNodeConfigInstancesDistributionArgs struct {
-	// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+	// Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
 	CapacityRebalance pulumi.BoolInput `pulumi:"capacityRebalance"`
-	// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+	// Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
 	CompensateWithOnDemand pulumi.BoolInput `pulumi:"compensateWithOnDemand"`
-	// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+	// Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
 	OnDemandBaseCapacity pulumi.IntInput `pulumi:"onDemandBaseCapacity"`
-	// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+	// Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
 	OnDemandPercentageAboveBaseCapacity pulumi.IntInput `pulumi:"onDemandPercentageAboveBaseCapacity"`
 }
 
@@ -18789,22 +19215,22 @@ func (o GetNodePoolNodeConfigInstancesDistributionOutput) ToGetNodePoolNodeConfi
 	return o
 }
 
-// Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+// Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
 func (o GetNodePoolNodeConfigInstancesDistributionOutput) CapacityRebalance() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigInstancesDistribution) bool { return v.CapacityRebalance }).(pulumi.BoolOutput)
 }
 
-// On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+// Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
 func (o GetNodePoolNodeConfigInstancesDistributionOutput) CompensateWithOnDemand() pulumi.BoolOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigInstancesDistribution) bool { return v.CompensateWithOnDemand }).(pulumi.BoolOutput)
 }
 
-// Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+// Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
 func (o GetNodePoolNodeConfigInstancesDistributionOutput) OnDemandBaseCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigInstancesDistribution) int { return v.OnDemandBaseCapacity }).(pulumi.IntOutput)
 }
 
-// Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+// Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
 func (o GetNodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAboveBaseCapacity() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigInstancesDistribution) int { return v.OnDemandPercentageAboveBaseCapacity }).(pulumi.IntOutput)
 }
@@ -18812,9 +19238,9 @@ func (o GetNodePoolNodeConfigInstancesDistributionOutput) OnDemandPercentageAbov
 type GetNodePoolNodeConfigPublicAccessConfig struct {
 	// Peak bandwidth for public IP, unit: Mbps
 	Bandwidth int `pulumi:"bandwidth"`
-	// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+	// Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 	BillingType int `pulumi:"billingType"`
-	// Public IP line type. Parameter description: BGP: BGP (multi-line)
+	// Public IP line type. Parameter value description: BGP: BGP (multi-line).
 	Isp string `pulumi:"isp"`
 }
 
@@ -18832,9 +19258,9 @@ type GetNodePoolNodeConfigPublicAccessConfigInput interface {
 type GetNodePoolNodeConfigPublicAccessConfigArgs struct {
 	// Peak bandwidth for public IP, unit: Mbps
 	Bandwidth pulumi.IntInput `pulumi:"bandwidth"`
-	// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+	// Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 	BillingType pulumi.IntInput `pulumi:"billingType"`
-	// Public IP line type. Parameter description: BGP: BGP (multi-line)
+	// Public IP line type. Parameter value description: BGP: BGP (multi-line).
 	Isp pulumi.StringInput `pulumi:"isp"`
 }
 
@@ -18869,12 +19295,12 @@ func (o GetNodePoolNodeConfigPublicAccessConfigOutput) Bandwidth() pulumi.IntOut
 	return o.ApplyT(func(v GetNodePoolNodeConfigPublicAccessConfig) int { return v.Bandwidth }).(pulumi.IntOutput)
 }
 
-// Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+// Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
 func (o GetNodePoolNodeConfigPublicAccessConfigOutput) BillingType() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigPublicAccessConfig) int { return v.BillingType }).(pulumi.IntOutput)
 }
 
-// Public IP line type. Parameter description: BGP: BGP (multi-line)
+// Public IP line type. Parameter value description: BGP: BGP (multi-line).
 func (o GetNodePoolNodeConfigPublicAccessConfigOutput) Isp() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigPublicAccessConfig) string { return v.Isp }).(pulumi.StringOutput)
 }
@@ -19029,11 +19455,11 @@ func (o GetNodePoolNodeConfigSecurityLoginOutput) Type() pulumi.StringOutput {
 }
 
 type GetNodePoolNodeConfigSystemVolume struct {
-	// Placement group ID
+	// Storage placement group ID of the system disk.
 	PlacementGroupId string `pulumi:"placementGroupId"`
-	// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+	// Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
 	Size int `pulumi:"size"`
-	// Placement subgroup
+	// Storage sub-placement group number for the system disk.
 	SubgroupNumber int `pulumi:"subgroupNumber"`
 	// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 	Type string `pulumi:"type"`
@@ -19051,11 +19477,11 @@ type GetNodePoolNodeConfigSystemVolumeInput interface {
 }
 
 type GetNodePoolNodeConfigSystemVolumeArgs struct {
-	// Placement group ID
+	// Storage placement group ID of the system disk.
 	PlacementGroupId pulumi.StringInput `pulumi:"placementGroupId"`
-	// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+	// Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
 	Size pulumi.IntInput `pulumi:"size"`
-	// Placement subgroup
+	// Storage sub-placement group number for the system disk.
 	SubgroupNumber pulumi.IntInput `pulumi:"subgroupNumber"`
 	// Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
 	Type pulumi.StringInput `pulumi:"type"`
@@ -19087,17 +19513,17 @@ func (o GetNodePoolNodeConfigSystemVolumeOutput) ToGetNodePoolNodeConfigSystemVo
 	return o
 }
 
-// Placement group ID
+// Storage placement group ID of the system disk.
 func (o GetNodePoolNodeConfigSystemVolumeOutput) PlacementGroupId() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSystemVolume) string { return v.PlacementGroupId }).(pulumi.StringOutput)
 }
 
-// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+// Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
 func (o GetNodePoolNodeConfigSystemVolumeOutput) Size() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSystemVolume) int { return v.Size }).(pulumi.IntOutput)
 }
 
-// Placement subgroup
+// Storage sub-placement group number for the system disk.
 func (o GetNodePoolNodeConfigSystemVolumeOutput) SubgroupNumber() pulumi.IntOutput {
 	return o.ApplyT(func(v GetNodePoolNodeConfigSystemVolume) int { return v.SubgroupNumber }).(pulumi.IntOutput)
 }
@@ -19313,7 +19739,7 @@ func (o GetNodePoolNodeStatisticsOutput) UpdatingCount() pulumi.IntOutput {
 type GetNodePoolStatus struct {
 	// Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
 	Conditions []GetNodePoolStatusCondition `pulumi:"conditions"`
-	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+	// Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
 	Phase string `pulumi:"phase"`
 }
 
@@ -19331,7 +19757,7 @@ type GetNodePoolStatusInput interface {
 type GetNodePoolStatusArgs struct {
 	// Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
 	Conditions GetNodePoolStatusConditionArrayInput `pulumi:"conditions"`
-	// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+	// Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
 	Phase pulumi.StringInput `pulumi:"phase"`
 }
 
@@ -19366,13 +19792,13 @@ func (o GetNodePoolStatusOutput) Conditions() GetNodePoolStatusConditionArrayOut
 	return o.ApplyT(func(v GetNodePoolStatus) []GetNodePoolStatusCondition { return v.Conditions }).(GetNodePoolStatusConditionArrayOutput)
 }
 
-// Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+// Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
 func (o GetNodePoolStatusOutput) Phase() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolStatus) string { return v.Phase }).(pulumi.StringOutput)
 }
 
 type GetNodePoolStatusCondition struct {
-	// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+	// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
 	Type string `pulumi:"type"`
 }
 
@@ -19388,7 +19814,7 @@ type GetNodePoolStatusConditionInput interface {
 }
 
 type GetNodePoolStatusConditionArgs struct {
-	// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+	// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
 	Type pulumi.StringInput `pulumi:"type"`
 }
 
@@ -19443,7 +19869,7 @@ func (o GetNodePoolStatusConditionOutput) ToGetNodePoolStatusConditionOutputWith
 	return o
 }
 
-// Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+// Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
 func (o GetNodePoolStatusConditionOutput) Type() pulumi.StringOutput {
 	return o.ApplyT(func(v GetNodePoolStatusCondition) string { return v.Type }).(pulumi.StringOutput)
 }
@@ -19732,6 +20158,182 @@ func (o GetNodeStatusConditionArrayOutput) Index(i pulumi.IntInput) GetNodeStatu
 	}).(GetNodeStatusConditionOutput)
 }
 
+type GetNodepoolScalingPolicyScheduledInstancePolicy struct {
+	// Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+	AutoReleaseTime string `pulumi:"autoReleaseTime"`
+	// If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+	BestEffort bool `pulumi:"bestEffort"`
+	// Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+	DeliveryType string `pulumi:"deliveryType"`
+	// Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+	ElasticScheduledInstanceType string `pulumi:"elasticScheduledInstanceType"`
+	// End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+	EndDeliveryTime string `pulumi:"endDeliveryTime"`
+	// Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+	StartDeliveryTime string `pulumi:"startDeliveryTime"`
+}
+
+// GetNodepoolScalingPolicyScheduledInstancePolicyInput is an input type that accepts GetNodepoolScalingPolicyScheduledInstancePolicyArgs and GetNodepoolScalingPolicyScheduledInstancePolicyOutput values.
+// You can construct a concrete instance of `GetNodepoolScalingPolicyScheduledInstancePolicyInput` via:
+//
+//	GetNodepoolScalingPolicyScheduledInstancePolicyArgs{...}
+type GetNodepoolScalingPolicyScheduledInstancePolicyInput interface {
+	pulumi.Input
+
+	ToGetNodepoolScalingPolicyScheduledInstancePolicyOutput() GetNodepoolScalingPolicyScheduledInstancePolicyOutput
+	ToGetNodepoolScalingPolicyScheduledInstancePolicyOutputWithContext(context.Context) GetNodepoolScalingPolicyScheduledInstancePolicyOutput
+}
+
+type GetNodepoolScalingPolicyScheduledInstancePolicyArgs struct {
+	// Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+	AutoReleaseTime pulumi.StringInput `pulumi:"autoReleaseTime"`
+	// If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+	BestEffort pulumi.BoolInput `pulumi:"bestEffort"`
+	// Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+	DeliveryType pulumi.StringInput `pulumi:"deliveryType"`
+	// Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+	ElasticScheduledInstanceType pulumi.StringInput `pulumi:"elasticScheduledInstanceType"`
+	// End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+	EndDeliveryTime pulumi.StringInput `pulumi:"endDeliveryTime"`
+	// Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+	StartDeliveryTime pulumi.StringInput `pulumi:"startDeliveryTime"`
+}
+
+func (GetNodepoolScalingPolicyScheduledInstancePolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodepoolScalingPolicyScheduledInstancePolicy)(nil)).Elem()
+}
+
+func (i GetNodepoolScalingPolicyScheduledInstancePolicyArgs) ToGetNodepoolScalingPolicyScheduledInstancePolicyOutput() GetNodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return i.ToGetNodepoolScalingPolicyScheduledInstancePolicyOutputWithContext(context.Background())
+}
+
+func (i GetNodepoolScalingPolicyScheduledInstancePolicyArgs) ToGetNodepoolScalingPolicyScheduledInstancePolicyOutputWithContext(ctx context.Context) GetNodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodepoolScalingPolicyScheduledInstancePolicyOutput)
+}
+
+type GetNodepoolScalingPolicyScheduledInstancePolicyOutput struct{ *pulumi.OutputState }
+
+func (GetNodepoolScalingPolicyScheduledInstancePolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodepoolScalingPolicyScheduledInstancePolicy)(nil)).Elem()
+}
+
+func (o GetNodepoolScalingPolicyScheduledInstancePolicyOutput) ToGetNodepoolScalingPolicyScheduledInstancePolicyOutput() GetNodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return o
+}
+
+func (o GetNodepoolScalingPolicyScheduledInstancePolicyOutput) ToGetNodepoolScalingPolicyScheduledInstancePolicyOutputWithContext(ctx context.Context) GetNodepoolScalingPolicyScheduledInstancePolicyOutput {
+	return o
+}
+
+// Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+func (o GetNodepoolScalingPolicyScheduledInstancePolicyOutput) AutoReleaseTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledInstancePolicy) string { return v.AutoReleaseTime }).(pulumi.StringOutput)
+}
+
+// If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+func (o GetNodepoolScalingPolicyScheduledInstancePolicyOutput) BestEffort() pulumi.BoolOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledInstancePolicy) bool { return v.BestEffort }).(pulumi.BoolOutput)
+}
+
+// Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+func (o GetNodepoolScalingPolicyScheduledInstancePolicyOutput) DeliveryType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledInstancePolicy) string { return v.DeliveryType }).(pulumi.StringOutput)
+}
+
+// Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+func (o GetNodepoolScalingPolicyScheduledInstancePolicyOutput) ElasticScheduledInstanceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledInstancePolicy) string { return v.ElasticScheduledInstanceType }).(pulumi.StringOutput)
+}
+
+// End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+func (o GetNodepoolScalingPolicyScheduledInstancePolicyOutput) EndDeliveryTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledInstancePolicy) string { return v.EndDeliveryTime }).(pulumi.StringOutput)
+}
+
+// Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+func (o GetNodepoolScalingPolicyScheduledInstancePolicyOutput) StartDeliveryTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledInstancePolicy) string { return v.StartDeliveryTime }).(pulumi.StringOutput)
+}
+
+type GetNodepoolScalingPolicyScheduledPolicy struct {
+	// Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+	LaunchTime string `pulumi:"launchTime"`
+	// End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+	RecurrenceEndTime string `pulumi:"recurrenceEndTime"`
+	// Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+	RecurrenceType string `pulumi:"recurrenceType"`
+	// Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+	RecurrenceValue string `pulumi:"recurrenceValue"`
+}
+
+// GetNodepoolScalingPolicyScheduledPolicyInput is an input type that accepts GetNodepoolScalingPolicyScheduledPolicyArgs and GetNodepoolScalingPolicyScheduledPolicyOutput values.
+// You can construct a concrete instance of `GetNodepoolScalingPolicyScheduledPolicyInput` via:
+//
+//	GetNodepoolScalingPolicyScheduledPolicyArgs{...}
+type GetNodepoolScalingPolicyScheduledPolicyInput interface {
+	pulumi.Input
+
+	ToGetNodepoolScalingPolicyScheduledPolicyOutput() GetNodepoolScalingPolicyScheduledPolicyOutput
+	ToGetNodepoolScalingPolicyScheduledPolicyOutputWithContext(context.Context) GetNodepoolScalingPolicyScheduledPolicyOutput
+}
+
+type GetNodepoolScalingPolicyScheduledPolicyArgs struct {
+	// Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+	LaunchTime pulumi.StringInput `pulumi:"launchTime"`
+	// End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+	RecurrenceEndTime pulumi.StringInput `pulumi:"recurrenceEndTime"`
+	// Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+	RecurrenceType pulumi.StringInput `pulumi:"recurrenceType"`
+	// Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+	RecurrenceValue pulumi.StringInput `pulumi:"recurrenceValue"`
+}
+
+func (GetNodepoolScalingPolicyScheduledPolicyArgs) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodepoolScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (i GetNodepoolScalingPolicyScheduledPolicyArgs) ToGetNodepoolScalingPolicyScheduledPolicyOutput() GetNodepoolScalingPolicyScheduledPolicyOutput {
+	return i.ToGetNodepoolScalingPolicyScheduledPolicyOutputWithContext(context.Background())
+}
+
+func (i GetNodepoolScalingPolicyScheduledPolicyArgs) ToGetNodepoolScalingPolicyScheduledPolicyOutputWithContext(ctx context.Context) GetNodepoolScalingPolicyScheduledPolicyOutput {
+	return pulumi.ToOutputWithContext(ctx, i).(GetNodepoolScalingPolicyScheduledPolicyOutput)
+}
+
+type GetNodepoolScalingPolicyScheduledPolicyOutput struct{ *pulumi.OutputState }
+
+func (GetNodepoolScalingPolicyScheduledPolicyOutput) ElementType() reflect.Type {
+	return reflect.TypeOf((*GetNodepoolScalingPolicyScheduledPolicy)(nil)).Elem()
+}
+
+func (o GetNodepoolScalingPolicyScheduledPolicyOutput) ToGetNodepoolScalingPolicyScheduledPolicyOutput() GetNodepoolScalingPolicyScheduledPolicyOutput {
+	return o
+}
+
+func (o GetNodepoolScalingPolicyScheduledPolicyOutput) ToGetNodepoolScalingPolicyScheduledPolicyOutputWithContext(ctx context.Context) GetNodepoolScalingPolicyScheduledPolicyOutput {
+	return o
+}
+
+// Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+func (o GetNodepoolScalingPolicyScheduledPolicyOutput) LaunchTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledPolicy) string { return v.LaunchTime }).(pulumi.StringOutput)
+}
+
+// End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+func (o GetNodepoolScalingPolicyScheduledPolicyOutput) RecurrenceEndTime() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledPolicy) string { return v.RecurrenceEndTime }).(pulumi.StringOutput)
+}
+
+// Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+func (o GetNodepoolScalingPolicyScheduledPolicyOutput) RecurrenceType() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledPolicy) string { return v.RecurrenceType }).(pulumi.StringOutput)
+}
+
+// Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+func (o GetNodepoolScalingPolicyScheduledPolicyOutput) RecurrenceValue() pulumi.StringOutput {
+	return o.ApplyT(func(v GetNodepoolScalingPolicyScheduledPolicy) string { return v.RecurrenceValue }).(pulumi.StringOutput)
+}
+
 func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*AddonStatusInput)(nil)).Elem(), AddonStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*AddonStatusPtrInput)(nil)).Elem(), AddonStatusArgs{})
@@ -19879,6 +20481,10 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*NodeStatusPtrInput)(nil)).Elem(), NodeStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodeStatusConditionInput)(nil)).Elem(), NodeStatusConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*NodeStatusConditionArrayInput)(nil)).Elem(), NodeStatusConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodepoolScalingPolicyScheduledInstancePolicyInput)(nil)).Elem(), NodepoolScalingPolicyScheduledInstancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodepoolScalingPolicyScheduledInstancePolicyPtrInput)(nil)).Elem(), NodepoolScalingPolicyScheduledInstancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodepoolScalingPolicyScheduledPolicyInput)(nil)).Elem(), NodepoolScalingPolicyScheduledPolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*NodepoolScalingPolicyScheduledPolicyPtrInput)(nil)).Elem(), NodepoolScalingPolicyScheduledPolicyArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonStatusInput)(nil)).Elem(), GetAddonStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonStatusConditionInput)(nil)).Elem(), GetAddonStatusConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetAddonStatusConditionArrayInput)(nil)).Elem(), GetAddonStatusConditionArray{})
@@ -19978,6 +20584,8 @@ func init() {
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeStatusInput)(nil)).Elem(), GetNodeStatusArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeStatusConditionInput)(nil)).Elem(), GetNodeStatusConditionArgs{})
 	pulumi.RegisterInputType(reflect.TypeOf((*GetNodeStatusConditionArrayInput)(nil)).Elem(), GetNodeStatusConditionArray{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodepoolScalingPolicyScheduledInstancePolicyInput)(nil)).Elem(), GetNodepoolScalingPolicyScheduledInstancePolicyArgs{})
+	pulumi.RegisterInputType(reflect.TypeOf((*GetNodepoolScalingPolicyScheduledPolicyInput)(nil)).Elem(), GetNodepoolScalingPolicyScheduledPolicyArgs{})
 	pulumi.RegisterOutputType(AddonStatusOutput{})
 	pulumi.RegisterOutputType(AddonStatusPtrOutput{})
 	pulumi.RegisterOutputType(AddonStatusConditionOutput{})
@@ -20124,6 +20732,10 @@ func init() {
 	pulumi.RegisterOutputType(NodeStatusPtrOutput{})
 	pulumi.RegisterOutputType(NodeStatusConditionOutput{})
 	pulumi.RegisterOutputType(NodeStatusConditionArrayOutput{})
+	pulumi.RegisterOutputType(NodepoolScalingPolicyScheduledInstancePolicyOutput{})
+	pulumi.RegisterOutputType(NodepoolScalingPolicyScheduledInstancePolicyPtrOutput{})
+	pulumi.RegisterOutputType(NodepoolScalingPolicyScheduledPolicyOutput{})
+	pulumi.RegisterOutputType(NodepoolScalingPolicyScheduledPolicyPtrOutput{})
 	pulumi.RegisterOutputType(GetAddonStatusOutput{})
 	pulumi.RegisterOutputType(GetAddonStatusConditionOutput{})
 	pulumi.RegisterOutputType(GetAddonStatusConditionArrayOutput{})
@@ -20223,4 +20835,6 @@ func init() {
 	pulumi.RegisterOutputType(GetNodeStatusOutput{})
 	pulumi.RegisterOutputType(GetNodeStatusConditionOutput{})
 	pulumi.RegisterOutputType(GetNodeStatusConditionArrayOutput{})
+	pulumi.RegisterOutputType(GetNodepoolScalingPolicyScheduledInstancePolicyOutput{})
+	pulumi.RegisterOutputType(GetNodepoolScalingPolicyScheduledPolicyOutput{})
 }

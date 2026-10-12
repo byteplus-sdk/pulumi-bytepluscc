@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolManagementRemedyConfigArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enable self-healing check
+        /// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Self-healing rule ID
+        /// Self-healing rule ID associated after enabling self-healing check for the node pool.
         /// </summary>
         [Input("remedyId")]
         public Input<string>? RemedyId { get; set; }

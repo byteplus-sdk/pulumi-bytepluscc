@@ -5,8 +5,10 @@ package com.byteplus.bytepluscc.rdsmssql.outputs;
 
 import com.byteplus.bytepluscc.rdsmssql.outputs.GetInstanceChargeInfo;
 import com.byteplus.bytepluscc.rdsmssql.outputs.GetInstanceConnectionInfo;
+import com.byteplus.bytepluscc.rdsmssql.outputs.GetInstanceCrossBackupPolicy;
 import com.byteplus.bytepluscc.rdsmssql.outputs.GetInstanceNodeDetailInfo;
 import com.byteplus.bytepluscc.rdsmssql.outputs.GetInstanceTag;
+import com.byteplus.bytepluscc.rdsmssql.outputs.GetInstanceTdeConfig;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
 import java.lang.Boolean;
@@ -29,6 +31,11 @@ public final class GetInstanceResult {
      */
     private List<String> allowListIds;
     /**
+     * @return List of cross-region backup destination regions.
+     * 
+     */
+    private List<String> availableCrossRegions;
+    /**
      * @return Used backup space for the instance, in GiB.
      * 
      */
@@ -48,6 +55,11 @@ public final class GetInstanceResult {
      * 
      */
     private String createdTime;
+    /**
+     * @return Cross-region backup policy.
+     * 
+     */
+    private GetInstanceCrossBackupPolicy crossBackupPolicy;
     /**
      * @return Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
      * 
@@ -179,6 +191,11 @@ public final class GetInstanceResult {
      */
     private List<GetInstanceTag> tags;
     /**
+     * @return Instance TDE configuration.
+     * 
+     */
+    private GetInstanceTdeConfig tdeConfig;
+    /**
      * @return Time zone.
      * 
      */
@@ -220,6 +237,13 @@ public final class GetInstanceResult {
         return this.allowListIds;
     }
     /**
+     * @return List of cross-region backup destination regions.
+     * 
+     */
+    public List<String> availableCrossRegions() {
+        return this.availableCrossRegions;
+    }
+    /**
      * @return Used backup space for the instance, in GiB.
      * 
      */
@@ -246,6 +270,13 @@ public final class GetInstanceResult {
      */
     public String createdTime() {
         return this.createdTime;
+    }
+    /**
+     * @return Cross-region backup policy.
+     * 
+     */
+    public GetInstanceCrossBackupPolicy crossBackupPolicy() {
+        return this.crossBackupPolicy;
     }
     /**
      * @return Compatible version. Values: SQLServer*2019*Std: SQL Server 2019 Standard Edition. SQLServer*2019*Ent: SQL Server 2019 Enterprise Edition. SQLServer*2019*Web: SQL Server 2019 Web Edition. SQLServer*2022*Std: SQL Server 2022 Standard Edition. SQLServer*2022*Ent: SQL Server 2022 Enterprise Edition. SQLServer*2022*Web: SQL Server 2022 Web Edition.
@@ -430,6 +461,13 @@ public final class GetInstanceResult {
         return this.tags;
     }
     /**
+     * @return Instance TDE configuration.
+     * 
+     */
+    public GetInstanceTdeConfig tdeConfig() {
+        return this.tdeConfig;
+    }
+    /**
      * @return Time zone.
      * 
      */
@@ -476,10 +514,12 @@ public final class GetInstanceResult {
     public static final class Builder {
         private String advancedFeatures;
         private List<String> allowListIds;
+        private List<String> availableCrossRegions;
         private Double backupUse;
         private GetInstanceChargeInfo chargeInfo;
         private List<GetInstanceConnectionInfo> connectionInfos;
         private String createdTime;
+        private GetInstanceCrossBackupPolicy crossBackupPolicy;
         private String dbEngineVersion;
         private String id;
         private String innerVersion;
@@ -506,6 +546,7 @@ public final class GetInstanceResult {
         private String subnetId;
         private String superAccountPassword;
         private List<GetInstanceTag> tags;
+        private GetInstanceTdeConfig tdeConfig;
         private String timeZone;
         private String updatedTime;
         private Integer vcpu;
@@ -516,10 +557,12 @@ public final class GetInstanceResult {
     	      Objects.requireNonNull(defaults);
     	      this.advancedFeatures = defaults.advancedFeatures;
     	      this.allowListIds = defaults.allowListIds;
+    	      this.availableCrossRegions = defaults.availableCrossRegions;
     	      this.backupUse = defaults.backupUse;
     	      this.chargeInfo = defaults.chargeInfo;
     	      this.connectionInfos = defaults.connectionInfos;
     	      this.createdTime = defaults.createdTime;
+    	      this.crossBackupPolicy = defaults.crossBackupPolicy;
     	      this.dbEngineVersion = defaults.dbEngineVersion;
     	      this.id = defaults.id;
     	      this.innerVersion = defaults.innerVersion;
@@ -546,6 +589,7 @@ public final class GetInstanceResult {
     	      this.subnetId = defaults.subnetId;
     	      this.superAccountPassword = defaults.superAccountPassword;
     	      this.tags = defaults.tags;
+    	      this.tdeConfig = defaults.tdeConfig;
     	      this.timeZone = defaults.timeZone;
     	      this.updatedTime = defaults.updatedTime;
     	      this.vcpu = defaults.vcpu;
@@ -571,6 +615,17 @@ public final class GetInstanceResult {
         }
         public Builder allowListIds(String... allowListIds) {
             return allowListIds(List.of(allowListIds));
+        }
+        @CustomType.Setter
+        public Builder availableCrossRegions(List<String> availableCrossRegions) {
+            if (availableCrossRegions == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "availableCrossRegions");
+            }
+            this.availableCrossRegions = availableCrossRegions;
+            return this;
+        }
+        public Builder availableCrossRegions(String... availableCrossRegions) {
+            return availableCrossRegions(List.of(availableCrossRegions));
         }
         @CustomType.Setter
         public Builder backupUse(Double backupUse) {
@@ -605,6 +660,14 @@ public final class GetInstanceResult {
               throw new MissingRequiredPropertyException("GetInstanceResult", "createdTime");
             }
             this.createdTime = createdTime;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder crossBackupPolicy(GetInstanceCrossBackupPolicy crossBackupPolicy) {
+            if (crossBackupPolicy == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "crossBackupPolicy");
+            }
+            this.crossBackupPolicy = crossBackupPolicy;
             return this;
         }
         @CustomType.Setter
@@ -822,6 +885,14 @@ public final class GetInstanceResult {
             return tags(List.of(tags));
         }
         @CustomType.Setter
+        public Builder tdeConfig(GetInstanceTdeConfig tdeConfig) {
+            if (tdeConfig == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "tdeConfig");
+            }
+            this.tdeConfig = tdeConfig;
+            return this;
+        }
+        @CustomType.Setter
         public Builder timeZone(String timeZone) {
             if (timeZone == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "timeZone");
@@ -865,10 +936,12 @@ public final class GetInstanceResult {
             final var _resultValue = new GetInstanceResult();
             _resultValue.advancedFeatures = advancedFeatures;
             _resultValue.allowListIds = allowListIds;
+            _resultValue.availableCrossRegions = availableCrossRegions;
             _resultValue.backupUse = backupUse;
             _resultValue.chargeInfo = chargeInfo;
             _resultValue.connectionInfos = connectionInfos;
             _resultValue.createdTime = createdTime;
+            _resultValue.crossBackupPolicy = crossBackupPolicy;
             _resultValue.dbEngineVersion = dbEngineVersion;
             _resultValue.id = id;
             _resultValue.innerVersion = innerVersion;
@@ -895,6 +968,7 @@ public final class GetInstanceResult {
             _resultValue.subnetId = subnetId;
             _resultValue.superAccountPassword = superAccountPassword;
             _resultValue.tags = tags;
+            _resultValue.tdeConfig = tdeConfig;
             _resultValue.timeZone = timeZone;
             _resultValue.updatedTime = updatedTime;
             _resultValue.vcpu = vcpu;

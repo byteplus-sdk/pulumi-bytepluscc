@@ -110,6 +110,16 @@ export const getIpamPools: typeof import("./getIpamPools").getIpamPools = null a
 export const getIpamPoolsOutput: typeof import("./getIpamPools").getIpamPoolsOutput = null as any;
 utilities.lazyLoad(exports, ["getIpamPools","getIpamPoolsOutput"], () => require("./getIpamPools"));
 
+export { GetIpamResourceDiscoveriesResult } from "./getIpamResourceDiscoveries";
+export const getIpamResourceDiscoveries: typeof import("./getIpamResourceDiscoveries").getIpamResourceDiscoveries = null as any;
+export const getIpamResourceDiscoveriesOutput: typeof import("./getIpamResourceDiscoveries").getIpamResourceDiscoveriesOutput = null as any;
+utilities.lazyLoad(exports, ["getIpamResourceDiscoveries","getIpamResourceDiscoveriesOutput"], () => require("./getIpamResourceDiscoveries"));
+
+export { GetIpamResourceDiscoveryArgs, GetIpamResourceDiscoveryResult, GetIpamResourceDiscoveryOutputArgs } from "./getIpamResourceDiscovery";
+export const getIpamResourceDiscovery: typeof import("./getIpamResourceDiscovery").getIpamResourceDiscovery = null as any;
+export const getIpamResourceDiscoveryOutput: typeof import("./getIpamResourceDiscovery").getIpamResourceDiscoveryOutput = null as any;
+utilities.lazyLoad(exports, ["getIpamResourceDiscovery","getIpamResourceDiscoveryOutput"], () => require("./getIpamResourceDiscovery"));
+
 export { GetIpamScopeArgs, GetIpamScopeResult, GetIpamScopeOutputArgs } from "./getIpamScope";
 export const getIpamScope: typeof import("./getIpamScope").getIpamScope = null as any;
 export const getIpamScopeOutput: typeof import("./getIpamScope").getIpamScopeOutput = null as any;
@@ -280,6 +290,11 @@ export type IpamPool = import("./ipamPool").IpamPool;
 export const IpamPool: typeof import("./ipamPool").IpamPool = null as any;
 utilities.lazyLoad(exports, ["IpamPool"], () => require("./ipamPool"));
 
+export { IpamResourceDiscoveryArgs, IpamResourceDiscoveryState } from "./ipamResourceDiscovery";
+export type IpamResourceDiscovery = import("./ipamResourceDiscovery").IpamResourceDiscovery;
+export const IpamResourceDiscovery: typeof import("./ipamResourceDiscovery").IpamResourceDiscovery = null as any;
+utilities.lazyLoad(exports, ["IpamResourceDiscovery"], () => require("./ipamResourceDiscovery"));
+
 export { IpamScopeArgs, IpamScopeState } from "./ipamScope";
 export type IpamScope = import("./ipamScope").IpamScope;
 export const IpamScope: typeof import("./ipamScope").IpamScope = null as any;
@@ -373,6 +388,8 @@ const _module = {
                 return new Ipam(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipamPool:IpamPool":
                 return new IpamPool(name, <any>undefined, { urn })
+            case "bytepluscc:vpc/ipamResourceDiscovery:IpamResourceDiscovery":
+                return new IpamResourceDiscovery(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipamScope:IpamScope":
                 return new IpamScope(name, <any>undefined, { urn })
             case "bytepluscc:vpc/ipv4Gateway:Ipv4Gateway":
@@ -415,6 +432,7 @@ pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipPool", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipPoolCidrBlock", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipam", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipamPool", _module)
+pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipamResourceDiscovery", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipamScope", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv4Gateway", _module)
 pulumi.runtime.registerResourceModule("bytepluscc", "vpc/ipv6AddressBandwidth", _module)

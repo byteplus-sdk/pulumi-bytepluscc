@@ -21,6 +21,8 @@ __all__ = [
     'AllowListSecurityGroupBindInfoArgsDict',
     'InstanceBackupArgs',
     'InstanceBackupArgsDict',
+    'InstanceBackupPlanArgs',
+    'InstanceBackupPlanArgsDict',
     'InstanceBackupRestoreArgs',
     'InstanceBackupRestoreArgsDict',
     'InstanceCapacityArgs',
@@ -386,6 +388,155 @@ class InstanceBackupArgs:
     @status.setter
     def status(self, value: pulumi.Input[Optional[_builtins.str]]):
         pulumi.set(self, "status", value)
+
+
+class InstanceBackupPlanArgsDict(TypedDict):
+    active: NotRequired[pulumi.Input[Optional[_builtins.bool]]]
+    """
+    Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+    """
+    backup_hour: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+    """
+    backup_type: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+    """
+    expect_next_backup_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+    """
+    last_update_time: NotRequired[pulumi.Input[Optional[_builtins.str]]]
+    """
+    Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+    """
+    periods: NotRequired[pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]]
+    """
+    Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+    """
+    ttl: NotRequired[pulumi.Input[Optional[_builtins.int]]]
+    """
+    Backup file retention period, default is 7 days.
+    """
+
+@pulumi.input_type
+class InstanceBackupPlanArgs:
+    def __init__(__self__, *,
+                 active: pulumi.Input[Optional[_builtins.bool]] = None,
+                 backup_hour: pulumi.Input[Optional[_builtins.int]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 expect_next_backup_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 last_update_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 periods: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]] = None,
+                 ttl: pulumi.Input[Optional[_builtins.int]] = None):
+        """
+        :param pulumi.Input[_builtins.bool] active: Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+        :param pulumi.Input[_builtins.int] backup_hour: Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+        :param pulumi.Input[_builtins.str] backup_type: Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+        :param pulumi.Input[_builtins.str] expect_next_backup_time: Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param pulumi.Input[_builtins.str] last_update_time: Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+        :param pulumi.Input[Sequence[pulumi.Input[_builtins.int]]] periods: Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+        :param pulumi.Input[_builtins.int] ttl: Backup file retention period, default is 7 days.
+        """
+        if active is not None:
+            pulumi.set(__self__, "active", active)
+        if backup_hour is not None:
+            pulumi.set(__self__, "backup_hour", backup_hour)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if expect_next_backup_time is not None:
+            pulumi.set(__self__, "expect_next_backup_time", expect_next_backup_time)
+        if last_update_time is not None:
+            pulumi.set(__self__, "last_update_time", last_update_time)
+        if periods is not None:
+            pulumi.set(__self__, "periods", periods)
+        if ttl is not None:
+            pulumi.set(__self__, "ttl", ttl)
+
+    @_builtins.property
+    @pulumi.getter
+    def active(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Whether to enable automatic backup. The value range is as follows: false (default): Disabled. true: Enabled.
+        """
+        return pulumi.get(self, "active")
+
+    @active.setter
+    def active(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "active", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupHour")
+    def backup_hour(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Backup window (UTC+8). The value can be any integer from 0 to 23. 0 means the system performs the backup between 00:00 and 00:59, 1 means between 01:00 and 01:59, and so on.
+        """
+        return pulumi.get(self, "backup_hour")
+
+    @backup_hour.setter
+    def backup_hour(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "backup_hour", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Restore method. The value range is as follows: Full: Full restore, that is, restore by backup set. Inc: Incremental restore, that is, restore by point in time.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @backup_type.setter
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_type", value)
+
+    @_builtins.property
+    @pulumi.getter(name="expectNextBackupTime")
+    def expect_next_backup_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Expected time for the next backup execution, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "expect_next_backup_time")
+
+    @expect_next_backup_time.setter
+    def expect_next_backup_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "expect_next_backup_time", value)
+
+    @_builtins.property
+    @pulumi.getter(name="lastUpdateTime")
+    def last_update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Last time the backup policy was modified, in the format yyyy-MM-ddTHH:mm:ssZ (UTC).
+        """
+        return pulumi.get(self, "last_update_time")
+
+    @last_update_time.setter
+    def last_update_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "last_update_time", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def periods(self) -> pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]:
+        """
+        Backup cycle. The value can be any integer from 1 to 7. 1 means backup is performed every Monday, 2 means every Tuesday, and so on. This parameter is required when automatic backup is enabled (that is, when Active is set to true).
+        """
+        return pulumi.get(self, "periods")
+
+    @periods.setter
+    def periods(self, value: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.int]]]]):
+        pulumi.set(self, "periods", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def ttl(self) -> pulumi.Input[Optional[_builtins.int]]:
+        """
+        Backup file retention period, default is 7 days.
+        """
+        return pulumi.get(self, "ttl")
+
+    @ttl.setter
+    def ttl(self, value: pulumi.Input[Optional[_builtins.int]]):
+        pulumi.set(self, "ttl", value)
 
 
 class InstanceBackupRestoreArgsDict(TypedDict):

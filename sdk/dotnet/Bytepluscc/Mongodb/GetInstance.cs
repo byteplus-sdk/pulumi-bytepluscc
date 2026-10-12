@@ -73,6 +73,18 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// </summary>
         public readonly bool AutoRenew;
         /// <summary>
+        /// Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        /// </summary>
+        public readonly string BackupId;
+        /// <summary>
+        /// Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        /// </summary>
+        public readonly string BackupType;
+        /// <summary>
+        /// Backup file list information for the instance.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceBackupResult> Backups;
+        /// <summary>
         /// Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
         /// </summary>
         public readonly string ChargeStatus;
@@ -205,6 +217,14 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// </summary>
         public readonly string ReclaimTime;
         /// <summary>
+        /// List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+        /// </summary>
+        public readonly ImmutableArray<Outputs.GetInstanceRecoverableTimeResult> RecoverableTimes;
+        /// <summary>
+        /// When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+        /// </summary>
+        public readonly string RestoreTime;
+        /// <summary>
         /// Number of shards in the sharded cluster. Range: 2–32.
         /// </summary>
         public readonly int ShardNumber;
@@ -212,6 +232,10 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         /// Shard information list
         /// </summary>
         public readonly ImmutableArray<Outputs.GetInstanceShardResult> Shards;
+        /// <summary>
+        /// Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+        /// </summary>
+        public readonly string SrcDbInstanceId;
         /// <summary>
         /// Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         /// </summary>
@@ -254,6 +278,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
             ImmutableArray<string> allowListIds,
 
             bool autoRenew,
+
+            string backupId,
+
+            string backupType,
+
+            ImmutableArray<Outputs.GetInstanceBackupResult> backups,
 
             string chargeStatus,
 
@@ -321,9 +351,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
 
             string reclaimTime,
 
+            ImmutableArray<Outputs.GetInstanceRecoverableTimeResult> recoverableTimes,
+
+            string restoreTime,
+
             int shardNumber,
 
             ImmutableArray<Outputs.GetInstanceShardResult> shards,
+
+            string srcDbInstanceId,
 
             int storageSpaceGb,
 
@@ -345,6 +381,9 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
         {
             AllowListIds = allowListIds;
             AutoRenew = autoRenew;
+            BackupId = backupId;
+            BackupType = backupType;
+            Backups = backups;
             ChargeStatus = chargeStatus;
             ChargeType = chargeType;
             ClosedTime = closedTime;
@@ -378,8 +417,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Mongodb
             ProjectName = projectName;
             ReadOnlyNodeNumber = readOnlyNodeNumber;
             ReclaimTime = reclaimTime;
+            RecoverableTimes = recoverableTimes;
+            RestoreTime = restoreTime;
             ShardNumber = shardNumber;
             Shards = shards;
+            SrcDbInstanceId = srcDbInstanceId;
             StorageSpaceGb = storageSpaceGb;
             StorageType = storageType;
             SubnetId = subnetId;

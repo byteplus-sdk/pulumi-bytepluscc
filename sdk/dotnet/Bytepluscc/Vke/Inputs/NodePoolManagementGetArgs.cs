@@ -14,13 +14,13 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Inputs
     public sealed class NodePoolManagementGetArgs : global::Pulumi.ResourceArgs
     {
         /// <summary>
-        /// Enable managed mode for node pool. Options:   - true: on   - false: off
+        /// Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
         /// </summary>
         [Input("enabled")]
         public Input<bool>? Enabled { get; set; }
 
         /// <summary>
-        /// Check self-healing configuration.
+        /// Node pool health check and self-healing rule configuration.
         /// </summary>
         [Input("remedyConfig")]
         public Input<Inputs.NodePoolManagementRemedyConfigGetArgs>? RemedyConfig { get; set; }

@@ -174,7 +174,7 @@ export class NodePool extends pulumi.CustomResource {
      */
     declare public readonly autoScaling: pulumi.Output<outputs.vke.NodePoolAutoScaling>;
     /**
-     * ID of the cluster where the node pool is located
+     * ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
      */
     declare public readonly clusterId: pulumi.Output<string>;
     /**
@@ -190,7 +190,7 @@ export class NodePool extends pulumi.CustomResource {
      */
     declare public readonly management: pulumi.Output<outputs.vke.NodePoolManagement>;
     /**
-     * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+     * Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
      */
     declare public readonly name: pulumi.Output<string>;
     /**
@@ -214,7 +214,7 @@ export class NodePool extends pulumi.CustomResource {
      */
     declare public /*out*/ readonly status: pulumi.Output<outputs.vke.NodePoolStatus>;
     /**
-     * Node pool tag information
+     * Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     declare public readonly tags: pulumi.Output<outputs.vke.NodePoolTag[]>;
@@ -282,7 +282,7 @@ export interface NodePoolState {
      */
     autoScaling?: pulumi.Input<inputs.vke.NodePoolAutoScaling | undefined>;
     /**
-     * ID of the cluster where the node pool is located
+     * ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
      */
     clusterId?: pulumi.Input<string | undefined>;
     /**
@@ -298,7 +298,7 @@ export interface NodePoolState {
      */
     management?: pulumi.Input<inputs.vke.NodePoolManagement | undefined>;
     /**
-     * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+     * Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
      */
     name?: pulumi.Input<string | undefined>;
     /**
@@ -322,7 +322,7 @@ export interface NodePoolState {
      */
     status?: pulumi.Input<inputs.vke.NodePoolStatus | undefined>;
     /**
-     * Node pool tag information
+     * Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolTag>[] | undefined>;
@@ -341,7 +341,7 @@ export interface NodePoolArgs {
      */
     autoScaling?: pulumi.Input<inputs.vke.NodePoolAutoScaling | undefined>;
     /**
-     * ID of the cluster where the node pool is located
+     * ID of the cluster where the node pool resides. You can call the ListClusters API to obtain the cluster ID. Note: The cluster must be in {Running,[Ok]} or {Updating,[Progressing]} status.
      */
     clusterId: pulumi.Input<string>;
     /**
@@ -353,7 +353,7 @@ export interface NodePoolArgs {
      */
     management?: pulumi.Input<inputs.vke.NodePoolManagement | undefined>;
     /**
-     * Node pool name. The node pool name must be unique within the same cluster. Supports uppercase and lowercase English letters, Chinese characters, numbers, and hyphens (-). Length limit: 2–64 characters.
+     * Node pool name. Within the same cluster, node pool names must be unique. Supports English letters (upper and lower case), Chinese characters, numbers, and hyphens (-). Length must be between 2 and 64 characters. Note: The reserved default node pool name vke-default-nodepool cannot be used.
      */
     name?: pulumi.Input<string | undefined>;
     /**
@@ -365,7 +365,7 @@ export interface NodePoolArgs {
      */
     retainResources?: pulumi.Input<pulumi.Input<string>[] | undefined>;
     /**
-     * Node pool tag information
+     * Custom resource tags for classifying, searching, and aggregating node pools with similar characteristics from different dimensions, enabling flexible node pool management. Note: Each Key in Tags must be unique; if a resource already has the same Tags.Key, rebinding will not cause an error and will update to the latest Tags.Value; a single resource supports up to 50 Tags; do not enter spaces at the beginning or end of Keys or Values in Tags.
      * Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
      */
     tags?: pulumi.Input<pulumi.Input<inputs.vke.NodePoolTag>[] | undefined>;

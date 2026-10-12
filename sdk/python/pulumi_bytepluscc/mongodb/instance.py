@@ -28,6 +28,8 @@ class InstanceArgs:
                  zone_id: pulumi.Input[_builtins.str],
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  auto_renew: pulumi.Input[Optional[_builtins.bool]] = None,
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
                  charge_type: pulumi.Input[Optional[_builtins.str]] = None,
                  config_server_node_spec: pulumi.Input[Optional[_builtins.str]] = None,
                  config_server_storage_space_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -44,7 +46,9 @@ class InstanceArgs:
                  period: pulumi.Input[Optional[_builtins.int]] = None,
                  period_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_time: pulumi.Input[Optional[_builtins.str]] = None,
                  shard_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 src_db_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  super_account_name: pulumi.Input[Optional[_builtins.str]] = None,
                  super_account_password: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
@@ -58,6 +62,8 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.str] zone_id: The ID of the availability zone where the instance is located. If you want to deploy a new instance across multiple availability zones, you can provide three availability zone IDs, separated by English commas (,).
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
         :param pulumi.Input[_builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
+        :param pulumi.Input[_builtins.str] backup_id: Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        :param pulumi.Input[_builtins.str] backup_type: Backup type. Valid values: Physical: physical backup. Logical: logical backup.
         :param pulumi.Input[_builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         :param pulumi.Input[_builtins.str] config_server_node_spec: ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
         :param pulumi.Input[_builtins.int] config_server_storage_space_gb: ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
@@ -76,7 +82,9 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.int] period: Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
         :param pulumi.Input[_builtins.str] period_unit: Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
         :param pulumi.Input[_builtins.str] project_name: Select the project for the instance. If left blank, the new instance will be added to the default project.
+        :param pulumi.Input[_builtins.str] restore_time: When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
         :param pulumi.Input[_builtins.int] shard_number: Number of shards in the sharded cluster. Range: 2–32.
+        :param pulumi.Input[_builtins.str] src_db_instance_id: Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
         :param pulumi.Input[_builtins.str] super_account_name: Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
         :param pulumi.Input[_builtins.str] super_account_password: Password for the root account. The password must meet the following requirements: Only uppercase and lowercase letters, digits, and the following special characters _#!@$%^&*()+=-. Length: 8–32 characters. Must contain at least three of the following character types: uppercase letters, lowercase letters, digits, or special characters. Weak passwords that are easily cracked (such as Admin@123) are not allowed.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]] tags: MongoDB instance tag information
@@ -91,6 +99,10 @@ class InstanceArgs:
             pulumi.set(__self__, "allow_list_ids", allow_list_ids)
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
         if charge_type is not None:
             pulumi.set(__self__, "charge_type", charge_type)
         if config_server_node_spec is not None:
@@ -123,8 +135,12 @@ class InstanceArgs:
             pulumi.set(__self__, "period_unit", period_unit)
         if project_name is not None:
             pulumi.set(__self__, "project_name", project_name)
+        if restore_time is not None:
+            pulumi.set(__self__, "restore_time", restore_time)
         if shard_number is not None:
             pulumi.set(__self__, "shard_number", shard_number)
+        if src_db_instance_id is not None:
+            pulumi.set(__self__, "src_db_instance_id", src_db_instance_id)
         if super_account_name is not None:
             pulumi.set(__self__, "super_account_name", super_account_name)
         if super_account_password is not None:
@@ -215,6 +231,30 @@ class InstanceArgs:
     @auto_renew.setter
     def auto_renew(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_renew", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @backup_id.setter
+    def backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @backup_type.setter
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_type", value)
 
     @_builtins.property
     @pulumi.getter(name="chargeType")
@@ -411,6 +451,18 @@ class InstanceArgs:
         pulumi.set(self, "project_name", value)
 
     @_builtins.property
+    @pulumi.getter(name="restoreTime")
+    def restore_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+        """
+        return pulumi.get(self, "restore_time")
+
+    @restore_time.setter
+    def restore_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "restore_time", value)
+
+    @_builtins.property
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -421,6 +473,18 @@ class InstanceArgs:
     @shard_number.setter
     def shard_number(self, value: pulumi.Input[Optional[_builtins.int]]):
         pulumi.set(self, "shard_number", value)
+
+    @_builtins.property
+    @pulumi.getter(name="srcDbInstanceId")
+    def src_db_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+        """
+        return pulumi.get(self, "src_db_instance_id")
+
+    @src_db_instance_id.setter
+    def src_db_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "src_db_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="superAccountName")
@@ -465,6 +529,9 @@ class _InstanceState:
     def __init__(__self__, *,
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  auto_renew: pulumi.Input[Optional[_builtins.bool]] = None,
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+                 backups: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceBackupArgs']]]] = None,
                  charge_status: pulumi.Input[Optional[_builtins.str]] = None,
                  charge_type: pulumi.Input[Optional[_builtins.str]] = None,
                  closed_time: pulumi.Input[Optional[_builtins.str]] = None,
@@ -497,8 +564,11 @@ class _InstanceState:
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
                  read_only_node_number: pulumi.Input[Optional[_builtins.int]] = None,
                  reclaim_time: pulumi.Input[Optional[_builtins.str]] = None,
+                 recoverable_times: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceRecoverableTimeArgs']]]] = None,
+                 restore_time: pulumi.Input[Optional[_builtins.str]] = None,
                  shard_number: pulumi.Input[Optional[_builtins.int]] = None,
                  shards: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceShardArgs']]]] = None,
+                 src_db_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_space_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -513,6 +583,10 @@ class _InstanceState:
 
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
         :param pulumi.Input[_builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
+        :param pulumi.Input[_builtins.str] backup_id: Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        :param pulumi.Input[_builtins.str] backup_type: Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceBackupArgs']]] backups: Backup file list information for the instance.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] charge_status: Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
         :param pulumi.Input[_builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         :param pulumi.Input[_builtins.str] closed_time: Scheduled shutdown time (UTC).
@@ -550,9 +624,13 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] project_name: Select the project for the instance. If left blank, the new instance will be added to the default project.
         :param pulumi.Input[_builtins.int] read_only_node_number: Number of read-only nodes in the instance
         :param pulumi.Input[_builtins.str] reclaim_time: Scheduled recycle time for the instance (UTC)
+        :param pulumi.Input[Sequence[pulumi.Input['InstanceRecoverableTimeArgs']]] recoverable_times: List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] restore_time: When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
         :param pulumi.Input[_builtins.int] shard_number: Number of shards in the sharded cluster. Range: 2–32.
         :param pulumi.Input[Sequence[pulumi.Input['InstanceShardArgs']]] shards: Shard information list
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] src_db_instance_id: Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
         :param pulumi.Input[_builtins.int] storage_space_gb: Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         :param pulumi.Input[_builtins.str] storage_type: Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
         :param pulumi.Input[_builtins.str] subnet_id: Subnet ID.
@@ -568,6 +646,12 @@ class _InstanceState:
             pulumi.set(__self__, "allow_list_ids", allow_list_ids)
         if auto_renew is not None:
             pulumi.set(__self__, "auto_renew", auto_renew)
+        if backup_id is not None:
+            pulumi.set(__self__, "backup_id", backup_id)
+        if backup_type is not None:
+            pulumi.set(__self__, "backup_type", backup_type)
+        if backups is not None:
+            pulumi.set(__self__, "backups", backups)
         if charge_status is not None:
             pulumi.set(__self__, "charge_status", charge_status)
         if charge_type is not None:
@@ -632,10 +716,16 @@ class _InstanceState:
             pulumi.set(__self__, "read_only_node_number", read_only_node_number)
         if reclaim_time is not None:
             pulumi.set(__self__, "reclaim_time", reclaim_time)
+        if recoverable_times is not None:
+            pulumi.set(__self__, "recoverable_times", recoverable_times)
+        if restore_time is not None:
+            pulumi.set(__self__, "restore_time", restore_time)
         if shard_number is not None:
             pulumi.set(__self__, "shard_number", shard_number)
         if shards is not None:
             pulumi.set(__self__, "shards", shards)
+        if src_db_instance_id is not None:
+            pulumi.set(__self__, "src_db_instance_id", src_db_instance_id)
         if storage_space_gb is not None:
             pulumi.set(__self__, "storage_space_gb", storage_space_gb)
         if storage_type is not None:
@@ -678,6 +768,43 @@ class _InstanceState:
     @auto_renew.setter
     def auto_renew(self, value: pulumi.Input[Optional[_builtins.bool]]):
         pulumi.set(self, "auto_renew", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @backup_id.setter
+    def backup_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_id", value)
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @backup_type.setter
+    def backup_type(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "backup_type", value)
+
+    @_builtins.property
+    @pulumi.getter
+    def backups(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceBackupArgs']]]]:
+        """
+        Backup file list information for the instance.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "backups")
+
+    @backups.setter
+    def backups(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceBackupArgs']]]]):
+        pulumi.set(self, "backups", value)
 
     @_builtins.property
     @pulumi.getter(name="chargeStatus")
@@ -1069,6 +1196,31 @@ class _InstanceState:
         pulumi.set(self, "reclaim_time", value)
 
     @_builtins.property
+    @pulumi.getter(name="recoverableTimes")
+    def recoverable_times(self) -> pulumi.Input[Optional[Sequence[pulumi.Input['InstanceRecoverableTimeArgs']]]]:
+        """
+        List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "recoverable_times")
+
+    @recoverable_times.setter
+    def recoverable_times(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceRecoverableTimeArgs']]]]):
+        pulumi.set(self, "recoverable_times", value)
+
+    @_builtins.property
+    @pulumi.getter(name="restoreTime")
+    def restore_time(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+        """
+        return pulumi.get(self, "restore_time")
+
+    @restore_time.setter
+    def restore_time(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "restore_time", value)
+
+    @_builtins.property
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> pulumi.Input[Optional[_builtins.int]]:
         """
@@ -1092,6 +1244,18 @@ class _InstanceState:
     @shards.setter
     def shards(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceShardArgs']]]]):
         pulumi.set(self, "shards", value)
+
+    @_builtins.property
+    @pulumi.getter(name="srcDbInstanceId")
+    def src_db_instance_id(self) -> pulumi.Input[Optional[_builtins.str]]:
+        """
+        Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+        """
+        return pulumi.get(self, "src_db_instance_id")
+
+    @src_db_instance_id.setter
+    def src_db_instance_id(self, value: pulumi.Input[Optional[_builtins.str]]):
+        pulumi.set(self, "src_db_instance_id", value)
 
     @_builtins.property
     @pulumi.getter(name="storageSpaceGb")
@@ -1211,6 +1375,8 @@ class Instance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  auto_renew: pulumi.Input[Optional[_builtins.bool]] = None,
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
                  charge_type: pulumi.Input[Optional[_builtins.str]] = None,
                  config_server_node_spec: pulumi.Input[Optional[_builtins.str]] = None,
                  config_server_storage_space_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1228,7 +1394,9 @@ class Instance(pulumi.CustomResource):
                  period: pulumi.Input[Optional[_builtins.int]] = None,
                  period_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_time: pulumi.Input[Optional[_builtins.str]] = None,
                  shard_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 src_db_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_space_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  super_account_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1288,6 +1456,8 @@ class Instance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
         :param pulumi.Input[_builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
+        :param pulumi.Input[_builtins.str] backup_id: Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        :param pulumi.Input[_builtins.str] backup_type: Backup type. Valid values: Physical: physical backup. Logical: logical backup.
         :param pulumi.Input[_builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         :param pulumi.Input[_builtins.str] config_server_node_spec: ConfigServer node specification code in the sharded cluster. Default: mongo.config.1c2g.
         :param pulumi.Input[_builtins.int] config_server_storage_space_gb: ConfigServer storage space in the sharded cluster, unit: GiB. Step size: 10. Default: 20.
@@ -1307,7 +1477,9 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.int] period: Subscription instance purchase duration. When PeriodUnit is Year, Period can be 1–3. When PeriodUnit is Month, Period can be 1–9.
         :param pulumi.Input[_builtins.str] period_unit: Specify whether the subscription instance is yearly or monthly. Options: Year: yearly. Month: monthly.
         :param pulumi.Input[_builtins.str] project_name: Select the project for the instance. If left blank, the new instance will be added to the default project.
+        :param pulumi.Input[_builtins.str] restore_time: When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
         :param pulumi.Input[_builtins.int] shard_number: Number of shards in the sharded cluster. Range: 2–32.
+        :param pulumi.Input[_builtins.str] src_db_instance_id: Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
         :param pulumi.Input[_builtins.int] storage_space_gb: Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         :param pulumi.Input[_builtins.str] subnet_id: Subnet ID.
         :param pulumi.Input[_builtins.str] super_account_name: Database account name. Currently, only the super administrator account can be set when creating an instance. The account name is fixed as root.
@@ -1387,6 +1559,8 @@ class Instance(pulumi.CustomResource):
                  opts: Optional[pulumi.ResourceOptions] = None,
                  allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
                  auto_renew: pulumi.Input[Optional[_builtins.bool]] = None,
+                 backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+                 backup_type: pulumi.Input[Optional[_builtins.str]] = None,
                  charge_type: pulumi.Input[Optional[_builtins.str]] = None,
                  config_server_node_spec: pulumi.Input[Optional[_builtins.str]] = None,
                  config_server_storage_space_gb: pulumi.Input[Optional[_builtins.int]] = None,
@@ -1404,7 +1578,9 @@ class Instance(pulumi.CustomResource):
                  period: pulumi.Input[Optional[_builtins.int]] = None,
                  period_unit: pulumi.Input[Optional[_builtins.str]] = None,
                  project_name: pulumi.Input[Optional[_builtins.str]] = None,
+                 restore_time: pulumi.Input[Optional[_builtins.str]] = None,
                  shard_number: pulumi.Input[Optional[_builtins.int]] = None,
+                 src_db_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
                  storage_space_gb: pulumi.Input[Optional[_builtins.int]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  super_account_name: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1423,6 +1599,8 @@ class Instance(pulumi.CustomResource):
 
             __props__.__dict__["allow_list_ids"] = allow_list_ids
             __props__.__dict__["auto_renew"] = auto_renew
+            __props__.__dict__["backup_id"] = backup_id
+            __props__.__dict__["backup_type"] = backup_type
             __props__.__dict__["charge_type"] = charge_type
             __props__.__dict__["config_server_node_spec"] = config_server_node_spec
             __props__.__dict__["config_server_storage_space_gb"] = config_server_storage_space_gb
@@ -1442,7 +1620,9 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["period"] = period
             __props__.__dict__["period_unit"] = period_unit
             __props__.__dict__["project_name"] = project_name
+            __props__.__dict__["restore_time"] = restore_time
             __props__.__dict__["shard_number"] = shard_number
+            __props__.__dict__["src_db_instance_id"] = src_db_instance_id
             if storage_space_gb is None and not opts.urn:
                 raise TypeError("Missing required property 'storage_space_gb'")
             __props__.__dict__["storage_space_gb"] = storage_space_gb
@@ -1458,6 +1638,7 @@ class Instance(pulumi.CustomResource):
             if zone_id is None and not opts.urn:
                 raise TypeError("Missing required property 'zone_id'")
             __props__.__dict__["zone_id"] = zone_id
+            __props__.__dict__["backups"] = None
             __props__.__dict__["charge_status"] = None
             __props__.__dict__["closed_time"] = None
             __props__.__dict__["config_servers"] = None
@@ -1473,6 +1654,7 @@ class Instance(pulumi.CustomResource):
             __props__.__dict__["private_endpoint"] = None
             __props__.__dict__["read_only_node_number"] = None
             __props__.__dict__["reclaim_time"] = None
+            __props__.__dict__["recoverable_times"] = None
             __props__.__dict__["shards"] = None
             __props__.__dict__["storage_type"] = None
             __props__.__dict__["updated_time"] = None
@@ -1488,6 +1670,9 @@ class Instance(pulumi.CustomResource):
             opts: Optional[pulumi.ResourceOptions] = None,
             allow_list_ids: pulumi.Input[Optional[Sequence[pulumi.Input[_builtins.str]]]] = None,
             auto_renew: pulumi.Input[Optional[_builtins.bool]] = None,
+            backup_id: pulumi.Input[Optional[_builtins.str]] = None,
+            backup_type: pulumi.Input[Optional[_builtins.str]] = None,
+            backups: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceBackupArgs', 'InstanceBackupArgsDict']]]]] = None,
             charge_status: pulumi.Input[Optional[_builtins.str]] = None,
             charge_type: pulumi.Input[Optional[_builtins.str]] = None,
             closed_time: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1520,8 +1705,11 @@ class Instance(pulumi.CustomResource):
             project_name: pulumi.Input[Optional[_builtins.str]] = None,
             read_only_node_number: pulumi.Input[Optional[_builtins.int]] = None,
             reclaim_time: pulumi.Input[Optional[_builtins.str]] = None,
+            recoverable_times: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceRecoverableTimeArgs', 'InstanceRecoverableTimeArgsDict']]]]] = None,
+            restore_time: pulumi.Input[Optional[_builtins.str]] = None,
             shard_number: pulumi.Input[Optional[_builtins.int]] = None,
             shards: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceShardArgs', 'InstanceShardArgsDict']]]]] = None,
+            src_db_instance_id: pulumi.Input[Optional[_builtins.str]] = None,
             storage_space_gb: pulumi.Input[Optional[_builtins.int]] = None,
             storage_type: pulumi.Input[Optional[_builtins.str]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1540,6 +1728,10 @@ class Instance(pulumi.CustomResource):
         :param pulumi.ResourceOptions opts: Options for the resource.
         :param pulumi.Input[Sequence[pulumi.Input[_builtins.str]]] allow_list_ids: Allowlist ID list. New instances are bound to the specified allowlist.
         :param pulumi.Input[_builtins.bool] auto_renew: Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
+        :param pulumi.Input[_builtins.str] backup_id: Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        :param pulumi.Input[_builtins.str] backup_type: Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceBackupArgs', 'InstanceBackupArgsDict']]]] backups: Backup file list information for the instance.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param pulumi.Input[_builtins.str] charge_status: Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
         :param pulumi.Input[_builtins.str] charge_type: Instance billing type. Options: PostPaid (default): pay-as-you-go (also called postpaid). Prepaid: subscription (also called prepaid).
         :param pulumi.Input[_builtins.str] closed_time: Scheduled shutdown time (UTC).
@@ -1577,9 +1769,13 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] project_name: Select the project for the instance. If left blank, the new instance will be added to the default project.
         :param pulumi.Input[_builtins.int] read_only_node_number: Number of read-only nodes in the instance
         :param pulumi.Input[_builtins.str] reclaim_time: Scheduled recycle time for the instance (UTC)
+        :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceRecoverableTimeArgs', 'InstanceRecoverableTimeArgsDict']]]] recoverable_times: List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+               Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] restore_time: When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
         :param pulumi.Input[_builtins.int] shard_number: Number of shards in the sharded cluster. Range: 2–32.
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceShardArgs', 'InstanceShardArgsDict']]]] shards: Shard information list
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.str] src_db_instance_id: Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
         :param pulumi.Input[_builtins.int] storage_space_gb: Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
         :param pulumi.Input[_builtins.str] storage_type: Instance storage type. Currently, only local SSD disks (LocalSSD) are supported.
         :param pulumi.Input[_builtins.str] subnet_id: Subnet ID.
@@ -1597,6 +1793,9 @@ class Instance(pulumi.CustomResource):
 
         __props__.__dict__["allow_list_ids"] = allow_list_ids
         __props__.__dict__["auto_renew"] = auto_renew
+        __props__.__dict__["backup_id"] = backup_id
+        __props__.__dict__["backup_type"] = backup_type
+        __props__.__dict__["backups"] = backups
         __props__.__dict__["charge_status"] = charge_status
         __props__.__dict__["charge_type"] = charge_type
         __props__.__dict__["closed_time"] = closed_time
@@ -1629,8 +1828,11 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["project_name"] = project_name
         __props__.__dict__["read_only_node_number"] = read_only_node_number
         __props__.__dict__["reclaim_time"] = reclaim_time
+        __props__.__dict__["recoverable_times"] = recoverable_times
+        __props__.__dict__["restore_time"] = restore_time
         __props__.__dict__["shard_number"] = shard_number
         __props__.__dict__["shards"] = shards
+        __props__.__dict__["src_db_instance_id"] = src_db_instance_id
         __props__.__dict__["storage_space_gb"] = storage_space_gb
         __props__.__dict__["storage_type"] = storage_type
         __props__.__dict__["subnet_id"] = subnet_id
@@ -1657,6 +1859,31 @@ class Instance(pulumi.CustomResource):
         Enable auto-renewal. Options: false (default): auto-renewal disabled. true: auto-renewal enabled.
         """
         return pulumi.get(self, "auto_renew")
+
+    @_builtins.property
+    @pulumi.getter(name="backupId")
+    def backup_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+        """
+        return pulumi.get(self, "backup_id")
+
+    @_builtins.property
+    @pulumi.getter(name="backupType")
+    def backup_type(self) -> pulumi.Output[_builtins.str]:
+        """
+        Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+        """
+        return pulumi.get(self, "backup_type")
+
+    @_builtins.property
+    @pulumi.getter
+    def backups(self) -> pulumi.Output[Sequence['outputs.InstanceBackup']]:
+        """
+        Backup file list information for the instance.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "backups")
 
     @_builtins.property
     @pulumi.getter(name="chargeStatus")
@@ -1920,6 +2147,23 @@ class Instance(pulumi.CustomResource):
         return pulumi.get(self, "reclaim_time")
 
     @_builtins.property
+    @pulumi.getter(name="recoverableTimes")
+    def recoverable_times(self) -> pulumi.Output[Sequence['outputs.InstanceRecoverableTime']]:
+        """
+        List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+        Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        """
+        return pulumi.get(self, "recoverable_times")
+
+    @_builtins.property
+    @pulumi.getter(name="restoreTime")
+    def restore_time(self) -> pulumi.Output[_builtins.str]:
+        """
+        When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+        """
+        return pulumi.get(self, "restore_time")
+
+    @_builtins.property
     @pulumi.getter(name="shardNumber")
     def shard_number(self) -> pulumi.Output[_builtins.int]:
         """
@@ -1935,6 +2179,14 @@ class Instance(pulumi.CustomResource):
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "shards")
+
+    @_builtins.property
+    @pulumi.getter(name="srcDbInstanceId")
+    def src_db_instance_id(self) -> pulumi.Output[_builtins.str]:
+        """
+        Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+        """
+        return pulumi.get(self, "src_db_instance_id")
 
     @_builtins.property
     @pulumi.getter(name="storageSpaceGb")

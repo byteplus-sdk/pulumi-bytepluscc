@@ -94,6 +94,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Output<bool> AutoRenew { get; private set; } = null!;
 
         /// <summary>
+        /// Automatic backup policy for the instance.
+        /// </summary>
+        [Output("backupPlan")]
+        public Output<Outputs.InstanceBackupPlan> BackupPlan { get; private set; } = null!;
+
+        /// <summary>
         /// Set a backup name for the full backup created before changes.
         /// </summary>
         [Output("backupPointName")]
@@ -440,6 +446,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         public Input<bool>? AutoRenew { get; set; }
 
         /// <summary>
+        /// Automatic backup policy for the instance.
+        /// </summary>
+        [Input("backupPlan")]
+        public Input<Inputs.InstanceBackupPlanArgs>? BackupPlan { get; set; }
+
+        /// <summary>
         /// Set a backup name for the full backup created before changes.
         /// </summary>
         [Input("backupPointName")]
@@ -628,6 +640,12 @@ namespace Byteplus.Pulumi.Bytepluscc.Redis
         /// </summary>
         [Input("autoRenew")]
         public Input<bool>? AutoRenew { get; set; }
+
+        /// <summary>
+        /// Automatic backup policy for the instance.
+        /// </summary>
+        [Input("backupPlan")]
+        public Input<Inputs.InstanceBackupPlanGetArgs>? BackupPlan { get; set; }
 
         /// <summary>
         /// Set a backup name for the full backup created before changes.

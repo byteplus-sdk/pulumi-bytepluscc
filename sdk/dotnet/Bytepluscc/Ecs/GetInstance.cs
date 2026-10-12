@@ -101,6 +101,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
         public readonly Outputs.GetInstanceRenewInfoResult RenewInfo;
         public readonly ImmutableArray<string> RoleNames;
         public readonly ImmutableArray<Outputs.GetInstanceSecondaryNetworkInterfaceResult> SecondaryNetworkInterfaces;
+        public readonly ImmutableArray<string> ShowRoleNames;
         public readonly double SpotPriceLimit;
         public readonly string SpotStrategy;
         public readonly string Status;
@@ -200,6 +201,8 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
 
             ImmutableArray<Outputs.GetInstanceSecondaryNetworkInterfaceResult> secondaryNetworkInterfaces,
 
+            ImmutableArray<string> showRoleNames,
+
             double spotPriceLimit,
 
             string spotStrategy,
@@ -263,6 +266,7 @@ namespace Byteplus.Pulumi.Bytepluscc.Ecs
             RenewInfo = renewInfo;
             RoleNames = roleNames;
             SecondaryNetworkInterfaces = secondaryNetworkInterfaces;
+            ShowRoleNames = showRoleNames;
             SpotPriceLimit = spotPriceLimit;
             SpotStrategy = spotStrategy;
             Status = status;

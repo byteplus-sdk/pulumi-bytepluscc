@@ -15,15 +15,15 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class NodePoolNodeConfigSystemVolume
     {
         /// <summary>
-        /// Placement group ID
+        /// Storage placement group ID of the system disk.
         /// </summary>
         public readonly string? PlacementGroupId;
         /// <summary>
-        /// Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+        /// Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
         /// </summary>
         public readonly int? Size;
         /// <summary>
-        /// Placement subgroup
+        /// Storage sub-placement group number for the system disk.
         /// </summary>
         public readonly int? SubgroupNumber;
         /// <summary>

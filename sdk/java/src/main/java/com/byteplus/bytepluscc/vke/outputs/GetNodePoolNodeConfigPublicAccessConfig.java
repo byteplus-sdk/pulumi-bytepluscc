@@ -17,12 +17,12 @@ public final class GetNodePoolNodeConfigPublicAccessConfig {
      */
     private Integer bandwidth;
     /**
-     * @return Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+     * @return Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     private Integer billingType;
     /**
-     * @return Public IP line type. Parameter description: BGP: BGP (multi-line)
+     * @return Public IP line type. Parameter value description: BGP: BGP (multi-line).
      * 
      */
     private String isp;
@@ -36,14 +36,14 @@ public final class GetNodePoolNodeConfigPublicAccessConfig {
         return this.bandwidth;
     }
     /**
-     * @return Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+     * @return Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
      * 
      */
     public Integer billingType() {
         return this.billingType;
     }
     /**
-     * @return Public IP line type. Parameter description: BGP: BGP (multi-line)
+     * @return Public IP line type. Parameter value description: BGP: BGP (multi-line).
      * 
      */
     public String isp() {

@@ -27,13 +27,16 @@ class GetInstanceResult:
     """
     A collection of values returned by getInstance.
     """
-    def __init__(__self__, advanced_features=None, allow_list_ids=None, backup_use=None, charge_info=None, connection_infos=None, created_time=None, db_engine_version=None, id=None, inner_version=None, instance_category=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, maintenance_time=None, master_node_id=None, memory=None, node_detail_infos=None, node_spec=None, port=None, primary_instance_id=None, project_name=None, read_only_number=None, server_collation=None, slow_query_enable=None, slow_query_time=None, storage_space=None, storage_type=None, storage_use=None, subnet_id=None, super_account_password=None, tags=None, time_zone=None, updated_time=None, vcpu=None, vpc_id=None, zone_id=None):
+    def __init__(__self__, advanced_features=None, allow_list_ids=None, available_cross_regions=None, backup_use=None, charge_info=None, connection_infos=None, created_time=None, cross_backup_policy=None, db_engine_version=None, id=None, inner_version=None, instance_category=None, instance_id=None, instance_name=None, instance_status=None, instance_type=None, maintenance_time=None, master_node_id=None, memory=None, node_detail_infos=None, node_spec=None, port=None, primary_instance_id=None, project_name=None, read_only_number=None, server_collation=None, slow_query_enable=None, slow_query_time=None, storage_space=None, storage_type=None, storage_use=None, subnet_id=None, super_account_password=None, tags=None, tde_config=None, time_zone=None, updated_time=None, vcpu=None, vpc_id=None, zone_id=None):
         if advanced_features and not isinstance(advanced_features, str):
             raise TypeError("Expected argument 'advanced_features' to be a str")
         pulumi.set(__self__, "advanced_features", advanced_features)
         if allow_list_ids and not isinstance(allow_list_ids, list):
             raise TypeError("Expected argument 'allow_list_ids' to be a list")
         pulumi.set(__self__, "allow_list_ids", allow_list_ids)
+        if available_cross_regions and not isinstance(available_cross_regions, list):
+            raise TypeError("Expected argument 'available_cross_regions' to be a list")
+        pulumi.set(__self__, "available_cross_regions", available_cross_regions)
         if backup_use and not isinstance(backup_use, float):
             raise TypeError("Expected argument 'backup_use' to be a float")
         pulumi.set(__self__, "backup_use", backup_use)
@@ -46,6 +49,9 @@ class GetInstanceResult:
         if created_time and not isinstance(created_time, str):
             raise TypeError("Expected argument 'created_time' to be a str")
         pulumi.set(__self__, "created_time", created_time)
+        if cross_backup_policy and not isinstance(cross_backup_policy, dict):
+            raise TypeError("Expected argument 'cross_backup_policy' to be a dict")
+        pulumi.set(__self__, "cross_backup_policy", cross_backup_policy)
         if db_engine_version and not isinstance(db_engine_version, str):
             raise TypeError("Expected argument 'db_engine_version' to be a str")
         pulumi.set(__self__, "db_engine_version", db_engine_version)
@@ -124,6 +130,9 @@ class GetInstanceResult:
         if tags and not isinstance(tags, list):
             raise TypeError("Expected argument 'tags' to be a list")
         pulumi.set(__self__, "tags", tags)
+        if tde_config and not isinstance(tde_config, dict):
+            raise TypeError("Expected argument 'tde_config' to be a dict")
+        pulumi.set(__self__, "tde_config", tde_config)
         if time_zone and not isinstance(time_zone, str):
             raise TypeError("Expected argument 'time_zone' to be a str")
         pulumi.set(__self__, "time_zone", time_zone)
@@ -157,6 +166,14 @@ class GetInstanceResult:
         return pulumi.get(self, "allow_list_ids")
 
     @_builtins.property
+    @pulumi.getter(name="availableCrossRegions")
+    def available_cross_regions(self) -> Sequence[_builtins.str]:
+        """
+        List of cross-region backup destination regions.
+        """
+        return pulumi.get(self, "available_cross_regions")
+
+    @_builtins.property
     @pulumi.getter(name="backupUse")
     def backup_use(self) -> _builtins.float:
         """
@@ -187,6 +204,14 @@ class GetInstanceResult:
         Creation time.
         """
         return pulumi.get(self, "created_time")
+
+    @_builtins.property
+    @pulumi.getter(name="crossBackupPolicy")
+    def cross_backup_policy(self) -> 'outputs.GetInstanceCrossBackupPolicyResult':
+        """
+        Cross-region backup policy.
+        """
+        return pulumi.get(self, "cross_backup_policy")
 
     @_builtins.property
     @pulumi.getter(name="dbEngineVersion")
@@ -397,6 +422,14 @@ class GetInstanceResult:
         return pulumi.get(self, "tags")
 
     @_builtins.property
+    @pulumi.getter(name="tdeConfig")
+    def tde_config(self) -> 'outputs.GetInstanceTdeConfigResult':
+        """
+        Instance TDE configuration.
+        """
+        return pulumi.get(self, "tde_config")
+
+    @_builtins.property
     @pulumi.getter(name="timeZone")
     def time_zone(self) -> _builtins.str:
         """
@@ -445,10 +478,12 @@ class AwaitableGetInstanceResult(GetInstanceResult):
         return GetInstanceResult(
             advanced_features=self.advanced_features,
             allow_list_ids=self.allow_list_ids,
+            available_cross_regions=self.available_cross_regions,
             backup_use=self.backup_use,
             charge_info=self.charge_info,
             connection_infos=self.connection_infos,
             created_time=self.created_time,
+            cross_backup_policy=self.cross_backup_policy,
             db_engine_version=self.db_engine_version,
             id=self.id,
             inner_version=self.inner_version,
@@ -475,6 +510,7 @@ class AwaitableGetInstanceResult(GetInstanceResult):
             subnet_id=self.subnet_id,
             super_account_password=self.super_account_password,
             tags=self.tags,
+            tde_config=self.tde_config,
             time_zone=self.time_zone,
             updated_time=self.updated_time,
             vcpu=self.vcpu,
@@ -498,10 +534,12 @@ def get_instance(id: Optional[_builtins.str] = None,
     return AwaitableGetInstanceResult(
         advanced_features=pulumi.get(__ret__, 'advanced_features'),
         allow_list_ids=pulumi.get(__ret__, 'allow_list_ids'),
+        available_cross_regions=pulumi.get(__ret__, 'available_cross_regions'),
         backup_use=pulumi.get(__ret__, 'backup_use'),
         charge_info=pulumi.get(__ret__, 'charge_info'),
         connection_infos=pulumi.get(__ret__, 'connection_infos'),
         created_time=pulumi.get(__ret__, 'created_time'),
+        cross_backup_policy=pulumi.get(__ret__, 'cross_backup_policy'),
         db_engine_version=pulumi.get(__ret__, 'db_engine_version'),
         id=pulumi.get(__ret__, 'id'),
         inner_version=pulumi.get(__ret__, 'inner_version'),
@@ -528,6 +566,7 @@ def get_instance(id: Optional[_builtins.str] = None,
         subnet_id=pulumi.get(__ret__, 'subnet_id'),
         super_account_password=pulumi.get(__ret__, 'super_account_password'),
         tags=pulumi.get(__ret__, 'tags'),
+        tde_config=pulumi.get(__ret__, 'tde_config'),
         time_zone=pulumi.get(__ret__, 'time_zone'),
         updated_time=pulumi.get(__ret__, 'updated_time'),
         vcpu=pulumi.get(__ret__, 'vcpu'),
@@ -548,10 +587,12 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
     return __ret__.apply(lambda __response__: GetInstanceResult(
         advanced_features=pulumi.get(__response__, 'advanced_features'),
         allow_list_ids=pulumi.get(__response__, 'allow_list_ids'),
+        available_cross_regions=pulumi.get(__response__, 'available_cross_regions'),
         backup_use=pulumi.get(__response__, 'backup_use'),
         charge_info=pulumi.get(__response__, 'charge_info'),
         connection_infos=pulumi.get(__response__, 'connection_infos'),
         created_time=pulumi.get(__response__, 'created_time'),
+        cross_backup_policy=pulumi.get(__response__, 'cross_backup_policy'),
         db_engine_version=pulumi.get(__response__, 'db_engine_version'),
         id=pulumi.get(__response__, 'id'),
         inner_version=pulumi.get(__response__, 'inner_version'),
@@ -578,6 +619,7 @@ def get_instance_output(id: pulumi.Input[Optional[_builtins.str]] = None,
         subnet_id=pulumi.get(__response__, 'subnet_id'),
         super_account_password=pulumi.get(__response__, 'super_account_password'),
         tags=pulumi.get(__response__, 'tags'),
+        tde_config=pulumi.get(__response__, 'tde_config'),
         time_zone=pulumi.get(__response__, 'time_zone'),
         updated_time=pulumi.get(__response__, 'updated_time'),
         vcpu=pulumi.get(__response__, 'vcpu'),

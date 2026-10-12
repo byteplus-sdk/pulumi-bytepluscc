@@ -12,6 +12,7 @@ import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceRestoreToExisted
 import com.byteplus.bytepluscc.rdspostgresql.outputs.GetInstanceTag;
 import com.pulumi.core.annotations.CustomType;
 import com.pulumi.exceptions.MissingRequiredPropertyException;
+import java.lang.Boolean;
 import java.lang.Double;
 import java.lang.String;
 import java.util.List;
@@ -159,6 +160,11 @@ public final class GetInstanceResult {
      * 
      */
     private List<GetInstanceTag> tags;
+    /**
+     * @return Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     * 
+     */
+    private Boolean tdeEnable;
     /**
      * @return Instance update time
      * 
@@ -378,6 +384,13 @@ public final class GetInstanceResult {
         return this.tags;
     }
     /**
+     * @return Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+     * 
+     */
+    public Boolean tdeEnable() {
+        return this.tdeEnable;
+    }
+    /**
      * @return Instance update time
      * 
      */
@@ -443,6 +456,7 @@ public final class GetInstanceResult {
         private Double storageWalUse;
         private String subnetId;
         private List<GetInstanceTag> tags;
+        private Boolean tdeEnable;
         private String updateTime;
         private Double vcpu;
         private String vpcId;
@@ -478,6 +492,7 @@ public final class GetInstanceResult {
     	      this.storageWalUse = defaults.storageWalUse;
     	      this.subnetId = defaults.subnetId;
     	      this.tags = defaults.tags;
+    	      this.tdeEnable = defaults.tdeEnable;
     	      this.updateTime = defaults.updateTime;
     	      this.vcpu = defaults.vcpu;
     	      this.vpcId = defaults.vpcId;
@@ -724,6 +739,14 @@ public final class GetInstanceResult {
             return tags(List.of(tags));
         }
         @CustomType.Setter
+        public Builder tdeEnable(Boolean tdeEnable) {
+            if (tdeEnable == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "tdeEnable");
+            }
+            this.tdeEnable = tdeEnable;
+            return this;
+        }
+        @CustomType.Setter
         public Builder updateTime(String updateTime) {
             if (updateTime == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "updateTime");
@@ -785,6 +808,7 @@ public final class GetInstanceResult {
             _resultValue.storageWalUse = storageWalUse;
             _resultValue.subnetId = subnetId;
             _resultValue.tags = tags;
+            _resultValue.tdeEnable = tdeEnable;
             _resultValue.updateTime = updateTime;
             _resultValue.vcpu = vcpu;
             _resultValue.vpcId = vpcId;

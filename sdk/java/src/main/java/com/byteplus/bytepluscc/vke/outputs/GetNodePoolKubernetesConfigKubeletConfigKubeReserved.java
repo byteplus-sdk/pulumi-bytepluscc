@@ -16,7 +16,7 @@ public final class GetNodePoolKubernetesConfigKubeletConfigKubeReserved {
      */
     private String name;
     /**
-     * @return Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+     * @return Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
      * 
      */
     private String quantity;
@@ -30,7 +30,7 @@ public final class GetNodePoolKubernetesConfigKubeletConfigKubeReserved {
         return this.name;
     }
     /**
-     * @return Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+     * @return Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
      * 
      */
     public String quantity() {

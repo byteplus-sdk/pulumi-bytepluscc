@@ -39,6 +39,10 @@ export interface GetInstanceResult {
      */
     readonly autoRenew: boolean;
     /**
+     * Automatic backup policy for the instance.
+     */
+    readonly backupPlan: outputs.redis.GetInstanceBackupPlan;
+    /**
      * Set a backup name for the full backup created before changes.
      */
     readonly backupPointName: string;

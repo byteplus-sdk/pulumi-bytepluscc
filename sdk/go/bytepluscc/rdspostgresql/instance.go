@@ -124,6 +124,8 @@ type Instance struct {
 	// Tag information of the cloud disk
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayOutput `pulumi:"tags"`
+	// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+	TdeEnable pulumi.BoolOutput `pulumi:"tdeEnable"`
 	// Instance update time
 	UpdateTime pulumi.StringOutput `pulumi:"updateTime"`
 	// CPU size. For example: 1 means 1U
@@ -240,6 +242,8 @@ type instanceState struct {
 	// Tag information of the cloud disk
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []InstanceTag `pulumi:"tags"`
+	// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+	TdeEnable *bool `pulumi:"tdeEnable"`
 	// Instance update time
 	UpdateTime *string `pulumi:"updateTime"`
 	// CPU size. For example: 1 means 1U
@@ -309,6 +313,8 @@ type InstanceState struct {
 	// Tag information of the cloud disk
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayInput
+	// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+	TdeEnable pulumi.BoolPtrInput
 	// Instance update time
 	UpdateTime pulumi.StringPtrInput
 	// CPU size. For example: 1 means 1U
@@ -353,6 +359,8 @@ type instanceArgs struct {
 	// Tag information of the cloud disk
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags []InstanceTag `pulumi:"tags"`
+	// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+	TdeEnable *bool `pulumi:"tdeEnable"`
 	// Use this parameter to specify the private network for the instance
 	VpcId string `pulumi:"vpcId"`
 }
@@ -388,6 +396,8 @@ type InstanceArgs struct {
 	// Tag information of the cloud disk
 	// Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 	Tags InstanceTagArrayInput
+	// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+	TdeEnable pulumi.BoolPtrInput
 	// Use this parameter to specify the private network for the instance
 	VpcId pulumi.StringInput
 }
@@ -616,6 +626,11 @@ func (o InstanceOutput) SubnetId() pulumi.StringOutput {
 // Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
 func (o InstanceOutput) Tags() InstanceTagArrayOutput {
 	return o.ApplyT(func(v *Instance) InstanceTagArrayOutput { return v.Tags }).(InstanceTagArrayOutput)
+}
+
+// Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+func (o InstanceOutput) TdeEnable() pulumi.BoolOutput {
+	return o.ApplyT(func(v *Instance) pulumi.BoolOutput { return v.TdeEnable }).(pulumi.BoolOutput)
 }
 
 // Instance update time

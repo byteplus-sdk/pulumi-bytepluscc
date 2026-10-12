@@ -34,7 +34,8 @@ class InstanceArgs:
                  replication_slots: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceReplicationSlotArgs']]]] = None,
                  restore_to_existed_instance: pulumi.Input[Optional['InstanceRestoreToExistedInstanceArgs']] = None,
                  storage_space: pulumi.Input[Optional[_builtins.float]] = None,
-                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None):
+                 tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
+                 tde_enable: pulumi.Input[Optional[_builtins.bool]] = None):
         """
         The set of arguments for constructing a Instance resource.
 
@@ -55,6 +56,7 @@ class InstanceArgs:
         :param pulumi.Input[_builtins.float] storage_space: Instance storage space. Value range: [20, 3000], unit: GB, increment: 10GB. Default value is 100
         :param pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]] tags: Tag information of the cloud disk
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.bool] tde_enable: Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
         """
         pulumi.set(__self__, "charge_detail", charge_detail)
         pulumi.set(__self__, "db_engine_version", db_engine_version)
@@ -78,6 +80,8 @@ class InstanceArgs:
             pulumi.set(__self__, "storage_space", storage_space)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tde_enable is not None:
+            pulumi.set(__self__, "tde_enable", tde_enable)
 
     @_builtins.property
     @pulumi.getter(name="chargeDetail")
@@ -250,6 +254,18 @@ class InstanceArgs:
     def tags(self, value: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]]):
         pulumi.set(self, "tags", value)
 
+    @_builtins.property
+    @pulumi.getter(name="tdeEnable")
+    def tde_enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+        """
+        return pulumi.get(self, "tde_enable")
+
+    @tde_enable.setter
+    def tde_enable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "tde_enable", value)
+
 
 @pulumi.input_type
 class _InstanceState:
@@ -281,6 +297,7 @@ class _InstanceState:
                  storage_wal_use: pulumi.Input[Optional[_builtins.float]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input['InstanceTagArgs']]]] = None,
+                 tde_enable: pulumi.Input[Optional[_builtins.bool]] = None,
                  update_time: pulumi.Input[Optional[_builtins.str]] = None,
                  vcpu: pulumi.Input[Optional[_builtins.float]] = None,
                  vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -319,6 +336,7 @@ class _InstanceState:
         :param pulumi.Input[_builtins.str] subnet_id: Subnet ID
         :param pulumi.Input[Sequence[pulumi.Input['InstanceTagArgs']]] tags: Tag information of the cloud disk
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.bool] tde_enable: Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
         :param pulumi.Input[_builtins.str] update_time: Instance update time
         :param pulumi.Input[_builtins.float] vcpu: CPU size. For example: 1 means 1U
         :param pulumi.Input[_builtins.str] vpc_id: Use this parameter to specify the private network for the instance
@@ -378,6 +396,8 @@ class _InstanceState:
             pulumi.set(__self__, "subnet_id", subnet_id)
         if tags is not None:
             pulumi.set(__self__, "tags", tags)
+        if tde_enable is not None:
+            pulumi.set(__self__, "tde_enable", tde_enable)
         if update_time is not None:
             pulumi.set(__self__, "update_time", update_time)
         if vcpu is not None:
@@ -716,6 +736,18 @@ class _InstanceState:
         pulumi.set(self, "tags", value)
 
     @_builtins.property
+    @pulumi.getter(name="tdeEnable")
+    def tde_enable(self) -> pulumi.Input[Optional[_builtins.bool]]:
+        """
+        Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+        """
+        return pulumi.get(self, "tde_enable")
+
+    @tde_enable.setter
+    def tde_enable(self, value: pulumi.Input[Optional[_builtins.bool]]):
+        pulumi.set(self, "tde_enable", value)
+
+    @_builtins.property
     @pulumi.getter(name="updateTime")
     def update_time(self) -> pulumi.Input[Optional[_builtins.str]]:
         """
@@ -783,6 +815,7 @@ class Instance(pulumi.CustomResource):
                  storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+                 tde_enable: pulumi.Input[Optional[_builtins.bool]] = None,
                  vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         """
@@ -841,6 +874,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subnet_id: Subnet ID
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]] tags: Tag information of the cloud disk
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.bool] tde_enable: Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
         :param pulumi.Input[_builtins.str] vpc_id: Use this parameter to specify the private network for the instance
         """
         ...
@@ -915,6 +949,7 @@ class Instance(pulumi.CustomResource):
                  storage_type: pulumi.Input[Optional[_builtins.str]] = None,
                  subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
                  tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+                 tde_enable: pulumi.Input[Optional[_builtins.bool]] = None,
                  vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
                  __props__=None):
         opts = pulumi.ResourceOptions.merge(_utilities.get_resource_opts_defaults(), opts)
@@ -948,6 +983,7 @@ class Instance(pulumi.CustomResource):
                 raise TypeError("Missing required property 'subnet_id'")
             __props__.__dict__["subnet_id"] = subnet_id
             __props__.__dict__["tags"] = tags
+            __props__.__dict__["tde_enable"] = tde_enable
             if vpc_id is None and not opts.urn:
                 raise TypeError("Missing required property 'vpc_id'")
             __props__.__dict__["vpc_id"] = vpc_id
@@ -1005,6 +1041,7 @@ class Instance(pulumi.CustomResource):
             storage_wal_use: pulumi.Input[Optional[_builtins.float]] = None,
             subnet_id: pulumi.Input[Optional[_builtins.str]] = None,
             tags: pulumi.Input[Optional[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]]] = None,
+            tde_enable: pulumi.Input[Optional[_builtins.bool]] = None,
             update_time: pulumi.Input[Optional[_builtins.str]] = None,
             vcpu: pulumi.Input[Optional[_builtins.float]] = None,
             vpc_id: pulumi.Input[Optional[_builtins.str]] = None,
@@ -1047,6 +1084,7 @@ class Instance(pulumi.CustomResource):
         :param pulumi.Input[_builtins.str] subnet_id: Subnet ID
         :param pulumi.Input[Sequence[pulumi.Input[Union['InstanceTagArgs', 'InstanceTagArgsDict']]]] tags: Tag information of the cloud disk
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
+        :param pulumi.Input[_builtins.bool] tde_enable: Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
         :param pulumi.Input[_builtins.str] update_time: Instance update time
         :param pulumi.Input[_builtins.float] vcpu: CPU size. For example: 1 means 1U
         :param pulumi.Input[_builtins.str] vpc_id: Use this parameter to specify the private network for the instance
@@ -1083,6 +1121,7 @@ class Instance(pulumi.CustomResource):
         __props__.__dict__["storage_wal_use"] = storage_wal_use
         __props__.__dict__["subnet_id"] = subnet_id
         __props__.__dict__["tags"] = tags
+        __props__.__dict__["tde_enable"] = tde_enable
         __props__.__dict__["update_time"] = update_time
         __props__.__dict__["vcpu"] = vcpu
         __props__.__dict__["vpc_id"] = vpc_id
@@ -1308,6 +1347,14 @@ class Instance(pulumi.CustomResource):
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "tags")
+
+    @_builtins.property
+    @pulumi.getter(name="tdeEnable")
+    def tde_enable(self) -> pulumi.Output[_builtins.bool]:
+        """
+        Specifies whether to enable the Transparent Data Encryption (TDE) feature. The default value is false (disabled). This feature can only be enabled when creating an instance, and is supported only for PostgreSQL 17 with local SSD storage. Once enabled, it cannot be disabled.
+        """
+        return pulumi.get(self, "tde_enable")
 
     @_builtins.property
     @pulumi.getter(name="updateTime")

@@ -15,11 +15,11 @@ namespace Byteplus.Pulumi.Bytepluscc.Vke.Outputs
     public sealed class GetNodePoolManagementRemedyConfigResult
     {
         /// <summary>
-        /// Enable self-healing check
+        /// Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
         /// </summary>
         public readonly bool Enabled;
         /// <summary>
-        /// Self-healing rule ID
+        /// Self-healing rule ID associated after enabling self-healing check for the node pool.
         /// </summary>
         public readonly string RemedyId;
 

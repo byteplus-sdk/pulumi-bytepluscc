@@ -35,14 +35,14 @@ public final class NodePoolStatusArgs extends com.pulumi.resources.ResourceArgs 
     }
 
     /**
-     * Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+     * Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
      * 
      */
     @Import(name="phase")
     private @Nullable Output<String> phase;
 
     /**
-     * @return Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+     * @return Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
      * 
      */
     public Optional<Output<String>> phase() {
@@ -109,7 +109,7 @@ public final class NodePoolStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param phase Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+         * @param phase Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
          * 
          * @return builder
          * 
@@ -120,7 +120,7 @@ public final class NodePoolStatusArgs extends com.pulumi.resources.ResourceArgs 
         }
 
         /**
-         * @param phase Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+         * @param phase Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
          * 
          * @return builder
          * 

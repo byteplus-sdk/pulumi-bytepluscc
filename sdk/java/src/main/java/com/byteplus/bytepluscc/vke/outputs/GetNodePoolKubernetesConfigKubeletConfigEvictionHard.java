@@ -16,7 +16,7 @@ public final class GetNodePoolKubernetesConfigKubeletConfigEvictionHard {
      */
     private String key;
     /**
-     * @return Hard threshold value.
+     * @return Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
      * 
      */
     private String value;
@@ -30,7 +30,7 @@ public final class GetNodePoolKubernetesConfigKubeletConfigEvictionHard {
         return this.key;
     }
     /**
-     * @return Hard threshold value.
+     * @return Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
      * 
      */
     public String value() {

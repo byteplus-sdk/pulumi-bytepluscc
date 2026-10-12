@@ -89,6 +89,8 @@ __all__ = [
     'NodePoolTag',
     'NodeStatus',
     'NodeStatusCondition',
+    'NodepoolScalingPolicyScheduledInstancePolicy',
+    'NodepoolScalingPolicyScheduledPolicy',
     'GetAddonStatusResult',
     'GetAddonStatusConditionResult',
     'GetClusterClusterConfigResult',
@@ -162,6 +164,8 @@ __all__ = [
     'GetNodePoolTagResult',
     'GetNodeStatusResult',
     'GetNodeStatusConditionResult',
+    'GetNodepoolScalingPolicyScheduledInstancePolicyResult',
+    'GetNodepoolScalingPolicyScheduledPolicyResult',
 ]
 
 @pulumi.output_type
@@ -3182,12 +3186,12 @@ class NodePoolAutoScaling(dict):
                  scaling_group_id: Optional[_builtins.str] = None,
                  subnet_policy: Optional[_builtins.str] = None):
         """
-        :param _builtins.int desired_replicas: Configure the expected number of nodes in the node pool
-        :param _builtins.bool enabled: Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
-        :param _builtins.int max_replicas: Configure the maximum number of nodes in the node pool
-        :param _builtins.int min_replicas: Minimum number of nodes configured for the node pool
-        :param _builtins.int priority: Priority
-        :param _builtins.str scaling_group_id: Scaling group ID
+        :param _builtins.int desired_replicas: Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
+        :param _builtins.bool enabled: Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
+        :param _builtins.int max_replicas: Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
+        :param _builtins.int min_replicas: Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
+        :param _builtins.int priority: Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
+        :param _builtins.str scaling_group_id: Scaling group ID associated with the node pool.
         :param _builtins.str subnet_policy: Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
         """
         if desired_replicas is not None:
@@ -3209,7 +3213,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="desiredReplicas")
     def desired_replicas(self) -> Optional[_builtins.int]:
         """
-        Configure the expected number of nodes in the node pool
+        Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
         """
         return pulumi.get(self, "desired_replicas")
 
@@ -3217,7 +3221,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter
     def enabled(self) -> Optional[_builtins.bool]:
         """
-        Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+        Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -3225,7 +3229,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="maxReplicas")
     def max_replicas(self) -> Optional[_builtins.int]:
         """
-        Configure the maximum number of nodes in the node pool
+        Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
         """
         return pulumi.get(self, "max_replicas")
 
@@ -3233,7 +3237,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="minReplicas")
     def min_replicas(self) -> Optional[_builtins.int]:
         """
-        Minimum number of nodes configured for the node pool
+        Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
         """
         return pulumi.get(self, "min_replicas")
 
@@ -3241,7 +3245,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter
     def priority(self) -> Optional[_builtins.int]:
         """
-        Priority
+        Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
         """
         return pulumi.get(self, "priority")
 
@@ -3249,7 +3253,7 @@ class NodePoolAutoScaling(dict):
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> Optional[_builtins.str]:
         """
-        Scaling group ID
+        Scaling group ID associated with the node pool.
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -3302,16 +3306,16 @@ class NodePoolKubernetesConfig(dict):
                  name_use_hostname: Optional[_builtins.bool] = None,
                  taints: Optional[Sequence['outputs.NodePoolKubernetesConfigTaint']] = None):
         """
-        :param _builtins.bool auto_sync_disabled: Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+        :param _builtins.bool auto_sync_disabled: Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
         :param 'NodePoolKubernetesConfigContainerdConfigArgs' containerd_config: Node pool Containerd configuration
-        :param _builtins.bool cordon: Node blocking configuration. Parameter values: false: not blocked; true: blocked
-        :param 'NodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet component configuration
-        :param Sequence['NodePoolKubernetesConfigLabelArgs'] labels: Kubernetes label information for node pools/nodes
+        :param _builtins.bool cordon: Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
+        :param 'NodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
+        :param Sequence['NodePoolKubernetesConfigLabelArgs'] labels: Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        :param _builtins.str name_prefix: Prefix for node object metadata name in Kubernetes
+        :param _builtins.str name_prefix: Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
         :param _builtins.str name_suffix: Suffix for node object metadata name in Kubernetes
-        :param _builtins.bool name_use_hostname: Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
-        :param Sequence['NodePoolKubernetesConfigTaintArgs'] taints: Kubernetes taint information for node pools/nodes
+        :param _builtins.bool name_use_hostname: Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
+        :param Sequence['NodePoolKubernetesConfigTaintArgs'] taints: Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         if auto_sync_disabled is not None:
@@ -3337,7 +3341,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="autoSyncDisabled")
     def auto_sync_disabled(self) -> Optional[_builtins.bool]:
         """
-        Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+        Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
         """
         return pulumi.get(self, "auto_sync_disabled")
 
@@ -3353,7 +3357,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter
     def cordon(self) -> Optional[_builtins.bool]:
         """
-        Node blocking configuration. Parameter values: false: not blocked; true: blocked
+        Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
         """
         return pulumi.get(self, "cordon")
 
@@ -3361,7 +3365,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="kubeletConfig")
     def kubelet_config(self) -> Optional['outputs.NodePoolKubernetesConfigKubeletConfig']:
         """
-        Kubelet component configuration
+        Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
         """
         return pulumi.get(self, "kubelet_config")
 
@@ -3369,7 +3373,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter
     def labels(self) -> Optional[Sequence['outputs.NodePoolKubernetesConfigLabel']]:
         """
-        Kubernetes label information for node pools/nodes
+        Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "labels")
@@ -3378,7 +3382,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> Optional[_builtins.str]:
         """
-        Prefix for node object metadata name in Kubernetes
+        Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
         """
         return pulumi.get(self, "name_prefix")
 
@@ -3394,7 +3398,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter(name="nameUseHostname")
     def name_use_hostname(self) -> Optional[_builtins.bool]:
         """
-        Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+        Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
         """
         return pulumi.get(self, "name_use_hostname")
 
@@ -3402,7 +3406,7 @@ class NodePoolKubernetesConfig(dict):
     @pulumi.getter
     def taints(self) -> Optional[Sequence['outputs.NodePoolKubernetesConfigTaint']]:
         """
-        Kubernetes taint information for node pools/nodes
+        Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "taints")
@@ -3433,7 +3437,7 @@ class NodePoolKubernetesConfigContainerdConfig(dict):
                  insecure_registries: Optional[Sequence[_builtins.str]] = None,
                  registry_proxy_configs: Optional[Sequence['outputs.NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig']] = None):
         """
-        :param Sequence[_builtins.str] insecure_registries: Specify the container image repository address to skip certificate verification.
+        :param Sequence[_builtins.str] insecure_registries: Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
         :param Sequence['NodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs'] registry_proxy_configs: Container image repository proxy configuration
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
@@ -3446,7 +3450,7 @@ class NodePoolKubernetesConfigContainerdConfig(dict):
     @pulumi.getter(name="insecureRegistries")
     def insecure_registries(self) -> Optional[Sequence[_builtins.str]]:
         """
-        Specify the container image repository address to skip certificate verification.
+        Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
         """
         return pulumi.get(self, "insecure_registries")
 
@@ -3483,8 +3487,8 @@ class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig(dict):
                  proxy_endpoints: Optional[Sequence[_builtins.str]] = None,
                  registry: Optional[_builtins.str] = None):
         """
-        :param Sequence[_builtins.str] proxy_endpoints: Proxy address.
-        :param _builtins.str registry: Container image repository address.
+        :param Sequence[_builtins.str] proxy_endpoints: Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
+        :param _builtins.str registry: Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
         """
         if proxy_endpoints is not None:
             pulumi.set(__self__, "proxy_endpoints", proxy_endpoints)
@@ -3495,7 +3499,7 @@ class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig(dict):
     @pulumi.getter(name="proxyEndpoints")
     def proxy_endpoints(self) -> Optional[Sequence[_builtins.str]]:
         """
-        Proxy address.
+        Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
         """
         return pulumi.get(self, "proxy_endpoints")
 
@@ -3503,7 +3507,7 @@ class NodePoolKubernetesConfigContainerdConfigRegistryProxyConfig(dict):
     @pulumi.getter
     def registry(self) -> Optional[_builtins.str]:
         """
-        Container image repository address.
+        Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
         """
         return pulumi.get(self, "registry")
 
@@ -3566,19 +3570,19 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
                  topology_manager_policy: Optional[_builtins.str] = None,
                  topology_manager_scope: Optional[_builtins.str] = None):
         """
-        :param _builtins.str cpu_manager_policy: Configure kubelet CpuManagerPolicy. Supports none and static policies
-        :param Sequence['NodePoolKubernetesConfigKubeletConfigEvictionHardArgs'] eviction_hards: Set of hard thresholds for triggering Pod eviction
+        :param _builtins.str cpu_manager_policy: CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
+        :param Sequence['NodePoolKubernetesConfigKubeletConfigEvictionHardArgs'] eviction_hards: A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        :param 'NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: Feature gate
-        :param _builtins.int kube_api_burst: Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
-        :param _builtins.int kube_api_qps: Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
-        :param Sequence['NodePoolKubernetesConfigKubeletConfigKubeReservedArgs'] kube_reserveds: Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+        :param 'NodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
+        :param _builtins.int kube_api_burst: Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
+        :param _builtins.int kube_api_qps: Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
+        :param Sequence['NodePoolKubernetesConfigKubeletConfigKubeReservedArgs'] kube_reserveds: Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        :param _builtins.int max_pods: Configure the maximum number of Pods supported by kubelet
-        :param _builtins.int registry_burst: Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-        :param _builtins.int registry_pull_qps: Used to limit the QPS cap for the image repository
-        :param _builtins.bool serialize_image_pulls: Pull images sequentially
-        :param Sequence['NodePoolKubernetesConfigKubeletConfigSystemReservedArgs'] system_reserveds: Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+        :param _builtins.int max_pods: Maximum number of Pods supported by the node. Default is 110.
+        :param _builtins.int registry_burst: Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
+        :param _builtins.int registry_pull_qps: QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
+        :param _builtins.bool serialize_image_pulls: Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
+        :param Sequence['NodePoolKubernetesConfigKubeletConfigSystemReservedArgs'] system_reserveds: Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         :param _builtins.str topology_manager_policy: Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
         :param _builtins.str topology_manager_scope: Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
@@ -3614,7 +3618,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="cpuManagerPolicy")
     def cpu_manager_policy(self) -> Optional[_builtins.str]:
         """
-        Configure kubelet CpuManagerPolicy. Supports none and static policies
+        CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
         """
         return pulumi.get(self, "cpu_manager_policy")
 
@@ -3622,7 +3626,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="evictionHards")
     def eviction_hards(self) -> Optional[Sequence['outputs.NodePoolKubernetesConfigKubeletConfigEvictionHard']]:
         """
-        Set of hard thresholds for triggering Pod eviction
+        A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "eviction_hards")
@@ -3631,7 +3635,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="featureGates")
     def feature_gates(self) -> Optional['outputs.NodePoolKubernetesConfigKubeletConfigFeatureGates']:
         """
-        Feature gate
+        Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
         """
         return pulumi.get(self, "feature_gates")
 
@@ -3639,7 +3643,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="kubeApiBurst")
     def kube_api_burst(self) -> Optional[_builtins.int]:
         """
-        Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+        Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
         """
         return pulumi.get(self, "kube_api_burst")
 
@@ -3647,7 +3651,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="kubeApiQps")
     def kube_api_qps(self) -> Optional[_builtins.int]:
         """
-        Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+        Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
         """
         return pulumi.get(self, "kube_api_qps")
 
@@ -3655,7 +3659,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="kubeReserveds")
     def kube_reserveds(self) -> Optional[Sequence['outputs.NodePoolKubernetesConfigKubeletConfigKubeReserved']]:
         """
-        Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+        Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "kube_reserveds")
@@ -3664,7 +3668,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="maxPods")
     def max_pods(self) -> Optional[_builtins.int]:
         """
-        Configure the maximum number of Pods supported by kubelet
+        Maximum number of Pods supported by the node. Default is 110.
         """
         return pulumi.get(self, "max_pods")
 
@@ -3672,7 +3676,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="registryBurst")
     def registry_burst(self) -> Optional[_builtins.int]:
         """
-        Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+        Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
         """
         return pulumi.get(self, "registry_burst")
 
@@ -3680,7 +3684,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="registryPullQps")
     def registry_pull_qps(self) -> Optional[_builtins.int]:
         """
-        Used to limit the QPS cap for the image repository
+        QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
         """
         return pulumi.get(self, "registry_pull_qps")
 
@@ -3688,7 +3692,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="serializeImagePulls")
     def serialize_image_pulls(self) -> Optional[_builtins.bool]:
         """
-        Pull images sequentially
+        Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
         """
         return pulumi.get(self, "serialize_image_pulls")
 
@@ -3696,7 +3700,7 @@ class NodePoolKubernetesConfigKubeletConfig(dict):
     @pulumi.getter(name="systemReserveds")
     def system_reserveds(self) -> Optional[Sequence['outputs.NodePoolKubernetesConfigKubeletConfigSystemReserved']]:
         """
-        Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+        Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "system_reserveds")
@@ -3725,7 +3729,7 @@ class NodePoolKubernetesConfigKubeletConfigEvictionHard(dict):
                  value: Optional[_builtins.str] = None):
         """
         :param _builtins.str key: Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
-        :param _builtins.str value: Hard threshold value.
+        :param _builtins.str value: Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -3744,7 +3748,7 @@ class NodePoolKubernetesConfigKubeletConfigEvictionHard(dict):
     @pulumi.getter
     def value(self) -> Optional[_builtins.str]:
         """
-        Hard threshold value.
+        Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
         """
         return pulumi.get(self, "value")
 
@@ -3774,8 +3778,8 @@ class NodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
                  in_place_pod_vertical_scaling: Optional[_builtins.bool] = None,
                  qo_s_resource_manager: Optional[_builtins.bool] = None):
         """
-        :param _builtins.bool in_place_pod_vertical_scaling: Enable local vertical Pod autoscaling feature toggle
-        :param _builtins.bool qo_s_resource_manager: Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+        :param _builtins.bool in_place_pod_vertical_scaling: Enable Pod vertical scaling. Options: true: enabled. false: disabled.
+        :param _builtins.bool qo_s_resource_manager: Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
         """
         if in_place_pod_vertical_scaling is not None:
             pulumi.set(__self__, "in_place_pod_vertical_scaling", in_place_pod_vertical_scaling)
@@ -3786,7 +3790,7 @@ class NodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
     @pulumi.getter(name="inPlacePodVerticalScaling")
     def in_place_pod_vertical_scaling(self) -> Optional[_builtins.bool]:
         """
-        Enable local vertical Pod autoscaling feature toggle
+        Enable Pod vertical scaling. Options: true: enabled. false: disabled.
         """
         return pulumi.get(self, "in_place_pod_vertical_scaling")
 
@@ -3794,7 +3798,7 @@ class NodePoolKubernetesConfigKubeletConfigFeatureGates(dict):
     @pulumi.getter(name="qoSResourceManager")
     def qo_s_resource_manager(self) -> Optional[_builtins.bool]:
         """
-        Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+        Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
         """
         return pulumi.get(self, "qo_s_resource_manager")
 
@@ -3806,7 +3810,7 @@ class NodePoolKubernetesConfigKubeletConfigKubeReserved(dict):
                  quantity: Optional[_builtins.str] = None):
         """
         :param _builtins.str name: Resource name. Valid values: cpu or memory.
-        :param _builtins.str quantity: Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+        :param _builtins.str quantity: Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3825,7 +3829,7 @@ class NodePoolKubernetesConfigKubeletConfigKubeReserved(dict):
     @pulumi.getter
     def quantity(self) -> Optional[_builtins.str]:
         """
-        Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+        Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         """
         return pulumi.get(self, "quantity")
 
@@ -3837,7 +3841,7 @@ class NodePoolKubernetesConfigKubeletConfigSystemReserved(dict):
                  quantity: Optional[_builtins.str] = None):
         """
         :param _builtins.str name: Resource name. Valid values: cpu or memory.
-        :param _builtins.str quantity: Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+        :param _builtins.str quantity: Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         """
         if name is not None:
             pulumi.set(__self__, "name", name)
@@ -3856,7 +3860,7 @@ class NodePoolKubernetesConfigKubeletConfigSystemReserved(dict):
     @pulumi.getter
     def quantity(self) -> Optional[_builtins.str]:
         """
-        Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+        Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         """
         return pulumi.get(self, "quantity")
 
@@ -3867,8 +3871,8 @@ class NodePoolKubernetesConfigLabel(dict):
                  key: Optional[_builtins.str] = None,
                  value: Optional[_builtins.str] = None):
         """
-        :param _builtins.str key: Tag key.
-        :param _builtins.str value: Label value.
+        :param _builtins.str key: Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
+        :param _builtins.str value: Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
         """
         if key is not None:
             pulumi.set(__self__, "key", key)
@@ -3879,7 +3883,7 @@ class NodePoolKubernetesConfigLabel(dict):
     @pulumi.getter
     def key(self) -> Optional[_builtins.str]:
         """
-        Tag key.
+        Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
         """
         return pulumi.get(self, "key")
 
@@ -3887,7 +3891,7 @@ class NodePoolKubernetesConfigLabel(dict):
     @pulumi.getter
     def value(self) -> Optional[_builtins.str]:
         """
-        Label value.
+        Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
         """
         return pulumi.get(self, "value")
 
@@ -3900,8 +3904,8 @@ class NodePoolKubernetesConfigTaint(dict):
                  value: Optional[_builtins.str] = None):
         """
         :param _builtins.str effect: Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
-        :param _builtins.str key: Taint key.
-        :param _builtins.str value: Taint value
+        :param _builtins.str key: Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
+        :param _builtins.str value: Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
         """
         if effect is not None:
             pulumi.set(__self__, "effect", effect)
@@ -3922,7 +3926,7 @@ class NodePoolKubernetesConfigTaint(dict):
     @pulumi.getter
     def key(self) -> Optional[_builtins.str]:
         """
-        Taint key.
+        Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
         """
         return pulumi.get(self, "key")
 
@@ -3930,7 +3934,7 @@ class NodePoolKubernetesConfigTaint(dict):
     @pulumi.getter
     def value(self) -> Optional[_builtins.str]:
         """
-        Taint value
+        Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
         """
         return pulumi.get(self, "value")
 
@@ -3958,8 +3962,8 @@ class NodePoolManagement(dict):
                  enabled: Optional[_builtins.bool] = None,
                  remedy_config: Optional['outputs.NodePoolManagementRemedyConfig'] = None):
         """
-        :param _builtins.bool enabled: Enable managed mode for node pool. Options:   - true: on   - false: off
-        :param 'NodePoolManagementRemedyConfigArgs' remedy_config: Check self-healing configuration.
+        :param _builtins.bool enabled: Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
+        :param 'NodePoolManagementRemedyConfigArgs' remedy_config: Node pool health check and self-healing rule configuration.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -3970,7 +3974,7 @@ class NodePoolManagement(dict):
     @pulumi.getter
     def enabled(self) -> Optional[_builtins.bool]:
         """
-        Enable managed mode for node pool. Options:   - true: on   - false: off
+        Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -3978,7 +3982,7 @@ class NodePoolManagement(dict):
     @pulumi.getter(name="remedyConfig")
     def remedy_config(self) -> Optional['outputs.NodePoolManagementRemedyConfig']:
         """
-        Check self-healing configuration.
+        Node pool health check and self-healing rule configuration.
         """
         return pulumi.get(self, "remedy_config")
 
@@ -4006,8 +4010,8 @@ class NodePoolManagementRemedyConfig(dict):
                  enabled: Optional[_builtins.bool] = None,
                  remedy_id: Optional[_builtins.str] = None):
         """
-        :param _builtins.bool enabled: Enable self-healing check
-        :param _builtins.str remedy_id: Self-healing rule ID
+        :param _builtins.bool enabled: Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
+        :param _builtins.str remedy_id: Self-healing rule ID associated after enabling self-healing check for the node pool.
         """
         if enabled is not None:
             pulumi.set(__self__, "enabled", enabled)
@@ -4018,7 +4022,7 @@ class NodePoolManagementRemedyConfig(dict):
     @pulumi.getter
     def enabled(self) -> Optional[_builtins.bool]:
         """
-        Enable self-healing check
+        Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
         """
         return pulumi.get(self, "enabled")
 
@@ -4026,7 +4030,7 @@ class NodePoolManagementRemedyConfig(dict):
     @pulumi.getter(name="remedyId")
     def remedy_id(self) -> Optional[_builtins.str]:
         """
-        Self-healing rule ID
+        Self-healing rule ID associated after enabling self-healing check for the node pool.
         """
         return pulumi.get(self, "remedy_id")
 
@@ -4120,33 +4124,33 @@ class NodePoolNodeConfig(dict):
                  system_volume: Optional['outputs.NodePoolNodeConfigSystemVolume'] = None,
                  tags: Optional[Sequence['outputs.NodePoolNodeConfigTag']] = None):
         """
-        :param _builtins.bool additional_container_storage_enabled: Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
-        :param _builtins.bool auto_renew: Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
-        :param _builtins.int auto_renew_period: Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
-        :param Sequence['NodePoolNodeConfigDataVolumeArgs'] data_volumes: Node data disk configuration.
+        :param _builtins.bool additional_container_storage_enabled: Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
+        :param _builtins.bool auto_renew: Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
+        :param _builtins.int auto_renew_period: ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
+        :param Sequence['NodePoolNodeConfigDataVolumeArgs'] data_volumes: Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        :param _builtins.int deployment_set_group_number: Group number of the instance in the deployment set; 0 means not set
-        :param _builtins.str deployment_set_id: Deployment Set ID to be added to the instance
-        :param _builtins.str hostname: The host name corresponding to the node.
-        :param Sequence[_builtins.str] hpc_cluster_ids: High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-        :param _builtins.str image_id: Image ID used by the cloud server corresponding to the node
-        :param _builtins.str initialize_script: Custom script executed after node creation and initialization. Shell script in Base64 encoding
-        :param _builtins.str instance_charge_type: Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
-        :param _builtins.str instance_name: Node (instance) name
-        :param Sequence[_builtins.str] instance_type_ids: List of cloud server instance type IDs corresponding to the nodes
-        :param 'NodePoolNodeConfigInstancesDistributionArgs' instances_distribution: Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
-        :param _builtins.str name_prefix: Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
-        :param _builtins.str network_traffic_mode: Network communication mode between nodes
-        :param _builtins.int period: Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
-        :param _builtins.str pre_script: Script to execute before deploying the node
-        :param _builtins.str project_name: Project to which the ECS belongs. Each ECS can only belong to one project.
-        :param 'NodePoolNodeConfigPublicAccessConfigArgs' public_access_config: Configuration for automatic public network access for nodes
-        :param _builtins.bool public_access_enabled: Enable public network access for nodes automatically. Options:   - false: off   - true: on
+        :param _builtins.int deployment_set_group_number: When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
+        :param _builtins.str deployment_set_id: Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
+        :param _builtins.str hostname: Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
+        :param Sequence[_builtins.str] hpc_cluster_ids: High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
+        :param _builtins.str image_id: The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
+        :param _builtins.str initialize_script: Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
+        :param _builtins.str instance_charge_type: ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
+        :param _builtins.str instance_name: Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
+        :param Sequence[_builtins.str] instance_type_ids: List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
+        :param 'NodePoolNodeConfigInstancesDistributionArgs' instances_distribution: Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+        :param _builtins.str name_prefix: Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
+        :param _builtins.str network_traffic_mode: Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
+        :param _builtins.int period: ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
+        :param _builtins.str pre_script: [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
+        :param _builtins.str project_name: Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
+        :param 'NodePoolNodeConfigPublicAccessConfigArgs' public_access_config: Configuration information for automatically binding EIP to nodes.
+        :param _builtins.bool public_access_enabled: Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
         :param 'NodePoolNodeConfigSecurityArgs' security: Node security configuration
-        :param _builtins.str spot_strategy: Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
-        :param Sequence[_builtins.str] subnet_ids: List of subnet IDs for the node network.
-        :param 'NodePoolNodeConfigSystemVolumeArgs' system_volume: System disk configuration for the node
-        :param Sequence['NodePoolNodeConfigTagArgs'] tags: Label information configured for the node pool
+        :param _builtins.str spot_strategy: Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
+        :param Sequence[_builtins.str] subnet_ids: List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
+        :param 'NodePoolNodeConfigSystemVolumeArgs' system_volume: System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
+        :param Sequence['NodePoolNodeConfigTagArgs'] tags: Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         if additional_container_storage_enabled is not None:
@@ -4206,7 +4210,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="additionalContainerStorageEnabled")
     def additional_container_storage_enabled(self) -> Optional[_builtins.bool]:
         """
-        Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+        Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
         """
         return pulumi.get(self, "additional_container_storage_enabled")
 
@@ -4214,7 +4218,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> Optional[_builtins.bool]:
         """
-        Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+        Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -4222,7 +4226,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="autoRenewPeriod")
     def auto_renew_period(self) -> Optional[_builtins.int]:
         """
-        Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+        ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
         """
         return pulumi.get(self, "auto_renew_period")
 
@@ -4230,7 +4234,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="dataVolumes")
     def data_volumes(self) -> Optional[Sequence['outputs.NodePoolNodeConfigDataVolume']]:
         """
-        Node data disk configuration.
+        Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "data_volumes")
@@ -4239,7 +4243,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> Optional[_builtins.int]:
         """
-        Group number of the instance in the deployment set; 0 means not set
+        When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -4247,7 +4251,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> Optional[_builtins.str]:
         """
-        Deployment Set ID to be added to the instance
+        Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -4255,7 +4259,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter
     def hostname(self) -> Optional[_builtins.str]:
         """
-        The host name corresponding to the node.
+        Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
         """
         return pulumi.get(self, "hostname")
 
@@ -4263,7 +4267,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="hpcClusterIds")
     def hpc_cluster_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
-        High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+        High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
         """
         return pulumi.get(self, "hpc_cluster_ids")
 
@@ -4271,7 +4275,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> Optional[_builtins.str]:
         """
-        Image ID used by the cloud server corresponding to the node
+        The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
         """
         return pulumi.get(self, "image_id")
 
@@ -4279,7 +4283,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="initializeScript")
     def initialize_script(self) -> Optional[_builtins.str]:
         """
-        Custom script executed after node creation and initialization. Shell script in Base64 encoding
+        Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
         """
         return pulumi.get(self, "initialize_script")
 
@@ -4287,7 +4291,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> Optional[_builtins.str]:
         """
-        Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+        ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -4295,7 +4299,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> Optional[_builtins.str]:
         """
-        Node (instance) name
+        Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
         """
         return pulumi.get(self, "instance_name")
 
@@ -4303,7 +4307,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="instanceTypeIds")
     def instance_type_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
-        List of cloud server instance type IDs corresponding to the nodes
+        List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
         """
         return pulumi.get(self, "instance_type_ids")
 
@@ -4311,7 +4315,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="instancesDistribution")
     def instances_distribution(self) -> Optional['outputs.NodePoolNodeConfigInstancesDistribution']:
         """
-        Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+        Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
         """
         return pulumi.get(self, "instances_distribution")
 
@@ -4319,7 +4323,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> Optional[_builtins.str]:
         """
-        Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+        Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
         """
         return pulumi.get(self, "name_prefix")
 
@@ -4327,7 +4331,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="networkTrafficMode")
     def network_traffic_mode(self) -> Optional[_builtins.str]:
         """
-        Network communication mode between nodes
+        Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
         """
         return pulumi.get(self, "network_traffic_mode")
 
@@ -4335,7 +4339,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter
     def period(self) -> Optional[_builtins.int]:
         """
-        Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+        ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
         """
         return pulumi.get(self, "period")
 
@@ -4343,7 +4347,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="preScript")
     def pre_script(self) -> Optional[_builtins.str]:
         """
-        Script to execute before deploying the node
+        [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
         """
         return pulumi.get(self, "pre_script")
 
@@ -4351,7 +4355,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> Optional[_builtins.str]:
         """
-        Project to which the ECS belongs. Each ECS can only belong to one project.
+        Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
         """
         return pulumi.get(self, "project_name")
 
@@ -4359,7 +4363,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="publicAccessConfig")
     def public_access_config(self) -> Optional['outputs.NodePoolNodeConfigPublicAccessConfig']:
         """
-        Configuration for automatic public network access for nodes
+        Configuration information for automatically binding EIP to nodes.
         """
         return pulumi.get(self, "public_access_config")
 
@@ -4367,7 +4371,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="publicAccessEnabled")
     def public_access_enabled(self) -> Optional[_builtins.bool]:
         """
-        Enable public network access for nodes automatically. Options:   - false: off   - true: on
+        Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
         """
         return pulumi.get(self, "public_access_enabled")
 
@@ -4383,7 +4387,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> Optional[_builtins.str]:
         """
-        Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+        Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -4391,7 +4395,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Optional[Sequence[_builtins.str]]:
         """
-        List of subnet IDs for the node network.
+        List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -4399,7 +4403,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter(name="systemVolume")
     def system_volume(self) -> Optional['outputs.NodePoolNodeConfigSystemVolume']:
         """
-        System disk configuration for the node
+        System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
         """
         return pulumi.get(self, "system_volume")
 
@@ -4407,7 +4411,7 @@ class NodePoolNodeConfig(dict):
     @pulumi.getter
     def tags(self) -> Optional[Sequence['outputs.NodePoolNodeConfigTag']]:
         """
-        Label information configured for the node pool
+        Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
         Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
         """
         return pulumi.get(self, "tags")
@@ -4449,13 +4453,13 @@ class NodePoolNodeConfigDataVolume(dict):
                  subgroup_number: Optional[_builtins.int] = None,
                  type: Optional[_builtins.str] = None):
         """
-        :param _builtins.str file_system: File system. Options:   - Ext4 (default)   - Xfs
+        :param _builtins.str file_system: [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
         :param _builtins.str mount_point: Target mount directory after disk formatting.
-        :param _builtins.str placement_group_id: Placement group ID
+        :param _builtins.str placement_group_id: Storage placement group ID to which the data disk belongs.
         :param _builtins.int size: Disk capacity, in GiB.
-        :param _builtins.str snapshot_id: Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
-        :param _builtins.int subgroup_number: Placement subgroup
-        :param _builtins.str type: Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+        :param _builtins.str snapshot_id: Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
+        :param _builtins.int subgroup_number: Storage sub-placement group number of the data disk.
+        :param _builtins.str type: Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
         """
         if file_system is not None:
             pulumi.set(__self__, "file_system", file_system)
@@ -4476,7 +4480,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="fileSystem")
     def file_system(self) -> Optional[_builtins.str]:
         """
-        File system. Options:   - Ext4 (default)   - Xfs
+        [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
         """
         return pulumi.get(self, "file_system")
 
@@ -4492,7 +4496,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> Optional[_builtins.str]:
         """
-        Placement group ID
+        Storage placement group ID to which the data disk belongs.
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -4508,7 +4512,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> Optional[_builtins.str]:
         """
-        Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+        Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -4516,7 +4520,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> Optional[_builtins.int]:
         """
-        Placement subgroup
+        Storage sub-placement group number of the data disk.
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -4524,7 +4528,7 @@ class NodePoolNodeConfigDataVolume(dict):
     @pulumi.getter
     def type(self) -> Optional[_builtins.str]:
         """
-        Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+        Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
         """
         return pulumi.get(self, "type")
 
@@ -4560,10 +4564,10 @@ class NodePoolNodeConfigInstancesDistribution(dict):
                  on_demand_base_capacity: Optional[_builtins.int] = None,
                  on_demand_percentage_above_base_capacity: Optional[_builtins.int] = None):
         """
-        :param _builtins.bool capacity_rebalance: Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
-        :param _builtins.bool compensate_with_on_demand: On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
-        :param _builtins.int on_demand_base_capacity: Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
-        :param _builtins.int on_demand_percentage_above_base_capacity: Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+        :param _builtins.bool capacity_rebalance: Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
+        :param _builtins.bool compensate_with_on_demand: Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
+        :param _builtins.int on_demand_base_capacity: Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
+        :param _builtins.int on_demand_percentage_above_base_capacity: Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
         """
         if capacity_rebalance is not None:
             pulumi.set(__self__, "capacity_rebalance", capacity_rebalance)
@@ -4578,7 +4582,7 @@ class NodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="capacityRebalance")
     def capacity_rebalance(self) -> Optional[_builtins.bool]:
         """
-        Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+        Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
         """
         return pulumi.get(self, "capacity_rebalance")
 
@@ -4586,7 +4590,7 @@ class NodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="compensateWithOnDemand")
     def compensate_with_on_demand(self) -> Optional[_builtins.bool]:
         """
-        On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+        Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
         """
         return pulumi.get(self, "compensate_with_on_demand")
 
@@ -4594,7 +4598,7 @@ class NodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="onDemandBaseCapacity")
     def on_demand_base_capacity(self) -> Optional[_builtins.int]:
         """
-        Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+        Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
         """
         return pulumi.get(self, "on_demand_base_capacity")
 
@@ -4602,7 +4606,7 @@ class NodePoolNodeConfigInstancesDistribution(dict):
     @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
     def on_demand_percentage_above_base_capacity(self) -> Optional[_builtins.int]:
         """
-        Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+        Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
         """
         return pulumi.get(self, "on_demand_percentage_above_base_capacity")
 
@@ -4632,8 +4636,8 @@ class NodePoolNodeConfigPublicAccessConfig(dict):
                  isp: Optional[_builtins.str] = None):
         """
         :param _builtins.int bandwidth: Peak bandwidth for public IP, unit: Mbps
-        :param _builtins.int billing_type: Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
-        :param _builtins.str isp: Public IP line type. Parameter description: BGP: BGP (multi-line)
+        :param _builtins.int billing_type: Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+        :param _builtins.str isp: Public IP line type. Parameter value description: BGP: BGP (multi-line).
         """
         if bandwidth is not None:
             pulumi.set(__self__, "bandwidth", bandwidth)
@@ -4654,7 +4658,7 @@ class NodePoolNodeConfigPublicAccessConfig(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> Optional[_builtins.int]:
         """
-        Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+        Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -4662,7 +4666,7 @@ class NodePoolNodeConfigPublicAccessConfig(dict):
     @pulumi.getter
     def isp(self) -> Optional[_builtins.str]:
         """
-        Public IP line type. Parameter description: BGP: BGP (multi-line)
+        Public IP line type. Parameter value description: BGP: BGP (multi-line).
         """
         return pulumi.get(self, "isp")
 
@@ -4830,9 +4834,9 @@ class NodePoolNodeConfigSystemVolume(dict):
                  subgroup_number: Optional[_builtins.int] = None,
                  type: Optional[_builtins.str] = None):
         """
-        :param _builtins.str placement_group_id: Placement group ID
-        :param _builtins.int size: Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
-        :param _builtins.int subgroup_number: Placement subgroup
+        :param _builtins.str placement_group_id: Storage placement group ID of the system disk.
+        :param _builtins.int size: Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
+        :param _builtins.int subgroup_number: Storage sub-placement group number for the system disk.
         :param _builtins.str type: Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
         """
         if placement_group_id is not None:
@@ -4848,7 +4852,7 @@ class NodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> Optional[_builtins.str]:
         """
-        Placement group ID
+        Storage placement group ID of the system disk.
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -4856,7 +4860,7 @@ class NodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter
     def size(self) -> Optional[_builtins.int]:
         """
-        Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+        Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
         """
         return pulumi.get(self, "size")
 
@@ -4864,7 +4868,7 @@ class NodePoolNodeConfigSystemVolume(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> Optional[_builtins.int]:
         """
-        Placement subgroup
+        Storage sub-placement group number for the system disk.
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -5022,7 +5026,7 @@ class NodePoolStatus(dict):
         """
         :param Sequence['NodePoolStatusConditionArgs'] conditions: Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
                Important Note: When using SetNestedAttribute, you must fully define all attributes of its nested structure. Incomplete definitions may cause Terraform to detect unexpected differences during plan comparison, triggering unnecessary resource updates and affecting resource stability and predictability.
-        :param _builtins.str phase: Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+        :param _builtins.str phase: Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
         """
         if conditions is not None:
             pulumi.set(__self__, "conditions", conditions)
@@ -5042,7 +5046,7 @@ class NodePoolStatus(dict):
     @pulumi.getter
     def phase(self) -> Optional[_builtins.str]:
         """
-        Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+        Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
         """
         return pulumi.get(self, "phase")
 
@@ -5052,7 +5056,7 @@ class NodePoolStatusCondition(dict):
     def __init__(__self__, *,
                  type: Optional[_builtins.str] = None):
         """
-        :param _builtins.str type: Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+        :param _builtins.str type: Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
         """
         if type is not None:
             pulumi.set(__self__, "type", type)
@@ -5061,7 +5065,7 @@ class NodePoolStatusCondition(dict):
     @pulumi.getter
     def type(self) -> Optional[_builtins.str]:
         """
-        Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+        Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
         """
         return pulumi.get(self, "type")
 
@@ -5147,6 +5151,190 @@ class NodeStatusCondition(dict):
         Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class NodepoolScalingPolicyScheduledInstancePolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "autoReleaseTime":
+            suggest = "auto_release_time"
+        elif key == "bestEffort":
+            suggest = "best_effort"
+        elif key == "deliveryType":
+            suggest = "delivery_type"
+        elif key == "elasticScheduledInstanceType":
+            suggest = "elastic_scheduled_instance_type"
+        elif key == "endDeliveryTime":
+            suggest = "end_delivery_time"
+        elif key == "startDeliveryTime":
+            suggest = "start_delivery_time"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodepoolScalingPolicyScheduledInstancePolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodepoolScalingPolicyScheduledInstancePolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodepoolScalingPolicyScheduledInstancePolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 auto_release_time: Optional[_builtins.str] = None,
+                 best_effort: Optional[_builtins.bool] = None,
+                 delivery_type: Optional[_builtins.str] = None,
+                 elastic_scheduled_instance_type: Optional[_builtins.str] = None,
+                 end_delivery_time: Optional[_builtins.str] = None,
+                 start_delivery_time: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str auto_release_time: Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+        :param _builtins.bool best_effort: If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+        :param _builtins.str delivery_type: Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+        :param _builtins.str elastic_scheduled_instance_type: Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+        :param _builtins.str end_delivery_time: End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+        :param _builtins.str start_delivery_time: Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+        """
+        if auto_release_time is not None:
+            pulumi.set(__self__, "auto_release_time", auto_release_time)
+        if best_effort is not None:
+            pulumi.set(__self__, "best_effort", best_effort)
+        if delivery_type is not None:
+            pulumi.set(__self__, "delivery_type", delivery_type)
+        if elastic_scheduled_instance_type is not None:
+            pulumi.set(__self__, "elastic_scheduled_instance_type", elastic_scheduled_instance_type)
+        if end_delivery_time is not None:
+            pulumi.set(__self__, "end_delivery_time", end_delivery_time)
+        if start_delivery_time is not None:
+            pulumi.set(__self__, "start_delivery_time", start_delivery_time)
+
+    @_builtins.property
+    @pulumi.getter(name="autoReleaseTime")
+    def auto_release_time(self) -> Optional[_builtins.str]:
+        """
+        Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+        """
+        return pulumi.get(self, "auto_release_time")
+
+    @_builtins.property
+    @pulumi.getter(name="bestEffort")
+    def best_effort(self) -> Optional[_builtins.bool]:
+        """
+        If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+        """
+        return pulumi.get(self, "best_effort")
+
+    @_builtins.property
+    @pulumi.getter(name="deliveryType")
+    def delivery_type(self) -> Optional[_builtins.str]:
+        """
+        Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+        """
+        return pulumi.get(self, "delivery_type")
+
+    @_builtins.property
+    @pulumi.getter(name="elasticScheduledInstanceType")
+    def elastic_scheduled_instance_type(self) -> Optional[_builtins.str]:
+        """
+        Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+        """
+        return pulumi.get(self, "elastic_scheduled_instance_type")
+
+    @_builtins.property
+    @pulumi.getter(name="endDeliveryTime")
+    def end_delivery_time(self) -> Optional[_builtins.str]:
+        """
+        End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+        """
+        return pulumi.get(self, "end_delivery_time")
+
+    @_builtins.property
+    @pulumi.getter(name="startDeliveryTime")
+    def start_delivery_time(self) -> Optional[_builtins.str]:
+        """
+        Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+        """
+        return pulumi.get(self, "start_delivery_time")
+
+
+@pulumi.output_type
+class NodepoolScalingPolicyScheduledPolicy(dict):
+    @staticmethod
+    def __key_warning(key: str):
+        suggest = None
+        if key == "launchTime":
+            suggest = "launch_time"
+        elif key == "recurrenceEndTime":
+            suggest = "recurrence_end_time"
+        elif key == "recurrenceType":
+            suggest = "recurrence_type"
+        elif key == "recurrenceValue":
+            suggest = "recurrence_value"
+
+        if suggest:
+            pulumi.log.warn(f"Key '{key}' not found in NodepoolScalingPolicyScheduledPolicy. Access the value via the '{suggest}' property getter instead.")
+
+    def __getitem__(self, key: str) -> Any:
+        NodepoolScalingPolicyScheduledPolicy.__key_warning(key)
+        return super().__getitem__(key)
+
+    def get(self, key: str, default = None) -> Any:
+        NodepoolScalingPolicyScheduledPolicy.__key_warning(key)
+        return super().get(key, default)
+
+    def __init__(__self__, *,
+                 launch_time: Optional[_builtins.str] = None,
+                 recurrence_end_time: Optional[_builtins.str] = None,
+                 recurrence_type: Optional[_builtins.str] = None,
+                 recurrence_value: Optional[_builtins.str] = None):
+        """
+        :param _builtins.str launch_time: Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+        :param _builtins.str recurrence_end_time: End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+        :param _builtins.str recurrence_type: Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+        :param _builtins.str recurrence_value: Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+        """
+        if launch_time is not None:
+            pulumi.set(__self__, "launch_time", launch_time)
+        if recurrence_end_time is not None:
+            pulumi.set(__self__, "recurrence_end_time", recurrence_end_time)
+        if recurrence_type is not None:
+            pulumi.set(__self__, "recurrence_type", recurrence_type)
+        if recurrence_value is not None:
+            pulumi.set(__self__, "recurrence_value", recurrence_value)
+
+    @_builtins.property
+    @pulumi.getter(name="launchTime")
+    def launch_time(self) -> Optional[_builtins.str]:
+        """
+        Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+        """
+        return pulumi.get(self, "launch_time")
+
+    @_builtins.property
+    @pulumi.getter(name="recurrenceEndTime")
+    def recurrence_end_time(self) -> Optional[_builtins.str]:
+        """
+        End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+        """
+        return pulumi.get(self, "recurrence_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="recurrenceType")
+    def recurrence_type(self) -> Optional[_builtins.str]:
+        """
+        Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+        """
+        return pulumi.get(self, "recurrence_type")
+
+    @_builtins.property
+    @pulumi.getter(name="recurrenceValue")
+    def recurrence_value(self) -> Optional[_builtins.str]:
+        """
+        Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+        """
+        return pulumi.get(self, "recurrence_value")
 
 
 @pulumi.output_type
@@ -7352,12 +7540,12 @@ class GetNodePoolAutoScalingResult(dict):
                  scaling_group_id: _builtins.str,
                  subnet_policy: _builtins.str):
         """
-        :param _builtins.int desired_replicas: Configure the expected number of nodes in the node pool
-        :param _builtins.bool enabled: Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
-        :param _builtins.int max_replicas: Configure the maximum number of nodes in the node pool
-        :param _builtins.int min_replicas: Minimum number of nodes configured for the node pool
-        :param _builtins.int priority: Priority
-        :param _builtins.str scaling_group_id: Scaling group ID
+        :param _builtins.int desired_replicas: Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
+        :param _builtins.bool enabled: Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
+        :param _builtins.int max_replicas: Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
+        :param _builtins.int min_replicas: Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
+        :param _builtins.int priority: Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
+        :param _builtins.str scaling_group_id: Scaling group ID associated with the node pool.
         :param _builtins.str subnet_policy: Multi-subnet scheduling strategy for the node pool. Parameter values: ZoneBalance: availability zone balancing strategy. Priority: subnet priority strategy.
         """
         pulumi.set(__self__, "desired_replicas", desired_replicas)
@@ -7372,7 +7560,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="desiredReplicas")
     def desired_replicas(self) -> _builtins.int:
         """
-        Configure the expected number of nodes in the node pool
+        Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
         """
         return pulumi.get(self, "desired_replicas")
 
@@ -7380,7 +7568,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter
     def enabled(self) -> _builtins.bool:
         """
-        Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+        Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -7388,7 +7576,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="maxReplicas")
     def max_replicas(self) -> _builtins.int:
         """
-        Configure the maximum number of nodes in the node pool
+        Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
         """
         return pulumi.get(self, "max_replicas")
 
@@ -7396,7 +7584,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="minReplicas")
     def min_replicas(self) -> _builtins.int:
         """
-        Minimum number of nodes configured for the node pool
+        Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
         """
         return pulumi.get(self, "min_replicas")
 
@@ -7404,7 +7592,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter
     def priority(self) -> _builtins.int:
         """
-        Priority
+        Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
         """
         return pulumi.get(self, "priority")
 
@@ -7412,7 +7600,7 @@ class GetNodePoolAutoScalingResult(dict):
     @pulumi.getter(name="scalingGroupId")
     def scaling_group_id(self) -> _builtins.str:
         """
-        Scaling group ID
+        Scaling group ID associated with the node pool.
         """
         return pulumi.get(self, "scaling_group_id")
 
@@ -7438,15 +7626,15 @@ class GetNodePoolKubernetesConfigResult(dict):
                  name_use_hostname: _builtins.bool,
                  taints: Sequence['outputs.GetNodePoolKubernetesConfigTaintResult']):
         """
-        :param _builtins.bool auto_sync_disabled: Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+        :param _builtins.bool auto_sync_disabled: Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
         :param 'GetNodePoolKubernetesConfigContainerdConfigArgs' containerd_config: Node pool Containerd configuration
-        :param _builtins.bool cordon: Node blocking configuration. Parameter values: false: not blocked; true: blocked
-        :param 'GetNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Kubelet component configuration
-        :param Sequence['GetNodePoolKubernetesConfigLabelArgs'] labels: Kubernetes label information for node pools/nodes
-        :param _builtins.str name_prefix: Prefix for node object metadata name in Kubernetes
+        :param _builtins.bool cordon: Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
+        :param 'GetNodePoolKubernetesConfigKubeletConfigArgs' kubelet_config: Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
+        :param Sequence['GetNodePoolKubernetesConfigLabelArgs'] labels: Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
+        :param _builtins.str name_prefix: Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
         :param _builtins.str name_suffix: Suffix for node object metadata name in Kubernetes
-        :param _builtins.bool name_use_hostname: Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
-        :param Sequence['GetNodePoolKubernetesConfigTaintArgs'] taints: Kubernetes taint information for node pools/nodes
+        :param _builtins.bool name_use_hostname: Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
+        :param Sequence['GetNodePoolKubernetesConfigTaintArgs'] taints: Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
         """
         pulumi.set(__self__, "auto_sync_disabled", auto_sync_disabled)
         pulumi.set(__self__, "containerd_config", containerd_config)
@@ -7462,7 +7650,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="autoSyncDisabled")
     def auto_sync_disabled(self) -> _builtins.bool:
         """
-        Disable automatic synchronization of labels and taints to existing nodes. Parameter values: true: disable (turn off automatic sync). false: do not disable (turn on automatic sync)
+        Disable automatic synchronization of labels and taints to existing nodes. Parameter value description: true: Disable, i.e., turn off automatic synchronization. false: (Default) Do not disable, i.e., enable automatic synchronization.
         """
         return pulumi.get(self, "auto_sync_disabled")
 
@@ -7478,7 +7666,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def cordon(self) -> _builtins.bool:
         """
-        Node blocking configuration. Parameter values: false: not blocked; true: blocked
+        Node blocking configuration. Options: false: (default) Not blocked. true: Blocked. Note: When updating the node pool (UpdateNodePoolConfig), if no parameter value is provided, the original parameter configuration is retained.
         """
         return pulumi.get(self, "cordon")
 
@@ -7486,7 +7674,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="kubeletConfig")
     def kubelet_config(self) -> 'outputs.GetNodePoolKubernetesConfigKubeletConfigResult':
         """
-        Kubelet component configuration
+        Custom kubelet parameter configuration for nodes in the node pool, used to adjust node behavior.
         """
         return pulumi.get(self, "kubelet_config")
 
@@ -7494,7 +7682,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def labels(self) -> Sequence['outputs.GetNodePoolKubernetesConfigLabelResult']:
         """
-        Kubernetes label information for node pools/nodes
+        Kubernetes label information for the node pool/nodes. Up to 20 labels can be specified. Note: The node pool centrally manages node label configurations, so label information is synchronized to all nodes in the pool. When labels change, the original label configuration will be overwritten.
         """
         return pulumi.get(self, "labels")
 
@@ -7502,7 +7690,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> _builtins.str:
         """
-        Prefix for node object metadata name in Kubernetes
+        Prefix for the metadata name of node objects in Kubernetes. Disabled by default. If set, it is enabled and will affect the metadata.name prefix displayed in the Kubernetes Node Manifest file. Prefix validation rules: Supports lowercase English letters, numbers, hyphens (-), and periods (.); must start with a lowercase English letter or number; length must be 1–48 characters.
         """
         return pulumi.get(self, "name_prefix")
 
@@ -7518,7 +7706,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter(name="nameUseHostname")
     def name_use_hostname(self) -> _builtins.bool:
         """
-        Whether the node object metadata name in Kubernetes uses the ECS host name. Values: true: use ECS host name as node name; false: do not use ECS host name as node name
+        Whether to use the ECS host name as the metadata name for node objects in Kubernetes. Options: true: Use ECS host name as node name. false: Do not use ECS host name as node name. Note: This setting takes precedence over NamePrefix and NameSuffix.
         """
         return pulumi.get(self, "name_use_hostname")
 
@@ -7526,7 +7714,7 @@ class GetNodePoolKubernetesConfigResult(dict):
     @pulumi.getter
     def taints(self) -> Sequence['outputs.GetNodePoolKubernetesConfigTaintResult']:
         """
-        Kubernetes taint information for node pools/nodes
+        Kubernetes taints information for the node pool/nodes. You can specify up to 20 taints. Note: The node pool manages taint configuration uniformly, so taint information is synchronized to all nodes in the pool. When taints are changed, the original taint configuration will be overwritten.
         """
         return pulumi.get(self, "taints")
 
@@ -7537,7 +7725,7 @@ class GetNodePoolKubernetesConfigContainerdConfigResult(dict):
                  insecure_registries: Sequence[_builtins.str],
                  registry_proxy_configs: Sequence['outputs.GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult']):
         """
-        :param Sequence[_builtins.str] insecure_registries: Specify the container image repository address to skip certificate verification.
+        :param Sequence[_builtins.str] insecure_registries: Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
         :param Sequence['GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigArgs'] registry_proxy_configs: Container image repository proxy configuration
         """
         pulumi.set(__self__, "insecure_registries", insecure_registries)
@@ -7547,7 +7735,7 @@ class GetNodePoolKubernetesConfigContainerdConfigResult(dict):
     @pulumi.getter(name="insecureRegistries")
     def insecure_registries(self) -> Sequence[_builtins.str]:
         """
-        Specify the container image repository address to skip certificate verification.
+        Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
         """
         return pulumi.get(self, "insecure_registries")
 
@@ -7566,8 +7754,8 @@ class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult(dict)
                  proxy_endpoints: Sequence[_builtins.str],
                  registry: _builtins.str):
         """
-        :param Sequence[_builtins.str] proxy_endpoints: Proxy address.
-        :param _builtins.str registry: Container image repository address.
+        :param Sequence[_builtins.str] proxy_endpoints: Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
+        :param _builtins.str registry: Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
         """
         pulumi.set(__self__, "proxy_endpoints", proxy_endpoints)
         pulumi.set(__self__, "registry", registry)
@@ -7576,7 +7764,7 @@ class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult(dict)
     @pulumi.getter(name="proxyEndpoints")
     def proxy_endpoints(self) -> Sequence[_builtins.str]:
         """
-        Proxy address.
+        Proxy address. Format: domain name or IP address with protocol, may include port number, for example: https://example.com or https://example.com:8080. Supports up to 5 domain names or IP addresses.
         """
         return pulumi.get(self, "proxy_endpoints")
 
@@ -7584,7 +7772,7 @@ class GetNodePoolKubernetesConfigContainerdConfigRegistryProxyConfigResult(dict)
     @pulumi.getter
     def registry(self) -> _builtins.str:
         """
-        Container image repository address.
+        Container image repository address. The format is a domain name or IP address without protocol, and may include a port number, for example: example.com or example.com:8080.
         """
         return pulumi.get(self, "registry")
 
@@ -7606,17 +7794,17 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
                  topology_manager_policy: _builtins.str,
                  topology_manager_scope: _builtins.str):
         """
-        :param _builtins.str cpu_manager_policy: Configure kubelet CpuManagerPolicy. Supports none and static policies
-        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs'] eviction_hards: Set of hard thresholds for triggering Pod eviction
-        :param 'GetNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: Feature gate
-        :param _builtins.int kube_api_burst: Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
-        :param _builtins.int kube_api_qps: Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
-        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigKubeReservedArgs'] kube_reserveds: Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
-        :param _builtins.int max_pods: Configure the maximum number of Pods supported by kubelet
-        :param _builtins.int registry_burst: Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
-        :param _builtins.int registry_pull_qps: Used to limit the QPS cap for the image repository
-        :param _builtins.bool serialize_image_pulls: Pull images sequentially
-        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigSystemReservedArgs'] system_reserveds: Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+        :param _builtins.str cpu_manager_policy: CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
+        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigEvictionHardArgs'] eviction_hards: A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
+        :param 'GetNodePoolKubernetesConfigKubeletConfigFeatureGatesArgs' feature_gates: Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
+        :param _builtins.int kube_api_burst: Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
+        :param _builtins.int kube_api_qps: Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
+        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigKubeReservedArgs'] kube_reserveds: Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
+        :param _builtins.int max_pods: Maximum number of Pods supported by the node. Default is 110.
+        :param _builtins.int registry_burst: Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
+        :param _builtins.int registry_pull_qps: QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
+        :param _builtins.bool serialize_image_pulls: Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
+        :param Sequence['GetNodePoolKubernetesConfigKubeletConfigSystemReservedArgs'] system_reserveds: Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
         :param _builtins.str topology_manager_policy: Topology management policy. Values: none (default): disables topology management policy. restricted: kubelet only accepts Pods that achieve optimal NUMA (Non-Uniform Memory Access) on requested resources. best-effort: kubelet prioritizes Pods that achieve NUMA on CPU and device resources. single-numa-node: kubelet only allows Pods that achieve NUMA on CPU and device resources within the same node
         :param _builtins.str topology_manager_scope: Resource granularity for topology management policy. Values: container: resource alignment at container level pod: resource alignment at Pod level
         """
@@ -7638,7 +7826,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="cpuManagerPolicy")
     def cpu_manager_policy(self) -> _builtins.str:
         """
-        Configure kubelet CpuManagerPolicy. Supports none and static policies
+        CPU manager policy. Options: none: Default policy. static: Allows Pods with certain resource characteristics on the node to have stronger CPU affinity and exclusivity.
         """
         return pulumi.get(self, "cpu_manager_policy")
 
@@ -7646,7 +7834,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="evictionHards")
     def eviction_hards(self) -> Sequence['outputs.GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult']:
         """
-        Set of hard thresholds for triggering Pod eviction
+        A set of hard thresholds that trigger Pod eviction. For detailed parameter explanations, see the Kubernetes official documentation (https://kubernetes.io/docs/concepts/scheduling-eviction/node-pressure-eviction/). To explicitly disable, set the threshold for any resource to 0% or 100%. Default values: memory.available: "100Mi", nodefs.available: "10%", nodefs.inodesFree: "5%", imagefs.available: "15%".
         """
         return pulumi.get(self, "eviction_hards")
 
@@ -7654,7 +7842,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="featureGates")
     def feature_gates(self) -> 'outputs.GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult':
         """
-        Feature gate
+        Feature gates, which are a set of key-value pairs that describe Kubernetes features. Note: These feature gates are only supported in clusters running Kubernetes v1.26 or earlier.
         """
         return pulumi.get(self, "feature_gates")
 
@@ -7662,7 +7850,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeApiBurst")
     def kube_api_burst(self) -> _builtins.int:
         """
-        Maximum burst request rate sent to the API server per second. Excludes events and node heartbeat APIs, whose rate limits are controlled by a different set of flags
+        Maximum burst request count sent to APIServer per second. Integer value, range: 1–100, default is 10. Note: This value must be greater than or equal to the value of the KubeApiQps parameter.
         """
         return pulumi.get(self, "kube_api_burst")
 
@@ -7670,7 +7858,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeApiQps")
     def kube_api_qps(self) -> _builtins.int:
         """
-        Queries per second (QPS) for communication with apiserver. Events and node heartbeat APIs are not included; their rate limits are controlled by a different set of flags.
+        Number of queries per second (QPS) to APIServer. Integer, range: 1–50, default is 5.
         """
         return pulumi.get(self, "kube_api_qps")
 
@@ -7678,7 +7866,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="kubeReserveds")
     def kube_reserveds(self) -> Sequence['outputs.GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult']:
         """
-        Resources reserved for Kubernetes system components on the node. By default, half of the default value in the node reserved resource policy is reserved.
+        Resources reserved for Kubernetes system components on the node. By default, reserves half of the default value specified in the node resource reservation policy.
         """
         return pulumi.get(self, "kube_reserveds")
 
@@ -7686,7 +7874,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="maxPods")
     def max_pods(self) -> _builtins.int:
         """
-        Configure the maximum number of Pods supported by kubelet
+        Maximum number of Pods supported by the node. Default is 110.
         """
         return pulumi.get(self, "max_pods")
 
@@ -7694,7 +7882,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="registryBurst")
     def registry_burst(self) -> _builtins.int:
         """
-        Set the maximum number of burst image pulls. Temporarily allows the number of image pulls specified by this parameter, provided it does not exceed the RegistryPullQps setting
+        Burst threshold for pulling images from the image registry in the cluster. Integer value, range: 1–100, default is 5. Note: Only required when RegistryPullQps is greater than 0, and the value must be greater than or equal to the value of the RegistryPullQps parameter.
         """
         return pulumi.get(self, "registry_burst")
 
@@ -7702,7 +7890,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="registryPullQps")
     def registry_pull_qps(self) -> _builtins.int:
         """
-        Used to limit the QPS cap for the image repository
+        QPS threshold for pulling images from the image registry in the cluster. Integer value, range: 1–50, default is 2.
         """
         return pulumi.get(self, "registry_pull_qps")
 
@@ -7710,7 +7898,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="serializeImagePulls")
     def serialize_image_pulls(self) -> _builtins.bool:
         """
-        Pull images sequentially
+        Enable serial image pulling. Values: true: Pull images serially. false: (Default) Pull images in parallel to speed up Pod startup.
         """
         return pulumi.get(self, "serialize_image_pulls")
 
@@ -7718,7 +7906,7 @@ class GetNodePoolKubernetesConfigKubeletConfigResult(dict):
     @pulumi.getter(name="systemReserveds")
     def system_reserveds(self) -> Sequence['outputs.GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult']:
         """
-        Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is used for resource reservation.
+        Resources reserved for the operating system on the node. By default, half of the default value in the node reserved resource policy is allocated.
         """
         return pulumi.get(self, "system_reserveds")
 
@@ -7746,7 +7934,7 @@ class GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult(dict):
                  value: _builtins.str):
         """
         :param _builtins.str key: Hard threshold name. Options: memory.available, nodefs.available, nodefs.inodesFree, imagefs.available
-        :param _builtins.str value: Hard threshold value.
+        :param _builtins.str value: Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -7763,7 +7951,7 @@ class GetNodePoolKubernetesConfigKubeletConfigEvictionHardResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Hard threshold value.
+        Hard threshold value. Supports integer or percentage format: Integer format specifies the actual resource threshold in bytes, for example, 100Mi. Percentage format specifies the resource threshold as a proportion, range: 0%–100%, for example, 20%. To explicitly disable, set the threshold to 0% or 100% for any resource.
         """
         return pulumi.get(self, "value")
 
@@ -7774,8 +7962,8 @@ class GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
                  in_place_pod_vertical_scaling: _builtins.bool,
                  qo_s_resource_manager: _builtins.bool):
         """
-        :param _builtins.bool in_place_pod_vertical_scaling: Enable local vertical Pod autoscaling feature toggle
-        :param _builtins.bool qo_s_resource_manager: Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+        :param _builtins.bool in_place_pod_vertical_scaling: Enable Pod vertical scaling. Options: true: enabled. false: disabled.
+        :param _builtins.bool qo_s_resource_manager: Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
         """
         pulumi.set(__self__, "in_place_pod_vertical_scaling", in_place_pod_vertical_scaling)
         pulumi.set(__self__, "qo_s_resource_manager", qo_s_resource_manager)
@@ -7784,7 +7972,7 @@ class GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
     @pulumi.getter(name="inPlacePodVerticalScaling")
     def in_place_pod_vertical_scaling(self) -> _builtins.bool:
         """
-        Enable local vertical Pod autoscaling feature toggle
+        Enable Pod vertical scaling. Options: true: enabled. false: disabled.
         """
         return pulumi.get(self, "in_place_pod_vertical_scaling")
 
@@ -7792,7 +7980,7 @@ class GetNodePoolKubernetesConfigKubeletConfigFeatureGatesResult(dict):
     @pulumi.getter(name="qoSResourceManager")
     def qo_s_resource_manager(self) -> _builtins.bool:
         """
-        Whether to enable the QoSResourceManager feature switch. Values:   - true enabled;   - false disabled
+        Whether to enable the QoS resource manager to support micro-topology scheduling. Values: true: Enable the QoS resource manager. false: (default) Do not enable the QoS resource manager.
         """
         return pulumi.get(self, "qo_s_resource_manager")
 
@@ -7804,7 +7992,7 @@ class GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult(dict):
                  quantity: _builtins.str):
         """
         :param _builtins.str name: Resource name. Valid values: cpu or memory.
-        :param _builtins.str quantity: Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+        :param _builtins.str quantity: Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "quantity", quantity)
@@ -7821,7 +8009,7 @@ class GetNodePoolKubernetesConfigKubeletConfigKubeReservedResult(dict):
     @pulumi.getter
     def quantity(self) -> _builtins.str:
         """
-        Specify the resource quantity.   - For cpu, example value: 200m   - For memory, example value: 1G
+        Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         """
         return pulumi.get(self, "quantity")
 
@@ -7833,7 +8021,7 @@ class GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult(dict):
                  quantity: _builtins.str):
         """
         :param _builtins.str name: Resource name. Valid values: cpu or memory.
-        :param _builtins.str quantity: Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+        :param _builtins.str quantity: Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         """
         pulumi.set(__self__, "name", name)
         pulumi.set(__self__, "quantity", quantity)
@@ -7850,7 +8038,7 @@ class GetNodePoolKubernetesConfigKubeletConfigSystemReservedResult(dict):
     @pulumi.getter
     def quantity(self) -> _builtins.str:
         """
-        Resource quantity for the specified resource.   - For cpu, example value: 200m.   - For memory, example value: 1G.
+        Specify the resource quantity. For cpu, example value is 200m. For memory, example value is 1G.
         """
         return pulumi.get(self, "quantity")
 
@@ -7861,8 +8049,8 @@ class GetNodePoolKubernetesConfigLabelResult(dict):
                  key: _builtins.str,
                  value: _builtins.str):
         """
-        :param _builtins.str key: Tag key.
-        :param _builtins.str value: Label value.
+        :param _builtins.str key: Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
+        :param _builtins.str value: Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
         """
         pulumi.set(__self__, "key", key)
         pulumi.set(__self__, "value", value)
@@ -7871,7 +8059,7 @@ class GetNodePoolKubernetesConfigLabelResult(dict):
     @pulumi.getter
     def key(self) -> _builtins.str:
         """
-        Tag key.
+        Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
         """
         return pulumi.get(self, "key")
 
@@ -7879,7 +8067,7 @@ class GetNodePoolKubernetesConfigLabelResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Label value.
+        Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
         """
         return pulumi.get(self, "value")
 
@@ -7892,8 +8080,8 @@ class GetNodePoolKubernetesConfigTaintResult(dict):
                  value: _builtins.str):
         """
         :param _builtins.str effect: Taint effect. Values: NoSchedule: (default) Do not schedule. NoExecute: Evict pods that do not tolerate the taint. PreferNoSchedule: Prefer not to schedule.
-        :param _builtins.str key: Taint key.
-        :param _builtins.str value: Taint value
+        :param _builtins.str key: Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
+        :param _builtins.str value: Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
         """
         pulumi.set(__self__, "effect", effect)
         pulumi.set(__self__, "key", key)
@@ -7911,7 +8099,7 @@ class GetNodePoolKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def key(self) -> _builtins.str:
         """
-        Taint key.
+        Taint key. A valid taint key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
         """
         return pulumi.get(self, "key")
 
@@ -7919,7 +8107,7 @@ class GetNodePoolKubernetesConfigTaintResult(dict):
     @pulumi.getter
     def value(self) -> _builtins.str:
         """
-        Taint value
+        Taint value. Maximum length is 63 characters (can be empty). Must start and end with an English letter (upper or lower case) or a number. Supports special characters: hyphen (-), underscore (_), and period (.).
         """
         return pulumi.get(self, "value")
 
@@ -7930,8 +8118,8 @@ class GetNodePoolManagementResult(dict):
                  enabled: _builtins.bool,
                  remedy_config: 'outputs.GetNodePoolManagementRemedyConfigResult'):
         """
-        :param _builtins.bool enabled: Enable managed mode for node pool. Options:   - true: on   - false: off
-        :param 'GetNodePoolManagementRemedyConfigArgs' remedy_config: Check self-healing configuration.
+        :param _builtins.bool enabled: Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
+        :param 'GetNodePoolManagementRemedyConfigArgs' remedy_config: Node pool health check and self-healing rule configuration.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "remedy_config", remedy_config)
@@ -7940,7 +8128,7 @@ class GetNodePoolManagementResult(dict):
     @pulumi.getter
     def enabled(self) -> _builtins.bool:
         """
-        Enable managed mode for node pool. Options:   - true: on   - false: off
+        Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
         """
         return pulumi.get(self, "enabled")
 
@@ -7948,7 +8136,7 @@ class GetNodePoolManagementResult(dict):
     @pulumi.getter(name="remedyConfig")
     def remedy_config(self) -> 'outputs.GetNodePoolManagementRemedyConfigResult':
         """
-        Check self-healing configuration.
+        Node pool health check and self-healing rule configuration.
         """
         return pulumi.get(self, "remedy_config")
 
@@ -7959,8 +8147,8 @@ class GetNodePoolManagementRemedyConfigResult(dict):
                  enabled: _builtins.bool,
                  remedy_id: _builtins.str):
         """
-        :param _builtins.bool enabled: Enable self-healing check
-        :param _builtins.str remedy_id: Self-healing rule ID
+        :param _builtins.bool enabled: Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
+        :param _builtins.str remedy_id: Self-healing rule ID associated after enabling self-healing check for the node pool.
         """
         pulumi.set(__self__, "enabled", enabled)
         pulumi.set(__self__, "remedy_id", remedy_id)
@@ -7969,7 +8157,7 @@ class GetNodePoolManagementRemedyConfigResult(dict):
     @pulumi.getter
     def enabled(self) -> _builtins.bool:
         """
-        Enable self-healing check
+        Whether to enable the self-healing check after enabling managed mode for the node pool. Values: true: enable; false: disable.
         """
         return pulumi.get(self, "enabled")
 
@@ -7977,7 +8165,7 @@ class GetNodePoolManagementRemedyConfigResult(dict):
     @pulumi.getter(name="remedyId")
     def remedy_id(self) -> _builtins.str:
         """
-        Self-healing rule ID
+        Self-healing rule ID associated after enabling self-healing check for the node pool.
         """
         return pulumi.get(self, "remedy_id")
 
@@ -8012,32 +8200,32 @@ class GetNodePoolNodeConfigResult(dict):
                  system_volume: 'outputs.GetNodePoolNodeConfigSystemVolumeResult',
                  tags: Sequence['outputs.GetNodePoolNodeConfigTagResult']):
         """
-        :param _builtins.bool additional_container_storage_enabled: Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
-        :param _builtins.bool auto_renew: Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
-        :param _builtins.int auto_renew_period: Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
-        :param Sequence['GetNodePoolNodeConfigDataVolumeArgs'] data_volumes: Node data disk configuration.
-        :param _builtins.int deployment_set_group_number: Group number of the instance in the deployment set; 0 means not set
-        :param _builtins.str deployment_set_id: Deployment Set ID to be added to the instance
-        :param _builtins.str hostname: The host name corresponding to the node.
-        :param Sequence[_builtins.str] hpc_cluster_ids: High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
-        :param _builtins.str image_id: Image ID used by the cloud server corresponding to the node
-        :param _builtins.str initialize_script: Custom script executed after node creation and initialization. Shell script in Base64 encoding
-        :param _builtins.str instance_charge_type: Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
-        :param _builtins.str instance_name: Node (instance) name
-        :param Sequence[_builtins.str] instance_type_ids: List of cloud server instance type IDs corresponding to the nodes
-        :param 'GetNodePoolNodeConfigInstancesDistributionArgs' instances_distribution: Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
-        :param _builtins.str name_prefix: Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
-        :param _builtins.str network_traffic_mode: Network communication mode between nodes
-        :param _builtins.int period: Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
-        :param _builtins.str pre_script: Script to execute before deploying the node
-        :param _builtins.str project_name: Project to which the ECS belongs. Each ECS can only belong to one project.
-        :param 'GetNodePoolNodeConfigPublicAccessConfigArgs' public_access_config: Configuration for automatic public network access for nodes
-        :param _builtins.bool public_access_enabled: Enable public network access for nodes automatically. Options:   - false: off   - true: on
+        :param _builtins.bool additional_container_storage_enabled: Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
+        :param _builtins.bool auto_renew: Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
+        :param _builtins.int auto_renew_period: ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
+        :param Sequence['GetNodePoolNodeConfigDataVolumeArgs'] data_volumes: Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
+        :param _builtins.int deployment_set_group_number: When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
+        :param _builtins.str deployment_set_id: Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
+        :param _builtins.str hostname: Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
+        :param Sequence[_builtins.str] hpc_cluster_ids: High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
+        :param _builtins.str image_id: The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
+        :param _builtins.str initialize_script: Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
+        :param _builtins.str instance_charge_type: ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
+        :param _builtins.str instance_name: Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
+        :param Sequence[_builtins.str] instance_type_ids: List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
+        :param 'GetNodePoolNodeConfigInstancesDistributionArgs' instances_distribution: Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+        :param _builtins.str name_prefix: Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
+        :param _builtins.str network_traffic_mode: Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
+        :param _builtins.int period: ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
+        :param _builtins.str pre_script: [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
+        :param _builtins.str project_name: Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
+        :param 'GetNodePoolNodeConfigPublicAccessConfigArgs' public_access_config: Configuration information for automatically binding EIP to nodes.
+        :param _builtins.bool public_access_enabled: Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
         :param 'GetNodePoolNodeConfigSecurityArgs' security: Node security configuration
-        :param _builtins.str spot_strategy: Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
-        :param Sequence[_builtins.str] subnet_ids: List of subnet IDs for the node network.
-        :param 'GetNodePoolNodeConfigSystemVolumeArgs' system_volume: System disk configuration for the node
-        :param Sequence['GetNodePoolNodeConfigTagArgs'] tags: Label information configured for the node pool
+        :param _builtins.str spot_strategy: Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
+        :param Sequence[_builtins.str] subnet_ids: List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
+        :param 'GetNodePoolNodeConfigSystemVolumeArgs' system_volume: System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
+        :param Sequence['GetNodePoolNodeConfigTagArgs'] tags: Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
         """
         pulumi.set(__self__, "additional_container_storage_enabled", additional_container_storage_enabled)
         pulumi.set(__self__, "auto_renew", auto_renew)
@@ -8070,7 +8258,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="additionalContainerStorageEnabled")
     def additional_container_storage_enabled(self) -> _builtins.bool:
         """
-        Whether the first data disk of the node is configured, formatted, and mounted as the storage directory for container images and logs. Parameter values: false: not configured and formatted; true: configured and formatted
+        Whether to configure the first data disk of the node, format it, and mount it to the container and image storage directory (/var/lib/containerd). Options: false: (default) Disabled. true: Enabled. Note: When enabled, at least one data disk must be configured; otherwise, node pool creation will fail. This method will automatically format the first data disk and create the file system.
         """
         return pulumi.get(self, "additional_container_storage_enabled")
 
@@ -8078,7 +8266,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="autoRenew")
     def auto_renew(self) -> _builtins.bool:
         """
-        Whether the cloud server instance will be automatically renewed upon expiration. Parameter description: true: auto renewal false: no auto renewal This parameter is returned only when InstanceChargeType=PrePaid.
+        Whether the ECS instance will be automatically renewed upon expiration. Options: true (default): auto renewal. false: no auto renewal. Only required when InstanceChargeType=PrePaid; otherwise, ignore.
         """
         return pulumi.get(self, "auto_renew")
 
@@ -8086,7 +8274,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="autoRenewPeriod")
     def auto_renew_period(self) -> _builtins.int:
         """
-        Automatic renewal duration for cloud server instances, in months. This parameter is returned only when AutoRenew=true
+        ECS instance auto-renewal duration, in months. Values: 1 (default), 2, 3, 6, 12. Only required when AutoRenew=true; otherwise, ignore.
         """
         return pulumi.get(self, "auto_renew_period")
 
@@ -8094,7 +8282,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="dataVolumes")
     def data_volumes(self) -> Sequence['outputs.GetNodePoolNodeConfigDataVolumeResult']:
         """
-        Node data disk configuration.
+        Node data disk configuration. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and cloud disk specifications.
         """
         return pulumi.get(self, "data_volumes")
 
@@ -8102,7 +8290,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="deploymentSetGroupNumber")
     def deployment_set_group_number(self) -> _builtins.int:
         """
-        Group number of the instance in the deployment set; 0 means not set
+        When the specified deployment set policy is the deployment set group high availability policy, you can use this parameter to specify the group number of the instance in the deployment set. Value range: 1–3. 0 means not set.
         """
         return pulumi.get(self, "deployment_set_group_number")
 
@@ -8110,7 +8298,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="deploymentSetId")
     def deployment_set_id(self) -> _builtins.str:
         """
-        Deployment Set ID to be added to the instance
+        Deployment set ID that nodes in the node pool need to join. You can call the DescribeDeploymentSets API to obtain the deployment set ID.
         """
         return pulumi.get(self, "deployment_set_id")
 
@@ -8118,7 +8306,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def hostname(self) -> _builtins.str:
         """
-        The host name corresponding to the node.
+        Host name corresponding to the node. Supports defining fixed incremental sorting and dynamic expansion sorting. For details on the definition format, see naming format.
         """
         return pulumi.get(self, "hostname")
 
@@ -8126,7 +8314,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="hpcClusterIds")
     def hpc_cluster_ids(self) -> Sequence[_builtins.str]:
         """
-        High performance computing cluster ID. When the node pool is configured with high performance computing GPU node types, returns the high performance computing cluster ID
+        High Performance Computing Cluster ID. When creating a node pool with a high-performance computing GPU type, you must specify the High Performance Computing Cluster ID, which can be obtained from the 'Instances & Images > High Performance Computing Cluster' page in the cloud server console. Note: Only one High Performance Computing Cluster ID is supported; ensure the specified cluster and the subnets in SubnetIds are in the same availability zone.
         """
         return pulumi.get(self, "hpc_cluster_ids")
 
@@ -8134,7 +8322,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="imageId")
     def image_id(self) -> _builtins.str:
         """
-        Image ID used by the cloud server corresponding to the node
+        The image ID used by the ECS instance corresponding to the node. Different image types have different image IDs. For details, see Public Images Supported by Container Service. Note: If you do not specify this parameter, Container Service will assign the veLinux-VKE image ID corresponding to the selected ECS instance type by default. If you specify multiple instance types, this parameter is required.
         """
         return pulumi.get(self, "image_id")
 
@@ -8142,7 +8330,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="initializeScript")
     def initialize_script(self) -> _builtins.str:
         """
-        Custom script executed after node creation and initialization. Shell script in Base64 encoding
+        Custom script to execute after creating and initializing the node. Supports Shell format and must be Base64-encoded before being passed in. Note: The Base64-encoded length must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
         """
         return pulumi.get(self, "initialize_script")
 
@@ -8150,7 +8338,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceChargeType")
     def instance_charge_type(self) -> _builtins.str:
         """
-        Cloud server instance billing type. Parameter values: PostPaid: pay-as-you-go. PrePaid: subscription (annual/monthly).
+        ECS instance billing type. Values: PostPaid (default): pay-as-you-go. PrePaid: subscription.
         """
         return pulumi.get(self, "instance_charge_type")
 
@@ -8158,7 +8346,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceName")
     def instance_name(self) -> _builtins.str:
         """
-        Node (instance) name
+        Name of the node (instance). Supports defining fixed incremental sorting and dynamic expansion sorting. For format details, see naming format.
         """
         return pulumi.get(self, "instance_name")
 
@@ -8166,7 +8354,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instanceTypeIds")
     def instance_type_ids(self) -> Sequence[_builtins.str]:
         """
-        List of cloud server instance type IDs corresponding to the nodes
+        List of instance type IDs for cloud server (ECS) instances corresponding to the nodes. This list serves as the candidate set of instance types when creating nodes in the node pool, not as a fixed quota for each type: the node pool selects instance types from the list based on available inventory and other factors. Different nodes in the same node pool may use different types from the list, or all may use the same type. Each type does not correspond to an independent node count quota. To strictly split node counts by type, create a separate node pool for each type. You can call the ListSupportedResourceTypes API to query the resource types and ranges supported by the cluster instance. Constraints: Up to ten array elements are supported; all types in the list must be consistent, such as all GPU types, all non-GPU types, or all bare metal types; when multiple types are provided, the ImageId parameter is required.
         """
         return pulumi.get(self, "instance_type_ids")
 
@@ -8174,7 +8362,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="instancesDistribution")
     def instances_distribution(self) -> 'outputs.GetNodePoolNodeConfigInstancesDistributionResult':
         """
-        Set the mixed strategy for spot and pay-as-you-go instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
+        Configure a mixed strategy for spot instances and on-demand instances. This strategy takes effect when SpotStrategy is SpotAsPriceGo.
         """
         return pulumi.get(self, "instances_distribution")
 
@@ -8182,7 +8370,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="namePrefix")
     def name_prefix(self) -> _builtins.str:
         """
-        Node name prefix. An empty string or nil means the node name prefix policy is not enabled.
+        Node name prefix. If the value is an empty string or nil, it indicates that the node name prefix policy is not enabled. This policy is not enabled by default. Prefix validation rules: supports uppercase and lowercase English letters, numbers, and hyphens (-); must start with a letter and end with a letter or number; hyphens (-) cannot be used consecutively; length must be between 2 and 51 characters.
         """
         return pulumi.get(self, "name_prefix")
 
@@ -8190,7 +8378,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="networkTrafficMode")
     def network_traffic_mode(self) -> _builtins.str:
         """
-        Network communication mode between nodes
+        Network communication mode between nodes. Options: HighPerformance: Communication method based on RDMA for data transmission. Standard: Communication method based on TCP for data transmission.
         """
         return pulumi.get(self, "network_traffic_mode")
 
@@ -8198,7 +8386,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def period(self) -> _builtins.int:
         """
-        Purchase duration for cloud server instances, in months. This parameter is returned only when InstanceChargeType=PrePaid
+        ECS instance purchase duration, in months. Values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36. Only required and mandatory when InstanceChargeType=PrePaid.
         """
         return pulumi.get(self, "period")
 
@@ -8206,7 +8394,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="preScript")
     def pre_script(self) -> _builtins.str:
         """
-        Script to execute before deploying the node
+        [Invitation Test · Apply for Trial] Script executed before deploying the node. Enter the Shell script encoded in Base64. Note: The length after Base64 encoding must not exceed 8 KB. If both InitializeScript and PreScript are provided, the total length of both parameters must not exceed 8 KB.
         """
         return pulumi.get(self, "pre_script")
 
@@ -8214,7 +8402,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="projectName")
     def project_name(self) -> _builtins.str:
         """
-        Project to which the ECS belongs. Each ECS can only belong to one project.
+        Project name to which the ECS expanded from the node pool belongs. Each ECS can only belong to one project. Only English letters, numbers, underscores (_), periods (.), and hyphens (-) are allowed. Maximum length is 64 characters. Default is default.
         """
         return pulumi.get(self, "project_name")
 
@@ -8222,7 +8410,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="publicAccessConfig")
     def public_access_config(self) -> 'outputs.GetNodePoolNodeConfigPublicAccessConfigResult':
         """
-        Configuration for automatic public network access for nodes
+        Configuration information for automatically binding EIP to nodes.
         """
         return pulumi.get(self, "public_access_config")
 
@@ -8230,7 +8418,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="publicAccessEnabled")
     def public_access_enabled(self) -> _builtins.bool:
         """
-        Enable public network access for nodes automatically. Options:   - false: off   - true: on
+        Enable automatic public IP (EIP) binding for nodes. Options: false: (default) Disabled. The system will not automatically assign an EIP to the node. If you need public network access later, refer to Applying for a Public IP and Binding to a Cloud Server. true: Enabled. The system automatically assigns an EIP to nodes in the cluster. You must also configure the PublicAccessConfig parameter to customize the EIP settings.
         """
         return pulumi.get(self, "public_access_enabled")
 
@@ -8246,7 +8434,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="spotStrategy")
     def spot_strategy(self) -> _builtins.str:
         """
-        Spot pricing strategy for pay-as-you-go billing. When InstanceChargeType=PostPaid: NoSpot: Standard pay-as-you-go instance. SpotAsPriceGo: System automatically bids, following the current market price.
+        Spot pricing strategy for on-demand billing applies only when InstanceChargeType=PostPaid. Options: NoSpot (default): standard on-demand instance. SpotAsPriceGo: system automatically bids, following the current market price.
         """
         return pulumi.get(self, "spot_strategy")
 
@@ -8254,7 +8442,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="subnetIds")
     def subnet_ids(self) -> Sequence[_builtins.str]:
         """
-        List of subnet IDs for the node network.
+        List of subnet IDs to which the node network belongs. You can call the private network API to obtain subnet IDs. Note: Must be in the same private network as the cluster. A single node pool supports up to 8 subnet IDs.
         """
         return pulumi.get(self, "subnet_ids")
 
@@ -8262,7 +8450,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter(name="systemVolume")
     def system_volume(self) -> 'outputs.GetNodePoolNodeConfigSystemVolumeResult':
         """
-        System disk configuration for the node
+        System disk configuration for the node. You can call the DescribeInstanceTypes API of the cloud server to obtain the matching relationship between ECS instance families and disk specifications.
         """
         return pulumi.get(self, "system_volume")
 
@@ -8270,7 +8458,7 @@ class GetNodePoolNodeConfigResult(dict):
     @pulumi.getter
     def tags(self) -> Sequence['outputs.GetNodePoolNodeConfigTagResult']:
         """
-        Label information configured for the node pool
+        Tag information bound to the ECS instance corresponding to the node, used for searching and managing ECS instances. Note: Keys in Tags must be unique. If a resource already has the same Tags.Key, binding the same Tags.Key again will not cause an error and will update to the latest Tags.Value. A single resource supports up to 20 ECS instance tags. Do not enter spaces at the beginning or end of Keys or Values in Tags.
         """
         return pulumi.get(self, "tags")
 
@@ -8286,13 +8474,13 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
                  subgroup_number: _builtins.int,
                  type: _builtins.str):
         """
-        :param _builtins.str file_system: File system. Options:   - Ext4 (default)   - Xfs
+        :param _builtins.str file_system: [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
         :param _builtins.str mount_point: Target mount directory after disk formatting.
-        :param _builtins.str placement_group_id: Placement group ID
+        :param _builtins.str placement_group_id: Storage placement group ID to which the data disk belongs.
         :param _builtins.int size: Disk capacity, in GiB.
-        :param _builtins.str snapshot_id: Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
-        :param _builtins.int subgroup_number: Placement subgroup
-        :param _builtins.str type: Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+        :param _builtins.str snapshot_id: Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
+        :param _builtins.int subgroup_number: Storage sub-placement group number of the data disk.
+        :param _builtins.str type: Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
         """
         pulumi.set(__self__, "file_system", file_system)
         pulumi.set(__self__, "mount_point", mount_point)
@@ -8306,7 +8494,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="fileSystem")
     def file_system(self) -> _builtins.str:
         """
-        File system. Options:   - Ext4 (default)   - Xfs
+        [Invitation Test · Apply for Trial] File system for the node pool data disk. Values: Ext4 (default), Xfs.
         """
         return pulumi.get(self, "file_system")
 
@@ -8322,7 +8510,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> _builtins.str:
         """
-        Placement group ID
+        Storage placement group ID to which the data disk belongs.
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -8338,7 +8526,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="snapshotId")
     def snapshot_id(self) -> _builtins.str:
         """
-        Create a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only Ultra SSD and High-performance Cloud Disk support creating disks from snapshots. Only snapshots in the 'available' status can be used to create new disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' status cannot be used to create new disks.
+        Snapshot ID used when creating a data disk from a snapshot. You can call the DescribeSnapshots API to query the snapshot ID. Note: Only ultra-fast SSDs and efficient cloud disks support creating cloud disks from snapshots. Only snapshots in the 'available' state can be used to create new cloud disks. Snapshots in 'creating', 'rolling back', 'deleting', or 'error' states cannot be used to create new cloud disks.
         """
         return pulumi.get(self, "snapshot_id")
 
@@ -8346,7 +8534,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> _builtins.int:
         """
-        Placement subgroup
+        Storage sub-placement group number of the data disk.
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -8354,7 +8542,7 @@ class GetNodePoolNodeConfigDataVolumeResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Disk type: ESSD*PL0: ultra-fast SSD disk with performance level PL0. ESSD*FlexPL: ultra-fast SSD disk with performance level PL1
+        Disk types. Cloud disks: ESSD*PL0: Ultra-fast SSD cloud disk, PL0 specification. ESSD*FlexPL: Ultra-fast SSD cloud disk, FlexPL specification. Ultra*Disk: [EBS Invitation Test] High-performance SSD cloud disk. TSSD*TL0: Throughput SSD cloud disk, TL0 specification. RSSD*PL0: [EBS Invitation Test] Elastic remote disk, PL0 specification. Local disks: LOCAL*SSD: SSD type local disk. LOCAL*HDD: HDD type local disk. LOCAL*LVM*SSD: SSD LVM logical local disk. LOCAL*SSD_SRIOV: SSD SRIOV local disk.
         """
         return pulumi.get(self, "type")
 
@@ -8367,10 +8555,10 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
                  on_demand_base_capacity: _builtins.int,
                  on_demand_percentage_above_base_capacity: _builtins.int):
         """
-        :param _builtins.bool capacity_rebalance: Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
-        :param _builtins.bool compensate_with_on_demand: On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
-        :param _builtins.int on_demand_base_capacity: Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
-        :param _builtins.int on_demand_percentage_above_base_capacity: Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+        :param _builtins.bool capacity_rebalance: Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
+        :param _builtins.bool compensate_with_on_demand: Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
+        :param _builtins.int on_demand_base_capacity: Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
+        :param _builtins.int on_demand_percentage_above_base_capacity: Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
         """
         pulumi.set(__self__, "capacity_rebalance", capacity_rebalance)
         pulumi.set(__self__, "compensate_with_on_demand", compensate_with_on_demand)
@@ -8381,7 +8569,7 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="capacityRebalance")
     def capacity_rebalance(self) -> _builtins.bool:
         """
-        Capacity rebalancing. Value range:   - true: enables this feature. When a preemptible instance is about to be reclaimed, proactively creates a new preemptible instance for compensation.   - false (default): disables this feature. Waits until the preemptible instance is reclaimed before scaling out to make up the instance count
+        Whether to enable capacity rebalancing (on-demand instance supplementation for preemptible capacity). Values: true: enable this feature to proactively create new preemptible instances for compensation before existing preemptible instances are reclaimed; false (default): do not enable this feature, and only scale out to replenish instances after preemptible instances are reclaimed.
         """
         return pulumi.get(self, "capacity_rebalance")
 
@@ -8389,7 +8577,7 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="compensateWithOnDemand")
     def compensate_with_on_demand(self) -> _builtins.bool:
         """
-        On-demand instance fallback feature. Value range:   - true: enable this feature; when all preemptible instances fail to purchase due to insufficient inventory or other reasons, attempt to purchase on-demand instances   - false (default): disable this feature; only attempt to purchase configured preemptible instances when scaling up
+        Enable on-demand instance replacement. Values: true: Enable this feature. When all preemptible instances fail to be purchased due to insufficient inventory or other reasons, attempt to purchase on-demand instances. false: (Default) Do not enable this feature. When scaling out preemptible instances, only the configured preemptible instances are attempted.
         """
         return pulumi.get(self, "compensate_with_on_demand")
 
@@ -8397,7 +8585,7 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="onDemandBaseCapacity")
     def on_demand_base_capacity(self) -> _builtins.int:
         """
-        Size of the base capacity. The base capacity is always pay-as-you-go instances. Value range: [0,500], default is 0.
+        Base capacity size. The base capacity portion is fixed as on-demand instances. Value range: [0,500], default is 0.
         """
         return pulumi.get(self, "on_demand_base_capacity")
 
@@ -8405,7 +8593,7 @@ class GetNodePoolNodeConfigInstancesDistributionResult(dict):
     @pulumi.getter(name="onDemandPercentageAboveBaseCapacity")
     def on_demand_percentage_above_base_capacity(self) -> _builtins.int:
         """
-        Proportion of pay-as-you-go instances in the part exceeding the base capacity. Value range: [0, 100]. 0 means only preemptible instances are produced for the part exceeding the base capacity; 100 means only pay-as-you-go instances are produced. Default value is 0.
+        Proportion of pay-as-you-go instances in the remaining capacity of the node pool after deducting the base capacity for pay-as-you-go instances. Value range: [0,100]. 0 means only preemptible instances are created for the portion exceeding the base capacity; 100 means only pay-as-you-go instances are created. Default value is 0.
         """
         return pulumi.get(self, "on_demand_percentage_above_base_capacity")
 
@@ -8418,8 +8606,8 @@ class GetNodePoolNodeConfigPublicAccessConfigResult(dict):
                  isp: _builtins.str):
         """
         :param _builtins.int bandwidth: Peak bandwidth for public IP, unit: Mbps
-        :param _builtins.int billing_type: Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
-        :param _builtins.str isp: Public IP line type. Parameter description: BGP: BGP (multi-line)
+        :param _builtins.int billing_type: Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+        :param _builtins.str isp: Public IP line type. Parameter value description: BGP: BGP (multi-line).
         """
         pulumi.set(__self__, "bandwidth", bandwidth)
         pulumi.set(__self__, "billing_type", billing_type)
@@ -8437,7 +8625,7 @@ class GetNodePoolNodeConfigPublicAccessConfigResult(dict):
     @pulumi.getter(name="billingType")
     def billing_type(self) -> _builtins.int:
         """
-        Billing type for public IP: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
+        Billing type for public IP. Values: 2: pay-as-you-go by bandwidth cap. 3: pay-as-you-go by actual traffic.
         """
         return pulumi.get(self, "billing_type")
 
@@ -8445,7 +8633,7 @@ class GetNodePoolNodeConfigPublicAccessConfigResult(dict):
     @pulumi.getter
     def isp(self) -> _builtins.str:
         """
-        Public IP line type. Parameter description: BGP: BGP (multi-line)
+        Public IP line type. Parameter value description: BGP: BGP (multi-line).
         """
         return pulumi.get(self, "isp")
 
@@ -8549,9 +8737,9 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
                  subgroup_number: _builtins.int,
                  type: _builtins.str):
         """
-        :param _builtins.str placement_group_id: Placement group ID
-        :param _builtins.int size: Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
-        :param _builtins.int subgroup_number: Placement subgroup
+        :param _builtins.str placement_group_id: Storage placement group ID of the system disk.
+        :param _builtins.int size: Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
+        :param _builtins.int subgroup_number: Storage sub-placement group number for the system disk.
         :param _builtins.str type: Cloud disk types: ESSD*PL0: (default) Ultra-fast SSD cloud disk with performance level PL0. ESSD*FlexPL: Ultra-fast SSD cloud disk with performance level PL1.
         """
         pulumi.set(__self__, "placement_group_id", placement_group_id)
@@ -8563,7 +8751,7 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter(name="placementGroupId")
     def placement_group_id(self) -> _builtins.str:
         """
-        Placement group ID
+        Storage placement group ID of the system disk.
         """
         return pulumi.get(self, "placement_group_id")
 
@@ -8571,7 +8759,7 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter
     def size(self) -> _builtins.int:
         """
-        Disk capacity, in GiB. Value description: Default: 40 GiB. Ultra-fast SSD (ESSD*PL0, ESSD*FlexPL): 40–2048 GiB
+        Cloud disk capacity, in GiB. Value description: Default is 40 GiB; for Ultra SSD (ESSD*PL0, ESSD*FlexPL), the range is 40–2048 GiB.
         """
         return pulumi.get(self, "size")
 
@@ -8579,7 +8767,7 @@ class GetNodePoolNodeConfigSystemVolumeResult(dict):
     @pulumi.getter(name="subgroupNumber")
     def subgroup_number(self) -> _builtins.int:
         """
-        Placement subgroup
+        Storage sub-placement group number for the system disk.
         """
         return pulumi.get(self, "subgroup_number")
 
@@ -8701,7 +8889,7 @@ class GetNodePoolStatusResult(dict):
                  phase: _builtins.str):
         """
         :param Sequence['GetNodePoolStatusConditionArgs'] conditions: Status conditions for the current primary state of the node pool, i.e., the reason for entering this primary state
-        :param _builtins.str phase: Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+        :param _builtins.str phase: Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
         """
         pulumi.set(__self__, "conditions", conditions)
         pulumi.set(__self__, "phase", phase)
@@ -8718,7 +8906,7 @@ class GetNodePoolStatusResult(dict):
     @pulumi.getter
     def phase(self) -> _builtins.str:
         """
-        Status of the node pool. Parameter values: Creating, Running, Updating, Deleting, Failed, Scaling
+        Status of the node pool. Values: Creating: Creating. Running: Running. Updating: Updating. Deleting: Deleting. Failed: Abnormal. Scaling: Scaling. Note: For valid combinations of Phase and Conditions.Type, see the resource status documentation.
         """
         return pulumi.get(self, "phase")
 
@@ -8728,7 +8916,7 @@ class GetNodePoolStatusConditionResult(dict):
     def __init__(__self__, *,
                  type: _builtins.str):
         """
-        :param _builtins.str type: Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+        :param _builtins.str type: Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
         """
         pulumi.set(__self__, "type", type)
 
@@ -8736,7 +8924,7 @@ class GetNodePoolStatusConditionResult(dict):
     @pulumi.getter
     def type(self) -> _builtins.str:
         """
-        Status conditions for the node pool in the current main state, i.e., the reasons for entering this main state. There can be multiple reasons. Parameter values: ProgressingOk, ResourceCleanupFailed, Unknown, ClusterNotRunning.
+        Status conditions under the current primary state of the node pool, indicating the reasons for entering this state. Multiple reasons are possible. Values: Progressing: in progress. Ok: normal. ResourceCleanupFailed: resource cleanup failed. Unknown: creation failed due to unknown reasons. ClusterNotRunning: cluster exception. ScalingFailed: scaling failed. ClusterVersionUpgrading: node version upgrading in the node pool. Note: For valid Phase and Conditions.Type combinations, see resource status description.
         """
         return pulumi.get(self, "type")
 
@@ -8815,5 +9003,129 @@ class GetNodeStatusConditionResult(dict):
         Status condition under the node's current primary state, indicating the reason for entering this primary state. There can be multiple reasons. Parameter values: Progressing, Ok, Unschedulable, InitilizeFailed, NotReady, Balance, ResourceCleanupFailed, Unknown.
         """
         return pulumi.get(self, "type")
+
+
+@pulumi.output_type
+class GetNodepoolScalingPolicyScheduledInstancePolicyResult(dict):
+    def __init__(__self__, *,
+                 auto_release_time: _builtins.str,
+                 best_effort: _builtins.bool,
+                 delivery_type: _builtins.str,
+                 elastic_scheduled_instance_type: _builtins.str,
+                 end_delivery_time: _builtins.str,
+                 start_delivery_time: _builtins.str):
+        """
+        :param _builtins.str auto_release_time: Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+        :param _builtins.bool best_effort: If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+        :param _builtins.str delivery_type: Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+        :param _builtins.str elastic_scheduled_instance_type: Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+        :param _builtins.str end_delivery_time: End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+        :param _builtins.str start_delivery_time: Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+        """
+        pulumi.set(__self__, "auto_release_time", auto_release_time)
+        pulumi.set(__self__, "best_effort", best_effort)
+        pulumi.set(__self__, "delivery_type", delivery_type)
+        pulumi.set(__self__, "elastic_scheduled_instance_type", elastic_scheduled_instance_type)
+        pulumi.set(__self__, "end_delivery_time", end_delivery_time)
+        pulumi.set(__self__, "start_delivery_time", start_delivery_time)
+
+    @_builtins.property
+    @pulumi.getter(name="autoReleaseTime")
+    def auto_release_time(self) -> _builtins.str:
+        """
+        Automatic release time for reserved instances, in UTC, accurate to the minute, must be at a 10-minute mark. Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+        """
+        return pulumi.get(self, "auto_release_time")
+
+    @_builtins.property
+    @pulumi.getter(name="bestEffort")
+    def best_effort(self) -> _builtins.bool:
+        """
+        If the inventory of elastic scheduled instances cannot fully meet the reservation demand, specify whether to reserve as many instances as possible. false (default): At most one reservation order is generated; true: If a single reservation order cannot meet the demand, multiple reservation orders will be submitted.
+        """
+        return pulumi.get(self, "best_effort")
+
+    @_builtins.property
+    @pulumi.getter(name="deliveryType")
+    def delivery_type(self) -> _builtins.str:
+        """
+        Delivery type for elastic scheduled instance   - time segment type. Valid values: Reserve (reserved delivery), Immediate (immediate delivery). Required and valid only when ElasticScheduledInstanceType is Segmented (elastic scheduled instance   - time segment type).
+        """
+        return pulumi.get(self, "delivery_type")
+
+    @_builtins.property
+    @pulumi.getter(name="elasticScheduledInstanceType")
+    def elastic_scheduled_instance_type(self) -> _builtins.str:
+        """
+        Elastic reservation instance type. Options: Esi (general-purpose elastic reservation instance), Segmented (time-slot elastic reservation instance).
+        """
+        return pulumi.get(self, "elastic_scheduled_instance_type")
+
+    @_builtins.property
+    @pulumi.getter(name="endDeliveryTime")
+    def end_delivery_time(self) -> _builtins.str:
+        """
+        End time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark and have a 10-minute interval from StartDeliveryTime. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+        """
+        return pulumi.get(self, "end_delivery_time")
+
+    @_builtins.property
+    @pulumi.getter(name="startDeliveryTime")
+    def start_delivery_time(self) -> _builtins.str:
+        """
+        Start time for delivery of the elastic reservation instance, in UTC, accurate to the minute. Must be on a 10-minute mark. For type Esi, set within 4–8 hours after LaunchTime; for type Segmented with DeliveryType Reserve, set within 24 hours after LaunchTime.
+        """
+        return pulumi.get(self, "start_delivery_time")
+
+
+@pulumi.output_type
+class GetNodepoolScalingPolicyScheduledPolicyResult(dict):
+    def __init__(__self__, *,
+                 launch_time: _builtins.str,
+                 recurrence_end_time: _builtins.str,
+                 recurrence_type: _builtins.str,
+                 recurrence_value: _builtins.str):
+        """
+        :param _builtins.str launch_time: Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+        :param _builtins.str recurrence_end_time: End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+        :param _builtins.str recurrence_type: Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+        :param _builtins.str recurrence_value: Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+        """
+        pulumi.set(__self__, "launch_time", launch_time)
+        pulumi.set(__self__, "recurrence_end_time", recurrence_end_time)
+        pulumi.set(__self__, "recurrence_type", recurrence_type)
+        pulumi.set(__self__, "recurrence_value", recurrence_value)
+
+    @_builtins.property
+    @pulumi.getter(name="launchTime")
+    def launch_time(self) -> _builtins.str:
+        """
+        Task start time, in UTC, accurate to the minute. When Type is Scheduled, this is the trigger time for the scheduled task; when Type is Recurrence, this is the start time for the periodic task. Must be later than the current time, and can only be set within 90 days from the creation/modification time.
+        """
+        return pulumi.get(self, "launch_time")
+
+    @_builtins.property
+    @pulumi.getter(name="recurrenceEndTime")
+    def recurrence_end_time(self) -> _builtins.str:
+        """
+        End time for the periodic task, in UTC, accurate to the minute. Only valid and required when Type is Recurrence. Must be greater than or equal to LaunchTime, and can only be set within 365 days from the creation/modification time.
+        """
+        return pulumi.get(self, "recurrence_end_time")
+
+    @_builtins.property
+    @pulumi.getter(name="recurrenceType")
+    def recurrence_type(self) -> _builtins.str:
+        """
+        Recurrence cycle for the periodic task. Only valid and required when Type is Recurrence. Options: Daily (runs every few days), Weekly (select days of the week, runs once per day), Monthly (select dates within the month, runs once per day).
+        """
+        return pulumi.get(self, "recurrence_type")
+
+    @_builtins.property
+    @pulumi.getter(name="recurrenceValue")
+    def recurrence_value(self) -> _builtins.str:
+        """
+        Number of recurrences for the periodic task. Only valid and required when Type is Recurrence. For RecurrenceType Daily, only one value is allowed, range 1–31; for Weekly, multiple values can be entered and separated by commas (Monday to Sunday are 1–7); for Monthly, use the format A-B (both A and B range from 1–31, and B ≥ A).
+        """
+        return pulumi.get(self, "recurrence_value")
 
 

@@ -3,11 +3,13 @@
 
 package com.byteplus.bytepluscc.mongodb.outputs;
 
+import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceBackup;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceConfigServer;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceInstanceParameter;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceMongo;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceNode;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceNodeAvailabilityZone;
+import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceRecoverableTime;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceShard;
 import com.byteplus.bytepluscc.mongodb.outputs.GetInstanceTag;
 import com.pulumi.core.annotations.CustomType;
@@ -30,6 +32,21 @@ public final class GetInstanceResult {
      * 
      */
     private Boolean autoRenew;
+    /**
+     * @return Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     * 
+     */
+    private String backupId;
+    /**
+     * @return Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     * 
+     */
+    private String backupType;
+    /**
+     * @return Backup file list information for the instance.
+     * 
+     */
+    private List<GetInstanceBackup> backups;
     /**
      * @return Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
      * 
@@ -196,6 +213,16 @@ public final class GetInstanceResult {
      */
     private String reclaimTime;
     /**
+     * @return List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+     * 
+     */
+    private List<GetInstanceRecoverableTime> recoverableTimes;
+    /**
+     * @return When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     * 
+     */
+    private String restoreTime;
+    /**
      * @return Number of shards in the sharded cluster. Range: 2–32.
      * 
      */
@@ -205,6 +232,11 @@ public final class GetInstanceResult {
      * 
      */
     private List<GetInstanceShard> shards;
+    /**
+     * @return Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     * 
+     */
+    private String srcDbInstanceId;
     /**
      * @return Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
      * 
@@ -265,6 +297,27 @@ public final class GetInstanceResult {
      */
     public Boolean autoRenew() {
         return this.autoRenew;
+    }
+    /**
+     * @return Backup file ID of the source instance for backup restore, used for restoring by backup file. Either BackupId or RestoreTime must be specified. Currently, only replica set instances support restoring a backup set to a new instance; sharded cluster instances are not supported.
+     * 
+     */
+    public String backupId() {
+        return this.backupId;
+    }
+    /**
+     * @return Backup type. Valid values: Physical: physical backup. Logical: logical backup.
+     * 
+     */
+    public String backupType() {
+        return this.backupType;
+    }
+    /**
+     * @return Backup file list information for the instance.
+     * 
+     */
+    public List<GetInstanceBackup> backups() {
+        return this.backups;
     }
     /**
      * @return Instance billing status. Valid values: Normal: normal. WaitingPaid: waiting for payment. ChangingPayType: changing billing type. Renewing: renewing. Overdue: overdue. Owing: owing. Unsubscribing: unsubscribing.
@@ -498,6 +551,20 @@ public final class GetInstanceResult {
         return this.reclaimTime;
     }
     /**
+     * @return List of recoverable time ranges for the instance. If the returned data is empty, the instance cannot be recovered.
+     * 
+     */
+    public List<GetInstanceRecoverableTime> recoverableTimes() {
+        return this.recoverableTimes;
+    }
+    /**
+     * @return When restoring a backup, specify the restore time point in the format yyyy-MM-ddTHH:mm:ssZ (UTC). Either BackupId or RestoreTime must be specified. Use DescribeRecoverableTime to query supported recoverable time ranges.
+     * 
+     */
+    public String restoreTime() {
+        return this.restoreTime;
+    }
+    /**
      * @return Number of shards in the sharded cluster. Range: 2–32.
      * 
      */
@@ -510,6 +577,13 @@ public final class GetInstanceResult {
      */
     public List<GetInstanceShard> shards() {
         return this.shards;
+    }
+    /**
+     * @return Source instance ID for backup restore. If this parameter is provided, a new instance will be created based on the backup file or specified time point of the source instance, and data will be restored to the new instance via RestoreToNewInstance. If left blank, the instance will be created normally via CreateDBInstance.
+     * 
+     */
+    public String srcDbInstanceId() {
+        return this.srcDbInstanceId;
     }
     /**
      * @return Total storage space for replica set instances, or storage space for a single Shard in a sharded cluster. Unit: GiB, step size: 10.
@@ -586,6 +660,9 @@ public final class GetInstanceResult {
     public static final class Builder {
         private List<String> allowListIds;
         private Boolean autoRenew;
+        private String backupId;
+        private String backupType;
+        private List<GetInstanceBackup> backups;
         private String chargeStatus;
         private String chargeType;
         private String closedTime;
@@ -619,8 +696,11 @@ public final class GetInstanceResult {
         private String projectName;
         private Integer readOnlyNodeNumber;
         private String reclaimTime;
+        private List<GetInstanceRecoverableTime> recoverableTimes;
+        private String restoreTime;
         private Integer shardNumber;
         private List<GetInstanceShard> shards;
+        private String srcDbInstanceId;
         private Integer storageSpaceGb;
         private String storageType;
         private String subnetId;
@@ -635,6 +715,9 @@ public final class GetInstanceResult {
     	      Objects.requireNonNull(defaults);
     	      this.allowListIds = defaults.allowListIds;
     	      this.autoRenew = defaults.autoRenew;
+    	      this.backupId = defaults.backupId;
+    	      this.backupType = defaults.backupType;
+    	      this.backups = defaults.backups;
     	      this.chargeStatus = defaults.chargeStatus;
     	      this.chargeType = defaults.chargeType;
     	      this.closedTime = defaults.closedTime;
@@ -668,8 +751,11 @@ public final class GetInstanceResult {
     	      this.projectName = defaults.projectName;
     	      this.readOnlyNodeNumber = defaults.readOnlyNodeNumber;
     	      this.reclaimTime = defaults.reclaimTime;
+    	      this.recoverableTimes = defaults.recoverableTimes;
+    	      this.restoreTime = defaults.restoreTime;
     	      this.shardNumber = defaults.shardNumber;
     	      this.shards = defaults.shards;
+    	      this.srcDbInstanceId = defaults.srcDbInstanceId;
     	      this.storageSpaceGb = defaults.storageSpaceGb;
     	      this.storageType = defaults.storageType;
     	      this.subnetId = defaults.subnetId;
@@ -699,6 +785,33 @@ public final class GetInstanceResult {
             }
             this.autoRenew = autoRenew;
             return this;
+        }
+        @CustomType.Setter
+        public Builder backupId(String backupId) {
+            if (backupId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "backupId");
+            }
+            this.backupId = backupId;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backupType(String backupType) {
+            if (backupType == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "backupType");
+            }
+            this.backupType = backupType;
+            return this;
+        }
+        @CustomType.Setter
+        public Builder backups(List<GetInstanceBackup> backups) {
+            if (backups == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "backups");
+            }
+            this.backups = backups;
+            return this;
+        }
+        public Builder backups(GetInstanceBackup... backups) {
+            return backups(List.of(backups));
         }
         @CustomType.Setter
         public Builder chargeStatus(String chargeStatus) {
@@ -980,6 +1093,25 @@ public final class GetInstanceResult {
             return this;
         }
         @CustomType.Setter
+        public Builder recoverableTimes(List<GetInstanceRecoverableTime> recoverableTimes) {
+            if (recoverableTimes == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "recoverableTimes");
+            }
+            this.recoverableTimes = recoverableTimes;
+            return this;
+        }
+        public Builder recoverableTimes(GetInstanceRecoverableTime... recoverableTimes) {
+            return recoverableTimes(List.of(recoverableTimes));
+        }
+        @CustomType.Setter
+        public Builder restoreTime(String restoreTime) {
+            if (restoreTime == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "restoreTime");
+            }
+            this.restoreTime = restoreTime;
+            return this;
+        }
+        @CustomType.Setter
         public Builder shardNumber(Integer shardNumber) {
             if (shardNumber == null) {
               throw new MissingRequiredPropertyException("GetInstanceResult", "shardNumber");
@@ -997,6 +1129,14 @@ public final class GetInstanceResult {
         }
         public Builder shards(GetInstanceShard... shards) {
             return shards(List.of(shards));
+        }
+        @CustomType.Setter
+        public Builder srcDbInstanceId(String srcDbInstanceId) {
+            if (srcDbInstanceId == null) {
+              throw new MissingRequiredPropertyException("GetInstanceResult", "srcDbInstanceId");
+            }
+            this.srcDbInstanceId = srcDbInstanceId;
+            return this;
         }
         @CustomType.Setter
         public Builder storageSpaceGb(Integer storageSpaceGb) {
@@ -1077,6 +1217,9 @@ public final class GetInstanceResult {
             final var _resultValue = new GetInstanceResult();
             _resultValue.allowListIds = allowListIds;
             _resultValue.autoRenew = autoRenew;
+            _resultValue.backupId = backupId;
+            _resultValue.backupType = backupType;
+            _resultValue.backups = backups;
             _resultValue.chargeStatus = chargeStatus;
             _resultValue.chargeType = chargeType;
             _resultValue.closedTime = closedTime;
@@ -1110,8 +1253,11 @@ public final class GetInstanceResult {
             _resultValue.projectName = projectName;
             _resultValue.readOnlyNodeNumber = readOnlyNodeNumber;
             _resultValue.reclaimTime = reclaimTime;
+            _resultValue.recoverableTimes = recoverableTimes;
+            _resultValue.restoreTime = restoreTime;
             _resultValue.shardNumber = shardNumber;
             _resultValue.shards = shards;
+            _resultValue.srcDbInstanceId = srcDbInstanceId;
             _resultValue.storageSpaceGb = storageSpaceGb;
             _resultValue.storageType = storageType;
             _resultValue.subnetId = subnetId;

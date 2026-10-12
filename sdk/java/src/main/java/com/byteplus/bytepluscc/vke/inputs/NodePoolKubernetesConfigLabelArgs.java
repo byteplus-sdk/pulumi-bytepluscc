@@ -16,14 +16,14 @@ public final class NodePoolKubernetesConfigLabelArgs extends com.pulumi.resource
     public static final NodePoolKubernetesConfigLabelArgs Empty = new NodePoolKubernetesConfigLabelArgs();
 
     /**
-     * Tag key.
+     * Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
      * 
      */
     @Import(name="key")
     private @Nullable Output<String> key;
 
     /**
-     * @return Tag key.
+     * @return Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
      * 
      */
     public Optional<Output<String>> key() {
@@ -31,14 +31,14 @@ public final class NodePoolKubernetesConfigLabelArgs extends com.pulumi.resource
     }
 
     /**
-     * Label value.
+     * Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
      * 
      */
     @Import(name="value")
     private @Nullable Output<String> value;
 
     /**
-     * @return Label value.
+     * @return Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
      * 
      */
     public Optional<Output<String>> value() {
@@ -71,7 +71,7 @@ public final class NodePoolKubernetesConfigLabelArgs extends com.pulumi.resource
         }
 
         /**
-         * @param key Tag key.
+         * @param key Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
          * 
          * @return builder
          * 
@@ -82,7 +82,7 @@ public final class NodePoolKubernetesConfigLabelArgs extends com.pulumi.resource
         }
 
         /**
-         * @param key Tag key.
+         * @param key Tag key. A valid tag key consists of two segments: prefix and name, separated by a slash (/). The name is required and supports English letters (upper and lower case), numbers, hyphens (-), underscores (_), and periods (.), must start and end with a letter or number, and cannot exceed 63 characters. The prefix is optional; if specified, it must be a DNS subdomain: a series of DNS labels separated by periods (.), not exceeding 253 characters. The total length of prefix and name must not exceed 82 characters.
          * 
          * @return builder
          * 
@@ -92,7 +92,7 @@ public final class NodePoolKubernetesConfigLabelArgs extends com.pulumi.resource
         }
 
         /**
-         * @param value Label value.
+         * @param value Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
          * 
          * @return builder
          * 
@@ -103,7 +103,7 @@ public final class NodePoolKubernetesConfigLabelArgs extends com.pulumi.resource
         }
 
         /**
-         * @param value Label value.
+         * @param value Tag value. Maximum length is 63 characters (can be empty). Must start and end with English letters or numbers. Supports special characters: hyphen (-), underscore (_), period (.).
          * 
          * @return builder
          * 

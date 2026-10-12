@@ -13,7 +13,7 @@ import javax.annotation.Nullable;
 @CustomType
 public final class NodePoolKubernetesConfigContainerdConfig {
     /**
-     * @return Specify the container image repository address to skip certificate verification.
+     * @return Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
      * 
      */
     private @Nullable List<String> insecureRegistries;
@@ -26,7 +26,7 @@ public final class NodePoolKubernetesConfigContainerdConfig {
 
     private NodePoolKubernetesConfigContainerdConfig() {}
     /**
-     * @return Specify the container image repository address to skip certificate verification.
+     * @return Specify container image registry addresses to skip certificate authentication. The format is a domain name or IP address without protocol, and can include a port number, for example: example.com or example.com:8080. Supports up to 10 domain names or IP addresses.
      * 
      */
     public List<String> insecureRegistries() {

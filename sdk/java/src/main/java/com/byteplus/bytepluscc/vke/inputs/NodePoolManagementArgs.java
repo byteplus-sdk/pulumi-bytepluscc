@@ -17,14 +17,14 @@ public final class NodePoolManagementArgs extends com.pulumi.resources.ResourceA
     public static final NodePoolManagementArgs Empty = new NodePoolManagementArgs();
 
     /**
-     * Enable managed mode for node pool. Options:   - true: on   - false: off
+     * Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
      * 
      */
     @Import(name="enabled")
     private @Nullable Output<Boolean> enabled;
 
     /**
-     * @return Enable managed mode for node pool. Options:   - true: on   - false: off
+     * @return Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
      * 
      */
     public Optional<Output<Boolean>> enabled() {
@@ -32,14 +32,14 @@ public final class NodePoolManagementArgs extends com.pulumi.resources.ResourceA
     }
 
     /**
-     * Check self-healing configuration.
+     * Node pool health check and self-healing rule configuration.
      * 
      */
     @Import(name="remedyConfig")
     private @Nullable Output<NodePoolManagementRemedyConfigArgs> remedyConfig;
 
     /**
-     * @return Check self-healing configuration.
+     * @return Node pool health check and self-healing rule configuration.
      * 
      */
     public Optional<Output<NodePoolManagementRemedyConfigArgs>> remedyConfig() {
@@ -72,7 +72,7 @@ public final class NodePoolManagementArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enabled Enable managed mode for node pool. Options:   - true: on   - false: off
+         * @param enabled Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
          * 
          * @return builder
          * 
@@ -83,7 +83,7 @@ public final class NodePoolManagementArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param enabled Enable managed mode for node pool. Options:   - true: on   - false: off
+         * @param enabled Enable managed mode for the node pool. Options: true: Enabled. false: Disabled.
          * 
          * @return builder
          * 
@@ -93,7 +93,7 @@ public final class NodePoolManagementArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param remedyConfig Check self-healing configuration.
+         * @param remedyConfig Node pool health check and self-healing rule configuration.
          * 
          * @return builder
          * 
@@ -104,7 +104,7 @@ public final class NodePoolManagementArgs extends com.pulumi.resources.ResourceA
         }
 
         /**
-         * @param remedyConfig Check self-healing configuration.
+         * @param remedyConfig Node pool health check and self-healing rule configuration.
          * 
          * @return builder
          * 

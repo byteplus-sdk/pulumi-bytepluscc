@@ -13,32 +13,32 @@ import java.util.Objects;
 @CustomType
 public final class GetNodePoolAutoScaling {
     /**
-     * @return Configure the expected number of nodes in the node pool
+     * @return Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
      * 
      */
     private Integer desiredReplicas;
     /**
-     * @return Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+     * @return Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
      * 
      */
     private Boolean enabled;
     /**
-     * @return Configure the maximum number of nodes in the node pool
+     * @return Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
      * 
      */
     private Integer maxReplicas;
     /**
-     * @return Minimum number of nodes configured for the node pool
+     * @return Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
      * 
      */
     private Integer minReplicas;
     /**
-     * @return Priority
+     * @return Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
      * 
      */
     private Integer priority;
     /**
-     * @return Scaling group ID
+     * @return Scaling group ID associated with the node pool.
      * 
      */
     private String scalingGroupId;
@@ -50,42 +50,42 @@ public final class GetNodePoolAutoScaling {
 
     private GetNodePoolAutoScaling() {}
     /**
-     * @return Configure the expected number of nodes in the node pool
+     * @return Configure the expected number of nodes in the node pool. Value description: Default is 0. Range: 0–2000. Note: When auto scaling is enabled for the node pool, DesiredReplicas must be greater than or equal to MinReplicas and less than or equal to MaxReplicas.
      * 
      */
     public Integer desiredReplicas() {
         return this.desiredReplicas;
     }
     /**
-     * @return Configure the node pool auto scaling feature switch. Parameter values: false: disabled. true: enabled.
+     * @return Configure the node pool auto scaling feature switch. Parameter values: false (default): disabled. true: enabled.
      * 
      */
     public Boolean enabled() {
         return this.enabled;
     }
     /**
-     * @return Configure the maximum number of nodes in the node pool
+     * @return Set the maximum number of nodes in the node pool. This takes effect only when auto scaling is enabled (Enabled=true). The number of nodes will not exceed this value during node pool scaling.
      * 
      */
     public Integer maxReplicas() {
         return this.maxReplicas;
     }
     /**
-     * @return Minimum number of nodes configured for the node pool
+     * @return Minimum number of nodes in the node pool. Only effective when node pool auto scaling is enabled (Enabled=true). The number of nodes will not fall below this value during auto scaling.
      * 
      */
     public Integer minReplicas() {
         return this.minReplicas;
     }
     /**
-     * @return Priority
+     * @return Elastic scaling priority of the node pool. Effective only when SubnetPolicy=Priority. The higher the value, the higher the priority.
      * 
      */
     public Integer priority() {
         return this.priority;
     }
     /**
-     * @return Scaling group ID
+     * @return Scaling group ID associated with the node pool.
      * 
      */
     public String scalingGroupId() {
